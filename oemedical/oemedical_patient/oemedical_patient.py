@@ -34,7 +34,7 @@ class OeMedicalPatient(osv.osv):
         'general_info': fields.text(string='General Information'),
         'primary_care_doctor': fields.many2one('oemedical.physician', string='Primary Care Doctor', ),
         'childbearing_age': fields.boolean(string='Potential for Childbearing'),
-        #'medications': fields.one2many('oemedical.patient.medication', 'relation_id', string='Medications', ),
+        'medications': fields.one2many('oemedical.patient.medication', 'relation_id', string='Medications', ),
         'critical_info': fields.text(string='Important disease, allergy or procedures information'),
         'rh': fields.selection([('+', '+'),('-', '-'),], string='Rh'),
         'current_address': fields.many2one('res.partner', string='Address', ),
