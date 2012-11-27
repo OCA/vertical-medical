@@ -70,7 +70,7 @@ OeMedical at a glance:
     "website" : "http://techreceptives.com",
     "init_xml" : [],
     "demo_xml" : [],
-    "update_xml" : [],
+    "update_xml" : ["oemedical_menu.xml"],
     "active": False 
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

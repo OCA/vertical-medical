@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_oemedical_family_member_tree" model="ir.ui.view">
+            <field name="name">oemedical.family_member.tree</field>
+            <field name="model">oemedical.family_member</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Oemedical Family_Member">
+                    <field name="party"/>
+                    <field name="role"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_oemedical_family_member_form" model="ir.ui.view">
+            <field name="name">oemedical.family_member.form</field>
+            <field name="model">oemedical.family_member</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Oemedical Family_Member">
+                    <field name="party"/>
+                    <field name="role"/>
+                    <field name="name"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_oemedical_family_member_search" model="ir.ui.view">
+            <field name="name">oemedical.family_member.search</field>
+            <field name="model">oemedical.family_member</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Oemedical Family_Member">
+                    <field name="party"/>
+                    <field name="role"/>
+                    <field name="name"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Party" domain="[]" context="{'group_by':'party'}"/>
+                        <filter string="Role" domain="[]" context="{'group_by':'role'}"/>
+                        <filter string="Family" domain="[]" context="{'group_by':'name'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_oemedical_family_member_view">
+            <field name="name"> Family Member</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oemedical.family_member</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_oemedical_family_member_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_oemedical_family_member_view_form">
+            <field name="act_window_id" ref="act_open_oemedical_family_member_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_oemedical_family_member_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_oemedical_family_member_view_tree">
+            <field name="act_window_id" ref="act_open_oemedical_family_member_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_oemedical_family_member_tree"/>
+        </record>
+
+    </data>
+</openerp>
