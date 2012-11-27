@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-##############################################################################
+#/#############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,10 +18,19 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-##############################################################################
-import oemedical_patient
-import oemedical_family
-import oemedical_family_member
-import oemedical_patient_medication
-import res_partner
+#/#############################################################################
+from osv import osv
+from osv import fields
+
+
+class OeMedicalOccupation(osv.osv):
+    _name = 'oemedical.occupation'
+
+    _columns = {
+        'rec_name': fields.char(size=256, string='Name', required=True),
+        'code': fields.char(size=256, string='Code', required=True),
+        'name': fields.char(size=256, string='Name', required=True),
+    }
+
+OeMedicalOccupation()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
