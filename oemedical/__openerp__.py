@@ -1,9 +1,22 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
-#
-#    Tech-Receptives Solutions Pvt. Ltd.
-#    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
+#    OpenERP, Open Source Management Solution    
+#    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
+#    OeMedical, HMS Opensource Solution
+##############################################################################
+#    Collaborators of this module:
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.  
+#    Coded by: Parthiv Patel <parthiv@techreceptives.com>
+#    Coded by: Ruchir Shukla <ruchir@techreceptives.com>
+#    Planifyied by: Parthiv Patel <parthiv@techreceptives.com>
+#    Planifyied by: Nhomar Hernandéz <nhomar@vauxoo.com>
+#     
+##############################################################################    
+#    This project is mantained by OeMEdical Team:
+#    https://launchpad.net/oemedical
+#
+##############################################################################
+#    It is a collaborative effort between several companies that want to join 
+#    efforts in have a proposal solid and strong in the Health Care environment
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -23,7 +36,7 @@
 
     'name' : 'OeMedical : Free Health and Hospital Information System',  
     'version' : '1.0',
-    'author' : 'Tech-Receptives Solutions Pvt. Ltd.',
+    'author' : "OeMEdical Team", 
     'category' : 'Generic Modules/Others',
     'depends' : ['base','sale','purchase','account','product'],
     'description' : """
@@ -67,8 +80,9 @@ OeMedical at a glance:
     * Open Source : Licensed under AGPL 
 
 """,
-    "website" : "http://techreceptives.com",
+    "website" : "http://launchpad.net/oemedical",
     "init_xml" : [],
+    "licence": "AGPL v3",
     "demo_xml" : [],
     "update_xml" : ["oemedical_menu.xml"],
     "active": False 
