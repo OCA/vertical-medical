@@ -1,21 +1,21 @@
 ##############################################################################
-#    OpenERP, Open Source Management Solution    
+#    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
 #    OeMedical, HMS Opensource Solution
 ##############################################################################
 #    Collaborators of this module:
-#    Special Credit and Thanks to Thymbra Latinoamericana S.A.  
+#    Special Credit and Thanks to Thymbra Latinoamericana S.A.
 #    Coded by: Parthiv Patel <parthiv@techreceptives.com>
 #    Coded by: Ruchir Shukla <ruchir@techreceptives.com>
 #    Planifyied by: Parthiv Patel <parthiv@techreceptives.com>
 #    Planifyied by: Nhomar Hernandéz <nhomar@vauxoo.com>
-#     
-##############################################################################    
+#
+##############################################################################
 #    This project is mantained by OeMEdical Team:
 #    https://launchpad.net/oemedical
 #
 ##############################################################################
-#    It is a collaborative effort between several companies that want to join 
+#    It is a collaborative effort between several companies that want to join
 #    efforts in have a proposal solid and strong in the Health Care environment
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -34,12 +34,12 @@
 ##############################################################################
 {
 
-    'name' : 'OeMedical : Free Health and Hospital Information System',  
-    'version' : '1.0',
-    'author' : "OeMEdical Team", 
-    'category' : 'Generic Modules/Others',
-    'depends' : ['base','sale','purchase','account','product'],
-    'description' : """
+    'name': 'OeMedical : Free Health and Hospital Information System',
+    'version': '1.0',
+    'author': "OeMEdical Team",
+    'category': 'Generic Modules/Others',
+    'depends': ['base', 'sale', 'purchase', 'account', 'product'],
+    'description': """
 
 About OeMedical
 -------------
@@ -77,14 +77,59 @@ OeMedical at a glance:
 
     * Designed with industry standards in mind
 
-    * Open Source : Licensed under AGPL 
+    * Open Source : Licensed under AGPL
 
 """,
-    "website" : "http://launchpad.net/oemedical",
-    "init_xml" : [],
+    "website": "http://launchpad.net/oemedical",
+    "init_xml": [],
     "licence": "AGPL v3",
-    "demo_xml" : [],
-    "update_xml" : ["oemedical_menu.xml"],
-    "active": False 
+    "demo_xml": [],
+    "update_xml": [
+        'oemedical_secondary_condition/oemedical_secondary_condition_view.xml',
+        'oemedical_pathology_category/oemedical_pathology_category_view.xml',
+        'oemedical_signs_and_symptoms/oemedical_signs_and_symptoms_view.xml',
+        'product_product/product_product_view.xml',
+        'oemedical_physician/oemedical_physician_view.xml',
+        'oemedical_directions/oemedical_directions_view.xml',
+        'oemedical_insurance/oemedical_insurance_view.xml',
+        'res_partner/res_partner_view.xml',
+        'oemedical_pathology/oemedical_pathology_view.xml',
+        'oemedical_operational_area/oemedical_operational_area_view.xml',
+        'oemedical_ethnicity/oemedical_ethnicity_view.xml',
+        'oemedical_dose_unit/oemedical_dose_unit_view.xml',
+        'oemedical_operational_sector/oemedical_operational_sector_view.xml',
+        'oemedical_sequences/oemedical_sequences_view.xml',
+        'oemedical_prescription_order/oemedical_prescription_order_view.xml',
+        'oemedical_medicament_category/oemedical_medicament_category_view.xml',
+        'oemedical_insurance_plan/oemedical_insurance_plan_view.xml',
+        'oemedical_diagnostic_hypothesis/oemedical_diagnostic_hypothesis_view.xml',
+        'oemedical_procedure/oemedical_procedure_view.xml',
+        'oemedical_medication_template/oemedical_medication_template_view.xml',
+        'oemedical_vaccination/oemedical_vaccination_view.xml',
+        'oemedical_medication_dosage/oemedical_medication_dosage_view.xml',
+        'oemedical_family_member/oemedical_family_member_view.xml',
+        'oemedical_hospital_ward/oemedical_hospital_ward_view.xml',
+        'oemedical_hospital_or/oemedical_hospital_or_view.xml',
+        'oemedical_drug_form/oemedical_drug_form_view.xml',
+        'oemedical_patient_medication/oemedical_patient_medication_view.xml',
+        'oemedical_patient_evaluation/oemedical_patient_evaluation_view.xml',
+        'oemedical_hospital_building/oemedical_hospital_building_view.xml',
+        'oemedical_patient/oemedical_patient_view.xml',
+        'oemedical_prescription_line/oemedical_prescription_line_view.xml',
+        'oemedical_patient_disease/oemedical_patient_disease_view.xml',
+        'oemedical_drug_route/oemedical_drug_route_view.xml',
+        'oemedical_hospital_unit/oemedical_hospital_unit_view.xml',
+        'oemedical_appointment/oemedical_appointment_view.xml',
+        'oemedical_specialty/oemedical_specialty_view.xml',
+        'oemedical_family/oemedical_family_view.xml',
+        'oemedical_hospital_bed/oemedical_hospital_bed_view.xml',
+        'oemedical_occupation/oemedical_occupation_view.xml',
+        'oemedical_disease_group_members/oemedical_disease_group_members_view.xml',
+        'oemedical_medicament/oemedical_medicament_view.xml',
+        'oemedical_pathology_group/oemedical_pathology_group_view.xml',
+        'security/ir.model.access.csv',
+        'oemedical_menu.xml',
+    ],
+    "active": False
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
