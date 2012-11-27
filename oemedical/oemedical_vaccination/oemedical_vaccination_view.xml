@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_oemedical_vaccination_tree" model="ir.ui.view">
+            <field name="name">oemedical.vaccination.tree</field>
+            <field name="model">oemedical.vaccination</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Oemedical Vaccination">
+                    <field name="rec_name"/>
+                    <field name="vaccine_lot"/>
+                    <field name="name"/>
+                    <field name="vaccine"/>
+                    <field name="dose"/>
+                    <field name="observations"/>
+                    <field name="date"/>
+                    <field name="institution"/>
+                    <field name="next_dose_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_oemedical_vaccination_form" model="ir.ui.view">
+            <field name="name">oemedical.vaccination.form</field>
+            <field name="model">oemedical.vaccination</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Oemedical Vaccination">
+                    <field name="rec_name"/>
+                    <field name="vaccine_lot"/>
+                    <field name="name"/>
+                    <field name="vaccine"/>
+                    <field name="dose"/>
+                    <field name="observations"/>
+                    <field name="date"/>
+                    <field name="institution"/>
+                    <field name="next_dose_date"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_oemedical_vaccination_search" model="ir.ui.view">
+            <field name="name">oemedical.vaccination.search</field>
+            <field name="model">oemedical.vaccination</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Oemedical Vaccination">
+                    <field name="rec_name"/>
+                    <field name="vaccine_lot"/>
+                    <field name="name"/>
+                    <field name="vaccine"/>
+                    <field name="dose"/>
+                    <field name="observations"/>
+                    <field name="date"/>
+                    <field name="institution"/>
+                    <field name="next_dose_date"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
+                        <filter string="Lot Number" domain="[]" context="{'group_by':'vaccine_lot'}"/>
+                        <filter string="Patient" domain="[]" context="{'group_by':'name'}"/>
+                        <filter string="Name" domain="[]" context="{'group_by':'vaccine'}"/>
+                        <filter string="Dose #" domain="[]" context="{'group_by':'dose'}"/>
+                        <filter string="Observations" domain="[]" context="{'group_by':'observations'}"/>
+                        <filter string="Date" domain="[]" context="{'group_by':'date'}"/>
+                        <filter string="Institution" domain="[]" context="{'group_by':'institution'}"/>
+                        <filter string="Next Dose" domain="[]" context="{'group_by':'next_dose_date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_oemedical_vaccination_view">
+            <field name="name"> Vaccination</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oemedical.vaccination</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_oemedical_vaccination_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_oemedical_vaccination_view_form">
+            <field name="act_window_id" ref="act_open_oemedical_vaccination_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_oemedical_vaccination_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_oemedical_vaccination_view_tree">
+            <field name="act_window_id" ref="act_open_oemedical_vaccination_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_oemedical_vaccination_tree"/>
+        </record>
+
+    </data>
+</openerp>
