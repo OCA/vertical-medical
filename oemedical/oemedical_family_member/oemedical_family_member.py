@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-##############################################################################
+#/#############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
-#    Special Credit and Thanks to Thymbra Latinoamericana S.A.  
+#    Special Credit and Thanks to Thymbra Latinoamericana S.A.
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,8 +18,18 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-##############################################################################
-import oemedical_patient
-import oemedical_familty
-import oemedical_familty_member
+#/#############################################################################
+from osv import osv
+from osv import fields
+
+
+class OeMedicalFamilyMember(osv.osv):
+    _name = 'oemedical.family_member'
+    _columns = {
+        'party': fields.many2one('res.partner', string='Party', ),
+        'role': fields.char(size=256, string='Role', required=True),
+        'name': fields.many2one('oemedical.family', string='Family', ),
+    }
+
+OeMedicalFamilyMember()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
