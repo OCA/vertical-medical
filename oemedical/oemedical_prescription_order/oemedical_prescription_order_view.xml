@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_oemedical_prescription_order_tree" model="ir.ui.view">
+            <field name="name">oemedical.prescription.order.tree</field>
+            <field name="model">oemedical.prescription.order</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Oemedical Prescription Order">
+                    <field name="rec_name"/>
+                    <field name="patient"/>
+                    <field name="pregnancy_warning"/>
+                    <field name="notes"/>
+                    <!--field name="prescription_line"/-->
+                    <field name="pharmacy"/>
+                    <field name="prescription_date"/>
+                    <field name="prescription_warning_ack"/>
+                    <field name="user_id"/>
+                    <field name="prescription_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_oemedical_prescription_order_form" model="ir.ui.view">
+            <field name="name">oemedical.prescription.order.form</field>
+            <field name="model">oemedical.prescription.order</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Oemedical Prescription Order">
+                    <field name="rec_name"/>
+                    <field name="patient"/>
+                    <field name="pregnancy_warning"/>
+                    <field name="notes"/>
+                    <!--field name="prescription_line"/-->
+                    <field name="pharmacy"/>
+                    <field name="prescription_date"/>
+                    <field name="prescription_warning_ack"/>
+                    <field name="user_id"/>
+                    <field name="prescription_id"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_oemedical_prescription_order_search" model="ir.ui.view">
+            <field name="name">oemedical.prescription.order.search</field>
+            <field name="model">oemedical.prescription.order</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Oemedical Prescription Order">
+                    <field name="rec_name"/>
+                    <field name="patient"/>
+                    <field name="pregnancy_warning"/>
+                    <field name="notes"/>
+                    <field name="pharmacy"/>
+                    <field name="prescription_date"/>
+                    <field name="prescription_warning_ack"/>
+                    <field name="user_id"/>
+                    <field name="prescription_id"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
+                        <filter string="Patient" domain="[]" context="{'group_by':'patient'}"/>
+                        <filter string="Pregancy Warning" domain="[]" context="{'group_by':'pregnancy_warning'}"/>
+                        <filter string="Prescription Notes" domain="[]" context="{'group_by':'notes'}"/>
+                        <filter string="Pharmacy" domain="[]" context="{'group_by':'pharmacy'}"/>
+                        <filter string="Prescription Date" domain="[]" context="{'group_by':'prescription_date'}"/>
+                        <filter string="Prescription verified" domain="[]" context="{'group_by':'prescription_warning_ack'}"/>
+                        <filter string="Prescribing Doctor" domain="[]" context="{'group_by':'user_id'}"/>
+                        <filter string="Prescription ID" domain="[]" context="{'group_by':'prescription_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_oemedical_prescription_order_view">
+            <field name="name"> Prescription Order</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oemedical.prescription.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_oemedical_prescription_order_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_oemedical_prescription_order_view_form">
+            <field name="act_window_id" ref="act_open_oemedical_prescription_order_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_oemedical_prescription_order_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_oemedical_prescription_order_view_tree">
+            <field name="act_window_id" ref="act_open_oemedical_prescription_order_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_oemedical_prescription_order_tree"/>
+        </record>
+
+    </data>
+</openerp>
