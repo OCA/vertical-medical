@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_oemedical_insurance_tree" model="ir.ui.view">
+            <field name="name">oemedical.insurance.tree</field>
+            <field name="model">oemedical.insurance</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Oemedical Insurance">
+                    <field name="category"/>
+                    <field name="rec_name"/>
+                    <field name="plan_id"/>
+                    <!--field name="insurance_type"/-->
+                    <field name="member_since"/>
+                    <field name="company"/>
+                    <field name="number"/>
+                    <field name="member_exp"/>
+                    <field name="notes"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_oemedical_insurance_form" model="ir.ui.view">
+            <field name="name">oemedical.insurance.form</field>
+            <field name="model">oemedical.insurance</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Oemedical Insurance">
+                    <field name="category"/>
+                    <field name="rec_name"/>
+                    <field name="plan_id"/>
+                    <!--field name="insurance_type"/-->
+                    <field name="member_since"/>
+                    <field name="company"/>
+                    <field name="number"/>
+                    <field name="member_exp"/>
+                    <field name="notes"/>
+                    <field name="name"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_oemedical_insurance_search" model="ir.ui.view">
+            <field name="name">oemedical.insurance.search</field>
+            <field name="model">oemedical.insurance</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Oemedical Insurance">
+                    <field name="category"/>
+                    <field name="rec_name"/>
+                    <field name="plan_id"/>
+                    <field name="member_since"/>
+                    <field name="company"/>
+                    <field name="number"/>
+                    <field name="member_exp"/>
+                    <field name="notes"/>
+                    <field name="name"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Category" domain="[]" context="{'group_by':'category'}"/>
+                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
+                        <filter string="Plan" domain="[]" context="{'group_by':'plan_id'}"/>
+                        <filter string="Member since" domain="[]" context="{'group_by':'member_since'}"/>
+                        <filter string="Insurance Company" domain="[]" context="{'group_by':'company'}"/>
+                        <filter string="Number" domain="[]" context="{'group_by':'number'}"/>
+                        <filter string="Expiration date" domain="[]" context="{'group_by':'member_exp'}"/>
+                        <filter string="Extra Info" domain="[]" context="{'group_by':'notes'}"/>
+                        <filter string="Owner" domain="[]" context="{'group_by':'name'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_oemedical_insurance_view">
+            <field name="name"> Insurance</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oemedical.insurance</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_oemedical_insurance_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_oemedical_insurance_view_form">
+            <field name="act_window_id" ref="act_open_oemedical_insurance_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_oemedical_insurance_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_oemedical_insurance_view_tree">
+            <field name="act_window_id" ref="act_open_oemedical_insurance_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_oemedical_insurance_tree"/>
+        </record>
+
+    </data>
+</openerp>
