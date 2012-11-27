@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_oemedical_medicament_category_tree" model="ir.ui.view">
+            <field name="name">oemedical.medicament.category.tree</field>
+            <field name="model">oemedical.medicament.category</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Oemedical Medicament Category">
+                    <field name="rec_name"/>
+                    <!--field name="childs"/-->
+                    <field name="name"/>
+                    <field name="parent"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_oemedical_medicament_category_form" model="ir.ui.view">
+            <field name="name">oemedical.medicament.category.form</field>
+            <field name="model">oemedical.medicament.category</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Oemedical Medicament Category">
+                    <field name="rec_name"/>
+                    <!--field name="childs"/-->
+                    <field name="name"/>
+                    <field name="parent"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_oemedical_medicament_category_search" model="ir.ui.view">
+            <field name="name">oemedical.medicament.category.search</field>
+            <field name="model">oemedical.medicament.category</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Oemedical Medicament Category">
+                    <field name="rec_name"/>
+                    <field name="name"/>
+                    <field name="parent"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
+                        <filter string="Name" domain="[]" context="{'group_by':'name'}"/>
+                        <filter string="Parent" domain="[]" context="{'group_by':'parent'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_oemedical_medicament_category_view">
+            <field name="name"> Medicament Category</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oemedical.medicament.category</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_oemedical_medicament_category_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_oemedical_medicament_category_view_form">
+            <field name="act_window_id" ref="act_open_oemedical_medicament_category_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_oemedical_medicament_category_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_oemedical_medicament_category_view_tree">
+            <field name="act_window_id" ref="act_open_oemedical_medicament_category_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_oemedical_medicament_category_tree"/>
+        </record>
+
+    </data>
+</openerp>
