@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_oemedical_medication_template_tree" model="ir.ui.view">
+            <field name="name">oemedical.medication.template.tree</field>
+            <field name="model">oemedical.medication.template</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Oemedical Medication Template">
+                    <field name="rec_name"/>
+                    <field name="start_treatment"/>
+                    <field name="form"/>
+                    <field name="route"/>
+                    <!--field name="duration_period"/-->
+                    <field name="qty"/>
+                    <!--field name="frequency_unit"/-->
+                    <field name="dose"/>
+                    <field name="duration"/>
+                    <field name="frequency_prn"/>
+                    <field name="frequency"/>
+                    <field name="indication"/>
+                    <field name="medicament"/>
+                    <field name="common_dosage"/>
+                    <field name="admin_times"/>
+                    <field name="end_treatment"/>
+                    <field name="dose_unit"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_oemedical_medication_template_form" model="ir.ui.view">
+            <field name="name">oemedical.medication.template.form</field>
+            <field name="model">oemedical.medication.template</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Oemedical Medication Template">
+                    <field name="rec_name"/>
+                    <field name="start_treatment"/>
+                    <field name="form"/>
+                    <field name="route"/>
+                    <!--field name="duration_period"/-->
+                    <field name="qty"/>
+                    <!--field name="frequency_unit"/-->
+                    <field name="dose"/>
+                    <field name="duration"/>
+                    <field name="frequency_prn"/>
+                    <field name="frequency"/>
+                    <field name="indication"/>
+                    <field name="medicament"/>
+                    <field name="common_dosage"/>
+                    <field name="admin_times"/>
+                    <field name="end_treatment"/>
+                    <field name="dose_unit"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_oemedical_medication_template_search" model="ir.ui.view">
+            <field name="name">oemedical.medication.template.search</field>
+            <field name="model">oemedical.medication.template</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Oemedical Medication Template">
+                    <field name="rec_name"/>
+                    <field name="start_treatment"/>
+                    <field name="form"/>
+                    <field name="route"/>
+                    <field name="qty"/>
+                    <field name="dose"/>
+                    <field name="duration"/>
+                    <field name="frequency_prn"/>
+                    <field name="frequency"/>
+                    <field name="indication"/>
+                    <field name="medicament"/>
+                    <field name="common_dosage"/>
+                    <field name="admin_times"/>
+                    <field name="end_treatment"/>
+                    <field name="dose_unit"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
+                        <filter string="Start" domain="[]" context="{'group_by':'start_treatment'}"/>
+                        <filter string="Form" domain="[]" context="{'group_by':'form'}"/>
+                        <filter string="Administration Route" domain="[]" context="{'group_by':'route'}"/>
+                        <filter string="x" domain="[]" context="{'group_by':'qty'}"/>
+                        <filter string="Dose" domain="[]" context="{'group_by':'dose'}"/>
+                        <filter string="Treatment duration" domain="[]" context="{'group_by':'duration'}"/>
+                        <filter string="PRN" domain="[]" context="{'group_by':'frequency_prn'}"/>
+                        <filter string="Frequency" domain="[]" context="{'group_by':'frequency'}"/>
+                        <filter string="Indication" domain="[]" context="{'group_by':'indication'}"/>
+                        <filter string="Medicament" domain="[]" context="{'group_by':'medicament'}"/>
+                        <filter string="Frequency" domain="[]" context="{'group_by':'common_dosage'}"/>
+                        <filter string="Admin hours" domain="[]" context="{'group_by':'admin_times'}"/>
+                        <filter string="End" domain="[]" context="{'group_by':'end_treatment'}"/>
+                        <filter string="dose unit" domain="[]" context="{'group_by':'dose_unit'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_oemedical_medication_template_view">
+            <field name="name"> Medication Template</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oemedical.medication.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_oemedical_medication_template_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_oemedical_medication_template_view_form">
+            <field name="act_window_id" ref="act_open_oemedical_medication_template_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_oemedical_medication_template_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_oemedical_medication_template_view_tree">
+            <field name="act_window_id" ref="act_open_oemedical_medication_template_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_oemedical_medication_template_tree"/>
+        </record>
+
+    </data>
+</openerp>
