@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_oemedical_hospital_ward_tree" model="ir.ui.view">
+            <field name="name">oemedical.hospital.ward.tree</field>
+            <field name="model">oemedical.hospital.ward</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Oemedical Hospital Ward">
+                    <field name="building"/>
+                    <field name="rec_name"/>
+                    <field name="ac"/>
+                    <field name="name"/>
+                    <field name="floor"/>
+                    <field name="tv"/>
+                    <!--field name="gender"/-->
+                    <field name="unit"/>
+                    <field name="private_bathroom"/>
+                    <field name="telephone"/>
+                    <field name="microwave"/>
+                    <field name="guest_sofa"/>
+                    <!--field name="state"/-->
+                    <field name="private"/>
+                    <field name="number_of_beds"/>
+                    <field name="internet"/>
+                    <field name="bio_hazard"/>
+                    <field name="institution"/>
+                    <field name="refrigerator"/>
+                    <field name="extra_info"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_oemedical_hospital_ward_form" model="ir.ui.view">
+            <field name="name">oemedical.hospital.ward.form</field>
+            <field name="model">oemedical.hospital.ward</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Oemedical Hospital Ward">
+                    <field name="building"/>
+                    <field name="rec_name"/>
+                    <field name="ac"/>
+                    <field name="name"/>
+                    <field name="floor"/>
+                    <field name="tv"/>
+                    <!--field name="gender"/-->
+                    <field name="unit"/>
+                    <field name="private_bathroom"/>
+                    <field name="telephone"/>
+                    <field name="microwave"/>
+                    <field name="guest_sofa"/>
+                    <!--field name="state"/-->
+                    <field name="private"/>
+                    <field name="number_of_beds"/>
+                    <field name="internet"/>
+                    <field name="bio_hazard"/>
+                    <field name="institution"/>
+                    <field name="refrigerator"/>
+                    <field name="extra_info"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_oemedical_hospital_ward_search" model="ir.ui.view">
+            <field name="name">oemedical.hospital.ward.search</field>
+            <field name="model">oemedical.hospital.ward</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Oemedical Hospital Ward">
+                    <field name="building"/>
+                    <field name="rec_name"/>
+                    <field name="ac"/>
+                    <field name="name"/>
+                    <field name="floor"/>
+                    <field name="tv"/>
+                    <field name="unit"/>
+                    <field name="private_bathroom"/>
+                    <field name="telephone"/>
+                    <field name="microwave"/>
+                    <field name="guest_sofa"/>
+                    <field name="private"/>
+                    <field name="number_of_beds"/>
+                    <field name="internet"/>
+                    <field name="bio_hazard"/>
+                    <field name="institution"/>
+                    <field name="refrigerator"/>
+                    <field name="extra_info"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Building" domain="[]" context="{'group_by':'building'}"/>
+                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
+                        <filter string="Air Conditioning" domain="[]" context="{'group_by':'ac'}"/>
+                        <filter string="Name" domain="[]" context="{'group_by':'name'}"/>
+                        <filter string="Floor Number" domain="[]" context="{'group_by':'floor'}"/>
+                        <filter string="Television" domain="[]" context="{'group_by':'tv'}"/>
+                        <filter string="Unit" domain="[]" context="{'group_by':'unit'}"/>
+                        <filter string="Private Bathroom" domain="[]" context="{'group_by':'private_bathroom'}"/>
+                        <filter string="Telephone access" domain="[]" context="{'group_by':'telephone'}"/>
+                        <filter string="Microwave" domain="[]" context="{'group_by':'microwave'}"/>
+                        <filter string="Guest sofa-bed" domain="[]" context="{'group_by':'guest_sofa'}"/>
+                        <filter string="Private" domain="[]" context="{'group_by':'private'}"/>
+                        <filter string="Number of beds" domain="[]" context="{'group_by':'number_of_beds'}"/>
+                        <filter string="Internet Access" domain="[]" context="{'group_by':'internet'}"/>
+                        <filter string="Bio Hazard" domain="[]" context="{'group_by':'bio_hazard'}"/>
+                        <filter string="Institution" domain="[]" context="{'group_by':'institution'}"/>
+                        <filter string="Refrigetator" domain="[]" context="{'group_by':'refrigerator'}"/>
+                        <filter string="Extra Info" domain="[]" context="{'group_by':'extra_info'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_oemedical_hospital_ward_view">
+            <field name="name"> Hospital Ward</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oemedical.hospital.ward</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_oemedical_hospital_ward_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_oemedical_hospital_ward_view_form">
+            <field name="act_window_id" ref="act_open_oemedical_hospital_ward_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_oemedical_hospital_ward_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_oemedical_hospital_ward_view_tree">
+            <field name="act_window_id" ref="act_open_oemedical_hospital_ward_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_oemedical_hospital_ward_tree"/>
+        </record>
+
+    </data>
+</openerp>
