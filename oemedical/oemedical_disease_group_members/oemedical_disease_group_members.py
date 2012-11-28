@@ -28,7 +28,8 @@ class OeMedicalDiseaseGroupMembers(osv.osv):
 
     _columns = {
         'rec_name': fields.char(size=256, string='Name', required=True),
-        'disease_group': fields.many2one('oemedical.pathology.group', string='Group', ),
+        'disease_group': fields.many2one('oemedical.pathology.group',
+                                         string='Group', ),
         'name': fields.many2one('oemedical.pathology', string='Disease', ),
     }
 

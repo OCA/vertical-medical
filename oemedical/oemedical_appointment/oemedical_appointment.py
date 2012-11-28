@@ -28,16 +28,20 @@ class OeMedicalAppointment(osv.osv):
 
     _columns = {
         'rec_name': fields.char(size=256, string='Name', required=True),
-        'consultations': fields.many2one('product.product', string='Consultation Services', ),
+        'consultations': fields.many2one('product.product',
+                                         string='Consultation Services', ),
         'patient': fields.many2one('oemedical.patient', string='Patient', ),
         'name': fields.char(size=256, string='Appointment ID', required=True),
         'appointment_date': fields.datetime(string='Date and Time'),
-        'doctor': fields.many2one('oemedical.physician', string='Physician', ),
+        'doctor': fields.many2one('oemedical.physician',
+                                  string='Physician', ),
         'comments': fields.text(string='Comments'),
         #'appointment_type': fields.selection([], string='Type'),
-        'institution': fields.many2one('res.partner', string='Health Center', ),
+        'institution': fields.many2one('res.partner',
+                                       string='Health Center', ),
         #'urgency': fields.selection([], string='Urgency Level'),
-        'speciality': fields.many2one('oemedical.specialty', string='Specialty', ),
+        'speciality': fields.many2one('oemedical.specialty',
+                                      string='Specialty', ),
     }
 
 OeMedicalAppointment()

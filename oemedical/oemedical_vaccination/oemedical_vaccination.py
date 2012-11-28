@@ -28,11 +28,13 @@ class OeMedicalVaccination(osv.osv):
 
     _columns = {
         'rec_name': fields.char(size=256, string='Name', required=True),
-        'vaccine_lot': fields.char(size=256, string='Lot Number', required=True),
+        'vaccine_lot': fields.char(size=256, string='Lot Number',
+                                   required=True),
         'name': fields.many2one('oemedical.patient', string='Patient', ),
         'vaccine': fields.many2one('product.product', string='Name', ),
         'dose': fields.integer(string='Dose #'),
-        'observations': fields.char(size=256, string='Observations', required=True),
+        'observations': fields.char(size=256, string='Observations',
+                                    required=True),
         'date': fields.datetime(string='Date'),
         'institution': fields.many2one('res.partner', string='Institution', ),
         'next_dose_date': fields.datetime(string='Next Dose'),

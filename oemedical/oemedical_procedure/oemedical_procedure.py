@@ -28,7 +28,8 @@ class OeMedicalProcedure(osv.osv):
 
     _columns = {
         'rec_name': fields.char(size=256, string='Name', required=True),
-        'description': fields.char(size=256, string='Long Text', required=True),
+        'description': fields.char(size=256, string='Long Text',
+                                   required=True),
         'name': fields.char(size=256, string='Code', required=True),
     }
 

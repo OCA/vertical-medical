@@ -29,12 +29,15 @@ class OeMedicalPrescriptionLine(osv.osv):
     _columns = {
         'rec_name': fields.char(size=256, string='Name', required=True),
         'refills': fields.integer(string='Refills #'),
-        'name': fields.many2one('oemedical.prescription.order', string='Prescription ID', ),
+        'name': fields.many2one('oemedical.prescription.order',
+                                string='Prescription ID', ),
         'allow_substitution': fields.boolean(string='Allow substitution'),
         'prnt': fields.boolean(string='Print'),
         'review': fields.datetime(string='Review'),
-        'short_comment': fields.char(size=256, string='Comment', required=True),
-        'template': fields.many2one('oemedical.medication.template', string='Medication Template', ),
+        'short_comment': fields.char(size=256, string='Comment',
+                                     required=True),
+        'template': fields.many2one('oemedical.medication.template',
+                                    string='Medication Template', ),
         'quantity': fields.integer(string='Quantity'),
     }
 

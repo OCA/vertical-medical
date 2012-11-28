@@ -27,16 +27,21 @@ class ResPartner(osv.osv):
     _inherit = 'res.partner'
 
     _columns = {
-        #'insurance_plan_ids': fields.one2many('oemedical.insurance.plan', 'relation_id', string='Insurance Plans', ),
+        #'insurance_plan_ids': fields.one2many('oemedical.insurance.plan',
+        #                                       'relation_id',
+        #                                       string='Insurance Plans', ),
         'is_insurance_company': fields.boolean(string='Insurance Company'),
-        'relationship': fields.char(size=256, string='Relationship', required=True),
-        #'insurance_company_type': fields.selection([], string='Insurance Type'),
+        'relationship': fields.char(size=256, string='Relationship',
+                                    required=True),
+        #'insurance_company_type': fields.selection([],
+        #                                           string='Insurance Type'),
         'is_institution': fields.boolean(string='Institution'),
         'relative_id': fields.many2one('res.partner', string='Contact', ),
         'is_doctor': fields.boolean(string='Health Prof'),
         'is_patient': fields.boolean(string='Patient'),
         'alias': fields.char(size=256, string='Alias', required=True),
-        'internal_user': fields.many2one('res.users', string='Internal User', ),
+        'internal_user': fields.many2one('res.users',
+                                         string='Internal User', ),
         'activation_date': fields.date(string='Activation date'),
         'lastname': fields.char(size=256, string='Last Name', required=True),
         'is_work': fields.boolean(string='Work'),
@@ -44,7 +49,8 @@ class ResPartner(osv.osv):
         'is_school': fields.boolean(string='School'),
         'is_pharmacy': fields.boolean(string='Pharmacy'),
         'ref': fields.char(size=256, string='SSN', required=True),
-        #'insurance': fields.one2many('oemedical.insurance', 'relation_id', string='Insurance', ),
+        #'insurance': fields.one2many('oemedical.insurance', 'relation_id',
+        #                               string='Insurance', ),
     }
 
 ResPartner()

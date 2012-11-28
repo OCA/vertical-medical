@@ -31,7 +31,8 @@ class OeMedicalPathologyGroup(osv.osv):
         'rec_name': fields.char(size=256, string='Name', required=True),
         'code': fields.char(size=256, string='Code', required=True),
         'name': fields.char(size=256, string='Name', required=True),
-        'desc': fields.char(size=256, string='Short Description', required=True),
+        'desc': fields.char(size=256, string='Short Description',
+                            required=True),
     }
 
 OeMedicalPathologyGroup()

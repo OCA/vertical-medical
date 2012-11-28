@@ -27,14 +27,18 @@ class OeMedicalPatientDisease(osv.osv):
     _name = 'oemedical.patient.disease'
 
     _columns = {
-        'treatment_description': fields.char(size=256, string='Treatment Description', required=True),
+        'treatment_description': fields.char(size=256,
+                                             string='Treatment Description',
+                                             required=True),
         'healed_date': fields.date(string='Healed'),
-        'pathology': fields.many2one('oemedical.pathology', string='Disease', ),
+        'pathology': fields.many2one('oemedical.pathology',
+                                     string='Disease', ),
         #'disease_severity': fields.selection([], string='Severity'),
         'is_allergy': fields.boolean(string='Allergic Disease'),
         'doctor': fields.many2one('oemedical.physician', string='Physician', ),
         'pregnancy_warning': fields.boolean(string='Pregnancy warning'),
-        'weeks_of_pregnancy': fields.integer(string='Contracted in pregnancy week #'),
+        'weeks_of_pregnancy': fields.integer(
+            string='Contracted in pregnancy week #'),
         'is_on_treatment': fields.boolean(string='Currently on Treatment'),
         'diagnosed_date': fields.date(string='Date of Diagnosis'),
         'extra_info': fields.text(string='Extra Info'),
@@ -48,7 +52,8 @@ class OeMedicalPatientDisease(osv.osv):
         'name': fields.many2one('oemedical.patient', string='Patient', ),
         'age': fields.integer(string='Age when diagnosed'),
         'date_start_treatment': fields.date(string='Start'),
-        'short_comment': fields.char(size=256, string='Remarks', required=True),
+        'short_comment': fields.char(size=256, string='Remarks',
+                                     required=True),
     }
 
 OeMedicalPatientDisease()
