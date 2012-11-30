@@ -28,12 +28,16 @@ class OeMedicalPatientDisease(osv.osv):
 
     _columns = {
         'treatment_description': fields.char(size=256,
-                                             string='Treatment Description',
-                                             required=True),
+            string='Treatment Description',
+            required=True),
         'healed_date': fields.date(string='Healed'),
         'pathology': fields.many2one('oemedical.pathology',
-                                     string='Disease', ),
-        #'disease_severity': fields.selection([], string='Severity'),
+            string='Disease', ),
+        'disease_severity': fields.selection([
+            ('1_mi', 'Mild'),
+            ('2_mo', 'Moderate'),
+            ('3_sv', 'Severe'),
+        ], string='Severity'),
         'is_allergy': fields.boolean(string='Allergic Disease'),
         'doctor': fields.many2one('oemedical.physician', string='Physician', ),
         'pregnancy_warning': fields.boolean(string='Pregnancy warning'),
@@ -42,17 +46,29 @@ class OeMedicalPatientDisease(osv.osv):
         'is_on_treatment': fields.boolean(string='Currently on Treatment'),
         'diagnosed_date': fields.date(string='Date of Diagnosis'),
         'extra_info': fields.text(string='Extra Info'),
-        #'status': fields.selection([], string='Status of the disease'),
+        'status': fields.selection([
+            ('a', 'acute'),
+            ('c', 'chronic'),
+            ('u', 'unchanged'),
+            ('h', 'healed'),
+            ('i', 'improving'),
+            ('w', 'worsening'),
+        ], string='Status of the disease'),
         'is_active': fields.boolean(string='Active disease'),
         'date_stop_treatment': fields.date(string='End'),
         'pcs_code': fields.many2one('oemedical.procedure', string='Code', ),
         'is_infectious': fields.boolean(string='Infectious Disease'),
-        #'allergy_type': fields.selection([], string='Allergy type'),
+        'allergy_type': fields.selection([
+            ('da', 'Drug Allergy'),
+            ('fa', 'Food Allergy'),
+            ('ma', 'Misc Allergy'),
+            ('mc', 'Misc Contraindication'),
+        ], string='Allergy type'),
         'patient_id': fields.many2one('oemedical.patient', string='Patient', ),
         'age': fields.integer(string='Age when diagnosed'),
         'date_start_treatment': fields.date(string='Start'),
         'short_comment': fields.char(size=256, string='Remarks',
-                                     required=True),
+            required=True),
     }
 
 OeMedicalPatientDisease()

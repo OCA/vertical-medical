@@ -28,7 +28,7 @@ class OeMedicalProcedure(osv.osv):
 
     _columns = {
         'description': fields.char(size=256, string='Long Text',
-                                   required=True),
+            required=True),
         'name': fields.char(size=256, string='Code', required=True),
     }
 

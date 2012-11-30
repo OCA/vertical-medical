@@ -28,11 +28,11 @@ class OeMedicalPathologyCategory(osv.osv):
 
     _columns = {
         'childs': fields.one2many('oemedical.pathology.category',
-                                   'parent',
-                                   string='Children Category', ),
+            'parent',
+            string='Children Category', ),
         'name': fields.char(size=256, string='Category Name', required=True),
         'parent': fields.many2one('oemedical.pathology.category',
-                                  string='Parent Category', ),
+            string='Parent Category', ),
     }
 
 OeMedicalPathologyCategory()

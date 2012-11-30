@@ -28,17 +28,17 @@ class OeMedicalPathology(osv.osv):
 
     _columns = {
         'category': fields.many2one('oemedical.pathology.category',
-                                    string='Main Category', ),
+            string='Main Category', ),
         'info': fields.text(string='Extra Info'),
         'code': fields.char(size=256, string='Code', required=True),
         'name': fields.char(size=256, string='Name', required=True),
         'groups': fields.one2many('oemedical.disease_group.members',
-                                   'disease_group_id', string='Groups', ),
+            'disease_group_id', string='Groups', ),
         'protein': fields.char(size=256, string='Protein involved',
-                               required=True),
+            required=True),
         'gene': fields.char(size=256, string='Gene', required=True),
         'chromosome': fields.char(size=256, string='Affected Chromosome',
-                                  required=True),
+            required=True),
     }
 
 OeMedicalPathology()

@@ -29,8 +29,8 @@ class OeMedicalOperationalArea(osv.osv):
     _columns = {
         'info': fields.text(string='Extra Information'),
         'operational_sector': fields.one2many('oemedical.operational_sector',
-                                               'operational_area_id',
-                                               string='Operational Sector', ),
+            'operational_area_id',
+            string='Operational Sector', ),
         'name': fields.char(size=256, string='Name', required=True),
     }
 

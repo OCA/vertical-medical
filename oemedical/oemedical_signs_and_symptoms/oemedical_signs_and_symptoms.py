@@ -28,11 +28,13 @@ class OeMedicalSignsAndSymptoms(osv.osv):
 
     _columns = {
         'clinical_id': fields.many2one('oemedical.pathology',
-                                    string='Sign or Symptom', ),
+            string='Sign or Symptom', ),
         'evaluation_id': fields.many2one('oemedical.patient.evaluation',
-                                      string='Evaluation', ),
-        #'sign_or_symptom': fields.selection([],
-        #                                   string='Subjective / Objective'),
+            string='Evaluation', ),
+        'sign_or_symptom': fields.selection([
+            ('sign', 'Sign'),
+            ('symptom', 'Symptom'),
+        ], string='Subjective / Objective'),
         'comments': fields.char(size=256, string='Comments', required=True),
     }
 

@@ -13,9 +13,9 @@
 					<field name="appointment_date" />
 					<field name="doctor" />
 					<field name="comments" />
-					<!--field name="appointment_type"/ -->
+					<field name="appointment_type" />
 					<field name="institution" />
-					<!--field name="urgency"/ -->
+					<field name="urgency" />
 					<field name="speciality" />
 				</tree>
 			</field>
@@ -33,9 +33,9 @@
 					<field name="appointment_date" />
 					<field name="doctor" />
 					<field name="comments" />
-					<!--field name="appointment_type"/ -->
+					<field name="appointment_type" />
 					<field name="institution" />
-					<!--field name="urgency"/ -->
+					<field name="urgency" />
 					<field name="speciality" />
 				</form>
 			</field>
