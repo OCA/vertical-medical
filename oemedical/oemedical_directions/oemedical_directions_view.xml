@@ -40,7 +40,8 @@
 					<group expand="0" string="Group By...">
 						<filter string="Procedure" domain="[]"
 							context="{'group_by':'procedure_id'}" />
-						<filter string="Evaluation" domain="[]" context="{'group_by':'evaluation_id'}" />
+						<filter string="Evaluation" domain="[]"
+							context="{'group_by':'evaluation_id'}" />
 						<filter string="Comments" domain="[]" context="{'group_by':'comments'}" />
 					</group>
 				</search>
