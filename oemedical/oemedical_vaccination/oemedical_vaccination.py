@@ -30,7 +30,7 @@ class OeMedicalVaccination(osv.osv):
         'name': fields.char(size=256, string='Name'),
         'vaccine_lot': fields.char(size=256, string='Lot Number',
                                    required=True),
-        'patient': fields.many2one('oemedical.patient', string='Patient', ),
+        'patient_id': fields.many2one('oemedical.patient', string='Patient', ),
         'vaccine': fields.many2one('product.product', string='Vaccine', ),
         'dose': fields.integer(string='Dose #'),
         'observations': fields.char(size=256, string='Observations',

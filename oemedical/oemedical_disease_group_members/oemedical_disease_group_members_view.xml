@@ -7,7 +7,7 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Disease_Group Members">
-					<field name="disease_group" />
+					<field name="disease_group_id" />
 					<field name="name" />
 				</tree>
 			</field>
@@ -19,7 +19,7 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Disease_Group Members">
-					<field name="disease_group" />
+					<field name="disease_group_id" />
 					<field name="name" />
 				</form>
 			</field>
@@ -31,7 +31,7 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<search string="Oemedical Disease_Group Members">
-					<field name="disease_group" />
+					<field name="disease_group_id" />
 					<field name="name" />
 					<newline />
 					<group expand="0" string="Group By...">

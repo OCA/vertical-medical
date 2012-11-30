@@ -7,8 +7,8 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Signs_And_Symptoms">
-					<field name="clinical" />
-					<field name="evaluation" />
+					<field name="clinical_id" />
+					<field name="evaluation_id" />
 					<!--field name="sign_or_symptom"/ -->
 					<field name="comments" />
 				</tree>
@@ -21,8 +21,8 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Signs_And_Symptoms">
-					<field name="clinical" />
-					<field name="evaluation" />
+					<field name="clinical_id" />
+					<field name="evaluation_id" />
 					<!--field name="sign_or_symptom"/ -->
 					<field name="comments" />
 				</form>
@@ -35,15 +35,15 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<search string="Oemedical Signs_And_Symptoms">
-					<field name="clinical" />
-					<field name="evaluation" />
+					<field name="clinical_id" />
+					<field name="evaluation_id" />
 					<field name="comments" />
 					<newline />
 					<group expand="0" string="Group By...">
 						<filter string="Sign or Symptom" domain="[]"
-							context="{'group_by':'clinical'}" />
+							context="{'group_by':'clinical_id'}" />
 						<filter string="Evaluation" domain="[]"
-							context="{'group_by':'evaluation'}" />
+							context="{'group_by':'evaluation_id'}" />
 						<filter string="Comments" domain="[]" context="{'group_by':'comments'}" />
 					</group>
 				</search>

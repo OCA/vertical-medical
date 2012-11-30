@@ -48,7 +48,7 @@ class OeMedicalPatientDisease(osv.osv):
         'pcs_code': fields.many2one('oemedical.procedure', string='Code', ),
         'is_infectious': fields.boolean(string='Infectious Disease'),
         #'allergy_type': fields.selection([], string='Allergy type'),
-        'name': fields.many2one('oemedical.patient', string='Patient', ),
+        'patient_id': fields.many2one('oemedical.patient', string='Patient', ),
         'age': fields.integer(string='Age when diagnosed'),
         'date_start_treatment': fields.date(string='Start'),
         'short_comment': fields.char(size=256, string='Remarks',

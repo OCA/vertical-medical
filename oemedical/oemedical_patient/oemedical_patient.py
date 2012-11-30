@@ -25,9 +25,13 @@ from osv import fields
 
 class OeMedicalPatient(osv.osv):
     _name = 'oemedical.patient'
-    _inherits = 'res.partner'
+    _inherits = {
+        'res.partner': 'partner_id',
+    }
     _columns = {
-        'name': fields.char(size=256, string='Name'),
+        'partner_id': fields.many2one('res.partner', required=True,
+            string='Related Partner', ondelete='cascade',
+            help='Partner-related data of the patient'),
         'family': fields.many2one('oemedical.family', string='Family', ),
         'photo': fields.binary(string='Picture'),
         'sex': fields.selection([('m', 'Male'), ('f', 'Female'), ],
@@ -45,15 +49,15 @@ class OeMedicalPatient(osv.osv):
             string='Important disease, allergy or procedures information'),
         'rh': fields.selection([('+', '+'), ('-', '-'), ], string='Rh'),
         'current_address': fields.many2one('res.partner', string='Address', ),
-        #'diseases': fields.one2many('oemedical.patient.disease',
-        #                             'relation_id', string='Diseases', ),
+        'diseases': fields.one2many('oemedical.patient.disease',
+                                     'patient_id', string='Diseases', ),
         'lastname': fields.char(size=256, string='Lastname', required=True),
         'ethnic_group': fields.many2one('oemedical.ethnicity',
                                         string='Ethnic group', ),
         'ssn': fields.char(size=256, string='SSN', required=True),
-        #'vaccinations': fields.one2many('oemedical.vaccination',
-        #                                'relation_id',
-        #                                string='Vaccinations', ),
+        'vaccinations': fields.one2many('oemedical.vaccination',
+                                        'patient_id',
+                                        string='Vaccinations', ),
         'patient': fields.many2one('res.partner', string='Patient', ),
         'dob': fields.date(string='DoB'),
         'age': fields.char(size=256, string='Age', required=True),

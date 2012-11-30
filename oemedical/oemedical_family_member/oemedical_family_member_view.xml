@@ -7,9 +7,9 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Family_Member">
-					<field name="party" />
+					<field name="member" />
 					<field name="role" />
-					<field name="name" />
+					<field name="family_id" />
 				</tree>
 			</field>
 		</record>
@@ -20,9 +20,9 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Family_Member">
-					<field name="party" />
+					<field name="member" />
 					<field name="role" />
-					<field name="name" />
+					<field name="family_id" />
 				</form>
 			</field>
 		</record>
@@ -33,14 +33,14 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<search string="Oemedical Family_Member">
-					<field name="party" />
+					<field name="member" />
 					<field name="role" />
-					<field name="name" />
+					<field name="family_id" />
 					<newline />
 					<group expand="0" string="Group By...">
-						<filter string="Party" domain="[]" context="{'group_by':'party'}" />
+						<filter string="Party" domain="[]" context="{'group_by':'member'}" />
 						<filter string="Role" domain="[]" context="{'group_by':'role'}" />
-						<filter string="Family" domain="[]" context="{'group_by':'name'}" />
+						<filter string="Family" domain="[]" context="{'group_by':'family_id'}" />
 					</group>
 				</search>
 			</field>

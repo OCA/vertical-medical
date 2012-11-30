@@ -28,7 +28,7 @@ class OeMedicalPrescriptionLine(osv.osv):
 
     _columns = {
         'refills': fields.integer(string='Refills #'),
-        'name': fields.many2one('oemedical.prescription.order',
+        'prescription_order_id': fields.many2one('oemedical.prescription.order',
                                 string='Prescription ID', ),
         'allow_substitution': fields.boolean(string='Allow substitution'),
         'prnt': fields.boolean(string='Print'),

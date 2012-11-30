@@ -8,7 +8,7 @@
 			<field name="arch" type="xml">
 				<tree string="Oemedical Operational_Sector">
 					<field name="info" />
-					<field name="operational_area" />
+					<field name="operational_area_id" />
 					<field name="name" />
 				</tree>
 			</field>
@@ -21,7 +21,7 @@
 			<field name="arch" type="xml">
 				<form string="Oemedical Operational_Sector">
 					<field name="info" />
-					<field name="operational_area" />
+					<field name="operational_area_id" />
 					<field name="name" />
 				</form>
 			</field>
@@ -34,14 +34,14 @@
 			<field name="arch" type="xml">
 				<search string="Oemedical Operational_Sector">
 					<field name="info" />
-					<field name="operational_area" />
+					<field name="operational_area_id" />
 					<field name="name" />
 					<newline />
 					<group expand="0" string="Group By...">
 						<filter string="Extra Information" domain="[]"
 							context="{'group_by':'info'}" />
 						<filter string="Operational Area" domain="[]"
-							context="{'group_by':'operational_area'}" />
+							context="{'group_by':'operational_area_id'}" />
 						<filter string="Op. Sector" domain="[]" context="{'group_by':'name'}" />
 					</group>
 				</search>

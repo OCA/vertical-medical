@@ -27,9 +27,9 @@ class OeMedicalSecondaryCondition(osv.osv):
     _name = 'oemedical.secondary_condition'
 
     _columns = {
-        'pathology': fields.many2one('oemedical.pathology',
+        'pathology_id': fields.many2one('oemedical.pathology',
                                      string='Pathology', ),
-        'evaluation': fields.many2one('oemedical.patient.evaluation',
+        'evaluation_id': fields.many2one('oemedical.patient.evaluation',
                                       string='Evaluation', ),
         'comments': fields.char(size=256, string='Comments', required=True),
     }

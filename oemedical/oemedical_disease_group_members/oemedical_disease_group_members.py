@@ -27,7 +27,7 @@ class OeMedicalDiseaseGroupMembers(osv.osv):
     _name = 'oemedical.disease_group.members'
 
     _columns = {
-        'disease_group': fields.many2one('oemedical.pathology.group',
+        'disease_group_id': fields.many2one('oemedical.pathology.group',
                                          string='Group', ),
         'name': fields.many2one('oemedical.pathology', string='Disease', ),
     }

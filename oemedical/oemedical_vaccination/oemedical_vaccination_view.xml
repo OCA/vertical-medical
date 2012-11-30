@@ -9,7 +9,7 @@
 				<tree string="Oemedical Vaccination">
 					<field name="name" />
 					<field name="vaccine_lot" />
-					<field name="patient" />
+					<field name="patient_id" />
 					<field name="vaccine" />
 					<field name="dose" />
 					<field name="observations" />
@@ -28,7 +28,7 @@
 				<form string="Oemedical Vaccination">
 					<field name="name" />
 					<field name="vaccine_lot" />
-					<field name="patient" />
+					<field name="patient_id" />
 					<field name="vaccine" />
 					<field name="dose" />
 					<field name="observations" />
@@ -47,7 +47,7 @@
 				<search string="Oemedical Vaccination">
 					<field name="name" />
 					<field name="vaccine_lot" />
-					<field name="patient" />
+					<field name="patient_id" />
 					<field name="vaccine" />
 					<field name="dose" />
 					<field name="observations" />
@@ -59,7 +59,7 @@
 						<filter string="Lot Number" domain="[]"
 							context="{'group_by':'vaccine_lot'}" />
 						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
-						<filter string="Patient" domain="[]" context="{'group_by':'patient'}" />
+						<filter string="Patient" domain="[]" context="{'group_by':'patient_id'}" />
 						<filter string="Vaccine" domain="[]" context="{'group_by':'vaccine'}" />
 						<filter string="Dose #" domain="[]" context="{'group_by':'dose'}" />
 						<filter string="Observations" domain="[]"

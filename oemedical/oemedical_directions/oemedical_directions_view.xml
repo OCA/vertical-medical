@@ -7,8 +7,8 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Directions">
-					<field name="procedure" />
-					<field name="name" />
+					<field name="evaluation_id" />
+					<field name="procedure_id" />
 					<field name="comments" />
 				</tree>
 			</field>
@@ -20,8 +20,8 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Directions">
-					<field name="procedure" />
-					<field name="name" />
+					<field name="procedure_id" />
+					<field name="evaluation_id" />
 					<field name="comments" />
 				</form>
 			</field>
@@ -33,14 +33,14 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<search string="Oemedical Directions">
-					<field name="procedure" />
-					<field name="name" />
+					<field name="procedure_id" />
+					<field name="evaluation_id" />
 					<field name="comments" />
 					<newline />
 					<group expand="0" string="Group By...">
 						<filter string="Procedure" domain="[]"
-							context="{'group_by':'procedure'}" />
-						<filter string="Evaluation" domain="[]" context="{'group_by':'name'}" />
+							context="{'group_by':'procedure_id'}" />
+						<filter string="Evaluation" domain="[]" context="{'group_by':'evaluation_id'}" />
 						<filter string="Comments" domain="[]" context="{'group_by':'comments'}" />
 					</group>
 				</search>

@@ -31,8 +31,8 @@ class OeMedicalFamily(osv.osv):
         'operational_sector': fields.many2one('oemedical.operational_sector',
                                               string='Operational Sector', ),
         'name': fields.char(size=256, string='Family', required=True),
-        #'members': fields.one2many('oemedical.family_member', 'relation_id',
-        #                           string='Family Members', ),
+        'members': fields.one2many('oemedical.family_member', 'family_id',
+                                   string='Family Members', ),
     }
 
 OeMedicalFamily()

@@ -7,7 +7,6 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Hospital Bed">
-					<field name="rec_name" />
 					<field name="name" />
 					<!--field name="bed_type"/ -->
 					<field name="telephone_number" />

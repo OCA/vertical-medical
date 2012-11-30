@@ -7,7 +7,7 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Medicament Category">
-					<!--field name="childs"/ -->
+					<field name="childs"/>
 					<field name="name" />
 					<field name="parent" />
 				</tree>
@@ -20,7 +20,7 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Medicament Category">
-					<!--field name="childs"/ -->
+					<field name="childs"/>
 					<field name="name" />
 					<field name="parent" />
 				</form>
