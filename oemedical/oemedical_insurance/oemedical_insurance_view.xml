@@ -7,8 +7,8 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Oemedical Insurance">
+                	<field name="name"/>
                     <field name="category"/>
-                    <field name="rec_name"/>
                     <field name="plan_id"/>
                     <!--field name="insurance_type"/-->
                     <field name="member_since"/>
@@ -16,7 +16,7 @@
                     <field name="number"/>
                     <field name="member_exp"/>
                     <field name="notes"/>
-                    <field name="name"/>
+                    <field name="owner"/>
                 </tree>
             </field>
         </record>
@@ -27,8 +27,8 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Oemedical Insurance">
+                	<field name="name"/>
                     <field name="category"/>
-                    <field name="rec_name"/>
                     <field name="plan_id"/>
                     <!--field name="insurance_type"/-->
                     <field name="member_since"/>
@@ -36,7 +36,7 @@
                     <field name="number"/>
                     <field name="member_exp"/>
                     <field name="notes"/>
-                    <field name="name"/>
+                    <field name="owner"/>
                 </form>
             </field>
         </record>
@@ -48,25 +48,23 @@
             <field name="arch" type="xml">
                 <search string="Oemedical Insurance">
                     <field name="category"/>
-                    <field name="rec_name"/>
                     <field name="plan_id"/>
                     <field name="member_since"/>
                     <field name="company"/>
                     <field name="number"/>
                     <field name="member_exp"/>
                     <field name="notes"/>
-                    <field name="name"/>
+                    <field name="owner"/>
                     <newline/>
                     <group expand="0" string="Group By...">
                         <filter string="Category" domain="[]" context="{'group_by':'category'}"/>
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
                         <filter string="Plan" domain="[]" context="{'group_by':'plan_id'}"/>
                         <filter string="Member since" domain="[]" context="{'group_by':'member_since'}"/>
                         <filter string="Insurance Company" domain="[]" context="{'group_by':'company'}"/>
                         <filter string="Number" domain="[]" context="{'group_by':'number'}"/>
                         <filter string="Expiration date" domain="[]" context="{'group_by':'member_exp'}"/>
                         <filter string="Extra Info" domain="[]" context="{'group_by':'notes'}"/>
-                        <filter string="Owner" domain="[]" context="{'group_by':'name'}"/>
+                        <filter string="Owner" domain="[]" context="{'group_by':'owner'}"/>
                     </group>
                 </search>
             </field>

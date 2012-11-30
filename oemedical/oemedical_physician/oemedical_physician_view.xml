@@ -7,10 +7,10 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Oemedical Physician">
+                	<field name="name"/>
                     <field name="info"/>
-                    <field name="rec_name"/>
                     <field name="code"/>
-                    <field name="name"/>
+                    <field name="health_professional"/>
                     <field name="specialty"/>
                     <field name="institution"/>
                 </tree>
@@ -23,10 +23,10 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Oemedical Physician">
+                	<field name="name"/>
                     <field name="info"/>
-                    <field name="rec_name"/>
                     <field name="code"/>
-                    <field name="name"/>
+                    <field name="health_professional"/>
                     <field name="specialty"/>
                     <field name="institution"/>
                 </form>
@@ -39,18 +39,18 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Oemedical Physician">
+                	<field name="name"/>
                     <field name="info"/>
-                    <field name="rec_name"/>
                     <field name="code"/>
-                    <field name="name"/>
+                    <field name="health_professional"/>
                     <field name="specialty"/>
                     <field name="institution"/>
                     <newline/>
                     <group expand="0" string="Group By...">
                         <filter string="Extra info" domain="[]" context="{'group_by':'info'}"/>
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
+                        <filter string="Name" domain="[]" context="{'group_by':'name'}"/>
                         <filter string="ID" domain="[]" context="{'group_by':'code'}"/>
-                        <filter string="Health Professional" domain="[]" context="{'group_by':'name'}"/>
+                        <filter string="Health Professional" domain="[]" context="{'group_by':'health_professional'}"/>
                         <filter string="Specialty" domain="[]" context="{'group_by':'specialty'}"/>
                         <filter string="Institution" domain="[]" context="{'group_by':'institution'}"/>
                     </group>

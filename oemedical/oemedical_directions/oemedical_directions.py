@@ -27,7 +27,6 @@ class OeMedicalDirections(osv.osv):
     _name = 'oemedical.directions'
 
     _columns = {
-        'rec_name': fields.char(size=256, string='Name', required=True),
         'procedure': fields.many2one('oemedical.procedure',
                                      string='Procedure', ),
         'name': fields.many2one('oemedical.patient.evaluation',

@@ -7,9 +7,9 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Oemedical Vaccination">
-                    <field name="rec_name"/>
+                	<field name="name"/>
                     <field name="vaccine_lot"/>
-                    <field name="name"/>
+                    <field name="patient"/>
                     <field name="vaccine"/>
                     <field name="dose"/>
                     <field name="observations"/>
@@ -26,9 +26,9 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Oemedical Vaccination">
-                    <field name="rec_name"/>
+                	<field name="name"/>
                     <field name="vaccine_lot"/>
-                    <field name="name"/>
+                    <field name="patient"/>
                     <field name="vaccine"/>
                     <field name="dose"/>
                     <field name="observations"/>
@@ -45,9 +45,9 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Oemedical Vaccination">
-                    <field name="rec_name"/>
+                	<field name="name"/>
                     <field name="vaccine_lot"/>
-                    <field name="name"/>
+                    <field name="patient"/>
                     <field name="vaccine"/>
                     <field name="dose"/>
                     <field name="observations"/>
@@ -56,10 +56,10 @@
                     <field name="next_dose_date"/>
                     <newline/>
                     <group expand="0" string="Group By...">
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
                         <filter string="Lot Number" domain="[]" context="{'group_by':'vaccine_lot'}"/>
-                        <filter string="Patient" domain="[]" context="{'group_by':'name'}"/>
-                        <filter string="Name" domain="[]" context="{'group_by':'vaccine'}"/>
+                        <filter string="Name" domain="[]" context="{'group_by':'name'}"/>
+                        <filter string="Patient" domain="[]" context="{'group_by':'patient'}"/>
+                        <filter string="Vaccine" domain="[]" context="{'group_by':'vaccine'}"/>
                         <filter string="Dose #" domain="[]" context="{'group_by':'dose'}"/>
                         <filter string="Observations" domain="[]" context="{'group_by':'observations'}"/>
                         <filter string="Date" domain="[]" context="{'group_by':'date'}"/>

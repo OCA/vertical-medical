@@ -31,7 +31,6 @@ class OeMedicalOperationalSector(osv.osv):
         'operational_area': fields.many2one('oemedical.operational_area',
                                             string='Operational Area', ),
         'name': fields.char(size=256, string='Op. Sector', required=True),
-        'rec_name': fields.char(size=256, string='Name', required=True),
     }
 
 OeMedicalOperationalSector()

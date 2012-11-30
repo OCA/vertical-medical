@@ -7,6 +7,7 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Oemedical Patient">
+                	<field name="name"/>
                     <field name="family"/>
                     <field name="photo"/>
                     <field name="sex"/>
@@ -23,7 +24,6 @@
                     <field name="ethnic_group"/>
                     <field name="ssn"/>
                     <!--field name="vaccinations"/-->
-                    <field name="rec_name"/>
                     <field name="name"/>
                     <field name="dob"/>
                     <field name="age"/>
@@ -43,6 +43,7 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Oemedical Patient">
+                	<field name="name"/>
                     <field name="family"/>
                     <field name="photo"/>
                     <!--field name="sex"/-->
@@ -59,8 +60,7 @@
                     <field name="ethnic_group"/>
                     <field name="ssn"/>
                     <!--field name="vaccinations"/-->
-                    <field name="rec_name"/>
-                    <field name="name"/>
+                    <field name="patient"/>
                     <field name="dob"/>
                     <field name="age"/>
                     <!--field name="marital_status"/-->
@@ -79,6 +79,7 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Oemedical Patient">
+                	<field name="name"/>
                     <field name="family"/>
                     <field name="general_info"/>
                     <field name="primary_care_doctor"/>
@@ -88,8 +89,7 @@
                     <field name="lastname"/>
                     <field name="ethnic_group"/>
                     <field name="ssn"/>
-                    <field name="rec_name"/>
-                    <field name="name"/>
+                    <field name="patient"/>
                     <field name="dob"/>
                     <field name="age"/>
                     <field name="dod"/>
@@ -99,6 +99,7 @@
                     <field name="deceased"/>
                     <newline/>
                     <group expand="0" string="Group By...">
+                    	<filter string="Name" domain="[]" context="{'group_by':'name'}"/>
                         <filter string="Family" domain="[]" context="{'group_by':'family'}"/>
                         <filter string="General Information" domain="[]" context="{'group_by':'general_info'}"/>
                         <filter string="Primary Care Doctor" domain="[]" context="{'group_by':'primary_care_doctor'}"/>
@@ -108,8 +109,7 @@
                         <filter string="Lastname" domain="[]" context="{'group_by':'lastname'}"/>
                         <filter string="Ethnic group" domain="[]" context="{'group_by':'ethnic_group'}"/>
                         <filter string="SSN" domain="[]" context="{'group_by':'ssn'}"/>
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
-                        <filter string="Patient" domain="[]" context="{'group_by':'name'}"/>
+                        <filter string="Patient" domain="[]" context="{'group_by':'patient'}"/>
                         <filter string="DoB" domain="[]" context="{'group_by':'dob'}"/>
                         <filter string="Age" domain="[]" context="{'group_by':'age'}"/>
                         <filter string="Date of Death" domain="[]" context="{'group_by':'dod'}"/>

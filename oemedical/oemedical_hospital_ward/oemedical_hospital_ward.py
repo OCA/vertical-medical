@@ -29,7 +29,6 @@ class OeMedicalHospitalWard(osv.osv):
     _columns = {
         'building': fields.many2one('oemedical.hospital.building',
                                     string='Building', ),
-        'rec_name': fields.char(size=256, string='Name', required=True),
         'ac': fields.boolean(string='Air Conditioning'),
         'name': fields.char(size=256, string='Name', required=True),
         'floor': fields.integer(string='Floor Number'),

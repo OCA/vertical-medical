@@ -27,7 +27,6 @@ class OeMedicalSecondaryCondition(osv.osv):
     _name = 'oemedical.secondary_condition'
 
     _columns = {
-        'rec_name': fields.char(size=256, string='Name', required=True),
         'pathology': fields.many2one('oemedical.pathology',
                                      string='Pathology', ),
         'evaluation': fields.many2one('oemedical.patient.evaluation',

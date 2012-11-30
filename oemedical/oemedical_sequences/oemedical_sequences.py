@@ -27,7 +27,6 @@ class OeMedicalSequences(osv.osv):
     _name = 'oemedical.sequences'
 
     _columns = {
-        'rec_name': fields.char(size=256, string='Name', required=True),
         'appointment_sequence': fields.many2one('ir.sequence',
                                                 string='Appointment Sequence',
                                                 ),

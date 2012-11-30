@@ -7,7 +7,6 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Oemedical Prescription Line">
-                    <field name="rec_name"/>
                     <field name="refills"/>
                     <field name="name"/>
                     <field name="allow_substitution"/>
@@ -26,7 +25,6 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Oemedical Prescription Line">
-                    <field name="rec_name"/>
                     <field name="refills"/>
                     <field name="name"/>
                     <field name="allow_substitution"/>
@@ -45,7 +43,6 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Oemedical Prescription Line">
-                    <field name="rec_name"/>
                     <field name="refills"/>
                     <field name="name"/>
                     <field name="allow_substitution"/>
@@ -56,7 +53,6 @@
                     <field name="quantity"/>
                     <newline/>
                     <group expand="0" string="Group By...">
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
                         <filter string="Refills #" domain="[]" context="{'group_by':'refills'}"/>
                         <filter string="Prescription ID" domain="[]" context="{'group_by':'name'}"/>
                         <filter string="Allow substitution" domain="[]" context="{'group_by':'allow_substitution'}"/>

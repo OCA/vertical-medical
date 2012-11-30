@@ -27,7 +27,6 @@ class OeMedicalHospitalBed(osv.osv):
     _name = 'oemedical.hospital.bed'
 
     _columns = {
-        'rec_name': fields.char(size=256, string='Name', required=True),
         'name': fields.many2one('product.product', string='Bed', ),
         #'bed_type': fields.selection([], string='Bed Type'),
         'telephone_number': fields.char(size=256, string='Telephone Number',

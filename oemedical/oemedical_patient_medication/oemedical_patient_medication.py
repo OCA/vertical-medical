@@ -27,7 +27,6 @@ class OeMedicalPatientMedication(osv.osv):
     _name = 'oemedical.patient.medication'
 
     _columns = {
-        'rec_name': fields.char(size=256, string='Name', required=True),
         'patient': fields.many2one('oemedical.patient', string='Patient', ),
         'name': fields.many2one('oemedical.patient', string='Patient', ),
         'doctor': fields.many2one('oemedical.physician', string='Physician', ),

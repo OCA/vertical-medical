@@ -27,7 +27,6 @@ class OeMedicalPrescriptionLine(osv.osv):
     _name = 'oemedical.prescription.line'
 
     _columns = {
-        'rec_name': fields.char(size=256, string='Name', required=True),
         'refills': fields.integer(string='Refills #'),
         'name': fields.many2one('oemedical.prescription.order',
                                 string='Prescription ID', ),

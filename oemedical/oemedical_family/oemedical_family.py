@@ -28,7 +28,6 @@ class OeMedicalFamily(osv.osv):
 
     _columns = {
         'info': fields.text(string='Extra Information'),
-        'rec_name': fields.char(size=256, string='Name', required=True),
         'operational_sector': fields.many2one('oemedical.operational_sector',
                                               string='Operational Sector', ),
         'name': fields.char(size=256, string='Family', required=True),

@@ -7,6 +7,7 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Oemedical Patient Evaluation">
+                	<field name="name"/>
                     <field name="information_source"/>
                     <field name="info_diagnosis"/>
                     <field name="orientation"/>
@@ -53,7 +54,6 @@
                     <!--field name="diagnostic_hypothesis"/-->
                     <field name="judgment"/>
                     <field name="temperature"/>
-                    <field name="rec_name"/>
                     <field name="osat"/>
                     <!--field name="secondary_conditions"/-->
                     <field name="evaluation_endtime"/>
@@ -80,6 +80,7 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Oemedical Patient Evaluation">
+                	<field name="name"/>
                     <field name="information_source"/>
                     <field name="info_diagnosis"/>
                     <field name="orientation"/>
@@ -126,7 +127,6 @@
                     <!--field name="diagnostic_hypothesis"/-->
                     <field name="judgment"/>
                     <field name="temperature"/>
-                    <field name="rec_name"/>
                     <field name="osat"/>
                     <!--field name="secondary_conditions"/-->
                     <field name="evaluation_endtime"/>
@@ -153,6 +153,7 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Oemedical Patient Evaluation">
+                	<field name="name"/>
                     <field name="information_source"/>
                     <field name="info_diagnosis"/>
                     <field name="orientation"/>
@@ -192,7 +193,6 @@
                     <field name="cholesterol_total"/>
                     <field name="judgment"/>
                     <field name="temperature"/>
-                    <field name="rec_name"/>
                     <field name="osat"/>
                     <field name="evaluation_endtime"/>
                     <field name="notes"/>
@@ -248,7 +248,6 @@
                         <filter string="Last Cholesterol" domain="[]" context="{'group_by':'cholesterol_total'}"/>
                         <filter string="Jugdment" domain="[]" context="{'group_by':'judgment'}"/>
                         <filter string="Temperature" domain="[]" context="{'group_by':'temperature'}"/>
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
                         <filter string="Oxygen Saturation" domain="[]" context="{'group_by':'osat'}"/>
                         <filter string="End" domain="[]" context="{'group_by':'evaluation_endtime'}"/>
                         <filter string="Notes" domain="[]" context="{'group_by':'notes'}"/>

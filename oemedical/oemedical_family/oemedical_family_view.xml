@@ -8,7 +8,6 @@
             <field name="arch" type="xml">
                 <tree string="Oemedical Family">
                     <field name="info"/>
-                    <field name="rec_name"/>
                     <field name="operational_sector"/>
                     <field name="name"/>
                     <!--field name="members"/-->
@@ -23,7 +22,6 @@
             <field name="arch" type="xml">
                 <form string="Oemedical Family">
                     <field name="info"/>
-                    <field name="rec_name"/>
                     <field name="operational_sector"/>
                     <field name="name"/>
                     <!--field name="members"/-->
@@ -38,13 +36,11 @@
             <field name="arch" type="xml">
                 <search string="Oemedical Family">
                     <field name="info"/>
-                    <field name="rec_name"/>
                     <field name="operational_sector"/>
                     <field name="name"/>
                     <newline/>
                     <group expand="0" string="Group By...">
                         <filter string="Extra Information" domain="[]" context="{'group_by':'info'}"/>
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
                         <filter string="Operational Sector" domain="[]" context="{'group_by':'operational_sector'}"/>
                         <filter string="Family" domain="[]" context="{'group_by':'name'}"/>
                     </group>

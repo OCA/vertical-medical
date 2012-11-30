@@ -12,7 +12,6 @@
                     <field name="code"/>
                     <field name="name"/>
                     <!--field name="groups"/-->
-                    <field name="rec_name"/>
                     <field name="protein"/>
                     <field name="gene"/>
                     <field name="chromosome"/>
@@ -31,7 +30,6 @@
                     <field name="code"/>
                     <field name="name"/>
                     <!--field name="groups"/-->
-                    <field name="rec_name"/>
                     <field name="protein"/>
                     <field name="gene"/>
                     <field name="chromosome"/>
@@ -49,7 +47,6 @@
                     <field name="info"/>
                     <field name="code"/>
                     <field name="name"/>
-                    <field name="rec_name"/>
                     <field name="protein"/>
                     <field name="gene"/>
                     <field name="chromosome"/>
@@ -59,7 +56,6 @@
                         <filter string="Extra Info" domain="[]" context="{'group_by':'info'}"/>
                         <filter string="Code" domain="[]" context="{'group_by':'code'}"/>
                         <filter string="Name" domain="[]" context="{'group_by':'name'}"/>
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
                         <filter string="Protein involved" domain="[]" context="{'group_by':'protein'}"/>
                         <filter string="Gene" domain="[]" context="{'group_by':'gene'}"/>
                         <filter string="Affected Chromosome" domain="[]" context="{'group_by':'chromosome'}"/>

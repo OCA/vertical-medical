@@ -27,7 +27,6 @@ class OeMedicalDrugForm(osv.osv):
     _name = 'oemedical.drug.form'
 
     _columns = {
-        'rec_name': fields.char(size=256, string='Name', required=True),
         'code': fields.char(size=256, string='Code', required=True),
         'name': fields.char(size=256, string='Form', required=True),
     }

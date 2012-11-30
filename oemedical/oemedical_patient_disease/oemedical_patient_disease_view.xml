@@ -24,7 +24,6 @@
                     <field name="pcs_code"/>
                     <field name="is_infectious"/>
                     <!--field name="allergy_type"/-->
-                    <field name="rec_name"/>
                     <field name="name"/>
                     <field name="age"/>
                     <field name="date_start_treatment"/>
@@ -56,7 +55,6 @@
                     <field name="pcs_code"/>
                     <field name="is_infectious"/>
                     <!--field name="allergy_type"/-->
-                    <field name="rec_name"/>
                     <field name="name"/>
                     <field name="age"/>
                     <field name="date_start_treatment"/>
@@ -85,7 +83,6 @@
                     <field name="date_stop_treatment"/>
                     <field name="pcs_code"/>
                     <field name="is_infectious"/>
-                    <field name="rec_name"/>
                     <field name="name"/>
                     <field name="age"/>
                     <field name="date_start_treatment"/>
@@ -106,7 +103,6 @@
                         <filter string="End" domain="[]" context="{'group_by':'date_stop_treatment'}"/>
                         <filter string="Code" domain="[]" context="{'group_by':'pcs_code'}"/>
                         <filter string="Infectious Disease" domain="[]" context="{'group_by':'is_infectious'}"/>
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
                         <filter string="Patient" domain="[]" context="{'group_by':'name'}"/>
                         <filter string="Age when diagnosed" domain="[]" context="{'group_by':'age'}"/>
                         <filter string="Start" domain="[]" context="{'group_by':'date_start_treatment'}"/>

@@ -8,7 +8,6 @@
             <field name="arch" type="xml">
                 <tree string="Oemedical Medication Dosage">
                     <field name="abbreviation"/>
-                    <field name="rec_name"/>
                     <field name="code"/>
                     <field name="name"/>
                 </tree>
@@ -22,7 +21,6 @@
             <field name="arch" type="xml">
                 <form string="Oemedical Medication Dosage">
                     <field name="abbreviation"/>
-                    <field name="rec_name"/>
                     <field name="code"/>
                     <field name="name"/>
                 </form>
@@ -36,13 +34,11 @@
             <field name="arch" type="xml">
                 <search string="Oemedical Medication Dosage">
                     <field name="abbreviation"/>
-                    <field name="rec_name"/>
                     <field name="code"/>
                     <field name="name"/>
                     <newline/>
                     <group expand="0" string="Group By...">
                         <filter string="Abbreviation" domain="[]" context="{'group_by':'abbreviation'}"/>
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
                         <filter string="Code" domain="[]" context="{'group_by':'code'}"/>
                         <filter string="Frequency" domain="[]" context="{'group_by':'name'}"/>
                     </group>

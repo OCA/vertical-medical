@@ -24,7 +24,6 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Oemedical Hospital Bed">
-                    <field name="rec_name"/>
                     <field name="name"/>
                     <!--field name="bed_type"/-->
                     <field name="telephone_number"/>
@@ -41,14 +40,12 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Oemedical Hospital Bed">
-                    <field name="rec_name"/>
                     <field name="name"/>
                     <field name="telephone_number"/>
                     <field name="ward"/>
                     <field name="extra_info"/>
                     <newline/>
                     <group expand="0" string="Group By...">
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
                         <filter string="Bed" domain="[]" context="{'group_by':'name'}"/>
                         <filter string="Telephone Number" domain="[]" context="{'group_by':'telephone_number'}"/>
                         <filter string="Ward" domain="[]" context="{'group_by':'ward'}"/>

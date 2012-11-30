@@ -27,7 +27,6 @@ class OeMedicalAppointment(osv.osv):
     _name = 'oemedical.appointment'
 
     _columns = {
-        'rec_name': fields.char(size=256, string='Name', required=True),
         'consultations': fields.many2one('product.product',
                                          string='Consultation Services', ),
         'patient': fields.many2one('oemedical.patient', string='Patient', ),

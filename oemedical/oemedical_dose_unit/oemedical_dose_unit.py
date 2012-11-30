@@ -27,7 +27,6 @@ class OeMedicalDoseUnit(osv.osv):
     _name = 'oemedical.dose.unit'
 
     _columns = {
-        'rec_name': fields.char(size=256, string='Name', required=True),
         'name': fields.char(size=256, string='Unit', required=True),
         'desc': fields.char(size=256, string='Description', required=True),
     }

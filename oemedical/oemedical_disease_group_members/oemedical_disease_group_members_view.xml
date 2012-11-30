@@ -7,7 +7,6 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Oemedical Disease_Group Members">
-                    <field name="rec_name"/>
                     <field name="disease_group"/>
                     <field name="name"/>
                 </tree>
@@ -20,7 +19,6 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Oemedical Disease_Group Members">
-                    <field name="rec_name"/>
                     <field name="disease_group"/>
                     <field name="name"/>
                 </form>
@@ -33,12 +31,10 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Oemedical Disease_Group Members">
-                    <field name="rec_name"/>
                     <field name="disease_group"/>
                     <field name="name"/>
                     <newline/>
                     <group expand="0" string="Group By...">
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
                         <filter string="Group" domain="[]" context="{'group_by':'disease_group'}"/>
                         <filter string="Disease" domain="[]" context="{'group_by':'name'}"/>
                     </group>

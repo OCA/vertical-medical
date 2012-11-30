@@ -8,7 +8,6 @@
             <field name="arch" type="xml">
                 <tree string="Oemedical Hospital Or">
                     <field name="building"/>
-                    <field name="rec_name"/>
                     <field name="name"/>
                     <field name="institution"/>
                     <field name="unit"/>
@@ -24,7 +23,6 @@
             <field name="arch" type="xml">
                 <form string="Oemedical Hospital Or">
                     <field name="building"/>
-                    <field name="rec_name"/>
                     <field name="name"/>
                     <field name="institution"/>
                     <field name="unit"/>
@@ -40,7 +38,6 @@
             <field name="arch" type="xml">
                 <search string="Oemedical Hospital Or">
                     <field name="building"/>
-                    <field name="rec_name"/>
                     <field name="name"/>
                     <field name="institution"/>
                     <field name="unit"/>
@@ -48,7 +45,6 @@
                     <newline/>
                     <group expand="0" string="Group By...">
                         <filter string="Building" domain="[]" context="{'group_by':'building'}"/>
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
                         <filter string="Name" domain="[]" context="{'group_by':'name'}"/>
                         <filter string="Institution" domain="[]" context="{'group_by':'institution'}"/>
                         <filter string="Unit" domain="[]" context="{'group_by':'unit'}"/>

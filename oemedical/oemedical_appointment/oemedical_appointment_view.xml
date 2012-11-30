@@ -7,7 +7,6 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Oemedical Appointment">
-                    <field name="rec_name"/>
                     <field name="consultations"/>
                     <field name="patient"/>
                     <field name="name"/>
@@ -28,7 +27,6 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Oemedical Appointment">
-                    <field name="rec_name"/>
                     <field name="consultations"/>
                     <field name="patient"/>
                     <field name="name"/>
@@ -49,7 +47,6 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Oemedical Appointment">
-                    <field name="rec_name"/>
                     <field name="consultations"/>
                     <field name="patient"/>
                     <field name="name"/>
@@ -60,7 +57,6 @@
                     <field name="speciality"/>
                     <newline/>
                     <group expand="0" string="Group By...">
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
                         <filter string="Consultation Services" domain="[]" context="{'group_by':'consultations'}"/>
                         <filter string="Patient" domain="[]" context="{'group_by':'patient'}"/>
                         <filter string="Appointment ID" domain="[]" context="{'group_by':'name'}"/>

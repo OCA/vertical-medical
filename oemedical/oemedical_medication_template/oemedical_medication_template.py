@@ -27,7 +27,7 @@ class OeMedicalMedicationTemplate(osv.osv):
     _name = 'oemedical.medication.template'
 
     _columns = {
-        'rec_name': fields.char(size=256, string='Name', required=True),
+        'name': fields.char(size=256, string='Name'),     
         'start_treatment': fields.datetime(string='Start'),
         'form': fields.many2one('oemedical.drug.form', string='Form', ),
         'route': fields.many2one('oemedical.drug.route',

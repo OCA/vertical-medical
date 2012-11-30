@@ -7,7 +7,7 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Oemedical Medication Template">
-                    <field name="rec_name"/>
+                	<field name="name"/>
                     <field name="start_treatment"/>
                     <field name="form"/>
                     <field name="route"/>
@@ -34,7 +34,7 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Oemedical Medication Template">
-                    <field name="rec_name"/>
+                	<field name="name"/>
                     <field name="start_treatment"/>
                     <field name="form"/>
                     <field name="route"/>
@@ -61,7 +61,7 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Oemedical Medication Template">
-                    <field name="rec_name"/>
+                	<field name="name"/>
                     <field name="start_treatment"/>
                     <field name="form"/>
                     <field name="route"/>
@@ -78,8 +78,8 @@
                     <field name="dose_unit"/>
                     <newline/>
                     <group expand="0" string="Group By...">
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
                         <filter string="Start" domain="[]" context="{'group_by':'start_treatment'}"/>
+                        <filter string="Name" domain="[]" context="{'group_by':'name'}"/>
                         <filter string="Form" domain="[]" context="{'group_by':'form'}"/>
                         <filter string="Administration Route" domain="[]" context="{'group_by':'route'}"/>
                         <filter string="x" domain="[]" context="{'group_by':'qty'}"/>

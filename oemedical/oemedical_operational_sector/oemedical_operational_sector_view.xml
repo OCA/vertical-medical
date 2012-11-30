@@ -10,7 +10,6 @@
                     <field name="info"/>
                     <field name="operational_area"/>
                     <field name="name"/>
-                    <field name="rec_name"/>
                 </tree>
             </field>
         </record>
@@ -24,7 +23,6 @@
                     <field name="info"/>
                     <field name="operational_area"/>
                     <field name="name"/>
-                    <field name="rec_name"/>
                 </form>
             </field>
         </record>
@@ -38,13 +36,11 @@
                     <field name="info"/>
                     <field name="operational_area"/>
                     <field name="name"/>
-                    <field name="rec_name"/>
                     <newline/>
                     <group expand="0" string="Group By...">
                         <filter string="Extra Information" domain="[]" context="{'group_by':'info'}"/>
                         <filter string="Operational Area" domain="[]" context="{'group_by':'operational_area'}"/>
                         <filter string="Op. Sector" domain="[]" context="{'group_by':'name'}"/>
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
                     </group>
                 </search>
             </field>

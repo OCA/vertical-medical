@@ -27,7 +27,6 @@ class OeMedicalOccupation(osv.osv):
     _name = 'oemedical.occupation'
 
     _columns = {
-        'rec_name': fields.char(size=256, string='Name', required=True),
         'code': fields.char(size=256, string='Code', required=True),
         'name': fields.char(size=256, string='Name', required=True),
     }

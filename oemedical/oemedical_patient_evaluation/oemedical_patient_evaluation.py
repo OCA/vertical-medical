@@ -27,8 +27,8 @@ class OeMedicalPatientEvaluation(osv.osv):
     _name = 'oemedical.patient.evaluation'
 
     _columns = {
-        'information_source': fields.char(size=256, string='Source',
-                                          required=True),
+        'name': fields.char(size=264, string='Name'),        
+        'information_source': fields.char(size=256, string='Source', required=True),
         'info_diagnosis': fields.text(
             string='Presumptive Diagnosis: Extra Info'),
         'orientation': fields.boolean(string='Orientation'),
@@ -86,7 +86,6 @@ class OeMedicalPatientEvaluation(osv.osv):
         #   'relation_id', string='Hypotheses / DDx', ),
         'judgment': fields.boolean(string='Jugdment'),
         'temperature': fields.float(string='Temperature'),
-        'rec_name': fields.char(size=256, string='Name', required=True),
         'osat': fields.integer(string='Oxygen Saturation'),
         #'secondary_conditions': fields.one2many(
         #   'oemedical.secondary_condition', 'relation_id',

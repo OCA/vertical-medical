@@ -27,7 +27,6 @@ class OeMedicalPathologyCategory(osv.osv):
     _name = 'oemedical.pathology.category'
 
     _columns = {
-        'rec_name': fields.char(size=256, string='Name', required=True),
         #'childs': fields.one2many('oemedical.pathology.category',
         #                           'relation_id',
         #                           string='Children Category', ),

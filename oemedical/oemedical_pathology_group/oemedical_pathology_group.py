@@ -28,7 +28,6 @@ class OeMedicalPathologyGroup(osv.osv):
 
     _columns = {
         'info': fields.text(string='Detailed information'),
-        'rec_name': fields.char(size=256, string='Name', required=True),
         'code': fields.char(size=256, string='Code', required=True),
         'name': fields.char(size=256, string='Name', required=True),
         'desc': fields.char(size=256, string='Short Description',

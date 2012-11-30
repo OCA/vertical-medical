@@ -7,11 +7,11 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Oemedical Insurance Plan">
+                	<field name="name"/>
                     <field name="is_default"/>
-                    <field name="rec_name"/>
                     <field name="company"/>
                     <field name="notes"/>
-                    <field name="name"/>
+                    <field name="plan"/>
                 </tree>
             </field>
         </record>
@@ -22,11 +22,11 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Oemedical Insurance Plan">
+                	<field name="name"/>
                     <field name="is_default"/>
-                    <field name="rec_name"/>
                     <field name="company"/>
                     <field name="notes"/>
-                    <field name="name"/>
+                    <field name="plan"/>
                 </form>
             </field>
         </record>
@@ -37,18 +37,17 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Oemedical Insurance Plan">
+                	<field name="name"/>
                     <field name="is_default"/>
-                    <field name="rec_name"/>
                     <field name="company"/>
                     <field name="notes"/>
-                    <field name="name"/>
+                    <field name="plan"/>
                     <newline/>
                     <group expand="0" string="Group By...">
                         <filter string="Default plan" domain="[]" context="{'group_by':'is_default'}"/>
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
                         <filter string="Insurance Company" domain="[]" context="{'group_by':'company'}"/>
                         <filter string="Extra info" domain="[]" context="{'group_by':'notes'}"/>
-                        <filter string="Plan" domain="[]" context="{'group_by':'name'}"/>
+                        <filter string="Plan" domain="[]" context="{'group_by':'plan'}"/>
                     </group>
                 </search>
             </field>

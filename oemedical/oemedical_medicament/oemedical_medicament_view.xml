@@ -7,11 +7,11 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Oemedical Medicament">
+                	<field name="name"/>
                     <field name="category"/>
-                    <field name="rec_name"/>
                     <field name="indications"/>
                     <field name="therapeutic_action"/>
-                    <field name="name"/>
+                    <field name="product"/>
                     <!--field name="pregnancy_category"/-->
                     <field name="overdosage"/>
                     <field name="pregnancy_warning"/>
@@ -33,11 +33,11 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Oemedical Medicament">
+                	<field name="name"/>
                     <field name="category"/>
-                    <field name="rec_name"/>
                     <field name="indications"/>
                     <field name="therapeutic_action"/>
-                    <field name="name"/>
+                    <field name="product"/>
                     <!--field name="pregnancy_category"/-->
                     <field name="overdosage"/>
                     <field name="pregnancy_warning"/>
@@ -59,11 +59,11 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Oemedical Medicament">
+                	<field name="name"/>
                     <field name="category"/>
-                    <field name="rec_name"/>
                     <field name="indications"/>
                     <field name="therapeutic_action"/>
-                    <field name="name"/>
+                    <field name="product"/>
                     <field name="overdosage"/>
                     <field name="pregnancy_warning"/>
                     <field name="notes"/>
@@ -77,10 +77,10 @@
                     <newline/>
                     <group expand="0" string="Group By...">
                         <filter string="Category" domain="[]" context="{'group_by':'category'}"/>
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
+                        <filter string="Name" domain="[]" context="{'group_by':'name'}"/>
                         <filter string="Indication" domain="[]" context="{'group_by':'indications'}"/>
                         <filter string="Therapeutic effect" domain="[]" context="{'group_by':'therapeutic_action'}"/>
-                        <filter string="Product" domain="[]" context="{'group_by':'name'}"/>
+                        <filter string="Product" domain="[]" context="{'group_by':'product'}"/>
                         <filter string="Overdosage" domain="[]" context="{'group_by':'overdosage'}"/>
                         <filter string="Pregnancy Warning" domain="[]" context="{'group_by':'pregnancy_warning'}"/>
                         <filter string="Extra Info" domain="[]" context="{'group_by':'notes'}"/>

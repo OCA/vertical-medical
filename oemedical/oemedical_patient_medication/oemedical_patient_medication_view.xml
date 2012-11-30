@@ -7,7 +7,6 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Oemedical Patient Medication">
-                    <field name="rec_name"/>
                     <field name="patient"/>
                     <field name="name"/>
                     <field name="doctor"/>
@@ -28,7 +27,6 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Oemedical Patient Medication">
-                    <field name="rec_name"/>
                     <field name="patient"/>
                     <field name="name"/>
                     <field name="doctor"/>
@@ -49,7 +47,6 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Oemedical Patient Medication">
-                    <field name="rec_name"/>
                     <field name="patient"/>
                     <field name="name"/>
                     <field name="doctor"/>
@@ -62,7 +59,6 @@
                     <field name="discontinued"/>
                     <newline/>
                     <group expand="0" string="Group By...">
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
                         <filter string="Patient" domain="[]" context="{'group_by':'patient'}"/>
                         <filter string="Patient" domain="[]" context="{'group_by':'name'}"/>
                         <filter string="Physician" domain="[]" context="{'group_by':'doctor'}"/>

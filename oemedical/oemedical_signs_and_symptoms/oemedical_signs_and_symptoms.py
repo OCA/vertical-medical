@@ -27,7 +27,6 @@ class OeMedicalSignsAndSymptoms(osv.osv):
     _name = 'oemedical.signs_and_symptoms'
 
     _columns = {
-        'rec_name': fields.char(size=256, string='Name', required=True),
         'clinical': fields.many2one('oemedical.pathology',
                                     string='Sign or Symptom', ),
         'evaluation': fields.many2one('oemedical.patient.evaluation',

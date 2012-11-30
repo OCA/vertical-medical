@@ -7,7 +7,6 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Oemedical Hospital Unit">
-                    <field name="rec_name"/>
                     <field name="code"/>
                     <field name="institution"/>
                     <field name="name"/>
@@ -22,7 +21,6 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Oemedical Hospital Unit">
-                    <field name="rec_name"/>
                     <field name="code"/>
                     <field name="institution"/>
                     <field name="name"/>
@@ -37,14 +35,12 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Oemedical Hospital Unit">
-                    <field name="rec_name"/>
                     <field name="code"/>
                     <field name="institution"/>
                     <field name="name"/>
                     <field name="extra_info"/>
                     <newline/>
                     <group expand="0" string="Group By...">
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
                         <filter string="Code" domain="[]" context="{'group_by':'code'}"/>
                         <filter string="Institution" domain="[]" context="{'group_by':'institution'}"/>
                         <filter string="Name" domain="[]" context="{'group_by':'name'}"/>

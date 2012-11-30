@@ -8,7 +8,6 @@
             <field name="arch" type="xml">
                 <tree string="Oemedical Pathology Group">
                     <field name="info"/>
-                    <field name="rec_name"/>
                     <field name="code"/>
                     <field name="name"/>
                     <field name="desc"/>
@@ -23,7 +22,6 @@
             <field name="arch" type="xml">
                 <form string="Oemedical Pathology Group">
                     <field name="info"/>
-                    <field name="rec_name"/>
                     <field name="code"/>
                     <field name="name"/>
                     <field name="desc"/>
@@ -38,14 +36,12 @@
             <field name="arch" type="xml">
                 <search string="Oemedical Pathology Group">
                     <field name="info"/>
-                    <field name="rec_name"/>
                     <field name="code"/>
                     <field name="name"/>
                     <field name="desc"/>
                     <newline/>
                     <group expand="0" string="Group By...">
                         <filter string="Detailed information" domain="[]" context="{'group_by':'info'}"/>
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
                         <filter string="Code" domain="[]" context="{'group_by':'code'}"/>
                         <filter string="Name" domain="[]" context="{'group_by':'name'}"/>
                         <filter string="Short Description" domain="[]" context="{'group_by':'desc'}"/>

@@ -25,12 +25,11 @@ from osv import fields
 
 class OeMedicalInsurance(osv.osv):
     _name = 'oemedical.insurance'
-
+    
     _columns = {
+        'name': fields.char(size=256, string='Name'),        
         'category': fields.char(size=256, string='Category', required=True),
-        'rec_name': fields.char(size=256, string='Name', required=True),
-        'plan_id': fields.many2one('oemedical.insurance.plan',
-                                   string='Plan', ),
+        'plan_id': fields.many2one('oemedical.insurance.plan', string='Plan', ),
         #'insurance_type': fields.selection([], string='Insurance Type'),
         'member_since': fields.date(string='Member since'),
         'company': fields.many2one('res.partner',
@@ -38,7 +37,7 @@ class OeMedicalInsurance(osv.osv):
         'number': fields.char(size=256, string='Number', required=True),
         'member_exp': fields.date(string='Expiration date'),
         'notes': fields.text(string='Extra Info'),
-        'name': fields.many2one('res.partner', string='Owner', ),
+        'owner': fields.many2one('res.partner', string='Owner'),
     }
 
 OeMedicalInsurance()

@@ -7,7 +7,6 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Oemedical Ethnicity">
-                    <field name="rec_name"/>
                     <field name="notes"/>
                     <field name="code"/>
                     <field name="name"/>
@@ -21,7 +20,6 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Oemedical Ethnicity">
-                    <field name="rec_name"/>
                     <field name="notes"/>
                     <field name="code"/>
                     <field name="name"/>
@@ -35,13 +33,11 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Oemedical Ethnicity">
-                    <field name="rec_name"/>
                     <field name="notes"/>
                     <field name="code"/>
                     <field name="name"/>
                     <newline/>
                     <group expand="0" string="Group By...">
-                        <filter string="Name" domain="[]" context="{'group_by':'rec_name'}"/>
                         <filter string="Notes" domain="[]" context="{'group_by':'notes'}"/>
                         <filter string="Code" domain="[]" context="{'group_by':'code'}"/>
                         <filter string="Name" domain="[]" context="{'group_by':'name'}"/>

@@ -29,7 +29,6 @@ class OeMedicalMedicationDosage(osv.osv):
     _columns = {
         'abbreviation': fields.char(size=256, string='Abbreviation',
                                     required=True),
-        'rec_name': fields.char(size=256, string='Name', required=True),
         'code': fields.char(size=256, string='Code', required=True),
         'name': fields.char(size=256, string='Frequency', required=True),
     }
