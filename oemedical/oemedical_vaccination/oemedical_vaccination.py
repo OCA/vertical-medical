@@ -27,7 +27,7 @@ class OeMedicalVaccination(osv.osv):
     _name = 'oemedical.vaccination'
 
     _columns = {
-        'name': fields.char(size=256, string='Name'),        
+        'name': fields.char(size=256, string='Name'),
         'vaccine_lot': fields.char(size=256, string='Lot Number',
                                    required=True),
         'patient': fields.many2one('oemedical.patient', string='Patient', ),

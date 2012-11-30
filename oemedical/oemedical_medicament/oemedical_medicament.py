@@ -27,7 +27,7 @@ class OeMedicalMedicament(osv.osv):
     _name = 'oemedical.medicament'
 
     _columns = {
-        'name':fields.char(string='Name',size=264),        
+        'name': fields.char(string='Name', size=264),
         'category': fields.many2one('oemedical.medicament.category',
                                     string='Category', ),
         'indications': fields.text(string='Indication'),

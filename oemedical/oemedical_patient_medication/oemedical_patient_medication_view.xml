@@ -1,103 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
-    <data>
-        <record id="view_oemedical_patient_medication_tree" model="ir.ui.view">
-            <field name="name">oemedical.patient.medication.tree</field>
-            <field name="model">oemedical.patient.medication</field>
-            <field name="priority" eval="8"/>
-            <field name="arch" type="xml">
-                <tree string="Oemedical Patient Medication">
-                    <field name="patient"/>
-                    <field name="name"/>
-                    <field name="doctor"/>
-                    <field name="adverse_reaction"/>
-                    <field name="notes"/>
-                    <field name="is_active"/>
-                    <field name="course_completed"/>
-                    <field name="template"/>
-                    <field name="discontinued_reason"/>
-                    <field name="discontinued"/>
-                </tree>
-            </field>
-        </record>
+	<data>
+		<record id="view_oemedical_patient_medication_tree" model="ir.ui.view">
+			<field name="name">oemedical.patient.medication.tree</field>
+			<field name="model">oemedical.patient.medication</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<tree string="Oemedical Patient Medication">
+					<field name="patient" />
+					<field name="name" />
+					<field name="doctor" />
+					<field name="adverse_reaction" />
+					<field name="notes" />
+					<field name="is_active" />
+					<field name="course_completed" />
+					<field name="template" />
+					<field name="discontinued_reason" />
+					<field name="discontinued" />
+				</tree>
+			</field>
+		</record>
 
-        <record id="view_oemedical_patient_medication_form" model="ir.ui.view">
-            <field name="name">oemedical.patient.medication.form</field>
-            <field name="model">oemedical.patient.medication</field>
-            <field name="priority" eval="8"/>
-            <field name="arch" type="xml">
-                <form string="Oemedical Patient Medication">
-                    <field name="patient"/>
-                    <field name="name"/>
-                    <field name="doctor"/>
-                    <field name="adverse_reaction"/>
-                    <field name="notes"/>
-                    <field name="is_active"/>
-                    <field name="course_completed"/>
-                    <field name="template"/>
-                    <field name="discontinued_reason"/>
-                    <field name="discontinued"/>
-                </form>
-            </field>
-        </record>
+		<record id="view_oemedical_patient_medication_form" model="ir.ui.view">
+			<field name="name">oemedical.patient.medication.form</field>
+			<field name="model">oemedical.patient.medication</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<form string="Oemedical Patient Medication">
+					<field name="patient" />
+					<field name="name" />
+					<field name="doctor" />
+					<field name="adverse_reaction" />
+					<field name="notes" />
+					<field name="is_active" />
+					<field name="course_completed" />
+					<field name="template" />
+					<field name="discontinued_reason" />
+					<field name="discontinued" />
+				</form>
+			</field>
+		</record>
 
-        <record id="view_oemedical_patient_medication_search" model="ir.ui.view">
-            <field name="name">oemedical.patient.medication.search</field>
-            <field name="model">oemedical.patient.medication</field>
-            <field name="priority" eval="8"/>
-            <field name="arch" type="xml">
-                <search string="Oemedical Patient Medication">
-                    <field name="patient"/>
-                    <field name="name"/>
-                    <field name="doctor"/>
-                    <field name="adverse_reaction"/>
-                    <field name="notes"/>
-                    <field name="is_active"/>
-                    <field name="course_completed"/>
-                    <field name="template"/>
-                    <field name="discontinued_reason"/>
-                    <field name="discontinued"/>
-                    <newline/>
-                    <group expand="0" string="Group By...">
-                        <filter string="Patient" domain="[]" context="{'group_by':'patient'}"/>
-                        <filter string="Patient" domain="[]" context="{'group_by':'name'}"/>
-                        <filter string="Physician" domain="[]" context="{'group_by':'doctor'}"/>
-                        <filter string="Adverse Reactions" domain="[]" context="{'group_by':'adverse_reaction'}"/>
-                        <filter string="Extra Info" domain="[]" context="{'group_by':'notes'}"/>
-                        <filter string="Active" domain="[]" context="{'group_by':'is_active'}"/>
-                        <filter string="Course Completed" domain="[]" context="{'group_by':'course_completed'}"/>
-                        <filter string="Medication Template" domain="[]" context="{'group_by':'template'}"/>
-                        <filter string="Reason for discontinuation" domain="[]" context="{'group_by':'discontinued_reason'}"/>
-                        <filter string="Discontinued" domain="[]" context="{'group_by':'discontinued'}"/>
-                    </group>
-                </search>
-            </field>
-        </record>
+		<record id="view_oemedical_patient_medication_search" model="ir.ui.view">
+			<field name="name">oemedical.patient.medication.search</field>
+			<field name="model">oemedical.patient.medication</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<search string="Oemedical Patient Medication">
+					<field name="patient" />
+					<field name="name" />
+					<field name="doctor" />
+					<field name="adverse_reaction" />
+					<field name="notes" />
+					<field name="is_active" />
+					<field name="course_completed" />
+					<field name="template" />
+					<field name="discontinued_reason" />
+					<field name="discontinued" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Patient" domain="[]" context="{'group_by':'patient'}" />
+						<filter string="Patient" domain="[]" context="{'group_by':'name'}" />
+						<filter string="Physician" domain="[]" context="{'group_by':'doctor'}" />
+						<filter string="Adverse Reactions" domain="[]"
+							context="{'group_by':'adverse_reaction'}" />
+						<filter string="Extra Info" domain="[]" context="{'group_by':'notes'}" />
+						<filter string="Active" domain="[]" context="{'group_by':'is_active'}" />
+						<filter string="Course Completed" domain="[]"
+							context="{'group_by':'course_completed'}" />
+						<filter string="Medication Template" domain="[]"
+							context="{'group_by':'template'}" />
+						<filter string="Reason for discontinuation" domain="[]"
+							context="{'group_by':'discontinued_reason'}" />
+						<filter string="Discontinued" domain="[]"
+							context="{'group_by':'discontinued'}" />
+					</group>
+				</search>
+			</field>
+		</record>
 
-        <record model="ir.actions.act_window" id="act_open_oemedical_patient_medication_view">
-            <field name="name"> Patient Medication</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">oemedical.patient.medication</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_oemedical_patient_medication_search"/>
-            <field name="domain">[]</field>
-            <field name="context">{}</field>
-        </record>
+		<record model="ir.actions.act_window" id="act_open_oemedical_patient_medication_view">
+			<field name="name">Patient Medication</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">oemedical.patient.medication</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_oemedical_patient_medication_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
 
-        <record model="ir.actions.act_window.view" id="act_open_oemedical_patient_medication_view_form">
-            <field name="act_window_id" ref="act_open_oemedical_patient_medication_view"/>
-            <field name="sequence" eval="20"/>
-            <field name="view_mode">form</field>
-            <field name="view_id" ref="view_oemedical_patient_medication_form"/>
-        </record>
+		<record model="ir.actions.act_window.view" id="act_open_oemedical_patient_medication_view_form">
+			<field name="act_window_id" ref="act_open_oemedical_patient_medication_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_oemedical_patient_medication_form" />
+		</record>
 
-        <record model="ir.actions.act_window.view" id="act_open_oemedical_patient_medication_view_tree">
-            <field name="act_window_id" ref="act_open_oemedical_patient_medication_view"/>
-            <field name="sequence" eval="10"/>
-            <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_oemedical_patient_medication_tree"/>
-        </record>
+		<record model="ir.actions.act_window.view" id="act_open_oemedical_patient_medication_view_tree">
+			<field name="act_window_id" ref="act_open_oemedical_patient_medication_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_oemedical_patient_medication_tree" />
+		</record>
 
-    </data>
+	</data>
 </openerp>

@@ -1,84 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
-    <data>
-        <record id="view_oemedical_hospital_bed_tree" model="ir.ui.view">
-            <field name="name">oemedical.hospital.bed.tree</field>
-            <field name="model">oemedical.hospital.bed</field>
-            <field name="priority" eval="8"/>
-            <field name="arch" type="xml">
-                <tree string="Oemedical Hospital Bed">
-                    <field name="rec_name"/>
-                    <field name="name"/>
-                    <!--field name="bed_type"/-->
-                    <field name="telephone_number"/>
-                    <!--field name="state"/-->
-                    <field name="ward"/>
-                    <field name="extra_info"/>
-                </tree>
-            </field>
-        </record>
+	<data>
+		<record id="view_oemedical_hospital_bed_tree" model="ir.ui.view">
+			<field name="name">oemedical.hospital.bed.tree</field>
+			<field name="model">oemedical.hospital.bed</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<tree string="Oemedical Hospital Bed">
+					<field name="rec_name" />
+					<field name="name" />
+					<!--field name="bed_type"/ -->
+					<field name="telephone_number" />
+					<!--field name="state"/ -->
+					<field name="ward" />
+					<field name="extra_info" />
+				</tree>
+			</field>
+		</record>
 
-        <record id="view_oemedical_hospital_bed_form" model="ir.ui.view">
-            <field name="name">oemedical.hospital.bed.form</field>
-            <field name="model">oemedical.hospital.bed</field>
-            <field name="priority" eval="8"/>
-            <field name="arch" type="xml">
-                <form string="Oemedical Hospital Bed">
-                    <field name="name"/>
-                    <!--field name="bed_type"/-->
-                    <field name="telephone_number"/>
-                    <!--field name="state"/-->
-                    <field name="ward"/>
-                    <field name="extra_info"/>
-                </form>
-            </field>
-        </record>
+		<record id="view_oemedical_hospital_bed_form" model="ir.ui.view">
+			<field name="name">oemedical.hospital.bed.form</field>
+			<field name="model">oemedical.hospital.bed</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<form string="Oemedical Hospital Bed">
+					<field name="name" />
+					<!--field name="bed_type"/ -->
+					<field name="telephone_number" />
+					<!--field name="state"/ -->
+					<field name="ward" />
+					<field name="extra_info" />
+				</form>
+			</field>
+		</record>
 
-        <record id="view_oemedical_hospital_bed_search" model="ir.ui.view">
-            <field name="name">oemedical.hospital.bed.search</field>
-            <field name="model">oemedical.hospital.bed</field>
-            <field name="priority" eval="8"/>
-            <field name="arch" type="xml">
-                <search string="Oemedical Hospital Bed">
-                    <field name="name"/>
-                    <field name="telephone_number"/>
-                    <field name="ward"/>
-                    <field name="extra_info"/>
-                    <newline/>
-                    <group expand="0" string="Group By...">
-                        <filter string="Bed" domain="[]" context="{'group_by':'name'}"/>
-                        <filter string="Telephone Number" domain="[]" context="{'group_by':'telephone_number'}"/>
-                        <filter string="Ward" domain="[]" context="{'group_by':'ward'}"/>
-                        <filter string="Extra Info" domain="[]" context="{'group_by':'extra_info'}"/>
-                    </group>
-                </search>
-            </field>
-        </record>
+		<record id="view_oemedical_hospital_bed_search" model="ir.ui.view">
+			<field name="name">oemedical.hospital.bed.search</field>
+			<field name="model">oemedical.hospital.bed</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<search string="Oemedical Hospital Bed">
+					<field name="name" />
+					<field name="telephone_number" />
+					<field name="ward" />
+					<field name="extra_info" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Bed" domain="[]" context="{'group_by':'name'}" />
+						<filter string="Telephone Number" domain="[]"
+							context="{'group_by':'telephone_number'}" />
+						<filter string="Ward" domain="[]" context="{'group_by':'ward'}" />
+						<filter string="Extra Info" domain="[]"
+							context="{'group_by':'extra_info'}" />
+					</group>
+				</search>
+			</field>
+		</record>
 
-        <record model="ir.actions.act_window" id="act_open_oemedical_hospital_bed_view">
-            <field name="name"> Hospital Bed</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">oemedical.hospital.bed</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_oemedical_hospital_bed_search"/>
-            <field name="domain">[]</field>
-            <field name="context">{}</field>
-        </record>
+		<record model="ir.actions.act_window" id="act_open_oemedical_hospital_bed_view">
+			<field name="name">Hospital Bed</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">oemedical.hospital.bed</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_oemedical_hospital_bed_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
 
-        <record model="ir.actions.act_window.view" id="act_open_oemedical_hospital_bed_view_form">
-            <field name="act_window_id" ref="act_open_oemedical_hospital_bed_view"/>
-            <field name="sequence" eval="20"/>
-            <field name="view_mode">form</field>
-            <field name="view_id" ref="view_oemedical_hospital_bed_form"/>
-        </record>
+		<record model="ir.actions.act_window.view" id="act_open_oemedical_hospital_bed_view_form">
+			<field name="act_window_id" ref="act_open_oemedical_hospital_bed_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_oemedical_hospital_bed_form" />
+		</record>
 
-        <record model="ir.actions.act_window.view" id="act_open_oemedical_hospital_bed_view_tree">
-            <field name="act_window_id" ref="act_open_oemedical_hospital_bed_view"/>
-            <field name="sequence" eval="10"/>
-            <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_oemedical_hospital_bed_tree"/>
-        </record>
+		<record model="ir.actions.act_window.view" id="act_open_oemedical_hospital_bed_view_tree">
+			<field name="act_window_id" ref="act_open_oemedical_hospital_bed_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_oemedical_hospital_bed_tree" />
+		</record>
 
-    </data>
+	</data>
 </openerp>

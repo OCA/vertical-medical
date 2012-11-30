@@ -27,7 +27,7 @@ class OeMedicalPatient(osv.osv):
     _name = 'oemedical.patient'
     _inherits = 'res.partner'
     _columns = {
-        'name': fields.char(size=256, string='Name'),       
+        'name': fields.char(size=256, string='Name'),
         'family': fields.many2one('oemedical.family', string='Family', ),
         'photo': fields.binary(string='Picture'),
         'sex': fields.selection([('m', 'Male'), ('f', 'Female'), ],
@@ -35,10 +35,12 @@ class OeMedicalPatient(osv.osv):
         'blood_type': fields.selection([('A', 'A'), ('B', 'B'), ('AB', 'AB'),
                                         ('O', 'O'), ], string='Blood Type'),
         'general_info': fields.text(string='General Information'),
-        'primary_care_doctor': fields.many2one('oemedical.physician', string='Primary Care Doctor', ),
+        'primary_care_doctor': fields.many2one('oemedical.physician',
+                                               string='Primary Care Doctor', ),
         'childbearing_age': fields.boolean(
             string='Potential for Childbearing'),
-        'medications': fields.one2many('oemedical.patient.medication', 'patient', string='Medications', ),
+        'medications': fields.one2many('oemedical.patient.medication',
+                                       'patient', string='Medications', ),
         'critical_info': fields.text(
             string='Important disease, allergy or procedures information'),
         'rh': fields.selection([('+', '+'), ('-', '-'), ], string='Rh'),
@@ -46,7 +48,8 @@ class OeMedicalPatient(osv.osv):
         #'diseases': fields.one2many('oemedical.patient.disease',
         #                             'relation_id', string='Diseases', ),
         'lastname': fields.char(size=256, string='Lastname', required=True),
-        'ethnic_group': fields.many2one('oemedical.ethnicity', string='Ethnic group', ),
+        'ethnic_group': fields.many2one('oemedical.ethnicity',
+                                        string='Ethnic group', ),
         'ssn': fields.char(size=256, string='SSN', required=True),
         #'vaccinations': fields.one2many('oemedical.vaccination',
         #                                'relation_id',
@@ -60,10 +63,12 @@ class OeMedicalPatient(osv.osv):
                                             ('x', 'Separated'), ],
                                            string='Marital Status'),
         'dod': fields.datetime(string='Date of Death'),
-        'current_insurance': fields.many2one('oemedical.insurance', string='Insurance', ),
+        'current_insurance': fields.many2one('oemedical.insurance',
+                                             string='Insurance', ),
         'cod': fields.many2one('oemedical.pathology',
                                string='Cause of Death', ),
-        'identification_code': fields.char(size=256, string='ID', required=True),
+        'identification_code': fields.char(size=256, string='ID',
+                                           required=True),
         'deceased': fields.boolean(string='Deceased'),
     }
 

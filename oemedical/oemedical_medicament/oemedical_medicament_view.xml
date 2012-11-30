@@ -1,125 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
-    <data>
-        <record id="view_oemedical_medicament_tree" model="ir.ui.view">
-            <field name="name">oemedical.medicament.tree</field>
-            <field name="model">oemedical.medicament</field>
-            <field name="priority" eval="8"/>
-            <field name="arch" type="xml">
-                <tree string="Oemedical Medicament">
-                	<field name="name"/>
-                    <field name="category"/>
-                    <field name="indications"/>
-                    <field name="therapeutic_action"/>
-                    <field name="product"/>
-                    <!--field name="pregnancy_category"/-->
-                    <field name="overdosage"/>
-                    <field name="pregnancy_warning"/>
-                    <field name="notes"/>
-                    <field name="storage"/>
-                    <field name="adverse_reaction"/>
-                    <field name="active_component"/>
-                    <field name="dosage"/>
-                    <field name="pregnancy"/>
-                    <field name="presentation"/>
-                    <field name="composition"/>
-                </tree>
-            </field>
-        </record>
+	<data>
+		<record id="view_oemedical_medicament_tree" model="ir.ui.view">
+			<field name="name">oemedical.medicament.tree</field>
+			<field name="model">oemedical.medicament</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<tree string="Oemedical Medicament">
+					<field name="name" />
+					<field name="category" />
+					<field name="indications" />
+					<field name="therapeutic_action" />
+					<field name="product" />
+					<!--field name="pregnancy_category"/ -->
+					<field name="overdosage" />
+					<field name="pregnancy_warning" />
+					<field name="notes" />
+					<field name="storage" />
+					<field name="adverse_reaction" />
+					<field name="active_component" />
+					<field name="dosage" />
+					<field name="pregnancy" />
+					<field name="presentation" />
+					<field name="composition" />
+				</tree>
+			</field>
+		</record>
 
-        <record id="view_oemedical_medicament_form" model="ir.ui.view">
-            <field name="name">oemedical.medicament.form</field>
-            <field name="model">oemedical.medicament</field>
-            <field name="priority" eval="8"/>
-            <field name="arch" type="xml">
-                <form string="Oemedical Medicament">
-                	<field name="name"/>
-                    <field name="category"/>
-                    <field name="indications"/>
-                    <field name="therapeutic_action"/>
-                    <field name="product"/>
-                    <!--field name="pregnancy_category"/-->
-                    <field name="overdosage"/>
-                    <field name="pregnancy_warning"/>
-                    <field name="notes"/>
-                    <field name="storage"/>
-                    <field name="adverse_reaction"/>
-                    <field name="active_component"/>
-                    <field name="dosage"/>
-                    <field name="pregnancy"/>
-                    <field name="presentation"/>
-                    <field name="composition"/>
-                </form>
-            </field>
-        </record>
+		<record id="view_oemedical_medicament_form" model="ir.ui.view">
+			<field name="name">oemedical.medicament.form</field>
+			<field name="model">oemedical.medicament</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<form string="Oemedical Medicament">
+					<field name="name" />
+					<field name="category" />
+					<field name="indications" />
+					<field name="therapeutic_action" />
+					<field name="product" />
+					<!--field name="pregnancy_category"/ -->
+					<field name="overdosage" />
+					<field name="pregnancy_warning" />
+					<field name="notes" />
+					<field name="storage" />
+					<field name="adverse_reaction" />
+					<field name="active_component" />
+					<field name="dosage" />
+					<field name="pregnancy" />
+					<field name="presentation" />
+					<field name="composition" />
+				</form>
+			</field>
+		</record>
 
-        <record id="view_oemedical_medicament_search" model="ir.ui.view">
-            <field name="name">oemedical.medicament.search</field>
-            <field name="model">oemedical.medicament</field>
-            <field name="priority" eval="8"/>
-            <field name="arch" type="xml">
-                <search string="Oemedical Medicament">
-                	<field name="name"/>
-                    <field name="category"/>
-                    <field name="indications"/>
-                    <field name="therapeutic_action"/>
-                    <field name="product"/>
-                    <field name="overdosage"/>
-                    <field name="pregnancy_warning"/>
-                    <field name="notes"/>
-                    <field name="storage"/>
-                    <field name="adverse_reaction"/>
-                    <field name="active_component"/>
-                    <field name="dosage"/>
-                    <field name="pregnancy"/>
-                    <field name="presentation"/>
-                    <field name="composition"/>
-                    <newline/>
-                    <group expand="0" string="Group By...">
-                        <filter string="Category" domain="[]" context="{'group_by':'category'}"/>
-                        <filter string="Name" domain="[]" context="{'group_by':'name'}"/>
-                        <filter string="Indication" domain="[]" context="{'group_by':'indications'}"/>
-                        <filter string="Therapeutic effect" domain="[]" context="{'group_by':'therapeutic_action'}"/>
-                        <filter string="Product" domain="[]" context="{'group_by':'product'}"/>
-                        <filter string="Overdosage" domain="[]" context="{'group_by':'overdosage'}"/>
-                        <filter string="Pregnancy Warning" domain="[]" context="{'group_by':'pregnancy_warning'}"/>
-                        <filter string="Extra Info" domain="[]" context="{'group_by':'notes'}"/>
-                        <filter string="Storage Conditions" domain="[]" context="{'group_by':'storage'}"/>
-                        <filter string="Adverse Reactions" domain="[]" context="{'group_by':'adverse_reaction'}"/>
-                        <filter string="Active component" domain="[]" context="{'group_by':'active_component'}"/>
-                        <filter string="Dosage Instructions" domain="[]" context="{'group_by':'dosage'}"/>
-                        <filter string="Pregnancy and Lactancy" domain="[]" context="{'group_by':'pregnancy'}"/>
-                        <filter string="Presentation" domain="[]" context="{'group_by':'presentation'}"/>
-                        <filter string="Composition" domain="[]" context="{'group_by':'composition'}"/>
-                    </group>
-                </search>
-            </field>
-        </record>
+		<record id="view_oemedical_medicament_search" model="ir.ui.view">
+			<field name="name">oemedical.medicament.search</field>
+			<field name="model">oemedical.medicament</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<search string="Oemedical Medicament">
+					<field name="name" />
+					<field name="category" />
+					<field name="indications" />
+					<field name="therapeutic_action" />
+					<field name="product" />
+					<field name="overdosage" />
+					<field name="pregnancy_warning" />
+					<field name="notes" />
+					<field name="storage" />
+					<field name="adverse_reaction" />
+					<field name="active_component" />
+					<field name="dosage" />
+					<field name="pregnancy" />
+					<field name="presentation" />
+					<field name="composition" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Category" domain="[]" context="{'group_by':'category'}" />
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+						<filter string="Indication" domain="[]"
+							context="{'group_by':'indications'}" />
+						<filter string="Therapeutic effect" domain="[]"
+							context="{'group_by':'therapeutic_action'}" />
+						<filter string="Product" domain="[]" context="{'group_by':'product'}" />
+						<filter string="Overdosage" domain="[]"
+							context="{'group_by':'overdosage'}" />
+						<filter string="Pregnancy Warning" domain="[]"
+							context="{'group_by':'pregnancy_warning'}" />
+						<filter string="Extra Info" domain="[]" context="{'group_by':'notes'}" />
+						<filter string="Storage Conditions" domain="[]"
+							context="{'group_by':'storage'}" />
+						<filter string="Adverse Reactions" domain="[]"
+							context="{'group_by':'adverse_reaction'}" />
+						<filter string="Active component" domain="[]"
+							context="{'group_by':'active_component'}" />
+						<filter string="Dosage Instructions" domain="[]"
+							context="{'group_by':'dosage'}" />
+						<filter string="Pregnancy and Lactancy" domain="[]"
+							context="{'group_by':'pregnancy'}" />
+						<filter string="Presentation" domain="[]"
+							context="{'group_by':'presentation'}" />
+						<filter string="Composition" domain="[]"
+							context="{'group_by':'composition'}" />
+					</group>
+				</search>
+			</field>
+		</record>
 
-        <record model="ir.actions.act_window" id="act_open_oemedical_medicament_view">
-            <field name="name"> Medicament</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">oemedical.medicament</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_oemedical_medicament_search"/>
-            <field name="domain">[]</field>
-            <field name="context">{}</field>
-        </record>
+		<record model="ir.actions.act_window" id="act_open_oemedical_medicament_view">
+			<field name="name">Medicament</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">oemedical.medicament</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_oemedical_medicament_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
 
-        <record model="ir.actions.act_window.view" id="act_open_oemedical_medicament_view_form">
-            <field name="act_window_id" ref="act_open_oemedical_medicament_view"/>
-            <field name="sequence" eval="20"/>
-            <field name="view_mode">form</field>
-            <field name="view_id" ref="view_oemedical_medicament_form"/>
-        </record>
+		<record model="ir.actions.act_window.view" id="act_open_oemedical_medicament_view_form">
+			<field name="act_window_id" ref="act_open_oemedical_medicament_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_oemedical_medicament_form" />
+		</record>
 
-        <record model="ir.actions.act_window.view" id="act_open_oemedical_medicament_view_tree">
-            <field name="act_window_id" ref="act_open_oemedical_medicament_view"/>
-            <field name="sequence" eval="10"/>
-            <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_oemedical_medicament_tree"/>
-        </record>
+		<record model="ir.actions.act_window.view" id="act_open_oemedical_medicament_view_tree">
+			<field name="act_window_id" ref="act_open_oemedical_medicament_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_oemedical_medicament_tree" />
+		</record>
 
-    </data>
+	</data>
 </openerp>

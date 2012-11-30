@@ -1,87 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
-    <data>
-        <record id="view_oemedical_physician_tree" model="ir.ui.view">
-            <field name="name">oemedical.physician.tree</field>
-            <field name="model">oemedical.physician</field>
-            <field name="priority" eval="8"/>
-            <field name="arch" type="xml">
-                <tree string="Oemedical Physician">
-                	<field name="name"/>
-                    <field name="info"/>
-                    <field name="code"/>
-                    <field name="health_professional"/>
-                    <field name="specialty"/>
-                    <field name="institution"/>
-                </tree>
-            </field>
-        </record>
+	<data>
+		<record id="view_oemedical_physician_tree" model="ir.ui.view">
+			<field name="name">oemedical.physician.tree</field>
+			<field name="model">oemedical.physician</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<tree string="Oemedical Physician">
+					<field name="name" />
+					<field name="info" />
+					<field name="code" />
+					<field name="health_professional" />
+					<field name="specialty" />
+					<field name="institution" />
+				</tree>
+			</field>
+		</record>
 
-        <record id="view_oemedical_physician_form" model="ir.ui.view">
-            <field name="name">oemedical.physician.form</field>
-            <field name="model">oemedical.physician</field>
-            <field name="priority" eval="8"/>
-            <field name="arch" type="xml">
-                <form string="Oemedical Physician">
-                	<field name="name"/>
-                    <field name="info"/>
-                    <field name="code"/>
-                    <field name="health_professional"/>
-                    <field name="specialty"/>
-                    <field name="institution"/>
-                </form>
-            </field>
-        </record>
+		<record id="view_oemedical_physician_form" model="ir.ui.view">
+			<field name="name">oemedical.physician.form</field>
+			<field name="model">oemedical.physician</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<form string="Oemedical Physician">
+					<field name="name" />
+					<field name="info" />
+					<field name="code" />
+					<field name="health_professional" />
+					<field name="specialty" />
+					<field name="institution" />
+				</form>
+			</field>
+		</record>
 
-        <record id="view_oemedical_physician_search" model="ir.ui.view">
-            <field name="name">oemedical.physician.search</field>
-            <field name="model">oemedical.physician</field>
-            <field name="priority" eval="8"/>
-            <field name="arch" type="xml">
-                <search string="Oemedical Physician">
-                	<field name="name"/>
-                    <field name="info"/>
-                    <field name="code"/>
-                    <field name="health_professional"/>
-                    <field name="specialty"/>
-                    <field name="institution"/>
-                    <newline/>
-                    <group expand="0" string="Group By...">
-                        <filter string="Extra info" domain="[]" context="{'group_by':'info'}"/>
-                        <filter string="Name" domain="[]" context="{'group_by':'name'}"/>
-                        <filter string="ID" domain="[]" context="{'group_by':'code'}"/>
-                        <filter string="Health Professional" domain="[]" context="{'group_by':'health_professional'}"/>
-                        <filter string="Specialty" domain="[]" context="{'group_by':'specialty'}"/>
-                        <filter string="Institution" domain="[]" context="{'group_by':'institution'}"/>
-                    </group>
-                </search>
-            </field>
-        </record>
+		<record id="view_oemedical_physician_search" model="ir.ui.view">
+			<field name="name">oemedical.physician.search</field>
+			<field name="model">oemedical.physician</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<search string="Oemedical Physician">
+					<field name="name" />
+					<field name="info" />
+					<field name="code" />
+					<field name="health_professional" />
+					<field name="specialty" />
+					<field name="institution" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Extra info" domain="[]" context="{'group_by':'info'}" />
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+						<filter string="ID" domain="[]" context="{'group_by':'code'}" />
+						<filter string="Health Professional" domain="[]"
+							context="{'group_by':'health_professional'}" />
+						<filter string="Specialty" domain="[]"
+							context="{'group_by':'specialty'}" />
+						<filter string="Institution" domain="[]"
+							context="{'group_by':'institution'}" />
+					</group>
+				</search>
+			</field>
+		</record>
 
-        <record model="ir.actions.act_window" id="act_open_oemedical_physician_view">
-            <field name="name"> Physician</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">oemedical.physician</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_oemedical_physician_search"/>
-            <field name="domain">[]</field>
-            <field name="context">{}</field>
-        </record>
+		<record model="ir.actions.act_window" id="act_open_oemedical_physician_view">
+			<field name="name">Physician</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">oemedical.physician</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_oemedical_physician_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
 
-        <record model="ir.actions.act_window.view" id="act_open_oemedical_physician_view_form">
-            <field name="act_window_id" ref="act_open_oemedical_physician_view"/>
-            <field name="sequence" eval="20"/>
-            <field name="view_mode">form</field>
-            <field name="view_id" ref="view_oemedical_physician_form"/>
-        </record>
+		<record model="ir.actions.act_window.view" id="act_open_oemedical_physician_view_form">
+			<field name="act_window_id" ref="act_open_oemedical_physician_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_oemedical_physician_form" />
+		</record>
 
-        <record model="ir.actions.act_window.view" id="act_open_oemedical_physician_view_tree">
-            <field name="act_window_id" ref="act_open_oemedical_physician_view"/>
-            <field name="sequence" eval="10"/>
-            <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_oemedical_physician_tree"/>
-        </record>
+		<record model="ir.actions.act_window.view" id="act_open_oemedical_physician_view_tree">
+			<field name="act_window_id" ref="act_open_oemedical_physician_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_oemedical_physician_tree" />
+		</record>
 
-    </data>
+	</data>
 </openerp>

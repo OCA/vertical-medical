@@ -27,8 +27,9 @@ class OeMedicalPatientEvaluation(osv.osv):
     _name = 'oemedical.patient.evaluation'
 
     _columns = {
-        'name': fields.char(size=264, string='Name'),        
-        'information_source': fields.char(size=256, string='Source', required=True),
+        'name': fields.char(size=264, string='Name'),
+        'information_source': fields.char(size=256, string='Source',
+                                          required=True),
         'info_diagnosis': fields.text(
             string='Presumptive Diagnosis: Extra Info'),
         'orientation': fields.boolean(string='Orientation'),
