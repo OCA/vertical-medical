@@ -34,6 +34,8 @@ class OeMedicalFamily(osv.osv):
         'members': fields.one2many('oemedical.family_member', 'family_id',
                                    string='Family Members', ),
     }
-
+    _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'Family Code must be unique!'),
+    ]
 OeMedicalFamily()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

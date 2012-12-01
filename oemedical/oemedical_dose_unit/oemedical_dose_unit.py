@@ -30,6 +30,8 @@ class OeMedicalDoseUnit(osv.osv):
         'name': fields.char(size=256, string='Unit', required=True),
         'desc': fields.char(size=256, string='Description', required=True),
     }
-
+    _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'Unit must be unique!'),
+    ]
 OeMedicalDoseUnit()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

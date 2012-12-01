@@ -31,6 +31,8 @@ class OeMedicalEthnicity(osv.osv):
         'code': fields.char(size=256, string='Code', required=True),
         'name': fields.char(size=256, string='Name', required=True),
     }
-
+    _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
+    ]
 OeMedicalEthnicity()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

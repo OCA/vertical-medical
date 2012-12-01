@@ -33,6 +33,8 @@ class OeMedicalOperationalArea(osv.osv):
                                               string='Operational Sector', ),
         'name': fields.char(size=256, string='Name', required=True),
     }
-
+    _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
+    ]
 OeMedicalOperationalArea()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

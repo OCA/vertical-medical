@@ -33,6 +33,8 @@ class OeMedicalHospitalOr(osv.osv):
         'unit': fields.many2one('oemedical.hospital.unit', string='Unit', ),
         'extra_info': fields.text(string='Extra Info'),
     }
-
+    _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
+    ]
 OeMedicalHospitalOr()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

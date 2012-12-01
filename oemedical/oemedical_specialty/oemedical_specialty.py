@@ -30,6 +30,8 @@ class OeMedicalSpecialty(osv.osv):
         'code': fields.char(size=256, string='Code', required=True),
         'name': fields.char(size=256, string='Specialty', required=True),
     }
-
+    _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
+    ]
 OeMedicalSpecialty()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
