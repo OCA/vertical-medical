@@ -1,76 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
-	<data>
-		<record id="view_product_product_tree" model="ir.ui.view">
-			<field name="name">product.product.tree</field>
-			<field name="model">product.product</field>
-			<field name="priority" eval="8" />
-			<field name="arch" type="xml">
-				<tree string="Product Product">
-					<field name="is_medicament" />
-					<field name="is_bed" />
-					<field name="is_vaccine" />
-				</tree>
-			</field>
-		</record>
+    <data>
+        <record id="view_product_product_form" model="ir.ui.view">
+            <field name="name">product.product.form</field>
+            <field name="model">product.product</field>
+            <field name="priority" eval="8" />
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                    <label for="sale_ok" position="after">
+                            <field name="is_medicament" />
+                            <label for="is_medicament"/>
+                            <field name="is_bed" />
+                            <label for="is_bed"/>
+                            <newline/>
+                            <field name="is_vaccine" />
+                            <label for="is_vaccine"/>
+                    </label>
+            </field>
+        </record>
 
-		<record id="view_product_product_form" model="ir.ui.view">
-			<field name="name">product.product.form</field>
-			<field name="model">product.product</field>
-			<field name="priority" eval="8" />
-			<field name="arch" type="xml">
-				<form string="Product Product">
-					<field name="is_medicament" />
-					<field name="is_bed" />
-					<field name="is_vaccine" />
-				</form>
-			</field>
-		</record>
 
-		<record id="view_product_product_search" model="ir.ui.view">
-			<field name="name">product.product.search</field>
-			<field name="model">product.product</field>
-			<field name="priority" eval="8" />
-			<field name="arch" type="xml">
-				<search string="Product Product">
-					<field name="is_medicament" />
-					<field name="is_bed" />
-					<field name="is_vaccine" />
-					<newline />
-					<group expand="0" string="Group By...">
-						<filter string="Medicament" domain="[]"
-							context="{'group_by':'is_medicament'}" />
-						<filter string="Bed" domain="[]" context="{'group_by':'is_bed'}" />
-						<filter string="Vaccine" domain="[]" context="{'group_by':'is_vaccine'}" />
-					</group>
-				</search>
-			</field>
-		</record>
-
-		<record model="ir.actions.act_window" id="act_open_product_product_view">
-			<field name="name">Product Product</field>
-			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">product.product</field>
-			<field name="view_type">form</field>
-			<field name="view_mode">tree,form</field>
-			<field name="search_view_id" ref="view_product_product_search" />
-			<field name="domain">[]</field>
-			<field name="context">{}</field>
-		</record>
-
-		<record model="ir.actions.act_window.view" id="act_open_product_product_view_form">
-			<field name="act_window_id" ref="act_open_product_product_view" />
-			<field name="sequence" eval="20" />
-			<field name="view_mode">form</field>
-			<field name="view_id" ref="view_product_product_form" />
-		</record>
-
-		<record model="ir.actions.act_window.view" id="act_open_product_product_view_tree">
-			<field name="act_window_id" ref="act_open_product_product_view" />
-			<field name="sequence" eval="10" />
-			<field name="view_mode">tree</field>
-			<field name="view_id" ref="view_product_product_tree" />
-		</record>
-
-	</data>
+    </data>
 </openerp>

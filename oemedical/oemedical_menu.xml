@@ -15,8 +15,6 @@
 		<menuitem id="oemedical_signs_and_symptoms" name=" Signs And Symptoms"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_signs_and_symptoms_view" />
-		<menuitem id="product_product" name="Product Product" parent="oemedical_root_sub"
-			sequence="10" action="act_open_product_product_view" />
 		<menuitem id="oemedical_physician" name=" Physician" parent="oemedical_root_sub"
 			sequence="10" action="act_open_oemedical_physician_view" />
 		<menuitem id="oemedical_directions" name=" Directions"
@@ -24,8 +22,6 @@
 			action="act_open_oemedical_directions_view" />
 		<menuitem id="oemedical_insurance" name=" Insurance" parent="oemedical_root_sub"
 			sequence="10" action="act_open_oemedical_insurance_view" />
-		<menuitem id="res_partner" name="Res Partner" parent="oemedical_root_sub"
-			sequence="10" action="act_open_res_partner_view" />
 		<menuitem id="oemedical_pathology" name=" Pathology" parent="oemedical_root_sub"
 			sequence="10" action="act_open_oemedical_pathology_view" />
 		<menuitem id="oemedical_operational_area" name=" Operational Area"
