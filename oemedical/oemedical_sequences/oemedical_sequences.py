@@ -28,12 +28,10 @@ class OeMedicalSequences(osv.osv):
 
     _columns = {
         'appointment_sequence': fields.many2one('ir.sequence',
-            string='Appointment Sequence',
-        ),
+                                                string='Appointment Sequence'),
         'prescription_sequence': fields.many2one(
             'ir.sequence', string='Prescription Sequence', ),
-        'patient_sequence': fields.many2one('ir.sequence',
-            string='Patient Sequence', ),
+        'patient_sequence': fields.many2one('ir.sequence', 'Patient Sequence'),
     }
 
 OeMedicalSequences()

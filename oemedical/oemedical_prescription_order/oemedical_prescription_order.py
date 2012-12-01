@@ -31,15 +31,15 @@ class OeMedicalPrescriptionOrder(osv.osv):
         'pregnancy_warning': fields.boolean(string='Pregancy Warning'),
         'notes': fields.text(string='Prescription Notes'),
         'prescription_line': fields.one2many('oemedical.prescription.line',
-            'prescription_order_id',
-            string='Prescription line', ),
+                                             'prescription_order_id',
+                                             string='Prescription line', ),
         'pharmacy': fields.many2one('res.partner', string='Pharmacy', ),
         'prescription_date': fields.datetime(string='Prescription Date'),
         'prescription_warning_ack': fields.boolean(
             string='Prescription verified'),
         'user_id': fields.many2one('res.users', string='Prescribing Doctor', ),
         'prescription_id': fields.char(size=256, string='Prescription ID',
-            required=True),
+                                       required=True),
     }
 
 OeMedicalPrescriptionOrder()

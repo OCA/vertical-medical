@@ -27,10 +27,9 @@ class OeMedicalDiagnosticHypothesis(osv.osv):
     _name = 'oemedical.diagnostic_hypothesis'
 
     _columns = {
-        'pathology_id': fields.many2one('oemedical.pathology',
-            string='Pathology', ),
+        'pathology_id': fields.many2one('oemedical.pathology', 'Pathology', ),
         'evaluation_id': fields.many2one('oemedical.patient.evaluation',
-            string='Evaluation', ),
+                                         'Evaluation', ),
         'comments': fields.char(size=256, string='Comments', required=True),
     }
 

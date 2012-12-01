@@ -28,10 +28,10 @@ class OeMedicalMedicamentCategory(osv.osv):
 
     _columns = {
         'childs': fields.one2many('oemedical.medicament.category',
-            'parent', string='Children', ),
+                                  'parent', string='Children', ),
         'name': fields.char(size=256, string='Name', required=True),
         'parent': fields.many2one('oemedical.medicament.category',
-            string='Parent', ),
+                                  string='Parent', ),
     }
 
 OeMedicalMedicamentCategory()

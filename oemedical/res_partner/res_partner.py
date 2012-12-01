@@ -32,7 +32,7 @@ class ResPartner(osv.osv):
         #                                       string='Insurance Plans', ),
         'is_insurance_company': fields.boolean(string='Insurance Company'),
         'relationship': fields.char(size=256, string='Relationship',
-            required=True),
+                                    required=True),
         'insurance_company_type': fields.selection([
             ('state', 'State'),
             ('labour_union', 'Labour Union / Syndical'),
@@ -43,8 +43,7 @@ class ResPartner(osv.osv):
         'is_doctor': fields.boolean(string='Health Prof'),
         'is_patient': fields.boolean(string='Patient'),
         'alias': fields.char(size=256, string='Alias', required=True),
-        'internal_user': fields.many2one('res.users',
-            string='Internal User', ),
+        'internal_user': fields.many2one('res.users', string='Internal User'),
         'activation_date': fields.date(string='Activation date'),
         'lastname': fields.char(size=256, string='Last Name', required=True),
         'is_work': fields.boolean(string='Work'),

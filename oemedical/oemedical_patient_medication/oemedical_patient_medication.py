@@ -35,10 +35,10 @@ class OeMedicalPatientMedication(osv.osv):
         'is_active': fields.boolean(string='Active'),
         'course_completed': fields.boolean(string='Course Completed'),
         'template': fields.many2one('oemedical.medication.template',
-            string='Medication Template', ),
+                                    string='Medication Template', ),
         'discontinued_reason': fields.char(size=256,
-            string='Reason for discontinuation',
-            required=True),
+                                           string='Reason for discontinuation',
+                                           required=True),
         'discontinued': fields.boolean(string='Discontinued'),
     }
 

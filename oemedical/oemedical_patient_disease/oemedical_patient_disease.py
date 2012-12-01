@@ -28,11 +28,11 @@ class OeMedicalPatientDisease(osv.osv):
 
     _columns = {
         'treatment_description': fields.char(size=256,
-            string='Treatment Description',
-            required=True),
+                                             string='Treatment Description',
+                                             required=True),
         'healed_date': fields.date(string='Healed'),
         'pathology': fields.many2one('oemedical.pathology',
-            string='Disease', ),
+                                     string='Disease', ),
         'disease_severity': fields.selection([
             ('1_mi', 'Mild'),
             ('2_mo', 'Moderate'),
@@ -68,7 +68,7 @@ class OeMedicalPatientDisease(osv.osv):
         'age': fields.integer(string='Age when diagnosed'),
         'date_start_treatment': fields.date(string='Start'),
         'short_comment': fields.char(size=256, string='Remarks',
-            required=True),
+                                     required=True),
     }
 
 OeMedicalPatientDisease()

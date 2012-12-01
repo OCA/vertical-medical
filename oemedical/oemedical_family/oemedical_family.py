@@ -29,10 +29,10 @@ class OeMedicalFamily(osv.osv):
     _columns = {
         'info': fields.text(string='Extra Information'),
         'operational_sector': fields.many2one('oemedical.operational_sector',
-            string='Operational Sector', ),
+                                              string='Operational Sector', ),
         'name': fields.char(size=256, string='Family', required=True),
         'members': fields.one2many('oemedical.family_member', 'family_id',
-            string='Family Members', ),
+                                   string='Family Members', ),
     }
 
 OeMedicalFamily()

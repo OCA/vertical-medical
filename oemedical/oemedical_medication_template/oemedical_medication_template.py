@@ -31,7 +31,7 @@ class OeMedicalMedicationTemplate(osv.osv):
         'start_treatment': fields.datetime(string='Start'),
         'form': fields.many2one('oemedical.drug.form', string='Form', ),
         'route': fields.many2one('oemedical.drug.route',
-            string='Administration Route', ),
+                                 string='Administration Route', ),
         'duration_period': fields.selection([
             ('minutes', 'minutes'),
             ('hours', 'hours'),
@@ -54,16 +54,16 @@ class OeMedicalMedicationTemplate(osv.osv):
         'frequency_prn': fields.boolean(string='PRN'),
         'frequency': fields.integer(string='Frequency'),
         'indication': fields.many2one('oemedical.pathology',
-            string='Indication', ),
+                                      string='Indication', ),
         'medicament': fields.many2one('oemedical.medicament',
-            string='Medicament', ),
+                                      string='Medicament', ),
         'common_dosage': fields.many2one('oemedical.medication.dosage',
-            string='Frequency', ),
+                                         string='Frequency', ),
         'admin_times': fields.char(size=256, string='Admin hours',
-            required=True),
+                                   required=True),
         'end_treatment': fields.datetime(string='End'),
         'dose_unit': fields.many2one('oemedical.dose.unit',
-            string='dose unit', ),
+                                     string='dose unit', ),
     }
 
 OeMedicalMedicationTemplate()

@@ -110,7 +110,8 @@ OeMedical at a glance:
         'oemedical_prescription_order/oemedical_prescription_order_view.xml',
         'oemedical_medicament_category/oemedical_medicament_category_view.xml',
         'oemedical_insurance_plan/oemedical_insurance_plan_view.xml',
-        'oemedical_diagnostic_hypothesis/oemedical_diagnostic_hypothesis_view.xml',
+        'oemedical_diagnostic_hypothesis/'
+        'oemedical_diagnostic_hypothesis_view.xml',
         'oemedical_procedure/oemedical_procedure_view.xml',
         'oemedical_medication_template/oemedical_medication_template_view.xml',
         'oemedical_vaccination/oemedical_vaccination_view.xml',
@@ -132,7 +133,8 @@ OeMedical at a glance:
         'oemedical_family/oemedical_family_view.xml',
         'oemedical_hospital_bed/oemedical_hospital_bed_view.xml',
         'oemedical_occupation/oemedical_occupation_view.xml',
-        'oemedical_disease_group_members/oemedical_disease_group_members_view.xml',
+        'oemedical_disease_group_members/'
+        'oemedical_disease_group_members_view.xml',
         'oemedical_medicament/oemedical_medicament_view.xml',
         'oemedical_pathology_group/oemedical_pathology_group_view.xml',
         'security/ir.model.access.csv',

@@ -31,9 +31,9 @@ class OeMedicalPhysician(osv.osv):
         'info': fields.text(string='Extra info'),
         'code': fields.char(size=256, string='ID', required=True),
         'health_professional': fields.many2one('res.partner',
-            string='Health Professional', ),
+                                               string='Health Professional', ),
         'specialty': fields.many2one('oemedical.specialty',
-            string='Specialty', ),
+                                     string='Specialty', ),
         'institution': fields.many2one('res.partner', string='Institution', ),
     }
 

@@ -38,7 +38,7 @@ class OeMedicalHospitalBed(osv.osv):
             ('clinitron', 'Clinitron'),
         ], string='Bed Type'),
         'telephone_number': fields.char(size=256, string='Telephone Number',
-            required=True),
+                                        required=True),
         'state': fields.selection([
             ('free', 'Free'),
             ('reserved', 'Reserved'),

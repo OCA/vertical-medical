@@ -28,15 +28,15 @@ class OeMedicalHospitalWard(osv.osv):
 
     _columns = {
         'building': fields.many2one('oemedical.hospital.building',
-            string='Building', ),
+                                    string='Building', ),
         'ac': fields.boolean(string='Air Conditioning'),
         'name': fields.char(size=256, string='Name', required=True),
         'floor': fields.integer(string='Floor Number'),
         'tv': fields.boolean(string='Television'),
         'gender': fields.selection([('men', 'Men Ward'),
                                     ('women', 'Women Ward'),
-                                    ('unisex', 'Unisex'),
-        ], string='Gender'),
+                                    ('unisex', 'Unisex')],
+                                   string='Gender'),
         'unit': fields.many2one('oemedical.hospital.unit', string='Unit', ),
         'private_bathroom': fields.boolean(string='Private Bathroom'),
         'telephone': fields.boolean(string='Telephone access'),
