@@ -93,6 +93,7 @@ OeMedical at a glance:
     "licence": "AGPL v3",
     "demo_xml": [],
     "update_xml": [
+        'sequence/oemedical_sequence.xml',
         'oemedical_secondary_condition/oemedical_secondary_condition_view.xml',
         'oemedical_pathology_category/oemedical_pathology_category_view.xml',
         'oemedical_signs_and_symptoms/oemedical_signs_and_symptoms_view.xml',
@@ -106,7 +107,7 @@ OeMedical at a glance:
         'oemedical_ethnicity/oemedical_ethnicity_view.xml',
         'oemedical_dose_unit/oemedical_dose_unit_view.xml',
         'oemedical_operational_sector/oemedical_operational_sector_view.xml',
-        'oemedical_sequences/oemedical_sequences_view.xml',
+#        'oemedical_sequences/oemedical_sequences_view.xml',
         'oemedical_prescription_order/oemedical_prescription_order_view.xml',
         'oemedical_medicament_category/oemedical_medicament_category_view.xml',
         'oemedical_insurance_plan/oemedical_insurance_plan_view.xml',
