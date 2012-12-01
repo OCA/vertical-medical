@@ -73,6 +73,11 @@ class OeMedicalPatient(osv.osv):
                                            required=True),
         'deceased': fields.boolean(string='Deceased'),
     }
+    
+    _defaults = {
+         'ref': lambda obj, cr, uid, context: 
+                obj.pool.get('ir.sequence').get(cr, uid, 'oemedical.patient'),
+                 }
 
 OeMedicalPatient()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

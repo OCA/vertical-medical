@@ -50,6 +50,11 @@ class OeMedicalAppointment(osv.osv):
         'speciality': fields.many2one('oemedical.specialty',
                                       string='Specialty', ),
     }
+    
+    _defaults = {
+         'name': lambda obj, cr, uid, context: 
+            obj.pool.get('ir.sequence').get(cr, uid, 'oemedical.appointment'),
+                 }
 
 OeMedicalAppointment()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

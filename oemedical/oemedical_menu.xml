@@ -38,8 +38,6 @@
 		<menuitem id="oemedical_operational_sector" name=" Operational Sector"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_operational_sector_view" />
-		<menuitem id="oemedical_sequences" name=" Sequences" parent="oemedical_root_sub"
-			sequence="10" action="act_open_oemedical_sequences_view" />
 		<menuitem id="oemedical_prescription_order" name=" Prescription Order"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_prescription_order_view" />

@@ -40,7 +40,14 @@ class OeMedicalPrescriptionOrder(osv.osv):
         'user_id': fields.many2one('res.users', string='Prescribing Doctor', ),
         'prescription_id': fields.char(size=256, string='Prescription ID',
                                        required=True),
+        'name': fields.char(size=256, string='Appointment ID', required=True),
     }
+    
+    _defaults = {
+         'name': lambda obj, cr, uid, context: 
+            obj.pool.get('ir.sequence').get(cr, uid, 
+                                            'oemedical.prescription.order'),
+                 }
 
 OeMedicalPrescriptionOrder()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
