@@ -39,10 +39,12 @@
     'author': "OeMEdical Team",
     'category': 'Generic Modules/Others',
     'depends': ['base', 'sale', 'purchase', 'account', 'product'],
+    'application': True,
     'description': """
 
 About OeMedical
--------------
+---------------
+
 OeMedical is a multi-user, highly scalable, centralized Electronic
 Medical Record (EMR) and Hospital Information System for openERP.
 
@@ -89,10 +91,8 @@ OeMedical at a glance:
 
 """,
     "website": "http://launchpad.net/oemedical",
-    "init_xml": [],
     "licence": "AGPL v3",
-    "demo_xml": [],
-    "update_xml": [
+    "data": [
         'sequence/oemedical_sequence.xml',
         'oemedical_secondary_condition/oemedical_secondary_condition_view.xml',
         'oemedical_pathology_category/oemedical_pathology_category_view.xml',
@@ -152,6 +152,9 @@ OeMedical at a glance:
         'data/medicament_form.xml',
         'data/medication_frequencies.xml',
     ],
+    "demo": [
+
+    ],
     'test':[
             'test/physician.yml',
             'test/patient.yml',
@@ -159,7 +162,16 @@ OeMedical at a glance:
             'test/insurance_plan.yml',
             'test/insurance.yml',
             'test/physician_speciality.yml'
-            ],
+    ],
+    'css': [
+
+    ],
+    'js': [
+
+    ],
+    'qweb': [
+
+    ], 
     "active": False
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
