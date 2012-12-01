@@ -30,7 +30,7 @@ class OeMedicalPatient(osv.osv):
     }
     _columns = {
         'partner_id': fields.many2one(
-            'Related Partner', 'res.partner', required=True,
+            'res.partner','Related Partner', required=True,
             ondelete='cascade', help='Partner-related data of the patient'),
         'family': fields.many2one('oemedical.family', string='Family', ),
         'photo': fields.binary(string='Picture'),
