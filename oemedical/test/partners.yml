@@ -1,0 +1,26 @@
+-
+  Create New Insurance Company
+-
+  !record {model: res.partner, id: ins_com_lombard}:
+    name: Lombard Insurance Group
+    is_company: True
+    street: Ground Floor, Building C
+    street2: Sunnyside Office Park,2 Carse O'Gowrie Road
+    city: Parktown
+    country_id: base.us
+    phone: +325-5689871
+    email: info@lombard.com
+
+
+-
+  Create New Hospital Information
+-
+  !record {model: res.partner, id: ins_hos_marco}:
+    name: Marcopolo Institute of Health
+    is_company: True
+    street: 3rd Floor Sunclare
+    street2: 21 Dreyer Street
+    city: Claremont
+    country_id: base.us
+    phone: +325-6325842
+    email: info@marcopolo.com
