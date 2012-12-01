@@ -27,8 +27,10 @@ class OeMedicalPrescriptionOrder(osv.osv):
     _name = 'oemedical.prescription.order'
 
     _columns = {
-        'patient': fields.many2one('oemedical.patient', string='Patient', ),
-        'pregnancy_warning': fields.boolean(string='Pregancy Warning'),
+        'patient': fields.many2one('oemedical.patient', string='Patient',
+                                   required=True),
+        'pregnancy_warning': fields.boolean(string='Pregancy Warning',
+                                            readonly=True),
         'notes': fields.text(string='Prescription Notes'),
         'prescription_line': fields.one2many('oemedical.prescription.line',
                                              'prescription_order_id',
@@ -37,7 +39,8 @@ class OeMedicalPrescriptionOrder(osv.osv):
         'prescription_date': fields.datetime(string='Prescription Date'),
         'prescription_warning_ack': fields.boolean(
             string='Prescription verified'),
-        'user_id': fields.many2one('res.users', string='Prescribing Doctor', ),
+        'user_id': fields.many2one('res.users', string='Prescribing Doctor',
+                                   required=True),
         'prescription_id': fields.char(size=256, string='Prescription ID',
                                        required=True),
         'name': fields.char(size=256, string='Appointment ID', required=True),

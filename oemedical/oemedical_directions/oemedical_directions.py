@@ -28,10 +28,10 @@ class OeMedicalDirections(osv.osv):
 
     _columns = {
         'procedure_id': fields.many2one('oemedical.procedure',
-                                        string='Procedure', ),
+                                        string='Procedure',required=True),
         'evaluation_id': fields.many2one('oemedical.patient.evaluation',
-                                         string='Evaluation', ),
-        'comments': fields.char(size=256, string='Comments', required=True),
+                                         string='Evaluation',readonly=True ),
+        'comments': fields.char(size=256, string='Comments'),
     }
 
 OeMedicalDirections()

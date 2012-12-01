@@ -28,15 +28,15 @@ class OeMedicalPathologyCategory(osv.osv):
 
     _columns = {
         'childs': fields.one2many('oemedical.pathology.category',
-                                  'parent',
+                                  'parent_id',
                                   string='Children Category', ),
         'name': fields.char(size=256, string='Category Name', required=True),
-        'parent': fields.many2one('oemedical.pathology.category',
-                                  string='Parent Category', ),
+        'parent_id': fields.many2one('oemedical.pathology.category',
+                                  string='Parent Category', select=True),
     }
     _constraints = [
         (osv.osv._check_recursion, 'Error ! You cannot create recursive \n' 
-        'Category.', ['parent'])
+        'Category.', ['parent_id'])
     ]
 OeMedicalPathologyCategory()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

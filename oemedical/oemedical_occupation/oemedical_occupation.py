@@ -27,8 +27,9 @@ class OeMedicalOccupation(osv.osv):
     _name = 'oemedical.occupation'
 
     _columns = {
-        'code': fields.char(size=256, string='Code', required=True),
-        'name': fields.char(size=256, string='Name', required=True),
+        'code': fields.char(size=256, string='Code'),
+        'name': fields.char(size=256, string='Name', required=True ,
+                            translate=True),
     }
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),

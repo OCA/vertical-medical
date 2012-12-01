@@ -28,8 +28,7 @@ class OeMedicalPatientDisease(osv.osv):
 
     _columns = {
         'treatment_description': fields.char(size=256,
-                                             string='Treatment Description',
-                                             required=True),
+                                             string='Treatment Description'),
         'healed_date': fields.date(string='Healed'),
         'pathology': fields.many2one('oemedical.pathology',
                                      string='Disease', ),
@@ -37,7 +36,7 @@ class OeMedicalPatientDisease(osv.osv):
             ('1_mi', 'Mild'),
             ('2_mo', 'Moderate'),
             ('3_sv', 'Severe'),
-        ], string='Severity'),
+        ], string='Severity',select=True, sort=False),
         'is_allergy': fields.boolean(string='Allergic Disease'),
         'doctor': fields.many2one('oemedical.physician', string='Physician', ),
         'pregnancy_warning': fields.boolean(string='Pregnancy warning'),
@@ -53,7 +52,7 @@ class OeMedicalPatientDisease(osv.osv):
             ('h', 'healed'),
             ('i', 'improving'),
             ('w', 'worsening'),
-        ], string='Status of the disease'),
+        ], string='Status of the disease',select=True, sort=False),
         'is_active': fields.boolean(string='Active disease'),
         'date_stop_treatment': fields.date(string='End'),
         'pcs_code': fields.many2one('oemedical.procedure', string='Code', ),
@@ -63,12 +62,11 @@ class OeMedicalPatientDisease(osv.osv):
             ('fa', 'Food Allergy'),
             ('ma', 'Misc Allergy'),
             ('mc', 'Misc Contraindication'),
-        ], string='Allergy type'),
+        ], string='Allergy type',select=True, sort=False),
         'patient_id': fields.many2one('oemedical.patient', string='Patient', ),
         'age': fields.integer(string='Age when diagnosed'),
         'date_start_treatment': fields.date(string='Start'),
-        'short_comment': fields.char(size=256, string='Remarks',
-                                     required=True),
+        'short_comment': fields.char(size=256, string='Remarks'),
     }
 
 OeMedicalPatientDisease()

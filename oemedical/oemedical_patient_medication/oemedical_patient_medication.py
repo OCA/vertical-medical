@@ -28,7 +28,8 @@ class OeMedicalPatientMedication(osv.osv):
 
     _columns = {
         'patient': fields.many2one('oemedical.patient', string='Patient', ),
-        'name': fields.many2one('oemedical.patient', string='Patient', ),
+        'name': fields.many2one('oemedical.patient', string='Patient',
+                                readonly=True ),
         'doctor': fields.many2one('oemedical.physician', string='Physician', ),
         'adverse_reaction': fields.text(string='Adverse Reactions'),
         'notes': fields.text(string='Extra Info'),
@@ -37,8 +38,7 @@ class OeMedicalPatientMedication(osv.osv):
         'template': fields.many2one('oemedical.medication.template',
                                     string='Medication Template', ),
         'discontinued_reason': fields.char(size=256,
-                                           string='Reason for discontinuation',
-                                           required=True),
+                                           string='Reason for discontinuation'),
         'discontinued': fields.boolean(string='Discontinued'),
     }
 

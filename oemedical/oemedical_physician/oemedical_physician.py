@@ -29,11 +29,11 @@ class OeMedicalPhysician(osv.osv):
     _columns = {
         'name': fields.char(size=256, string='Name'),
         'info': fields.text(string='Extra info'),
-        'code': fields.char(size=256, string='ID', required=True),
+        'code': fields.char(size=256, string='ID'),
         'health_professional': fields.many2one('res.partner',
                                                string='Health Professional', ),
         'specialty': fields.many2one('oemedical.specialty',
-                                     string='Specialty', ),
+                                     string='Specialty',required=True),
         'institution': fields.many2one('res.partner', string='Institution', ),
     }
 

@@ -28,10 +28,10 @@ class OeMedicalSecondaryCondition(osv.osv):
 
     _columns = {
         'pathology_id': fields.many2one('oemedical.pathology',
-                                        string='Pathology', ),
+                                        string='Pathology', required=True),
         'evaluation_id': fields.many2one('oemedical.patient.evaluation',
-                                         string='Evaluation', ),
-        'comments': fields.char(size=256, string='Comments', required=True),
+                                         string='Evaluation', readonly=True),
+        'comments': fields.char(size=256, string='Comments'),
     }
 
 OeMedicalSecondaryCondition()

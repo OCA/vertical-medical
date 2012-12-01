@@ -27,9 +27,10 @@ class OeMedicalInsurancePlan(osv.osv):
     _name = 'oemedical.insurance.plan'
 
     _columns = {
-        'name': fields.char(string='Name', size=264),
+        'name': fields.char(string='Name', size=264,required=True),
         'is_default': fields.boolean(string='Default plan'),
-        'company': fields.many2one('res.partner', string='Insurance Company'),
+        'company': fields.many2one('res.partner', string='Insurance Company',
+                                   required=True),
         'notes': fields.text(string='Extra info'),
         'plan': fields.many2one('product.product', string='Plan'),
     }

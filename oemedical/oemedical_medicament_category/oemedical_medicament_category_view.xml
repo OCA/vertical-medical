@@ -9,7 +9,7 @@
 				<tree string="Oemedical Medicament Category">
 					<field name="childs" />
 					<field name="name" />
-					<field name="parent" />
+					<field name="parent_id" />
 				</tree>
 			</field>
 		</record>
@@ -22,7 +22,7 @@
 				<form string="Oemedical Medicament Category">
 					<field name="childs" />
 					<field name="name" />
-					<field name="parent" />
+					<field name="parent_id" />
 				</form>
 			</field>
 		</record>
@@ -34,11 +34,11 @@
 			<field name="arch" type="xml">
 				<search string="Oemedical Medicament Category">
 					<field name="name" />
-					<field name="parent" />
+					<field name="parent_id" />
 					<newline />
 					<group expand="0" string="Group By...">
 						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
-						<filter string="Parent" domain="[]" context="{'group_by':'parent'}" />
+						<filter string="Parent" domain="[]" context="{'group_by':'parent_id'}" />
 					</group>
 				</search>
 			</field>

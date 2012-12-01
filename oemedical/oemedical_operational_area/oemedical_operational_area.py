@@ -30,7 +30,8 @@ class OeMedicalOperationalArea(osv.osv):
         'info': fields.text(string='Extra Information'),
         'operational_sector': fields.one2many('oemedical.operational_sector',
                                               'operational_area_id',
-                                              string='Operational Sector', ),
+                                              string='Operational Sector',
+                                              readonly=True),
         'name': fields.char(size=256, string='Name', required=True),
     }
     _sql_constraints = [

@@ -28,8 +28,7 @@ class OeMedicalPatientEvaluation(osv.osv):
 
     _columns = {
         'name': fields.char(size=264, string='Name'),
-        'information_source': fields.char(size=256, string='Source',
-                                          required=True),
+        'information_source': fields.char(size=256, string='Source'),
         'info_diagnosis': fields.text(
             string='Presumptive Diagnosis: Extra Info'),
         'orientation': fields.boolean(string='Orientation'),
@@ -53,9 +52,10 @@ class OeMedicalPatientEvaluation(osv.osv):
         'present_illness': fields.text(string='Present Illness'),
         'evaluation_date': fields.many2one('oemedical.appointment',
                                            string='Appointment', ),
-        'evaluation_start': fields.datetime(string='Start'),
+        'evaluation_start': fields.datetime(string='Start', required=True),
         'loc': fields.integer(string='Level of Consciousness'),
-        'user_id': fields.many2one('res.users', string='Last Changed by', ),
+        'user_id': fields.many2one('res.users', string='Last Changed by',
+                                   readonly=True),
         'mood': fields.selection([
             ('n', 'Normal'),
             ('s', 'Sad'),
@@ -66,7 +66,8 @@ class OeMedicalPatientEvaluation(osv.osv):
             ('e', 'Euphoria'),
             ('fl', 'Flat'),
         ], string='Mood'),
-        'doctor': fields.many2one('oemedical.physician', string='Doctor', ),
+        'doctor': fields.many2one('oemedical.physician', string='Doctor',
+                                  readonly=True),
         'knowledge_current_events': fields.boolean(
             string='Knowledge of Current Events'),
         'next_evaluation': fields.many2one('oemedical.appointment',
@@ -122,7 +123,7 @@ class OeMedicalPatientEvaluation(osv.osv):
         'secondary_conditions': fields.one2many(
             'oemedical.secondary_condition', 'evaluation_id',
             string='Secondary Conditions', ),
-        'evaluation_endtime': fields.datetime(string='End'),
+        'evaluation_endtime': fields.datetime(string='End', required=True),
         'notes': fields.text(string='Notes'),
         'calculation_ability': fields.boolean(string='Calculation Ability'),
         'bpm': fields.integer(string='Heart Rate'),

@@ -28,8 +28,9 @@ class OeMedicalMedicationDosage(osv.osv):
 
     _columns = {
         'abbreviation': fields.char(size=256, string='Abbreviation'),
-        'code': fields.char(size=8, string='Code', required=True),
-        'name': fields.char(size=256, string='Frequency', required=True),
+        'code': fields.char(size=8, string='Code'),
+        'name': fields.char(size=256, string='Frequency', required=True,
+                            translate=True),
     }
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),

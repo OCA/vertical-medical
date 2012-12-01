@@ -27,7 +27,7 @@ class OeMedicalHospitalBed(osv.osv):
     _name = 'oemedical.hospital.bed'
 
     _columns = {
-        'name': fields.many2one('product.product', string='Bed', ),
+        'name': fields.many2one('product.product', string='Bed',required=True),
         'bed_type': fields.selection([
             ('gatch', 'Gatch Bed'),
             ('electric', 'Electric'),
@@ -36,15 +36,14 @@ class OeMedicalHospitalBed(osv.osv):
             ('low_air_loss', 'Low Air Loss'),
             ('circo_electric', 'Circo Electric'),
             ('clinitron', 'Clinitron'),
-        ], string='Bed Type'),
-        'telephone_number': fields.char(size=256, string='Telephone Number',
-                                        required=True),
+        ], string='Bed Type',required=True),
+        'telephone_number': fields.char(size=256, string='Telephone Number'),
         'state': fields.selection([
             ('free', 'Free'),
             ('reserved', 'Reserved'),
             ('occupied', 'Occupied'),
             ('na', 'Not available'),
-        ], string='Status'),
+        ], string='Status',readonly=True),
         'ward': fields.many2one('oemedical.hospital.ward', string='Ward', ),
         'extra_info': fields.text(string='Extra Info'),
     }

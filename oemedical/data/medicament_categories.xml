@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
-    <data noupdate="1">
+    <data noupdate="0">
 
         <record model="oemedical.medicament.category" id="medicament">
             <field name="name">Medicaments</field>
@@ -8,687 +8,687 @@
 
         <record model="oemedical.medicament.category" id="em">
             <field name="name">WHO essential Medicines</field>
-            <field name="parent" ref="medicament"/>
+            <field name="parent_id" ref="medicament"/>
         </record>
         <record model="oemedical.medicament.category" id="em_1">
             <field name="name">ANAESTHETICS</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_1_1">
             <field name="name">General anaesthetics and oxygen</field>
-            <field name="parent" ref="em_1"/>
+            <field name="parent_id" ref="em_1"/>
         </record>
         <record model="oemedical.medicament.category" id="em_1_1_1">
             <field name="name">Inhalational medicines</field>
-            <field name="parent" ref="em_1_1"/>
+            <field name="parent_id" ref="em_1_1"/>
         </record>
         <record model="oemedical.medicament.category" id="em_1_1_2">
             <field name="name">Injectable medicines</field>
-            <field name="parent" ref="em_1_1"/>
+            <field name="parent_id" ref="em_1_1"/>
         </record>
         <record model="oemedical.medicament.category" id="em_1_2">
             <field name="name">Local anaesthetics</field>
-            <field name="parent" ref="em_1"/>
+            <field name="parent_id" ref="em_1"/>
         </record>
         <record model="oemedical.medicament.category" id="em_1_2c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_1_2"/>
+            <field name="parent_id" ref="em_1_2"/>
         </record>
         <record model="oemedical.medicament.category" id="em_1_3">
             <field name="name">Preoperative medication and sedation for short-term procedures</field>
-            <field name="parent" ref="em_1"/>
+            <field name="parent_id" ref="em_1"/>
         </record>
         <record model="oemedical.medicament.category" id="em_2">
             <field name="name">ANALGESICS, ANTIPYRETICS, NON-STEROIDAL ANTI-INFLAMMATORY MEDICINES (NSAIMs), MEDICINES USED TO TREAT GOUT AND DISEASE MODIFYING AGENTS IN RHEUMATOID DISORDERS (DMARDs)</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_2_1">
             <field name="name">Non-opioids and non-steroidal anti-inflammatory medicines (NSAIMs)</field>
-            <field name="parent" ref="em_2"/>
+            <field name="parent_id" ref="em_2"/>
         </record>
         <record model="oemedical.medicament.category" id="em_2_1c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_2_1"/>
+            <field name="parent_id" ref="em_2_1"/>
         </record>
         <record model="oemedical.medicament.category" id="em_2_2">
             <field name="name">Opioid analgesics</field>
-            <field name="parent" ref="em_2"/>
+            <field name="parent_id" ref="em_2"/>
         </record>
         <record model="oemedical.medicament.category" id="em_2_3">
             <field name="name">Medicines used to treat gout</field>
-            <field name="parent" ref="em_2"/>
+            <field name="parent_id" ref="em_2"/>
         </record>
         <record model="oemedical.medicament.category" id="em_2_4">
             <field name="name">Disease modifying agents used in rheumatoid disorders (DMARDs)</field>
-            <field name="parent" ref="em_2"/>
+            <field name="parent_id" ref="em_2"/>
         </record>
         <record model="oemedical.medicament.category" id="em_3">
             <field name="name">ANTIALLERGICS AND MEDICINES USED IN ANAPHYLAXIS</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_4">
             <field name="name">ANTIDOTES AND OTHER SUBSTANCES USED IN POISONINGS</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_4_1">
             <field name="name">Non-specific</field>
-            <field name="parent" ref="em_4"/>
+            <field name="parent_id" ref="em_4"/>
         </record>
         <record model="oemedical.medicament.category" id="em_4_2">
             <field name="name">Specific</field>
-            <field name="parent" ref="em_4"/>
+            <field name="parent_id" ref="em_4"/>
         </record>
         <record model="oemedical.medicament.category" id="em_4_2c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_4_2"/>
+            <field name="parent_id" ref="em_4_2"/>
         </record>
         <record model="oemedical.medicament.category" id="em_5">
             <field name="name">ANTICONVULSANTS/ANTIEPILEPTICS</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_5c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_5"/>
+            <field name="parent_id" ref="em_5"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6">
             <field name="name">ANTI-INFECTIVE MEDICINES</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_1">
             <field name="name">Anthelminthics</field>
-            <field name="parent" ref="em_6"/>
+            <field name="parent_id" ref="em_6"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_1_1">
             <field name="name">Intestinal anthelminthics</field>
-            <field name="parent" ref="em_6_1"/>
+            <field name="parent_id" ref="em_6_1"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_1_2">
             <field name="name">Antifilarials</field>
-            <field name="parent" ref="em_6_1"/>
+            <field name="parent_id" ref="em_6_1"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_1_3">
             <field name="name">Antischistosomals and other antitrematode medicines</field>
-            <field name="parent" ref="em_6_1"/>
+            <field name="parent_id" ref="em_6_1"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_1_3c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_6_1_3"/>
+            <field name="parent_id" ref="em_6_1_3"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_2">
             <field name="name">Antibacterials</field>
-            <field name="parent" ref="em_6"/>
+            <field name="parent_id" ref="em_6"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_2_1">
             <field name="name">Beta Lactam medicines</field>
-            <field name="parent" ref="em_6_2"/>
+            <field name="parent_id" ref="em_6_2"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_2_1c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_6_2_1"/>
+            <field name="parent_id" ref="em_6_2_1"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_2_2">
             <field name="name">Other antibacterials</field>
-            <field name="parent" ref="em_6_2"/>
+            <field name="parent_id" ref="em_6_2"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_2_3">
             <field name="name">Antileprosy medicines</field>
-            <field name="parent" ref="em_6_2"/>
+            <field name="parent_id" ref="em_6_2"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_2_4">
             <field name="name">Antituberculosis medicines</field>
-            <field name="parent" ref="em_6_2"/>
+            <field name="parent_id" ref="em_6_2"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_2_4c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_6_2_4"/>
+            <field name="parent_id" ref="em_6_2_4"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_3">
             <field name="name">Antifungal medicines</field>
-            <field name="parent" ref="em_6"/>
+            <field name="parent_id" ref="em_6"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_3c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_6_3"/>
+            <field name="parent_id" ref="em_6_3"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_4">
             <field name="name">Antiviral medicines</field>
-            <field name="parent" ref="em_6"/>
+            <field name="parent_id" ref="em_6"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_4_1">
             <field name="name">Antiherpes medicines</field>
-            <field name="parent" ref="em_6_4"/>
+            <field name="parent_id" ref="em_6_4"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_4_2">
             <field name="name">Antiretrovirals</field>
-            <field name="parent" ref="em_6_4"/>
+            <field name="parent_id" ref="em_6_4"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_4_2_1">
             <field name="name">Nucleoside/Nucleotide reverse transcriptase inhibitors</field>
-            <field name="parent" ref="em_6_4_2"/>
+            <field name="parent_id" ref="em_6_4_2"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_4_2_2">
             <field name="name">Non-nucleoside reverse transcriptase inhibitors</field>
-            <field name="parent" ref="em_6_4_2"/>
+            <field name="parent_id" ref="em_6_4_2"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_4_2_3">
             <field name="name">Protease Inhibitors</field>
-            <field name="parent" ref="em_6_4_2"/>
+            <field name="parent_id" ref="em_6_4_2"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_4_3">
             <field name="name">Other antivirals</field>
-            <field name="parent" ref="em_6_4"/>
+            <field name="parent_id" ref="em_6_4"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_5">
             <field name="name">Antiprotozoal medicines</field>
-            <field name="parent" ref="em_6"/>
+            <field name="parent_id" ref="em_6"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_5_1">
             <field name="name">Antiamoebic and antigiardiasis medicines</field>
-            <field name="parent" ref="em_6_5"/>
+            <field name="parent_id" ref="em_6_5"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_5_2">
             <field name="name">Antileishmaniasis medicines</field>
-            <field name="parent" ref="em_6_5"/>
+            <field name="parent_id" ref="em_6_5"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_5_3">
             <field name="name">Antimalarial medicines</field>
-            <field name="parent" ref="em_6_5"/>
+            <field name="parent_id" ref="em_6_5"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_5_3_1">
             <field name="name">For curative treatment</field>
-            <field name="parent" ref="em_6_5_3"/>
+            <field name="parent_id" ref="em_6_5_3"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_5_3_2">
             <field name="name">For prophylaxis</field>
-            <field name="parent" ref="em_6_5_3"/>
+            <field name="parent_id" ref="em_6_5_3"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_5_4">
             <field name="name">Antipneumocystosis and antitoxoplasmosis medicines</field>
-            <field name="parent" ref="em_6_5"/>
+            <field name="parent_id" ref="em_6_5"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_5_4c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_6_5_4"/>
+            <field name="parent_id" ref="em_6_5_4"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_5_5">
             <field name="name">Antitrypanosomal medicines</field>
-            <field name="parent" ref="em_6_5"/>
+            <field name="parent_id" ref="em_6_5"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_5_5_1">
             <field name="name">African trypanosomiasis</field>
-            <field name="parent" ref="em_6_5_5"/>
+            <field name="parent_id" ref="em_6_5_5"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_5_5_1c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_6_5_5_1"/>
+            <field name="parent_id" ref="em_6_5_5_1"/>
         </record>
         <record model="oemedical.medicament.category" id="em_6_5_5_2">
             <field name="name">American trypanosomiasis</field>
-            <field name="parent" ref="em_6_5_5"/>
+            <field name="parent_id" ref="em_6_5_5"/>
         </record>
         <record model="oemedical.medicament.category" id="em_7">
             <field name="name">ANTIMIGRAINE MEDICINES</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_7_1">
             <field name="name">For treatment of acute attack</field>
-            <field name="parent" ref="em_7"/>
+            <field name="parent_id" ref="em_7"/>
         </record>
         <record model="oemedical.medicament.category" id="em_7_2">
             <field name="name">For prophylaxis</field>
-            <field name="parent" ref="em_7"/>
+            <field name="parent_id" ref="em_7"/>
         </record>
         <record model="oemedical.medicament.category" id="em_8">
             <field name="name">ANTINEOPLASTIC, IMMUNOSUPPRESSIVES AND MEDICINES USED IN PALLIATIVE CARE</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_8_1">
             <field name="name">Immunosuppressive medicines</field>
-            <field name="parent" ref="em_8"/>
+            <field name="parent_id" ref="em_8"/>
         </record>
         <record model="oemedical.medicament.category" id="em_8_1c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_8_1"/>
+            <field name="parent_id" ref="em_8_1"/>
         </record>
         <record model="oemedical.medicament.category" id="em_8_2">
             <field name="name">Cytotoxic and adjuvant medicines</field>
-            <field name="parent" ref="em_8"/>
+            <field name="parent_id" ref="em_8"/>
         </record>
         <record model="oemedical.medicament.category" id="em_8_2c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_8_2"/>
+            <field name="parent_id" ref="em_8_2"/>
         </record>
         <record model="oemedical.medicament.category" id="em_8_3">
             <field name="name">Hormones and antihormones</field>
-            <field name="parent" ref="em_8"/>
+            <field name="parent_id" ref="em_8"/>
         </record>
         <record model="oemedical.medicament.category" id="em_8_3c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_8_3"/>
+            <field name="parent_id" ref="em_8_3"/>
         </record>
         <record model="oemedical.medicament.category" id="em_8_4">
             <field name="name">Medicines used in palliative care</field>
-            <field name="parent" ref="em_8"/>
+            <field name="parent_id" ref="em_8"/>
         </record>
         <record model="oemedical.medicament.category" id="em_9">
             <field name="name">ANTIPARKINSONISM MEDICINES</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_10">
             <field name="name">MEDICINES AFFECTING THE BLOOD</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_10_1">
             <field name="name">Antianaemia medicines</field>
-            <field name="parent" ref="em_10"/>
+            <field name="parent_id" ref="em_10"/>
         </record>
         <record model="oemedical.medicament.category" id="em_10_2">
             <field name="name">Medicines affecting coagulation</field>
-            <field name="parent" ref="em_10"/>
+            <field name="parent_id" ref="em_10"/>
         </record>
         <record model="oemedical.medicament.category" id="em_10_2c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_10_2"/>
+            <field name="parent_id" ref="em_10_2"/>
         </record>
         <record model="oemedical.medicament.category" id="em_10_3">
             <field name="name">Other medicines for haemoglobinopathies</field>
-            <field name="parent" ref="em_10"/>
+            <field name="parent_id" ref="em_10"/>
         </record>
         <record model="oemedical.medicament.category" id="em_10_3c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_10_3"/>
+            <field name="parent_id" ref="em_10_3"/>
         </record>
         <record model="oemedical.medicament.category" id="em_11">
             <field name="name">BLOOD PRODUCTS AND PLASMA SUBSTITUTES</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_11_1">
             <field name="name">Plasma substitutes</field>
-            <field name="parent" ref="em_11"/>
+            <field name="parent_id" ref="em_11"/>
         </record>
         <record model="oemedical.medicament.category" id="em_11_2">
             <field name="name">Plasma fractions for specific use</field>
-            <field name="parent" ref="em_11"/>
+            <field name="parent_id" ref="em_11"/>
         </record>
         <record model="oemedical.medicament.category" id="em_11_2c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_11_2"/>
+            <field name="parent_id" ref="em_11_2"/>
         </record>
         <record model="oemedical.medicament.category" id="em_12">
             <field name="name">CARDIOVASCULAR MEDICINES</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_12_1">
             <field name="name">Antianginal medicines</field>
-            <field name="parent" ref="em_12"/>
+            <field name="parent_id" ref="em_12"/>
         </record>
         <record model="oemedical.medicament.category" id="em_12_2">
             <field name="name">Antiarrhythmic medicines</field>
-            <field name="parent" ref="em_12"/>
+            <field name="parent_id" ref="em_12"/>
         </record>
         <record model="oemedical.medicament.category" id="em_12_2c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_12_2"/>
+            <field name="parent_id" ref="em_12_2"/>
         </record>
         <record model="oemedical.medicament.category" id="em_12_3">
             <field name="name">Antihypertensive medicines</field>
-            <field name="parent" ref="em_12"/>
+            <field name="parent_id" ref="em_12"/>
         </record>
         <record model="oemedical.medicament.category" id="em_12_3c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_12_3"/>
+            <field name="parent_id" ref="em_12_3"/>
         </record>
         <record model="oemedical.medicament.category" id="em_12_4">
             <field name="name">Medicines used in heart failure</field>
-            <field name="parent" ref="em_12"/>
+            <field name="parent_id" ref="em_12"/>
         </record>
         <record model="oemedical.medicament.category" id="em_12_4c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_12_4"/>
+            <field name="parent_id" ref="em_12_4"/>
         </record>
         <record model="oemedical.medicament.category" id="em_12_5">
             <field name="name">Antithrombotic medicines</field>
-            <field name="parent" ref="em_12"/>
+            <field name="parent_id" ref="em_12"/>
         </record>
         <record model="oemedical.medicament.category" id="em_12_5c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_12_5"/>
+            <field name="parent_id" ref="em_12_5"/>
         </record>
         <record model="oemedical.medicament.category" id="em_12_6">
             <field name="name">Antithrombotic medicines</field>
-            <field name="parent" ref="em_12"/>
+            <field name="parent_id" ref="em_12"/>
         </record>
         <record model="oemedical.medicament.category" id="em_12_7">
             <field name="name">Lipid-lowering agents</field>
-            <field name="parent" ref="em_12"/>
+            <field name="parent_id" ref="em_12"/>
         </record>
         <record model="oemedical.medicament.category" id="em_13">
             <field name="name">DERMATOLOGICAL MEDICINES (topical)</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_13_1">
             <field name="name">Antifungal medicines</field>
-            <field name="parent" ref="em_13"/>
+            <field name="parent_id" ref="em_13"/>
         </record>
         <record model="oemedical.medicament.category" id="em_13_2">
             <field name="name">Anti-infective medicines</field>
-            <field name="parent" ref="em_13"/>
+            <field name="parent_id" ref="em_13"/>
         </record>
         <record model="oemedical.medicament.category" id="em_13_3">
             <field name="name">Anti-inflammatory and antipruritic medicines</field>
-            <field name="parent" ref="em_13"/>
+            <field name="parent_id" ref="em_13"/>
         </record>
         <record model="oemedical.medicament.category" id="em_13_4">
             <field name="name">Medicines affecting skin differentiation and proliferation</field>
-            <field name="parent" ref="em_13"/>
+            <field name="parent_id" ref="em_13"/>
         </record>
         <record model="oemedical.medicament.category" id="em_13_5">
             <field name="name">Scabicides and pediculicides</field>
-            <field name="parent" ref="em_13"/>
+            <field name="parent_id" ref="em_13"/>
         </record>
         <record model="oemedical.medicament.category" id="em_14">
             <field name="name">DIAGNOSTIC AGENTS</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_14_1">
             <field name="name">Ophthalmic medicines</field>
-            <field name="parent" ref="em_14"/>
+            <field name="parent_id" ref="em_14"/>
         </record>
         <record model="oemedical.medicament.category" id="em_14_2">
             <field name="name">Radiocontrast media</field>
-            <field name="parent" ref="em_14"/>
+            <field name="parent_id" ref="em_14"/>
         </record>
         <record model="oemedical.medicament.category" id="em_14_2c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_14_2"/>
+            <field name="parent_id" ref="em_14_2"/>
         </record>
         <record model="oemedical.medicament.category" id="em_15">
             <field name="name">DISINFECTANTS AND ANTISEPTICS</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_15_1">
             <field name="name">Antiseptics</field>
-            <field name="parent" ref="em_15"/>
+            <field name="parent_id" ref="em_15"/>
         </record>
         <record model="oemedical.medicament.category" id="em_15_2">
             <field name="name">Disinfectants</field>
-            <field name="parent" ref="em_15"/>
+            <field name="parent_id" ref="em_15"/>
         </record>
         <record model="oemedical.medicament.category" id="em_16">
             <field name="name">DIURETICS</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_16c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_16"/>
+            <field name="parent_id" ref="em_16"/>
         </record>
         <record model="oemedical.medicament.category" id="em_17">
             <field name="name">GASTROINTESTINAL MEDICINES</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_17c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_17"/>
+            <field name="parent_id" ref="em_17"/>
         </record>
         <record model="oemedical.medicament.category" id="em_17_1">
             <field name="name">Antiulcer medicines</field>
-            <field name="parent" ref="em_17"/>
+            <field name="parent_id" ref="em_17"/>
         </record>
         <record model="oemedical.medicament.category" id="em_17_2">
             <field name="name">Antiemetic medicines</field>
-            <field name="parent" ref="em_17"/>
+            <field name="parent_id" ref="em_17"/>
         </record>
         <record model="oemedical.medicament.category" id="em_17_3">
             <field name="name">Anti-inflammatory medicines</field>
-            <field name="parent" ref="em_17"/>
+            <field name="parent_id" ref="em_17"/>
         </record>
         <record model="oemedical.medicament.category" id="em_17_3c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_17_3"/>
+            <field name="parent_id" ref="em_17_3"/>
         </record>
         <record model="oemedical.medicament.category" id="em_17_4">
             <field name="name">Laxatives</field>
-            <field name="parent" ref="em_17"/>
+            <field name="parent_id" ref="em_17"/>
         </record>
         <record model="oemedical.medicament.category" id="em_17_5">
             <field name="name">Medicines used in diarrhoea</field>
-            <field name="parent" ref="em_17"/>
+            <field name="parent_id" ref="em_17"/>
         </record>
         <record model="oemedical.medicament.category" id="em_17_5_1">
             <field name="name">Oral rehydration</field>
-            <field name="parent" ref="em_17_5"/>
+            <field name="parent_id" ref="em_17_5"/>
         </record>
         <record model="oemedical.medicament.category" id="em_17_5_2">
             <field name="name">Medicines for diarrhoea in children</field>
-            <field name="parent" ref="em_17_5"/>
+            <field name="parent_id" ref="em_17_5"/>
         </record>
         <record model="oemedical.medicament.category" id="em_18">
             <field name="name">HORMONES, OTHER ENDOCRINE MEDICINES AND CONTRACEPTIVES</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_18_1">
             <field name="name">Adrenal hormones and synthetic substitutes</field>
-            <field name="parent" ref="em_18"/>
+            <field name="parent_id" ref="em_18"/>
         </record>
         <record model="oemedical.medicament.category" id="em_18_2">
             <field name="name">Androgens</field>
-            <field name="parent" ref="em_18"/>
+            <field name="parent_id" ref="em_18"/>
         </record>
         <record model="oemedical.medicament.category" id="em_18_2c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_18_2"/>
+            <field name="parent_id" ref="em_18_2"/>
         </record>
         <record model="oemedical.medicament.category" id="em_18_3">
             <field name="name">Contraceptives</field>
-            <field name="parent" ref="em_18"/>
+            <field name="parent_id" ref="em_18"/>
         </record>
         <record model="oemedical.medicament.category" id="em_18_3_1">
             <field name="name">Oral hormonal contraceptives</field>
-            <field name="parent" ref="em_18_3"/>
+            <field name="parent_id" ref="em_18_3"/>
         </record>
         <record model="oemedical.medicament.category" id="em_18_3_2">
             <field name="name">Injectable hormonal contraceptives</field>
-            <field name="parent" ref="em_18_3"/>
+            <field name="parent_id" ref="em_18_3"/>
         </record>
         <record model="oemedical.medicament.category" id="em_18_3_3">
             <field name="name">Intrauterine devices</field>
-            <field name="parent" ref="em_18_3"/>
+            <field name="parent_id" ref="em_18_3"/>
         </record>
         <record model="oemedical.medicament.category" id="em_18_3_4">
             <field name="name">Barrier methods</field>
-            <field name="parent" ref="em_18_3"/>
+            <field name="parent_id" ref="em_18_3"/>
         </record>
         <record model="oemedical.medicament.category" id="em_18_3_5">
             <field name="name">Implantable contraceptives</field>
-            <field name="parent" ref="em_18_3"/>
+            <field name="parent_id" ref="em_18_3"/>
         </record>
         <record model="oemedical.medicament.category" id="em_18_4">
             <field name="name">Estrogens</field>
-            <field name="parent" ref="em_18"/>
+            <field name="parent_id" ref="em_18"/>
         </record>
         <record model="oemedical.medicament.category" id="em_18_5">
             <field name="name">Insulins and other medicines used for diabetes</field>
-            <field name="parent" ref="em_18"/>
+            <field name="parent_id" ref="em_18"/>
         </record>
         <record model="oemedical.medicament.category" id="em_18_5c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_18_5"/>
+            <field name="parent_id" ref="em_18_5"/>
         </record>
         <record model="oemedical.medicament.category" id="em_18_6">
             <field name="name">Ovulation inducers</field>
-            <field name="parent" ref="em_18"/>
+            <field name="parent_id" ref="em_18"/>
         </record>
         <record model="oemedical.medicament.category" id="em_18_7">
             <field name="name">Progestogens </field>
-            <field name="parent" ref="em_18"/>
+            <field name="parent_id" ref="em_18"/>
         </record>
         <record model="oemedical.medicament.category" id="em_18_8">
             <field name="name">Thyroid hormones and antithyroid medicines</field>
-            <field name="parent" ref="em_18"/>
+            <field name="parent_id" ref="em_18"/>
         </record>
         <record model="oemedical.medicament.category" id="em_18_8c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_18_8"/>
+            <field name="parent_id" ref="em_18_8"/>
         </record>
         <record model="oemedical.medicament.category" id="em_19">
             <field name="name">IMMUNOLOGICALS</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_19_1">
             <field name="name">Diagnostic agents</field>
-            <field name="parent" ref="em_19"/>
+            <field name="parent_id" ref="em_19"/>
         </record>
         <record model="oemedical.medicament.category" id="em_19_2">
             <field name="name">Sera and immunoglobulins</field>
-            <field name="parent" ref="em_19"/>
+            <field name="parent_id" ref="em_19"/>
         </record>
         <record model="oemedical.medicament.category" id="em_19_3">
             <field name="name">Vaccines</field>
-            <field name="parent" ref="em_19"/>
+            <field name="parent_id" ref="em_19"/>
         </record>
         <record model="oemedical.medicament.category" id="em_20">
             <field name="name">MUSCLE RELAXANTS (PERIPHERALLY-ACTING) AND CHOLINESTERASE INHIBITORS</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_20c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_20"/>
+            <field name="parent_id" ref="em_20"/>
         </record>
         <record model="oemedical.medicament.category" id="em_21">
             <field name="name">OPHTHALMOLOGICAL PREPARATIONS</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_21_1">
             <field name="name">Anti-infective agents</field>
-            <field name="parent" ref="em_21"/>
+            <field name="parent_id" ref="em_21"/>
         </record>
         <record model="oemedical.medicament.category" id="em_21_2">
             <field name="name">Anti-inflammatory agents</field>
-            <field name="parent" ref="em_21"/>
+            <field name="parent_id" ref="em_21"/>
         </record>
         <record model="oemedical.medicament.category" id="em_21_3">
             <field name="name">Local anaesthetics</field>
-            <field name="parent" ref="em_21"/>
+            <field name="parent_id" ref="em_21"/>
         </record>
         <record model="oemedical.medicament.category" id="em_21_4">
             <field name="name">Miotics and antiglaucoma medicines</field>
-            <field name="parent" ref="em_21"/>
+            <field name="parent_id" ref="em_21"/>
         </record>
         <record model="oemedical.medicament.category" id="em_21_5">
             <field name="name">Mydriatics</field>
-            <field name="parent" ref="em_21"/>
+            <field name="parent_id" ref="em_21"/>
         </record>
         <record model="oemedical.medicament.category" id="em_21_5c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_21_5"/>
+            <field name="parent_id" ref="em_21_5"/>
         </record>
         <record model="oemedical.medicament.category" id="em_22">
             <field name="name">OXYTOCICS AND ANTIOXYTOCICS</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_22_1">
             <field name="name">Oxytocics</field>
-            <field name="parent" ref="em_22"/>
+            <field name="parent_id" ref="em_22"/>
         </record>
         <record model="oemedical.medicament.category" id="em_22_1c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_22_1"/>
+            <field name="parent_id" ref="em_22_1"/>
         </record>
         <record model="oemedical.medicament.category" id="em_22_2">
             <field name="name">Antioxytocics (tocolytics)</field>
-            <field name="parent" ref="em_22"/>
+            <field name="parent_id" ref="em_22"/>
         </record>
         <record model="oemedical.medicament.category" id="em_23">
             <field name="name">PERITONEAL DIALYSIS SOLUTION</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_24">
             <field name="name">MEDICINES FOR MENTAL AND BEHAVIOURAL DISORDERS</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_24_1">
             <field name="name">Medicines used in psychotic disorders</field>
-            <field name="parent" ref="em_24"/>
+            <field name="parent_id" ref="em_24"/>
         </record>
         <record model="oemedical.medicament.category" id="em_24_1c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_24_1"/>
+            <field name="parent_id" ref="em_24_1"/>
         </record>
         <record model="oemedical.medicament.category" id="em_24_2">
             <field name="name">Medicines used in mood disorders</field>
-            <field name="parent" ref="em_24"/>
+            <field name="parent_id" ref="em_24"/>
         </record>
         <record model="oemedical.medicament.category" id="em_24_2_1">
             <field name="name">Medicines used in depressive disorders</field>
-            <field name="parent" ref="em_24_2"/>
+            <field name="parent_id" ref="em_24_2"/>
         </record>
         <record model="oemedical.medicament.category" id="em_24_2_1c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_24_2_1"/>
+            <field name="parent_id" ref="em_24_2_1"/>
         </record>
         <record model="oemedical.medicament.category" id="em_24_2_2">
             <field name="name">Medicines used in bipolar disorders</field>
-            <field name="parent" ref="em_24_2"/>
+            <field name="parent_id" ref="em_24_2"/>
         </record>
         <record model="oemedical.medicament.category" id="em_24_3">
             <field name="name">Medicines for anxiety disorders</field>
-            <field name="parent" ref="em_24"/>
+            <field name="parent_id" ref="em_24"/>
         </record>
         <record model="oemedical.medicament.category" id="em_24_4">
             <field name="name">Medicines used for obsessive compulsive disorders</field>
-            <field name="parent" ref="em_24"/>
+            <field name="parent_id" ref="em_24"/>
         </record>
         <record model="oemedical.medicament.category" id="em_24_5">
             <field name="name">Medicines for disorders due to psychoactive substance use</field>
-            <field name="parent" ref="em_24"/>
+            <field name="parent_id" ref="em_24"/>
         </record>
         <record model="oemedical.medicament.category" id="em_24_5c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_24_5"/>
+            <field name="parent_id" ref="em_24_5"/>
         </record>
         <record model="oemedical.medicament.category" id="em_25">
             <field name="name">MEDICINES ACTING ON THE RESPIRATORY TRACT</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_25_1">
             <field name="name">Antiasthmatic and medicines for chronic obstructive pulmonary disease</field>
-            <field name="parent" ref="em_25"/>
+            <field name="parent_id" ref="em_25"/>
         </record>
         <record model="oemedical.medicament.category" id="em_26">
             <field name="name">SOLUTIONS CORRECTING WATER, ELECTROLYTE AND ACID-BASE DISTURBANCES</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_26_1">
             <field name="name">Oral</field>
-            <field name="parent" ref="em_26"/>
+            <field name="parent_id" ref="em_26"/>
         </record>
         <record model="oemedical.medicament.category" id="em_26_2">
-            <field name="name">Parenteral</field>
-            <field name="parent" ref="em_26"/>
+            <field name="name">parent_ideral</field>
+            <field name="parent_id" ref="em_26"/>
         </record>
         <record model="oemedical.medicament.category" id="em_26_3">
             <field name="name">Miscellaneous</field>
-            <field name="parent" ref="em_26"/>
+            <field name="parent_id" ref="em_26"/>
         </record>
         <record model="oemedical.medicament.category" id="em_27">
             <field name="name">VITAMINS AND MINERALS</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_27c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_27"/>
+            <field name="parent_id" ref="em_27"/>
         </record>
         <record model="oemedical.medicament.category" id="em_28">
             <field name="name">EAR, NOSE AND THROAT CONDITIONS IN CHILDREN</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_29">
             <field name="name">SPECIFIC MEDICINES FOR NEONATAL CARE</field>
-            <field name="parent" ref="em"/>
+            <field name="parent_id" ref="em"/>
         </record>
         <record model="oemedical.medicament.category" id="em_29c">
             <field name="name">Complementary</field>
-            <field name="parent" ref="em_29"/>
+            <field name="parent_id" ref="em_29"/>
         </record>
 
     </data>
