@@ -27,8 +27,8 @@ class OeMedicalDoseUnit(osv.osv):
     _name = 'oemedical.dose.unit'
 
     _columns = {
-        'name': fields.char(size=256, string='Unit', required=True),
-        'desc': fields.char(size=256, string='Description', required=True),
+        'name': fields.char(size=256, string='Unit', required=True, translate=True),
+        'desc': fields.char(size=256, string='Description', required=True, translate=True),
     }
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Unit must be unique!'),
