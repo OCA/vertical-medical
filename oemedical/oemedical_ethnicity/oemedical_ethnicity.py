@@ -27,7 +27,7 @@ class OeMedicalEthnicity(osv.osv):
     _name = 'oemedical.ethnicity'
 
     _columns = {
-        'notes': fields.char(size=256, string='Notes', required=True),
+        'notes': fields.char(size=256, string='Notes'),
         'code': fields.char(size=256, string='Code', required=True),
         'name': fields.char(size=256, string='Name', required=True),
     }

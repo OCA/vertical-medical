@@ -32,8 +32,7 @@ class OeMedicalMedicament(osv.osv):
                                     'Category', ),
         'indications': fields.text(string='Indication'),
         'therapeutic_action': fields.char(size=256,
-                                          string='Therapeutic effect',
-                                          required=True),
+                                          string='Therapeutic effect'),
         'product': fields.many2one('product.product', string='Product', ),
         'pregnancy_category': fields.selection([
             ('A', 'A'),

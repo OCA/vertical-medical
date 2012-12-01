@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data >
+
+        <record model="oemedical.ethnicity" id="eth1">
+            <field name="name">Black</field>
+            <field name="code">1</field>
+        </record>
+        <record model="oemedical.ethnicity" id="eth2">
+            <field name="name">Asian</field>
+            <field name="code">2</field>
+        </record>
+        <record model="oemedical.ethnicity" id="eth3">
+            <field name="name">White</field>
+            <field name="code">3</field>
+        </record>
+        <record model="oemedical.ethnicity" id="eth4">
+            <field name="name">Middle-East</field>
+            <field name="code">4</field>
+        </record>
+        <record model="oemedical.ethnicity" id="eth5">
+            <field name="name">Hispanic</field>
+            <field name="code">5</field>
+        </record>
+        <record model="oemedical.ethnicity" id="eth6">
+            <field name="name">African American</field>
+            <field name="code">6</field>
+        </record>
+        <record model="oemedical.ethnicity" id="eth7">
+            <field name="name">Indian American</field>
+            <field name="code">7</field>
+        </record>
+
+    </data>
+</openerp>

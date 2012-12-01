@@ -27,7 +27,7 @@ class OeMedicalSpecialty(osv.osv):
     _name = 'oemedical.specialty'
 
     _columns = {
-        'code': fields.char(size=256, string='Code', required=True),
+        'code': fields.char(size=256, string='Code'),
         'name': fields.char(size=256, string='Specialty', required=True),
     }
     _sql_constraints = [
