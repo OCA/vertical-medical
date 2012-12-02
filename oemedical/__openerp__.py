@@ -39,10 +39,12 @@
     'author': "OeMEdical Team",
     'category': 'Generic Modules/Others',
     'depends': ['base', 'sale', 'purchase', 'account', 'product'],
+    'application': True,
     'description': """
 
 About OeMedical
--------------
+---------------
+
 OeMedical is a multi-user, highly scalable, centralized Electronic
 Medical Record (EMR) and Hospital Information System for openERP.
 
@@ -51,48 +53,43 @@ so doctors and institutions all over the world,
 specially in developing countries will benefit from a centralized,
 high quality, secure and scalable system.
 
-
 OeMedical at a glance:
 
-
     * Strong focus in family medicine and Primary Health Care
-
+    
     * Major interest in Socio-economics (housing conditions, substance abuse,
     education...)
-
+    
     * Diseases and Medical procedures standards (like ICD-10 / ICD-10-PCS ...)
-
+    
     * Patient Genetic and Hereditary risks : Over 4200 genes related to
     diseases (NCBI / Genecards)
-
+    
     * Epidemiological and other statistical reports
-
+    
     * 100% paperless patient examination and history taking
-
-    * Patient Administration (creation,
-    evaluations / consultations,
-    history ... )
-
+    
+    * Patient Administration 
+    (creation, evaluations / consultations, history ... )
+    
     * Doctor Administration
-
+    
     * Lab Administration
-
+    
     * Medicine / Drugs information (vademécum)
-
+    
     * Medical stock and supply chain management
-
+    
     * Hospital Financial Administration
-
+    
     * Designed with industry standards in mind
-
+    
     * Open Source : Licensed under AGPL
-
+    
 """,
     "website": "http://launchpad.net/oemedical",
-    "init_xml": [],
     "licence": "AGPL v3",
-    "demo_xml": [],
-    "update_xml": [
+    "data": [
         'sequence/oemedical_sequence.xml',
         'oemedical_secondary_condition/oemedical_secondary_condition_view.xml',
         'oemedical_pathology_category/oemedical_pathology_category_view.xml',
@@ -143,7 +140,7 @@ OeMedical at a glance:
 
         'data/medicament_categories.xml',
         'data/WHO_products.xml',
-        'data/WHO_list_of_essential_medicines.xml',
+        #'data/WHO_list_of_essential_medicines.xml',
         'data/health_specialties.xml',
         'data/ethnic_groups.xml',
         'data/occupations.xml',
@@ -152,6 +149,9 @@ OeMedical at a glance:
         'data/medicament_form.xml',
         'data/medication_frequencies.xml',
     ],
+    "demo": [
+
+    ],
     'test':[
             'test/physician.yml',
             'test/patient.yml',
@@ -159,7 +159,16 @@ OeMedical at a glance:
             'test/insurance_plan.yml',
             'test/insurance.yml',
             'test/physician_speciality.yml'
-            ],
+    ],
+    'css': [
+
+    ],
+    'js': [
+
+    ],
+    'qweb': [
+
+    ], 
     "active": False
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
