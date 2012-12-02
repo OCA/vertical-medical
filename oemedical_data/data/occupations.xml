@@ -1,0 +1,2619 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record model="oemedical.occupation" id="occ1">
+            <field name="name">Unemployed</field>
+            <field name="code">1</field>
+        </record>
+        <record model="oemedical.occupation" id="occ2">
+            <field name="name">Administrator</field>
+            <field name="code">2</field>
+        </record>
+        <record model="oemedical.occupation" id="occ3">
+            <field name="name">Agronomist</field>
+            <field name="code">3</field>
+        </record>
+        <record model="oemedical.occupation" id="occ4">
+            <field name="name">Astronaut</field>
+            <field name="code">4</field>
+        </record>
+        <record model="oemedical.occupation" id="occ5">
+            <field name="name">Archaeologist</field>
+            <field name="code">5</field>
+        </record>
+        <record model="oemedical.occupation" id="occ6">
+            <field name="name">Architect</field>
+            <field name="code">6</field>
+        </record>
+        <record model="oemedical.occupation" id="occ7">
+            <field name="name">Auditor</field>
+            <field name="code">7</field>
+        </record>
+        <record model="oemedical.occupation" id="occ8">
+            <field name="name">Author</field>
+            <field name="code">8</field>
+        </record>
+        <record model="oemedical.occupation" id="occ9">
+            <field name="name">Artist</field>
+            <field name="code">9</field>
+        </record>
+        <record model="oemedical.occupation" id="occ10">
+            <field name="name">Ballerina</field>
+            <field name="code">10</field>
+        </record>
+        <record model="oemedical.occupation" id="occ11">
+            <field name="name">Bassist</field>
+            <field name="code">11</field>
+        </record>
+        <record model="oemedical.occupation" id="occ12">
+            <field name="name">Boatswain</field>
+            <field name="code">12</field>
+        </record>
+        <record model="oemedical.occupation" id="occ13">
+            <field name="name">Boilermaker</field>
+            <field name="code">13</field>
+        </record>
+        <record model="oemedical.occupation" id="occ14">
+            <field name="name">Bookseller</field>
+            <field name="code">14</field>
+        </record>
+        <record model="oemedical.occupation" id="occ15">
+            <field name="name">Builder</field>
+            <field name="code">15</field>
+        </record>
+        <record model="oemedical.occupation" id="occ16">
+            <field name="name">Cab driver</field>
+            <field name="code">16</field>
+        </record>
+        <record model="oemedical.occupation" id="occ17">
+            <field name="name">Cop</field>
+            <field name="code">17</field>
+        </record>
+        <record model="oemedical.occupation" id="occ18">
+            <field name="name">Cabinet-maker</field>
+            <field name="code">18</field>
+        </record>
+        <record model="oemedical.occupation" id="occ19">
+            <field name="name">Calligrapher</field>
+            <field name="code">19</field>
+        </record>
+        <record model="oemedical.occupation" id="occ20">
+            <field name="name">Call girl</field>
+            <field name="code">20</field>
+        </record>
+        <record model="oemedical.occupation" id="occ21">
+            <field name="name">Cameraman</field>
+            <field name="code">21</field>
+        </record>
+        <record model="oemedical.occupation" id="occ22">
+            <field name="name">Camp Counselor</field>
+            <field name="code">22</field>
+        </record>
+        <record model="oemedical.occupation" id="occ23">
+            <field name="name">Car designer</field>
+            <field name="code">23</field>
+        </record>
+        <record model="oemedical.occupation" id="occ24">
+            <field name="name">Cardiologist</field>
+            <field name="code">24</field>
+        </record>
+        <record model="oemedical.occupation" id="occ25">
+            <field name="name">Carpenter</field>
+            <field name="code">25</field>
+        </record>
+        <record model="oemedical.occupation" id="occ26">
+            <field name="name">Cartographer</field>
+            <field name="code">26</field>
+        </record>
+        <record model="oemedical.occupation" id="occ27">
+            <field name="name">Cartoonist</field>
+            <field name="code">27</field>
+        </record>
+        <record model="oemedical.occupation" id="occ28">
+            <field name="name">Cartwright</field>
+            <field name="code">28</field>
+        </record>
+        <record model="oemedical.occupation" id="occ29">
+            <field name="name">Cashier</field>
+            <field name="code">29</field>
+        </record>
+        <record model="oemedical.occupation" id="occ30">
+            <field name="name">Celebrity</field>
+            <field name="code">30</field>
+        </record>
+        <record model="oemedical.occupation" id="occ31">
+            <field name="name">Cellist</field>
+            <field name="code">31</field>
+        </record>
+        <record model="oemedical.occupation" id="occ32">
+            <field name="name">Censor</field>
+            <field name="code">32</field>
+        </record>
+        <record model="oemedical.occupation" id="occ33">
+            <field name="name">CEO (Chief Executive Officer)</field>
+            <field name="code">33</field>
+        </record>
+        <record model="oemedical.occupation" id="occ34">
+            <field name="name">CFO (Chief Financial Officer)</field>
+            <field name="code">34</field>
+        </record>
+        <record model="oemedical.occupation" id="occ35">
+            <field name="name">Chandler (candles)</field>
+            <field name="code">35</field>
+        </record>
+        <record model="oemedical.occupation" id="occ36">
+            <field name="name">Chapman</field>
+            <field name="code">36</field>
+        </record>
+        <record model="oemedical.occupation" id="occ37">
+            <field name="name">Chauffeur</field>
+            <field name="code">37</field>
+        </record>
+        <record model="oemedical.occupation" id="occ38">
+            <field name="name">Cheerleader</field>
+            <field name="code">38</field>
+        </record>
+        <record model="oemedical.occupation" id="occ39">
+            <field name="name">Cheesemaker</field>
+            <field name="code">39</field>
+        </record>
+        <record model="oemedical.occupation" id="occ40">
+            <field name="name">Chef </field>
+            <field name="code">40</field>
+        </record>
+        <record model="oemedical.occupation" id="occ41">
+            <field name="name">Chemical Engineer</field>
+            <field name="code">41</field>
+        </record>
+        <record model="oemedical.occupation" id="occ42">
+            <field name="name">Chemical Technologist</field>
+            <field name="code">42</field>
+        </record>
+        <record model="oemedical.occupation" id="occ43">
+            <field name="name">Chemist</field>
+            <field name="code">43</field>
+        </record>
+        <record model="oemedical.occupation" id="occ44">
+            <field name="name">Chief of Police</field>
+            <field name="code">44</field>
+        </record>
+        <record model="oemedical.occupation" id="occ45">
+            <field name="name">Chief Mate</field>
+            <field name="code">45</field>
+        </record>
+        <record model="oemedical.occupation" id="occ46">
+            <field name="name">Chimney-sweeper</field>
+            <field name="code">46</field>
+        </record>
+        <record model="oemedical.occupation" id="occ47">
+            <field name="name">Chiropodist</field>
+            <field name="code">47</field>
+        </record>
+        <record model="oemedical.occupation" id="occ48">
+            <field name="name">Doctor of Chiropractic</field>
+            <field name="code">48</field>
+        </record>
+        <record model="oemedical.occupation" id="occ49">
+            <field name="name">Choreographer</field>
+            <field name="code">49</field>
+        </record>
+        <record model="oemedical.occupation" id="occ50">
+            <field name="name">Church usher</field>
+            <field name="code">50</field>
+        </record>
+        <record model="oemedical.occupation" id="occ51">
+            <field name="name">CIA Agent</field>
+            <field name="code">51</field>
+        </record>
+        <record model="oemedical.occupation" id="occ52">
+            <field name="name">Circuit preacher</field>
+            <field name="code">52</field>
+        </record>
+        <record model="oemedical.occupation" id="occ53">
+            <field name="name">Civil servant</field>
+            <field name="code">53</field>
+        </record>
+        <record model="oemedical.occupation" id="occ54">
+            <field name="name">Civil engineer</field>
+            <field name="code">54</field>
+        </record>
+        <record model="oemedical.occupation" id="occ55">
+            <field name="name">Clarinetist</field>
+            <field name="code">55</field>
+        </record>
+        <record model="oemedical.occupation" id="occ56">
+            <field name="name">Cleaner</field>
+            <field name="code">56</field>
+        </record>
+        <record model="oemedical.occupation" id="occ57">
+            <field name="name">Clerk</field>
+            <field name="code">57</field>
+        </record>
+        <record model="oemedical.occupation" id="occ58">
+            <field name="name">Clockmaker</field>
+            <field name="code">58</field>
+        </record>
+        <record model="oemedical.occupation" id="occ59">
+            <field name="name">Coach</field>
+            <field name="code">59</field>
+        </record>
+        <record model="oemedical.occupation" id="occ60">
+            <field name="name">Coachman</field>
+            <field name="code">60</field>
+        </record>
+        <record model="oemedical.occupation" id="occ61">
+            <field name="name">Coast guard</field>
+            <field name="code">61</field>
+        </record>
+        <record model="oemedical.occupation" id="occ62">
+            <field name="name">Cobbler</field>
+            <field name="code">62</field>
+        </record>
+        <record model="oemedical.occupation" id="occ63">
+            <field name="name">Cognitive scientist</field>
+            <field name="code">63</field>
+        </record>
+        <record model="oemedical.occupation" id="occ64">
+            <field name="name">Columnist</field>
+            <field name="code">64</field>
+        </record>
+        <record model="oemedical.occupation" id="occ65">
+            <field name="name">Comedian</field>
+            <field name="code">65</field>
+        </record>
+        <record model="oemedical.occupation" id="occ66">
+            <field name="name">Compasssmith</field>
+            <field name="code">66</field>
+        </record>
+        <record model="oemedical.occupation" id="occ67">
+            <field name="name">Composer</field>
+            <field name="code">67</field>
+        </record>
+        <record model="oemedical.occupation" id="occ68">
+            <field name="name">Computer engineer</field>
+            <field name="code">68</field>
+        </record>
+        <record model="oemedical.occupation" id="occ69">
+            <field name="name">Computer programmer</field>
+            <field name="code">69</field>
+        </record>
+        <record model="oemedical.occupation" id="occ70">
+            <field name="name">Concierge</field>
+            <field name="code">70</field>
+        </record>
+        <record model="oemedical.occupation" id="occ71">
+            <field name="name">Conductor (music)</field>
+            <field name="code">71</field>
+        </record>
+        <record model="oemedical.occupation" id="occ72">
+            <field name="name">Constable</field>
+            <field name="code">72</field>
+        </record>
+        <record model="oemedical.occupation" id="occ73">
+            <field name="name">Construction engineer</field>
+            <field name="code">73</field>
+        </record>
+        <record model="oemedical.occupation" id="occ74">
+            <field name="name">Construction manager</field>
+            <field name="code">74</field>
+        </record>
+        <record model="oemedical.occupation" id="occ75">
+            <field name="name">Construction worker</field>
+            <field name="code">75</field>
+        </record>
+        <record model="oemedical.occupation" id="occ76">
+            <field name="name">Consul</field>
+            <field name="code">76</field>
+        </record>
+        <record model="oemedical.occupation" id="occ77">
+            <field name="name">Consultant</field>
+            <field name="code">77</field>
+        </record>
+        <record model="oemedical.occupation" id="occ78">
+            <field name="name">Contract Manager</field>
+            <field name="code">78</field>
+        </record>
+        <record model="oemedical.occupation" id="occ79">
+            <field name="name">Controller</field>
+            <field name="code">79</field>
+        </record>
+        <record model="oemedical.occupation" id="occ80">
+            <field name="name">Coroner</field>
+            <field name="code">80</field>
+        </record>
+        <record model="oemedical.occupation" id="occ81">
+            <field name="name">Corporate executive officer</field>
+            <field name="code">81</field>
+        </record>
+        <record model="oemedical.occupation" id="occ82">
+            <field name="name">Correctional Officer</field>
+            <field name="code">82</field>
+        </record>
+        <record model="oemedical.occupation" id="occ83">
+            <field name="name">Corrector</field>
+            <field name="code">83</field>
+        </record>
+        <record model="oemedical.occupation" id="occ84">
+            <field name="name">Correspondent</field>
+            <field name="code">84</field>
+        </record>
+        <record model="oemedical.occupation" id="occ85">
+            <field name="name">Cosmetologist</field>
+            <field name="code">85</field>
+        </record>
+        <record model="oemedical.occupation" id="occ86">
+            <field name="name">Cosmonaut</field>
+            <field name="code">86</field>
+        </record>
+        <record model="oemedical.occupation" id="occ87">
+            <field name="name">Costermonger</field>
+            <field name="code">87</field>
+        </record>
+        <record model="oemedical.occupation" id="occ88">
+            <field name="name">Costume Designer</field>
+            <field name="code">88</field>
+        </record>
+        <record model="oemedical.occupation" id="occ89">
+            <field name="name">Courier</field>
+            <field name="code">89</field>
+        </record>
+        <record model="oemedical.occupation" id="occ90">
+            <field name="name">Court jester</field>
+            <field name="code">90</field>
+        </record>
+        <record model="oemedical.occupation" id="occ91">
+            <field name="name">Cowherd</field>
+            <field name="code">91</field>
+        </record>
+        <record model="oemedical.occupation" id="occ92">
+            <field name="name">CPA (Certified Public Accountant)</field>
+            <field name="code">92</field>
+        </record>
+        <record model="oemedical.occupation" id="occ93">
+            <field name="name">Craftsman </field>
+            <field name="code">93</field>
+        </record>
+        <record model="oemedical.occupation" id="occ94">
+            <field name="name">Creative engineering</field>
+            <field name="code">94</field>
+        </record>
+        <record model="oemedical.occupation" id="occ95">
+            <field name="name">Crier</field>
+            <field name="code">95</field>
+        </record>
+        <record model="oemedical.occupation" id="occ96">
+            <field name="name">Crofter</field>
+            <field name="code">96</field>
+        </record>
+        <record model="oemedical.occupation" id="occ97">
+            <field name="name">Cryptographer</field>
+            <field name="code">97</field>
+        </record>
+        <record model="oemedical.occupation" id="occ98">
+            <field name="name">Cryptozoologist</field>
+            <field name="code">98</field>
+        </record>
+        <record model="oemedical.occupation" id="occ99">
+            <field name="name">Crystallographer</field>
+            <field name="code">99</field>
+        </record>
+        <record model="oemedical.occupation" id="occ100">
+            <field name="name">Curator</field>
+            <field name="code">100</field>
+        </record>
+        <record model="oemedical.occupation" id="occ101">
+            <field name="name">Currier</field>
+            <field name="code">101</field>
+        </record>
+        <record model="oemedical.occupation" id="occ102">
+            <field name="name">Custodian</field>
+            <field name="code">102</field>
+        </record>
+        <record model="oemedical.occupation" id="occ103">
+            <field name="name">Customs officer</field>
+            <field name="code">103</field>
+        </record>
+        <record model="oemedical.occupation" id="occ104">
+            <field name="name">Cutler</field>
+            <field name="code">104</field>
+        </record>
+        <record model="oemedical.occupation" id="occ105">
+            <field name="name">Dancer</field>
+            <field name="code">105</field>
+        </record>
+        <record model="oemedical.occupation" id="occ106">
+            <field name="name">Dance instructor</field>
+            <field name="code">106</field>
+        </record>
+        <record model="oemedical.occupation" id="occ107">
+            <field name="name">Database administrator (DBA)</field>
+            <field name="code">107</field>
+        </record>
+        <record model="oemedical.occupation" id="occ108">
+            <field name="name">Deputy (law enforcement)</field>
+            <field name="code">108</field>
+        </record>
+        <record model="oemedical.occupation" id="occ109">
+            <field name="name">Deputy (parliamentary)</field>
+            <field name="code">109</field>
+        </record>
+        <record model="oemedical.occupation" id="occ110">
+            <field name="name">Demographer</field>
+            <field name="code">110</field>
+        </record>
+        <record model="oemedical.occupation" id="occ111">
+            <field name="name">Demolitionist</field>
+            <field name="code">111</field>
+        </record>
+        <record model="oemedical.occupation" id="occ112">
+            <field name="name">Dentist</field>
+            <field name="code">112</field>
+        </record>
+        <record model="oemedical.occupation" id="occ113">
+            <field name="name">Dermatologist</field>
+            <field name="code">113</field>
+        </record>
+        <record model="oemedical.occupation" id="occ114">
+            <field name="name">Designer</field>
+            <field name="code">114</field>
+        </record>
+        <record model="oemedical.occupation" id="occ115">
+            <field name="name">Detective</field>
+            <field name="code">115</field>
+        </record>
+        <record model="oemedical.occupation" id="occ116">
+            <field name="name">Diamantaire</field>
+            <field name="code">116</field>
+        </record>
+        <record model="oemedical.occupation" id="occ117">
+            <field name="name">Dictator</field>
+            <field name="code">117</field>
+        </record>
+        <record model="oemedical.occupation" id="occ118">
+            <field name="name">Dietician</field>
+            <field name="code">118</field>
+        </record>
+        <record model="oemedical.occupation" id="occ119">
+            <field name="name">Diplomat</field>
+            <field name="code">119</field>
+        </record>
+        <record model="oemedical.occupation" id="occ120">
+            <field name="name">Director</field>
+            <field name="code">120</field>
+        </record>
+        <record model="oemedical.occupation" id="occ121">
+            <field name="name">Disc jockey</field>
+            <field name="code">121</field>
+        </record>
+        <record model="oemedical.occupation" id="occ122">
+            <field name="name">Dispatcher</field>
+            <field name="code">122</field>
+        </record>
+        <record model="oemedical.occupation" id="occ123">
+            <field name="name">Distiller</field>
+            <field name="code">123</field>
+        </record>
+        <record model="oemedical.occupation" id="occ124">
+            <field name="name">Diver</field>
+            <field name="code">124</field>
+        </record>
+        <record model="oemedical.occupation" id="occ125">
+            <field name="name">Dock labourer</field>
+            <field name="code">125</field>
+        </record>
+        <record model="oemedical.occupation" id="occ126">
+            <field name="name">Documentalist</field>
+            <field name="code">126</field>
+        </record>
+        <record model="oemedical.occupation" id="occ127">
+            <field name="name">Doctor (PhD)</field>
+            <field name="code">127</field>
+        </record>
+        <record model="oemedical.occupation" id="occ128">
+            <field name="name">Doctor of Education</field>
+            <field name="code">128</field>
+        </record>
+        <record model="oemedical.occupation" id="occ129">
+            <field name="name">Doctor (MD)</field>
+            <field name="code">129</field>
+        </record>
+        <record model="oemedical.occupation" id="occ130">
+            <field name="name">Doctor of Physical Therapy</field>
+            <field name="code">130</field>
+        </record>
+        <record model="oemedical.occupation" id="occ131">
+            <field name="name">Dog breeder</field>
+            <field name="code">131</field>
+        </record>
+        <record model="oemedical.occupation" id="occ132">
+            <field name="name">Dogcatcher</field>
+            <field name="code">132</field>
+        </record>
+        <record model="oemedical.occupation" id="occ133">
+            <field name="name">Dog walker</field>
+            <field name="code">133</field>
+        </record>
+        <record model="oemedical.occupation" id="occ134">
+            <field name="name">Domestic worker</field>
+            <field name="code">134</field>
+        </record>
+        <record model="oemedical.occupation" id="occ135">
+            <field name="name">Dominatrix</field>
+            <field name="code">135</field>
+        </record>
+        <record model="oemedical.occupation" id="occ136">
+            <field name="name">Donkey Trainer</field>
+            <field name="code">136</field>
+        </record>
+        <record model="oemedical.occupation" id="occ137">
+            <field name="name">Doorman</field>
+            <field name="code">137</field>
+        </record>
+        <record model="oemedical.occupation" id="occ138">
+            <field name="name">Draftsman</field>
+            <field name="code">138</field>
+        </record>
+        <record model="oemedical.occupation" id="occ139">
+            <field name="name">Dramatist</field>
+            <field name="code">139</field>
+        </record>
+        <record model="oemedical.occupation" id="occ140">
+            <field name="name">Dramaturg</field>
+            <field name="code">140</field>
+        </record>
+        <record model="oemedical.occupation" id="occ141">
+            <field name="name">Draper</field>
+            <field name="code">141</field>
+        </record>
+        <record model="oemedical.occupation" id="occ142">
+            <field name="name">Drayman</field>
+            <field name="code">142</field>
+        </record>
+        <record model="oemedical.occupation" id="occ143">
+            <field name="name">Dressmaker</field>
+            <field name="code">143</field>
+        </record>
+        <record model="oemedical.occupation" id="occ144">
+            <field name="name">Drill instructor</field>
+            <field name="code">144</field>
+        </record>
+        <record model="oemedical.occupation" id="occ145">
+            <field name="name">Driver</field>
+            <field name="code">145</field>
+        </record>
+        <record model="oemedical.occupation" id="occ146">
+            <field name="name">Drug dealer</field>
+            <field name="code">146</field>
+        </record>
+        <record model="oemedical.occupation" id="occ147">
+            <field name="name">Drummer</field>
+            <field name="code">147</field>
+        </record>
+        <record model="oemedical.occupation" id="occ148">
+            <field name="name">Drycooper</field>
+            <field name="code">148</field>
+        </record>
+        <record model="oemedical.occupation" id="occ149">
+            <field name="name">Drywaller</field>
+            <field name="code">149</field>
+        </record>
+        <record model="oemedical.occupation" id="occ150">
+            <field name="name">Dustman</field>
+            <field name="code">150</field>
+        </record>
+        <record model="oemedical.occupation" id="occ151">
+            <field name="name">Dyer</field>
+            <field name="code">151</field>
+        </record>
+        <record model="oemedical.occupation" id="occ152">
+            <field name="name">Ecologist</field>
+            <field name="code">152</field>
+        </record>
+        <record model="oemedical.occupation" id="occ153">
+            <field name="name">Economist</field>
+            <field name="code">153</field>
+        </record>
+        <record model="oemedical.occupation" id="occ154">
+            <field name="name">Editor</field>
+            <field name="code">154</field>
+        </record>
+        <record model="oemedical.occupation" id="occ155">
+            <field name="name">Educationalist</field>
+            <field name="code">155</field>
+        </record>
+        <record model="oemedical.occupation" id="occ156">
+            <field name="name">Educator</field>
+            <field name="code">156</field>
+        </record>
+        <record model="oemedical.occupation" id="occ157">
+            <field name="name">Egyptologist</field>
+            <field name="code">157</field>
+        </record>
+        <record model="oemedical.occupation" id="occ158">
+            <field name="name">Electrical engineer</field>
+            <field name="code">158</field>
+        </record>
+        <record model="oemedical.occupation" id="occ159">
+            <field name="name">Electrician</field>
+            <field name="code">159</field>
+        </record>
+        <record model="oemedical.occupation" id="occ160">
+            <field name="name">Elevator Mechanic</field>
+            <field name="code">160</field>
+        </record>
+        <record model="oemedical.occupation" id="occ161">
+            <field name="name">Embalmer</field>
+            <field name="code">161</field>
+        </record>
+        <record model="oemedical.occupation" id="occ162">
+            <field name="name">Embryologist</field>
+            <field name="code">162</field>
+        </record>
+        <record model="oemedical.occupation" id="occ163">
+            <field name="name">Emergency Medical Technician (EMT)</field>
+            <field name="code">163</field>
+        </record>
+        <record model="oemedical.occupation" id="occ164">
+            <field name="name">Engine-driver</field>
+            <field name="code">164</field>
+        </record>
+        <record model="oemedical.occupation" id="occ165">
+            <field name="name">Engineer</field>
+            <field name="code">165</field>
+        </record>
+        <record model="oemedical.occupation" id="occ166">
+            <field name="name">Engraver</field>
+            <field name="code">166</field>
+        </record>
+        <record model="oemedical.occupation" id="occ167">
+            <field name="name">Enologist</field>
+            <field name="code">167</field>
+        </record>
+        <record model="oemedical.occupation" id="occ168">
+            <field name="name">Entertainer</field>
+            <field name="code">168</field>
+        </record>
+        <record model="oemedical.occupation" id="occ169">
+            <field name="name">Entomologist</field>
+            <field name="code">169</field>
+        </record>
+        <record model="oemedical.occupation" id="occ170">
+            <field name="name">Entrepreneur</field>
+            <field name="code">170</field>
+        </record>
+        <record model="oemedical.occupation" id="occ171">
+            <field name="name">Environmental scientist</field>
+            <field name="code">171</field>
+        </record>
+        <record model="oemedical.occupation" id="occ172">
+            <field name="name">Ergonomist</field>
+            <field name="code">172</field>
+        </record>
+        <record model="oemedical.occupation" id="occ173">
+            <field name="name">Escort</field>
+            <field name="code">173</field>
+        </record>
+        <record model="oemedical.occupation" id="occ174">
+            <field name="name">Estate Agent</field>
+            <field name="code">174</field>
+        </record>
+        <record model="oemedical.occupation" id="occ175">
+            <field name="name">Esthetician</field>
+            <field name="code">175</field>
+        </record>
+        <record model="oemedical.occupation" id="occ176">
+            <field name="name">Ethnologist</field>
+            <field name="code">176</field>
+        </record>
+        <record model="oemedical.occupation" id="occ177">
+            <field name="name">Ethologist</field>
+            <field name="code">177</field>
+        </record>
+        <record model="oemedical.occupation" id="occ178">
+            <field name="name">Etymologist</field>
+            <field name="code">178</field>
+        </record>
+        <record model="oemedical.occupation" id="occ179">
+            <field name="name">Evangelist</field>
+            <field name="code">179</field>
+        </record>
+        <record model="oemedical.occupation" id="occ180">
+            <field name="name">Exchequer</field>
+            <field name="code">180</field>
+        </record>
+        <record model="oemedical.occupation" id="occ181">
+            <field name="name">Executive</field>
+            <field name="code">181</field>
+        </record>
+        <record model="oemedical.occupation" id="occ182">
+            <field name="name">Exotic dancer</field>
+            <field name="code">182</field>
+        </record>
+        <record model="oemedical.occupation" id="occ183">
+            <field name="name">Expressman</field>
+            <field name="code">183</field>
+        </record>
+        <record model="oemedical.occupation" id="occ184">
+            <field name="name">Exterminator</field>
+            <field name="code">184</field>
+        </record>
+        <record model="oemedical.occupation" id="occ185">
+            <field name="name">Extra</field>
+            <field name="code">185</field>
+        </record>
+        <record model="oemedical.occupation" id="occ186">
+            <field name="name">Falconer</field>
+            <field name="code">186</field>
+        </record>
+        <record model="oemedical.occupation" id="occ187">
+            <field name="name">Farmer</field>
+            <field name="code">187</field>
+        </record>
+        <record model="oemedical.occupation" id="occ188">
+            <field name="name">Farrier</field>
+            <field name="code">188</field>
+        </record>
+        <record model="oemedical.occupation" id="occ189">
+            <field name="name">Fashion designer</field>
+            <field name="code">189</field>
+        </record>
+        <record model="oemedical.occupation" id="occ190">
+            <field name="name">FBI Agent</field>
+            <field name="code">190</field>
+        </record>
+        <record model="oemedical.occupation" id="occ191">
+            <field name="name">Fellmonger</field>
+            <field name="code">191</field>
+        </record>
+        <record model="oemedical.occupation" id="occ192">
+            <field name="name">Fence</field>
+            <field name="code">192</field>
+        </record>
+        <record model="oemedical.occupation" id="occ193">
+            <field name="name">Ferryman</field>
+            <field name="code">193</field>
+        </record>
+        <record model="oemedical.occupation" id="occ194">
+            <field name="name">Film director</field>
+            <field name="code">194</field>
+        </record>
+        <record model="oemedical.occupation" id="occ195">
+            <field name="name">Film producer</field>
+            <field name="code">195</field>
+        </record>
+        <record model="oemedical.occupation" id="occ196">
+            <field name="name">Financial adviser</field>
+            <field name="code">196</field>
+        </record>
+        <record model="oemedical.occupation" id="occ197">
+            <field name="name">Financial analyst</field>
+            <field name="code">197</field>
+        </record>
+        <record model="oemedical.occupation" id="occ198">
+            <field name="name">Financial manager</field>
+            <field name="code">198</field>
+        </record>
+        <record model="oemedical.occupation" id="occ199">
+            <field name="name">Financial planner</field>
+            <field name="code">199</field>
+        </record>
+        <record model="oemedical.occupation" id="occ200">
+            <field name="name">Financier</field>
+            <field name="code">200</field>
+        </record>
+        <record model="oemedical.occupation" id="occ201">
+            <field name="name">Fire marshal</field>
+            <field name="code">201</field>
+        </record>
+        <record model="oemedical.occupation" id="occ202">
+            <field name="name">Fire officer</field>
+            <field name="code">202</field>
+        </record>
+        <record model="oemedical.occupation" id="occ203">
+            <field name="name">Firefighter</field>
+            <field name="code">203</field>
+        </record>
+        <record model="oemedical.occupation" id="occ204">
+            <field name="name">First Mate</field>
+            <field name="code">204</field>
+        </record>
+        <record model="oemedical.occupation" id="occ205">
+            <field name="name">Fishmonger</field>
+            <field name="code">205</field>
+        </record>
+        <record model="oemedical.occupation" id="occ206">
+            <field name="name">Fisherman</field>
+            <field name="code">206</field>
+        </record>
+        <record model="oemedical.occupation" id="occ207">
+            <field name="name">Fitter</field>
+            <field name="code">207</field>
+        </record>
+        <record model="oemedical.occupation" id="occ208">
+            <field name="name">Flautist</field>
+            <field name="code">208</field>
+        </record>
+        <record model="oemedical.occupation" id="occ209">
+            <field name="name">Flavorist</field>
+            <field name="code">209</field>
+        </record>
+        <record model="oemedical.occupation" id="occ210">
+            <field name="name">Fletcher</field>
+            <field name="code">210</field>
+        </record>
+        <record model="oemedical.occupation" id="occ211">
+            <field name="name">Flight attendant</field>
+            <field name="code">211</field>
+        </record>
+        <record model="oemedical.occupation" id="occ212">
+            <field name="name">Flight engineer</field>
+            <field name="code">212</field>
+        </record>
+        <record model="oemedical.occupation" id="occ213">
+            <field name="name">Flight instructor</field>
+            <field name="code">213</field>
+        </record>
+        <record model="oemedical.occupation" id="occ214">
+            <field name="name">Floor manager</field>
+            <field name="code">214</field>
+        </record>
+        <record model="oemedical.occupation" id="occ215">
+            <field name="name">Florist</field>
+            <field name="code">215</field>
+        </record>
+        <record model="oemedical.occupation" id="occ216">
+            <field name="name">Fluffer</field>
+            <field name="code">216</field>
+        </record>
+        <record model="oemedical.occupation" id="occ217">
+            <field name="name">Flutist</field>
+            <field name="code">217</field>
+        </record>
+        <record model="oemedical.occupation" id="occ218">
+            <field name="name">Foreman</field>
+            <field name="code">218</field>
+        </record>
+        <record model="oemedical.occupation" id="occ219">
+            <field name="name">Forensic scientist</field>
+            <field name="code">219</field>
+        </record>
+        <record model="oemedical.occupation" id="occ220">
+            <field name="name">Fruiterer</field>
+            <field name="code">220</field>
+        </record>
+        <record model="oemedical.occupation" id="occ221">
+            <field name="name">Furrier</field>
+            <field name="code">221</field>
+        </record>
+        <record model="oemedical.occupation" id="occ222">
+            <field name="name">Gamekeeper</field>
+            <field name="code">222</field>
+        </record>
+        <record model="oemedical.occupation" id="occ223">
+            <field name="name">Game show host</field>
+            <field name="code">223</field>
+        </record>
+        <record model="oemedical.occupation" id="occ224">
+            <field name="name">Game designer</field>
+            <field name="code">224</field>
+        </record>
+        <record model="oemedical.occupation" id="occ225">
+            <field name="name">Garbage collector</field>
+            <field name="code">225</field>
+        </record>
+        <record model="oemedical.occupation" id="occ226">
+            <field name="name">Gardener</field>
+            <field name="code">226</field>
+        </record>
+        <record model="oemedical.occupation" id="occ227">
+            <field name="name">Gate-keeper</field>
+            <field name="code">227</field>
+        </record>
+        <record model="oemedical.occupation" id="occ228">
+            <field name="name">Gemcutter</field>
+            <field name="code">228</field>
+        </record>
+        <record model="oemedical.occupation" id="occ229">
+            <field name="name">Genealogist</field>
+            <field name="code">229</field>
+        </record>
+        <record model="oemedical.occupation" id="occ230">
+            <field name="name">General</field>
+            <field name="code">230</field>
+        </record>
+        <record model="oemedical.occupation" id="occ231">
+            <field name="name">Geodesist</field>
+            <field name="code">231</field>
+        </record>
+        <record model="oemedical.occupation" id="occ232">
+            <field name="name">Geographer</field>
+            <field name="code">232</field>
+        </record>
+        <record model="oemedical.occupation" id="occ233">
+            <field name="name">Geologist</field>
+            <field name="code">233</field>
+        </record>
+        <record model="oemedical.occupation" id="occ234">
+            <field name="name">Geometer</field>
+            <field name="code">234</field>
+        </record>
+        <record model="oemedical.occupation" id="occ235">
+            <field name="name">Geophysicist</field>
+            <field name="code">235</field>
+        </record>
+        <record model="oemedical.occupation" id="occ236">
+            <field name="name">Government agent</field>
+            <field name="code">236</field>
+        </record>
+        <record model="oemedical.occupation" id="occ237">
+            <field name="name">Governor</field>
+            <field name="code">237</field>
+        </record>
+        <record model="oemedical.occupation" id="occ238">
+            <field name="name">Grammarian</field>
+            <field name="code">238</field>
+        </record>
+        <record model="oemedical.occupation" id="occ239">
+            <field name="name">Graphic artist</field>
+            <field name="code">239</field>
+        </record>
+        <record model="oemedical.occupation" id="occ240">
+            <field name="name">Gravedigger</field>
+            <field name="code">240</field>
+        </record>
+        <record model="oemedical.occupation" id="occ241">
+            <field name="name">Grenadier</field>
+            <field name="code">241</field>
+        </record>
+        <record model="oemedical.occupation" id="occ242">
+            <field name="name">Greengrocer</field>
+            <field name="code">242</field>
+        </record>
+        <record model="oemedical.occupation" id="occ243">
+            <field name="name">Grocer</field>
+            <field name="code">243</field>
+        </record>
+        <record model="oemedical.occupation" id="occ244">
+            <field name="name">Guide</field>
+            <field name="code">244</field>
+        </record>
+        <record model="oemedical.occupation" id="occ245">
+            <field name="name">Guitarist</field>
+            <field name="code">245</field>
+        </record>
+        <record model="oemedical.occupation" id="occ246">
+            <field name="name">Gunsmith</field>
+            <field name="code">246</field>
+        </record>
+        <record model="oemedical.occupation" id="occ247">
+            <field name="name">Gynecologist</field>
+            <field name="code">247</field>
+        </record>
+        <record model="oemedical.occupation" id="occ248">
+            <field name="name">Garrett</field>
+            <field name="code">248</field>
+        </record>
+        <record model="oemedical.occupation" id="occ249">
+            <field name="name">Haberdasher</field>
+            <field name="code">249</field>
+        </record>
+        <record model="oemedical.occupation" id="occ250">
+            <field name="name">Harpist</field>
+            <field name="code">250</field>
+        </record>
+        <record model="oemedical.occupation" id="occ251">
+            <field name="name">Hairdresser</field>
+            <field name="code">251</field>
+        </record>
+        <record model="oemedical.occupation" id="occ252">
+            <field name="name">Handyman</field>
+            <field name="code">252</field>
+        </record>
+        <record model="oemedical.occupation" id="occ253">
+            <field name="name">Harbourmaster</field>
+            <field name="code">253</field>
+        </record>
+        <record model="oemedical.occupation" id="occ254">
+            <field name="name">Harper</field>
+            <field name="code">254</field>
+        </record>
+        <record model="oemedical.occupation" id="occ255">
+            <field name="name">Hatter</field>
+            <field name="code">255</field>
+        </record>
+        <record model="oemedical.occupation" id="occ256">
+            <field name="name">Hayward</field>
+            <field name="code">256</field>
+        </record>
+        <record model="oemedical.occupation" id="occ257">
+            <field name="name">Headmaster</field>
+            <field name="code">257</field>
+        </record>
+        <record model="oemedical.occupation" id="occ258">
+            <field name="name">Herald</field>
+            <field name="code">258</field>
+        </record>
+        <record model="oemedical.occupation" id="occ259">
+            <field name="name">Herbalist</field>
+            <field name="code">259</field>
+        </record>
+        <record model="oemedical.occupation" id="occ260">
+            <field name="name">Herder</field>
+            <field name="code">260</field>
+        </record>
+        <record model="oemedical.occupation" id="occ261">
+            <field name="name">Historian</field>
+            <field name="code">261</field>
+        </record>
+        <record model="oemedical.occupation" id="occ262">
+            <field name="name">Historiographer</field>
+            <field name="code">262</field>
+        </record>
+        <record model="oemedical.occupation" id="occ263">
+            <field name="name">Hosier</field>
+            <field name="code">263</field>
+        </record>
+        <record model="oemedical.occupation" id="occ264">
+            <field name="name">Horse trainer</field>
+            <field name="code">264</field>
+        </record>
+        <record model="oemedical.occupation" id="occ265">
+            <field name="name">Hotelier</field>
+            <field name="code">265</field>
+        </record>
+        <record model="oemedical.occupation" id="occ266">
+            <field name="name">House painter</field>
+            <field name="code">266</field>
+        </record>
+        <record model="oemedical.occupation" id="occ267">
+            <field name="name">Housewife</field>
+            <field name="code">267</field>
+        </record>
+        <record model="oemedical.occupation" id="occ268">
+            <field name="name">Hunter</field>
+            <field name="code">268</field>
+        </record>
+        <record model="oemedical.occupation" id="occ269">
+            <field name="name">Hydraulic engineer</field>
+            <field name="code">269</field>
+        </record>
+        <record model="oemedical.occupation" id="occ270">
+            <field name="name">Illuminator</field>
+            <field name="code">270</field>
+        </record>
+        <record model="oemedical.occupation" id="occ271">
+            <field name="name">Illusionist</field>
+            <field name="code">271</field>
+        </record>
+        <record model="oemedical.occupation" id="occ272">
+            <field name="name">Illustrator</field>
+            <field name="code">272</field>
+        </record>
+        <record model="oemedical.occupation" id="occ273">
+            <field name="name">Importer</field>
+            <field name="code">273</field>
+        </record>
+        <record model="oemedical.occupation" id="occ274">
+            <field name="name">Industrial designer</field>
+            <field name="code">274</field>
+        </record>
+        <record model="oemedical.occupation" id="occ275">
+            <field name="name">Industrial engineer</field>
+            <field name="code">275</field>
+        </record>
+        <record model="oemedical.occupation" id="occ276">
+            <field name="name">Industrialist</field>
+            <field name="code">276</field>
+        </record>
+        <record model="oemedical.occupation" id="occ277">
+            <field name="name">Infantryman</field>
+            <field name="code">277</field>
+        </record>
+        <record model="oemedical.occupation" id="occ278">
+            <field name="name">Information Architect</field>
+            <field name="code">278</field>
+        </record>
+        <record model="oemedical.occupation" id="occ279">
+            <field name="name">Information Technologist</field>
+            <field name="code">279</field>
+        </record>
+        <record model="oemedical.occupation" id="occ280">
+            <field name="name">Inker</field>
+            <field name="code">280</field>
+        </record>
+        <record model="oemedical.occupation" id="occ281">
+            <field name="name">Innkeeper</field>
+            <field name="code">281</field>
+        </record>
+        <record model="oemedical.occupation" id="occ282">
+            <field name="name">Instructor</field>
+            <field name="code">282</field>
+        </record>
+        <record model="oemedical.occupation" id="occ283">
+            <field name="name">Insurer</field>
+            <field name="code">283</field>
+        </record>
+        <record model="oemedical.occupation" id="occ284">
+            <field name="name">Intelligence officer</field>
+            <field name="code">284</field>
+        </record>
+        <record model="oemedical.occupation" id="occ285">
+            <field name="name">Interior designer</field>
+            <field name="code">285</field>
+        </record>
+        <record model="oemedical.occupation" id="occ286">
+            <field name="name">Internist</field>
+            <field name="code">286</field>
+        </record>
+        <record model="oemedical.occupation" id="occ287">
+            <field name="name">Interpreter</field>
+            <field name="code">287</field>
+        </record>
+        <record model="oemedical.occupation" id="occ288">
+            <field name="name">Interrogator</field>
+            <field name="code">288</field>
+        </record>
+        <record model="oemedical.occupation" id="occ289">
+            <field name="name">Inventor</field>
+            <field name="code">289</field>
+        </record>
+        <record model="oemedical.occupation" id="occ290">
+            <field name="name">Investigator</field>
+            <field name="code">290</field>
+        </record>
+        <record model="oemedical.occupation" id="occ291">
+            <field name="name">Investment analyst</field>
+            <field name="code">291</field>
+        </record>
+        <record model="oemedical.occupation" id="occ292">
+            <field name="name">Investment banker</field>
+            <field name="code">292</field>
+        </record>
+        <record model="oemedical.occupation" id="occ293">
+            <field name="name">Investment broker</field>
+            <field name="code">293</field>
+        </record>
+        <record model="oemedical.occupation" id="occ294">
+            <field name="name">Ironmonger</field>
+            <field name="code">294</field>
+        </record>
+        <record model="oemedical.occupation" id="occ295">
+            <field name="name">Ironmaster</field>
+            <field name="code">295</field>
+        </record>
+        <record model="oemedical.occupation" id="occ296">
+            <field name="name">Ironworker</field>
+            <field name="code">296</field>
+        </record>
+        <record model="oemedical.occupation" id="occ297">
+            <field name="name">Jailer</field>
+            <field name="code">297</field>
+        </record>
+        <record model="oemedical.occupation" id="occ298">
+            <field name="name">Janitor</field>
+            <field name="code">298</field>
+        </record>
+        <record model="oemedical.occupation" id="occ299">
+            <field name="name">Jeweler</field>
+            <field name="code">299</field>
+        </record>
+        <record model="oemedical.occupation" id="occ300">
+            <field name="name">Journalist</field>
+            <field name="code">300</field>
+        </record>
+        <record model="oemedical.occupation" id="occ301">
+            <field name="name">Jurist</field>
+            <field name="code">301</field>
+        </record>
+        <record model="oemedical.occupation" id="occ302">
+            <field name="name">Judge</field>
+            <field name="code">302</field>
+        </record>
+        <record model="oemedical.occupation" id="occ303">
+            <field name="name">Kinesiologist</field>
+            <field name="code">303</field>
+        </record>
+        <record model="oemedical.occupation" id="occ304">
+            <field name="name">King</field>
+            <field name="code">304</field>
+        </record>
+        <record model="oemedical.occupation" id="occ305">
+            <field name="name">Lab Assistant</field>
+            <field name="code">305</field>
+        </record>
+        <record model="oemedical.occupation" id="occ306">
+            <field name="name">Laborer</field>
+            <field name="code">306</field>
+        </record>
+        <record model="oemedical.occupation" id="occ307">
+            <field name="name">Landlord </field>
+            <field name="code">307</field>
+        </record>
+        <record model="oemedical.occupation" id="occ308">
+            <field name="name">Landscaper</field>
+            <field name="code">308</field>
+        </record>
+        <record model="oemedical.occupation" id="occ309">
+            <field name="name">Lamplighter</field>
+            <field name="code">309</field>
+        </record>
+        <record model="oemedical.occupation" id="occ310">
+            <field name="name">Laundress</field>
+            <field name="code">310</field>
+        </record>
+        <record model="oemedical.occupation" id="occ311">
+            <field name="name">Law enforcement agent</field>
+            <field name="code">311</field>
+        </record>
+        <record model="oemedical.occupation" id="occ312">
+            <field name="name">Lawyer</field>
+            <field name="code">312</field>
+        </record>
+        <record model="oemedical.occupation" id="occ313">
+            <field name="name">Leadworker</field>
+            <field name="code">313</field>
+        </record>
+        <record model="oemedical.occupation" id="occ314">
+            <field name="name">Leatherer</field>
+            <field name="code">314</field>
+        </record>
+        <record model="oemedical.occupation" id="occ315">
+            <field name="name">Lecturer</field>
+            <field name="code">315</field>
+        </record>
+        <record model="oemedical.occupation" id="occ316">
+            <field name="name">Level designer</field>
+            <field name="code">316</field>
+        </record>
+        <record model="oemedical.occupation" id="occ317">
+            <field name="name">Librarian</field>
+            <field name="code">317</field>
+        </record>
+        <record model="oemedical.occupation" id="occ318">
+            <field name="name">Library technical assistant</field>
+            <field name="code">318</field>
+        </record>
+        <record model="oemedical.occupation" id="occ319">
+            <field name="name">Librettist</field>
+            <field name="code">319</field>
+        </record>
+        <record model="oemedical.occupation" id="occ320">
+            <field name="name">Lifeguard</field>
+            <field name="code">320</field>
+        </record>
+        <record model="oemedical.occupation" id="occ321">
+            <field name="name">Lighthouse keeper</field>
+            <field name="code">321</field>
+        </record>
+        <record model="oemedical.occupation" id="occ322">
+            <field name="name">Lighting technician</field>
+            <field name="code">322</field>
+        </record>
+        <record model="oemedical.occupation" id="occ323">
+            <field name="name">Linesman</field>
+            <field name="code">323</field>
+        </record>
+        <record model="oemedical.occupation" id="occ324">
+            <field name="name">Linguist</field>
+            <field name="code">324</field>
+        </record>
+        <record model="oemedical.occupation" id="occ325">
+            <field name="name">Loan officer</field>
+            <field name="code">325</field>
+        </record>
+        <record model="oemedical.occupation" id="occ326">
+            <field name="name">Lobbyist</field>
+            <field name="code">326</field>
+        </record>
+        <record model="oemedical.occupation" id="occ327">
+            <field name="name">Locksmith</field>
+            <field name="code">327</field>
+        </record>
+        <record model="oemedical.occupation" id="occ328">
+            <field name="name">Logistician</field>
+            <field name="code">328</field>
+        </record>
+        <record model="oemedical.occupation" id="occ329">
+            <field name="name">Lumberjack</field>
+            <field name="code">329</field>
+        </record>
+        <record model="oemedical.occupation" id="occ330">
+            <field name="name">Lyricist</field>
+            <field name="code">330</field>
+        </record>
+        <record model="oemedical.occupation" id="occ331">
+            <field name="name">Magazine Editor</field>
+            <field name="code">331</field>
+        </record>
+        <record model="oemedical.occupation" id="occ332">
+            <field name="name">Magician</field>
+            <field name="code">332</field>
+        </record>
+        <record model="oemedical.occupation" id="occ333">
+            <field name="name">Magistrate</field>
+            <field name="code">333</field>
+        </record>
+        <record model="oemedical.occupation" id="occ334">
+            <field name="name">Maid</field>
+            <field name="code">334</field>
+        </record>
+        <record model="oemedical.occupation" id="occ335">
+            <field name="name">Mailman or Mail carrier</field>
+            <field name="code">335</field>
+        </record>
+        <record model="oemedical.occupation" id="occ336">
+            <field name="name">Make-up artist</field>
+            <field name="code">336</field>
+        </record>
+        <record model="oemedical.occupation" id="occ337">
+            <field name="name">Management consultant</field>
+            <field name="code">337</field>
+        </record>
+        <record model="oemedical.occupation" id="occ338">
+            <field name="name">Manager</field>
+            <field name="code">338</field>
+        </record>
+        <record model="oemedical.occupation" id="occ339">
+            <field name="name">Manicurist</field>
+            <field name="code">339</field>
+        </record>
+        <record model="oemedical.occupation" id="occ340">
+            <field name="name">Manufacturer</field>
+            <field name="code">340</field>
+        </record>
+        <record model="oemedical.occupation" id="occ341">
+            <field name="name">Marine</field>
+            <field name="code">341</field>
+        </record>
+        <record model="oemedical.occupation" id="occ342">
+            <field name="name">Marketer</field>
+            <field name="code">342</field>
+        </record>
+        <record model="oemedical.occupation" id="occ343">
+            <field name="name">Market gardener</field>
+            <field name="code">343</field>
+        </record>
+        <record model="oemedical.occupation" id="occ344">
+            <field name="name">Martial artist</field>
+            <field name="code">344</field>
+        </record>
+        <record model="oemedical.occupation" id="occ345">
+            <field name="name">Mason</field>
+            <field name="code">345</field>
+        </record>
+        <record model="oemedical.occupation" id="occ346">
+            <field name="name">Massage therapist </field>
+            <field name="code">346</field>
+        </record>
+        <record model="oemedical.occupation" id="occ347">
+            <field name="name">Master of Ceremony (MC)</field>
+            <field name="code">347</field>
+        </record>
+        <record model="oemedical.occupation" id="occ348">
+            <field name="name">Matador</field>
+            <field name="code">348</field>
+        </record>
+        <record model="oemedical.occupation" id="occ349">
+            <field name="name">Materials engineer</field>
+            <field name="code">349</field>
+        </record>
+        <record model="oemedical.occupation" id="occ350">
+            <field name="name">Materials scientist</field>
+            <field name="code">350</field>
+        </record>
+        <record model="oemedical.occupation" id="occ351">
+            <field name="name">Mathematician</field>
+            <field name="code">351</field>
+        </record>
+        <record model="oemedical.occupation" id="occ352">
+            <field name="name">Matron</field>
+            <field name="code">352</field>
+        </record>
+        <record model="oemedical.occupation" id="occ353">
+            <field name="name">Mechanic</field>
+            <field name="code">353</field>
+        </record>
+        <record model="oemedical.occupation" id="occ354">
+            <field name="name">Mechanical engineer</field>
+            <field name="code">354</field>
+        </record>
+        <record model="oemedical.occupation" id="occ355">
+            <field name="name">Mechanician</field>
+            <field name="code">355</field>
+        </record>
+        <record model="oemedical.occupation" id="occ356">
+            <field name="name">Mediator</field>
+            <field name="code">356</field>
+        </record>
+        <record model="oemedical.occupation" id="occ357">
+            <field name="name">Medic</field>
+            <field name="code">357</field>
+        </record>
+        <record model="oemedical.occupation" id="occ358">
+            <field name="name">Medical biller</field>
+            <field name="code">358</field>
+        </record>
+        <record model="oemedical.occupation" id="occ359">
+            <field name="name">Medical Technologist</field>
+            <field name="code">359</field>
+        </record>
+        <record model="oemedical.occupation" id="occ360">
+            <field name="name">Medical Transcriptionist</field>
+            <field name="code">360</field>
+        </record>
+        <record model="oemedical.occupation" id="occ361">
+            <field name="name">Mesmerist</field>
+            <field name="code">361</field>
+        </record>
+        <record model="oemedical.occupation" id="occ362">
+            <field name="name">Messenger</field>
+            <field name="code">362</field>
+        </record>
+        <record model="oemedical.occupation" id="occ363">
+            <field name="name">Meteorologist</field>
+            <field name="code">363</field>
+        </record>
+        <record model="oemedical.occupation" id="occ364">
+            <field name="name">Microbiologist</field>
+            <field name="code">364</field>
+        </record>
+        <record model="oemedical.occupation" id="occ365">
+            <field name="name">Midwife</field>
+            <field name="code">365</field>
+        </record>
+        <record model="oemedical.occupation" id="occ366">
+            <field name="name">Milkman </field>
+            <field name="code">366</field>
+        </record>
+        <record model="oemedical.occupation" id="occ367">
+            <field name="name">Miller</field>
+            <field name="code">367</field>
+        </record>
+        <record model="oemedical.occupation" id="occ368">
+            <field name="name">Miner</field>
+            <field name="code">368</field>
+        </record>
+        <record model="oemedical.occupation" id="occ369">
+            <field name="name">Model</field>
+            <field name="code">369</field>
+        </record>
+        <record model="oemedical.occupation" id="occ370">
+            <field name="name">Modeller</field>
+            <field name="code">370</field>
+        </record>
+        <record model="oemedical.occupation" id="occ371">
+            <field name="name">Molecatcher</field>
+            <field name="code">371</field>
+        </record>
+        <record model="oemedical.occupation" id="occ372">
+            <field name="name">Moldmaker</field>
+            <field name="code">372</field>
+        </record>
+        <record model="oemedical.occupation" id="occ373">
+            <field name="name">Moneychanger</field>
+            <field name="code">373</field>
+        </record>
+        <record model="oemedical.occupation" id="occ374">
+            <field name="name">Moneylender</field>
+            <field name="code">374</field>
+        </record>
+        <record model="oemedical.occupation" id="occ375">
+            <field name="name">Monk</field>
+            <field name="code">375</field>
+        </record>
+        <record model="oemedical.occupation" id="occ376">
+            <field name="name">Mortgage banker</field>
+            <field name="code">376</field>
+        </record>
+        <record model="oemedical.occupation" id="occ377">
+            <field name="name">Mortgage broker</field>
+            <field name="code">377</field>
+        </record>
+        <record model="oemedical.occupation" id="occ378">
+            <field name="name">Mortician</field>
+            <field name="code">378</field>
+        </record>
+        <record model="oemedical.occupation" id="occ379">
+            <field name="name">Mountain rescuer</field>
+            <field name="code">379</field>
+        </record>
+        <record model="oemedical.occupation" id="occ380">
+            <field name="name">Mountaineer</field>
+            <field name="code">380</field>
+        </record>
+        <record model="oemedical.occupation" id="occ381">
+            <field name="name">Muleskinner</field>
+            <field name="code">381</field>
+        </record>
+        <record model="oemedical.occupation" id="occ382">
+            <field name="name">Muralist</field>
+            <field name="code">382</field>
+        </record>
+        <record model="oemedical.occupation" id="occ383">
+            <field name="name">Music Director</field>
+            <field name="code">383</field>
+        </record>
+        <record model="oemedical.occupation" id="occ384">
+            <field name="name">Musician</field>
+            <field name="code">384</field>
+        </record>
+        <record model="oemedical.occupation" id="occ385">
+            <field name="name">Nanny</field>
+            <field name="code">385</field>
+        </record>
+        <record model="oemedical.occupation" id="occ386">
+            <field name="name">Navigator</field>
+            <field name="code">386</field>
+        </record>
+        <record model="oemedical.occupation" id="occ387">
+            <field name="name">Needler</field>
+            <field name="code">387</field>
+        </record>
+        <record model="oemedical.occupation" id="occ388">
+            <field name="name">Négociant</field>
+            <field name="code">388</field>
+        </record>
+        <record model="oemedical.occupation" id="occ389">
+            <field name="name">Negotiator</field>
+            <field name="code">389</field>
+        </record>
+        <record model="oemedical.occupation" id="occ390">
+            <field name="name">Netmaker</field>
+            <field name="code">390</field>
+        </record>
+        <record model="oemedical.occupation" id="occ391">
+            <field name="name">Neurosurgeon</field>
+            <field name="code">391</field>
+        </record>
+        <record model="oemedical.occupation" id="occ392">
+            <field name="name">Newscaster</field>
+            <field name="code">392</field>
+        </record>
+        <record model="oemedical.occupation" id="occ393">
+            <field name="name">Notary</field>
+            <field name="code">393</field>
+        </record>
+        <record model="oemedical.occupation" id="occ394">
+            <field name="name">Novelist</field>
+            <field name="code">394</field>
+        </record>
+        <record model="oemedical.occupation" id="occ395">
+            <field name="name">Nuclear Engineer</field>
+            <field name="code">395</field>
+        </record>
+        <record model="oemedical.occupation" id="occ396">
+            <field name="name">Numerologist</field>
+            <field name="code">396</field>
+        </record>
+        <record model="oemedical.occupation" id="occ397">
+            <field name="name">Numismatist</field>
+            <field name="code">397</field>
+        </record>
+        <record model="oemedical.occupation" id="occ398">
+            <field name="name">Nun</field>
+            <field name="code">398</field>
+        </record>
+        <record model="oemedical.occupation" id="occ399">
+            <field name="name">Nurse</field>
+            <field name="code">399</field>
+        </record>
+        <record model="oemedical.occupation" id="occ400">
+            <field name="name">Nursemaid</field>
+            <field name="code">400</field>
+        </record>
+        <record model="oemedical.occupation" id="occ401">
+            <field name="name">Oboist</field>
+            <field name="code">401</field>
+        </record>
+        <record model="oemedical.occupation" id="occ402">
+            <field name="name">Obstetrician</field>
+            <field name="code">402</field>
+        </record>
+        <record model="oemedical.occupation" id="occ403">
+            <field name="name">Occupational therapist</field>
+            <field name="code">403</field>
+        </record>
+        <record model="oemedical.occupation" id="occ404">
+            <field name="name">Odontologist</field>
+            <field name="code">404</field>
+        </record>
+        <record model="oemedical.occupation" id="occ405">
+            <field name="name">Office Assistant</field>
+            <field name="code">405</field>
+        </record>
+        <record model="oemedical.occupation" id="occ406">
+            <field name="name">Oncologist</field>
+            <field name="code">406</field>
+        </record>
+        <record model="oemedical.occupation" id="occ407">
+            <field name="name">Ontologist</field>
+            <field name="code">407</field>
+        </record>
+        <record model="oemedical.occupation" id="occ408">
+            <field name="name">Operator</field>
+            <field name="code">408</field>
+        </record>
+        <record model="oemedical.occupation" id="occ409">
+            <field name="name">Ophthalmologist</field>
+            <field name="code">409</field>
+        </record>
+        <record model="oemedical.occupation" id="occ410">
+            <field name="name">Optician</field>
+            <field name="code">410</field>
+        </record>
+        <record model="oemedical.occupation" id="occ411">
+            <field name="name">Oracle</field>
+            <field name="code">411</field>
+        </record>
+        <record model="oemedical.occupation" id="occ412">
+            <field name="name">Ordinary Seaman</field>
+            <field name="code">412</field>
+        </record>
+        <record model="oemedical.occupation" id="occ413">
+            <field name="name">Organist</field>
+            <field name="code">413</field>
+        </record>
+        <record model="oemedical.occupation" id="occ414">
+            <field name="name">Organizer</field>
+            <field name="code">414</field>
+        </record>
+        <record model="oemedical.occupation" id="occ415">
+            <field name="name">Ornithologist</field>
+            <field name="code">415</field>
+        </record>
+        <record model="oemedical.occupation" id="occ416">
+            <field name="name">Orthodontist</field>
+            <field name="code">416</field>
+        </record>
+        <record model="oemedical.occupation" id="occ417">
+            <field name="name">Orthopaedist</field>
+            <field name="code">417</field>
+        </record>
+        <record model="oemedical.occupation" id="occ418">
+            <field name="name">Ostler</field>
+            <field name="code">418</field>
+        </record>
+        <record model="oemedical.occupation" id="occ419">
+            <field name="name">Otorhinolaryngologist</field>
+            <field name="code">419</field>
+        </record>
+        <record model="oemedical.occupation" id="occ420">
+            <field name="name">Painter</field>
+            <field name="code">420</field>
+        </record>
+        <record model="oemedical.occupation" id="occ421">
+            <field name="name">Paleontologist</field>
+            <field name="code">421</field>
+        </record>
+        <record model="oemedical.occupation" id="occ422">
+            <field name="name">Parachute instructor</field>
+            <field name="code">422</field>
+        </record>
+        <record model="oemedical.occupation" id="occ423">
+            <field name="name">Paralegal</field>
+            <field name="code">423</field>
+        </record>
+        <record model="oemedical.occupation" id="occ424">
+            <field name="name">Paramedic</field>
+            <field name="code">424</field>
+        </record>
+        <record model="oemedical.occupation" id="occ425">
+            <field name="name">Park ranger</field>
+            <field name="code">425</field>
+        </record>
+        <record model="oemedical.occupation" id="occ426">
+            <field name="name">Patent attorney</field>
+            <field name="code">426</field>
+        </record>
+        <record model="oemedical.occupation" id="occ427">
+            <field name="name">Patent examiner</field>
+            <field name="code">427</field>
+        </record>
+        <record model="oemedical.occupation" id="occ428">
+            <field name="name">Pathologist</field>
+            <field name="code">428</field>
+        </record>
+        <record model="oemedical.occupation" id="occ429">
+            <field name="name">Pawnbroker</field>
+            <field name="code">429</field>
+        </record>
+        <record model="oemedical.occupation" id="occ430">
+            <field name="name">Peddler</field>
+            <field name="code">430</field>
+        </record>
+        <record model="oemedical.occupation" id="occ431">
+            <field name="name">Pediatrician</field>
+            <field name="code">431</field>
+        </record>
+        <record model="oemedical.occupation" id="occ432">
+            <field name="name">Pediatrist</field>
+            <field name="code">432</field>
+        </record>
+        <record model="oemedical.occupation" id="occ433">
+            <field name="name">Pedologist (soil)</field>
+            <field name="code">433</field>
+        </record>
+        <record model="oemedical.occupation" id="occ434">
+            <field name="name">Pedologist (children)</field>
+            <field name="code">434</field>
+        </record>
+        <record model="oemedical.occupation" id="occ435">
+            <field name="name">Percussionist</field>
+            <field name="code">435</field>
+        </record>
+        <record model="oemedical.occupation" id="occ436">
+            <field name="name">Perfumer</field>
+            <field name="code">436</field>
+        </record>
+        <record model="oemedical.occupation" id="occ437">
+            <field name="name">Personal Trainer</field>
+            <field name="code">437</field>
+        </record>
+        <record model="oemedical.occupation" id="occ438">
+            <field name="name">Pharmacist</field>
+            <field name="code">438</field>
+        </record>
+        <record model="oemedical.occupation" id="occ439">
+            <field name="name">Philanthropist</field>
+            <field name="code">439</field>
+        </record>
+        <record model="oemedical.occupation" id="occ440">
+            <field name="name">Philologist</field>
+            <field name="code">440</field>
+        </record>
+        <record model="oemedical.occupation" id="occ441">
+            <field name="name">Photographer</field>
+            <field name="code">441</field>
+        </record>
+        <record model="oemedical.occupation" id="occ442">
+            <field name="name">Physical Therapist</field>
+            <field name="code">442</field>
+        </record>
+        <record model="oemedical.occupation" id="occ443">
+            <field name="name">Physician</field>
+            <field name="code">443</field>
+        </record>
+        <record model="oemedical.occupation" id="occ444">
+            <field name="name">Physician Assistant</field>
+            <field name="code">444</field>
+        </record>
+        <record model="oemedical.occupation" id="occ445">
+            <field name="name">Physicist</field>
+            <field name="code">445</field>
+        </record>
+        <record model="oemedical.occupation" id="occ446">
+            <field name="name">Physiognomist</field>
+            <field name="code">446</field>
+        </record>
+        <record model="oemedical.occupation" id="occ447">
+            <field name="name">Physiologist</field>
+            <field name="code">447</field>
+        </record>
+        <record model="oemedical.occupation" id="occ448">
+            <field name="name">Physiotherapist</field>
+            <field name="code">448</field>
+        </record>
+        <record model="oemedical.occupation" id="occ449">
+            <field name="name">Pianist</field>
+            <field name="code">449</field>
+        </record>
+        <record model="oemedical.occupation" id="occ450">
+            <field name="name">Piano tuner</field>
+            <field name="code">450</field>
+        </record>
+        <record model="oemedical.occupation" id="occ451">
+            <field name="name">Pilot</field>
+            <field name="code">451</field>
+        </record>
+        <record model="oemedical.occupation" id="occ452">
+            <field name="name">Pirate</field>
+            <field name="code">452</field>
+        </record>
+        <record model="oemedical.occupation" id="occ453">
+            <field name="name">Plastic surgeon</field>
+            <field name="code">453</field>
+        </record>
+        <record model="oemedical.occupation" id="occ454">
+            <field name="name">Playwright</field>
+            <field name="code">454</field>
+        </record>
+        <record model="oemedical.occupation" id="occ455">
+            <field name="name">Plumber</field>
+            <field name="code">455</field>
+        </record>
+        <record model="oemedical.occupation" id="occ456">
+            <field name="name">Poet</field>
+            <field name="code">456</field>
+        </record>
+        <record model="oemedical.occupation" id="occ457">
+            <field name="name">Police</field>
+            <field name="code">457</field>
+        </record>
+        <record model="oemedical.occupation" id="occ458">
+            <field name="name">Policeman</field>
+            <field name="code">458</field>
+        </record>
+        <record model="oemedical.occupation" id="occ459">
+            <field name="name">Policewoman</field>
+            <field name="code">459</field>
+        </record>
+        <record model="oemedical.occupation" id="occ460">
+            <field name="name">Police officer</field>
+            <field name="code">460</field>
+        </record>
+        <record model="oemedical.occupation" id="occ461">
+            <field name="name">Police inspector</field>
+            <field name="code">461</field>
+        </record>
+        <record model="oemedical.occupation" id="occ462">
+            <field name="name">Political scientist</field>
+            <field name="code">462</field>
+        </record>
+        <record model="oemedical.occupation" id="occ463">
+            <field name="name">Presenter</field>
+            <field name="code">463</field>
+        </record>
+        <record model="oemedical.occupation" id="occ464">
+            <field name="name">Press officer</field>
+            <field name="code">464</field>
+        </record>
+        <record model="oemedical.occupation" id="occ465">
+            <field name="name">Principal</field>
+            <field name="code">465</field>
+        </record>
+        <record model="oemedical.occupation" id="occ466">
+            <field name="name">Printer</field>
+            <field name="code">466</field>
+        </record>
+        <record model="oemedical.occupation" id="occ467">
+            <field name="name">Private detective</field>
+            <field name="code">467</field>
+        </record>
+        <record model="oemedical.occupation" id="occ468">
+            <field name="name">Proctologist</field>
+            <field name="code">468</field>
+        </record>
+        <record model="oemedical.occupation" id="occ469">
+            <field name="name">Professor</field>
+            <field name="code">469</field>
+        </record>
+        <record model="oemedical.occupation" id="occ470">
+            <field name="name">Professional dominant</field>
+            <field name="code">470</field>
+        </record>
+        <record model="oemedical.occupation" id="occ471">
+            <field name="name">Programmer</field>
+            <field name="code">471</field>
+        </record>
+        <record model="oemedical.occupation" id="occ472">
+            <field name="name">Project Manager</field>
+            <field name="code">472</field>
+        </record>
+        <record model="oemedical.occupation" id="occ473">
+            <field name="name">Proofreader</field>
+            <field name="code">473</field>
+        </record>
+        <record model="oemedical.occupation" id="occ474">
+            <field name="name">Prostitute</field>
+            <field name="code">474</field>
+        </record>
+        <record model="oemedical.occupation" id="occ475">
+            <field name="name">Psychiatrist</field>
+            <field name="code">475</field>
+        </record>
+        <record model="oemedical.occupation" id="occ476">
+            <field name="name">Psychodramatist</field>
+            <field name="code">476</field>
+        </record>
+        <record model="oemedical.occupation" id="occ477">
+            <field name="name">Psychologist</field>
+            <field name="code">477</field>
+        </record>
+        <record model="oemedical.occupation" id="occ478">
+            <field name="name">Public Relations Officer</field>
+            <field name="code">478</field>
+        </record>
+        <record model="oemedical.occupation" id="occ479">
+            <field name="name">Public speaker</field>
+            <field name="code">479</field>
+        </record>
+        <record model="oemedical.occupation" id="occ480">
+            <field name="name">Publisher</field>
+            <field name="code">480</field>
+        </record>
+        <record model="oemedical.occupation" id="occ481">
+            <field name="name">Quilter</field>
+            <field name="code">481</field>
+        </record>
+        <record model="oemedical.occupation" id="occ482">
+            <field name="name">Radiologist</field>
+            <field name="code">482</field>
+        </record>
+        <record model="oemedical.occupation" id="occ483">
+            <field name="name">Radiographer</field>
+            <field name="code">483</field>
+        </record>
+        <record model="oemedical.occupation" id="occ484">
+            <field name="name">Racing Driver</field>
+            <field name="code">484</field>
+        </record>
+        <record model="oemedical.occupation" id="occ485">
+            <field name="name">Real estate agent</field>
+            <field name="code">485</field>
+        </record>
+        <record model="oemedical.occupation" id="occ486">
+            <field name="name">Real estate broker</field>
+            <field name="code">486</field>
+        </record>
+        <record model="oemedical.occupation" id="occ487">
+            <field name="name">Real estate investor</field>
+            <field name="code">487</field>
+        </record>
+        <record model="oemedical.occupation" id="occ488">
+            <field name="name">Real estate developer</field>
+            <field name="code">488</field>
+        </record>
+        <record model="oemedical.occupation" id="occ489">
+            <field name="name">Receptionist</field>
+            <field name="code">489</field>
+        </record>
+        <record model="oemedical.occupation" id="occ490">
+            <field name="name">Record Producer</field>
+            <field name="code">490</field>
+        </record>
+        <record model="oemedical.occupation" id="occ491">
+            <field name="name">Recording engineer</field>
+            <field name="code">491</field>
+        </record>
+        <record model="oemedical.occupation" id="occ492">
+            <field name="name">Referee</field>
+            <field name="code">492</field>
+        </record>
+        <record model="oemedical.occupation" id="occ493">
+            <field name="name">Refuse collector</field>
+            <field name="code">493</field>
+        </record>
+        <record model="oemedical.occupation" id="occ494">
+            <field name="name">Registrar</field>
+            <field name="code">494</field>
+        </record>
+        <record model="oemedical.occupation" id="occ495">
+            <field name="name">Remedial teacher</field>
+            <field name="code">495</field>
+        </record>
+        <record model="oemedical.occupation" id="occ496">
+            <field name="name">Reporter</field>
+            <field name="code">496</field>
+        </record>
+        <record model="oemedical.occupation" id="occ497">
+            <field name="name">Respiratory Therapist</field>
+            <field name="code">497</field>
+        </record>
+        <record model="oemedical.occupation" id="occ498">
+            <field name="name">Restaurateur</field>
+            <field name="code">498</field>
+        </record>
+        <record model="oemedical.occupation" id="occ499">
+            <field name="name">Retailer</field>
+            <field name="code">499</field>
+        </record>
+        <record model="oemedical.occupation" id="occ500">
+            <field name="name">Rajan Brar</field>
+            <field name="code">500</field>
+        </record>
+        <record model="oemedical.occupation" id="occ501">
+            <field name="name">Sailmaker</field>
+            <field name="code">501</field>
+        </record>
+        <record model="oemedical.occupation" id="occ502">
+            <field name="name">Sailor</field>
+            <field name="code">502</field>
+        </record>
+        <record model="oemedical.occupation" id="occ503">
+            <field name="name">Salesperson</field>
+            <field name="code">503</field>
+        </record>
+        <record model="oemedical.occupation" id="occ504">
+            <field name="name">Salaryman</field>
+            <field name="code">504</field>
+        </record>
+        <record model="oemedical.occupation" id="occ505">
+            <field name="name">Saucier</field>
+            <field name="code">505</field>
+        </record>
+        <record model="oemedical.occupation" id="occ506">
+            <field name="name">Saxophonist</field>
+            <field name="code">506</field>
+        </record>
+        <record model="oemedical.occupation" id="occ507">
+            <field name="name">Sawyer</field>
+            <field name="code">507</field>
+        </record>
+        <record model="oemedical.occupation" id="occ508">
+            <field name="name">Scabbardmaker</field>
+            <field name="code">508</field>
+        </record>
+        <record model="oemedical.occupation" id="occ509">
+            <field name="name">School-bus driver</field>
+            <field name="code">509</field>
+        </record>
+        <record model="oemedical.occupation" id="occ510">
+            <field name="name">School Principal</field>
+            <field name="code">510</field>
+        </record>
+        <record model="oemedical.occupation" id="occ511">
+            <field name="name">School superintendent</field>
+            <field name="code">511</field>
+        </record>
+        <record model="oemedical.occupation" id="occ512">
+            <field name="name">Scientist</field>
+            <field name="code">512</field>
+        </record>
+        <record model="oemedical.occupation" id="occ513">
+            <field name="name">Scout</field>
+            <field name="code">513</field>
+        </record>
+        <record model="oemedical.occupation" id="occ514">
+            <field name="name">Screenwriter</field>
+            <field name="code">514</field>
+        </record>
+        <record model="oemedical.occupation" id="occ515">
+            <field name="name">Scribe</field>
+            <field name="code">515</field>
+        </record>
+        <record model="oemedical.occupation" id="occ516">
+            <field name="name">Sculptor</field>
+            <field name="code">516</field>
+        </record>
+        <record model="oemedical.occupation" id="occ517">
+            <field name="name">Seamstress</field>
+            <field name="code">517</field>
+        </record>
+        <record model="oemedical.occupation" id="occ518">
+            <field name="name">Second Mate</field>
+            <field name="code">518</field>
+        </record>
+        <record model="oemedical.occupation" id="occ519">
+            <field name="name">Secret service agent</field>
+            <field name="code">519</field>
+        </record>
+        <record model="oemedical.occupation" id="occ520">
+            <field name="name">Secretary</field>
+            <field name="code">520</field>
+        </record>
+        <record model="oemedical.occupation" id="occ521">
+            <field name="name">Secretary general</field>
+            <field name="code">521</field>
+        </record>
+        <record model="oemedical.occupation" id="occ522">
+            <field name="name">Servant</field>
+            <field name="code">522</field>
+        </record>
+        <record model="oemedical.occupation" id="occ523">
+            <field name="name">Sexologist</field>
+            <field name="code">523</field>
+        </record>
+        <record model="oemedical.occupation" id="occ524">
+            <field name="name">Sexton</field>
+            <field name="code">524</field>
+        </record>
+        <record model="oemedical.occupation" id="occ525">
+            <field name="name">Sex worker</field>
+            <field name="code">525</field>
+        </record>
+        <record model="oemedical.occupation" id="occ526">
+            <field name="name">Sheepshearer</field>
+            <field name="code">526</field>
+        </record>
+        <record model="oemedical.occupation" id="occ527">
+            <field name="name">Shepherd</field>
+            <field name="code">527</field>
+        </record>
+        <record model="oemedical.occupation" id="occ528">
+            <field name="name">Shaman</field>
+            <field name="code">528</field>
+        </record>
+        <record model="oemedical.occupation" id="occ529">
+            <field name="name">Scott</field>
+            <field name="code">529</field>
+        </record>
+        <record model="oemedical.occupation" id="occ530">
+            <field name="name">Sheriff</field>
+            <field name="code">530</field>
+        </record>
+        <record model="oemedical.occupation" id="occ531">
+            <field name="name">Sheriff officer</field>
+            <field name="code">531</field>
+        </record>
+        <record model="oemedical.occupation" id="occ532">
+            <field name="name">Shoemaker</field>
+            <field name="code">532</field>
+        </record>
+        <record model="oemedical.occupation" id="occ533">
+            <field name="name">Singer</field>
+            <field name="code">533</field>
+        </record>
+        <record model="oemedical.occupation" id="occ534">
+            <field name="name">Sider</field>
+            <field name="code">534</field>
+        </record>
+        <record model="oemedical.occupation" id="occ535">
+            <field name="name">Sleuth</field>
+            <field name="code">535</field>
+        </record>
+        <record model="oemedical.occupation" id="occ536">
+            <field name="name">Social worker</field>
+            <field name="code">536</field>
+        </record>
+        <record model="oemedical.occupation" id="occ537">
+            <field name="name">Sociologists</field>
+            <field name="code">537</field>
+        </record>
+        <record model="oemedical.occupation" id="occ538">
+            <field name="name">Software architect</field>
+            <field name="code">538</field>
+        </record>
+        <record model="oemedical.occupation" id="occ539">
+            <field name="name">Software engineer</field>
+            <field name="code">539</field>
+        </record>
+        <record model="oemedical.occupation" id="occ540">
+            <field name="name">Software project manager</field>
+            <field name="code">540</field>
+        </record>
+        <record model="oemedical.occupation" id="occ541">
+            <field name="name">Soil scientist</field>
+            <field name="code">541</field>
+        </record>
+        <record model="oemedical.occupation" id="occ542">
+            <field name="name">Soldier</field>
+            <field name="code">542</field>
+        </record>
+        <record model="oemedical.occupation" id="occ543">
+            <field name="name">Solicitor</field>
+            <field name="code">543</field>
+        </record>
+        <record model="oemedical.occupation" id="occ544">
+            <field name="name">Sommelier</field>
+            <field name="code">544</field>
+        </record>
+        <record model="oemedical.occupation" id="occ545">
+            <field name="name">Sound Engineer</field>
+            <field name="code">545</field>
+        </record>
+        <record model="oemedical.occupation" id="occ546">
+            <field name="name">Special agent</field>
+            <field name="code">546</field>
+        </record>
+        <record model="oemedical.occupation" id="occ547">
+            <field name="name">Specialist</field>
+            <field name="code">547</field>
+        </record>
+        <record model="oemedical.occupation" id="occ548">
+            <field name="name">Speech therapist</field>
+            <field name="code">548</field>
+        </record>
+        <record model="oemedical.occupation" id="occ549">
+            <field name="name">Sperm donor</field>
+            <field name="code">549</field>
+        </record>
+        <record model="oemedical.occupation" id="occ550">
+            <field name="name">Sports therapist</field>
+            <field name="code">550</field>
+        </record>
+        <record model="oemedical.occupation" id="occ551">
+            <field name="name">Stage designer</field>
+            <field name="code">551</field>
+        </record>
+        <record model="oemedical.occupation" id="occ552">
+            <field name="name">Statistician</field>
+            <field name="code">552</field>
+        </record>
+        <record model="oemedical.occupation" id="occ553">
+            <field name="name">Steward or stewardess</field>
+            <field name="code">553</field>
+        </record>
+        <record model="oemedical.occupation" id="occ554">
+            <field name="name">Stock broker</field>
+            <field name="code">554</field>
+        </record>
+        <record model="oemedical.occupation" id="occ555">
+            <field name="name">Store Manager</field>
+            <field name="code">555</field>
+        </record>
+        <record model="oemedical.occupation" id="occ556">
+            <field name="name">Street artist</field>
+            <field name="code">556</field>
+        </record>
+        <record model="oemedical.occupation" id="occ557">
+            <field name="name">Street musician</field>
+            <field name="code">557</field>
+        </record>
+        <record model="oemedical.occupation" id="occ558">
+            <field name="name">Street vendor</field>
+            <field name="code">558</field>
+        </record>
+        <record model="oemedical.occupation" id="occ559">
+            <field name="name">Stringer</field>
+            <field name="code">559</field>
+        </record>
+        <record model="oemedical.occupation" id="occ560">
+            <field name="name">Stripper</field>
+            <field name="code">560</field>
+        </record>
+        <record model="oemedical.occupation" id="occ561">
+            <field name="name">Structural engineers</field>
+            <field name="code">561</field>
+        </record>
+        <record model="oemedical.occupation" id="occ562">
+            <field name="name">Student</field>
+            <field name="code">562</field>
+        </record>
+        <record model="oemedical.occupation" id="occ563">
+            <field name="name">Stuffer</field>
+            <field name="code">563</field>
+        </record>
+        <record model="oemedical.occupation" id="occ564">
+            <field name="name">Stunt coordinator</field>
+            <field name="code">564</field>
+        </record>
+        <record model="oemedical.occupation" id="occ565">
+            <field name="name">Stunt double</field>
+            <field name="code">565</field>
+        </record>
+        <record model="oemedical.occupation" id="occ566">
+            <field name="name">Stunt performer</field>
+            <field name="code">566</field>
+        </record>
+        <record model="oemedical.occupation" id="occ567">
+            <field name="name">Superhero</field>
+            <field name="code">567</field>
+        </record>
+        <record model="oemedical.occupation" id="occ568">
+            <field name="name">Surgeon</field>
+            <field name="code">568</field>
+        </record>
+        <record model="oemedical.occupation" id="occ569">
+            <field name="name">Surgical Technologist</field>
+            <field name="code">569</field>
+        </record>
+        <record model="oemedical.occupation" id="occ570">
+            <field name="name">Surveyor</field>
+            <field name="code">570</field>
+        </record>
+        <record model="oemedical.occupation" id="occ571">
+            <field name="name">Swimmer</field>
+            <field name="code">571</field>
+        </record>
+        <record model="oemedical.occupation" id="occ572">
+            <field name="name">Switchboard operator</field>
+            <field name="code">572</field>
+        </record>
+        <record model="oemedical.occupation" id="occ573">
+            <field name="name">System administrator</field>
+            <field name="code">573</field>
+        </record>
+        <record model="oemedical.occupation" id="occ574">
+            <field name="name">Systems designer</field>
+            <field name="code">574</field>
+        </record>
+        <record model="oemedical.occupation" id="occ575">
+            <field name="name">Systems analyst</field>
+            <field name="code">575</field>
+        </record>
+        <record model="oemedical.occupation" id="occ576">
+            <field name="name">Tailor</field>
+            <field name="code">576</field>
+        </record>
+        <record model="oemedical.occupation" id="occ577">
+            <field name="name">Tanner</field>
+            <field name="code">577</field>
+        </record>
+        <record model="oemedical.occupation" id="occ578">
+            <field name="name">Tapicer</field>
+            <field name="code">578</field>
+        </record>
+        <record model="oemedical.occupation" id="occ579">
+            <field name="name">Tax Collector</field>
+            <field name="code">579</field>
+        </record>
+        <record model="oemedical.occupation" id="occ580">
+            <field name="name">Taxidermist</field>
+            <field name="code">580</field>
+        </record>
+        <record model="oemedical.occupation" id="occ581">
+            <field name="name">Taxi-driver</field>
+            <field name="code">581</field>
+        </record>
+        <record model="oemedical.occupation" id="occ582">
+            <field name="name">Taxonomist</field>
+            <field name="code">582</field>
+        </record>
+        <record model="oemedical.occupation" id="occ583">
+            <field name="name">Tea lady</field>
+            <field name="code">583</field>
+        </record>
+        <record model="oemedical.occupation" id="occ584">
+            <field name="name">Teacher</field>
+            <field name="code">584</field>
+        </record>
+        <record model="oemedical.occupation" id="occ585">
+            <field name="name">Technician</field>
+            <field name="code">585</field>
+        </record>
+        <record model="oemedical.occupation" id="occ586">
+            <field name="name">Technologist</field>
+            <field name="code">586</field>
+        </record>
+        <record model="oemedical.occupation" id="occ587">
+            <field name="name">Technical Writer</field>
+            <field name="code">587</field>
+        </record>
+        <record model="oemedical.occupation" id="occ588">
+            <field name="name">Telegraphist</field>
+            <field name="code">588</field>
+        </record>
+        <record model="oemedical.occupation" id="occ589">
+            <field name="name">Telemarketer</field>
+            <field name="code">589</field>
+        </record>
+        <record model="oemedical.occupation" id="occ590">
+            <field name="name">Telephone operator</field>
+            <field name="code">590</field>
+        </record>
+        <record model="oemedical.occupation" id="occ591">
+            <field name="name">Tennis player</field>
+            <field name="code">591</field>
+        </record>
+        <record model="oemedical.occupation" id="occ592">
+            <field name="name">Test developer</field>
+            <field name="code">592</field>
+        </record>
+        <record model="oemedical.occupation" id="occ593">
+            <field name="name">Test pilot</field>
+            <field name="code">593</field>
+        </record>
+        <record model="oemedical.occupation" id="occ594">
+            <field name="name">Thatcher</field>
+            <field name="code">594</field>
+        </record>
+        <record model="oemedical.occupation" id="occ595">
+            <field name="name">Theatre director</field>
+            <field name="code">595</field>
+        </record>
+        <record model="oemedical.occupation" id="occ596">
+            <field name="name">Theologian</field>
+            <field name="code">596</field>
+        </record>
+        <record model="oemedical.occupation" id="occ597">
+            <field name="name">Therapist</field>
+            <field name="code">597</field>
+        </record>
+        <record model="oemedical.occupation" id="occ598">
+            <field name="name">Thimbler</field>
+            <field name="code">598</field>
+        </record>
+        <record model="oemedical.occupation" id="occ599">
+            <field name="name">Tiler</field>
+            <field name="code">599</field>
+        </record>
+        <record model="oemedical.occupation" id="occ600">
+            <field name="name">Toolmaker</field>
+            <field name="code">600</field>
+        </record>
+        <record model="oemedical.occupation" id="occ601">
+            <field name="name">Trademark attorney</field>
+            <field name="code">601</field>
+        </record>
+        <record model="oemedical.occupation" id="occ602">
+            <field name="name">Trader</field>
+            <field name="code">602</field>
+        </record>
+        <record model="oemedical.occupation" id="occ603">
+            <field name="name">Tradesman</field>
+            <field name="code">603</field>
+        </record>
+        <record model="oemedical.occupation" id="occ604">
+            <field name="name">Trainer</field>
+            <field name="code">604</field>
+        </record>
+        <record model="oemedical.occupation" id="occ605">
+            <field name="name">Transit planner</field>
+            <field name="code">605</field>
+        </record>
+        <record model="oemedical.occupation" id="occ606">
+            <field name="name">Translator</field>
+            <field name="code">606</field>
+        </record>
+        <record model="oemedical.occupation" id="occ607">
+            <field name="name">Treasurer</field>
+            <field name="code">607</field>
+        </record>
+        <record model="oemedical.occupation" id="occ608">
+            <field name="name">Trigonometrist</field>
+            <field name="code">608</field>
+        </record>
+        <record model="oemedical.occupation" id="occ609">
+            <field name="name">Truck Driver</field>
+            <field name="code">609</field>
+        </record>
+        <record model="oemedical.occupation" id="occ610">
+            <field name="name">Tuner</field>
+            <field name="code">610</field>
+        </record>
+        <record model="oemedical.occupation" id="occ611">
+            <field name="name">Turner</field>
+            <field name="code">611</field>
+        </record>
+        <record model="oemedical.occupation" id="occ612">
+            <field name="name">Tutor</field>
+            <field name="code">612</field>
+        </record>
+        <record model="oemedical.occupation" id="occ613">
+            <field name="name">Tyler</field>
+            <field name="code">613</field>
+        </record>
+        <record model="oemedical.occupation" id="occ614">
+            <field name="name">Undertaker</field>
+            <field name="code">614</field>
+        </record>
+        <record model="oemedical.occupation" id="occ615">
+            <field name="name">Ufologist</field>
+            <field name="code">615</field>
+        </record>
+        <record model="oemedical.occupation" id="occ616">
+            <field name="name">Undercover agent</field>
+            <field name="code">616</field>
+        </record>
+        <record model="oemedical.occupation" id="occ617">
+            <field name="name">Upholder</field>
+            <field name="code">617</field>
+        </record>
+        <record model="oemedical.occupation" id="occ618">
+            <field name="name">Upholsterer</field>
+            <field name="code">618</field>
+        </record>
+        <record model="oemedical.occupation" id="occ619">
+            <field name="name">Urologist</field>
+            <field name="code">619</field>
+        </record>
+        <record model="oemedical.occupation" id="occ620">
+            <field name="name">Urban planner</field>
+            <field name="code">620</field>
+        </record>
+        <record model="oemedical.occupation" id="occ621">
+            <field name="name">Usher</field>
+            <field name="code">621</field>
+        </record>
+        <record model="oemedical.occupation" id="occ622">
+            <field name="name">Valet</field>
+            <field name="code">622</field>
+        </record>
+        <record model="oemedical.occupation" id="occ623">
+            <field name="name">Verger</field>
+            <field name="code">623</field>
+        </record>
+        <record model="oemedical.occupation" id="occ624">
+            <field name="name">Veterinarian</field>
+            <field name="code">624</field>
+        </record>
+        <record model="oemedical.occupation" id="occ625">
+            <field name="name">Vibraphonist</field>
+            <field name="code">625</field>
+        </record>
+        <record model="oemedical.occupation" id="occ626">
+            <field name="name">Vicar</field>
+            <field name="code">626</field>
+        </record>
+        <record model="oemedical.occupation" id="occ627">
+            <field name="name">Video editor</field>
+            <field name="code">627</field>
+        </record>
+        <record model="oemedical.occupation" id="occ628">
+            <field name="name">Video game developer</field>
+            <field name="code">628</field>
+        </record>
+        <record model="oemedical.occupation" id="occ629">
+            <field name="name">Vintner</field>
+            <field name="code">629</field>
+        </record>
+        <record model="oemedical.occupation" id="occ630">
+            <field name="name">Violinist</field>
+            <field name="code">630</field>
+        </record>
+        <record model="oemedical.occupation" id="occ631">
+            <field name="name">Violist</field>
+            <field name="code">631</field>
+        </record>
+        <record model="oemedical.occupation" id="occ632">
+            <field name="name">Vocalist</field>
+            <field name="code">632</field>
+        </record>
+        <record model="oemedical.occupation" id="occ633">
+            <field name="name">Waiter</field>
+            <field name="code">633</field>
+        </record>
+        <record model="oemedical.occupation" id="occ634">
+            <field name="name">Warder</field>
+            <field name="code">634</field>
+        </record>
+        <record model="oemedical.occupation" id="occ635">
+            <field name="name">Weaponsmith</field>
+            <field name="code">635</field>
+        </record>
+        <record model="oemedical.occupation" id="occ636">
+            <field name="name">Weatherman</field>
+            <field name="code">636</field>
+        </record>
+        <record model="oemedical.occupation" id="occ637">
+            <field name="name">Weaver</field>
+            <field name="code">637</field>
+        </record>
+        <record model="oemedical.occupation" id="occ638">
+            <field name="name">Webmaster</field>
+            <field name="code">638</field>
+        </record>
+        <record model="oemedical.occupation" id="occ639">
+            <field name="name">Web developer</field>
+            <field name="code">639</field>
+        </record>
+        <record model="oemedical.occupation" id="occ640">
+            <field name="name">Web designer</field>
+            <field name="code">640</field>
+        </record>
+        <record model="oemedical.occupation" id="occ641">
+            <field name="name">Welder</field>
+            <field name="code">641</field>
+        </record>
+        <record model="oemedical.occupation" id="occ642">
+            <field name="name">Wet nurse</field>
+            <field name="code">642</field>
+        </record>
+        <record model="oemedical.occupation" id="occ643">
+            <field name="name">Woodcarver</field>
+            <field name="code">643</field>
+        </record>
+        <record model="oemedical.occupation" id="occ644">
+            <field name="name">Wood cutter</field>
+            <field name="code">644</field>
+        </record>
+        <record model="oemedical.occupation" id="occ645">
+            <field name="name">Wrangler</field>
+            <field name="code">645</field>
+        </record>
+        <record model="oemedical.occupation" id="occ646">
+            <field name="name">Winemaker</field>
+            <field name="code">646</field>
+        </record>
+        <record model="oemedical.occupation" id="occ647">
+            <field name="name">Writer</field>
+            <field name="code">647</field>
+        </record>
+        <record model="oemedical.occupation" id="occ648">
+            <field name="name">Xylophonist</field>
+            <field name="code">648</field>
+        </record>
+        <record model="oemedical.occupation" id="occ649">
+            <field name="name">X-ray technician</field>
+            <field name="code">649</field>
+        </record>
+        <record model="oemedical.occupation" id="occ650">
+            <field name="name">Yodeler</field>
+            <field name="code">650</field>
+        </record>
+        <record model="oemedical.occupation" id="occ651">
+            <field name="name">Youth worker</field>
+            <field name="code">651</field>
+        </record>
+        <record model="oemedical.occupation" id="occ652">
+            <field name="name">Zookeeper</field>
+            <field name="code">652</field>
+        </record>
+        <record model="oemedical.occupation" id="occ653">
+            <field name="name">Zoologist</field>
+            <field name="code">653</field>
+        </record>
+
+    </data>
+</openerp>

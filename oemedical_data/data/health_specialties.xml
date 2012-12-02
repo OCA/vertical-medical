@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record model="oemedical.specialty" id="2">
+            <field name="name">Anatomy</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="3">
+            <field name="name">Andrology</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="4">
+            <field name="name">Alternative Medicine</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="5">
+            <field name="name">Anesthesiology</field>
+            <field name="code">AN, PAN</field>
+        </record>
+        <record model="oemedical.specialty" id="6">
+            <field name="name">Biochemistry</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="7">
+            <field name="name">Cardiology</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="8">
+            <field name="name">Cardiovascular surgery</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="9">
+            <field name="name">Clinical laboratory sciences</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="10">
+            <field name="name">Clinical Neurophysiology</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="11">
+            <field name="name">Dermatology</field>
+            <field name="code">D, DS</field>
+        </record>
+        <record model="oemedical.specialty" id="12">
+            <field name="name">Dietetics</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="13">
+            <field name="name">Embryology</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="14">
+            <field name="name">Emergency medicine</field>
+            <field name="code">EM</field>
+        </record>
+        <record model="oemedical.specialty" id="15">
+            <field name="name">Endocrinology</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="16">
+            <field name="name">Family Medicine</field>
+            <field name="code">FM</field>
+        </record>
+        <record model="oemedical.specialty" id="17">
+            <field name="name">Forensic Medicine</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="18">
+            <field name="name">Gastroenterology</field>
+            <field name="code">GI</field>
+        </record>
+        <record model="oemedical.specialty" id="19">
+            <field name="name">General surgery</field>
+            <field name="code">GS</field>
+        </record>
+        <record model="oemedical.specialty" id="20">
+            <field name="name">Genetics</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="21">
+            <field name="name">Geriatrics</field>
+            <field name="code">IMG</field>
+        </record>
+        <record model="oemedical.specialty" id="22">
+            <field name="name">Gynaecology</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="23">
+            <field name="name">Hematology</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="24">
+            <field name="name">Hepatology</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="25">
+            <field name="name">Histology</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="26">
+            <field name="name">Immunology</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="27">
+            <field name="name">Infectious disease</field>
+            <field name="code">ID</field>
+        </record>
+        <record model="oemedical.specialty" id="28">
+            <field name="name">Intensive care medicine</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="29">
+            <field name="name">Maxillofacial surgery</field>
+            <field name="code">Maxfacs, OMFS</field>
+        </record>
+        <record model="oemedical.specialty" id="30">
+            <field name="name">Nephrology</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="31">
+            <field name="name">Neurology</field>
+            <field name="code">N</field>
+        </record>
+        <record model="oemedical.specialty" id="32">
+            <field name="name">Neurosurgery</field>
+            <field name="code">NS</field>
+        </record>
+        <record model="oemedical.specialty" id="33">
+            <field name="name">Nursing</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="34">
+            <field name="name">Obstetrics and gynecology</field>
+            <field name="code">OB/GYN</field>
+        </record>
+        <record model="oemedical.specialty" id="35">
+            <field name="name">Oncology</field>
+            <field name="code">ON</field>
+        </record>
+        <record model="oemedical.specialty" id="36">
+            <field name="name">Ophthalmology</field>
+            <field name="code">OPH</field>
+        </record>
+        <record model="oemedical.specialty" id="37">
+            <field name="name">Orthopedic surgery</field>
+            <field name="code">ORS</field>
+        </record>
+        <record model="oemedical.specialty" id="38">
+            <field name="name">Otolaryngology, or ENT</field>
+            <field name="code">ORL, ENT</field>
+        </record>
+        <record model="oemedical.specialty" id="39">
+            <field name="name">Palliative care</field>
+            <field name="code">PLM</field>
+        </record>
+        <record model="oemedical.specialty" id="40">
+            <field name="name">Pathology</field>
+            <field name="code">PTH</field>
+        </record>
+        <record model="oemedical.specialty" id="41">
+            <field name="name">Pediatrics</field>
+            <field name="code">PD</field>
+        </record>
+        <record model="oemedical.specialty" id="42">
+            <field name="name">Pediatric surgery</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="43">
+            <field name="name">Pharmacology</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="44">
+            <field name="name">Physical medicine and rehabilitation</field>
+            <field name="code">PM&amp;R</field>
+        </record>
+        <record model="oemedical.specialty" id="45">
+            <field name="name">Plastic surgery</field>
+            <field name="code">PS</field>
+        </record>
+        <record model="oemedical.specialty" id="46">
+            <field name="name">Proctology</field>
+            <field name="code">PRO</field>
+        </record>
+        <record model="oemedical.specialty" id="47">
+            <field name="name">Psychiatry</field>
+            <field name="code">P</field>
+        </record>
+        <record model="oemedical.specialty" id="48">
+            <field name="name">Pulmonology</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="49">
+            <field name="name">Radiology</field>
+            <field name="code">R, DR</field>
+        </record>
+        <record model="oemedical.specialty" id="50">
+            <field name="name">Rheumatology</field>
+            <field name="code">RHU</field>
+        </record>
+        <record model="oemedical.specialty" id="51">
+            <field name="name">Stomatology</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="52">
+            <field name="name">Surgical oncology</field>
+            <field name="code">SO</field>
+        </record>
+        <record model="oemedical.specialty" id="53">
+            <field name="name">Thoracic surgery</field>
+            <field name="code">TS</field>
+        </record>
+        <record model="oemedical.specialty" id="54">
+            <field name="name">Toxicology</field>
+            <field name="code"></field>
+        </record>
+        <record model="oemedical.specialty" id="55">
+            <field name="name">Transplant surgery</field>
+            <field name="code">TTS</field>
+        </record>
+        <record model="oemedical.specialty" id="56">
+            <field name="name">Trauma surgery</field>
+            <field name="code">TRS</field>
+        </record>
+        <record model="oemedical.specialty" id="57">
+            <field name="name">Urgent Care Medicine</field>
+            <field name="code">UCM</field>
+        </record>
+        <record model="oemedical.specialty" id="58">
+            <field name="name">Urology</field>
+            <field name="code">U</field>
+        </record>
+        <record model="oemedical.specialty" id="59">
+            <field name="name">Vascular surgery</field>
+            <field name="code">VS</field>
+        </record>
+
+        <record model="oemedical.specialty" id="60">
+            <field name="name">General Practitioner</field>
+            <field name="code">GP</field>
+        </record>
+
+    </data>
+</openerp>
