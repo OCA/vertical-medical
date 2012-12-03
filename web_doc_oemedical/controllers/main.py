@@ -30,9 +30,7 @@ def read_base_doc(name):
     '''
     whereami=os.path.dirname(os.path.realpath(__file__))
     
-    f = open(os.path.join("%s/../_build/html/%s"%(whereami, name), "r")
-    html = f.read()
-    return html
+    return ''
 
 
 class OeMedicalDoc(web.http.Controller):

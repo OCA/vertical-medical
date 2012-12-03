@@ -17,8 +17,20 @@ import sys, os
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
+#Necesary to import osv.osv in autodoc
+SERVERPATH = "/home/nhomar/instancias/7.0/server/openerp"
+#Necesary to import openerp in autodoc
+OPENERPPATH = "/home/nhomar/instancias/7.0/server"
+#OeMEdical Relative path.
+OEMEDICALPATH = '../../oemedical'
 sys.path.append(os.path.abspath('_themes'))
 sys.path.append(os.path.abspath('..'))
+sys.path.append(SERVERPATH)
+sys.path.append(OPENERPPATH)
+#sys.path.append(os.path.abspath(OEMEDICALPATH))
+for oemModule in os.listdir(OEMEDICALPATH):
+    sys.path.append(os.path.join(OEMEDICALPATH,oemModule))
+
 #Uncomment this line to include all models and methods documentations
 #sys.path.append(os.path.abspath('../model'))
 
@@ -30,6 +42,8 @@ sys.path.append(os.path.abspath('..'))
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.intersphinx', 'sphinx.ext.todo', 'sphinx.ext.viewcode']
+
+autodoc_default_flags = ['members', 'undoc-members', 'linenos']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -115,6 +129,7 @@ html_theme_path = ['_themes']
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
 #html_logo = None
+html_logo = 'icon-sidebar.png'
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32

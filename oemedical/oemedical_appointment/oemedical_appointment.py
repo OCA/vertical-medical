@@ -25,7 +25,7 @@ from osv import fields
 
 class OeMedicalAppointment(osv.osv):
     _name = 'oemedical.appointment'
-
+    _description = 'Appointments in OeMedical'
     _columns = {
         'consultations': fields.many2one('product.product',
                                          string='Consultation Services', ),
@@ -56,6 +56,4 @@ class OeMedicalAppointment(osv.osv):
          'name': lambda obj, cr, uid, context: 
             obj.pool.get('ir.sequence').get(cr, uid, 'oemedical.appointment'),
                  }
-
-OeMedicalAppointment()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
