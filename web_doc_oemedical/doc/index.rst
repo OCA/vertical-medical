@@ -32,6 +32,14 @@ Module web_doc_oemedical
 OeMedical API.
 ''''''''''''''
 
+Coding Guidelines
++++++++++++++++++
+
+.. toctree::
+    :maxdepth: 2
+
+    contribute.rst
+ 
 .. toctree::
     :maxdepth: 2
 
