@@ -31,10 +31,13 @@ class OeMedicalPhysician(osv.osv):
         'info': fields.text(string='Extra info'),
         'code': fields.char(size=256, string='ID'),
         'health_professional': fields.many2one('res.partner',
-                                               string='Health Professional', ),
+                                               string='Health Professional',
+                    help='Health Professional\'s Name, from the partner list' ),
         'specialty': fields.many2one('oemedical.specialty',
-                                     string='Specialty',required=True),
-        'institution': fields.many2one('res.partner', string='Institution', ),
+                                     string='Specialty',required=True, 
+                                     help='Specialty Code'),
+        'institution': fields.many2one('res.partner', string='Institution',
+                                        help='Instituion where she/he works' ),
     }
 
 OeMedicalPhysician()

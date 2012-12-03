@@ -29,8 +29,10 @@ class OeMedicalHospitalOr(osv.osv):
     _columns = {
         'building': fields.many2one('oemedical.hospital.building', 'Building',
                                     select=True),
-        'name': fields.char(size=256, string='Name', required=True),
-        'institution': fields.many2one('res.partner', string='Institution', ),
+        'name': fields.char(size=256, string='Name', required=True,
+                            help='Name of the Operating Room'),
+        'institution': fields.many2one('res.partner', string='Institution', 
+                                       help='Medical Center'),
         'unit': fields.many2one('oemedical.hospital.unit', string='Unit', ),
         'extra_info': fields.text(string='Extra Info'),
     }

@@ -28,8 +28,10 @@ class OeMedicalInsurance(osv.osv):
 
     _columns = {
         'name': fields.char(size=256, string='Name'),
-        'category': fields.char(size=256, string='Category', required=True),
-        'plan_id': fields.many2one('oemedical.insurance.plan', string='Plan'),
+        'category': fields.char(size=256, string='Category', required=True,
+                                help='Insurance company plan / category'),
+        'plan_id': fields.many2one('oemedical.insurance.plan', string='Plan',  
+                                   help='Insurance company plan'),
         'insurance_type': fields.selection([
             ('state', 'State'),
             ('labour_union', 'Labour Union / Syndical'),

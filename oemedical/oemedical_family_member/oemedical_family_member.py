@@ -26,9 +26,11 @@ from osv import fields
 class OeMedicalFamilyMember(osv.osv):
     _name = 'oemedical.family_member'
     _columns = {
-        'member': fields.many2one('res.partner', string='Member', ),
+        'member': fields.many2one('res.partner', string='Member', 
+                                  help='Family Member Name'),
         'role': fields.char(size=256, string='Role', required=True),
-        'family_id': fields.many2one('oemedical.family', string='Family', ),
+        'family_id': fields.many2one('oemedical.family', string='Family', 
+                                     help='Family code'),
     }
 
 OeMedicalFamilyMember()

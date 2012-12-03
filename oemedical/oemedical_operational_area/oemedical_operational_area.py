@@ -32,7 +32,8 @@ class OeMedicalOperationalArea(osv.osv):
                                               'operational_area_id',
                                               string='Operational Sector',
                                               readonly=True),
-        'name': fields.char(size=256, string='Name', required=True),
+        'name': fields.char(size=256, string='Name', required=True, 
+                            help='Operational Area of the city or region'),
     }
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),

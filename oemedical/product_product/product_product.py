@@ -27,9 +27,12 @@ class ProductProduct(osv.osv):
     _inherit = 'product.product'
 
     _columns = {
-        'is_medicament': fields.boolean(string='Medicament'),
-        'is_bed': fields.boolean(string='Bed'),
-        'is_vaccine': fields.boolean(string='Vaccine'),
+        'is_medicament': fields.boolean(string='Medicament', 
+                                help='Check if the product is a medicament'),
+        'is_bed': fields.boolean(string='Bed', 
+                 help='Check if the product is a bed on the gnuhealth.center'),
+        'is_vaccine': fields.boolean(string='Vaccine', 
+                                     help='Check if the product is a vaccine'),
     }
 
 ProductProduct()

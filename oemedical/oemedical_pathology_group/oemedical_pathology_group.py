@@ -28,9 +28,11 @@ class OeMedicalPathologyGroup(osv.osv):
 
     _columns = {
         'info': fields.text(string='Detailed information'),
-        'code': fields.char(size=256, string='Code', required=True),
+        'code': fields.char(size=256, string='Code', required=True, 
+          help='for example MDG6 code will contain the Millennium Development'\
+                    ' Goals # 6 diseases : Tuberculosis, Malaria and HIV/AIDS'),
         'name': fields.char(size=256, string='Name', required=True,
-                            translate=True),
+                            translate=True, help='Group name'),
         'desc': fields.char(size=256, string='Short Description',
                             required=True),
     }

@@ -28,8 +28,10 @@ class OeMedicalHospitalBuilding(osv.osv):
 
     _columns = {
         'code': fields.char(size=8, string='Code'),
-        'institution': fields.many2one('res.partner', string='Institution', ),
-        'name': fields.char(size=256, string='Name', required=True),
+        'institution': fields.many2one('res.partner', string='Institution', 
+                                       help='Medical Center'),
+        'name': fields.char(size=256, string='Name', required=True,
+                            help='Name of the building within the institution'),
         'extra_info': fields.text(string='Extra Info'),
     }
 

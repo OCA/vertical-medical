@@ -28,16 +28,24 @@ class OeMedicalVaccination(osv.osv):
 
     _columns = {
         'name': fields.char(size=256, string='Name'),
-        'vaccine_lot': fields.char(size=256, string='Lot Number'),
+        'vaccine_lot': fields.char(size=256, string='Lot Number', 
+        help='Please check on the vaccine (product) production lot numberand'\
+        ' tracking number when available !'),
         'patient_id': fields.many2one('oemedical.patient', string='Patient',
                                       readonly=True ),
         'vaccine': fields.many2one('product.product', string='Vaccine',
-                                   required=True ),
+                                   required=True, 
+        help='Vaccine Name. Make sure that the vaccine (product) has all the'\
+        ' proper information at product level. Information such as provider,'\
+        ' supplier code, tracking number, etc.. This  information must always'\
+        ' be present. If available, please copy / scan the vaccine leaflet'\
+        ' and attach it to this record'),
         'dose': fields.integer(string='Dose #'),
         'observations': fields.char(size=256, string='Observations',
                                     required=True),
         'date': fields.datetime(string='Date'),
-        'institution': fields.many2one('res.partner', string='Institution', ),
+        'institution': fields.many2one('res.partner', string='Institution', 
+            help='Medical Center where the patient is being or was vaccinated'),
         'next_dose_date': fields.datetime(string='Next Dose'),
     }
 

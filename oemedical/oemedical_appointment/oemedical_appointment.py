@@ -25,16 +25,19 @@ from osv import fields
 
 class OeMedicalAppointment(osv.osv):
     _name = 'oemedical.appointment'
-    _description = 'Appointments in OeMedical'
+
     _columns = {
         'consultations': fields.many2one('product.product',
-                                         string='Consultation Services', ),
+                                         string='Consultation Services',
+                                          help='Consultation Services'),
         'patient': fields.many2one('oemedical.patient', string='Patient', 
-                                   required=True, select=True),
+                                   required=True, select=True,
+                                   help='Patient Name'),
         'name': fields.char(size=256, string='Appointment ID', readonly=True),
         'appointment_date': fields.datetime(string='Date and Time'),
         'doctor': fields.many2one('oemedical.physician',
-                                  string='Physician',select=True),
+                                  string='Physician',select=True, 
+                                  help='Physician\'s Name'),
         'comments': fields.text(string='Comments'),
         'appointment_type': fields.selection([
             ('ambulatory', 'Ambulatory'),
@@ -42,18 +45,22 @@ class OeMedicalAppointment(osv.osv):
             ('inpatient', 'Inpatient'),
         ], string='Type'),
         'institution': fields.many2one('res.partner',
-                                       string='Health Center', ),
+                                       string='Health Center',
+                                       help='Medical Center'),
         'urgency': fields.selection([
             ('a', 'Normal'),
             ('b', 'Urgent'),
             ('c', 'Medical Emergency'), ],
             string='Urgency Level'),
         'speciality': fields.many2one('oemedical.specialty',
-                                      string='Specialty', ),
+                                      string='Specialty', 
+                                      help='Medical Specialty / Sector'),
     }
     
     _defaults = {
          'name': lambda obj, cr, uid, context: 
             obj.pool.get('ir.sequence').get(cr, uid, 'oemedical.appointment'),
                  }
+
+OeMedicalAppointment()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

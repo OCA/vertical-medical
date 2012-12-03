@@ -42,7 +42,8 @@ class OeMedicalPrescriptionOrder(osv.osv):
         'user_id': fields.many2one('res.users', string='Prescribing Doctor',
                                    required=True),
         'prescription_id': fields.char(size=256, string='Prescription ID',
-                                       required=True),
+                                       required=True,
+                                    help='Type in the ID of this prescription'),
         'name': fields.char(size=256, string='Appointment ID', required=True),
     }
     
