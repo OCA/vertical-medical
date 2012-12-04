@@ -24,9 +24,9 @@ from osv import fields
 
 
 class OeMedicalPrescriptionOrder(osv.osv):
-    _name = 'oemedical.prescription.order'
+    _name='oemedical.prescription.order'
 
-    _columns = {
+    _columns={
         'patient': fields.many2one('oemedical.patient', string='Patient',
                                    required=True),
         'pregnancy_warning': fields.boolean(string='Pregancy Warning',
@@ -34,22 +34,20 @@ class OeMedicalPrescriptionOrder(osv.osv):
         'notes': fields.text(string='Prescription Notes'),
         'prescription_line': fields.one2many('oemedical.prescription.line',
                                              'prescription_order_id',
-                                             string='Prescription line', ),
-        'pharmacy': fields.many2one('res.partner', string='Pharmacy', ),
+                                             string='Prescription line',),
+        'pharmacy': fields.many2one('res.partner', string='Pharmacy',),
         'prescription_date': fields.datetime(string='Prescription Date'),
         'prescription_warning_ack': fields.boolean(
             string='Prescription verified'),
         'user_id': fields.many2one('res.users', string='Prescribing Doctor',
                                    required=True),
-        'prescription_id': fields.char(size=256, string='Prescription ID',
-                                       required=True,
-                                    help='Type in the ID of this prescription'),
-        'name': fields.char(size=256, string='Appointment ID', required=True),
+        'name': fields.char(size=256, string='Prescription ID', required=True,
+                             help='Type in the ID of this prescription'),
     }
     
-    _defaults = {
+    _defaults={
          'name': lambda obj, cr, uid, context: 
-            obj.pool.get('ir.sequence').get(cr, uid, 
+            obj.pool.get('ir.sequence').get(cr, uid,
                                             'oemedical.prescription.order'),
                  }
 

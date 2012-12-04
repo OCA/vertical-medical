@@ -10,7 +10,6 @@
 					<field name="info" />
 					<field name="operational_sector" />
 					<field name="name" />
-					<!--field name="members"/ -->
 				</tree>
 			</field>
 		</record>
@@ -21,10 +20,10 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Family">
-					<field name="info" />
-					<field name="operational_sector" />
 					<field name="name" />
-					<!--field name="members"/ -->
+					<field name="operational_sector" />
+					<field name="members" colspan="4"/>
+					<field name="info" colspan="4"/>
 				</form>
 			</field>
 		</record>
@@ -40,8 +39,6 @@
 					<field name="name" />
 					<newline />
 					<group expand="0" string="Group By...">
-						<filter string="Extra Information" domain="[]"
-							context="{'group_by':'info'}" />
 						<filter string="Operational Sector" domain="[]"
 							context="{'group_by':'operational_sector'}" />
 						<filter string="Family" domain="[]" context="{'group_by':'name'}" />

@@ -3,8 +3,63 @@
 	<data>
 		<menuitem id="oemedical_root" name="OeMedical" sequence="10" />
 
-		<menuitem id="oemedical_root_sub" name="OeMedical" parent="oemedical_root"
+		<menuitem id="oemedical_patient_root" name="Patient" parent="oemedical_root"
 			sequence="10" />
+		<menuitem id="oemedical_patient" name=" Patient"
+			parent="oemedical_patient_root" sequence="10"
+			action="act_open_oemedical_patient_view" />
+
+		<menuitem id="oemedical_family_member" name=" Family Member"
+			parent="oemedical_patient_root" sequence="30"
+			action="act_open_oemedical_family_member_view" />
+
+		<menuitem id="oemedical_family" name=" Family" parent="oemedical_patient_root"
+			sequence="20" action="act_open_oemedical_family_view" />
+
+		<menuitem id="oemedical_appoitment_root" name="Appoitment"
+			parent="oemedical_root" sequence="20" />
+		<menuitem id="oemedical_appointment" name=" Appointment"
+			parent="oemedical_appoitment_root" sequence="10"
+			action="act_open_oemedical_appointment_view" />
+
+		<menuitem id="oemedical_prescription_root" name="Prescription"
+			parent="oemedical_root" sequence="30" />
+		<menuitem id="oemedical_prescription_order" name=" Prescription Order"
+			parent="oemedical_prescription_root" sequence="10"
+			action="act_open_oemedical_prescription_order_view" />
+
+		<menuitem id="oemedical_root_sub" name="Configuration"
+			parent="oemedical_root" sequence="100" />
+
+		<menuitem id="oemedical_medicament_root" name="Medicaments"
+			parent="oemedical_root_sub" sequence="10" />
+			
+		<menuitem id="oemedical_medicament" name=" Medicament"
+			parent="oemedical_medicament_root" sequence="10"
+			action="act_open_oemedical_medicament_view" />
+
+		<menuitem id="oemedical_medicament_category" name=" Medicament Category"
+			parent="oemedical_medicament_root" sequence="10"
+			action="act_open_oemedical_medicament_category_view" />
+
+		<menuitem id="oemedical_medication_dosage" name=" Medication Dosage"
+			parent="oemedical_root_sub" sequence="10"
+			action="act_open_oemedical_medication_dosage_view" />
+
+		<menuitem id="oemedical_medication_template" name=" Medication Template"
+			parent="oemedical_root_sub" sequence="10"
+			action="act_open_oemedical_medication_template_view" />
+
+		<menuitem id="oemedical_drug_route" name=" Drug Route"
+			parent="oemedical_root_sub" sequence="10"
+			action="act_open_oemedical_drug_route_view" />
+
+		<menuitem id="oemedical_dose_unit" name=" Dose Unit" parent="oemedical_root_sub"
+			sequence="10" action="act_open_oemedical_dose_unit_view" />
+
+		<menuitem id="oemedical_drug_form" name=" Drug Form" parent="oemedical_root_sub"
+			sequence="10" action="act_open_oemedical_drug_form_view" />
+
 
 		<menuitem id="oemedical_secondary_condition" name=" Secondary Condition"
 			parent="oemedical_root_sub" sequence="10"
@@ -29,17 +84,12 @@
 			action="act_open_oemedical_operational_area_view" />
 		<menuitem id="oemedical_ethnicity" name=" Ethnicity" parent="oemedical_root_sub"
 			sequence="10" action="act_open_oemedical_ethnicity_view" />
-		<menuitem id="oemedical_dose_unit" name=" Dose Unit" parent="oemedical_root_sub"
-			sequence="10" action="act_open_oemedical_dose_unit_view" />
+
 		<menuitem id="oemedical_operational_sector" name=" Operational Sector"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_operational_sector_view" />
-		<menuitem id="oemedical_prescription_order" name=" Prescription Order"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_prescription_order_view" />
-		<menuitem id="oemedical_medicament_category" name=" Medicament Category"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_medicament_category_view" />
+
+
 		<menuitem id="oemedical_insurance_plan" name=" Insurance Plan"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_insurance_plan_view" />
@@ -48,26 +98,19 @@
 			action="act_open_oemedical_diagnostic_hypothesis_view" />
 		<menuitem id="oemedical_procedure" name=" Procedure" parent="oemedical_root_sub"
 			sequence="10" action="act_open_oemedical_procedure_view" />
-		<menuitem id="oemedical_medication_template" name=" Medication Template"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_medication_template_view" />
+
 		<menuitem id="oemedical_vaccination" name=" Vaccination"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_vaccination_view" />
-		<menuitem id="oemedical_medication_dosage" name=" Medication Dosage"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_medication_dosage_view" />
-		<menuitem id="oemedical_family_member" name=" Family Member"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_family_member_view" />
+
+
 		<menuitem id="oemedical_hospital_ward" name=" Hospital Ward"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_hospital_ward_view" />
 		<menuitem id="oemedical_hospital_or" name=" Hospital Or"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_hospital_or_view" />
-		<menuitem id="oemedical_drug_form" name=" Drug Form" parent="oemedical_root_sub"
-			sequence="10" action="act_open_oemedical_drug_form_view" />
+
 		<menuitem id="oemedical_patient_medication" name=" Patient Medication"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_patient_medication_view" />
@@ -77,27 +120,21 @@
 		<menuitem id="oemedical_hospital_building" name=" Hospital Building"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_hospital_building_view" />
-		<menuitem id="oemedical_patient" name=" Patient" parent="oemedical_root_sub"
-			sequence="10" action="act_open_oemedical_patient_view" />
-		<menuitem id="oemedical_prescription_line" name=" Prescription Line"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_prescription_line_view" />
+
+		<!-- <menuitem id="oemedical_prescription_line" name=" Prescription Line" -->
+		<!-- parent="oemedical_root_sub" sequence="10" -->
+		<!-- action="act_open_oemedical_prescription_line_view" /> -->
 		<menuitem id="oemedical_patient_disease" name=" Patient Disease"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_patient_disease_view" />
-		<menuitem id="oemedical_drug_route" name=" Drug Route"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_drug_route_view" />
+
 		<menuitem id="oemedical_hospital_unit" name=" Hospital Unit"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_hospital_unit_view" />
-		<menuitem id="oemedical_appointment" name=" Appointment"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_appointment_view" />
+
 		<menuitem id="oemedical_specialty" name=" Specialty" parent="oemedical_root_sub"
 			sequence="10" action="act_open_oemedical_specialty_view" />
-		<menuitem id="oemedical_family" name=" Family" parent="oemedical_root_sub"
-			sequence="10" action="act_open_oemedical_family_view" />
+
 		<menuitem id="oemedical_hospital_bed" name=" Hospital Bed"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_hospital_bed_view" />
@@ -107,9 +144,7 @@
 		<menuitem id="oemedical_disease_group_members" name=" Disease Group Members"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_disease_group_members_view" />
-		<menuitem id="oemedical_medicament" name=" Medicament"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_medicament_view" />
+
 		<menuitem id="oemedical_pathology_group" name=" Pathology Group"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_pathology_group_view" />

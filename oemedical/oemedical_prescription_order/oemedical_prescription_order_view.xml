@@ -15,7 +15,7 @@
 					<field name="prescription_date" />
 					<field name="prescription_warning_ack" />
 					<field name="user_id" />
-					<field name="prescription_id" />
+					<field name="name" />
 				</tree>
 			</field>
 		</record>
@@ -26,15 +26,17 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Prescription Order">
+					<field name="name" />
+					<field name="prescription_date" />
 					<field name="patient" />
 					<field name="pregnancy_warning" />
-					<field name="notes" />
-					<!--field name="prescription_line"/ -->
 					<field name="pharmacy" />
-					<field name="prescription_date" />
 					<field name="prescription_warning_ack" />
 					<field name="user_id" />
-					<field name="prescription_id" />
+					<newline/>
+					<field name="prescription_line" colspan="4"/>
+					<newline/>
+					<field name="notes" colspan="4"/>
 				</form>
 			</field>
 		</record>
@@ -45,14 +47,14 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<search string="Oemedical Prescription Order">
+					<field name="name" />
+					<field name="prescription_date" />
 					<field name="patient" />
 					<field name="pregnancy_warning" />
-					<field name="notes" />
 					<field name="pharmacy" />
-					<field name="prescription_date" />
 					<field name="prescription_warning_ack" />
 					<field name="user_id" />
-					<field name="prescription_id" />
+					<field name="notes"/>
 					<newline />
 					<group expand="0" string="Group By...">
 						<filter string="Patient" domain="[]" context="{'group_by':'patient'}" />
@@ -68,7 +70,7 @@
 						<filter string="Prescribing Doctor" domain="[]"
 							context="{'group_by':'user_id'}" />
 						<filter string="Prescription ID" domain="[]"
-							context="{'group_by':'prescription_id'}" />
+							context="{'group_by':'name'}" />
 					</group>
 				</search>
 			</field>

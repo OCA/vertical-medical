@@ -7,12 +7,11 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Appointment">
-					<field name="consultations" />
-					<field name="patient" />
 					<field name="name" />
+					<field name="patient" />
+					<field name="consultations" />
 					<field name="appointment_date" />
 					<field name="doctor" />
-					<field name="comments" />
 					<field name="appointment_type" />
 					<field name="institution" />
 					<field name="urgency" />
@@ -27,16 +26,17 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Appointment">
-					<field name="consultations" />
-					<field name="patient" />
 					<field name="name" />
-					<field name="appointment_date" />
+					<field name="patient" />
 					<field name="doctor" />
-					<field name="comments" />
+					<field name="appointment_date" />
 					<field name="appointment_type" />
-					<field name="institution" />
 					<field name="urgency" />
+					<field name="consultations" />
+					<field name="institution" />
 					<field name="speciality" />
+					<newline/>
+					<field name="comments" colspan="4"/>
 				</form>
 			</field>
 		</record>
@@ -47,12 +47,13 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<search string="Oemedical Appointment">
-					<field name="consultations" />
-					<field name="patient" />
 					<field name="name" />
-					<field name="appointment_date" />
+					<field name="patient" />
 					<field name="doctor" />
-					<field name="comments" />
+					<field name="appointment_date" />
+					<field name="appointment_type" />
+					<field name="urgency" />
+					<field name="consultations" />
 					<field name="institution" />
 					<field name="speciality" />
 					<newline />

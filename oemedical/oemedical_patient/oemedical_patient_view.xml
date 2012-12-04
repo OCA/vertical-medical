@@ -8,31 +8,14 @@
 			<field name="arch" type="xml">
 				<tree string="Oemedical Patient">
 					<field name="name" />
-					<field name="family" />
-					<field name="photo" />
-					<field name="sex" />
-					<field name="blood_type" />
-					<field name="general_info" />
-					<field name="primary_care_doctor" />
-					<field name="childbearing_age" />
-					<!--field name="medications"/ -->
-					<field name="critical_info" />
-					<field name="rh" />
-					<field name="current_address" />
-					<!-- <field name="diseases"/> -->
 					<field name="lastname" />
-					<field name="ethnic_group" />
 					<field name="ssn" />
-					<!--field name="vaccinations"/ -->
-					<field name="name" />
+					<field name="identification_code" />
 					<field name="dob" />
 					<field name="age" />
-					<field name="marital_status" />
-					<field name="dod" />
-					<field name="current_insurance" />
-					<field name="cod" />
-					<field name="identification_code" />
-					<field name="deceased" />
+					<field name="blood_type" />
+					<field name="rh"/>
+					<field name="sex" />
 				</tree>
 			</field>
 		</record>
@@ -42,34 +25,57 @@
 			<field name="model">oemedical.patient</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Patient">
-					<field name="name" />
+			 <form string="Patient" version="7.0">
+                    <sheet>
+                        <field name="photo" widget='image' class="oe_left oe_avatar"/>
+                        <div class="oe_title">
+                            <h1>
+								<field name="name" placeholder="First Name" style="width: 30%%" />
+								<field name="lastname" placeholder="Last Name" style="width: 30%%" />
+							</h1>
+							<label for="sex" class="oe_edit_only"/>
+							<field name="sex" style="width: 30%%"/>
+							<label for="blood_type" class="oe_edit_only"/>
+							<field name="blood_type" style="width: 8%%"/>
+							<field name="rh" style="width: 2%%"/>
+						</div>
+						<div>
+						</div>
+						<div>
+							<label for="ssn"/>
+							<field name="ssn" style="width: 30%%"/>
+							<label for="identification_code"/>
+							<field name="identification_code" style="width: 30%%"/>
+							<label for="dob"/>
+							<field name="dob" style="width: 15%%"/>
+							<label for="age"/>
+							<field name="age" style="width: 15%%"/>
+                        </div>
+                 <notebook>
+                 <page string="Public Information">
+                 <group  col="4" colspan="4">
+                 	<field name="current_address" />
+                 	<field name="patient" />
+					<field name="marital_status"/>
 					<field name="family" />
-					<field name="photo" />
-					<!--field name="sex"/ -->
-					<!--field name="blood_type"/ -->
 					<field name="general_info" />
 					<field name="primary_care_doctor" />
 					<field name="childbearing_age" />
-					<!--field name="medications"/ -->
+<!-- 					<field name="medications"/> -->
 					<field name="critical_info" />
-					<!--field name="rh"/ -->
-					<field name="current_address" />
-					<!--field name="diseases"/ -->
-					<field name="lastname" />
+<!-- 					<field name="diseases"/> -->
 					<field name="ethnic_group" />
-					<field name="ssn" />
-					<!--field name="vaccinations"/ -->
-					<field name="patient" />
-					<field name="dob" />
-					<field name="age" />
-					<!--field name="marital_status"/ -->
+<!-- 					<field name="vaccinations"/> -->
 					<field name="dod" />
 					<field name="current_insurance" />
 					<field name="cod" />
-					<field name="identification_code" />
 					<field name="deceased" />
+				</group>
+				</page>
+				</notebook>
+				</sheet>
 				</form>
+				
 			</field>
 		</record>
 
