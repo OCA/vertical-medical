@@ -8,10 +8,9 @@
 			<field name="arch" type="xml">
 				<tree string="Oemedical Physician">
 					<field name="name" />
-					<field name="info" />
 					<field name="code" />
-					<field name="health_professional" />
 					<field name="specialty" />
+					<field name="health_professional" />
 					<field name="institution" />
 				</tree>
 			</field>
@@ -24,11 +23,12 @@
 			<field name="arch" type="xml">
 				<form string="Oemedical Physician">
 					<field name="name" />
-					<field name="info" />
 					<field name="code" />
-					<field name="health_professional" />
 					<field name="specialty" />
+					<field name="health_professional" />					
 					<field name="institution" />
+					<newline/>
+					<field name="info" colspan="4"/>
 				</form>
 			</field>
 		</record>
@@ -40,11 +40,11 @@
 			<field name="arch" type="xml">
 				<search string="Oemedical Physician">
 					<field name="name" />
-					<field name="info" />
 					<field name="code" />
-					<field name="health_professional" />
 					<field name="specialty" />
+					<field name="health_professional" />
 					<field name="institution" />
+					<field name="info" />
 					<newline />
 					<group expand="0" string="Group By...">
 						<filter string="Extra info" domain="[]" context="{'group_by':'info'}" />

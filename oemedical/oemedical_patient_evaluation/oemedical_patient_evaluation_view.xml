@@ -7,7 +7,7 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Patient Evaluation">
-					<field name="name" />
+					<field name="patient_id" />
 					<field name="information_source" />
 					<field name="info_diagnosis" />
 					<field name="orientation" />
@@ -37,7 +37,7 @@
 					<field name="hip" />
 					<field name="memory" />
 					<field name="abstraction" />
-					<field name="patient" />
+					<field name="patient_id" />
 					<field name="derived_from" />
 					<field name="specialty" />
 					<!--field name="loc_verbal"/ -->
@@ -55,7 +55,7 @@
 					<field name="judgment" />
 					<field name="temperature" />
 					<field name="osat" />
-					<!--field name="secondary_conditions"/ -->
+<!-- 					<field name="secondary_conditions"/> -->
 					<field name="evaluation_endtime" />
 					<field name="notes" />
 					<field name="calculation_ability" />
@@ -80,7 +80,7 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Patient Evaluation">
-					<field name="name" />
+					<field name="patient_id" />
 					<field name="information_source" />
 					<field name="info_diagnosis" />
 					<field name="orientation" />
@@ -110,7 +110,7 @@
 					<field name="hip" />
 					<field name="memory" />
 					<field name="abstraction" />
-					<field name="patient" />
+					<field name="patient_id" />
 					<field name="derived_from" />
 					<field name="specialty" />
 					<!--field name="loc_verbal"/ -->
@@ -128,7 +128,7 @@
 					<field name="judgment" />
 					<field name="temperature" />
 					<field name="osat" />
-					<!--field name="secondary_conditions"/ -->
+					<field name="secondary_conditions"/>
 					<field name="evaluation_endtime" />
 					<field name="notes" />
 					<field name="calculation_ability" />
@@ -153,7 +153,7 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<search string="Oemedical Patient Evaluation">
-					<field name="name" />
+					<field name="patient_id" />
 					<field name="information_source" />
 					<field name="info_diagnosis" />
 					<field name="orientation" />
@@ -178,7 +178,7 @@
 					<field name="hip" />
 					<field name="memory" />
 					<field name="abstraction" />
-					<field name="patient" />
+					<field name="patient_id" />
 					<field name="derived_from" />
 					<field name="specialty" />
 					<field name="glycemia" />
@@ -249,7 +249,7 @@
 						<filter string="Memory" domain="[]" context="{'group_by':'memory'}" />
 						<filter string="Abstraction" domain="[]"
 							context="{'group_by':'abstraction'}" />
-						<filter string="Patient" domain="[]" context="{'group_by':'patient'}" />
+						<filter string="Patient" domain="[]" context="{'group_by':'patient_id'}" />
 						<filter string="Derived from" domain="[]"
 							context="{'group_by':'derived_from'}" />
 						<filter string="Specialty" domain="[]"

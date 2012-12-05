@@ -55,7 +55,6 @@
                  <page string="Public Information">
                  <group  col="4" colspan="4">
                  	<field name="current_address" />
-                 	<field name="patient" />
 					<field name="marital_status"/>
 					<field name="family" />
 					<field name="general_info" />
@@ -95,7 +94,6 @@
 					<field name="lastname" />
 					<field name="ethnic_group" />
 					<field name="ssn" />
-					<field name="patient" />
 					<field name="dob" />
 					<field name="age" />
 					<field name="dod" />
@@ -121,7 +119,6 @@
 						<filter string="Ethnic group" domain="[]"
 							context="{'group_by':'ethnic_group'}" />
 						<filter string="SSN" domain="[]" context="{'group_by':'ssn'}" />
-						<filter string="Patient" domain="[]" context="{'group_by':'patient'}" />
 						<filter string="DoB" domain="[]" context="{'group_by':'dob'}" />
 						<filter string="Age" domain="[]" context="{'group_by':'age'}" />
 						<filter string="Date of Death" domain="[]" context="{'group_by':'dod'}" />

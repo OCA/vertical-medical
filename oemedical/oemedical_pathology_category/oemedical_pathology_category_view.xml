@@ -7,9 +7,9 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Pathology Category">
-					<field name="childs" />
 					<field name="name" />
 					<field name="parent_id" />
+					<field name="childs" />
 				</tree>
 			</field>
 		</record>
@@ -20,9 +20,10 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Pathology Category">
-					<field name="childs" />
 					<field name="name" />
 					<field name="parent_id" />
+					<newline/>
+					<field name="childs" colspan="4"/>
 				</form>
 			</field>
 		</record>
@@ -33,9 +34,9 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<search string="Oemedical Pathology Category">
-					<field name="childs" />
 					<field name="name" />
 					<field name="parent_id" />
+					<field name="childs" />
 					<newline />
 					<group expand="0" string="Group By...">
 						<filter string="Category Name" domain="[]" context="{'group_by':'name'}" />

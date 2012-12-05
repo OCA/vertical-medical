@@ -7,8 +7,7 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Patient Medication">
-					<field name="patient" />
-					<field name="name" />
+					<field name="patient_id" />
 					<field name="doctor" />
 					<field name="adverse_reaction" />
 					<field name="notes" />
@@ -27,8 +26,7 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Patient Medication">
-					<field name="patient" />
-					<field name="name" />
+					<field name="patient_id" />
 					<field name="doctor" />
 					<field name="adverse_reaction" />
 					<field name="notes" />
@@ -47,8 +45,7 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<search string="Oemedical Patient Medication">
-					<field name="patient" />
-					<field name="name" />
+					<field name="patient_id" />
 					<field name="doctor" />
 					<field name="adverse_reaction" />
 					<field name="notes" />
@@ -59,8 +56,7 @@
 					<field name="discontinued" />
 					<newline />
 					<group expand="0" string="Group By...">
-						<filter string="Patient" domain="[]" context="{'group_by':'patient'}" />
-						<filter string="Patient" domain="[]" context="{'group_by':'name'}" />
+						<filter string="Patient" domain="[]" context="{'group_by':'patient_id'}" />
 						<filter string="Physician" domain="[]" context="{'group_by':'doctor'}" />
 						<filter string="Adverse Reactions" domain="[]"
 							context="{'group_by':'adverse_reaction'}" />

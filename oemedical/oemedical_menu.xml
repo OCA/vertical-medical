@@ -16,6 +16,15 @@
 		<menuitem id="oemedical_family" name=" Family" parent="oemedical_patient_root"
 			sequence="20" action="act_open_oemedical_family_view" />
 
+		<menuitem id="oemedical_patient_medication" name=" Patient Medication"
+			parent="oemedical_patient_root" sequence="40"
+			action="act_open_oemedical_patient_medication_view" />
+		<menuitem id="oemedical_patient_evaluation" name=" Patient Evaluation"
+			parent="oemedical_patient_root" sequence="50"
+			action="act_open_oemedical_patient_evaluation_view" />
+
+
+
 		<menuitem id="oemedical_appoitment_root" name="Appoitment"
 			parent="oemedical_root" sequence="20" />
 		<menuitem id="oemedical_appointment" name=" Appointment"
@@ -61,20 +70,20 @@
 			sequence="10" action="act_open_oemedical_drug_form_view" />
 
 
-		<menuitem id="oemedical_secondary_condition" name=" Secondary Condition"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_secondary_condition_view" />
+<!-- 		<menuitem id="oemedical_secondary_condition" name=" Secondary Condition" -->
+<!-- 			parent="oemedical_root_sub" sequence="10" -->
+<!-- 			action="act_open_oemedical_secondary_condition_view" /> -->
 		<menuitem id="oemedical_pathology_category" name=" Pathology Category"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_pathology_category_view" />
-		<menuitem id="oemedical_signs_and_symptoms" name=" Signs And Symptoms"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_signs_and_symptoms_view" />
+<!-- 		<menuitem id="oemedical_signs_and_symptoms" name=" Signs And Symptoms" -->
+<!-- 			parent="oemedical_root_sub" sequence="10" -->
+<!-- 			action="act_open_oemedical_signs_and_symptoms_view" /> -->
 		<menuitem id="oemedical_physician" name=" Physician" parent="oemedical_root_sub"
 			sequence="10" action="act_open_oemedical_physician_view" />
-		<menuitem id="oemedical_directions" name=" Directions"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_directions_view" />
+<!-- 		<menuitem id="oemedical_directions" name=" Directions" -->
+<!-- 			parent="oemedical_root_sub" sequence="10" -->
+<!-- 			action="act_open_oemedical_directions_view" /> -->
 		<menuitem id="oemedical_insurance" name=" Insurance" parent="oemedical_root_sub"
 			sequence="10" action="act_open_oemedical_insurance_view" />
 		<menuitem id="oemedical_pathology" name=" Pathology" parent="oemedical_root_sub"
@@ -111,12 +120,7 @@
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_hospital_or_view" />
 
-		<menuitem id="oemedical_patient_medication" name=" Patient Medication"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_patient_medication_view" />
-		<menuitem id="oemedical_patient_evaluation" name=" Patient Evaluation"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_patient_evaluation_view" />
+		
 		<menuitem id="oemedical_hospital_building" name=" Hospital Building"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_hospital_building_view" />

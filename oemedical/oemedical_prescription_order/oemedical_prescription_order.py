@@ -27,7 +27,7 @@ class OeMedicalPrescriptionOrder(osv.osv):
     _name='oemedical.prescription.order'
 
     _columns={
-        'patient': fields.many2one('oemedical.patient', string='Patient',
+        'patient_id': fields.many2one('oemedical.patient', string='Patient',
                                    required=True),
         'pregnancy_warning': fields.boolean(string='Pregancy Warning',
                                             readonly=True),

@@ -30,7 +30,7 @@ class OeMedicalAppointment(osv.osv):
         'consultations': fields.many2one('product.product',
                                          string='Consultation Services',
                                           help='Consultation Services'),
-        'patient': fields.many2one('oemedical.patient', string='Patient', 
+        'patient_id': fields.many2one('oemedical.patient', string='Patient',
                                    required=True, select=True,
                                    help='Patient Name'),
         'name': fields.char(size=256, string='Appointment ID', readonly=True),

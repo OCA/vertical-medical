@@ -8,7 +8,7 @@
 			<field name="arch" type="xml">
 				<tree string="Oemedical Appointment">
 					<field name="name" />
-					<field name="patient" />
+					<field name="patient_id" />
 					<field name="consultations" />
 					<field name="appointment_date" />
 					<field name="doctor" />
@@ -27,7 +27,7 @@
 			<field name="arch" type="xml">
 				<form string="Oemedical Appointment">
 					<field name="name" />
-					<field name="patient" />
+					<field name="patient_id" />
 					<field name="doctor" />
 					<field name="appointment_date" />
 					<field name="appointment_type" />
@@ -48,7 +48,7 @@
 			<field name="arch" type="xml">
 				<search string="Oemedical Appointment">
 					<field name="name" />
-					<field name="patient" />
+					<field name="patient_id" />
 					<field name="doctor" />
 					<field name="appointment_date" />
 					<field name="appointment_type" />
@@ -60,7 +60,7 @@
 					<group expand="0" string="Group By...">
 						<filter string="Consultation Services" domain="[]"
 							context="{'group_by':'consultations'}" />
-						<filter string="Patient" domain="[]" context="{'group_by':'patient'}" />
+						<filter string="Patient" domain="[]" context="{'group_by':'patient_id'}" />
 						<filter string="Appointment ID" domain="[]"
 							context="{'group_by':'name'}" />
 						<filter string="Date and Time" domain="[]"

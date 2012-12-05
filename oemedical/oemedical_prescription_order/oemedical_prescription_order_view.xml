@@ -7,7 +7,7 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Prescription Order">
-					<field name="patient" />
+					<field name="patient_id" />
 					<field name="pregnancy_warning" />
 					<field name="notes" />
 					<!--field name="prescription_line"/ -->
@@ -28,7 +28,7 @@
 				<form string="Oemedical Prescription Order">
 					<field name="name" />
 					<field name="prescription_date" />
-					<field name="patient" />
+					<field name="patient_id" />
 					<field name="pregnancy_warning" />
 					<field name="pharmacy" />
 					<field name="prescription_warning_ack" />
@@ -49,7 +49,7 @@
 				<search string="Oemedical Prescription Order">
 					<field name="name" />
 					<field name="prescription_date" />
-					<field name="patient" />
+					<field name="patient_id" />
 					<field name="pregnancy_warning" />
 					<field name="pharmacy" />
 					<field name="prescription_warning_ack" />
@@ -57,7 +57,7 @@
 					<field name="notes"/>
 					<newline />
 					<group expand="0" string="Group By...">
-						<filter string="Patient" domain="[]" context="{'group_by':'patient'}" />
+						<filter string="Patient" domain="[]" context="{'group_by':'patient_id'}" />
 						<filter string="Pregancy Warning" domain="[]"
 							context="{'group_by':'pregnancy_warning'}" />
 						<filter string="Prescription Notes" domain="[]"

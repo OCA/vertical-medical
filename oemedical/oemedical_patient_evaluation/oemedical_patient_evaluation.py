@@ -24,10 +24,10 @@ from osv import fields
 
 
 class OeMedicalPatientEvaluation(osv.osv):
-    _name = 'oemedical.patient.evaluation'
-
-    _columns = {
-        'name': fields.char(size=264, string='Name'),
+    _name='oemedical.patient.evaluation'
+    _rec_name='patient_id'
+    _columns={
+        'patient_id':fields.many2one('oemedical.patient', 'Patient'),
         'information_source': fields.char(size=256, string='Source',
             help="Source of" "Information, eg : Self, relative, friend ..."),
         'info_diagnosis': fields.text(
@@ -35,7 +35,7 @@ class OeMedicalPatientEvaluation(osv.osv):
         'orientation': fields.boolean(string='Orientation',
             help='Check this box if the patient is disoriented in time and/or'\
             ' space'),
-        'weight': fields.float(string='Weight', 
+        'weight': fields.float(string='Weight',
                                help='Weight in Kilos'),
         'evaluation_type': fields.selection([
             ('a', 'Ambulatory'),
@@ -46,13 +46,13 @@ class OeMedicalPatientEvaluation(osv.osv):
             ('p', 'Phone call'),
             ('t', 'Telemedicine'),
         ], string='Type'),
-        'malnutrition': fields.boolean(string='Malnutrition', 
+        'malnutrition': fields.boolean(string='Malnutrition',
         help='Check this box if the patient show signs of malnutrition. If'\
         ' associated  to a disease, please encode the correspondent disease'\
         ' on the patient disease history. For example, Moderate'\
         ' protein-energy malnutrition, E44.0 in ICD-10 encoding'),
         'actions': fields.one2many('oemedical.directions',
-                                   'evaluation_id', string='Procedures', 
+                                   'evaluation_id', string='Procedures',
                                    help='Procedures / Actions to take'),
         'height': fields.float(string='Height',
                                help='Height in centimeters, eg 175'),
@@ -68,7 +68,7 @@ class OeMedicalPatientEvaluation(osv.osv):
            ' disease history'),
         'present_illness': fields.text(string='Present Illness'),
         'evaluation_date': fields.many2one('oemedical.appointment',
-                                           string='Appointment', 
+                                           string='Appointment',
             help='Enter or select the date / ID of the appointment related to'\
                  ' this evaluation'),
         'evaluation_start': fields.datetime(string='Start', required=True),
@@ -88,14 +88,14 @@ class OeMedicalPatientEvaluation(osv.osv):
         'doctor': fields.many2one('oemedical.physician', string='Doctor',
                                   readonly=True),
         'knowledge_current_events': fields.boolean(
-            string='Knowledge of Current Events', 
+            string='Knowledge of Current Events',
             help='Check this box if the patient can not respond to public'\
             ' notorious events'),
         'next_evaluation': fields.many2one('oemedical.appointment',
-                                           string='Next Appointment', ),
+                                           string='Next Appointment',),
         'signs_and_symptoms': fields.one2many('oemedical.signs_and_symptoms',
                                               'evaluation_id',
-                                              string='Signs and Symptoms', 
+                                              string='Signs and Symptoms',
                                             help="Enter the Signs and Symptoms \
                                         for the patient in this evaluation."),
         'loc_motor': fields.selection([
@@ -111,7 +111,7 @@ class OeMedicalPatientEvaluation(osv.osv):
                                         help="Uncheck this option" \
         "if the information provided by the source seems not reliable"),
         'systolic': fields.integer(string='Systolic Pressure'),
-        'vocabulary': fields.boolean(string='Vocabulary', 
+        'vocabulary': fields.boolean(string='Vocabulary',
         help='Check this box if the patient lacks basic intelectual capacity,'\
         ' when she/he can not describe elementary objects'),
         'praxis': fields.boolean(string='Praxis',
@@ -125,12 +125,12 @@ class OeMedicalPatientEvaluation(osv.osv):
         'abstraction': fields.boolean(string='Abstraction',
             help='Check this box if the patient presents abnormalities in'\
             ' abstract reasoning'),
-        'patient': fields.many2one('oemedical.patient', string='Patient', ),
+        'patient_id': fields.many2one('oemedical.patient', string='Patient',),
         'derived_from': fields.many2one('oemedical.physician',
-                                        string='Derived from', 
+                                        string='Derived from',
                                         help='Physician who derived the case'),
         'specialty': fields.many2one('oemedical.specialty',
-                                     string='Specialty', ),
+                                     string='Specialty',),
         'loc_verbal': fields.selection([
             ('1', 'Makes no sounds'),
             ('2', 'Incomprehensible sounds'),
@@ -138,19 +138,19 @@ class OeMedicalPatientEvaluation(osv.osv):
             ('4', 'Confused, disoriented'),
             ('5', 'Oriented, converses normally'),
         ], string='Glasgow - Verbal'),
-        'glycemia': fields.float(string='Glycemia', 
+        'glycemia': fields.float(string='Glycemia',
                         help='Last blood glucose level. Can be approximative.'),
-        'head_circumference': fields.float(string='Head Circumference', 
+        'head_circumference': fields.float(string='Head Circumference',
                                            help='Head circumference'),
         'bmi': fields.float(string='Body Mass Index'),
         'respiratory_rate': fields.integer(string='Respiratory Rate',
                     help='Respiratory rate expressed in breaths per minute'),
         'derived_to': fields.many2one('oemedical.physician',
-                                      string='Derived to', 
+                                      string='Derived to',
                         help='Physician to whom escalate / derive the case'),
-        'hba1c': fields.float(string='Glycated Hemoglobin', 
+        'hba1c': fields.float(string='Glycated Hemoglobin',
                         help='Last Glycated Hb level. Can be approximative.'),
-        'violent': fields.boolean(string='Violent Behaviour', 
+        'violent': fields.boolean(string='Violent Behaviour',
            help='Check this box if the patient is agressive or violent at the'\
            ' moment'),
         'directions': fields.text(string='Plan'),
@@ -158,7 +158,7 @@ class OeMedicalPatientEvaluation(osv.osv):
         'cholesterol_total': fields.integer(string='Last Cholesterol'),
         'diagnostic_hypothesis': fields.one2many(
             'oemedical.diagnostic_hypothesis',
-            'evaluation_id', string='Hypotheses / DDx', 
+            'evaluation_id', string='Hypotheses / DDx',
             help='Presumptive Diagnosis. If no diagnosis can be made'\
             ', encode the main sign or symptom.'),
         'judgment': fields.boolean(string='Jugdment',
@@ -170,7 +170,7 @@ class OeMedicalPatientEvaluation(osv.osv):
                                help='Oxygen Saturation(arterial).'),
         'secondary_conditions': fields.one2many(
             'oemedical.secondary_condition', 'evaluation_id',
-            string='Secondary Conditions', 
+            string='Secondary Conditions',
             help="Other, Secondary conditions found on the patient"),
         'evaluation_endtime': fields.datetime(string='End', required=True),
         'notes': fields.text(string='Notes'),
@@ -193,9 +193,9 @@ class OeMedicalPatientEvaluation(osv.osv):
           help='Check this box if the patient suffers from any sort of gnosia'\
           ' disorders, such as agnosia, prosopagnosia ...'),
         'diagnosis': fields.many2one('oemedical.pathology',
-                                     string='Presumptive Diagnosis', ),
+                                     string='Presumptive Diagnosis',),
         'whr': fields.float(string='WHR', help='Waist to hip ratio'),
-        'ldl': fields.integer(string='Last LDL', 
+        'ldl': fields.integer(string='Last LDL',
                     help='Last LDL Cholesterol reading. Can be approximative'),
         'notes_complaint': fields.text(string='Complaint details'),
         'hdl': fields.integer(string='Last HDL'),

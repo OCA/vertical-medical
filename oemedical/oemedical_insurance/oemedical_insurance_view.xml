@@ -10,6 +10,7 @@
 					<field name="name" />
 					<field name="category" />
 					<field name="plan_id" />
+					<field name="patient_id"/>
 					<!--field name="insurance_type"/ -->
 					<field name="member_since" />
 					<field name="company" />
@@ -30,6 +31,7 @@
 					<field name="name" />
 					<field name="category" />
 					<field name="plan_id" />
+					<field name="patient_id"/>
 					<!--field name="insurance_type"/ -->
 					<field name="member_since" />
 					<field name="company" />
@@ -49,6 +51,7 @@
 				<search string="Oemedical Insurance">
 					<field name="category" />
 					<field name="plan_id" />
+					<field name="patient_id"/>
 					<field name="member_since" />
 					<field name="company" />
 					<field name="number" />

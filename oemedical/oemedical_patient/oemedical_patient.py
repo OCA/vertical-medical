@@ -46,7 +46,9 @@ class OeMedicalPatient(osv.osv):
                                 help='Current primary care / family doctor'),
         'childbearing_age': fields.boolean('Potential for Childbearing'),
         'medications': fields.one2many('oemedical.patient.medication',
-                                       'patient', string='Medications',),
+                                       'patient_id', string='Medications',),
+        'evaluations': fields.one2many('oemedical.patient.evaluation',
+                                       'patient_id', string='Evaluations',),
         'critical_info': fields.text(
             string='Important disease, allergy or procedures information',
             help='Write any important information on the patient\'s disease,'\
@@ -64,8 +66,6 @@ class OeMedicalPatient(osv.osv):
         'ssn': fields.char(size=256, string='SSN',),
         'vaccinations': fields.one2many('oemedical.vaccination', 'patient_id',
                                         'Vaccinations',),
-        'patient': fields.many2one('res.partner', string='Patient',
-                                   help='Patient Name'),
         'dob': fields.date(string='DoB'),
         'age': fields.char(size=256, string='Age',),
         'marital_status': fields.selection([('s', 'Single'), ('m', 'Married'),
