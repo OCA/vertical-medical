@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data >
-
-        <record model="oemedical.dose.unit" id="ml">
+		
+		 <record id="product_uom_litre" model="product.uom">
+            <field name="name">Litre</field>
+            <field name="category_id" ref="product_uom_categ_vol"/>
+            <field name="factor">1.0</field>
+        </record>
+		
+        <record model="product.uom" id="product_uom_ml">
             <field name="name">mL</field>
-            <field name="desc">milliliter</field>
+            <field name="category_id" ref="product.product_uom_categ_vol"/>
+            <field name="uom_type">smaller</field>
         </record>
-        <record model="oemedical.dose.unit" id="mg">
+        <record model="product.uom" id="mg">
             <field name="name">mg</field>
-            <field name="desc">milligram</field>
-        </record>
-        <record model="oemedical.dose.unit" id="l">
-            <field name="name">L</field>
-            <field name="desc">liter</field>
-        </record>
-        <record model="oemedical.dose.unit" id="kg">
-            <field name="name">kg</field>
-            <field name="desc">kilogram</field>
+            <field name="factor" eval="10000"/>
+            <field name="category_id" ref="product.product_uom_categ_kgm"/>
+            <field name="uom_type">smaller</field>
         </record>
         <record model="oemedical.dose.unit" id="mmol">
             <field name="name">mmol</field>
-            <field name="desc">millimol</field>
+            <field name="factor" eval="1"/>
+            <field name="category_id" ref="product.product_uom_categ_unit"/>
+            <field name="uom_type">smaller</field>
         </record>
         <record model="oemedical.dose.unit" id="ug">
             <field name="name">ug</field>
-            <field name="desc">microgram</field>
-        </record>
-        <record model="oemedical.dose.unit" id="unit">
-            <field name="name">unit</field>
-            <field name="desc">unit</field>
+            <field name="factor" eval="100000"/>
+            <field name="category_id" ref="product.product_uom_categ_kgm"/>
+            <field name="uom_type">smaller</field>
         </record>
 
     </data>

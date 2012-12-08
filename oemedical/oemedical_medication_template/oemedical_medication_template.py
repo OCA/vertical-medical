@@ -80,7 +80,7 @@ class OeMedicalMedicationTemplate(osv.osv):
         ' and 18:00 can be encoded like 08 13 18'),
         'end_treatment': fields.datetime(string='End',
                                          help='Date of start of Treatment'),
-        'dose_unit': fields.many2one('oemedical.dose.unit',
+        'dose_unit': fields.many2one('product.uom',
                                      string='dose unit', 
                         help='Unit of measure for the medication to be taken'),
     }

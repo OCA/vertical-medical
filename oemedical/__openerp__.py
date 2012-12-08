@@ -102,7 +102,6 @@ OeMedical at a glance:
         'oemedical_pathology/oemedical_pathology_view.xml',
         'oemedical_operational_area/oemedical_operational_area_view.xml',
         'oemedical_ethnicity/oemedical_ethnicity_view.xml',
-        'oemedical_dose_unit/oemedical_dose_unit_view.xml',
         'oemedical_operational_sector/oemedical_operational_sector_view.xml',
         'oemedical_prescription_order/oemedical_prescription_order_view.xml',
         'oemedical_medicament_category/oemedical_medicament_category_view.xml',

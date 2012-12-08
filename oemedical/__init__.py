@@ -30,9 +30,7 @@ import res_partner
 import oemedical_pathology
 import oemedical_operational_area
 import oemedical_ethnicity
-import oemedical_dose_unit
 import oemedical_operational_sector
-#import oemedical_sequences
 import oemedical_prescription_order
 import oemedical_medicament_category
 import oemedical_insurance_plan
