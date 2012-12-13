@@ -23,7 +23,7 @@ from osv import osv
 from osv import fields
 
 
-class ProductProduct(osv.osv):
+class ProductProduct(osv.Model):
     _inherit = 'product.product'
 
     _columns = {

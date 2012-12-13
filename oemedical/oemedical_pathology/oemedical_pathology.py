@@ -23,7 +23,7 @@ from osv import osv
 from osv import fields
 
 
-class OeMedicalPathology(osv.osv):
+class OeMedicalPathology(osv.Model):
     _name = 'oemedical.pathology'
 
     _columns = {

@@ -23,7 +23,7 @@ from osv import osv
 from osv import fields
 
 
-class OeMedicalMedicamentCategory(osv.osv):
+class OeMedicalMedicamentCategory(osv.Model):
     _name = 'oemedical.medicament.category'
 
     _columns = {
@@ -34,7 +34,7 @@ class OeMedicalMedicamentCategory(osv.osv):
                                   string='Parent', select=True),
     }
     _constraints = [
-        (osv.osv._check_recursion, 'Error ! You cannot create recursive \n' 
+        (osv.Model._check_recursion, 'Error ! You cannot create recursive \n' 
         'Category.', ['parent_id'])
     ]
 OeMedicalMedicamentCategory()

@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-class OeMedicalAppointment(osv.osv):
+class OeMedicalAppointment(osv.Model):
     '''
     DocString for a new object.
     Is important say here where will be the menu to test this object.
