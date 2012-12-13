@@ -23,7 +23,7 @@ from osv import osv
 from osv import fields
 
 
-class OeMedicalPatient(osv.osv):
+class OeMedicalPatient(osv.Model):
     _name='oemedical.patient'
     _inherits={
         'res.partner': 'partner_id',

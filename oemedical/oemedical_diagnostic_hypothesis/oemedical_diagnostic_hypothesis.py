@@ -23,7 +23,7 @@ from osv import osv
 from osv import fields
 
 
-class OeMedicalDiagnosticHypothesis(osv.osv):
+class OeMedicalDiagnosticHypothesis(osv.Model):
     _name = 'oemedical.diagnostic_hypothesis'
 
     _columns = {

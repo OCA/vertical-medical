@@ -23,7 +23,7 @@ from osv import osv
 from osv import fields
 
 
-class ResPartner(osv.osv):
+class ResPartner(osv.Model):
     _inherit = 'res.partner'
 
     _columns = {

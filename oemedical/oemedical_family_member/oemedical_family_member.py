@@ -23,7 +23,7 @@ from osv import osv
 from osv import fields
 
 
-class OeMedicalFamilyMember(osv.osv):
+class OeMedicalFamilyMember(osv.Model):
     _name = 'oemedical.family_member'
     _columns = {
         'member': fields.many2one('res.partner', string='Member', 

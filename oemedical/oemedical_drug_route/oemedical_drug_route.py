@@ -23,7 +23,7 @@ from osv import osv
 from osv import fields
 
 
-class OeMedicalDrugRoute(osv.osv):
+class OeMedicalDrugRoute(osv.Model):
     _name = 'oemedical.drug.route'
 
     _columns = {

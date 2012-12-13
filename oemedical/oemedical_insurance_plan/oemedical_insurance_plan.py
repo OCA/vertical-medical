@@ -23,7 +23,7 @@ from osv import osv
 from osv import fields
 
 
-class OeMedicalInsurancePlan(osv.osv):
+class OeMedicalInsurancePlan(osv.Model):
     _name = 'oemedical.insurance.plan'
 
     _columns = {

@@ -23,7 +23,7 @@ from osv import osv
 from osv import fields
 
 
-class OeMedicalSecondaryCondition(osv.osv):
+class OeMedicalSecondaryCondition(osv.Model):
     _name = 'oemedical.secondary_condition'
 
     _columns = {
