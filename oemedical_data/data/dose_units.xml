@@ -19,13 +19,13 @@
             <field name="category_id" ref="product.product_uom_categ_kgm"/>
             <field name="uom_type">smaller</field>
         </record>
-        <record model="oemedical.dose.unit" id="mmol">
+        <record model="product.uom" id="mmol">
             <field name="name">mmol</field>
             <field name="factor" eval="1"/>
             <field name="category_id" ref="product.product_uom_categ_unit"/>
             <field name="uom_type">smaller</field>
         </record>
-        <record model="oemedical.dose.unit" id="ug">
+        <record model="product.uom" id="ug">
             <field name="name">ug</field>
             <field name="factor" eval="100000"/>
             <field name="category_id" ref="product.product_uom_categ_kgm"/>

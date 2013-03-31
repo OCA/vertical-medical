@@ -1322,10 +1322,6 @@ msgstr ""
 msgid "Confused, disoriented"
 msgstr ""
 
-#. module: oemedical
-#: sql_constraint:oemedical.dose.unit:0
-msgid "Unit must be unique!"
-msgstr ""
 
 #. module: oemedical
 #: help:oemedical.pathology,name:0
@@ -1484,8 +1480,6 @@ msgid "Group name"
 msgstr ""
 
 #. module: oemedical
-#: view:oemedical.dose.unit:0
-#: field:oemedical.dose.unit,name:0
 #: view:oemedical.drug.route:0
 #: field:oemedical.drug.route,name:0
 #: view:oemedical.hospital.or:0
@@ -1535,11 +1529,6 @@ msgstr ""
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_disease_group_members
 msgid " Disease Group Members"
-msgstr ""
-
-#. module: oemedical
-#: view:oemedical.dose.unit:0
-msgid "Oemedical Dose Unit"
 msgstr ""
 
 #. module: oemedical
@@ -1772,7 +1761,6 @@ msgstr ""
 #: view:oemedical.diagnostic_hypothesis:0
 #: view:oemedical.directions:0
 #: view:oemedical.disease_group.members:0
-#: view:oemedical.dose.unit:0
 #: view:oemedical.drug.form:0
 #: view:oemedical.drug.route:0
 #: view:oemedical.ethnicity:0
@@ -3315,11 +3303,6 @@ msgstr ""
 msgid "oemedical.family_member"
 msgstr ""
 
-#. module: oemedical
-#: view:oemedical.dose.unit:0
-#: field:oemedical.dose.unit,desc:0
-msgid "Description"
-msgstr ""
 
 #. module: oemedical
 #: selection:oemedical.patient,marital_status:0
@@ -3444,11 +3427,6 @@ msgstr ""
 #: view:oemedical.patient.disease:0
 #: field:oemedical.patient.disease,healed_date:0
 msgid "Healed"
-msgstr ""
-
-#. module: oemedical
-#: model:ir.model,name:oemedical.model_oemedical_dose_unit
-msgid "oemedical.dose.unit"
 msgstr ""
 
 #. module: oemedical

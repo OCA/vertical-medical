@@ -63,9 +63,6 @@
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_drug_route_view" />
 
-		<menuitem id="oemedical_dose_unit" name=" Dose Unit" parent="oemedical_root_sub"
-			sequence="10" action="act_open_oemedical_dose_unit_view" />
-
 		<menuitem id="oemedical_drug_form" name=" Drug Form" parent="oemedical_root_sub"
 			sequence="10" action="act_open_oemedical_drug_form_view" />
 
