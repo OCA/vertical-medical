@@ -12,6 +12,7 @@
             <field name="name">mL</field>
             <field name="category_id" ref="product.product_uom_categ_vol"/>
             <field name="uom_type">smaller</field>
+            <field name="factor" eval="1000"/>
         </record>
         <record model="product.uom" id="mg">
             <field name="name">mg</field>

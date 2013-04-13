@@ -1,162 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
-		<record id="view_oemedical_patient_tree" model="ir.ui.view">
-			<field name="name">oemedical.patient.tree</field>
-			<field name="model">oemedical.patient</field>
-			<field name="priority" eval="8" />
-			<field name="arch" type="xml">
-				<tree string="Oemedical Patient">
-					<field name="name" />
-					<field name="lastname" />
-					<field name="ssn" />
-					<field name="identification_code" />
-					<field name="dob" />
-					<field name="age" />
-					<field name="blood_type" />
-					<field name="rh"/>
-					<field name="sex" />
-				</tree>
-			</field>
-		</record>
+<!-- 		<record id="view_oemedical_patient_tree" model="ir.ui.view"> -->
+<!-- 			<field name="name">oemedical.patient.tree</field> -->
+<!-- 			<field name="model">oemedical.patient</field> -->
+<!-- 			<field name="priority" eval="8" /> -->
+<!-- 			<field name="arch" type="xml"> -->
+<!-- 				<tree string="Oemedical Patient"> -->
+<!-- 					<field name="name" /> -->
+<!-- 					<field name="lastname" /> -->
+<!-- 					<field name="ssn" /> -->
+<!-- 					<field name="identification_code" /> -->
+<!-- 					<field name="dob" /> -->
+<!-- 					<field name="age" /> -->
+<!-- 					<field name="blood_type" /> -->
+<!-- 					<field name="rh"/> -->
+<!-- 					<field name="sex" /> -->
+<!-- 				</tree> -->
+<!-- 			</field> -->
+<!-- 		</record> -->
 
-		<record id="view_oemedical_patient_form" model="ir.ui.view">
-			<field name="name">oemedical.patient.form</field>
-			<field name="model">oemedical.patient</field>
-			<field name="priority" eval="8" />
-			<field name="arch" type="xml">
-			 <form string="Patient" version="7.0">
-                    <sheet>
-                        <field name="photo" widget='image' class="oe_left oe_avatar"/>
-                        <div class="oe_title">
-                            <h1>
-								<field name="name" placeholder="First Name" style="width: 30%%" />
-								<field name="lastname" placeholder="Last Name" style="width: 30%%" />
-							</h1>
-							<label for="sex" class="oe_edit_only"/>
-							<field name="sex" style="width: 30%%"/>
-							<label for="blood_type" class="oe_edit_only"/>
-							<field name="blood_type" style="width: 8%%"/>
-							<field name="rh" style="width: 2%%"/>
-						</div>
-						<div>
-						</div>
-						<div>
-							<label for="ssn"/>
-							<field name="ssn" style="width: 30%%"/>
-							<label for="identification_code"/>
-							<field name="identification_code" style="width: 30%%"/>
-							<label for="dob"/>
-							<field name="dob" style="width: 15%%"/>
-							<label for="age"/>
-							<field name="age" style="width: 15%%"/>
-                        </div>
-                 <notebook>
-                 <page string="Public Information">
-                 <group  col="4" colspan="4">
-                 	<field name="current_address" />
-					<field name="marital_status"/>
-					<field name="family" />
-					<field name="general_info" />
-					<field name="primary_care_doctor" />
-					<field name="childbearing_age" />
-<!-- 					<field name="medications"/> -->
-					<field name="critical_info" />
-<!-- 					<field name="diseases"/> -->
-					<field name="ethnic_group" />
-<!-- 					<field name="vaccinations"/> -->
-					<field name="dod" />
-					<field name="current_insurance" />
-					<field name="cod" />
-					<field name="deceased" />
-				</group>
-				</page>
-				</notebook>
-				</sheet>
-				</form>
-				
-			</field>
-		</record>
+<!-- 		<record id="view_oemedical_patient_form" model="ir.ui.view"> -->
+<!-- 			<field name="name">oemedical.patient.form</field> -->
+<!-- 			<field name="model">oemedical.patient</field> -->
+<!-- 			<field name="priority" eval="8" /> -->
+<!-- 			<field name="arch" type="xml"> -->
+<!-- 			 <form string="Patient" version="7.0"> -->
+<!--                     <sheet> -->
+<!--                         <field name="photo" widget='image' class="oe_left oe_avatar"/> -->
+<!--                         <div class="oe_title"> -->
+<!--                             <h1> -->
+<!-- 								<field name="name" placeholder="First Name" style="width: 30%%" /> -->
+<!-- 								<field name="lastname" placeholder="Last Name" style="width: 30%%" /> -->
+<!-- 							</h1> -->
+<!-- 							<label for="sex" class="oe_edit_only"/> -->
+<!-- 							<field name="sex" style="width: 30%%"/> -->
+<!-- 							<label for="blood_type" class="oe_edit_only"/> -->
+<!-- 							<field name="blood_type" style="width: 8%%"/> -->
+<!-- 							<field name="rh" style="width: 2%%"/> -->
+<!-- 						</div> -->
+<!-- 						<div> -->
+<!-- 						</div> -->
+<!-- 						<div> -->
+<!-- 							<label for="ssn"/> -->
+<!-- 							<field name="ssn" style="width: 30%%"/> -->
+<!-- 							<label for="identification_code"/> -->
+<!-- 							<field name="identification_code" style="width: 30%%"/> -->
+<!-- 							<label for="dob"/> -->
+<!-- 							<field name="dob" style="width: 15%%"/> -->
+<!-- 							<label for="age"/> -->
+<!-- 							<field name="age" style="width: 15%%"/> -->
+<!--                         </div> -->
+<!--                  <notebook> -->
+<!--                  <page string="Public Information"> -->
+<!--                  <group  col="4" colspan="4"> -->
+<!--                  	<field name="current_address" /> -->
+<!-- 					<field name="marital_status"/> -->
+<!-- 					<field name="family" /> -->
+<!-- 					<field name="general_info" /> -->
+<!-- 					<field name="primary_care_doctor" /> -->
+<!-- 					<field name="childbearing_age" /> -->
+<!--  					<field name="medications"/> --> 
+<!-- 					<field name="critical_info" /> -->
+<!--  					<field name="diseases"/> --> 
+<!-- 					<field name="ethnic_group" /> -->
+<!--  					<field name="vaccinations"/> -->
+<!-- 					<field name="dod" /> -->
+<!-- 					<field name="current_insurance" /> -->
+<!-- 					<field name="cod" /> -->
+<!-- 					<field name="deceased" /> -->
+<!-- 				</group> -->
+<!-- 				</page> -->
+<!-- 				</notebook> -->
+<!-- 				</sheet> -->
+<!-- 				</form> -->
+<!-- 			</field> -->
+<!-- 		</record> -->
 
-		<record id="view_oemedical_patient_search" model="ir.ui.view">
-			<field name="name">oemedical.patient.search</field>
-			<field name="model">oemedical.patient</field>
-			<field name="priority" eval="8" />
-			<field name="arch" type="xml">
-				<search string="Oemedical Patient">
-					<field name="name" />
-					<field name="family" />
-					<field name="general_info" />
-					<field name="primary_care_doctor" />
-					<field name="childbearing_age" />
-					<field name="critical_info" />
-					<field name="current_address" />
-					<field name="lastname" />
-					<field name="ethnic_group" />
-					<field name="ssn" />
-					<field name="dob" />
-					<field name="age" />
-					<field name="dod" />
-					<field name="current_insurance" />
-					<field name="cod" />
-					<field name="identification_code" />
-					<field name="deceased" />
-					<newline />
-					<group expand="0" string="Group By...">
-						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
-						<filter string="Family" domain="[]" context="{'group_by':'family'}" />
-						<filter string="General Information" domain="[]"
-							context="{'group_by':'general_info'}" />
-						<filter string="Primary Care Doctor" domain="[]"
-							context="{'group_by':'primary_care_doctor'}" />
-						<filter string="Potential for Childbearing" domain="[]"
-							context="{'group_by':'childbearing_age'}" />
-						<filter string="Important disease, allergy or procedures information"
-							domain="[]" context="{'group_by':'critical_info'}" />
-						<filter string="Address" domain="[]"
-							context="{'group_by':'current_address'}" />
-						<filter string="Lastname" domain="[]" context="{'group_by':'lastname'}" />
-						<filter string="Ethnic group" domain="[]"
-							context="{'group_by':'ethnic_group'}" />
-						<filter string="SSN" domain="[]" context="{'group_by':'ssn'}" />
-						<filter string="DoB" domain="[]" context="{'group_by':'dob'}" />
-						<filter string="Age" domain="[]" context="{'group_by':'age'}" />
-						<filter string="Date of Death" domain="[]" context="{'group_by':'dod'}" />
-						<filter string="Insurance" domain="[]"
-							context="{'group_by':'current_insurance'}" />
-						<filter string="Cause of Death" domain="[]" context="{'group_by':'cod'}" />
-						<filter string="ID" domain="[]"
-							context="{'group_by':'identification_code'}" />
-						<filter string="Deceased" domain="[]" context="{'group_by':'deceased'}" />
-					</group>
-				</search>
-			</field>
-		</record>
+<!-- 		<record id="view_oemedical_patient_search" model="ir.ui.view"> -->
+<!-- 			<field name="name">oemedical.patient.search</field> -->
+<!-- 			<field name="model">oemedical.patient</field> -->
+<!-- 			<field name="priority" eval="8" /> -->
+<!-- 			<field name="arch" type="xml"> -->
+<!-- 				<search string="Oemedical Patient"> -->
+<!-- 					<field name="name" /> -->
+<!-- 					<field name="family" /> -->
+<!-- 					<field name="general_info" /> -->
+<!-- 					<field name="primary_care_doctor" /> -->
+<!-- 					<field name="childbearing_age" /> -->
+<!-- 					<field name="critical_info" /> -->
+<!-- 					<field name="current_address" /> -->
+<!-- 					<field name="lastname" /> -->
+<!-- 					<field name="ethnic_group" /> -->
+<!-- 					<field name="ssn" /> -->
+<!-- 					<field name="dob" /> -->
+<!-- 					<field name="age" /> -->
+<!-- 					<field name="dod" /> -->
+<!-- 					<field name="current_insurance" /> -->
+<!-- 					<field name="cod" /> -->
+<!-- 					<field name="identification_code" /> -->
+<!-- 					<field name="deceased" /> -->
+<!-- 					<newline /> -->
+<!-- 					<group expand="0" string="Group By..."> -->
+<!-- 						<filter string="Name" domain="[]" context="{'group_by':'name'}" /> -->
+<!-- 						<filter string="Family" domain="[]" context="{'group_by':'family'}" /> -->
+<!-- 						<filter string="General Information" domain="[]" -->
+<!-- 							context="{'group_by':'general_info'}" /> -->
+<!-- 						<filter string="Primary Care Doctor" domain="[]" -->
+<!-- 							context="{'group_by':'primary_care_doctor'}" /> -->
+<!-- 						<filter string="Potential for Childbearing" domain="[]" -->
+<!-- 							context="{'group_by':'childbearing_age'}" /> -->
+<!-- 						<filter string="Important disease, allergy or procedures information" -->
+<!-- 							domain="[]" context="{'group_by':'critical_info'}" /> -->
+<!-- 						<filter string="Address" domain="[]" -->
+<!-- 							context="{'group_by':'current_address'}" /> -->
+<!-- 						<filter string="Lastname" domain="[]" context="{'group_by':'lastname'}" /> -->
+<!-- 						<filter string="Ethnic group" domain="[]" -->
+<!-- 							context="{'group_by':'ethnic_group'}" /> -->
+<!-- 						<filter string="SSN" domain="[]" context="{'group_by':'ssn'}" /> -->
+<!-- 						<filter string="DoB" domain="[]" context="{'group_by':'dob'}" /> -->
+<!-- 						<filter string="Age" domain="[]" context="{'group_by':'age'}" /> -->
+<!-- 						<filter string="Date of Death" domain="[]" context="{'group_by':'dod'}" /> -->
+<!-- 						<filter string="Insurance" domain="[]" -->
+<!-- 							context="{'group_by':'current_insurance'}" /> -->
+<!-- 						<filter string="Cause of Death" domain="[]" context="{'group_by':'cod'}" /> -->
+<!-- 						<filter string="ID" domain="[]" -->
+<!-- 							context="{'group_by':'identification_code'}" /> -->
+<!-- 						<filter string="Deceased" domain="[]" context="{'group_by':'deceased'}" /> -->
+<!-- 					</group> -->
+<!-- 				</search> -->
+<!-- 			</field> -->
+<!-- 		</record> -->
 
-		<record model="ir.actions.act_window" id="act_open_oemedical_patient_view">
-			<field name="name">Patient</field>
-			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">oemedical.patient</field>
-			<field name="view_type">form</field>
-			<field name="view_mode">tree,form</field>
-			<field name="search_view_id" ref="view_oemedical_patient_search" />
-			<field name="domain">[]</field>
-			<field name="context">{}</field>
-		</record>
+<!-- 		<record model="ir.actions.act_window" id="act_open_oemedical_patient_view"> -->
+<!-- 			<field name="name">Patient</field> -->
+<!-- 			<field name="type">ir.actions.act_window</field> -->
+<!-- 			<field name="res_model">oemedical.patient</field> -->
+<!-- 			<field name="view_type">form</field> -->
+<!-- 			<field name="view_mode">tree,form</field> -->
+<!-- 			<field name="search_view_id" ref="view_oemedical_patient_search" /> -->
+<!-- 			<field name="domain">[]</field> -->
+<!-- 			<field name="context">{}</field> -->
+<!-- 		</record> -->
 
-		<record model="ir.actions.act_window.view" id="act_open_oemedical_patient_view_form">
-			<field name="act_window_id" ref="act_open_oemedical_patient_view" />
-			<field name="sequence" eval="20" />
-			<field name="view_mode">form</field>
-			<field name="view_id" ref="view_oemedical_patient_form" />
-		</record>
+<!-- 		<record model="ir.actions.act_window.view" id="act_open_oemedical_patient_view_form"> -->
+<!-- 			<field name="act_window_id" ref="act_open_oemedical_patient_view" /> -->
+<!-- 			<field name="sequence" eval="20" /> -->
+<!-- 			<field name="view_mode">form</field> -->
+<!-- 			<field name="view_id" ref="view_oemedical_patient_form" /> -->
+<!-- 		</record> -->
 
-		<record model="ir.actions.act_window.view" id="act_open_oemedical_patient_view_tree">
-			<field name="act_window_id" ref="act_open_oemedical_patient_view" />
-			<field name="sequence" eval="10" />
-			<field name="view_mode">tree</field>
-			<field name="view_id" ref="view_oemedical_patient_tree" />
-		</record>
+<!-- 		<record model="ir.actions.act_window.view" id="act_open_oemedical_patient_view_tree"> -->
+<!-- 			<field name="act_window_id" ref="act_open_oemedical_patient_view" /> -->
+<!-- 			<field name="sequence" eval="10" /> -->
+<!-- 			<field name="view_mode">tree</field> -->
+<!-- 			<field name="view_id" ref="view_oemedical_patient_tree" /> -->
+<!-- 		</record> -->
 
 	</data>
 </openerp>
