@@ -5,9 +5,9 @@
 
 		<menuitem id="oemedical_patient_root" name="Patient" parent="oemedical_root"
 			sequence="10" />
-		<menuitem id="oemedical_patient" name=" Patient"
-			parent="oemedical_patient_root" sequence="10"
-			action="act_open_oemedical_patient_view" />
+<!--		<menuitem id="oemedical_patient" name=" Patient"-->
+<!--			parent="oemedical_patient_root" sequence="10"-->
+<!--			action="act_open_oemedical_patient_view" />-->
 
 		<menuitem id="oemedical_family_member" name=" Family Member"
 			parent="oemedical_patient_root" sequence="30"
