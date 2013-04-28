@@ -33,9 +33,9 @@
                     <sheet>
                         <h1>
                             <label string="Prescription Order "/>
+					        <field name="name" />
                         </h1>
                         <group>
-					        <field name="name" />
 					        <field name="prescription_date" />
 					        <field name="patient_id" />
 					        <field name="pregnancy_warning" />
