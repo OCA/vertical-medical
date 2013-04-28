@@ -25,18 +25,30 @@
 			<field name="model">oemedical.appointment</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Appointment">
-					<field name="name" />
-					<field name="patient_id" />
-					<field name="doctor" />
-					<field name="appointment_date" />
-					<field name="appointment_type" />
-					<field name="urgency" />
-					<field name="consultations" />
-					<field name="institution" />
-					<field name="speciality" />
-					<newline/>
-					<field name="comments" colspan="4"/>
+				<form string="Oemedical Appointment"  version="7.0">
+                    <header>
+                        <button name="action_quotation_send" string="Send by Email" type="object" class="oe_highlight" groups="base.group_user"/>
+                        <button name="print_prescription" string="Print" type="object"  class="oe_highlight" groups="base.group_user"/>
+                    </header>
+                    <sheet>
+                        <h1>
+                            <label string="Appointment"/>
+					        <field name="name" />
+                        </h1>
+                        <group>
+
+					        <field name="patient_id" />
+					        <field name="doctor" />
+					        <field name="appointment_date" />
+					        <field name="appointment_type" />
+					        <field name="urgency" />
+					        <field name="consultations" />
+					        <field name="institution" />
+					        <field name="speciality" />
+					        <newline/>
+					        <field name="comments" colspan="4"/>
+                        </group>
+                    </sheet>
 				</form>
 			</field>
 		</record>
