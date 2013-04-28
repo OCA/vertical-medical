@@ -25,18 +25,29 @@
 			<field name="model">oemedical.prescription.order</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Prescription Order">
-					<field name="name" />
-					<field name="prescription_date" />
-					<field name="patient_id" />
-					<field name="pregnancy_warning" />
-					<field name="pharmacy" />
-					<field name="prescription_warning_ack" />
-					<field name="user_id" />
-					<newline/>
-					<field name="prescription_line" colspan="4"/>
-					<newline/>
-					<field name="notes" colspan="4"/>
+				<form string="Oemedical Prescription Order"  version="7.0">
+                    <header>
+                        <button name="action_quotation_send" string="Send by e-mail" type="object" class="oe_highlight" groups="base.group_user"/>
+                        <button name="print_prescription" string="Print" type="object"  class="oe_highlight" groups="base.group_user"/>
+                    </header>
+                    <sheet>
+                        <h1>
+                            <label string="Prescription Order "/>
+					        <field name="name" />
+                        </h1>
+                        <group>
+					        <field name="prescription_date" />
+					        <field name="patient_id" />
+					        <field name="pregnancy_warning" />
+					        <field name="pharmacy" />
+					        <field name="prescription_warning_ack" />
+					        <field name="user_id" />
+					        <newline/>
+					        <field name="prescription_line" colspan="4"/>
+					        <newline/>
+					        <field name="notes" colspan="4"/>
+                        </group>
+                    </sheet>
 				</form>
 			</field>
 		</record>
