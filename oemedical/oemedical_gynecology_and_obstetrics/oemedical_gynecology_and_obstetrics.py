@@ -19,20 +19,5 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #/#############################################################################
-from osv import osv
-from osv import fields
 
-
-class OeMedicalOccupation(osv.Model):
-    _name = 'oemedical.occupation'
-
-    _columns = {
-        'code': fields.char(size=256, string='Code'),
-        'name': fields.char(size=256, string='Name', required=True ,
-                            translate=True),
-    }
-    _sql_constraints = [
-        ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
-    ]
-OeMedicalOccupation()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
