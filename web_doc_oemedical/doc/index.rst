@@ -20,6 +20,7 @@ Module oemedical
     :maxdepth: 2
 
     index_oemedical.rst
+    gyneco.rst
 
 Module web_doc_oemedical
 ''''''''''''''''''''''''
