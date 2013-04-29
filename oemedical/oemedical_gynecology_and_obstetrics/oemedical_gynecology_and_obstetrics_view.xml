@@ -3,60 +3,129 @@
 	<data>
 
 
-        <record model="ir.ui.view" id="oemedical_puerperium_monitor_view">
-            <field name="model">oemedical.puerperium.monitor</field>
+<!--        <record model="ir.ui.view" id="oemedical_puerperium_monitor_view">-->
+<!--            <field name="model">oemedical.puerperium.monitor</field>-->
+<!--            <field name="type">form</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <form string="Puerperium Monitor">-->
+<!--                    <group colspan="4" string="Main" id="group_puerperium_monitor">-->
+<!--                        <label name="date"/>-->
+<!--                        <field name="date"/>-->
+<!--                        <newline/>-->
+<!--                        <label name="systolic"/>-->
+<!--                        <field name="systolic"/>-->
+<!--                        <label name="diastolic"/>-->
+<!--                        <field name="diastolic"/>-->
+<!--                        <label name="frequency"/>-->
+<!--                        <field name="frequency"/>-->
+<!--                        <newline/>-->
+<!--                        <label name="temperature"/>-->
+<!--                        <field name="temperature"/>-->
+<!--                        <label name="uterus_involution"/>-->
+<!--                        <field name="uterus_involution"/>-->
+<!--                        <newline/>-->
+<!--                    </group>-->
+<!--                    <newline/>-->
+<!--                    <group colspan="4" string="Lochia" id="group_lochia">-->
+<!--                        <label name="lochia_amount"/>-->
+<!--                        <field name="lochia_amount"/>-->
+<!--                        <label name="lochia_color"/>-->
+<!--                        <field name="lochia_color"/>-->
+<!--                        <label name="lochia_odor"/>-->
+<!--                        <field name="lochia_odor"/>-->
+<!--                        <newline/>-->
+<!--                    </group>-->
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        <record model="ir.ui.view" id="oemedical_puerperium_monitor_tree">-->
+<!--            <field name="model">oemedical.puerperium.monitor</field>-->
+<!--            <field name="type">tree</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <tree string='Puerperium Monitor'>-->
+<!--                    <field name="date"/>-->
+<!--                    <field name="systolic"/>-->
+<!--                    <field name="diastolic"/>-->
+<!--                    <field name="frequency"/>-->
+<!--                    <field name="temperature"/>-->
+<!--                    <field name="uterus_involution"/>-->
+<!--                    <field name="lochia_amount"/>-->
+<!--                    <field name="lochia_color"/>-->
+<!--                    <field name="lochia_odor"/>-->
+<!--                </tree>-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!-- Include the Gynecological and Obstetric pages into the Patient History -->
+
+        <record model="ir.ui.view" id="view_oemedical_patient_form_gyneco">
+            <field name="name">oemedical.patient.view.inherit.gyneco</field>
+            <field name="model">oemedical.patient</field>
+            <field name="inherit_id" ref="oemedical.view_oemedical_patient_form" />
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <form string="Puerperium Monitor">
-                    <group colspan="4" string="Main" id="group_puerperium_monitor">
-                        <label name="date"/>
-                        <field name="date"/>
-                        <newline/>
-                        <label name="systolic"/>
-                        <field name="systolic"/>
-                        <label name="diastolic"/>
-                        <field name="diastolic"/>
-                        <label name="frequency"/>
-                        <field name="frequency"/>
-                        <newline/>
-                        <label name="temperature"/>
-                        <field name="temperature"/>
-                        <label name="uterus_involution"/>
-                        <field name="uterus_involution"/>
-                        <newline/>
-                    </group>
-                    <newline/>
-                    <group colspan="4" string="Lochia" id="group_lochia">
-                        <label name="lochia_amount"/>
-                        <field name="lochia_amount"/>
-                        <label name="lochia_color"/>
-                        <field name="lochia_color"/>
-                        <label name="lochia_odor"/>
-                        <field name="lochia_odor"/>
-                        <newline/>
-                    </group>
-                </form>
+                <data>
+                    <notebook position="inside">
+                        <page string="Gyneco / Obs" >
+                            <notebook>
+                                <page string="Gyneco" >
+                                    <group colspan="2" string="General" id="group_gyneco_general">
+                                        <label string="fertile"/>
+                                        <field name="fertile"/>
+<!--                                        <label string="currently_pregnant"/>-->
+<!--                                        <field name="currently_pregnant"/>-->
+<!--                                        <label string="menarche"/>-->
+<!--                                        <field name="menarche"/>-->
+<!--                                        <label string="menopausal"/>-->
+<!--                                        <field name="menopausal"/>-->
+<!--                                        <label string="menopause"/>-->
+<!--                                        <field name="menopause"/>-->
+                                    </group>
+                                    <group colspan="2" string="Prevention and Screening" id="group_prevention">
+                                        <label string="breast_self_examination"/>
+                                        <field name="breast_self_examination"/>
+<!--                                        <newline/>-->
+<!--                                        <label name="mammography"/>-->
+<!--                                        <field name="mammography"/>-->
+<!--                                        <label name="mammography_last"/>-->
+<!--                                        <field name="mammography_last"/>-->
+<!--                                        <label name="pap_test"/>-->
+<!--                                        <field name="pap_test"/>-->
+<!--                                        <label name="pap_test_last"/>-->
+<!--                                        <field name="pap_test_last"/>-->
+<!--                                        <label name="colposcopy"/>-->
+<!--                                        <field name="colposcopy"/>-->
+<!--                                        <label name="colposcopy_last"/>-->
+<!--                                        <field name="colposcopy_last"/>-->
+                                    </group>
+                                </page>
+                                <page string="Obstetrics">
+<!--                                    <group colspan="2" string="Obstetric" id="group_obstetrics">-->
+<!--                                        <label name="gpa"/>-->
+<!--                                        <field name="gpa"/>-->
+<!--                                        <label name="gravida"/>-->
+<!--                                        <field name="gravida"/>-->
+<!--                                        <label name="full_term"/>-->
+<!--                                        <field name="full_term"/>-->
+<!--                                        <label name="born_alive"/>-->
+<!--                                        <field name="born_alive"/>-->
+<!--                                        <label name="deaths_1st_week"/>-->
+<!--                                        <field name="deaths_1st_week"/>-->
+<!--                                        <label name="premature"/>-->
+<!--                                        <field name="premature"/>-->
+<!--                                        <label name="deaths_2nd_week"/>-->
+<!--                                        <field name="deaths_2nd_week"/>-->
+<!--                                        <label name="abortions"/>-->
+<!--                                        <field name="abortions"/>-->
+<!--                                    </group>-->
+<!--                                    <field name="perinatal"/>-->
+                              </page>
+                            </notebook>
+                        </page>
+                    </notebook>
+                </data>
             </field>
         </record>
-
-        <record model="ir.ui.view" id="oemedical_puerperium_monitor_tree">
-            <field name="model">oemedical.puerperium.monitor</field>
-            <field name="type">tree</field>
-            <field name="arch" type="xml">
-                <tree string='Puerperium Monitor'>
-                    <field name="date"/>
-                    <field name="systolic"/>
-                    <field name="diastolic"/>
-                    <field name="frequency"/>
-                    <field name="temperature"/>
-                    <field name="uterus_involution"/>
-                    <field name="lochia_amount"/>
-                    <field name="lochia_color"/>
-                    <field name="lochia_odor"/>
-                </tree>
-            </field>
-        </record>
-
-
 	</data>
 </openerp>

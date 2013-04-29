@@ -133,35 +133,33 @@ class OemedicalPerinatal(osv.Model):
 OemedicalPerinatal()
 
 
-#class OeMedicalPatient(osv.Model):
+class OeMedicalPatient(osv.Model):
 
-#    _description =   'Add to the Medical patient_data class (OeMedical Patient) the gynecological and obstetric fields. '
-##    _name=
-#    _inherits='oemedical.patient'
+    _inherit='oemedical.patient'
 
-#    _columns = {
-#            'currently_pregnant' : fields.boolean('Currently Pregnant'),
-#            'fertile' : fields.boolean('Fertile', help="Check if patient is in fertile age"),
-#            'menarche' : fields.integer('Menarche age'),
-#            'menopausal' : fields.boolean('Menopausal'),
-#            'menopause' : fields.integer('Menopause age'),
-#            'mammography' : fields.boolean('Mammography', help="Check if the patient does periodic mammographys"),
-#            'mammography_last' : fields.date('Last mammography', help="Enter the date of the last mammography"),
-#            'breast_self_examination' : fields.boolean('Breast self-examination', help="Check if patient does and knows how to self examine her breasts"),
-#            'pap_test' : fields.boolean('PAP test',  help="Check if patient does periodic cytologic pelvic smear screening"),
-#            'pap_test_last' : fields.date('Last PAP test', help="Enter the date of the last Papanicolau test"),
-#            'colposcopy' : fields.boolean('Colposcopy', help="Check if the patient has done a colposcopy exam"),
-#            'colposcopy_last' : fields.date('Last colposcopy', help="Enter the date of the last colposcopy"),
-#            'gravida' : fields.integer('Gravida', help="Number of pregnancies"),
-#            'premature' : fields.integer('Premature', help="Premature Deliveries"),
-#            'abortions' : fields.integer('Abortions'),
-#            'full_term' : fields.integer('Full Term', help="Full term pregnancies"),
-#            'gpa' : fields.char('GPA', help="Gravida, Para, Abortus Notation. For example G4P3A1 : 4 Pregnancies, 3 viable and 1 abortion"),
-#            'born_alive' : fields.integer('Born Alive'),
-#            'deaths_1st_week' : fields.integer('Deceased during 1st week', help="Number of babies that die in the first week"),
-#            'deaths_2nd_week' : fields.integer('Deceased after 2nd week', help="Number of babies that die after the second week"),
-#            'perinatal' : fields.one2many('oemedical.perinatal', 'name', 'Perinatal Info'),
-#            }
-#OeMedicalPatient()
+    _columns = {
+            'currently_pregnant' : fields.boolean('Currently Pregnant'),
+            'fertile' : fields.boolean('Fertile', help="Check if patient is in fertile age"),
+            'menarche' : fields.integer('Menarche age'),
+            'menopausal' : fields.boolean('Menopausal'),
+            'menopause' : fields.integer('Menopause age'),
+            'mammography' : fields.boolean('Mammography', help="Check if the patient does periodic mammographys"),
+            'mammography_last' : fields.date('Last mammography', help="Enter the date of the last mammography"),
+            'breast_self_examination' : fields.boolean('Breast self-examination', help="Check if patient does and knows how to self examine her breasts"),
+            'pap_test' : fields.boolean('PAP test',  help="Check if patient does periodic cytologic pelvic smear screening"),
+            'pap_test_last' : fields.date('Last PAP test', help="Enter the date of the last Papanicolau test"),
+            'colposcopy' : fields.boolean('Colposcopy', help="Check if the patient has done a colposcopy exam"),
+            'colposcopy_last' : fields.date('Last colposcopy', help="Enter the date of the last colposcopy"),
+            'gravida' : fields.integer('Gravida', help="Number of pregnancies"),
+            'premature' : fields.integer('Premature', help="Premature Deliveries"),
+            'abortions' : fields.integer('Abortions'),
+            'full_term' : fields.integer('Full Term', help="Full term pregnancies"),
+            'gpa' : fields.char('GPA', help="Gravida, Para, Abortus Notation. For example G4P3A1 : 4 Pregnancies, 3 viable and 1 abortion"),
+            'born_alive' : fields.integer('Born Alive'),
+            'deaths_1st_week' : fields.integer('Deceased during 1st week', help="Number of babies that die in the first week"),
+            'deaths_2nd_week' : fields.integer('Deceased after 2nd week', help="Number of babies that die after the second week"),
+            'perinatal' : fields.one2many('oemedical.perinatal', 'name', string='Perinatal Info'),
+            }
+OeMedicalPatient()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
