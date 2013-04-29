@@ -90,7 +90,7 @@ class OemedicalPerinatal(osv.Model):
     _name = 'oemedical.perinatal'
     _description =  'Perinatal Information'
     _columns={
-    'name' : fields.many2one('oemedical.patient', string='Patient ID'),
+    'name' : fields.many2one('oemedical.patient', string='Perinatal Infomation'),
     'admission_code' : fields.char('Admission Code', size=64),
     'gravida_number' : fields.integer('Gravida #'),
     'abortion' : fields.boolean('Abortion'),
@@ -158,7 +158,7 @@ class OeMedicalPatient(osv.Model):
             'born_alive' : fields.integer('Born Alive'),
             'deaths_1st_week' : fields.integer('Deceased during 1st week', help="Number of babies that die in the first week"),
             'deaths_2nd_week' : fields.integer('Deceased after 2nd week', help="Number of babies that die after the second week"),
-            'perinatal' : fields.one2many('oemedical.perinatal', 'name', string='Perinatal Info'),
+            'perinatal' : fields.one2many('oemedical.perinatal', 'name', 'Perinatal Info'),
             }
 OeMedicalPatient()
 
