@@ -115,6 +115,31 @@
                                             <field name="admission_date"/>
                                             <field name="start_labor_mode"/>
                                             <field name="fetus_presentation"/>
+                                            <group colspan="4" string="Monitoring">
+                                                <field name="monitoring" colspan="4" nolabel="1">
+                                                    <tree string="Monitoring">      
+                                                        <field name="date"/>
+                                                        <field name="systolic"/>
+                                                        <field name="frequency"/>
+                                                        <field name="fetus_position"/>
+                                                        <field name="f_frequency"/>
+                                                    </tree>
+                                                    <form string="Monitoring"> 
+                                                        <field name="date"/>
+                                                        <label string="" colspan="2"/>
+                                                        <field name="systolic"/>
+                                                        <field name="diastolic"/>
+                                                        <field name="frequency"/>
+                                                        <label string="" colspan="2"/>
+                                                        <field name="contractions"/>
+                                                        <field name="dilation"/>
+                                                        <field name="fundal_height"/>
+                                                        <label string="" colspan="2"/>
+                                                        <field name="fetus_position"/>
+                                                        <field name="f_frequency"/>
+                                                    </form>
+                                                </field>
+                                            </group>
                                             <group colspan="4" string="Notes">
                                                 <field name="notes" nolabel="1"/>
                                             </group>
