@@ -3,5 +3,60 @@
 	<data>
 
 
+        <record model="ir.ui.view" id="oemedical_puerperium_monitor_view">
+            <field name="model">oemedical.puerperium.monitor</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Puerperium Monitor">
+                    <group colspan="4" string="Main" id="group_puerperium_monitor">
+                        <label name="date"/>
+                        <field name="date"/>
+                        <newline/>
+                        <label name="systolic"/>
+                        <field name="systolic"/>
+                        <label name="diastolic"/>
+                        <field name="diastolic"/>
+                        <label name="frequency"/>
+                        <field name="frequency"/>
+                        <newline/>
+                        <label name="temperature"/>
+                        <field name="temperature"/>
+                        <label name="uterus_involution"/>
+                        <field name="uterus_involution"/>
+                        <newline/>
+                    </group>
+                    <newline/>
+                    <group colspan="4" string="Lochia" id="group_lochia">
+                        <label name="lochia_amount"/>
+                        <field name="lochia_amount"/>
+                        <label name="lochia_color"/>
+                        <field name="lochia_color"/>
+                        <label name="lochia_odor"/>
+                        <field name="lochia_odor"/>
+                        <newline/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="oemedical_puerperium_monitor_tree">
+            <field name="model">oemedical.puerperium.monitor</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string='Puerperium Monitor'>
+                    <field name="date"/>
+                    <field name="systolic"/>
+                    <field name="diastolic"/>
+                    <field name="frequency"/>
+                    <field name="temperature"/>
+                    <field name="uterus_involution"/>
+                    <field name="lochia_amount"/>
+                    <field name="lochia_color"/>
+                    <field name="lochia_odor"/>
+                </tree>
+            </field>
+        </record>
+
+
 	</data>
 </openerp>

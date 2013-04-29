@@ -29,35 +29,30 @@ class PuerperiumMonitor(osv.Model):
     _description = 'Puerperium Monitor'
 
     _columns = {
-
-        name = fields.many2one('oemedical.patient',
-                                     'Patient ID',
-                                help='Consultation Services'),
-        date = fields.datetime('Date and Time', required=True),
-        systolic = fields.integer('Systolic Pressure'),
-        diastolic = fields.integer('Diastolic Pressure'),
-        frequency = fields.integer('Heart Frequency'),
-        lochia_amount = fields.selection([
+        'name' : fields.many2one('oemedical.patient',
+                                     string='Patient ID'),
+        'date' : fields.datetime('Date and Time', required=True),
+        'systolic' : fields.integer('Systolic Pressure'),
+        'diastolic' : fields.integer('Diastolic Pressure'),
+        'frequency' : fields.integer('Heart Frequency'),
+        'lochia_amount' : fields.selection([
             ('n', 'normal'),
             ('e', 'abundant'),
             ('h', 'hemorrhage'),
             ], 'Lochia amount', select=True),
-
-        lochia_color = fields.selection([
+        'lochia_color' : fields.selection([
             ('r', 'rubra'),
             ('s', 'serosa'),
             ('a', 'alba'),
             ], 'Lochia color', select=True),
-
-        lochia_odor = fields.selection([
+        'lochia_odor' : fields.selection([
             ('n', 'normal'),
             ('o', 'offensive'),
             ], 'Lochia odor', select=True),
-
-        uterus_involution = fields.integer('Fundal Height',
+        'uterus_involution' : fields.integer('Fundal Height',
             help="Distance between the symphysis pubis and the uterine fundus " \
             "(S-FD) in cm"),
-        temperature = fields.float('Temperature'),
+        'temperature' : fields.float('Temperature'),
             }
 
 PuerperiumMonitor()
@@ -91,108 +86,86 @@ PuerperiumMonitor()
 #PerinatalMonitor()
 
 
-#class Perinatal(ModelSQL, ModelView):
-#    'Perinatal Information'
-#    _name = 'gnuhealth.perinatal'
-#    _description = __doc__
+class OemedicalPerinatal(osv.Model):
 
-#    name = fields.Many2One('gnuhealth.patient', 'Patient ID')
-#    admission_code = fields.Char('Admission Code', size=64)
-#    gravida_number = fields.Integer('Gravida #')
-#    abortion = fields.Boolean('Abortion')
-#    admission_date = fields.DateTime('Admission date',
-#        help="Date when she was admitted to give birth")
-#    prenatal_evaluations = fields.Integer('Prenatal evaluations',
-#        help="Number of visits to the doctor during pregnancy")
-#    start_labor_mode = fields.Selection([
-#        ('n', 'Normal'),
-#        ('i', 'Induced'),
-#        ('c', 'c-section'),
-#        ], 'Labor mode', select=True)
-#    gestational_weeks = fields.Integer('Gestational weeks')
-#    gestational_days = fields.Integer('Gestational days')
-#    fetus_presentation = fields.Selection([
-#        ('n', 'Correct'),
-#        ('o', 'Occiput / Cephalic Posterior'),
-#        ('fb', 'Frank Breech'),
-#        ('cb', 'Complete Breech'),
-#        ('t', 'Transverse Lie'),
-#        ('t', 'Footling Breech'),
-#        ], 'Fetus Presentation', select=True)
-#    dystocia = fields.Boolean('Dystocia')
-#    placenta_incomplete = fields.Boolean('Incomplete Placenta')
-#    placenta_retained = fields.Boolean('Retained Placenta')
-#    episiotomy = fields.Boolean('Episiotomy')
-#    vaginal_tearing = fields.Boolean('Vaginal tearing')
-#    forceps = fields.Boolean('Use of forceps')
-#    monitoring = fields.One2Many('gnuhealth.perinatal.monitor', 'name',
+    _name = 'oemedical.perinatal'
+    _description =  'Perinatal Information'
+    _columns={
+    'name' : fields.many2one('oemedical.patient', string='Patient ID'),
+    'admission_code' : fields.char('Admission Code', size=64),
+    'gravida_number' : fields.integer('Gravida #'),
+    'abortion' : fields.boolean('Abortion'),
+    'admission_date' : fields.datetime('Admission date', help="Date when she was admitted to give birth"),
+    'prenatal_evaluations' : fields.integer('Prenatal evaluations', help="Number of visits to the doctor during pregnancy"),
+    'start_labor_mode' : fields.selection([
+        ('n', 'Normal'),
+        ('i', 'Induced'),
+        ('c', 'c-section'),
+        ], 'Labor mode', select=True),
+    'gestational_weeks' : fields.integer('Gestational weeks'),
+    'gestational_days' : fields.integer('Gestational days'),
+    'fetus_presentation' : fields.selection([
+        ('n', 'Correct'),
+        ('o', 'Occiput / Cephalic Posterior'),
+        ('fb', 'Frank Breech'),
+        ('cb', 'Complete Breech'),
+        ('t', 'Transverse Lie'),
+        ('t', 'Footling Breech'),
+        ], 'Fetus Presentation', select=True),
+    'dystocia' : fields.boolean('Dystocia'),
+    'placenta_incomplete' : fields.boolean('Incomplete Placenta'),
+    'placenta_retained' : fields.boolean('Retained Placenta'),
+    'episiotomy' : fields.boolean('Episiotomy'),
+    'vaginal_tearing' : fields.boolean('Vaginal tearing'),
+    'forceps' : fields.boolean('Use of forceps'),
+#    'monitoring' : fields.One2Many('oemedical.perinatal.monitor', 'name',
 #        'Monitors')
-#    puerperium_monitor = fields.One2Many('gnuhealth.puerperium.monitor', 'name',
+#    'puerperium_monitor' : fields.One2Many('oemedical.puerperium.monitor', 'name',
 #        'Puerperium monitor')
-#    medication = fields.One2Many('gnuhealth.patient.medication', 'name',
-#        'Medication and anesthesics')
-#    dismissed = fields.DateTime('Dismissed from hospital')
-#    place_of_death = fields.Selection([
-#        ('ho', 'Hospital'),
-#        ('dr', 'At the delivery room'),
-#        ('hh', 'in transit to the hospital'),
-#        ('th', 'Being transferred to other hospital'),
-#        ], 'Place of Death', help="Place where the mother died",
-#        states={'invisible': Not(Bool(Eval('mother_deceased')))},
-#        depends=['mother_deceased'])
-
-#    mother_deceased = fields.Boolean('Deceased',
-#        help="Mother died in the process")
-
-#    notes = fields.Text('Notes')
-
-#Perinatal()
-
-
-class OeMedicalPatient(osv.Model):
-    _name = 'oemedical.patient'
-    _description =     "'Add to the Medical patient_data class (OeMedical Patient) the gynecological and obstetric fields. '
-
-    _inherits={
-        'res.partner': 'partner_id',
-    }
-    _columns = {
-            currently_pregnant = fields.boolean('Currently Pregnant'),
-            fertile = fields.boolean('Fertile',
-                help="Check if patient is in fertile age"),
-            menarche = fields.integer('Menarche age'),
-            menopausal = fields.boolean('Menopausal'),
-            menopause = fields.integer('Menopause age'),
-            mammography = fields.boolean('Mammography',
-                help="Check if the patient does periodic mammographys"),
-            mammography_last = fields.date('Last mammography',
-                help="Enter the date of the last mammography"),
-            breast_self_examination = fields.boolean('Breast self-examination',
-                help="Check if patient does and knows how to self examine her breasts"),
-            pap_test = fields.boolean('PAP test',
-                help="Check if patient does periodic cytologic pelvic smear screening"),
-            pap_test_last = fields.date('Last PAP test',
-                help="Enter the date of the last Papanicolau test"),
-            colposcopy = fields.boolean('Colposcopy',
-                help="Check if the patient has done a colposcopy exam"),
-            colposcopy_last = fields.date('Last colposcopy',
-                help="Enter the date of the last colposcopy"),
-
-            gravida = fields.integer('Gravida', help="Number of pregnancies"),
-            premature = fields.integer('Premature', help="Premature Deliveries"),
-            abortions = fields.integer('Abortions')
-            full_term = fields.integer('Full Term', help="Full term pregnancies"),
-            gpa = fields.char('GPA',
-                help="Gravida, Para, Abortus Notation. For example G4P3A1 : 4 " \
-                "Pregnancies, 3 viable and 1 abortion"),
-            born_alive = fields.integer('Born Alive'),
-            deaths_1st_week = fields.integer('Deceased during 1st week',
-                help="Number of babies that die in the first week"),
-            deaths_2nd_week = fields.integer('Deceased after 2nd week',
-                help="Number of babies that die after the second week"),
-
-            perinatal = fields.one2many('gnuhealth.perinatal', 'name', 'Perinatal Info'),
+    'medications': fields.one2many('oemedical.patient.medication',
+                                       'patient_id', string='Medications',),
+    'dismissed' : fields.datetime('Dismissed from hospital'),
+    'place_of_death' : fields.selection([
+        ('ho', 'Hospital'),
+        ('dr', 'At the delivery room'),
+        ('hh', 'in transit to the hospital'),
+        ('th', 'Being transferred to other hospital'),
+        ], 'Place of Death'),
+    'mother_deceased' : fields.boolean('Deceased', help="Mother died in the process"),
+    'notes' : fields.text('Notes'),
             }
-OeMedicalPatient()
+OemedicalPerinatal()
+
+
+#class OeMedicalPatient(osv.Model):
+
+#    _description =   'Add to the Medical patient_data class (OeMedical Patient) the gynecological and obstetric fields. '
+##    _name=
+#    _inherits='oemedical.patient'
+
+#    _columns = {
+#            'currently_pregnant' : fields.boolean('Currently Pregnant'),
+#            'fertile' : fields.boolean('Fertile', help="Check if patient is in fertile age"),
+#            'menarche' : fields.integer('Menarche age'),
+#            'menopausal' : fields.boolean('Menopausal'),
+#            'menopause' : fields.integer('Menopause age'),
+#            'mammography' : fields.boolean('Mammography', help="Check if the patient does periodic mammographys"),
+#            'mammography_last' : fields.date('Last mammography', help="Enter the date of the last mammography"),
+#            'breast_self_examination' : fields.boolean('Breast self-examination', help="Check if patient does and knows how to self examine her breasts"),
+#            'pap_test' : fields.boolean('PAP test',  help="Check if patient does periodic cytologic pelvic smear screening"),
+#            'pap_test_last' : fields.date('Last PAP test', help="Enter the date of the last Papanicolau test"),
+#            'colposcopy' : fields.boolean('Colposcopy', help="Check if the patient has done a colposcopy exam"),
+#            'colposcopy_last' : fields.date('Last colposcopy', help="Enter the date of the last colposcopy"),
+#            'gravida' : fields.integer('Gravida', help="Number of pregnancies"),
+#            'premature' : fields.integer('Premature', help="Premature Deliveries"),
+#            'abortions' : fields.integer('Abortions'),
+#            'full_term' : fields.integer('Full Term', help="Full term pregnancies"),
+#            'gpa' : fields.char('GPA', help="Gravida, Para, Abortus Notation. For example G4P3A1 : 4 Pregnancies, 3 viable and 1 abortion"),
+#            'born_alive' : fields.integer('Born Alive'),
+#            'deaths_1st_week' : fields.integer('Deceased during 1st week', help="Number of babies that die in the first week"),
+#            'deaths_2nd_week' : fields.integer('Deceased after 2nd week', help="Number of babies that die after the second week"),
+#            'perinatal' : fields.one2many('oemedical.perinatal', 'name', 'Perinatal Info'),
+#            }
+#OeMedicalPatient()
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
