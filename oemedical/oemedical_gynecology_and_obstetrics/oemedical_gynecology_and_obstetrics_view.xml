@@ -70,14 +70,14 @@
                         <page string="Gyneco / Obs" >
                             <notebook>
                                 <page string="Gyneco" >
-                                    <group colspan="2" string="General" id="group_gyneco_general">
+                                    <group colspan="2" string="General">
                                         <field name="fertile"/>
                                         <field name="currently_pregnant"/>
                                         <field name="menarche"/>
                                         <field name="menopausal"/>
                                         <field name="menopause"/>
                                     </group>
-                                    <group colspan="2" string="Prevention and Screening" id="group_prevention">
+                                    <group colspan="2" string="Prevention and Screening">
                                         <field name="breast_self_examination"/>
                                         <newline/>
                                         <field name="mammography"/>
