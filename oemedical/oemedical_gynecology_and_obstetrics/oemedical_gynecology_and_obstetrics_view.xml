@@ -87,7 +87,7 @@
                                         <field name="colposcopy_last"/>
                                     </group>
                                 </page>
-                                <page string="Obstetrics">
+                                <page string="Obstetric">
                                     <group colspan="2" string="Obstetric" id="group_obstetrics">
                                         <field name="gpa"/>
                                         <field name="gravida"/>
