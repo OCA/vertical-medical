@@ -98,7 +98,23 @@
                                         <field name="deaths_2nd_week"/>
                                         <field name="abortions"/>
                                     </group>
-                                    <field name="perinatal"/>
+                                    <H1>
+                                        <label string="Perinatal Information"/>
+                                    </H1>
+                                    <field name="perinatal">
+                                                        <tree string="Perinatal Information"  >      
+                                                            <field name="gestational_weeks"/>
+                                                            <field name="admission_date"/>
+                                                            <field name="start_labor_mode"/>
+                                                            <field name="fetus_presentation"/>
+                                                        </tree>
+                                                        <form string="Perinatal Information"> 
+                                                            <field name="gestational_weeks"/>
+                                                            <field name="admission_date"/>
+                                                            <field name="start_labor_mode"/>
+                                                            <field name="fetus_presentation"/>
+                                                        </form>
+                                        </field>
                               </page>
                             </notebook>
                         </page>
