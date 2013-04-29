@@ -57,33 +57,32 @@ class PuerperiumMonitor(osv.Model):
 
 PuerperiumMonitor()
 
-
-#class PerinatalMonitor(ModelSQL, ModelView):
-#    'Perinatal monitor'
-#    _name = 'gnuhealth.perinatal.monitor'
-#    _description = __doc__
-
-#    name = fields.Many2One('gnuhealth.patient', 'Patient ID')
-#    date = fields.DateTime('Date and Time')
-#    systolic = fields.Integer('Systolic Pressure')
-#    diastolic = fields.Integer('Diastolic Pressure')
-#    contractions = fields.Integer('Contractions')
-#    frequency = fields.Integer('Mother\'s Heart Frequency')
-#    dilation = fields.Integer('Cervix dilation')
-#    f_frequency = fields.Integer('Fetus Heart Frequency')
-#    meconium = fields.Boolean('Meconium')
-#    bleeding = fields.Boolean('Bleeding')
-#    fundal_height = fields.Integer('Fundal Height')
-#    fetus_position = fields.Selection([
-#        ('n', 'Correct'),
-#        ('o', 'Occiput / Cephalic Posterior'),
-#        ('fb', 'Frank Breech'),
-#        ('cb', 'Complete Breech'),
-#        ('t', 'Transverse Lie'),
-#        ('t', 'Footling Breech'),
-#        ], 'Fetus Position', select=True)
-
-#PerinatalMonitor()
+class PerinatalMonitor(osv.Model):
+    
+    _name = 'oemedical.perinatal.monitor'
+    _description = 'Perinatal monitor'
+    _columns = {
+            'name' : fields.many2one('oemedical.patient', string='patient_id'),
+            'date' : fields.datetime('Date and Time'),
+            'systolic' : fields.integer('Systolic Pressure'),
+            'diastolic' : fields.integer('Diastolic Pressure'),
+            'contractions' : fields.integer('Contractions'),
+            'frequency' : fields.integer('Mother\'s Heart Frequency'),
+            'dilation' : fields.integer('Cervix dilation'),
+            'f_frequency' : fields.integer('Fetus Heart Frequency'),
+            'meconium' : fields.boolean('Meconium'),
+            'bleeding' : fields.boolean('Bleeding'),
+            'fundal_height' : fields.integer('Fundal Height'),
+            'fetus_position' : fields.selection([
+                ('n', 'Correct'),
+                ('o', 'Occiput / Cephalic Posterior'),
+                ('fb', 'Frank Breech'),
+                ('cb', 'Complete Breech'),
+                ('t', 'Transverse Lie'),
+                ('t', 'Footling Breech'),
+                ], 'Fetus Position', select=True),
+            }
+PerinatalMonitor()
 
 
 class OemedicalPerinatal(osv.Model):
@@ -118,12 +117,9 @@ class OemedicalPerinatal(osv.Model):
     'episiotomy' : fields.boolean('Episiotomy'),
     'vaginal_tearing' : fields.boolean('Vaginal tearing'),
     'forceps' : fields.boolean('Use of forceps'),
-#    'monitoring' : fields.One2Many('oemedical.perinatal.monitor', 'name',
-#        'Monitors')
-#    'puerperium_monitor' : fields.One2Many('oemedical.puerperium.monitor', 'name',
-#        'Puerperium monitor')
-    'medications': fields.one2many('oemedical.patient.medication',
-                                       'patient_id', string='Medications',),
+    'monitoring' : fields.one2many('oemedical.perinatal.monitor', 'name', string='Monitors'),
+    'puerperium_monitor' : fields.one2many('oemedical.puerperium.monitor', 'name','Puerperium monitor'),
+    'medications': fields.one2many('oemedical.patient.medication','patient_id', string='Medications',),
     'dismissed' : fields.datetime('Dismissed from hospital'),
     'place_of_death' : fields.selection([
         ('ho', 'Hospital'),
