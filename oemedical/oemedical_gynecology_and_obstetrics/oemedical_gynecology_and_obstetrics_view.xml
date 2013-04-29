@@ -71,55 +71,35 @@
                             <notebook>
                                 <page string="Gyneco" >
                                     <group colspan="2" string="General" id="group_gyneco_general">
-                                        <label string="fertile"/>
                                         <field name="fertile"/>
-<!--                                        <label string="currently_pregnant"/>-->
-<!--                                        <field name="currently_pregnant"/>-->
-<!--                                        <label string="menarche"/>-->
-<!--                                        <field name="menarche"/>-->
-<!--                                        <label string="menopausal"/>-->
-<!--                                        <field name="menopausal"/>-->
-<!--                                        <label string="menopause"/>-->
-<!--                                        <field name="menopause"/>-->
+                                        <field name="currently_pregnant"/>
+                                        <field name="menarche"/>
+                                        <field name="menopausal"/>
+                                        <field name="menopause"/>
                                     </group>
                                     <group colspan="2" string="Prevention and Screening" id="group_prevention">
-                                        <label string="breast_self_examination"/>
                                         <field name="breast_self_examination"/>
-<!--                                        <newline/>-->
-<!--                                        <label name="mammography"/>-->
-<!--                                        <field name="mammography"/>-->
-<!--                                        <label name="mammography_last"/>-->
-<!--                                        <field name="mammography_last"/>-->
-<!--                                        <label name="pap_test"/>-->
-<!--                                        <field name="pap_test"/>-->
-<!--                                        <label name="pap_test_last"/>-->
-<!--                                        <field name="pap_test_last"/>-->
-<!--                                        <label name="colposcopy"/>-->
-<!--                                        <field name="colposcopy"/>-->
-<!--                                        <label name="colposcopy_last"/>-->
-<!--                                        <field name="colposcopy_last"/>-->
+                                        <newline/>
+                                        <field name="mammography"/>
+                                        <field name="mammography_last"/>
+                                        <field name="pap_test"/>
+                                        <field name="pap_test_last"/>
+                                        <field name="colposcopy"/>
+                                        <field name="colposcopy_last"/>
                                     </group>
                                 </page>
                                 <page string="Obstetrics">
-<!--                                    <group colspan="2" string="Obstetric" id="group_obstetrics">-->
-<!--                                        <label name="gpa"/>-->
-<!--                                        <field name="gpa"/>-->
-<!--                                        <label name="gravida"/>-->
-<!--                                        <field name="gravida"/>-->
-<!--                                        <label name="full_term"/>-->
-<!--                                        <field name="full_term"/>-->
-<!--                                        <label name="born_alive"/>-->
-<!--                                        <field name="born_alive"/>-->
-<!--                                        <label name="deaths_1st_week"/>-->
-<!--                                        <field name="deaths_1st_week"/>-->
-<!--                                        <label name="premature"/>-->
-<!--                                        <field name="premature"/>-->
-<!--                                        <label name="deaths_2nd_week"/>-->
-<!--                                        <field name="deaths_2nd_week"/>-->
-<!--                                        <label name="abortions"/>-->
-<!--                                        <field name="abortions"/>-->
-<!--                                    </group>-->
-<!--                                    <field name="perinatal"/>-->
+                                    <group colspan="2" string="Obstetric" id="group_obstetrics">
+                                        <field name="gpa"/>
+                                        <field name="gravida"/>
+                                        <field name="full_term"/>
+                                        <field name="born_alive"/>
+                                        <field name="deaths_1st_week"/>
+                                        <field name="premature"/>
+                                        <field name="deaths_2nd_week"/>
+                                        <field name="abortions"/>
+                                    </group>
+                                    <field name="perinatal"/>
                               </page>
                             </notebook>
                         </page>
