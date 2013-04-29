@@ -79,7 +79,6 @@
                                     </group>
                                     <group colspan="2" string="Prevention and Screening">
                                         <field name="breast_self_examination"/>
-                                        <newline/>
                                         <field name="mammography"/>
                                         <field name="mammography_last"/>
                                         <field name="pap_test"/>
