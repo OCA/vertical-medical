@@ -162,7 +162,6 @@
 					                                            <field name="is_active" />
 					                                            <field name="course_completed" />
 					                                            <field name="template" />
-					                                            <field name="discontinued_reason" />
 					                                            <field name="discontinued" />
 				                                            </tree>
 				                                            <form string="Oemedical Patient Medication">
