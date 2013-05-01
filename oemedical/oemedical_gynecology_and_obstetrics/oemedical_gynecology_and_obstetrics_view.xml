@@ -105,16 +105,21 @@
                                     </div>
                                     <field name="perinatal">
                                         <tree string="Perinatal Information"  >      
-                                            <field name="gestational_weeks"/>
+                                            <field name="admission_code"/>
+                                            <field name="gravida_number"/>
                                             <field name="admission_date"/>
-                                            <field name="start_labor_mode"/>
-                                            <field name="fetus_presentation"/>
+                                            <field name="gestational_weeks"/>
                                         </tree>
                                         <form string="Perinatal Information"> 
-                                            <field name="gestational_weeks"/>
                                             <field name="admission_date"/>
-                                            <field name="start_labor_mode"/>
-                                            <field name="fetus_presentation"/>
+                                            <field name="dismissed"/>
+                                            <field name="admission_code"/>
+                                            <field name="gravida_number"/>
+                                            <group colspan="4" col="6" string="Gestational period (weeks / days)" >
+                                                <field name="gestational_days"/>
+                                                <field name="prenatal_evaluations"/>
+                                                <field name="abortion"/>
+                                            </group>
                                             <group colspan="4" string="Monitoring">
                                                 <field name="monitoring" colspan="4" nolabel="1">
                                                     <tree string="Monitoring">      
@@ -135,14 +140,24 @@
                                                         <field name="dilation"/>
                                                         <field name="fundal_height"/>
                                                         <label string="" colspan="2"/>
-                                                        <field name="fetus_position"/>
-                                                        <field name="f_frequency"/>
+                                                        <group colspan="4" col="4" string="Fetus" >
+                                                            <field name="fetus_position" colspan="2"/>
+                                                            <field name="f_frequency" colspan="2"/>
+                                                        </group>
+                                                        <group colspan="4" col="4" string="Complications">
+                                                            <field name="bleeding" colspan="2"/>
+                                                            <field name="meconium" colspan="2"/>
+                                                        </group>
                                                     </form>
                                                 </field>
+                                            </group>
+                                            <group colspan="4" col="4" string="Medications" >
+                                                <field name="medication"  nolabel="1"  colspan="4"/>
                                             </group>
                                             <group colspan="4" string="Notes">
                                                 <field name="notes" nolabel="1"/>
                                             </group>
+
                                         </form>
                                     </field>
 
