@@ -154,7 +154,28 @@
                                                         </field>
                                                     </group>
                                                     <group colspan="4" col="4" string="Medications" >
-                                                        <field name="medications"  nolabel="1"  colspan="4"/>
+                                                        <field name="medications"  nolabel="1"  colspan="4">
+				                                            <tree string="Oemedical Patient Medication">
+					                                            <field name="doctor" />
+					                                            <field name="adverse_reaction" />
+					                                            <field name="notes" />
+					                                            <field name="is_active" />
+					                                            <field name="course_completed" />
+					                                            <field name="template" />
+					                                            <field name="discontinued_reason" />
+					                                            <field name="discontinued" />
+				                                            </tree>
+				                                            <form string="Oemedical Patient Medication">
+					                                            <field name="doctor" />
+					                                            <field name="adverse_reaction" />
+					                                            <field name="notes" />
+					                                            <field name="is_active" />
+					                                            <field name="course_completed" />
+					                                            <field name="template" />
+					                                            <field name="discontinued_reason" />
+					                                            <field name="discontinued" />
+				                                            </form>
+                                                        </field>
                                                     </group>
                                                     <group colspan="4" string="Notes">
                                                         <field name="notes" nolabel="1"/>
