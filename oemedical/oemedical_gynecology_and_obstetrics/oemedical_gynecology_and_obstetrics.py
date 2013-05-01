@@ -119,7 +119,7 @@ class OemedicalPerinatal(osv.Model):
     'forceps' : fields.boolean('Use of forceps'),
     'monitoring' : fields.one2many('oemedical.perinatal.monitor', 'name', string='Monitors'),
     'puerperium_monitor' : fields.one2many('oemedical.puerperium.monitor', 'name','Puerperium monitor'),
-    'medication': fields.one2many('oemedical.patient.medication','patient_id', string='Medications',),
+    'medications': fields.one2many('oemedical.patient.medication','patient_id', string='Medications',),
     'dismissed' : fields.datetime('Dismissed from hospital'),
     'place_of_death' : fields.selection([
         ('ho', 'Hospital'),

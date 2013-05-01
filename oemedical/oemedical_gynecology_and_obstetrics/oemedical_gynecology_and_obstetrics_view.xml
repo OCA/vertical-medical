@@ -111,53 +111,106 @@
                                             <field name="gestational_weeks"/>
                                         </tree>
                                         <form string="Perinatal Information"> 
-                                            <field name="admission_date"/>
-                                            <field name="dismissed"/>
-                                            <field name="admission_code"/>
-                                            <field name="gravida_number"/>
-                                            <group colspan="4" col="6" string="Gestational period (weeks / days)" >
-                                                <field name="gestational_days"/>
-                                                <field name="prenatal_evaluations"/>
-                                                <field name="abortion"/>
-                                            </group>
-                                            <group colspan="4" string="Monitoring">
-                                                <field name="monitoring" colspan="4" nolabel="1">
-                                                    <tree string="Monitoring">      
-                                                        <field name="date"/>
-                                                        <field name="systolic"/>
-                                                        <field name="frequency"/>
-                                                        <field name="fetus_position"/>
-                                                        <field name="f_frequency"/>
-                                                    </tree>
-                                                    <form string="Monitoring"> 
-                                                        <field name="date"/>
-                                                        <label string="" colspan="2"/>
-                                                        <field name="systolic"/>
-                                                        <field name="diastolic"/>
-                                                        <field name="frequency"/>
-                                                        <label string="" colspan="2"/>
-                                                        <field name="contractions"/>
-                                                        <field name="dilation"/>
-                                                        <field name="fundal_height"/>
-                                                        <label string="" colspan="2"/>
-                                                        <group colspan="4" col="4" string="Fetus" >
-                                                            <field name="fetus_position" colspan="2"/>
-                                                            <field name="f_frequency" colspan="2"/>
-                                                        </group>
-                                                        <group colspan="4" col="4" string="Complications">
-                                                            <field name="bleeding" colspan="2"/>
-                                                            <field name="meconium" colspan="2"/>
-                                                        </group>
-                                                    </form>
-                                                </field>
-                                            </group>
-                                            <group colspan="4" col="4" string="Medications" >
-                                                <field name="medication"  nolabel="1"  colspan="4"/>
-                                            </group>
-                                            <group colspan="4" string="Notes">
-                                                <field name="notes" nolabel="1"/>
-                                            </group>
-
+                                            <notebook>
+                                                <page string="Perinatal">
+                                                    <field name="admission_date"/>
+                                                    <field name="dismissed"/>
+                                                    <field name="admission_code"/>
+                                                    <field name="gravida_number"/>
+                                                    <group colspan="4" col="6" string="Gestational period (weeks / days)" >
+                                                        <field name="gestational_days"/>
+                                                        <field name="prenatal_evaluations"/>
+                                                        <field name="abortion"/>
+                                                    </group>
+                                                    <group colspan="4" string="Monitoring">
+                                                        <field name="monitoring" colspan="4" nolabel="1">
+                                                            <tree string="Monitoring">      
+                                                                <field name="date"/>
+                                                                <field name="systolic"/>
+                                                                <field name="frequency"/>
+                                                                <field name="fetus_position"/>
+                                                                <field name="f_frequency"/>
+                                                            </tree>
+                                                            <form string="Monitoring"> 
+                                                                <field name="date"/>
+                                                                <label string="" colspan="2"/>
+                                                                <field name="systolic"/>
+                                                                <field name="diastolic"/>
+                                                                <field name="frequency"/>
+                                                                <label string="" colspan="2"/>
+                                                                <field name="contractions"/>
+                                                                <field name="dilation"/>
+                                                                <field name="fundal_height"/>
+                                                                <label string="" colspan="2"/>
+                                                                <group colspan="4" col="4" string="Fetus" >
+                                                                    <field name="fetus_position" colspan="2"/>
+                                                                    <field name="f_frequency" colspan="2"/>
+                                                                </group>
+                                                                <group colspan="4" col="4" string="Complications">
+                                                                    <field name="bleeding" colspan="2"/>
+                                                                    <field name="meconium" colspan="2"/>
+                                                                </group>
+                                                            </form>
+                                                        </field>
+                                                    </group>
+                                                    <group colspan="4" col="4" string="Medications" >
+                                                        <field name="medications"  nolabel="1"  colspan="4"/>
+                                                    </group>
+                                                    <group colspan="4" string="Notes">
+                                                        <field name="notes" nolabel="1"/>
+                                                    </group>
+                                                    <group string="Labor" colspan="4" col="4">
+                                                            <field name="start_labor_mode"/>
+                                                            <field name="fetus_presentation"/>
+                                                    </group>
+                                                    <group string="Misc" colspan="4" col="4">
+                                                        <field name="dystocia"/>
+                                                        <field name="placenta_incomplete"/>
+                                                        <field name="placenta_retained"/>
+                                                        <field name="episiotomy"/>
+                                                        <field name="vaginal_tearing"/>
+                                                        <field name="forceps"/>
+                                                    </group>
+                                                    <newline/>
+                                                        <field name="mother_deceased"/>
+                                                        <field name="place_of_death"/>
+                                                </page>
+                                                <page string="Puerperium" id="page_puerperium">
+                                                    <field name="puerperium_monitor" nolabel="1">
+                                                        <tree string='Puerperium Monitor'>
+                                                            <field name="date"/>
+                                                            <field name="systolic"/>
+                                                            <field name="diastolic"/>
+                                                            <field name="frequency"/>
+                                                            <field name="temperature"/>
+                                                            <field name="uterus_involution"/>
+                                                            <field name="lochia_amount"/>
+                                                            <field name="lochia_color"/>
+                                                            <field name="lochia_odor"/>
+                                                        </tree>
+                                                        <form string="Puerperium Monitor">
+                                                            <group colspan="4" string="Main">
+                                                                <field name="date"/>
+                                                                <newline/>
+                                                                <field name="systolic"/>
+                                                                <field name="diastolic"/>
+                                                                <field name="frequency"/>
+                                                                <newline/>
+                                                                <field name="temperature"/>
+                                                                <field name="uterus_involution"/>
+                                                                <newline/>
+                                                            </group>
+                                                            <newline/>
+                                                            <group colspan="4" string="Lochia" id="group_lochia">
+                                                                <field name="lochia_amount"/>
+                                                                <field name="lochia_color"/>
+                                                                <field name="lochia_odor"/>
+                                                                <newline/>
+                                                            </group>
+                                                        </form>
+                                                    </field>
+                                                </page>
+                                            </notebook>
                                         </form>
                                     </field>
 
