@@ -23,6 +23,38 @@
 from osv import osv
 from osv import fields
 
+class PatientPregnancy(osv.Model):
+    
+    _name = 'oemedical.patient.pregnancy'
+    _description = 'Patient Pregnancy'
+    _columns = {
+                'name' : fields.many2one('oemedical.patient', 'Patient ID'),
+                'gravida' : fields.integer('Pregnancy #', required=True),
+                'warning' : fields.boolean('Warn', help='Check this box if this is pregancy is or was NOT normal'),
+                'lmp' : fields.date('LMP', help="Last Menstrual Period", required=True),
+#                'pdd' : fields.function(fields.date('Pregnancy Due Date'), 'get_pregnancy_data'),
+                'prenatal_evaluations' : fields.one2many('oemedical.patient.prenatal.evaluation', 'name', 'Prenatal Evaluations'),
+                'perinatal' : fields.one2many('oemedical.perinatal', 'name', 'Perinatal Info'),
+                'puerperium_monitor' : fields.one2many('oemedical.puerperium.monitor', 'name', 'Puerperium monitor'),
+                'current_pregnancy' : fields.boolean('Current Pregnancy', help='This field marks the current pregnancy'),
+                'fetuses' : fields.integer('Fetuses', required=True),
+                'monozygotic' : fields.boolean('Monozygotic'),
+                'pregnancy_end_result' : fields.selection([
+                                ('live_birth', 'Live birth'),
+                                ('abortion', 'Abortion'),
+                                ('stillbirth', 'Stillbirth'),
+                                ('status_unknown', 'Status unknown'),
+                                ], 'Result', sort=False,),
+                'pregnancy_end_date' : fields.datetime('End of Pregnancy',),
+#                'pregnancy_end_age' : fields.function(fields.Char('Weeks', help='Weeks at the end of pregnancy'), 'get_pregnancy_data'),
+                'iugr' : fields.selection([
+                                ('symmetric', 'Symmetric'),
+                                ('assymetric', 'Assymetric'),
+                                ], 'IUGR', sort=False),
+                }
+
+PatientPregnancy()
+
 class PuerperiumMonitor(osv.Model):
 
     _name = 'oemedical.puerperium.monitor'

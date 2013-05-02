@@ -133,19 +133,19 @@
                                         <field name="stillbirths"/>
                                         <field name="abortions"/>
                                     </group>
-<!--                                    <field name="pregnancy_history">-->
-<!--                                        <tree string='Pregnancies' >-->
-<!--                                            <field name="gravida"/>-->
-<!--                                            <field name="lmp" expand="1"/>-->
+                                    <field name="pregnancy_history">
+                                        <tree string='Pregnancies' >
+                                            <field name="gravida"/>
+                                            <field name="lmp" expand="1"/>
 <!--                                            <field name="pdd" expand="1"/>-->
-<!--                                            <field name="current_pregnancy" expand="1"/>-->
-<!--                                            <field name="pregnancy_end_date" expand="1"/>-->
+                                            <field name="current_pregnancy" expand="1"/>
+                                            <field name="pregnancy_end_date" expand="1"/>
 <!--                                            <field name="pregnancy_end_age" expand="1"/>-->
-<!--                                            <field name="pregnancy_end_result" expand="1"/>-->
-<!--                                            <field name="iugr" expand="1"/>-->
-<!--                                            <field name="fetuses" expand="1"/>-->
-<!--                                            <field name="warning" expand="1"/>                    -->
-<!--                                        </tree>-->
+                                            <field name="pregnancy_end_result" expand="1"/>
+                                            <field name="iugr" expand="1"/>
+                                            <field name="fetuses" expand="1"/>
+                                            <field name="warning" expand="1"/>                    
+                                        </tree>
 <!--                                        <form string="Pregnancies">-->
 <!--                                            <group id="group_pregnancy_header" colspan="4" col="8">-->
 <!--                                                <field name="gravida"/>-->
@@ -174,7 +174,7 @@
 <!--                                                <field name="pregnancy_end_result"/>-->
 <!--                                            </group>    -->
 <!--                                        </form>-->
-<!--                                    </field>-->
+                                    </field>
                                 </page>
                             </notebook>
                         </page>
