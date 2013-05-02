@@ -139,6 +139,7 @@ class OeMedicalPatient(osv.Model):
 
     _columns = {
             'currently_pregnant' : fields.boolean('Currently Pregnant'),
+#            'currently_pregnant' : fields.function(fields.Boolean('Pregnant'), 'get_pregnancy_info')
             'fertile' : fields.boolean('Fertile', help="Check if patient is in fertile age"),
             'menarche' : fields.integer('Menarche age'),
             'menopausal' : fields.boolean('Menopausal'),
@@ -153,13 +154,145 @@ class OeMedicalPatient(osv.Model):
             'gravida' : fields.integer('Gravida', help="Number of pregnancies"),
             'premature' : fields.integer('Premature', help="Premature Deliveries"),
             'abortions' : fields.integer('Abortions'),
+            'stillbirths' : fields.integer('Stillbirths')
             'full_term' : fields.integer('Full Term', help="Full term pregnancies"),
-            'gpa' : fields.char('GPA', help="Gravida, Para, Abortus Notation. For example G4P3A1 : 4 Pregnancies, 3 viable and 1 abortion"),
-            'born_alive' : fields.integer('Born Alive'),
-            'deaths_1st_week' : fields.integer('Deceased during 1st week', help="Number of babies that die in the first week"),
-            'deaths_2nd_week' : fields.integer('Deceased after 2nd week', help="Number of babies that die after the second week"),
-            'perinatal' : fields.one2many('oemedical.perinatal', 'name', 'Perinatal Info'),
+            'menstrual_history' : fields.one2many('oemedical.patient.menstrual_history', 'name', 'Menstrual History')
+            'mammography_history' : fields.one2many('oemedical.patient.mammography_history', 'name', 'Mammography History')
+            'pap_history' : fields.one2many('oemedical.patient.pap_history', 'name', 'PAP smear History')
+            'colposcopy_history' : fields.one2many('oemedical.patient.colposcopy_history', 'name', 'Colposcopy History')
+            'pregnancy_history' : fields.one2many('oemedical.patient.pregnancy', 'name', 'Pregnancies')
             }
+
+    def get_pregnancy_info(self, name):
+        if name == 'currently_pregnant':
+            for pregnancy_history in self.pregnancy_history:
+                if pregnancy_history.current_pregnancy:
+                    return True
+        return False
+
 OeMedicalPatient()
 
+class PatientMenstrualHistory(osv.Model):
+
+    _name = 'oemedical.patient.menstrual_history'
+    _description =  'Menstrual History'
+    _columns={
+            'name' : fields.Many2One('gnuhealth.patient', 'Patient', readonly=True,
+        required=True)
+    evaluation = fields.Many2One('gnuhealth.patient.evaluation', 'Evaluation',
+        domain=[('patient', '=', Eval('name'))])
+    evaluation_date = fields.Date('Date', help="Evaluation Date",
+        required=True)
+    lmp = fields.Date('LMP', help="Last Menstrual Period", required=True)
+    lmp_length = fields.Integer('Length', required=True)
+    is_regular = fields.Boolean('Regular')
+    dysmenorrhea = fields.Boolean('Dysmenorrhea')
+    frequency = fields.Selection([
+        ('amenorrhea', 'amenorrhea'),
+        ('oligomenorrhea', 'oligomenorrhea'),
+        ('eumenorrhea', 'eumenorrhea'),
+        ('polymenorrhea', 'polymenorrhea'),
+        ], 'frequency', sort=False)
+    volume = fields.Selection([
+        ('hypomenorrhea', 'hypomenorrhea'),
+        ('normal', 'normal'),
+        ('menorrhagia', 'menorrhagia'),
+        ], 'volume', sort=False)
+
+    @staticmethod
+    def default_evaluation_date():
+        return Pool().get('ir.date').today()
+
+    @staticmethod
+    def default_frequency():
+        return 'eumenorrhea'
+
+    @staticmethod
+    def default_volume():
+        return 'normal'
+
+
+class PatientMammographyHistory(ModelSQL, ModelView):
+    'Mammography History'
+    __name__ = 'gnuhealth.patient.mammography_history'
+
+    name = fields.Many2One('gnuhealth.patient', 'Patient', readonly=True,
+        required=True)
+    evaluation = fields.Many2One('gnuhealth.patient.evaluation', 'Evaluation',
+        domain=[('patient', '=', Eval('name'))])
+    evaluation_date = fields.Date('Date', help=" Date")
+    last_mammography = fields.Date('Date', help="Last Mammography",
+        required=True)
+    result = fields.Selection([
+        ('normal', 'normal'),
+        ('abnormal', 'abnormal'),
+        ], 'result', help="Please check the lab test results if the module is \
+            installed", sort=False)
+    comments = fields.Char('Remarks')
+
+    @staticmethod
+    def default_evaluation_date():
+        return Pool().get('ir.date').today()
+
+    @staticmethod
+    def default_last_mammography():
+        return Pool().get('ir.date').today()
+
+
+class PatientPAPHistory(ModelSQL, ModelView):
+    'PAP Test History'
+    __name__ = 'gnuhealth.patient.pap_history'
+
+    name = fields.Many2One('gnuhealth.patient', 'Patient', readonly=True,
+        required=True)
+    evaluation = fields.Many2One('gnuhealth.patient.evaluation', 'Evaluation',
+        domain=[('patient', '=', Eval('name'))])
+    evaluation_date = fields.Date('Date', help=" Date")
+    last_pap = fields.Date('Date', help="Last Papanicolau", required=True)
+    result = fields.Selection([
+        ('negative', 'Negative'),
+        ('c1', 'ASC-US'),
+        ('c2', 'ASC-H'),
+        ('g1', 'ASG'),
+        ('c3', 'LSIL'),
+        ('c4', 'HSIL'),
+        ('g4', 'AIS'),
+        ], 'result', help="Please check the lab results if the module is \
+            installed", sort=False)
+    comments = fields.Char('Remarks')
+
+    @staticmethod
+    def default_evaluation_date():
+        return Pool().get('ir.date').today()
+
+    @staticmethod
+    def default_last_pap():
+        return Pool().get('ir.date').today()
+
+
+class PatientColposcopyHistory(ModelSQL, ModelView):
+    'Colposcopy History'
+    __name__ = 'gnuhealth.patient.colposcopy_history'
+
+    name = fields.Many2One('gnuhealth.patient', 'Patient', readonly=True,
+        required=True)
+    evaluation = fields.Many2One('gnuhealth.patient.evaluation', 'Evaluation',
+        domain=[('patient', '=', Eval('name'))])
+    evaluation_date = fields.Date('Date', help=" Date")
+    last_colposcopy = fields.Date('Date', help="Last colposcopy",
+        required=True)
+    result = fields.Selection([
+        ('normal', 'normal'),
+        ('abnormal', 'abnormal'),
+        ], 'result', help="Please check the lab test results if the module is \
+            installed", sort=False)
+    comments = fields.Char('Remarks')
+
+    @staticmethod
+    def default_evaluation_date():
+        return Pool().get('ir.date').today()
+
+    @staticmethod
+    def default_last_colposcopy():
+        return Pool().get('ir.date').today()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
