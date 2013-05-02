@@ -149,7 +149,7 @@ class OemedicalPerinatal(osv.Model):
             'forceps' : fields.boolean('Use of forceps'),
             'monitoring' : fields.one2many('oemedical.perinatal.monitor', 'name', string='Monitors'),
             'puerperium_monitor' : fields.one2many('oemedical.puerperium.monitor', 'name','Puerperium monitor'),
-            'medications': fields.one2many('oemedical.patient.medication','patient_id', string='Medications',),
+            'medication': fields.one2many('oemedical.patient.medication','patient_id', string='Medications',),
             'dismissed' : fields.datetime('Dismissed from hospital'),
             'place_of_death' : fields.selection([
                 ('ho', 'Hospital'),
@@ -268,7 +268,7 @@ class PatientPAPHistory(osv.Model):
                             ('c3', 'LSIL'),
                             ('c4', 'HSIL'),
                             ('g4', 'AIS'),
-                            ], 'result', help="Please check the lab results if the module is installed", sort=False),
+                            ], 'result', help="Please check the lab results if the module is installed"),
             'comments' : fields.char('Remarks'),
             }
 PatientPAPHistory()

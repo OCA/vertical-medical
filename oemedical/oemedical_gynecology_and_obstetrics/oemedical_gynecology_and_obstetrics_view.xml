@@ -120,10 +120,30 @@
                                         <field name="colposcopy"/>
                                     </group>
                                     <newline/>
-                                    <field colspan="4" name="mammography_history"/>
+                                    <field colspan="4" name="mammography_history">
+                                        <tree editable="1" string='Mammography Tests'>
+                                            <field name="last_mammography"/>
+                                            <field name="result" expand="1"/>                    
+                                            <field name="comments" expand="1"/>                    
+                                        </tree>
+                                        <form string="Patient mammography History">
+                                            <field name="name"/>
+                                            <field name="evaluation"/>
+                                            <field name="evaluation_date"/>
+                                            <field name="last_mammography"/>
+                                            <field name="result"/>
+                                            <field name="comments"/>
+                                        </form>
+                                    </field>
                                 </page>
                                 <page string="Pap / Colpo">
-                                    <field name="colposcopy_history"/>                                    
+                                    <field colspan="4" name="colposcopy_history"/>
+                                        <tree editable="1" string='PAP Tests'>
+                                            <field name="last_pap" />
+                                            <field name="result" expand="1"/>                    
+                                            <field name="comments" expand="1"/>                    
+                                        </tree>
+                                    </field>
                                 </page>
 
                                 <page string="Obstetrics" >
