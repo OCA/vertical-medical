@@ -146,11 +146,16 @@
                                                 </group>
 
                                                 <newline/>
-                                                <field colspan="4" name="prenatal_evaluations"/>
-
+                                                <group colspan="4" string="Prenatal Evaluations">
+                                                    <field colspan="4" name="prenatal_evaluations" nolabel="1"/>
+                                                </group>
                                                 <newline/>
-                                                <field name="perinatal"/>
-                                                <field name="puerperium_monitor"/>
+                                                <group colspan="4" string="Prenatal Evaluations">
+                                                    <field name="perinatal" colspan="4" nolabel="1" />
+                                                </group>
+                                                <group colspan="4" string="Prenatal Evaluations">
+                                                    <field name="puerperium_monitor" colspan="4" nolabel="1"/>
+                                                </group>
                                                 <newline/>
 
                                                 <group id="group_pregnancy_footer1" colspan="4" col="8">                    

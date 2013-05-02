@@ -55,6 +55,56 @@ class PatientPregnancy(osv.Model):
 
 PatientPregnancy()
 
+class PrenatalEvaluation(osv.Model):
+
+    _name = 'oemedical.patient.prenatal.evaluation'
+    _description =  'Prenatal and Antenatal Evaluations'
+
+    _columns = {
+            'name' : fields.many2one('oemedical.patient.pregnancy', 'Patient Pregnancy'),
+            'evaluation' : fields.many2one('oemedical.patient.evaluation', 'Patient Evaluation', readonly=True),
+            'evaluation_date' : fields.datetime('Date', required=True),
+#            'gestational_weeks' : fields.function(fields.integer('Gestational Weeks'), 'get_patient_evaluation_data'),
+#            'gestational_days' : fields.function(fields.integer('Gestational days'),  'get_patient_evaluation_data'),
+            'hypertension' : fields.boolean('Hypertension', help='Check this box if the mother has hypertension'),
+            'preeclampsia' : fields.boolean('Preeclampsia', help='Check this box if the mother has pre-eclampsia'),
+            'overweight' : fields.boolean('Overweight', help='Check this box if the mother is overweight or obesity'),
+            'diabetes' : fields.boolean('Diabetes', help='Check this box if the mother has glucose intolerance or diabetes'),
+            'invasive_placentation' : fields.selection([
+                        ('normal', 'Normal decidua'),
+                        ('accreta', 'Accreta'),
+                        ('increta', 'Increta'),
+                        ('percreta', 'Percreta'),
+                        ], 'Placentation'),
+            'placenta_previa' : fields.boolean('Placenta Previa'),
+            'vasa_previa' : fields.boolean('Vasa Previa'),
+            'fundal_height' : fields.integer('Fundal Height', help="Distance between the symphysis pubis and the uterine fundus (S-FD) in cm"),
+            'fetus_heart_rate' : fields.integer('Fetus heart rate', help='Fetus heart rate'),
+            'efw' : fields.integer('EFW', help="Estimated Fetal Weight"),
+            'fetal_bpd' : fields.integer('BPD', help="Fetal Biparietal Diameter"),
+            'fetal_ac' : fields.integer('AC', help="Fetal Abdominal Circumference"),
+            'fetal_hc' : fields.integer('HC', help="Fetal Head Circumference"),
+            'fetal_fl' : fields.integer('FL', help="Fetal Femur Length"),
+            'oligohydramnios' : fields.boolean('Oligohydramnios'),
+            'polihydramnios' : fields.boolean('Polihydramnios'),
+            'iugr' : fields.boolean('IUGR', help="Intra Uterine Growth Restriction"),
+        }
+
+    def get_patient_evaluation_data(self, name):
+#        if name == 'gestational_weeks':
+#            gestational_age = datetime.datetime.date(self.evaluation_date) - \
+#                self.name.lmp
+#            return (gestational_age.days) / 7
+#        if name == 'gestational_days':
+#            gestational_age = datetime.datetime.date(self.evaluation_date) - \
+#                self.name.lmp
+#            return gestational_age.days
+        return 0
+
+PrenatalEvaluation()
+
+
+
 class PuerperiumMonitor(osv.Model):
 
     _name = 'oemedical.puerperium.monitor'
@@ -189,6 +239,7 @@ class OeMedicalPatient(osv.Model):
             'menstrual_history' : fields.one2many('oemedical.patient.menstrual_history', 'name', 'Menstrual History'),
             'mammography_history' : fields.one2many('oemedical.patient.mammography_history', 'name', 'Mammography History'),
             'pap_history' : fields.one2many('oemedical.patient.pap_history', 'name', 'PAP smear History'),
+            'prenatal_evaluations' : fields.one2many('oemedical.patient.prenatal.evaluation', 'name', 'Prenatal Evaluations'),
             'colposcopy_history' : fields.one2many('oemedical.patient.colposcopy_history', 'name', 'Colposcopy History'),
             'pregnancy_history' : fields.one2many('oemedical.patient.pregnancy', 'name', 'Pregnancies'),
             }
