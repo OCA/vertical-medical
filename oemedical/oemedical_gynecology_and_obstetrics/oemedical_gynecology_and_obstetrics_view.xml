@@ -2,63 +2,6 @@
 <openerp>
 	<data>
 
-
-<!--        <record model="ir.ui.view" id="oemedical_puerperium_monitor_view">-->
-<!--            <field name="model">oemedical.puerperium.monitor</field>-->
-<!--            <field name="type">form</field>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <form string="Puerperium Monitor">-->
-<!--                    <group colspan="4" string="Main" id="group_puerperium_monitor">-->
-<!--                        <label name="date"/>-->
-<!--                        <field name="date"/>-->
-<!--                        <newline/>-->
-<!--                        <label name="systolic"/>-->
-<!--                        <field name="systolic"/>-->
-<!--                        <label name="diastolic"/>-->
-<!--                        <field name="diastolic"/>-->
-<!--                        <label name="frequency"/>-->
-<!--                        <field name="frequency"/>-->
-<!--                        <newline/>-->
-<!--                        <label name="temperature"/>-->
-<!--                        <field name="temperature"/>-->
-<!--                        <label name="uterus_involution"/>-->
-<!--                        <field name="uterus_involution"/>-->
-<!--                        <newline/>-->
-<!--                    </group>-->
-<!--                    <newline/>-->
-<!--                    <group colspan="4" string="Lochia" id="group_lochia">-->
-<!--                        <label name="lochia_amount"/>-->
-<!--                        <field name="lochia_amount"/>-->
-<!--                        <label name="lochia_color"/>-->
-<!--                        <field name="lochia_color"/>-->
-<!--                        <label name="lochia_odor"/>-->
-<!--                        <field name="lochia_odor"/>-->
-<!--                        <newline/>-->
-<!--                    </group>-->
-<!--                </form>-->
-<!--            </field>-->
-<!--        </record>-->
-
-<!--        <record model="ir.ui.view" id="oemedical_puerperium_monitor_tree">-->
-<!--            <field name="model">oemedical.puerperium.monitor</field>-->
-<!--            <field name="type">tree</field>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <tree string='Puerperium Monitor'>-->
-<!--                    <field name="date"/>-->
-<!--                    <field name="systolic"/>-->
-<!--                    <field name="diastolic"/>-->
-<!--                    <field name="frequency"/>-->
-<!--                    <field name="temperature"/>-->
-<!--                    <field name="uterus_involution"/>-->
-<!--                    <field name="lochia_amount"/>-->
-<!--                    <field name="lochia_color"/>-->
-<!--                    <field name="lochia_odor"/>-->
-<!--                </tree>-->
-<!--            </field>-->
-<!--        </record>-->
-
-<!-- Include the Gynecological and Obstetric pages into the Patient History -->
-
         <record model="ir.ui.view" id="view_oemedical_patient_form_gyneco">
             <field name="name">oemedical.patient.view.inherit.gyneco</field>
             <field name="model">oemedical.patient</field>
@@ -113,37 +56,67 @@
                                     </group>
                                 </page>
                                 <page string="Screening" >
-                                    <group colspan="4" col="8" id="group_prevention">
+                                    <group colspan="4" col="8">
                                         <field name="breast_self_examination"/>
                                         <field name="mammography"/>
                                         <field name="pap_test"/>
                                         <field name="colposcopy"/>
                                     </group>
                                     <newline/>
-                                    <field colspan="4" name="mammography_history">
-                                        <tree editable="1" string='Mammography Tests'>
-                                            <field name="last_mammography"/>
-                                            <field name="result" expand="1"/>                    
-                                            <field name="comments" expand="1"/>                    
-                                        </tree>
-                                        <form string="Patient mammography History">
-                                            <field name="name"/>
-                                            <field name="evaluation"/>
-                                            <field name="evaluation_date"/>
-                                            <field name="last_mammography"/>
-                                            <field name="result"/>
-                                            <field name="comments"/>
-                                        </form>
-                                    </field>
+                                    <group colspan="4" string="Mammography History">
+                                        <field colspan="4" name="mammography_history" nolabel="1">
+                                            <tree editable="1" string='Mammography Tests'>
+                                                <field name="last_mammography"/>
+                                                <field name="result" expand="1"/>                    
+                                                <field name="comments" expand="1"/>                    
+                                            </tree>
+                                            <form string="Patient mammography History">
+                                                <field name="name"/>
+                                                <field name="evaluation"/>
+                                                <field name="evaluation_date"/>
+                                                <field name="last_mammography"/>
+                                                <field name="result"/>
+                                                <field name="comments"/>
+                                            </form>
+                                        </field>
+                                    </group>
                                 </page>
-                                <page string="Pap / Colpo">
-                                    <field colspan="4" name="colposcopy_history"/>
-                                        <tree editable="1" string='PAP Tests'>
-                                            <field name="last_pap" />
-                                            <field name="result" expand="1"/>                    
-                                            <field name="comments" expand="1"/>                    
-                                        </tree>
-                                    </field>
+
+                                <page string="Pap / Colpo" >
+                                    <group colspan="4" string="Mammography History">
+                                        <field name="pap_history" nolabel="1">
+                                            <tree editable="top" string='PAP Tests'>
+                                                <field name="last_pap" expand="1"/>
+                                                <field name="result" expand="1"/>                    
+                                                <field name="comments" expand="1"/>                    
+                                            </tree>
+                                            <form string="Patient pap History">
+                                                <field name="name"/>
+                                                <field name="evaluation"/>
+                                                <field name="evaluation_date"/>
+                                                <field name="last_pap"/>
+                                                <field name="result"/>
+                                                <field name="comments"/>
+                                            </form>
+                                        </field>
+                                    </group>
+                                    <group colspan="4" string="Colposcopy History">
+                                        <field name="colposcopy_history" nolabel="1">
+                                            <tree editable="top" string='Colposcopy Tests'>
+                                                <field name="last_colposcopy" expand="1"/>
+                                                <field name="result" expand="1"/>                    
+                                                <field name="comments" expand="1"/>     
+                                            </tree>
+                                            <form string="Patient colposcopy History">
+                                                <field name="name"/>
+                                                <field name="evaluation"/>
+                                                <field name="evaluation_date"/>
+                                                <field name="last_colposcopy"/>
+                                                <field name="result"/>
+                                                <field name="comments"/>
+                                            </form>
+                                        </field>
+                                    </group>
                                 </page>
 
                                 <page string="Obstetrics" >
@@ -153,48 +126,47 @@
                                         <field name="stillbirths"/>
                                         <field name="abortions"/>
                                     </group>
-                                    <field name="pregnancy_history">
-                                        <tree string='Pregnancies' >
-                                            <field name="gravida"/>
-                                            <field name="lmp" expand="1"/>
-<!--                                            <field name="pdd" expand="1"/>-->
-                                            <field name="current_pregnancy" expand="1"/>
-                                            <field name="pregnancy_end_date" expand="1"/>
-<!--                                            <field name="pregnancy_end_age" expand="1"/>-->
-                                            <field name="pregnancy_end_result" expand="1"/>
-                                            <field name="iugr" expand="1"/>
-                                            <field name="fetuses" expand="1"/>
-                                            <field name="warning" expand="1"/>                    
-                                        </tree>
-                                        <form string="Pregnancies">
-                                            <group id="group_pregnancy_header" colspan="4" col="8">
+                                    <group colspan="4" string="Pregnancy History">
+                                        <field name="pregnancy_history" nolabel="1">
+                                            <tree string='Pregnancies' >
                                                 <field name="gravida"/>
-                                                <field name="lmp"/>
-<!--                                                <field name="pdd"/>-->
-                                                <field name="current_pregnancy"/>
-                                            </group>
+                                                <field name="lmp" expand="1"/>
+                                                <field name="current_pregnancy" expand="1"/>
+                                                <field name="pregnancy_end_date" expand="1"/>
+                                                <field name="pregnancy_end_result" expand="1"/>
+                                                <field name="iugr" expand="1"/>
+                                                <field name="fetuses" expand="1"/>
+                                                <field name="warning" expand="1"/>                    
+                                            </tree>
+                                            <form string="Pregnancies">
+                                                <group id="group_pregnancy_header" colspan="4" col="8">
+                                                    <field name="gravida"/>
+                                                    <field name="lmp"/>
+                                                    <field name="current_pregnancy"/>
+                                                </group>
 
-                                            <newline/>
-                                            <field colspan="4" name="prenatal_evaluations"/>
+                                                <newline/>
+                                                <field colspan="4" name="prenatal_evaluations"/>
 
-                                            <newline/>
-                                            <field name="perinatal"/>
-                                            <field name="puerperium_monitor"/>
-                                            <newline/>
+                                                <newline/>
+                                                <field name="perinatal"/>
+                                                <field name="puerperium_monitor"/>
+                                                <newline/>
 
-                                            <group id="group_pregnancy_footer1" colspan="4" col="8">                    
-                                                <field name="fetuses"/>
-                                                <field name="monozygotic"/>
-                                                <field name="iugr"/>
-                                                <field name="warning"/>
-                                            </group>
-                                            <newline/>
-                                            <group id="group_pregnancy_footer2" colspan="4" col="4">                                            
-                                                <field name="pregnancy_end_date"/>
-                                                <field name="pregnancy_end_result"/>
-                                            </group>    
-                                        </form>
-                                    </field>
+                                                <group id="group_pregnancy_footer1" colspan="4" col="8">                    
+                                                    <field name="fetuses"/>
+                                                    <field name="monozygotic"/>
+                                                    <field name="iugr"/>
+                                                    <field name="warning"/>
+                                                </group>
+                                                <newline/>
+                                                <group id="group_pregnancy_footer2" colspan="4" col="4">                                            
+                                                    <field name="pregnancy_end_date"/>
+                                                    <field name="pregnancy_end_result"/>
+                                                </group>    
+                                            </form>
+                                        </field>
+                                    </group>
                                 </page>
                             </notebook>
                         </page>
