@@ -60,7 +60,7 @@ class PatientPregnancy(osv.Model):
                                 ('status_unknown', 'Status unknown'),
                                 ], 'Result', sort=False,),
                 'pregnancy_end_date' : fields.datetime('End of Pregnancy',),
-#                'pregnancy_end_age' : fields.function(fields.Char('Weeks', help='Weeks at the end of pregnancy'), 'get_pregnancy_data'),
+                'pregnancy_end_age' : fields.function(_get_pregnancy_data, type='char', string='Weeks', help='Weeks at the end of pregnancy'),
                 'iugr' : fields.selection([
                                 ('symmetric', 'Symmetric'),
                                 ('assymetric', 'Assymetric'),
