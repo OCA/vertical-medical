@@ -27,12 +27,26 @@ class PatientPregnancy(osv.Model):
     
     _name = 'oemedical.patient.pregnancy'
     _description = 'Patient Pregnancy'
+
+    def _get_pregnancy_data(self, cr, uid, ids, name, args, context=None):
+#        if name == 'pdd':
+#            return self.lmp + datetime.timedelta(days=280)
+#        if name == 'pregnancy_end_age':
+#            if self.pregnancy_end_date:
+#                gestational_age = datetime.datetime.date(
+#                    self.pregnancy_end_date) - self.lmp
+#                return (gestational_age.days) / 7
+#            else:
+        return 2
+
+
+
     _columns = {
                 'name' : fields.many2one('oemedical.patient', 'Patient ID'),
                 'gravida' : fields.integer('Pregnancy #', required=True),
                 'warning' : fields.boolean('Warn', help='Check this box if this is pregancy is or was NOT normal'),
                 'lmp' : fields.date('LMP', help="Last Menstrual Period", required=True),
-#                'pdd' : fields.function(fields.date('Pregnancy Due Date'), 'get_pregnancy_data'),
+                'pdd' : fields.function(_get_pregnancy_data, type='date', string='Pregnancy Due Date'),
                 'prenatal_evaluations' : fields.one2many('oemedical.patient.prenatal.evaluation', 'name', 'Prenatal Evaluations'),
                 'perinatal' : fields.one2many('oemedical.perinatal', 'name', 'Perinatal Info'),
                 'puerperium_monitor' : fields.one2many('oemedical.puerperium.monitor', 'name', 'Puerperium monitor'),
@@ -60,11 +74,26 @@ class PrenatalEvaluation(osv.Model):
     _name = 'oemedical.patient.prenatal.evaluation'
     _description =  'Prenatal and Antenatal Evaluations'
 
+    def _get_patient_evaluation_data(self, cr, uid, ids, field, arg, context=None):
+        print field, arg
+#        if name == 'gestational_weeks':
+#            gestational_age = datetime.datetime.date(self.evaluation_date) - \
+#                self.name.lmp
+#            return (gestational_age.days) / 7
+#        if name == 'gestational_days':
+#            gestational_age = datetime.datetime.date(self.evaluation_date) - \
+#                self.name.lmp
+#            return gestational_age.days
+        return 1
+
+
+
     _columns = {
             'name' : fields.many2one('oemedical.patient.pregnancy', 'Patient Pregnancy'),
             'evaluation' : fields.many2one('oemedical.patient.evaluation', 'Patient Evaluation', readonly=True),
             'evaluation_date' : fields.datetime('Date', required=True),
-#            'gestational_weeks' : fields.function(fields.integer('Gestational Weeks'), 'get_patient_evaluation_data'),
+            'gestational_weeks' : fields.function(_get_patient_evaluation_data, method=False, string="Gestational Weeks", type='integer'),
+                                    
 #            'gestational_days' : fields.function(fields.integer('Gestational days'),  'get_patient_evaluation_data'),
             'hypertension' : fields.boolean('Hypertension', help='Check this box if the mother has hypertension'),
             'preeclampsia' : fields.boolean('Preeclampsia', help='Check this box if the mother has pre-eclampsia'),
@@ -89,17 +118,6 @@ class PrenatalEvaluation(osv.Model):
             'polihydramnios' : fields.boolean('Polihydramnios'),
             'iugr' : fields.boolean('IUGR', help="Intra Uterine Growth Restriction"),
         }
-
-    def get_patient_evaluation_data(self, name):
-#        if name == 'gestational_weeks':
-#            gestational_age = datetime.datetime.date(self.evaluation_date) - \
-#                self.name.lmp
-#            return (gestational_age.days) / 7
-#        if name == 'gestational_days':
-#            gestational_age = datetime.datetime.date(self.evaluation_date) - \
-#                self.name.lmp
-#            return gestational_age.days
-        return 0
 
 PrenatalEvaluation()
 
@@ -184,16 +202,32 @@ class OemedicalPerinatal(osv.Model):
             'gestational_weeks' : fields.integer('Gestational weeks'),
             'gestational_days' : fields.integer('Gestational days'),
             'fetus_presentation' : fields.selection([
-                ('n', 'Correct'),
-                ('o', 'Occiput / Cephalic Posterior'),
-                ('fb', 'Frank Breech'),
-                ('cb', 'Complete Breech'),
-                ('t', 'Transverse Lie'),
-                ('t', 'Footling Breech'),
-                ], 'Fetus Presentation', select=True),
+                            ('n', 'Correct'),
+                            ('o', 'Occiput / Cephalic Posterior'),
+                            ('fb', 'Frank Breech'),
+                            ('cb', 'Complete Breech'),
+                            ('t', 'Transverse Lie'),
+                            ('t', 'Footling Breech'),
+                            ], 'Fetus Presentation', select=True),
             'dystocia' : fields.boolean('Dystocia'),
+            'laceration' : fields.selection([
+                            ('perineal', 'Perineal'),
+                            ('vaginal', 'Vaginal'),
+                            ('cervical', 'Cervical'),
+                            ('broad_ligament', 'Broad Ligament'),
+                            ('vulvar', 'Vulvar'),
+                            ('rectal', 'Rectal'),
+                            ('bladder', 'Bladder'),
+                            ('urethral', 'Urethral'),
+                            ], 'Lacerations', sort=False),
+            'hematoma' : fields.selection([
+                            ('vaginal', 'Vaginal'),
+                            ('vulvar', 'Vulvar'),
+                            ('retroperitoneal', 'Retroperitoneal'),
+                            ], 'Hematoma', sort=False),
             'placenta_incomplete' : fields.boolean('Incomplete Placenta'),
             'placenta_retained' : fields.boolean('Retained Placenta'),
+            'abruptio_placentae' : fields.boolean('Abruptio Placentae', help='Abruptio Placentae'),
             'episiotomy' : fields.boolean('Episiotomy'),
             'vaginal_tearing' : fields.boolean('Vaginal tearing'),
             'forceps' : fields.boolean('Use of forceps'),
@@ -217,9 +251,17 @@ class OeMedicalPatient(osv.Model):
 
     _inherit='oemedical.patient'
 
+    def _get_pregnancy_info(self, cr, uid, ids, name, args, context=None):
+#        if name == 'currently_pregnant':
+#            for pregnancy_history in self.pregnancy_history:
+#                if pregnancy_history.current_pregnancy:
+#                    return True
+        return False
+
+
     _columns = {
             'currently_pregnant' : fields.boolean('Currently Pregnant'),
-#            'currently_pregnant' : fields.function(fields.Boolean('Pregnant'), 'get_pregnancy_info'),
+#            'currently_pregnant' : fields.function( _get_pregnancy_info , string='Pregnant' , type='boolean' ),
             'fertile' : fields.boolean('Fertile', help="Check if patient is in fertile age"),
             'menarche' : fields.integer('Menarche age'),
             'menopausal' : fields.boolean('Menopausal'),
@@ -244,12 +286,6 @@ class OeMedicalPatient(osv.Model):
             'pregnancy_history' : fields.one2many('oemedical.patient.pregnancy', 'name', 'Pregnancies'),
             }
 
-#    def get_pregnancy_info(self, name):
-#        if name == 'currently_pregnant':
-#            for pregnancy_history in self.pregnancy_history:
-#                if pregnancy_history.current_pregnancy:
-#                    return True
-#        return False
 
 OeMedicalPatient()
 
