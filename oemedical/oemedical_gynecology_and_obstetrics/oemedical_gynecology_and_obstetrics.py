@@ -92,9 +92,8 @@ class PrenatalEvaluation(osv.Model):
             'name' : fields.many2one('oemedical.patient.pregnancy', 'Patient Pregnancy'),
             'evaluation' : fields.many2one('oemedical.patient.evaluation', 'Patient Evaluation', readonly=True),
             'evaluation_date' : fields.datetime('Date', required=True),
-            'gestational_weeks' : fields.function(_get_patient_evaluation_data, method=False, string="Gestational Weeks", type='integer'),
-                                    
-#            'gestational_days' : fields.function(fields.integer('Gestational days'),  'get_patient_evaluation_data'),
+            'gestational_weeks' : fields.function(_get_patient_evaluation_data, method=True , string="Gestational Weeks", type='integer'),
+            'gestational_days' : fields.function(_get_patient_evaluation_data, method=True , string='Gestational days', type='integer'),
             'hypertension' : fields.boolean('Hypertension', help='Check this box if the mother has hypertension'),
             'preeclampsia' : fields.boolean('Preeclampsia', help='Check this box if the mother has pre-eclampsia'),
             'overweight' : fields.boolean('Overweight', help='Check this box if the mother is overweight or obesity'),

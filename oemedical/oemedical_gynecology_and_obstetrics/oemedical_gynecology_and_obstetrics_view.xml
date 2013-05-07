@@ -83,7 +83,7 @@
                                 </page>
 
                                 <page string="Pap / Colpo" >
-                                    <group colspan="4" string="Mammography History">
+                                    <group colspan="4" string="PAP History">
                                         <field name="pap_history" nolabel="1">
                                             <tree editable="top" string='PAP Tests'>
                                                 <field name="last_pap" expand="1"/>
@@ -139,7 +139,7 @@
                                                 <field name="warning" expand="1"/>                    
                                             </tree>
                                             <form string="Pregnancies">
-                                                <group id="group_pregnancy_header" colspan="4" col="8">
+                                                <group id="group_pregnancy_header" colspan="4" col="4">
                                                     <field name="gravida"/>
                                                     <field name="lmp"/>
                                                     <field name="pdd"/>
@@ -153,17 +153,16 @@
                                                             <field name="evaluation_date" expand="1"/>                                           
                                                             <field name="fundal_height" expand="1"/>                                               
                                                             <field name="fetus_heart_rate" expand="1"/>
-                                                            <field name="efw" expand="1"/>
-                                                            <field name="iugr" expand="1"/>                    
-                                                            <field name="hypertension" expand="1"/>                                                                   
-                                                            <field name="preeclampsia" expand="1"/>                                                                   
-                                                            <field name="overweight" expand="1"/>                                               
-                                                            <field name="diabetes" expand="1"/>                                               
-                                                            <field name="invasive_placentation" expand="1"/>                                               
-                                                            <field name="placenta_previa" expand="1"/>                                               
-                                                            <field name="vasa_previa" expand="1"/>                                               
-                                                            <field name="oligohydramnios" expand="1"/>                                               
-                                                            <field name="polihydramnios" expand="1"/>                                               
+<!--                                                            <field name="efw" expand="1"/>-->
+<!--                                                            <field name="iugr" expand="1"/>                    -->
+<!--                                                            <field name="hypertension" expand="1"/>                                                                   -->
+<!--                                                            <field name="preeclampsia" expand="1"/>                                                                   -->
+<!--                                                            <field name="overweight" expand="1"/>                                                                                        -->
+<!--                                                            <field name="invasive_placentation" expand="1"/>                                               -->
+<!--                                                            <field name="placenta_previa" expand="1"/>                                               -->
+<!--                                                            <field name="vasa_previa" expand="1"/>                                               -->
+<!--                                                            <field name="oligohydramnios" expand="1"/>                                               -->
+<!--                                                            <field name="polihydramnios" expand="1"/>                                               -->
                                                         </tree>
                                                         <form string="Prenatal Evaluation">
                                                             <group  colspan="4" col="4">
@@ -306,14 +305,14 @@
                                                 </group>
                                                 <newline/>
 
-                                                <group id="group_pregnancy_footer1" colspan="4" col="8">                    
+                                                <group id="group_pregnancy_footer1" colspan="2" col="2">                    
                                                     <field name="fetuses"/>
                                                     <field name="monozygotic"/>
                                                     <field name="iugr"/>
                                                     <field name="warning"/>
                                                 </group>
                                                 <newline/>
-                                                <group id="group_pregnancy_footer2" colspan="4" col="4">                                            
+                                                <group id="group_pregnancy_footer2" colspan="2" col="2">                                            
                                                     <field name="pregnancy_end_date"/>
                                                     <field name="pregnancy_end_result"/>
                                                 </group>    
