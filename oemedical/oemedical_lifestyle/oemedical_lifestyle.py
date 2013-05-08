@@ -23,6 +23,179 @@
 from osv import osv
 from osv import fields
 
+class DrugsRecreational(osv.Model):
+    
+    _name = 'oemedical.drugs_recreational'
+    _description = 'Recreational Drug'
+    _columns = {
+
+
+    'name' : fields.char('Name', translate=True, help="Name of the drug"),
+    'street_name' : fields.char('Street names',
+        help="Common name of the drug in street jargon"),
+
+    'toxicity' : fields.selection([
+        ('0', 'None'),
+        ('1', 'Low'),
+        ('2', 'High'),
+        ('3', 'Extreme'),
+        ], 'Toxicity', sort=False),
+
+    'addiction_level' : fields.selection([
+        ('0', 'None'),
+        ('1', 'Low'),
+        ('2', 'High'),
+        ('3', 'Extreme'),
+        ], 'Dependence', sort=False),
+
+    'legal_status' : fields.selection([
+        ('0', 'Legal'),
+        ('1', 'Illegal'),
+        ], 'Legal Status', sort=False),
+
+    'category' : fields.selection([
+        ('cannabinoid', 'Cannabinoids'),
+        ('depressant', 'Depressants'),
+        ('dissociative', 'Dissociative Anesthetics'),
+        ('hallucinogen', 'Hallucinogens'),
+        ('opioid', 'Opioids'),
+        ('stimulant', 'Stimulants'),
+        ('other', 'Others'),
+        ], 'Category', sort=False),
+
+    'withdrawal_level' : fields.integer('Withdrawal',
+        help="Presence and severity of characteristic withdrawal "
+        "symptoms.\nUsing Henningfield rating. 1=highest and 6=lowest"),
+
+    'reinforcement_level' : fields.integer('Reinforcement',
+        help="A measure of the substance's ability to get users to take it "
+        " again and again, and in preference to other substances.\nUsing "
+        " Henningfield rating. 1=highest and 6=lowest"),
+
+    'tolerance_level' : fields.integer('Tolerance',
+        help="How much of the substance is needed to satisfy increasing "
+        "cravings for it, and the level of stable need that is eventually "
+        "reached.\nUsing Henningfield rating. 1=highest and 6=lowest"),
+
+    'dependence_level' : fields.integer('Dependence',
+        help="How difficult it is for the user to quit, the relapse rate, "
+        "the percentage of people who eventually become dependent, the "
+        "rating users give their own need for the substance and the "
+        "degree to which the substance will be used in the face of "
+        "evidence that it causes harm.\nUsing Henningfield rating. "
+        "1=highest and 6=lowest"),
+
+    'intoxication_level' : fields.integer('Intoxication',
+        help="the level of intoxication is associated with addiction and "
+        "increases the personal and social damage a substance may do. \n"
+        "Using Henningfield rating. 1=highest and 6=lowest"),
+
+    'route_oral' : fields.boolean('Oral'),
+
+    'route_popping' : fields.boolean('Skin Popping',
+        help="Subcutaneous or Intradermical administration"),
+
+    'route_inhaling' : fields.boolean('Smoke / Inhale',
+        help="Insufflation, excluding nasal"),
+
+    'route_sniffing' : fields.boolean('Sniffing',
+        help="Also called snorting - inhaling through the nares  "),
+
+    'route_injection' : fields.boolean('Injection',
+        help="Injection - Intravenous, Intramuscular..."),
+
+    'dea_schedule_i' : fields.boolean('DEA schedule I',
+        help="Schedule I and II drugs have a high potential for abuse. "
+        "They require greater storage security and have a quota on "
+        "manufacturing, among other restrictions. Schedule I drugs are "
+        "available for research only and have no approved medical use; "
+        "Schedule II drugs are available only by prescription "
+        "(unrefillable) and require a form for ordering. Schedule III "
+        "and IV drugs are available by prescription, may have five "
+        "refills in 6 months, and may be ordered orally. "
+        "Some Schedule V drugs are available over the counter"),
+
+    'dea_schedule_ii' : fields.boolean('II',
+        help="Schedule I and II drugs have a high potential for abuse."
+        "They require greater storage security and have a quota on"
+        "manufacturing, among other restrictions. Schedule I drugs are"
+        "available for research only and have no approved medical use; "
+        "Schedule II drugs are available only by prescription "
+        "(unrefillable) and require a form for ordering. Schedule III "
+        "and IV drugs are available by prescription, may have five"
+        "refills in 6 months, and may be ordered orally. "
+        "Some Schedule V drugs are available over the counter"),
+
+    'dea_schedule_iii' : fields.boolean('III',
+        help="Schedule I and II drugs have a high potential for abuse. "
+        "They require greater storage security and have a quota on "
+        "manufacturing, among other restrictions. Schedule I drugs are "
+        "available for research only and have no approved medical use; "
+        "Schedule II drugs are available only by prescription "
+        "(unrefillable) and require a form for ordering. Schedule III "
+        "and IV drugs are available by prescription, may have five "
+        "refills in 6 months, and may be ordered orally. "
+        "Some Schedule V drugs are available over the counter"),
+
+    'dea_schedule_iv' : fields.boolean('IV',
+        help="Schedule I and II drugs have a high potential for abuse. "
+        "They require greater storage security and have a quota on "
+        "manufacturing, among other restrictions. Schedule I drugs are "
+        "available for research only and have no approved medical use; "
+        "Schedule II drugs are available only by prescription "
+        "(unrefillable) and require a form for ordering. Schedule III "
+        "and IV drugs are available by prescription, may have five "
+        "refills in 6 months, and may be ordered orally. "
+        "Some Schedule V drugs are available over the counter"),
+
+    'dea_schedule_v' : fields.boolean('V',
+        help="Schedule I and II drugs have a high potential for abuse. "
+        "They require greater storage security and have a quota on "
+        "manufacturing, among other restrictions. Schedule I drugs are "
+        "available for research only and have no approved medical use; "
+        "Schedule II drugs are available only by prescription "
+        "(unrefillable) and require a form for ordering. Schedule III "
+        "and IV drugs are available by prescription, may have five "
+        "refills in 6 months, and may be ordered orally. "
+        "Some Schedule V drugs are available over the counter"),
+
+    'info' : fields.text('Extra Info'),
+
+
+}
+
+DrugsRecreational()
+
+class PatientRecreationalDrugs(osv.Model):
+    
+    _name = 'oemedical.patient.recreational_drugs'
+    _description = 'Patient use of Recreational Drugs'
+
+    _columns = {
+            'patient_id' : fields.many2one('oemedical.patient', 'Patient'),
+            'recreational_drug' : fields.many2one('oemedical.drugs_recreational', 'Recreational Drug'),
+                }
+
+''' CAGE questionnaire to assess patient dependency to alcohol '''
+PatientRecreationalDrugs()
+
+class PatientCAGE(osv.Model):
+
+    _name = 'oemedical.patient.cage'
+    _description =  'Patient CAGE Questionnaire'
+    _columns = {
+
+    'name' : fields.many2one('oemedical.patient', 'Patient', required=True),
+    'evaluation_date' : fields.datetime('Date'),
+    'cage_c' : fields.boolean('Hard to Cut down', help='Have you ever felt you needed to Cut down on your drinking ?'),
+    'cage_a' : fields.boolean('Angry with Critics', help='Have people Annoyed you by criticizing your drinking ?'),
+    'cage_g' : fields.boolean('Guilt', help='Have you ever felt Guilty about drinking ?'),
+    'cage_e' : fields.boolean('Eye-opener', help='Have you ever felt you needed a drink first thing in the morning (Eye-opener) to steady your nerves or to get rid of a hangover?'),
+    'cage_score' : fields.integer('CAGE Score'),
+
+}
+
+PatientCAGE()
 
 class MedicalPatient(osv.Model):
 
@@ -60,7 +233,7 @@ class MedicalPatient(osv.Model):
     'drug_iv' : fields.boolean('IV drug user', help="Check this option if the patient injects drugs"),
     'age_start_drugs' : fields.integer('Age started drugs ', help="Age of start drugs"),
     'age_quit_drugs' : fields.integer('Age quit drugs ', help="Date of quitting drugs"),
-    'recreational_drugs' : fields.one2many( 'oemedical.patient.recreational_drugs', 'patient', 'Drugs'),
+    'recreational_drugs' : fields.one2many( 'oemedical.patient.recreational_drugs', 'patient_id', 'Drugs'),
     'traffic_laws' : fields.boolean('Obeys Traffic Laws', help="Check if the patient is a safe driver"),
     'car_revision' : fields.boolean('Car Revision', help="Maintain the vehicle. Do periodical checks - tires,breaks ..."),
     'car_seat_belt' : fields.boolean('Seat belt', help="Safety measures when driving : safety belt"),

@@ -74,10 +74,80 @@
                                                 <field name="alcohol_wine_number"/>
                                                 <field name="alcohol_liquor_number"/>
                                             </group>
-<!--                                            <field name="cage"/>-->
+                                            <field name="cage"/>
                                         </page>
                                         <page string="Recreational Drugs" id="page_recreational_drugs">
-<!--                                            <field name="recreational_drugs"/>-->
+                                            <field name="recreational_drugs" >
+                                                <tree string="Patient Recreational Drugs">
+                                                    <field name="recreational_drug" expand="1"/>
+                                                </tree>
+                                                <form string="Patient Recreational Drugs">
+                                                    <field name="recreational_drug">
+                                                        <tree string="Recreational Drugs">
+                                                            <field name="name"/>
+                                                            <field name="category"/>
+                                                            <field name="toxicity"/>
+                                                            <field name="addiction_level"/>
+                                                            <field name="street_name"/>
+                                                        </tree>
+                                                        <form string="Recreational Drugs">
+
+                                                            <group string="General Information" id="group_general_info">
+                                                                <field name="name"/>
+                                                                <field name="street_name"/>
+                                                                <newline/>
+                                                                <field name="toxicity"/>
+                                                                <field name="addiction_level"/>
+                                                                <field name="legal_status"/>
+                                                                <field name="category"/>
+                                                            </group>
+                                                            <newline/>
+
+                                                            <separator colspan="4" string="DEA Schedule Level" id="separator_DEA"/>
+                                                            <newline/>
+
+                                                            <group col="10" id="group_dea">
+                                                                <label name="dea_schedule_i"/>
+                                                                <field name="dea_schedule_i"/>
+                                                                <label name="dea_schedule_ii"/>
+                                                                <field name="dea_schedule_ii"/>
+                                                                <label name="dea_schedule_iii"/>
+                                                                <field name="dea_schedule_iii"/>
+                                                                <label name="dea_schedule_iv"/>
+                                                                <field name="dea_schedule_iv"/>
+                                                                <label name="dea_schedule_v"/>
+                                                                <field name="dea_schedule_v"/>
+                                                            </group>
+                                                            <newline/>
+
+                                                            <separator colspan="4" string="Henningfield Rating" id="separator_henningfield"/>
+                                                            <newline/>
+
+                                                            <group col="10" id="group_henningfield">
+                                                                <field name="withdrawal_level"/>
+                                                                <field name="reinforcement_level"/>
+                                                                <field name="tolerance_level"/>
+                                                                <field name="dependence_level"/>
+                                                                <field name="intoxication_level"/>
+                                                            </group>
+
+                                                            <separator colspan="4" string="Administration Routes" id="separator_admin_route"/>
+                                                            <group colspan="4" id="group_admin_route">
+                                                                <field name="route_oral"/>
+                                                                <field name="route_inhaling"/>
+                                                                <field name="route_popping"/>
+                                                                <field name="route_sniffing"/>
+                                                                <field name="route_injection"/>
+                                                            </group>
+                                                            <newline/>
+
+                                                            <separator colspan="4" string="Additional Info and Effects" id="separator_additional_info"/>
+
+                                                            <field name="info" colspan="4"/>
+                                                        </form>
+                                                    </field>
+                                                </form>
+                                            </field>
                                         </page>
                                     </notebook>
                                 </page>
