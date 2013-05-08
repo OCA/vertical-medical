@@ -25,14 +25,18 @@
                                         </group>
                                         <newline/>
                                         <group colspan="4" col="4" id="group_diet">
+                                            <separator string="Meals" colspan="4"/>
                                             <field name="number_of_meals"/>
                                             <field name="eats_alone"/>
-                                            <field name="coffee"/>
+                                            <separator string="Coffee" colspan="4"/>
+                                            <field name="coffee" nolabel="1"/>
                                             <field name="coffee_cups"/>
+                                            <separator string="Sugar/Salt" colspan="4"/>
                                             <field name="soft_drinks"/>
                                             <field name="salt"/>
-                                            <field name="diet"/>
-                                            <field name="diet_info"/>
+                                            <separator string="Diet" colspan="4"/>
+                                            <field name="diet" nolabel="1"/>
+                                            <field name="diet_info" nolabel="1"/>
                                         </group>
                                         <newline/>
                                         <group colspan="4" id="group_lifestyle">
