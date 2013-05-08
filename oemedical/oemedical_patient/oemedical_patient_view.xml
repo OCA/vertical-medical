@@ -12,10 +12,6 @@
  					<field name="slastname" />
  					<field name="ssn" /> 
  					<field name="identification_code" /> 
- 					<field name="dob" /> 
- 					<field name="age" /> 
- 					<field name="blood_type" /> 
- 					<field name="rh"/> 
  					<field name="sex" /> 
  				</tree> 
  			</field> 
@@ -66,32 +62,84 @@
                                 <label string="General Infomation" colspan="2"/>
              					<field name="family" nolabel="1"  colspan="2"/> 
              					<field name="primary_care_doctor" colspan="2"/> 
-                                <label string="Medications" colspan="4"/>
-              					<field name="medications"  nolabel="1" colspan="4">  
-				                    <tree string="Oemedical Patient Medication">
-					                    <field name="doctor" />
-					                    <field name="adverse_reaction" />
-					                    <field name="notes" />
-					                    <field name="is_active" />
-					                    <field name="course_completed" />
-					                    <field name="template" />
-					                    <field name="discontinued_reason" />
-					                    <field name="discontinued" />
-				                    </tree>
-				                    <form string="Oemedical Patient Medication">
-					                    <field name="doctor" />
-					                    <field name="adverse_reaction" />
-					                    <field name="notes" />
-					                    <field name="is_active" />
-					                    <field name="course_completed" />
-					                    <field name="template" />
-					                    <field name="discontinued_reason" />
-					                    <field name="discontinued" />
-				                    </form>
-                                </field>
-                                <label string="Critical Information" colspan="4"/>
+                                <separator colspan="4" string="Patient Allergies and Critical Information"/>
              					<field name="critical_info" colspan="4" nolabel="1"/> 
-                                <label string="Diseases" colspan="4"/>
+                                <group colspan="2">
+             					<field name="childbearing_age" /> 
+                 					<field name="ethnic_group" /> 
+                 					<field name="current_insurance" /> 
+                                </group>
+             				</group> 
+         				</page> 
+                        <page string="Misc">
+                            <group colspan="4" col="4">
+                                <separator colspan="4" string="Patient Extra Information"/>
+              					<field name="general_info" nolabel="1"  colspan="4"/> 
+                            </group>
+                            <newline/>
+                            <group colspan="4" col="6">
+                                <field name="deceased"/>
+                                <field name="dod"/>
+                                <field name="cod"/>
+                            </group>
+                        </page>
+                        <page string="Medication" >
+<!-- Patient Medications -->
+                            <separator string="Medications" colspan="4"/>
+          					<field name="medications"  nolabel="1" colspan="4">  
+			                    <tree string="Oemedical Patient Medication">
+				                    <field name="doctor" />
+				                    <field name="adverse_reaction" />
+				                    <field name="notes" />
+				                    <field name="is_active" />
+				                    <field name="course_completed" />
+				                    <field name="template" />
+				                    <field name="discontinued_reason" />
+				                    <field name="discontinued" />
+			                    </tree>
+			                    <form string="Oemedical Patient Medication">
+				                    <field name="doctor" />
+				                    <field name="adverse_reaction" />
+				                    <field name="notes" />
+				                    <field name="is_active" />
+				                    <field name="course_completed" />
+				                    <field name="template" />
+				                    <field name="discontinued_reason" />
+				                    <field name="discontinued" />
+			                    </form>
+                            </field>
+<!-- Patient Vaccinations -->
+                            <separator string="Vaccinations" colspan="4"/>
+          					<field name="vaccinations"  nolabel="1" colspan="4"> 
+			                    <tree string="Oemedical Vaccination">
+				                    <field name="name" />
+				                    <field name="vaccine_lot" />
+				                    <field name="patient_id" />
+				                    <field name="vaccine" />
+				                    <field name="dose" />
+				                    <field name="observations" />
+				                    <field name="date" />
+				                    <field name="institution" />
+				                    <field name="next_dose_date" />
+			                    </tree>
+			                    <form string="Oemedical Vaccination">
+				                    <field name="name" />
+				                    <field name="vaccine_lot" />
+				                    <field name="patient_id" />
+				                    <field name="vaccine" />
+				                    <field name="dose" />
+				                    <field name="observations" />
+				                    <field name="date" />
+				                    <field name="institution" />
+				                    <field name="next_dose_date" />
+			                    </form>
+                            </field>
+
+                        </page>
+
+<!-- Patient Diseases -->
+                        <page string="Diseases" >
+                                <separator string="Diseases" colspan="4"/>
               					<field name="diseases"  nolabel="1" colspan="4">  
 				                    <tree string="Oemedical Patient Disease">
 					                    <field name="treatment_description" />
@@ -125,51 +173,7 @@
 					                    <field name="short_comment" />
 				                    </form>
                                 </field>
-                                <label string="Vaccinations" colspan="4"/>
-              					<field name="vaccinations"  nolabel="1" colspan="4"> 
-				                    <tree string="Oemedical Vaccination">
-					                    <field name="name" />
-					                    <field name="vaccine_lot" />
-					                    <field name="patient_id" />
-					                    <field name="vaccine" />
-					                    <field name="dose" />
-					                    <field name="observations" />
-					                    <field name="date" />
-					                    <field name="institution" />
-					                    <field name="next_dose_date" />
-				                    </tree>
-				                    <form string="Oemedical Vaccination">
-					                    <field name="name" />
-					                    <field name="vaccine_lot" />
-					                    <field name="patient_id" />
-					                    <field name="vaccine" />
-					                    <field name="dose" />
-					                    <field name="observations" />
-					                    <field name="date" />
-					                    <field name="institution" />
-					                    <field name="next_dose_date" />
-				                    </form>
-                                </field>
-                                <group colspan="2">
-             					<field name="childbearing_age" /> 
-                 					<field name="ethnic_group" /> 
-                 					<field name="current_insurance" /> 
-                                </group>
-             				</group> 
-         				</page> 
-                        <page string="Misc">
-                            <group colspan="4" col="4">
-                                <separator colspan="4" string="Patient Extra Information"/>
-              					<field name="general_info" nolabel="1"  colspan="4"/> 
-                            </group>
-                            <newline/>
-                            <group colspan="4" col="6">
-                                <field name="deceased"/>
-                                <field name="dod"/>
-                                <field name="cod"/>
-                            </group>
                         </page>
-
                     </notebook> 
  				</sheet> 
  				</form> 
