@@ -74,7 +74,25 @@
                                                 <field name="alcohol_wine_number"/>
                                                 <field name="alcohol_liquor_number"/>
                                             </group>
-                                            <field name="cage"/>
+                                            <field name="cage">
+                                                <tree editable="top" string="Patient CAGE SCORE" > 
+                                                    <field name="evaluation_date"/>
+                                                    <field name="cage_c"/>
+                                                    <field name="cage_a"/>
+                                                    <field name="cage_g"/>
+                                                    <field name="cage_e"/>
+                                                    <field name="cage_score"/>
+                                                </tree>
+                                                <form string="Patient CAGE Questionnaire">
+                                                        <field name="evaluation_date"/>
+                                                        <field name="evaluation_date"/>
+                                                        <field name="cage_c"/>
+                                                        <field name="cage_a"/>
+                                                        <field name="cage_g"/>
+                                                        <field name="cage_e"/>
+                                                        <field name="cage_score"/>                        
+                                                </form>
+                                            </field>
                                         </page>
                                         <page string="Recreational Drugs" id="page_recreational_drugs">
                                             <field name="recreational_drugs" >
