@@ -40,7 +40,8 @@
                                         </group>
                                         <newline/>
                                         <group colspan="4" id="group_lifestyle">
-                                            <field name="lifestyle_info"/>
+                                            <separator string="Extra Information" colspan="4"/>
+                                            <field name="lifestyle_info" nolabel="1" colspan="4"/>
                                         </group>
 
                                     </group>
