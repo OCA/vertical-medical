@@ -56,37 +56,38 @@
  							<field name="age" style="width: 8%%"/> 
                          </div> 
                     <notebook> 
-                          <page string="Public Information"> 
-                              <group  col="4" colspan="4"> 
-                              	<field name="current_address" /> 
-                            <newline/>
-             					<field name="marital_status"/> 
-                            <newline/>
-             					<field name="family" /> 
-                            <newline/>
-             					<field name="general_info" /> 
-                            <newline/>
-             					<field name="primary_care_doctor" /> 
-                            <newline/>
-             					<field name="childbearing_age" /> 
-                            <newline/>
-              					<field name="medications"  nolabel="1"/>  
-                            <newline/>
-             					<field name="critical_info" /> 
-                            <newline/>
-              					<field name="diseases"  nolabel="1"/>  
-                            <newline/>
-             					<field name="ethnic_group" /> 
-                            <newline/>
-              					<field name="vaccinations"  nolabel="1"/> 
-                            <newline/>
-             					<field name="dod" /> 
-                            <newline/>
-             					<field name="current_insurance" /> 
-                            <newline/>
-             					<field name="cod" /> 
-                            <newline/>
-             					<field name="deceased" /> 
+                        <page string="Public Information"> 
+                            <group  string="Address"col="4" colspan="2"> 
+                              	<field name="current_address" nolabel="1"/> 
+                            </group>>        
+<!--                            <newline/>-->
+<!--             					<field name="marital_status"/> -->
+<!--                            <newline/>-->
+<!--             					<field name="family" /> -->
+<!--                            <newline/>-->
+<!--             					<field name="general_info" /> -->
+<!--                            <newline/>-->
+<!--             					<field name="primary_care_doctor" /> -->
+<!--                            <newline/>-->
+<!--             					<field name="childbearing_age" /> -->
+<!--                            <newline/>-->
+<!--              					<field name="medications"  nolabel="1"/>  -->
+<!--                            <newline/>-->
+<!--             					<field name="critical_info" /> -->
+<!--                            <newline/>-->
+<!--              					<field name="diseases"  nolabel="1"/>  -->
+<!--                            <newline/>-->
+<!--             					<field name="ethnic_group" /> -->
+<!--                            <newline/>-->
+<!--              					<field name="vaccinations"  nolabel="1"/> -->
+<!--                            <newline/>-->
+<!--             					<field name="dod" /> -->
+<!--                            <newline/>-->
+<!--             					<field name="current_insurance" /> -->
+<!--                            <newline/>-->
+<!--             					<field name="cod" /> -->
+<!--                            <newline/>-->
+<!--             					<field name="deceased" /> -->
              				</group> 
          				</page> 
                     </notebook> 
