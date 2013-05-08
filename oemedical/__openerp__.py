@@ -134,6 +134,7 @@ OeMedical at a glance:
         'oemedical_medicament/oemedical_medicament_view.xml',
         'oemedical_pathology_group/oemedical_pathology_group_view.xml',
         'oemedical_gynecology_and_obstetrics/oemedical_gynecology_and_obstetrics_view.xml',
+        'oemedical_lifestyle/oemedical_lifestyle_view.xml',
         'security/ir.model.access.csv',
         'oemedical_menu.xml',
     ],

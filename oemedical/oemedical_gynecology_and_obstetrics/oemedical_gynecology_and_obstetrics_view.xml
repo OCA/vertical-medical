@@ -20,7 +20,6 @@
                                         <field name="menopausal"/>
                                         <field name="menopause"/>
                                     </group>
-
                                     <group colspan="2" string="Prevention and Screening">
                                         <field name="breast_self_examination"/>
                                         <field name="mammography"/>

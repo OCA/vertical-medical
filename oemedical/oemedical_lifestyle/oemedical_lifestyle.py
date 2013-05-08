@@ -23,362 +23,110 @@
 from osv import osv
 from osv import fields
 
-class PatientPregnancy(osv.Model):
-    
-    _name = 'oemedical.patient.pregnancy'
-    _description = 'Patient Pregnancy'
 
-    def _get_pregnancy_data(self, cr, uid, ids, name, args, context=None):
-#        if name == 'pdd':
-#            return self.lmp + datetime.timedelta(days=280)
-#        if name == 'pregnancy_end_age':
-#            if self.pregnancy_end_date:
-#                gestational_age = datetime.datetime.date(
-#                    self.pregnancy_end_date) - self.lmp
-#                return (gestational_age.days) / 7
-#            else:
-        return 2
-
-
-
-    _columns = {
-                'name' : fields.many2one('oemedical.patient', 'Patient ID'),
-                'gravida' : fields.integer('Pregnancy #', required=True),
-                'warning' : fields.boolean('Warn', help='Check this box if this is pregancy is or was NOT normal'),
-                'lmp' : fields.date('LMP', help="Last Menstrual Period", required=True),
-                'pdd' : fields.function(_get_pregnancy_data, type='date', string='Pregnancy Due Date'),
-                'prenatal_evaluations' : fields.one2many('oemedical.patient.prenatal.evaluation', 'name', 'Prenatal Evaluations'),
-                'perinatal' : fields.one2many('oemedical.perinatal', 'name', 'Perinatal Info'),
-                'puerperium_monitor' : fields.one2many('oemedical.puerperium.monitor', 'name', 'Puerperium monitor'),
-                'current_pregnancy' : fields.boolean('Current Pregnancy', help='This field marks the current pregnancy'),
-                'fetuses' : fields.integer('Fetuses', required=True),
-                'monozygotic' : fields.boolean('Monozygotic'),
-                'pregnancy_end_result' : fields.selection([
-                                ('live_birth', 'Live birth'),
-                                ('abortion', 'Abortion'),
-                                ('stillbirth', 'Stillbirth'),
-                                ('status_unknown', 'Status unknown'),
-                                ], 'Result', sort=False,),
-                'pregnancy_end_date' : fields.datetime('End of Pregnancy',),
-                'pregnancy_end_age' : fields.function(_get_pregnancy_data, type='char', string='Weeks', help='Weeks at the end of pregnancy'),
-                'iugr' : fields.selection([
-                                ('symmetric', 'Symmetric'),
-                                ('assymetric', 'Assymetric'),
-                                ], 'IUGR', sort=False),
-                }
-
-PatientPregnancy()
-
-class PrenatalEvaluation(osv.Model):
-
-    _name = 'oemedical.patient.prenatal.evaluation'
-    _description =  'Prenatal and Antenatal Evaluations'
-
-    def _get_patient_evaluation_data(self, cr, uid, ids, field_name, args, context=None):
-        result = dict([(i, {}.fromkeys(field_names, 0.0)) for i in ids])
-        print result
-#        print ids, field_name, arg
-#        if name == 'gestational_weeks':
-#            gestational_age = datetime.datetime.date(self.evaluation_date) - \
-#                self.name.lmp
-#            return (gestational_age.days) / 7
-#        if name == 'gestational_days':
-#            gestational_age = datetime.datetime.date(self.evaluation_date) - \
-#                self.name.lmp
-#            return gestational_age.days
-        return 20
-
-
-
-    _columns = {
-            'name' : fields.many2one('oemedical.patient.pregnancy', 'Patient Pregnancy'),
-            'evaluation' : fields.many2one('oemedical.patient.evaluation', 'Patient Evaluation', readonly=True),
-            'evaluation_date' : fields.datetime('Date', required=True),
-            'gestational_weeks' : fields.function(_get_patient_evaluation_data, method=True , string="Gestational Weeks", type='float'),
-            'gestational_days' : fields.function(_get_patient_evaluation_data, method=True , string='Gestational days', type='integer'),
-            'hypertension' : fields.boolean('Hypertension', help='Check this box if the mother has hypertension'),
-            'preeclampsia' : fields.boolean('Preeclampsia', help='Check this box if the mother has pre-eclampsia'),
-            'overweight' : fields.boolean('Overweight', help='Check this box if the mother is overweight or obesity'),
-            'diabetes' : fields.boolean('Diabetes', help='Check this box if the mother has glucose intolerance or diabetes'),
-            'invasive_placentation' : fields.selection([
-                        ('normal', 'Normal decidua'),
-                        ('accreta', 'Accreta'),
-                        ('increta', 'Increta'),
-                        ('percreta', 'Percreta'),
-                        ], 'Placentation'),
-            'placenta_previa' : fields.boolean('Placenta Previa'),
-            'vasa_previa' : fields.boolean('Vasa Previa'),
-            'fundal_height' : fields.integer('Fundal Height', help="Distance between the symphysis pubis and the uterine fundus (S-FD) in cm"),
-            'fetus_heart_rate' : fields.integer('Fetus heart rate', help='Fetus heart rate'),
-            'efw' : fields.integer('EFW', help="Estimated Fetal Weight"),
-            'fetal_bpd' : fields.integer('BPD', help="Fetal Biparietal Diameter"),
-            'fetal_ac' : fields.integer('AC', help="Fetal Abdominal Circumference"),
-            'fetal_hc' : fields.integer('HC', help="Fetal Head Circumference"),
-            'fetal_fl' : fields.integer('FL', help="Fetal Femur Length"),
-            'oligohydramnios' : fields.boolean('Oligohydramnios'),
-            'polihydramnios' : fields.boolean('Polihydramnios'),
-            'iugr' : fields.boolean('IUGR', help="Intra Uterine Growth Restriction"),
-        }
-
-PrenatalEvaluation()
-
-
-
-class PuerperiumMonitor(osv.Model):
-
-    _name = 'oemedical.puerperium.monitor'
-    _description = 'Puerperium Monitor'
-
-    _columns = {
-        'name' : fields.many2one('oemedical.patient', string='Patient ID'),
-        'date' : fields.datetime('Date and Time', required=True),
-        'systolic' : fields.integer('Systolic Pressure'),
-        'diastolic' : fields.integer('Diastolic Pressure'),
-        'frequency' : fields.integer('Heart Frequency'),
-        'lochia_amount' : fields.selection([
-            ('n', 'normal'),
-            ('e', 'abundant'),
-            ('h', 'hemorrhage'),
-            ], 'Lochia amount', select=True),
-        'lochia_color' : fields.selection([
-            ('r', 'rubra'),
-            ('s', 'serosa'),
-            ('a', 'alba'),
-            ], 'Lochia color', select=True),
-        'lochia_odor' : fields.selection([
-            ('n', 'normal'),
-            ('o', 'offensive'),
-            ], 'Lochia odor', select=True),
-        'uterus_involution' : fields.integer('Fundal Height', help="Distance between the symphysis pubis and the uterine fundus (S-FD) in cm"),
-        'temperature' : fields.float('Temperature'),
-            }
-
-PuerperiumMonitor()
-
-
-class PerinatalMonitor(osv.Model):
-    
-    _name = 'oemedical.perinatal.monitor'
-    _description = 'Perinatal monitor'
-    _columns = {
-            'name' : fields.many2one('oemedical.patient', string='patient_id'),
-            'date' : fields.datetime('Date and Time'),
-            'systolic' : fields.integer('Systolic Pressure'),
-            'diastolic' : fields.integer('Diastolic Pressure'),
-            'contractions' : fields.integer('Contractions'),
-            'frequency' : fields.integer('Mother\'s Heart Frequency'),
-            'dilation' : fields.integer('Cervix dilation'),
-            'f_frequency' : fields.integer('Fetus Heart Frequency'),
-            'meconium' : fields.boolean('Meconium'),
-            'bleeding' : fields.boolean('Bleeding'),
-            'fundal_height' : fields.integer('Fundal Height'),
-            'fetus_position' : fields.selection([
-                ('n', 'Correct'),
-                ('o', 'Occiput / Cephalic Posterior'),
-                ('fb', 'Frank Breech'),
-                ('cb', 'Complete Breech'),
-                ('t', 'Transverse Lie'),
-                ('t', 'Footling Breech'),
-                ], 'Fetus Position', select=True),
-            }
-PerinatalMonitor()
-
-
-class OemedicalPerinatal(osv.Model):
-
-    _name = 'oemedical.perinatal'
-    _description =  'Perinatal Information'
-    _columns={
-            'name' : fields.many2one('oemedical.patient', string='Perinatal Infomation'),
-            'admission_code' : fields.char('Admission Code', size=64),
-            'gravida_number' : fields.integer('Gravida #'),
-            'abortion' : fields.boolean('Abortion'),
-            'admission_date' : fields.datetime('Admission date', help="Date when she was admitted to give birth"),
-            'prenatal_evaluations' : fields.integer('Prenatal evaluations', help="Number of visits to the doctor during pregnancy"),
-            'start_labor_mode' : fields.selection([
-                ('n', 'Normal'),
-                ('i', 'Induced'),
-                ('c', 'c-section'),
-                ], 'Labor mode', select=True),
-            'gestational_weeks' : fields.integer('Gestational weeks'),
-            'gestational_days' : fields.integer('Gestational days'),
-            'fetus_presentation' : fields.selection([
-                            ('n', 'Correct'),
-                            ('o', 'Occiput / Cephalic Posterior'),
-                            ('fb', 'Frank Breech'),
-                            ('cb', 'Complete Breech'),
-                            ('t', 'Transverse Lie'),
-                            ('t', 'Footling Breech'),
-                            ], 'Fetus Presentation', select=True),
-            'dystocia' : fields.boolean('Dystocia'),
-            'laceration' : fields.selection([
-                            ('perineal', 'Perineal'),
-                            ('vaginal', 'Vaginal'),
-                            ('cervical', 'Cervical'),
-                            ('broad_ligament', 'Broad Ligament'),
-                            ('vulvar', 'Vulvar'),
-                            ('rectal', 'Rectal'),
-                            ('bladder', 'Bladder'),
-                            ('urethral', 'Urethral'),
-                            ], 'Lacerations', sort=False),
-            'hematoma' : fields.selection([
-                            ('vaginal', 'Vaginal'),
-                            ('vulvar', 'Vulvar'),
-                            ('retroperitoneal', 'Retroperitoneal'),
-                            ], 'Hematoma', sort=False),
-            'placenta_incomplete' : fields.boolean('Incomplete Placenta'),
-            'placenta_retained' : fields.boolean('Retained Placenta'),
-            'abruptio_placentae' : fields.boolean('Abruptio Placentae', help='Abruptio Placentae'),
-            'episiotomy' : fields.boolean('Episiotomy'),
-            'vaginal_tearing' : fields.boolean('Vaginal tearing'),
-            'forceps' : fields.boolean('Use of forceps'),
-            'monitoring' : fields.one2many('oemedical.perinatal.monitor', 'name', string='Monitors'),
-            'puerperium_monitor' : fields.one2many('oemedical.puerperium.monitor', 'name','Puerperium monitor'),
-            'medications': fields.one2many('oemedical.patient.medication','patient_id', string='Medications',),
-            'dismissed' : fields.datetime('Dismissed from hospital'),
-            'place_of_death' : fields.selection([
-                ('ho', 'Hospital'),
-                ('dr', 'At the delivery room'),
-                ('hh', 'in transit to the hospital'),
-                ('th', 'Being transferred to other hospital'),
-                ], 'Place of Death'),
-            'mother_deceased' : fields.boolean('Deceased', help="Mother died in the process"),
-            'notes' : fields.text('Notes'),
-            }
-OemedicalPerinatal()
-
-
-class OeMedicalPatient(osv.Model):
+class MedicalPatient(osv.Model):
 
     _inherit='oemedical.patient'
 
-    def _get_pregnancy_info(self, cr, uid, ids, name, args, context=None):
-#        if name == 'currently_pregnant':
-#            for pregnancy_history in self.pregnancy_history:
-#                if pregnancy_history.current_pregnancy:
-#                    return True
-        return False
-
-
     _columns = {
-            'currently_pregnant' : fields.boolean('Currently Pregnant'),
-#            'currently_pregnant' : fields.function( _get_pregnancy_info , string='Pregnant' , type='boolean' ),
-            'fertile' : fields.boolean('Fertile', help="Check if patient is in fertile age"),
-            'menarche' : fields.integer('Menarche age'),
-            'menopausal' : fields.boolean('Menopausal'),
-            'menopause' : fields.integer('Menopause age'),
-            'mammography' : fields.boolean('Mammography', help="Check if the patient does periodic mammographys"),
-            'mammography_last' : fields.date('Last mammography', help="Enter the date of the last mammography"),
-            'breast_self_examination' : fields.boolean('Breast self-examination', help="Check if patient does and knows how to self examine her breasts"),
-            'pap_test' : fields.boolean('PAP test',  help="Check if patient does periodic cytologic pelvic smear screening"),
-            'pap_test_last' : fields.date('Last PAP test', help="Enter the date of the last Papanicolau test"),
-            'colposcopy' : fields.boolean('Colposcopy', help="Check if the patient has done a colposcopy exam"),
-            'colposcopy_last' : fields.date('Last colposcopy', help="Enter the date of the last colposcopy"),
-            'gravida' : fields.integer('Gravida', help="Number of pregnancies"),
-            'premature' : fields.integer('Premature', help="Premature Deliveries"),
-            'abortions' : fields.integer('Abortions'),
-            'stillbirths' : fields.integer('Stillbirths'),
-            'full_term' : fields.integer('Full Term', help="Full term pregnancies"),
-            'menstrual_history' : fields.one2many('oemedical.patient.menstrual_history', 'name', 'Menstrual History'),
-            'mammography_history' : fields.one2many('oemedical.patient.mammography_history', 'name', 'Mammography History'),
-            'pap_history' : fields.one2many('oemedical.patient.pap_history', 'name', 'PAP smear History'),
-            'prenatal_evaluations' : fields.one2many('oemedical.patient.prenatal.evaluation', 'name', 'Prenatal Evaluations'),
-            'colposcopy_history' : fields.one2many('oemedical.patient.colposcopy_history', 'name', 'Colposcopy History'),
-            'pregnancy_history' : fields.one2many('oemedical.patient.pregnancy', 'name', 'Pregnancies'),
+
+    'exercise' : fields.boolean('Exercise'),
+    'exercise_minutes_day' : fields.integer('Minutes / day', help="How many minutes a day the patient exercises"),
+    'sleep_hours' : fields.integer('Hours of sleep', help="Average hours of sleep per day"),
+    'sleep_during_daytime' : fields.boolean('Sleeps at daytime', help="Check if the patient sleep hours are during daylight rather than at night"),
+    'number_of_meals' : fields.integer('Meals per day'),
+    'eats_alone' : fields.boolean('Eats alone', help="Check this box if the patient eats by him / herself."),
+    'salt' : fields.boolean('Salt',  help="Check if patient consumes salt with the food"),
+    'coffee' : fields.boolean('Coffee'),
+    'coffee_cups' : fields.integer('Cups per day', help="Number of cup of coffee a day"),
+    'soft_drinks' : fields.boolean('Soft drinks (sugar)', help="Check if the patient consumes soft drinks with sugar"),
+    'diet' : fields.boolean('Currently on a diet', help="Check if the patient is currently on a diet"),
+    'diet_info' : fields.char('Diet info', help="Short description on the diet"),
+    'smoking' : fields.boolean('Smokes'),
+    'smoking_number' : fields.integer('Cigarretes a day'),
+    'ex_smoker' : fields.boolean('Ex-smoker'),
+    'second_hand_smoker' : fields.boolean('Passive smoker', help="Check it the patient is a passive / second-hand smoker"),
+    'age_start_smoking' : fields.integer('Age started to smoke'),
+    'age_quit_smoking' : fields.integer('Age of quitting', help="Age of quitting smoking"),
+    'alcohol' : fields.boolean('Drinks Alcohol'),
+    'age_start_drinking' : fields.integer('Age started to drink ', help="Date to start drinking"),
+    'age_quit_drinking' : fields.integer('Age quit drinking ', help="Date to stop drinking"),
+    'ex_alcoholic' : fields.boolean('Ex alcoholic'),
+    'alcohol_beer_number' : fields.integer('Beer / day'),
+    'alcohol_wine_number' : fields.integer('Wine / day'),
+    'alcohol_liquor_number' : fields.integer('Liquor / day'),
+    'drug_usage' : fields.boolean('Drug Habits'),
+    'ex_drug_addict' : fields.boolean('Ex drug addict'),
+    'drug_iv' : fields.boolean('IV drug user', help="Check this option if the patient injects drugs"),
+    'age_start_drugs' : fields.integer('Age started drugs ', help="Age of start drugs"),
+    'age_quit_drugs' : fields.integer('Age quit drugs ', help="Date of quitting drugs"),
+    'recreational_drugs' : fields.one2many( 'oemedical.patient.recreational_drugs', 'patient', 'Drugs'),
+    'traffic_laws' : fields.boolean('Obeys Traffic Laws', help="Check if the patient is a safe driver"),
+    'car_revision' : fields.boolean('Car Revision', help="Maintain the vehicle. Do periodical checks - tires,breaks ..."),
+    'car_seat_belt' : fields.boolean('Seat belt', help="Safety measures when driving : safety belt"),
+    'car_child_safety' : fields.boolean('Car Child Safety', help="Safety measures when driving : child seats, proper seat belting, not seating on the front seat, ...."),
+    'home_safety' : fields.boolean('Home safety',  help="Keep safety measures for kids in the kitchen, correct storage of chemicals, ..."),
+    'motorcycle_rider' : fields.boolean('Motorcycle Rider', help="The patient rides motorcycles"),
+    'helmet' : fields.boolean('Uses helmet',  help="The patient uses the proper motorcycle helmet"),
+    'lifestyle_info' : fields.text('Extra Information'),
+    'sexual_preferences' : fields.selection([
+        ('h', 'Heterosexual'),
+        ('g', 'Homosexual'),
+        ('b', 'Bisexual'),
+        ('t', 'Transexual'),
+        ], 'Sexual Preferences', sort=False),
+
+    'sexual_practices' : fields.selection([
+        ('s', 'Safe / Protected sex'),
+        ('r', 'Risky / Unprotected sex'),
+        ], 'Sexual Practices', sort=False),
+
+    'sexual_partners' : fields.selection([
+        ('m', 'Monogamous'),
+        ('t', 'Polygamous'),
+        ], 'Sexual Partners', sort=False),
+
+    'sexual_partners_number' : fields.integer('Number of sexual partners'),
+
+    'first_sexual_encounter' : fields.integer('Age first sexual encounter'),
+
+    'anticonceptive' : fields.selection([
+        ('0', 'None'),
+        ('1', 'Pill / Minipill'),
+        ('2', 'Male condom'),
+        ('3', 'Vasectomy'),
+        ('4', 'Female sterilisation'),
+        ('5', 'Intra-uterine device'),
+        ('6', 'Withdrawal method'),
+        ('7', 'Fertility cycle awareness'),
+        ('8', 'Contraceptive injection'),
+        ('9', 'Skin Patch'),
+        ('10', 'Female condom'),
+        ], 'Anticonceptive Method', sort=False),
+
+    'sex_oral' : fields.selection([
+        ('0', 'None'),
+        ('1', 'Active'),
+        ('2', 'Passive'),
+        ('3', 'Both'),
+        ], 'Oral Sex', sort=False),
+
+    'sex_anal' : fields.selection([
+        ('0', 'None'),
+        ('1', 'Active'),
+        ('2', 'Passive'),
+        ('3', 'Both'),
+        ], 'Anal Sex', sort=False),
+
+    'prostitute' : fields.boolean('Prostitute', help="Check if the patient (he or she) is a prostitute"),
+    'sex_with_prostitutes' : fields.boolean('Sex with prostitutes', help="Check if the patient (he or she) has sex with prostitutes"),
+
+    'sexuality_info' : fields.text('Extra Information'),
+
+    'cage' : fields.one2many('oemedical.patient.cage', 'name', 'CAGE'),
             }
 
-
-OeMedicalPatient()
-
-
-class PatientMenstrualHistory(osv.Model):
-
-    _name = 'oemedical.patient.menstrual_history'
-    _description =  'Menstrual History'
-    _columns={
-            'name' : fields.many2one('oemedical.patient', 'Patient', readonly=True, required=True),
-            'evaluation' : fields.many2one('oemedical.patient.evaluation', 'Evaluation'),
-            'evaluation_date' : fields.date('Date', help="Evaluation Date",  required=True),
-            'lmp' : fields.date('LMP', help="Last Menstrual Period", required=True),
-            'lmp_length' : fields.integer('Length', required=True),
-            'is_regular' : fields.boolean('Regular'),
-            'dysmenorrhea' : fields.boolean('Dysmenorrhea'),
-            'frequency' : fields.selection([
-                                    ('amenorrhea', 'amenorrhea'),
-                                    ('oligomenorrhea', 'oligomenorrhea'),
-                                    ('eumenorrhea', 'eumenorrhea'),
-                                    ('polymenorrhea', 'polymenorrhea'),
-                                    ], 'frequency', sort=False),
-            'volume' : fields.selection([
-                                    ('hypomenorrhea', 'hypomenorrhea'),
-                                    ('normal', 'normal'),
-                                    ('menorrhagia', 'menorrhagia'),
-                                    ], 'volume', sort=False),
-
-            }
-
-PatientMenstrualHistory()
-
-
-class PatientMammographyHistory(osv.Model):
-
-    _name = 'oemedical.patient.mammography_history'
-    _description =  'Mammography History'
-    _columns={
-            'name' : fields.many2one('oemedical.patient', 'Patient', readonly=True, required=True),
-            'evaluation' : fields.many2one('oemedical.patient.evaluation', 'Evaluation'),
-            'evaluation_date' : fields.date('Date', help=" Date"),
-            'last_mammography' : fields.date('Date', help="Last Mammography", required=True),
-            'result' : fields.selection([
-                ('normal', 'normal'),
-                ('abnormal', 'abnormal'),
-                ], 'result', help="Please check the lab test results if the module is installed", sort=False),
-            'comments' : fields.char('Remarks'),
-            }
-
-PatientMammographyHistory()
-
-
-class PatientPAPHistory(osv.Model):
-
-    _name = 'oemedical.patient.pap_history'
-    _description =  'PAP Test History'
-    _columns={
-            'name' : fields.many2one('oemedical.patient', 'Patient', readonly=True, required=True),
-            'evaluation' : fields.many2one('oemedical.patient.evaluation', 'Evaluation'),
-            'evaluation_date' : fields.date('Date', help=" Date"),
-            'last_pap' : fields.date('Date', help="Last Papanicolau", required=True),
-            'result' : fields.selection([
-                            ('negative', 'Negative'),
-                            ('c1', 'ASC-US'),
-                            ('c2', 'ASC-H'),
-                            ('g1', 'ASG'),
-                            ('c3', 'LSIL'),
-                            ('c4', 'HSIL'),
-                            ('g4', 'AIS'),
-                            ], 'result', help="Please check the lab results if the module is installed"),
-            'comments' : fields.char('Remarks'),
-            }
-PatientPAPHistory()
-
-
-class PatientColposcopyHistory(osv.Model):
-
-    _name = 'oemedical.patient.colposcopy_history'
-    _description =  'Colposcopy History'
-    _columns={
-            'name' : fields.many2one('oemedical.patient', 'Patient', readonly=True, required=True),
-            'evaluation' : fields.many2one('oemedical.patient.evaluation', 'Evaluation'),
-            'evaluation_date' : fields.date('Date', help=" Date"),
-            'last_colposcopy' : fields.date('Date', help="Last colposcopy", required=True),
-            'result' : fields.selection([
-                            ('normal', 'normal'),
-                            ('abnormal', 'abnormal'),
-                            ], 'result', help="Please check the lab test results if the module is installed", sort=False),
-            'comments' : fields.char('Remarks'),
-            }
-
-PatientColposcopyHistory()
+MedicalPatient()
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
