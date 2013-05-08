@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<tryton>
-    <data noupdate="1" skiptest="1">
+<openerp>
+    <data noupdate="0">
 
         <record model="oemedical.drugs_recreational" id="hashish">
             <field name="name">Hashish</field>
@@ -745,4 +745,4 @@ Additional effects attributable to tobacco exposure; adverse pregnancy outcomes;
         </record>
 
     </data>
-</tryton>
+</openerp>
