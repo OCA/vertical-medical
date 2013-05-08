@@ -133,6 +133,7 @@ OeMedical at a glance:
         'oemedical_disease_group_members_view.xml',
         'oemedical_medicament/oemedical_medicament_view.xml',
         'oemedical_pathology_group/oemedical_pathology_group_view.xml',
+        'oemedical_gynecology_and_obstetrics/oemedical_gynecology_and_obstetrics_view.xml',
         'security/ir.model.access.csv',
         'oemedical_menu.xml',
     ],

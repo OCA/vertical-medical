@@ -59,5 +59,6 @@ import oemedical_occupation
 import oemedical_disease_group_members
 import oemedical_medicament
 import oemedical_pathology_group
+import oemedical_gynecology_and_obstetrics
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
