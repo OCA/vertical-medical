@@ -91,7 +91,6 @@
 					                    <field name="discontinued" />
 				                    </form>
                                 </field>
-<!--             					<field name="childbearing_age" /> -->
                                 <label string="Critical Information" colspan="4"/>
              					<field name="critical_info" colspan="4" nolabel="1"/> 
                                 <label string="Diseases" colspan="4"/>
@@ -154,6 +153,7 @@
 				                    </form>
                                 </field>
                                 <group colspan="2">
+             					<field name="childbearing_age" /> 
                  					<field name="ethnic_group" /> 
                  					<field name="dod" /> 
                  					<field name="current_insurance" /> 

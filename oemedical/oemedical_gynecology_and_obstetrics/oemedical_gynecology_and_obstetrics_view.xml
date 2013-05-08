@@ -154,16 +154,6 @@
                                                             <field name="fundal_height" expand="1"/>                                               
                                                             <field name="fetus_heart_rate" expand="1"/>
                                                             <field name="gestational_weeks"/>                                               
-<!--                                                            <field name="efw" expand="1"/>-->
-<!--                                                            <field name="iugr" expand="1"/>                    -->
-<!--                                                            <field name="hypertension" expand="1"/>                                                                   -->
-<!--                                                            <field name="preeclampsia" expand="1"/>                                                                   -->
-<!--                                                            <field name="overweight" expand="1"/>                                                                                        -->
-<!--                                                            <field name="invasive_placentation" expand="1"/>                                               -->
-<!--                                                            <field name="placenta_previa" expand="1"/>                                               -->
-<!--                                                            <field name="vasa_previa" expand="1"/>                                               -->
-<!--                                                            <field name="oligohydramnios" expand="1"/>                                               -->
-<!--                                                            <field name="polihydramnios" expand="1"/>                                               -->
                                                         </tree>
                                                         <form string="Prenatal Evaluation">
                                                             <group  colspan="4" col="4">
