@@ -41,9 +41,8 @@
                                         <newline/>
                                         <group colspan="4" id="group_lifestyle">
                                             <separator string="Extra Information" colspan="4"/>
-                                            <field name="lifestyle_info" nolabel="1" colspan="4"/>
+                                            <field name="lifestyle_info" nolabel="1" colspan="4" />
                                         </group>
-
                                     </group>
 
                                 </page>
