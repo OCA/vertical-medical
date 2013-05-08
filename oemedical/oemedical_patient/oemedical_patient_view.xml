@@ -9,6 +9,7 @@
  				<tree string="Oemedical Patient"> 
  					<field name="name" /> 
  					<field name="lastname" /> 
+ 					<field name="slastname" />
  					<field name="ssn" /> 
  					<field name="identification_code" /> 
  					<field name="dob" /> 
@@ -26,13 +27,16 @@
  			<field name="priority" eval="8" /> 
  			<field name="arch" type="xml"> 
  			 <form string="Patient" version="7.0"> 
-                     <sheet> 
-                         <field name="photo" widget='image' class="oe_left oe_avatar"/> 
-                         <div class="oe_title"> 
+                    <sheet> 
+                        <field name="photo" widget='image' class="oe_left oe_avatar"/> 
+                        <div> 
                              <h1> 
- 								<field name="name" placeholder="First Name" style="width: 30%%" /> 
- 								<field name="lastname" placeholder="Last Name" style="width: 30%%" /> 
- 							</h1> 
+		                        <field name="name" placeholder="First Name" style="width: 20%%" /> 
+		                        <field name="lastname" placeholder="Last Name" style="width: 20%%" /> 
+		                        <field name="slastname" placeholder="S Last Name" style="width: 20%%" /> 
+	                        </h1> 
+                        </div> 
+ 						<div> 
  							<label for="sex" class="oe_edit_only"/> 
  							<field name="sex" style="width: 30%%"/> 
  							<label for="blood_type" class="oe_edit_only"/> 
@@ -43,35 +47,49 @@
  						</div> 
  						<div> 
  							<label for="ssn"/> 
- 							<field name="ssn" style="width: 30%%"/> 
+ 							<field name="ssn" style="width: 20%%"/> 
  							<label for="identification_code"/> 
- 							<field name="identification_code" style="width: 30%%"/> 
+ 							<field name="identification_code" style="width: 17%%"/> 
  							<label for="dob"/> 
  							<field name="dob" style="width: 15%%"/> 
  							<label for="age"/> 
- 							<field name="age" style="width: 15%%"/> 
+ 							<field name="age" style="width: 8%%"/> 
                          </div> 
-                  <notebook> 
-                  <page string="Public Information"> 
-                  <group  col="4" colspan="4"> 
-                  	<field name="current_address" /> 
- 					<field name="marital_status"/> 
- 					<field name="family" /> 
- 					<field name="general_info" /> 
- 					<field name="primary_care_doctor" /> 
- 					<field name="childbearing_age" /> 
-  					<field name="medications"/>  
- 					<field name="critical_info" /> 
-  					<field name="diseases"/>  
- 					<field name="ethnic_group" /> 
-  					<field name="vaccinations"/> 
- 					<field name="dod" /> 
- 					<field name="current_insurance" /> 
- 					<field name="cod" /> 
- 					<field name="deceased" /> 
- 				</group> 
- 				</page> 
- 				</notebook> 
+                    <notebook> 
+                          <page string="Public Information"> 
+                              <group  col="4" colspan="4"> 
+                              	<field name="current_address" /> 
+                            <newline/>
+             					<field name="marital_status"/> 
+                            <newline/>
+             					<field name="family" /> 
+                            <newline/>
+             					<field name="general_info" /> 
+                            <newline/>
+             					<field name="primary_care_doctor" /> 
+                            <newline/>
+             					<field name="childbearing_age" /> 
+                            <newline/>
+              					<field name="medications"  nolabel="1"/>  
+                            <newline/>
+             					<field name="critical_info" /> 
+                            <newline/>
+              					<field name="diseases"  nolabel="1"/>  
+                            <newline/>
+             					<field name="ethnic_group" /> 
+                            <newline/>
+              					<field name="vaccinations"  nolabel="1"/> 
+                            <newline/>
+             					<field name="dod" /> 
+                            <newline/>
+             					<field name="current_insurance" /> 
+                            <newline/>
+             					<field name="cod" /> 
+                            <newline/>
+             					<field name="deceased" /> 
+             				</group> 
+         				</page> 
+                    </notebook> 
  				</sheet> 
  				</form> 
  			</field> 

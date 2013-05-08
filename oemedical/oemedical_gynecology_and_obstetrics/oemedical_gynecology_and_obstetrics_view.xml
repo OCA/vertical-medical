@@ -153,6 +153,7 @@
                                                             <field name="evaluation_date" expand="1"/>                                           
                                                             <field name="fundal_height" expand="1"/>                                               
                                                             <field name="fetus_heart_rate" expand="1"/>
+                                                            <field name="gestational_weeks"/>                                               
 <!--                                                            <field name="efw" expand="1"/>-->
 <!--                                                            <field name="iugr" expand="1"/>                    -->
 <!--                                                            <field name="hypertension" expand="1"/>                                                                   -->
