@@ -112,8 +112,7 @@
                                             <field name="dominance"/>
                                             <field name="chromosome"/>
                                         </tree>
-                                        <form string="Oemedical Disease Gene">
-                                            
+                                        <form string="Oemedical Disease Gene">   
                                             <field name="name"/>
                                             <field name="gene_id"/>
                                             <field name="long_name"/>
@@ -126,7 +125,7 @@
                                     </field>
                                 </form>
                             </field>
-                            <separator string="Famili History" />
+                            <separator string="Family History" />
                             <field name="family_history">
                                 <tree string="Genetic Family Diseases">
                                     <field name="name"/>
