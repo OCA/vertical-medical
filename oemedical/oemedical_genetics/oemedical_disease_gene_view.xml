@@ -87,5 +87,22 @@
             <field name="view_id" ref="view_oemedical_disease_gene_tree"/>
         </record>
 
+        <record model="ir.ui.view" id="view_oemedical_patient_form_disease_gen">
+            <field name="name">oemedical.patient.view.inherit.disease.gen</field>
+            <field name="model">oemedical.patient</field>
+            <field name="inherit_id" ref="oemedical.view_oemedical_patient_form" />
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <data>
+                    <notebook position="inside">
+                        <page string="Genetics">
+                            <field name="genetic_risks"/>
+                            <field name="family_history"/>
+                        </page>
+                    </notebook>
+                </data>
+            </field>
+        </record>
+
     </data>
 </openerp>

@@ -136,6 +136,7 @@ OeMedical at a glance:
         'oemedical_gynecology_and_obstetrics/oemedical_gynecology_and_obstetrics_view.xml',
         'oemedical_lifestyle/oemedical_lifestyle_view.xml',
         'oemedical_lifestyle/data/recreational_drugs.xml',
+        'oemedical_genetics/oemedical_disease_gene_view.xml',
         'security/ir.model.access.csv',
         'oemedical_menu.xml',
     ],

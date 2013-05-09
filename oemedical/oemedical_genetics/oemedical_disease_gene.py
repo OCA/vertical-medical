@@ -41,4 +41,61 @@ class OeMedicalDiseaseGene(osv.osv):
     }
 
 OeMedicalDiseaseGene()
+
+
+
+class PatientGeneticRisk(osv.Model):
+    
+    _name = 'oemedical.patient.genetic.risk'
+    _description = 'Patient Genetic Risks'
+    _columns = {
+            'patient_id' : fields.many2one('oemedical.patient', 'Patient', select=True),
+            'disease_gene' : fields.many2one('oemedical.disease.gene', 'Disease Gene', required=True),
+                }
+PatientGeneticRisk()
+
+
+class FamilyDiseases(osv.Model):
+    
+    _name = 'oemedical.patient.family.diseases'
+    _description = 'Family Diseases'
+    _columns = {
+    'patient_id' : fields.many2one('oemedical.patient', 'Patient', select=True),
+    'name' : fields.many2one('oemedical.pathology', 'Disease', required=True),
+    'xory' : fields.selection([
+            ('m', 'Maternal'),
+            ('f', 'Paternal'),
+            ], 'Maternal or Paternal', select=True),
+    'relative' : fields.selection([
+            ('mother', 'Mother'),
+            ('father', 'Father'),
+            ('brother', 'Brother'),
+            ('sister', 'Sister'),
+            ('aunt', 'Aunt'),
+            ('uncle', 'Uncle'),
+            ('nephew', 'Nephew'),
+            ('niece', 'Niece'),
+            ('grandfather', 'Grandfather'),
+            ('grandmother', 'Grandmother'),
+            ('cousin', 'Cousin'),
+            ], 'Relative',
+            help="First degree = siblings, mother and father; second degree = "
+            "Uncles, nephews and Nieces; third degree = Grandparents and cousins",
+            required=True),
+            }
+
+FamilyDiseases()
+
+class oemedicalPatient(osv.Model):
+    'Add to the Medical patient_data class (oemedical.patient) the genetic ' \
+    'and family risks'
+    _inherit='oemedical.patient'
+    _columns = {
+            'genetic_risks' : fields.one2many('oemedical.patient.genetic.risk', 'patient_id', 'Genetic Risks'),
+            'family_history' : fields.one2many('oemedical.patient.family.diseases', 'patient_id', 'Family History'),
+                }
+
+oemedicalPatient()
+
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
