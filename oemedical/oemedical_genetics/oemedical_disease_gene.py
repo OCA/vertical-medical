@@ -30,7 +30,7 @@ class OeMedicalDiseaseGene(osv.osv):
 
     _columns = {
         'name': fields.char('Official Symbol', size=256, required=True),
-        'gene_id': fields.char('Gene ID', size=256, required=True),
+        'gene_id': fields.char('Gene ID', size=256),
         'long_name': fields.char('Official Long Name', size=256, required=True),
         'location': fields.char('Location', size=256, required=True, help="Locus of the chromosome"),
         'chromosome': fields.char('Affected Chromosome', size=256, required=True),

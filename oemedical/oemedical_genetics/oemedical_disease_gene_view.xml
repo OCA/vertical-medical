@@ -24,7 +24,6 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Oemedical Disease Gene">
-                    
                     <field name="name"/>
                     <field name="gene_id"/>
                     <field name="long_name"/>
