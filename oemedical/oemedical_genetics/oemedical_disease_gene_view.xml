@@ -96,8 +96,50 @@
                 <data>
                     <notebook position="inside">
                         <page string="Genetics">
-                            <field name="genetic_risks"/>
-                            <field name="family_history"/>
+                            <separator string="Genetic Risk" />
+                            <field name="genetic_risks">
+                                <tree string="Patient Genetic Risks">
+                                    <field name="disease_gene" expand="1"/>
+                                </tree>
+                                <form string="Patient Genetic Risks">
+                                    <field name="disease_gene">
+                                        <tree string="Oemedical Disease Gene">
+                                            <field name="info"/>
+                                            <field name="name"/>
+                                            <field name="gene_id"/>
+                                            <field name="long_name"/>
+                                            <field name="location"/>
+                                            <field name="dominance"/>
+                                            <field name="chromosome"/>
+                                        </tree>
+                                        <form string="Oemedical Disease Gene">
+                                            
+                                            <field name="name"/>
+                                            <field name="gene_id"/>
+                                            <field name="long_name"/>
+                                            <field name="location"/>
+                                            <field name="dominance"/>
+                                            <field name="chromosome"/>
+                                            <newline/>
+                                            <field name="info" colspan="4"/>
+                                        </form>
+                                    </field>
+                                </form>
+                            </field>
+                            <separator string="Famili History" />
+                            <field name="family_history">
+                                <tree string="Genetic Family Diseases">
+                                    <field name="name"/>
+                                    <field name="xory"/>
+                                    <field name="relative" expand="1"/>
+                                </tree>
+                                <form string="Patient Genetic Family Diseases">
+                                    <field colspan="4" name="name"/>
+                                    <newline/>
+                                    <field name="xory"/>
+                                    <field name="relative"/>
+                                </form>
+                            </field>
                         </page>
                     </notebook>
                 </data>

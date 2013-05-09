@@ -24,7 +24,9 @@ from osv import fields
 
 
 class OeMedicalDiseaseGene(osv.osv):
+
     _name = 'oemedical.disease.gene'
+    _description = 'Disease Genes'
 
     _columns = {
         'name': fields.char('Official Symbol', size=256, required=True),
