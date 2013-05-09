@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <openerp>
-    <data noupdate="1">
+    <data noupdate="0">
 
         <!-- Disease Categories, based on ICD-10 -->
 
@@ -95,1052 +95,1052 @@
 
         <record model="oemedical.pathology.category" id="icdcat1-1">
 	        <field name="name">(A00-A09) Intestinal infectious diseases</field>
-	        <field name="parent" ref="icdcat1"></field>
+	        <field name="parent_id" ref="icdcat1"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat1-2">
 	        <field name="name">(A15-A19) Tuberculosis</field>
-	        <field name="parent" ref="icdcat1"></field>
+	        <field name="parent_id" ref="icdcat1"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat1-3">
 	        <field name="name">(A20-A28) Certain zoonotic bacterial diseases</field>
-	        <field name="parent" ref="icdcat1"></field>
+	        <field name="parent_id" ref="icdcat1"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat1-4">
 	        <field name="name">(A30-A49) Other bacterial diseases</field>
-	        <field name="parent" ref="icdcat1"></field>
+	        <field name="parent_id" ref="icdcat1"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat1-5">
 	        <field name="name">(A50-A64) Infections with a predominantly sexual mode of transmission</field>
-	        <field name="parent" ref="icdcat1"></field>
+	        <field name="parent_id" ref="icdcat1"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat1-6">
 	        <field name="name">(A65-A69) Other spirochaetal diseases</field>
-	        <field name="parent" ref="icdcat1"></field>
+	        <field name="parent_id" ref="icdcat1"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat1-7">
 	        <field name="name">(A70-A74) Other diseases caused by chlamydiae</field>
-	        <field name="parent" ref="icdcat1"></field>
+	        <field name="parent_id" ref="icdcat1"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat1-8">
 	        <field name="name">(A75-A79) Rickettsioses</field>
-	        <field name="parent" ref="icdcat1"></field>
+	        <field name="parent_id" ref="icdcat1"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat1-9">
 	        <field name="name">(A80-A89) Viral diseases of the central nervous system</field>
-	        <field name="parent" ref="icdcat1"></field>
+	        <field name="parent_id" ref="icdcat1"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat1-10">
 	        <field name="name">(A90-A99) Arthropod-borne viral fevers and viral haemorrhagic fevers</field>
-	        <field name="parent" ref="icdcat1"></field>
+	        <field name="parent_id" ref="icdcat1"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat1-11">
 	        <field name="name">(B00-B09) Viral infections characterised by skin and mucous membrane lesions</field>
-	        <field name="parent" ref="icdcat1"></field>
+	        <field name="parent_id" ref="icdcat1"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat1-12">
 	        <field name="name">(B15-B19) Viral hepatitis</field>
-	        <field name="parent" ref="icdcat1"></field>
+	        <field name="parent_id" ref="icdcat1"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat1-13">
 	        <field name="name">(B20-B24) Human immunodeficiency virus [HIV] disease</field>
-	        <field name="parent" ref="icdcat1"></field>
+	        <field name="parent_id" ref="icdcat1"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat1-14">
 	        <field name="name">(B25-B34) Other viral diseases</field>
-	        <field name="parent" ref="icdcat1"></field>
+	        <field name="parent_id" ref="icdcat1"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat1-15">
 	        <field name="name">(B35-B49) Mycoses</field>
-	        <field name="parent" ref="icdcat1"></field>
+	        <field name="parent_id" ref="icdcat1"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat1-16">
 	        <field name="name">(B50-B64) Protozoal diseases</field>
-	        <field name="parent" ref="icdcat1"></field>
+	        <field name="parent_id" ref="icdcat1"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat1-17">
 	        <field name="name">(B65-B83) Helminthiases</field>
-	        <field name="parent" ref="icdcat1"></field>
+	        <field name="parent_id" ref="icdcat1"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat1-18">
 	        <field name="name">(B85-B89) Pediculosis</field>
-	        <field name="parent" ref="icdcat1"></field>
+	        <field name="parent_id" ref="icdcat1"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat1-19">
 	        <field name="name">(B90-B94) Sequelae of infectious and parasitic diseases</field>
-	        <field name="parent" ref="icdcat1"></field>
+	        <field name="parent_id" ref="icdcat1"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat1-20">
 	        <field name="name">(B95-B97) Bacterial</field>
-	        <field name="parent" ref="icdcat1"></field>
+	        <field name="parent_id" ref="icdcat1"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat1-21">
 	        <field name="name">(B99-B99) Other infectious diseases</field>
-	        <field name="parent" ref="icdcat1"></field>
+	        <field name="parent_id" ref="icdcat1"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat2-1">
 	        <field name="name">(C00-C14) Malignant neoplasms of lip, oral cavity and pharynx</field>
-	        <field name="parent" ref="icdcat2"></field>
+	        <field name="parent_id" ref="icdcat2"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat2-2">
 	        <field name="name">(C15-C26) Malignant neoplasms of digestive organs</field>
-	        <field name="parent" ref="icdcat2"></field>
+	        <field name="parent_id" ref="icdcat2"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat2-3">
 	        <field name="name">(C30-C39) Malignant neoplasm of respiratory and intrathoracic organs</field>
-	        <field name="parent" ref="icdcat2"></field>
+	        <field name="parent_id" ref="icdcat2"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat2-4">
 	        <field name="name">(C40-C41) Malignant neoplasm of bone and articular cartilage</field>
-	        <field name="parent" ref="icdcat2"></field>
+	        <field name="parent_id" ref="icdcat2"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat2-5">
 	        <field name="name">(C43-C44) Melanoma and other malignant neoplasms of skin</field>
-	        <field name="parent" ref="icdcat2"></field>
+	        <field name="parent_id" ref="icdcat2"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat2-6">
 	        <field name="name">(C45-C49) Malignant neoplasms of mesothelial and soft tissue</field>
-	        <field name="parent" ref="icdcat2"></field>
+	        <field name="parent_id" ref="icdcat2"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat2-7">
 	        <field name="name">(C50-C50) Malignant neoplasm of breast</field>
-	        <field name="parent" ref="icdcat2"></field>
+	        <field name="parent_id" ref="icdcat2"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat2-8">
 	        <field name="name">(C51-C58) Malignant neoplasms of female genital organs</field>
-	        <field name="parent" ref="icdcat2"></field>
+	        <field name="parent_id" ref="icdcat2"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat2-9">
 	        <field name="name">(C60-C63) Malignant neoplasms of male genital organs</field>
-	        <field name="parent" ref="icdcat2"></field>
+	        <field name="parent_id" ref="icdcat2"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat2-10">
 	        <field name="name">(C64-C68) Malignant neoplasm of urinary tract</field>
-	        <field name="parent" ref="icdcat2"></field>
+	        <field name="parent_id" ref="icdcat2"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat2-11">
 	        <field name="name">(C69-C72) Malignant neoplasms of eye, brain and other parts of central nervous system</field>
-	        <field name="parent" ref="icdcat2"></field>
+	        <field name="parent_id" ref="icdcat2"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat2-12">
 	        <field name="name">(C73-C75) Malignant neoplasms of thyroid and other endocrine glands</field>
-	        <field name="parent" ref="icdcat2"></field>
+	        <field name="parent_id" ref="icdcat2"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat2-13">
 	        <field name="name">(C76-C80) Malignant neoplasms of ill-defined, secondary and unspecified sites</field>
-	        <field name="parent" ref="icdcat2"></field>
+	        <field name="parent_id" ref="icdcat2"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat2-14">
 	        <field name="name">(C81-C96) Malignant neoplasms, stated or presumed to be primary, of lymphoid, haematopoietic and related tissue</field>
-	        <field name="parent" ref="icdcat2"></field>
+	        <field name="parent_id" ref="icdcat2"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat2-15">
 	        <field name="name">(C97-C97) Malignant neoplasms of independent (primary) multiple sites</field>
-	        <field name="parent" ref="icdcat2"></field>
+	        <field name="parent_id" ref="icdcat2"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat2-16">
 	        <field name="name">(D00-D09) In situ neoplasms</field>
-	        <field name="parent" ref="icdcat2"></field>
+	        <field name="parent_id" ref="icdcat2"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat2-17">
 	        <field name="name">(D10-D36) Benign neoplasms</field>
-	        <field name="parent" ref="icdcat2"></field>
+	        <field name="parent_id" ref="icdcat2"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat2-18">
 	        <field name="name">(D37-D48) Neoplasms of uncertain or unknown behaviour</field>
-	        <field name="parent" ref="icdcat2"></field>
+	        <field name="parent_id" ref="icdcat2"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat3-1">
 	        <field name="name">(D50-D53) Nutritional anaemias</field>
-	        <field name="parent" ref="icdcat3"></field>
+	        <field name="parent_id" ref="icdcat3"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat3-2">
 	        <field name="name">(D55-D59) Haemolytic anaemias</field>
-	        <field name="parent" ref="icdcat3"></field>
+	        <field name="parent_id" ref="icdcat3"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat3-3">
 	        <field name="name">(D60-D64) Aplastic and other anaemias</field>
-	        <field name="parent" ref="icdcat3"></field>
+	        <field name="parent_id" ref="icdcat3"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat3-4">
 	        <field name="name">(D65-D69) Coagulation defects, purpura and other haemorrhagic conditions</field>
-	        <field name="parent" ref="icdcat3"></field>
+	        <field name="parent_id" ref="icdcat3"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat3-5">
 	        <field name="name">(D70-D77) Other diseases of blood and blood-forming organs</field>
-	        <field name="parent" ref="icdcat3"></field>
+	        <field name="parent_id" ref="icdcat3"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat3-6">
 	        <field name="name">(D80-D89) Certain disorders involving the immune mechanism</field>
-	        <field name="parent" ref="icdcat3"></field>
+	        <field name="parent_id" ref="icdcat3"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat4-1">
 	        <field name="name">(E00-E07) Disorders of thyroid gland</field>
-	        <field name="parent" ref="icdcat4"></field>
+	        <field name="parent_id" ref="icdcat4"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat4-2">
 	        <field name="name">(E10-E14) Diabetes mellitus</field>
-	        <field name="parent" ref="icdcat4"></field>
+	        <field name="parent_id" ref="icdcat4"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat4-3">
 	        <field name="name">(E15-E16) Other disorders of glucose regulation and pancreatic internal secretion</field>
-	        <field name="parent" ref="icdcat4"></field>
+	        <field name="parent_id" ref="icdcat4"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat4-4">
 	        <field name="name">(E20-E35) Disorders of other endocrine glands</field>
-	        <field name="parent" ref="icdcat4"></field>
+	        <field name="parent_id" ref="icdcat4"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat4-5">
 	        <field name="name">(E40-E46) Malnutrition</field>
-	        <field name="parent" ref="icdcat4"></field>
+	        <field name="parent_id" ref="icdcat4"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat4-6">
 	        <field name="name">(E50-E64) Other nutritional deficiencies</field>
-	        <field name="parent" ref="icdcat4"></field>
+	        <field name="parent_id" ref="icdcat4"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat4-7">
 	        <field name="name">(E65-E68) Obesity and other hyperalimentation</field>
-	        <field name="parent" ref="icdcat4"></field>
+	        <field name="parent_id" ref="icdcat4"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat4-8">
 	        <field name="name">(E70-E90) Metabolic disorders</field>
-	        <field name="parent" ref="icdcat4"></field>
+	        <field name="parent_id" ref="icdcat4"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat5-1">
 	        <field name="name">(F00-F09) Organic, including symptomatic, mental disorders</field>
-	        <field name="parent" ref="icdcat5"></field>
+	        <field name="parent_id" ref="icdcat5"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat5-2">
 	        <field name="name">(F10-F19) Mental and behavioural disorders due to psychoactive substance use</field>
-	        <field name="parent" ref="icdcat5"></field>
+	        <field name="parent_id" ref="icdcat5"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat5-3">
 	        <field name="name">(F20-F29) Schizophrenia, schizotypal and delusional disorders</field>
-	        <field name="parent" ref="icdcat5"></field>
+	        <field name="parent_id" ref="icdcat5"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat5-4">
 	        <field name="name">(F30-F39) Mood [affective] disorders</field>
-	        <field name="parent" ref="icdcat5"></field>
+	        <field name="parent_id" ref="icdcat5"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat5-5">
 	        <field name="name">(F40-F48) Neurotic, stress-related and somatoform disorders</field>
-	        <field name="parent" ref="icdcat5"></field>
+	        <field name="parent_id" ref="icdcat5"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat5-6">
 	        <field name="name">(F50-F59) Behavioural syndromes associated with psychological disturbances and physical factors</field>
-	        <field name="parent" ref="icdcat5"></field>
+	        <field name="parent_id" ref="icdcat5"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat5-7">
 	        <field name="name">(F60-F69) Disorders of adult personality and behaviour</field>
-	        <field name="parent" ref="icdcat5"></field>
+	        <field name="parent_id" ref="icdcat5"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat5-8">
 	        <field name="name">(F70-F79) Mental retardation</field>
-	        <field name="parent" ref="icdcat5"></field>
+	        <field name="parent_id" ref="icdcat5"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat5-9">
 	        <field name="name">(F80-F89) Disorders of psychological development</field>
-	        <field name="parent" ref="icdcat5"></field>
+	        <field name="parent_id" ref="icdcat5"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat5-10">
 	        <field name="name">(F90-F98) Behavioural and emotional disorders with onset usually occurring in childhood and adolescence</field>
-	        <field name="parent" ref="icdcat5"></field>
+	        <field name="parent_id" ref="icdcat5"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat5-11">
 	        <field name="name">(F99-F99) Unspecified mental disorder</field>
-	        <field name="parent" ref="icdcat5"></field>
+	        <field name="parent_id" ref="icdcat5"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat6-1">
 	        <field name="name">(G00-G09) Inflammatory diseases of the central nervous system</field>
-	        <field name="parent" ref="icdcat6"></field>
+	        <field name="parent_id" ref="icdcat6"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat6-2">
 	        <field name="name">(G10-G13) Systemic atrophies primarily affecting the central nervous system</field>
-	        <field name="parent" ref="icdcat6"></field>
+	        <field name="parent_id" ref="icdcat6"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat6-3">
 	        <field name="name">(G20-G26) Extrapyramidal and movement disorders</field>
-	        <field name="parent" ref="icdcat6"></field>
+	        <field name="parent_id" ref="icdcat6"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat6-4">
 	        <field name="name">(G30-G32) Other degenerative diseases of the central nervous system</field>
-	        <field name="parent" ref="icdcat6"></field>
+	        <field name="parent_id" ref="icdcat6"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat6-5">
 	        <field name="name">(G35-G37) Demyelinating diseases of the central nervous system</field>
-	        <field name="parent" ref="icdcat6"></field>
+	        <field name="parent_id" ref="icdcat6"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat6-6">
 	        <field name="name">(G40-G47) Episodic and paroxysmal disorders</field>
-	        <field name="parent" ref="icdcat6"></field>
+	        <field name="parent_id" ref="icdcat6"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat6-7">
 	        <field name="name">(G50-G59) Nerve, nerve root and plexus disorders</field>
-	        <field name="parent" ref="icdcat6"></field>
+	        <field name="parent_id" ref="icdcat6"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat6-8">
 	        <field name="name">(G60-G64) Polyneuropathies and other disorders of the peripheral nervous system</field>
-	        <field name="parent" ref="icdcat6"></field>
+	        <field name="parent_id" ref="icdcat6"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat6-9">
 	        <field name="name">(G70-G73) Diseases of myoneural junction and muscle</field>
-	        <field name="parent" ref="icdcat6"></field>
+	        <field name="parent_id" ref="icdcat6"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat6-10">
 	        <field name="name">(G80-G83) Cerebral palsy and other paralytic syndromes</field>
-	        <field name="parent" ref="icdcat6"></field>
+	        <field name="parent_id" ref="icdcat6"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat6-11">
 	        <field name="name">(G90-G99) Other disorders of the nervous system</field>
-	        <field name="parent" ref="icdcat6"></field>
+	        <field name="parent_id" ref="icdcat6"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat7-1">
 	        <field name="name">(H00-H06) Disorders of eyelid</field>
-	        <field name="parent" ref="icdcat7"></field>
+	        <field name="parent_id" ref="icdcat7"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat7-2">
 	        <field name="name">(H10-H13) Disorders of conjunctiva</field>
-	        <field name="parent" ref="icdcat7"></field>
+	        <field name="parent_id" ref="icdcat7"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat7-3">
 	        <field name="name">(H15-H22) Disorders of sclera, cornea, iris and ciliary body</field>
-	        <field name="parent" ref="icdcat7"></field>
+	        <field name="parent_id" ref="icdcat7"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat7-4">
 	        <field name="name">(H25-H28) Disorders of lens</field>
-	        <field name="parent" ref="icdcat7"></field>
+	        <field name="parent_id" ref="icdcat7"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat7-5">
 	        <field name="name">(H30-H36) Disorders of choroid and retina</field>
-	        <field name="parent" ref="icdcat7"></field>
+	        <field name="parent_id" ref="icdcat7"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat7-6">
 	        <field name="name">(H40-H42) Glaucoma</field>
-	        <field name="parent" ref="icdcat7"></field>
+	        <field name="parent_id" ref="icdcat7"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat7-7">
 	        <field name="name">(H43-H45) Disorders of vitreous body and globe</field>
-	        <field name="parent" ref="icdcat7"></field>
+	        <field name="parent_id" ref="icdcat7"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat7-8">
 	        <field name="name">(H46-H48) Disorders of optic nerve and visual pathways</field>
-	        <field name="parent" ref="icdcat7"></field>
+	        <field name="parent_id" ref="icdcat7"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat7-9">
 	        <field name="name">(H49-H52) Disorders of ocular muscles, binocular movement, accommodation and refraction</field>
-	        <field name="parent" ref="icdcat7"></field>
+	        <field name="parent_id" ref="icdcat7"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat7-10">
 	        <field name="name">(H53-H54) Visual disturbances and blindness</field>
-	        <field name="parent" ref="icdcat7"></field>
+	        <field name="parent_id" ref="icdcat7"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat7-11">
 	        <field name="name">(H55-H59) Other disorders of eye and adnexa</field>
-	        <field name="parent" ref="icdcat7"></field>
+	        <field name="parent_id" ref="icdcat7"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat8-1">
 	        <field name="name">(H60-H62) Diseases of external ear</field>
-	        <field name="parent" ref="icdcat8"></field>
+	        <field name="parent_id" ref="icdcat8"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat8-2">
 	        <field name="name">(H65-H75) Diseases of middle ear and mastoid</field>
-	        <field name="parent" ref="icdcat8"></field>
+	        <field name="parent_id" ref="icdcat8"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat8-3">
 	        <field name="name">(H80-H83) Diseases of inner ear</field>
-	        <field name="parent" ref="icdcat8"></field>
+	        <field name="parent_id" ref="icdcat8"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat8-4">
 	        <field name="name">(H90-H95) Other disorders of ear</field>
-	        <field name="parent" ref="icdcat8"></field>
+	        <field name="parent_id" ref="icdcat8"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat9-1">
 	        <field name="name">(I00-I02) Acute rheumatic fever</field>
-	        <field name="parent" ref="icdcat9"></field>
+	        <field name="parent_id" ref="icdcat9"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat9-2">
 	        <field name="name">(I05-I09) Chronic rheumatic heart diseases</field>
-	        <field name="parent" ref="icdcat9"></field>
+	        <field name="parent_id" ref="icdcat9"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat9-3">
 	        <field name="name">(I10-I15) Hypertensive diseases</field>
-	        <field name="parent" ref="icdcat9"></field>
+	        <field name="parent_id" ref="icdcat9"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat9-4">
 	        <field name="name">(I20-I25) Ischaemic heart diseases</field>
-	        <field name="parent" ref="icdcat9"></field>
+	        <field name="parent_id" ref="icdcat9"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat9-5">
 	        <field name="name">(I26-I28) Pulmonary heart disease and diseases of pulmonary circulation</field>
-	        <field name="parent" ref="icdcat9"></field>
+	        <field name="parent_id" ref="icdcat9"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat9-6">
 	        <field name="name">(I30-I52) Other forms of heart disease</field>
-	        <field name="parent" ref="icdcat9"></field>
+	        <field name="parent_id" ref="icdcat9"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat9-7">
 	        <field name="name">(I60-I69) Cerebrovascular diseases</field>
-	        <field name="parent" ref="icdcat9"></field>
+	        <field name="parent_id" ref="icdcat9"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat9-8">
 	        <field name="name">(I70-I79) Diseases of arteries, arterioles and capillaries</field>
-	        <field name="parent" ref="icdcat9"></field>
+	        <field name="parent_id" ref="icdcat9"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat9-9">
 	        <field name="name">(I80-I89) Diseases of veins, lymphatic vessels and lymph nodes, not elsewhere classified</field>
-	        <field name="parent" ref="icdcat9"></field>
+	        <field name="parent_id" ref="icdcat9"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat9-10">
 	        <field name="name">(I95-I99) Other and unspecified disorders of the circulatory system</field>
-	        <field name="parent" ref="icdcat9"></field>
+	        <field name="parent_id" ref="icdcat9"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat10-1">
 	        <field name="name">(J00-J06) Acute respiratory infections</field>
-	        <field name="parent" ref="icdcat10"></field>
+	        <field name="parent_id" ref="icdcat10"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat10-2">
 	        <field name="name">(J10-J18) Influenza and pneumonia</field>
-	        <field name="parent" ref="icdcat10"></field>
+	        <field name="parent_id" ref="icdcat10"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat10-3">
 	        <field name="name">(J20-J22) Other acute lower respiratory infections</field>
-	        <field name="parent" ref="icdcat10"></field>
+	        <field name="parent_id" ref="icdcat10"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat10-4">
 	        <field name="name">(J30-J39) Other diseases of upper respiratory tract</field>
-	        <field name="parent" ref="icdcat10"></field>
+	        <field name="parent_id" ref="icdcat10"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat10-5">
 	        <field name="name">(J40-J47) Chronic lower respiratory diseases</field>
-	        <field name="parent" ref="icdcat10"></field>
+	        <field name="parent_id" ref="icdcat10"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat10-6">
 	        <field name="name">(J60-J70) Lung diseases due to external agents</field>
-	        <field name="parent" ref="icdcat10"></field>
+	        <field name="parent_id" ref="icdcat10"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat10-7">
 	        <field name="name">(J80-J84) Other respiratory diseases principally affecting the interstitium</field>
-	        <field name="parent" ref="icdcat10"></field>
+	        <field name="parent_id" ref="icdcat10"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat10-8">
 	        <field name="name">(J85-J86) Suppurative and necrotic conditions of lower respiratory tract</field>
-	        <field name="parent" ref="icdcat10"></field>
+	        <field name="parent_id" ref="icdcat10"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat10-9">
 	        <field name="name">(J90-J94) Other diseases of pleura</field>
-	        <field name="parent" ref="icdcat10"></field>
+	        <field name="parent_id" ref="icdcat10"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat10-10">
 	        <field name="name">(J95-J99) Other diseases of the respiratory system</field>
-	        <field name="parent" ref="icdcat10"></field>
+	        <field name="parent_id" ref="icdcat10"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat11-1">
 	        <field name="name">(K00-K14) Diseases of oral cavity, salivary glands and jaws</field>
-	        <field name="parent" ref="icdcat11"></field>
+	        <field name="parent_id" ref="icdcat11"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat11-2">
 	        <field name="name">(K20-K31) Diseases of oesophagus, stomach and duodenum</field>
-	        <field name="parent" ref="icdcat11"></field>
+	        <field name="parent_id" ref="icdcat11"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat11-3">
 	        <field name="name">(K35-K38) Diseases of appendix</field>
-	        <field name="parent" ref="icdcat11"></field>
+	        <field name="parent_id" ref="icdcat11"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat11-4">
 	        <field name="name">(K40-K46) Hernia</field>
-	        <field name="parent" ref="icdcat11"></field>
+	        <field name="parent_id" ref="icdcat11"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat11-5">
 	        <field name="name">(K50-K52) Non-infective enteritis and colitis</field>
-	        <field name="parent" ref="icdcat11"></field>
+	        <field name="parent_id" ref="icdcat11"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat11-6">
 	        <field name="name">(K55-K63) Other diseases of intestines</field>
-	        <field name="parent" ref="icdcat11"></field>
+	        <field name="parent_id" ref="icdcat11"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat11-7">
 	        <field name="name">(K65-K67) Diseases of peritoneum</field>
-	        <field name="parent" ref="icdcat11"></field>
+	        <field name="parent_id" ref="icdcat11"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat11-8">
 	        <field name="name">(K70-K77) Diseases of liver</field>
-	        <field name="parent" ref="icdcat11"></field>
+	        <field name="parent_id" ref="icdcat11"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat11-9">
 	        <field name="name">(K80-K87) Disorders of gallbladder, biliary tract and pancreas</field>
-	        <field name="parent" ref="icdcat11"></field>
+	        <field name="parent_id" ref="icdcat11"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat11-10">
 	        <field name="name">(K90-K93) Other diseases of the digestive system</field>
-	        <field name="parent" ref="icdcat11"></field>
+	        <field name="parent_id" ref="icdcat11"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat12-1">
 	        <field name="name">(L00-L08) Infections of the skin and subcutaneous tissue</field>
-	        <field name="parent" ref="icdcat12"></field>
+	        <field name="parent_id" ref="icdcat12"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat12-2">
 	        <field name="name">(L10-L14) Bullous disorders</field>
-	        <field name="parent" ref="icdcat12"></field>
+	        <field name="parent_id" ref="icdcat12"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat12-3">
 	        <field name="name">(L20-L30) Dermatitis and eczema</field>
-	        <field name="parent" ref="icdcat12"></field>
+	        <field name="parent_id" ref="icdcat12"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat12-4">
 	        <field name="name">(L40-L45) Papulosquamous disorders</field>
-	        <field name="parent" ref="icdcat12"></field>
+	        <field name="parent_id" ref="icdcat12"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat12-5">
 	        <field name="name">(L50-L54) Urticaria and erythema</field>
-	        <field name="parent" ref="icdcat12"></field>
+	        <field name="parent_id" ref="icdcat12"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat12-6">
 	        <field name="name">(L55-L59) Radiation-related disorders of the skin and subcutaneous tissue</field>
-	        <field name="parent" ref="icdcat12"></field>
+	        <field name="parent_id" ref="icdcat12"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat12-7">
 	        <field name="name">(L60-L75) Disorders of skin appendages</field>
-	        <field name="parent" ref="icdcat12"></field>
+	        <field name="parent_id" ref="icdcat12"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat12-8">
 	        <field name="name">(L80-L99) Other disorders of the skin and subcutaneous tissue</field>
-	        <field name="parent" ref="icdcat12"></field>
+	        <field name="parent_id" ref="icdcat12"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat13-1">
 	        <field name="name">(M00-M03) Infectious arthropathies</field>
-	        <field name="parent" ref="icdcat13"></field>
+	        <field name="parent_id" ref="icdcat13"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat13-2">
 	        <field name="name">(M05-M14) Inflammatory polyarthropathies</field>
-	        <field name="parent" ref="icdcat13"></field>
+	        <field name="parent_id" ref="icdcat13"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat13-3">
 	        <field name="name">(M15-M19) Arthrosis</field>
-	        <field name="parent" ref="icdcat13"></field>
+	        <field name="parent_id" ref="icdcat13"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat13-4">
 	        <field name="name">(M20-M25) Other joint disorders</field>
-	        <field name="parent" ref="icdcat13"></field>
+	        <field name="parent_id" ref="icdcat13"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat13-5">
 	        <field name="name">(M30-M36) Systemic connective tissue disorders</field>
-	        <field name="parent" ref="icdcat13"></field>
+	        <field name="parent_id" ref="icdcat13"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat13-6">
 	        <field name="name">(M40-M43) Deforming dorsopathies</field>
-	        <field name="parent" ref="icdcat13"></field>
+	        <field name="parent_id" ref="icdcat13"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat13-7">
 	        <field name="name">(M45-M49) Spondylopathies</field>
-	        <field name="parent" ref="icdcat13"></field>
+	        <field name="parent_id" ref="icdcat13"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat13-8">
 	        <field name="name">(M50-M54) Other dorsopathies</field>
-	        <field name="parent" ref="icdcat13"></field>
+	        <field name="parent_id" ref="icdcat13"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat13-9">
 	        <field name="name">(M60-M63) Disorders of muscles</field>
-	        <field name="parent" ref="icdcat13"></field>
+	        <field name="parent_id" ref="icdcat13"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat13-10">
 	        <field name="name">(M65-M68) Disorders of synovium and tendon</field>
-	        <field name="parent" ref="icdcat13"></field>
+	        <field name="parent_id" ref="icdcat13"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat13-11">
 	        <field name="name">(M70-M79) Other soft tissue disorders</field>
-	        <field name="parent" ref="icdcat13"></field>
+	        <field name="parent_id" ref="icdcat13"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat13-12">
 	        <field name="name">(M80-M85) Disorders of bone density and structure</field>
-	        <field name="parent" ref="icdcat13"></field>
+	        <field name="parent_id" ref="icdcat13"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat13-13">
 	        <field name="name">(M86-M90) Other osteopathies</field>
-	        <field name="parent" ref="icdcat13"></field>
+	        <field name="parent_id" ref="icdcat13"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat13-14">
 	        <field name="name">(M91-M94) Chondropathies</field>
-	        <field name="parent" ref="icdcat13"></field>
+	        <field name="parent_id" ref="icdcat13"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat13-15">
 	        <field name="name">(M95-M99) Other disorders of the musculoskeletal system and connective tissue</field>
-	        <field name="parent" ref="icdcat13"></field>
+	        <field name="parent_id" ref="icdcat13"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat14-1">
 	        <field name="name">(N00-N08) Glomerular diseases</field>
-	        <field name="parent" ref="icdcat14"></field>
+	        <field name="parent_id" ref="icdcat14"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat14-2">
 	        <field name="name">(N10-N16) Renal tubulo-interstitial diseases</field>
-	        <field name="parent" ref="icdcat14"></field>
+	        <field name="parent_id" ref="icdcat14"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat14-3">
 	        <field name="name">(N17-N19) Renal failure</field>
-	        <field name="parent" ref="icdcat14"></field>
+	        <field name="parent_id" ref="icdcat14"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat14-4">
 	        <field name="name">(N20-N23) Urolithiasis</field>
-	        <field name="parent" ref="icdcat14"></field>
+	        <field name="parent_id" ref="icdcat14"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat14-5">
 	        <field name="name">(N25-N29) Other disorders of kidney and ureter</field>
-	        <field name="parent" ref="icdcat14"></field>
+	        <field name="parent_id" ref="icdcat14"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat14-6">
 	        <field name="name">(N30-N39) Other diseases of the urinary system</field>
-	        <field name="parent" ref="icdcat14"></field>
+	        <field name="parent_id" ref="icdcat14"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat14-7">
 	        <field name="name">(N40-N51) Diseases of male genital organs</field>
-	        <field name="parent" ref="icdcat14"></field>
+	        <field name="parent_id" ref="icdcat14"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat14-8">
 	        <field name="name">(N60-N64) Disorders of breast</field>
-	        <field name="parent" ref="icdcat14"></field>
+	        <field name="parent_id" ref="icdcat14"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat14-9">
 	        <field name="name">(N70-N77) Inflammatory diseases of female pelvic organs</field>
-	        <field name="parent" ref="icdcat14"></field>
+	        <field name="parent_id" ref="icdcat14"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat14-10">
 	        <field name="name">(N80-N98) Noninflammatory disorders of female genital tract</field>
-	        <field name="parent" ref="icdcat14"></field>
+	        <field name="parent_id" ref="icdcat14"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat14-11">
 	        <field name="name">(N99-N99) Other disorders of the genito-urinary system</field>
-	        <field name="parent" ref="icdcat14"></field>
+	        <field name="parent_id" ref="icdcat14"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat15-1">
 	        <field name="name">(O00-O08) Pregnancy with abortive outcome</field>
-	        <field name="parent" ref="icdcat15"></field>
+	        <field name="parent_id" ref="icdcat15"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat15-2">
 	        <field name="name">(O10-O16) Oedema, proteinuria and hypertensive disorders in pregnancy, childbirth and the puerperium</field>
-	        <field name="parent" ref="icdcat15"></field>
+	        <field name="parent_id" ref="icdcat15"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat15-3">
 	        <field name="name">(O20-O29) Other maternal disorders predominantly related to pregnancy</field>
-	        <field name="parent" ref="icdcat15"></field>
+	        <field name="parent_id" ref="icdcat15"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat15-4">
 	        <field name="name">(O30-O48) Maternal care related to the foetus and amniotic cavity and possible delivery problems</field>
-	        <field name="parent" ref="icdcat15"></field>
+	        <field name="parent_id" ref="icdcat15"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat15-5">
 	        <field name="name">(O60-O75) Complications of labour and delivery</field>
-	        <field name="parent" ref="icdcat15"></field>
+	        <field name="parent_id" ref="icdcat15"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat15-6">
 	        <field name="name">(O80-O84) Delivery</field>
-	        <field name="parent" ref="icdcat15"></field>
+	        <field name="parent_id" ref="icdcat15"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat15-7">
 	        <field name="name">(O85-O92) Complications predominantly related to the puerperium</field>
-	        <field name="parent" ref="icdcat15"></field>
+	        <field name="parent_id" ref="icdcat15"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat15-8">
 	        <field name="name">(O95-O99) Other obstetric conditions</field>
-	        <field name="parent" ref="icdcat15"></field>
+	        <field name="parent_id" ref="icdcat15"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat16-1">
 	        <field name="name">(P00-P04) Fetus and newborn affected by maternal factors and by complications of pregnancy, labour and delivery</field>
-	        <field name="parent" ref="icdcat16"></field>
+	        <field name="parent_id" ref="icdcat16"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat16-2">
 	        <field name="name">(P05-P08) Disorders related to length of gestation and foetal growth</field>
-	        <field name="parent" ref="icdcat16"></field>
+	        <field name="parent_id" ref="icdcat16"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat16-3">
 	        <field name="name">(P10-P15) Birth trauma</field>
-	        <field name="parent" ref="icdcat16"></field>
+	        <field name="parent_id" ref="icdcat16"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat16-4">
 	        <field name="name">(P20-P29) Respiratory and cardiovascular disorders specific to the perinatal period</field>
-	        <field name="parent" ref="icdcat16"></field>
+	        <field name="parent_id" ref="icdcat16"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat16-5">
 	        <field name="name">(P35-P39) Infections specific to the perinatal period</field>
-	        <field name="parent" ref="icdcat16"></field>
+	        <field name="parent_id" ref="icdcat16"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat16-6">
 	        <field name="name">(P50-P61) Haemorrhagic and haematological disorders of foetus and newborn</field>
-	        <field name="parent" ref="icdcat16"></field>
+	        <field name="parent_id" ref="icdcat16"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat16-7">
 	        <field name="name">(P70-P74) Transitory endocrine and metabolic disorders specific to foetus and newborn</field>
-	        <field name="parent" ref="icdcat16"></field>
+	        <field name="parent_id" ref="icdcat16"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat16-8">
 	        <field name="name">(P75-P78) Digestive system disorders of foetus and newborn</field>
-	        <field name="parent" ref="icdcat16"></field>
+	        <field name="parent_id" ref="icdcat16"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat16-9">
 	        <field name="name">(P80-P83) Conditions involving the integument and temperature regulation of foetus and newborn</field>
-	        <field name="parent" ref="icdcat16"></field>
+	        <field name="parent_id" ref="icdcat16"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat16-10">
 	        <field name="name">(P90-P96) Other disorders originating in the perinatal period</field>
-	        <field name="parent" ref="icdcat16"></field>
+	        <field name="parent_id" ref="icdcat16"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat17-1">
 	        <field name="name">(Q00-Q07) Congenital malformations of the nervous system</field>
-	        <field name="parent" ref="icdcat17"></field>
+	        <field name="parent_id" ref="icdcat17"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat17-2">
 	        <field name="name">(Q10-Q18) Congenital malformations of eye, ear, face and neck</field>
-	        <field name="parent" ref="icdcat17"></field>
+	        <field name="parent_id" ref="icdcat17"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat17-3">
 	        <field name="name">(Q20-Q28) Congenital malformations of the circulatory system</field>
-	        <field name="parent" ref="icdcat17"></field>
+	        <field name="parent_id" ref="icdcat17"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat17-4">
 	        <field name="name">(Q30-Q34) Congenital malformations of the respiratory system</field>
-	        <field name="parent" ref="icdcat17"></field>
+	        <field name="parent_id" ref="icdcat17"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat17-5">
 	        <field name="name">(Q35-Q37) Cleft lip and cleft palate</field>
-	        <field name="parent" ref="icdcat17"></field>
+	        <field name="parent_id" ref="icdcat17"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat17-6">
 	        <field name="name">(Q38-Q45) Other congenital malformations of the digestive system</field>
-	        <field name="parent" ref="icdcat17"></field>
+	        <field name="parent_id" ref="icdcat17"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat17-7">
 	        <field name="name">(Q50-Q56) Congenital malformations of genital organs</field>
-	        <field name="parent" ref="icdcat17"></field>
+	        <field name="parent_id" ref="icdcat17"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat17-8">
 	        <field name="name">(Q60-Q64) Congenital malformations of the urinary system</field>
-	        <field name="parent" ref="icdcat17"></field>
+	        <field name="parent_id" ref="icdcat17"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat17-9">
 	        <field name="name">(Q65-Q79) Congenital malformations and deformations of the musculoskeletal system</field>
-	        <field name="parent" ref="icdcat17"></field>
+	        <field name="parent_id" ref="icdcat17"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat17-10">
 	        <field name="name">(Q80-Q89) Other congenital malformations</field>
-	        <field name="parent" ref="icdcat17"></field>
+	        <field name="parent_id" ref="icdcat17"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat17-11">
 	        <field name="name">(Q90-Q99) Chromosomal abnormalities, not elsewhere classified</field>
-	        <field name="parent" ref="icdcat17"></field>
+	        <field name="parent_id" ref="icdcat17"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat18-1">
 	        <field name="name">(R00-R09) Symptoms and signs involving the circulatory and respiratory systems</field>
-	        <field name="parent" ref="icdcat18"></field>
+	        <field name="parent_id" ref="icdcat18"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat18-2">
 	        <field name="name">(R10-R19) Symptoms and signs involving the digestive system and abdomen</field>
-	        <field name="parent" ref="icdcat18"></field>
+	        <field name="parent_id" ref="icdcat18"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat18-3">
 	        <field name="name">(R20-R23) Symptoms and signs involving the skin and subcutaneous tissue</field>
-	        <field name="parent" ref="icdcat18"></field>
+	        <field name="parent_id" ref="icdcat18"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat18-4">
 	        <field name="name">(R25-R29) Symptoms and signs involving the nervous and musculoskeletal systems</field>
-	        <field name="parent" ref="icdcat18"></field>
+	        <field name="parent_id" ref="icdcat18"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat18-5">
 	        <field name="name">(R30-R39) Symptoms and signs involving the urinary system</field>
-	        <field name="parent" ref="icdcat18"></field>
+	        <field name="parent_id" ref="icdcat18"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat18-6">
 	        <field name="name">(R40-R46) Symptoms and signs involving cognition, perception, emotional state and behaviour</field>
-	        <field name="parent" ref="icdcat18"></field>
+	        <field name="parent_id" ref="icdcat18"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat18-7">
 	        <field name="name">(R47-R49) Symptoms and signs involving speech and voice</field>
-	        <field name="parent" ref="icdcat18"></field>
+	        <field name="parent_id" ref="icdcat18"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat18-8">
 	        <field name="name">(R50-R69) General symptoms and signs</field>
-	        <field name="parent" ref="icdcat18"></field>
+	        <field name="parent_id" ref="icdcat18"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat18-9">
 	        <field name="name">(R70-R79) Abnormal findings on examination of blood, without diagnosis</field>
-	        <field name="parent" ref="icdcat18"></field>
+	        <field name="parent_id" ref="icdcat18"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat18-10">
 	        <field name="name">(R80-R82) Abnormal findings on examination of urine, without diagnosis</field>
-	        <field name="parent" ref="icdcat18"></field>
+	        <field name="parent_id" ref="icdcat18"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat18-11">
 	        <field name="name">(R83-R89) Abnormal findings on examination of other body fluids, substances and tissues, without diagnosis</field>
-	        <field name="parent" ref="icdcat18"></field>
+	        <field name="parent_id" ref="icdcat18"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat18-12">
 	        <field name="name">(R90-R94) Abnormal findings on diagnostic imaging and in function studies, without diagnosis</field>
-	        <field name="parent" ref="icdcat18"></field>
+	        <field name="parent_id" ref="icdcat18"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat18-13">
 	        <field name="name">(R95-R99) Ill-defined and unknown causes of mortality</field>
-	        <field name="parent" ref="icdcat18"></field>
+	        <field name="parent_id" ref="icdcat18"></field>
         </record>
 
         <record model="oemedical.pathology.category" id="icdcat19-1">
 	        <field name="name">(S00-S09) Injuries to the head</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-2">
 	        <field name="name">(S10-S19) Injuries to the neck</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-3">
 	        <field name="name">(S20-S29) Injuries to the thorax</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-4">
 	        <field name="name">(S30-S39) Injuries to the abdomen</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-5">
 	        <field name="name">(S40-S49) Injuries to the shoulder and upper arm</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-6">
 	        <field name="name">(S50-S59) Injuries to the elbow and forearm</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-7">
 	        <field name="name">(S60-S69) Injuries to the wrist and hand</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-8">
 	        <field name="name">(S70-S79) Injuries to the hip and thigh</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-9">
 	        <field name="name">(S80-S89) Injuries to the knee and lower leg</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-10">
 	        <field name="name">(S90-S99) Injuries to the ankle and foot</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-11">
 	        <field name="name">(T00-T07) Injuries involving multiple body regions</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-12">
 	        <field name="name">(T08-T14) Injuries to unspecified part of trunk, limb or body region</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-13">
 	        <field name="name">(T15-T19) Effects of foreign body entering through natural orifice</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-14">
 	        <field name="name">(T20-T25) Burns and corrosions of external body surface, specified by site</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-15">
 	        <field name="name">(T26-T28) Burns and corrosions confined to eye and internal organs</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-16">
 	        <field name="name">(T29-T32) Burns and corrosions of multiple and unspecified body regions</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-17">
 	        <field name="name">(T33-T35) Frostbite</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-18">
 	        <field name="name">(T36-T50) Poisoning by drugs, medicaments and biological substances</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-19">
 	        <field name="name">(T51-T65) Toxic effects of substances chiefly nonmedicinal as to source</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-20">
 	        <field name="name">(T66-T78) Other and unspecified effects of external causes</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-21">
 	        <field name="name">(T79-T79) Certain early complications of trauma</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-22">
 	        <field name="name">(T80-T88) Complications of surgical and medical care, not elsewhere classified</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat19-23">
 	        <field name="name">(T90-T98) Sequelae of injuries, of poisoning and of other consequences of external causes</field>
-	        <field name="parent" ref="icdcat19"></field>
+	        <field name="parent_id" ref="icdcat19"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-1">
 	        <field name="name">(V01-V09) Pedestrian injured in transport accident</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-2">
 	        <field name="name">(V10-V19) Pedal cyclist injured in transport accident</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-3">
 	        <field name="name">(V20-V29) Motorcycle rider injured in transport accident</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-4">
 	        <field name="name">(V30-V39) Occupant of three-wheeled motor vehicle injured in transport accident</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-5">
 	        <field name="name">(V40-V49) Car occupant injured in transport accident</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-6">
 	        <field name="name">(V50-V59) Occupant of pick-up truck or van injured in transport accident</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-7">
 	        <field name="name">(V60-V69) Occupant of heavy transport vehicle injured in transport accident</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-8">
 	        <field name="name">(V70-V79) Bus occupant injured in transport accident</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-9">
 	        <field name="name">(V80-V89) Other land transport accidents</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-10">
 	        <field name="name">(V90-V94) Water transport accidents</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-11">
 	        <field name="name">(V95-V97) Air and space transport accidents</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-12">
 	        <field name="name">(V98-V99) Other and unspecified transport accidents</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-13">
 	        <field name="name">(W00-W19) Falls</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-14">
 	        <field name="name">(W20-W49) Exposure to inanimate mechanical forces</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-15">
 	        <field name="name">(W50-W64) Exposure to animate mechanical forces</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-16">
 	        <field name="name">(W65-W74) Accidental drowning and submersion</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-17">
 	        <field name="name">(W75-W84) Other accidental threats to breathing</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-18">
 	        <field name="name">(W85-W99) Exposure to electric current, radiation and extreme ambient air temperature and pressure</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-19">
 	        <field name="name">(X00-X09) Exposure to smoke, fire and flames</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-20">
 	        <field name="name">(X10-X19) Contact with heat and hot substances</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-21">
 	        <field name="name">(X20-X29) Contact with venomous animals and plants</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-22">
 	        <field name="name">(X30-X39) Exposure to forces of nature</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-23">
 	        <field name="name">(X40-X49) Accidental poisoning by and exposure to noxious substances</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-24">
 	        <field name="name">(X50-X57) Overexertion, travel and privation</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-25">
 	        <field name="name">(X58-X59) Exposure to other and unspecified factors</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-26">
 	        <field name="name">(X60-X84) Intentional self-harm</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-27">
 	        <field name="name">(X85-Y09) Assault</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-28">
 	        <field name="name">(Y10-Y34) Event of undetermined intent</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-29">
 	        <field name="name">(Y35-Y36) Legal intervention and operations of war</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-30">
 	        <field name="name">(Y40-Y59) Drugs, medicaments and biological substances causing adverse effects in therapeutic use</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-31">
 	        <field name="name">(Y60-Y69) Misadventures to patients during surgical and medical care</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-32">
 	        <field name="name">(Y70-Y82) Medical devices associated with adverse incidents in diagnostic and therapeutic use</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-33">
 	        <field name="name">(Y83-Y84) Surgical and other medical procedures as the cause of abnormal reaction of the patient, or of later complication, without mention of misadventure at the time of the procedure</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-34">
 	        <field name="name">(Y85-Y89) Sequelae of external causes of morbidity and mortality</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat20-35">
 	        <field name="name">(Y90-Y98) Supplementary factors related to causes of morbidity and mortality classified elsewhere</field>
-	        <field name="parent" ref="icdcat20"></field>
+	        <field name="parent_id" ref="icdcat20"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat21-1">
 	        <field name="name">(Z00-Z13) Persons encountering health services for examination and investigation</field>
-	        <field name="parent" ref="icdcat21"></field>
+	        <field name="parent_id" ref="icdcat21"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat21-2">
 	        <field name="name">(Z20-Z29) Persons with potential health hazards related to communicable diseases</field>
-	        <field name="parent" ref="icdcat21"></field>
+	        <field name="parent_id" ref="icdcat21"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat21-3">
 	        <field name="name">(Z30-Z39) Persons encountering health services in circumstances related to reproduction</field>
-	        <field name="parent" ref="icdcat21"></field>
+	        <field name="parent_id" ref="icdcat21"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat21-4">
 	        <field name="name">(Z40-Z54) Persons encountering health services for specific procedures and health care</field>
-	        <field name="parent" ref="icdcat21"></field>
+	        <field name="parent_id" ref="icdcat21"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat21-5">
 	        <field name="name">(Z55-Z65) Persons with potential health hazards related to socioeconomic and psychosocial circumstances</field>
-	        <field name="parent" ref="icdcat21"></field>
+	        <field name="parent_id" ref="icdcat21"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat21-6">
 	        <field name="name">(Z70-Z76) Persons encountering health services in other circumstances</field>
-	        <field name="parent" ref="icdcat21"></field>
+	        <field name="parent_id" ref="icdcat21"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat21-7">
 	        <field name="name">(Z80-Z99) Persons with potential health hazards related to family and personal history and certain conditions influencing health status</field>
-	        <field name="parent" ref="icdcat21"></field>
+	        <field name="parent_id" ref="icdcat21"></field>
         </record>
         <record model="oemedical.pathology.category" id="icdcat22-1">
 	        <field name="name">(U00-U49) Provisional assignment of new diseases of uncertain aetiology</field>
-	        <field name="parent" ref="icdcat22"></field>
+	        <field name="parent_id" ref="icdcat22"></field>
         </record>
     </data>
 </openerp>
