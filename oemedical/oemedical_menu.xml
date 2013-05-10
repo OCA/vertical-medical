@@ -67,12 +67,23 @@
 			sequence="10" action="act_open_oemedical_drug_form_view" />
 
 
+
+<!--  Menu of Pathology-->
+
+		<menuitem id="oemedical_pathology_root" name="Pathology" parent="oemedical_root_sub" sequence="70" />
+
+		<menuitem id="oemedical_pathology_category" name=" Pathology Category"	parent="oemedical_pathology_root" sequence="10"	action="act_open_oemedical_pathology_category_view" />
+
+		<menuitem id="oemedical_pathology_group" name=" Pathology Group" parent="oemedical_pathology_root" sequence="20" action="act_open_oemedical_pathology_group_view" />
+
+		<menuitem id="oemedical_pathology" name=" Pathology" parent="oemedical_pathology_root"	sequence="30" action="act_open_oemedical_pathology_view" />
+
+
+
+
 <!-- 		<menuitem id="oemedical_secondary_condition" name=" Secondary Condition" -->
 <!-- 			parent="oemedical_root_sub" sequence="10" -->
 <!-- 			action="act_open_oemedical_secondary_condition_view" /> -->
-		<menuitem id="oemedical_pathology_category" name=" Pathology Category"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_pathology_category_view" />
 <!-- 		<menuitem id="oemedical_signs_and_symptoms" name=" Signs And Symptoms" -->
 <!-- 			parent="oemedical_root_sub" sequence="10" -->
 <!-- 			action="act_open_oemedical_signs_and_symptoms_view" /> -->
@@ -83,8 +94,6 @@
 <!-- 			action="act_open_oemedical_directions_view" /> -->
 		<menuitem id="oemedical_insurance" name=" Insurance" parent="oemedical_root_sub"
 			sequence="10" action="act_open_oemedical_insurance_view" />
-		<menuitem id="oemedical_pathology" name=" Pathology" parent="oemedical_root_sub"
-			sequence="10" action="act_open_oemedical_pathology_view" />
 		<menuitem id="oemedical_operational_area" name=" Operational Area"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_operational_area_view" />
@@ -146,9 +155,6 @@
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_disease_group_members_view" />
 
-		<menuitem id="oemedical_pathology_group" name=" Pathology Group"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_pathology_group_view" />
 
 	</data>
 </openerp>
