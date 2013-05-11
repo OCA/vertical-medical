@@ -98,6 +98,11 @@
 		<menuitem id="oemedical_pathology" name=" Pathology" parent="oemedical_pathology_root"	sequence="30" action="act_open_oemedical_pathology_view" />
 
 
+<!--Hospital Centers-->
+
+		<menuitem id="oemedical_hospital_center_root" name="Health Center"
+			parent="oemedical_root_sub" sequence="20" />
+
 
 
 <!-- 		<menuitem id="oemedical_secondary_condition" name=" Secondary Condition" -->
