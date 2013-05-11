@@ -27,6 +27,10 @@
 			parent="oemedical_patient_root" sequence="50"
 			action="act_open_oemedical_patient_evaluation_view" />
 
+		<menuitem id="oemedical_patient_disease" name=" Patient Disease"
+			parent="oemedical_patient_root" sequence="10"
+			action="act_open_oemedical_patient_disease_view" />
+
 
 <!--Appointment-->
 
@@ -171,9 +175,6 @@
 		<!-- <menuitem id="oemedical_prescription_line" name=" Prescription Line" -->
 		<!-- parent="oemedical_root_sub" sequence="10" -->
 		<!-- action="act_open_oemedical_prescription_line_view" /> -->
-		<menuitem id="oemedical_patient_disease" name=" Patient Disease"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_patient_disease_view" />
 
 
 		<menuitem id="oemedical_specialty" name=" Specialty" parent="oemedical_root_sub"
