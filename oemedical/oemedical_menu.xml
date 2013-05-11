@@ -100,9 +100,28 @@
 
 <!--Hospital Centers-->
 
-		<menuitem id="oemedical_hospital_center_root" name="Health Center"
+		<menuitem id="oemedical_health_center_root" name="Health Center"
 			parent="oemedical_root_sub" sequence="20" />
 
+		<menuitem id="oemedical_hospital_building" name=" Hospital Building"
+			parent="oemedical_health_center_root" sequence="10"
+			action="act_open_oemedical_hospital_building_view" />
+
+		<menuitem id="oemedical_hospital_unit" name=" Hospital Unit"
+			parent="oemedical_health_center_root" sequence="20"
+			action="act_open_oemedical_hospital_unit_view" />
+
+		<menuitem id="oemedical_hospital_ward" name=" Hospital Ward"
+			parent="oemedical_health_center_root" sequence="30"
+			action="act_open_oemedical_hospital_ward_view" />
+
+		<menuitem id="oemedical_hospital_or" name=" Hospital Or"
+			parent="oemedical_health_center_root" sequence="40"
+			action="act_open_oemedical_hospital_or_view" />
+		
+		<menuitem id="oemedical_hospital_bed" name=" Hospital Bed"
+			parent="oemedical_health_center_root" sequence="50"
+			action="act_open_oemedical_hospital_bed_view" />
 
 
 <!-- 		<menuitem id="oemedical_secondary_condition" name=" Secondary Condition" -->
@@ -143,17 +162,6 @@
 			action="act_open_oemedical_vaccination_view" />
 
 
-		<menuitem id="oemedical_hospital_ward" name=" Hospital Ward"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_hospital_ward_view" />
-		<menuitem id="oemedical_hospital_or" name=" Hospital Or"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_hospital_or_view" />
-
-		
-		<menuitem id="oemedical_hospital_building" name=" Hospital Building"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_hospital_building_view" />
 
 		<!-- <menuitem id="oemedical_prescription_line" name=" Prescription Line" -->
 		<!-- parent="oemedical_root_sub" sequence="10" -->
@@ -162,16 +170,10 @@
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_patient_disease_view" />
 
-		<menuitem id="oemedical_hospital_unit" name=" Hospital Unit"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_hospital_unit_view" />
 
 		<menuitem id="oemedical_specialty" name=" Specialty" parent="oemedical_root_sub"
 			sequence="10" action="act_open_oemedical_specialty_view" />
 
-		<menuitem id="oemedical_hospital_bed" name=" Hospital Bed"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_hospital_bed_view" />
 		<menuitem id="oemedical_occupation" name=" Occupation"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_occupation_view" />
