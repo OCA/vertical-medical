@@ -71,11 +71,18 @@
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_medication_template_view" />
 
+
+<!--Drugs-->
+
+		<menuitem id="oemedical_drugs_root" name="Drugs"
+			parent="oemedical_root_sub" sequence="20" />
+
 		<menuitem id="oemedical_drug_route" name=" Drug Route"
-			parent="oemedical_root_sub" sequence="10"
+			parent="oemedical_drugs_root" sequence="10"
 			action="act_open_oemedical_drug_route_view" />
 
-		<menuitem id="oemedical_drug_form" name=" Drug Form" parent="oemedical_root_sub"
+		<menuitem id="oemedical_drug_form" name=" Drug Form"
+            parent="oemedical_drugs_root"
 			sequence="10" action="act_open_oemedical_drug_form_view" />
 
 
