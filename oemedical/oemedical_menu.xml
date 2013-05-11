@@ -12,12 +12,12 @@
 			parent="oemedical_patient_root" sequence="10"
 			action="act_open_oemedical_patient_view" />
 
+		<menuitem id="oemedical_family" name=" Family" parent="oemedical_patient_root"
+			sequence="20" action="act_open_oemedical_family_view" />
+
 		<menuitem id="oemedical_family_member" name=" Family Member"
 			parent="oemedical_patient_root" sequence="30"
 			action="act_open_oemedical_family_member_view" />
-
-		<menuitem id="oemedical_family" name=" Family" parent="oemedical_patient_root"
-			sequence="20" action="act_open_oemedical_family_view" />
 
 		<menuitem id="oemedical_patient_medication" name=" Patient Medication"
 			parent="oemedical_patient_root" sequence="40"
@@ -28,7 +28,7 @@
 			action="act_open_oemedical_patient_evaluation_view" />
 
 		<menuitem id="oemedical_patient_disease" name=" Patient Disease"
-			parent="oemedical_patient_root" sequence="10"
+			parent="oemedical_patient_root" sequence="60"
 			action="act_open_oemedical_patient_disease_view" />
 
 
