@@ -56,6 +56,11 @@
 		<menuitem id="oemedical_root_sub" name="Configuration"
 			parent="oemedical_root" sequence="100" />
 
+<!-- Misec -->
+
+		<menuitem id="oemedical_root_misc" name="Misc"
+			parent="oemedical_root_sub" sequence="200" />
+
 <!--Medicaments-->
 
 		<menuitem id="oemedical_medicament_root" name="Medicaments"
@@ -139,6 +144,13 @@
 			action="act_open_oemedical_operational_sector_view" />
 
 
+<!-- Ethnicity  -->
+
+		<menuitem id="oemedical_ethnicity" name=" Ethnicity" parent="oemedical_root_misc"
+			sequence="10" action="act_open_oemedical_ethnicity_view" />
+
+
+
 <!-- 		<menuitem id="oemedical_secondary_condition" name=" Secondary Condition" -->
 <!-- 			parent="oemedical_root_sub" sequence="10" -->
 <!-- 			action="act_open_oemedical_secondary_condition_view" /> -->
@@ -152,8 +164,6 @@
 <!-- 			action="act_open_oemedical_directions_view" /> -->
 		<menuitem id="oemedical_insurance" name=" Insurance" parent="oemedical_root_sub"
 			sequence="10" action="act_open_oemedical_insurance_view" />
-		<menuitem id="oemedical_ethnicity" name=" Ethnicity" parent="oemedical_root_sub"
-			sequence="10" action="act_open_oemedical_ethnicity_view" />
 
 
 
