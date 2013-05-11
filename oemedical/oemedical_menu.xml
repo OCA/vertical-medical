@@ -166,7 +166,7 @@
 <!--    Insurance     -->
 
         <menuitem name="Insurances" id="oemedical_conf_insurances"
-            parent="oemedical_conf_misc" sequence="20" />
+            parent="oemedical_root_misc" sequence="20" />
 
 		<menuitem id="oemedical_insurance" name=" Insurance" 
             parent="oemedical_conf_insurances"	sequence="10" 
@@ -202,6 +202,7 @@
 		<menuitem id="oemedical_occupation" name=" Occupation"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_occupation_view" />
+
 		<menuitem id="oemedical_disease_group_members" name=" Disease Group Members"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_disease_group_members_view" />
