@@ -59,7 +59,7 @@
 <!--Medicaments-->
 
 		<menuitem id="oemedical_medicament_root" name="Medicaments"
-			parent="oemedical_root_sub" sequence="10" />
+			parent="oemedical_root_sub" sequence="50" />
 
 		<menuitem id="oemedical_medicament_category" name=" Medicament Category"
 			parent="oemedical_medicament_root" sequence="10"
@@ -108,7 +108,7 @@
 <!--Hospital Centers-->
 
 		<menuitem id="oemedical_health_center_root" name="Health Center"
-			parent="oemedical_root_sub" sequence="20" />
+			parent="oemedical_root_sub" sequence="10" />
 
 		<menuitem id="oemedical_hospital_building" name=" Hospital Building"
 			parent="oemedical_health_center_root" sequence="10"
