@@ -146,7 +146,7 @@
 
 <!-- Ethnicity  -->
 
-		<menuitem id="oemedical_ethnicity" name=" Ethnicity" parent="oemedical_root_misc"
+		<menuitem id="oemedical_ethnicity" name="Ethnicity" parent="oemedical_root_misc"
 			sequence="10" action="act_open_oemedical_ethnicity_view" />
 
 
@@ -162,14 +162,23 @@
 <!-- 		<menuitem id="oemedical_directions" name=" Directions" -->
 <!-- 			parent="oemedical_root_sub" sequence="10" -->
 <!-- 			action="act_open_oemedical_directions_view" /> -->
-		<menuitem id="oemedical_insurance" name=" Insurance" parent="oemedical_root_sub"
-			sequence="10" action="act_open_oemedical_insurance_view" />
 
+<!--    Insurance     -->
 
+        <menuitem name="Insurances" id="oemedical_conf_insurances"
+            parent="oemedical_conf_misc" sequence="20" />
+
+		<menuitem id="oemedical_insurance" name=" Insurance" 
+            parent="oemedical_conf_insurances"	sequence="10" 
+            action="act_open_oemedical_insurance_view" />
 
 		<menuitem id="oemedical_insurance_plan" name=" Insurance Plan"
-			parent="oemedical_root_sub" sequence="10"
+			parent="oemedical_conf_insurances" sequence="20"
 			action="act_open_oemedical_insurance_plan_view" />
+
+
+
+
 		<menuitem id="oemedical_diagnostic_hypothesis" name=" Diagnostic Hypothesis"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_diagnostic_hypothesis_view" />
