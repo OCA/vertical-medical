@@ -157,8 +157,17 @@
 <!-- 		<menuitem id="oemedical_signs_and_symptoms" name=" Signs And Symptoms" -->
 <!-- 			parent="oemedical_root_sub" sequence="10" -->
 <!-- 			action="act_open_oemedical_signs_and_symptoms_view" /> -->
-		<menuitem id="oemedical_physician" name=" Physician" parent="oemedical_root_sub"
+
+<!--    Physician Conf    -->
+
+        <menuitem name="Health Professionals" id="oemedical_conf_physicians"
+            parent="oemedical_root_sub" sequence="20" />
+
+		<menuitem id="oemedical_physician" name=" Physician" parent="oemedical_conf_physicians"
 			sequence="10" action="act_open_oemedical_physician_view" />
+
+
+
 <!-- 		<menuitem id="oemedical_directions" name=" Directions" -->
 <!-- 			parent="oemedical_root_sub" sequence="10" -->
 <!-- 			action="act_open_oemedical_directions_view" /> -->
