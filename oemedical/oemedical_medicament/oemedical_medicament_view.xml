@@ -11,7 +11,6 @@
 					<field name="category" />
 					<field name="indications" />
 					<field name="therapeutic_action" />
-					<field name="product" />
 					<!--field name="pregnancy_category"/ -->
 					<field name="overdosage" />
 					<field name="pregnancy_warning" />
@@ -87,7 +86,6 @@
 					<field name="category" />
 					<field name="indications" />
 					<field name="therapeutic_action" />
-					<field name="product" />
 					<field name="overdosage" />
 					<field name="pregnancy_warning" />
 					<field name="notes" />
