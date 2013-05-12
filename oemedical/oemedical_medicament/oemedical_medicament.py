@@ -27,15 +27,14 @@ class OeMedicalMedicament(osv.Model):
     _name = 'oemedical.medicament'
 
     _columns = {
-        'name': fields.char(string='Name', size=264, required=True),
+        'name': fields.many2one('product.product', string='Product', requered=True,
+                                   help='Product Name'),
         'category': fields.many2one('oemedical.medicament.category',
                                     'Category',select=True),
         'indications': fields.text(string='Indication', help='Indications'),
         'therapeutic_action': fields.char(size=256,
                                           string='Therapeutic effect', 
                                           help='Therapeutic action'),
-        'product': fields.many2one('product.product', string='Product', 
-                                   help='Product Name'),
         'pregnancy_category': fields.selection([
             ('A', 'A'),
             ('B', 'B'),
