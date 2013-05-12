@@ -56,6 +56,32 @@
 		<menuitem id="oemedical_root_sub" name="Configuration"
 			parent="oemedical_root" sequence="100" />
 
+<!-- Diseases -->
+
+		<menuitem id="oemedical_root_disease" name="Disease"
+			parent="oemedical_root_sub" sequence="10" />
+
+<!--  Menu of Pathology-->
+
+		<menuitem id="oemedical_pathology_category" name=" Pathology Category"	
+            parent="oemedical_root_disease" sequence="10"	
+            action="act_open_oemedical_pathology_category_view" />
+
+		<menuitem id="oemedical_pathology" name=" Pathology" 
+            parent="oemedical_root_disease"   sequence="30" 
+            action="act_open_oemedical_pathology_view" />
+
+		<menuitem id="oemedical_pathology_group" name=" Pathology Group" 
+            parent="oemedical_root_disease" sequence="20"
+            action="act_open_oemedical_pathology_group_view" />
+
+		<menuitem id="oemedical_root_disease_cat" name="Categories"
+			parent="oemedical_root_disease" sequence="100" />
+
+		<menuitem id="oemedical_disease_group_members" name=" Disease Group"
+			parent="oemedical_root_disease_cat" sequence="10"
+			action="act_open_oemedical_disease_group_members_view" />
+
 <!-- Misc -->
 
 		<menuitem id="oemedical_root_misc" name="Misc"
@@ -119,18 +145,6 @@
 		<menuitem id="oemedical_medicament_category" name=" Medicament Category"
 			parent="oemedical_medicament_root" sequence="100"
 			action="act_open_oemedical_medicament_category_view" />
-
-
-<!--  Menu of Pathology-->
-
-		<menuitem id="oemedical_pathology_root" name="Pathology" parent="oemedical_root_sub" sequence="70" />
-
-		<menuitem id="oemedical_pathology_category" name=" Pathology Category"	parent="oemedical_pathology_root" sequence="10"	action="act_open_oemedical_pathology_category_view" />
-
-		<menuitem id="oemedical_pathology_group" name=" Pathology Group" parent="oemedical_pathology_root" sequence="20" action="act_open_oemedical_pathology_group_view" />
-
-		<menuitem id="oemedical_pathology" name=" Pathology" parent="oemedical_pathology_root"	sequence="30" action="act_open_oemedical_pathology_view" />
-
 
 <!--Hospital Centers-->
 
@@ -200,18 +214,6 @@
 		<menuitem id="oemedical_vaccination" name=" Vaccination"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_vaccination_view" />
-
-
-
-		<!-- <menuitem id="oemedical_prescription_line" name=" Prescription Line" -->
-		<!-- parent="oemedical_root_sub" sequence="10" -->
-		<!-- action="act_open_oemedical_prescription_line_view" /> -->
-
-
-
-		<menuitem id="oemedical_disease_group_members" name=" Disease Group Members"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_disease_group_members_view" />
 
 
 	</data>
