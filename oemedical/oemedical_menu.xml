@@ -99,22 +99,19 @@
 			action="act_open_oemedical_medication_dosage_view" />
 
 		<menuitem id="oemedical_medication_template" name=" Medication Template"
-			parent="oemedical_root_sub" sequence="10"
+			parent="oemedical_root_sub" sequence="20"
 			action="act_open_oemedical_medication_template_view" />
-
-		<menuitem id="oemedical_drugs_root" name="Drugs"
-			parent="oemedical_root_sub" sequence="20" />
 
 <!--  Drugs Administration Routes  -->
 
 		<menuitem id="oemedical_drug_route" name=" Drug Administration Route"
-			parent="oemedical_drugs_root" sequence="10"
+			parent="oemedical_medicament_root" sequence="80"
 			action="act_open_oemedical_drug_route_view" />
 
 <!--Drugs-->
 
 		<menuitem id="oemedical_drug_form" name=" Drug Form"
-            parent="oemedical_drugs_root" sequence="90"
+            parent="oemedical_medicament_root" sequence="90"
             action="act_open_oemedical_drug_form_view" />
 
 <!--Medicament Categories-->
@@ -122,12 +119,6 @@
 		<menuitem id="oemedical_medicament_category" name=" Medicament Category"
 			parent="oemedical_medicament_root" sequence="100"
 			action="act_open_oemedical_medicament_category_view" />
-
-
-
-
-
-
 
 
 <!--  Menu of Pathology-->
@@ -175,15 +166,6 @@
 			action="act_open_oemedical_operational_sector_view" />
 
 
-
-
-<!-- 		<menuitem id="oemedical_secondary_condition" name=" Secondary Condition" -->
-<!-- 			parent="oemedical_root_sub" sequence="10" -->
-<!-- 			action="act_open_oemedical_secondary_condition_view" /> -->
-<!-- 		<menuitem id="oemedical_signs_and_symptoms" name=" Signs And Symptoms" -->
-<!-- 			parent="oemedical_root_sub" sequence="10" -->
-<!-- 			action="act_open_oemedical_signs_and_symptoms_view" /> -->
-
 <!--    Physician Conf    -->
 
         <menuitem name="Health Professionals" id="oemedical_conf_physicians"
@@ -192,11 +174,6 @@
 		<menuitem id="oemedical_physician" name=" Physician" parent="oemedical_conf_physicians"
 			sequence="10" action="act_open_oemedical_physician_view" />
 
-
-
-<!-- 		<menuitem id="oemedical_directions" name=" Directions" -->
-<!-- 			parent="oemedical_root_sub" sequence="10" -->
-<!-- 			action="act_open_oemedical_directions_view" /> -->
 
 <!--    Insurance     -->
 
