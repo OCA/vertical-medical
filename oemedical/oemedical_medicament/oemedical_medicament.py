@@ -27,9 +27,7 @@ class OeMedicalMedicament(osv.Model):
     _name = 'oemedical.medicament'
 
     _columns = {
-#        'name': fields.many2one('product.product', string='Product', requered=True,
-#                                   help='Product Name'),
-        'name': fields.many2one('product.product', string='Product', 
+        'name': fields.many2one('product.product', string='Product', requered=True, 
                                    help='Product Name'),
 
         'category': fields.many2one('oemedical.medicament.category',
