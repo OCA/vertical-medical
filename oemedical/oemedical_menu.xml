@@ -61,8 +61,26 @@
 		<menuitem id="oemedical_root_misc" name="Misc"
 			parent="oemedical_root_sub" sequence="200" />
 
-		<menuitem id="oemedical_specialty" name=" Medical Specialty" parent="oemedical_root_misc"
-			sequence="10" action="act_open_oemedical_specialty_view" />
+<!-- Occupation  ( Config/misc/Occupation) )--> 
+
+		<menuitem id="oemedical_occupation" name=" Occupation"
+			parent="oemedical_root_misc" sequence="20"
+			action="act_open_oemedical_occupation_view" />
+
+<!-- Medical Specialty  ( Config/misc/specialty) )--> 
+
+		<menuitem id="oemedical_specialty" name=" Medical Specialty"
+            parent="oemedical_root_misc" sequence="10" 
+            action="act_open_oemedical_specialty_view" />
+
+<!-- Ethnicity  ( Config/misc/Ethnicity) )--> 
+
+		<menuitem id="oemedical_ethnicity" name="Ethnicity" parent="oemedical_root_misc"
+			sequence="10" action="act_open_oemedical_ethnicity_view" />
+
+
+
+
 
 
 <!--Medicaments-->
@@ -148,11 +166,6 @@
 			action="act_open_oemedical_operational_sector_view" />
 
 
-<!-- Ethnicity  -->
-
-		<menuitem id="oemedical_ethnicity" name="Ethnicity" parent="oemedical_root_misc"
-			sequence="10" action="act_open_oemedical_ethnicity_view" />
-
 
 
 <!-- 		<menuitem id="oemedical_secondary_condition" name=" Secondary Condition" -->
@@ -195,7 +208,7 @@
 		<menuitem id="oemedical_diagnostic_hypothesis" name=" Diagnostic Hypothesis"
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_diagnostic_hypothesis_view" />
-		<menuitem id="oemedical_procedure" name=" Procedure" parent="oemedical_root_sub"
+		<menuitem id="oemedical_predure" name=" Procedure" parent="oemedical_root_sub"
 			sequence="10" action="act_open_oemedical_procedure_view" />
 
 		<menuitem id="oemedical_vaccination" name=" Vaccination"
@@ -209,10 +222,6 @@
 		<!-- action="act_open_oemedical_prescription_line_view" /> -->
 
 
-
-		<menuitem id="oemedical_occupation" name=" Occupation"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_occupation_view" />
 
 		<menuitem id="oemedical_disease_group_members" name=" Disease Group Members"
 			parent="oemedical_root_sub" sequence="10"
