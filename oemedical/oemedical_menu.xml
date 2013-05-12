@@ -61,6 +61,10 @@
 		<menuitem id="oemedical_root_misc" name="Misc"
 			parent="oemedical_root_sub" sequence="200" />
 
+		<menuitem id="oemedical_specialty" name=" Medical Specialty" parent="oemedical_root_misc"
+			sequence="10" action="act_open_oemedical_specialty_view" />
+
+
 <!--Medicaments-->
 
 		<menuitem id="oemedical_medicament_root" name="Medicaments"
@@ -205,8 +209,6 @@
 		<!-- action="act_open_oemedical_prescription_line_view" /> -->
 
 
-		<menuitem id="oemedical_specialty" name=" Specialty" parent="oemedical_root_sub"
-			sequence="10" action="act_open_oemedical_specialty_view" />
 
 		<menuitem id="oemedical_occupation" name=" Occupation"
 			parent="oemedical_root_sub" sequence="10"
