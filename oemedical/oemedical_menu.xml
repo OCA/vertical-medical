@@ -56,7 +56,7 @@
 		<menuitem id="oemedical_root_sub" name="Configuration"
 			parent="oemedical_root" sequence="100" />
 
-<!-- Misec -->
+<!-- Misc -->
 
 		<menuitem id="oemedical_root_misc" name="Misc"
 			parent="oemedical_root_sub" sequence="200" />
@@ -88,9 +88,6 @@
 		<menuitem id="oemedical_medicament_root" name="Medicaments"
 			parent="oemedical_root_sub" sequence="50" />
 
-		<menuitem id="oemedical_medicament_category" name=" Medicament Category"
-			parent="oemedical_medicament_root" sequence="10"
-			action="act_open_oemedical_medicament_category_view" />
 
 		<menuitem id="oemedical_medicament" name=" Medicament"
 			parent="oemedical_medicament_root" sequence="20"
@@ -105,19 +102,31 @@
 			parent="oemedical_root_sub" sequence="10"
 			action="act_open_oemedical_medication_template_view" />
 
-
-<!--Drugs-->
-
 		<menuitem id="oemedical_drugs_root" name="Drugs"
 			parent="oemedical_root_sub" sequence="20" />
 
-		<menuitem id="oemedical_drug_route" name=" Drug Route"
+<!--  Drugs Administration Routes  -->
+
+		<menuitem id="oemedical_drug_route" name=" Drug Administration Route"
 			parent="oemedical_drugs_root" sequence="10"
 			action="act_open_oemedical_drug_route_view" />
 
+<!--Drugs-->
+
 		<menuitem id="oemedical_drug_form" name=" Drug Form"
-            parent="oemedical_drugs_root"
-			sequence="10" action="act_open_oemedical_drug_form_view" />
+            parent="oemedical_drugs_root" sequence="90"
+            action="act_open_oemedical_drug_form_view" />
+
+<!--Medicament Categories-->
+
+		<menuitem id="oemedical_medicament_category" name=" Medicament Category"
+			parent="oemedical_medicament_root" sequence="100"
+			action="act_open_oemedical_medicament_category_view" />
+
+
+
+
+
 
 
 
