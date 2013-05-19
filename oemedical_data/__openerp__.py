@@ -63,6 +63,8 @@ localizing core data.
         'data/drug_routes.xml',
         'data/medicament_form.xml',
         'data/medication_frequencies.xml',
+        'data/disease_categories.xml',
+        'data/diseases.xml',
     ],
     "demo": [
 

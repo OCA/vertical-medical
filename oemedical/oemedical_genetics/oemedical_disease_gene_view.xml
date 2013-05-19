@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_oemedical_disease_gene_tree" model="ir.ui.view">
+            <field name="name">oemedical.disease.gene.tree</field>
+            <field name="model">oemedical.disease.gene</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Oemedical Disease Gene">
+                    <field name="info"/>
+                    <field name="name"/>
+                    <field name="gene_id"/>
+                    <field name="long_name"/>
+                    <field name="location"/>
+                    <field name="dominance"/>
+                    <field name="chromosome"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_oemedical_disease_gene_form" model="ir.ui.view">
+            <field name="name">oemedical.disease.gene.form</field>
+            <field name="model">oemedical.disease.gene</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Oemedical Disease Gene">
+                    <field name="name"/>
+                    <field name="gene_id"/>
+                    <field name="long_name"/>
+                    <field name="location"/>
+                    <field name="dominance"/>
+                    <field name="chromosome"/>
+                    <newline/>
+                    <field name="info" colspan="4"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_oemedical_disease_gene_search" model="ir.ui.view">
+            <field name="name">oemedical.disease.gene.search</field>
+            <field name="model">oemedical.disease.gene</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Oemedical Disease Gene">
+                    <field name="info"/>
+                    <field name="name"/>
+                    <field name="gene_id"/>
+                    <field name="long_name"/>
+                    <field name="location"/>
+                    <field name="chromosome"/>
+                    <newline/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Information" domain="[]" context="{'group_by':'info'}"/>
+                        <filter string="Official Symbol" domain="[]" context="{'group_by':'name'}"/>
+                        <filter string="Gene ID" domain="[]" context="{'group_by':'gene_id'}"/>
+                        <filter string="Official Long Name" domain="[]" context="{'group_by':'long_name'}"/>
+                        <filter string="Location" domain="[]" context="{'group_by':'location'}"/>
+                        <filter string="Affected Chromosome" domain="[]" context="{'group_by':'chromosome'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_oemedical_disease_gene_view">
+            <field name="name"> Disease Gene</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">oemedical.disease.gene</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_oemedical_disease_gene_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_oemedical_disease_gene_view_form">
+            <field name="act_window_id" ref="act_open_oemedical_disease_gene_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_oemedical_disease_gene_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_oemedical_disease_gene_view_tree">
+            <field name="act_window_id" ref="act_open_oemedical_disease_gene_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_oemedical_disease_gene_tree"/>
+        </record>
+
+        <record model="ir.ui.view" id="view_oemedical_patient_form_disease_gen">
+            <field name="name">oemedical.patient.view.inherit.disease.gen</field>
+            <field name="model">oemedical.patient</field>
+            <field name="inherit_id" ref="oemedical.view_oemedical_patient_form" />
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <data>
+                    <notebook position="inside">
+                        <page string="Genetics">
+                            <separator string="Genetic Risk" />
+                            <field name="genetic_risks">
+                                <tree string="Patient Genetic Risks">
+                                    <field name="disease_gene" expand="1"/>
+                                </tree>
+                                <form string="Patient Genetic Risks">
+                                    <field name="disease_gene">
+                                        <tree string="Oemedical Disease Gene">
+                                            <field name="info"/>
+                                            <field name="name"/>
+                                            <field name="gene_id"/>
+                                            <field name="long_name"/>
+                                            <field name="location"/>
+                                            <field name="dominance"/>
+                                            <field name="chromosome"/>
+                                        </tree>
+                                        <form string="Oemedical Disease Gene">   
+                                            <field name="name"/>
+                                            <field name="gene_id"/>
+                                            <field name="long_name"/>
+                                            <field name="location"/>
+                                            <field name="dominance"/>
+                                            <field name="chromosome"/>
+                                            <newline/>
+                                            <field name="info" colspan="4"/>
+                                        </form>
+                                    </field>
+                                </form>
+                            </field>
+                            <separator string="Family History" />
+                            <field name="family_history">
+                                <tree string="Genetic Family Diseases">
+                                    <field name="name"/>
+                                    <field name="xory"/>
+                                    <field name="relative" expand="1"/>
+                                </tree>
+                                <form string="Patient Genetic Family Diseases">
+                                    <field colspan="4" name="name"/>
+                                    <newline/>
+                                    <field name="xory"/>
+                                    <field name="relative"/>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</openerp>

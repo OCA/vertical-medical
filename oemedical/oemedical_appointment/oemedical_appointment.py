@@ -35,6 +35,7 @@ class OeMedicalAppointment(osv.Model):
                                    help='Patient Name'),
         'name': fields.char(size=256, string='Appointment ID', readonly=True),
         'appointment_date': fields.datetime(string='Date and Time'),
+        'duration': fields.float('Duration'),
         'doctor': fields.many2one('oemedical.physician',
                                   string='Physician',select=True, 
                                   help='Physician\'s Name'),

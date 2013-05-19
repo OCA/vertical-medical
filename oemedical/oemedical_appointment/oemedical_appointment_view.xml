@@ -40,6 +40,7 @@
 					        <field name="patient_id" />
 					        <field name="doctor" />
 					        <field name="appointment_date" />
+					        <field name="duration" />
 					        <field name="appointment_type" />
 					        <field name="urgency" />
 					        <field name="consultations" />
@@ -52,6 +53,20 @@
 				</form>
 			</field>
 		</record>
+
+        <record id="view_oemedical_appointment_calendar" model="ir.ui.view">
+            <field name="name">oemedical.appointment.calendar</field>
+            <field name="model">oemedical.appointment</field>
+            <field eval="2" name="priority"/>
+            <field name="arch" type="xml">
+                <calendar color="doctor" date_start="appointment_date" string="Calendar View">
+                    <field name="patient_id"/>
+                    <field name="doctor"/>
+                    <field name="duration"/>
+                </calendar>
+            </field>
+        </record>
+
 
 		<record id="view_oemedical_appointment_search" model="ir.ui.view">
 			<field name="name">oemedical.appointment.search</field>
@@ -93,7 +108,7 @@
 			<field name="type">ir.actions.act_window</field>
 			<field name="res_model">oemedical.appointment</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">tree,form</field>
+			<field name="view_mode">tree,form, calendar</field>
 			<field name="search_view_id" ref="view_oemedical_appointment_search" />
 			<field name="domain">[]</field>
 			<field name="context">{}</field>
@@ -112,6 +127,14 @@
 			<field name="view_mode">tree</field>
 			<field name="view_id" ref="view_oemedical_appointment_tree" />
 		</record>
+
+		<record model="ir.actions.act_window.view" id="act_open_oemedical_appointment_view_calendar">
+			<field name="act_window_id" ref="act_open_oemedical_appointment_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">calendar</field>
+			<field name="view_id" ref="view_oemedical_appointment_calendar" />
+		</record>
+
 
 	</data>
 </openerp>

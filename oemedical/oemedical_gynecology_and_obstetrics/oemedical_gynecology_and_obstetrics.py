@@ -74,8 +74,10 @@ class PrenatalEvaluation(osv.Model):
     _name = 'oemedical.patient.prenatal.evaluation'
     _description =  'Prenatal and Antenatal Evaluations'
 
-    def _get_patient_evaluation_data(self, cr, uid, ids, field, arg, context=None):
-        print field, arg
+    def _get_patient_evaluation_data(self, cr, uid, ids, field_name, args, context=None):
+        result = dict([(i, {}.fromkeys(field_names, 0.0)) for i in ids])
+        print result
+#        print ids, field_name, arg
 #        if name == 'gestational_weeks':
 #            gestational_age = datetime.datetime.date(self.evaluation_date) - \
 #                self.name.lmp
@@ -84,7 +86,7 @@ class PrenatalEvaluation(osv.Model):
 #            gestational_age = datetime.datetime.date(self.evaluation_date) - \
 #                self.name.lmp
 #            return gestational_age.days
-        return 1
+        return 20
 
 
 
@@ -92,7 +94,7 @@ class PrenatalEvaluation(osv.Model):
             'name' : fields.many2one('oemedical.patient.pregnancy', 'Patient Pregnancy'),
             'evaluation' : fields.many2one('oemedical.patient.evaluation', 'Patient Evaluation', readonly=True),
             'evaluation_date' : fields.datetime('Date', required=True),
-            'gestational_weeks' : fields.function(_get_patient_evaluation_data, method=True , string="Gestational Weeks", type='integer'),
+            'gestational_weeks' : fields.function(_get_patient_evaluation_data, method=True , string="Gestational Weeks", type='float'),
             'gestational_days' : fields.function(_get_patient_evaluation_data, method=True , string='Gestational days', type='integer'),
             'hypertension' : fields.boolean('Hypertension', help='Check this box if the mother has hypertension'),
             'preeclampsia' : fields.boolean('Preeclampsia', help='Check this box if the mother has pre-eclampsia'),

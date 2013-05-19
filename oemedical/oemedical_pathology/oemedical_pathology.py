@@ -47,8 +47,8 @@ class OeMedicalPathology(osv.Model):
         'chromosome': fields.char(size=256, string='Affected Chromosome', 
                                   help='chromosome number'),
     }
-    _sql_constraints = [
-        ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
-    ]
+#    _sql_constraints = [
+#        ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
+#    ]
 OeMedicalPathology()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
