@@ -3517,7 +3517,7 @@ msgstr "Dominance"
 #: view:oemedical.appointment:0
 #: field:oemedical.appointment,name:0
 msgid "Appointment ID"
-msgstr "Appointment ID"
+msgstr "ID Cita"
 
 #. module: oemedical
 #: view:oemedical.prescription.line:0
@@ -3866,7 +3866,7 @@ msgstr "Head Circumference"
 #: view:oemedical.patient.evaluation:0
 #: field:oemedical.patient.evaluation,evaluation_date:0
 msgid "Appointment"
-msgstr "Appointment"
+msgstr "Citas"
 
 #. module: oemedical
 #: selection:oemedical.hospital.bed,bed_type:0
@@ -5691,7 +5691,7 @@ msgstr "Oemedical Operational_Sector"
 #: field:oemedical.appointment,appointment_type:0
 #: field:oemedical.patient.evaluation,evaluation_type:0
 msgid "Type"
-msgstr "Type"
+msgstr "Tipo"
 
 #. module: oemedical
 #: selection:oemedical.puerperium.monitor,lochia_odor:0
