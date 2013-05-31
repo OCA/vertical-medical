@@ -5023,7 +5023,7 @@ msgstr "Check this box if the Paciente suffers from any sort of gnosia disorders
 #: selection:oemedical.Cita,Cita_type:0
 #: selection:oemedical.Paciente.evaluation,evaluation_type:0
 msgid "Ambulatory"
-msgstr "Ambulatory"
+msgstr "Ambulatorio"
 
 #. module: oemedical
 #: view:oemedical.drug.form:0
@@ -5201,7 +5201,7 @@ msgstr "Vocabulary"
 #: view:oemedical.Paciente.evaluation:0
 #: field:oemedical.Paciente.evaluation,weight:0
 msgid "Weight"
-msgstr "Weight"
+msgstr "Peso"
 
 #. module: oemedical
 #: field:oemedical.perinatal,admission_date:0

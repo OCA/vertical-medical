@@ -40,7 +40,7 @@ class OeMedicalPrescriptionOrder(osv.Model):
         'prescription_date': fields.datetime(string='Prescription Date'),
         'prescription_warning_ack': fields.boolean(
             string='Prescription verified'),
-        'user_id': fields.many2one('res.users', string='Prescribing Doctor',
+        'physician_id': fields.many2one('oemedical.physician', string='Prescribing Doctor',
                                    required=True),
         'name': fields.char(size=256, string='Prescription ID', required=True,
                              help='Type in the ID of this prescription'),
