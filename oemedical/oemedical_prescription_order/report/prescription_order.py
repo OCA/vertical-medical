@@ -9,4 +9,4 @@ class order(report_sxw.rml_parse):
             'time': time,
         })
 
-report_sxw.report_sxw('report.prescription.order', 'oemedical.prescription.order', 'addons/oemedical/oemedical_prescription_order/report/prescription_order.rml', parser=order, header=True)
+report_sxw.report_sxw('report.prescription.order', 'oemedical.prescription.order', 'addons/oemedical/oemedical_prescription_order/report/prescription_order.rml', parser=order, header=False)
