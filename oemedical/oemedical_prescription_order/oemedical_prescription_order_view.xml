@@ -14,7 +14,7 @@
 					<field name="pharmacy" />
 					<field name="prescription_date" />
 					<field name="prescription_warning_ack" />
-					<field name="user_id" />
+					<field name="physician_id" />
 					<field name="name" />
 				</tree>
 			</field>
@@ -41,7 +41,7 @@
 					        <field name="pregnancy_warning" />
 					        <field name="pharmacy" />
 					        <field name="prescription_warning_ack" />
-					        <field name="user_id" />
+					        <field name="physician_id" />
 					        <newline/>
 					        <field name="prescription_line" colspan="4"/>
 					        <newline/>
@@ -64,7 +64,7 @@
 					<field name="pregnancy_warning" />
 					<field name="pharmacy" />
 					<field name="prescription_warning_ack" />
-					<field name="user_id" />
+					<field name="physician_id" />
 					<field name="notes"/>
 					<newline />
 					<group expand="0" string="Group By...">
@@ -79,7 +79,7 @@
 						<filter string="Prescription verified" domain="[]"
 							context="{'group_by':'prescription_warning_ack'}" />
 						<filter string="Prescribing Doctor" domain="[]"
-							context="{'group_by':'user_id'}" />
+							context="{'group_by':'physician_id'}" />
 						<filter string="Prescription ID" domain="[]"
 							context="{'group_by':'name'}" />
 					</group>

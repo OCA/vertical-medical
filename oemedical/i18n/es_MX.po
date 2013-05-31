@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-31 05:48+0000\n"
-"PO-Revision-Date: 2013-05-31 05:48+0000\n"
+"POT-Creation-Date: 2013-05-31 21:07+0000\n"
+"PO-Revision-Date: 2013-05-31 21:07+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,35 +21,34 @@ msgid "Schedule I and II drugs have a high potential for abuse.They require grea
 msgstr "Schedule I and II drugs have a high potential for abuse.They require greater storage security and have a quota onmanufacturing, among other restrictions. Schedule I drugs areavailable for research only and have no approved medical use; Schedule II drugs are available only by prescription (unrefillable) and require a form for ordering. Schedule III and IV drugs are available by prescription, may have fiverefills in 6 months, and may be ordered orally. Some Schedule V drugs are available over the counter"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Sugar/Salt"
 msgstr "Sugar/Salt"
 
 #. module: oemedical
-#: field:oemedical.Paciente.prenatal.evaluation,fetus_heart_rate:0
-#: help:oemedical.Paciente.prenatal.evaluation,fetus_heart_rate:0
+#: field:oemedical.patient.prenatal.evaluation,fetus_heart_rate:0
+#: help:oemedical.patient.prenatal.evaluation,fetus_heart_rate:0
 msgid "Fetus heart rate"
 msgstr "Fetus heart rate"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,childbearing_age:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,childbearing_age:0
 msgid "Potential for Childbearing"
 msgstr "Potential for Childbearing"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.disease,status:0
+#: selection:oemedical.patient.disease,status:0
 msgid "unchanged"
 msgstr "unchanged"
 
 #. module: oemedical
-#: field:oemedical.Paciente.pregnancy,monozygotic:0
+#: field:oemedical.patient.pregnancy,monozygotic:0
 msgid "Monozygotic"
 msgstr "Monozygotic"
 
 #. module: oemedical
-#: view:oemedical.Cita:0
-#: view:oemedical.prescription.order:0
+#: view:oemedical.appointment:0
 msgid "Send by e-mail"
 msgstr "Send by e-mail"
 
@@ -59,17 +58,17 @@ msgid "Vaginal tearing"
 msgstr "Vaginal tearing"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Perinatal and Intrapartum Information"
 msgstr "Perinatal and Intrapartum Information"
 
 #. module: oemedical
-#: field:oemedical.Paciente,pap_test_last:0
+#: field:oemedical.patient,pap_test_last:0
 msgid "Last PAP test"
 msgstr "Last PAP test"
 
 #. module: oemedical
-#: field:oemedical.Paciente.pregnancy,current_pregnancy:0
+#: field:oemedical.patient.pregnancy,current_pregnancy:0
 msgid "Current Pregnancy"
 msgstr "Current Pregnancy"
 
@@ -84,13 +83,13 @@ msgid "indefinite"
 msgstr "indefinite"
 
 #. module: oemedical
-#: field:oemedical.Paciente.evaluation,mood:0
+#: field:oemedical.patient.evaluation,mood:0
 msgid "Mood"
 msgstr "Mood"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,information_source:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,information_source:0
 msgid "Source"
 msgstr "Source"
 
@@ -129,12 +128,12 @@ msgid "Low Air Loss"
 msgstr "Low Air Loss"
 
 #. module: oemedical
-#: field:oemedical.Paciente,menarche:0
+#: field:oemedical.patient,menarche:0
 msgid "Menarche age"
 msgstr "Menarche age"
 
 #. module: oemedical
-#: field:oemedical.Paciente.evaluation,loc_verbal:0
+#: field:oemedical.patient.evaluation,loc_verbal:0
 msgid "Glasgow - Verbal"
 msgstr "Glasgow - Verbal"
 
@@ -144,10 +143,10 @@ msgid "Oemedical Medication Dosage"
 msgstr "Oemedical Medication Dosage"
 
 #. module: oemedical
-#: model:ir.model,name:oemedical.model_oemedical_Paciente_pregnancy
-#: field:oemedical.Paciente.prenatal.evaluation,name:0
-msgid "Paciente Pregnancy"
-msgstr "Paciente Pregnancy"
+#: model:ir.model,name:oemedical.model_oemedical_patient_pregnancy
+#: field:oemedical.patient.prenatal.evaluation,name:0
+msgid "Patient Pregnancy"
+msgstr "Patient Pregnancy"
 
 #. module: oemedical
 #: field:oemedical.perinatal.monitor,fetus_position:0
@@ -161,19 +160,19 @@ msgid "Quantity"
 msgstr "Quantity"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,respiratory_rate:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,respiratory_rate:0
 msgid "Respiratory Rate"
 msgstr "Respiratory Rate"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_physician_view
-#: view:oemedical.Cita:0
-#: field:oemedical.Cita,doctor:0
-#: view:oemedical.Paciente.disease:0
-#: field:oemedical.Paciente.disease,doctor:0
-#: view:oemedical.Paciente.medication:0
-#: field:oemedical.Paciente.medication,doctor:0
+#: view:oemedical.appointment:0
+#: field:oemedical.appointment,doctor:0
+#: view:oemedical.patient.disease:0
+#: field:oemedical.patient.disease,doctor:0
+#: view:oemedical.patient.medication:0
+#: field:oemedical.patient.medication,doctor:0
 msgid "Physician"
 msgstr "Physician"
 
@@ -183,7 +182,7 @@ msgid "Oemedical Insurance"
 msgstr "Oemedical Insurance"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,anticonceptive:0
+#: selection:oemedical.patient,anticonceptive:0
 msgid "Pill / Minipill"
 msgstr "Pill / Minipill"
 
@@ -193,19 +192,19 @@ msgid "Flunitrazepam"
 msgstr "Flunitrazepam"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-msgid "Paciente Allergies and Critical Information"
-msgstr "Paciente Allergies and Critical Information"
+#: view:oemedical.patient:0
+msgid "Patient Allergies and Critical Information"
+msgstr "Patient Allergies and Critical Information"
 
 #. module: oemedical
-#: model:ir.model,name:oemedical.model_oemedical_Paciente_disease
-msgid "oemedical.Paciente.disease"
-msgstr "oemedical.Paciente.disease"
+#: model:ir.model,name:oemedical.model_oemedical_patient_disease
+msgid "oemedical.patient.disease"
+msgstr "oemedical.patient.disease"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-msgid "Paciente Genetic Family Diseases"
-msgstr "Paciente Genetic Family Diseases"
+#: view:oemedical.patient:0
+msgid "Patient Genetic Family Diseases"
+msgstr "Patient Genetic Family Diseases"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_hospital_or_view
@@ -213,24 +212,24 @@ msgid "Hospital Or"
 msgstr "Hospital Or"
 
 #. module: oemedical
-#: model:ir.model,name:oemedical.model_oemedical_Paciente_mammography_history
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,mammography_history:0
+#: model:ir.model,name:oemedical.model_oemedical_patient_mammography_history
+#: view:oemedical.patient:0
+#: field:oemedical.patient,mammography_history:0
 msgid "Mammography History"
 msgstr "Mammography History"
 
 #. module: oemedical
-#: field:oemedical.Paciente,salt:0
+#: field:oemedical.patient,salt:0
 msgid "Salt"
 msgstr "Salt"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,anticonceptive:0
+#: selection:oemedical.patient,anticonceptive:0
 msgid "Fertility cycle awareness"
 msgstr "Fertility cycle awareness"
 
 #. module: oemedical
-#: field:oemedical.Paciente.pregnancy,fetuses:0
+#: field:oemedical.patient.pregnancy,fetuses:0
 msgid "Fetuses"
 msgstr "Fetuses"
 
@@ -240,15 +239,15 @@ msgid "Check if the party is an Insurance Company"
 msgstr "Check if the party is an Insurance Company"
 
 #. module: oemedical
-#: view:oemedical.Paciente.disease:0
-#: field:oemedical.Paciente.disease,pregnancy_warning:0
+#: view:oemedical.patient.disease:0
+#: field:oemedical.patient.disease,pregnancy_warning:0
 msgid "Pregnancy warning"
 msgstr "Pregnancy warning"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,vocabulary:0
-msgid "Check this box if the Paciente lacks basic intelectual capacity, when she/he can not describe elementary objects"
-msgstr "Check this box if the Paciente lacks basic intelectual capacity, when she/he can not describe elementary objects"
+#: help:oemedical.patient.evaluation,vocabulary:0
+msgid "Check this box if the patient lacks basic intelectual capacity, when she/he can not describe elementary objects"
+msgstr "Check this box if the patient lacks basic intelectual capacity, when she/he can not describe elementary objects"
 
 #. module: oemedical
 #: view:oemedical.medication.template:0
@@ -257,15 +256,15 @@ msgid "Dose"
 msgstr "Dose"
 
 #. module: oemedical
-#: field:oemedical.Paciente.menstrual_history,lmp:0
-#: field:oemedical.Paciente.pregnancy,lmp:0
+#: field:oemedical.patient.menstrual_history,lmp:0
+#: field:oemedical.patient.pregnancy,lmp:0
 msgid "LMP"
 msgstr "LMP"
 
 #. module: oemedical
-#: help:oemedical.Paciente,colposcopy:0
-msgid "Check if the Paciente has done a colposcopy exam"
-msgstr "Check if the Paciente has done a colposcopy exam"
+#: help:oemedical.patient,colposcopy:0
+msgid "Check if the patient has done a colposcopy exam"
+msgstr "Check if the patient has done a colposcopy exam"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_res_partner
@@ -273,35 +272,35 @@ msgid "Partner"
 msgstr "Empresa"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.disease,disease_severity:0
+#: selection:oemedical.patient.disease,disease_severity:0
 msgid "Severe"
 msgstr "Severe"
 
 #. module: oemedical
-#: field:oemedical.Paciente.pregnancy,pregnancy_end_date:0
+#: field:oemedical.patient.pregnancy,pregnancy_end_date:0
 msgid "End of Pregnancy"
 msgstr "End of Pregnancy"
 
 #. module: oemedical
-#: help:oemedical.Paciente.pap_history,result:0
+#: help:oemedical.patient.pap_history,result:0
 msgid "Please check the lab results if the module is installed"
 msgstr "Please check the lab results if the module is installed"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,hba1c:0
+#: help:oemedical.patient.evaluation,hba1c:0
 msgid "Last Glycated Hb level. Can be approximative."
 msgstr "Last Glycated Hb level. Can be approximative."
 
 #. module: oemedical
-#: field:oemedical.Paciente,age_start_drinking:0
+#: field:oemedical.patient,age_start_drinking:0
 msgid "Age started to drink "
 msgstr "Age started to drink "
 
 #. module: oemedical
-#: model:ir.model,name:oemedical.model_oemedical_Paciente_genetic_risk
-#: view:oemedical.Paciente:0
-msgid "Paciente Genetic Risks"
-msgstr "Paciente Genetic Risks"
+#: model:ir.model,name:oemedical.model_oemedical_patient_genetic_risk
+#: view:oemedical.patient:0
+msgid "Patient Genetic Risks"
+msgstr "Patient Genetic Risks"
 
 #. module: oemedical
 #: help:oemedical.drugs_recreational,name:0
@@ -330,7 +329,7 @@ msgid "Pathology Category"
 msgstr "Pathology Category"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.pap_history,result:0
+#: selection:oemedical.patient.pap_history,result:0
 msgid "Negative"
 msgstr "Negative"
 
@@ -347,12 +346,12 @@ msgid "Suggested administration hours. For example, at 08:00, 13:00 and 18:00 ca
 msgstr "Suggested administration hours. For example, at 08:00, 13:00 and 18:00 can be encoded like 08 13 18"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.family.diseases,relative:0
+#: selection:oemedical.patient.family.diseases,relative:0
 msgid "Grandmother"
-msgstr "Grandmother"
+msgstr "Abuela"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,loc_eyes:0
+#: selection:oemedical.patient.evaluation,loc_eyes:0
 msgid "Opens eyes in response to painful stimuli"
 msgstr "Opens eyes in response to painful stimuli"
 
@@ -360,10 +359,10 @@ msgstr "Opens eyes in response to painful stimuli"
 #: selection:oemedical.insurance,insurance_type:0
 #: selection:res.partner,insurance_company_type:0
 msgid "State"
-msgstr "State"
+msgstr "Estado"
 
 #. module: oemedical
-#: help:oemedical.Paciente.prenatal.evaluation,overweight:0
+#: help:oemedical.patient.prenatal.evaluation,overweight:0
 msgid "Check this box if the mother is overweight or obesity"
 msgstr "Check this box if the mother is overweight or obesity"
 
@@ -373,8 +372,8 @@ msgid "oemedical.medicament"
 msgstr "oemedical.medicament"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,bpm:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,bpm:0
 msgid "Heart Rate"
 msgstr "Heart Rate"
 
@@ -385,8 +384,8 @@ msgid "Health Professional"
 msgstr "Health Professional"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,height:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,height:0
 msgid "Height"
 msgstr "Height"
 
@@ -397,9 +396,9 @@ msgid "Therapeutic effect"
 msgstr "Therapeutic effect"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-msgid "Paciente colposcopy History"
-msgstr "Paciente colposcopy History"
+#: view:oemedical.patient:0
+msgid "Patient colposcopy History"
+msgstr "Patient colposcopy History"
 
 #. module: oemedical
 #: model:oemedical.drugs_recreational,name:oemedical.lsd
@@ -413,32 +412,32 @@ msgid "Complete Breech"
 msgstr "Complete Breech"
 
 #. module: oemedical
-#: model:ir.actions.act_window,name:oemedical.act_open_oemedical_Paciente_view
-#: model:ir.ui.menu,name:oemedical.oemedical_Paciente_root
-#: view:oemedical.Cita:0
-#: field:oemedical.Cita,Paciente_id:0
-#: field:oemedical.insurance,Paciente_id:0
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente.cage,name:0
-#: field:oemedical.Paciente.colposcopy_history,name:0
-#: view:oemedical.Paciente.disease:0
-#: field:oemedical.Paciente.disease,Paciente_id:0
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,Paciente_id:0
-#: field:oemedical.Paciente.family.diseases,Paciente_id:0
-#: field:oemedical.Paciente.genetic.risk,Paciente_id:0
-#: field:oemedical.Paciente.mammography_history,name:0
-#: view:oemedical.Paciente.medication:0
-#: field:oemedical.Paciente.medication,Paciente_id:0
-#: field:oemedical.Paciente.menstrual_history,name:0
-#: field:oemedical.Paciente.pap_history,name:0
-#: field:oemedical.Paciente.recreational_drugs,Paciente_id:0
+#: model:ir.actions.act_window,name:oemedical.act_open_oemedical_patient_view
+#: model:ir.ui.menu,name:oemedical.oemedical_patient_root
+#: view:oemedical.appointment:0
+#: field:oemedical.appointment,patient_id:0
+#: field:oemedical.insurance,patient_id:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient.cage,name:0
+#: field:oemedical.patient.colposcopy_history,name:0
+#: view:oemedical.patient.disease:0
+#: field:oemedical.patient.disease,patient_id:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,patient_id:0
+#: field:oemedical.patient.family.diseases,patient_id:0
+#: field:oemedical.patient.genetic.risk,patient_id:0
+#: field:oemedical.patient.mammography_history,name:0
+#: view:oemedical.patient.medication:0
+#: field:oemedical.patient.medication,patient_id:0
+#: field:oemedical.patient.menstrual_history,name:0
+#: field:oemedical.patient.pap_history,name:0
+#: field:oemedical.patient.recreational_drugs,patient_id:0
 #: view:oemedical.prescription.order:0
-#: field:oemedical.prescription.order,Paciente_id:0
+#: field:oemedical.prescription.order,patient_id:0
 #: view:oemedical.vaccination:0
-#: field:oemedical.vaccination,Paciente_id:0
-#: field:res.partner,is_Paciente:0
-msgid "Paciente"
+#: field:oemedical.vaccination,patient_id:0
+#: field:res.partner,is_patient:0
+msgid "Patient"
 msgstr "Paciente"
 
 #. module: oemedical
@@ -450,7 +449,7 @@ msgid "Form"
 msgstr "Form"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,sexual_partners:0
+#: selection:oemedical.patient,sexual_partners:0
 msgid "Polygamous"
 msgstr "Polygamous"
 
@@ -470,15 +469,15 @@ msgid "Intoxication"
 msgstr "Intoxication"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,vaccinations:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,vaccinations:0
 msgid "Vaccinations"
 msgstr "Vaccinations"
 
 #. module: oemedical
-#: model:ir.ui.menu,name:oemedical.oemedical_Paciente_evaluation
-msgid " Paciente Evaluation"
-msgstr " Paciente Evaluation"
+#: model:ir.ui.menu,name:oemedical.oemedical_patient_evaluation
+msgid " Patient Evaluation"
+msgstr " Evaluacion del Paciente"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_procedure
@@ -506,8 +505,8 @@ msgid "Subcutaneous or Intradermical administration"
 msgstr "Subcutaneous or Intradermical administration"
 
 #. module: oemedical
-#: view:oemedical.Paciente.disease:0
-#: field:oemedical.Paciente.disease,diagnosed_date:0
+#: view:oemedical.patient.disease:0
+#: field:oemedical.patient.disease,diagnosed_date:0
 msgid "Date of Diagnosis"
 msgstr "Date of Diagnosis"
 
@@ -517,20 +516,20 @@ msgid "Locus of the chromosome"
 msgstr "Locus of the chromosome"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,ldl:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,ldl:0
 msgid "Last LDL"
 msgstr "Last LDL"
 
 #. module: oemedical
-#: help:oemedical.Paciente.family.diseases,relative:0
+#: help:oemedical.patient.family.diseases,relative:0
 msgid "First degree = siblings, mother and father; second degree = Uncles, nephews and Nieces; third degree = Grandparents and cousins"
 msgstr "First degree = siblings, mother and father; second degree = Uncles, nephews and Nieces; third degree = Grandparents and cousins"
 
 #. module: oemedical
-#: help:oemedical.Paciente,drug_iv:0
-msgid "Check this option if the Paciente injects drugs"
-msgstr "Check this option if the Paciente injects drugs"
+#: help:oemedical.patient,drug_iv:0
+msgid "Check this option if the patient injects drugs"
+msgstr "Check this option if the patient injects drugs"
 
 #. module: oemedical
 #: selection:oemedical.perinatal,laceration:0
@@ -538,18 +537,18 @@ msgid "Urethral"
 msgstr "Urethral"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,age:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,age:0
 msgid "Age"
-msgstr "Age"
+msgstr "Edad"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,evaluation_type:0
+#: selection:oemedical.patient.evaluation,evaluation_type:0
 msgid "Periodic control"
 msgstr "Periodic control"
 
 #. module: oemedical
-#: field:oemedical.Paciente,car_child_safety:0
+#: field:oemedical.patient,car_child_safety:0
 msgid "Car Child Safety"
 msgstr "Car Child Safety"
 
@@ -559,7 +558,7 @@ msgid "Sniffing"
 msgstr "Sniffing"
 
 #. module: oemedical
-#: field:oemedical.Paciente,age_quit_drinking:0
+#: field:oemedical.patient,age_quit_drinking:0
 msgid "Age quit drinking "
 msgstr "Age quit drinking "
 
@@ -574,7 +573,7 @@ msgid "oemedical.diagnostic_hypothesis"
 msgstr "oemedical.diagnostic_hypothesis"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.prenatal.evaluation,invasive_placentation:0
+#: selection:oemedical.patient.prenatal.evaluation,invasive_placentation:0
 msgid "Increta"
 msgstr "Increta"
 
@@ -589,15 +588,15 @@ msgid "oemedical.ethnicity"
 msgstr "oemedical.ethnicity"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,primary_care_doctor:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,primary_care_doctor:0
 msgid "Primary Care Doctor"
 msgstr "Primary Care Doctor"
 
 #. module: oemedical
-#: view:oemedical.Cita:0
-#: field:oemedical.Cita,consultations:0
-#: help:oemedical.Cita,consultations:0
+#: view:oemedical.appointment:0
+#: field:oemedical.appointment,consultations:0
+#: help:oemedical.appointment,consultations:0
 msgid "Consultation Services"
 msgstr "Consultation Services"
 
@@ -612,29 +611,29 @@ msgid "oemedical.drug.route"
 msgstr "oemedical.drug.route"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Mestrual History"
 msgstr "Mestrual History"
 
 #. module: oemedical
 #: model:oemedical.drugs_recreational,name:oemedical.nicotine
 msgid "Nicotine"
-msgstr "Nicotine"
+msgstr "Nicotina"
 
 #. module: oemedical
-#: field:oemedical.Paciente,menopause:0
+#: field:oemedical.patient,menopause:0
 msgid "Menopause age"
-msgstr "Menopause age"
+msgstr "Edad Menopause"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 #: field:res.partner,lastname:0
 #: help:res.partner,lastname:0
 msgid "Last Name"
-msgstr "Last Name"
+msgstr "Apellido Paterno"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Recreational Drugs"
 msgstr "Recreational Drugs"
 
@@ -646,20 +645,20 @@ msgstr "Check this option for private room"
 #. module: oemedical
 #: view:oemedical.medicament:0
 #: field:oemedical.medicament,adverse_reaction:0
-#: view:oemedical.Paciente.medication:0
-#: field:oemedical.Paciente.medication,adverse_reaction:0
+#: view:oemedical.patient.medication:0
+#: field:oemedical.patient.medication,adverse_reaction:0
 msgid "Adverse Reactions"
 msgstr "Adverse Reactions"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,sexual_practices:0
+#: selection:oemedical.patient,sexual_practices:0
 msgid "Safe / Protected sex"
 msgstr "Safe / Protected sex"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,tremor:0
-msgid "If associated  to a disease, please encode it on the Paciente disease history"
-msgstr "If associated  to a disease, please encode it on the Paciente disease history"
+#: help:oemedical.patient.evaluation,tremor:0
+msgid "If associated  to a disease, please encode it on the patient disease history"
+msgstr "If associated  to a disease, please encode it on the patient disease history"
 
 #. module: oemedical
 #: model:oemedical.drugs_recreational,name:oemedical.mdma
@@ -687,7 +686,7 @@ msgstr "Owner"
 
 #. module: oemedical
 #: view:oemedical.prescription.order:0
-#: field:oemedical.prescription.order,user_id:0
+#: field:oemedical.prescription.order,physician_id:0
 msgid "Prescribing Doctor"
 msgstr "Prescribing Doctor"
 
@@ -702,7 +701,7 @@ msgid "PCP and analogs"
 msgstr "PCP and analogs"
 
 #. module: oemedical
-#: help:oemedical.Paciente,age_quit_drugs:0
+#: help:oemedical.patient,age_quit_drugs:0
 msgid "Date of quitting drugs"
 msgstr "Date of quitting drugs"
 
@@ -713,10 +712,10 @@ msgstr "Date of quitting drugs"
 #: view:oemedical.medicament:0
 #: field:oemedical.medicament,category:0
 msgid "Category"
-msgstr "Category"
+msgstr "Categoria"
 
 #. module: oemedical
-#: field:oemedical.Paciente,alcohol_liquor_number:0
+#: field:oemedical.patient,alcohol_liquor_number:0
 msgid "Liquor / day"
 msgstr "Liquor / day"
 
@@ -742,20 +741,20 @@ msgid "Family Member Name"
 msgstr "Family Member Name"
 
 #. module: oemedical
-#: help:oemedical.Paciente.disease,is_infectious:0
-msgid "Check if the Paciente has an infectioustransmissible disease"
-msgstr "Check if the Paciente has an infectioustransmissible disease"
+#: help:oemedical.patient.disease,is_infectious:0
+msgid "Check if the patient has an infectioustransmissible disease"
+msgstr "Check if the patient has an infectioustransmissible disease"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,doctor:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,doctor:0
 msgid "Doctor"
 msgstr "Doctor"
 
 #. module: oemedical
-#: help:res.partner,is_Paciente:0
-msgid "Check if the party is a Paciente"
-msgstr "Check if the party is a Paciente"
+#: help:res.partner,is_patient:0
+msgid "Check if the party is a patient"
+msgstr "Check if the party is a patient"
 
 #. module: oemedical
 #: field:oemedical.family_member,member:0
@@ -763,17 +762,17 @@ msgid "Member"
 msgstr "Member"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,height:0
+#: help:oemedical.patient.evaluation,height:0
 msgid "Height in centimeters, eg 175"
 msgstr "Height in centimeters, eg 175"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Safety"
 msgstr "Safety"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Screening"
 msgstr "Screening"
 
@@ -793,7 +792,7 @@ msgid "Health Professional's Name, from the partner list"
 msgstr "Health Professional's Name, from the partner list"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,anticonceptive:0
+#: selection:oemedical.patient,anticonceptive:0
 msgid "Skin Patch"
 msgstr "Skin Patch"
 
@@ -802,10 +801,10 @@ msgstr "Skin Patch"
 #: field:oemedical.diagnostic_hypothesis,evaluation_id:0
 #: view:oemedical.directions:0
 #: field:oemedical.directions,evaluation_id:0
-#: field:oemedical.Paciente.colposcopy_history,evaluation:0
-#: field:oemedical.Paciente.mammography_history,evaluation:0
-#: field:oemedical.Paciente.menstrual_history,evaluation:0
-#: field:oemedical.Paciente.pap_history,evaluation:0
+#: field:oemedical.patient.colposcopy_history,evaluation:0
+#: field:oemedical.patient.mammography_history,evaluation:0
+#: field:oemedical.patient.menstrual_history,evaluation:0
+#: field:oemedical.patient.pap_history,evaluation:0
 #: view:oemedical.secondary_condition:0
 #: field:oemedical.secondary_condition,evaluation_id:0
 #: view:oemedical.signs_and_symptoms:0
@@ -814,8 +813,8 @@ msgid "Evaluation"
 msgstr "Evaluation"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.colposcopy_history,result:0
-#: selection:oemedical.Paciente.mammography_history,result:0
+#: selection:oemedical.patient.colposcopy_history,result:0
+#: selection:oemedical.patient.mammography_history,result:0
 msgid "abnormal"
 msgstr "abnormal"
 
@@ -839,11 +838,11 @@ msgstr "Status"
 
 #. module: oemedical
 #: help:oemedical.vaccination,institution:0
-msgid "Medical Center where the Paciente is being or was vaccinated"
-msgstr "Medical Center where the Paciente is being or was vaccinated"
+msgid "Medical Center where the patient is being or was vaccinated"
+msgstr "Medical Center where the patient is being or was vaccinated"
 
 #. module: oemedical
-#: field:oemedical.Paciente,recreational_drugs:0
+#: field:oemedical.patient,recreational_drugs:0
 msgid "Drugs"
 msgstr "Drugs"
 
@@ -854,12 +853,12 @@ msgid "OeMedical"
 msgstr "OeMedical"
 
 #. module: oemedical
-#: field:oemedical.Paciente,sex_with_prostitutes:0
+#: field:oemedical.patient,sex_with_prostitutes:0
 msgid "Sex with prostitutes"
 msgstr "Sex with prostitutes"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Diet"
 msgstr "Diet"
 
@@ -869,7 +868,7 @@ msgid "rubra"
 msgstr "rubra"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,loc_motor:0
+#: selection:oemedical.patient.evaluation,loc_motor:0
 msgid "Makes no movement"
 msgstr "Makes no movement"
 
@@ -890,17 +889,17 @@ msgid "Treatment duration"
 msgstr "Treatment duration"
 
 #. module: oemedical
-#: field:oemedical.Paciente,abortions:0
+#: field:oemedical.patient,abortions:0
 msgid "Abortions"
 msgstr "Abortions"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.family.diseases,relative:0
+#: selection:oemedical.patient.family.diseases,relative:0
 msgid "Uncle"
 msgstr "Uncle"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,diagnostic_hypothesis:0
+#: help:oemedical.patient.evaluation,diagnostic_hypothesis:0
 msgid "Presumptive Diagnosis. If no diagnosis can be made, encode the main sign or symptom."
 msgstr "Presumptive Diagnosis. If no diagnosis can be made, encode the main sign or symptom."
 
@@ -916,19 +915,19 @@ msgstr "Family Members"
 
 #. module: oemedical
 #: view:oemedical.disease.gene:0
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Oemedical Disease Gene"
 msgstr "Oemedical Disease Gene"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Pap / Colpo"
 msgstr "Pap / Colpo"
 
 #. module: oemedical
-#: help:oemedical.Paciente,general_info:0
-msgid "General information about the Paciente"
-msgstr "General information about the Paciente"
+#: help:oemedical.patient,general_info:0
+msgid "General information about the patient"
+msgstr "General information about the patient"
 
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_operational_sector
@@ -938,12 +937,12 @@ msgstr " Operational Sector"
 #. module: oemedical
 #: selection:oemedical.drugs_recreational,category:0
 msgid "Others"
-msgstr "Others"
+msgstr "Otros"
 
 #. module: oemedical
-#: field:oemedical.Paciente,smoking:0
+#: field:oemedical.patient,smoking:0
 msgid "Smokes"
-msgstr "Smokes"
+msgstr "Fumador"
 
 #. module: oemedical
 #: field:oemedical.drugs_recreational,addiction_level:0
@@ -956,15 +955,15 @@ msgstr "Dependence"
 #: field:oemedical.hospital.bed,name:0
 #: field:product.product,is_bed:0
 msgid "Bed"
-msgstr "Bed"
+msgstr "Cama"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.family.diseases,relative:0
+#: selection:oemedical.patient.family.diseases,relative:0
 msgid "Grandfather"
-msgstr "Grandfather"
+msgstr "Abuelo"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,loc_motor:0
+#: selection:oemedical.patient.evaluation,loc_motor:0
 msgid "Flexion / Withdrawal to painful stimuli"
 msgstr "Flexion / Withdrawal to painful stimuli"
 
@@ -975,12 +974,12 @@ msgid "Protein involved"
 msgstr "Protein involved"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Medication"
-msgstr "Medication"
+msgstr "Medicacion"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Complications"
 msgstr "Complications"
 
@@ -1003,7 +1002,7 @@ msgid "Vaccine"
 msgstr "Vaccine"
 
 #. module: oemedical
-#: field:oemedical.Paciente,anticonceptive:0
+#: field:oemedical.patient,anticonceptive:0
 msgid "Anticonceptive Method"
 msgstr "Anticonceptive Method"
 
@@ -1014,9 +1013,9 @@ msgid "dose unit"
 msgstr "dose unit"
 
 #. module: oemedical
-#: selection:oemedical.Cita,urgency:0
+#: selection:oemedical.appointment,urgency:0
 msgid "Urgent"
-msgstr "Urgent"
+msgstr "Urgente"
 
 #. module: oemedical
 #: field:oemedical.drugs_recreational,route_oral:0
@@ -1031,8 +1030,8 @@ msgid "Procedure"
 msgstr "Procedure"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,praxis:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,praxis:0
 msgid "Praxis"
 msgstr "Praxis"
 
@@ -1042,10 +1041,10 @@ msgstr "Praxis"
 #: field:oemedical.family,name:0
 #: view:oemedical.family_member:0
 #: field:oemedical.family_member,family_id:0
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,family:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,family:0
 msgid "Family"
-msgstr "Family"
+msgstr "Familia"
 
 #. module: oemedical
 #: view:oemedical.prescription.order:0
@@ -1054,20 +1053,20 @@ msgid "Prescription verified"
 msgstr "Prescription verified"
 
 #. module: oemedical
-#: help:oemedical.Paciente,diet:0
-msgid "Check if the Paciente is currently on a diet"
-msgstr "Check if the Paciente is currently on a diet"
+#: help:oemedical.patient,diet:0
+msgid "Check if the patient is currently on a diet"
+msgstr "Check if the patient is currently on a diet"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Sleep"
 msgstr "Sleep"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,pregnancy_history:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,pregnancy_history:0
 msgid "Pregnancies"
-msgstr "Pregnancies"
+msgstr "Embarazos"
 
 #. module: oemedical
 #: help:oemedical.pathology,protein:0
@@ -1080,51 +1079,51 @@ msgid "Active Component"
 msgstr "Active Component"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,marital_status:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,marital_status:0
 msgid "Marital Status"
-msgstr "Marital Status"
+msgstr "Estado Civil"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-msgid "Paciente Recreational Drugs"
-msgstr "Paciente Recreational Drugs"
+#: view:oemedical.patient:0
+msgid "Patient Recreational Drugs"
+msgstr "Patient Recreational Drugs"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Diet and Exersice"
-msgstr "Diet and Exersice"
+msgstr "Dieta y Ejercicio"
 
 #. module: oemedical
-#: field:oemedical.Paciente,ex_alcoholic:0
+#: field:oemedical.patient,ex_alcoholic:0
 msgid "Ex alcoholic"
-msgstr "Ex alcoholic"
+msgstr "Ex alcoholico"
 
 #. module: oemedical
-#: field:oemedical.Paciente.pregnancy,name:0
+#: field:oemedical.patient.pregnancy,name:0
 #: field:oemedical.puerperium.monitor,name:0
-msgid "Paciente ID"
-msgstr "Paciente ID"
+msgid "Patient ID"
+msgstr "ID Paciente"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.family.diseases,relative:0
+#: selection:oemedical.patient.family.diseases,relative:0
 msgid "Nephew"
 msgstr "Nephew"
 
 #. module: oemedical
-#: field:oemedical.Paciente,prostitute:0
+#: field:oemedical.patient,prostitute:0
 msgid "Prostitute"
 msgstr "Prostitute"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Mammography Tests"
 msgstr "Mammography Tests"
 
 #. module: oemedical
 #: field:oemedical.medicament.category,childs:0
 msgid "Children"
-msgstr "Children"
+msgstr "Hijos"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_ethnicity_view
@@ -1133,9 +1132,9 @@ msgid "Ethnicity"
 msgstr "Ethnicity"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,knowledge_current_events:0
-msgid "Check this box if the Paciente can not respond to public notorious events"
-msgstr "Check this box if the Paciente can not respond to public notorious events"
+#: help:oemedical.patient.evaluation,knowledge_current_events:0
+msgid "Check this box if the patient can not respond to public notorious events"
+msgstr "Check this box if the patient can not respond to public notorious events"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_drug_route_view
@@ -1143,13 +1142,13 @@ msgid "Drug Route"
 msgstr "Drug Route"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,object_recognition:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,object_recognition:0
 msgid "Object Recognition"
 msgstr "Object Recognition"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.disease,allergy_type:0
+#: selection:oemedical.patient.disease,allergy_type:0
 msgid "Misc Allergy"
 msgstr "Misc Allergy"
 
@@ -1159,35 +1158,35 @@ msgid "oemedical.hospital.unit"
 msgstr "oemedical.hospital.unit"
 
 #. module: oemedical
-#: field:oemedical.Paciente.prenatal.evaluation,vasa_previa:0
+#: field:oemedical.patient.prenatal.evaluation,vasa_previa:0
 msgid "Vasa Previa"
 msgstr "Vasa Previa"
 
 #. module: oemedical
-#: field:oemedical.Paciente.family.diseases,xory:0
+#: field:oemedical.patient.family.diseases,xory:0
 msgid "Maternal or Paternal"
 msgstr "Maternal or Paternal"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,signs_and_symptoms:0
-msgid "Enter the Signs and Symptoms                                         for the Paciente in this evaluation."
-msgstr "Enter the Signs and Symptoms                                         for the Paciente in this evaluation."
+#: help:oemedical.patient.evaluation,signs_and_symptoms:0
+msgid "Enter the Signs and Symptoms                                         for the patient in this evaluation."
+msgstr "Enter the Signs and Symptoms                                         for the patient in this evaluation."
 
 #. module: oemedical
-#: field:oemedical.Paciente,colposcopy_last:0
-#: help:oemedical.Paciente.colposcopy_history,last_colposcopy:0
+#: field:oemedical.patient,colposcopy_last:0
+#: help:oemedical.patient.colposcopy_history,last_colposcopy:0
 msgid "Last colposcopy"
 msgstr "Last colposcopy"
 
 #. module: oemedical
-#: field:oemedical.Paciente.pregnancy,perinatal:0
+#: field:oemedical.patient.pregnancy,perinatal:0
 msgid "Perinatal Info"
 msgstr "Perinatal Info"
 
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_medicament
 msgid " Medicament"
-msgstr " Medicament"
+msgstr " Medicamento"
 
 #. module: oemedical
 #: view:oemedical.family_member:0
@@ -1218,10 +1217,10 @@ msgstr "dominant"
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_medicament_root
 msgid "Medicaments"
-msgstr "Medicaments"
+msgstr "Medicamentos"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Additional Info and Effects"
 msgstr "Additional Info and Effects"
 
@@ -1231,14 +1230,14 @@ msgid "Oemedical Directions"
 msgstr "Oemedical Directions"
 
 #. module: oemedical
-#: help:oemedical.Paciente,coffee_cups:0
+#: help:oemedical.patient,coffee_cups:0
 msgid "Number of cup of coffee a day"
 msgstr "Number of cup of coffee a day"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-msgid "Paciente mammography History"
-msgstr "Paciente mammography History"
+#: view:oemedical.patient:0
+msgid "Patient mammography History"
+msgstr "Patient mammography History"
 
 #. module: oemedical
 #: field:oemedical.perinatal,dismissed:0
@@ -1247,21 +1246,21 @@ msgstr "Dismissed from hospital"
 
 #. module: oemedical
 #: help:oemedical.medication.template,indication:0
-msgid "Choose a disease for this medicament from the disease list. It can be an existing disease of the Paciente or a prophylactic."
-msgstr "Choose a disease for this medicament from the disease list. It can be an existing disease of the Paciente or a prophylactic."
+msgid "Choose a disease for this medicament from the disease list. It can be an existing disease of the patient or a prophylactic."
+msgstr "Choose a disease for this medicament from the disease list. It can be an existing disease of the patient or a prophylactic."
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Sexual practices"
-msgstr "Sexual practices"
+msgstr "Practicas Sexuales"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.menstrual_history,frequency:0
+#: selection:oemedical.patient.menstrual_history,frequency:0
 msgid "oligomenorrhea"
 msgstr "oligomenorrhea"
 
 #. module: oemedical
-#: help:oemedical.Paciente.prenatal.evaluation,fetal_ac:0
+#: help:oemedical.patient.prenatal.evaluation,fetal_ac:0
 msgid "Fetal Abdominal Circumference"
 msgstr "Fetal Abdominal Circumference"
 
@@ -1271,9 +1270,9 @@ msgid "III"
 msgstr "III"
 
 #. module: oemedical
-#: help:oemedical.Paciente,traffic_laws:0
-msgid "Check if the Paciente is a safe driver"
-msgstr "Check if the Paciente is a safe driver"
+#: help:oemedical.patient,traffic_laws:0
+msgid "Check if the patient is a safe driver"
+msgstr "Check if the patient is a safe driver"
 
 #. module: oemedical
 #: selection:oemedical.hospital.ward,gender:0
@@ -1286,9 +1285,9 @@ msgid "Stretcher"
 msgstr "Stretcher"
 
 #. module: oemedical
-#: help:oemedical.Paciente,eats_alone:0
-msgid "Check this box if the Paciente eats by him / herself."
-msgstr "Check this box if the Paciente eats by him / herself."
+#: help:oemedical.patient,eats_alone:0
+msgid "Check this box if the patient eats by him / herself."
+msgstr "Check this box if the patient eats by him / herself."
 
 #. module: oemedical
 #: help:oemedical.medication.template,common_dosage:0
@@ -1296,7 +1295,7 @@ msgid "Common / standard dosage frequency for this medicament"
 msgstr "Common / standard dosage frequency for this medicament"
 
 #. module: oemedical
-#: help:oemedical.Paciente,diet_info:0
+#: help:oemedical.patient,diet_info:0
 msgid "Short description on the diet"
 msgstr "Short description on the diet"
 
@@ -1306,7 +1305,7 @@ msgid " Family"
 msgstr " Familia"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.menstrual_history,volume:0
+#: selection:oemedical.patient.menstrual_history,volume:0
 msgid "menorrhagia"
 msgstr "menorrhagia"
 
@@ -1314,15 +1313,15 @@ msgstr "menorrhagia"
 #: model:ir.ui.menu,name:oemedical.oemedical_root_disease
 #: view:oemedical.disease_group.members:0
 #: field:oemedical.disease_group.members,name:0
-#: view:oemedical.Paciente.disease:0
-#: field:oemedical.Paciente.disease,pathology:0
-#: help:oemedical.Paciente.disease,pathology:0
-#: field:oemedical.Paciente.family.diseases,name:0
+#: view:oemedical.patient.disease:0
+#: field:oemedical.patient.disease,pathology:0
+#: help:oemedical.patient.disease,pathology:0
+#: field:oemedical.patient.family.diseases,name:0
 msgid "Disease"
-msgstr "Disease"
+msgstr "Enfermedad"
 
 #. module: oemedical
-#: field:oemedical.Paciente,age_quit_smoking:0
+#: field:oemedical.patient,age_quit_smoking:0
 msgid "Age of quitting"
 msgstr "Age of quitting"
 
@@ -1332,22 +1331,22 @@ msgid "Alias"
 msgstr "Alias"
 
 #. module: oemedical
-#: field:oemedical.Paciente.disease,status:0
+#: field:oemedical.patient.disease,status:0
 msgid "Status of the disease"
 msgstr "Status of the disease"
 
 #. module: oemedical
-#: field:oemedical.Paciente.cage,cage_score:0
+#: field:oemedical.patient.cage,cage_score:0
 msgid "CAGE Score"
 msgstr "CAGE Score"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "S Last Name"
 msgstr "S Last Name"
 
 #. module: oemedical
-#: help:oemedical.Paciente.prenatal.evaluation,diabetes:0
+#: help:oemedical.patient.prenatal.evaluation,diabetes:0
 msgid "Check this box if the mother has glucose intolerance or diabetes"
 msgstr "Check this box if the mother has glucose intolerance or diabetes"
 
@@ -1357,12 +1356,12 @@ msgid "Withdrawal"
 msgstr "Withdrawal"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.disease,status:0
+#: selection:oemedical.patient.disease,status:0
 msgid "improving"
 msgstr "improving"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,anticonceptive:0
+#: selection:oemedical.patient,anticonceptive:0
 msgid "Intra-uterine device"
 msgstr "Intra-uterine device"
 
@@ -1372,32 +1371,32 @@ msgid "Use it as needed, pro re nata"
 msgstr "Use it as needed, pro re nata"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,cod:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,cod:0
 msgid "Cause of Death"
 msgstr "Cause of Death"
 
 #. module: oemedical
-#: view:oemedical.Paciente.disease:0
-#: field:oemedical.Paciente.disease,is_active:0
+#: view:oemedical.patient.disease:0
+#: field:oemedical.patient.disease,is_active:0
 msgid "Active disease"
 msgstr "Active disease"
 
 #. module: oemedical
-#: field:oemedical.Paciente.cage,cage_e:0
+#: field:oemedical.patient.cage,cage_e:0
 msgid "Eye-opener"
 msgstr "Eye-opener"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,dob:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,dob:0
 msgid "DoB"
 msgstr "DoB"
 
 #. module: oemedical
-#: field:oemedical.Paciente,genetic_risks:0
+#: field:oemedical.patient,genetic_risks:0
 msgid "Genetic Risks"
-msgstr "Genetic Risks"
+msgstr "Riesgo Genetico"
 
 #. module: oemedical
 #: field:res.partner,internal_user:0
@@ -1405,9 +1404,9 @@ msgid "Internal User"
 msgstr "Internal User"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-msgid "Paciente Extra Information"
-msgstr "Paciente Extra Information"
+#: view:oemedical.patient:0
+msgid "Patient Extra Information"
+msgstr "Information extra"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_specialty
@@ -1425,12 +1424,12 @@ msgid "Oemedical Signs_And_Symptoms"
 msgstr "Oemedical Signs_And_Symptoms"
 
 #. module: oemedical
-#: field:oemedical.Paciente.evaluation,secondary_conditions:0
+#: field:oemedical.patient.evaluation,secondary_conditions:0
 msgid "Secondary Conditions"
 msgstr "Secondary Conditions"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,loc_verbal:0
+#: selection:oemedical.patient.evaluation,loc_verbal:0
 msgid "Incomprehensible sounds"
 msgstr "Incomprehensible sounds"
 
@@ -1442,35 +1441,35 @@ msgstr "Vaccine Name. Make sure that the vaccine (product) has all the proper in
 #. module: oemedical
 #: model:oemedical.drugs_recreational,name:oemedical.cocaine
 msgid "Cocaine"
-msgstr "Cocaine"
+msgstr "Cocaina"
 
 #. module: oemedical
-#: field:oemedical.Paciente,helmet:0
+#: field:oemedical.patient,helmet:0
 msgid "Uses helmet"
 msgstr "Uses helmet"
 
 #. module: oemedical
-#: help:oemedical.Paciente.prenatal.evaluation,fetal_fl:0
+#: help:oemedical.patient.prenatal.evaluation,fetal_fl:0
 msgid "Fetal Femur Length"
 msgstr "Fetal Femur Length"
 
 #. module: oemedical
-#: model:ir.actions.act_window,name:oemedical.act_open_oemedical_Paciente_disease_view
-msgid "Paciente Disease"
-msgstr "Paciente Disease"
+#: model:ir.actions.act_window,name:oemedical.act_open_oemedical_patient_disease_view
+msgid "Patient Disease"
+msgstr "Patient Disease"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,head_circumference:0
+#: help:oemedical.patient.evaluation,head_circumference:0
 msgid "Head circumference"
 msgstr "Head circumference"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,weight:0
+#: help:oemedical.patient.evaluation,weight:0
 msgid "Weight in Kilos"
 msgstr "Weight in Kilos"
 
 #. module: oemedical
-#: help:oemedical.Paciente,full_term:0
+#: help:oemedical.patient,full_term:0
 msgid "Full term pregnancies"
 msgstr "Full term pregnancies"
 
@@ -1480,14 +1479,14 @@ msgid "Check if the party is a Medical Center"
 msgstr "Check if the party is a Medical Center"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,sexual_partners:0
+#: selection:oemedical.patient,sexual_partners:0
 msgid "Monogamous"
 msgstr "Monogamous"
 
 #. module: oemedical
-#: help:oemedical.Cita,Paciente_id:0
-msgid "Paciente Name"
-msgstr "Paciente Name"
+#: help:oemedical.appointment,patient_id:0
+msgid "Patient Name"
+msgstr "Patient Name"
 
 #. module: oemedical
 #: help:oemedical.drugs_recreational,route_sniffing:0
@@ -1495,22 +1494,22 @@ msgid "Also called snorting - inhaling through the nares  "
 msgstr "Also called snorting - inhaling through the nares  "
 
 #. module: oemedical
-#: selection:oemedical.Paciente.pap_history,result:0
+#: selection:oemedical.patient.pap_history,result:0
 msgid "ASC-US"
 msgstr "ASC-US"
 
 #. module: oemedical
-#: help:oemedical.Paciente,car_revision:0
+#: help:oemedical.patient,car_revision:0
 msgid "Maintain the vehicle. Do periodical checks - tires,breaks ..."
 msgstr "Maintain the vehicle. Do periodical checks - tires,breaks ..."
 
 #. module: oemedical
-#: help:oemedical.Paciente,age_quit_drinking:0
+#: help:oemedical.patient,age_quit_drinking:0
 msgid "Date to stop drinking"
 msgstr "Date to stop drinking"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.pap_history,result:0
+#: selection:oemedical.patient.pap_history,result:0
 msgid "ASC-H"
 msgstr "ASC-H"
 
@@ -1530,36 +1529,36 @@ msgstr "Extra info"
 #. module: oemedical
 #: field:oemedical.perinatal,fetus_presentation:0
 msgid "Fetus Presentation"
-msgstr "Fetus Presentation"
+msgstr "Presentacion Fetal"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,mood:0
+#: selection:oemedical.patient.evaluation,mood:0
 msgid "Disgust"
 msgstr "Disgust"
 
 #. module: oemedical
-#: help:oemedical.Paciente.cage,cage_g:0
+#: help:oemedical.patient.cage,cage_g:0
 msgid "Have you ever felt Guilty about drinking ?"
 msgstr "Have you ever felt Guilty about drinking ?"
 
 #. module: oemedical
-#: field:oemedical.Paciente,age_quit_drugs:0
+#: field:oemedical.patient,age_quit_drugs:0
 msgid "Age quit drugs "
 msgstr "Age quit drugs "
 
 #. module: oemedical
-#: field:oemedical.Paciente,rh:0
+#: field:oemedical.patient,rh:0
 msgid "Rh"
 msgstr "Rh"
 
 #. module: oemedical
-#: model:ir.model,name:oemedical.model_oemedical_Paciente_pap_history
+#: model:ir.model,name:oemedical.model_oemedical_patient_pap_history
 msgid "PAP Test History"
 msgstr "PAP Test History"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,hip:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,hip:0
 msgid "Hip"
 msgstr "Hip"
 
@@ -1569,14 +1568,14 @@ msgid " Prescription Order"
 msgstr " Recetas"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.family.diseases,xory:0
+#: selection:oemedical.patient.family.diseases,xory:0
 msgid "Maternal"
 msgstr "Maternal"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,evaluation_type:0
+#: selection:oemedical.patient.evaluation,evaluation_type:0
 msgid "Emergency"
-msgstr "Emergency"
+msgstr "Emergencia"
 
 #. module: oemedical
 #: help:oemedical.hospital.ward,bio_hazard:0
@@ -1584,7 +1583,7 @@ msgid "Check this option if there is biological hazard"
 msgstr "Check this option if there is biological hazard"
 
 #. module: oemedical
-#: field:oemedical.Paciente,sexual_partners_number:0
+#: field:oemedical.patient,sexual_partners_number:0
 msgid "Number of sexual partners"
 msgstr "Number of sexual partners"
 
@@ -1616,39 +1615,39 @@ msgid "Meconium"
 msgstr "Meconium"
 
 #. module: oemedical
-#: help:oemedical.Paciente.pap_history,last_pap:0
+#: help:oemedical.patient.pap_history,last_pap:0
 msgid "Last Papanicolau"
 msgstr "Last Papanicolau"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.family.diseases,relative:0
+#: selection:oemedical.patient.family.diseases,relative:0
 msgid "Cousin"
-msgstr "Cousin"
+msgstr "Primo"
 
 #. module: oemedical
 #: selection:oemedical.medication.template,frequency_unit:0
 msgid "weeks"
-msgstr "weeks"
+msgstr "Semanas"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Addictions"
 msgstr "Addictions"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.family.diseases,relative:0
+#: selection:oemedical.patient.family.diseases,relative:0
 msgid "Sister"
-msgstr "Sister"
+msgstr "Hermana"
 
 #. module: oemedical
 #: field:oemedical.prescription.order,prescription_line:0
 msgid "Prescription line"
-msgstr "Prescription line"
+msgstr "Linea de receta"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.family.diseases,relative:0
+#: selection:oemedical.patient.family.diseases,relative:0
 msgid "Brother"
-msgstr "Brother"
+msgstr "Hermano"
 
 #. module: oemedical
 #: field:oemedical.drugs_recreational,reinforcement_level:0
@@ -1658,29 +1657,29 @@ msgstr "Reinforcement"
 #. module: oemedical
 #: help:oemedical.hospital.bed,telephone_number:0
 msgid "Telephone number / Extension"
-msgstr "Telephone number / Extension"
+msgstr "Numero de Telefono / Extension"
 
 #. module: oemedical
 #: view:oemedical.ethnicity:0
 #: field:oemedical.ethnicity,notes:0
 #: view:oemedical.medicament:0
-#: view:oemedical.Paciente:0
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,notes:0
+#: view:oemedical.patient:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,notes:0
 #: field:oemedical.perinatal,notes:0
 msgid "Notes"
-msgstr "Notes"
+msgstr "Notas"
 
 #. module: oemedical
-#: field:oemedical.Paciente.evaluation,diagnostic_hypothesis:0
+#: field:oemedical.patient.evaluation,diagnostic_hypothesis:0
 msgid "Hypotheses / DDx"
 msgstr "Hypotheses / DDx"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: selection:oemedical.Paciente.family.diseases,relative:0
+#: view:oemedical.patient:0
+#: selection:oemedical.patient.family.diseases,relative:0
 msgid "Mother"
-msgstr "Mother"
+msgstr "Madre"
 
 #. module: oemedical
 #: help:oemedical.drugs_recreational,reinforcement_level:0
@@ -1690,9 +1689,9 @@ msgstr "A measure of the substance's ability to get users to take it  again and 
 "Using  Henningfield rating. 1=highest and 6=lowest"
 
 #. module: oemedical
-#: model:ir.model,name:oemedical.model_oemedical_Paciente
-msgid "oemedical.Paciente"
-msgstr "oemedical.Paciente"
+#: model:ir.model,name:oemedical.model_oemedical_patient
+msgid "oemedical.patient"
+msgstr "oemedical.patient"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_prescription_line
@@ -1701,22 +1700,22 @@ msgstr "oemedical.prescription.line"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_drugs_recreational
-#: field:oemedical.Paciente.recreational_drugs,recreational_drug:0
+#: field:oemedical.patient.recreational_drugs,recreational_drug:0
 msgid "Recreational Drug"
 msgstr "Recreational Drug"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,whr:0
+#: help:oemedical.patient.evaluation,whr:0
 msgid "Waist to hip ratio"
 msgstr "Waist to hip ratio"
 
 #. module: oemedical
 #: view:oemedical.medication.template:0
 #: field:oemedical.medication.template,start_treatment:0
-#: view:oemedical.Paciente.disease:0
-#: field:oemedical.Paciente.disease,date_start_treatment:0
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,evaluation_start:0
+#: view:oemedical.patient.disease:0
+#: field:oemedical.patient.disease,date_start_treatment:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,evaluation_start:0
 msgid "Start"
 msgstr "Start"
 
@@ -1732,8 +1731,8 @@ msgstr " Drug Form"
 
 #. module: oemedical
 #: help:oemedical.insurance.plan,is_default:0
-msgid "Check if this is the default plan when assigning this insurance company to a Paciente"
-msgstr "Check if this is the default plan when assigning this insurance company to a Paciente"
+msgid "Check if this is the default plan when assigning this insurance company to a patient"
+msgstr "Check if this is the default plan when assigning this insurance company to a patient"
 
 #. module: oemedical
 #: view:oemedical.medication.dosage:0
@@ -1742,7 +1741,7 @@ msgid "Abbreviation"
 msgstr "Abbreviation"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.disease,disease_severity:0
+#: selection:oemedical.patient.disease,disease_severity:0
 msgid "Mild"
 msgstr "Mild"
 
@@ -1767,7 +1766,7 @@ msgid "Low Bed"
 msgstr "Low Bed"
 
 #. module: oemedical
-#: view:oemedical.Cita:0
+#: view:oemedical.appointment:0
 msgid "Calendar View"
 msgstr "Calendar View"
 
@@ -1777,7 +1776,7 @@ msgid "Unit of measure for the medication to be taken"
 msgstr "Unit of measure for the medication to be taken"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Additional Info"
 msgstr "Additional Info"
 
@@ -1811,17 +1810,17 @@ msgstr "** FDA Pregancy Categories ***\n"
 #. module: oemedical
 #: view:oemedical.medication.template:0
 #: field:oemedical.medication.template,end_treatment:0
-#: view:oemedical.Paciente.disease:0
-#: field:oemedical.Paciente.disease,date_stop_treatment:0
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,evaluation_endtime:0
+#: view:oemedical.patient.disease:0
+#: field:oemedical.patient.disease,date_stop_treatment:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,evaluation_endtime:0
 msgid "End"
 msgstr "End"
 
 #. module: oemedical
-#: field:oemedical.Paciente,sex_anal:0
+#: field:oemedical.patient,sex_anal:0
 msgid "Anal Sex"
-msgstr "Anal Sex"
+msgstr "Sexo Anal"
 
 #. module: oemedical
 #: help:res.partner,is_doctor:0
@@ -1857,17 +1856,17 @@ msgstr "Legal"
 #. module: oemedical
 #: model:oemedical.drugs_recreational,name:oemedical.marijuana
 msgid "Marijuana"
-msgstr "Marijuana"
+msgstr "Mariguana"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.pregnancy,iugr:0
+#: selection:oemedical.patient.pregnancy,iugr:0
 msgid "Symmetric"
-msgstr "Symmetric"
+msgstr "Simentrico"
 
 #. module: oemedical
-#: field:oemedical.Paciente.menstrual_history,frequency:0
+#: field:oemedical.patient.menstrual_history,frequency:0
 msgid "frequency"
-msgstr "frequency"
+msgstr "Frecuencia"
 
 #. module: oemedical
 #: view:oemedical.hospital.ward:0
@@ -1876,18 +1875,18 @@ msgid "Bio Hazard"
 msgstr "Bio Hazard"
 
 #. module: oemedical
-#: help:oemedical.Paciente,second_hand_smoker:0
-msgid "Check it the Paciente is a passive / second-hand smoker"
-msgstr "Check it the Paciente is a passive / second-hand smoker"
+#: help:oemedical.patient,second_hand_smoker:0
+msgid "Check it the patient is a passive / second-hand smoker"
+msgstr "Check it the patient is a passive / second-hand smoker"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,ssn:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,ssn:0
 msgid "SSN"
-msgstr "SSN"
+msgstr "NSS"
 
 #. module: oemedical
-#: view:oemedical.Cita:0
+#: view:oemedical.appointment:0
 #: view:oemedical.prescription.line:0
 #: field:oemedical.prescription.line,prnt:0
 #: view:oemedical.prescription.order:0
@@ -1895,16 +1894,16 @@ msgid "Print"
 msgstr "Imprimir"
 
 #. module: oemedical
-#: help:oemedical.Paciente.colposcopy_history,evaluation_date:0
-#: help:oemedical.Paciente.mammography_history,evaluation_date:0
-#: help:oemedical.Paciente.pap_history,evaluation_date:0
+#: help:oemedical.patient.colposcopy_history,evaluation_date:0
+#: help:oemedical.patient.mammography_history,evaluation_date:0
+#: help:oemedical.patient.pap_history,evaluation_date:0
 msgid " Date"
-msgstr " Fecha"
+msgstr "Fecha"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_family_member_view
 msgid "Family Member"
-msgstr "Family Member"
+msgstr "Miembro de la Familia"
 
 #. module: oemedical
 #: selection:oemedical.perinatal,fetus_presentation:0
@@ -1913,14 +1912,14 @@ msgid "Footling Breech"
 msgstr "Footling Breech"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,mood:0
+#: selection:oemedical.patient.evaluation,mood:0
 msgid "Flat"
-msgstr "Flat"
+msgstr "Plano"
 
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_insurance_plan
 msgid " Insurance Plan"
-msgstr " Insurance Plan"
+msgstr "Seguro Medico"
 
 #. module: oemedical
 #: help:oemedical.hospital.or,name:0
@@ -1928,12 +1927,12 @@ msgid "Name of the Operating Room"
 msgstr "Name of the Operating Room"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "DEA Schedule Level"
 msgstr "DEA Schedule Level"
 
 #. module: oemedical
-#: field:oemedical.Paciente,sleep_during_daytime:0
+#: field:oemedical.patient,sleep_during_daytime:0
 msgid "Sleeps at daytime"
 msgstr "Sleeps at daytime"
 
@@ -1954,28 +1953,28 @@ msgid "when required"
 msgstr "when required"
 
 #. module: oemedical
-#: selection:oemedical.Cita,Cita_type:0
-msgid "OutPaciente"
-msgstr "OutPaciente"
+#: selection:oemedical.appointment,appointment_type:0
+msgid "Outpatient"
+msgstr "Outpatient"
 
 #. module: oemedical
-#: help:oemedical.Paciente.prenatal.evaluation,hypertension:0
+#: help:oemedical.patient.prenatal.evaluation,hypertension:0
 msgid "Check this box if the mother has hypertension"
 msgstr "Check this box if the mother has hypertension"
 
 #. module: oemedical
-#: field:oemedical.Paciente.pregnancy,warning:0
+#: field:oemedical.patient.pregnancy,warning:0
 msgid "Warn"
 msgstr "Warn"
 
 #. module: oemedical
-#: view:oemedical.Paciente.disease:0
-#: field:oemedical.Paciente.disease,is_infectious:0
+#: view:oemedical.patient.disease:0
+#: field:oemedical.patient.disease,is_infectious:0
 msgid "Infectious Disease"
 msgstr "Infectious Disease"
 
 #. module: oemedical
-#: help:oemedical.Paciente.medication,doctor:0
+#: help:oemedical.patient.medication,doctor:0
 msgid "Physician who prescribed the medicament"
 msgstr "Physician who prescribed the medicament"
 
@@ -1985,9 +1984,9 @@ msgid "Product Name"
 msgstr "Product Name"
 
 #. module: oemedical
-#: help:oemedical.Paciente,exercise_minutes_day:0
-msgid "How many minutes a day the Paciente exercises"
-msgstr "How many minutes a day the Paciente exercises"
+#: help:oemedical.patient,exercise_minutes_day:0
+msgid "How many minutes a day the patient exercises"
+msgstr "How many minutes a day the patient exercises"
 
 #. module: oemedical
 #: view:oemedical.hospital.bed:0
@@ -2011,12 +2010,12 @@ msgid "Oemedical Insurance Plan"
 msgstr "Oemedical Insurance Plan"
 
 #. module: oemedical
-#: field:oemedical.Paciente,full_term:0
+#: field:oemedical.patient,full_term:0
 msgid "Full Term"
 msgstr "Full Term"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,marital_status:0
+#: selection:oemedical.patient,marital_status:0
 msgid "Separated"
 msgstr "Separated"
 
@@ -2026,13 +2025,13 @@ msgid " Hospital Ward"
 msgstr " Hospital Ward"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Obstetrics"
 msgstr "Obstetrics"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,reliable_info:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,reliable_info:0
 msgid "Reliable"
 msgstr "Reliable"
 
@@ -2042,13 +2041,13 @@ msgid "Work"
 msgstr "Work"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.pregnancy,pregnancy_end_result:0
+#: selection:oemedical.patient.pregnancy,pregnancy_end_result:0
 #: field:oemedical.perinatal,abortion:0
 msgid "Abortion"
 msgstr "Abortion"
 
 #. module: oemedical
-#: help:oemedical.Paciente.pregnancy,pregnancy_end_age:0
+#: help:oemedical.patient.pregnancy,pregnancy_end_age:0
 msgid "Weeks at the end of pregnancy"
 msgstr "Weeks at the end of pregnancy"
 
@@ -2063,12 +2062,12 @@ msgid "Oemedical Disease_Group Members"
 msgstr "Oemedical Disease_Group Members"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-msgid "Paciente CAGE SCORE"
-msgstr "Paciente CAGE SCORE"
+#: view:oemedical.patient:0
+msgid "Patient CAGE SCORE"
+msgstr "Patient CAGE SCORE"
 
 #. module: oemedical
-#: help:oemedical.Paciente,premature:0
+#: help:oemedical.patient,premature:0
 msgid "Premature Deliveries"
 msgstr "Premature Deliveries"
 
@@ -2079,17 +2078,17 @@ msgid "Insurance Type"
 msgstr "Insurance Type"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,sex:0
+#: selection:oemedical.patient,sex:0
 msgid "Male"
-msgstr "Male"
+msgstr "Masculino"
 
 #. module: oemedical
-#: field:oemedical.Paciente,cage:0
+#: field:oemedical.patient,cage:0
 msgid "CAGE"
 msgstr "CAGE"
 
 #. module: oemedical
-#: help:oemedical.Paciente,car_child_safety:0
+#: help:oemedical.patient,car_child_safety:0
 msgid "Safety measures when driving : child seats, proper seat belting, not seating on the front seat, ...."
 msgstr "Safety measures when driving : child seats, proper seat belting, not seating on the front seat, ...."
 
@@ -2100,9 +2099,9 @@ msgid "Parent Category"
 msgstr "Parent Category"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,calculation_ability:0
-msgid "Check this box if the Paciente can not do simple arithmetic problems"
-msgstr "Check this box if the Paciente can not do simple arithmetic problems"
+#: help:oemedical.patient.evaluation,calculation_ability:0
+msgid "Check this box if the patient can not do simple arithmetic problems"
+msgstr "Check this box if the patient can not do simple arithmetic problems"
 
 #. module: oemedical
 #: help:oemedical.perinatal,admission_date:0
@@ -2116,7 +2115,7 @@ msgid "Refills #"
 msgstr "Refills #"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,evaluation_type:0
+#: selection:oemedical.patient.evaluation,evaluation_type:0
 msgid "Phone call"
 msgstr "Phone call"
 
@@ -2131,9 +2130,9 @@ msgid "Heart Frequency"
 msgstr "Heart Frequency"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.pregnancy,pregnancy_end_result:0
+#: selection:oemedical.patient.pregnancy,pregnancy_end_result:0
 msgid "Status unknown"
-msgstr "Status unknown"
+msgstr "Estado desconocido"
 
 #. module: oemedical
 #: view:oemedical.family:0
@@ -2157,12 +2156,12 @@ msgid "Heroin"
 msgstr "Heroin"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Public Information"
 msgstr "Public Information"
 
 #. module: oemedical
-#: field:oemedical.Paciente,diet:0
+#: field:oemedical.patient,diet:0
 msgid "Currently on a diet"
 msgstr "Currently on a diet"
 
@@ -2172,34 +2171,34 @@ msgid "Occupation"
 msgstr "Occupation"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.disease,status:0
+#: selection:oemedical.patient.disease,status:0
 msgid "chronic"
 msgstr "chronic"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.prenatal.evaluation,invasive_placentation:0
+#: selection:oemedical.patient.prenatal.evaluation,invasive_placentation:0
 msgid "Accreta"
 msgstr "Accreta"
 
 #. module: oemedical
-#: field:oemedical.Paciente,breast_self_examination:0
+#: field:oemedical.patient,breast_self_examination:0
 msgid "Breast self-examination"
 msgstr "Breast self-examination"
 
 #. module: oemedical
-#: field:oemedical.Paciente.pregnancy,pregnancy_end_age:0
+#: field:oemedical.patient.pregnancy,pregnancy_end_age:0
 msgid "Weeks"
 msgstr "Weeks"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,sexual_practices:0
+#: selection:oemedical.patient,sexual_practices:0
 msgid "Risky / Unprotected sex"
 msgstr "Risky / Unprotected sex"
 
 #. module: oemedical
 #: help:oemedical.medication.template,duration:0
-msgid "Period that the Paciente must take the medication. in minutes, hours, days, months, years or indefinately"
-msgstr "Period that the Paciente must take the medication. in minutes, hours, days, months, years or indefinately"
+msgid "Period that the patient must take the medication. in minutes, hours, days, months, years or indefinately"
+msgstr "Period that the patient must take the medication. in minutes, hours, days, months, years or indefinately"
 
 #. module: oemedical
 #: help:oemedical.medicament,dosage:0
@@ -2213,7 +2212,7 @@ msgid "Review"
 msgstr "Review"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,sexual_preferences:0
+#: selection:oemedical.patient,sexual_preferences:0
 msgid "Heterosexual"
 msgstr "Heterosexual"
 
@@ -2223,15 +2222,15 @@ msgid "Perinatal Infomation"
 msgstr "Perinatal Infomation"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,medications:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,medications:0
 #: field:oemedical.perinatal,medications:0
 msgid "Medications"
 msgstr "Medications"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,present_illness:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,present_illness:0
 msgid "Present Illness"
 msgstr "Present Illness"
 
@@ -2241,13 +2240,13 @@ msgid "Clinitron"
 msgstr "Clinitron"
 
 #. module: oemedical
-#: field:oemedical.Paciente,exercise:0
+#: field:oemedical.patient,exercise:0
 msgid "Exercise"
-msgstr "Exercise"
+msgstr "Ejercicio"
 
 #. module: oemedical
-#: view:oemedical.Cita:0
-#: field:oemedical.Cita,Cita_date:0
+#: view:oemedical.appointment:0
+#: field:oemedical.appointment,appointment_date:0
 #: field:oemedical.perinatal.monitor,date:0
 #: field:oemedical.puerperium.monitor,date:0
 msgid "Date and Time"
@@ -2280,13 +2279,13 @@ msgid "Benzodiazepines"
 msgstr "Benzodiazepines"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,praxis:0
-msgid "Check this box if the Paciente is unable to make voluntarymovements"
-msgstr "Check this box if the Paciente is unable to make voluntarymovements"
+#: help:oemedical.patient.evaluation,praxis:0
+msgid "Check this box if the patient is unable to make voluntarymovements"
+msgstr "Check this box if the patient is unable to make voluntarymovements"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,derived_from:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,derived_from:0
 msgid "Derived from"
 msgstr "Derived from"
 
@@ -2297,26 +2296,26 @@ msgstr "Name of the building within the institution"
 
 #. module: oemedical
 #: help:oemedical.hospital.ward,number_of_beds:0
-msgid "Number of Pacientes per ward"
-msgstr "Number of Pacientes per ward"
+msgid "Number of patients per ward"
+msgstr "Number of patients per ward"
 
 #. module: oemedical
-#: help:oemedical.Paciente,primary_care_doctor:0
+#: help:oemedical.patient,primary_care_doctor:0
 msgid "Current primary care / family doctor"
 msgstr "Current primary care / family doctor"
 
 #. module: oemedical
-#: field:oemedical.Paciente.evaluation,loc_eyes:0
+#: field:oemedical.patient.evaluation,loc_eyes:0
 msgid "Glasgow - Eyes"
 msgstr "Glasgow - Eyes"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,dehydration:0
-msgid "Check this box if the Paciente show signs of dehydration. If associated  to a disease, please encode the  correspondent disease on the Paciente disease history. For example, Volume Depletion, E86 in ICD-10 encoding"
-msgstr "Check this box if the Paciente show signs of dehydration. If associated  to a disease, please encode the  correspondent disease on the Paciente disease history. For example, Volume Depletion, E86 in ICD-10 encoding"
+#: help:oemedical.patient.evaluation,dehydration:0
+msgid "Check this box if the patient show signs of dehydration. If associated  to a disease, please encode the  correspondent disease on the patient disease history. For example, Volume Depletion, E86 in ICD-10 encoding"
+msgstr "Check this box if the patient show signs of dehydration. If associated  to a disease, please encode the  correspondent disease on the patient disease history. For example, Volume Depletion, E86 in ICD-10 encoding"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.pap_history,result:0
+#: selection:oemedical.patient.pap_history,result:0
 msgid "ASG"
 msgstr "ASG"
 
@@ -2328,10 +2327,10 @@ msgstr "Miembro de la Familia"
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_appoitment_root
 msgid "Appoitment"
-msgstr "Appoitment"
+msgstr "Citas"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,loc_verbal:0
+#: selection:oemedical.patient.evaluation,loc_verbal:0
 msgid "Confused, disoriented"
 msgstr "Confused, disoriented"
 
@@ -2341,18 +2340,18 @@ msgid "Cervical"
 msgstr "Cervical"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,tag:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,tag:0
 msgid "Last TAGs"
 msgstr "Last TAGs"
 
 #. module: oemedical
-#: help:oemedical.Paciente,age_start_drinking:0
+#: help:oemedical.patient,age_start_drinking:0
 msgid "Date to start drinking"
 msgstr "Date to start drinking"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,sexual_preferences:0
+#: selection:oemedical.patient,sexual_preferences:0
 msgid "Transexual"
 msgstr "Transexual"
 
@@ -2367,9 +2366,9 @@ msgid "Storage"
 msgstr "Storage"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Gyneco / Obs"
-msgstr "Gyneco / Obs"
+msgstr "Ginecologia / Obs"
 
 #. module: oemedical
 #: field:oemedical.perinatal,forceps:0
@@ -2377,58 +2376,58 @@ msgid "Use of forceps"
 msgstr "Use of forceps"
 
 #. module: oemedical
-#: field:oemedical.Paciente,premature:0
+#: field:oemedical.patient,premature:0
 msgid "Premature"
 msgstr "Premature"
 
 #. module: oemedical
-#: field:oemedical.Paciente,sleep_hours:0
+#: field:oemedical.patient,sleep_hours:0
 msgid "Hours of sleep"
 msgstr "Hours of sleep"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,diastolic:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,diastolic:0
 #: field:oemedical.perinatal.monitor,diastolic:0
 #: field:oemedical.puerperium.monitor,diastolic:0
 msgid "Diastolic Pressure"
 msgstr "Diastolic Pressure"
 
 #. module: oemedical
-#: field:oemedical.Paciente,age_start_smoking:0
+#: field:oemedical.patient,age_start_smoking:0
 msgid "Age started to smoke"
 msgstr "Age started to smoke"
 
 #. module: oemedical
-#: help:oemedical.Paciente,mammography_last:0
+#: help:oemedical.patient,mammography_last:0
 msgid "Enter the date of the last mammography"
 msgstr "Enter the date of the last mammography"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,hba1c:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,hba1c:0
 msgid "Glycated Hemoglobin"
 msgstr "Glycated Hemoglobin"
 
 #. module: oemedical
-#: help:oemedical.Paciente,mammography:0
-msgid "Check if the Paciente does periodic mammographys"
-msgstr "Check if the Paciente does periodic mammographys"
+#: help:oemedical.patient,mammography:0
+msgid "Check if the patient does periodic mammographys"
+msgstr "Check if the patient does periodic mammographys"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,family_history:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,family_history:0
 msgid "Family History"
 msgstr "Family History"
 
 #. module: oemedical
-#: field:oemedical.Paciente.pregnancy,pdd:0
+#: field:oemedical.patient.pregnancy,pdd:0
 msgid "Pregnancy Due Date"
 msgstr "Pregnancy Due Date"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,loc:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,loc:0
 msgid "Level of Consciousness"
 msgstr "Level of Consciousness"
 
@@ -2438,7 +2437,7 @@ msgid "Reserved"
 msgstr "Reserved"
 
 #. module: oemedical
-#: field:oemedical.Paciente,number_of_meals:0
+#: field:oemedical.patient,number_of_meals:0
 msgid "Meals per day"
 msgstr "Meals per day"
 
@@ -2455,7 +2454,7 @@ msgid "minutes"
 msgstr "minutes"
 
 #. module: oemedical
-#: help:oemedical.Paciente,pap_test_last:0
+#: help:oemedical.patient,pap_test_last:0
 msgid "Enter the date of the last Papanicolau test"
 msgstr "Enter the date of the last Papanicolau test"
 
@@ -2470,7 +2469,7 @@ msgid "Sign"
 msgstr "Sign"
 
 #. module: oemedical
-#: field:oemedical.Paciente.genetic.risk,disease_gene:0
+#: field:oemedical.patient.genetic.risk,disease_gene:0
 msgid "Disease Gene"
 msgstr "Disease Gene"
 
@@ -2493,8 +2492,8 @@ msgstr "Disease Gene"
 #: field:oemedical.pathology,code:0
 #: view:oemedical.pathology.group:0
 #: field:oemedical.pathology.group,code:0
-#: view:oemedical.Paciente.disease:0
-#: field:oemedical.Paciente.disease,pcs_code:0
+#: view:oemedical.patient.disease:0
+#: field:oemedical.patient.disease,pcs_code:0
 #: view:oemedical.procedure:0
 #: field:oemedical.procedure,name:0
 #: view:oemedical.specialty:0
@@ -2503,13 +2502,13 @@ msgid "Code"
 msgstr "Code"
 
 #. module: oemedical
-#: help:oemedical.Paciente,current_insurance:0
-msgid "Insurance information. You may choose from the different insurances belonging to the Paciente"
-msgstr "Insurance information. You may choose from the different insurances belonging to the Paciente"
+#: help:oemedical.patient,current_insurance:0
+msgid "Insurance information. You may choose from the different insurances belonging to the patient"
+msgstr "Insurance information. You may choose from the different insurances belonging to the patient"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,orientation:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,orientation:0
 msgid "Orientation"
 msgstr "Orientation"
 
@@ -2520,27 +2519,27 @@ msgid "Official Symbol"
 msgstr "Official Symbol"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,osat:0
+#: help:oemedical.patient.evaluation,osat:0
 msgid "Oxygen Saturation(arterial)."
 msgstr "Oxygen Saturation(arterial)."
 
 #. module: oemedical
-#: help:oemedical.Paciente,critical_info:0
-msgid "Write any important information on the Paciente's disease, surgeries, allergies, ..."
-msgstr "Write any important information on the Paciente's disease, surgeries, allergies, ..."
+#: help:oemedical.patient,critical_info:0
+msgid "Write any important information on the patient's disease, surgeries, allergies, ..."
+msgstr "Write any important information on the patient's disease, surgeries, allergies, ..."
 
 #. module: oemedical
-#: field:oemedical.Paciente,alcohol_beer_number:0
+#: field:oemedical.patient,alcohol_beer_number:0
 msgid "Beer / day"
-msgstr "Beer / day"
+msgstr "Cerveza / Dia"
 
 #. module: oemedical
-#: model:ir.model,name:oemedical.model_oemedical_Cita
-msgid "oemedical.Cita"
-msgstr "oemedical.Cita"
+#: model:ir.model,name:oemedical.model_oemedical_appointment
+msgid "oemedical.appointment"
+msgstr "oemedical.appointment"
 
 #. module: oemedical
-#: help:oemedical.Paciente,colposcopy_last:0
+#: help:oemedical.patient,colposcopy_last:0
 msgid "Enter the date of the last colposcopy"
 msgstr "Enter the date of the last colposcopy"
 
@@ -2569,14 +2568,14 @@ msgid "Bed Type"
 msgstr "Bed Type"
 
 #. module: oemedical
-#: field:oemedical.Paciente,drug_usage:0
+#: field:oemedical.patient,drug_usage:0
 msgid "Drug Habits"
 msgstr "Drug Habits"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Gyneco"
-msgstr "Gyneco"
+msgstr "Ginecologia"
 
 #. module: oemedical
 #: help:oemedical.pathology.group,name:0
@@ -2594,25 +2593,25 @@ msgid "Unit"
 msgstr "Unit"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,violent:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,violent:0
 msgid "Violent Behaviour"
 msgstr "Violent Behaviour"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,whr:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,whr:0
 msgid "WHR"
 msgstr "WHR"
 
 #. module: oemedical
-#: view:oemedical.Paciente.disease:0
-#: field:oemedical.Paciente.disease,age:0
+#: view:oemedical.patient.disease:0
+#: field:oemedical.patient.disease,age:0
 msgid "Age when diagnosed"
 msgstr "Age when diagnosed"
 
 #. module: oemedical
-#: field:oemedical.Paciente.prenatal.evaluation,fetal_bpd:0
+#: field:oemedical.patient.prenatal.evaluation,fetal_bpd:0
 msgid "BPD"
 msgstr "BPD"
 
@@ -2632,14 +2631,14 @@ msgid "Oemedical Hospital Or"
 msgstr "Oemedical Hospital Or"
 
 #. module: oemedical
-#: field:oemedical.Paciente.prenatal.evaluation,placenta_previa:0
+#: field:oemedical.patient.prenatal.evaluation,placenta_previa:0
 msgid "Placenta Previa"
 msgstr "Placenta Previa"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.family.diseases,relative:0
+#: selection:oemedical.patient.family.diseases,relative:0
 msgid "Father"
-msgstr "Father"
+msgstr "Padre"
 
 #. module: oemedical
 #: view:oemedical.medicament:0
@@ -2648,40 +2647,40 @@ msgid "Active component"
 msgstr "Active component"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "First Name"
-msgstr "First Name"
+msgstr "Nombre"
 
 #. module: oemedical
-#: help:oemedical.Paciente,car_seat_belt:0
+#: help:oemedical.patient,car_seat_belt:0
 msgid "Safety measures when driving : safety belt"
 msgstr "Safety measures when driving : safety belt"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: view:oemedical.Paciente.disease:0
-msgid "Oemedical Paciente Disease"
-msgstr "Oemedical Paciente Disease"
+#: view:oemedical.patient:0
+#: view:oemedical.patient.disease:0
+msgid "Oemedical Patient Disease"
+msgstr "Oemedical Patient Disease"
 
 #. module: oemedical
-#: field:oemedical.Paciente,slastname:0
+#: field:oemedical.patient,slastname:0
 msgid "Second Lastname"
-msgstr "Second Lastname"
+msgstr "Apellido Materno"
 
 #. module: oemedical
 #: view:oemedical.medicament:0
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Main"
 msgstr "Main"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,user_id:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,user_id:0
 msgid "Last Changed by"
 msgstr "Last Changed by"
 
 #. module: oemedical
-#: help:oemedical.Paciente.prenatal.evaluation,fetal_bpd:0
+#: help:oemedical.patient.prenatal.evaluation,fetal_bpd:0
 msgid "Fetal Biparietal Diameter"
 msgstr "Fetal Biparietal Diameter"
 
@@ -2696,8 +2695,8 @@ msgid "Induced"
 msgstr "Induced"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,diseases:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,diseases:0
 msgid "Diseases"
 msgstr "Diseases"
 
@@ -2707,20 +2706,20 @@ msgid "Please check on the vaccine (product) production lot numberand tracking n
 msgstr "Please check on the vaccine (product) production lot numberand tracking number when available !"
 
 #. module: oemedical
-#: field:oemedical.Paciente.evaluation,loc_motor:0
+#: field:oemedical.patient.evaluation,loc_motor:0
 msgid "Glasgow - Motor"
 msgstr "Glasgow - Motor"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-msgid "Oemedical Paciente Evaluation"
-msgstr "Oemedical Paciente Evaluation"
+#: view:oemedical.patient.evaluation:0
+msgid "Oemedical Patient Evaluation"
+msgstr "Oemedical Patient Evaluation"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: view:oemedical.Paciente.medication:0
-msgid "Oemedical Paciente Medication"
-msgstr "Oemedical Paciente Medication"
+#: view:oemedical.patient:0
+#: view:oemedical.patient.medication:0
+msgid "Oemedical Patient Medication"
+msgstr "Oemedical Patient Medication"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_medicament_category
@@ -2728,9 +2727,9 @@ msgid "oemedical.medicament.category"
 msgstr "oemedical.medicament.category"
 
 #. module: oemedical
-#: view:oemedical.Cita:0
-msgid "Oemedical Cita"
-msgstr "Oemedical Cita"
+#: view:oemedical.appointment:0
+msgid "Oemedical Appointment"
+msgstr "Oemedical Appointment"
 
 #. module: oemedical
 #: help:oemedical.drugs_recreational,dependence_level:0
@@ -2745,9 +2744,9 @@ msgid "Check if the product is a medicament"
 msgstr "Check if the product is a medicament"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,violent:0
-msgid "Check this box if the Paciente is agressive or violent at the moment"
-msgstr "Check this box if the Paciente is agressive or violent at the moment"
+#: help:oemedical.patient.evaluation,violent:0
+msgid "Check this box if the patient is agressive or violent at the moment"
+msgstr "Check this box if the patient is agressive or violent at the moment"
 
 #. module: oemedical
 #: model:oemedical.drugs_recreational,name:oemedical.psilocybin
@@ -2760,35 +2759,35 @@ msgid "Oemedical Physician"
 msgstr "Oemedical Physician"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.disease,status:0
+#: selection:oemedical.patient.disease,status:0
 msgid "worsening"
 msgstr "worsening"
 
 #. module: oemedical
-#: model:ir.ui.menu,name:oemedical.oemedical_Paciente_disease
-msgid " Paciente Disease"
-msgstr " Paciente Disease"
+#: model:ir.ui.menu,name:oemedical.oemedical_patient_disease
+msgid " Patient Disease"
+msgstr " Patient Disease"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Puerperium"
 msgstr "Puerperium"
 
 #. module: oemedical
-#: field:oemedical.Paciente,currently_pregnant:0
+#: field:oemedical.patient,currently_pregnant:0
 msgid "Currently Pregnant"
 msgstr "Currently Pregnant"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Placenta"
 msgstr "Placenta"
 
 #. module: oemedical
-#: model:ir.model,name:oemedical.model_oemedical_Paciente_cage
-#: view:oemedical.Paciente:0
-msgid "Paciente CAGE Questionnaire"
-msgstr "Paciente CAGE Questionnaire"
+#: model:ir.model,name:oemedical.model_oemedical_patient_cage
+#: view:oemedical.patient:0
+msgid "Patient CAGE Questionnaire"
+msgstr "Patient CAGE Questionnaire"
 
 #. module: oemedical
 #: selection:oemedical.medication.template,duration_period:0
@@ -2822,7 +2821,7 @@ msgstr "years"
 #: field:oemedical.pathology,name:0
 #: view:oemedical.pathology.group:0
 #: field:oemedical.pathology.group,name:0
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 #: view:oemedical.physician:0
 #: field:oemedical.physician,name:0
 #: view:oemedical.vaccination:0
@@ -2837,7 +2836,7 @@ msgid "Occiput / Cephalic Posterior"
 msgstr "Occiput / Cephalic Posterior"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,mood:0
+#: selection:oemedical.patient.evaluation,mood:0
 msgid "Rage"
 msgstr "Rage"
 
@@ -2847,15 +2846,15 @@ msgid "oemedical.hospital.or"
 msgstr "oemedical.hospital.or"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 #: view:oemedical.vaccination:0
 msgid "Oemedical Vaccination"
 msgstr "Oemedical Vaccination"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,malnutrition:0
-msgid "Check this box if the Paciente show signs of malnutrition. If associated  to a disease, please encode the correspondent disease on the Paciente disease history. For example, Moderate protein-energy malnutrition, E44.0 in ICD-10 encoding"
-msgstr "Check this box if the Paciente show signs of malnutrition. If associated  to a disease, please encode the correspondent disease on the Paciente disease history. For example, Moderate protein-energy malnutrition, E44.0 in ICD-10 encoding"
+#: help:oemedical.patient.evaluation,malnutrition:0
+msgid "Check this box if the patient show signs of malnutrition. If associated  to a disease, please encode the correspondent disease on the patient disease history. For example, Moderate protein-energy malnutrition, E44.0 in ICD-10 encoding"
+msgstr "Check this box if the patient show signs of malnutrition. If associated  to a disease, please encode the correspondent disease on the patient disease history. For example, Moderate protein-energy malnutrition, E44.0 in ICD-10 encoding"
 
 #. module: oemedical
 #: view:oemedical.hospital.ward:0
@@ -2869,19 +2868,19 @@ msgid "Check if the product is a vaccine"
 msgstr "Check if the product is a vaccine"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-msgid "Paciente pap History"
-msgstr "Paciente pap History"
+#: view:oemedical.patient:0
+msgid "Patient pap History"
+msgstr "Historial PAP"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,loc_verbal:0
+#: selection:oemedical.patient.evaluation,loc_verbal:0
 msgid "Makes no sounds"
 msgstr "Makes no sounds"
 
 #. module: oemedical
 #: field:oemedical.perinatal,gestational_weeks:0
 msgid "Gestational weeks"
-msgstr "Gestational weeks"
+msgstr "Semanas de Gestacion"
 
 #. module: oemedical
 #: view:oemedical.vaccination:0
@@ -2890,7 +2889,7 @@ msgid "Next Dose"
 msgstr "Next Dose"
 
 #. module: oemedical
-#: field:oemedical.Paciente.cage,cage_a:0
+#: field:oemedical.patient.cage,cage_a:0
 msgid "Angry with Critics"
 msgstr "Angry with Critics"
 
@@ -2900,18 +2899,18 @@ msgid "Perineal"
 msgstr "Perineal"
 
 #. module: oemedical
-#: help:oemedical.Paciente.prenatal.evaluation,iugr:0
+#: help:oemedical.patient.prenatal.evaluation,iugr:0
 msgid "Intra Uterine Growth Restriction"
 msgstr "Intra Uterine Growth Restriction"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,anticonceptive:0
+#: selection:oemedical.patient,anticonceptive:0
 msgid "Female condom"
 msgstr "Female condom"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,notes_complaint:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,notes_complaint:0
 msgid "Complaint details"
 msgstr "Complaint details"
 
@@ -2941,9 +2940,9 @@ msgid "Dextromethorphan - DMX"
 msgstr "Dextromethorphan - DMX"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.disease,status:0
+#: selection:oemedical.patient.disease,status:0
 msgid "healed"
-msgstr "healed"
+msgstr "Curada"
 
 #. module: oemedical
 #: selection:oemedical.hospital.bed,state:0
@@ -2952,12 +2951,12 @@ msgid "Not available"
 msgstr "Not available"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,derived_from:0
+#: help:oemedical.patient.evaluation,derived_from:0
 msgid "Physician who derived the case"
 msgstr "Physician who derived the case"
 
 #. module: oemedical
-#: field:oemedical.Paciente.disease,disease_severity:0
+#: field:oemedical.patient.disease,disease_severity:0
 msgid "Severity"
 msgstr "Severity"
 
@@ -2981,14 +2980,14 @@ msgid "Prescription Line"
 msgstr "Prescription Line"
 
 #. module: oemedical
-#: help:oemedical.Paciente.colposcopy_history,result:0
-#: help:oemedical.Paciente.mammography_history,result:0
+#: help:oemedical.patient.colposcopy_history,result:0
+#: help:oemedical.patient.mammography_history,result:0
 msgid "Please check the lab test results if the module is installed"
 msgstr "Please check the lab test results if the module is installed"
 
 #. module: oemedical
-#: view:oemedical.Cita:0
-#: field:oemedical.Cita,comments:0
+#: view:oemedical.appointment:0
+#: field:oemedical.appointment,comments:0
 #: view:oemedical.diagnostic_hypothesis:0
 #: field:oemedical.diagnostic_hypothesis,comments:0
 #: view:oemedical.directions:0
@@ -3001,13 +3000,13 @@ msgid "Comments"
 msgstr "Comments"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,sex_anal:0
-#: selection:oemedical.Paciente,sex_oral:0
+#: selection:oemedical.patient,sex_anal:0
+#: selection:oemedical.patient,sex_oral:0
 msgid "Passive"
 msgstr "Passive"
 
 #. module: oemedical
-#: view:oemedical.Cita:0
+#: view:oemedical.appointment:0
 #: view:oemedical.diagnostic_hypothesis:0
 #: view:oemedical.directions:0
 #: view:oemedical.disease.gene:0
@@ -3034,10 +3033,10 @@ msgstr "Passive"
 #: view:oemedical.pathology:0
 #: view:oemedical.pathology.category:0
 #: view:oemedical.pathology.group:0
-#: view:oemedical.Paciente:0
-#: view:oemedical.Paciente.disease:0
-#: view:oemedical.Paciente.evaluation:0
-#: view:oemedical.Paciente.medication:0
+#: view:oemedical.patient:0
+#: view:oemedical.patient.disease:0
+#: view:oemedical.patient.evaluation:0
+#: view:oemedical.patient.medication:0
 #: view:oemedical.physician:0
 #: view:oemedical.prescription.line:0
 #: view:oemedical.prescription.order:0
@@ -3071,14 +3070,14 @@ msgid "Hashish"
 msgstr "Hashish"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Genetic Family Diseases"
 msgstr "Genetic Family Diseases"
 
 #. module: oemedical
-#: field:oemedical.Paciente,sex_oral:0
+#: field:oemedical.patient,sex_oral:0
 msgid "Oral Sex"
-msgstr "Oral Sex"
+msgstr "Sexo Oral"
 
 #. module: oemedical
 #: view:oemedical.hospital.ward:0
@@ -3088,8 +3087,8 @@ msgstr "Air Conditioning"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_medication_template_view
-#: view:oemedical.Paciente.medication:0
-#: field:oemedical.Paciente.medication,template:0
+#: view:oemedical.patient.medication:0
+#: field:oemedical.patient.medication,template:0
 #: view:oemedical.prescription.line:0
 #: field:oemedical.prescription.line,template:0
 msgid "Medication Template"
@@ -3106,9 +3105,9 @@ msgid " Physician"
 msgstr " Physician"
 
 #. module: oemedical
-#: help:oemedical.Paciente,sleep_during_daytime:0
-msgid "Check if the Paciente sleep hours are during daylight rather than at night"
-msgstr "Check if the Paciente sleep hours are during daylight rather than at night"
+#: help:oemedical.patient,sleep_during_daytime:0
+msgid "Check if the patient sleep hours are during daylight rather than at night"
+msgstr "Check if the patient sleep hours are during daylight rather than at night"
 
 #. module: oemedical
 #: view:oemedical.medicament:0
@@ -3117,13 +3116,13 @@ msgid "Pregnancy and Lactancy"
 msgstr "Pregnancy and Lactancy"
 
 #. module: oemedical
-#: view:oemedical.Paciente.disease:0
-#: field:oemedical.Paciente.disease,treatment_description:0
+#: view:oemedical.patient.disease:0
+#: field:oemedical.patient.disease,treatment_description:0
 msgid "Treatment Description"
 msgstr "Treatment Description"
 
 #. module: oemedical
-#: field:oemedical.Paciente,pap_history:0
+#: field:oemedical.patient,pap_history:0
 msgid "PAP smear History"
 msgstr "PAP smear History"
 
@@ -3133,8 +3132,8 @@ msgid "Free"
 msgstr "Free"
 
 #. module: oemedical
-#: view:oemedical.Paciente.medication:0
-#: field:oemedical.Paciente.medication,discontinued:0
+#: view:oemedical.patient.medication:0
+#: field:oemedical.patient.medication,discontinued:0
 msgid "Discontinued"
 msgstr "Discontinued"
 
@@ -3144,12 +3143,12 @@ msgid "Dystocia"
 msgstr "Dystocia"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "General Infomation"
 msgstr "General Infomation"
 
 #. module: oemedical
-#: field:oemedical.Paciente.cage,cage_c:0
+#: field:oemedical.patient.cage,cage_c:0
 msgid "Hard to Cut down"
 msgstr "Hard to Cut down"
 
@@ -3159,8 +3158,8 @@ msgid "Incomplete Placenta"
 msgstr "Incomplete Placenta"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,tremor:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,tremor:0
 msgid "Tremor"
 msgstr "Tremor"
 
@@ -3175,7 +3174,7 @@ msgid "Hematoma"
 msgstr "Hematoma"
 
 #. module: oemedical
-#: help:oemedical.Paciente.cage,cage_c:0
+#: help:oemedical.patient.cage,cage_c:0
 msgid "Have you ever felt you needed to Cut down on your drinking ?"
 msgstr "Have you ever felt you needed to Cut down on your drinking ?"
 
@@ -3201,9 +3200,9 @@ msgid "Health Prof"
 msgstr "Health Prof"
 
 #. module: oemedical
-#: help:oemedical.Paciente,fertile:0
-msgid "Check if Paciente is in fertile age"
-msgstr "Check if Paciente is in fertile age"
+#: help:oemedical.patient,fertile:0
+msgid "Check if patient is in fertile age"
+msgstr "Check if patient is in fertile age"
 
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_medication_dosage
@@ -3217,7 +3216,7 @@ msgstr "Hallucinogens"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_puerperium_monitor
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Puerperium Monitor"
 msgstr "Puerperium Monitor"
 
@@ -3227,21 +3226,21 @@ msgid "Oemedical Hospital Unit"
 msgstr "Oemedical Hospital Unit"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.disease,allergy_type:0
+#: selection:oemedical.patient.disease,allergy_type:0
 msgid "Drug Allergy"
 msgstr "Drug Allergy"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,loc_motor:0
+#: selection:oemedical.patient.evaluation,loc_motor:0
 msgid "Obeys commands"
 msgstr "Obeys commands"
 
 #. module: oemedical
 #: selection:oemedical.drugs_recreational,addiction_level:0
 #: selection:oemedical.drugs_recreational,toxicity:0
-#: selection:oemedical.Paciente,anticonceptive:0
-#: selection:oemedical.Paciente,sex_anal:0
-#: selection:oemedical.Paciente,sex_oral:0
+#: selection:oemedical.patient,anticonceptive:0
+#: selection:oemedical.patient,sex_anal:0
+#: selection:oemedical.patient,sex_oral:0
 msgid "None"
 msgstr "None"
 
@@ -3251,7 +3250,7 @@ msgid " Pathology"
 msgstr " Pathology"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Genetic Risk"
 msgstr "Genetic Risk"
 
@@ -3261,7 +3260,7 @@ msgid "Drug administration route code."
 msgstr "Drug administration route code."
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,ldl:0
+#: help:oemedical.patient.evaluation,ldl:0
 msgid "Last LDL Cholesterol reading. Can be approximative"
 msgstr "Last LDL Cholesterol reading. Can be approximative"
 
@@ -3278,23 +3277,23 @@ msgid "Lacerations"
 msgstr "Lacerations"
 
 #. module: oemedical
-#: help:oemedical.Paciente.cage,cage_e:0
+#: help:oemedical.patient.cage,cage_e:0
 msgid "Have you ever felt you needed a drink first thing in the morning (Eye-opener) to steady your nerves or to get rid of a hangover?"
 msgstr "Have you ever felt you needed a drink first thing in the morning (Eye-opener) to steady your nerves or to get rid of a hangover?"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,info_diagnosis:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,info_diagnosis:0
 msgid "Presumptive Diagnosis: Extra Info"
 msgstr "Presumptive Diagnosis: Extra Info"
 
 #. module: oemedical
-#: help:oemedical.Paciente,sex_with_prostitutes:0
-msgid "Check if the Paciente (he or she) has sex with prostitutes"
-msgstr "Check if the Paciente (he or she) has sex with prostitutes"
+#: help:oemedical.patient,sex_with_prostitutes:0
+msgid "Check if the patient (he or she) has sex with prostitutes"
+msgstr "Check if the patient (he or she) has sex with prostitutes"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Pregnancy History"
 msgstr "Pregnancy History"
 
@@ -3310,36 +3309,36 @@ msgid "Bed Number"
 msgstr "Bed Number"
 
 #. module: oemedical
-#: help:oemedical.Paciente,current_address:0
-msgid "Contact information. You may choose from the different contacts and addresses this Paciente has."
-msgstr "Contact information. You may choose from the different contacts and addresses this Paciente has."
+#: help:oemedical.patient,current_address:0
+msgid "Contact information. You may choose from the different contacts and addresses this patient has."
+msgstr "Contact information. You may choose from the different contacts and addresses this patient has."
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,cholesterol_total:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,cholesterol_total:0
 msgid "Last Cholesterol"
 msgstr "Last Cholesterol"
 
 #. module: oemedical
-#: help:oemedical.Paciente.menstrual_history,lmp:0
-#: help:oemedical.Paciente.pregnancy,lmp:0
+#: help:oemedical.patient.menstrual_history,lmp:0
+#: help:oemedical.patient.pregnancy,lmp:0
 msgid "Last Menstrual Period"
 msgstr "Last Menstrual Period"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Fetal Biometry"
 msgstr "Fetal Biometry"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,temperature:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,temperature:0
 #: field:oemedical.puerperium.monitor,temperature:0
 msgid "Temperature"
 msgstr "Temperature"
 
 #. module: oemedical
-#: field:oemedical.Paciente.pregnancy,gravida:0
+#: field:oemedical.patient.pregnancy,gravida:0
 msgid "Pregnancy #"
 msgstr "Pregnancy #"
 
@@ -3349,7 +3348,7 @@ msgid " Hospital Unit"
 msgstr " Hospital Unit"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,loc_motor:0
+#: selection:oemedical.patient.evaluation,loc_motor:0
 msgid "Abnormal flexion to painful stimuli (decorticate response)"
 msgstr "Abnormal flexion to painful stimuli (decorticate response)"
 
@@ -3371,10 +3370,10 @@ msgstr "Abnormal flexion to painful stimuli (decorticate response)"
 #: field:oemedical.medicament,notes:0
 #: view:oemedical.pathology:0
 #: field:oemedical.pathology,info:0
-#: view:oemedical.Paciente.disease:0
-#: field:oemedical.Paciente.disease,extra_info:0
-#: view:oemedical.Paciente.medication:0
-#: field:oemedical.Paciente.medication,notes:0
+#: view:oemedical.patient.disease:0
+#: field:oemedical.patient.disease,extra_info:0
+#: view:oemedical.patient.medication:0
+#: field:oemedical.patient.medication,notes:0
 msgid "Extra Info"
 msgstr "Extra Info"
 
@@ -3385,9 +3384,9 @@ msgid "Abruptio Placentae"
 msgstr "Abruptio Placentae"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,sex:0
+#: selection:oemedical.patient,sex:0
 msgid "Female"
-msgstr "Female"
+msgstr "Femenino"
 
 #. module: oemedical
 #: field:oemedical.perinatal,admission_code:0
@@ -3396,11 +3395,11 @@ msgstr "Admission Code"
 
 #. module: oemedical
 #: field:oemedical.perinatal.monitor,name:0
-msgid "Paciente_id"
-msgstr "Paciente_id"
+msgid "patient_id"
+msgstr "patient_id"
 
 #. module: oemedical
-#: field:oemedical.Paciente.evaluation,signs_and_symptoms:0
+#: field:oemedical.patient.evaluation,signs_and_symptoms:0
 msgid "Signs and Symptoms"
 msgstr "Signs and Symptoms"
 
@@ -3415,13 +3414,13 @@ msgid "oemedical.secondary_condition"
 msgstr "oemedical.secondary_condition"
 
 #. module: oemedical
-#: model:ir.ui.menu,name:oemedical.oemedical_Cita
-msgid " Cita"
-msgstr " Cita"
+#: model:ir.ui.menu,name:oemedical.oemedical_appointment
+msgid " Appointment"
+msgstr "Citas"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,evaluation_summary:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,evaluation_summary:0
 msgid "Evaluation Summary"
 msgstr "Evaluation Summary"
 
@@ -3436,7 +3435,7 @@ msgid "Date of activation of the party"
 msgstr "Date of activation of the party"
 
 #. module: oemedical
-#: field:oemedical.Paciente.prenatal.evaluation,gestational_weeks:0
+#: field:oemedical.patient.prenatal.evaluation,gestational_weeks:0
 msgid "Gestational Weeks"
 msgstr "Gestational Weeks"
 
@@ -3452,20 +3451,20 @@ msgid "Hospital"
 msgstr "Hospital"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,ethnic_group:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,ethnic_group:0
 msgid "Ethnic group"
 msgstr "Ethnic group"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,mood:0
+#: selection:oemedical.patient.evaluation,mood:0
 msgid "Euphoria"
 msgstr "Euphoria"
 
 #. module: oemedical
-#: help:oemedical.Paciente,helmet:0
-msgid "The Paciente uses the proper motorcycle helmet"
-msgstr "The Paciente uses the proper motorcycle helmet"
+#: help:oemedical.patient,helmet:0
+msgid "The patient uses the proper motorcycle helmet"
+msgstr "The patient uses the proper motorcycle helmet"
 
 #. module: oemedical
 #: view:oemedical.medicament:0
@@ -3484,12 +3483,12 @@ msgid "Location"
 msgstr "Location"
 
 #. module: oemedical
-#: help:oemedical.Paciente,gravida:0
+#: help:oemedical.patient,gravida:0
 msgid "Number of pregnancies"
 msgstr "Number of pregnancies"
 
 #. module: oemedical
-#: field:oemedical.Paciente,menopausal:0
+#: field:oemedical.patient,menopausal:0
 msgid "Menopausal"
 msgstr "Menopausal"
 
@@ -3499,7 +3498,7 @@ msgid "Prenatal evaluations"
 msgstr "Prenatal evaluations"
 
 #. module: oemedical
-#: field:oemedical.Paciente,sex:0
+#: field:oemedical.patient,sex:0
 msgid "Sex"
 msgstr "Sex"
 
@@ -3514,10 +3513,10 @@ msgid "Dominance"
 msgstr "Dominance"
 
 #. module: oemedical
-#: view:oemedical.Cita:0
-#: field:oemedical.Cita,name:0
-msgid "Cita ID"
-msgstr "ID Cita"
+#: view:oemedical.appointment:0
+#: field:oemedical.appointment,name:0
+msgid "Appointment ID"
+msgstr "Appointment ID"
 
 #. module: oemedical
 #: view:oemedical.prescription.line:0
@@ -3528,9 +3527,9 @@ msgid "Prescription ID"
 msgstr "ID Receta"
 
 #. module: oemedical
-#: field:oemedical.Paciente,blood_type:0
+#: field:oemedical.patient,blood_type:0
 msgid "Blood Type"
-msgstr "Blood Type"
+msgstr "Tipo Sanguineo"
 
 #. module: oemedical
 #: help:oemedical.drugs_recreational,intoxication_level:0
@@ -3540,12 +3539,12 @@ msgstr "the level of intoxication is associated with addiction and increases the
 "Using Henningfield rating. 1=highest and 6=lowest"
 
 #. module: oemedical
-#: field:oemedical.Paciente,gravida:0
+#: field:oemedical.patient,gravida:0
 msgid "Gravida"
 msgstr "Gravida"
 
 #. module: oemedical
-#: selection:oemedical.Cita,urgency:0
+#: selection:oemedical.appointment,urgency:0
 msgid "Medical Emergency"
 msgstr "Medical Emergency"
 
@@ -3555,8 +3554,8 @@ msgid " Hospital Or"
 msgstr " Hospital Or"
 
 #. module: oemedical
-#: view:oemedical.Paciente.disease:0
-#: field:oemedical.Paciente.disease,is_on_treatment:0
+#: view:oemedical.patient.disease:0
+#: field:oemedical.patient.disease,is_on_treatment:0
 msgid "Currently on Treatment"
 msgstr "Currently on Treatment"
 
@@ -3567,8 +3566,8 @@ msgstr "Relationship"
 
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_health_center_root
-#: view:oemedical.Cita:0
-#: field:oemedical.Cita,institution:0
+#: view:oemedical.appointment:0
+#: field:oemedical.appointment,institution:0
 msgid "Health Center"
 msgstr "Health Center"
 
@@ -3578,27 +3577,27 @@ msgid "Lochia amount"
 msgstr "Lochia amount"
 
 #. module: oemedical
-#: field:oemedical.Paciente,eats_alone:0
+#: field:oemedical.patient,eats_alone:0
 msgid "Eats alone"
 msgstr "Eats alone"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,loc_motor:0
+#: selection:oemedical.patient.evaluation,loc_motor:0
 msgid "Extension to painful stimuli - decerebrate response -"
 msgstr "Extension to painful stimuli - decerebrate response -"
 
 #. module: oemedical
-#: help:oemedical.Paciente.medication,discontinued_reason:0
+#: help:oemedical.patient.medication,discontinued_reason:0
 msgid "Short description for discontinuing the treatment"
 msgstr "Short description for discontinuing the treatment"
 
 #. module: oemedical
-#: field:oemedical.Paciente,evaluations:0
+#: field:oemedical.patient,evaluations:0
 msgid "Evaluations"
 msgstr "Evaluations"
 
 #. module: oemedical
-#: field:oemedical.Paciente.prenatal.evaluation,oligohydramnios:0
+#: field:oemedical.patient.prenatal.evaluation,oligohydramnios:0
 msgid "Oligohydramnios"
 msgstr "Oligohydramnios"
 
@@ -3608,12 +3607,12 @@ msgid "Retained Placenta"
 msgstr "Retained Placenta"
 
 #. module: oemedical
-#: help:oemedical.Paciente.disease,short_comment:0
+#: help:oemedical.patient.disease,short_comment:0
 msgid "Brief, one-line remark of the disease. Longer description will go on the Extra info field"
 msgstr "Brief, one-line remark of the disease. Longer description will go on the Extra info field"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Mother Information"
 msgstr "Mother Information"
 
@@ -3623,23 +3622,23 @@ msgid "Legal Status"
 msgstr "Legal Status"
 
 #. module: oemedical
-#: field:oemedical.Paciente.prenatal.evaluation,efw:0
+#: field:oemedical.patient.prenatal.evaluation,efw:0
 msgid "EFW"
 msgstr "EFW"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,orientation:0
-msgid "Check this box if the Paciente is disoriented in time and/or space"
-msgstr "Check this box if the Paciente is disoriented in time and/or space"
+#: help:oemedical.patient.evaluation,orientation:0
+msgid "Check this box if the patient is disoriented in time and/or space"
+msgstr "Check this box if the patient is disoriented in time and/or space"
 
 #. module: oemedical
-#: view:oemedical.Paciente.medication:0
-#: field:oemedical.Paciente.medication,course_completed:0
+#: view:oemedical.patient.medication:0
+#: field:oemedical.patient.medication,course_completed:0
 msgid "Course Completed"
 msgstr "Course Completed"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Fetus Information"
 msgstr "Fetus Information"
 
@@ -3649,12 +3648,12 @@ msgid "Full"
 msgstr "Full"
 
 #. module: oemedical
-#: field:oemedical.Paciente,alcohol:0
+#: field:oemedical.patient,alcohol:0
 msgid "Drinks Alcohol"
 msgstr "Drinks Alcohol"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.pregnancy,iugr:0
+#: selection:oemedical.patient.pregnancy,iugr:0
 msgid "Assymetric"
 msgstr "Assymetric"
 
@@ -3665,25 +3664,25 @@ msgid "Vaginal"
 msgstr "Vaginal"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,osat:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,osat:0
 msgid "Oxygen Saturation"
 msgstr "Oxygen Saturation"
 
 #. module: oemedical
-#: field:oemedical.Paciente,stillbirths:0
+#: field:oemedical.patient,stillbirths:0
 msgid "Stillbirths"
 msgstr "Stillbirths"
 
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_insurance
 msgid " Insurance"
-msgstr " Insurance"
+msgstr "Seguro Medico"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,secondary_conditions:0
-msgid "Other, Secondary conditions found on the Paciente"
-msgstr "Other, Secondary conditions found on the Paciente"
+#: help:oemedical.patient.evaluation,secondary_conditions:0
+msgid "Other, Secondary conditions found on the patient"
+msgstr "Other, Secondary conditions found on the patient"
 
 #. module: oemedical
 #: selection:oemedical.medication.template,duration_period:0
@@ -3692,7 +3691,7 @@ msgid "hours"
 msgstr "hours"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,evaluation_type:0
+#: selection:oemedical.patient.evaluation,evaluation_type:0
 msgid "Telemedicine"
 msgstr "Telemedicine"
 
@@ -3705,49 +3704,49 @@ msgid "Affected Chromosome"
 msgstr "Affected Chromosome"
 
 #. module: oemedical
-#: help:oemedical.Cita,speciality:0
+#: help:oemedical.appointment,speciality:0
 msgid "Medical Specialty / Sector"
 msgstr "Medical Specialty / Sector"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,abstraction:0
-msgid "Check this box if the Paciente presents abnormalities in abstract reasoning"
-msgstr "Check this box if the Paciente presents abnormalities in abstract reasoning"
+#: help:oemedical.patient.evaluation,abstraction:0
+msgid "Check this box if the patient presents abnormalities in abstract reasoning"
+msgstr "Check this box if the patient presents abnormalities in abstract reasoning"
 
 #. module: oemedical
-#: view:oemedical.Paciente.disease:0
-#: field:oemedical.Paciente.disease,weeks_of_pregnancy:0
+#: view:oemedical.patient.disease:0
+#: field:oemedical.patient.disease,weeks_of_pregnancy:0
 msgid "Contracted in pregnancy week #"
 msgstr "Contracted in pregnancy week #"
 
 #. module: oemedical
-#: field:oemedical.Paciente,pap_test:0
+#: field:oemedical.patient,pap_test:0
 msgid "PAP test"
 msgstr "PAP test"
 
 #. module: oemedical
-#: field:oemedical.Paciente,traffic_laws:0
+#: field:oemedical.patient,traffic_laws:0
 msgid "Obeys Traffic Laws"
 msgstr "Obeys Traffic Laws"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,dehydration:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,dehydration:0
 msgid "Dehydration"
 msgstr "Dehydration"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-msgid "Oemedical Paciente"
-msgstr "Oemedical Paciente"
+#: view:oemedical.patient:0
+msgid "Oemedical Patient"
+msgstr "Oemedical Patient"
 
 #. module: oemedical
-#: field:oemedical.Paciente.prenatal.evaluation,hypertension:0
+#: field:oemedical.patient.prenatal.evaluation,hypertension:0
 msgid "Hypertension"
 msgstr "Hypertension"
 
 #. module: oemedical
-#: field:oemedical.Paciente.pregnancy,pregnancy_end_result:0
+#: field:oemedical.patient.pregnancy,pregnancy_end_result:0
 msgid "Result"
 msgstr "Result"
 
@@ -3757,17 +3756,17 @@ msgid " Pathology Group"
 msgstr " Pathology Group"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,loc_eyes:0
+#: selection:oemedical.patient.evaluation,loc_eyes:0
 msgid "Does not Open Eyes"
 msgstr "Does not Open Eyes"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,temperature:0
+#: help:oemedical.patient.evaluation,temperature:0
 msgid "Temperature in celcius"
 msgstr "Temperature in celcius"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Genetics"
 msgstr "Genetics"
 
@@ -3783,18 +3782,18 @@ msgid "Information"
 msgstr "Information"
 
 #. module: oemedical
-#: field:oemedical.Paciente,sexual_partners:0
+#: field:oemedical.patient,sexual_partners:0
 msgid "Sexual Partners"
 msgstr "Sexual Partners"
 
 #. module: oemedical
-#: field:oemedical.Paciente.pregnancy,puerperium_monitor:0
+#: field:oemedical.patient.pregnancy,puerperium_monitor:0
 #: field:oemedical.perinatal,puerperium_monitor:0
 msgid "Puerperium monitor"
 msgstr "Puerperium monitor"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.prenatal.evaluation,invasive_placentation:0
+#: selection:oemedical.patient.prenatal.evaluation,invasive_placentation:0
 msgid "Normal decidua"
 msgstr "Normal decidua"
 
@@ -3804,27 +3803,27 @@ msgid "Treatment period"
 msgstr "Treatment period"
 
 #. module: oemedical
-#: field:oemedical.Paciente,second_hand_smoker:0
+#: field:oemedical.patient,second_hand_smoker:0
 msgid "Passive smoker"
 msgstr "Passive smoker"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.family.diseases,xory:0
+#: selection:oemedical.patient.family.diseases,xory:0
 msgid "Paternal"
 msgstr "Paternal"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.prenatal.evaluation,invasive_placentation:0
+#: selection:oemedical.patient.prenatal.evaluation,invasive_placentation:0
 msgid "Percreta"
 msgstr "Percreta"
 
 #. module: oemedical
-#: help:oemedical.Paciente.prenatal.evaluation,preeclampsia:0
+#: help:oemedical.patient.prenatal.evaluation,preeclampsia:0
 msgid "Check this box if the mother has pre-eclampsia"
 msgstr "Check this box if the mother has pre-eclampsia"
 
 #. module: oemedical
-#: help:oemedical.Paciente.disease,pcs_code:0
+#: help:oemedical.patient.disease,pcs_code:0
 msgid "Procedure code, for example, ICD-10-PCS Code 7-character string"
 msgstr "Procedure code, for example, ICD-10-PCS Code 7-character string"
 
@@ -3835,17 +3834,17 @@ msgid "Low"
 msgstr "Low"
 
 #. module: oemedical
-#: field:oemedical.Paciente,motorcycle_rider:0
+#: field:oemedical.patient,motorcycle_rider:0
 msgid "Motorcycle Rider"
 msgstr "Motorcycle Rider"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.disease,disease_severity:0
+#: selection:oemedical.patient.disease,disease_severity:0
 msgid "Moderate"
 msgstr "Moderate"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Alcohol"
 msgstr "Alcohol"
 
@@ -3855,17 +3854,17 @@ msgid "Dissociative Anesthetics"
 msgstr "Dissociative Anesthetics"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,head_circumference:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,head_circumference:0
 msgid "Head Circumference"
 msgstr "Head Circumference"
 
 #. module: oemedical
-#: model:ir.actions.act_window,name:oemedical.act_open_oemedical_Cita_view
-#: view:oemedical.Cita:0
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,evaluation_date:0
-msgid "Cita"
+#: model:ir.actions.act_window,name:oemedical.act_open_oemedical_appointment_view
+#: view:oemedical.appointment:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,evaluation_date:0
+msgid "Appointment"
 msgstr "Citas"
 
 #. module: oemedical
@@ -3879,9 +3878,9 @@ msgid " Operational Area"
 msgstr " Operational Area"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,evaluation_type:0
-msgid "Pre-arranged Cita"
-msgstr "Pre-arranged Cita"
+#: selection:oemedical.patient.evaluation,evaluation_type:0
+msgid "Pre-arranged appointment"
+msgstr "Pre-arranged appointment"
 
 #. module: oemedical
 #: view:oemedical.hospital.ward:0
@@ -3895,7 +3894,7 @@ msgid "Oemedical Operational_Area"
 msgstr "Oemedical Operational_Area"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,bpm:0
+#: help:oemedical.patient.evaluation,bpm:0
 msgid "Heart rate expressed in beats per minute"
 msgstr "Heart rate expressed in beats per minute"
 
@@ -3914,8 +3913,8 @@ msgstr "Disease Group Members"
 #: field:oemedical.insurance,plan_id:0
 #: view:oemedical.insurance.plan:0
 #: field:oemedical.insurance.plan,plan:0
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,directions:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,directions:0
 msgid "Plan"
 msgstr "Plan"
 
@@ -3925,15 +3924,15 @@ msgid "Groups"
 msgstr "Groups"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,loc_eyes:0
+#: selection:oemedical.patient.evaluation,loc_eyes:0
 msgid "Opens eyes in response to voice"
 msgstr "Opens eyes in response to voice"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,sex_anal:0
-#: selection:oemedical.Paciente,sex_oral:0
-#: view:oemedical.Paciente.medication:0
-#: field:oemedical.Paciente.medication,is_active:0
+#: selection:oemedical.patient,sex_anal:0
+#: selection:oemedical.patient,sex_oral:0
+#: view:oemedical.patient.medication:0
+#: field:oemedical.patient.medication,is_active:0
 msgid "Active"
 msgstr "Active"
 
@@ -3948,12 +3947,12 @@ msgid "Check this box to print this line of the prescription."
 msgstr "Check this box to print this line of the prescription."
 
 #. module: oemedical
-#: help:oemedical.Paciente,identification_code:0
-msgid "Paciente Identifier provided by the Health Center.Is not the Social Security Number"
-msgstr "Paciente Identifier provided by the Health Center.Is not the Social Security Number"
+#: help:oemedical.patient,identification_code:0
+msgid "Patient Identifier provided by the Health Center.Is not the Social Security Number"
+msgstr "Patient Identifier provided by the Health Center.Is not the Social Security Number"
 
 #. module: oemedical
-#: model:ir.model,name:oemedical.model_oemedical_Paciente_prenatal_evaluation
+#: model:ir.model,name:oemedical.model_oemedical_patient_prenatal_evaluation
 msgid "Prenatal and Antenatal Evaluations"
 msgstr "Prenatal and Antenatal Evaluations"
 
@@ -3965,7 +3964,7 @@ msgstr "recessive"
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_prescription_root
 msgid "Prescription"
-msgstr "Receta"
+msgstr "Recetas"
 
 #. module: oemedical
 #: view:oemedical.medication.template:0
@@ -3980,12 +3979,12 @@ msgid "Pregnancy Warning"
 msgstr "Pregnancy Warning"
 
 #. module: oemedical
-#: help:oemedical.Paciente,diseases:0
-msgid "Mark if the Paciente has died"
-msgstr "Mark if the Paciente has died"
+#: help:oemedical.patient,diseases:0
+msgid "Mark if the patient has died"
+msgstr "Mark if the patient has died"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.pap_history,result:0
+#: selection:oemedical.patient.pap_history,result:0
 msgid "LSIL"
 msgstr "LSIL"
 
@@ -3995,14 +3994,14 @@ msgstr "LSIL"
 #: field:oemedical.operational_area,info:0
 #: view:oemedical.operational_sector:0
 #: field:oemedical.operational_sector,info:0
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,lifestyle_info:0
-#: field:oemedical.Paciente,sexuality_info:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,lifestyle_info:0
+#: field:oemedical.patient,sexuality_info:0
 msgid "Extra Information"
 msgstr "Extra Information"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Perinatal"
 msgstr "Perinatal"
 
@@ -4012,17 +4011,17 @@ msgid "Perinatal Information"
 msgstr "Perinatal Information"
 
 #. module: oemedical
-#: field:oemedical.Paciente.cage,cage_g:0
+#: field:oemedical.patient.cage,cage_g:0
 msgid "Guilt"
 msgstr "Guilt"
 
 #. module: oemedical
-#: field:oemedical.Paciente,home_safety:0
+#: field:oemedical.patient,home_safety:0
 msgid "Home safety"
 msgstr "Home safety"
 
 #. module: oemedical
-#: field:oemedical.Paciente.prenatal.evaluation,invasive_placentation:0
+#: field:oemedical.patient.prenatal.evaluation,invasive_placentation:0
 msgid "Placentation"
 msgstr "Placentation"
 
@@ -4043,7 +4042,7 @@ msgid "Indications"
 msgstr "Indications"
 
 #. module: oemedical
-#: field:oemedical.Paciente,car_seat_belt:0
+#: field:oemedical.patient,car_seat_belt:0
 msgid "Seat belt"
 msgstr "Seat belt"
 
@@ -4054,7 +4053,7 @@ msgstr "Hydrocodone bitartrate"
 
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_root_misc
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Misc"
 msgstr "Misc"
 
@@ -4070,27 +4069,27 @@ msgid "Oemedical Drug Route"
 msgstr "Oemedical Drug Route"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "General"
 msgstr "General"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Colposcopy Tests"
 msgstr "Colposcopy Tests"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,derived_to:0
+#: help:oemedical.patient.evaluation,derived_to:0
 msgid "Physician to whom escalate / derive the case"
 msgstr "Physician to whom escalate / derive the case"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,actions:0
+#: help:oemedical.patient.evaluation,actions:0
 msgid "Procedures / Actions to take"
 msgstr "Procedures / Actions to take"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,sexual_preferences:0
+#: selection:oemedical.patient,sexual_preferences:0
 msgid "Bisexual"
 msgstr "Bisexual"
 
@@ -4105,7 +4104,7 @@ msgid "Pregnancy Category"
 msgstr "Pregnancy Category"
 
 #. module: oemedical
-#: field:oemedical.Paciente.disease,allergy_type:0
+#: field:oemedical.patient.disease,allergy_type:0
 msgid "Allergy type"
 msgstr "Allergy type"
 
@@ -4115,7 +4114,7 @@ msgid "chromosome number"
 msgstr "chromosome number"
 
 #. module: oemedical
-#: help:oemedical.Paciente,home_safety:0
+#: help:oemedical.patient,home_safety:0
 msgid "Keep safety measures for kids in the kitchen, correct storage of chemicals, ..."
 msgstr "Keep safety measures for kids in the kitchen, correct storage of chemicals, ..."
 
@@ -4131,17 +4130,17 @@ msgid "oemedical.medication.dosage"
 msgstr "oemedical.medication.dosage"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.pap_history,result:0
+#: selection:oemedical.patient.pap_history,result:0
 msgid "AIS"
 msgstr "AIS"
 
 #. module: oemedical
-#: field:oemedical.Paciente,exercise_minutes_day:0
+#: field:oemedical.patient,exercise_minutes_day:0
 msgid "Minutes / day"
-msgstr "Minutes / day"
+msgstr "Minutos / dia"
 
 #. module: oemedical
-#: help:oemedical.Paciente.prenatal.evaluation,fundal_height:0
+#: help:oemedical.patient.prenatal.evaluation,fundal_height:0
 #: help:oemedical.puerperium.monitor,uterus_involution:0
 msgid "Distance between the symphysis pubis and the uterine fundus (S-FD) in cm"
 msgstr "Distance between the symphysis pubis and the uterine fundus (S-FD) in cm"
@@ -4152,45 +4151,45 @@ msgid "unit"
 msgstr "unit"
 
 #. module: oemedical
-#: field:oemedical.Paciente,colposcopy:0
+#: field:oemedical.patient,colposcopy:0
 msgid "Colposcopy"
 msgstr "Colposcopy"
 
 #. module: oemedical
-#: help:oemedical.Paciente.prenatal.evaluation,fetal_hc:0
+#: help:oemedical.patient.prenatal.evaluation,fetal_hc:0
 msgid "Fetal Head Circumference"
 msgstr "Fetal Head Circumference"
 
 #. module: oemedical
-#: field:oemedical.Paciente,mammography:0
+#: field:oemedical.patient,mammography:0
 msgid "Mammography"
 msgstr "Mammography"
 
 #. module: oemedical
-#: help:oemedical.Paciente,breast_self_examination:0
-msgid "Check if Paciente does and knows how to self examine her breasts"
-msgstr "Check if Paciente does and knows how to self examine her breasts"
+#: help:oemedical.patient,breast_self_examination:0
+msgid "Check if patient does and knows how to self examine her breasts"
+msgstr "Check if patient does and knows how to self examine her breasts"
 
 #. module: oemedical
-#: field:oemedical.Paciente.colposcopy_history,result:0
-#: field:oemedical.Paciente.mammography_history,result:0
-#: field:oemedical.Paciente.pap_history,result:0
+#: field:oemedical.patient.colposcopy_history,result:0
+#: field:oemedical.patient.mammography_history,result:0
+#: field:oemedical.patient.pap_history,result:0
 msgid "result"
 msgstr "result"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,glycemia:0
+#: help:oemedical.patient.evaluation,glycemia:0
 msgid "Last blood glucose level. Can be approximative."
 msgstr "Last blood glucose level. Can be approximative."
 
 #. module: oemedical
-#: model:ir.model,name:oemedical.model_oemedical_Paciente_family_diseases
+#: model:ir.model,name:oemedical.model_oemedical_patient_family_diseases
 msgid "Family Diseases"
 msgstr "Family Diseases"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,abstraction:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,abstraction:0
 msgid "Abstraction"
 msgstr "Abstraction"
 
@@ -4200,24 +4199,24 @@ msgid "Check if the party is a person."
 msgstr "Check if the party is a person."
 
 #. module: oemedical
-#: help:oemedical.Paciente.mammography_history,last_mammography:0
+#: help:oemedical.patient.mammography_history,last_mammography:0
 msgid "Last Mammography"
 msgstr "Last Mammography"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Drive and Home Safety"
 msgstr "Drive and Home Safety"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,diagnosis:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,diagnosis:0
 msgid "Presumptive Diagnosis"
 msgstr "Presumptive Diagnosis"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,lastname:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,lastname:0
 msgid "Lastname"
 msgstr "Lastname"
 
@@ -4227,7 +4226,7 @@ msgid "Toxicity"
 msgstr "Toxicity"
 
 #. module: oemedical
-#: field:oemedical.Paciente.family.diseases,relative:0
+#: field:oemedical.patient.family.diseases,relative:0
 msgid "Relative"
 msgstr "Relative"
 
@@ -4238,38 +4237,38 @@ msgid "Correct"
 msgstr "Correct"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,hdl:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,hdl:0
 msgid "Last HDL"
 msgstr "Last HDL"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Physical Exercise"
 msgstr "Physical Exercise"
 
 #. module: oemedical
-#: field:oemedical.Paciente.menstrual_history,is_regular:0
+#: field:oemedical.patient.menstrual_history,is_regular:0
 msgid "Regular"
 msgstr "Regular"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.menstrual_history,frequency:0
+#: selection:oemedical.patient.menstrual_history,frequency:0
 msgid "eumenorrhea"
 msgstr "eumenorrhea"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,current_address:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,current_address:0
 msgid "Address"
 msgstr "Address"
 
 #. module: oemedical
-#: field:oemedical.Paciente.colposcopy_history,comments:0
-#: view:oemedical.Paciente.disease:0
-#: field:oemedical.Paciente.disease,short_comment:0
-#: field:oemedical.Paciente.mammography_history,comments:0
-#: field:oemedical.Paciente.pap_history,comments:0
+#: field:oemedical.patient.colposcopy_history,comments:0
+#: view:oemedical.patient.disease:0
+#: field:oemedical.patient.disease,short_comment:0
+#: field:oemedical.patient.mammography_history,comments:0
+#: field:oemedical.patient.pap_history,comments:0
 msgid "Remarks"
 msgstr "Remarks"
 
@@ -4280,23 +4279,23 @@ msgid "Labour Union / Syndical"
 msgstr "Labour Union / Syndical"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "PAP History"
 msgstr "PAP History"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-msgid "Paciente Menstrual History"
-msgstr "Paciente Menstrual History"
+#: view:oemedical.patient:0
+msgid "Patient Menstrual History"
+msgstr "Patient Menstrual History"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,marital_status:0
+#: selection:oemedical.patient,marital_status:0
 msgid "Married"
 msgstr "Married"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,abdominal_circ:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,abdominal_circ:0
 msgid "Waist"
 msgstr "Waist"
 
@@ -4313,7 +4312,7 @@ msgid "oemedical.hospital.building"
 msgstr "oemedical.hospital.building"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.pregnancy,pregnancy_end_result:0
+#: selection:oemedical.patient.pregnancy,pregnancy_end_result:0
 msgid "Live birth"
 msgstr "Live birth"
 
@@ -4356,7 +4355,7 @@ msgid "Oemedical Diagnostic_Hypothesis"
 msgstr "Oemedical Diagnostic_Hypothesis"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,mood:0
+#: selection:oemedical.patient.evaluation,mood:0
 msgid "Sad"
 msgstr "Sad"
 
@@ -4373,20 +4372,20 @@ msgid "Extreme"
 msgstr "Extreme"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,deceased:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,deceased:0
 #: field:oemedical.perinatal,mother_deceased:0
 msgid "Deceased"
 msgstr "Deceased"
 
 #. module: oemedical
-#: help:oemedical.Paciente,pap_test:0
-msgid "Check if Paciente does periodic cytologic pelvic smear screening"
-msgstr "Check if Paciente does periodic cytologic pelvic smear screening"
+#: help:oemedical.patient,pap_test:0
+msgid "Check if patient does periodic cytologic pelvic smear screening"
+msgstr "Check if patient does periodic cytologic pelvic smear screening"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,derived_to:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,derived_to:0
 msgid "Derived to"
 msgstr "Derived to"
 
@@ -4404,17 +4403,17 @@ msgid "Name must be unique!"
 msgstr "Name must be unique!"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,marital_status:0
+#: selection:oemedical.patient,marital_status:0
 msgid "Widowed"
 msgstr "Widowed"
 
 #. module: oemedical
-#: field:oemedical.Paciente,fertile:0
+#: field:oemedical.patient,fertile:0
 msgid "Fertile"
 msgstr "Fertile"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Henningfield Rating"
 msgstr "Henningfield Rating"
 
@@ -4424,22 +4423,22 @@ msgid "Oemedical Hospital Building"
 msgstr "Oemedical Hospital Building"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.disease,allergy_type:0
+#: selection:oemedical.patient.disease,allergy_type:0
 msgid "Misc Contraindication"
 msgstr "Misc Contraindication"
 
 #. module: oemedical
-#: help:oemedical.Paciente,family:0
+#: help:oemedical.patient,family:0
 msgid "Family Code"
 msgstr "Family Code"
 
 #. module: oemedical
-#: help:oemedical.Paciente.prenatal.evaluation,efw:0
+#: help:oemedical.patient.prenatal.evaluation,efw:0
 msgid "Estimated Fetal Weight"
 msgstr "Estimated Fetal Weight"
 
 #. module: oemedical
-#: field:oemedical.Paciente,diet_info:0
+#: field:oemedical.patient,diet_info:0
 msgid "Diet info"
 msgstr "Diet info"
 
@@ -4474,7 +4473,7 @@ msgid "Hospital Bed"
 msgstr "Hospital Bed"
 
 #. module: oemedical
-#: field:oemedical.Cita,duration:0
+#: field:oemedical.appointment,duration:0
 msgid "Duration"
 msgstr "Duration"
 
@@ -4484,15 +4483,15 @@ msgid "oemedical.disease_group.members"
 msgstr "oemedical.disease_group.members"
 
 #. module: oemedical
-#: model:ir.actions.act_window,name:oemedical.act_open_oemedical_Paciente_evaluation_view
-#: field:oemedical.Paciente.prenatal.evaluation,evaluation:0
-msgid "Paciente Evaluation"
-msgstr "Paciente Evaluation"
+#: model:ir.actions.act_window,name:oemedical.act_open_oemedical_patient_evaluation_view
+#: field:oemedical.patient.prenatal.evaluation,evaluation:0
+msgid "Patient Evaluation"
+msgstr "Patient Evaluation"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,evaluation_date:0
-msgid "Enter or select the date / ID of the Cita related to this evaluation"
-msgstr "Enter or select the date / ID of the Cita related to this evaluation"
+#: help:oemedical.patient.evaluation,evaluation_date:0
+msgid "Enter or select the date / ID of the appointment related to this evaluation"
+msgstr "Enter or select the date / ID of the appointment related to this evaluation"
 
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_drug_route
@@ -4500,12 +4499,12 @@ msgid " Drug Administration Route"
 msgstr " Drug Administration Route"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,information_source:0
+#: help:oemedical.patient.evaluation,information_source:0
 msgid "Source ofInformation, eg : Self, relative, friend ..."
 msgstr "Source ofInformation, eg : Self, relative, friend ..."
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Placenta anomalies"
 msgstr "Placenta anomalies"
 
@@ -4515,9 +4514,9 @@ msgid "Vaccination"
 msgstr "Vaccination"
 
 #. module: oemedical
-#: model:ir.actions.act_window,name:oemedical.act_open_oemedical_Paciente_medication_view
-msgid "Paciente Medication"
-msgstr "Paciente Medication"
+#: model:ir.actions.act_window,name:oemedical.act_open_oemedical_patient_medication_view
+msgid "Patient Medication"
+msgstr "Patient Medication"
 
 #. module: oemedical
 #: selection:oemedical.perinatal,place_of_death:0
@@ -4525,7 +4524,7 @@ msgid "Being transferred to other hospital"
 msgstr "Being transferred to other hospital"
 
 #. module: oemedical
-#: help:oemedical.Paciente,age_start_drugs:0
+#: help:oemedical.patient,age_start_drugs:0
 msgid "Age of start drugs"
 msgstr "Age of start drugs"
 
@@ -4541,12 +4540,12 @@ msgid "Detailed information"
 msgstr "Detailed information"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Family Information"
 msgstr "Family Information"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Monitoring"
 msgstr "Monitoring"
 
@@ -4557,7 +4556,7 @@ msgid "Prescription Notes"
 msgstr "Prescription Notes"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,mood:0
+#: selection:oemedical.patient.evaluation,mood:0
 msgid "Happy"
 msgstr "Happy"
 
@@ -4573,14 +4572,14 @@ msgid "Long Text"
 msgstr "Long Text"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.disease,allergy_type:0
+#: selection:oemedical.patient.disease,allergy_type:0
 msgid "Food Allergy"
 msgstr "Food Allergy"
 
 #. module: oemedical
 #: help:oemedical.medication.template,duration_period:0
-msgid "Period that the Paciente must take the medication in minutes, hours, days, months, years or indefinately"
-msgstr "Period that the Paciente must take the medication in minutes, hours, days, months, years or indefinately"
+msgid "Period that the patient must take the medication in minutes, hours, days, months, years or indefinately"
+msgstr "Period that the patient must take the medication in minutes, hours, days, months, years or indefinately"
 
 #. module: oemedical
 #: model:oemedical.drugs_recreational,name:oemedical.barbiturates
@@ -4588,7 +4587,7 @@ msgid "Barbiturates"
 msgstr "Barbiturates"
 
 #. module: oemedical
-#: field:oemedical.Paciente.prenatal.evaluation,overweight:0
+#: field:oemedical.patient.prenatal.evaluation,overweight:0
 msgid "Overweight"
 msgstr "Overweight"
 
@@ -4598,17 +4597,17 @@ msgid "Number of visits to the doctor during pregnancy"
 msgstr "Number of visits to the doctor during pregnancy"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.pap_history,result:0
+#: selection:oemedical.patient.pap_history,result:0
 msgid "HSIL"
 msgstr "HSIL"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,reliable_info:0
+#: help:oemedical.patient.evaluation,reliable_info:0
 msgid "Uncheck this optionif the information provided by the source seems not reliable"
 msgstr "Uncheck this optionif the information provided by the source seems not reliable"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,anticonceptive:0
+#: selection:oemedical.patient,anticonceptive:0
 msgid "Female sterilisation"
 msgstr "Female sterilisation"
 
@@ -4618,7 +4617,7 @@ msgid "Check if the product is a bed on the gnuhealth.center"
 msgstr "Check if the product is a bed on the gnuhealth.center"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "PAP Tests"
 msgstr "PAP Tests"
 
@@ -4629,7 +4628,7 @@ msgid "Transverse Lie"
 msgstr "Transverse Lie"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,anticonceptive:0
+#: selection:oemedical.patient,anticonceptive:0
 msgid "Withdrawal method"
 msgstr "Withdrawal method"
 
@@ -4639,9 +4638,9 @@ msgid "Injection"
 msgstr "Injection"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,chief_complaint:0
-#: help:oemedical.Paciente.evaluation,chief_complaint:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,chief_complaint:0
+#: help:oemedical.patient.evaluation,chief_complaint:0
 msgid "Chief Complaint"
 msgstr "Chief Complaint"
 
@@ -4663,7 +4662,7 @@ msgid "Institution"
 msgstr "Institution"
 
 #. module: oemedical
-#: field:oemedical.Paciente.prenatal.evaluation,preeclampsia:0
+#: field:oemedical.patient.prenatal.evaluation,preeclampsia:0
 msgid "Preeclampsia"
 msgstr "Preeclampsia"
 
@@ -4676,13 +4675,13 @@ msgid "Building"
 msgstr "Building"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,sex_anal:0
-#: selection:oemedical.Paciente,sex_oral:0
+#: selection:oemedical.patient,sex_anal:0
+#: selection:oemedical.patient,sex_oral:0
 msgid "Both"
 msgstr "Both"
 
 #. module: oemedical
-#: help:oemedical.Cita,institution:0
+#: help:oemedical.appointment,institution:0
 #: help:oemedical.hospital.building,institution:0
 #: help:oemedical.hospital.or,institution:0
 #: help:oemedical.hospital.unit,institution:0
@@ -4702,7 +4701,7 @@ msgid "Telephone Number"
 msgstr "Telephone Number"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,loc_eyes:0
+#: selection:oemedical.patient.evaluation,loc_eyes:0
 msgid "Opens eyes spontaneously"
 msgstr "Opens eyes spontaneously"
 
@@ -4717,22 +4716,22 @@ msgid "Lochia odor"
 msgstr "Lochia odor"
 
 #. module: oemedical
-#: model:ir.model,name:oemedical.model_oemedical_Paciente_recreational_drugs
-msgid "Paciente use of Recreational Drugs"
-msgstr "Paciente use of Recreational Drugs"
+#: model:ir.model,name:oemedical.model_oemedical_patient_recreational_drugs
+msgid "Patient use of Recreational Drugs"
+msgstr "Patient use of Recreational Drugs"
 
 #. module: oemedical
-#: field:oemedical.Paciente.menstrual_history,lmp_length:0
+#: field:oemedical.patient.menstrual_history,lmp_length:0
 msgid "Length"
 msgstr "Length"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.family.diseases,relative:0
+#: selection:oemedical.patient.family.diseases,relative:0
 msgid "Aunt"
 msgstr "Aunt"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Administration Routes"
 msgstr "Administration Routes"
 
@@ -4750,21 +4749,21 @@ msgid "Medicament"
 msgstr "Medicament"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,prenatal_evaluations:0
-#: field:oemedical.Paciente.pregnancy,prenatal_evaluations:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,prenatal_evaluations:0
+#: field:oemedical.patient.pregnancy,prenatal_evaluations:0
 msgid "Prenatal Evaluations"
 msgstr "Prenatal Evaluations"
 
 #. module: oemedical
-#: model:ir.model,name:oemedical.model_oemedical_Paciente_menstrual_history
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,menstrual_history:0
+#: model:ir.model,name:oemedical.model_oemedical_patient_menstrual_history
+#: view:oemedical.patient:0
+#: field:oemedical.patient,menstrual_history:0
 msgid "Menstrual History"
 msgstr "Menstrual History"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.disease,status:0
+#: selection:oemedical.patient.disease,status:0
 msgid "acute"
 msgstr "acute"
 
@@ -4779,7 +4778,7 @@ msgid "Contractions"
 msgstr "Contractions"
 
 #. module: oemedical
-#: field:oemedical.Paciente,ex_smoker:0
+#: field:oemedical.patient,ex_smoker:0
 msgid "Ex-smoker"
 msgstr "Ex-smoker"
 
@@ -4789,7 +4788,7 @@ msgid "Oemedical Family_Member"
 msgstr "Oemedical Family_Member"
 
 #. module: oemedical
-#: field:oemedical.Paciente.prenatal.evaluation,gestational_days:0
+#: field:oemedical.patient.prenatal.evaluation,gestational_days:0
 #: field:oemedical.perinatal,gestational_days:0
 msgid "Gestational days"
 msgstr "Gestational days"
@@ -4800,23 +4799,23 @@ msgid "Ward or room"
 msgstr "Ward or room"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Meals"
 msgstr "Meals"
 
 #. module: oemedical
-#: selection:oemedical.Cita,Cita_type:0
-#: selection:oemedical.Paciente.evaluation,evaluation_type:0
-msgid "InPaciente"
-msgstr "InPaciente"
+#: selection:oemedical.appointment,appointment_type:0
+#: selection:oemedical.patient.evaluation,evaluation_type:0
+msgid "Inpatient"
+msgstr "Inpatient"
 
 #. module: oemedical
-#: help:oemedical.Paciente.disease,date_start_treatment:0
+#: help:oemedical.patient.disease,date_start_treatment:0
 msgid "Start of treatment date"
 msgstr "Start of treatment date"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.menstrual_history,volume:0
+#: selection:oemedical.patient.menstrual_history,volume:0
 msgid "hypomenorrhea"
 msgstr "hypomenorrhea"
 
@@ -4841,7 +4840,7 @@ msgid "oemedical.insurance"
 msgstr "oemedical.insurance"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,mood:0
+#: selection:oemedical.patient.evaluation,mood:0
 msgid "Fear"
 msgstr "Fear"
 
@@ -4851,30 +4850,30 @@ msgid "Ketamine"
 msgstr "Ketamine"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.menstrual_history,frequency:0
+#: selection:oemedical.patient.menstrual_history,frequency:0
 msgid "polymenorrhea"
 msgstr "polymenorrhea"
 
 #. module: oemedical
-#: field:oemedical.Paciente,drug_iv:0
+#: field:oemedical.patient,drug_iv:0
 msgid "IV drug user"
 msgstr "IV drug user"
 
 #. module: oemedical
-#: help:oemedical.Paciente.pregnancy,current_pregnancy:0
+#: help:oemedical.patient.pregnancy,current_pregnancy:0
 msgid "This field marks the current pregnancy"
 msgstr "This field marks the current pregnancy"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,dod:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,dod:0
 msgid "Date of Death"
 msgstr "Date of Death"
 
 #. module: oemedical
-#: help:oemedical.Paciente,soft_drinks:0
-msgid "Check if the Paciente consumes soft drinks with sugar"
-msgstr "Check if the Paciente consumes soft drinks with sugar"
+#: help:oemedical.patient,soft_drinks:0
+msgid "Check if the patient consumes soft drinks with sugar"
+msgstr "Check if the patient consumes soft drinks with sugar"
 
 #. module: oemedical
 #: help:oemedical.prescription.order,name:0
@@ -4882,7 +4881,7 @@ msgid "Type in the ID of this prescription"
 msgstr "Type in the ID of this prescription"
 
 #. module: oemedical
-#: help:oemedical.Paciente,age_quit_smoking:0
+#: help:oemedical.patient,age_quit_smoking:0
 msgid "Age of quitting smoking"
 msgstr "Age of quitting smoking"
 
@@ -4892,9 +4891,9 @@ msgid "Gatch Bed"
 msgstr "Gatch Bed"
 
 #. module: oemedical
-#: model:ir.ui.menu,name:oemedical.oemedical_Paciente
-msgid " Paciente"
-msgstr " Paciente"
+#: model:ir.ui.menu,name:oemedical.oemedical_patient
+msgid " Patient"
+msgstr " Patient"
 
 #. module: oemedical
 #: help:oemedical.insurance,plan_id:0
@@ -4903,9 +4902,9 @@ msgid "Insurance company plan"
 msgstr "Insurance company plan"
 
 #. module: oemedical
-#: help:oemedical.Paciente.disease,doctor:0
-msgid "Physician who treated or diagnosed the Paciente"
-msgstr "Physician who treated or diagnosed the Paciente"
+#: help:oemedical.patient.disease,doctor:0
+msgid "Physician who treated or diagnosed the patient"
+msgstr "Physician who treated or diagnosed the patient"
 
 #. module: oemedical
 #: help:oemedical.pathology,code:0
@@ -4920,9 +4919,9 @@ msgid "Pharmacy"
 msgstr "Pharmacy"
 
 #. module: oemedical
-#: help:oemedical.Paciente.medication,is_active:0
-msgid "Check if the Paciente is currently taking the medication"
-msgstr "Check if the Paciente is currently taking the medication"
+#: help:oemedical.patient.medication,is_active:0
+msgid "Check if the patient is currently taking the medication"
+msgstr "Check if the patient is currently taking the medication"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_hospital_building_view
@@ -4936,12 +4935,12 @@ msgid "Main Category"
 msgstr "Main Category"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,loc_verbal:0
+#: selection:oemedical.patient.evaluation,loc_verbal:0
 msgid "Utters inappropriate words"
 msgstr "Utters inappropriate words"
 
 #. module: oemedical
-#: field:oemedical.Paciente.prenatal.evaluation,fetal_hc:0
+#: field:oemedical.patient.prenatal.evaluation,fetal_hc:0
 msgid "HC"
 msgstr "HC"
 
@@ -4951,23 +4950,23 @@ msgid "hemorrhage"
 msgstr "hemorrhage"
 
 #. module: oemedical
-#: help:oemedical.Cita,doctor:0
+#: help:oemedical.appointment,doctor:0
 msgid "Physician's Name"
 msgstr "Physician's Name"
 
 #. module: oemedical
-#: field:oemedical.Paciente,coffee_cups:0
+#: field:oemedical.patient,coffee_cups:0
 msgid "Cups per day"
 msgstr "Cups per day"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,coffee:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,coffee:0
 msgid "Coffee"
-msgstr "Cafe"
+msgstr "Coffee"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,sexual_preferences:0
+#: selection:oemedical.patient,sexual_preferences:0
 msgid "Homosexual"
 msgstr "Homosexual"
 
@@ -4989,12 +4988,12 @@ msgid "Oemedical Hospital Bed"
 msgstr "Oemedical Hospital Bed"
 
 #. module: oemedical
-#: field:oemedical.Paciente.prenatal.evaluation,fetal_fl:0
+#: field:oemedical.patient.prenatal.evaluation,fetal_fl:0
 msgid "FL"
 msgstr "FL"
 
 #. module: oemedical
-#: field:oemedical.Paciente,sexual_preferences:0
+#: field:oemedical.patient,sexual_preferences:0
 msgid "Sexual Preferences"
 msgstr "Sexual Preferences"
 
@@ -5015,15 +5014,15 @@ msgid "months"
 msgstr "Meses"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,object_recognition:0
-msgid "Check this box if the Paciente suffers from any sort of gnosia disorders, such as agnosia, prosopagnosia ..."
-msgstr "Check this box if the Paciente suffers from any sort of gnosia disorders, such as agnosia, prosopagnosia ..."
+#: help:oemedical.patient.evaluation,object_recognition:0
+msgid "Check this box if the patient suffers from any sort of gnosia disorders, such as agnosia, prosopagnosia ..."
+msgstr "Check this box if the patient suffers from any sort of gnosia disorders, such as agnosia, prosopagnosia ..."
 
 #. module: oemedical
-#: selection:oemedical.Cita,Cita_type:0
-#: selection:oemedical.Paciente.evaluation,evaluation_type:0
+#: selection:oemedical.appointment,appointment_type:0
+#: selection:oemedical.patient.evaluation,evaluation_type:0
 msgid "Ambulatory"
-msgstr "Ambulatorio"
+msgstr "Ambulatory"
 
 #. module: oemedical
 #: view:oemedical.drug.form:0
@@ -5031,7 +5030,7 @@ msgid "Oemedical Drug Form"
 msgstr "Oemedical Drug Form"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,loc_motor:0
+#: selection:oemedical.patient.evaluation,loc_motor:0
 msgid "Localizes painful stimuli"
 msgstr "Localizes painful stimuli"
 
@@ -5051,14 +5050,14 @@ msgid "Family code within an operational sector"
 msgstr "Family code within an operational sector"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,judgment:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,judgment:0
 msgid "Jugdment"
 msgstr "Jugdment"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,bmi:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,bmi:0
 msgid "Body Mass Index"
 msgstr "Body Mass Index"
 
@@ -5074,7 +5073,7 @@ msgid "oemedical.vaccination"
 msgstr "oemedical.vaccination"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,anticonceptive:0
+#: selection:oemedical.patient,anticonceptive:0
 msgid "Male condom"
 msgstr "Male condom"
 
@@ -5084,12 +5083,12 @@ msgid "Prescribed Medicament"
 msgstr "Prescribed Medicament"
 
 #. module: oemedical
-#: help:oemedical.Paciente.cage,cage_a:0
+#: help:oemedical.patient.cage,cage_a:0
 msgid "Have people Annoyed you by criticizing your drinking ?"
 msgstr "Have people Annoyed you by criticizing your drinking ?"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,marital_status:0
+#: selection:oemedical.patient,marital_status:0
 msgid "Divorced"
 msgstr "Divorced"
 
@@ -5099,13 +5098,13 @@ msgid "seconds"
 msgstr "seconds"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.pregnancy,pregnancy_end_result:0
+#: selection:oemedical.patient.pregnancy,pregnancy_end_result:0
 msgid "Stillbirth"
 msgstr "Stillbirth"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,calculation_ability:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,calculation_ability:0
 msgid "Calculation Ability"
 msgstr "Calculation Ability"
 
@@ -5115,10 +5114,10 @@ msgid "Oemedical Medication Template"
 msgstr "Oemedical Medication Template"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,next_evaluation:0
-msgid "Next Cita"
-msgstr "Next Cita"
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,next_evaluation:0
+msgid "Next Appointment"
+msgstr "Next Appointment"
 
 #. module: oemedical
 #: selection:oemedical.drugs_recreational,category:0
@@ -5126,7 +5125,7 @@ msgid "Cannabinoids"
 msgstr "Cannabinoids"
 
 #. module: oemedical
-#: field:oemedical.Paciente,smoking_number:0
+#: field:oemedical.patient,smoking_number:0
 msgid "Cigarretes a day"
 msgstr "Cigarretes a day"
 
@@ -5136,12 +5135,12 @@ msgid "Fetus Heart Frequency"
 msgstr "Fetus Heart Frequency"
 
 #. module: oemedical
-#: help:oemedical.Paciente.medication,adverse_reaction:0
-msgid "Side effects or adverse reactions that the Paciente experienced"
-msgstr "Side effects or adverse reactions that the Paciente experienced"
+#: help:oemedical.patient.medication,adverse_reaction:0
+msgid "Side effects or adverse reactions that the patient experienced"
+msgstr "Side effects or adverse reactions that the patient experienced"
 
 #. module: oemedical
-#: field:oemedical.Paciente,ex_drug_addict:0
+#: field:oemedical.patient,ex_drug_addict:0
 msgid "Ex drug addict"
 msgstr "Ex drug addict"
 
@@ -5166,7 +5165,7 @@ msgid "Pathology"
 msgstr "Pathology"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,respiratory_rate:0
+#: help:oemedical.patient.evaluation,respiratory_rate:0
 msgid "Respiratory rate expressed in breaths per minute"
 msgstr "Respiratory rate expressed in breaths per minute"
 
@@ -5177,7 +5176,7 @@ msgid "Comment"
 msgstr "Comment"
 
 #. module: oemedical
-#: help:oemedical.Paciente.pregnancy,warning:0
+#: help:oemedical.patient.pregnancy,warning:0
 msgid "Check this box if this is pregancy is or was NOT normal"
 msgstr "Check this box if this is pregancy is or was NOT normal"
 
@@ -5187,21 +5186,21 @@ msgid "Mescaline"
 msgstr "Mescaline"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Fetus"
 msgstr "Fetus"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,vocabulary:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,vocabulary:0
 msgid "Vocabulary"
 msgstr "Vocabulary"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,weight:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,weight:0
 msgid "Weight"
-msgstr "Peso"
+msgstr "Weight"
 
 #. module: oemedical
 #: field:oemedical.perinatal,admission_date:0
@@ -5229,7 +5228,7 @@ msgid "Pregnancy"
 msgstr "Pregnancy"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,hip:0
+#: help:oemedical.patient.evaluation,hip:0
 msgid "Hip circumference in centimeters, eg 100"
 msgstr "Hip circumference in centimeters, eg 100"
 
@@ -5239,17 +5238,17 @@ msgid "Cervix dilation"
 msgstr "Cervix dilation"
 
 #. module: oemedical
-#: field:oemedical.Cita,urgency:0
+#: field:oemedical.appointment,urgency:0
 msgid "Urgency Level"
 msgstr "Urgency Level"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Perinatal Monitor"
 msgstr "Perinatal Monitor"
 
 #. module: oemedical
-#: field:oemedical.Paciente,first_sexual_encounter:0
+#: field:oemedical.patient,first_sexual_encounter:0
 msgid "Age first sexual encounter"
 msgstr "Age first sexual encounter"
 
@@ -5266,13 +5265,13 @@ msgid "Operational Area"
 msgstr "Operational Area"
 
 #. module: oemedical
-#: help:oemedical.Paciente.menstrual_history,evaluation_date:0
+#: help:oemedical.patient.menstrual_history,evaluation_date:0
 msgid "Evaluation Date"
 msgstr "Evaluation Date"
 
 #. module: oemedical
-#: field:oemedical.Paciente.pregnancy,iugr:0
-#: field:oemedical.Paciente.prenatal.evaluation,iugr:0
+#: field:oemedical.patient.pregnancy,iugr:0
+#: field:oemedical.patient.prenatal.evaluation,iugr:0
 msgid "IUGR"
 msgstr "IUGR"
 
@@ -5294,13 +5293,13 @@ msgid "Oemedical Prescription Order"
 msgstr "Oemedical Prescription Order"
 
 #. module: oemedical
-#: view:oemedical.Paciente.medication:0
-#: field:oemedical.Paciente.medication,discontinued_reason:0
+#: view:oemedical.patient.medication:0
+#: field:oemedical.patient.medication,discontinued_reason:0
 msgid "Reason for discontinuation"
 msgstr "Reason for discontinuation"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,tag:0
+#: help:oemedical.patient.evaluation,tag:0
 msgid "Triacylglycerol(triglicerides) level. Can be approximative"
 msgstr "Triacylglycerol(triglicerides) level. Can be approximative"
 
@@ -5310,7 +5309,7 @@ msgid "Skin Popping"
 msgstr "Skin Popping"
 
 #. module: oemedical
-#: help:oemedical.Paciente.disease,date_stop_treatment:0
+#: help:oemedical.patient.disease,date_stop_treatment:0
 msgid "End of treatment date"
 msgstr "End of treatment date"
 
@@ -5320,18 +5319,18 @@ msgid "Inhalants"
 msgstr "Inhalants"
 
 #. module: oemedical
-#: field:oemedical.Paciente,sexual_practices:0
+#: field:oemedical.patient,sexual_practices:0
 msgid "Sexual Practices"
 msgstr "Sexual Practices"
 
 #. module: oemedical
-#: field:oemedical.Paciente,mammography_last:0
+#: field:oemedical.patient,mammography_last:0
 msgid "Last mammography"
 msgstr "Last mammography"
 
 #. module: oemedical
-#: selection:oemedical.Cita,urgency:0
-#: selection:oemedical.Paciente.evaluation,mood:0
+#: selection:oemedical.appointment,urgency:0
+#: selection:oemedical.patient.evaluation,mood:0
 #: selection:oemedical.perinatal,start_labor_mode:0
 msgid "Normal"
 msgstr "Normal"
@@ -5347,7 +5346,7 @@ msgid "Lochia color"
 msgstr "Lochia color"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Prevention and Screening"
 msgstr "Prevention and Screening"
 
@@ -5357,14 +5356,14 @@ msgid " Hospital Building"
 msgstr " Hospital Building"
 
 #. module: oemedical
-#: model:ir.model,name:oemedical.model_oemedical_Paciente_colposcopy_history
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,colposcopy_history:0
+#: model:ir.model,name:oemedical.model_oemedical_patient_colposcopy_history
+#: view:oemedical.patient:0
+#: field:oemedical.patient,colposcopy_history:0
 msgid "Colposcopy History"
 msgstr "Colposcopy History"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Lifestyle"
 msgstr "Lifestyle"
 
@@ -5405,9 +5404,9 @@ msgid "Oemedical Procedure"
 msgstr "Oemedical Procedure"
 
 #. module: oemedical
-#: help:oemedical.Paciente,prostitute:0
-msgid "Check if the Paciente (he or she) is a prostitute"
-msgstr "Check if the Paciente (he or she) is a prostitute"
+#: help:oemedical.patient,prostitute:0
+msgid "Check if the patient (he or she) is a prostitute"
+msgstr "Check if the patient (he or she) is a prostitute"
 
 #. module: oemedical
 #: model:oemedical.drugs_recreational,name:oemedical.fentanyl
@@ -5430,9 +5429,9 @@ msgid "Beds available"
 msgstr "Beds available"
 
 #. module: oemedical
-#: model:ir.ui.menu,name:oemedical.oemedical_Paciente_medication
-msgid " Paciente Medication"
-msgstr " Paciente Medication"
+#: model:ir.ui.menu,name:oemedical.oemedical_patient_medication
+msgid " Patient Medication"
+msgstr " Patient Medication"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_pathology_group_view
@@ -5440,40 +5439,40 @@ msgid "Pathology Group"
 msgstr "Pathology Group"
 
 #. module: oemedical
-#: model:ir.model,name:oemedical.model_oemedical_Paciente_medication
-msgid "oemedical.Paciente.medication"
-msgstr "oemedical.Paciente.medication"
+#: model:ir.model,name:oemedical.model_oemedical_patient_medication
+msgid "oemedical.patient.medication"
+msgstr "oemedical.patient.medication"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Prenatal Evaluation"
 msgstr "Prenatal Evaluation"
 
 #. module: oemedical
-#: field:oemedical.Paciente,car_revision:0
+#: field:oemedical.patient,car_revision:0
 msgid "Car Revision"
 msgstr "Car Revision"
 
 #. module: oemedical
-#: help:oemedical.Paciente,sleep_hours:0
+#: help:oemedical.patient,sleep_hours:0
 msgid "Average hours of sleep per day"
 msgstr "Average hours of sleep per day"
 
 #. module: oemedical
-#: model:ir.model,name:oemedical.model_oemedical_Paciente_evaluation
-msgid "oemedical.Paciente.evaluation"
-msgstr "oemedical.Paciente.evaluation"
+#: model:ir.model,name:oemedical.model_oemedical_patient_evaluation
+msgid "oemedical.patient.evaluation"
+msgstr "oemedical.patient.evaluation"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,critical_info:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,critical_info:0
 msgid "Important disease, allergy or procedures information"
 msgstr "Important disease, allergy or procedures information"
 
 #. module: oemedical
-#: help:oemedical.Paciente.disease,age:0
-msgid "Paciente age at the moment of the diagnosis. Can be estimative"
-msgstr "Paciente age at the moment of the diagnosis. Can be estimative"
+#: help:oemedical.patient.disease,age:0
+msgid "Patient age at the moment of the diagnosis. Can be estimative"
+msgstr "Patient age at the moment of the diagnosis. Can be estimative"
 
 #. module: oemedical
 #: view:oemedical.hospital.ward:0
@@ -5487,7 +5486,7 @@ msgid "Smoke / Inhale"
 msgstr "Smoke / Inhale"
 
 #. module: oemedical
-#: field:oemedical.Paciente,age_start_drugs:0
+#: field:oemedical.patient,age_start_drugs:0
 msgid "Age started drugs "
 msgstr "Age started drugs "
 
@@ -5497,8 +5496,8 @@ msgid "Common name that the Party is reffered"
 msgstr "Common name that the Party is reffered"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,identification_code:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,identification_code:0
 #: view:oemedical.physician:0
 #: field:oemedical.physician,code:0
 msgid "ID"
@@ -5513,7 +5512,7 @@ msgid "Schedule I and II drugs have a high potential for abuse. They require gre
 msgstr "Schedule I and II drugs have a high potential for abuse. They require greater storage security and have a quota on manufacturing, among other restrictions. Schedule I drugs are available for research only and have no approved medical use; Schedule II drugs are available only by prescription (unrefillable) and require a form for ordering. Schedule III and IV drugs are available by prescription, may have five refills in 6 months, and may be ordered orally. Some Schedule V drugs are available over the counter"
 
 #. module: oemedical
-#: field:oemedical.Paciente.menstrual_history,volume:0
+#: field:oemedical.patient.menstrual_history,volume:0
 msgid "volume"
 msgstr "volume"
 
@@ -5529,20 +5528,20 @@ msgid "Prescription Date"
 msgstr "Fecha"
 
 #. module: oemedical
-#: field:oemedical.Paciente,partner_id:0
+#: field:oemedical.patient,partner_id:0
 msgid "Related Partner"
 msgstr "Related Partner"
 
 #. module: oemedical
-#: view:oemedical.Paciente.disease:0
-#: field:oemedical.Paciente.disease,is_allergy:0
+#: view:oemedical.patient.disease:0
+#: field:oemedical.patient.disease,is_allergy:0
 msgid "Allergic Disease"
 msgstr "Allergic Disease"
 
 #. module: oemedical
-#: help:oemedical.Paciente,partner_id:0
-msgid "Partner-related data of the Paciente"
-msgstr "Partner-related data of the Paciente"
+#: help:oemedical.patient,partner_id:0
+msgid "Partner-related data of the patient"
+msgstr "Partner-related data of the patient"
 
 #. module: oemedical
 #: field:oemedical.pathology.category,childs:0
@@ -5555,8 +5554,8 @@ msgid "Methamphetamine"
 msgstr "Methamphetamine"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,general_info:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,general_info:0
 msgid "General Information"
 msgstr "General Information"
 
@@ -5566,7 +5565,7 @@ msgid "Symptom"
 msgstr "Symptom"
 
 #. module: oemedical
-#: field:oemedical.Paciente.prenatal.evaluation,diabetes:0
+#: field:oemedical.patient.prenatal.evaluation,diabetes:0
 msgid "Diabetes"
 msgstr "Diabetes"
 
@@ -5577,18 +5576,18 @@ msgstr "Warnings for Pregnant Women"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_insurance_view
-#: view:oemedical.Paciente:0
-#: field:oemedical.Paciente,current_insurance:0
+#: view:oemedical.patient:0
+#: field:oemedical.patient,current_insurance:0
 msgid "Insurance"
 msgstr "Insurance"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,memory:0
-msgid "Check this box if the Paciente has problems in short or long term memory"
-msgstr "Check this box if the Paciente has problems in short or long term memory"
+#: help:oemedical.patient.evaluation,memory:0
+msgid "Check this box if the patient has problems in short or long term memory"
+msgstr "Check this box if the patient has problems in short or long term memory"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.family.diseases,relative:0
+#: selection:oemedical.patient.family.diseases,relative:0
 msgid "Niece"
 msgstr "Niece"
 
@@ -5603,7 +5602,7 @@ msgid "oemedical.insurance.plan"
 msgstr "oemedical.insurance.plan"
 
 #. module: oemedical
-#: field:oemedical.Paciente,alcohol_wine_number:0
+#: field:oemedical.patient,alcohol_wine_number:0
 msgid "Wine / day"
 msgstr "Wine / day"
 
@@ -5616,12 +5615,12 @@ msgstr "Error ! You cannot create recursive \n"
 "Category."
 
 #. module: oemedical
-#: field:oemedical.Paciente.menstrual_history,dysmenorrhea:0
+#: field:oemedical.patient.menstrual_history,dysmenorrhea:0
 msgid "Dysmenorrhea"
 msgstr "Dysmenorrhea"
 
 #. module: oemedical
-#: field:oemedical.Paciente.prenatal.evaluation,polihydramnios:0
+#: field:oemedical.patient.prenatal.evaluation,polihydramnios:0
 msgid "Polihydramnios"
 msgstr "Polihydramnios"
 
@@ -5638,8 +5637,8 @@ msgid "Lot Number"
 msgstr "Lot Number"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,memory:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,memory:0
 msgid "Memory"
 msgstr "Memory"
 
@@ -5650,13 +5649,13 @@ msgid "Short Description"
 msgstr "Short Description"
 
 #. module: oemedical
-#: help:oemedical.Paciente,salt:0
-msgid "Check if Paciente consumes salt with the food"
-msgstr "Check if Paciente consumes salt with the food"
+#: help:oemedical.patient,salt:0
+msgid "Check if patient consumes salt with the food"
+msgstr "Check if patient consumes salt with the food"
 
 #. module: oemedical
-#: view:oemedical.Paciente.disease:0
-#: field:oemedical.Paciente.disease,healed_date:0
+#: view:oemedical.patient.disease:0
+#: field:oemedical.patient.disease,healed_date:0
 msgid "Healed"
 msgstr "Healed"
 
@@ -5678,7 +5677,7 @@ msgid "High"
 msgstr "High"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,anticonceptive:0
+#: selection:oemedical.patient,anticonceptive:0
 msgid "Contraceptive injection"
 msgstr "Contraceptive injection"
 
@@ -5688,10 +5687,10 @@ msgid "Oemedical Operational_Sector"
 msgstr "Oemedical Operational_Sector"
 
 #. module: oemedical
-#: field:oemedical.Cita,Cita_type:0
-#: field:oemedical.Paciente.evaluation,evaluation_type:0
+#: field:oemedical.appointment,appointment_type:0
+#: field:oemedical.patient.evaluation,evaluation_type:0
 msgid "Type"
-msgstr "Tipo"
+msgstr "Type"
 
 #. module: oemedical
 #: selection:oemedical.puerperium.monitor,lochia_odor:0
@@ -5699,12 +5698,12 @@ msgid "offensive"
 msgstr "offensive"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,marital_status:0
+#: selection:oemedical.patient,marital_status:0
 msgid "Single"
 msgstr "Single"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.evaluation,loc_verbal:0
+#: selection:oemedical.patient.evaluation,loc_verbal:0
 msgid "Oriented, converses normally"
 msgstr "Oriented, converses normally"
 
@@ -5714,9 +5713,9 @@ msgid "oemedical.prescription.order"
 msgstr "oemedical.prescription.order"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.colposcopy_history,result:0
-#: selection:oemedical.Paciente.mammography_history,result:0
-#: selection:oemedical.Paciente.menstrual_history,volume:0
+#: selection:oemedical.patient.colposcopy_history,result:0
+#: selection:oemedical.patient.mammography_history,result:0
+#: selection:oemedical.patient.menstrual_history,volume:0
 #: selection:oemedical.puerperium.monitor,lochia_amount:0
 #: selection:oemedical.puerperium.monitor,lochia_odor:0
 msgid "normal"
@@ -5729,7 +5728,7 @@ msgid "Gene ID"
 msgstr "Gene ID"
 
 #. module: oemedical
-#: field:oemedical.Paciente.evaluation,actions:0
+#: field:oemedical.patient.evaluation,actions:0
 msgid "Procedures"
 msgstr "Procedures"
 
@@ -5744,12 +5743,12 @@ msgid "Anabolic steroids"
 msgstr "Anabolic steroids"
 
 #. module: oemedical
-#: field:oemedical.Paciente.prenatal.evaluation,fetal_ac:0
+#: field:oemedical.patient.prenatal.evaluation,fetal_ac:0
 msgid "AC"
 msgstr "AC"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,blood_type:0
+#: selection:oemedical.patient,blood_type:0
 msgid "AB"
 msgstr "AB"
 
@@ -5759,13 +5758,13 @@ msgid "Oemedical Pathology Group"
 msgstr "Oemedical Pathology Group"
 
 #. module: oemedical
-#: field:oemedical.Paciente,photo:0
+#: field:oemedical.patient,photo:0
 msgid "Picture"
 msgstr "Picture"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,knowledge_current_events:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,knowledge_current_events:0
 msgid "Knowledge of Current Events"
 msgstr "Knowledge of Current Events"
 
@@ -5790,9 +5789,9 @@ msgid "oemedical.occupation"
 msgstr "oemedical.occupation"
 
 #. module: oemedical
-#: help:oemedical.Paciente,motorcycle_rider:0
-msgid "The Paciente rides motorcycles"
-msgstr "The Paciente rides motorcycles"
+#: help:oemedical.patient,motorcycle_rider:0
+msgid "The patient rides motorcycles"
+msgstr "The patient rides motorcycles"
 
 #. module: oemedical
 #: help:oemedical.physician,specialty:0
@@ -5800,14 +5799,14 @@ msgid "Specialty Code"
 msgstr "Specialty Code"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,malnutrition:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,malnutrition:0
 msgid "Malnutrition"
 msgstr "Malnutrition"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,systolic:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,systolic:0
 #: field:oemedical.perinatal.monitor,systolic:0
 #: field:oemedical.puerperium.monitor,systolic:0
 msgid "Systolic Pressure"
@@ -5820,10 +5819,10 @@ msgstr "for example MDG6 code will contain the Millennium Development Goals # 6 
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_specialty_view
-#: view:oemedical.Cita:0
-#: field:oemedical.Cita,speciality:0
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,specialty:0
+#: view:oemedical.appointment:0
+#: field:oemedical.appointment,speciality:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,specialty:0
 #: view:oemedical.physician:0
 #: field:oemedical.physician,specialty:0
 #: view:oemedical.specialty:0
@@ -5832,12 +5831,12 @@ msgid "Specialty"
 msgstr "Specialty"
 
 #. module: oemedical
-#: field:oemedical.Paciente,soft_drinks:0
+#: field:oemedical.patient,soft_drinks:0
 msgid "Soft drinks (sugar)"
 msgstr "Soft drinks (sugar)"
 
 #. module: oemedical
-#: field:oemedical.Paciente.prenatal.evaluation,fundal_height:0
+#: field:oemedical.patient.prenatal.evaluation,fundal_height:0
 #: field:oemedical.perinatal.monitor,fundal_height:0
 #: field:oemedical.puerperium.monitor,uterus_involution:0
 msgid "Fundal Height"
@@ -5855,13 +5854,13 @@ msgstr "Person"
 
 #. module: oemedical
 #: help:oemedical.medication.template,frequency:0
-msgid "Time in between doses the Paciente must wait (ie, for 1 pill each 8 hours, put here 8 and select \"hours\" in the unit field"
-msgstr "Time in between doses the Paciente must wait (ie, for 1 pill each 8 hours, put here 8 and select \"hours\" in the unit field"
+msgid "Time in between doses the patient must wait (ie, for 1 pill each 8 hours, put here 8 and select \"hours\" in the unit field"
+msgstr "Time in between doses the patient must wait (ie, for 1 pill each 8 hours, put here 8 and select \"hours\" in the unit field"
 
 #. module: oemedical
-#: help:oemedical.Paciente.evaluation,judgment:0
-msgid "Check this box if the Paciente can not interpret basic scenario solutions"
-msgstr "Check this box if the Paciente can not interpret basic scenario solutions"
+#: help:oemedical.patient.evaluation,judgment:0
+msgid "Check this box if the patient can not interpret basic scenario solutions"
+msgstr "Check this box if the patient can not interpret basic scenario solutions"
 
 #. module: oemedical
 #: view:oemedical.hospital.ward:0
@@ -5872,15 +5871,15 @@ msgid "Private"
 msgstr "Private"
 
 #. module: oemedical
-#: field:oemedical.Paciente.cage,evaluation_date:0
-#: field:oemedical.Paciente.colposcopy_history,evaluation_date:0
-#: field:oemedical.Paciente.colposcopy_history,last_colposcopy:0
-#: field:oemedical.Paciente.mammography_history,evaluation_date:0
-#: field:oemedical.Paciente.mammography_history,last_mammography:0
-#: field:oemedical.Paciente.menstrual_history,evaluation_date:0
-#: field:oemedical.Paciente.pap_history,evaluation_date:0
-#: field:oemedical.Paciente.pap_history,last_pap:0
-#: field:oemedical.Paciente.prenatal.evaluation,evaluation_date:0
+#: field:oemedical.patient.cage,evaluation_date:0
+#: field:oemedical.patient.colposcopy_history,evaluation_date:0
+#: field:oemedical.patient.colposcopy_history,last_colposcopy:0
+#: field:oemedical.patient.mammography_history,evaluation_date:0
+#: field:oemedical.patient.mammography_history,last_mammography:0
+#: field:oemedical.patient.menstrual_history,evaluation_date:0
+#: field:oemedical.patient.pap_history,evaluation_date:0
+#: field:oemedical.patient.pap_history,last_pap:0
+#: field:oemedical.patient.prenatal.evaluation,evaluation_date:0
 #: view:oemedical.vaccination:0
 #: field:oemedical.vaccination,date:0
 msgid "Date"
@@ -5892,7 +5891,7 @@ msgid "Oemedical Hospital Ward"
 msgstr "Oemedical Hospital Ward"
 
 #. module: oemedical
-#: view:oemedical.Paciente:0
+#: view:oemedical.patient:0
 msgid "Sexuality"
 msgstr "Sexuality"
 
@@ -5902,13 +5901,13 @@ msgid "Oemedical Prescription Line"
 msgstr "Oemedical Prescription Line"
 
 #. module: oemedical
-#: selection:oemedical.Paciente.menstrual_history,frequency:0
+#: selection:oemedical.patient.menstrual_history,frequency:0
 msgid "amenorrhea"
 msgstr "amenorrhea"
 
 #. module: oemedical
-#: view:oemedical.Paciente.evaluation:0
-#: field:oemedical.Paciente.evaluation,glycemia:0
+#: view:oemedical.patient.evaluation:0
+#: field:oemedical.patient.evaluation,glycemia:0
 msgid "Glycemia"
 msgstr "Glycemia"
 
@@ -5923,7 +5922,7 @@ msgid "Disease Genes"
 msgstr "Disease Genes"
 
 #. module: oemedical
-#: selection:oemedical.Paciente,anticonceptive:0
+#: selection:oemedical.patient,anticonceptive:0
 msgid "Vasectomy"
 msgstr "Vasectomy"
 
