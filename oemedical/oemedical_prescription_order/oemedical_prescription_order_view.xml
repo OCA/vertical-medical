@@ -14,7 +14,7 @@
 					<field name="pharmacy" />
 					<field name="prescription_date" />
 					<field name="prescription_warning_ack" />
-					<field name="user_id" />
+					<field name="physician_id" />
 					<field name="name" />
 				</tree>
 			</field>
@@ -41,7 +41,7 @@
 					        <field name="pregnancy_warning" />
 					        <field name="pharmacy" />
 					        <field name="prescription_warning_ack" />
-					        <field name="user_id" />
+					        <field name="physician_id" />
 					        <newline/>
 					        <field name="prescription_line" colspan="4"/>
 					        <newline/>
