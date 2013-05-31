@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-12 22:56+0000\n"
-"PO-Revision-Date: 2013-05-12 22:56+0000\n"
+"POT-Creation-Date: 2013-05-31 05:48+0000\n"
+"PO-Revision-Date: 2013-05-31 05:48+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -29,13 +29,13 @@ msgstr "Sugar/Salt"
 #: field:oemedical.patient.prenatal.evaluation,fetus_heart_rate:0
 #: help:oemedical.patient.prenatal.evaluation,fetus_heart_rate:0
 msgid "Fetus heart rate"
-msgstr "La frecuencia cardíaca del feto"
+msgstr "Fetus heart rate"
 
 #. module: oemedical
 #: view:oemedical.patient:0
 #: field:oemedical.patient,childbearing_age:0
 msgid "Potential for Childbearing"
-msgstr "Posibilidad de embarazo"
+msgstr "Potential for Childbearing"
 
 #. module: oemedical
 #: selection:oemedical.patient.disease,status:0
@@ -71,7 +71,7 @@ msgstr "Last PAP test"
 #. module: oemedical
 #: field:oemedical.patient.pregnancy,current_pregnancy:0
 msgid "Current Pregnancy"
-msgstr "Embarazo actual"
+msgstr "Current Pregnancy"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_diagnostic_hypothesis_view
@@ -115,7 +115,7 @@ msgstr "Producto"
 #: view:oemedical.medicament.category:0
 #: field:oemedical.medicament.category,parent_id:0
 msgid "Parent"
-msgstr "Paciente"
+msgstr "Parent"
 
 #. module: oemedical
 #: help:oemedical.medication.template,end_treatment:0
@@ -147,7 +147,7 @@ msgstr "Oemedical Medication Dosage"
 #: model:ir.model,name:oemedical.model_oemedical_patient_pregnancy
 #: field:oemedical.patient.prenatal.evaluation,name:0
 msgid "Patient Pregnancy"
-msgstr "Embarazo del paciente"
+msgstr "Patient Pregnancy"
 
 #. module: oemedical
 #: field:oemedical.perinatal.monitor,fetus_position:0
@@ -180,7 +180,7 @@ msgstr "Physician"
 #. module: oemedical
 #: view:oemedical.insurance:0
 msgid "Oemedical Insurance"
-msgstr "Seguro"
+msgstr "Oemedical Insurance"
 
 #. module: oemedical
 #: selection:oemedical.patient,anticonceptive:0
@@ -195,7 +195,7 @@ msgstr "Flunitrazepam"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Patient Allergies and Critical Information"
-msgstr "Alergias e informacion criticas"
+msgstr "Patient Allergies and Critical Information"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_patient_disease
@@ -222,7 +222,7 @@ msgstr "Mammography History"
 #. module: oemedical
 #: field:oemedical.patient,salt:0
 msgid "Salt"
-msgstr "Sal"
+msgstr "Salt"
 
 #. module: oemedical
 #: selection:oemedical.patient,anticonceptive:0
@@ -360,7 +360,7 @@ msgstr "Opens eyes in response to painful stimuli"
 #: selection:oemedical.insurance,insurance_type:0
 #: selection:res.partner,insurance_company_type:0
 msgid "State"
-msgstr "Estado"
+msgstr "State"
 
 #. module: oemedical
 #: help:oemedical.patient.prenatal.evaluation,overweight:0
@@ -376,7 +376,7 @@ msgstr "oemedical.medicament"
 #: view:oemedical.patient.evaluation:0
 #: field:oemedical.patient.evaluation,bpm:0
 msgid "Heart Rate"
-msgstr "Pulsaciones"
+msgstr "Heart Rate"
 
 #. module: oemedical
 #: view:oemedical.physician:0
@@ -541,7 +541,7 @@ msgstr "Urethral"
 #: view:oemedical.patient:0
 #: field:oemedical.patient,age:0
 msgid "Age"
-msgstr "Años"
+msgstr "Age"
 
 #. module: oemedical
 #: selection:oemedical.patient.evaluation,evaluation_type:0
@@ -631,7 +631,7 @@ msgstr "Menopause age"
 #: field:res.partner,lastname:0
 #: help:res.partner,lastname:0
 msgid "Last Name"
-msgstr "Apellido"
+msgstr "Last Name"
 
 #. module: oemedical
 #: view:oemedical.patient:0
@@ -723,7 +723,7 @@ msgstr "Liquor / day"
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_prescription_order_view
 msgid "Prescription Order"
-msgstr "Prescription Order"
+msgstr "Recetas"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_pathology_category
@@ -861,7 +861,7 @@ msgstr "Sex with prostitutes"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Diet"
-msgstr "Dieta"
+msgstr "Diet"
 
 #. module: oemedical
 #: selection:oemedical.puerperium.monitor,lochia_color:0
@@ -956,7 +956,7 @@ msgstr "Dependence"
 #: field:oemedical.hospital.bed,name:0
 #: field:product.product,is_bed:0
 msgid "Bed"
-msgstr "Cama"
+msgstr "Bed"
 
 #. module: oemedical
 #: selection:oemedical.patient.family.diseases,relative:0
@@ -977,7 +977,7 @@ msgstr "Protein involved"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Medication"
-msgstr "Medicacion"
+msgstr "Medication"
 
 #. module: oemedical
 #: view:oemedical.patient:0
@@ -1045,7 +1045,7 @@ msgstr "Praxis"
 #: view:oemedical.patient:0
 #: field:oemedical.patient,family:0
 msgid "Family"
-msgstr "Familia"
+msgstr "Family"
 
 #. module: oemedical
 #: view:oemedical.prescription.order:0
@@ -1253,7 +1253,7 @@ msgstr "Choose a disease for this medicament from the disease list. It can be an
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Sexual practices"
-msgstr "Practica Sexual"
+msgstr "Sexual practices"
 
 #. module: oemedical
 #: selection:oemedical.patient.menstrual_history,frequency:0
@@ -1344,7 +1344,7 @@ msgstr "CAGE Score"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "S Last Name"
-msgstr "Apellido Materno"
+msgstr "S Last Name"
 
 #. module: oemedical
 #: help:oemedical.patient.prenatal.evaluation,diabetes:0
@@ -1517,7 +1517,7 @@ msgstr "ASC-H"
 #. module: oemedical
 #: view:oemedical.prescription.order:0
 msgid "Prescription Order "
-msgstr "Prescription Order "
+msgstr "Recetas"
 
 #. module: oemedical
 #: view:oemedical.insurance.plan:0
@@ -1566,7 +1566,7 @@ msgstr "Hip"
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_prescription_order
 msgid " Prescription Order"
-msgstr " Prescription Order"
+msgstr " Recetas"
 
 #. module: oemedical
 #: selection:oemedical.patient.family.diseases,xory:0
@@ -1892,14 +1892,14 @@ msgstr "SSN"
 #: field:oemedical.prescription.line,prnt:0
 #: view:oemedical.prescription.order:0
 msgid "Print"
-msgstr "Print"
+msgstr "Imprimir"
 
 #. module: oemedical
 #: help:oemedical.patient.colposcopy_history,evaluation_date:0
 #: help:oemedical.patient.mammography_history,evaluation_date:0
 #: help:oemedical.patient.pap_history,evaluation_date:0
 msgid " Date"
-msgstr " Date"
+msgstr " Fecha"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_family_member_view
@@ -2323,7 +2323,7 @@ msgstr "ASG"
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_family_member
 msgid " Family Member"
-msgstr " Family Member"
+msgstr "Miembro de la Familia"
 
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_appoitment_root
@@ -3417,7 +3417,7 @@ msgstr "oemedical.secondary_condition"
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_appointment
 msgid " Appointment"
-msgstr " Appointment"
+msgstr " Cita"
 
 #. module: oemedical
 #: view:oemedical.patient.evaluation:0
@@ -3525,7 +3525,7 @@ msgstr "Appointment ID"
 #: view:oemedical.prescription.order:0
 #: field:oemedical.prescription.order,name:0
 msgid "Prescription ID"
-msgstr "Prescription ID"
+msgstr "ID Receta"
 
 #. module: oemedical
 #: field:oemedical.patient,blood_type:0
@@ -3965,7 +3965,7 @@ msgstr "recessive"
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_prescription_root
 msgid "Prescription"
-msgstr "Prescription"
+msgstr "Receta"
 
 #. module: oemedical
 #: view:oemedical.medication.template:0
@@ -5526,7 +5526,7 @@ msgstr "Short comment on the specific drug"
 #: view:oemedical.prescription.order:0
 #: field:oemedical.prescription.order,prescription_date:0
 msgid "Prescription Date"
-msgstr "Prescription Date"
+msgstr "Fecha"
 
 #. module: oemedical
 #: field:oemedical.patient,partner_id:0

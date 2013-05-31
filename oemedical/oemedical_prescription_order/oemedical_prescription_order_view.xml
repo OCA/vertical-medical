@@ -27,7 +27,7 @@
 			<field name="arch" type="xml">
 				<form string="Oemedical Prescription Order"  version="7.0">
                     <header>
-                        <button name="action_quotation_send" string="Send by e-mail" type="object" class="oe_highlight" groups="base.group_user"/>
+<!--                        <button name="action_quotation_send" string="Send by e-mail" type="object" class="oe_highlight" groups="base.group_user"/>-->
                         <button name="print_prescription" string="Print" type="object"  class="oe_highlight" groups="base.group_user"/>
                     </header>
                     <sheet>

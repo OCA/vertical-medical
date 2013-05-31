@@ -21,6 +21,7 @@
 #/#############################################################################
 from osv import osv
 from osv import fields
+from openerp import netsvc
 
 
 class OeMedicalPrescriptionOrder(osv.Model):
@@ -50,6 +51,20 @@ class OeMedicalPrescriptionOrder(osv.Model):
             obj.pool.get('ir.sequence').get(cr, uid,
                                             'oemedical.prescription.order'),
                  }
+
+    def print_prescription(self, cr, uid, ids, context=None):
+        '''
+        '''
+#        assert len(ids) == 1, 'This option should only be used for a single id at a time'
+#        wf_service = netsvc.LocalService("workflow")
+#        wf_service.trg_validate(uid, 'oemedical.prescription.order', ids[0], 'prescription_sent', cr)
+        datas = {
+                 'model': 'oemedical.prescription.order',
+                 'ids': ids,
+                 'form': self.read(cr, uid, ids[0], context=context),
+        }
+        return {'type': 'ir.actions.report.xml', 'report_name': 'prescription.order', 'datas': datas, 'nodestroy': True}
+
 
 OeMedicalPrescriptionOrder()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
