@@ -4964,7 +4964,7 @@ msgstr "Cups per day"
 #: view:oemedical.Paciente:0
 #: field:oemedical.Paciente,coffee:0
 msgid "Coffee"
-msgstr "Coffee"
+msgstr "Cafe"
 
 #. module: oemedical
 #: selection:oemedical.Paciente,sexual_preferences:0
@@ -5012,7 +5012,7 @@ msgstr "Number of beds"
 #. module: oemedical
 #: selection:oemedical.medication.template,duration_period:0
 msgid "months"
-msgstr "months"
+msgstr "Meses"
 
 #. module: oemedical
 #: help:oemedical.Paciente.evaluation,object_recognition:0
