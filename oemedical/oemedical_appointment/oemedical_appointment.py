@@ -47,7 +47,8 @@ class OeMedicalAppointment(osv.Model):
         ], string='Type'),
         'institution': fields.many2one('res.partner',
                                        string='Health Center',
-                                       help='Medical Center'),
+                                       help='Medical Center'
+                                        , domain="[('category_id', '=', 'Doctor Office')]"),
         'urgency': fields.selection([
             ('a', 'Normal'),
             ('b', 'Urgent'),
