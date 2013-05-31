@@ -48,7 +48,7 @@ msgid "Monozygotic"
 msgstr "Monozygotic"
 
 #. module: oemedical
-#: view:oemedical.appointment:0
+#: view:oemedical.Cita:0
 #: view:oemedical.prescription.order:0
 msgid "Send by e-mail"
 msgstr "Send by e-mail"
@@ -168,8 +168,8 @@ msgstr "Respiratory Rate"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_physician_view
-#: view:oemedical.appointment:0
-#: field:oemedical.appointment,doctor:0
+#: view:oemedical.Cita:0
+#: field:oemedical.Cita,doctor:0
 #: view:oemedical.Paciente.disease:0
 #: field:oemedical.Paciente.disease,doctor:0
 #: view:oemedical.Paciente.medication:0
@@ -415,8 +415,8 @@ msgstr "Complete Breech"
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_Paciente_view
 #: model:ir.ui.menu,name:oemedical.oemedical_Paciente_root
-#: view:oemedical.appointment:0
-#: field:oemedical.appointment,Paciente_id:0
+#: view:oemedical.Cita:0
+#: field:oemedical.Cita,Paciente_id:0
 #: field:oemedical.insurance,Paciente_id:0
 #: view:oemedical.Paciente:0
 #: field:oemedical.Paciente.cage,name:0
@@ -595,9 +595,9 @@ msgid "Primary Care Doctor"
 msgstr "Primary Care Doctor"
 
 #. module: oemedical
-#: view:oemedical.appointment:0
-#: field:oemedical.appointment,consultations:0
-#: help:oemedical.appointment,consultations:0
+#: view:oemedical.Cita:0
+#: field:oemedical.Cita,consultations:0
+#: help:oemedical.Cita,consultations:0
 msgid "Consultation Services"
 msgstr "Consultation Services"
 
@@ -1014,7 +1014,7 @@ msgid "dose unit"
 msgstr "dose unit"
 
 #. module: oemedical
-#: selection:oemedical.appointment,urgency:0
+#: selection:oemedical.Cita,urgency:0
 msgid "Urgent"
 msgstr "Urgent"
 
@@ -1485,7 +1485,7 @@ msgid "Monogamous"
 msgstr "Monogamous"
 
 #. module: oemedical
-#: help:oemedical.appointment,Paciente_id:0
+#: help:oemedical.Cita,Paciente_id:0
 msgid "Paciente Name"
 msgstr "Paciente Name"
 
@@ -1767,7 +1767,7 @@ msgid "Low Bed"
 msgstr "Low Bed"
 
 #. module: oemedical
-#: view:oemedical.appointment:0
+#: view:oemedical.Cita:0
 msgid "Calendar View"
 msgstr "Calendar View"
 
@@ -1887,7 +1887,7 @@ msgid "SSN"
 msgstr "SSN"
 
 #. module: oemedical
-#: view:oemedical.appointment:0
+#: view:oemedical.Cita:0
 #: view:oemedical.prescription.line:0
 #: field:oemedical.prescription.line,prnt:0
 #: view:oemedical.prescription.order:0
@@ -1954,7 +1954,7 @@ msgid "when required"
 msgstr "when required"
 
 #. module: oemedical
-#: selection:oemedical.appointment,appointment_type:0
+#: selection:oemedical.Cita,Cita_type:0
 msgid "OutPaciente"
 msgstr "OutPaciente"
 
@@ -2246,8 +2246,8 @@ msgid "Exercise"
 msgstr "Exercise"
 
 #. module: oemedical
-#: view:oemedical.appointment:0
-#: field:oemedical.appointment,appointment_date:0
+#: view:oemedical.Cita:0
+#: field:oemedical.Cita,Cita_date:0
 #: field:oemedical.perinatal.monitor,date:0
 #: field:oemedical.puerperium.monitor,date:0
 msgid "Date and Time"
@@ -2535,9 +2535,9 @@ msgid "Beer / day"
 msgstr "Beer / day"
 
 #. module: oemedical
-#: model:ir.model,name:oemedical.model_oemedical_appointment
-msgid "oemedical.appointment"
-msgstr "oemedical.appointment"
+#: model:ir.model,name:oemedical.model_oemedical_Cita
+msgid "oemedical.Cita"
+msgstr "oemedical.Cita"
 
 #. module: oemedical
 #: help:oemedical.Paciente,colposcopy_last:0
@@ -2728,9 +2728,9 @@ msgid "oemedical.medicament.category"
 msgstr "oemedical.medicament.category"
 
 #. module: oemedical
-#: view:oemedical.appointment:0
-msgid "Oemedical Appointment"
-msgstr "Oemedical Appointment"
+#: view:oemedical.Cita:0
+msgid "Oemedical Cita"
+msgstr "Oemedical Cita"
 
 #. module: oemedical
 #: help:oemedical.drugs_recreational,dependence_level:0
@@ -2987,8 +2987,8 @@ msgid "Please check the lab test results if the module is installed"
 msgstr "Please check the lab test results if the module is installed"
 
 #. module: oemedical
-#: view:oemedical.appointment:0
-#: field:oemedical.appointment,comments:0
+#: view:oemedical.Cita:0
+#: field:oemedical.Cita,comments:0
 #: view:oemedical.diagnostic_hypothesis:0
 #: field:oemedical.diagnostic_hypothesis,comments:0
 #: view:oemedical.directions:0
@@ -3007,7 +3007,7 @@ msgid "Passive"
 msgstr "Passive"
 
 #. module: oemedical
-#: view:oemedical.appointment:0
+#: view:oemedical.Cita:0
 #: view:oemedical.diagnostic_hypothesis:0
 #: view:oemedical.directions:0
 #: view:oemedical.disease.gene:0
@@ -3415,8 +3415,8 @@ msgid "oemedical.secondary_condition"
 msgstr "oemedical.secondary_condition"
 
 #. module: oemedical
-#: model:ir.ui.menu,name:oemedical.oemedical_appointment
-msgid " Appointment"
+#: model:ir.ui.menu,name:oemedical.oemedical_Cita
+msgid " Cita"
 msgstr " Cita"
 
 #. module: oemedical
@@ -3514,9 +3514,9 @@ msgid "Dominance"
 msgstr "Dominance"
 
 #. module: oemedical
-#: view:oemedical.appointment:0
-#: field:oemedical.appointment,name:0
-msgid "Appointment ID"
+#: view:oemedical.Cita:0
+#: field:oemedical.Cita,name:0
+msgid "Cita ID"
 msgstr "ID Cita"
 
 #. module: oemedical
@@ -3545,7 +3545,7 @@ msgid "Gravida"
 msgstr "Gravida"
 
 #. module: oemedical
-#: selection:oemedical.appointment,urgency:0
+#: selection:oemedical.Cita,urgency:0
 msgid "Medical Emergency"
 msgstr "Medical Emergency"
 
@@ -3567,8 +3567,8 @@ msgstr "Relationship"
 
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_health_center_root
-#: view:oemedical.appointment:0
-#: field:oemedical.appointment,institution:0
+#: view:oemedical.Cita:0
+#: field:oemedical.Cita,institution:0
 msgid "Health Center"
 msgstr "Health Center"
 
@@ -3705,7 +3705,7 @@ msgid "Affected Chromosome"
 msgstr "Affected Chromosome"
 
 #. module: oemedical
-#: help:oemedical.appointment,speciality:0
+#: help:oemedical.Cita,speciality:0
 msgid "Medical Specialty / Sector"
 msgstr "Medical Specialty / Sector"
 
@@ -3861,11 +3861,11 @@ msgid "Head Circumference"
 msgstr "Head Circumference"
 
 #. module: oemedical
-#: model:ir.actions.act_window,name:oemedical.act_open_oemedical_appointment_view
-#: view:oemedical.appointment:0
+#: model:ir.actions.act_window,name:oemedical.act_open_oemedical_Cita_view
+#: view:oemedical.Cita:0
 #: view:oemedical.Paciente.evaluation:0
 #: field:oemedical.Paciente.evaluation,evaluation_date:0
-msgid "Appointment"
+msgid "Cita"
 msgstr "Citas"
 
 #. module: oemedical
@@ -3880,8 +3880,8 @@ msgstr " Operational Area"
 
 #. module: oemedical
 #: selection:oemedical.Paciente.evaluation,evaluation_type:0
-msgid "Pre-arranged appointment"
-msgstr "Pre-arranged appointment"
+msgid "Pre-arranged Cita"
+msgstr "Pre-arranged Cita"
 
 #. module: oemedical
 #: view:oemedical.hospital.ward:0
@@ -4474,7 +4474,7 @@ msgid "Hospital Bed"
 msgstr "Hospital Bed"
 
 #. module: oemedical
-#: field:oemedical.appointment,duration:0
+#: field:oemedical.Cita,duration:0
 msgid "Duration"
 msgstr "Duration"
 
@@ -4491,8 +4491,8 @@ msgstr "Paciente Evaluation"
 
 #. module: oemedical
 #: help:oemedical.Paciente.evaluation,evaluation_date:0
-msgid "Enter or select the date / ID of the appointment related to this evaluation"
-msgstr "Enter or select the date / ID of the appointment related to this evaluation"
+msgid "Enter or select the date / ID of the Cita related to this evaluation"
+msgstr "Enter or select the date / ID of the Cita related to this evaluation"
 
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_drug_route
@@ -4682,7 +4682,7 @@ msgid "Both"
 msgstr "Both"
 
 #. module: oemedical
-#: help:oemedical.appointment,institution:0
+#: help:oemedical.Cita,institution:0
 #: help:oemedical.hospital.building,institution:0
 #: help:oemedical.hospital.or,institution:0
 #: help:oemedical.hospital.unit,institution:0
@@ -4805,7 +4805,7 @@ msgid "Meals"
 msgstr "Meals"
 
 #. module: oemedical
-#: selection:oemedical.appointment,appointment_type:0
+#: selection:oemedical.Cita,Cita_type:0
 #: selection:oemedical.Paciente.evaluation,evaluation_type:0
 msgid "InPaciente"
 msgstr "InPaciente"
@@ -4951,7 +4951,7 @@ msgid "hemorrhage"
 msgstr "hemorrhage"
 
 #. module: oemedical
-#: help:oemedical.appointment,doctor:0
+#: help:oemedical.Cita,doctor:0
 msgid "Physician's Name"
 msgstr "Physician's Name"
 
@@ -5020,7 +5020,7 @@ msgid "Check this box if the Paciente suffers from any sort of gnosia disorders,
 msgstr "Check this box if the Paciente suffers from any sort of gnosia disorders, such as agnosia, prosopagnosia ..."
 
 #. module: oemedical
-#: selection:oemedical.appointment,appointment_type:0
+#: selection:oemedical.Cita,Cita_type:0
 #: selection:oemedical.Paciente.evaluation,evaluation_type:0
 msgid "Ambulatory"
 msgstr "Ambulatory"
@@ -5117,8 +5117,8 @@ msgstr "Oemedical Medication Template"
 #. module: oemedical
 #: view:oemedical.Paciente.evaluation:0
 #: field:oemedical.Paciente.evaluation,next_evaluation:0
-msgid "Next Appointment"
-msgstr "Next Appointment"
+msgid "Next Cita"
+msgstr "Next Cita"
 
 #. module: oemedical
 #: selection:oemedical.drugs_recreational,category:0
@@ -5239,7 +5239,7 @@ msgid "Cervix dilation"
 msgstr "Cervix dilation"
 
 #. module: oemedical
-#: field:oemedical.appointment,urgency:0
+#: field:oemedical.Cita,urgency:0
 msgid "Urgency Level"
 msgstr "Urgency Level"
 
@@ -5330,7 +5330,7 @@ msgid "Last mammography"
 msgstr "Last mammography"
 
 #. module: oemedical
-#: selection:oemedical.appointment,urgency:0
+#: selection:oemedical.Cita,urgency:0
 #: selection:oemedical.Paciente.evaluation,mood:0
 #: selection:oemedical.perinatal,start_labor_mode:0
 msgid "Normal"
@@ -5688,7 +5688,7 @@ msgid "Oemedical Operational_Sector"
 msgstr "Oemedical Operational_Sector"
 
 #. module: oemedical
-#: field:oemedical.appointment,appointment_type:0
+#: field:oemedical.Cita,Cita_type:0
 #: field:oemedical.Paciente.evaluation,evaluation_type:0
 msgid "Type"
 msgstr "Tipo"
@@ -5820,8 +5820,8 @@ msgstr "for example MDG6 code will contain the Millennium Development Goals # 6 
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_specialty_view
-#: view:oemedical.appointment:0
-#: field:oemedical.appointment,speciality:0
+#: view:oemedical.Cita:0
+#: field:oemedical.Cita,speciality:0
 #: view:oemedical.Paciente.evaluation:0
 #: field:oemedical.Paciente.evaluation,specialty:0
 #: view:oemedical.physician:0
