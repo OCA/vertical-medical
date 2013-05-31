@@ -14,7 +14,6 @@
 					<field name="pharmacy" />
 					<field name="prescription_date" />
 					<field name="prescription_warning_ack" />
-					<field name="physician_id" />
 					<field name="name" />
 				</tree>
 			</field>
