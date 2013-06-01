@@ -39,6 +39,7 @@ class OeMedicalAppointment(osv.Model):
         'doctor': fields.many2one('oemedical.physician',
                                   string='Physician',select=True, 
                                   help='Physician\'s Name'),
+        'alias' : fields.char(size=256, string='Alias', ),
         'comments': fields.text(string='Comments'),
         'appointment_type': fields.selection([
             ('ambulatory', 'Ambulatory'),
@@ -57,11 +58,21 @@ class OeMedicalAppointment(osv.Model):
         'speciality': fields.many2one('oemedical.specialty',
                                       string='Specialty', 
                                       help='Medical Specialty / Sector'),
+        'state': fields.selection([
+            ('draft', 'Draft'),
+            ('waiting', 'Wating'),
+            ('in_consultation', 'In consultation'),
+            ('done', 'Done'),
+            ('cancel', 'Cancel'),
+             ],
+            string='State'),
+
     }
     
     _defaults = {
          'name': lambda obj, cr, uid, context: 
             obj.pool.get('ir.sequence').get(cr, uid, 'oemedical.appointment'),
+        'state': 'draft',
                  }
 
 OeMedicalAppointment()

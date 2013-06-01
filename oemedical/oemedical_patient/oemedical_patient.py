@@ -55,8 +55,7 @@ class OeMedicalPatient(osv.Model):
             ' surgeries, allergies, ...'),
         'rh': fields.selection([('+', '+'), ('-', '-'), ], string='Rh'),
         'current_address': fields.many2one('res.partner', string='Address',
-        help='Contact information. You may choose from the different contacts'\
-        ' and addresses this patient has.'),
+                           domain="[('category_id', '=', 'Customer'),('category_id', '=', 'Address')]"),
         'diseases': fields.one2many('oemedical.patient.disease',
                                     'patient_id', string='Diseases',
                                     help='Mark if the patient has died'),
