@@ -60,12 +60,14 @@ class OeMedicalAppointment(osv.Model):
                                       help='Medical Specialty / Sector'),
         'state': fields.selection([
             ('draft', 'Draft'),
+            ('confirm', 'Confirm'),
             ('waiting', 'Wating'),
             ('in_consultation', 'In consultation'),
             ('done', 'Done'),
-            ('cancel', 'Cancel'),
+            ('canceled', 'Canceled'),
              ],
             string='State'),
+        'history_ids' : fields.one2many('oemedical.appointment.history','appointment_id_history','History lines', states={'start':[('readonly',True)]}),
 
     }
     
@@ -76,4 +78,19 @@ class OeMedicalAppointment(osv.Model):
                  }
 
 OeMedicalAppointment()
+
+class OeMedicalAppointment_history(osv.Model):
+    _name = 'oemedical.appointment.history'
+
+    _columns = {
+        'appointment_id_history' :  fields.many2one('oemedical.appointment','History', ondelete='cascade'),
+        'date': fields.datetime(string='Date and Time'),
+        'name': fields.many2one('res.users', string='User', help=''),
+	    'action' : fields.text('Action'),
+    }
+    
+    _defaults = {
+                 }
+
+OeMedicalAppointment_history()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

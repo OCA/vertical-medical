@@ -32,28 +32,43 @@
                         <button name="print_prescription" string="Print" type="object"  class="oe_highlight" groups="base.group_user"/>
                         <button name="action_button_confirm" states="draft" string="Confirm" class="oe_highlight"  type="object" groups="base.group_user"/>
                         <button name="cancel" states="draft,sent" string="Cancel" groups="base.group_user"/>
-                        <field name="state" widget="statusbar" statusbar_visible="draft,waiting,in_consultation,done" statusbar_colors='{"draft":"red","waiting":"blue"}'/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm,waiting,in_consultation,done,canceled" statusbar_colors='{"canceled":"red","waiting":"blue"}'/>
                     </header>
                     <sheet>
                         <h1>
                             <label string="Appointment"/>
 					        <field name="name" />
                         </h1>
-                        <group>
-
-					        <field name="patient_id" />
-        					<field name="alias" />
-					        <field name="doctor" />
-					        <field name="appointment_date" />
-					        <field name="duration" />
-					        <field name="appointment_type" />
-					        <field name="urgency" />
-					        <field name="consultations" />
-					        <field name="institution" />
-					        <field name="speciality" />
-					        <newline/>
-					        <field name="comments" colspan="4"/>
-                        </group>
+                        <notebook>
+                            <page string="Main">
+                                <group>
+					                <field name="patient_id" />
+                					<field name="alias" />
+					                <field name="doctor" />
+					                <field name="appointment_date" />
+					                <field name="duration" />
+					                <field name="appointment_type" />
+					                <field name="urgency" />
+					                <field name="consultations" />
+					                <field name="institution" />
+					                <field name="speciality" />
+					                <newline/>
+					                <field name="comments" colspan="4"/>
+                                </group>
+                            </page>
+                            <page string="History">
+                                <field name="history_ids" nolabel="1">
+                                    <tree string="History">
+    					                <field name="date" />
+    					                <field name="name" />
+    					                <field name="action" />
+                                    </tree>
+                                    <form String="History">
+	    				                <field name="name" />
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
                     </sheet>
 				</form>
 			</field>
