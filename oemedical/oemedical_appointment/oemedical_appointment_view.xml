@@ -30,7 +30,7 @@
                     <header>
 <!--                        <button name="action_quotation_send" string="Send by e-mail" type="object" class="oe_highlight" groups="base.group_user"/>-->
 <!--                        <button name="print_prescription" string="Print" type="object"  class="oe_highlight" groups="base.group_user"/>-->
-                        <button name="button_back" states="confirm,waiting,in_consultation,done" string="Back"  type="object" groups="base.group_user"/>
+                        <button name="button_back" states="confirm,waiting,in_consultation,done,canceled" string="Back"  type="object" groups="base.group_user"/>
                         <button name="button_confirm" states="draft" string="Confirm" class="oe_highlight"  type="object" groups="base.group_user"/>
                         <button name="button_waiting" states="confirm" string="Waiting" class="oe_highlight"  type="object" groups="base.group_user"/>
                         <button name="button_in_consultation" states="waiting" string="In Consultation" class="oe_highlight"  type="object" groups="base.group_user"/>

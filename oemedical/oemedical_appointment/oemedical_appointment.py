@@ -21,6 +21,7 @@
 #/#############################################################################
 from osv import osv
 from osv import fields
+import time
 
 
 class OeMedicalAppointment(osv.Model):
@@ -78,36 +79,108 @@ class OeMedicalAppointment(osv.Model):
                  }
 
     def button_back(self, cr, uid, ids, context=None):
+
+        val_history = {}
+        ait_obj = self.pool.get('oemedical.appointment.history')
+
         for order in self.browse(cr, uid, ids, context=context):
             if order.state == 'confirm':
                 self.write(cr, uid, ids, {'state':'draft'} ,context=context)
+                val_history['action'] = "--------------------------------  Changed to Draft  ------------------------------------\n"
             if order.state == 'waiting':
+                val_history['action'] = "--------------------------------  Changed to Confirm  ------------------------------------\n"
                 self.write(cr, uid, ids, {'state':'confirm'} ,context=context)
             if order.state == 'in_consultation':
+                val_history['action'] = "--------------------------------  Changed to Waiting  ------------------------------------\n"
                 self.write(cr, uid, ids, {'state':'waiting'} ,context=context)
             if order.state == 'done':
+                val_history['action'] = "--------------------------------  Changed to In Consultation  ------------------------------------\n"
                 self.write(cr, uid, ids, {'state':'in_consultation'} ,context=context)
+            if order.state == 'canceled':
+                val_history['action'] = "--------------------------------  Changed to Draft  ------------------------------------\n"
+                self.write(cr, uid, ids, {'state':'draft'} ,context=context)
+
+        val_history['appointment_id_history'] = ids[0]
+        val_history['name'] = uid
+        val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
+
+        ait_obj.create(cr, uid, val_history)
 
         return True
 
     def button_confirm(self, cr, uid, ids, context=None):
+
+        val_history = {}
+        ait_obj = self.pool.get('oemedical.appointment.history')
+
         self.write(cr, uid, ids, {'state':'confirm'} ,context=context)
+
+        val_history['appointment_id_history'] = ids[0]
+        val_history['name'] = uid
+        val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
+        val_history['action'] = "--------------------------------  Changed to Comfirm  ------------------------------------\n"
+        ait_obj.create(cr, uid, val_history)
+
         return True
 
     def button_waiting(self, cr, uid, ids, context=None):
+
+        val_history = {}
+        ait_obj = self.pool.get('oemedical.appointment.history')
+
         self.write(cr, uid, ids, {'state':'waiting'} ,context=context)
+
+        val_history['appointment_id_history'] = ids[0]
+        val_history['name'] = uid
+        val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
+        val_history['action'] = "--------------------------------  Changed to Waiting  ------------------------------------\n"
+        ait_obj.create(cr, uid, val_history)
+
         return True
 
     def button_in_consultation(self, cr, uid, ids, context=None):
+
+        val_history = {}
+        ait_obj = self.pool.get('oemedical.appointment.history')
+
         self.write(cr, uid, ids, {'state':'in_consultation'} ,context=context)
+
+        val_history['appointment_id_history'] = ids[0]
+        val_history['name'] = uid
+        val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
+        val_history['action'] = "--------------------------------  Changed to In Consultation  ------------------------------------\n"
+        ait_obj.create(cr, uid, val_history)
+
         return True
 
     def button_done(self, cr, uid, ids, context=None):
+
+        val_history = {}
+        ait_obj = self.pool.get('oemedical.appointment.history')
+
         self.write(cr, uid, ids, {'state':'done'} ,context=context)
+
+        val_history['appointment_id_history'] = ids[0]
+        val_history['name'] = uid
+        val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
+        val_history['action'] = "--------------------------------  Changed to Done  ------------------------------------\n"
+        ait_obj.create(cr, uid, val_history)
+
         return True
 
     def button_cancel(self, cr, uid, ids, context=None):
+
+        val_history = {}
+        ait_obj = self.pool.get('oemedical.appointment.history')
+
         self.write(cr, uid, ids, {'state':'canceled'} ,context=context)
+
+        val_history['appointment_id_history'] = ids[0]
+        val_history['name'] = uid
+        val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
+        val_history['action'] = "--------------------------------  Changed to Canceled  ------------------------------------\n"
+        ait_obj.create(cr, uid, val_history)
+
         return True
 
 
