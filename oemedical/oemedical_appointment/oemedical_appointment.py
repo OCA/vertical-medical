@@ -77,6 +77,40 @@ class OeMedicalAppointment(osv.Model):
         'state': 'draft',
                  }
 
+    def button_back(self, cr, uid, ids, context=None):
+        for order in self.browse(cr, uid, ids, context=context):
+            if order.state == 'confirm':
+                self.write(cr, uid, ids, {'state':'draft'} ,context=context)
+            if order.state == 'waiting':
+                self.write(cr, uid, ids, {'state':'confirm'} ,context=context)
+            if order.state == 'in_consultation':
+                self.write(cr, uid, ids, {'state':'waiting'} ,context=context)
+            if order.state == 'done':
+                self.write(cr, uid, ids, {'state':'in_consultation'} ,context=context)
+
+        return True
+
+    def button_confirm(self, cr, uid, ids, context=None):
+        self.write(cr, uid, ids, {'state':'confirm'} ,context=context)
+        return True
+
+    def button_waiting(self, cr, uid, ids, context=None):
+        self.write(cr, uid, ids, {'state':'waiting'} ,context=context)
+        return True
+
+    def button_in_consultation(self, cr, uid, ids, context=None):
+        self.write(cr, uid, ids, {'state':'in_consultation'} ,context=context)
+        return True
+
+    def button_done(self, cr, uid, ids, context=None):
+        self.write(cr, uid, ids, {'state':'done'} ,context=context)
+        return True
+
+    def button_cancel(self, cr, uid, ids, context=None):
+        self.write(cr, uid, ids, {'state':'canceled'} ,context=context)
+        return True
+
+
 OeMedicalAppointment()
 
 class OeMedicalAppointment_history(osv.Model):
