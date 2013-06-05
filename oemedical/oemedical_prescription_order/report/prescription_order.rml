@@ -94,6 +94,29 @@
     <initialize>
       <paraStyle name="all" alignment="justify"/>
     </initialize>
+    <paraStyle name="P1" fontName="Times-Roman" alignment="RIGHT"/>
+    <paraStyle name="P2" fontName="Times-Roman" fontSize="8.0" leading="10"/>
+    <paraStyle name="P3" fontName="Helvetica" fontSize="8.0" leading="10"/>
+    <paraStyle name="P4" fontName="Helvetica" fontSize="10.0" leading="13"/>
+    <paraStyle name="P5" fontName="Times-Roman"/>
+    <paraStyle name="P6" fontName="Times-Roman" alignment="RIGHT"/>
+    <paraStyle name="P6a" fontName="Times-Roman" fontSize="6.0" leading="8" alignment="LEFT"/>
+    <paraStyle name="P7a" fontName="Times-Roman" fontSize="8.0" leading="8" alignment="LEFT"/>
+    <paraStyle name="P7l" fontName="Times-Roman" fontSize="8.0" leftIndent="0.0" leading="8" alignment="LEFT"/>
+    <paraStyle name="P7bl" fontName="Times-Roman" fontSize="8.0" leftIndent="0.0" leading="8" alignment="LEFT"/>
+    <paraStyle name="P7bc" fontName="Times-Bold" fontSize="8.0" leading="8" alignment="CENTER"/>
+    <paraStyle name="P7c" fontName="Times-Roman" fontSize="8.0" leading="8" alignment="CENTER"/>
+    <paraStyle name="P7r" fontName="Times-Roman" fontSize="8.0" leading="8" rightIndent="0.0" alignment="RIGHT"/>
+    <paraStyle name="P7" fontName="Times-Roman"/>
+    <paraStyle name="P8" fontName="Helvetica" fontSize="12.0" leading="15"/>
+    <paraStyle name="P8a" fontName="Times-Roman" fontSize="8.0" leading="8" alignment="LEFT"/>
+    <paraStyle name="P9" fontName="Helvetica" fontSize="2.0" leading="3"/>
+    <paraStyle name="P9l" fontName="Times-Roman" fontSize="9.0" leading="8" alignment="LEFT"/>
+    <paraStyle name="P9r" fontName="Times-Roman" fontSize="9.0" leading="8" alignment="RIGHT"/>
+    <paraStyle name="P10" fontName="Times-Bold" fontSize="6.0" leading="8" alignment="CENTER"/>
+    <paraStyle name="P11" fontName="Times-Roman" fontSize="6.0" leading="8" alignment="CENTER"/>
+    <paraStyle name="P12" fontName="Times-Roman" fontSize="6.0" leading="8" alignment="CENTER"/>
+    <paraStyle name="P12r" fontName="Times-Roman" fontSize="12.0" leading="12" rightIndent="0.1" alignment="RIGHT"/>
     <paraStyle name="Standard" fontName="Helvetica"/>
     <paraStyle name="Text body" fontName="Helvetica" spaceBefore="0.0" spaceAfter="6.0"/>
     <paraStyle name="Heading" fontName="Helvetica" fontSize="14.0" leading="17" spaceBefore="12.0" spaceAfter="6.0"/>
@@ -131,6 +154,19 @@
   <story>
   <pto>
   <para style="terp_default_8">[[repeatIn(objects,'o')]]</para>
+
+    <blockTable colWidths="292.0,292.0" >
+      <tr>
+        <td>
+        </td>
+        <td>
+          <para style="P7r">[[ formatLang(o.prescription_date,date = True)  ]]</para>
+          <para style="P7l">[[ o.patient_id.name ]]</para>
+          <para style="P7l">[[ o.physician_id.name ]]</para>
+        </td>
+      </tr>
+    </blockTable>
+
 
     <para style="terp_default_9">
       <font color="white"> </font>

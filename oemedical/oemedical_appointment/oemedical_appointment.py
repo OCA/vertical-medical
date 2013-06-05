@@ -73,10 +73,27 @@ class OeMedicalAppointment(osv.Model):
     }
     
     _defaults = {
-         'name': lambda obj, cr, uid, context: 
+        'name': lambda obj, cr, uid, context: 
             obj.pool.get('ir.sequence').get(cr, uid, 'oemedical.appointment'),
+        'duration': 30.00,
         'state': 'draft',
                  }
+
+    def create(self, cr, uid, vals, context=None):
+        val_history = {}
+        ait_obj = self.pool.get('oemedical.appointment.history')
+
+
+
+        val_history['name'] = uid
+        val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
+        val_history['action'] = "--------------------------------  Changed to Comfirm  ------------------------------------\n"
+
+        vals['history_ids'] = val_history
+
+        print "create", vals['history_ids'], val_history, '     ------    ', vals
+
+        return super(OeMedicalAppointment, self).create(cr, uid, vals, context=context)
 
     def button_back(self, cr, uid, ids, context=None):
 

@@ -41,9 +41,18 @@
 					        <field name="pharmacy" />
 					        <field name="prescription_warning_ack" />
 					        <field name="physician_id" />
-					        <newline/>
-					        <field name="prescription_line" colspan="4"/>
-					        <newline/>
+                        </group>
+                        <group>
+					        <field name="prescription_line" nolabel="1" colspan="4">
+                                <tree string="">
+        					        <field name="name" />
+                                </tree>
+                                <form string=""  version="7.0">
+        					        <field name="name" />
+                                </form>
+                            </field>
+                        </group>
+                        <group>
 					        <field name="notes" colspan="4"/>
                         </group>
                     </sheet>

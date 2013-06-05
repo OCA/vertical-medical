@@ -27,7 +27,7 @@ class OeMedicalPrescriptionLine(osv.Model):
     _name = 'oemedical.prescription.line'
 
     _columns = {
-        'refills': fields.integer(string='Refills #'),
+        'name': fields.integer(string='Refills #'),
         'prescription_order_id': fields.many2one(
             'oemedical.prescription.order',
             string='Prescription ID', ),
@@ -41,6 +41,11 @@ class OeMedicalPrescriptionLine(osv.Model):
                                     string='Medication Template', ),
         'quantity': fields.integer(string='Quantity'),
     }
+
+    _default = {
+
+        'prnt' : True,
+                }
 
 OeMedicalPrescriptionLine()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
