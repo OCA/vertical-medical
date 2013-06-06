@@ -28,9 +28,6 @@ class OeMedicalAppointment(osv.Model):
     _name = 'oemedical.appointment'
 
     _columns = {
-        'consultations': fields.many2one('product.product',
-                                         string='Consultation Services',
-                                          help='Consultation Services'),
         'patient_id': fields.many2one('oemedical.patient', string='Patient',
                                    required=True, select=True,
                                    help='Patient Name'),
@@ -51,6 +48,10 @@ class OeMedicalAppointment(osv.Model):
                                        string='Health Center',
                                        help='Medical Center'
                                         , domain="[('category_id', '=', 'Doctor Office')]"),
+        'consultations': fields.many2one('product.product',
+                                         string='Consultation Services',
+                                          help='Consultation Services'
+                                        , domain="[('type', '=', 'service'), ]"),
         'urgency': fields.selection([
             ('a', 'Normal'),
             ('b', 'Urgent'),

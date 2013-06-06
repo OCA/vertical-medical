@@ -41,7 +41,7 @@
                     <sheet>
                         <h1>
                             <label string="Appointment"/>
-					        <field name="name"/>
+				            <field name="name"/>
                         </h1>
                         <group col="4" colspan="4">
                             <field name="institution" />
@@ -58,9 +58,9 @@
 					                <field name="speciality" />
 					                <field name="appointment_date" />
 					                <field name="duration" />
-					                <field name="consultations" />
-					                <newline/>
-					                <field name="comments" colspan="4"/>
+                                </group>
+                                <group col="4" colspan="4" string="Notes">
+					                <field name="comments" colspan="4" nolabel="1"/>
                                 </group>
                             </page>
                             <page string="History">
