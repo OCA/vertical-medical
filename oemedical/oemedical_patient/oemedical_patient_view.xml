@@ -66,11 +66,6 @@
              					<field name="primary_care_doctor" colspan="2" nolabel="1"/> 
                                 <separator colspan="4" string="Patient Allergies and Critical Information"/>
              					<field name="critical_info" colspan="4" nolabel="1"/> 
-                                <group colspan="2">
-             					<field name="childbearing_age" /> 
-
-                 					<field name="current_insurance" /> 
-                                </group>
              				</group> 
          				</page> 
                         <page string="Misc">

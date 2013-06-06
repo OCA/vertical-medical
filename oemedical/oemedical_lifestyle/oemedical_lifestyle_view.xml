@@ -16,12 +16,12 @@
                                     <group colspan="4">
                                         <group col="4" string="Physical Exercise" id="physical_exercise">
                                             <field name="exercise" nolabel="1"/>
-                                            <field name="exercise_minutes_day" nolabel="1"/>
+                                            <field name="exercise_minutes_day" />
                                         </group>
 
                                         <group col="4" string="Sleep" id="group_sleep">
                                             <field name="sleep_during_daytime" nolabel="1"/>
-                                            <field name="sleep_hours" nolabel="1"/>
+                                            <field name="sleep_hours" />
                                         </group>
                                         <newline/>
                                         <group colspan="4" col="4" id="group_diet">

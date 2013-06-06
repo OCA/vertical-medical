@@ -41,21 +41,24 @@
                     <sheet>
                         <h1>
                             <label string="Appointment"/>
-					        <field name="name" />
+					        <field name="name"/>
                         </h1>
+                        <group col="4" colspan="4">
+                            <field name="institution" />
+			                <field name="consultations" />
+    		                <field name="appointment_type" />
+			                <field name="urgency" />
+                        </group>
                         <notebook>
                             <page string="Main">
-                                <group>
+                                <group col="4" colspan="4">
 					                <field name="patient_id" />
                 					<field name="alias" />
 					                <field name="doctor" />
+					                <field name="speciality" />
 					                <field name="appointment_date" />
 					                <field name="duration" />
-					                <field name="appointment_type" />
-					                <field name="urgency" />
 					                <field name="consultations" />
-					                <field name="institution" />
-					                <field name="speciality" />
 					                <newline/>
 					                <field name="comments" colspan="4"/>
                                 </group>

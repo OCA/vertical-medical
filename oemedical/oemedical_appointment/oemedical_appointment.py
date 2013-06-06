@@ -76,7 +76,9 @@ class OeMedicalAppointment(osv.Model):
         'name': lambda obj, cr, uid, context: 
             obj.pool.get('ir.sequence').get(cr, uid, 'oemedical.appointment'),
         'duration': 30.00,
+        'urgency': 'a',
         'state': 'draft',
+
                  }
 
     def create(self, cr, uid, vals, context=None):
