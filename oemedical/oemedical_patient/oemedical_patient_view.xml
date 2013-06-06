@@ -35,9 +35,6 @@
  						<div> 
  							<label for="sex" class="oe_edit_only"/> 
  							<field name="sex" style="width: 30%%"/> 
- 							<label for="blood_type" class="oe_edit_only"/> 
- 							<field name="blood_type" style="width: 8%%"/> 
- 							<field name="rh" style="width: 2%%"/> 
  						</div> 
  						<div> 
  						</div> 
@@ -52,21 +49,26 @@
  							<field name="age" style="width: 8%%"/> 
                          </div> 
                     <notebook> 
-                        <page string="Public Information"> 
+                        <page string="General Information"> 
+                            <group  col="6" colspan="4"> 
+     							<field name="blood_type" style="width: 8%%"/> 
+     							<field name="rh" nolabel="1"/> 
+               					<field name="ethnic_group" /> 
+                            </group>
                             <group  col="4" colspan="4"> 
                                 <label string="Address" colspan="2"/>
                                 <label string="Marital Status" colspan="2"/>
                               	<field name="current_address" nolabel="1" colspan="2"/> 
              					<field name="marital_status"  nolabel="1" colspan="2"/> 
                                 <label string="Family Information" colspan="2"/>
-                                <label string="General Infomation" colspan="2"/>
+                                <label string="Primary Care Doctor" colspan="2"/>
              					<field name="family" nolabel="1"  colspan="2"/> 
-             					<field name="primary_care_doctor" colspan="2"/> 
+             					<field name="primary_care_doctor" colspan="2" nolabel="1"/> 
                                 <separator colspan="4" string="Patient Allergies and Critical Information"/>
              					<field name="critical_info" colspan="4" nolabel="1"/> 
                                 <group colspan="2">
              					<field name="childbearing_age" /> 
-                 					<field name="ethnic_group" /> 
+
                  					<field name="current_insurance" /> 
                                 </group>
              				</group> 

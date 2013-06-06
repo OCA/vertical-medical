@@ -45,10 +45,14 @@
                         <group>
 					        <field name="prescription_line" nolabel="1" colspan="4">
                                 <tree string="">
-        					        <field name="name" />
+        					        <field name="quantity" />
+        					        <field name="template" />
                                 </tree>
                                 <form string=""  version="7.0">
-        					        <field name="name" />
+        					        <field name="quantity" />
+        					        <field name="template" />        
+        					        <field name="prnt" />
+        					        <field name="short_comment" />
                                 </form>
                             </field>
                         </group>

@@ -42,9 +42,9 @@ class OeMedicalPrescriptionLine(osv.Model):
         'quantity': fields.integer(string='Quantity'),
     }
 
-    _default = {
-
+    _defaults = {
         'prnt' : True,
+
                 }
 
 OeMedicalPrescriptionLine()
