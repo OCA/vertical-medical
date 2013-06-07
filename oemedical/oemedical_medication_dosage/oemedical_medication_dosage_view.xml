@@ -72,5 +72,6 @@
 			<field name="view_id" ref="view_oemedical_medication_dosage_tree" />
 		</record>
 
+
 	</data>
 </openerp>

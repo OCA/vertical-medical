@@ -33,24 +33,48 @@
 			<field name="model">oemedical.medication.template</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Medication Template">
-					<field name="name" />
-					<field name="start_treatment" />
-					<field name="form" />
-					<field name="route" />
-					<!--field name="duration_period"/ -->
-					<field name="qty" />
-					<!--field name="frequency_unit"/ -->
-					<field name="dose" />
-					<field name="duration" />
-					<field name="frequency_prn" />
-					<field name="frequency" />
-					<field name="indication" />
-					<field name="medicament" />
-					<field name="common_dosage" />
-					<field name="admin_times" />
-					<field name="end_treatment" />
-					<field name="dose_unit" />
+				<form string="Oemedical Medication Template"  version="7.0">
+                    <notebook>
+                        <page string="General Info" id="medication_general_info">
+					        <field name="name" />
+					        <field name="indication" />
+                            <group colspan="4" col="4" string="Treatment period">
+                                <field name="start_treatment"/>
+                                <field name="end_treatment"/>
+                            </group>
+                        </page>
+                        <page id="medication_misc" string="Extra Info">
+                            <group id="medicament_dosage_main">
+                                <group id="medicament_form"
+                                    string="Admnistration">
+                                    <field name="form"/>
+                                    <field name="route"/>
+                                </group>
+                                <newline/>
+                                <group id="medicament_dosage" col="6" string="Dosage">
+                                    <field name="dose"/>
+                                    <field name="dose_unit"/>
+                                    <field name="qty"/>
+                                </group>
+                                <newline/>
+                                <group id="medicament_duration" string="Treatment duration">
+                                    <field name="duration"/>
+                                    <field name="duration_period"/>
+                                </group>
+                                <newline/>
+                                <group string="Common Dosage" id="group_common_dosage">
+                                    <field name="common_dosage"/>
+                                    <field name="admin_times"/>
+                                </group>
+                                <newline/>
+                                <group col="6" colspan="4" string="Specific Dosage" id="group_specific_dosage">
+                                    <field name="frequency"/>
+                                    <field name="frequency_unit"/>
+                                    <field name="frequency_prn"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
 				</form>
 			</field>
 		</record>

@@ -34,25 +34,75 @@
                             <label string="Prescription Order "/>
 					        <field name="name" />
                         </h1>
-                        <group>
-					        <field name="prescription_date" />
+                        <group col="4" colspan="4">
 					        <field name="patient_id" />
-					        <field name="pregnancy_warning" />
-					        <field name="pharmacy" />
-					        <field name="prescription_warning_ack" />
+					        <field name="prescription_date" />
 					        <field name="physician_id" />
+                        </group>
+                        <group col="6" colspan="4">
+					        <field name="pharmacy" />
+					        <field name="pregnancy_warning" />
+					        <field name="prescription_warning_ack" />
                         </group>
                         <group>
 					        <field name="prescription_line" nolabel="1" colspan="4">
                                 <tree string="">
-        					        <field name="quantity" />
-        					        <field name="template" />
+                                    <field name="prnt" expand="1"/>
+                                    <field name="template" expand="1"/>
+                                    <field name="indication" expand="1"/>
+                                    <field name="dose"/>
+                                    <field name="dose_unit"/>
+                                    <field name="form"/>
+                                    <field name="common_dosage"/>
+                                    <field name="quantity"/>
+                                    <field name="duration"/>
+                                    <field name="duration_period"/>
+                                    <field name="allow_substitution"/>
+                                    <field name="short_comment" expand="1"/>
                                 </tree>
                                 <form string=""  version="7.0">
-        					        <field name="quantity" />
-        					        <field name="template" />        
-        					        <field name="prnt" />
-        					        <field name="short_comment" />
+                                    <field name="template"/>
+                                    <field name="indication"/>
+                                    <group colspan="4">
+                                        <label string="Allow_substitution"/>
+                                        <field name="allow_substitution" nolabel="1"/>
+                                        <label string="Print"/>
+                                        <field name="prnt" nolabel="1"/>
+                                    </group>
+                                    <group colspan="4" col="4">
+                                        <field name="form"/>
+                                        <field name="route"/>
+                                    </group>
+                                    <group colspan="4" col="4" string="Treatment">
+                                        <field name="start_treatment"/>
+                                        <field name="end_treatment"/>
+                                    </group>
+                                    <group colspan="4" string="Dosage" id="group_dosage">
+                                        <group colspan="4" col="6">
+                                            <field name="dose"/>
+                                            <field name="dose_unit"/>
+                                            <field name="qty"/>
+                                        </group>
+                                        <group colspan="4" string="Common Dosage" col="4">
+                                            <field name="common_dosage"/>
+                                            <field name="admin_times"/>
+                                        </group>
+                                        <group colspan="4" col="4" string="Specific Dosage" >
+                                            <field name="frequency"/>
+                                            <field name="frequency_unit"/>
+                                            <field name="frequency_prn"/>
+                                        </group>
+                                    </group>
+                                    <group colspan="4" col="6" string="">
+                                        <field name="duration"/>
+                                        <field name="duration_period"/>
+                                        <field name="review"/>
+                                        <field name="quantity"/>
+                                        <field name="name"/>
+                                    </group>
+                                    <group colspan="4" col="4" string="Short comment">
+                                        <field name="short_comment" nolabel="1" colspan="1"/>
+                                    </group>
                                 </form>
                             </field>
                         </group>

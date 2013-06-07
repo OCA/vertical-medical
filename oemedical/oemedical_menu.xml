@@ -115,32 +115,26 @@
 			parent="oemedical_root_sub" sequence="50" />
 
 
-		<menuitem id="oemedical_medicament" name=" Medicament"
-			parent="oemedical_medicament_root" sequence="20"
+		<menuitem id="oemedical_medicament" name="Medicaments"
+			parent="oemedical_medicament_root" sequence="10"
 			action="act_open_oemedical_medicament_view" />
 
-
-		<menuitem id="oemedical_medication_dosage" name=" Medication Dosage"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_medication_dosage_view" />
-
 		<menuitem id="oemedical_medication_template" name=" Medication Template"
-			parent="oemedical_root_sub" sequence="20"
+			parent="oemedical_medicament_root" sequence="20"
 			action="act_open_oemedical_medication_template_view" />
 
-<!--  Drugs Administration Routes  -->
+		<menuitem id="oemedical_medication_frequencies" name="Medication Frequencies"
+			parent="oemedical_medicament_root" sequence="30"
+			action="act_open_oemedical_medication_dosage_view" />
 
-		<menuitem id="oemedical_drug_route" name=" Drug Administration Route"
+		<menuitem id="oemedical_drug_route" name=" Drug Admin Route"
 			parent="oemedical_medicament_root" sequence="80"
 			action="act_open_oemedical_drug_route_view" />
-
-<!--Drugs-->
 
 		<menuitem id="oemedical_drug_form" name=" Drug Form"
             parent="oemedical_medicament_root" sequence="90"
             action="act_open_oemedical_drug_form_view" />
 
-<!--Medicament Categories-->
 
 		<menuitem id="oemedical_medicament_category" name=" Medicament Category"
 			parent="oemedical_medicament_root" sequence="100"
