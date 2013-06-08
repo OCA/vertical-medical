@@ -63,7 +63,7 @@
                                 <form string=""  version="7.0">
                                     <field name="template"/>
                                     <field name="indication"/>
-                                    <group colspan="4">
+                                    <group colspan="4" col="6">
                                         <label string="Allow_substitution"/>
                                         <field name="allow_substitution" nolabel="1"/>
                                         <label string="Print"/>
@@ -87,7 +87,7 @@
                                             <field name="common_dosage"/>
                                             <field name="admin_times"/>
                                         </group>
-                                        <group colspan="4" col="4" string="Specific Dosage" >
+                                        <group colspan="4" col="6" string="Specific Dosage" >
                                             <field name="frequency"/>
                                             <field name="frequency_unit"/>
                                             <field name="frequency_prn"/>

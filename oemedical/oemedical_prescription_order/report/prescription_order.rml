@@ -160,12 +160,76 @@
         <td>
         </td>
         <td>
-          <para style="P7r">[[ formatLang(o.prescription_date,date = True)  ]]</para>
-          <para style="P7l">[[ o.patient_id.name ]]</para>
-          <para style="P7l">[[ o.physician_id.name ]]</para>
+            <para style="P7r">[[ formatLang(o.prescription_date,date = True)  ]]</para>
+            <para style="P6">
+                <font color="white"> </font>
+            </para>
+            <para style="P7l">[[ o.patient_id.name ]]</para>
         </td>
       </tr>
     </blockTable>
+    <section>
+      <para style="terp_default_1">[[ repeatIn(o.prescription_line,'pres_line') ]]</para>
+      <blockTable colWidths="292.0,80.0,50.0,50.0" >
+            <tr>
+                <td>
+                    <para style="p7l">  </para>
+                </td>
+                <td>
+                    <para style="p7l">[[ (pres_line.template.name) or '' ]]</para>
+                </td>
+                <td>
+                    <para style="p7l">  </para>
+                </td>
+                <td>
+                    <para style="p7l">  </para>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <para style="p7l">  </para>
+                </td>
+                <td>
+                    <para style="p7l">[[ Dose: (pres_line.dose) or '0' ]]</para>
+                </td>
+                <td>
+                    <para style="p7l">[[ (pres_line.dose_unit) or '0' ]]</para>
+                </td>
+                <td>
+                    <para style="p7l">[[ pres_line.duration ]] [[ pres_line.duration_period ]] </para>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <para style="p7l">  </para>
+                </td>
+                <td>
+                    <para style="p7l">[[ Frequency: (pres_line.frequency) or '0' ]]</para>
+                </td>
+                <td>
+                    <para style="p7l">[[ (pres_line.admin_times) or '0' ]]</para>
+                </td>
+                <td>
+                    <para style="p7l">  </para>
+                </td>
+            </tr>
+      </blockTable>
+    </section>
+    <blockTable colWidths="292.0,292.0" >
+      <tr>
+        <td>
+        </td>
+        <td>
+
+            <para style="P6">
+                <font color="white"> </font>
+            </para>
+            <para style="P7l">[[ o.physician_id.name ]]</para>
+
+        </td>
+      </tr>
+    </blockTable>
+            
 
 
     <para style="terp_default_9">

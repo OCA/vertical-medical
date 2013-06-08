@@ -34,7 +34,7 @@ class OeMedicalPrescriptionLine(osv.Model):
     def _get_dose(self, cr, uid, ids, field_name, arg, context=None):
         res = {}
         for record in self.browse(cr, uid, ids, context=context):
-            res[record.id] = 1
+            res[record.id] = record.template.dose
         return res
 
     def _get_frecuency(self, cr, uid, ids, field_name, arg, context=None):
