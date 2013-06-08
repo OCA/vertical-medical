@@ -1,4 +1,4 @@
-# Spanish (Mexico) translation for oemedical
+# Spanish (Venezuela) translation for oemedical
 # Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
 # This file is distributed under the same license as the oemedical package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
@@ -11,7 +11,7 @@ msgstr ""
 "PO-Revision-Date: 2013-06-08 22:52+0000\n"
 "Last-Translator: Federico Manuel Echeverri Choux -  (  Vauxoo  ) "
 "<echeverrifm@gmail.com>\n"
-"Language-Team: Spanish (Mexico) <es_MX@li.org>\n"
+"Language-Team: Spanish (Venezuela) <es_VE@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
