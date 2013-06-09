@@ -24,7 +24,7 @@
                     <group colspan="2" >
 					    <field name="code" />
 					    <field name="physician_id" />
-					    <field name="name" />
+					    <field name="name" invisible="1"/>
 					    <field name="specialty" />				
 					    <field name="institution" />
                     </group>

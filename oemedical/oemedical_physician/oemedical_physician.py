@@ -36,7 +36,6 @@ class OeMedicalPhysician(osv.Model):
     _columns = {
         'physician_id': fields.many2one('res.partner', string='Health Professional',required=True , help='Physician' ,domain=[('category_id', '=', 'Physician')]  ),
         'code': fields.char(size=256, string='ID'),
-#        'name': fields.char(size=256, string='Health Professional'),
         'name': fields.function(_get_name, type='char', string='Health Professional', help="", multi=False),
         'specialty': fields.many2one('oemedical.specialty', string='Specialty',required=True, help='Specialty Code'),
         'institution': fields.many2one('res.partner', string='Institution', help='Instituion where she/he works' ),

@@ -25,10 +25,17 @@ from osv import fields
 
 class OeMedicalMedicament(osv.Model):
     _name = 'oemedical.medicament'
-    _rec_name = 'active_component'
+
+    def _get_name(self, cr, uid, ids, field_name, arg, context=None):
+        res = {}
+        for record in self.browse(cr, uid, ids, context=context):
+            res[record.id] = record.physician_id.name
+        return res
+
 
     _columns = {
         'product_id': fields.many2one('product.product', string='Medicament', requered=True, help='Product Name'),
+        'name': fields.function(_get_name, type='char', string='Medicament', help="", multi=False),
         'category': fields.many2one('oemedical.medicament.category', 'Category',select=True),
         'active_component': fields.char(size=256, string='Active component', help='Active Component'),
         'indications': fields.text(string='Indication', help='Indications'), 
