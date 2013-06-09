@@ -28,17 +28,22 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Insurance">
-					<field name="name" />
-					<field name="category" />
-					<field name="plan_id" />
-					<field name="patient_id"/>
-					<!--field name="insurance_type"/ -->
-					<field name="member_since" />
-					<field name="company" />
-					<field name="number" />
-					<field name="member_exp" />
-					<field name="notes" />
-					<field name="owner" />
+                    <sheet>
+                        <h1>
+                            <label string="Insurance:"/>
+					        <field name="name" />
+					        <field name="company" />
+                        </h1>
+					    <field name="category" />
+					    <field name="plan_id" />
+					    <field name="patient_id"/>
+					    <!--field name="insurance_type"/ -->
+					    <field name="member_since" />
+					    <field name="number" />
+					    <field name="member_exp" />
+					    <field name="notes" />
+					    <field name="owner" />
+                    </sheet>
 				</form>
 			</field>
 		</record>

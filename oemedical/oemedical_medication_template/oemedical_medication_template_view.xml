@@ -37,7 +37,7 @@
                         <h1>
                             <label string="Medicament:"/>
 					        <field name="medicament_id" />
-					        <field name="name" />
+					        <field name="name" invisible="1" />
                         </h1>
                         <notebook>
                             <page string="General Info" id="medication_general_info">

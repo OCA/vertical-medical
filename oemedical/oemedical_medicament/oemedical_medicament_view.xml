@@ -33,9 +33,9 @@
 			<field name="arch" type="xml">
 				<form string="Oemedical Medicament">
                     <notebook>
+    			        <field name="product_id" domain="[('is_medicament','=', True )]"/>
+				        <field name="name"  invisible="1"/>
                         <page string="Main">
-					        <field name="product_id" domain="[('is_medicament','=', True )]"/>
-					        <field name="name"  invisible="1"/>
 					        <field name="category" />
 					        <field name="active_component" />
                             <separator string="Indications" colspan="4"/>
