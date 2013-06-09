@@ -34,15 +34,17 @@
 					        <field name="name" />
 					        <field name="company" />
                         </h1>
-					    <field name="category" />
-					    <field name="plan_id" />
-					    <field name="patient_id"/>
-					    <!--field name="insurance_type"/ -->
-					    <field name="member_since" />
-					    <field name="number" />
-					    <field name="member_exp" />
-					    <field name="notes" />
-					    <field name="owner" />
+                        <group colspan="4">
+					        <field name="category" />
+					        <field name="plan_id" />
+					        <field name="patient_id"/>
+					        <!--field name="insurance_type"/ -->
+					        <field name="member_since" />
+					        <field name="number" />
+					        <field name="member_exp" />
+					        <field name="notes" />
+					        <field name="owner" />
+                        </gruop>
                     </sheet>
 				</form>
 			</field>
