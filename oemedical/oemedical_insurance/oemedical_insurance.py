@@ -43,7 +43,7 @@ class OeMedicalInsurance(osv.Model):
             ('labour_union', 'Labour Union / Syndical'),
             ('private', 'Private'),
         ], string='Insurance Type',select=True),
-        'ssn': fields.char(size=256, string='SSN', required=True),
+        'number': fields.char(size=256, string='Number', required=True),
         'member_since': fields.date(string='Member since'),
         'member_exp': fields.date(string='Expiration date'),
         'notes': fields.text(string='Extra Info'),

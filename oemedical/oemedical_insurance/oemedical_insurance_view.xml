@@ -12,7 +12,7 @@
 					<field name="patient_id"/>
 					<field name="insurance_type"/>
 					<field name="company" />
-					<field name="ssn" />
+					<field name="number" />
 					<field name="member_since" />
 					<field name="member_exp" />
 					<field name="notes" />
@@ -36,7 +36,7 @@
 					        <field name="plan_id" />
 					        <field name="patient_id"/>
 					        <field name="insurance_type"/>
-					        <field name="ssn" />
+					        <field name="number" />
 					        <field name="member_since" />
 					        <field name="member_exp" />
                         </group>
@@ -57,7 +57,7 @@
 					<field name="plan_id" />
 					<field name="patient_id"/>
 					<field name="company" />
-					<field name="ssn" />
+					<field name="number" />
 					<field name="member_since" />
 					<field name="member_exp" />
 					<field name="notes" />
