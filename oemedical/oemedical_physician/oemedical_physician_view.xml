@@ -10,7 +10,6 @@
 					<field name="name" />
 					<field name="code" />
 					<field name="specialty" />
-					<field name="health_professional" />
 					<field name="institution" />
 				</tree>
 			</field>
@@ -22,10 +21,9 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Physician">
-					<field name="name" />
+					<field name="name" domain="[('category_id','=', 'Physician' )]"/>
 					<field name="code" />
-					<field name="specialty" />
-					<field name="health_professional" />					
+					<field name="specialty" />				
 					<field name="institution" />
 					<newline/>
 					<field name="info" colspan="4"/>
@@ -42,7 +40,6 @@
 					<field name="name" />
 					<field name="code" />
 					<field name="specialty" />
-					<field name="health_professional" />
 					<field name="institution" />
 					<field name="info" />
 					<newline />
@@ -50,12 +47,8 @@
 						<filter string="Extra info" domain="[]" context="{'group_by':'info'}" />
 						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
 						<filter string="ID" domain="[]" context="{'group_by':'code'}" />
-						<filter string="Health Professional" domain="[]"
-							context="{'group_by':'health_professional'}" />
-						<filter string="Specialty" domain="[]"
-							context="{'group_by':'specialty'}" />
-						<filter string="Institution" domain="[]"
-							context="{'group_by':'institution'}" />
+						<filter string="Specialty" domain="[]"	context="{'group_by':'specialty'}" />
+						<filter string="Institution" domain="[]" context="{'group_by':'institution'}" />
 					</group>
 				</search>
 			</field>

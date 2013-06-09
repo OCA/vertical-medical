@@ -26,9 +26,17 @@ from osv import fields
 class OeMedicalPrescriptionLine(osv.Model):
     _name = 'oemedical.prescription.line'
 
+
+
     def _get_medicament(self, cr, uid, ids, name, args, context=None):
-        print '_get_medicament', name, args, context
+        print '_get_medicament', name, args, context, ids
+        medication_obj = self.pool.get('oemedical.medication.template')
         result = {}
+
+#        if name == 'form':
+#            result = {'value': { 
+#                        'form' : medication_obj.browse(cr, uid, medication, context = None).form.id ,
+#                         } }
         return result
 
     def _get_dose(self, cr, uid, ids, field_name, arg, context=None):
@@ -83,6 +91,16 @@ class OeMedicalPrescriptionLine(osv.Model):
         for line in self.browse(cr, uid, ids, context=context):
             res[line.id] = 'days'
         return res
+
+    def onchange_template(self, cr, uid, ids, medication, context=None):
+        medication_obj = self.pool.get('oemedical.medication.template')
+        res = {}
+        res = {'value': { 
+                        'form' : medication_obj.browse(cr, uid, medication, context = None).form.id ,
+                        'dose' : medication_obj.browse(cr, uid, medication, context = None).dose ,
+                         } }
+        return res
+
 
     _columns = {
         'name': fields.integer(string='Refills #'), 

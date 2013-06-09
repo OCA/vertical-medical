@@ -61,7 +61,7 @@
                                     <field name="short_comment" expand="1"/>
                                 </tree>
                                 <form string=""  version="7.0">
-                                    <field name="template"/>
+                                    <field name="template" on_change="onchange_template(template, context)"/>
                                     <field name="indication"/>
                                     <group colspan="4" col="6">
                                         <label string="Allow_substitution"/>
