@@ -8,16 +8,14 @@
 			<field name="arch" type="xml">
 				<tree string="Oemedical Insurance">
 					<field name="name" />
-					<field name="category" />
 					<field name="plan_id" />
 					<field name="patient_id"/>
-					<!--field name="insurance_type"/ -->
-					<field name="member_since" />
+					<field name="insurance_type"/>
 					<field name="company" />
-					<field name="number" />
+					<field name="ssn" />
+					<field name="member_since" />
 					<field name="member_exp" />
 					<field name="notes" />
-					<field name="owner" />
 				</tree>
 			</field>
 		</record>
@@ -34,17 +32,17 @@
 					        <field name="name" />
 					        <field name="company" />
                         </h1>
-                        <group colspan="4">
-					        <field name="category" />
+                        <group colspan="4" col="4">
 					        <field name="plan_id" />
 					        <field name="patient_id"/>
-					        <!--field name="insurance_type"/ -->
+					        <field name="insurance_type"/>
+					        <field name="ssn" />
 					        <field name="member_since" />
-					        <field name="number" />
 					        <field name="member_exp" />
-					        <field name="notes" />
-					        <field name="owner" />
-                        </gruop>
+                        </group>
+                        <group colspan="4" col="4" string="Notes">
+					        <field name="notes" colspan="4" nolabel="1"/>
+                        </group>
                     </sheet>
 				</form>
 			</field>
@@ -56,18 +54,15 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<search string="Oemedical Insurance">
-					<field name="category" />
 					<field name="plan_id" />
 					<field name="patient_id"/>
-					<field name="member_since" />
 					<field name="company" />
-					<field name="number" />
+					<field name="ssn" />
+					<field name="member_since" />
 					<field name="member_exp" />
 					<field name="notes" />
-					<field name="owner" />
 					<newline />
 					<group expand="0" string="Group By...">
-						<filter string="Category" domain="[]" context="{'group_by':'category'}" />
 						<filter string="Plan" domain="[]" context="{'group_by':'plan_id'}" />
 						<filter string="Member since" domain="[]"
 							context="{'group_by':'member_since'}" />
@@ -77,7 +72,6 @@
 						<filter string="Expiration date" domain="[]"
 							context="{'group_by':'member_exp'}" />
 						<filter string="Extra Info" domain="[]" context="{'group_by':'notes'}" />
-						<filter string="Owner" domain="[]" context="{'group_by':'owner'}" />
 					</group>
 				</search>
 			</field>
