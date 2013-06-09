@@ -29,7 +29,7 @@ class OeMedicalMedicament(osv.Model):
     def _get_name(self, cr, uid, ids, field_name, arg, context=None):
         res = {}
         for record in self.browse(cr, uid, ids, context=context):
-            res[record.id] = record.physician_id.name
+            res[record.id] = record.product_id.name
         return res
 
 

@@ -26,8 +26,16 @@ from osv import fields
 class OeMedicalMedicationTemplate(osv.Model):
     _name = 'oemedical.medication.template'
 
+    def _get_name(self, cr, uid, ids, field_name, arg, context=None):
+        res = {}
+        for record in self.browse(cr, uid, ids, context=context):
+            res[record.id] = record.medicament_id.name
+        return res
+
+
     _columns = {
-        'name': fields.many2one('oemedical.medicament', string='Medicament', requered=True, help='Product Name', ondelete='cascade'),
+        'medicament_id': fields.many2one('oemedical.medicament', string='Medicament', requered=True, help='Product Name', ondelete='cascade'),
+        'name': fields.function(_get_name, type='char', string='Medicament', help="", multi=False),
         'indication': fields.many2one('oemedical.pathology', string='Indication',  help='Choose a disease for this medicament from the disease list. It'\
                         ' can be an existing disease of the patient or a prophylactic.'),
         'start_treatment': fields.datetime(string='Start', help='Date of start of Treatment'),
