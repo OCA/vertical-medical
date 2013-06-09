@@ -26,9 +26,18 @@ from osv import fields
 class OeMedicalPhysician(osv.Model):
     _name = 'oemedical.physician'
 
+    def _get_name(self, cr, uid, ids, field_name, arg, context=None):
+        res = {}
+        for record in self.browse(cr, uid, ids, context=context):
+            res[record.id] = record.physician_id.name
+        return res
+
+
     _columns = {
-        'name': fields.many2one('res.partner', string='Health Professional',required=True , help='Physician' ),
+        'physician_id': fields.many2one('res.partner', string='Health Professional',required=True , help='Physician' ,domain=[('category_id', '=', 'Physician')]  ),
         'code': fields.char(size=256, string='ID'),
+#        'name': fields.char(size=256, string='Health Professional'),
+        'name': fields.function(_get_name, type='char', string='Health Professional', help="", multi=False),
         'specialty': fields.many2one('oemedical.specialty', string='Specialty',required=True, help='Specialty Code'),
         'institution': fields.many2one('res.partner', string='Institution', help='Instituion where she/he works' ),
         'info': fields.text(string='Extra info'),
