@@ -31,48 +31,52 @@
 			<field name="model">oemedical.medicament</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Medicament">
-                    <notebook>
-    			        <field name="product_id" domain="[('is_medicament','=', True )]"/>
-				        <field name="name"  invisible="1"/>
-                        <page string="Main">
-					        <field name="category" />
-					        <field name="active_component" />
-                            <separator string="Indications" colspan="4"/>
-					        <field name="indications" nolabel="1" colspan="4"/>
-<!--					        <field name="therapeutic_action" />-->
-                        </page>
-                        <page string="Presentation">
-					        <field name="presentation" colspan="4" nolabel="1"/>
+				<form string="Oemedical Medicament" version="7.0">
+                    <sheet>
+                        <H1>
+        			        <field name="product_id" domain="[('is_medicament','=', True )]"/>
+				            <field name="name"  invisible="1"/>
+                        </H1>
+                        <notebook>
+                            <page string="Main">
+					            <field name="category" />
+					            <field name="active_component" />
+                                <separator string="Indications" colspan="4"/>
+					            <field name="indications" nolabel="1" colspan="4"/>
+    <!--					        <field name="therapeutic_action" />-->
+                            </page>
+                            <page string="Presentation">
+					            <field name="presentation" colspan="4" nolabel="1"/>
 
-                        </page>
-                        <page string="Composition">
-					        <field name="composition" nolabel="1" colspan="4"/>
-                        </page>
-                        <page string="Dosage">
-                            <separator string="Dosage" colspan="2"/>
-                            <separator string="Overdosage" colspan="2"/>
-					        <field name="dosage" nolabel="1" colspan="2"/>
-					        <field name="overdosage" nolabel="1" colspan="2"/>
-                        </page>
-                        <page string="Pregnancy">
-					        <field name="pregnancy_warning" />
-					        <field name="pregnancy_category" />
-                            <separator string="Notes" colspan="4"/>
-                            <newline/>
-                            <field colspan="4" name="pregnancy" nolabel="1"/>
-                        </page>
-                        <page string="Adverse Reactions">
-					        <field name="adverse_reaction" nolabel="1" colspan="4"/>
-                        </page>
-                        <page string="Storage">
-                            <field name="storage" colspan="4" nolabel="1" />
-                        </page>
+                            </page>
+                            <page string="Composition">
+					            <field name="composition" nolabel="1" colspan="4"/>
+                            </page>
+                            <page string="Dosage">
+                                <separator string="Dosage" colspan="2"/>
+                                <separator string="Overdosage" colspan="2"/>
+					            <field name="dosage" nolabel="1" colspan="2"/>
+					            <field name="overdosage" nolabel="1" colspan="2"/>
+                            </page>
+                            <page string="Pregnancy">
+					            <field name="pregnancy_warning" />
+					            <field name="pregnancy_category" />
+                                <separator string="Notes" colspan="4"/>
+                                <newline/>
+                                <field colspan="4" name="pregnancy" nolabel="1"/>
+                            </page>
+                            <page string="Adverse Reactions">
+					            <field name="adverse_reaction" nolabel="1" colspan="4"/>
+                            </page>
+                            <page string="Storage">
+                                <field name="storage" colspan="4" nolabel="1" />
+                            </page>
 
-                        <page string="Notes">
-					        <field name="notes" nolabel="1" colspan="4"/>
-                        </page>
-                    </notebook>
+                            <page string="Notes">
+					            <field name="notes" nolabel="1" colspan="4"/>
+                            </page>
+                        </notebook>
+                    </sheet>
 				</form>
 			</field>
 		</record>

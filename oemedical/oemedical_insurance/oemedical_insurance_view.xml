@@ -27,7 +27,7 @@
 			<field name="model">oemedical.insurance</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Insurance">
+				<form string="Oemedical Insurance"  version="7.0">
                     <sheet>
                         <h1>
                             <label string="Insurance:"/>
