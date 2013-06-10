@@ -26,19 +26,21 @@
                         </H1>
                         <notebook>
                             <page string="Main">
-					            <field name="operational_sector" >
-                                        <tree>
-                        					<field name="name" />
-                        					<field name="operational_area_id" />
-                                        </tree>
-                                        <form>
-                        					<field name="name" />
-                        					<field name="operational_area_id" />
-                                            <group colspan="4" string="Extra Infomation">
-                            					<field name="info"  />
-                                            </group>
-                                        </form>
-                                </field>
+                                <group>
+					                <field name="operational_sector" >
+                                            <tree>
+                            					<field name="name" />
+                            					<field name="operational_area_id" />
+                                            </tree>
+                                            <form>
+                            					<field name="name" />
+                            					<field name="operational_area_id" />
+                                                <group colspan="4" string="Extra Infomation">
+                                					<field name="info"  />
+                                                </group>
+                                            </form>
+                                    </field>
+                                </group>
                                 <group colspan="4" col="4" string="Members">
                 					<field name="members" colspan="4" nolabel="1">
                                         <tree>
