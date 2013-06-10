@@ -41,8 +41,9 @@
                         </h1>
                         <notebook>
                             <page string="General Info" id="medication_general_info">
-
-					            <field name="indication" />
+                                <group >
+    					            <field name="indication" />
+                                </group>
                                 <group colspan="4" col="4" string="Treatment period">
                                     <field name="start_treatment"/>
                                     <field name="end_treatment"/>
