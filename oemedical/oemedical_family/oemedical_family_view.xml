@@ -19,11 +19,15 @@
 			<field name="model">oemedical.family</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Family">
+				<form string="Oemedical Family" version="7.0">
 					<field name="name" />
 					<field name="operational_sector" />
-					<field name="members" colspan="4"/>
-					<field name="info" colspan="4"/>
+                    <group colspan="4" col="4" string="Members">
+    					<field name="members" colspan="4" nolabel="1"/>
+                    </group>
+                    <group colspan="4" col="4" string="Info">
+    					<field name="info" colspan="4" nolabel="1"/>
+                    </group>
 				</form>
 			</field>
 		</record>
