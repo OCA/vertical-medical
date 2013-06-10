@@ -9,9 +9,9 @@
             <field name="arch" type="xml">
                     <label for="sale_ok" position="after">
                             <group colspan="2" col="6">
-                            <field name="is_medicament" />
-                            <field name="is_bed" />
-                            <field name="is_insurance_plan" />
+                                <field name="is_medicament" />
+                                <field name="is_bed" />
+                                <field name="is_insurance_plan" />
                             </group>
                             <group colspan="2" col="4">
                                 <field name="is_medical_supply" />
