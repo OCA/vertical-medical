@@ -7,9 +7,9 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Family_Member">
+					<field name="family_id" />
 					<field name="role" />
 					<field name="member" />
-					<field name="family_id" />
 				</tree>
 			</field>
 		</record>
@@ -20,9 +20,9 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Family_Member">
-					<field name="role" />
-					<field name="member" />
-					<field name="family_id" />
+					<field name="family_id" colspan="4"/>
+					<field name="role" colspan="4"/>
+					<field name="member" colspan="4"/>
 				</form>
 			</field>
 		</record>
