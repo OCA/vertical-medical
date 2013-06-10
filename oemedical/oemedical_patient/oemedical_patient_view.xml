@@ -10,6 +10,7 @@
  					<field name="first_name" /> 
  					<field name="lastname" /> 
  					<field name="slastname" />
+ 					<field name="age" />
  					<field name="ssn" /> 
  					<field name="identification_code" /> 
  					<field name="sex" /> 
@@ -24,31 +25,33 @@
  			<field name="arch" type="xml"> 
  			 <form string="Patient" version="7.0"> 
                     <sheet> 
-                        <field name="photo" widget='image' class="oe_left oe_avatar"/> 
-                        <div> 
-                             <h1> 
-		                        <field name="first_name" placeholder="First Name" style="width: 20%%" on_change="onchange_name(first_name, lastname, slastname, context)"  /> 
-		                        <field name="lastname" placeholder="Last Name" style="width: 20%%" on_change="onchange_name(first_name, lastname, slastname, context)" /> 
-		                        <field name="slastname" placeholder="S Last Name" style="width: 20%%" on_change="onchange_name(first_name, lastname, slastname, context)" /> 
-	                        </h1> 
-                        </div> 
- 						<div> 
- 							<label for="sex" class="oe_edit_only"/> 
- 							<field name="sex" style="width: 30%%"/> 
- 						</div> 
- 						<div> 
- 							<field name="name" invisible="1"/> 
- 						</div> 
- 						<div> 
- 							<label for="ssn"/> 
- 							<field name="ssn" style="width: 20%%"/> 
- 							<label for="identification_code"/> 
- 							<field name="identification_code" style="width: 17%%"/> 
- 							<label for="dob"/> 
- 							<field name="dob" style="width: 15%%"/> 
- 							<label for="age"/> 
- 							<field name="age" style="width: 8%%"/> 
-                         </div> 
+                        <div>
+                            <field name="photo" widget='image' class="oe_left oe_avatar"/> 
+                            <div> 
+                                 <h1> 
+		                            <field name="first_name" placeholder="First Name" style="width: 20%%" on_change="onchange_name(first_name, lastname, slastname, context)"  /> 
+		                            <field name="lastname" placeholder="Last Name" style="width: 20%%" on_change="onchange_name(first_name, lastname, slastname, context)" /> 
+		                            <field name="slastname" placeholder="S Last Name" style="width: 20%%" on_change="onchange_name(first_name, lastname, slastname, context)" /> 
+	                            </h1> 
+                            </div> 
+     						<div> 
+     							<label for="sex" class="oe_edit_only"/> 
+     							<field name="sex" style="width: 30%%"/> 
+     							<label for="ssn"/> 
+     							<field name="ssn" style="width: 20%%"/> 
+     							<label for="identification_code"/> 
+     							<field name="identification_code" style="width: 17%%"/> 
+     						</div> 
+     						<div> 
+     							<field name="name" invisible="1"/> 
+     						</div> 
+                            <div>
+     							<label for="dob"/> 
+     							<field name="dob" style="width: 30%%"/> 
+     							<label for="age"/> 
+     							<field name="age" style="width: 30%%"/> 
+                            </div> 
+                        </div>
                     <notebook> 
                         <page string="General Information"> 
                             <group  col="6" colspan="4"> 
@@ -212,7 +215,6 @@
  					<field name="primary_care_doctor" /> 
  					<field name="childbearing_age" /> 
  					<field name="critical_info" /> 
- 					<field name="current_address" /> 
  					<field name="lastname" /> 
  					<field name="ethnic_group" /> 
  					<field name="ssn" /> 
@@ -235,8 +237,6 @@
  							context="{'group_by':'childbearing_age'}" /> 
  						<filter string="Important disease, allergy or procedures information" 
  							domain="[]" context="{'group_by':'critical_info'}" /> 
- 						<filter string="Address" domain="[]" 
- 							context="{'group_by':'current_address'}" /> 
  						<filter string="Lastname" domain="[]" context="{'group_by':'lastname'}" /> 
  						<filter string="Ethnic group" domain="[]" 
  							context="{'group_by':'ethnic_group'}" /> 

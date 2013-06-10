@@ -21,6 +21,8 @@
 #/#############################################################################
 from osv import osv
 from osv import fields
+from dateutil.relativedelta import relativedelta
+from datetime import datetime
 
 
 class OeMedicalPatient(osv.Model):
@@ -43,6 +45,34 @@ class OeMedicalPatient(osv.Model):
                          } }
         return res
 
+    def _get_age(self, cr, uid, ids, field_name, arg, context=None):
+        res = {}
+        age = ''
+        now = datetime.now()
+        for record in self.browse(cr, uid, ids, context=context):
+            if (record.dob):
+                dob = datetime.strptime(str(record.dob), '%Y-%m-%d')
+
+                if record.deceased:
+                    dod = datetime.strptime(record.dod, '%Y-%m-%d %H:%M:%S')
+                    delta = relativedelta(dod, dob)
+                    deceased = ' (deceased)'
+                else:
+                    delta = relativedelta(now, dob)
+                    deceased = ''
+                years_months_days = str(delta.years) + 'y ' \
+                        + str(delta.months) + 'm ' \
+                        + str(delta.days) + 'd' + deceased
+            else:
+                years_months_days = 'No DoB !'
+
+            # Return the age in format y m d when the caller is the field name
+            if field_name == 'age':
+                age = years_months_days
+
+            res[record.id] = age
+        return res
+
 
     _columns={
         'partner_id': fields.many2one(
@@ -51,50 +81,36 @@ class OeMedicalPatient(osv.Model):
         'first_name': fields.char(size=256, string='Name', required=True),
         'lastname': fields.char(size=256, string='Lastname', required=True),    
         'slastname': fields.char(size=256, string='Second Lastname',),
-
-
-        'family': fields.many2one('oemedical.family', string='Family',
-                                  help='Family Code'),
+        'family': fields.many2one('oemedical.family', string='Family', help='Family Code'),
         'photo': fields.binary(string='Picture'),
-        'sex': fields.selection([('m', 'Male'), ('f', 'Female'), ],
-                                string='Sex', required=True),
-        'blood_type': fields.selection([('A', 'A'), ('B', 'B'), ('AB', 'AB'),
+        'sex': fields.selection([('m', 'Male'), ('f', 'Female'), ], string='Sex', required=True),
+        'blood_type': fields.selection([
+                                        ('A', 'A'), 
+                                        ('B', 'B'),
+                                        ('AB', 'AB'),
                                         ('O', 'O'), ], string='Blood Type'),
-        'general_info': fields.text(string='General Information',
-                                help='General information about the patient'),
-        'primary_care_doctor': fields.many2one('oemedical.physician',
-                                               'Primary Care Doctor',
-                                help='Current primary care / family doctor'),
+        'rh': fields.selection([
+                                        ('+', '+'), 
+                                        ('-', '-'), ], string='Rh'),
+        'general_info': fields.text(string='General Information', help='General information about the patient'),
+        'primary_care_doctor': fields.many2one('oemedical.physician', 'Primary Care Doctor', help='Current primary care / family doctor'),
         'childbearing_age': fields.boolean('Potential for Childbearing'),
-        'medications': fields.one2many('oemedical.patient.medication',
-                                       'patient_id', string='Medications',),
-        'evaluations': fields.one2many('oemedical.patient.evaluation',
-                                       'patient_id', string='Evaluations',),
-        'critical_info': fields.text(
-            string='Important disease, allergy or procedures information',
-            help='Write any important information on the patient\'s disease,'\
-            ' surgeries, allergies, ...'),
-        'rh': fields.selection([('+', '+'), ('-', '-'), ], string='Rh'),
-        'current_address': fields.many2one('res.partner', string='Address',
-                           domain="[('category_id', '=', 'Customer'),('category_id', '=', 'Address')]"),
-        'diseases': fields.one2many('oemedical.patient.disease',
-                                    'patient_id', string='Diseases',
-                                    help='Mark if the patient has died'),
-        'ethnic_group': fields.many2one('oemedical.ethnicity',
-                                        string='Ethnic group',),
+        'medications': fields.one2many('oemedical.patient.medication', 'patient_id', string='Medications',),
+        'evaluations': fields.one2many('oemedical.patient.evaluation', 'patient_id', string='Evaluations',),
+        'critical_info': fields.text( string='Important disease, allergy or procedures information', help='Write any important information on the patient\'s disease, surgeries, allergies, ...'),
+        'diseases': fields.one2many('oemedical.patient.disease', 'patient_id', string='Diseases', help='Mark if the patient has died'),
+        'ethnic_group': fields.many2one('oemedical.ethnicity', string='Ethnic group',),
         'ssn': fields.char(size=256, string='SSN',),
-        'vaccinations': fields.one2many('oemedical.vaccination', 'patient_id',
-                                        'Vaccinations',),
+        'vaccinations': fields.one2many('oemedical.vaccination', 'patient_id', 'Vaccinations',),
         'dob': fields.date(string='DoB'),
-        'age': fields.char(size=256, string='Age',),
+        'age': fields.function(_get_age, type='char', string='Age', help="", multi=False),
         'marital_status': fields.selection([('s', 'Single'), ('m', 'Married'),
                                             ('w', 'Widowed'),
                                             ('d', 'Divorced'),
                                             ('x', 'Separated'), ],
                                            string='Marital Status', sort=False),
         'dod': fields.datetime(string='Date of Death'),
-        'current_insurance': fields.many2one('oemedical.insurance', string='Insurance', help='Insurance information. You may choose from the different'\
-        ' insurances belonging to the patient'),
+        'current_insurance': fields.many2one('oemedical.insurance', string='Insurance', help='Insurance information. You may choose from the different insurances belonging to the patient'),
         'cod': fields.many2one('oemedical.pathology', string='Cause of Death',),
         'identification_code': fields.char(size=256, string='ID', help='Patient Identifier provided by the Health Center.Is not the Social Security Number'),
         'deceased': fields.boolean(string='Deceased'),
