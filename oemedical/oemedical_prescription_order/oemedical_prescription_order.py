@@ -22,6 +22,10 @@
 from osv import osv
 from osv import fields
 from openerp import netsvc
+from datetime import datetime, timedelta
+from dateutil.relativedelta import relativedelta
+import time
+
 
 
 class OeMedicalPrescriptionOrder(osv.Model):
@@ -49,6 +53,8 @@ class OeMedicalPrescriptionOrder(osv.Model):
          'name': lambda obj, cr, uid, context: 
             obj.pool.get('ir.sequence').get(cr, uid,
                                             'oemedical.prescription.order'),
+	    'prescription_date':lambda *a: time.strftime('%Y-%m-%d %H:%M:%S'),
+
                  }
 
     def print_prescription(self, cr, uid, ids, context=None):

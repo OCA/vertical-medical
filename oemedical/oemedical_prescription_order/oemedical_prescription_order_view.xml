@@ -7,14 +7,10 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Prescription Order">
-					<field name="patient_id" />
-					<field name="pregnancy_warning" />
-					<field name="notes" />
-					<!--field name="prescription_line"/ -->
-					<field name="pharmacy" />
 					<field name="prescription_date" />
-					<field name="prescription_warning_ack" />
 					<field name="name" />
+					<field name="patient_id" />
+					<field name="physician_id" />
 				</tree>
 			</field>
 		</record>
