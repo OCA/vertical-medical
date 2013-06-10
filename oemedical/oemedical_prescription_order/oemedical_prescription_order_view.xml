@@ -45,16 +45,12 @@
                                 <tree string="">
                                     <field name="prnt" expand="1"/>
                                     <field name="template" expand="1"/>
-                                    <field name="indication" expand="1"/>
                                     <field name="dose"/>
                                     <field name="dose_unit"/>
                                     <field name="form"/>
                                     <field name="common_dosage"/>
-                                    <field name="quantity"/>
                                     <field name="duration"/>
                                     <field name="duration_period"/>
-                                    <field name="allow_substitution"/>
-                                    <field name="short_comment" expand="1"/>
                                 </tree>
                                 <form string=""  version="7.0">
                                     <field name="template" on_change="onchange_template(template, context)"/>
