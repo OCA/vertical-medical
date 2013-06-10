@@ -51,9 +51,9 @@
                             </page>
                             <page id="medication_misc" string="Extra Info">
                                 <group id="medicament_dosage_main">
-                                    <group string="Admnistration">
-                                        <field name="form"/>
-                                        <field name="route"/>
+                                    <group string="Admnistration" colspan="4" col="4">
+                                        <field name="form" colspan="2"/>
+                                        <field name="route" colspan="2"/>
                                     </group>
                                     <newline/>
                                     <group id="medicament_dosage" col="6" string="Dosage">
@@ -62,14 +62,14 @@
                                         <field name="qty"/>
                                     </group>
                                     <newline/>
-                                    <group id="medicament_duration" string="Treatment duration">
-                                        <field name="duration"/>
-                                        <field name="duration_period"/>
+                                    <group colspan="4" col="4" string="Treatment duration">
+                                        <field name="duration" colspan="2"/>
+                                        <field name="duration_period" colspan="2"/>
                                     </group>
                                     <newline/>
-                                    <group string="Common Dosage" id="group_common_dosage">
-                                        <field name="common_dosage"/>
-                                        <field name="admin_times"/>
+                                    <group colspan="4" col="4" id="group_common_dosage">
+                                        <field name="common_dosage" colspan="2"/>
+                                        <field name="admin_times" colspan="2"/>
                                     </group>
                                     <newline/>
                                     <group col="6" colspan="4" string="Specific Dosage" id="group_specific_dosage">

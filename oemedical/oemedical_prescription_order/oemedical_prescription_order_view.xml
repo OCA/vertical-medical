@@ -53,8 +53,10 @@
                                     <field name="duration_period"/>
                                 </tree>
                                 <form string=""  version="7.0">
-                                    <field name="template" on_change="onchange_template(template, context)"/>
-                                    <field name="indication"/>
+                                    <group colspan="4" col="4">
+                                        <field name="template" on_change="onchange_template(template, context)" colspan="2"/>
+                                        <field name="indication" colspan="2"/>
+                                    </group>
                                     <group colspan="4" col="6">
                                         <label string="Allow_substitution"/>
                                         <field name="allow_substitution" nolabel="1"/>
@@ -64,8 +66,6 @@
                                     <group colspan="4" col="4">
                                         <field name="form"/>
                                         <field name="route"/>
-                                    </group>
-                                    <group colspan="4" col="4" string="Treatment">
                                         <field name="start_treatment"/>
                                         <field name="end_treatment"/>
                                     </group>
@@ -85,15 +85,14 @@
                                             <field name="frequency_prn"/>
                                         </group>
                                     </group>
-                                    <group colspan="4" col="6" string="">
+                                    <group colspan="4" col="4" string="">
+                                        <separator string="" colspan="4"/>
                                         <field name="duration"/>
                                         <field name="duration_period"/>
                                         <field name="review"/>
                                         <field name="quantity"/>
                                         <field name="name"/>
-                                    </group>
-                                    <group colspan="4" col="4" string="Short comment">
-                                        <field name="short_comment" nolabel="1" colspan="1"/>
+                                        <field name="short_comment" />
                                     </group>
                                 </form>
                             </field>

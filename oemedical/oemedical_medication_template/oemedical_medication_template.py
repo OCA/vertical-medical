@@ -36,7 +36,7 @@ class OeMedicalMedicationTemplate(osv.Model):
     _columns = {
         'medicament_id': fields.many2one('oemedical.medicament', string='Medicament', requered=True, help='Product Name', ondelete='cascade'),
         'name': fields.function(_get_name, type='char', string='Medicament', help="", multi=False),
-        'indication': fields.many2one('oemedical.pathology', string='Indication',  help='Choose a disease for this medicament from the disease list. It'\
+        'indication': fields.many2one('oemedical.pathology', string='Indication', help='Choose a disease for this medicament from the disease list. It'\
                         ' can be an existing disease of the patient or a prophylactic.'),
         'start_treatment': fields.datetime(string='Start', help='Date of start of Treatment'),
         'end_treatment': fields.datetime(string='End', help='Date of start of Treatment'),
