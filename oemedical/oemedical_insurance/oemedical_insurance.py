@@ -34,7 +34,7 @@ class OeMedicalInsurance(osv.Model):
 
 
     _columns = {
-        'name': fields.char(size=256, string='Name'),
+        'name': fields.function(_get_name, type='char', string='Name', help="", multi=False),
         'company': fields.many2one('res.partner', 'Insurance Company', required=True),
         'patient_id':fields.many2one('oemedical.patient', 'Patient'),
         'plan_id': fields.many2one('oemedical.insurance.plan', string='Plan',  help='Insurance company plan'),

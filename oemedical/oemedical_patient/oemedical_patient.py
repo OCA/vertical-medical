@@ -28,10 +28,31 @@ class OeMedicalPatient(osv.Model):
     _inherits={
         'res.partner': 'partner_id',
     }
+
+    def onchange_name(self, cr, uid, ids, first_name, lastname, slastname, context=None):
+        if first_name == False:
+            first_name = ''
+        if lastname == False:
+            lastname = ''
+        if slastname == False:
+            slastname = ''
+
+        res = {}
+        res = {'value': { 
+                        'name' : first_name + ' ' + lastname + ' ' + slastname
+                         } }
+        return res
+
+
     _columns={
         'partner_id': fields.many2one(
             'res.partner', 'Related Partner', required=True,
             ondelete='cascade', help='Partner-related data of the patient'),
+        'first_name': fields.char(size=256, string='Name', required=True),
+        'lastname': fields.char(size=256, string='Lastname', required=True),    
+        'slastname': fields.char(size=256, string='Second Lastname',),
+
+
         'family': fields.many2one('oemedical.family', string='Family',
                                   help='Family Code'),
         'photo': fields.binary(string='Picture'),
@@ -59,8 +80,6 @@ class OeMedicalPatient(osv.Model):
         'diseases': fields.one2many('oemedical.patient.disease',
                                     'patient_id', string='Diseases',
                                     help='Mark if the patient has died'),
-        'lastname': fields.char(size=256, string='Lastname',),    
-        'slastname': fields.char(size=256, string='Second Lastname',),
         'ethnic_group': fields.many2one('oemedical.ethnicity',
                                         string='Ethnic group',),
         'ssn': fields.char(size=256, string='SSN',),
@@ -74,15 +93,10 @@ class OeMedicalPatient(osv.Model):
                                             ('x', 'Separated'), ],
                                            string='Marital Status', sort=False),
         'dod': fields.datetime(string='Date of Death'),
-        'current_insurance': fields.many2one('oemedical.insurance',
-                                             string='Insurance',
-                help='Insurance information. You may choose from the different'\
+        'current_insurance': fields.many2one('oemedical.insurance', string='Insurance', help='Insurance information. You may choose from the different'\
         ' insurances belonging to the patient'),
-        'cod': fields.many2one('oemedical.pathology',
-                               string='Cause of Death',),
-        'identification_code': fields.char(size=256, string='ID',
-            help='Patient Identifier provided by the Health Center.Is not the'\
-            ' Social Security Number'),
+        'cod': fields.many2one('oemedical.pathology', string='Cause of Death',),
+        'identification_code': fields.char(size=256, string='ID', help='Patient Identifier provided by the Health Center.Is not the Social Security Number'),
         'deceased': fields.boolean(string='Deceased'),
     }
     

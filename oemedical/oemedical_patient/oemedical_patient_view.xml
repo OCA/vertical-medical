@@ -7,7 +7,7 @@
  			<field name="priority" eval="8" /> 
  			<field name="arch" type="xml"> 
  				<tree string="Oemedical Patient"> 
- 					<field name="name" /> 
+ 					<field name="first_name" /> 
  					<field name="lastname" /> 
  					<field name="slastname" />
  					<field name="ssn" /> 
@@ -27,9 +27,9 @@
                         <field name="photo" widget='image' class="oe_left oe_avatar"/> 
                         <div> 
                              <h1> 
-		                        <field name="name" placeholder="First Name" style="width: 20%%" /> 
-		                        <field name="lastname" placeholder="Last Name" style="width: 20%%" /> 
-		                        <field name="slastname" placeholder="S Last Name" style="width: 20%%" /> 
+		                        <field name="first_name" placeholder="First Name" style="width: 20%%" on_change="onchange_name(first_name, lastname, slastname, context)"  /> 
+		                        <field name="lastname" placeholder="Last Name" style="width: 20%%" on_change="onchange_name(first_name, lastname, slastname, context)" /> 
+		                        <field name="slastname" placeholder="S Last Name" style="width: 20%%" on_change="onchange_name(first_name, lastname, slastname, context)" /> 
 	                        </h1> 
                         </div> 
  						<div> 
@@ -37,6 +37,7 @@
  							<field name="sex" style="width: 30%%"/> 
  						</div> 
  						<div> 
+ 							<field name="name" invisible="1"/> 
  						</div> 
  						<div> 
  							<label for="ssn"/> 
@@ -55,15 +56,37 @@
      							<field name="rh" nolabel="1"/> 
                					<field name="ethnic_group" /> 
                             </group>
+                            <group string="Contact Information">
+                                <group>
+                                    <label for="street" string="Address"/>
+                                    <div>
+                                        <field name="use_parent_address" class="oe_edit_only oe_inline" invisible="1"/>
+                                        <label for="use_parent_address" class="oe_edit_only" invisible="1"/>
+                                        <field name="street" placeholder="Street..." />
+                                        <field name="street2" />
+                                        <div class="address_format">
+                                            <field name="city" placeholder="City" style="width: 40%%" />
+                                            <field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' />
+                                            <field name="zip" placeholder="ZIP" style="width: 20%%" />
+                                        </div>
+                                        <field name="country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True}' />
+                                    </div>
+                                    <field name="website" widget="url" placeholder="e.g. www.openerp.com"/>
+                                </group>
+                                <group>
+                                    <field name="phone" placeholder="e.g. +32.81.81.37.00"/>
+                                    <field name="mobile"/>
+                                    <field name="fax"/>
+                                    <field name="email" widget="email"/>
+                                </group>
+                            </group>
                             <group  col="4" colspan="4"> 
-                                <label string="Address" colspan="2"/>
-                                <label string="Marital Status" colspan="2"/>
-                              	<field name="current_address" nolabel="1" colspan="2"/> 
-             					<field name="marital_status"  nolabel="1" colspan="2"/> 
-                                <label string="Family Information" colspan="2"/>
-                                <label string="Primary Care Doctor" colspan="2"/>
-             					<field name="family" nolabel="1"  colspan="2"/> 
-             					<field name="primary_care_doctor" colspan="2" nolabel="1"/> 
+             					<field name="marital_status" colspan="2"/> 
+             					<field name="family" invisivle="1" colspan="2"/> 
+                                <group colspan="4" col="4">
+                 					<field name="primary_care_doctor" />
+                 					<field name="current_insurance" /> 
+                                </group>
                                 <separator colspan="4" string="Patient Allergies and Critical Information"/>
              					<field name="critical_info" colspan="4" nolabel="1"/> 
              				</group> 
@@ -183,7 +206,7 @@
  			<field name="priority" eval="8" /> 
  			<field name="arch" type="xml"> 
  				<search string="Oemedical Patient"> 
- 					<field name="name" /> 
+ 					<field name="first_name" /> 
  					<field name="family" /> 
  					<field name="general_info" /> 
  					<field name="primary_care_doctor" /> 

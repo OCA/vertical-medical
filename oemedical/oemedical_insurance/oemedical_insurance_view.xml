@@ -29,7 +29,7 @@
                     <sheet>
                         <h1>
                             <label string="Insurance:"/>
-					        <field name="name" />
+					        <field name="name" invisible="1"/>
 					        <field name="company" />
                         </h1>
                         <group colspan="4" col="4">
