@@ -1617,7 +1617,7 @@ msgstr "Elija ésta opción si hay riesgo biológico"
 #. module: oemedical
 #: field:oemedical.patient,sexual_partners_number:0
 msgid "Number of sexual partners"
-msgstr "Number of sexual partners"
+msgstr "Numero de parejas sexuales"
 
 #. module: oemedical
 #: view:oemedical.medication.template:0
