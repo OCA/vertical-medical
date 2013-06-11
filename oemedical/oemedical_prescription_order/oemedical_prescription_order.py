@@ -32,21 +32,15 @@ class OeMedicalPrescriptionOrder(osv.Model):
     _name='oemedical.prescription.order'
 
     _columns={
-        'patient_id': fields.many2one('oemedical.patient', string='Patient',
-                                   required=True),
-        'pregnancy_warning': fields.boolean(string='Pregancy Warning',
-                                            readonly=True),
+        'patient_id': fields.many2one('oemedical.patient', string='Patient', required=True),
+        'pregnancy_warning': fields.boolean(string='Pregancy Warning', readonly=True),
         'notes': fields.text(string='Prescription Notes'),
-        'prescription_line': fields.one2many('oemedical.prescription.line',
-                                             'prescription_order_id',
-                                             string='Prescription line',),
+        'prescription_line': fields.one2many('oemedical.prescription.line', 'name', string='Prescription line',),
         'pharmacy': fields.many2one('res.partner', string='Pharmacy',),
         'prescription_date': fields.datetime(string='Prescription Date'),
-        'prescription_warning_ack': fields.boolean(
-            string='Prescription verified'),
+        'prescription_warning_ack': fields.boolean( string='Prescription verified'),
         'physician_id': fields.many2one('oemedical.physician', string='Prescribing Doctor',  required=True),
-        'name': fields.char(size=256, string='Prescription ID', required=True,
-                             help='Type in the ID of this prescription'),
+        'name': fields.char(size=256, string='Prescription ID', required=True, help='Type in the ID of this prescription'),
     }
     
     _defaults={

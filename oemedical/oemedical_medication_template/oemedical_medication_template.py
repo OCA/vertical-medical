@@ -49,11 +49,8 @@ class OeMedicalMedicationTemplate(osv.Model):
             ('months', 'months'),
             ('years', 'years'),
             ('indefinite', 'indefinite'),
-        ], string='Treatment period',
-        help='Period that the patient must take the medication in minutes,'\
-        ' hours, days, months, years or indefinately'),
-        'qty': fields.integer(string='x',
-                help='Quantity of units (eg, 2 capsules) of the medicament'),
+        ], string='Treatment period', help='Period that the patient must take the medication in minutes, hours, days, months, years or indefinately'),
+        'qty': fields.integer(string='x', help='Quantity of units (eg, 2 capsules) of the medicament'),
         'frequency_unit': fields.selection([
             ('seconds', 'seconds'),
             ('minutes', 'minutes'),

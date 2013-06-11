@@ -91,7 +91,6 @@
                                         <field name="duration_period"/>
                                         <field name="review"/>
                                         <field name="quantity"/>
-                                        <field name="name"/>
                                         <field name="short_comment" />
                                     </group>
                                 </form>

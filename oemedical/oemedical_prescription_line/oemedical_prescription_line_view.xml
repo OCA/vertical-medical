@@ -8,7 +8,6 @@
 			<field name="arch" type="xml">
 				<tree string="Oemedical Prescription Line">
 					<field name="name" />
-					<field name="prescription_order_id" />
 					<field name="allow_substitution" />
 					<field name="prnt" />
 					<field name="review" />
@@ -26,7 +25,6 @@
 			<field name="arch" type="xml">
 				<form string="Oemedical Prescription Line">
 					<field name="name" />
-					<field name="prescription_order_id" />
 					<field name="allow_substitution" />
 					<field name="prnt" />
 					<field name="review" />
@@ -44,7 +42,7 @@
 			<field name="arch" type="xml">
 				<search string="Oemedical Prescription Line">
 					<field name="name" />
-					<field name="prescription_order_id" />
+					<field name="name" />
 					<field name="allow_substitution" />
 					<field name="prnt" />
 					<field name="review" />
@@ -55,7 +53,7 @@
 					<group expand="0" string="Group By...">
 						<filter string="Refills #" domain="[]" context="{'group_by':'name'}" />
 						<filter string="Prescription ID" domain="[]"
-							context="{'group_by':'prescription_order_id'}" />
+							context="{'group_by':'name'}" />
 						<filter string="Allow substitution" domain="[]"
 							context="{'group_by':'allow_substitution'}" />
 						<filter string="Print" domain="[]" context="{'group_by':'prnt'}" />
