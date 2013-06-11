@@ -100,13 +100,13 @@
     <paraStyle name="P4" fontName="Helvetica" fontSize="10.0" leading="13"/>
     <paraStyle name="P5" fontName="Times-Roman"/>
     <paraStyle name="P6" fontName="Times-Roman" alignment="RIGHT"/>
+    <paraStyle name="P6l" fontName="Times-Roman" fontSize="6.0" leading="8" rightIndent="0.0" alignment="LEFT"/>
     <paraStyle name="P6a" fontName="Times-Roman" fontSize="6.0" leading="8" alignment="LEFT"/>
     <paraStyle name="P7a" fontName="Times-Roman" fontSize="8.0" leading="8" alignment="LEFT"/>
-    <paraStyle name="P7l" fontName="Times-Roman" fontSize="8.0" leftIndent="0.0" leading="8" alignment="LEFT"/>
     <paraStyle name="P7bl" fontName="Times-Roman" fontSize="8.0" leftIndent="0.0" leading="8" alignment="LEFT"/>
     <paraStyle name="P7bc" fontName="Times-Bold" fontSize="8.0" leading="8" alignment="CENTER"/>
     <paraStyle name="P7c" fontName="Times-Roman" fontSize="7.0" leading="8" alignment="CENTER"/>
-    <paraStyle name="P7l" fontName="Times-Roman" fontSize="7.0" leading="8" rightIndent="0.0" alignment="LEFT"/>
+    <paraStyle name="P7l" fontName="Times-Roman" fontSize="7.0" leading="7" rightIndent="0.0" alignment="LEFT"/>
     <paraStyle name="P7r" fontName="Times-Roman" fontSize="7.0" leading="8" rightIndent="0.0" alignment="RIGHT"/>
     <paraStyle name="P7" fontName="Times-Roman"/>
     <paraStyle name="P8" fontName="Helvetica" fontSize="12.0" leading="15"/>
@@ -165,7 +165,7 @@
             <para style="P6">
                 <font color="white"> </font>
             </para>
-            <para style="P7l">[[ o.patient_id.name ]]</para>
+            <para style="P7l">Patient: [[ o.patient_id.name ]]</para>
         </td>
         <td>
         </td>
@@ -173,46 +173,27 @@
     </blockTable>
     <section>
       <para style="terp_default_1">[[ repeatIn(o.prescription_line,'pres_line') ]]</para>
-      <blockTable colWidths="292.0,120.0,50.0,20.0" >
+      <blockTable colWidths="292.0,270.0,20.0" >
             <tr>
                 <td>
-                    <para style="p7l">  </para>
+                    <para style="P7l">  </para>
                 </td>
                 <td>
-                    <para style="p7l">[[ (pres_line.template.medicament_id.product_id.name) or '' ]]</para>
+                    <para style="P7l">[[ (pres_line.template.medicament_id.product_id.name) or '' ]]</para>
                 </td>
                 <td>
-                    <para style="p7l">  </para>
+                    <para style="P7l">  </para>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <para style="p7l">  </para>
+                    <para style="P7l">  </para>
                 </td>
                 <td>
-                    <para style="p7l">Dose: [[  (pres_line.dose) or '0' ]]</para>
-                    <para style="p7l">[[ (pres_line.dose_unit.name) or '0' ]]</para>
+                    <para style="P7l">Dose: [[  (pres_line.dose) or '0' ]] [[ (pres_line.dose_unit.name) or '0' ]] [[ pres_line.duration ]] [[ pres_line.duration_period ]] - Frequency: [[  (pres_line.frequency) or '0' ]]  ( [[ (pres_line.admin_times) ]] ) </para>
                 </td>
                 <td>
-                    <para style="p7l">[[ pres_line.duration ]] [[ pres_line.duration_period ]] </para>
-                </td>
-                <td>
-                    <para style="p7l">  </para>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <para style="p7l">  </para>
-                </td>
-                <td>
-                    <para style="p7l">Frequency: [[  (pres_line.frequency) or '0' ]]</para>
-                    <para style="p7l">[[ (pres_line.admin_times) or '0' ]]</para>
-                </td>
-                <td>
-                    <para style="p7l">  </para>
-                </td>
-                <td>
-                    <para style="p7l">  </para>
+                    <para style="P7l">  </para>
                 </td>
             </tr>
       </blockTable>

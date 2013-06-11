@@ -127,7 +127,7 @@ class OeMedicalPrescriptionLine(osv.Model):
         'form': fields.many2one('oemedical.drug.form', string='Form', help='Drug form, such as tablet or gel'),
         'route': fields.many2one('oemedical.drug.route', string='Route', help='Drug form, such as tablet or gel'),
         'common_dosage': fields.many2one('oemedical.medication.dosage', string='Frequency', help='Drug form, such as tablet or gel'),
-	    'admin_times' : fields.char('Admin Hours', size=15),
+	    'admin_times' : fields.char('Admin Hours', size=255),
         'frequency' : fields.integer('Frequency'),
         'frequency_unit': fields.selection([
                                 (None, ''),
