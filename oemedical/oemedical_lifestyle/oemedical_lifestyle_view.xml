@@ -192,8 +192,8 @@
                                             <newline/>
                                             <field name="sex_with_prostitutes"/>
                                         </group>
-                                        <group colspan="4" >
-                                            <field name="sexuality_info"/>
+                                        <group colspan="2"  string="Sexual Information" >
+                                            <field name="sexuality_info" nolabel="1"/>
                                         </group>
                                     </group>
                                 </page>
