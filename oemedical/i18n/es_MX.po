@@ -70,7 +70,7 @@ msgstr "Last PAP test"
 #. module: oemedical
 #: field:oemedical.patient.pregnancy,current_pregnancy:0
 msgid "Current Pregnancy"
-msgstr "Current Pregnancy"
+msgstr "Actualmente Embarazada"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_diagnostic_hypothesis_view
@@ -97,12 +97,12 @@ msgstr "Fuente"
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_disease_group_members
 msgid " Disease Group"
-msgstr " Disease Group"
+msgstr "Grupo de Enfermedad"
 
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_conf_physicians
 msgid "Health Professionals"
-msgstr "Health Professionals"
+msgstr "Profesionales de la Salud"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_product_product
@@ -173,7 +173,7 @@ msgstr "Doctor"
 #. module: oemedical
 #: view:oemedical.insurance:0
 msgid "Oemedical Insurance"
-msgstr "Aseguradora"
+msgstr "Seguro Medico"
 
 #. module: oemedical
 #: selection:oemedical.patient,anticonceptive:0
@@ -326,7 +326,7 @@ msgstr "Categoría de la patología"
 #. module: oemedical
 #: selection:oemedical.patient.pap_history,result:0
 msgid "Negative"
-msgstr "Negative"
+msgstr "Negativo"
 
 #. module: oemedical
 #: help:oemedical.drugs_recreational,withdrawal_level:0
