@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-11 04:46+0000\n"
-"PO-Revision-Date: 2013-06-11 04:46+0000\n"
+"POT-Creation-Date: 2013-06-11 14:43+0000\n"
+"PO-Revision-Date: 2013-06-11 14:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,13 +23,13 @@ msgstr "Schedule I and II drugs have a high potential for abuse.They require gre
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Sugar/Salt"
-msgstr "Azucar/Sal"
+msgstr "Sugar/Salt"
 
 #. module: oemedical
 #: field:oemedical.patient.prenatal.evaluation,fetus_heart_rate:0
 #: help:oemedical.patient.prenatal.evaluation,fetus_heart_rate:0
 msgid "Fetus heart rate"
-msgstr "Ritmo Cardiaco del Feto"
+msgstr "Fetus heart rate"
 
 #. module: oemedical
 #: view:oemedical.patient:0
@@ -70,7 +70,7 @@ msgstr "Last PAP test"
 #. module: oemedical
 #: field:oemedical.patient.pregnancy,current_pregnancy:0
 msgid "Current Pregnancy"
-msgstr "Actualmente Embarazada"
+msgstr "Current Pregnancy"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_diagnostic_hypothesis_view
@@ -97,12 +97,12 @@ msgstr "Fuente"
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_disease_group_members
 msgid " Disease Group"
-msgstr "Grupo de Enfermedad"
+msgstr " Disease Group"
 
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_conf_physicians
 msgid "Health Professionals"
-msgstr "Profesionales de la Salud"
+msgstr "Health Professionals"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_product_product
@@ -173,7 +173,7 @@ msgstr "Doctor"
 #. module: oemedical
 #: view:oemedical.insurance:0
 msgid "Oemedical Insurance"
-msgstr "Seguro Medico"
+msgstr "Aseguradora"
 
 #. module: oemedical
 #: selection:oemedical.patient,anticonceptive:0
@@ -326,7 +326,7 @@ msgstr "Categoría de la patología"
 #. module: oemedical
 #: selection:oemedical.patient.pap_history,result:0
 msgid "Negative"
-msgstr "Negativo"
+msgstr "Negative"
 
 #. module: oemedical
 #: help:oemedical.drugs_recreational,withdrawal_level:0
@@ -648,7 +648,7 @@ msgstr "Reacciones adversas"
 #. module: oemedical
 #: view:oemedical.appointment:0
 msgid "Back"
-msgstr "Back"
+msgstr "Volver"
 
 #. module: oemedical
 #: selection:oemedical.patient,sexual_practices:0
@@ -692,7 +692,7 @@ msgstr "Doctor que prescribe"
 #. module: oemedical
 #: field:oemedical.appointment,history_ids:0
 msgid "History lines"
-msgstr "History lines"
+msgstr "Lineas Historial"
 
 #. module: oemedical
 #: field:oemedical.perinatal,monitoring:0
@@ -902,12 +902,12 @@ msgstr "Duración del tratamiento"
 #. module: oemedical
 #: field:oemedical.patient,abortions:0
 msgid "Abortions"
-msgstr "Abortos"
+msgstr "Abortions"
 
 #. module: oemedical
 #: selection:oemedical.patient.family.diseases,relative:0
 msgid "Uncle"
-msgstr "Tio"
+msgstr "Uncle"
 
 #. module: oemedical
 #: help:oemedical.patient.evaluation,diagnostic_hypothesis:0
@@ -987,12 +987,12 @@ msgstr "Relacionada a Proteina"
 #: view:oemedical.patient:0
 #: field:oemedical.prescription.line,template:0
 msgid "Medication"
-msgstr "Medicacion"
+msgstr "Medication"
 
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Complications"
-msgstr "Complicaciones"
+msgstr "Complications"
 
 #. module: oemedical
 #: view:oemedical.hospital.ward:0
@@ -1130,7 +1130,7 @@ msgstr "Nephew"
 #. module: oemedical
 #: field:oemedical.patient,prostitute:0
 msgid "Prostitute"
-msgstr "Prostituta"
+msgstr "Prostitute"
 
 #. module: oemedical
 #: view:oemedical.patient:0
@@ -1773,7 +1773,7 @@ msgstr "Seleccione la categoría principal para ésta enfermedad. Esta es usualm
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_drug_form
 msgid " Drug Form"
-msgstr " Orden de medicamento"
+msgstr "Presentacion del Medicamento"
 
 #. module: oemedical
 #: help:oemedical.insurance.plan,is_default:0
@@ -1814,7 +1814,7 @@ msgstr "Cama baja"
 #. module: oemedical
 #: selection:oemedical.appointment,state:0
 msgid "Draft"
-msgstr "Draft"
+msgstr "Borrador"
 
 #. module: oemedical
 #: view:oemedical.appointment:0
@@ -1824,7 +1824,7 @@ msgstr "In Consultation"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Additional Info"
-msgstr "Additional Info"
+msgstr "Informacion Adicional"
 
 #. module: oemedical
 #: help:oemedical.medicament,pregnancy_category:0
@@ -1913,12 +1913,12 @@ msgstr "Symmetric"
 #. module: oemedical
 #: view:oemedical.appointment:0
 msgid "Waiting"
-msgstr "Waiting"
+msgstr "En Espera"
 
 #. module: oemedical
 #: field:oemedical.patient.menstrual_history,frequency:0
 msgid "frequency"
-msgstr "frequency"
+msgstr "Frecuencia"
 
 #. module: oemedical
 #: view:oemedical.hospital.ward:0
@@ -1948,7 +1948,7 @@ msgstr "Imprimir"
 #: help:oemedical.patient.mammography_history,evaluation_date:0
 #: help:oemedical.patient.pap_history,evaluation_date:0
 msgid " Date"
-msgstr " Date"
+msgstr "Fecha"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_family_member_view
@@ -1969,7 +1969,7 @@ msgstr "Delgado"
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_insurance_plan
 msgid " Insurance Plan"
-msgstr " Plan de Seguro"
+msgstr "Plan de Seguro"
 
 #. module: oemedical
 #: help:oemedical.hospital.or,name:0
@@ -2069,7 +2069,7 @@ msgstr "Full Term"
 #. module: oemedical
 #: view:oemedical.prescription.order:0
 msgid "Common Dosage"
-msgstr "Dosaje Comun"
+msgstr "Common Dosage"
 
 #. module: oemedical
 #: selection:oemedical.patient,marital_status:0
@@ -2089,7 +2089,7 @@ msgstr "Obstetrics"
 #. module: oemedical
 #: selection:oemedical.appointment,state:0
 msgid "Wating"
-msgstr "Wating"
+msgstr "En Espera"
 
 #. module: oemedical
 #: view:oemedical.patient.evaluation:0
@@ -2106,7 +2106,7 @@ msgstr "Trabajo"
 #: selection:oemedical.patient.pregnancy,pregnancy_end_result:0
 #: field:oemedical.perinatal,abortion:0
 msgid "Abortion"
-msgstr "Abortion"
+msgstr "Aborto"
 
 #. module: oemedical
 #: help:oemedical.patient.pregnancy,pregnancy_end_age:0
@@ -5664,7 +5664,7 @@ msgstr "Habitación Privada"
 #. module: oemedical
 #: field:oemedical.drugs_recreational,route_inhaling:0
 msgid "Smoke / Inhale"
-msgstr "Fuma / Inhale"
+msgstr "Smoke / Inhale"
 
 #. module: oemedical
 #: field:oemedical.patient,age_start_drugs:0
@@ -5952,12 +5952,12 @@ msgstr "Conocimiento de eventos actuales"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Country"
-msgstr "Pais"
+msgstr "Country"
 
 #. module: oemedical
 #: field:oemedical.prescription.line,route:0
 msgid "Route"
-msgstr "Ruta"
+msgstr "Route"
 
 #. module: oemedical
 #: help:oemedical.medication.template,qty:0
@@ -5982,7 +5982,7 @@ msgstr "Código de Especialidad"
 #. module: oemedical
 #: view:oemedical.appointment:0
 msgid "Calendar View"
-msgstr "Vista de Calendario"
+msgstr "Calendar View"
 
 #. module: oemedical
 #: view:oemedical.patient.evaluation:0
@@ -6078,7 +6078,7 @@ msgstr "Oemedical Sala de Hospital"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Sexuality"
-msgstr "Sexualidad"
+msgstr "Sexuality"
 
 #. module: oemedical
 #: view:oemedical.prescription.line:0
@@ -6109,7 +6109,7 @@ msgstr "Disease Genes"
 #. module: oemedical
 #: selection:oemedical.patient,anticonceptive:0
 msgid "Vasectomy"
-msgstr "Vasectomia"
+msgstr "Vasectomy"
 
 #. module: oemedical
 #: help:oemedical.drugs_recreational,street_name:0

@@ -2,7 +2,7 @@
 <document filename="Purchase Order.pdf">
   <template title="Purchase Order" author="OpenERP S.A.(sales@openerp.com)" allowSplitting="20">
     <pageTemplate id="first">
-      <frame id="first" x1="18.0" y1="42.0" width="535" height="758"/>
+      <frame id="first" x1="18.0" y1="22.0" width="535" height="770"/>
     </pageTemplate>
   </template>
   <stylesheet>
@@ -116,8 +116,10 @@
     <paraStyle name="P9r" fontName="Times-Roman" fontSize="9.0" leading="8" alignment="RIGHT"/>
     <paraStyle name="P10" fontName="Times-Bold" fontSize="6.0" leading="8" alignment="CENTER"/>
     <paraStyle name="P11" fontName="Times-Roman" fontSize="6.0" leading="8" alignment="CENTER"/>
+    <paraStyle name="P11l" fontName="Times-Roman" fontSize="11.0" leading="7" rightIndent="0.0" alignment="LEFT"/>
     <paraStyle name="P12" fontName="Times-Roman" fontSize="6.0" leading="8" alignment="CENTER"/>
     <paraStyle name="P12r" fontName="Times-Roman" fontSize="12.0" leading="12" rightIndent="0.1" alignment="RIGHT"/>
+    <paraStyle name="P12l" fontName="Times-Roman" fontSize="12.0" leading="7" rightIndent="0.0" alignment="LEFT"/>
     <paraStyle name="Standard" fontName="Helvetica"/>
     <paraStyle name="Text body" fontName="Helvetica" spaceBefore="0.0" spaceAfter="6.0"/>
     <paraStyle name="Heading" fontName="Helvetica" fontSize="14.0" leading="17" spaceBefore="12.0" spaceAfter="6.0"/>
@@ -161,11 +163,11 @@
         <td>
         </td>
         <td>
-            <para style="P7r">[[ formatLang(o.prescription_date,date = True)  ]]</para>
+            <para style="P12r">[[ formatLang(o.prescription_date,date = True)  ]]</para>
             <para style="P6">
                 <font color="white"> </font>
             </para>
-            <para style="P7l">Patient: [[ o.patient_id.name ]]</para>
+            <para style="P12l">Patient: [[ o.patient_id.name ]]</para>
         </td>
         <td>
         </td>
@@ -179,7 +181,7 @@
                     <para style="P7l">  </para>
                 </td>
                 <td>
-                    <para style="P7l">Medicament: [[ (pres_line.template.medicament_id.product_id.name) or '' ]]</para>
+                    <para style="P12l">Medicament: [[ (pres_line.template.medicament_id.product_id.name) or '' ]]</para>
                 </td>
                 <td>
                     <para style="P7l">  </para>
@@ -190,7 +192,7 @@
                     <para style="P7l">  </para>
                 </td>
                 <td>
-                    <para style="P7l">Dose: [[  (pres_line.dose) or '0' ]] [[ (pres_line.dose_unit.name) or '0' ]] [[ pres_line.duration ]] [[ pres_line.duration_period ]] - Frequency: [[  (pres_line.frequency) or '0' ]]  ( [[ (pres_line.admin_times) ]] ) </para>
+                    <para style="P11l">Dose: [[  (pres_line.dose) or '0' ]] [[ (pres_line.dose_unit.name) or '0' ]] [[ pres_line.duration ]] [[ pres_line.duration_period ]] - Frequency: [[  (pres_line.frequency) or '0' ]]  ( [[ (pres_line.admin_times) ]] ) </para>
                 </td>
                 <td>
                     <para style="P7l">  </para>
@@ -207,7 +209,7 @@
             <para style="P6">
                 <font color="white"> </font>
             </para>
-            <para style="P7l">[[ o.physician_id.name ]]</para>
+            <para style="P12l">[[ o.physician_id.name ]]</para>
 
         </td>
         <td>
