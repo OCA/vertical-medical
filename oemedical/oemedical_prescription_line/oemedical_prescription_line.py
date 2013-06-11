@@ -118,7 +118,7 @@ class OeMedicalPrescriptionLine(osv.Model):
         'allow_substitution': fields.boolean(string='Allow substitution'),
         'prnt': fields.boolean(string='Print', help='Check this box to print this line of the prescription.'),
         'quantity': fields.integer(string='Units',  help="Number of units of the medicament. Example : 30 capsules of amoxicillin"),
-#        'medicament': fields.function(_get_medicament, type='many2one', relation="oemedical.medicament", string='Medicament', help="", multi=False),
+        'active_component': fields.char(size=256, string='Active component', help='Active Component'),
         'start_treatment': fields.datetime(string='Start'),
         'end_treatment': fields.datetime(string='End'),
         'dose' : fields.float('Dose', digits=(16, 2), help="Amount of medication (eg, 250 mg) per dose"),

@@ -39,11 +39,13 @@
                         </H1>
                         <notebook>
                             <page string="Main">
-					            <field name="category" />
-					            <field name="active_component" />
+                                <group colspan="4" col="4">
+    					            <field name="category" />
+    					            <field name="active_component" />
+        					        <field name="therapeutic_action" colspan="4"/>
+                                </group>
                                 <separator string="Indications" colspan="4"/>
 					            <field name="indications" nolabel="1" colspan="4"/>
-    <!--					        <field name="therapeutic_action" />-->
                             </page>
                             <page string="Presentation">
 					            <field name="presentation" colspan="4" nolabel="1"/>

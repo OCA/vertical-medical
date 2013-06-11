@@ -19,18 +19,6 @@
 			parent="oemedical_patient_root" sequence="30"
 			action="act_open_oemedical_family_member_view" />
 
-<!--		<menuitem id="oemedical_patient_medication" name=" Patient Medication"-->
-<!--			parent="oemedical_patient_root" sequence="40"-->
-<!--			action="act_open_oemedical_patient_medication_view" />-->
-
-<!--		<menuitem id="oemedical_patient_evaluation" name=" Patient Evaluation"-->
-<!--			parent="oemedical_patient_root" sequence="50"-->
-<!--			action="act_open_oemedical_patient_evaluation_view" />-->
-
-<!--		<menuitem id="oemedical_patient_disease" name=" Patient Disease"-->
-<!--			parent="oemedical_patient_root" sequence="60"-->
-<!--			action="act_open_oemedical_patient_disease_view" />-->
-
 
 <!--Appointment-->
 
@@ -46,7 +34,7 @@
 		<menuitem id="oemedical_prescription_root" name="Prescription"
 			parent="oemedical_root" sequence="30" />
 
-		<menuitem id="oemedical_prescription_order" name=" Prescription Order"
+		<menuitem id="oemedical_prescription_order" name="Prescription Order"
 			parent="oemedical_prescription_root" sequence="10"
 			action="act_open_oemedical_prescription_order_view" />
 

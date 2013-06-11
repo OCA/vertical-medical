@@ -179,7 +179,7 @@
                     <para style="P7l">  </para>
                 </td>
                 <td>
-                    <para style="P7l">[[ (pres_line.template.medicament_id.product_id.name) or '' ]]</para>
+                    <para style="P7l">Medicament: [[ (pres_line.template.medicament_id.product_id.name) or '' ]]</para>
                 </td>
                 <td>
                     <para style="P7l">  </para>
