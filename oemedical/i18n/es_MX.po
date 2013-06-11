@@ -653,7 +653,7 @@ msgstr "Volver"
 #. module: oemedical
 #: selection:oemedical.patient,sexual_practices:0
 msgid "Safe / Protected sex"
-msgstr "Safe / Protected sex"
+msgstr "Seguro / Proteccion Sexual"
 
 #. module: oemedical
 #: help:oemedical.patient.evaluation,tremor:0
@@ -2263,7 +2263,7 @@ msgstr "Weeks"
 #. module: oemedical
 #: selection:oemedical.patient,sexual_practices:0
 msgid "Risky / Unprotected sex"
-msgstr "Risky / Unprotected sex"
+msgstr "Riesgoso / Sin Proteccion"
 
 #. module: oemedical
 #: help:oemedical.medication.template,duration:0
@@ -3102,7 +3102,7 @@ msgstr "Comentarios"
 #: selection:oemedical.patient,sex_anal:0
 #: selection:oemedical.patient,sex_oral:0
 msgid "Passive"
-msgstr "Passive"
+msgstr "Pasivo"
 
 #. module: oemedical
 #: view:oemedical.appointment:0
@@ -3890,7 +3890,7 @@ msgstr "Information"
 #. module: oemedical
 #: field:oemedical.patient,sexual_partners:0
 msgid "Sexual Partners"
-msgstr "Sexual Partners"
+msgstr "Parejas Sexuales"
 
 #. module: oemedical
 #: field:oemedical.patient.pregnancy,puerperium_monitor:0
@@ -4820,7 +4820,7 @@ msgstr "Edificio"
 #: selection:oemedical.patient,sex_anal:0
 #: selection:oemedical.patient,sex_oral:0
 msgid "Both"
-msgstr "Both"
+msgstr "Ambos"
 
 #. module: oemedical
 #: help:oemedical.appointment,institution:0
@@ -5147,12 +5147,12 @@ msgstr "FL"
 #. module: oemedical
 #: field:oemedical.patient,sexual_preferences:0
 msgid "Sexual Preferences"
-msgstr "Sexual Preferences"
+msgstr "Preferencias Sexuales"
 
 #. module: oemedical
 #: field:oemedical.patient,number_of_meals:0
 msgid "Meals per day"
-msgstr "Meals per day"
+msgstr "Comidas por dia"
 
 #. module: oemedical
 #: view:oemedical.hospital.ward:0
@@ -5507,7 +5507,7 @@ msgstr "Inhalants"
 #. module: oemedical
 #: field:oemedical.patient,sexual_practices:0
 msgid "Sexual Practices"
-msgstr "Sexual Practices"
+msgstr "Practicas Sexuales"
 
 #. module: oemedical
 #: field:oemedical.patient,mammography_last:0
