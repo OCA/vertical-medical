@@ -1412,7 +1412,7 @@ msgstr "Eye-opener"
 #: view:oemedical.patient:0
 #: field:oemedical.patient,dob:0
 msgid "DoB"
-msgstr "DOB"
+msgstr "Fecha Nacimiento"
 
 #. module: oemedical
 #: field:oemedical.patient,genetic_risks:0
