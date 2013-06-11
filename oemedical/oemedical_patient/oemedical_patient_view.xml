@@ -102,8 +102,8 @@
                             <newline/>
                             <group colspan="4" col="6">
                                 <field name="deceased"/>
-                                <field name="dod"/>
-                                <field name="cod"/>
+                                <field name="dod" attrs="{'invisible':[('deceased','=',False)],'required':[('deceased','=',True)]}"/>
+                                <field name="cod" attrs="{'invisible':[('deceased','=',False)]}"/>
                             </group>
                         </page>
                         <page string="Medication" >
