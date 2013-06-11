@@ -119,7 +119,7 @@
     <paraStyle name="P11l" fontName="Times-Roman" fontSize="11.0" leading="7" rightIndent="0.0" alignment="LEFT"/>
     <paraStyle name="P12" fontName="Times-Roman" fontSize="6.0" leading="8" alignment="CENTER"/>
     <paraStyle name="P12r" fontName="Times-Roman" fontSize="12.0" leading="12" rightIndent="0.1" alignment="RIGHT"/>
-    <paraStyle name="P12l" fontName="Times-Roman" fontSize="12.0" leading="7" rightIndent="0.0" alignment="LEFT"/>
+    <paraStyle name="P12l" fontName="Times-Roman" fontSize="12.0" leading="12" rightIndent="0.0" alignment="LEFT"/>
     <paraStyle name="Standard" fontName="Helvetica"/>
     <paraStyle name="Text body" fontName="Helvetica" spaceBefore="0.0" spaceAfter="6.0"/>
     <paraStyle name="Heading" fontName="Helvetica" fontSize="14.0" leading="17" spaceBefore="12.0" spaceAfter="6.0"/>
@@ -164,6 +164,17 @@
         </td>
         <td>
             <para style="P12r">[[ formatLang(o.prescription_date,date = True)  ]]</para>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td>
+            <para style="P6">
+                <font color="white"> </font>
+            </para>
             <para style="P6">
                 <font color="white"> </font>
             </para>
@@ -182,6 +193,7 @@
                 </td>
                 <td>
                     <para style="P12l">Medicament: [[ (pres_line.template.medicament_id.product_id.name) or '' ]]</para>
+                    <para style="P12l">Active Component: [[ (pres_line.template.medicament_id.active_component) or '' ]]</para>
                 </td>
                 <td>
                     <para style="P7l">  </para>
@@ -201,6 +213,46 @@
       </blockTable>
     </section>
     <blockTable colWidths="292.0,272.0,20.0" >
+      <tr>
+        <td>
+        </td>
+        <td>
+            <para style="P6">
+                <font color="white"> </font>
+            </para>
+            <para style="P6">
+                <font color="white"> </font>
+            </para>
+            <para style="P6">
+                <font color="white"> </font>
+            </para>
+            <para style="P6">
+                <font color="white"> </font>
+            </para>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td>
+            <para style="P6">
+                <font color="white"> </font>
+            </para>
+            <para style="P6">
+                <font color="white"> </font>
+            </para>
+            <para style="P6">
+                <font color="white"> </font>
+            </para>
+            <para style="P6">
+                <font color="white"> </font>
+            </para>
+        </td>
+        <td>
+        </td>
+      </tr>
       <tr>
         <td>
         </td>
