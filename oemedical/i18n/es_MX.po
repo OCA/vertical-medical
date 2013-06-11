@@ -865,7 +865,7 @@ msgstr "OeMedical"
 #. module: oemedical
 #: field:oemedical.patient,sex_with_prostitutes:0
 msgid "Sex with prostitutes"
-msgstr "Sex with prostitutes"
+msgstr "Sexo con prostitutas"
 
 #. module: oemedical
 #: view:oemedical.patient:0
@@ -1015,7 +1015,7 @@ msgstr "Vacuna"
 #. module: oemedical
 #: field:oemedical.patient,anticonceptive:0
 msgid "Anticonceptive Method"
-msgstr "Anticonceptive Method"
+msgstr "Metodo Anticonceptivo"
 
 #. module: oemedical
 #: view:oemedical.medication.template:0
@@ -1109,12 +1109,12 @@ msgstr "Patient Recreational Drugs"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Diet and Exersice"
-msgstr "Diet and Exersice"
+msgstr "Dieta y Ejercicio"
 
 #. module: oemedical
 #: field:oemedical.patient,ex_alcoholic:0
 msgid "Ex alcoholic"
-msgstr "Ex alcoholic"
+msgstr "Ex alcoholico"
 
 #. module: oemedical
 #: field:oemedical.patient.pregnancy,name:0
@@ -1130,7 +1130,7 @@ msgstr "Nephew"
 #. module: oemedical
 #: field:oemedical.patient,prostitute:0
 msgid "Prostitute"
-msgstr "Prostitute"
+msgstr "Prostituta"
 
 #. module: oemedical
 #: view:oemedical.patient:0
@@ -5414,7 +5414,7 @@ msgstr "Perinatal Monitor"
 #. module: oemedical
 #: field:oemedical.patient,first_sexual_encounter:0
 msgid "Age first sexual encounter"
-msgstr "Age first sexual encounter"
+msgstr "Inicio de vida sexual"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_insurance_plan_view
