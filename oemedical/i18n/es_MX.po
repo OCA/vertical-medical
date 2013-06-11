@@ -902,12 +902,12 @@ msgstr "Duración del tratamiento"
 #. module: oemedical
 #: field:oemedical.patient,abortions:0
 msgid "Abortions"
-msgstr "Abortions"
+msgstr "Abortos"
 
 #. module: oemedical
 #: selection:oemedical.patient.family.diseases,relative:0
 msgid "Uncle"
-msgstr "Uncle"
+msgstr "Tio"
 
 #. module: oemedical
 #: help:oemedical.patient.evaluation,diagnostic_hypothesis:0
@@ -987,12 +987,12 @@ msgstr "Relacionada a Proteina"
 #: view:oemedical.patient:0
 #: field:oemedical.prescription.line,template:0
 msgid "Medication"
-msgstr "Medication"
+msgstr "Medicacion"
 
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Complications"
-msgstr "Complications"
+msgstr "Complicaciones"
 
 #. module: oemedical
 #: view:oemedical.hospital.ward:0
@@ -1130,7 +1130,7 @@ msgstr "Nephew"
 #. module: oemedical
 #: field:oemedical.patient,prostitute:0
 msgid "Prostitute"
-msgstr "Prostitute"
+msgstr "Prostituta"
 
 #. module: oemedical
 #: view:oemedical.patient:0
