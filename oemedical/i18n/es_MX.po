@@ -1364,7 +1364,7 @@ msgstr "CAGE Score"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "S Last Name"
-msgstr "S Last Name"
+msgstr "Apellido Materno"
 
 #. module: oemedical
 #: help:oemedical.patient.prenatal.evaluation,diabetes:0
@@ -5791,7 +5791,7 @@ msgstr "oemedical.aseguradora.plan"
 #. module: oemedical
 #: field:oemedical.patient,alcohol_wine_number:0
 msgid "Wine / day"
-msgstr "Wine / day"
+msgstr "Vino / Dia"
 
 #. module: oemedical
 #: constraint:oemedical.medicament.category:0
@@ -5860,7 +5860,7 @@ msgstr "oemedical.miembro_familia"
 #: selection:oemedical.drugs_recreational,addiction_level:0
 #: selection:oemedical.drugs_recreational,toxicity:0
 msgid "High"
-msgstr "High"
+msgstr "Alto"
 
 #. module: oemedical
 #: selection:oemedical.patient,anticonceptive:0
