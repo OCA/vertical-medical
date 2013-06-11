@@ -23,13 +23,13 @@ msgstr "Schedule I and II drugs have a high potential for abuse.They require gre
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Sugar/Salt"
-msgstr "Sugar/Salt"
+msgstr "Azucar/Sal"
 
 #. module: oemedical
 #: field:oemedical.patient.prenatal.evaluation,fetus_heart_rate:0
 #: help:oemedical.patient.prenatal.evaluation,fetus_heart_rate:0
 msgid "Fetus heart rate"
-msgstr "Fetus heart rate"
+msgstr "Ritmo Cardiaco del Feto"
 
 #. module: oemedical
 #: view:oemedical.patient:0
@@ -598,7 +598,7 @@ msgstr "Servicios de consulta"
 #: view:oemedical.medication.template:0
 #: view:oemedical.prescription.order:0
 msgid "Dosage"
-msgstr "Dosage"
+msgstr "Dosaje"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_drug_route
@@ -2069,7 +2069,7 @@ msgstr "Full Term"
 #. module: oemedical
 #: view:oemedical.prescription.order:0
 msgid "Common Dosage"
-msgstr "Common Dosage"
+msgstr "Dosaje Comun"
 
 #. module: oemedical
 #: selection:oemedical.patient,marital_status:0
@@ -5664,7 +5664,7 @@ msgstr "Habitación Privada"
 #. module: oemedical
 #: field:oemedical.drugs_recreational,route_inhaling:0
 msgid "Smoke / Inhale"
-msgstr "Smoke / Inhale"
+msgstr "Fuma / Inhale"
 
 #. module: oemedical
 #: field:oemedical.patient,age_start_drugs:0
@@ -5952,12 +5952,12 @@ msgstr "Conocimiento de eventos actuales"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Country"
-msgstr "Country"
+msgstr "Pais"
 
 #. module: oemedical
 #: field:oemedical.prescription.line,route:0
 msgid "Route"
-msgstr "Route"
+msgstr "Ruta"
 
 #. module: oemedical
 #: help:oemedical.medication.template,qty:0
@@ -5982,7 +5982,7 @@ msgstr "Código de Especialidad"
 #. module: oemedical
 #: view:oemedical.appointment:0
 msgid "Calendar View"
-msgstr "Calendar View"
+msgstr "Vista de Calendario"
 
 #. module: oemedical
 #: view:oemedical.patient.evaluation:0
@@ -6078,7 +6078,7 @@ msgstr "Oemedical Sala de Hospital"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Sexuality"
-msgstr "Sexuality"
+msgstr "Sexualidad"
 
 #. module: oemedical
 #: view:oemedical.prescription.line:0
@@ -6109,7 +6109,7 @@ msgstr "Disease Genes"
 #. module: oemedical
 #: selection:oemedical.patient,anticonceptive:0
 msgid "Vasectomy"
-msgstr "Vasectomy"
+msgstr "Vasectomia"
 
 #. module: oemedical
 #: help:oemedical.drugs_recreational,street_name:0
