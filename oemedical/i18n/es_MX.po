@@ -188,7 +188,7 @@ msgstr "Flunitrazepam"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Patient Allergies and Critical Information"
-msgstr "Patient Allergies and Critical Information"
+msgstr "Informacion Critica y alergias del Paciente"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_patient_disease
@@ -987,7 +987,7 @@ msgstr "Relacionada a Proteina"
 #: view:oemedical.patient:0
 #: field:oemedical.prescription.line,template:0
 msgid "Medication"
-msgstr "Medication"
+msgstr "Medicacion"
 
 #. module: oemedical
 #: view:oemedical.patient:0
