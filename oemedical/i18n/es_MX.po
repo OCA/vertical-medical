@@ -2444,7 +2444,7 @@ msgstr "Storage"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Gyneco / Obs"
-msgstr "Gyneco / Obs"
+msgstr "Ginecologia / Obstetricia"
 
 #. module: oemedical
 #: field:oemedical.perinatal,forceps:0
