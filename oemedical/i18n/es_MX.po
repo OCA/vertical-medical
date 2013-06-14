@@ -5551,7 +5551,7 @@ msgstr "Colposcopy History"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Lifestyle"
-msgstr "Lifestyle"
+msgstr "Estilo de Vida"
 
 #. module: oemedical
 #: field:oemedical.appointment.history,name:0
