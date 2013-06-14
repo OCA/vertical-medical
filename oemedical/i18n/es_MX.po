@@ -1182,7 +1182,7 @@ msgstr "Vasa Previa"
 #. module: oemedical
 #: field:oemedical.patient.family.diseases,xory:0
 msgid "Maternal or Paternal"
-msgstr "Maternal or Paternal"
+msgstr "Maternal o Paternal"
 
 #. module: oemedical
 #: help:oemedical.patient.evaluation,signs_and_symptoms:0
