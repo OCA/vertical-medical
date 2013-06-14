@@ -3885,7 +3885,7 @@ msgstr "Categoría de medicamento"
 #: view:oemedical.disease.gene:0
 #: field:oemedical.disease.gene,info:0
 msgid "Information"
-msgstr "Information"
+msgstr "Informacion"
 
 #. module: oemedical
 #: field:oemedical.patient,sexual_partners:0
@@ -3906,12 +3906,12 @@ msgstr "Normal decidua"
 #. module: oemedical
 #: field:oemedical.prescription.line,frequency_prn:0
 msgid "Frequency prn"
-msgstr "Frequency prn"
+msgstr "Frecuencia prn"
 
 #. module: oemedical
 #: field:oemedical.patient,second_hand_smoker:0
 msgid "Passive smoker"
-msgstr "Passive smoker"
+msgstr "Fomador Pasivo"
 
 #. module: oemedical
 #: selection:oemedical.patient.family.diseases,xory:0
@@ -3921,7 +3921,7 @@ msgstr "Paternal"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Street..."
-msgstr "Street..."
+msgstr "Calle..."
 
 #. module: oemedical
 #: selection:oemedical.patient.prenatal.evaluation,invasive_placentation:0
@@ -3942,12 +3942,12 @@ msgstr "Código de procedimiento, por ejemplo, ICD-10-PCS Código cadena de 7 ca
 #: selection:oemedical.drugs_recreational,addiction_level:0
 #: selection:oemedical.drugs_recreational,toxicity:0
 msgid "Low"
-msgstr "Low"
+msgstr "Bajo"
 
 #. module: oemedical
 #: field:oemedical.patient,motorcycle_rider:0
 msgid "Motorcycle Rider"
-msgstr "Motorcycle Rider"
+msgstr "Motociclista"
 
 #. module: oemedical
 #: selection:oemedical.patient.disease,disease_severity:0
@@ -4140,7 +4140,7 @@ msgstr "Guilt"
 #. module: oemedical
 #: field:oemedical.patient,home_safety:0
 msgid "Home safety"
-msgstr "Home safety"
+msgstr "Hogar Seguro"
 
 #. module: oemedical
 #: field:oemedical.appointment.history,action:0
@@ -4150,7 +4150,7 @@ msgstr "Action"
 #. module: oemedical
 #: field:oemedical.patient.prenatal.evaluation,invasive_placentation:0
 msgid "Placentation"
-msgstr "Placentation"
+msgstr ""
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_operational_sector
@@ -4216,7 +4216,7 @@ msgstr "General"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Colposcopy Tests"
-msgstr "Colposcopy Tests"
+msgstr "Tests de Colposcopia"
 
 #. module: oemedical
 #: help:oemedical.patient.evaluation,derived_to:0
@@ -4227,7 +4227,7 @@ msgstr "Médico a quien se refiere / deriva el caso"
 #: view:oemedical.appointment:0
 #: selection:oemedical.appointment,state:0
 msgid "Done"
-msgstr "Done"
+msgstr "Hecho"
 
 #. module: oemedical
 #: selection:oemedical.patient,sexual_preferences:0
@@ -4252,7 +4252,7 @@ msgstr "Tipo de alergia"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "City"
-msgstr "City"
+msgstr "Ciudad"
 
 #. module: oemedical
 #: help:oemedical.pathology,chromosome:0
@@ -4299,7 +4299,7 @@ msgstr "unidad"
 #. module: oemedical
 #: field:oemedical.patient,colposcopy:0
 msgid "Colposcopy"
-msgstr "Colposcopy"
+msgstr "Colposcopia"
 
 #. module: oemedical
 #: help:oemedical.patient.prenatal.evaluation,fetal_hc:0
@@ -4331,7 +4331,7 @@ msgstr "Ultimo nivel de glucosa en sangre. Puede ser aproximado."
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_patient_family_diseases
 msgid "Family Diseases"
-msgstr "Family Diseases"
+msgstr "Enfermedades Familiares"
 
 #. module: oemedical
 #: view:oemedical.patient.evaluation:0
@@ -4347,7 +4347,7 @@ msgstr "Elija si el sujeto es una persona."
 #. module: oemedical
 #: help:oemedical.patient.mammography_history,last_mammography:0
 msgid "Last Mammography"
-msgstr "Last Mammography"
+msgstr "Ultima Mamografia"
 
 #. module: oemedical
 #: view:oemedical.patient:0
