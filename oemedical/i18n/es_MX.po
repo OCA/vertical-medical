@@ -5104,7 +5104,7 @@ msgstr "Informacion Sexual"
 #. module: oemedical
 #: selection:oemedical.puerperium.monitor,lochia_amount:0
 msgid "hemorrhage"
-msgstr "hemorrhage"
+msgstr "Hemorragia"
 
 #. module: oemedical
 #: help:oemedical.appointment,doctor:0
