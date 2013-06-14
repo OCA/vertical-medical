@@ -295,7 +295,7 @@ msgstr "Age started to drink "
 #: model:ir.model,name:oemedical.model_oemedical_patient_genetic_risk
 #: view:oemedical.patient:0
 msgid "Patient Genetic Risks"
-msgstr "Patient Genetic Risks"
+msgstr "Riesgo Genetico del paciente"
 
 #. module: oemedical
 #: help:oemedical.drugs_recreational,name:0
@@ -1417,7 +1417,7 @@ msgstr "Fecha Nacimiento"
 #. module: oemedical
 #: field:oemedical.patient,genetic_risks:0
 msgid "Genetic Risks"
-msgstr "Genetic Risks"
+msgstr "Riesgo Genetico"
 
 #. module: oemedical
 #: field:res.partner,internal_user:0
@@ -3874,7 +3874,7 @@ msgstr "Temperatura en Celcius"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Genetics"
-msgstr "Genetics"
+msgstr "Genetica"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_medicament_category_view
