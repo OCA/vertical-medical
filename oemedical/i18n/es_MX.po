@@ -952,7 +952,7 @@ msgstr "Others"
 #. module: oemedical
 #: field:oemedical.patient,smoking:0
 msgid "Smokes"
-msgstr "Smokes"
+msgstr "Fumador"
 
 #. module: oemedical
 #: field:oemedical.drugs_recreational,addiction_level:0
@@ -1213,7 +1213,7 @@ msgstr "En Openerp Medical el usuario es el que accesa (doctor, enfermera). Cuan
 #. module: oemedical
 #: field:oemedical.perinatal,place_of_death:0
 msgid "Place of Death"
-msgstr "Place of Death"
+msgstr "Lugar de Defuncion"
 
 #. module: oemedical
 #: view:oemedical.medicament:0
@@ -1670,7 +1670,7 @@ msgstr "Medication Frequencies"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Addictions"
-msgstr "Addictions"
+msgstr "Adicciones"
 
 #. module: oemedical
 #: selection:oemedical.patient.family.diseases,relative:0
@@ -3759,12 +3759,12 @@ msgstr "Oemedical Paciente"
 #. module: oemedical
 #: field:oemedical.patient,alcohol:0
 msgid "Drinks Alcohol"
-msgstr "Drinks Alcohol"
+msgstr "Toma Alcohol"
 
 #. module: oemedical
 #: selection:oemedical.patient.pregnancy,iugr:0
 msgid "Assymetric"
-msgstr "Assymetric"
+msgstr "Asimetrico"
 
 #. module: oemedical
 #: selection:oemedical.perinatal,hematoma:0
@@ -5286,12 +5286,12 @@ msgstr "Cannabinoids"
 #. module: oemedical
 #: field:oemedical.patient,smoking_number:0
 msgid "Cigarretes a day"
-msgstr "Cigarretes a day"
+msgstr "Cigarros al dia"
 
 #. module: oemedical
 #: field:oemedical.perinatal.monitor,f_frequency:0
 msgid "Fetus Heart Frequency"
-msgstr "Fetus Heart Frequency"
+msgstr "Frecuencia Cardiaca del Feto"
 
 #. module: oemedical
 #: help:oemedical.patient.medication,adverse_reaction:0
@@ -5301,7 +5301,7 @@ msgstr "Los efectos secundarios o reacciones adversas que el paciente experiment
 #. module: oemedical
 #: field:oemedical.patient,ex_drug_addict:0
 msgid "Ex drug addict"
-msgstr "Ex drug addict"
+msgstr "Ex adicto a las drogas"
 
 #. module: oemedical
 #: view:oemedical.hospital.ward:0
@@ -5760,7 +5760,7 @@ msgstr "Advertencia de uso en embarazo"
 #: view:oemedical.patient:0
 #: field:oemedical.patient,current_insurance:0
 msgid "Insurance"
-msgstr "Aseguradora"
+msgstr "Seguro Medico"
 
 #. module: oemedical
 #: help:oemedical.patient.evaluation,memory:0
@@ -6078,7 +6078,7 @@ msgstr "Oemedical Sala de Hospital"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Sexuality"
-msgstr "Sexuality"
+msgstr "Sexualidad"
 
 #. module: oemedical
 #: view:oemedical.prescription.line:0
