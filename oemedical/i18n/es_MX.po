@@ -1867,7 +1867,7 @@ msgstr "Final"
 #. module: oemedical
 #: field:oemedical.patient,sex_anal:0
 msgid "Anal Sex"
-msgstr "Anal Sex"
+msgstr "Sexo Anal"
 
 #. module: oemedical
 #: help:res.partner,is_doctor:0
@@ -3176,7 +3176,7 @@ msgstr "Genetic Family Diseases"
 #. module: oemedical
 #: field:oemedical.patient,sex_oral:0
 msgid "Oral Sex"
-msgstr "Oral Sex"
+msgstr "Sexo Oral"
 
 #. module: oemedical
 #: view:oemedical.hospital.ward:0
