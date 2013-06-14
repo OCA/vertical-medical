@@ -4283,7 +4283,7 @@ msgstr "AIS"
 #. module: oemedical
 #: field:oemedical.patient,exercise_minutes_day:0
 msgid "Minutes / day"
-msgstr "Minutes / day"
+msgstr "Minutos / dia"
 
 #. module: oemedical
 #: help:oemedical.patient.prenatal.evaluation,fundal_height:0
@@ -4390,7 +4390,7 @@ msgstr "Ultimo HDL"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Physical Exercise"
-msgstr "Physical Exercise"
+msgstr "Ejercicio Fisico"
 
 #. module: oemedical
 #: field:oemedical.patient.menstrual_history,is_regular:0
