@@ -4705,7 +4705,7 @@ msgstr "Feliz"
 #. module: oemedical
 #: help:oemedical.drugs_recreational,route_injection:0
 msgid "Injection - Intravenous, Intramuscular..."
-msgstr "Injection - Intravenous, Intramuscular..."
+msgstr "Inyección - intravenosa, intramuscular ..."
 
 #. module: oemedical
 #: view:oemedical.procedure:0
@@ -4726,17 +4726,17 @@ msgstr "Período que el paciente debe tomar el medicamento en cuestión de minut
 #. module: oemedical
 #: model:oemedical.drugs_recreational,name:oemedical.barbiturates
 msgid "Barbiturates"
-msgstr "Barbiturates"
+msgstr "Los barbitúricos"
 
 #. module: oemedical
 #: field:oemedical.patient.prenatal.evaluation,overweight:0
 msgid "Overweight"
-msgstr "Overweight"
+msgstr "Sobrepeso"
 
 #. module: oemedical
 #: help:oemedical.perinatal,prenatal_evaluations:0
 msgid "Number of visits to the doctor during pregnancy"
-msgstr "Number of visits to the doctor during pregnancy"
+msgstr "Número de visitas al médico durante el embarazo"
 
 #. module: oemedical
 #: selection:oemedical.patient.pap_history,result:0
@@ -4751,7 +4751,7 @@ msgstr "Desactive esta opción si la información proporcionada por la fuente no
 #. module: oemedical
 #: selection:oemedical.patient,anticonceptive:0
 msgid "Female sterilisation"
-msgstr "Female sterilisation"
+msgstr "OTV"
 
 #. module: oemedical
 #: help:product.product,is_bed:0
@@ -4777,7 +4777,7 @@ msgstr "Withdrawal method"
 #. module: oemedical
 #: field:oemedical.drugs_recreational,route_injection:0
 msgid "Injection"
-msgstr "Injection"
+msgstr "Inyección"
 
 #. module: oemedical
 #: view:oemedical.patient.evaluation:0
@@ -4850,12 +4850,12 @@ msgstr "Abre los ojos espontáneamente"
 #. module: oemedical
 #: selection:oemedical.drugs_recreational,category:0
 msgid "Depressants"
-msgstr "Depressants"
+msgstr "Depresivos"
 
 #. module: oemedical
 #: field:oemedical.puerperium.monitor,lochia_odor:0
 msgid "Lochia odor"
-msgstr "Lochia odor"
+msgstr "Loquios de olor"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_patient_recreational_drugs
@@ -4865,17 +4865,17 @@ msgstr "Patient use of Recreational Drugs"
 #. module: oemedical
 #: field:oemedical.patient.menstrual_history,lmp_length:0
 msgid "Length"
-msgstr "Length"
+msgstr "Longitud"
 
 #. module: oemedical
 #: selection:oemedical.patient.family.diseases,relative:0
 msgid "Aunt"
-msgstr "Aunt"
+msgstr "Tia"
 
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Administration Routes"
-msgstr "Administration Routes"
+msgstr "Vias de administracion"
 
 #. module: oemedical
 #: help:oemedical.medicament,composition:0
@@ -4902,14 +4902,14 @@ msgstr "Numeros de tazas de cafe al dia"
 #: field:oemedical.patient,prenatal_evaluations:0
 #: field:oemedical.patient.pregnancy,prenatal_evaluations:0
 msgid "Prenatal Evaluations"
-msgstr "Prenatal Evaluations"
+msgstr "Evaluaciones Prenatales"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_patient_menstrual_history
 #: view:oemedical.patient:0
 #: field:oemedical.patient,menstrual_history:0
 msgid "Menstrual History"
-msgstr "Menstrual History"
+msgstr "Historial Menstrual"
 
 #. module: oemedical
 #: selection:oemedical.patient.disease,status:0
@@ -4924,12 +4924,12 @@ msgstr "Condiciones Secundarias"
 #. module: oemedical
 #: field:oemedical.perinatal.monitor,contractions:0
 msgid "Contractions"
-msgstr "Contractions"
+msgstr "Contraciones"
 
 #. module: oemedical
 #: field:oemedical.patient,ex_smoker:0
 msgid "Ex-smoker"
-msgstr "Ex-smoker"
+msgstr "Ex-fumador"
 
 #. module: oemedical
 #: view:oemedical.family_member:0
@@ -4940,7 +4940,7 @@ msgstr "Oemedical Miembro_Familia"
 #: field:oemedical.patient.prenatal.evaluation,gestational_days:0
 #: field:oemedical.perinatal,gestational_days:0
 msgid "Gestational days"
-msgstr "Gestational days"
+msgstr "Dias de Gestacion"
 
 #. module: oemedical
 #: help:oemedical.hospital.bed,ward:0
@@ -4966,7 +4966,7 @@ msgstr "Fecha de inicio del tratamiento"
 #. module: oemedical
 #: selection:oemedical.patient.menstrual_history,volume:0
 msgid "hypomenorrhea"
-msgstr "hypomenorrhea"
+msgstr "Hipomenorrea"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_signs_and_symptoms_view
@@ -4998,12 +4998,12 @@ msgstr "Miedo"
 #. module: oemedical
 #: model:oemedical.drugs_recreational,name:oemedical.ketamine
 msgid "Ketamine"
-msgstr "Ketamine"
+msgstr "Ketamina"
 
 #. module: oemedical
 #: selection:oemedical.patient.menstrual_history,frequency:0
 msgid "polymenorrhea"
-msgstr "polymenorrhea"
+msgstr "Polimenorrea"
 
 #. module: oemedical
 #: field:oemedical.patient,drug_iv:0
@@ -5013,7 +5013,7 @@ msgstr "IV drug user"
 #. module: oemedical
 #: help:oemedical.patient.pregnancy,current_pregnancy:0
 msgid "This field marks the current pregnancy"
-msgstr "This field marks the current pregnancy"
+msgstr "Esto es si la paciente esta actualmente embarazada"
 
 #. module: oemedical
 #: view:oemedical.patient:0
@@ -5024,18 +5024,18 @@ msgstr "Fecha de Defunción"
 #. module: oemedical
 #: help:oemedical.patient,soft_drinks:0
 msgid "Check if the patient consumes soft drinks with sugar"
-msgstr "Check if the patient consumes soft drinks with sugar"
+msgstr "Marque si el paciente consume bebidas ligth con azucar"
 
 #. module: oemedical
 #: view:oemedical.appointment:0
 #: selection:oemedical.appointment,state:0
 msgid "Confirm"
-msgstr "Confirm"
+msgstr "Confirmar"
 
 #. module: oemedical
 #: help:oemedical.patient,age_quit_smoking:0
 msgid "Age of quitting smoking"
-msgstr "Age of quitting smoking"
+msgstr "Edad que dejo de fumar"
 
 #. module: oemedical
 #: selection:oemedical.hospital.bed,bed_type:0
