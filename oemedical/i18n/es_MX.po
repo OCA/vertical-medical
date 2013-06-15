@@ -3646,7 +3646,7 @@ msgstr "the level of intoxication is associated with addiction and increases the
 #. module: oemedical
 #: field:oemedical.patient,gravida:0
 msgid "Gravida"
-msgstr "Gravida"
+msgstr "Gesta"
 
 #. module: oemedical
 #: selection:oemedical.appointment,urgency:0
