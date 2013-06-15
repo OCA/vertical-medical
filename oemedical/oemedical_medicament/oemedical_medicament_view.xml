@@ -61,11 +61,13 @@
 					            <field name="overdosage" nolabel="1" colspan="2"/>
                             </page>
                             <page string="Pregnancy">
-					            <field name="pregnancy_warning" />
-					            <field name="pregnancy_category" />
-                                <separator string="Notes" colspan="4"/>
-                                <newline/>
-                                <field colspan="4" name="pregnancy" nolabel="1"/>
+                                <group colspan="4">
+					                <field name="pregnancy_warning" />
+					                <field name="pregnancy_category" />
+                                    <separator string="Notes" colspan="4"/>
+                                    <newline/>
+                                    <field colspan="4" name="pregnancy" nolabel="1"/>
+                                </group>
                             </page>
                             <page string="Adverse Reactions">
 					            <field name="adverse_reaction" nolabel="1" colspan="4"/>
