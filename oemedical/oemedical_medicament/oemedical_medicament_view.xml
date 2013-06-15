@@ -56,8 +56,8 @@
                             </page>
                             <page string="Dosage">
                                 <separator string="Dosage" colspan="2"/>
-                                <separator string="Overdosage" colspan="2"/>
 					            <field name="dosage" nolabel="1" colspan="2"/>
+                                <separator string="Overdosage" colspan="2"/>
 					            <field name="overdosage" nolabel="1" colspan="2"/>
                             </page>
                             <page string="Pregnancy">
