@@ -130,7 +130,7 @@ msgstr "leve pérdida de aire"
 #. module: oemedical
 #: field:oemedical.patient,menarche:0
 msgid "Menarche age"
-msgstr "Menarche age"
+msgstr "Menarca"
 
 #. module: oemedical
 #: field:oemedical.patient.evaluation,loc_verbal:0
@@ -3590,7 +3590,7 @@ msgstr "Numeros de Embarazos"
 #. module: oemedical
 #: field:oemedical.patient,menopausal:0
 msgid "Menopausal"
-msgstr "Menopausal"
+msgstr "Menopáusia"
 
 #. module: oemedical
 #: field:oemedical.prescription.line,quantity:0
@@ -4556,7 +4556,7 @@ msgstr "Viudo"
 #. module: oemedical
 #: field:oemedical.patient,fertile:0
 msgid "Fertile"
-msgstr "Fertile"
+msgstr "Fertil"
 
 #. module: oemedical
 #: view:oemedical.patient:0
