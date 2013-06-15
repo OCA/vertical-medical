@@ -7,12 +7,11 @@
  			<field name="priority" eval="8" /> 
  			<field name="arch" type="xml"> 
  				<tree string="Oemedical Patient"> 
- 					<field name="first_name" /> 
- 					<field name="lastname" /> 
- 					<field name="slastname" />
- 					<field name="age" />
+ 					<field name="name" />
+<!-- 					<field name="lastname" />-->
  					<field name="ssn" /> 
  					<field name="identification_code" /> 
+ 					<field name="age" />
  					<field name="sex" /> 
  				</tree> 
  			</field> 
@@ -40,7 +39,7 @@
      							<label for="ssn"/> 
      							<field name="ssn" style="width: 20%%"/> 
      							<label for="identification_code"/> 
-     							<field name="identification_code" style="width: 17%%"/> 
+     							<field name="identification_code" style="width: 17%%" attrs="{'readonly': True }"/> 
      						</div> 
      						<div> 
      							<field name="name" invisible="1"/> 
@@ -209,7 +208,7 @@
  			<field name="priority" eval="8" /> 
  			<field name="arch" type="xml"> 
  				<search string="Oemedical Patient"> 
- 					<field name="first_name" /> 
+ 					<field name="name" /> 
  					<field name="family" /> 
  					<field name="general_info" /> 
  					<field name="primary_care_doctor" /> 
@@ -226,29 +225,14 @@
  					<field name="identification_code" /> 
  					<field name="deceased" /> 
  					<newline /> 
- 					<group expand="0" string="Group By..."> 
- 						<filter string="Name" domain="[]" context="{'group_by':'name'}" /> 
- 						<filter string="Family" domain="[]" context="{'group_by':'family'}" /> 
- 						<filter string="General Information" domain="[]" 
- 							context="{'group_by':'general_info'}" /> 
- 						<filter string="Primary Care Doctor" domain="[]" 
- 							context="{'group_by':'primary_care_doctor'}" /> 
- 						<filter string="Potential for Childbearing" domain="[]" 
- 							context="{'group_by':'childbearing_age'}" /> 
- 						<filter string="Important disease, allergy or procedures information" 
- 							domain="[]" context="{'group_by':'critical_info'}" /> 
- 						<filter string="Lastname" domain="[]" context="{'group_by':'lastname'}" /> 
- 						<filter string="Ethnic group" domain="[]" 
- 							context="{'group_by':'ethnic_group'}" /> 
+ 					<group expand="0" string="Group By...">  
  						<filter string="SSN" domain="[]" context="{'group_by':'ssn'}" /> 
  						<filter string="DoB" domain="[]" context="{'group_by':'dob'}" /> 
  						<filter string="Age" domain="[]" context="{'group_by':'age'}" /> 
  						<filter string="Date of Death" domain="[]" context="{'group_by':'dod'}" /> 
- 						<filter string="Insurance" domain="[]" 
- 							context="{'group_by':'current_insurance'}" /> 
+ 						<filter string="Insurance" domain="[]" context="{'group_by':'current_insurance'}" /> 
  						<filter string="Cause of Death" domain="[]" context="{'group_by':'cod'}" /> 
- 						<filter string="ID" domain="[]" 
- 							context="{'group_by':'identification_code'}" /> 
+ 						<filter string="ID" domain="[]" context="{'group_by':'identification_code'}" /> 
  						<filter string="Deceased" domain="[]" context="{'group_by':'deceased'}" /> 
  					</group> 
  				</search> 

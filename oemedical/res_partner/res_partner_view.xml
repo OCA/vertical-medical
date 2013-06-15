@@ -10,6 +10,9 @@
                 <notebook position="inside">
                     <page string="OeMedical">
                         <group colspan="4" col="6">
+<!--							<field name="firstname" />-->
+<!--							<field name="lastname" />-->
+<!--							<field name="slastname" />-->
                             <!--field name="insurance_plan_ids"/ -->
                             <field name="is_insurance_company" />
                             <field name="relationship" />
@@ -21,7 +24,6 @@
                             <field name="alias" />
                             <field name="internal_user" />
                             <field name="activation_date" />
-                            <field name="lastname" />
                             <field name="is_work" />
                             <field name="is_person" />
                             <field name="is_school" />
