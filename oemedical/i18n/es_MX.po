@@ -3486,7 +3486,7 @@ msgstr "Abruptio Placentae"
 #. module: oemedical
 #: selection:oemedical.patient,sex:0
 msgid "Female"
-msgstr "Mujer"
+msgstr "Femenino"
 
 #. module: oemedical
 #: field:oemedical.perinatal,admission_code:0
