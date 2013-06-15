@@ -3854,7 +3854,7 @@ msgstr "Hypertension"
 #. module: oemedical
 #: field:oemedical.patient.pregnancy,pregnancy_end_result:0
 msgid "Result"
-msgstr "Result"
+msgstr "Resultado"
 
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_pathology_group
@@ -5394,7 +5394,7 @@ msgstr "oemedical.area_operacional"
 #. module: oemedical
 #: view:oemedical.medicament:0
 msgid "Pregnancy"
-msgstr "Pregnancy"
+msgstr "Embarazo"
 
 #. module: oemedical
 #: help:oemedical.patient.evaluation,hip:0
