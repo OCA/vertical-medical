@@ -122,8 +122,8 @@
                                     <group colspan="2" col="2">
                                         <field name="gravida"/>
                                         <field name="premature"/>
-                                        <field name="stillbirths"/>
                                         <field name="abortions"/>
+                                        <field name="stillbirths"/>
                                     </group>
                                     <group colspan="4" string="Pregnancy History">
                                         <field name="pregnancy_history" nolabel="1">

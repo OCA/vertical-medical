@@ -902,7 +902,7 @@ msgstr "Duración del tratamiento"
 #. module: oemedical
 #: field:oemedical.patient,abortions:0
 msgid "Abortions"
-msgstr "Abortions"
+msgstr "Abortos"
 
 #. module: oemedical
 #: selection:oemedical.patient.family.diseases,relative:0
@@ -3781,7 +3781,7 @@ msgstr "Saturación de oxigeno"
 #. module: oemedical
 #: field:oemedical.patient,stillbirths:0
 msgid "Stillbirths"
-msgstr "Stillbirths"
+msgstr "Nacido Muertos"
 
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_insurance
