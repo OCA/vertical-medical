@@ -5470,13 +5470,13 @@ msgstr "Nombre de la Categoría"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Contact Information"
-msgstr "Contact Information"
+msgstr "Informacion de Contacto"
 
 #. module: oemedical
 #: view:oemedical.disease.gene:0
 #: field:oemedical.disease.gene,long_name:0
 msgid "Official Long Name"
-msgstr "Official Long Name"
+msgstr "Nombre Completo"
 
 #. module: oemedical
 #: view:oemedical.prescription.order:0
