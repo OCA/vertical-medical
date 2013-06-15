@@ -2439,7 +2439,7 @@ msgstr "Nombre de la enferemedad"
 #. module: oemedical
 #: view:oemedical.medicament:0
 msgid "Storage"
-msgstr "Storage"
+msgstr "Almacenamiento"
 
 #. module: oemedical
 #: view:oemedical.patient:0
@@ -4262,7 +4262,7 @@ msgstr "Número de cromosomas"
 #. module: oemedical
 #: help:oemedical.patient,home_safety:0
 msgid "Keep safety measures for kids in the kitchen, correct storage of chemicals, ..."
-msgstr "Keep safety measures for kids in the kitchen, correct storage of chemicals, ..."
+msgstr "Mantener las medidas de seguridad para los niños en la cocina, el almacenamiento correcto de los productos químicos, ..."
 
 #. module: oemedical
 #: selection:oemedical.perinatal,fetus_presentation:0
