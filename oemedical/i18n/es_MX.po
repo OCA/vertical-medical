@@ -608,7 +608,7 @@ msgstr "oemedical.medicamento.via"
 #. module: oemedical
 #: view:oemedical.patient:0
 msgid "Mestrual History"
-msgstr "Historico Mestrual"
+msgstr "Historico Menstrual"
 
 #. module: oemedical
 #: model:oemedical.drugs_recreational,name:oemedical.nicotine
@@ -2253,7 +2253,7 @@ msgstr "Accreta"
 #. module: oemedical
 #: field:oemedical.patient,breast_self_examination:0
 msgid "Breast self-examination"
-msgstr "Breast self-examination"
+msgstr "Autoexamen de mama"
 
 #. module: oemedical
 #: field:oemedical.patient.pregnancy,pregnancy_end_age:0

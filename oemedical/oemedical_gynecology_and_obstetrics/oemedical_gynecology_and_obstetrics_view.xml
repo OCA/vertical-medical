@@ -13,12 +13,15 @@
                         <page string="Gyneco / Obs" attrs="{'invisible':[('sex','=', 'm')]}" >
                             <notebook>
                                 <page string="Gyneco" >
-                                    <group colspan="2" col="2" string="General" >
+                                    <group colspan="4" col="4" string="General" >
                                         <field name="fertile"/>
                                         <field name="currently_pregnant"/>
                                         <field name="menarche"/>
                                         <field name="menopausal"/>
                                         <field name="menopause"/>
+                                        <newline/>
+                                        <field name="dispareunia_sup"/>
+                                        <field name="dispareunia_deep"/>
                                     </group>
                                     <group colspan="2" string="Prevention and Screening">
                                         <field name="breast_self_examination"/>
