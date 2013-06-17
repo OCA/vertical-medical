@@ -23,10 +23,6 @@
                                             <field name="menopausal"/>
                                             <field name="menopause" attrs="{'readonly':[('menopausal','=', False)]}"/>
                                         </group>
-<!--                                        <group colspan="2" col="2">-->
-
-<!--                                        </group>-->
-                                        <newline/>
                                         <field name="dispareunia_sup"/>
                                         <field name="dispareunia_deep"/>
                                     </group>

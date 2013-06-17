@@ -14,7 +14,7 @@
                             <notebook>
                                 <page string="Diet and Exersice" id="diet_and_exercise">
                                     <group colspan="4">
-                                        <group col="4" string="Physical Exercise" id="physical_exercise">
+                                        <group col="4" string="Physical Exercise" >
                                             <field name="exercise" nolabel="1"/>
                                             <field name="exercise_minutes_day" />
                                         </group>
@@ -28,19 +28,15 @@
                                             <separator string="Meals" colspan="4"/>
                                             <field name="number_of_meals"/>
                                             <field name="eats_alone"/>
-                                            <separator string="Coffee" colspan="4"/>
-                                            <field name="coffee" nolabel="1"/>
+                                            <field name="coffee" />
                                             <field name="coffee_cups"/>
-                                            <separator string="Sugar/Salt" colspan="4"/>
                                             <field name="soft_drinks"/>
                                             <field name="salt"/>
-                                            <separator string="Diet" colspan="4"/>
-                                            <field name="diet" nolabel="1"/>
-                                            <field name="diet_info" nolabel="1"/>
+                                            <field name="diet" />
+                                            <field name="diet_info" attrs="{'readonly':[('diet','=', False)]}" />
                                         </group>
                                         <newline/>
-                                        <group colspan="4" id="group_lifestyle">
-                                            <separator string="Extra Information" colspan="4"/>
+                                        <group colspan="4" string="Extra Information" >
                                             <field name="lifestyle_info" nolabel="1" colspan="4" />
                                         </group>
                                     </group>
@@ -50,13 +46,15 @@
                                 <page string="Addictions" id="page_addictions">
                                     <notebook>
                                         <page string="Main" id="page_addictions_main">
-                                            <group colspan="4" col="8" id="group_addictions_main">
+                                            <group colspan="4" col="6" string="Smoke">
                                                 <field name="smoking"/>
                                                 <field name="smoking_number"/>
                                                 <field name="ex_smoker"/>
                                                 <field name="second_hand_smoker"/>
                                                 <field name="age_start_smoking"/>
                                                 <field name="age_quit_smoking"/>
+                                            </group>
+                                            <group colspan="4" col="6" string="Drugs">
                                                 <field name="drug_usage"/>
                                                 <field name="drug_iv"/>
                                                 <field name="ex_drug_addict"/>
@@ -65,11 +63,13 @@
                                             </group>
                                         </page>
                                         <page string="Alcohol" >
-                                            <group colspan="2" >
+                                            <group colspan="4" col="6"  >
                                                 <field name="alcohol" />
                                                 <field name="ex_alcoholic" />
+                                                <newline/>
                                                 <field name="age_start_drinking"/>
                                                 <field name="age_quit_drinking"/>
+                                                <newline/>
                                                 <field name="alcohol_beer_number"/>
                                                 <field name="alcohol_wine_number"/>
                                                 <field name="alcohol_liquor_number"/>
