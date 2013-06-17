@@ -13,33 +13,25 @@
                         <page string="Gyneco / Obs" attrs="{'invisible':[('sex','=', 'm')]}" >
                             <notebook>
                                 <page string="Gyneco" >
-                                    <group colspan="4" col="4" string="General" >
-                                        <group colspan="4" col="6">
-                                            <field name="fertile"/>
-                                            <field name="currently_pregnant"/>
-                                            <field name="menarche"/>
-                                        </group>
-                                        <group colspan="4" col="4">
-                                            <field name="menopausal"/>
-                                            <field name="menopause" attrs="{'readonly':[('menopausal','=', False)]}"/>
-                                        </group>
+                                    <group colspan="4" col="6" string="General" >
+                                        <field name="fertile"/>
+                                        <field name="currently_pregnant"/>
+                                        <field name="menarche"/>
+                                        <field name="menopausal"/>
+                                        <field name="menopause" attrs="{'readonly':[('menopausal','=', False)]}"/>
+                                        <newline/>
                                         <field name="dispareunia_sup"/>
                                         <field name="dispareunia_deep"/>
                                     </group>
-                                    <group colspan="2" string="Prevention and Screening">
-                                        <group colspan="4" col="6">
-                                            <field name="breast_self_examination"/>
-                                            <field name="mammography"/>
-                                            <field name="mammography_last"/>
-                                        </group>
-                                        <group colspan="4" col="4">
-                                            <field name="pap_test"/>
-                                            <field name="pap_test_last"/>
-                                        </group>
-                                        <group colspan="4" col="4">
-                                            <field name="colposcopy"/>
-                                            <field name="colposcopy_last"/>
-                                        </group>
+                                    <group colspan="4"  col="6" string="Prevention and Screening">
+                                        <field name="breast_self_examination"/>
+                                        <field name="mammography"/>
+                                        <field name="mammography_last"/>
+                                        <field name="pap_test"/>
+                                        <field name="pap_test_last"/>
+                                        <newline/>
+                                        <field name="colposcopy"/>
+                                        <field name="colposcopy_last"/>
                                     </group>
                                     <group colspan="4" string="Mestrual History">
                                         <field name="menstrual_history" nolabel="1" colspan="4">
