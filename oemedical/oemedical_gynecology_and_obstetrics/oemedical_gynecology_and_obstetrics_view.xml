@@ -9,7 +9,7 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <data>
-                    <notebook position="inside">
+                    <xpath expr="//notebook/page[@string='Misc']" position="before">
                         <page string="Gyneco / Obs" attrs="{'invisible':[('sex','=', 'm')]}" >
                             <notebook>
                                 <page string="Gyneco" >
@@ -316,7 +316,7 @@
                                 </page>
                             </notebook>
                         </page>
-                    </notebook>
+                    </zpath>
                 </data>
             </field>
         </record>
