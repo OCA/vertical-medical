@@ -316,7 +316,7 @@
                                 </page>
                             </notebook>
                         </page>
-                    </zpath>
+                    </xpath>
                 </data>
             </field>
         </record>
