@@ -19,6 +19,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+
 import oemedical_secondary_condition
 import oemedical_pathology_category
 import oemedical_signs_and_symptoms
@@ -62,5 +63,6 @@ import oemedical_pathology_group
 import oemedical_gynecology_and_obstetrics
 import oemedical_lifestyle
 import oemedical_genetics
+import oemedical_socioeconomics
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

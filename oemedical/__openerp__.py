@@ -138,7 +138,7 @@ OeMedical at a glance:
         'oemedical_lifestyle/data/recreational_drugs.xml',
         'oemedical_genetics/oemedical_disease_gene_view.xml',
         'oemedical_genetics/data/disease_genes.xml',
-        'oemedical_patient_history/oemedical_patient_history_view.xml',
+        'oemedical_socioeconomics/oemedical_socioeconomics_view.xml',
         'security/ir.model.access.csv',
         'oemedical_menu.xml',
     ],
