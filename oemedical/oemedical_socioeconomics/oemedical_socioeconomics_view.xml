@@ -9,7 +9,7 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <data>
-                    <xpath expr="//notebook/page[@string='Misc']" position="after">
+                    <xpath expr="//notebook/page[@string='Misc']" position="before">
                         <page string="Socioeconomics" id="page_socioeconomics">
                             <notebook>
                                 <page string="Main" id="page_ses_main">

@@ -9,7 +9,7 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <data>
-                    <notebook position="inside">
+                    <xpath expr="//notebook/page[@string='Misc']" position="before">
                         <page string="Lifestyle" id="patient_lifestyle">
                             <notebook>
                                 <page string="Diet and Exersice" id="diet_and_exercise">
@@ -215,7 +215,7 @@
                             </notebook>
                         </page>
 
-                    </notebook>
+                    </xpath>
                 </data>
             </field>
         </record>
