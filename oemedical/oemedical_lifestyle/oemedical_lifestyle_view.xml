@@ -181,19 +181,13 @@
                                         <field name="anticonceptive"/>
                                     </group>
                                     <newline/>
-                                    <group colspan="4" col="6" string="Sexual practices" >
-                                        <group >
-                                            <field name="sex_oral"/>
-                                            <newline/>
-                                            <field name="sex_anal"/>
-                                        </group>
-                                        <group >
-                                            <field name="prostitute"/>
-                                            <newline/>
-                                            <field name="sex_with_prostitutes"/>
-                                        </group>
-                                        <group colspan="2"  string="Sexual Information" >
-                                            <field name="sexuality_info" nolabel="1"/>
+                                    <group colspan="4" col="4" string="Sexual practices" >
+                                        <field name="sex_oral"/>
+                                        <field name="prostitute"/>
+                                        <field name="sex_anal"/>
+                                        <field name="sex_with_prostitutes"/>
+                                        <group colspan="4" col="4"  string="Sexual Information" >
+                                            <field name="sexuality_info" nolabel="1" colspan="4"/>
                                         </group>
                                     </group>
                                 </page>
