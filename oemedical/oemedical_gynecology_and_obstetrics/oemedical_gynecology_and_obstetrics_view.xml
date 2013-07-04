@@ -256,7 +256,7 @@
                                                                     </group>
                                                                     <newline/>
                                                                     <separator colspan="4" string="Notes" />
-                                                                    <field name="notes"/>
+                                                                    <field name="notes" nolabel="1"/>
                                                                 </page>
 
 
