@@ -103,7 +103,7 @@ class OeMedicalPatient(osv.Model):
         'ssn': fields.char(size=256, string='SSN',),
         'vaccinations': fields.one2many('oemedical.vaccination', 'patient_id', 'Vaccinations',),
         'dob': fields.date(string='DoB'),
-        'age': fields.function(_get_age, type='char', string='Age', help="", multi=False),
+        'age': fields.function(_get_age, type='char', string='Age', help="It shows the age of the patient in years(y), months(m) and days(d).\nIf the patient has died, the age shown is the age at time of death, the age corresponding to the date on the death certificate. It will show also \"deceased\" on the field", multi=False),
         'marital_status': fields.selection([('s', 'Single'), ('m', 'Married'),
                                             ('w', 'Widowed'),
                                             ('d', 'Divorced'),
