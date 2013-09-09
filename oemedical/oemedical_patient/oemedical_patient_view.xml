@@ -202,6 +202,37 @@
  			</field> 
  		</record> 
 
+        <record model="ir.ui.view" id="view_oemedical_patient_kanban">
+            <field name="name">oemedical.patient.kanban</field>
+            <field name="model">oemedical.patient</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <templates>
+                            <field name="name"/>
+                        <t t-name="kanban-box">
+                            <div class="oe_employee_vignette">
+                                <div class="oe_employee_image">
+                                    <a type="open"><img t-att-src="kanban_image('oemedical.patient', 'image_medium', record.id.value)" class="oe_employee_picture"/></a>
+                                </div>
+                                <div class="oe_employee_details">
+                                    <h3>
+                                        <a type="open"><field name="name"/></a>
+                                    </h3>
+                                    <ul>
+                                        <li t-if="record.age.raw_value">Age: <field name="age"/></li>
+                                        <li t-if="record.sex.raw_value">Sex: <field name="sex"/></li>
+                                        <li t-if="record.blood_type.raw_value">Blond: <field name="blood_type"/><field name="rh"/></li>
+                                        <li t-if="record.ssn.raw_value">SSN: <field name="ssn"/></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
  		<record id="view_oemedical_patient_search" model="ir.ui.view"> 
  			<field name="name">oemedical.patient.search</field> 
  			<field name="model">oemedical.patient</field> 
@@ -244,7 +275,7 @@
  			<field name="type">ir.actions.act_window</field> 
  			<field name="res_model">oemedical.patient</field> 
  			<field name="view_type">form</field> 
- 			<field name="view_mode">tree,form</field> 
+ 			<field name="view_mode">tree,form,kanban</field> 
  			<field name="search_view_id" ref="view_oemedical_patient_search" /> 
  			<field name="domain">[]</field> 
  			<field name="context">{}</field> 
@@ -263,6 +294,14 @@
  			<field name="view_mode">tree</field> 
  			<field name="view_id" ref="view_oemedical_patient_tree" /> 
  		</record> 
+
+ 		<record model="ir.actions.act_window.view" id="act_open_oemedical_patient_view_kanban"> 
+ 			<field name="act_window_id" ref="act_open_oemedical_patient_view" /> 
+ 			<field name="sequence" eval="20" /> 
+ 			<field name="view_mode">kanban</field> 
+ 			<field name="view_id" ref="view_oemedical_patient_kanban" /> 
+ 		</record> 
+
 
 	</data>
 </openerp>
