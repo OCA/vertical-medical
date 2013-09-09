@@ -124,7 +124,6 @@ class OeMedicalPatient(osv.Model):
                  }
 
     def create(self, cr, uid, vals, context=None):
-        print "vals", vals
         sequence = unicode (self.pool.get('ir.sequence').get(cr, uid, 'oemedical.patient'))
         vals['identification_code'] = sequence
         return super(OeMedicalPatient, self).create(cr, uid, vals, context=context)

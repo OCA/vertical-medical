@@ -1,0 +1,142 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Medical\n"
+"Report-Msgid-Bugs-To: https://sourceforge.net/apps/mantisbt/medical\n"
+"POT-Creation-Date: 2010-12-05 21:38:03+0000\n"
+"PO-Revision-Date: 2011-02-05 18:44+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: German <None>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#. module: medical_surgery
+#: constraint:ir.model:0
+msgid "The Object name must start with x_ and not contain any special character !"
+msgstr "Das Objekt muss mit x_ beginnen und darf keine Sonderzeichen enthalten!"
+
+#. module: medical_surgery
+#: model:ir.module.module,shortdesc:medical_surgery.module_meta_information
+msgid "Medical : Surgery module"
+msgstr "Medical : Operationen"
+
+#. module: medical_surgery
+#: field:medical.surgery,pathology:0
+msgid "Base condition"
+msgstr "Hauptbeschwerde"
+
+#. module: medical_surgery
+#: field:medical.surgery,classification:0
+msgid "Surgery Classification"
+msgstr "Operationsklassifikation"
+
+#. module: medical_surgery
+#: help:medical.surgery,name:0
+msgid "Procedure Code, for example ICD-10-PCS Code 7-character string"
+msgstr "Prozeduren Code, z.B. OPS"
+
+#. module: medical_surgery
+#: help:medical.surgery,age:0
+msgid "Patient age at the moment of the surgery. Can be estimative"
+msgstr "Alter des Patienten zum Zeitpunkt der OP. Kann geschätzt werden"
+
+#. module: medical_surgery
+#: field:medical.surgery,surgeon:0
+msgid "Surgeon"
+msgstr "Operateur"
+
+#. module: medical_surgery
+#: selection:medical.surgery,classification:0
+msgid "Optional"
+msgstr "Optional"
+
+#. module: medical_surgery
+#: constraint:ir.ui.view:0
+msgid "Invalid XML for View Architecture!"
+msgstr "Ungültige XML für die Architektur der View"
+
+#. module: medical_surgery
+#: help:medical.surgery,surgeon:0
+msgid "Surgeon who did the procedure"
+msgstr "Arzt, der die Operation durchgeführt hat"
+
+#. module: medical_surgery
+#: model:ir.module.module,description:medical_surgery.module_meta_information
+msgid ""
+"\n"
+"\n"
+"Surgery Module for Medical.\n"
+"\n"
+"If you want to include standard procedures, please install the correspondant procedure module (such as medical_icd10)\n"
+msgstr ""
+"\n"
+"\n"
+"Operationsmodule für Medical.\n"
+"\n"
+"Wenn Sie die Datenbank für die Prozeduren (Operationsschlüssel haben möchten, dann installieren sie das entsprechende Modul, medical_icd10\n"
+
+#. module: medical_surgery
+#: selection:medical.surgery,classification:0
+msgid "Required"
+msgstr "Erforderlich"
+
+#. module: medical_surgery
+#: field:medical.surgery,date:0
+msgid "Date of the surgery"
+msgstr "Datum der Operation"
+
+#. module: medical_surgery
+#: view:medical.patient:0 field:medical.patient,surgery:0
+msgid "Surgeries"
+msgstr "Operationen"
+
+#. module: medical_surgery
+#: view:medical.procedure:0
+msgid "Procedure"
+msgstr "Prozeduren"
+
+#. module: medical_surgery
+#: field:medical.surgery,description:0
+msgid "Description"
+msgstr "Beschreibung"
+
+#. module: medical_surgery
+#: field:medical.surgery,name:0
+msgid "Code"
+msgstr "Code"
+
+#. module: medical_surgery
+#: help:medical.surgery,pathology:0
+msgid "Base Condition / Reason"
+msgstr "Hauptbeschwerde / Grund"
+
+#. module: medical_surgery
+#: selection:medical.surgery,classification:0
+msgid "Urgent"
+msgstr "Dringend"
+
+#. module: medical_surgery
+#: field:medical.surgery,extra_info:0
+msgid "Extra Info"
+msgstr "Extra Info"
+
+#. module: medical_surgery
+#: field:medical.surgery,age:0
+msgid "Patient age"
+msgstr "Patientenalter"
+
+#. module: medical_surgery
+#: model:ir.model,name:medical_surgery.model_medical_patient
+msgid "Patient related information"
+msgstr "Patienteninformationen"
+
+#. module: medical_surgery
+#: model:ir.model,name:medical_surgery.model_medical_surgery
+#: view:medical.surgery:0
+msgid "Surgery"
+msgstr "Operation"
