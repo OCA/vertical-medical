@@ -213,7 +213,7 @@
                         <t t-name="kanban-box">
                             <div class="oe_employee_vignette">
                                 <div class="oe_employee_image">
-                                    <a type="open"><img t-att-src="kanban_image('oemedical.patient', 'photo', record.id.value)" width="150" height="150" class="oe_employee_picture"/></a>
+                                    <a type="open"><img t-att-src="kanban_image('oemedical.patient', 'photo', record.id.value)" width="190" height="160" class="oe_employee_picture"/></a>
                                 </div>
                                 <div class="oe_employee_details">
                                     <h3>
