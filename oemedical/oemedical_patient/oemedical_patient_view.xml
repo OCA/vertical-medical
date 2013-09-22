@@ -219,10 +219,10 @@
                                             <a type="open"><field name="name"/></a>
                                         </h3>
                                         <ul>
-                                            <li t-if="record.age.raw_value">Age: <field name="age"/></li>
-                                            <li t-if="record.sex.raw_value">Sex: <field name="sex"/></li>
-                                            <li t-if="record.blood_type.raw_value">Blond: <field name="blood_type"/><field name="rh"/></li>
-                                            <li t-if="record.ssn.raw_value">SSN: <field name="ssn"/></li>
+                                            <li t-if="record.age.raw_value"><b>Age:</b> <field name="age"/></li>
+                                            <li t-if="record.sex.raw_value"><b>Sex:</b> <field name="sex"/></li>
+                                            <li t-if="record.blood_type.raw_value"><b>Blond:</b> <field name="blood_type"/><field name="rh"/></li>
+                                            <li t-if="record.ssn.raw_value"><b>SSN:</b> <field name="ssn"/></li>
                                         </ul>
                                     </div>
                                 </div>
