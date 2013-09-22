@@ -154,7 +154,9 @@
                                             <a type="open"><field name="name"/></a>
                                         </h3>
                                         <ul>
-                                            <li t-if="record.patient_id.raw_value">Patient: <field name="patient_id"/></li>
+                                            <li t-if="record.prescription_date.raw_value"><b>Date:</b> <field name="prescription_date"/></li>
+                                            <li t-if="record.patient_id.raw_value"><b>Patient:</b> <field name="patient_id"/></li>
+                                            <li t-if="record.physician_id.raw_value"><b>Physician:</b> <field name="physician_id"/></li>
                                         </ul>
                                     </div>
                                 </div>
