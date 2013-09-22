@@ -152,9 +152,9 @@
                                             <a type="open"><field name="name"/></a>
                                         </h3>
                                         <ul>
-                                            <li t-if="record.patient_id.raw_value">Patient: <field name="patient_id"/></li>
-                                            <li t-if="record.doctor.raw_value">Doctor: <field name="doctor"/></li>
-                                            <li t-if="record.duration.raw_value">Duration: <field name="duration"/></li>
+                                            <li t-if="record.patient_id.raw_value"><b>Patient:</b> <field name="patient_id"/></li>
+                                            <li t-if="record.doctor.raw_value"><b>Doctor:</b> <field name="doctor"/></li>
+                                            <li t-if="record.duration.raw_value"><b>Duration:</b> <field name="duration"/></li>
                                         </ul>
                                     </div>
                                 </div>
