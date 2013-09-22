@@ -290,14 +290,14 @@
 
  		<record model="ir.actions.act_window.view" id="act_open_oemedical_patient_view_tree"> 
  			<field name="act_window_id" ref="act_open_oemedical_patient_view" /> 
- 			<field name="sequence" eval="10" /> 
+ 			<field name="sequence" eval="30" /> 
  			<field name="view_mode">tree</field> 
  			<field name="view_id" ref="view_oemedical_patient_tree" /> 
  		</record> 
 
  		<record model="ir.actions.act_window.view" id="act_open_oemedical_patient_view_kanban"> 
  			<field name="act_window_id" ref="act_open_oemedical_patient_view" /> 
- 			<field name="sequence" eval="20" /> 
+ 			<field name="sequence" eval="10" /> 
  			<field name="view_mode">kanban</field> 
  			<field name="view_id" ref="view_oemedical_patient_kanban" /> 
  		</record> 
