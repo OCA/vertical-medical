@@ -24,9 +24,9 @@ from tools.translate import _
 
 # Add Lab test information to the Patient object
 
-class patient_data (osv.osv):
-	_name = "medical.patient"
-	_inherit = "medical.patient"
+class oemedical_patient (osv.osv):
+	_name = "oemedical.patient"
+	_inherit = "oemedical.patient"
 
 	def name_get(self, cr, uid, ids, context={}):
 		if not len(ids):
@@ -50,19 +50,19 @@ class patient_data (osv.osv):
 		return result        
 
 	_columns = {
-		'lab_test_ids': fields.one2many('medical.patient.lab.test','patient_id','Lab Tests Required'),
+		'lab_test_ids': fields.one2many('oemedical.patient.lab.test','patient_id','Lab Tests Required'),
 		}
 
     
 class test_type (osv.osv):
-	_name = "medical.test_type"
+	_name = "oemedical.test_type"
 	_description = "Type of Lab test"
 	_columns = {
 		'name' : fields.char ('Test',size=128,help="Test type, eg X-Ray, hemogram,biopsy..."),
 		'code' : fields.char ('Code',size=128,help="Short name - code for the test"),
 		'info' : fields.text ('Description'),
         'product_id' : fields.many2one('product.product', 'Service', required=True),
-        'critearea': fields.one2many('medical_test.critearea','test_type_id','Test Cases'),
+        'critearea': fields.one2many('oemedical_test.critearea','test_type_id','Test Cases'),
 
 
 	}
@@ -71,17 +71,17 @@ class test_type (osv.osv):
 
 
 class lab (osv.osv):
-	_name = "medical.lab"
+	_name = "oemedical.lab"
 	_description = "Lab Test"
 	_columns = {
 		'name' : fields.char ('ID', size=128, help="Lab result ID"),
-		'test' : fields.many2one ('medical.test_type', 'Test type', help="Lab test type"),
-		'patient' : fields.many2one ('medical.patient', 'Patient', help="Patient ID"), 
-		'pathologist' : fields.many2one ('medical.physician','Pathologist',help="Pathologist"),
-		'requestor' : fields.many2one ('medical.physician', 'Physician', help="Doctor who requested the test"),
+		'test' : fields.many2one ('oemedical.test_type', 'Test type', help="Lab test type"),
+		'patient' : fields.many2one ('oemedical.patient', 'Patient', help="Patient ID"), 
+		'pathologist' : fields.many2one ('oemedical.physician','Pathologist',help="Pathologist"),
+		'requestor' : fields.many2one ('oemedical.physician', 'Physician', help="Doctor who requested the test"),
 		'results' : fields.text ('Results'),
 		'diagnosis' : fields.text ('Diagnosis'),
-		'critearea': fields.one2many('medical_test.critearea','medical_lab_id','Test Cases'),
+		'critearea': fields.one2many('oemedical_test.critearea','oemedical_lab_id','Test Cases'),
 		'date_requested' : fields.datetime ('Date requested'),
 		'date_analysis' : fields.datetime ('Date of the Analysis'),        
 		}
@@ -89,7 +89,7 @@ class lab (osv.osv):
 	_defaults = {
         'date_requested': lambda *a: time.strftime('%Y-%m-%d %H:%M:%S'),
         'date_analysis': lambda *a: time.strftime('%Y-%m-%d %H:%M:%S'),
-        'name' : lambda obj, cr, uid, context: obj.pool.get('ir.sequence').get(cr, uid, 'medical.lab'),         
+        'name' : lambda obj, cr, uid, context: obj.pool.get('ir.sequence').get(cr, uid, 'oemedical.lab'),         
          }
 
 
@@ -99,8 +99,8 @@ class lab (osv.osv):
 
 
 
-class medical_lab_test_units(osv.osv):
-    _name = "medical.lab.test.units"
+class oemedical_lab_test_units(osv.osv):
+    _name = "oemedical.lab.test.units"
     _columns = {
         'name' : fields.char('Unit', size=25),
         'code' : fields.char('Code', size=25),
@@ -110,16 +110,16 @@ class medical_lab_test_units(osv.osv):
     
 
 
-class medical_test_critearea(osv.osv):
-    _name = "medical_test.critearea"
+class oemedical_test_critearea(osv.osv):
+    _name = "oemedical_test.critearea"
     _description = "Lab Test Critearea"    
     _columns ={
        'name' : fields.char('Test', size=64),
        'result' : fields.text('Result'),
        'normal_range' : fields.text('Normal Range'),
-       'units' : fields.many2one('medical.lab.test.units', 'Units'),
-       'test_type_id' : fields.many2one('medical.test_type','Test type'),
-       'medical_lab_id' : fields.many2one('medical.lab','Test Cases'),
+       'units' : fields.many2one('oemedical.lab.test.units', 'Units'),
+       'test_type_id' : fields.many2one('oemedical.test_type','Test type'),
+       'oemedical_lab_id' : fields.many2one('oemedical.lab','Test Cases'),
        'sequence' : fields.integer('Sequence'),       
        }
     _defaults = {
@@ -130,12 +130,12 @@ class medical_test_critearea(osv.osv):
 
     
 
-class medical_patient_lab_test(osv.osv):
-    _name = 'medical.patient.lab.test'
+class oemedical_patient_lab_test(osv.osv):
+    _name = 'oemedical.patient.lab.test'
     def _get_default_dr(self, cr, uid, context={}):
         partner_id = self.pool.get('res.partner').search(cr,uid,[('user_id','=',uid)])
         if partner_id:
-            dr_id = self.pool.get('medical.physician').search(cr,uid,[('name','=',partner_id[0])])
+            dr_id = self.pool.get('oemedical.physician').search(cr,uid,[('name','=',partner_id[0])])
             if dr_id:
                 return dr_id[0]
             #else:
@@ -146,11 +146,11 @@ class medical_patient_lab_test(osv.osv):
             return False
         
     _columns = {
-        'name' : fields.many2one('medical.test_type','Test Type'),
+        'name' : fields.many2one('oemedical.test_type','Test Type'),
         'date' : fields.datetime('Date'),
         'state' : fields.selection([('draft','Draft'),('tested','Tested'),('cancel','Cancel')],'State',readonly=True),
-        'patient_id' : fields.many2one('medical.patient','Patient'),
-        'doctor_id' : fields.many2one('medical.physician','Doctor', help="Doctor who Request the lab test."), 
+        'patient_id' : fields.many2one('oemedical.patient','Patient'),
+        'doctor_id' : fields.many2one('oemedical.physician','Doctor', help="Doctor who Request the lab test."), 
 		#'invoice_status' : fields.selection([('invoiced','Invoiced'),('tobe','To be Invoiced'),('no','No Invoice')],'Invoice Status'),
         }
     

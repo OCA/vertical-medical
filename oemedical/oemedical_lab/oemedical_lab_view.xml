@@ -3,64 +3,61 @@
     <data>
 
 <!-- Lab test units -->
-		<record model="ir.ui.view" id="medical_lab_unit_form">
-			<field name="name">Test Units</field>
-			<field name="model">medical.lab.test.units</field>
-			<field name="type">form</field>
-			<field name="arch" type="xml">
-				<form string="Test Unit">
-					<field name="name" required="1"/>
-					<field name="code"/>
-				</form>
-			</field>
-		</record>
+<!--		<record model="ir.ui.view" id="oemedical_lab_unit_form">-->
+<!--			<field name="name">Test Units</field>-->
+<!--			<field name="model">oemedical.lab.test.units</field>-->
+<!--			<field name="type">form</field>-->
+<!--			<field name="arch" type="xml">-->
+<!--				<form string="Test Unit">-->
+<!--					<field name="name" required="1"/>-->
+<!--					<field name="code"/>-->
+<!--				</form>-->
+<!--			</field>-->
+<!--		</record>-->
 
-		<record model="ir.ui.view" id="medical_lab_unit_tree">
-			<field name="name">Test Units</field>
-			<field name="model">medical.lab.test.units</field>
-			<field name="type">tree</field>
-			<field name="arch" type="xml">
-				<tree string="Test Unit">
-					<field name="name"/>
-					<field name="code"/>
-				</tree>
-			</field>
-		</record>
-        
-		<record model="ir.actions.act_window" id="medical_action_lab_unit">
-			<field name="name">Lab Testing Units</field>
-			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">medical.lab.test.units</field>
-			<field name="view_type">form</field>
-			<field name="view_mode">tree,form</field>
-		</record>
-
-
-		<record id="view_medical_lab_test_unit_search" model="ir.ui.view">
-			<field name="name">medical.lab.test.units.select</field>
-			<field name="model">medical.lab.test.units</field>
-			<field name="type">search</field>
-			<field name="arch" type="xml">
-				<search string="Search Lab Test Units">
-
-					<separator orientation="vertical"/>
-					    <field name="name" select="1"/>
-					    <field name="code" select="1"/>
-				<newline/>
-
-				</search>
-			</field>
-		</record>
+<!--		<record model="ir.ui.view" id="oemedical_lab_unit_tree">-->
+<!--			<field name="name">Test Units</field>-->
+<!--			<field name="model">oemedical.lab.test.units</field>-->
+<!--			<field name="type">tree</field>-->
+<!--			<field name="arch" type="xml">-->
+<!--				<tree string="Test Unit">-->
+<!--					<field name="name"/>-->
+<!--					<field name="code"/>-->
+<!--				</tree>-->
+<!--			</field>-->
+<!--		</record>-->
+<!--        -->
+<!--		<record model="ir.actions.act_window" id="oemedical_action_lab_unit">-->
+<!--			<field name="name">Lab Testing Units</field>-->
+<!--			<field name="type">ir.actions.act_window</field>-->
+<!--			<field name="res_model">oemedical.lab.test.units</field>-->
+<!--			<field name="view_type">form</field>-->
+<!--			<field name="view_mode">tree,form</field>-->
+<!--		</record>-->
 
 
+<!--		<record id="view_oemedical_lab_test_unit_search" model="ir.ui.view">-->
+<!--			<field name="name">oemedical.lab.test.units.select</field>-->
+<!--			<field name="model">oemedical.lab.test.units</field>-->
+<!--			<field name="type">search</field>-->
+<!--			<field name="arch" type="xml">-->
+<!--				<search string="Search Lab Test Units">-->
+<!--					<separator orientation="vertical"/>-->
+<!--					    <field name="name" select="1"/>-->
+<!--					    <field name="code" select="1"/>-->
+<!--				<newline/>-->
 
-		<menuitem action="medical_action_lab_unit" id="medical_labtest_unit" parent="medical_conf_laboratory"/>
+<!--				</search>-->
+<!--			</field>-->
+<!--		</record>-->
+
+<!--		<menuitem action="oemedical_action_lab_unit" id="oemedical_labtest_unit" parent="oemedical_conf_laboratory"/>-->
         
 <!-- lab requests -->
 
-		<record model="ir.ui.view" id="medical_lab_test_request_form">
+		<record model="ir.ui.view" id="oemedical_lab_test_request_form">
 			<field name="name">Lab Test Requests</field>
-			<field name="model">medical.patient.lab.test</field>
+			<field name="model">oemedical.patient.lab.test</field>
 			<field name="type">form</field>
 			<field name="arch" type="xml">
 				<form string="Test Requests">
@@ -73,9 +70,9 @@
 			</field>
 		</record>
 
-		<record model="ir.ui.view" id="medical_lab_test_request_tree">
+		<record model="ir.ui.view" id="oemedical_lab_test_request_tree">
 			<field name="name">Lab Test Requests</field>
-			<field name="model">medical.patient.lab.test</field>
+			<field name="model">oemedical.patient.lab.test</field>
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
 				<tree string="Test Requests">
@@ -88,42 +85,42 @@
 			</field>
 		</record>
         
-		<record model="ir.actions.act_window" id="medical_action_lab_test_request">
+		<record model="ir.actions.act_window" id="oemedical_action_lab_test_request">
 			<field name="name">Lab Requests</field>
 			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">medical.patient.lab.test</field>
+			<field name="res_model">oemedical.patient.lab.test</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">tree,form</field>
 		</record>
 
-		<menuitem action="medical_action_lab_test_request" id="medical_labtest_request" parent="medical_laboratory_menu"/>
+		<menuitem action="oemedical_action_lab_test_request" id="oemedical_labtest_request" parent="oemedical_laboratory_menu"/>
 
-		<record model="ir.actions.act_window" id="medical_action_draft_lab_test_request">
+		<record model="ir.actions.act_window" id="oemedical_action_draft_lab_test_request">
 			<field name="name">Draft Requests</field>
 			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">medical.patient.lab.test</field>
+			<field name="res_model">oemedical.patient.lab.test</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">tree,form</field>
 			<field name="domain">[('state','=','draft')]</field>
 		</record>
 
-		<menuitem action="medical_action_draft_lab_test_request" id="medical_draft_labtest_request" parent="medical_labtest_request"/>
+		<menuitem action="oemedical_action_draft_lab_test_request" id="oemedical_draft_labtest_request" parent="oemedical_labtest_request"/>
 
-		<record model="ir.actions.act_window" id="medical_action_today_draft_lab_test_request">
+		<record model="ir.actions.act_window" id="oemedical_action_today_draft_lab_test_request">
 			<field name="name">Today's Draft Requests</field>
 			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">medical.patient.lab.test</field>
+			<field name="res_model">oemedical.patient.lab.test</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">tree,form</field>
 			<field name="domain">[('state','=','draft'),('date','&gt;=',time.strftime('%Y-%m-%d 00:00:01')),('date','&lt;=',time.strftime('%Y-%m-%d 23:59:59'))]</field>
 		</record>
 
-		<menuitem action="medical_action_today_draft_lab_test_request" id="medical_today_draft_labtest_request" parent="medical_labtest_request"/>
+		<menuitem action="oemedical_action_today_draft_lab_test_request" id="oemedical_today_draft_labtest_request" parent="oemedical_labtest_request"/>
 
 
-		<record id="view_medical_lab_test_filter" model="ir.ui.view">
+		<record id="view_oemedical_lab_test_filter" model="ir.ui.view">
 			<field name="name">Lab Tests Requests</field>
-			<field name="model">medical.patient.lab.test</field>
+			<field name="model">oemedical.patient.lab.test</field>
 			<field name="type">search</field>
 			<field name="arch" type="xml">
 				<search string="Search Lab Tests Requests">
@@ -143,32 +140,32 @@
 
 <!-- Patient details -->
 
-		<record model="ir.ui.view" id="medical_patient_view_lab_test">
-			<field name="name">Patient Lab Test</field>
-			<field name="model">medical.patient</field>
-			<field name="type">form</field>
-			<field name="inherit_id" ref="medical.medical_patient_view"/>
-			<field name="arch" type="xml">
-				<notebook position="inside">
-                	<page string="Lab Tests">
-				        <field name="lab_test_ids" colspan="4" nolabel="1">
-				        	<tree string="Lab Tests">
-				        		<field name="name" required="1"/>
-				        		<field name="doctor_id"/>
-				        		<field name="date"/>
-				        		<field name="state"/>
-			        		</tree>
-			        		<form string="Lab Tests">
-				        		<field name="name"/>
-				        		<field name="doctor_id"/>
-				        		<field name="date"/>
-				        		<field name="state"/>
-			        		</form>
-		        		</field>
-					</page>
-				</notebook>
-            </field>
-		</record>
+<!--		<record model="ir.ui.view" id="oemedical_patient_view_lab_test">-->
+<!--			<field name="name">Patient Lab Test</field>-->
+<!--			<field name="model">oemedical.patient</field>-->
+<!--			<field name="type">form</field>-->
+<!--			<field name="inherit_id" ref="oemedical.medical_patient_view"/>-->
+<!--			<field name="arch" type="xml">-->
+<!--				<notebook position="inside">-->
+<!--                	<page string="Lab Tests">-->
+<!--				        <field name="lab_test_ids" colspan="4" nolabel="1">-->
+<!--				        	<tree string="Lab Tests">-->
+<!--				        		<field name="name" required="1"/>-->
+<!--				        		<field name="doctor_id"/>-->
+<!--				        		<field name="date"/>-->
+<!--				        		<field name="state"/>-->
+<!--			        		</tree>-->
+<!--			        		<form string="Lab Tests">-->
+<!--				        		<field name="name"/>-->
+<!--				        		<field name="doctor_id"/>-->
+<!--				        		<field name="date"/>-->
+<!--				        		<field name="state"/>-->
+<!--			        		</form>-->
+<!--		        		</field>-->
+<!--					</page>-->
+<!--				</notebook>-->
+<!--            </field>-->
+<!--		</record>-->
 
 
 
@@ -176,9 +173,9 @@
 
 
 
-                <record model="ir.ui.view" id="medical_test_view">
+                <record model="ir.ui.view" id="oemedical_test_view">
                         <field name="name">Lab test</field>
-                        <field name="model">medical.test_type</field>
+                        <field name="model">oemedical.test_type</field>
                         <field name="type">form</field>
                         <field name="arch" type="xml">
                                 <form string="Lab Test">
@@ -213,9 +210,9 @@
 
 
 
-                <record model="ir.ui.view" id="medical_test_tree">
+                <record model="ir.ui.view" id="oemedical_test_tree">
                         <field name="name">Lab test types list</field>
-                        <field name="model">medical.test_type</field>
+                        <field name="model">oemedical.test_type</field>
                         <field name="type">tree</field>
                         <field name="arch" type="xml">
                                 <tree string='Lab test type'>
@@ -226,17 +223,17 @@
                 </record>
 
 
-                <record model="ir.actions.act_window" id="medical_action_form_test">
+                <record model="ir.actions.act_window" id="oemedical_action_form_test">
                         <field name="name">New Type of Lab test</field>
                         <field name="type">ir.actions.act_window</field>
-                        <field name="res_model">medical.test_type</field>
+                        <field name="res_model">oemedical.test_type</field>
                         <field name="view_type">form</field>
-                        <field name="view_id" ref="medical_test_view"/>
+                        <field name="view_id" ref="oemedical_test_view"/>
                 </record>
 
-		<record id="view_medical_lab_test_type_search" model="ir.ui.view">
-			<field name="name">medical.test_type.select</field>
-			<field name="model">medical.test_type</field>
+		<record id="view_oemedical_lab_test_type_search" model="ir.ui.view">
+			<field name="name">oemedical.test_type.select</field>
+			<field name="model">oemedical.test_type</field>
 			<field name="type">search</field>
 			<field name="arch" type="xml">
 				<search string="Search Lab Test Types">
@@ -251,15 +248,15 @@
 		</record>
 
 
-		<menuitem action="medical_action_form_test" id="medical_conf_test" parent="medical_conf_laboratory" />
+		<menuitem action="oemedical_action_form_test" id="oemedical_conf_test" parent="oemedical_conf_laboratory" />
 
 
 
 
 
-                <record model="ir.ui.view" id="medical_lab_view">
+                <record model="ir.ui.view" id="oemedical_lab_view">
                         <field name="name">Lab Test</field>
-                        <field name="model">medical.lab</field>
+                        <field name="model">oemedical.lab</field>
                         <field name="type">form</field>
                         <field name="arch" type="xml">
                                 <form string="Laboratory Test">
@@ -304,9 +301,9 @@
 
 
 
-                <record model="ir.ui.view" id="medical_lab_tree">
+                <record model="ir.ui.view" id="oemedical_lab_tree">
                         <field name="name">Lab test type</field>
-                        <field name="model">medical.lab</field>
+                        <field name="model">oemedical.lab</field>
                         <field name="type">tree</field>
                         <field name="arch" type="xml">
                                 <tree string='Lab test type'>
@@ -318,24 +315,24 @@
                         </field>
                 </record>
 
-                <record model="ir.actions.act_window" id="medical_action_tree_lab">
+                <record model="ir.actions.act_window" id="oemedical_action_tree_lab">
                         <field name="name">Lab Tests Results</field>
                         <field name="type">ir.actions.act_window</field>
-                        <field name="res_model">medical.lab</field>
+                        <field name="res_model">oemedical.lab</field>
                         <field name="view_type">form</field>
 			<field name="view_mode">tree,form</field>
-                        <field name="view_id" ref="medical_lab_tree"/>
+                        <field name="view_id" ref="oemedical_lab_tree"/>
                 </record>
 
-		<menuitem action="medical_action_tree_lab" id="medical_action_lab_tree" parent="medical_laboratory_menu" sequence="2"/>
+		<menuitem action="oemedical_action_tree_lab" id="oemedical_action_lab_tree" parent="oemedical_laboratory_menu" sequence="2"/>
 
 
 
-	<act_window domain="[('patient', '=', active_id)]" id="act_patient_lab_history" name="Lab Reports" res_model="medical.lab" src_model="medical.patient"/>
+	<act_window domain="[('patient', '=', active_id)]" id="act_patient_lab_history" name="Lab Reports" res_model="oemedical.lab" src_model="oemedical.patient"/>
 
-		<record id="view_medical_lab_test_results_filter" model="ir.ui.view">
+		<record id="view_oemedical_lab_test_results_filter" model="ir.ui.view">
 			<field name="name">Lab Tests Results</field>
-			<field name="model">medical.lab</field>
+			<field name="model">oemedical.lab</field>
 			<field name="type">search</field>
 			<field name="arch" type="xml">
 				<search string="Search Lab Tests Results">

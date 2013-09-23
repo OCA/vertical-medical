@@ -64,5 +64,6 @@ import oemedical_gynecology_and_obstetrics
 import oemedical_lifestyle
 import oemedical_genetics
 import oemedical_socioeconomics
+import oemedical_lab
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

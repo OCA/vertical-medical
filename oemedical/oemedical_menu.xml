@@ -39,7 +39,7 @@
 			action="act_open_oemedical_prescription_order_view" />
 
 <!--       Laboratory    -->
-		<menuitem name="Laboratory" id="medical_laboratory_menu" 
+		<menuitem name="Laboratory" id="oemedical_laboratory_menu" 
             parent="oemedical_root" sequence="4"/>
 
 
@@ -49,7 +49,7 @@
 			parent="oemedical_root" sequence="100" />
 
 <!--       Laboratory       -->
-		<menuitem name="Laboratory" id="medical_conf_laboratory" 
+		<menuitem name="Laboratory" id="oemedical_conf_laboratory" 
             parent="oemedical_root_sub" sequence="3"/>
 
 
