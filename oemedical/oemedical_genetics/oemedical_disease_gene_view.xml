@@ -93,7 +93,7 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <data>
-                    <notebook position="inside">
+                    <xpath expr="//notebook/page[@string='Misc']" position="before">
                         <page string="Genetics">
                             <separator string="Genetic Risk" />
                             <field name="genetic_risks">
@@ -139,7 +139,7 @@
                                 </form>
                             </field>
                         </page>
-                    </notebook>
+                    </xpath>
                 </data>
             </field>
         </record>

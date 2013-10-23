@@ -7,11 +7,11 @@
  			<field name="priority" eval="8" /> 
  			<field name="arch" type="xml"> 
  				<tree string="Oemedical Patient"> 
- 					<field name="name" /> 
- 					<field name="lastname" /> 
- 					<field name="slastname" />
+ 					<field name="name" />
+<!-- 					<field name="lastname" />-->
  					<field name="ssn" /> 
  					<field name="identification_code" /> 
+ 					<field name="age" />
  					<field name="sex" /> 
  				</tree> 
  			</field> 
@@ -24,65 +24,75 @@
  			<field name="arch" type="xml"> 
  			 <form string="Patient" version="7.0"> 
                     <sheet> 
-                        <field name="photo" widget='image' class="oe_left oe_avatar"/> 
-                        <div> 
-                             <h1> 
-		                        <field name="name" placeholder="First Name" style="width: 20%%" /> 
-		                        <field name="lastname" placeholder="Last Name" style="width: 20%%" /> 
-		                        <field name="slastname" placeholder="S Last Name" style="width: 20%%" /> 
-	                        </h1> 
-                        </div> 
- 						<div> 
- 							<label for="sex" class="oe_edit_only"/> 
- 							<field name="sex" style="width: 30%%"/> 
- 							<label for="blood_type" class="oe_edit_only"/> 
- 							<field name="blood_type" style="width: 8%%"/> 
- 							<field name="rh" style="width: 2%%"/> 
- 						</div> 
- 						<div> 
- 						</div> 
- 						<div> 
- 							<label for="ssn"/> 
- 							<field name="ssn" style="width: 20%%"/> 
- 							<label for="identification_code"/> 
- 							<field name="identification_code" style="width: 17%%"/> 
- 							<label for="dob"/> 
- 							<field name="dob" style="width: 15%%"/> 
- 							<label for="age"/> 
- 							<field name="age" style="width: 8%%"/> 
-                         </div> 
+                        <div>
+                            <field name="photo" widget='image' class="oe_left oe_avatar"/> 
+                            <div> 
+                                 <h1> 
+		                            <field name="first_name" placeholder="First Name" style="width: 20%%" on_change="onchange_name(first_name, lastname, slastname, context)"  /> 
+		                            <field name="lastname" placeholder="Last Name" style="width: 20%%" on_change="onchange_name(first_name, lastname, slastname, context)" /> 
+		                            <field name="slastname" placeholder="S Last Name" style="width: 20%%" on_change="onchange_name(first_name, lastname, slastname, context)" /> 
+	                            </h1> 
+                            </div> 
+     						<div> 
+     							<label for="sex" class="oe_edit_only"/> 
+     							<field name="sex" style="width: 30%%"/> 
+     							<label for="ssn"/> 
+     							<field name="ssn" style="width: 20%%"/> 
+     							<label for="identification_code"/> 
+     							<field name="identification_code" style="width: 17%%" attrs="{'readonly': True }"/> 
+     						</div> 
+     						<div> 
+     							<field name="name" invisible="1"/> 
+     						</div> 
+                            <div>
+     							<label for="dob"/> 
+     							<field name="dob" style="width: 30%%"/> 
+     							<label for="age"/> 
+     							<field name="age" style="width: 30%%"/> 
+                            </div> 
+                        </div>
                     <notebook> 
-                        <page string="Public Information"> 
+                        <page string="General Information"> 
+                            <group  col="6" colspan="4"> 
+     							<field name="blood_type" style="width: 8%%"/> 
+     							<field name="rh" nolabel="1"/> 
+               					<field name="ethnic_group" /> 
+                            </group>
+                            <group string="Contact Information">
+                                <group>
+                                    <label for="street" string="Address"/>
+                                    <div>
+                                        <field name="use_parent_address" class="oe_edit_only oe_inline" invisible="1"/>
+                                        <label for="use_parent_address" class="oe_edit_only" invisible="1"/>
+                                        <field name="street" placeholder="Street..." />
+                                        <field name="street2" />
+                                        <div class="address_format">
+                                            <field name="city" placeholder="City" style="width: 40%%" />
+                                            <field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' />
+                                            <field name="zip" placeholder="ZIP" style="width: 20%%" />
+                                        </div>
+                                        <field name="country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True}' />
+                                    </div>
+                                    <field name="website" widget="url" placeholder="e.g. www.openerp.com"/>
+                                </group>
+                                <group>
+                                    <field name="phone" placeholder="e.g. +32.81.81.37.00"/>
+                                    <field name="mobile"/>
+                                    <field name="fax"/>
+                                    <field name="email" widget="email"/>
+                                </group>
+                            </group>
                             <group  col="4" colspan="4"> 
-                                <label string="Address" colspan="2"/>
-                                <label string="Marital Status" colspan="2"/>
-                              	<field name="current_address" nolabel="1" colspan="2"/> 
-             					<field name="marital_status"  nolabel="1" colspan="2"/> 
-                                <label string="Family Information" colspan="2"/>
-                                <label string="General Infomation" colspan="2"/>
-             					<field name="family" nolabel="1"  colspan="2"/> 
-             					<field name="primary_care_doctor" colspan="2"/> 
-                                <separator colspan="4" string="Patient Allergies and Critical Information"/>
-             					<field name="critical_info" colspan="4" nolabel="1"/> 
-                                <group colspan="2">
-             					<field name="childbearing_age" /> 
-                 					<field name="ethnic_group" /> 
+             					<field name="marital_status" colspan="2"/> 
+             					<field name="family" invisivle="1" colspan="2"/> 
+                                <group colspan="4" col="4">
+                 					<field name="primary_care_doctor" />
                  					<field name="current_insurance" /> 
                                 </group>
+                                <separator colspan="4" string="Patient Allergies and Critical Information"/>
+             					<field name="critical_info" colspan="4" nolabel="1"/> 
              				</group> 
          				</page> 
-                        <page string="Misc">
-                            <group colspan="4" col="4">
-                                <separator colspan="4" string="Patient Extra Information"/>
-              					<field name="general_info" nolabel="1"  colspan="4"/> 
-                            </group>
-                            <newline/>
-                            <group colspan="4" col="6">
-                                <field name="deceased"/>
-                                <field name="dod"/>
-                                <field name="cod"/>
-                            </group>
-                        </page>
                         <page string="Medication" >
 <!-- Patient Medications -->
                             <separator string="Medications" colspan="4"/>
@@ -174,11 +184,54 @@
 				                    </form>
                                 </field>
                         </page>
+                        <page string="Misc">
+                            <group colspan="4" col="4">
+                                <separator colspan="4" string="Patient Extra Information"/>
+              					<field name="general_info" nolabel="1"  colspan="4"/> 
+                            </group>
+                            <newline/>
+                            <group colspan="4" col="6">
+                                <field name="deceased"/>
+                                <field name="dod" attrs="{'invisible':[('deceased','=',False)],'required':[('deceased','=',True)]}"/>
+                                <field name="cod" attrs="{'invisible':[('deceased','=',False)]}"/>
+                            </group>
+                        </page>
                     </notebook> 
  				</sheet> 
  				</form> 
  			</field> 
  		</record> 
+
+        <record model="ir.ui.view" id="view_oemedical_patient_kanban">
+            <field name="name">oemedical.patient.kanban</field>
+            <field name="model">oemedical.patient</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban version="7.0" class="oe_background_grey">
+                    <field name="name"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_content">
+                                <div class="oe_kanban_vignette oe_semantic_html_override">
+                                    <a type="open"><img t-att-src="kanban_image('oemedical.patient', 'photo', record.id.value)" width="150" height="110" class="oe_employee_picture"/></a>
+                                    <div class="oe_kanban_details">
+                                        <h3>
+                                            <a type="open"><field name="name"/></a>
+                                        </h3>
+                                        <ul>
+                                            <li t-if="record.age.raw_value"><b>Age:</b> <field name="age"/></li>
+                                            <li t-if="record.sex.raw_value"><b>Sex:</b> <field name="sex"/></li>
+                                            <li t-if="record.blood_type.raw_value"><b>Blond:</b> <field name="blood_type"/><field name="rh"/></li>
+                                            <li t-if="record.ssn.raw_value"><b>SSN:</b> <field name="ssn"/></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
 
  		<record id="view_oemedical_patient_search" model="ir.ui.view"> 
  			<field name="name">oemedical.patient.search</field> 
@@ -192,7 +245,6 @@
  					<field name="primary_care_doctor" /> 
  					<field name="childbearing_age" /> 
  					<field name="critical_info" /> 
- 					<field name="current_address" /> 
  					<field name="lastname" /> 
  					<field name="ethnic_group" /> 
  					<field name="ssn" /> 
@@ -204,31 +256,14 @@
  					<field name="identification_code" /> 
  					<field name="deceased" /> 
  					<newline /> 
- 					<group expand="0" string="Group By..."> 
- 						<filter string="Name" domain="[]" context="{'group_by':'name'}" /> 
- 						<filter string="Family" domain="[]" context="{'group_by':'family'}" /> 
- 						<filter string="General Information" domain="[]" 
- 							context="{'group_by':'general_info'}" /> 
- 						<filter string="Primary Care Doctor" domain="[]" 
- 							context="{'group_by':'primary_care_doctor'}" /> 
- 						<filter string="Potential for Childbearing" domain="[]" 
- 							context="{'group_by':'childbearing_age'}" /> 
- 						<filter string="Important disease, allergy or procedures information" 
- 							domain="[]" context="{'group_by':'critical_info'}" /> 
- 						<filter string="Address" domain="[]" 
- 							context="{'group_by':'current_address'}" /> 
- 						<filter string="Lastname" domain="[]" context="{'group_by':'lastname'}" /> 
- 						<filter string="Ethnic group" domain="[]" 
- 							context="{'group_by':'ethnic_group'}" /> 
+ 					<group expand="0" string="Group By...">  
  						<filter string="SSN" domain="[]" context="{'group_by':'ssn'}" /> 
  						<filter string="DoB" domain="[]" context="{'group_by':'dob'}" /> 
  						<filter string="Age" domain="[]" context="{'group_by':'age'}" /> 
  						<filter string="Date of Death" domain="[]" context="{'group_by':'dod'}" /> 
- 						<filter string="Insurance" domain="[]" 
- 							context="{'group_by':'current_insurance'}" /> 
+ 						<filter string="Insurance" domain="[]" context="{'group_by':'current_insurance'}" /> 
  						<filter string="Cause of Death" domain="[]" context="{'group_by':'cod'}" /> 
- 						<filter string="ID" domain="[]" 
- 							context="{'group_by':'identification_code'}" /> 
+ 						<filter string="ID" domain="[]" context="{'group_by':'identification_code'}" /> 
  						<filter string="Deceased" domain="[]" context="{'group_by':'deceased'}" /> 
  					</group> 
  				</search> 
@@ -240,7 +275,7 @@
  			<field name="type">ir.actions.act_window</field> 
  			<field name="res_model">oemedical.patient</field> 
  			<field name="view_type">form</field> 
- 			<field name="view_mode">tree,form</field> 
+ 			<field name="view_mode">kanban,tree,form</field> 
  			<field name="search_view_id" ref="view_oemedical_patient_search" /> 
  			<field name="domain">[]</field> 
  			<field name="context">{}</field> 
@@ -255,10 +290,18 @@
 
  		<record model="ir.actions.act_window.view" id="act_open_oemedical_patient_view_tree"> 
  			<field name="act_window_id" ref="act_open_oemedical_patient_view" /> 
- 			<field name="sequence" eval="10" /> 
+ 			<field name="sequence" eval="30" /> 
  			<field name="view_mode">tree</field> 
  			<field name="view_id" ref="view_oemedical_patient_tree" /> 
  		</record> 
+
+ 		<record model="ir.actions.act_window.view" id="act_open_oemedical_patient_view_kanban"> 
+ 			<field name="act_window_id" ref="act_open_oemedical_patient_view" /> 
+ 			<field name="sequence" eval="10" /> 
+ 			<field name="view_mode">kanban</field> 
+ 			<field name="view_id" ref="view_oemedical_patient_kanban" /> 
+ 		</record> 
+
 
 	</data>
 </openerp>

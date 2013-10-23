@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_appointmentmake_invoice" model="ir.ui.view">
+            <field name="name">Create invoices</field>
+            <field name="model">medical.appointment.invoice</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Create invoices">
+                    <separator colspan="4" string="Do you want to create the invoice(s) ?" />
+                    <newline/>
+                    <separator string="" colspan="6"/>
+                    <button special="cancel" string="Cancel" icon="gtk-cancel"/>
+                    <button name="create_invoice" string="Create Invoices" type="object" icon="gtk-ok"/>
+               </form>
+            </field>
+        </record>
+
+       <act_window name="Create Invoice"
+            res_model="medical.appointment.invoice"
+            src_model="medical.appointment"
+            view_mode="form"
+            target="new"
+            key2="client_action_multi"
+            id="action_create_appointment_invoice"/>
+
+    </data>
+</openerp>

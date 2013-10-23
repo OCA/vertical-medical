@@ -7,9 +7,8 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Family">
-					<field name="info" />
-					<field name="operational_sector" />
 					<field name="name" />
+					<field name="operational_sector" />
 				</tree>
 			</field>
 		</record>
@@ -19,11 +18,50 @@
 			<field name="model">oemedical.family</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Family">
-					<field name="name" />
-					<field name="operational_sector" />
-					<field name="members" colspan="4"/>
-					<field name="info" colspan="4"/>
+				<form string="Oemedical Family" version="7.0">
+                    <sheet>
+                        <H1>
+                            <label string="Family: "/>
+        					<field name="name" />
+                        </H1>
+                        <notebook>
+                            <page string="Main">
+                                <group>
+					                <field name="operational_sector" >
+                                            <tree>
+                            					<field name="name" />
+                            					<field name="operational_area_id" />
+                                            </tree>
+                                            <form>
+                            					<field name="name" />
+                            					<field name="operational_area_id" />
+                                                <group colspan="4" string="Extra Infomation">
+                                					<field name="info"  />
+                                                </group>
+                                            </form>
+                                    </field>
+                                </group>
+                                <group colspan="4" col="4" string="Members">
+                					<field name="members" colspan="4" nolabel="1">
+                                        <tree>
+                        					<field name="role" />
+                        					<field name="member" />
+                        					<field name="family_id" />
+                                        </tree>
+                                        <form>
+                        					<field name="role" />
+                        					<field name="member" />
+                                        </form>
+                                    </field>
+                                </group>
+                            </page>
+                            <page string="Info">
+                                <group colspan="4" col="4" string="Info">
+                					<field name="info" colspan="4" nolabel="1"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
 				</form>
 			</field>
 		</record>

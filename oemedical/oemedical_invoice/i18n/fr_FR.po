@@ -1,0 +1,364 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Medical\n"
+"Report-Msgid-Bugs-To: https://sourceforge.net/apps/mantisbt/medical\n"
+"POT-Creation-Date: 2010-12-05 21:57:25+0000\n"
+"PO-Revision-Date: 2011-02-05 18:15+0000\n"
+"Last-Translator: gestionRessources <klinik_mailinglist@gestion-ressources.com>\n"
+"Language-Team: French (France) <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: fr_FR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+
+#. module: medical_invoice
+#: field:medical.patient,receivable:0
+msgid "Receivable"
+msgstr "Montant dû"
+
+#. module: medical_invoice
+#: model:ir.model,name:medical_invoice.model_medical_prescription_order
+msgid "prescription order"
+msgstr "Ordonnance"
+
+#. module: medical_invoice
+#: code:addons/medical_invoice/wizard/wizard_prescription_invoice.py:0
+#, python-format
+msgid "The prescription is invoice exempt"
+msgstr "La prescription est exonérée de facture "
+
+#. module: medical_invoice
+#: constraint:ir.model:0
+msgid "The Object name must start with x_ and not contain any special character !"
+msgstr "Le nom de l'objet doit commencer par x_ et ne pas contenir de caractères spéciaux!"
+
+#. module: medical_invoice
+#: constraint:ir.actions.act_window:0
+msgid "Invalid model name in the action definition."
+msgstr "Le nom du modèle invalide dans la définition de l'action."
+
+#. module: medical_invoice
+#: code:addons/medical_invoice/wizard/wizard_create_lab_invoice.py:0
+#, python-format
+msgid "At least one of the selected lab tests is already invoiced"
+msgstr "Au moins un des tests de laboratoires sélectionnés est déja facturé"
+
+#. module: medical_invoice
+#: view:medical.appointment.invoice:0
+msgid "Create invoices"
+msgstr "Créer factures"
+
+#. module: medical_invoice
+#: view:medical.lab.test.invoice:0
+msgid "Create Lab Invoices"
+msgstr "Créer factures de laboratoire"
+
+#. module: medical_invoice
+#: code:addons/medical_invoice/wizard/wizard_prescription_invoice.py:0
+#, python-format
+msgid "Prescription already invoiced"
+msgstr "Prescription déjà facturé"
+
+#. module: medical_invoice
+#: model:ir.module.module,shortdesc:medical_invoice.module_meta_information
+msgid "Medical Invoice"
+msgstr "Facture médicale"
+
+#. module: medical_invoice
+#: model:ir.model,name:medical_invoice.model_medical_appointment
+msgid "medical.appointment"
+msgstr "medical.appointment"
+
+#. module: medical_invoice
+#: model:ir.model,name:medical_invoice.model_medical_appointment_invoice
+msgid "medical.appointment.invoice"
+msgstr "medical.appointment.invoice"
+
+#. module: medical_invoice
+#: model:ir.actions.act_window,name:medical_invoice.action_create_appointment_invoice
+msgid "Create Invoice"
+msgstr "Créer facture\n"
+
+#. module: medical_invoice
+#: field:medical.appointment,no_invoice:0
+#: field:medical.patient.lab.test,no_invoice:0
+#: field:medical.prescription.order,no_invoice:0
+msgid "Invoice exempt"
+msgstr "Exonéré de facture"
+
+#. module: medical_invoice
+#: constraint:ir.ui.menu:0
+msgid "Error ! You can not create recursive Menu."
+msgstr "Erreur ! Vous ne pouvez pas créer de menu récursif."
+
+#. module: medical_invoice
+#: field:medical.patient.lab.test,invoice_status:0
+#: field:medical.prescription.order,invoice_status:0
+msgid "Invoice Status"
+msgstr "Statut de la facture"
+
+#. module: medical_invoice
+#: model:ir.actions.act_window,name:medical_invoice.medical_action_tobeinvoiced_prescription
+#: model:ir.ui.menu,name:medical_invoice.medical_tobeinvoiced_prescription
+msgid "Prescriptions to be invoiced"
+msgstr "Prescriptions à facturer"
+
+#. module: medical_invoice
+#: code:addons/medical_invoice/wizard/wizard_prescription_invoice.py:0
+#, python-format
+msgid "At least one of the selected prescriptions can not be invoiced"
+msgstr "Au moins une des prescriptions sélectionnées ne peut pas être facturée"
+
+#. module: medical_invoice
+#: model:ir.actions.act_window,name:medical_invoice.medical_action_today_tobeinvoiced_labtest_request
+#: model:ir.ui.menu,name:medical_invoice.medical_today_tobeinvoiced_labtest_request
+msgid "Today's Lab Requests to be invoiced"
+msgstr "Test de laboratoire d'aujourd'hui à facturer"
+
+#. module: medical_invoice
+#: selection:medical.appointment,validity_status:0
+#: selection:medical.patient.lab.test,invoice_status:0
+#: selection:medical.prescription.order,invoice_status:0
+msgid "To be Invoiced"
+msgstr "À facturer"
+
+#. module: medical_invoice
+#: field:medical.appointment,validity_status:0
+msgid "Status"
+msgstr "Bilan"
+
+#. module: medical_invoice
+#: view:medical.appointment.invoice:0
+msgid "Do you want to create the invoice(s) ?"
+msgstr "Voulez-vous créer la(les) facture(s) ?"
+
+#. module: medical_invoice
+#: code:addons/medical_invoice/wizard/wizard_create_lab_invoice.py:0
+#, python-format
+msgid "You can not invoice this lab test"
+msgstr "Vous ne pouvez pas facturer ce test de laboratoire"
+
+#. module: medical_invoice
+#: model:ir.model,name:medical_invoice.model_medical_prescription_invoice
+msgid "medical.prescription.invoice"
+msgstr "medical.prescription.invoice"
+
+#. module: medical_invoice
+#: model:ir.module.module,description:medical_invoice.module_meta_information
+msgid ""
+" \n"
+"        This module add functionality to create invoices for doctor's consulting charge.\n"
+"\n"
+"        Features:\n"
+"        -Invoice of multiple appointments at a time.\n"
+"        "
+msgstr ""
+"Ce module ajoute les fonctionnalités de création des factures pour les frais de consultation du médecin. Caractéristiques:\n"
+"-Facture de plusieurs rendez-vous à la fois."
+
+#. module: medical_invoice
+#: code:addons/medical_invoice/wizard/wizard_appointment_invoice.py:0
+#, python-format
+msgid "The appointment is invoice exempt"
+msgstr "Ce rendez-vous est exonéré de facture"
+
+#. module: medical_invoice
+#: field:medical.appointment,consultations:0
+msgid "Consultation Service"
+msgstr "Service de consultation"
+
+#. module: medical_invoice
+#: code:addons/medical_invoice/wizard/wizard_appointment_invoice.py:0
+#, python-format
+msgid "You can not invoice this appointment"
+msgstr "Vous ne pouvez pas facturer ce rendez-vous"
+
+#. module: medical_invoice
+#: model:ir.ui.menu,name:medical_invoice.medical_invoice_menu
+msgid "Invoices"
+msgstr "Factures"
+
+#. module: medical_invoice
+#: code:addons/medical_invoice/wizard/wizard_prescription_invoice.py:0
+#, python-format
+msgid "At least one of the selected prescriptions is already invoiced"
+msgstr "Au moins une des prescriptions selectionnées est déjà facturées"
+
+#. module: medical_invoice
+#: code:addons/medical_invoice/wizard/wizard_appointment_invoice.py:0
+#, python-format
+msgid "Appointment already invoiced"
+msgstr "Rendez-vous déjà facturé"
+
+#. module: medical_invoice
+#: model:ir.model,name:medical_invoice.model_medical_lab_test_invoice
+msgid "medical.lab.test.invoice"
+msgstr "medical.lab.test.invoice"
+
+#. module: medical_invoice
+#: code:addons/medical_invoice/wizard/wizard_prescription_invoice.py:0
+#, python-format
+msgid "You need to have at least one prescription item in your invoice"
+msgstr "Vous avez besoin d'au moins une prescription dans la facture"
+
+#. module: medical_invoice
+#: model:ir.actions.act_window,name:medical_invoice.action_create_lab_invoice
+#: view:medical.lab.test.invoice:0
+msgid "Create Lab Invoice"
+msgstr "Créer facture de laboratoire"
+
+#. module: medical_invoice
+#: code:addons/medical_invoice/wizard/wizard_create_lab_invoice.py:0
+#, python-format
+msgid "When multiple lab tests are selected, patient must be the same"
+msgstr "Lorsque plusieurs tests sont sélectionnés le patient doit être le même"
+
+#. module: medical_invoice
+#: code:addons/medical_invoice/wizard/wizard_appointment_invoice.py:0
+#: code:addons/medical_invoice/wizard/wizard_create_lab_invoice.py:0
+#: code:addons/medical_invoice/wizard/wizard_prescription_invoice.py:0
+#, python-format
+msgid "UserError"
+msgstr "Erreur Utilisateur"
+
+#. module: medical_invoice
+#: constraint:ir.ui.view:0
+msgid "Invalid XML for View Architecture!"
+msgstr "XML non valide pour la Vue Architecture !"
+
+#. module: medical_invoice
+#: view:medical.lab.test.invoice:0
+msgid "Do you want to generate the invoice(s) ?"
+msgstr "Voulez-vous générer la(les) facture(s) ?"
+
+#. module: medical_invoice
+#: view:medical.prescription.order:0
+msgid "Prescription"
+msgstr "Prescription"
+
+#. module: medical_invoice
+#: code:addons/medical_invoice/wizard/wizard_prescription_invoice.py:0
+#, python-format
+msgid "When multiple prescriptions are selected, patient must be the same"
+msgstr "Lorsque plusieurs prescriptions sont sélectionnés le patient doit être le même"
+
+#. module: medical_invoice
+#: model:ir.model,name:medical_invoice.model_medical_patient
+msgid "Patient related information"
+msgstr "Information relative au patient"
+
+#. module: medical_invoice
+#: code:addons/medical_invoice/wizard/wizard_appointment_invoice.py:0
+#, python-format
+msgid "No consultation service is connected with the selected appointments"
+msgstr "Aucun service de consultation est lié avec le rendez-vous sélectionné"
+
+#. module: medical_invoice
+#: field:medical.appointment,appointment_validity_date:0
+msgid "Validity Date"
+msgstr "Date de validation"
+
+#. module: medical_invoice
+#: help:medical.appointment,consultations:0
+msgid "Consultation Services"
+msgstr "Service de consultation"
+
+#. module: medical_invoice
+#: code:addons/medical_invoice/wizard/wizard_create_lab_invoice.py:0
+#, python-format
+msgid "Lab test already invoiced"
+msgstr "Test de laboratoire déjà facturé"
+
+#. module: medical_invoice
+#: model:ir.actions.act_window,name:medical_invoice.medical_action_tobeinvoiced_appointment
+#: model:ir.ui.menu,name:medical_invoice.medical_tobeinvoiced_appointment
+msgid "Appointments to be invoiced"
+msgstr "Rendez-vous à facturer"
+
+#. module: medical_invoice
+#: help:medical.patient,receivable:0
+msgid "Total amount this patient owes you"
+msgstr "Montant total dû par le patient"
+
+#. module: medical_invoice
+#: model:ir.model,name:medical_invoice.model_medical_patient_lab_test
+msgid "medical.patient.lab.test"
+msgstr "medical.patient.lab.test"
+
+#. module: medical_invoice
+#: code:addons/medical_invoice/wizard/wizard_appointment_invoice.py:0
+#, python-format
+msgid "At least one of the selected appointments can not be invoiced"
+msgstr "Au moins un des rendez-vous sélectionnés ne peut pas être facturé"
+
+#. module: medical_invoice
+#: view:medical.prescription.invoice:0
+msgid "Create Prescription Invoices"
+msgstr "Créer facture de prescription"
+
+#. module: medical_invoice
+#: code:addons/medical_invoice/wizard/wizard_create_lab_invoice.py:0
+#, python-format
+msgid "At least one of the selected lab tests can not be invoiced"
+msgstr "Au moins l'un des tests de laboratoire sélectionné ne peut être facturé"
+
+#. module: medical_invoice
+#: view:medical.appointment.invoice:0
+msgid "Create Invoices"
+msgstr "Créer factures"
+
+#. module: medical_invoice
+#: view:medical.prescription.invoice:0
+msgid "Create prescription invoices"
+msgstr "Créer facture d'ordonnance"
+
+#. module: medical_invoice
+#: code:addons/medical_invoice/wizard/wizard_appointment_invoice.py:0
+#, python-format
+msgid "When multiple appointments are selected, patient must be the same"
+msgstr "Lorsque plusieurs rendez-vous sont choisis, le patient doit être le même"
+
+#. module: medical_invoice
+#: code:addons/medical_invoice/wizard/wizard_prescription_invoice.py:0
+#, python-format
+msgid "You can not invoice this prescription"
+msgstr "Vous ne pouvez pas facturer cette prescription"
+
+#. module: medical_invoice
+#: model:ir.actions.act_window,name:medical_invoice.medical_action_tobeinvoiced_labtest_request
+#: model:ir.ui.menu,name:medical_invoice.medical_tobeinvoiced_labtest_request
+msgid "Lab Requests to be invoiced"
+msgstr "Test de laboratoire à facturer"
+
+#. module: medical_invoice
+#: model:ir.actions.act_window,name:medical_invoice.action_create_prescription_invoice
+msgid "Create Prescription Invoice"
+msgstr "Créer une facture d'ordonnance"
+
+#. module: medical_invoice
+#: code:addons/medical_invoice/wizard/wizard_appointment_invoice.py:0
+#, python-format
+msgid "At least one of the selected appointments is already invoiced"
+msgstr "Au moins l'un des rendez-vous sélectionné est déjà facturé"
+
+#. module: medical_invoice
+#: view:medical.appointment.invoice:0 view:medical.lab.test.invoice:0
+#: view:medical.prescription.invoice:0
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: medical_invoice
+#: view:medical.prescription.invoice:0
+msgid "Do you want to create the prescription invoice(s) ?"
+msgstr "Voulez-vous créer la facture d'ordonnance(s)?"
+
+#. module: medical_invoice
+#: selection:medical.appointment,validity_status:0
+#: selection:medical.patient.lab.test,invoice_status:0
+#: selection:medical.prescription.order,invoice_status:0
+msgid "Invoiced"
+msgstr "Facturé"

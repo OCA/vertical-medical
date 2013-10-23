@@ -26,16 +26,20 @@ from osv import fields
 class OeMedicalMedicament(osv.Model):
     _name = 'oemedical.medicament'
 
-    _columns = {
-        'name': fields.many2one('product.product', string='Product', requered=True, 
-                                   help='Product Name'),
+    def _get_name(self, cr, uid, ids, field_name, arg, context=None):
+        res = {}
+        for record in self.browse(cr, uid, ids, context=context):
+            res[record.id] = record.product_id.name
+        return res
 
-        'category': fields.many2one('oemedical.medicament.category',
-                                    'Category',select=True),
-        'indications': fields.text(string='Indication', help='Indications'),
-        'therapeutic_action': fields.char(size=256,
-                                          string='Therapeutic effect', 
-                                          help='Therapeutic action'),
+
+    _columns = {
+        'product_id': fields.many2one('product.product', string='Medicament', requered=True, help='Product Name'),
+        'name': fields.function(_get_name, type='char', string='Medicament', help="", multi=False),
+        'category': fields.many2one('oemedical.medicament.category', 'Category',select=True),
+        'active_component': fields.char(size=256, string='Active component', help='Active Component'),
+        'indications': fields.text(string='Indication', help='Indications'), 
+        'therapeutic_action': fields.char(size=256, string='Therapeutic effect', help='Therapeutic action'),
         'pregnancy_category': fields.selection([
             ('A', 'A'),
             ('B', 'B'),
@@ -76,9 +80,6 @@ class OeMedicalMedicament(osv.Model):
         'notes': fields.text(string='Extra Info'),
         'storage': fields.text(string='Storage Conditions'),
         'adverse_reaction': fields.text(string='Adverse Reactions'),
-        'active_component': fields.char(size=256, string='Active component',
-                                        translate=True, 
-                                        help='Active Component'),
         'dosage': fields.text(string='Dosage Instructions', 
                               help='Dosage / Indications'),
         'pregnancy': fields.text(string='Pregnancy and Lactancy', 

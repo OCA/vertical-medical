@@ -264,6 +264,8 @@ class OeMedicalPatient(osv.Model):
             'currently_pregnant' : fields.boolean('Currently Pregnant'),
 #            'currently_pregnant' : fields.function( _get_pregnancy_info , string='Pregnant' , type='boolean' ),
             'fertile' : fields.boolean('Fertile', help="Check if patient is in fertile age"),
+            'dispareunia_sup' : fields.boolean('Dyspareunia Superficial', help=""),
+            'dispareunia_deep' : fields.boolean('Dyspareunia Deep', help=""),
             'menarche' : fields.integer('Menarche age'),
             'menopausal' : fields.boolean('Menopausal'),
             'menopause' : fields.integer('Menopause age'),

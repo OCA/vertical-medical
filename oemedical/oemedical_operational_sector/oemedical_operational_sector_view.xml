@@ -7,9 +7,8 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Operational_Sector">
-					<field name="info" />
-					<field name="operational_area_id" />
 					<field name="name" />
+					<field name="operational_area_id" />
 				</tree>
 			</field>
 		</record>
@@ -20,9 +19,11 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Operational_Sector">
-					<field name="info" />
-					<field name="operational_area_id" />
 					<field name="name" />
+					<field name="operational_area_id" />
+                    <group colspan="4" string="Extra Infomation">
+    					<field name="info" colspan="4" nolabel="1" />
+                    </group>
 				</form>
 			</field>
 		</record>

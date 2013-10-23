@@ -6,16 +6,17 @@
 			<field name="model">oemedical.appointment</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<tree string="Oemedical Appointment">
+				<tree string="Oemedical Appointment" colors="grey:state=='cancel';green:state=='draft';blue:state in ('done');red:state in ('waiting')">
 					<field name="name" />
 					<field name="patient_id" />
-					<field name="consultations" />
+   					<field name="alias" />
 					<field name="appointment_date" />
 					<field name="doctor" />
 					<field name="appointment_type" />
 					<field name="institution" />
 					<field name="urgency" />
 					<field name="speciality" />
+					<field name="state" />
 				</tree>
 			</field>
 		</record>
@@ -27,28 +28,60 @@
 			<field name="arch" type="xml">
 				<form string="Oemedical Appointment"  version="7.0">
                     <header>
-                        <button name="action_quotation_send" string="Send by e-mail" type="object" class="oe_highlight" groups="base.group_user"/>
-                        <button name="print_prescription" string="Print" type="object"  class="oe_highlight" groups="base.group_user"/>
+<!--                        <button name="action_quotation_send" string="Send by e-mail" type="object" class="oe_highlight" groups="base.group_user"/>-->
+<!--                        <button name="print_prescription" string="Print" type="object"  class="oe_highlight" groups="base.group_user"/>-->
+                        <button name="button_back" states="confirm,waiting,in_consultation,done,canceled" string="Back"  type="object" groups="base.group_user"/>
+                        <button name="button_confirm" states="draft" string="Confirm" class="oe_highlight"  type="object" groups="base.group_user"/>
+                        <button name="button_waiting" states="confirm" string="Waiting" class="oe_highlight"  type="object" groups="base.group_user"/>
+                        <button name="button_in_consultation" states="waiting" string="In Consultation" class="oe_highlight"  type="object" groups="base.group_user"/>
+                        <button name="button_done" states="in_consultation" string="Done" class="oe_highlight"  type="object" groups="base.group_user"/>
+                        <button name="button_cancel" states="confirm,in_consultation" string="Cancel"  type="object" groups="base.group_user"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm,waiting,in_consultation,done,canceled" statusbar_colors='{"canceled":"red","waiting":"blue"}'/>
                     </header>
                     <sheet>
                         <h1>
                             <label string="Appointment"/>
-					        <field name="name" />
+				            <field name="name"/>
                         </h1>
-                        <group>
-
-					        <field name="patient_id" />
-					        <field name="doctor" />
-					        <field name="appointment_date" />
-					        <field name="duration" />
-					        <field name="appointment_type" />
-					        <field name="urgency" />
-					        <field name="consultations" />
-					        <field name="institution" />
-					        <field name="speciality" />
-					        <newline/>
-					        <field name="comments" colspan="4"/>
+                        <group col="4" colspan="4">
+                            <field name="institution" />
+			                <field name="consultations" />
+    		                <field name="appointment_type" />
+			                <field name="urgency" />
                         </group>
+                        <notebook>
+                            <page string="Main">
+                                <group col="4" colspan="4">
+					                <field name="patient_id" />
+                					<field name="alias" />
+					                <field name="doctor" />
+					                <field name="speciality" />
+                                    <group colspan="2" col="6">
+					                    <field name="appointment_day" nolabel="0"/>
+					                    <field name="appointment_hour" nolabel="1"/>
+					                    <field name="appointment_minute" nolabel="1"/>
+                                    </group>
+   					                <field name="duration" />
+
+       				                <field name="appointment_date" invisible="1"/>
+                                </group>
+                                <group col="4" colspan="4" string="Notes">
+					                <field name="comments" colspan="4" nolabel="1"/>
+                                </group>
+                            </page>
+                            <page string="History">
+                                <field name="history_ids" nolabel="1">
+                                    <tree string="History">
+    					                <field name="date" />
+    					                <field name="name" />
+    					                <field name="action" />
+                                    </tree>
+                                    <form String="History">
+	    				                <field name="name" />
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
                     </sheet>
 				</form>
 			</field>
@@ -103,12 +136,42 @@
 			</field>
 		</record>
 
+        <record model="ir.ui.view" id="view_oemedical_appointment_kanban">
+            <field name="name">oemedical.appointement.kanban</field>
+            <field name="model">oemedical.appointment</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban version="7.0" class="oe_background_grey">
+                    <field name="name"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_content">
+                                <div class="oe_kanban_vignette oe_semantic_html_override">
+                                    <div class="oe_kanban_details">
+                                        <h3>
+                                            <a type="open"><field name="name"/></a>
+                                        </h3>
+                                        <ul>
+                                            <li t-if="record.patient_id.raw_value"><b>Patient:</b> <field name="patient_id"/></li>
+                                            <li t-if="record.doctor.raw_value"><b>Doctor:</b> <field name="doctor"/></li>
+                                            <li t-if="record.duration.raw_value"><b>Duration:</b> <field name="duration"/></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
 		<record model="ir.actions.act_window" id="act_open_oemedical_appointment_view">
 			<field name="name">Appointment</field>
 			<field name="type">ir.actions.act_window</field>
 			<field name="res_model">oemedical.appointment</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">tree,form, calendar</field>
+			<field name="view_mode">kanban,tree,form,calendar</field>
 			<field name="search_view_id" ref="view_oemedical_appointment_search" />
 			<field name="domain">[]</field>
 			<field name="context">{}</field>
@@ -116,14 +179,14 @@
 
 		<record model="ir.actions.act_window.view" id="act_open_oemedical_appointment_view_form">
 			<field name="act_window_id" ref="act_open_oemedical_appointment_view" />
-			<field name="sequence" eval="20" />
+			<field name="sequence" eval="40" />
 			<field name="view_mode">form</field>
 			<field name="view_id" ref="view_oemedical_appointment_form" />
 		</record>
 
 		<record model="ir.actions.act_window.view" id="act_open_oemedical_appointment_view_tree">
 			<field name="act_window_id" ref="act_open_oemedical_appointment_view" />
-			<field name="sequence" eval="10" />
+			<field name="sequence" eval="30" />
 			<field name="view_mode">tree</field>
 			<field name="view_id" ref="view_oemedical_appointment_tree" />
 		</record>
@@ -134,6 +197,12 @@
 			<field name="view_mode">calendar</field>
 			<field name="view_id" ref="view_oemedical_appointment_calendar" />
 		</record>
+ 		<record model="ir.actions.act_window.view" id="act_open_oemedical_appointment_view_kanban"> 
+ 			<field name="act_window_id" ref="act_open_oemedical_appointment_view" /> 
+ 			<field name="sequence" eval="10" /> 
+ 			<field name="view_mode">kanban</field> 
+ 			<field name="view_id" ref="view_oemedical_appointment_kanban" /> 
+ 		</record> 
 
 
 	</data>

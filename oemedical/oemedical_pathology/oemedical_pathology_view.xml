@@ -25,14 +25,16 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Pathology">
-					<field name="category" />
-					<field name="info" />
 					<field name="code" />
 					<field name="name" />
+					<field name="category" />
 					<!--field name="groups"/ -->
 					<field name="protein" />
 					<field name="gene" />
 					<field name="chromosome" />
+                    <group colspan="4" string="Extra Info">
+    					<field name="info" nolabel="1" colspan="4"/>
+                    </group>
 				</form>
 			</field>
 		</record>

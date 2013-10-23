@@ -26,22 +26,25 @@ from osv import fields
 class OeMedicalInsurance(osv.Model):
     _name = 'oemedical.insurance'
 
+    def _get_name(self, cr, uid, ids, field_name, arg, context=None):
+        res = {}
+        for record in self.browse(cr, uid, ids, context=context):
+            res[record.id] = record.company.name
+        return res
+
+
     _columns = {
-        'name': fields.char(size=256, string='Name'),
+        'name': fields.function(_get_name, type='char', string='Name', help="", multi=False),
+        'company': fields.many2one('res.partner', 'Insurance Company', required=True),
         'patient_id':fields.many2one('oemedical.patient', 'Patient'),
-        'category': fields.char(size=256, string='Category', required=True,
-                                help='Insurance company plan / category'),
-        'plan_id': fields.many2one('oemedical.insurance.plan', string='Plan',  
-                                   help='Insurance company plan'),
+        'plan_id': fields.many2one('oemedical.insurance.plan', string='Plan',  help='Insurance company plan'),
         'insurance_type': fields.selection([
             ('state', 'State'),
             ('labour_union', 'Labour Union / Syndical'),
             ('private', 'Private'),
         ], string='Insurance Type',select=True),
-        'member_since': fields.date(string='Member since'),
-        'company': fields.many2one('res.partner', 'Insurance Company', 
-                                   required=True, select=True,),
         'number': fields.char(size=256, string='Number', required=True),
+        'member_since': fields.date(string='Member since'),
         'member_exp': fields.date(string='Expiration date'),
         'notes': fields.text(string='Extra Info'),
         'owner': fields.many2one('res.partner', string='Owner'),

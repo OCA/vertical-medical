@@ -7,15 +7,10 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Prescription Order">
-					<field name="patient_id" />
-					<field name="pregnancy_warning" />
-					<field name="notes" />
-					<!--field name="prescription_line"/ -->
-					<field name="pharmacy" />
 					<field name="prescription_date" />
-					<field name="prescription_warning_ack" />
-					<field name="user_id" />
 					<field name="name" />
+					<field name="patient_id" />
+					<field name="physician_id" />
 				</tree>
 			</field>
 		</record>
@@ -27,7 +22,7 @@
 			<field name="arch" type="xml">
 				<form string="Oemedical Prescription Order"  version="7.0">
                     <header>
-                        <button name="action_quotation_send" string="Send by e-mail" type="object" class="oe_highlight" groups="base.group_user"/>
+<!--                        <button name="action_quotation_send" string="Send by e-mail" type="object" class="oe_highlight" groups="base.group_user"/>-->
                         <button name="print_prescription" string="Print" type="object"  class="oe_highlight" groups="base.group_user"/>
                     </header>
                     <sheet>
@@ -35,16 +30,72 @@
                             <label string="Prescription Order "/>
 					        <field name="name" />
                         </h1>
-                        <group>
-					        <field name="prescription_date" />
+                        <group col="4" colspan="4">
 					        <field name="patient_id" />
-					        <field name="pregnancy_warning" />
+					        <field name="prescription_date" />
+					        <field name="physician_id" />
+                        </group>
+                        <group col="6" colspan="4">
 					        <field name="pharmacy" />
+					        <field name="pregnancy_warning" />
 					        <field name="prescription_warning_ack" />
-					        <field name="user_id" />
-					        <newline/>
-					        <field name="prescription_line" colspan="4"/>
-					        <newline/>
+                        </group>
+                        <group>
+					        <field name="prescription_line" nolabel="1" colspan="4">
+                                <tree string="">
+                                    <field name="prnt" expand="1"/>
+                                    <field name="template" expand="1"/>
+                                    <field name="dose"/>
+                                    <field name="dose_unit"/>
+                                    <field name="form"/>
+                                    <field name="common_dosage"/>
+                                    <field name="duration"/>
+                                    <field name="duration_period"/>
+                                </tree>
+                                <form string=""  version="7.0">
+                                    <group colspan="4" col="4">
+                                        <field name="template" on_change="onchange_template(template, context)" colspan="2"/>
+                                        <field name="indication" colspan="2"/>
+                                    </group>
+                                    <group colspan="4" col="8">
+                                        <field name="active_component" colspan="4"/>
+                                        <field name="allow_substitution" colspan="2"/>
+                                        <field name="prnt" colspan="2"/>
+                                    </group>
+                                    <group colspan="4" col="4">
+                                        <field name="form"/>
+                                        <field name="route"/>
+                                        <field name="start_treatment"/>
+                                        <field name="end_treatment"/>
+                                    </group>
+                                    <group colspan="4" string="Dosage" id="group_dosage">
+                                        <group colspan="4" col="6">
+                                            <field name="dose"/>
+                                            <field name="dose_unit"/>
+                                            <field name="qty"/>
+                                        </group>
+                                        <group colspan="4" string="Common Dosage" col="4">
+                                            <field name="common_dosage"/>
+                                            <field name="admin_times"/>
+                                        </group>
+                                        <group colspan="4" col="6" string="Specific Dosage" >
+                                            <field name="frequency"/>
+                                            <field name="frequency_unit"/>
+                                            <field name="frequency_prn"/>
+                                        </group>
+                                    </group>
+                                    <group colspan="4" col="4" string="">
+                                        <separator string="" colspan="4"/>
+                                        <field name="duration"/>
+                                        <field name="duration_period"/>
+                                        <field name="review"/>
+                                        <field name="quantity"/>
+                                        <field name="short_comment" />
+                                    </group>
+                                </form>
+                            </field>
+                        </group>
+                        <group>
 					        <field name="notes" colspan="4"/>
                         </group>
                     </sheet>
@@ -64,7 +115,7 @@
 					<field name="pregnancy_warning" />
 					<field name="pharmacy" />
 					<field name="prescription_warning_ack" />
-					<field name="user_id" />
+					<field name="physician_id" />
 					<field name="notes"/>
 					<newline />
 					<group expand="0" string="Group By...">
@@ -79,7 +130,7 @@
 						<filter string="Prescription verified" domain="[]"
 							context="{'group_by':'prescription_warning_ack'}" />
 						<filter string="Prescribing Doctor" domain="[]"
-							context="{'group_by':'user_id'}" />
+							context="{'group_by':'physician_id'}" />
 						<filter string="Prescription ID" domain="[]"
 							context="{'group_by':'name'}" />
 					</group>
@@ -87,12 +138,42 @@
 			</field>
 		</record>
 
+        <record model="ir.ui.view" id="view_oemedical_prescription_order_kanban">
+            <field name="name">oemedical.Prescription Order kanban</field>
+            <field name="model">oemedical.prescription.order</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban version="7.0" class="oe_background_grey">
+                    <field name="name"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_content">
+                                <div class="oe_kanban_vignette oe_semantic_html_override">
+                                    <div class="oe_kanban_details">
+                                        <h3>
+                                            <a type="open"><field name="name"/></a>
+                                        </h3>
+                                        <ul>
+                                            <li t-if="record.prescription_date.raw_value"><b>Date:</b> <field name="prescription_date"/></li>
+                                            <li t-if="record.patient_id.raw_value"><b>Patient:</b> <field name="patient_id"/></li>
+                                            <li t-if="record.physician_id.raw_value"><b>Physician:</b> <field name="physician_id"/></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
 		<record model="ir.actions.act_window" id="act_open_oemedical_prescription_order_view">
 			<field name="name">Prescription Order</field>
 			<field name="type">ir.actions.act_window</field>
 			<field name="res_model">oemedical.prescription.order</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">tree,form</field>
+			<field name="view_mode">kanban,tree,form</field>
 			<field name="search_view_id" ref="view_oemedical_prescription_order_search" />
 			<field name="domain">[]</field>
 			<field name="context">{}</field>
@@ -100,17 +181,25 @@
 
 		<record model="ir.actions.act_window.view" id="act_open_oemedical_prescription_order_view_form">
 			<field name="act_window_id" ref="act_open_oemedical_prescription_order_view" />
-			<field name="sequence" eval="20" />
+			<field name="sequence" eval="30" />
 			<field name="view_mode">form</field>
 			<field name="view_id" ref="view_oemedical_prescription_order_form" />
 		</record>
 
 		<record model="ir.actions.act_window.view" id="act_open_oemedical_prescription_order_view_tree">
 			<field name="act_window_id" ref="act_open_oemedical_prescription_order_view" />
-			<field name="sequence" eval="10" />
+			<field name="sequence" eval="20" />
 			<field name="view_mode">tree</field>
 			<field name="view_id" ref="view_oemedical_prescription_order_tree" />
 		</record>
+
+ 		<record model="ir.actions.act_window.view" id="act_open_oemedical_prescription_order_view_kanban"> 
+ 			<field name="act_window_id" ref="act_open_oemedical_prescription_order_view" /> 
+ 			<field name="sequence" eval="10" /> 
+ 			<field name="view_mode">kanban</field> 
+ 			<field name="view_id" ref="view_oemedical_prescription_order_kanban" /> 
+ 		</record> 
+
 
 	</data>
 </openerp>
