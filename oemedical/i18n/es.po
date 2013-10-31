@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: oemedical\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-12-03 17:04+0000\n"
-"PO-Revision-Date: 2013-10-23 16:56+0000\n"
-"Last-Translator: Open Business Solutions, SRL. <tecnologia@obsdr.com>\n"
+"PO-Revision-Date: 2013-10-30 19:33+0000\n"
+"Last-Translator: Xavier Andorrà <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-10-24 05:19+0000\n"
-"X-Generator: Launchpad (build 16810)\n"
+"X-Launchpad-Export-Date: 2013-10-31 05:46+0000\n"
+"X-Generator: Launchpad (build 16820)\n"
 
 #. module: oemedical
 #: field:oemedical.patient.evaluation,mood:0
@@ -43,18 +43,18 @@ msgstr ""
 #: view:oemedical.medicament.category:0
 #: field:oemedical.medicament.category,parent_id:0
 msgid "Parent"
-msgstr ""
+msgstr "Padre"
 
 #. module: oemedical
 #: help:oemedical.medication.template,end_treatment:0
 #: help:oemedical.medication.template,start_treatment:0
 msgid "Date of start of Treatment"
-msgstr ""
+msgstr "Fecha de inicio del tratamiento"
 
 #. module: oemedical
 #: selection:oemedical.hospital.bed,bed_type:0
 msgid "Low Air Loss"
-msgstr ""
+msgstr "Baja pérdida de aire"
 
 #. module: oemedical
 #: field:oemedical.patient.evaluation,loc_verbal:0
@@ -76,7 +76,7 @@ msgstr "Cantidad"
 #: view:oemedical.patient.evaluation:0
 #: field:oemedical.patient.evaluation,respiratory_rate:0
 msgid "Respiratory Rate"
-msgstr ""
+msgstr "Frecuencia respiratoria"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_physician_view
@@ -87,7 +87,7 @@ msgstr ""
 #: view:oemedical.patient.medication:0
 #: field:oemedical.patient.medication,doctor:0
 msgid "Physician"
-msgstr ""
+msgstr "Médico"
 
 #. module: oemedical
 #: view:oemedical.insurance:0
@@ -113,7 +113,7 @@ msgstr ""
 #: view:oemedical.patient.evaluation:0
 #: field:oemedical.patient.evaluation,object_recognition:0
 msgid "Object Recognition"
-msgstr ""
+msgstr "Reconocimiento de objetos"
 
 #. module: oemedical
 #: help:res.partner,is_insurance_company:0
