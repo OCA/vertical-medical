@@ -8,24 +8,24 @@ msgstr ""
 "Project-Id-Version: oemedical\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2012-12-03 17:04+0000\n"
-"PO-Revision-Date: 2013-10-30 19:33+0000\n"
+"PO-Revision-Date: 2013-11-01 01:25+0000\n"
 "Last-Translator: Xavier Andorrà <Unknown>\n"
 "Language-Team: Spanish <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-10-31 05:46+0000\n"
+"X-Launchpad-Export-Date: 2013-11-01 06:26+0000\n"
 "X-Generator: Launchpad (build 16820)\n"
 
 #. module: oemedical
 #: field:oemedical.patient.evaluation,mood:0
 msgid "Mood"
-msgstr ""
+msgstr "Estado de ánimo"
 
 #. module: oemedical
 #: help:oemedical.prescription.line,short_comment:0
 msgid "Short comment on the specific drug"
-msgstr ""
+msgstr "Breve comentario sobre el medicamento específico"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_diagnostic_hypothesis_view
@@ -37,7 +37,7 @@ msgstr "Hipótesis de diagnóstico"
 #: view:oemedical.medicament:0
 #: field:oemedical.medicament,product:0
 msgid "Product"
-msgstr ""
+msgstr "Producto"
 
 #. module: oemedical
 #: view:oemedical.medicament.category:0
@@ -64,7 +64,7 @@ msgstr ""
 #. module: oemedical
 #: view:oemedical.medication.dosage:0
 msgid "Oemedical Medication Dosage"
-msgstr ""
+msgstr "Dosificación del medicamento Oemedical"
 
 #. module: oemedical
 #: view:oemedical.prescription.line:0
@@ -124,7 +124,7 @@ msgstr ""
 #: view:oemedical.patient.disease:0
 #: field:oemedical.patient.disease,pregnancy_warning:0
 msgid "Pregnancy warning"
-msgstr ""
+msgstr "advertencia embarazo"
 
 #. module: oemedical
 #: help:oemedical.patient.evaluation,vocabulary:0
@@ -132,17 +132,19 @@ msgid ""
 "Check this box if the patient lacks basic intelectual capacity, when she/he "
 "can not describe elementary objects"
 msgstr ""
+"Marque esta casilla si el paciente carece de capacidad intelectual básica, "
+"cuando él / ella no puede describir objetos elementales"
 
 #. module: oemedical
 #: view:oemedical.medication.template:0
 #: field:oemedical.medication.template,dose:0
 msgid "Dose"
-msgstr ""
+msgstr "Dosis"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_res_partner
 msgid "Partner"
-msgstr ""
+msgstr "Socio"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_medicament
@@ -153,18 +155,18 @@ msgstr ""
 #: view:oemedical.patient.disease:0
 #: field:oemedical.patient.disease,is_infectious:0
 msgid "Infectious Disease"
-msgstr ""
+msgstr "Enfermedad Infecciosa"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_occupation_view
 msgid "Occupation"
-msgstr ""
+msgstr "Ocupación"
 
 #. module: oemedical
 #: view:oemedical.vaccination:0
 #: field:oemedical.vaccination,dose:0
 msgid "Dose #"
-msgstr ""
+msgstr "Dosis"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_medication_template
@@ -174,17 +176,17 @@ msgstr ""
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_specialty
 msgid " Specialty"
-msgstr ""
+msgstr " Especialidad"
 
 #. module: oemedical
 #: selection:oemedical.patient.disease,status:0
 msgid "healed"
-msgstr ""
+msgstr "curado"
 
 #. module: oemedical
 #: selection:oemedical.patient.evaluation,loc_eyes:0
 msgid "Opens eyes in response to painful stimuli"
-msgstr ""
+msgstr "Abre los ojos en respuesta a los estímulos dolorosos"
 
 #. module: oemedical
 #: selection:oemedical.insurance,insurance_type:0
@@ -196,24 +198,24 @@ msgstr ""
 #: view:oemedical.patient.evaluation:0
 #: field:oemedical.patient.evaluation,bpm:0
 msgid "Heart Rate"
-msgstr ""
+msgstr "Frecuencia cardiaca"
 
 #. module: oemedical
 #: view:oemedical.patient:0
 #: field:oemedical.patient,childbearing_age:0
 msgid "Potential for Childbearing"
-msgstr ""
+msgstr "Posibilidad de embarazo"
 
 #. module: oemedical
 #: help:oemedical.medicament,active_component:0
 msgid "Active Component"
-msgstr ""
+msgstr "Componente activo"
 
 #. module: oemedical
 #: view:oemedical.medicament:0
 #: field:oemedical.medicament,therapeutic_action:0
 msgid "Therapeutic effect"
-msgstr ""
+msgstr "efecto terapéutico"
 
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_patient_view
@@ -234,7 +236,7 @@ msgstr ""
 #: field:oemedical.vaccination,patient_id:0
 #: field:res.partner,is_patient:0
 msgid "Patient"
-msgstr ""
+msgstr "Paciente"
 
 #. module: oemedical
 #: view:oemedical.drug.form:0
@@ -242,7 +244,7 @@ msgstr ""
 #: view:oemedical.medication.template:0
 #: field:oemedical.medication.template,form:0
 msgid "Form"
-msgstr ""
+msgstr "Formulario"
 
 #. module: oemedical
 #: view:oemedical.pathology.category:0
@@ -257,12 +259,12 @@ msgstr ""
 #. module: oemedical
 #: field:oemedical.patient,vaccinations:0
 msgid "Vaccinations"
-msgstr ""
+msgstr "Vacunaciones"
 
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_patient_evaluation
 msgid " Patient Evaluation"
-msgstr ""
+msgstr " Evaluación del paciente"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_procedure
@@ -278,41 +280,41 @@ msgstr ""
 #: view:oemedical.patient.disease:0
 #: field:oemedical.patient.disease,diagnosed_date:0
 msgid "Date of Diagnosis"
-msgstr ""
+msgstr "Fecha de Diagnóstico"
 
 #. module: oemedical
 #: view:oemedical.patient.evaluation:0
 #: field:oemedical.patient.evaluation,ldl:0
 msgid "Last LDL"
-msgstr ""
+msgstr "Último LDL"
 
 #. module: oemedical
 #: view:oemedical.pathology.category:0
 #: field:oemedical.pathology.category,parent_id:0
 msgid "Parent Category"
-msgstr ""
+msgstr "Categoría Superior"
 
 #. module: oemedical
 #: view:oemedical.patient:0
 #: field:oemedical.patient,age:0
 msgid "Age"
-msgstr ""
+msgstr "Edad"
 
 #. module: oemedical
 #: selection:oemedical.patient.evaluation,evaluation_type:0
 msgid "Periodic control"
-msgstr ""
+msgstr "Control periódico"
 
 #. module: oemedical
 #: selection:oemedical.medication.template,duration_period:0
 #: selection:oemedical.medication.template,frequency_unit:0
 msgid "hours"
-msgstr ""
+msgstr "horas"
 
 #. module: oemedical
 #: field:res.partner,relative_id:0
 msgid "Contact"
-msgstr ""
+msgstr "Contacto"
 
 #. module: oemedical
 #: view:oemedical.specialty:0
