@@ -7,14 +7,14 @@ msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-12-03 17:04+0000\n"
-"PO-Revision-Date: 2013-11-04 18:57+0000\n"
+"PO-Revision-Date: 2013-11-07 02:24+0000\n"
 "Last-Translator: Federico Manuel Echeverri Choux -  (  Vauxoo  ) "
 "<echeverrifm@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-11-05 05:59+0000\n"
+"X-Launchpad-Export-Date: 2013-11-07 05:49+0000\n"
 "X-Generator: Launchpad (build 16820)\n"
 
 #. module: oemedical
@@ -3615,3 +3615,2088 @@ msgstr "Oemedical Prescription Line"
 #: model:ir.model,name:oemedical.model_oemedical_occupation
 msgid "oemedical.occupation"
 msgstr "oemedical.occupation"
+
+#~ msgid "Smoke"
+#~ msgstr "Smoke"
+
+#~ msgid ""
+#~ "Schedule I and II drugs have a high potential for abuse.They require greater "
+#~ "storage security and have a quota onmanufacturing, among other restrictions. "
+#~ "Schedule I drugs areavailable for research only and have no approved medical "
+#~ "use; Schedule II drugs are available only by prescription (unrefillable) and "
+#~ "require a form for ordering. Schedule III and IV drugs are available by "
+#~ "prescription, may have fiverefills in 6 months, and may be ordered orally. "
+#~ "Some Schedule V drugs are available over the counter"
+#~ msgstr ""
+#~ "Schedule I and II drugs have a high potential for abuse.They require greater "
+#~ "storage security and have a quota onmanufacturing, among other restrictions. "
+#~ "Schedule I drugs areavailable for research only and have no approved medical "
+#~ "use; Schedule II drugs are available only by prescription (unrefillable) and "
+#~ "require a form for ordering. Schedule III and IV drugs are available by "
+#~ "prescription, may have fiverefills in 6 months, and may be ordered orally. "
+#~ "Some Schedule V drugs are available over the counter"
+
+#~ msgid "rubra"
+#~ msgstr "rubra"
+
+#~ msgid "Fetus heart rate"
+#~ msgstr "Fetus heart rate"
+
+#~ msgid "Doctor who requested the test"
+#~ msgstr "Doctor who requested the test"
+
+#~ msgid "Monozygotic"
+#~ msgstr "Monozygotic"
+
+#~ msgid "Test Type"
+#~ msgstr "Test Type"
+
+#~ msgid "Vaginal tearing"
+#~ msgstr "Vaginal tearing"
+
+#~ msgid "Perinatal and Intrapartum Information"
+#~ msgstr "Perinatal and Intrapartum Information"
+
+#~ msgid "Last PAP test"
+#~ msgstr "Last PAP test"
+
+#~ msgid "Current Pregnancy"
+#~ msgstr "Current Pregnancy"
+
+#~ msgid "Vaginal"
+#~ msgstr "Vaginal"
+
+#~ msgid " Disease Group"
+#~ msgstr " Disease Group"
+
+#~ msgid "Health Professionals"
+#~ msgstr "Health Professionals"
+
+#~ msgid "Gas supply"
+#~ msgstr "Gas supply"
+
+#~ msgid "Menarche age"
+#~ msgstr "Menarche age"
+
+#~ msgid "Fetus Position"
+#~ msgstr "Fetus Position"
+
+#~ msgid "Test type"
+#~ msgstr "Test type"
+
+#~ msgid "oemedical.patient.lab.test"
+#~ msgstr "oemedical.patient.lab.test"
+
+#~ msgid "Check if the patient works at his / her house"
+#~ msgstr "Check if the patient works at his / her house"
+
+#~ msgid "Safe / Protected sex"
+#~ msgstr "Safe / Protected sex"
+
+#~ msgid "Lab Tests Required"
+#~ msgstr "Lab Tests Required"
+
+#~ msgid "Pill / Minipill"
+#~ msgstr "Pill / Minipill"
+
+#~ msgid "Flunitrazepam"
+#~ msgstr "Flunitrazepam"
+
+#~ msgid "Patient Allergies and Critical Information"
+#~ msgstr "Patient Allergies and Critical Information"
+
+#~ msgid "Patient Genetic Family Diseases"
+#~ msgstr "Patient Genetic Family Diseases"
+
+#~ msgid "Mammography History"
+#~ msgstr "Mammography History"
+
+#~ msgid "Works at home"
+#~ msgstr "Works at home"
+
+#~ msgid "Salt"
+#~ msgstr "Salt"
+
+#~ msgid "Telephone"
+#~ msgstr "Telephone"
+
+#~ msgid "When multiple appointments are selected, patient must be the same"
+#~ msgstr "When multiple appointments are selected, patient must be the same"
+
+#~ msgid "Fertility cycle awareness"
+#~ msgstr "Fertility cycle awareness"
+
+#~ msgid "Fetuses"
+#~ msgstr "Fetuses"
+
+#~ msgid "LMP"
+#~ msgstr "LMP"
+
+#~ msgid "Check if the patient has done a colposcopy exam"
+#~ msgstr "Check if the patient has done a colposcopy exam"
+
+#~ msgid "End of Pregnancy"
+#~ msgstr "End of Pregnancy"
+
+#~ msgid "Please check the lab results if the module is installed"
+#~ msgstr "Please check the lab results if the module is installed"
+
+#~ msgid "Age started to drink "
+#~ msgstr "Age started to drink "
+
+#~ msgid "Patient Genetic Risks"
+#~ msgstr "Patient Genetic Risks"
+
+#~ msgid "Name of the drug"
+#~ msgstr "Name of the drug"
+
+#~ msgid "DEA schedule I"
+#~ msgstr "DEA schedule I"
+
+#~ msgid "Date:"
+#~ msgstr "Date:"
+
+#~ msgid "Negative"
+#~ msgstr "Negative"
+
+#~ msgid ""
+#~ "Presence and severity of characteristic withdrawal symptoms.\n"
+#~ "Using Henningfield rating. 1=highest and 6=lowest"
+#~ msgstr ""
+#~ "Presence and severity of characteristic withdrawal symptoms.\n"
+#~ "Using Henningfield rating. 1=highest and 6=lowest"
+
+#~ msgid ""
+#~ "Is the patient satisfied with the level of time that they spend together ?"
+#~ msgstr ""
+#~ "Is the patient satisfied with the level of time that they spend together ?"
+
+#~ msgid "Grandmother"
+#~ msgstr "Grandmother"
+
+#~ msgid "Check this box if the mother is overweight or obesity"
+#~ msgstr "Check this box if the mother is overweight or obesity"
+
+#~ msgid "General"
+#~ msgstr "General"
+
+#~ msgid "Patient colposcopy History"
+#~ msgstr "Patient colposcopy History"
+
+#~ msgid "LSD"
+#~ msgstr "LSD"
+
+#~ msgid "Complete Breech"
+#~ msgstr "Complete Breech"
+
+#~ msgid "Patient Recreational Drugs"
+#~ msgstr "Patient Recreational Drugs"
+
+#~ msgid "Date of the Analysis"
+#~ msgstr "Date of the Analysis"
+
+#~ msgid "Polygamous"
+#~ msgstr "Polygamous"
+
+#~ msgid "Methylphenidate"
+#~ msgstr "Methylphenidate"
+
+#~ msgid "Trash recollection"
+#~ msgstr "Trash recollection"
+
+#~ msgid "Intoxication"
+#~ msgstr "Intoxication"
+
+#~ msgid "When multiple lab tests are selected, patient must be the same"
+#~ msgstr "When multiple lab tests are selected, patient must be the same"
+
+#~ msgid "Amphetamine"
+#~ msgstr "Amphetamine"
+
+#~ msgid "University"
+#~ msgstr "University"
+
+#~ msgid "Categories"
+#~ msgstr "Categorías"
+
+#~ msgid "Subcutaneous or Intradermical administration"
+#~ msgstr "Subcutaneous or Intradermical administration"
+
+#~ msgid "Locus of the chromosome"
+#~ msgstr "Locus of the chromosome"
+
+#~ msgid ""
+#~ "First degree = siblings, mother and father; second degree = Uncles, nephews "
+#~ "and Nieces; third degree = Grandparents and cousins"
+#~ msgstr ""
+#~ "First degree = siblings, mother and father; second degree = Uncles, nephews "
+#~ "and Nieces; third degree = Grandparents and cousins"
+
+#~ msgid "Check this option if the patient injects drugs"
+#~ msgstr "Check this option if the patient injects drugs"
+
+#~ msgid "Urethral"
+#~ msgstr "Urethral"
+
+#~ msgid "Car Child Safety"
+#~ msgstr "Car Child Safety"
+
+#~ msgid "Sniffing"
+#~ msgstr "Sniffing"
+
+#~ msgid "Age quit drinking "
+#~ msgstr "Age quit drinking "
+
+#~ msgid "Increta"
+#~ msgstr "Increta"
+
+#~ msgid " Medical Specialty"
+#~ msgstr " Medical Specialty"
+
+#~ msgid "Dosage"
+#~ msgstr "Dosage"
+
+#~ msgid "Mestrual History"
+#~ msgstr "Mestrual History"
+
+#~ msgid "Nicotine"
+#~ msgstr "Nicotine"
+
+#~ msgid "The Lab Test code must be unique"
+#~ msgstr "The Lab Test code must be unique"
+
+#~ msgid "Menopause age"
+#~ msgstr "Menopause age"
+
+#~ msgid "Recreational Drugs"
+#~ msgstr "Recreational Drugs"
+
+#~ msgid "Back"
+#~ msgstr "Back"
+
+#~ msgid ""
+#~ "Check if someone from the nuclear family - parents sibblings  is or has been "
+#~ "in prison"
+#~ msgstr ""
+#~ "Check if someone from the nuclear family - parents sibblings  is or has been "
+#~ "in prison"
+
+#~ msgid "MDMA methylenedioxy-methamphetamine"
+#~ msgstr "MDMA methylenedioxy-methamphetamine"
+
+#~ msgid "Main Info"
+#~ msgstr "Main Info"
+
+#~ msgid "History lines"
+#~ msgstr "History lines"
+
+#~ msgid "Monitors"
+#~ msgstr "Monitors"
+
+#~ msgid "PCP and analogs"
+#~ msgstr "PCP and analogs"
+
+#~ msgid "Date of quitting drugs"
+#~ msgstr "Date of quitting drugs"
+
+#~ msgid "Liquor / day"
+#~ msgstr "Liquor / day"
+
+#~ msgid "The patient uses the proper motorcycle helmet"
+#~ msgstr "The patient uses the proper motorcycle helmet"
+
+#~ msgid "Safety"
+#~ msgstr "Safety"
+
+#~ msgid "Screening"
+#~ msgstr "Screening"
+
+#~ msgid "Admin Hours"
+#~ msgstr "Admin Hours"
+
+#~ msgid "oxycodone HCL"
+#~ msgstr "oxycodone HCL"
+
+#~ msgid "Skin Patch"
+#~ msgstr "Skin Patch"
+
+#~ msgid "abnormal"
+#~ msgstr "abnormal"
+
+#~ msgid "Drugs"
+#~ msgstr "Drugs"
+
+#~ msgid "Sex with prostitutes"
+#~ msgstr "Sex with prostitutes"
+
+#~ msgid "At least one of the selected prescriptions is already invoiced"
+#~ msgstr "At least one of the selected prescriptions is already invoiced"
+
+#~ msgid "Methaqualone"
+#~ msgstr "Methaqualone"
+
+#~ msgid "The Unit name must be unique"
+#~ msgstr "The Unit name must be unique"
+
+#~ msgid "Abortions"
+#~ msgstr "Abortions"
+
+#~ msgid "Uncle"
+#~ msgstr "Uncle"
+
+#~ msgid "Diabetes"
+#~ msgstr "Diabetes"
+
+#~ msgid "General Info"
+#~ msgstr "General Info"
+
+#~ msgid "Pap / Colpo"
+#~ msgstr "Pap / Colpo"
+
+#~ msgid "Others"
+#~ msgstr "Others"
+
+#~ msgid "Smokes"
+#~ msgstr "Smokes"
+
+#~ msgid "Dependence"
+#~ msgstr "Dependence"
+
+#~ msgid "Grandfather"
+#~ msgstr "Grandfather"
+
+#~ msgid "Medication"
+#~ msgstr "Medication"
+
+#~ msgid "Complications"
+#~ msgstr "Complications"
+
+#~ msgid "Mother died in the process"
+#~ msgstr "Mother died in the process"
+
+#~ msgid "Anticonceptive Method"
+#~ msgstr "Anticonceptive Method"
+
+#~ msgid "Oral"
+#~ msgstr "Oral"
+
+#~ msgid "Last colposcopy"
+#~ msgstr "Last colposcopy"
+
+#~ msgid "Very much"
+#~ msgstr "Very much"
+
+#~ msgid "Check if the patient is currently on a diet"
+#~ msgstr "Check if the patient is currently on a diet"
+
+#~ msgid "Sleep"
+#~ msgstr "Sleep"
+
+#~ msgid "Pregnancies"
+#~ msgstr "Pregnancies"
+
+#~ msgid "Diet and Exersice"
+#~ msgstr "Diet and Exersice"
+
+#~ msgid "Ex alcoholic"
+#~ msgstr "Ex alcoholic"
+
+#~ msgid "Patient ID"
+#~ msgstr "Patient ID"
+
+#~ msgid "Nephew"
+#~ msgstr "Nephew"
+
+#~ msgid "Prostitute"
+#~ msgstr "Prostitute"
+
+#~ msgid "Mammography Tests"
+#~ msgstr "Mammography Tests"
+
+#~ msgid "Infrastructure"
+#~ msgstr "Infrastructure"
+
+#~ msgid "Date requested"
+#~ msgstr "Date requested"
+
+#~ msgid "Vasa Previa"
+#~ msgstr "Vasa Previa"
+
+#~ msgid "Maternal or Paternal"
+#~ msgstr "Maternal or Paternal"
+
+#~ msgid "Lab test type"
+#~ msgstr "Lab test type"
+
+#~ msgid "Score"
+#~ msgstr "Score"
+
+#~ msgid "Today's Draft Requests"
+#~ msgstr "Today's Draft Requests"
+
+#~ msgid "Perinatal Info"
+#~ msgstr "Perinatal Info"
+
+#~ msgid "Place of Death"
+#~ msgstr "Place of Death"
+
+#~ msgid "Result"
+#~ msgstr "Result"
+
+#~ msgid "dominant"
+#~ msgstr "dominant"
+
+#~ msgid "Medicaments"
+#~ msgstr "Medicaments"
+
+#~ msgid "Additional Info and Effects"
+#~ msgstr "Additional Info and Effects"
+
+#~ msgid "Insufflation, excluding nasal"
+#~ msgstr "Insufflation, excluding nasal"
+
+#~ msgid "Patient mammography History"
+#~ msgstr "Patient mammography History"
+
+#~ msgid "Drug Habits"
+#~ msgstr "Drug Habits"
+
+#~ msgid "Appointment already invoiced"
+#~ msgstr "Appointment already invoiced"
+
+#~ msgid "Sexual practices"
+#~ msgstr "Sexual practices"
+
+#~ msgid "You need to have at least one prescription item in your invoice"
+#~ msgstr "You need to have at least one prescription item in your invoice"
+
+#~ msgid "oligomenorrhea"
+#~ msgstr "oligomenorrhea"
+
+#~ msgid "Fetal Abdominal Circumference"
+#~ msgstr "Fetal Abdominal Circumference"
+
+#~ msgid "III"
+#~ msgstr "III"
+
+#~ msgid "Check this box if the patient eats by him / herself."
+#~ msgstr "Check this box if the patient eats by him / herself."
+
+#~ msgid "Short description on the diet"
+#~ msgstr "Short description on the diet"
+
+#~ msgid "menorrhagia"
+#~ msgstr "menorrhagia"
+
+#~ msgid "Age of quitting"
+#~ msgstr "Age of quitting"
+
+#~ msgid "CAGE Score"
+#~ msgstr "CAGE Score"
+
+#~ msgid "S Last Name"
+#~ msgstr "S Last Name"
+
+#~ msgid "Check this box if the mother has glucose intolerance or diabetes"
+#~ msgstr "Check this box if the mother has glucose intolerance or diabetes"
+
+#~ msgid "Withdrawal"
+#~ msgstr "Withdrawal"
+
+#~ msgid "Vulvar"
+#~ msgstr "Vulvar"
+
+#~ msgid "Intra-uterine device"
+#~ msgstr "Intra-uterine device"
+
+#~ msgid "Short name - code for the test"
+#~ msgstr "Short name - code for the test"
+
+#~ msgid "No consultation service is connected with the selected appointments"
+#~ msgstr "No consultation service is connected with the selected appointments"
+
+#~ msgid "Eye-opener"
+#~ msgstr "Eye-opener"
+
+#~ msgid "Genetic Risks"
+#~ msgstr "Genetic Risks"
+
+#~ msgid "Patient Extra Information"
+#~ msgstr "Patient Extra Information"
+
+#~ msgid "Cocaine"
+#~ msgstr "Cocaine"
+
+#~ msgid "Fetal Femur Length"
+#~ msgstr "Fetal Femur Length"
+
+#~ msgid "volume"
+#~ msgstr "volume"
+
+#~ msgid "Primary School"
+#~ msgstr "Primary School"
+
+#~ msgid "Full term pregnancies"
+#~ msgstr "Full term pregnancies"
+
+#~ msgid "Search Lab Tests Results"
+#~ msgstr "Search Lab Tests Results"
+
+#~ msgid "Monogamous"
+#~ msgstr "Monogamous"
+
+#~ msgid "Also called snorting - inhaling through the nares  "
+#~ msgstr "Also called snorting - inhaling through the nares  "
+
+#~ msgid "ASC-US"
+#~ msgstr "ASC-US"
+
+#~ msgid "Maintain the vehicle. Do periodical checks - tires,breaks ..."
+#~ msgstr "Maintain the vehicle. Do periodical checks - tires,breaks ..."
+
+#~ msgid "Date to stop drinking"
+#~ msgstr "Date to stop drinking"
+
+#~ msgid "ASC-H"
+#~ msgstr "ASC-H"
+
+#~ msgid "Prescription Order "
+#~ msgstr "Prescription Order "
+
+#~ msgid "Fetus Presentation"
+#~ msgstr "Fetus Presentation"
+
+#~ msgid "Income"
+#~ msgstr "Income"
+
+#~ msgid "Have you ever felt Guilty about drinking ?"
+#~ msgstr "Have you ever felt Guilty about drinking ?"
+
+#~ msgid "Age quit drugs "
+#~ msgstr "Age quit drugs "
+
+#~ msgid "PAP Test History"
+#~ msgstr "PAP Test History"
+
+#~ msgid "Higher"
+#~ msgstr "Higher"
+
+#~ msgid "Maternal"
+#~ msgstr "Maternal"
+
+#~ msgid "Number of sexual partners"
+#~ msgstr "Number of sexual partners"
+
+#~ msgid "Bladder"
+#~ msgstr "Bladder"
+
+#~ msgid "Mother's Heart Frequency"
+#~ msgstr "Mother's Heart Frequency"
+
+#~ msgid "Meconium"
+#~ msgstr "Meconium"
+
+#~ msgid "Luxury and excellent sanitary conditions"
+#~ msgstr "Luxury and excellent sanitary conditions"
+
+#~ msgid "Last Papanicolau"
+#~ msgstr "Last Papanicolau"
+
+#~ msgid "Cousin"
+#~ msgstr "Cousin"
+
+#~ msgid "Medication Frequencies"
+#~ msgstr "Medication Frequencies"
+
+#~ msgid "Lab Tests"
+#~ msgstr "Lab Tests"
+
+#~ msgid "Addictions"
+#~ msgstr "Addictions"
+
+#~ msgid "Sister"
+#~ msgstr "Sister"
+
+#~ msgid "eumenorrhea"
+#~ msgstr "eumenorrhea"
+
+#~ msgid "ZIP"
+#~ msgstr "ZIP"
+
+#~ msgid "Brother"
+#~ msgstr "Brother"
+
+#~ msgid "Reinforcement"
+#~ msgstr "Reinforcement"
+
+#~ msgid "Mother"
+#~ msgstr "Mother"
+
+#~ msgid ""
+#~ "A measure of the substance's ability to get users to take it  again and "
+#~ "again, and in preference to other substances.\n"
+#~ "Using  Henningfield rating. 1=highest and 6=lowest"
+#~ msgstr ""
+#~ "A measure of the substance's ability to get users to take it  again and "
+#~ "again, and in preference to other substances.\n"
+#~ "Using  Henningfield rating. 1=highest and 6=lowest"
+
+#~ msgid "Running Water"
+#~ msgstr "Running Water"
+
+#~ msgid "UserError"
+#~ msgstr "UserError"
+
+#~ msgid "Recreational Drug"
+#~ msgstr "Recreational Drug"
+
+#~ msgid "Lab Reports"
+#~ msgstr "Lab Reports"
+
+#~ msgid "Lab Tests Results"
+#~ msgstr "Lab Tests Results"
+
+#~ msgid "Prescription already invoiced"
+#~ msgstr "Prescription already invoiced"
+
+#~ msgid "Test Cases"
+#~ msgstr "Test Cases"
+
+#~ msgid "Draft"
+#~ msgstr "Draft"
+
+#~ msgid "In Consultation"
+#~ msgstr "In Consultation"
+
+#~ msgid "Additional Info"
+#~ msgstr "Additional Info"
+
+#~ msgid "Anal Sex"
+#~ msgstr "Anal Sex"
+
+#~ msgid "abundant"
+#~ msgstr "abundant"
+
+#~ msgid "Lower"
+#~ msgstr "Lower"
+
+#~ msgid "Legal"
+#~ msgstr "Legal"
+
+#~ msgid "Marijuana"
+#~ msgstr "Marijuana"
+
+#~ msgid "Symmetric"
+#~ msgstr "Symmetric"
+
+#~ msgid "Test Unit"
+#~ msgstr "Test Unit"
+
+#~ msgid "frequency"
+#~ msgstr "frequency"
+
+#~ msgid "Check it the patient is a passive / second-hand smoker"
+#~ msgstr "Check it the patient is a passive / second-hand smoker"
+
+#~ msgid " Date"
+#~ msgstr " Date"
+
+#~ msgid "Footling Breech"
+#~ msgstr "Footling Breech"
+
+#~ msgid "Domestic violence"
+#~ msgstr "Domestic violence"
+
+#~ msgid "DEA Schedule Level"
+#~ msgstr "DEA Schedule Level"
+
+#~ msgid "Sleeps at daytime"
+#~ msgstr "Sleeps at daytime"
+
+#~ msgid ""
+#~ "Is the patient satisfied with the level talking over the problems as family ?"
+#~ msgstr ""
+#~ "Is the patient satisfied with the level talking over the problems as family ?"
+
+#~ msgid "Check this box if the mother has hypertension"
+#~ msgstr "Check this box if the mother has hypertension"
+
+#~ msgid "Warn"
+#~ msgstr "Warn"
+
+#~ msgid "Draft Requests"
+#~ msgstr "Draft Requests"
+
+#~ msgid "How many minutes a day the patient exercises"
+#~ msgstr "How many minutes a day the patient exercises"
+
+#~ msgid "Perinatal monitor"
+#~ msgstr "Perinatal monitor"
+
+#~ msgid "Full Term"
+#~ msgstr "Full Term"
+
+#~ msgid "Common Dosage"
+#~ msgstr "Common Dosage"
+
+#~ msgid "The test ID code must be unique"
+#~ msgstr "The test ID code must be unique"
+
+#~ msgid "Obstetrics"
+#~ msgstr "Obstetrics"
+
+#~ msgid "Wating"
+#~ msgstr "Wating"
+
+#~ msgid "Abortion"
+#~ msgstr "Abortion"
+
+#~ msgid "Weeks at the end of pregnancy"
+#~ msgstr "Weeks at the end of pregnancy"
+
+#~ msgid "Gravida #"
+#~ msgstr "Gravida #"
+
+#~ msgid "Lower-middle"
+#~ msgstr "Lower-middle"
+
+#~ msgid "Check if the product is a medical supply"
+#~ msgstr "Check if the product is a medical supply"
+
+#~ msgid "Premature Deliveries"
+#~ msgstr "Premature Deliveries"
+
+#~ msgid "CAGE"
+#~ msgstr "CAGE"
+
+#~ msgid "Date when she was admitted to give birth"
+#~ msgstr "Date when she was admitted to give birth"
+
+#~ msgid "Bleeding"
+#~ msgstr "Bleeding"
+
+#~ msgid "Heart Frequency"
+#~ msgstr "Heart Frequency"
+
+#~ msgid "Status unknown"
+#~ msgstr "Status unknown"
+
+#~ msgid "Heroin"
+#~ msgstr "Heroin"
+
+#~ msgid "Hours outside home"
+#~ msgstr "Hours outside home"
+
+#~ msgid "Shanty, deficient sanitary conditions"
+#~ msgstr "Shanty, deficient sanitary conditions"
+
+#~ msgid "Currently on a diet"
+#~ msgstr "Currently on a diet"
+
+#~ msgid "Accreta"
+#~ msgstr "Accreta"
+
+#~ msgid "Breast self-examination"
+#~ msgstr "Breast self-examination"
+
+#~ msgid "Weeks"
+#~ msgstr "Weeks"
+
+#~ msgid "Risky / Unprotected sex"
+#~ msgstr "Risky / Unprotected sex"
+
+#~ msgid "Secondary School"
+#~ msgstr "Secondary School"
+
+#~ msgid "Drug addiction"
+#~ msgstr "Drug addiction"
+
+#~ msgid "oemedical.lab.test.units"
+#~ msgstr "oemedical.lab.test.units"
+
+#~ msgid "Results"
+#~ msgstr "Results"
+
+#~ msgid "Heterosexual"
+#~ msgstr "Heterosexual"
+
+#~ msgid "Perinatal Infomation"
+#~ msgstr "Perinatal Infomation"
+
+#~ msgid "Prevention and Screening"
+#~ msgstr "Prevention and Screening"
+
+#~ msgid "Exercise"
+#~ msgstr "Exercise"
+
+#~ msgid "Labor mode"
+#~ msgstr "Labor mode"
+
+#~ msgid "Insurances"
+#~ msgstr "Insurances"
+
+#~ msgid "Benzodiazepines"
+#~ msgstr "Benzodiazepines"
+
+#~ msgid ""
+#~ "Total Family APGAR 7 - 10 : Functional Family 4 - 6  : Some level of "
+#~ "disfunction \n"
+#~ "0 - 3  : Severe disfunctional family \n"
+#~ msgstr ""
+#~ "Total Family APGAR 7 - 10 : Functional Family 4 - 6  : Some level of "
+#~ "disfunction \n"
+#~ "0 - 3  : Severe disfunctional family \n"
+
+#~ msgid "ASG"
+#~ msgstr "ASG"
+
+#~ msgid "Appoitment"
+#~ msgstr "Appoitment"
+
+#~ msgid "Cervical"
+#~ msgstr "Cervical"
+
+#~ msgid "Date to start drinking"
+#~ msgstr "Date to start drinking"
+
+#~ msgid "Transexual"
+#~ msgstr "Transexual"
+
+#~ msgid "Storage"
+#~ msgstr "Storage"
+
+#~ msgid "Gyneco / Obs"
+#~ msgstr "Gyneco / Obs"
+
+#~ msgid "Use of forceps"
+#~ msgstr "Use of forceps"
+
+#~ msgid "Hours of sleep"
+#~ msgstr "Hours of sleep"
+
+#~ msgid "Age started to smoke"
+#~ msgstr "Age started to smoke"
+
+#~ msgid "Enter the date of the last mammography"
+#~ msgstr "Enter the date of the last mammography"
+
+#~ msgid "Check if the patient does periodic mammographys"
+#~ msgstr "Check if the patient does periodic mammographys"
+
+#~ msgid "Family History"
+#~ msgstr "Family History"
+
+#~ msgid "Pregnancy Due Date"
+#~ msgstr "Pregnancy Due Date"
+
+#~ msgid "Enter the date of the last Papanicolau test"
+#~ msgstr "Enter the date of the last Papanicolau test"
+
+#~ msgid "History"
+#~ msgstr "History"
+
+#~ msgid "Disease Gene"
+#~ msgstr "Disease Gene"
+
+#~ msgid "Official Symbol"
+#~ msgstr "Official Symbol"
+
+#~ msgid "Beer / day"
+#~ msgstr "Beer / day"
+
+#~ msgid "Family affection"
+#~ msgstr "Family affection"
+
+#~ msgid "Insurance:"
+#~ msgstr "Insurance:"
+
+#~ msgid "Enter the date of the last colposcopy"
+#~ msgstr "Enter the date of the last colposcopy"
+
+#~ msgid "Medicament:"
+#~ msgstr "Medicament:"
+
+#~ msgid "Patient:"
+#~ msgstr "Patient:"
+
+#~ msgid "Gyneco"
+#~ msgstr "Gyneco"
+
+#~ msgid "BPD"
+#~ msgstr "BPD"
+
+#~ msgid ""
+#~ "Safety measures when driving : child seats, proper seat belting, not seating "
+#~ "on the front seat, ...."
+#~ msgstr ""
+#~ "Safety measures when driving : child seats, proper seat belting, not seating "
+#~ "on the front seat, ...."
+
+#~ msgid "Placenta Previa"
+#~ msgstr "Placenta Previa"
+
+#~ msgid "Father"
+#~ msgstr "Father"
+
+#~ msgid "Other Family Issues"
+#~ msgstr "Other Family Issues"
+
+#~ msgid "First Name"
+#~ msgstr "First Name"
+
+#~ msgid "Safety measures when driving : safety belt"
+#~ msgstr "Safety measures when driving : safety belt"
+
+#~ msgid "Small, crowded but with good sanitary conditions"
+#~ msgstr "Small, crowded but with good sanitary conditions"
+
+#~ msgid "Second Lastname"
+#~ msgstr "Second Lastname"
+
+#~ msgid "Main"
+#~ msgstr "Main"
+
+#~ msgid "Correct"
+#~ msgstr "Correct"
+
+#~ msgid "Admnistration"
+#~ msgstr "Admnistration"
+
+#~ msgid "Broad Ligament"
+#~ msgstr "Broad Ligament"
+
+#~ msgid "Normal decidua"
+#~ msgstr "Normal decidua"
+
+#~ msgid "Induced"
+#~ msgstr "Induced"
+
+#~ msgid "Electrical supply"
+#~ msgstr "Electrical supply"
+
+#~ msgid "Middle"
+#~ msgstr "Middle"
+
+#~ msgid "Relative in prison"
+#~ msgstr "Relative in prison"
+
+#~ msgid ""
+#~ "How difficult it is for the user to quit, the relapse rate, the percentage "
+#~ "of people who eventually become dependent, the rating users give their own "
+#~ "need for the substance and the degree to which the substance will be used in "
+#~ "the face of evidence that it causes harm.\n"
+#~ "Using Henningfield rating. 1=highest and 6=lowest"
+#~ msgstr ""
+#~ "How difficult it is for the user to quit, the relapse rate, the percentage "
+#~ "of people who eventually become dependent, the rating users give their own "
+#~ "need for the substance and the degree to which the substance will be used in "
+#~ "the face of evidence that it causes harm.\n"
+#~ "Using Henningfield rating. 1=highest and 6=lowest"
+
+#~ msgid "Psilocybin"
+#~ msgstr "Psilocybin"
+
+#~ msgid "Meals"
+#~ msgstr "Meals"
+
+#~ msgid "Puerperium"
+#~ msgstr "Puerperium"
+
+#~ msgid "Currently Pregnant"
+#~ msgstr "Currently Pregnant"
+
+#~ msgid "Placenta"
+#~ msgstr "Placenta"
+
+#~ msgid "Patient CAGE Questionnaire"
+#~ msgstr "Patient CAGE Questionnaire"
+
+#~ msgid "Occiput / Cephalic Posterior"
+#~ msgstr "Occiput / Cephalic Posterior"
+
+#~ msgid "Test type, eg X-Ray, hemogram,biopsy..."
+#~ msgstr "Test type, eg X-Ray, hemogram,biopsy..."
+
+#~ msgid "Physician:"
+#~ msgstr "Physician:"
+
+#~ msgid "Problems discussion"
+#~ msgstr "Problems discussion"
+
+#~ msgid "Has been in prison"
+#~ msgstr "Has been in prison"
+
+#~ msgid "Premature"
+#~ msgstr "Premature"
+
+#~ msgid "Diagnosis"
+#~ msgstr "Diagnosis"
+
+#~ msgid "Patient pap History"
+#~ msgstr "Patient pap History"
+
+#~ msgid ""
+#~ "Is the patient satisfied with the level of help coming from the family when "
+#~ "there is a problem ?"
+#~ msgstr ""
+#~ "Is the patient satisfied with the level of help coming from the family when "
+#~ "there is a problem ?"
+
+#~ msgid "Gestational weeks"
+#~ msgstr "Gestational weeks"
+
+#~ msgid "Angry with Critics"
+#~ msgstr "Angry with Critics"
+
+#~ msgid "At least one of the selected appointments is already invoiced"
+#~ msgstr "At least one of the selected appointments is already invoiced"
+
+#~ msgid "Specific Dosage"
+#~ msgstr "Specific Dosage"
+
+#~ msgid "Perineal"
+#~ msgstr "Perineal"
+
+#~ msgid "Intra Uterine Growth Restriction"
+#~ msgstr "Intra Uterine Growth Restriction"
+
+#~ msgid "Female condom"
+#~ msgstr "Female condom"
+
+#~ msgid "Stimulants"
+#~ msgstr "Stimulants"
+
+#~ msgid "Dextromethorphan - DMX"
+#~ msgstr "Dextromethorphan - DMX"
+
+#~ msgid "Illegal"
+#~ msgstr "Illegal"
+
+#~ msgid "Laboratory Test"
+#~ msgstr "Laboratory Test"
+
+#~ msgid "Please check the lab test results if the module is installed"
+#~ msgstr "Please check the lab test results if the module is installed"
+
+#~ msgid "Passive"
+#~ msgstr "Passive"
+
+#~ msgid "Hashish"
+#~ msgstr "Hashish"
+
+#~ msgid "Test"
+#~ msgstr "Test"
+
+#~ msgid "Genetic Family Diseases"
+#~ msgstr "Genetic Family Diseases"
+
+#~ msgid "Oral Sex"
+#~ msgstr "Oral Sex"
+
+#~ msgid ""
+#~ "Check if the patient sleep hours are during daylight rather than at night"
+#~ msgstr ""
+#~ "Check if the patient sleep hours are during daylight rather than at night"
+
+#~ msgid "Blond:"
+#~ msgstr "Blond:"
+
+#~ msgid "You can not invoice this appointment"
+#~ msgstr "You can not invoice this appointment"
+
+#~ msgid "PAP smear History"
+#~ msgstr "PAP smear History"
+
+#~ msgid "Dystocia"
+#~ msgstr "Dystocia"
+
+#~ msgid "Hard to Cut down"
+#~ msgstr "Hard to Cut down"
+
+#~ msgid "Incomplete Placenta"
+#~ msgstr "Incomplete Placenta"
+
+#~ msgid "Retroperitoneal"
+#~ msgstr "Retroperitoneal"
+
+#~ msgid "Hematoma"
+#~ msgstr "Hematoma"
+
+#~ msgid "Have you ever felt you needed to Cut down on your drinking ?"
+#~ msgstr "Have you ever felt you needed to Cut down on your drinking ?"
+
+#~ msgid "Waiting"
+#~ msgstr "Waiting"
+
+#~ msgid "Members"
+#~ msgstr "Members"
+
+#~ msgid "Check if patient is in fertile age"
+#~ msgstr "Check if patient is in fertile age"
+
+#~ msgid "Check if the patient is a safe driver"
+#~ msgstr "Check if the patient is a safe driver"
+
+#~ msgid "Hallucinogens"
+#~ msgstr "Hallucinogens"
+
+#~ msgid "Puerperium Monitor"
+#~ msgstr "Puerperium Monitor"
+
+#~ msgid "None"
+#~ msgstr "None"
+
+#~ msgid "Genetic Risk"
+#~ msgstr "Genetic Risk"
+
+#~ msgid ""
+#~ "How much of the substance is needed to satisfy increasing cravings for it, "
+#~ "and the level of stable need that is eventually reached.\n"
+#~ "Using Henningfield rating. 1=highest and 6=lowest"
+#~ msgstr ""
+#~ "How much of the substance is needed to satisfy increasing cravings for it, "
+#~ "and the level of stable need that is eventually reached.\n"
+#~ "Using Henningfield rating. 1=highest and 6=lowest"
+
+#~ msgid "serosa"
+#~ msgstr "serosa"
+
+#~ msgid "Lacerations"
+#~ msgstr "Lacerations"
+
+#~ msgid ""
+#~ "Have you ever felt you needed a drink first thing in the morning (Eye-"
+#~ "opener) to steady your nerves or to get rid of a hangover?"
+#~ msgstr ""
+#~ "Have you ever felt you needed a drink first thing in the morning (Eye-"
+#~ "opener) to steady your nerves or to get rid of a hangover?"
+
+#~ msgid "Check if the patient (he or she) has sex with prostitutes"
+#~ msgstr "Check if the patient (he or she) has sex with prostitutes"
+
+#~ msgid "Pregnancy History"
+#~ msgstr "Pregnancy History"
+
+#~ msgid "Patient Pregnancy"
+#~ msgstr "Patient Pregnancy"
+
+#~ msgid "Last Menstrual Period"
+#~ msgstr "Last Menstrual Period"
+
+#~ msgid "Fetal Biometry"
+#~ msgstr "Fetal Biometry"
+
+#~ msgid "Pregnancy #"
+#~ msgstr "Pregnancy #"
+
+#~ msgid "Abruptio Placentae"
+#~ msgstr "Abruptio Placentae"
+
+#~ msgid "Admission Code"
+#~ msgstr "Admission Code"
+
+#~ msgid "patient_id"
+#~ msgstr "patient_id"
+
+#~ msgid " Disease Gene"
+#~ msgstr " Disease Gene"
+
+#~ msgid "GHB"
+#~ msgstr "GHB"
+
+#~ msgid "Gestational Weeks"
+#~ msgstr "Gestational Weeks"
+
+#~ msgid "Hospital"
+#~ msgstr "Hospital"
+
+#~ msgid "Patient CAGE SCORE"
+#~ msgstr "Patient CAGE SCORE"
+
+#~ msgid "Location"
+#~ msgstr "Location"
+
+#~ msgid "Number of pregnancies"
+#~ msgstr "Number of pregnancies"
+
+#~ msgid "Menopausal"
+#~ msgstr "Menopausal"
+
+#~ msgid "Units"
+#~ msgstr "Units"
+
+#~ msgid "Prenatal evaluations"
+#~ msgstr "Prenatal evaluations"
+
+#~ msgid "Tolerance"
+#~ msgstr "Tolerance"
+
+#~ msgid "Dominance"
+#~ msgstr "Dominance"
+
+#~ msgid ""
+#~ "the level of intoxication is associated with addiction and increases the "
+#~ "personal and social damage a substance may do. \n"
+#~ "Using Henningfield rating. 1=highest and 6=lowest"
+#~ msgstr ""
+#~ "the level of intoxication is associated with addiction and increases the "
+#~ "personal and social damage a substance may do. \n"
+#~ "Using Henningfield rating. 1=highest and 6=lowest"
+
+#~ msgid "Gravida"
+#~ msgstr "Gravida"
+
+#~ msgid "Incomplete Primary School"
+#~ msgstr "Incomplete Primary School"
+
+#~ msgid "Lochia amount"
+#~ msgstr "Lochia amount"
+
+#~ msgid "Eats alone"
+#~ msgstr "Eats alone"
+
+#~ msgid "Evaluations"
+#~ msgstr "Evaluations"
+
+#~ msgid "Oligohydramnios"
+#~ msgstr "Oligohydramnios"
+
+#~ msgid "Retained Placenta"
+#~ msgstr "Retained Placenta"
+
+#~ msgid "Info"
+#~ msgstr "Info"
+
+#~ msgid "Mother Information"
+#~ msgstr "Mother Information"
+
+#~ msgid "Legal Status"
+#~ msgstr "Legal Status"
+
+#~ msgid "EFW"
+#~ msgstr "EFW"
+
+#~ msgid "Cancel"
+#~ msgstr "Cancel"
+
+#~ msgid "Fetus Information"
+#~ msgstr "Fetus Information"
+
+#~ msgid "Drinks Alcohol"
+#~ msgstr "Drinks Alcohol"
+
+#~ msgid "Assymetric"
+#~ msgstr "Assymetric"
+
+#~ msgid "Sequence"
+#~ msgstr "Sequence"
+
+#~ msgid "Stillbirths"
+#~ msgstr "Stillbirths"
+
+#~ msgid "Lab Test"
+#~ msgstr "Lab Test"
+
+#~ msgid "SSN:"
+#~ msgstr "SSN:"
+
+#~ msgid "PAP test"
+#~ msgstr "PAP test"
+
+#~ msgid "Obeys Traffic Laws"
+#~ msgstr "Obeys Traffic Laws"
+
+#~ msgid "Hypertension"
+#~ msgstr "Hypertension"
+
+#~ msgid "Laboratory"
+#~ msgstr "Laboratory"
+
+#~ msgid "Check if patient lives in a zone of high hostility (eg, war)"
+#~ msgstr "Check if patient lives in a zone of high hostility (eg, war)"
+
+#~ msgid "Genetics"
+#~ msgstr "Genetics"
+
+#~ msgid "Information"
+#~ msgstr "Information"
+
+#~ msgid "Sexual Partners"
+#~ msgstr "Sexual Partners"
+
+#~ msgid "Puerperium monitor"
+#~ msgstr "Puerperium monitor"
+
+#~ msgid "Moderately"
+#~ msgstr "Moderately"
+
+#~ msgid "Frequency prn"
+#~ msgstr "Frequency prn"
+
+#~ msgid "Passive smoker"
+#~ msgstr "Passive smoker"
+
+#~ msgid "Paternal"
+#~ msgstr "Paternal"
+
+#~ msgid "Street..."
+#~ msgstr "Street..."
+
+#~ msgid "Percreta"
+#~ msgstr "Percreta"
+
+#~ msgid "Check this box if the mother has pre-eclampsia"
+#~ msgstr "Check this box if the mother has pre-eclampsia"
+
+#~ msgid "Low"
+#~ msgstr "Low"
+
+#~ msgid "Motorcycle Rider"
+#~ msgstr "Motorcycle Rider"
+
+#~ msgid "Alcohol"
+#~ msgstr "Alcohol"
+
+#~ msgid "Dissociative Anesthetics"
+#~ msgstr "Dissociative Anesthetics"
+
+#~ msgid "oemedical.appointment.history"
+#~ msgstr "oemedical.appointment.history"
+
+#~ msgid "Lab Requests"
+#~ msgstr "Lab Requests"
+
+#~ msgid "Lab Test Critearea"
+#~ msgstr "Lab Test Critearea"
+
+#~ msgid "Prenatal and Antenatal Evaluations"
+#~ msgstr "Prenatal and Antenatal Evaluations"
+
+#~ msgid "recessive"
+#~ msgstr "recessive"
+
+#~ msgid "Prescription"
+#~ msgstr "Prescription"
+
+#~ msgid "LSIL"
+#~ msgstr "LSIL"
+
+#~ msgid "Perinatal"
+#~ msgstr "Perinatal"
+
+#~ msgid "Perinatal Information"
+#~ msgstr "Perinatal Information"
+
+#~ msgid "Guilt"
+#~ msgstr "Guilt"
+
+#~ msgid "Home safety"
+#~ msgstr "Home safety"
+
+#~ msgid "Action"
+#~ msgstr "Action"
+
+#~ msgid "Placentation"
+#~ msgstr "Placentation"
+
+#~ msgid "Lab test already invoiced"
+#~ msgstr "Lab test already invoiced"
+
+#~ msgid "Check if the product is an insurance plan"
+#~ msgstr "Check if the product is an insurance plan"
+
+#~ msgid "Seat belt"
+#~ msgstr "Seat belt"
+
+#~ msgid "Hydrocodone bitartrate"
+#~ msgstr "Hydrocodone bitartrate"
+
+#~ msgid "Misc"
+#~ msgstr "Misc"
+
+#~ msgid "Comfortable and good sanitary conditions"
+#~ msgstr "Comfortable and good sanitary conditions"
+
+#~ msgid "Colposcopy Tests"
+#~ msgstr "Colposcopy Tests"
+
+#~ msgid "Incomplete Secondary School"
+#~ msgstr "Incomplete Secondary School"
+
+#~ msgid "Done"
+#~ msgstr "Done"
+
+#~ msgid "Lab result ID"
+#~ msgstr "Lab result ID"
+
+#~ msgid "Bisexual"
+#~ msgstr "Bisexual"
+
+#~ msgid "Sex:"
+#~ msgstr "Sex:"
+
+#~ msgid "Pathologist"
+#~ msgstr "Pathologist"
+
+#~ msgid "Doctor:"
+#~ msgstr "Doctor:"
+
+#~ msgid "City"
+#~ msgstr "City"
+
+#~ msgid "The prescription is invoice exempt"
+#~ msgstr "The prescription is invoice exempt"
+
+#~ msgid ""
+#~ "Keep safety measures for kids in the kitchen, correct storage of chemicals, "
+#~ "..."
+#~ msgstr ""
+#~ "Keep safety measures for kids in the kitchen, correct storage of chemicals, "
+#~ "..."
+
+#~ msgid "Hostile Area"
+#~ msgstr "Hostile Area"
+
+#~ msgid "Frank Breech"
+#~ msgstr "Frank Breech"
+
+#~ msgid "Uses helmet"
+#~ msgstr "Uses helmet"
+
+#~ msgid "AIS"
+#~ msgstr "AIS"
+
+#~ msgid "Minutes / day"
+#~ msgstr "Minutes / day"
+
+#~ msgid ""
+#~ "Distance between the symphysis pubis and the uterine fundus (S-FD) in cm"
+#~ msgstr ""
+#~ "Distance between the symphysis pubis and the uterine fundus (S-FD) in cm"
+
+#~ msgid "Colposcopy"
+#~ msgstr "Colposcopy"
+
+#~ msgid "At least one of the selected prescriptions can not be invoiced"
+#~ msgstr "At least one of the selected prescriptions can not be invoiced"
+
+#~ msgid "Mammography"
+#~ msgstr "Mammography"
+
+#~ msgid "Check if patient does and knows how to self examine her breasts"
+#~ msgstr "Check if patient does and knows how to self examine her breasts"
+
+#~ msgid "Education Level"
+#~ msgstr "Education Level"
+
+#~ msgid "result"
+#~ msgstr "result"
+
+#~ msgid "Family Diseases"
+#~ msgstr "Family Diseases"
+
+#~ msgid "Last Mammography"
+#~ msgstr "Last Mammography"
+
+#~ msgid "Drive and Home Safety"
+#~ msgstr "Drive and Home Safety"
+
+#~ msgid "Toxicity"
+#~ msgstr "Toxicity"
+
+#~ msgid "Relative"
+#~ msgstr "Relative"
+
+#~ msgid "Fetal Biparietal Diameter"
+#~ msgstr "Fetal Biparietal Diameter"
+
+#~ msgid "Physical Exercise"
+#~ msgstr "Physical Exercise"
+
+#~ msgid "Regular"
+#~ msgstr "Regular"
+
+#~ msgid "Housing and sanitary living conditions"
+#~ msgstr "Housing and sanitary living conditions"
+
+#~ msgid "PAP History"
+#~ msgstr "PAP History"
+
+#~ msgid "Is currently in prison"
+#~ msgstr "Is currently in prison"
+
+#~ msgid "Patient Menstrual History"
+#~ msgstr "Patient Menstrual History"
+
+#~ msgid "Working children"
+#~ msgstr "Working children"
+
+#~ msgid "Live birth"
+#~ msgstr "Live birth"
+
+#~ msgid "Codeine"
+#~ msgstr "Codeine"
+
+#~ msgid "IV"
+#~ msgstr "IV"
+
+#~ msgid "II"
+#~ msgstr "II"
+
+#~ msgid "Help from family"
+#~ msgstr "Help from family"
+
+#~ msgid "Search Lab Test Types"
+#~ msgstr "Search Lab Test Types"
+
+#~ msgid "Extreme"
+#~ msgstr "Extreme"
+
+#~ msgid "Check if patient does periodic cytologic pelvic smear screening"
+#~ msgstr "Check if patient does periodic cytologic pelvic smear screening"
+
+#~ msgid "Duration:"
+#~ msgstr "Duration:"
+
+#~ msgid "Fertile"
+#~ msgstr "Fertile"
+
+#~ msgid "Henningfield Rating"
+#~ msgstr "Henningfield Rating"
+
+#~ msgid "Estimated Fetal Weight"
+#~ msgstr "Estimated Fetal Weight"
+
+#~ msgid "Diet info"
+#~ msgstr "Diet info"
+
+#~ msgid "Duration"
+#~ msgstr "Duration"
+
+#~ msgid "Sanitary Sewers"
+#~ msgstr "Sanitary Sewers"
+
+#~ msgid "Placenta anomalies"
+#~ msgstr "Placenta anomalies"
+
+#~ msgid "Service"
+#~ msgstr "Service"
+
+#~ msgid "Being transferred to other hospital"
+#~ msgstr "Being transferred to other hospital"
+
+#~ msgid "Age of start drugs"
+#~ msgstr "Age of start drugs"
+
+#~ msgid "New Type of Lab test"
+#~ msgstr "New Type of Lab test"
+
+#~ msgid "Street names"
+#~ msgstr "Street names"
+
+#~ msgid "Internet"
+#~ msgstr "Internet"
+
+#~ msgid "Monitoring"
+#~ msgstr "Monitoring"
+
+#~ msgid "Injection - Intravenous, Intramuscular..."
+#~ msgstr "Injection - Intravenous, Intramuscular..."
+
+#~ msgid "At least one of the selected lab tests is already invoiced"
+#~ msgstr "At least one of the selected lab tests is already invoiced"
+
+#~ msgid "Barbiturates"
+#~ msgstr "Barbiturates"
+
+#~ msgid "Overweight"
+#~ msgstr "Overweight"
+
+#~ msgid "Number of visits to the doctor during pregnancy"
+#~ msgstr "Number of visits to the doctor during pregnancy"
+
+#~ msgid "HSIL"
+#~ msgstr "HSIL"
+
+#~ msgid "Female sterilisation"
+#~ msgstr "Female sterilisation"
+
+#~ msgid "PAP Tests"
+#~ msgstr "PAP Tests"
+
+#~ msgid "Transverse Lie"
+#~ msgstr "Transverse Lie"
+
+#~ msgid "Withdrawal method"
+#~ msgstr "Withdrawal method"
+
+#~ msgid "Injection"
+#~ msgstr "Injection"
+
+#~ msgid "Preeclampsia"
+#~ msgstr "Preeclampsia"
+
+#~ msgid "Both"
+#~ msgstr "Both"
+
+#~ msgid "Type of Lab test"
+#~ msgstr "Type of Lab test"
+
+#~ msgid "Opioids"
+#~ msgstr "Opioids"
+
+#~ msgid "Depressants"
+#~ msgstr "Depressants"
+
+#~ msgid "Lochia odor"
+#~ msgstr "Lochia odor"
+
+#~ msgid "Patient use of Recreational Drugs"
+#~ msgstr "Patient use of Recreational Drugs"
+
+#~ msgid "Length"
+#~ msgstr "Length"
+
+#~ msgid "Aunt"
+#~ msgstr "Aunt"
+
+#~ msgid "Administration Routes"
+#~ msgstr "Administration Routes"
+
+#~ msgid "Number of cup of coffee a day"
+#~ msgstr "Number of cup of coffee a day"
+
+#~ msgid "Prenatal Evaluations"
+#~ msgstr "Prenatal Evaluations"
+
+#~ msgid "Menstrual History"
+#~ msgstr "Menstrual History"
+
+#~ msgid "Contractions"
+#~ msgstr "Contractions"
+
+#~ msgid "At least one of the selected lab tests can not be invoiced"
+#~ msgstr "At least one of the selected lab tests can not be invoiced"
+
+#~ msgid "Gestational days"
+#~ msgstr "Gestational days"
+
+#~ msgid "Single parent family"
+#~ msgstr "Single parent family"
+
+#~ msgid "hypomenorrhea"
+#~ msgstr "hypomenorrhea"
+
+#~ msgid "At the delivery room"
+#~ msgstr "At the delivery room"
+
+#~ msgid "Ex-smoker"
+#~ msgstr "Ex-smoker"
+
+#~ msgid "Tested"
+#~ msgstr "Tested"
+
+#~ msgid "Number of hours a day the patient spend outside the house"
+#~ msgstr "Number of hours a day the patient spend outside the house"
+
+#~ msgid "Ketamine"
+#~ msgstr "Ketamine"
+
+#~ msgid "polymenorrhea"
+#~ msgstr "polymenorrhea"
+
+#~ msgid "IV drug user"
+#~ msgstr "IV drug user"
+
+#~ msgid "This field marks the current pregnancy"
+#~ msgstr "This field marks the current pregnancy"
+
+#~ msgid "Check if the patient consumes soft drinks with sugar"
+#~ msgstr "Check if the patient consumes soft drinks with sugar"
+
+#~ msgid "Confirm"
+#~ msgstr "Confirm"
+
+#~ msgid "Age of quitting smoking"
+#~ msgstr "Age of quitting smoking"
+
+#~ msgid "HC"
+#~ msgstr "HC"
+
+#~ msgid "Sexual Information"
+#~ msgstr "Sexual Information"
+
+#~ msgid "Cups per day"
+#~ msgstr "Cups per day"
+
+#~ msgid "Teenage pregnancy"
+#~ msgstr "Teenage pregnancy"
+
+#~ msgid "Coffee"
+#~ msgstr "Coffee"
+
+#~ msgid "Homosexual"
+#~ msgstr "Homosexual"
+
+#~ msgid "Age:"
+#~ msgstr "Age:"
+
+#~ msgid "FL"
+#~ msgstr "FL"
+
+#~ msgid "Sexual Preferences"
+#~ msgstr "Sexual Preferences"
+
+#~ msgid "Meals per day"
+#~ msgstr "Meals per day"
+
+#~ msgid "SES - Socioeconomic Status"
+#~ msgstr "SES - Socioeconomic Status"
+
+#~ msgid "Configuration"
+#~ msgstr "Configuración"
+
+#~ msgid "Episiotomy"
+#~ msgstr "Episiotomy"
+
+#~ msgid "Male condom"
+#~ msgstr "Male condom"
+
+#~ msgid "Have people Annoyed you by criticizing your drinking ?"
+#~ msgstr "Have people Annoyed you by criticizing your drinking ?"
+
+#~ msgid "in transit to the hospital"
+#~ msgstr "in transit to the hospital"
+
+#~ msgid "When multiple prescriptions are selected, patient must be the same"
+#~ msgstr "When multiple prescriptions are selected, patient must be the same"
+
+#~ msgid "Stillbirth"
+#~ msgstr "Stillbirth"
+
+#~ msgid "Cannabinoids"
+#~ msgstr "Cannabinoids"
+
+#~ msgid "Cigarretes a day"
+#~ msgstr "Cigarretes a day"
+
+#~ msgid "Roomy and excellent sanitary conditions"
+#~ msgstr "Roomy and excellent sanitary conditions"
+
+#~ msgid "Fetus Heart Frequency"
+#~ msgstr "Fetus Heart Frequency"
+
+#~ msgid "Ex drug addict"
+#~ msgstr "Ex drug addict"
+
+#~ msgid "Extra Infomation"
+#~ msgstr "Extra Infomation"
+
+#~ msgid "In consultation"
+#~ msgstr "In consultation"
+
+#~ msgid "Check this box if this is pregancy is or was NOT normal"
+#~ msgstr "Check this box if this is pregancy is or was NOT normal"
+
+#~ msgid "Mescaline"
+#~ msgstr "Mescaline"
+
+#~ msgid "Fetus"
+#~ msgstr "Fetus"
+
+#~ msgid "Family: "
+#~ msgstr "Family: "
+
+#~ msgid "Admission date"
+#~ msgstr "Admission date"
+
+#~ msgid "Middle-upper"
+#~ msgstr "Middle-upper"
+
+#~ msgid "Canceled"
+#~ msgstr "Canceled"
+
+#~ msgid "The appointment is invoice exempt"
+#~ msgstr "The appointment is invoice exempt"
+
+#~ msgid "Pregnancy"
+#~ msgstr "Pregnancy"
+
+#~ msgid "Cervix dilation"
+#~ msgstr "Cervix dilation"
+
+#~ msgid "Perinatal Monitor"
+#~ msgstr "Perinatal Monitor"
+
+#~ msgid "Age first sexual encounter"
+#~ msgstr "Age first sexual encounter"
+
+#~ msgid "Medical Supply"
+#~ msgstr "Medical Supply"
+
+#~ msgid ""
+#~ "Number of units of the medicament. Example : 30 capsules of amoxicillin"
+#~ msgstr ""
+#~ "Number of units of the medicament. Example : 30 capsules of amoxicillin"
+
+#~ msgid "Evaluation Date"
+#~ msgstr "Evaluation Date"
+
+#~ msgid "Last mammography"
+#~ msgstr "Last mammography"
+
+#~ msgid "IUGR"
+#~ msgstr "IUGR"
+
+#~ msgid "Socioeconomics"
+#~ msgstr "Socioeconomics"
+
+#~ msgid "Contact Information"
+#~ msgstr "Contact Information"
+
+#~ msgid "Official Long Name"
+#~ msgstr "Official Long Name"
+
+#~ msgid "Skin Popping"
+#~ msgstr "Skin Popping"
+
+#~ msgid "Inhalants"
+#~ msgstr "Inhalants"
+
+#~ msgid "Sexual Practices"
+#~ msgstr "Sexual Practices"
+
+#~ msgid ""
+#~ "Is the patient satisfied with the level of making important decisions as a "
+#~ "group ?"
+#~ msgstr ""
+#~ "Is the patient satisfied with the level of making important decisions as a "
+#~ "group ?"
+
+#~ msgid "law marriage"
+#~ msgstr "law marriage"
+
+#~ msgid "Lochia color"
+#~ msgstr "Lochia color"
+
+#~ msgid "Family APGAR"
+#~ msgstr "Family APGAR"
+
+#~ msgid "Colposcopy History"
+#~ msgstr "Colposcopy History"
+
+#~ msgid "Lifestyle"
+#~ msgstr "Lifestyle"
+
+#~ msgid "User"
+#~ msgstr "User"
+
+#~ msgid "Normal Range"
+#~ msgstr "Normal Range"
+
+#~ msgid "c-section"
+#~ msgstr "c-section"
+
+#~ msgid "Check if the patient (he or she) is a prostitute"
+#~ msgstr "Check if the patient (he or she) is a prostitute"
+
+#~ msgid "Fentanyl"
+#~ msgstr "Fentanyl"
+
+#~ msgid "Morphine"
+#~ msgstr "Morphine"
+
+#~ msgid " Drug Admin Route"
+#~ msgstr " Drug Admin Route"
+
+#~ msgid "Prenatal Evaluation"
+#~ msgstr "Prenatal Evaluation"
+
+#~ msgid "Car Revision"
+#~ msgstr "Car Revision"
+
+#~ msgid "Average hours of sleep per day"
+#~ msgstr "Average hours of sleep per day"
+
+#~ msgid "Housing conditions"
+#~ msgstr "Housing conditions"
+
+#~ msgid "Smoke / Inhale"
+#~ msgstr "Smoke / Inhale"
+
+#~ msgid "Age started drugs "
+#~ msgstr "Age started drugs "
+
+#~ msgid ""
+#~ "It shows the age of the patient in years(y), months(m) and days(d).\n"
+#~ "If the patient has died, the age shown is the age at time of death, the age "
+#~ "corresponding to the date on the death certificate. It will show also "
+#~ "\"deceased\" on the field"
+#~ msgstr ""
+#~ "It shows the age of the patient in years(y), months(m) and days(d).\n"
+#~ "If the patient has died, the age shown is the age at time of death, the age "
+#~ "corresponding to the date on the death certificate. It will show also "
+#~ "\"deceased\" on the field"
+
+#~ msgid ""
+#~ "Schedule I and II drugs have a high potential for abuse. They require "
+#~ "greater storage security and have a quota on manufacturing, among other "
+#~ "restrictions. Schedule I drugs are available for research only and have no "
+#~ "approved medical use; Schedule II drugs are available only by prescription "
+#~ "(unrefillable) and require a form for ordering. Schedule III and IV drugs "
+#~ "are available by prescription, may have five refills in 6 months, and may be "
+#~ "ordered orally. Some Schedule V drugs are available over the counter"
+#~ msgstr ""
+#~ "Schedule I and II drugs have a high potential for abuse. They require "
+#~ "greater storage security and have a quota on manufacturing, among other "
+#~ "restrictions. Schedule I drugs are available for research only and have no "
+#~ "approved medical use; Schedule II drugs are available only by prescription "
+#~ "(unrefillable) and require a form for ordering. Schedule III and IV drugs "
+#~ "are available by prescription, may have five refills in 6 months, and may be "
+#~ "ordered orally. Some Schedule V drugs are available over the counter"
+
+#~ msgid "Search Lab Tests Requests"
+#~ msgstr "Search Lab Tests Requests"
+
+#~ msgid "e.g. +32.81.81.37.00"
+#~ msgstr "e.g. +32.81.81.37.00"
+
+#~ msgid "You can not invoice this lab test"
+#~ msgstr "You can not invoice this lab test"
+
+#~ msgid "At least one of the selected appointments can not be invoiced"
+#~ msgstr "At least one of the selected appointments can not be invoiced"
+
+#~ msgid "Methamphetamine"
+#~ msgstr "Methamphetamine"
+
+#~ msgid "You can not invoice this prescription"
+#~ msgstr "You can not invoice this prescription"
+
+#~ msgid "Sexual abuse"
+#~ msgstr "Sexual abuse"
+
+#~ msgid "Decision making"
+#~ msgstr "Decision making"
+
+#~ msgid "Niece"
+#~ msgstr "Niece"
+
+#~ msgid "School withdrawal"
+#~ msgstr "School withdrawal"
+
+#~ msgid "Oemedical Disease Gene"
+#~ msgstr "Oemedical Disease Gene"
+
+#~ msgid "alba"
+#~ msgstr "alba"
+
+#~ msgid "Wine / day"
+#~ msgstr "Wine / day"
+
+#~ msgid "Time sharing"
+#~ msgstr "Time sharing"
+
+#~ msgid "Dysmenorrhea"
+#~ msgstr "Dysmenorrhea"
+
+#~ msgid "Polihydramnios"
+#~ msgstr "Polihydramnios"
+
+#~ msgid "Check if patient consumes salt with the food"
+#~ msgstr "Check if patient consumes salt with the food"
+
+#~ msgid "Fetal Head Circumference"
+#~ msgstr "Fetal Head Circumference"
+
+#~ msgid "hemorrhage"
+#~ msgstr "hemorrhage"
+
+#~ msgid "High"
+#~ msgstr "High"
+
+#~ msgid "Contraceptive injection"
+#~ msgstr "Contraceptive injection"
+
+#~ msgid "Description"
+#~ msgstr "Description"
+
+#~ msgid "offensive"
+#~ msgstr "offensive"
+
+#~ msgid ""
+#~ "Is the patient satisfied with the level of affection coming from the family ?"
+#~ msgstr ""
+#~ "Is the patient satisfied with the level of affection coming from the family ?"
+
+#~ msgid "Dyspareunia Deep"
+#~ msgstr "Dyspareunia Deep"
+
+#~ msgid "normal"
+#~ msgstr "normal"
+
+#~ msgid "Gene ID"
+#~ msgstr "Gene ID"
+
+#~ msgid "Medium / Average"
+#~ msgstr "Medium / Average"
+
+#~ msgid "Anabolic steroids"
+#~ msgstr "Anabolic steroids"
+
+#~ msgid "AC"
+#~ msgstr "AC"
+
+#~ msgid "Dyspareunia Superficial"
+#~ msgstr "Dyspareunia Superficial"
+
+#~ msgid "Lab Testing Units"
+#~ msgstr "Lab Testing Units"
+
+#~ msgid "Rectal"
+#~ msgstr "Rectal"
+
+#~ msgid "Country"
+#~ msgstr "Country"
+
+#~ msgid "Route"
+#~ msgstr "Route"
+
+#~ msgid "The patient rides motorcycles"
+#~ msgstr "The patient rides motorcycles"
+
+#~ msgid "Calendar View"
+#~ msgstr "Calendar View"
+
+#~ msgid "Disease Genes"
+#~ msgstr "Disease Genes"
+
+#~ msgid "Doctor who Request the lab test."
+#~ msgstr "Doctor who Request the lab test."
+
+#~ msgid "Soft drinks (sugar)"
+#~ msgstr "Soft drinks (sugar)"
+
+#~ msgid "Fundal Height"
+#~ msgstr "Fundal Height"
+
+#~ msgid "e.g. www.openerp.com"
+#~ msgstr "e.g. www.openerp.com"
+
+#~ msgid "Dismissed from hospital"
+#~ msgstr "Dismissed from hospital"
+
+#~ msgid "Sexuality"
+#~ msgstr "Sexuality"
+
+#~ msgid "amenorrhea"
+#~ msgstr "amenorrhea"
+
+#~ msgid "Vasectomy"
+#~ msgstr "Vasectomy"
+
+#~ msgid "Test Requests"
+#~ msgstr "Test Requests"
+
+#~ msgid "Common name of the drug in street jargon"
+#~ msgstr "Common name of the drug in street jargon"
