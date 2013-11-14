@@ -1,19 +1,21 @@
 # Translation of OpenERP Server.
 # This file contains the translation of the following modules:
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Medical\n"
 "Report-Msgid-Bugs-To: https://sourceforge.net/apps/mantisbt/medical\n"
-"POT-Creation-Date: 2010-12-05 21:57:25+0000\n"
-"PO-Revision-Date: 2011-02-05 18:17+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2010-12-05 21:57+0000\n"
+"PO-Revision-Date: 2013-11-08 04:39+0000\n"
+"Last-Translator: Federico Manuel Echeverri Choux -  (  Vauxoo  ) "
+"<echeverrifm@gmail.com>\n"
 "Language-Team: German <None>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2013-11-14 06:28+0000\n"
+"X-Generator: Launchpad (build 16820)\n"
 "Language: de\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #. module: medical_invoice
 #: field:medical.patient,receivable:0
@@ -33,8 +35,10 @@ msgstr "Die Verschreibung ist rechnungsfrei"
 
 #. module: medical_invoice
 #: constraint:ir.model:0
-msgid "The Object name must start with x_ and not contain any special character !"
-msgstr "Das Objekt muss mit x_ beginnen und darf keine Sonderzeichen enthalten!"
+msgid ""
+"The Object name must start with x_ and not contain any special character !"
+msgstr ""
+"Das Objekt muss mit x_ beginnen und darf keine Sonderzeichen enthalten!"
 
 #. module: medical_invoice
 #: constraint:ir.actions.act_window:0
@@ -45,7 +49,8 @@ msgstr "Ungültiger Name des Models in der Definition der <action>"
 #: code:addons/medical_invoice/wizard/wizard_create_lab_invoice.py:0
 #, python-format
 msgid "At least one of the selected lab tests is already invoiced"
-msgstr "Mindestens eine der gewählten Labortests ist bereits in Rechnung gestellt"
+msgstr ""
+"Mindestens eine der gewählten Labortests ist bereits in Rechnung gestellt"
 
 #. module: medical_invoice
 #: view:medical.appointment.invoice:0
@@ -111,7 +116,9 @@ msgstr "Noch abzurechnende Verschreibungen"
 #: code:addons/medical_invoice/wizard/wizard_prescription_invoice.py:0
 #, python-format
 msgid "At least one of the selected prescriptions can not be invoiced"
-msgstr "Mindestens eine der gewählten Verschreibungen kann nicht in Rechnung gestellt werden"
+msgstr ""
+"Mindestens eine der gewählten Verschreibungen kann nicht in Rechnung "
+"gestellt werden"
 
 #. module: medical_invoice
 #: model:ir.actions.act_window,name:medical_invoice.medical_action_today_tobeinvoiced_labtest_request
@@ -151,14 +158,16 @@ msgstr "medical.prescription.invoice"
 #: model:ir.module.module,description:medical_invoice.module_meta_information
 msgid ""
 " \n"
-"        This module add functionality to create invoices for doctor's consulting charge.\n"
+"        This module add functionality to create invoices for doctor's "
+"consulting charge.\n"
 "\n"
 "        Features:\n"
 "        -Invoice of multiple appointments at a time.\n"
 "        "
 msgstr ""
 " \n"
-"        Dieses Modul fügt die Funktionalitäten zur Rechnungserstellung hinzu.\n"
+"        Dieses Modul fügt die Funktionalitäten zur Rechnungserstellung "
+"hinzu.\n"
 "\n"
 "        Features:\n"
 "        -Rechnungserstellung für mehrere Arztbesuch gleichzeitig.\n"
@@ -169,11 +178,6 @@ msgstr ""
 #, python-format
 msgid "The appointment is invoice exempt"
 msgstr "Dieser Arztbesuch ist rechnungsbefreit"
-
-#. module: medical_invoice
-#: field:medical.appointment,consultations:0
-msgid "Consultation Service"
-msgstr "Beratungsservice"
 
 #. module: medical_invoice
 #: code:addons/medical_invoice/wizard/wizard_appointment_invoice.py:0
@@ -190,7 +194,8 @@ msgstr "Rechnungen"
 #: code:addons/medical_invoice/wizard/wizard_prescription_invoice.py:0
 #, python-format
 msgid "At least one of the selected prescriptions is already invoiced"
-msgstr "Mindestens eine der gewählten Beschreibungen ist bereits in Rechnung gestellt"
+msgstr ""
+"Mindestens eine der gewählten Beschreibungen ist bereits in Rechnung gestellt"
 
 #. module: medical_invoice
 #: code:addons/medical_invoice/wizard/wizard_appointment_invoice.py:0
@@ -219,7 +224,9 @@ msgstr "Erstelle Laborrechnung"
 #: code:addons/medical_invoice/wizard/wizard_create_lab_invoice.py:0
 #, python-format
 msgid "When multiple lab tests are selected, patient must be the same"
-msgstr "Wenn mehrere Labortests ausgewählt sind, muss der Patient immer derselbe sein."
+msgstr ""
+"Wenn mehrere Labortests ausgewählt sind, muss der Patient immer derselbe "
+"sein."
 
 #. module: medical_invoice
 #: code:addons/medical_invoice/wizard/wizard_appointment_invoice.py:0
@@ -248,7 +255,9 @@ msgstr "Verschreibungen"
 #: code:addons/medical_invoice/wizard/wizard_prescription_invoice.py:0
 #, python-format
 msgid "When multiple prescriptions are selected, patient must be the same"
-msgstr "Wenn mehrere Verschreibungen ausgewählt sind, muss der Patient immer derselbe sein."
+msgstr ""
+"Wenn mehrere Verschreibungen ausgewählt sind, muss der Patient immer "
+"derselbe sein."
 
 #. module: medical_invoice
 #: model:ir.model,name:medical_invoice.model_medical_patient
@@ -297,7 +306,8 @@ msgstr "medical.patient.lab.test"
 #: code:addons/medical_invoice/wizard/wizard_appointment_invoice.py:0
 #, python-format
 msgid "At least one of the selected appointments can not be invoiced"
-msgstr "Mindestens einer der gewählten Termine kann nicht in Rechnung gestellt werden"
+msgstr ""
+"Mindestens einer der gewählten Termine kann nicht in Rechnung gestellt werden"
 
 #. module: medical_invoice
 #: view:medical.prescription.invoice:0
@@ -308,7 +318,9 @@ msgstr "Erstelle Verschreibungsrechnung"
 #: code:addons/medical_invoice/wizard/wizard_create_lab_invoice.py:0
 #, python-format
 msgid "At least one of the selected lab tests can not be invoiced"
-msgstr "Mindestens einer der gewählten Labortests kann nicht in Rechnung gestellt werden"
+msgstr ""
+"Mindestens einer der gewählten Labortests kann nicht in Rechnung gestellt "
+"werden"
 
 #. module: medical_invoice
 #: view:medical.appointment.invoice:0
@@ -324,7 +336,8 @@ msgstr "Erstelle Verschreibungsrechnung"
 #: code:addons/medical_invoice/wizard/wizard_appointment_invoice.py:0
 #, python-format
 msgid "When multiple appointments are selected, patient must be the same"
-msgstr "Wenn mehrere Termine ausgewählt sind, muss der Patient immer derselbe sein."
+msgstr ""
+"Wenn mehrere Termine ausgewählt sind, muss der Patient immer derselbe sein."
 
 #. module: medical_invoice
 #: code:addons/medical_invoice/wizard/wizard_prescription_invoice.py:0
@@ -347,10 +360,12 @@ msgstr "Erstelle Verschreibungsrechnung"
 #: code:addons/medical_invoice/wizard/wizard_appointment_invoice.py:0
 #, python-format
 msgid "At least one of the selected appointments is already invoiced"
-msgstr "Mindestens einer der gewählten Termine ist bereits in REchnung gestellt"
+msgstr ""
+"Mindestens einer der gewählten Termine ist bereits in REchnung gestellt"
 
 #. module: medical_invoice
-#: view:medical.appointment.invoice:0 view:medical.lab.test.invoice:0
+#: view:medical.appointment.invoice:0
+#: view:medical.lab.test.invoice:0
 #: view:medical.prescription.invoice:0
 msgid "Cancel"
 msgstr "Abbruch"
