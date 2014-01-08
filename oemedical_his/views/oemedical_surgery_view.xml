@@ -5,9 +5,9 @@
 
 <!-- Surgery -->
 
-	<record model="ir.ui.view" id="medical_surgery_view">
+	<record model="ir.ui.view" id="oemedical_surgery_view">
 		<field name="name">Surgery</field>
-		<field name="model">medical.surgery</field>
+		<field name="model">oemedical.surgery</field>
 		<field name="type">form</field>
 			<field name="arch" type="xml">
 				<form string="Surgery">
@@ -27,9 +27,9 @@
 	</record>
 
 
-		<record model="ir.ui.view" id="medical_surgery_tree">
+		<record model="ir.ui.view" id="oemedical_surgery_tree">
 			<field name="name">Surgery Lists</field>
-			<field name="model">medical.surgery</field>
+			<field name="model">oemedical.surgery</field>
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
 				<tree string='Surgery'>
@@ -45,9 +45,9 @@
 
 <!-- Procedure -->
 
-	<record model="ir.ui.view" id="medical_procedure_view">
+	<record model="ir.ui.view" id="oemedical_procedure_view">
 		<field name="name">Procedure</field>
-		<field name="model">medical.procedure</field>
+		<field name="model">oemedical.procedure</field>
 		<field name="type">form</field>
 			<field name="arch" type="xml">
 				<form string="Procedure">
@@ -58,9 +58,9 @@
 	</record>
 
 
-		<record model="ir.ui.view" id="medical_procedure_tree">
+		<record model="ir.ui.view" id="oemedical_procedure_tree">
 			<field name="name">Procedure List</field>
-			<field name="model">medical.procedure</field>
+			<field name="model">oemedical.procedure</field>
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
 				<tree string='Procedure'>
@@ -73,10 +73,10 @@
 
 <!-- Include the Surgery page into the Patient History -->
 
-		<record model="ir.ui.view" id="medical_patient_view">
+		<record model="ir.ui.view" id="oemedical_patient_view">
 			<field name="name">Patient</field>
-			<field name="model">medical.patient</field>
-                        <field name="inherit_id" ref="medical.medical_patient_view" />
+			<field name="model">oemedical.patient</field>
+                        <field name="inherit_id" ref="oemedical.oemedical_patient_view" />
 			<field name="type">form</field>
 			<field name="arch" type="xml">
 				<notebook>

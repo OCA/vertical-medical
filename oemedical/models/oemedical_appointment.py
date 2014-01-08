@@ -19,67 +19,37 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #/#############################################################################
-from osv import osv
-from osv import fields
+
 import time
+from datetime import datetime
+
+from openerp.osv import fields, orm
+from openerp.tools.translate import _
+
+from openerp.addons.oemedical.oemedical_constants import hours, minutes
 
 
-class OeMedicalAppointment(osv.Model):
+class OeMedicalAppointment(orm.Model):
     _name = 'oemedical.appointment'
 
     _columns = {
+        'user_id': fields.many2one('res.users', 'Responsible', readonly=True, states={'draft': [('readonly', False)]}),
         'patient_id': fields.many2one('oemedical.patient', string='Patient',
                                    required=True, select=True,
                                    help='Patient Name'),
         'name': fields.char(size=256, string='Appointment ID', readonly=True),
         'appointment_date': fields.datetime(string='Date and Time'),
         'appointment_day': fields.date(string='Date'),
-        'appointment_hour': fields.selection([
-            ('01', '01'),
-            ('02', '02'),
-            ('03', '03'),
-            ('04', '04'),
-            ('05', '05'),
-            ('06', '06'),
-            ('07', '07'),
-            ('08', '08'),
-            ('09', '09'),
-            ('10', '10'),
-            ('11', '11'),
-            ('12', '12'),
-            ('13', '13'),
-            ('14', '14'),
-            ('15', '15'),
-            ('16', '16'),
-            ('17', '17'),
-            ('18', '18'),
-            ('19', '19'),
-            ('20', '20'),
-            ('21', '21'),
-            ('22', '22'),
-            ('23', '23'),
-             ],
+        'appointment_hour': fields.selection(hours,
             string='Hour'),
-        'appointment_minute': fields.selection([
-            ('05', '05'),
-            ('10', '10'),
-            ('15', '15'),
-            ('20', '20'),
-            ('25', '25'),
-            ('30', '30'),
-            ('35', '35'),
-            ('40', '40'),
-            ('45', '45'),
-            ('50', '50'),
-            ('55', '55'),
-             ],
+        'appointment_minute': fields.selection(minutes,
             string='Minute'),
 
         'duration': fields.float('Duration'),
         'doctor': fields.many2one('oemedical.physician',
-                                  string='Physician',select=True, 
+                                  string='Physician', select=True,
                                   help='Physician\'s Name'),
-        'alias' : fields.char(size=256, string='Alias', ),
+        'alias': fields.char(size=256, string='Alias', ),
         'comments': fields.text(string='Comments'),
         'appointment_type': fields.selection([
             ('ambulatory', 'Ambulatory'),
@@ -88,19 +58,20 @@ class OeMedicalAppointment(osv.Model):
         ], string='Type'),
         'institution': fields.many2one('res.partner',
                                        string='Health Center',
-                                       help='Medical Center'
-                                        , domain="[('category_id', '=', 'Doctor Office')]"),
+                                       help='Medical Center',
+                                       domain="[('is_institution', '=', True)]"),
+#        'institution': fields.related('user_id','parent_id', type='many2one', relation='res.partner', string='Institution', store=True, domain="[('is_institution', '=', True)]"), #, readonly=True
         'consultations': fields.many2one('product.product',
                                          string='Consultation Services',
-                                          help='Consultation Services'
-                                        , domain="[('type', '=', 'service'), ]"),
+                                         help='Consultation Services',
+                                         domain="[('type', '=', 'service'), ]"),
         'urgency': fields.selection([
             ('a', 'Normal'),
             ('b', 'Urgent'),
             ('c', 'Medical Emergency'), ],
             string='Urgency Level'),
         'speciality': fields.many2one('oemedical.specialty',
-                                      string='Specialty', 
+                                      string='Specialty',
                                       help='Medical Specialty / Sector'),
         'state': fields.selection([
             ('draft', 'Draft'),
@@ -111,24 +82,24 @@ class OeMedicalAppointment(osv.Model):
             ('canceled', 'Canceled'),
              ],
             string='State'),
-        'history_ids' : fields.one2many('oemedical.appointment.history','appointment_id_history','History lines', states={'start':[('readonly',True)]}),
+        'history_ids': fields.one2many('oemedical.appointment.history', 'appointment_id_history', 'History lines', states={'start': [('readonly', True)]}),
 
     }
-    
+
     _defaults = {
-        'name': lambda obj, cr, uid, context: 
+        'name': lambda obj, cr, uid, context:
             obj.pool.get('ir.sequence').get(cr, uid, 'oemedical.appointment'),
         'duration': 30.00,
         'urgency': 'a',
         'state': 'draft',
-
+        'user_id': lambda s, cr, u, c: u,
                  }
 
     def create(self, cr, uid, vals, context=None):
         val_history = {}
         ait_obj = self.pool.get('oemedical.appointment.history')
-
-
+        date_time_str = vals['appointment_day'] + ' ' + vals['appointment_hour'] + ':' + vals['appointment_minute']
+        vals['appointment_date'] = datetime.strptime(date_time_str, '%Y-%m-%d %H:%M')
 
         val_history['name'] = uid
         val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
@@ -147,20 +118,20 @@ class OeMedicalAppointment(osv.Model):
 
         for order in self.browse(cr, uid, ids, context=context):
             if order.state == 'confirm':
-                self.write(cr, uid, ids, {'state':'draft'} ,context=context)
+                self.write(cr, uid, ids, {'state': 'draft'}, context=context)
                 val_history['action'] = "--------------------------------  Changed to Draft  ------------------------------------\n"
             if order.state == 'waiting':
                 val_history['action'] = "--------------------------------  Changed to Confirm  ------------------------------------\n"
-                self.write(cr, uid, ids, {'state':'confirm'} ,context=context)
+                self.write(cr, uid, ids, {'state': 'confirm'}, context=context)
             if order.state == 'in_consultation':
                 val_history['action'] = "--------------------------------  Changed to Waiting  ------------------------------------\n"
-                self.write(cr, uid, ids, {'state':'waiting'} ,context=context)
+                self.write(cr, uid, ids, {'state': 'waiting'}, context=context)
             if order.state == 'done':
                 val_history['action'] = "--------------------------------  Changed to In Consultation  ------------------------------------\n"
-                self.write(cr, uid, ids, {'state':'in_consultation'} ,context=context)
+                self.write(cr, uid, ids, {'state': 'in_consultation'}, context=context)
             if order.state == 'canceled':
                 val_history['action'] = "--------------------------------  Changed to Draft  ------------------------------------\n"
-                self.write(cr, uid, ids, {'state':'draft'} ,context=context)
+                self.write(cr, uid, ids, {'state': 'draft'}, context=context)
 
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
@@ -175,7 +146,7 @@ class OeMedicalAppointment(osv.Model):
         val_history = {}
         ait_obj = self.pool.get('oemedical.appointment.history')
 
-        self.write(cr, uid, ids, {'state':'confirm'} ,context=context)
+        self.write(cr, uid, ids, {'state': 'confirm'}, context=context)
 
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
@@ -190,7 +161,7 @@ class OeMedicalAppointment(osv.Model):
         val_history = {}
         ait_obj = self.pool.get('oemedical.appointment.history')
 
-        self.write(cr, uid, ids, {'state':'waiting'} ,context=context)
+        self.write(cr, uid, ids, {'state': 'waiting'}, context=context)
 
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
@@ -205,7 +176,7 @@ class OeMedicalAppointment(osv.Model):
         val_history = {}
         ait_obj = self.pool.get('oemedical.appointment.history')
 
-        self.write(cr, uid, ids, {'state':'in_consultation'} ,context=context)
+        self.write(cr, uid, ids, {'state': 'in_consultation'}, context=context)
 
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
@@ -220,7 +191,7 @@ class OeMedicalAppointment(osv.Model):
         val_history = {}
         ait_obj = self.pool.get('oemedical.appointment.history')
 
-        self.write(cr, uid, ids, {'state':'done'} ,context=context)
+        self.write(cr, uid, ids, {'state': 'done'}, context=context)
 
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
@@ -235,7 +206,7 @@ class OeMedicalAppointment(osv.Model):
         val_history = {}
         ait_obj = self.pool.get('oemedical.appointment.history')
 
-        self.write(cr, uid, ids, {'state':'canceled'} ,context=context)
+        self.write(cr, uid, ids, {'state': 'canceled'}, context=context)
 
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
@@ -245,19 +216,19 @@ class OeMedicalAppointment(osv.Model):
 
         return True
 
-
 OeMedicalAppointment()
 
-class OeMedicalAppointment_history(osv.Model):
+
+class OeMedicalAppointment_history(orm.Model):
     _name = 'oemedical.appointment.history'
 
     _columns = {
-        'appointment_id_history' :  fields.many2one('oemedical.appointment','History', ondelete='cascade'),
+        'appointment_id_history': fields.many2one('oemedical.appointment', 'History', ondelete='cascade'),
         'date': fields.datetime(string='Date and Time'),
         'name': fields.many2one('res.users', string='User', help=''),
-	    'action' : fields.text('Action'),
+        'action': fields.text('Action'),
     }
-    
+
     _defaults = {
                  }
 

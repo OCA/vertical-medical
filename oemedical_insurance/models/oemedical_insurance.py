@@ -19,11 +19,12 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #/#############################################################################
-from osv import osv
-from osv import fields
+
+from openerp.osv import fields, orm
+from openerp.tools.translate import _
 
 
-class OeMedicalInsurance(osv.Model):
+class OeMedicalInsurance(orm.Model):
     _name = 'oemedical.insurance'
 
     def _get_name(self, cr, uid, ids, field_name, arg, context=None):

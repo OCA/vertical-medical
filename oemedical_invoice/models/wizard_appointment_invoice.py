@@ -22,13 +22,12 @@
 
 import logging
 
-from osv import fields, osv
-import pooler
-from tools.translate import _
+from openerp.osv import fields, orm
+from openerp.tools.translate import _
 
 logging.basicConfig(level=logging.DEBUG)
 
-class make_medical_appointment_invoice(osv.osv_memory):
+class make_medical_appointment_invoice(orm.Model_memory):
 	_name="medical.appointment.invoice"
 
 	def create_invoice(self, cr, uid, ids, context={}):

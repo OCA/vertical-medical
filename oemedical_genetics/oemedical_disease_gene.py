@@ -19,11 +19,12 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #/#############################################################################
-from osv import osv
-from osv import fields
+
+from openerp.osv import fields, orm
+from openerp.tools.translate import _
 
 
-class OeMedicalDiseaseGene(osv.osv):
+class OeMedicalDiseaseGene(orm.Model):
 
     _name = 'oemedical.disease.gene'
     _description = 'Disease Genes'
@@ -46,7 +47,7 @@ OeMedicalDiseaseGene()
 
 
 
-class PatientGeneticRisk(osv.Model):
+class PatientGeneticRisk(orm.Model):
     
     _name = 'oemedical.patient.genetic.risk'
     _description = 'Patient Genetic Risks'
@@ -57,7 +58,7 @@ class PatientGeneticRisk(osv.Model):
 PatientGeneticRisk()
 
 
-class FamilyDiseases(osv.Model):
+class FamilyDiseases(orm.Model):
     
     _name = 'oemedical.patient.family.diseases'
     _description = 'Family Diseases'
@@ -88,7 +89,7 @@ class FamilyDiseases(osv.Model):
 
 FamilyDiseases()
 
-class oemedicalPatient(osv.Model):
+class oemedicalPatient(orm.Model):
     'Add to the Medical patient_data class (oemedical.patient) the genetic ' \
     'and family risks'
     _inherit='oemedical.patient'

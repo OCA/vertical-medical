@@ -20,10 +20,11 @@
 #
 #/#############################################################################
 
-from osv import osv
-from osv import fields
+from openerp.osv import fields, orm
+from openerp.tools.translate import _
 
-class PatientPregnancy(osv.Model):
+
+class PatientPregnancy(orm.Model):
     
     _name = 'oemedical.patient.pregnancy'
     _description = 'Patient Pregnancy'
@@ -69,7 +70,7 @@ class PatientPregnancy(osv.Model):
 
 PatientPregnancy()
 
-class PrenatalEvaluation(osv.Model):
+class PrenatalEvaluation(orm.Model):
 
     _name = 'oemedical.patient.prenatal.evaluation'
     _description =  'Prenatal and Antenatal Evaluations'
@@ -124,7 +125,7 @@ PrenatalEvaluation()
 
 
 
-class PuerperiumMonitor(osv.Model):
+class PuerperiumMonitor(orm.Model):
 
     _name = 'oemedical.puerperium.monitor'
     _description = 'Puerperium Monitor'
@@ -156,7 +157,7 @@ class PuerperiumMonitor(osv.Model):
 PuerperiumMonitor()
 
 
-class PerinatalMonitor(osv.Model):
+class PerinatalMonitor(orm.Model):
     
     _name = 'oemedical.perinatal.monitor'
     _description = 'Perinatal monitor'
@@ -184,7 +185,7 @@ class PerinatalMonitor(osv.Model):
 PerinatalMonitor()
 
 
-class OemedicalPerinatal(osv.Model):
+class OemedicalPerinatal(orm.Model):
 
     _name = 'oemedical.perinatal'
     _description =  'Perinatal Information'
@@ -248,7 +249,7 @@ class OemedicalPerinatal(osv.Model):
 OemedicalPerinatal()
 
 
-class OeMedicalPatient(osv.Model):
+class OeMedicalPatient(orm.Model):
 
     _inherit='oemedical.patient'
 
@@ -293,7 +294,7 @@ class OeMedicalPatient(osv.Model):
 OeMedicalPatient()
 
 
-class PatientMenstrualHistory(osv.Model):
+class PatientMenstrualHistory(orm.Model):
 
     _name = 'oemedical.patient.menstrual_history'
     _description =  'Menstrual History'
@@ -322,7 +323,7 @@ class PatientMenstrualHistory(osv.Model):
 PatientMenstrualHistory()
 
 
-class PatientMammographyHistory(osv.Model):
+class PatientMammographyHistory(orm.Model):
 
     _name = 'oemedical.patient.mammography_history'
     _description =  'Mammography History'
@@ -341,7 +342,7 @@ class PatientMammographyHistory(osv.Model):
 PatientMammographyHistory()
 
 
-class PatientPAPHistory(osv.Model):
+class PatientPAPHistory(orm.Model):
 
     _name = 'oemedical.patient.pap_history'
     _description =  'PAP Test History'
@@ -364,7 +365,7 @@ class PatientPAPHistory(osv.Model):
 PatientPAPHistory()
 
 
-class PatientColposcopyHistory(osv.Model):
+class PatientColposcopyHistory(orm.Model):
 
     _name = 'oemedical.patient.colposcopy_history'
     _description =  'Colposcopy History'

@@ -8,8 +8,7 @@
  			<field name="arch" type="xml"> 
  				<tree string="Oemedical Patient"> 
  					<field name="name" />
-<!-- 					<field name="lastname" />-->
- 					<field name="ssn" /> 
+ 					<field name="ref" /> 
  					<field name="identification_code" /> 
  					<field name="age" />
  					<field name="sex" /> 
@@ -25,24 +24,20 @@
  			 <form string="Patient" version="7.0"> 
                     <sheet> 
                         <div>
-                            <field name="photo" widget='image' class="oe_left oe_avatar"/> 
+                            <field name="image" widget='image' class="oe_left oe_avatar"/> 
                             <div> 
                                  <h1> 
-		                            <field name="first_name" placeholder="First Name" style="width: 20%%" on_change="onchange_name(first_name, lastname, slastname, context)"  /> 
-		                            <field name="lastname" placeholder="Last Name" style="width: 20%%" on_change="onchange_name(first_name, lastname, slastname, context)" /> 
-		                            <field name="slastname" placeholder="S Last Name" style="width: 20%%" on_change="onchange_name(first_name, lastname, slastname, context)" /> 
-	                            </h1> 
+		                            <field name="name" placeholder="First Name" style="width: 20%%" /> 
+		                            <field name="login" placeholder="Login" style="width: 20%%" /> 
+		                         </h1> 
                             </div> 
      						<div> 
      							<label for="sex" class="oe_edit_only"/> 
      							<field name="sex" style="width: 30%%"/> 
-     							<label for="ssn"/> 
-     							<field name="ssn" style="width: 20%%"/> 
+     							<label for="ref"/> 
+     							<field name="ref" style="width: 20%%"/> 
      							<label for="identification_code"/> 
      							<field name="identification_code" style="width: 17%%" attrs="{'readonly': True }"/> 
-     						</div> 
-     						<div> 
-     							<field name="name" invisible="1"/> 
      						</div> 
                             <div>
      							<label for="dob"/> 
@@ -53,11 +48,6 @@
                         </div>
                     <notebook> 
                         <page string="General Information"> 
-                            <group  col="6" colspan="4"> 
-     							<field name="blood_type" style="width: 8%%"/> 
-     							<field name="rh" nolabel="1"/> 
-               					<field name="ethnic_group" /> 
-                            </group>
                             <group string="Contact Information">
                                 <group>
                                     <label for="street" string="Address"/>
@@ -84,117 +74,22 @@
                             </group>
                             <group  col="4" colspan="4"> 
              					<field name="marital_status" colspan="2"/> 
-             					<field name="family" invisivle="1" colspan="2"/> 
-                                <group colspan="4" col="4">
-                 					<field name="primary_care_doctor" />
-                 					<field name="current_insurance" /> 
-                                </group>
-                                <separator colspan="4" string="Patient Allergies and Critical Information"/>
-             					<field name="critical_info" colspan="4" nolabel="1"/> 
              				</group> 
          				</page> 
-                        <page string="Medication" >
-<!-- Patient Medications -->
-                            <separator string="Medications" colspan="4"/>
-          					<field name="medications"  nolabel="1" colspan="4">  
-			                    <tree string="Oemedical Patient Medication">
-				                    <field name="doctor" />
-				                    <field name="adverse_reaction" />
-				                    <field name="notes" />
-				                    <field name="is_active" />
-				                    <field name="course_completed" />
-				                    <field name="template" />
-				                    <field name="discontinued_reason" />
-				                    <field name="discontinued" />
-			                    </tree>
-			                    <form string="Oemedical Patient Medication">
-				                    <field name="doctor" />
-				                    <field name="adverse_reaction" />
-				                    <field name="notes" />
-				                    <field name="is_active" />
-				                    <field name="course_completed" />
-				                    <field name="template" />
-				                    <field name="discontinued_reason" />
-				                    <field name="discontinued" />
-			                    </form>
+                        <page string="Medical Centers">
+                            <field name="medical_center_ids">
+                                colspan="4"
+                                nolabel="1"
+                                <tree string="Medical Centers">
+                                    <field name="medical_center_id" />
+                                    <field name="identification_code" />
+                                </tree>
+                                <form string="Medical Centers">
+                                    <separator string="Medical Center Information" colspan="4" />
+                                    <field name="medical_center_id" />
+                                    <field name="identification_code" />
+                                </form>
                             </field>
-<!-- Patient Vaccinations -->
-                            <separator string="Vaccinations" colspan="4"/>
-          					<field name="vaccinations"  nolabel="1" colspan="4"> 
-			                    <tree string="Oemedical Vaccination">
-				                    <field name="name" />
-				                    <field name="vaccine_lot" />
-				                    <field name="patient_id" />
-				                    <field name="vaccine" />
-				                    <field name="dose" />
-				                    <field name="observations" />
-				                    <field name="date" />
-				                    <field name="institution" />
-				                    <field name="next_dose_date" />
-			                    </tree>
-			                    <form string="Oemedical Vaccination">
-				                    <field name="name" />
-				                    <field name="vaccine_lot" />
-				                    <field name="patient_id" />
-				                    <field name="vaccine" />
-				                    <field name="dose" />
-				                    <field name="observations" />
-				                    <field name="date" />
-				                    <field name="institution" />
-				                    <field name="next_dose_date" />
-			                    </form>
-                            </field>
-
-                        </page>
-
-<!-- Patient Diseases -->
-                        <page string="Diseases" >
-                                <separator string="Diseases" colspan="4"/>
-              					<field name="diseases"  nolabel="1" colspan="4">  
-				                    <tree string="Oemedical Patient Disease">
-					                    <field name="treatment_description" />
-					                    <field name="healed_date" />
-					                    <field name="pathology" />
-					                    <field name="is_allergy" />
-					                    <field name="doctor" />
-					                    <field name="pregnancy_warning" />
-					                    <field name="weeks_of_pregnancy" />
-					                    <field name="is_on_treatment" />
-					                    <field name="diagnosed_date" />
-				                    </tree>
-				                    <form string="Oemedical Patient Disease">
-					                    <field name="treatment_description" />
-					                    <field name="healed_date" />
-					                    <field name="pathology" />
-					                    <field name="is_allergy" />
-					                    <field name="doctor" />
-					                    <field name="pregnancy_warning" />
-					                    <field name="weeks_of_pregnancy" />
-					                    <field name="is_on_treatment" />
-					                    <field name="diagnosed_date" />
-					                    <field name="extra_info" />
-					                    <field name="is_active" />
-					                    <field name="date_stop_treatment" />
-					                    <field name="pcs_code" />
-					                    <field name="is_infectious" />
-					                    <field name="patient_id" />
-					                    <field name="age" />
-					                    <field name="date_start_treatment" />
-					                    <field name="short_comment" />
-				                    </form>
-                                </field>
-                        </page>
-                        <page string="Misc">
-                            <group colspan="4" col="4">
-                                <separator colspan="4" string="Patient Extra Information"/>
-              					<field name="general_info" nolabel="1"  colspan="4"/> 
-                            </group>
-                            <newline/>
-                            <group colspan="4" col="6">
-                                <field name="deceased"/>
-                                <field name="dod" attrs="{'invisible':[('deceased','=',False)],'required':[('deceased','=',True)]}"/>
-                                <field name="cod" attrs="{'invisible':[('deceased','=',False)]}"/>
-                            </group>
                         </page>
                     </notebook> 
  				</sheet> 
@@ -213,7 +108,7 @@
                         <t t-name="kanban-box">
                             <div class="oe_kanban_content">
                                 <div class="oe_kanban_vignette oe_semantic_html_override">
-                                    <a type="open"><img t-att-src="kanban_image('oemedical.patient', 'photo', record.id.value)" width="150" height="110" class="oe_employee_picture"/></a>
+                                    <a type="open"><img t-att-src="kanban_image('oemedical.patient', 'image', record.id.value)" width="150" height="110" class="oe_employee_picture"/></a>
                                     <div class="oe_kanban_details">
                                         <h3>
                                             <a type="open"><field name="name"/></a>
@@ -221,14 +116,13 @@
                                         <ul>
                                             <li t-if="record.age.raw_value"><b>Age:</b> <field name="age"/></li>
                                             <li t-if="record.sex.raw_value"><b>Sex:</b> <field name="sex"/></li>
-                                            <li t-if="record.blood_type.raw_value"><b>Blond:</b> <field name="blood_type"/><field name="rh"/></li>
-                                            <li t-if="record.ssn.raw_value"><b>SSN:</b> <field name="ssn"/></li>
+                                            <li t-if="record.ref.raw_value"><b>SSN:</b> <field name="ref"/></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </t>
-                    </templates>
+                    </templates> 
                 </kanban>
             </field>
         </record>
@@ -240,31 +134,17 @@
  			<field name="arch" type="xml"> 
  				<search string="Oemedical Patient"> 
  					<field name="name" /> 
- 					<field name="family" /> 
  					<field name="general_info" /> 
- 					<field name="primary_care_doctor" /> 
- 					<field name="childbearing_age" /> 
- 					<field name="critical_info" /> 
- 					<field name="lastname" /> 
- 					<field name="ethnic_group" /> 
- 					<field name="ssn" /> 
+ 					<field name="ref" /> 
  					<field name="dob" /> 
  					<field name="age" /> 
- 					<field name="dod" /> 
- 					<field name="current_insurance" /> 
- 					<field name="cod" /> 
  					<field name="identification_code" /> 
- 					<field name="deceased" /> 
  					<newline /> 
  					<group expand="0" string="Group By...">  
- 						<filter string="SSN" domain="[]" context="{'group_by':'ssn'}" /> 
+ 						<filter string="SSN" domain="[]" context="{'group_by':'ref'}" /> 
  						<filter string="DoB" domain="[]" context="{'group_by':'dob'}" /> 
  						<filter string="Age" domain="[]" context="{'group_by':'age'}" /> 
- 						<filter string="Date of Death" domain="[]" context="{'group_by':'dod'}" /> 
- 						<filter string="Insurance" domain="[]" context="{'group_by':'current_insurance'}" /> 
- 						<filter string="Cause of Death" domain="[]" context="{'group_by':'cod'}" /> 
  						<filter string="ID" domain="[]" context="{'group_by':'identification_code'}" /> 
- 						<filter string="Deceased" domain="[]" context="{'group_by':'deceased'}" /> 
  					</group> 
  				</search> 
  			</field> 

@@ -19,42 +19,22 @@
 import time
 from mx import DateTime
 import datetime
-from osv import fields, osv
-from tools.translate import _
+
+from openerp.osv import fields, orm
+from openerp.tools.translate import _
 
 # Add Lab test information to the Patient object
 
-class oemedical_patient (osv.osv):
+class oemedical_patient (orm.Model):
 	_name = "oemedical.patient"
 	_inherit = "oemedical.patient"
-
-	def name_get(self, cr, uid, ids, context={}):
-		if not len(ids):
-			return []
-		rec_name = 'name'
-		res = [(r['id'], r[rec_name][1]) for r in self.read(cr, uid, ids, [rec_name], context)]
-		return res
-		
-	def name_search(self, cr, user, name='', args=None, operator='ilike', context=None, limit=80):
-		if not args:
-			args=[]
-		if not context:
-			context={}
-		if name:
-			ids = self.search(cr, user, [('patient_id','=',name)]+ args, limit=limit, context=context)
-			if not len(ids):
-				ids += self.search(cr, user, [('name',operator,name)]+ args, limit=limit, context=context)
-		else:
-			ids = self.search(cr, user, args, limit=limit, context=context)
-		result = self.name_get(cr, user, ids, context)
-		return result        
 
 	_columns = {
 		'lab_test_ids': fields.one2many('oemedical.patient.lab.test','patient_id','Lab Tests Required'),
 		}
 
     
-class test_type (osv.osv):
+class test_type (orm.Model):
 	_name = "oemedical.test_type"
 	_description = "Type of Lab test"
 	_columns = {
@@ -70,7 +50,7 @@ class test_type (osv.osv):
                 ('code_uniq', 'unique (name)', 'The Lab Test code must be unique')]
 
 
-class lab (osv.osv):
+class lab (orm.Model):
 	_name = "oemedical.lab"
 	_description = "Lab Test"
 	_columns = {
@@ -99,7 +79,7 @@ class lab (osv.osv):
 
 
 
-class oemedical_lab_test_units(osv.osv):
+class oemedical_lab_test_units(orm.Model):
     _name = "oemedical.lab.test.units"
     _columns = {
         'name' : fields.char('Unit', size=25),
@@ -110,7 +90,7 @@ class oemedical_lab_test_units(osv.osv):
     
 
 
-class oemedical_test_critearea(osv.osv):
+class oemedical_test_critearea(orm.Model):
     _name = "oemedical_test.critearea"
     _description = "Lab Test Critearea"    
     _columns ={
@@ -130,7 +110,7 @@ class oemedical_test_critearea(osv.osv):
 
     
 
-class oemedical_patient_lab_test(osv.osv):
+class oemedical_patient_lab_test(orm.Model):
     _name = 'oemedical.patient.lab.test'
     def _get_default_dr(self, cr, uid, context={}):
         partner_id = self.pool.get('res.partner').search(cr,uid,[('user_id','=',uid)])

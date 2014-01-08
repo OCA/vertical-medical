@@ -21,15 +21,15 @@
 ##############################################################################
 
 import logging
-
-from osv import fields, osv
 import pooler
-from tools.translate import _
 import sys
+
+from openerp.osv import fields, orm
+from openerp.tools.translate import _
 
 logging.basicConfig(level=logging.DEBUG)
 
-class create_test_invoice(osv.osv_memory):
+class create_test_invoice(orm.Model_memory):
     _name='medical.lab.test.invoice'
 
     def create_lab_invoice(self, cr, uid, ids, context={}):

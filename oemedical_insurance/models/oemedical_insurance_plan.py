@@ -19,11 +19,12 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #/#############################################################################
-from osv import osv
-from osv import fields
+
+from openerp.osv import fields, orm
+from openerp.tools.translate import _
 
 
-class OeMedicalInsurancePlan(osv.Model):
+class OeMedicalInsurancePlan(orm.Model):
     _name = 'oemedical.insurance.plan'
 
     _columns = {

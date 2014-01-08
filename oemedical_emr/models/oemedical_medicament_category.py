@@ -19,11 +19,12 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #/#############################################################################
-from osv import osv
-from osv import fields
+
+from openerp.osv import fields, orm
+from openerp.tools.translate import _
 
 
-class OeMedicalMedicamentCategory(osv.Model):
+class OeMedicalMedicamentCategory(orm.Model):
     _name = 'oemedical.medicament.category'
 
     _columns = {
@@ -34,7 +35,7 @@ class OeMedicalMedicamentCategory(osv.Model):
                                   string='Parent', select=True),
     }
     _constraints = [
-        (osv.Model._check_recursion, 'Error ! You cannot create recursive \n' 
+        (orm.Model._check_recursion, 'Error ! You cannot create recursive \n' 
         'Category.', ['parent_id'])
     ]
 OeMedicalMedicamentCategory()

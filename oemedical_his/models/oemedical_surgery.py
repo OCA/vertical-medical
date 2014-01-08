@@ -17,21 +17,22 @@
 
 
 
-from osv import fields, osv
+from openerp.osv import fields, orm
+from openerp.tools.translate import _
 
 
-class surgery (osv.osv):
-	_name = "medical.surgery"
+class surgery (orm.Model):
+	_name = "oemedical.surgery"
 	_description = "Surgery"
 	_columns = {
-		'name' : fields.many2one ('medical.procedure','Code', help="Procedure Code, for example ICD-10-PCS Code 7-character string"),
-		'pathology' : fields.many2one ('medical.pathology','Base condition', help="Base Condition / Reason"),
+		'name' : fields.many2one ('oemedical.procedure','Code', help="Procedure Code, for example ICD-10-PCS Code 7-character string"),
+		'pathology' : fields.many2one ('oemedical.pathology','Base condition', help="Base Condition / Reason"),
 		'classification' : fields.selection ([
 				('o','Optional'),
 				('r','Required'),
 				('u','Urgent'),
                                 ], 'Surgery Classification', select=True),
-		'surgeon' : fields.many2one('medical.physician','Surgeon', help="Surgeon who did the procedure"),
+		'surgeon' : fields.many2one('oemedical.physician','Surgeon', help="Surgeon who did the procedure"),
 		'date': fields.datetime ('Date of the surgery'),
 		'age': fields.char ('Patient age',size=3,help='Patient age at the moment of the surgery. Can be estimative'),
 		'description' : fields.char ('Description', size=128),
@@ -41,17 +42,17 @@ class surgery (osv.osv):
 surgery ()
 
 
-# Add to the Medical patient_data class (medical.patient) the surgery field.
+# Add to the Medical patient_data class (oemedical.patient) the surgery field.
 
-class medical_patient (osv.osv):
-	_name = "medical.patient"
-	_inherit = "medical.patient"
+class oemedical_patient (orm.Model):
+	_name = "oemedical.patient"
+	_inherit = "oemedical.patient"
 	_columns = {
-		'surgery' : fields.many2many ('medical.surgery', 'patient_surgery_rel','patient_id','surgery_id', 'Surgeries'),
+		'surgery' : fields.many2many ('oemedical.surgery', 'patient_surgery_rel','patient_id','surgery_id', 'Surgeries'),
 		
 	}
 
-medical_patient ()
+oemedical_patient ()
 
 
 

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+<!--    Insurance     -->
+
+        <menuitem name="Insurances" id="oemedical_conf_insurances"
+            parent="oemedical.oemedical_root_misc" sequence="20" />
+
+		<menuitem id="oemedical_insurance" name=" Insurance" 
+            parent="oemedical_conf_insurances"	sequence="10" 
+            action="act_open_oemedical_insurance_view" />
+
+		<menuitem id="oemedical_insurance_plan" name=" Insurance Plan"
+			parent="oemedical_conf_insurances" sequence="20"
+			action="act_open_oemedical_insurance_plan_view" />
+
+	</data>
+</openerp>
