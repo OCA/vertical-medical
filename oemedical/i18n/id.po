@@ -1,4 +1,4 @@
-# Catalan translation for oemedical
+# Indonesian translation for oemedical
 # Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
 # This file is distributed under the same license as the oemedical package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: oemedical\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-11-08 00:39+0000\n"
-"PO-Revision-Date: 2013-12-05 01:39+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Catalan <ca@li.org>\n"
+"PO-Revision-Date: 2013-06-11 17:13+0000\n"
+"Last-Translator: Riza Kurniawan <rizabisnis@gmail.com>\n"
+"Language-Team: Indonesian <id@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-01-14 06:47+0000\n"
+"X-Launchpad-Export-Date: 2014-01-14 06:48+0000\n"
 "X-Generator: Launchpad (build 16890)\n"
 
 #. module: oemedical
@@ -109,7 +109,7 @@ msgstr ""
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_diagnostic_hypothesis_view
 msgid "Diagnostic Hypothesis"
-msgstr ""
+msgstr "Diagnosa awal"
 
 #. module: oemedical
 #: field:oemedical.insurance,owner:0
@@ -125,7 +125,7 @@ msgstr ""
 #. module: oemedical
 #: field:oemedical.patient.evaluation,mood:0
 msgid "Mood"
-msgstr ""
+msgstr "Mood"
 
 #. module: oemedical
 #: view:oemedical.patient.evaluation:0
@@ -147,19 +147,19 @@ msgstr ""
 #: model:ir.model,name:oemedical.model_product_product
 #: view:oemedical.medicament:0
 msgid "Product"
-msgstr ""
+msgstr "Produk"
 
 #. module: oemedical
 #: view:oemedical.medicament.category:0
 #: field:oemedical.medicament.category,parent_id:0
 msgid "Parent"
-msgstr ""
+msgstr "Induk"
 
 #. module: oemedical
 #: help:oemedical.medication.template,end_treatment:0
 #: help:oemedical.medication.template,start_treatment:0
 msgid "Date of start of Treatment"
-msgstr ""
+msgstr "Awal Terapi"
 
 #. module: oemedical
 #: field:oemedical.patient,gas:0
@@ -184,7 +184,7 @@ msgstr ""
 #. module: oemedical
 #: view:oemedical.medication.dosage:0
 msgid "Oemedical Medication Dosage"
-msgstr ""
+msgstr "Dosis Obat"
 
 #. module: oemedical
 #: field:oemedical.perinatal.monitor,fetus_position:0
@@ -205,13 +205,13 @@ msgstr ""
 #. module: oemedical
 #: view:oemedical.prescription.line:0
 msgid "Quantity"
-msgstr ""
+msgstr "Quantity"
 
 #. module: oemedical
 #: view:oemedical.patient.evaluation:0
 #: field:oemedical.patient.evaluation,respiratory_rate:0
 msgid "Respiratory Rate"
-msgstr ""
+msgstr "Napas Rata-rata"
 
 #. module: oemedical
 #: help:oemedical.patient,works_at_home:0
@@ -229,12 +229,12 @@ msgstr ""
 #: field:oemedical.patient.medication,doctor:0
 #: help:oemedical.physician,physician_id:0
 msgid "Physician"
-msgstr ""
+msgstr "Dokter"
 
 #. module: oemedical
 #: view:oemedical.insurance:0
 msgid "Oemedical Insurance"
-msgstr ""
+msgstr "Asuransi"
 
 #. module: oemedical
 #: selection:oemedical.patient,sexual_practices:0
@@ -329,13 +329,13 @@ msgstr ""
 #. module: oemedical
 #: help:res.partner,is_insurance_company:0
 msgid "Check if the party is an Insurance Company"
-msgstr ""
+msgstr "Centang jika rekanan merupakan Perusahaan Asuransi"
 
 #. module: oemedical
 #: view:oemedical.patient.disease:0
 #: field:oemedical.patient.disease,pregnancy_warning:0
 msgid "Pregnancy warning"
-msgstr ""
+msgstr "Peringatan Kehamilan"
 
 #. module: oemedical
 #: help:oemedical.patient.evaluation,vocabulary:0
@@ -6689,7 +6689,7 @@ msgstr ""
 #. module: oemedical
 #: help:oemedical.prescription.line,short_comment:0
 msgid "Short comment on the specific drug"
-msgstr ""
+msgstr "Penjelasan singkat tentang obat"
 
 #. module: oemedical
 #: code:addons/oemedical/oemedical_invoice/wizard/wizard_create_lab_invoice.py:68

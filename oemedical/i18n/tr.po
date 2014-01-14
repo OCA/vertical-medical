@@ -1,4 +1,4 @@
-# Catalan translation for oemedical
+# Turkish translation for oemedical
 # Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
 # This file is distributed under the same license as the oemedical package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: oemedical\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-11-08 00:39+0000\n"
-"PO-Revision-Date: 2013-12-05 01:39+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Catalan <ca@li.org>\n"
+"PO-Revision-Date: 2013-11-08 04:39+0000\n"
+"Last-Translator: Ediz Duman <neps1192@gmail.com>\n"
+"Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-01-14 06:47+0000\n"
+"X-Launchpad-Export-Date: 2014-01-14 06:48+0000\n"
 "X-Generator: Launchpad (build 16890)\n"
 
 #. module: oemedical
@@ -53,7 +53,7 @@ msgstr ""
 #. module: oemedical
 #: field:oemedical.patient,childbearing_age:0
 msgid "Potential for Childbearing"
-msgstr ""
+msgstr "Çocuk doğurmaya potansiyelli"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_hospital_building
@@ -109,12 +109,12 @@ msgstr ""
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_diagnostic_hypothesis_view
 msgid "Diagnostic Hypothesis"
-msgstr ""
+msgstr "Teşhis Hipotezi"
 
 #. module: oemedical
 #: field:oemedical.insurance,owner:0
 msgid "Owner"
-msgstr ""
+msgstr "Sahibi"
 
 #. module: oemedical
 #: selection:oemedical.perinatal,hematoma:0
@@ -147,13 +147,13 @@ msgstr ""
 #: model:ir.model,name:oemedical.model_product_product
 #: view:oemedical.medicament:0
 msgid "Product"
-msgstr ""
+msgstr "Ürün"
 
 #. module: oemedical
 #: view:oemedical.medicament.category:0
 #: field:oemedical.medicament.category,parent_id:0
 msgid "Parent"
-msgstr ""
+msgstr "Üst"
 
 #. module: oemedical
 #: help:oemedical.medication.template,end_treatment:0
@@ -184,7 +184,7 @@ msgstr ""
 #. module: oemedical
 #: view:oemedical.medication.dosage:0
 msgid "Oemedical Medication Dosage"
-msgstr ""
+msgstr "Oemedical İlaç Dozaj"
 
 #. module: oemedical
 #: field:oemedical.perinatal.monitor,fetus_position:0
@@ -205,13 +205,13 @@ msgstr ""
 #. module: oemedical
 #: view:oemedical.prescription.line:0
 msgid "Quantity"
-msgstr ""
+msgstr "Miktar"
 
 #. module: oemedical
 #: view:oemedical.patient.evaluation:0
 #: field:oemedical.patient.evaluation,respiratory_rate:0
 msgid "Respiratory Rate"
-msgstr ""
+msgstr "Solunum hızı"
 
 #. module: oemedical
 #: help:oemedical.patient,works_at_home:0
@@ -229,7 +229,7 @@ msgstr ""
 #: field:oemedical.patient.medication,doctor:0
 #: help:oemedical.physician,physician_id:0
 msgid "Physician"
-msgstr ""
+msgstr "Doktor"
 
 #. module: oemedical
 #: view:oemedical.insurance:0
@@ -264,7 +264,7 @@ msgstr ""
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_patient_disease
 msgid "oemedical.patient.disease"
-msgstr ""
+msgstr "Oemedical Sigorta"
 
 #. module: oemedical
 #: view:oemedical.patient:0
@@ -274,7 +274,7 @@ msgstr ""
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_hospital_or_view
 msgid "Hospital Or"
-msgstr ""
+msgstr "Hastanesi Veya"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_patient_mammography_history
@@ -335,7 +335,7 @@ msgstr ""
 #: view:oemedical.patient.disease:0
 #: field:oemedical.patient.disease,pregnancy_warning:0
 msgid "Pregnancy warning"
-msgstr ""
+msgstr "Gebelik uyarısı"
 
 #. module: oemedical
 #: help:oemedical.patient.evaluation,vocabulary:0
@@ -349,7 +349,7 @@ msgstr ""
 #: field:oemedical.medication.template,dose:0
 #: field:oemedical.prescription.line,dose:0
 msgid "Dose"
-msgstr ""
+msgstr "Doz"
 
 #. module: oemedical
 #: field:oemedical.patient.menstrual_history,lmp:0
@@ -365,7 +365,7 @@ msgstr ""
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_res_partner
 msgid "Partner"
-msgstr ""
+msgstr "İş Ortağı"
 
 #. module: oemedical
 #: selection:oemedical.patient.disease,disease_severity:0
@@ -407,7 +407,7 @@ msgstr ""
 #: view:oemedical.vaccination:0
 #: field:oemedical.vaccination,dose:0
 msgid "Dose #"
-msgstr ""
+msgstr "Doz#"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_vaccination
@@ -417,7 +417,7 @@ msgstr ""
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_medication_template
 msgid "oemedical.medication.template"
-msgstr ""
+msgstr "oemedical.medication.template"
 
 #. module: oemedical
 #: field:oemedical.drugs_recreational,dea_schedule_i:0
@@ -455,7 +455,7 @@ msgstr ""
 #. module: oemedical
 #: selection:oemedical.patient.evaluation,loc_eyes:0
 msgid "Opens eyes in response to painful stimuli"
-msgstr ""
+msgstr "Ağrılı uyaranlara yanıt olarak gözlerini açar"
 
 #. module: oemedical
 #: field:oemedical.appointment,state:0
@@ -480,7 +480,7 @@ msgstr ""
 #: view:oemedical.patient.evaluation:0
 #: field:oemedical.patient.evaluation,bpm:0
 msgid "Heart Rate"
-msgstr ""
+msgstr "Nabız"
 
 #. module: oemedical
 #: field:oemedical.physician,name:0
@@ -497,7 +497,7 @@ msgstr ""
 #: view:oemedical.medicament:0
 #: field:oemedical.medicament,therapeutic_action:0
 msgid "Therapeutic effect"
-msgstr ""
+msgstr "Terapötik etkisi"
 
 #. module: oemedical
 #: view:oemedical.patient:0
@@ -544,7 +544,7 @@ msgstr ""
 #: field:oemedical.vaccination,patient_id:0
 #: field:res.partner,is_patient:0
 msgid "Patient"
-msgstr ""
+msgstr "Hasta"
 
 #. module: oemedical
 #: selection:oemedical.appointment,state:0
@@ -605,7 +605,7 @@ msgstr ""
 #: view:oemedical.patient:0
 #: field:oemedical.patient,vaccinations:0
 msgid "Vaccinations"
-msgstr ""
+msgstr "Aşılar"
 
 #. module: oemedical
 #: code:addons/oemedical/oemedical_invoice/wizard/wizard_create_lab_invoice.py:127
@@ -654,7 +654,7 @@ msgstr ""
 #: view:oemedical.patient.disease:0
 #: field:oemedical.patient.disease,diagnosed_date:0
 msgid "Date of Diagnosis"
-msgstr ""
+msgstr "Tanı Tarihi"
 
 #. module: oemedical
 #: help:oemedical.disease.gene,location:0
@@ -665,7 +665,7 @@ msgstr ""
 #: view:oemedical.patient.evaluation:0
 #: field:oemedical.patient.evaluation,ldl:0
 msgid "Last LDL"
-msgstr ""
+msgstr "Son LDL"
 
 #. module: oemedical
 #: help:oemedical.patient.family.diseases,relative:0
@@ -688,12 +688,12 @@ msgstr ""
 #: view:oemedical.patient:0
 #: field:oemedical.patient,age:0
 msgid "Age"
-msgstr ""
+msgstr "Yaş"
 
 #. module: oemedical
 #: selection:oemedical.patient.evaluation,evaluation_type:0
 msgid "Periodic control"
-msgstr ""
+msgstr "Periyodik kontrolü"
 
 #. module: oemedical
 #: field:oemedical.patient,car_child_safety:0
@@ -713,7 +713,7 @@ msgstr ""
 #. module: oemedical
 #: field:res.partner,relative_id:0
 msgid "Contact"
-msgstr ""
+msgstr "Kontak"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_diagnostic_hypothesis
@@ -740,7 +740,7 @@ msgstr ""
 #: field:oemedical.appointment,consultations:0
 #: help:oemedical.appointment,consultations:0
 msgid "Consultation Services"
-msgstr ""
+msgstr "Danışmanlık Hizmetleri"
 
 #. module: oemedical
 #: view:oemedical.medicament:0
@@ -785,7 +785,7 @@ msgstr ""
 #: field:res.partner,lastname:0
 #: help:res.partner,lastname:0
 msgid "Last Name"
-msgstr ""
+msgstr "Soyadı"
 
 #. module: oemedical
 #: view:oemedical.patient:0
@@ -795,7 +795,7 @@ msgstr ""
 #. module: oemedical
 #: help:oemedical.hospital.ward,private:0
 msgid "Check this option for private room"
-msgstr ""
+msgstr "Özel bir oda için bu seçeneği işaretleyin"
 
 #. module: oemedical
 #: selection:oemedical.appointment,appointment_minute:0
@@ -843,7 +843,7 @@ msgstr ""
 #: view:oemedical.prescription.order:0
 #: field:oemedical.prescription.order,physician_id:0
 msgid "Prescribing Doctor"
-msgstr ""
+msgstr "Doktor Reçetesi"
 
 #. module: oemedical
 #: field:oemedical.appointment,history_ids:0
@@ -870,7 +870,7 @@ msgstr ""
 #: view:oemedical.medicament:0
 #: field:oemedical.medicament,category:0
 msgid "Category"
-msgstr ""
+msgstr "Kategori"
 
 #. module: oemedical
 #: field:oemedical.patient,alcohol_liquor_number:0
@@ -881,25 +881,25 @@ msgstr ""
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_prescription_order_view
 #: model:ir.ui.menu,name:oemedical.oemedical_prescription_order
 msgid "Prescription Order"
-msgstr ""
+msgstr "Reçete Sipariş"
 
 #. module: oemedical
 #: view:oemedical.medication.template:0
 #: field:oemedical.medication.template,duration_period:0
 #: field:oemedical.prescription.line,duration_period:0
 msgid "Treatment period"
-msgstr ""
+msgstr "Tedavi süresi"
 
 #. module: oemedical
 #: view:oemedical.disease_group.members:0
 #: field:oemedical.disease_group.members,disease_group_id:0
 msgid "Group"
-msgstr ""
+msgstr "Grup"
 
 #. module: oemedical
 #: help:oemedical.family_member,member:0
 msgid "Family Member Name"
-msgstr ""
+msgstr "Aile ve Üye İsmi"
 
 #. module: oemedical
 #: code:addons/oemedical/oemedical_invoice/wizard/wizard_create_lab_invoice.py:61
@@ -912,12 +912,12 @@ msgstr ""
 #: field:oemedical.patient.evaluation,doctor:0
 #: field:oemedical.patient.lab.test,doctor_id:0
 msgid "Doctor"
-msgstr ""
+msgstr "Doktor"
 
 #. module: oemedical
 #: help:res.partner,is_patient:0
 msgid "Check if the party is a patient"
-msgstr ""
+msgstr "Parti bir hasta olup olmadığını kontrol edin"
 
 #. module: oemedical
 #: help:oemedical.patient,helmet:0
@@ -930,7 +930,7 @@ msgstr ""
 #: field:oemedical.family,operational_sector:0
 #: field:oemedical.operational_area,operational_sector:0
 msgid "Operational Sector"
-msgstr ""
+msgstr "Operasyonel Sektörü"
 
 #. module: oemedical
 #: selection:oemedical.patient.family.diseases,xory:0
@@ -940,12 +940,12 @@ msgstr ""
 #. module: oemedical
 #: field:oemedical.family_member,member:0
 msgid "Member"
-msgstr ""
+msgstr "Üye"
 
 #. module: oemedical
 #: help:oemedical.patient.evaluation,height:0
 msgid "Height in centimeters, eg 175"
-msgstr ""
+msgstr "Örneğin 175 santimetre boyunda"
 
 #. module: oemedical
 #: view:oemedical.patient:0
@@ -991,7 +991,7 @@ msgstr ""
 #: view:oemedical.signs_and_symptoms:0
 #: field:oemedical.signs_and_symptoms,evaluation_id:0
 msgid "Evaluation"
-msgstr ""
+msgstr "Değerlendirme"
 
 #. module: oemedical
 #: selection:oemedical.patient.colposcopy_history,result:0
@@ -1015,7 +1015,7 @@ msgstr ""
 #: field:oemedical.hospital.bed,state:0
 #: field:oemedical.hospital.ward,state:0
 msgid "Status"
-msgstr ""
+msgstr "Durumu"
 
 #. module: oemedical
 #: help:oemedical.operational_area,name:0
@@ -1037,7 +1037,7 @@ msgstr ""
 #: view:oemedical.vaccination:0
 #: field:oemedical.vaccination,date:0
 msgid "Date"
-msgstr ""
+msgstr "Tarih"
 
 #. module: oemedical
 #: help:oemedical.vaccination,institution:0
@@ -1070,12 +1070,12 @@ msgstr ""
 #. module: oemedical
 #: selection:oemedical.patient.evaluation,loc_motor:0
 msgid "Makes no movement"
-msgstr ""
+msgstr "Hiç hareket yapamaz"
 
 #. module: oemedical
 #: view:oemedical.medicament.category:0
 msgid "Oemedical Medicament Category"
-msgstr ""
+msgstr "Oemedical İlaç Kategorisi"
 
 #. module: oemedical
 #: model:oemedical.drugs_recreational,name:oemedical.methaqualone
@@ -1090,7 +1090,7 @@ msgstr ""
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_pathology_category
 msgid " Pathology Category"
-msgstr ""
+msgstr " Patoloji Kategorisi"
 
 #. module: oemedical
 #: selection:oemedical.patient.family.diseases,relative:0
@@ -1107,7 +1107,7 @@ msgstr ""
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_medication_template
 msgid " Medication Template"
-msgstr ""
+msgstr " İlaç Şablon"
 
 #. module: oemedical
 #: field:oemedical.patient.prenatal.evaluation,diabetes:0
@@ -1127,7 +1127,7 @@ msgstr ""
 #. module: oemedical
 #: help:oemedical.patient,general_info:0
 msgid "General information about the patient"
-msgstr ""
+msgstr "Hasta hakkında genel bilgiler"
 
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_hospital_or
@@ -1137,7 +1137,7 @@ msgstr ""
 #. module: oemedical
 #: model:ir.ui.menu,name:oemedical.oemedical_operational_sector
 msgid " Operational Sector"
-msgstr ""
+msgstr " Operasyonel Sektörü"
 
 #. module: oemedical
 #: selection:oemedical.drugs_recreational,category:0
@@ -1160,7 +1160,7 @@ msgstr ""
 #: field:oemedical.hospital.bed,name:0
 #: field:product.product,is_bed:0
 msgid "Bed"
-msgstr ""
+msgstr "Yatak"
 
 #. module: oemedical
 #: selection:oemedical.patient.family.diseases,relative:0
@@ -1176,7 +1176,7 @@ msgstr ""
 #: view:oemedical.pathology:0
 #: field:oemedical.pathology,protein:0
 msgid "Protein involved"
-msgstr ""
+msgstr "Protein dahil"
 
 #. module: oemedical
 #: view:oemedical.patient:0
@@ -1205,7 +1205,7 @@ msgstr ""
 #: field:oemedical.vaccination,vaccine:0
 #: field:product.product,is_vaccine:0
 msgid "Vaccine"
-msgstr ""
+msgstr "Aşı"
 
 #. module: oemedical
 #: field:oemedical.patient,anticonceptive:0
@@ -1233,13 +1233,13 @@ msgstr ""
 #: view:oemedical.directions:0
 #: field:oemedical.directions,procedure_id:0
 msgid "Procedure"
-msgstr ""
+msgstr "Yöntem"
 
 #. module: oemedical
 #: view:oemedical.patient.evaluation:0
 #: field:oemedical.patient.evaluation,praxis:0
 msgid "Praxis"
-msgstr ""
+msgstr "Pratik"
 
 #. module: oemedical
 #: field:oemedical.patient,colposcopy_last:0
@@ -1271,7 +1271,7 @@ msgstr ""
 #: view:oemedical.patient:0
 #: field:oemedical.patient,family:0
 msgid "Family"
-msgstr ""
+msgstr "Aile"
 
 #. module: oemedical
 #: view:oemedical.prescription.order:0
@@ -1314,7 +1314,7 @@ msgstr ""
 #. module: oemedical
 #: field:oemedical.family,members:0
 msgid "Family Members"
-msgstr ""
+msgstr "Aile Üyeleri"
 
 #. module: oemedical
 #: view:oemedical.patient:0
@@ -1386,7 +1386,7 @@ msgstr ""
 #: view:oemedical.patient.evaluation:0
 #: field:oemedical.patient.evaluation,object_recognition:0
 msgid "Object Recognition"
-msgstr ""
+msgstr "Nesne Tanıma"
 
 #. module: oemedical
 #: selection:oemedical.patient.disease,allergy_type:0
@@ -1418,7 +1418,7 @@ msgstr ""
 msgid ""
 "Enter the Signs and Symptoms                                         for the "
 "patient in this evaluation."
-msgstr ""
+msgstr "Bu değerlendirmede hasta için Belirti ve Semptomlar girin."
 
 #. module: oemedical
 #: view:oemedical.lab:0
@@ -2581,13 +2581,13 @@ msgstr ""
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_ethnicity
 msgid "oemedical.ethnicity"
-msgstr ""
+msgstr "oemedical.ethnicity"
 
 #. module: oemedical
 #: view:oemedical.pathology.category:0
 #: field:oemedical.pathology.category,parent_id:0
 msgid "Parent Category"
-msgstr ""
+msgstr "Üst Kategori"
 
 #. module: oemedical
 #: help:oemedical.patient.evaluation,calculation_ability:0
@@ -2671,7 +2671,7 @@ msgstr ""
 #. module: oemedical
 #: model:ir.actions.act_window,name:oemedical.act_open_oemedical_occupation_view
 msgid "Occupation"
-msgstr ""
+msgstr "Meslek"
 
 #. module: oemedical
 #: selection:oemedical.patient.disease,status:0
@@ -2786,7 +2786,7 @@ msgstr ""
 #. module: oemedical
 #: view:oemedical.specialty:0
 msgid "Oemedical Specialty"
-msgstr ""
+msgstr "Oemedical Uzmanı"
 
 #. module: oemedical
 #: field:oemedical.perinatal,start_labor_mode:0
@@ -3637,7 +3637,7 @@ msgstr ""
 #. module: oemedical
 #: view:oemedical.pathology.category:0
 msgid "Oemedical Pathology Category"
-msgstr ""
+msgstr "Oemedical Patoloji Kategori"
 
 #. module: oemedical
 #: model:oemedical.drugs_recreational,name:oemedical.dmx
@@ -3647,7 +3647,7 @@ msgstr ""
 #. module: oemedical
 #: selection:oemedical.patient.disease,status:0
 msgid "healed"
-msgstr ""
+msgstr "iyileşmiş"
 
 #. module: oemedical
 #: selection:oemedical.appointment,appointment_hour:0
@@ -4484,7 +4484,7 @@ msgstr ""
 #: selection:oemedical.prescription.line,duration_period:0
 #: selection:oemedical.prescription.line,frequency_unit:0
 msgid "hours"
-msgstr ""
+msgstr "saat"
 
 #. module: oemedical
 #: selection:oemedical.patient.evaluation,evaluation_type:0
@@ -5016,7 +5016,7 @@ msgstr ""
 #: view:oemedical.patient.medication:0
 #: field:oemedical.patient.medication,adverse_reaction:0
 msgid "Adverse Reactions"
-msgstr ""
+msgstr "Yan Etkileri"
 
 #. module: oemedical
 #: help:oemedical.pathology,chromosome:0
@@ -5361,7 +5361,7 @@ msgstr ""
 #: view:oemedical.patient.disease:0
 #: field:oemedical.patient.disease,is_infectious:0
 msgid "Infectious Disease"
-msgstr ""
+msgstr "Enfeksiyon Hastalıkları"
 
 #. module: oemedical
 #: view:oemedical.appointment:0
@@ -5559,6 +5559,7 @@ msgstr ""
 #: help:oemedical.patient.disease,is_infectious:0
 msgid "Check if the patient has an infectioustransmissible disease"
 msgstr ""
+"Hastanın bulaşıcı bir bulaşabilen hastalık olup olmadığını kontrol edin"
 
 #. module: oemedical
 #: help:oemedical.medication.template,duration_period:0
@@ -5870,7 +5871,7 @@ msgstr ""
 #. module: oemedical
 #: model:ir.model,name:oemedical.model_oemedical_insurance
 msgid "oemedical.insurance"
-msgstr ""
+msgstr "oemedical.insurance"
 
 #. module: oemedical
 #: selection:oemedical.patient.evaluation,mood:0
@@ -6087,7 +6088,7 @@ msgstr ""
 #. module: oemedical
 #: view:oemedical.drug.form:0
 msgid "Oemedical Drug Form"
-msgstr ""
+msgstr "Oemedical İlaç Formu"
 
 #. module: oemedical
 #: field:oemedical.hospital.ward,gender:0
@@ -6244,7 +6245,7 @@ msgstr ""
 #. module: oemedical
 #: help:oemedical.patient.evaluation,respiratory_rate:0
 msgid "Respiratory rate expressed in breaths per minute"
-msgstr ""
+msgstr "Solunum hızı dakikada nefes olarak ifade"
 
 #. module: oemedical
 #: view:oemedical.prescription.line:0
@@ -6689,7 +6690,7 @@ msgstr ""
 #. module: oemedical
 #: help:oemedical.prescription.line,short_comment:0
 msgid "Short comment on the specific drug"
-msgstr ""
+msgstr "Belirli ilaça kısa bir yorum"
 
 #. module: oemedical
 #: code:addons/oemedical/oemedical_invoice/wizard/wizard_create_lab_invoice.py:68
