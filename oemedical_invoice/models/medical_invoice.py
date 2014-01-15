@@ -20,12 +20,13 @@
 #
 ##############################################################################
 
-from osv import fields, osv
-from tools.translate import _
+from openerp.osv import fields, orm
+from openerp.tools.translate import _
+
 from mx import DateTime
 import datetime
 
-class patient_data (osv.osv):
+class patient_data (orm.Model):
 	_name = "medical.patient"
 	_inherit = "medical.patient"
 
@@ -37,7 +38,7 @@ patient_data()
 
 # Add Invoicing information to the Appointment
 
-class appointment (osv.osv):
+class appointment (orm.Model):
 	_name = "medical.appointment"
 	_inherit = "medical.appointment"
 
@@ -68,7 +69,7 @@ appointment ()
 
 # Add Invoicing information to the Lab Test
 
-class labtest (osv.osv):
+class labtest (orm.Model):
 	_name = "medical.patient.lab.test"
 	_inherit = "medical.patient.lab.test"
 
@@ -86,7 +87,7 @@ class labtest (osv.osv):
 
 labtest()
 
-class patient_prescription_order (osv.osv):
+class patient_prescription_order (orm.Model):
 
 	_name = "medical.prescription.order"
 	_inherit = "medical.prescription.order"

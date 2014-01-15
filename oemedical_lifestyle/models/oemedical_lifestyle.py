@@ -20,10 +20,11 @@
 #
 #/#############################################################################
 
-from osv import osv
-from osv import fields
+from openerp.osv import fields, orm
+from openerp.tools.translate import _
 
-class DrugsRecreational(osv.Model):
+
+class DrugsRecreational(orm.Model):
     
     _name = 'oemedical.drugs_recreational'
     _description = 'Recreational Drug'
@@ -166,8 +167,8 @@ class DrugsRecreational(osv.Model):
 
 DrugsRecreational()
 
-class PatientRecreationalDrugs(osv.Model):
-    
+class PatientRecreationalDrugs(orm.Model):
+# TODO:  If no more fields are needed, should be moved as one2many inside of oemedical_patient... 
     _name = 'oemedical.patient.recreational_drugs'
     _description = 'Patient use of Recreational Drugs'
 
@@ -179,7 +180,7 @@ class PatientRecreationalDrugs(osv.Model):
 ''' CAGE questionnaire to assess patient dependency to alcohol '''
 PatientRecreationalDrugs()
 
-class PatientCAGE(osv.Model):
+class PatientCAGE(orm.Model):
 
     _name = 'oemedical.patient.cage'
     _description =  'Patient CAGE Questionnaire'
@@ -197,7 +198,7 @@ class PatientCAGE(osv.Model):
 
 PatientCAGE()
 
-class MedicalPatient(osv.Model):
+class MedicalPatient(orm.Model):
 
     _inherit='oemedical.patient'
 

@@ -22,15 +22,13 @@
 
 import logging
 
-from osv import fields, osv
-import pooler
-from tools.translate import _
-
+from openerp.osv import fields, orm
+from openerp.tools.translate import _
 
 logging.basicConfig(level=logging.DEBUG)
 
 
-class make_medical_prescription_invoice(osv.osv_memory):
+class make_medical_prescription_invoice(orm.TransientModel):
 	_name="medical.prescription.invoice"
 
 	def create_prescription_invoice(self, cr, uid, ids, context={}):
@@ -62,19 +60,19 @@ class make_medical_prescription_invoice(osv.osv_memory):
 
 # Check if the prescription is invoice exempt, and stop the invoicing process
 				if pres.no_invoice :
-					raise  osv.except_osv(_('UserError'), _('The prescription is invoice exempt'))				
+					raise  orm.except_orm(_('UserError'), _('The prescription is invoice exempt'))				
 	
 				if pres.invoice_status == 'invoiced':
 					logging.debug('pres.invoice_status = %s', repr(pres.invoice_status))
 					if len(prescriptions) > 1:
-						raise  osv.except_osv(_('UserError'), _('At least one of the selected prescriptions is already invoiced'))
+						raise  orm.except_orm(_('UserError'), _('At least one of the selected prescriptions is already invoiced'))
 					else:
-						raise  osv.except_osv(_('UserError'), _('Prescription already invoiced'))
+						raise  orm.except_orm(_('UserError'), _('Prescription already invoiced'))
 				if pres.invoice_status == 'no':
 					if len(prescriptions) > 1:
-						raise  osv.except_osv(_('UserError'), _('At least one of the selected prescriptions can not be invoiced'))
+						raise  orm.except_orm(_('UserError'), _('At least one of the selected prescriptions can not be invoiced'))
 					else:
-						raise  osv.except_osv(_('UserError'), _('You can not invoice this prescription'))
+						raise  orm.except_orm(_('UserError'), _('You can not invoice this prescription'))
 	
 			logging.debug('pres.name = %s', repr(pres.name))
 			if pres.name.name.id:
@@ -94,7 +92,7 @@ class make_medical_prescription_invoice(osv.osv_memory):
 # Check for empty prescription lines
 
 				if not pres.prescription_line:
-					raise  osv.except_osv(_('UserError'), _('You need to have at least one prescription item in your invoice'))			
+					raise  orm.except_orm(_('UserError'), _('You need to have at least one prescription item in your invoice'))			
 				
 				for pres_line in pres.prescription_line:
 					logging.debug('pres_line = %s; pres_line.medicament.name = %s; pres_line.quantity = %s', pres_line, pres_line.medicament.name, pres_line.quantity)
@@ -137,7 +135,7 @@ class make_medical_prescription_invoice(osv.osv_memory):
 			}
 	
 		else:
-			raise  osv.except_osv(_('UserError'), _('When multiple prescriptions are selected, patient must be the same'))
+			raise  orm.except_orm(_('UserError'), _('When multiple prescriptions are selected, patient must be the same'))
 
 
 make_medical_prescription_invoice()

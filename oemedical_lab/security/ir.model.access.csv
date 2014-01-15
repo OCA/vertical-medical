@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_oemedical_lab_group,model,model_oemedical_lab_group,group_oemedical_lab_user,1,1,1,0

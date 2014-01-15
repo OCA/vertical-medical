@@ -22,13 +22,12 @@
 
 import logging
 
-from osv import fields, osv
-import pooler
-from tools.translate import _
+from openerp.osv import fields, orm
+from openerp.tools.translate import _
 
 logging.basicConfig(level=logging.DEBUG)
 
-class make_medical_appointment_invoice(osv.osv_memory):
+class make_medical_appointment_invoice(orm.TransientModel):
 	_name="medical.appointment.invoice"
 
 	def create_invoice(self, cr, uid, ids, context={}):
@@ -47,18 +46,18 @@ class make_medical_appointment_invoice(osv.osv_memory):
 
 # Check if the appointment is invoice exempt, and stop the invoicing process
 				if appointment.no_invoice :
-					raise  osv.except_osv(_('UserError'), _('The appointment is invoice exempt'))				
+					raise orm.except_orm(_('UserError'), _('The appointment is invoice exempt'))				
 
 				if appointment.validity_status=='invoiced':
 					if len(apps) > 1:
-						raise  osv.except_osv(_('UserError'),_('At least one of the selected appointments is already invoiced'))
+						raise orm.except_orm(_('UserError'),_('At least one of the selected appointments is already invoiced'))
 					else:
-						raise  osv.except_osv(_('UserError'),_('Appointment already invoiced'))
+						raise orm.except_orm(_('UserError'),_('Appointment already invoiced'))
 				if appointment.validity_status=='no':
 					if len(apps) > 1:
-						raise  osv.except_osv(_('UserError'),_('At least one of the selected appointments can not be invoiced'))
+						raise orm.except_orm(_('UserError'),_('At least one of the selected appointments can not be invoiced'))
 					else:
-						raise  osv.except_osv(_('UserError'),_('You can not invoice this appointment'))
+						raise orm.except_orm(_('UserError'),_('You can not invoice this appointment'))
 
 			if appointment.patient.name.id:
 				invoice_data['partner_id'] = appointment.patient.name.id
@@ -87,7 +86,7 @@ class make_medical_appointment_invoice(osv.osv_memory):
 										'account_id':a,
 										'price_unit':appointment.consultations.lst_price}
 				else:
-					raise osv.except_osv(_('UserError'),_('No consultation service is connected with the selected appointments'))
+					raise orm.except_orm(_('UserError'),_('No consultation service is connected with the selected appointments'))
 
 			product_lines = []
 			for prod_id, prod_data in prods_data.items():
@@ -112,7 +111,5 @@ class make_medical_appointment_invoice(osv.osv_memory):
 			}
 
 		else:
-			raise  osv.except_osv(_('UserError'),_('When multiple appointments are selected, patient must be the same'))
-
-make_medical_appointment_invoice()
+			raise orm.except_orm(_('UserError'),_('When multiple appointments are selected, patient must be the same'))
 

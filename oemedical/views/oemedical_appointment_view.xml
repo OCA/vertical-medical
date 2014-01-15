@@ -52,16 +52,17 @@
                         <notebook>
                             <page string="Main">
                                 <group col="4" colspan="4">
-					                <field name="patient_id" />
                 					<field name="alias" />
+                                    <field name="patient_id" />
 					                <field name="doctor" />
 					                <field name="speciality" />
                                     <group colspan="2" col="6">
+					                    <field name="appointment_date" nolabel="0"/>
 					                    <field name="appointment_day" nolabel="0"/>
 					                    <field name="appointment_hour" nolabel="1"/>
 					                    <field name="appointment_minute" nolabel="1"/>
                                     </group>
-   					                <field name="duration" />
+   					                <field name="duration" widget="float_time"/>
 
        				                <field name="appointment_date" invisible="1"/>
                                 </group>
@@ -173,10 +174,10 @@
 			<field name="view_type">form</field>
 			<field name="view_mode">kanban,tree,form,calendar</field>
 			<field name="search_view_id" ref="view_oemedical_appointment_search" />
-			<field name="domain">[]</field>
 			<field name="context">{}</field>
 		</record>
-
+			<!-- field name="domain">['|',('patient_id.user_id.id','=',uid),('doctor.user_id.id','=',uid)]</field -->
+		
 		<record model="ir.actions.act_window.view" id="act_open_oemedical_appointment_view_form">
 			<field name="act_window_id" ref="act_open_oemedical_appointment_view" />
 			<field name="sequence" eval="40" />

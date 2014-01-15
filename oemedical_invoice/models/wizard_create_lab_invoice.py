@@ -21,15 +21,15 @@
 ##############################################################################
 
 import logging
-
-from osv import fields, osv
 import pooler
-from tools.translate import _
 import sys
+
+from openerp.osv import fields, orm
+from openerp.tools.translate import _
 
 logging.basicConfig(level=logging.DEBUG)
 
-class create_test_invoice(osv.osv_memory):
+class create_test_invoice(orm.TransientModel):
     _name='medical.lab.test.invoice'
 
     def create_lab_invoice(self, cr, uid, ids, context={}):
@@ -58,14 +58,14 @@ class create_test_invoice(osv.osv_memory):
                 logging.debug('test = %s', repr(test))
                 if test.invoice_status == 'invoiced':
                     if len(tests) > 1:
-                        raise  osv.except_osv(_('UserError'), _('At least one of the selected lab tests is already invoiced'))
+                        raise  orm.except_orm(_('UserError'), _('At least one of the selected lab tests is already invoiced'))
                     else:
-                        raise  osv.except_osv(_('UserError'), _('Lab test already invoiced'))
+                        raise  orm.except_orm(_('UserError'), _('Lab test already invoiced'))
                 if test.invoice_status == 'no':
                     if len(tests) > 1:
-                        raise  osv.except_osv(_('UserError'), _('At least one of the selected lab tests can not be invoiced'))
+                        raise  orm.except_orm(_('UserError'), _('At least one of the selected lab tests can not be invoiced'))
                     else:
-                        raise  osv.except_osv(_('UserError'), _('You can not invoice this lab test'))
+                        raise  orm.except_orm(_('UserError'), _('You can not invoice this lab test'))
     
             logging.debug('test.patient_id = %s; test.patient_id.id = %s', test.patient_id, test.patient_id.id)
             if test.patient_id.name.id:
@@ -124,7 +124,7 @@ class create_test_invoice(osv.osv_memory):
             }
     
         else:
-            raise  osv.except_osv(_('UserError'), _('When multiple lab tests are selected, patient must be the same'))
+            raise  orm.except_orm(_('UserError'), _('When multiple lab tests are selected, patient must be the same'))
 
 
 create_test_invoice()
