@@ -21,6 +21,8 @@
 #/#############################################################################
 
 import oemedical_secondary_condition
+import oemedical_operational_sector
+import oemedical_operational_area
 import oemedical_pathology_category
 import oemedical_signs_and_symptoms
 import oemedical_directions

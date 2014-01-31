@@ -117,8 +117,8 @@ OeMedical at a glance:
         'views/oemedical_disease_group_members_view.xml',
         'views/oemedical_medicament_view.xml',
         'views/oemedical_pathology_group_view.xml',
-        'security/oemedical_security.xml',
-        'security/ir.model.access.csv',
+#        'security/oemedical_security.xml',
+#        'security/ir.model.access.csv',
         'oemedical_menu.xml',
     ],
     "demo": [
