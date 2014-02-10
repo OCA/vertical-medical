@@ -19,11 +19,12 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #/#############################################################################
-from osv import osv
-from osv import fields
+
+from openerp.osv import fields, orm
+from openerp.tools.translate import _
 
 
-class OeMedicalOperationalArea(osv.Model):
+class OeMedicalOperationalArea(orm.Model):
     _name = 'oemedical.operational_area'
 
     _columns = {
@@ -38,5 +39,5 @@ class OeMedicalOperationalArea(osv.Model):
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
     ]
-OeMedicalOperationalArea()
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
