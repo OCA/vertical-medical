@@ -39,5 +39,6 @@ class OeMedicalFamily(orm.Model):
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Family Code must be unique!'),
     ]
-OeMedicalFamily()
+
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

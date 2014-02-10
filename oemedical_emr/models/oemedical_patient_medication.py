@@ -47,5 +47,5 @@ class OeMedicalPatientMedication(orm.Model):
         'discontinued': fields.boolean(string='Discontinued'),
     }
 
-OeMedicalPatientMedication()
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

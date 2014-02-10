@@ -35,5 +35,4 @@ class OeMedicalDirections(orm.Model):
         'comments': fields.char(size=256, string='Comments'),
     }
 
-OeMedicalDirections()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

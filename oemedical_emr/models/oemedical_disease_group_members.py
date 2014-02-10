@@ -34,5 +34,5 @@ class OeMedicalDiseaseGroupMembers(orm.Model):
                                 readonly=True ),
     }
 
-OeMedicalDiseaseGroupMembers()
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

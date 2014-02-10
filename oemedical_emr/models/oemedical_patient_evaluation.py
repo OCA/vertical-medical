@@ -203,5 +203,5 @@ class OeMedicalPatientEvaluation(orm.Model):
         'diastolic': fields.integer(string='Diastolic Pressure'),
     }
 
-OeMedicalPatientEvaluation()
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

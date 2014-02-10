@@ -36,5 +36,6 @@ class OeMedicalEthnicity(orm.Model):
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
     ]
-OeMedicalEthnicity()
+
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

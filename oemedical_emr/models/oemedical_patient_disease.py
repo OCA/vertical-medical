@@ -79,5 +79,5 @@ class OeMedicalPatientDisease(orm.Model):
         ' go on the Extra info field'),
     }
 
-OeMedicalPatientDisease()
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
