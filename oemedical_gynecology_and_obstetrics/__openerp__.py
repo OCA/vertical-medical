@@ -42,8 +42,20 @@
     'application': True,
     'description': """
 
-About OeMedical
----------------
+About OeMedical gynecology and obstetrics
+-----------------------------------------
+
+- Ginecology
+    - Mestrual History
+- Detection
+    - Mammography History
+- PAP / COLPO
+    - PAP History
+    - Colposcopy History
+- Obstetrics
+    - Pregnancy history
+
+
 
 """,
     "website": "http://launchpad.net/oemedical",
