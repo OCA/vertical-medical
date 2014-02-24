@@ -20,7 +20,7 @@
 			action="act_open_oemedical_prescription_order_view" />
 
 <!-- Diseases -->
-		<menuitem id="oemedical.oemedical_root_disease" name="Disease"
+		<menuitem id="oemedical_root_disease" name="Disease"
 			parent="oemedical.oemedical_root_sub" sequence="10" />
 
 <!--  Menu of Pathology-->
@@ -37,7 +37,7 @@
             parent="oemedical_root_disease" sequence="20"
             action="act_open_oemedical_pathology_group_view" />
 
-		<menuitem id="oemedical.oemedical_root_disease_cat" name="Categories"
+		<menuitem id="oemedical_root_disease_cat" name="Categories"
 			parent="oemedical_root_disease" sequence="100" />
 
 		<menuitem id="oemedical_disease_group_members" name=" Disease Group"

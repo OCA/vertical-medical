@@ -38,5 +38,6 @@ class OeMedicalMedicamentCategory(orm.Model):
         (orm.Model._check_recursion, 'Error ! You cannot create recursive \n' 
         'Category.', ['parent_id'])
     ]
-OeMedicalMedicamentCategory()
+
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

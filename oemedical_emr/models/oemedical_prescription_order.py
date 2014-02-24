@@ -66,5 +66,5 @@ class OeMedicalPrescriptionOrder(orm.Model):
         return {'type': 'ir.actions.report.xml', 'report_name': 'prescription.order', 'datas': datas, 'nodestroy': True}
 
 
-OeMedicalPrescriptionOrder()
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

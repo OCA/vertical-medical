@@ -24,19 +24,19 @@ from openerp.osv import fields, orm
 from openerp.tools.translate import _
 
 
-class OeMedicalPathologyGroup(orm.Model):
-    _name = 'oemedical.pathology.group'
+class OeMedicalOperationalSector(orm.Model):
+    _name = 'oemedical.operational_sector'
 
     _columns = {
-        'info': fields.text(string='Detailed information'),
-        'code': fields.char(size=256, string='Code', required=True, 
-          help='for example MDG6 code will contain the Millennium Development'\
-                    ' Goals # 6 diseases : Tuberculosis, Malaria and HIV/AIDS'),
-        'name': fields.char(size=256, string='Name', required=True,
-                            translate=True, help='Group name'),
-        'desc': fields.char(size=256, string='Short Description',
-                            required=True),
+        'info': fields.text(string='Extra Information'),
+        'operational_area_id': fields.many2one('oemedical.operational_area',
+                                               string='Operational Area', ),
+        'name': fields.char(size=256, string='Op. Sector', required=True, 
+                            help='Region included in an operational area'),
     }
+    _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
+    ]
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
