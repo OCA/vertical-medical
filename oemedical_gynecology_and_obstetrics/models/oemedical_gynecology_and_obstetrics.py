@@ -68,7 +68,6 @@ class PatientPregnancy(orm.Model):
                                 ], 'IUGR', sort=False),
                 }
 
-PatientPregnancy()
 
 class PrenatalEvaluation(orm.Model):
 
@@ -121,7 +120,6 @@ class PrenatalEvaluation(orm.Model):
             'iugr' : fields.boolean('IUGR', help="Intra Uterine Growth Restriction"),
         }
 
-PrenatalEvaluation()
 
 
 
@@ -154,7 +152,6 @@ class PuerperiumMonitor(orm.Model):
         'temperature' : fields.float('Temperature'),
             }
 
-PuerperiumMonitor()
 
 
 class PerinatalMonitor(orm.Model):
@@ -182,7 +179,7 @@ class PerinatalMonitor(orm.Model):
                 ('t', 'Footling Breech'),
                 ], 'Fetus Position', select=True),
             }
-PerinatalMonitor()
+
 
 
 class OemedicalPerinatal(orm.Model):
@@ -246,7 +243,7 @@ class OemedicalPerinatal(orm.Model):
             'mother_deceased' : fields.boolean('Deceased', help="Mother died in the process"),
             'notes' : fields.text('Notes'),
             }
-OemedicalPerinatal()
+
 
 
 class OeMedicalPatient(orm.Model):
@@ -291,7 +288,7 @@ class OeMedicalPatient(orm.Model):
             }
 
 
-OeMedicalPatient()
+
 
 
 class PatientMenstrualHistory(orm.Model):
@@ -320,7 +317,7 @@ class PatientMenstrualHistory(orm.Model):
 
             }
 
-PatientMenstrualHistory()
+
 
 
 class PatientMammographyHistory(orm.Model):
@@ -339,7 +336,7 @@ class PatientMammographyHistory(orm.Model):
             'comments' : fields.char('Remarks'),
             }
 
-PatientMammographyHistory()
+
 
 
 class PatientPAPHistory(orm.Model):
@@ -362,7 +359,7 @@ class PatientPAPHistory(orm.Model):
                             ], 'result', help="Please check the lab results if the module is installed"),
             'comments' : fields.char('Remarks'),
             }
-PatientPAPHistory()
+
 
 
 class PatientColposcopyHistory(orm.Model):
@@ -381,7 +378,7 @@ class PatientColposcopyHistory(orm.Model):
             'comments' : fields.char('Remarks'),
             }
 
-PatientColposcopyHistory()
+
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

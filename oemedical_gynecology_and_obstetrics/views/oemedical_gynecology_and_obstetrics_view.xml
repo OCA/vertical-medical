@@ -9,7 +9,7 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <data>
-                    <xpath expr="//notebook/page[@string='Misc']" position="before">
+                    <xpath expr="//notebook/page[@string='General Information']" position="after">
                         <page string="Gyneco / Obs" attrs="{'invisible':[('sex','=', 'm')]}" >
                             <notebook>
                                 <page string="Gyneco" >
