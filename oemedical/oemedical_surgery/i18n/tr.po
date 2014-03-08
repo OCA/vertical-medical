@@ -6,13 +6,13 @@ msgstr ""
 "Project-Id-Version: Medical\n"
 "Report-Msgid-Bugs-To: https://sourceforge.net/apps/mantisbt/medical\n"
 "POT-Creation-Date: 2010-12-05 21:38+0000\n"
-"PO-Revision-Date: 2013-11-08 01:22+0000\n"
-"Last-Translator: OEmedical Commiter <Unknown>\n"
+"PO-Revision-Date: 2014-03-07 22:37+0000\n"
+"Last-Translator: Ediz Duman <neps1192@gmail.com>\n"
 "Language-Team: Turkish <None>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-03-04 08:26+0000\n"
+"X-Launchpad-Export-Date: 2014-03-08 06:52+0000\n"
 "X-Generator: Launchpad (build 16948)\n"
 "Language: tr\n"
 
@@ -20,7 +20,7 @@ msgstr ""
 #: constraint:ir.model:0
 msgid ""
 "The Object name must start with x_ and not contain any special character !"
-msgstr ""
+msgstr "Nesne adı x_ ile başlamalı ve özel karakterler içermemelidir !"
 
 #. module: medical_surgery
 #: model:ir.module.module,shortdesc:medical_surgery.module_meta_information
@@ -40,12 +40,12 @@ msgstr "Cerrahi Sınıflandırma"
 #. module: medical_surgery
 #: help:medical.surgery,name:0
 msgid "Procedure Code, for example ICD-10-PCS Code 7-character string"
-msgstr ""
+msgstr "Usulü Kodu, örneğin ICD-10-PCS Kod 7-karakter dizesi"
 
 #. module: medical_surgery
 #: help:medical.surgery,age:0
 msgid "Patient age at the moment of the surgery. Can be estimative"
-msgstr ""
+msgstr "Ameliyatı anda hastanın yaşı. Tahmin edilebilir"
 
 #. module: medical_surgery
 #: field:medical.surgery,surgeon:0
@@ -60,12 +60,12 @@ msgstr "Isteğe bağlı"
 #. module: medical_surgery
 #: constraint:ir.ui.view:0
 msgid "Invalid XML for View Architecture!"
-msgstr ""
+msgstr "Görüntüleme mimarisi için Geçersiz XML"
 
 #. module: medical_surgery
 #: help:medical.surgery,surgeon:0
 msgid "Surgeon who did the procedure"
-msgstr ""
+msgstr "Operasyonu gerçekleştiren cerrah"
 
 #. module: medical_surgery
 #: model:ir.module.module,description:medical_surgery.module_meta_information
