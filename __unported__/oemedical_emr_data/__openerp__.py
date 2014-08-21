@@ -34,49 +34,54 @@
 ##############################################################################
 {
 
-    'name': 'OeMedical : gynecology and obstetrics',
-    'version': '1.0.1',
+    'name': 'OeMedical EMR: Module Data',
+    'version': '1.0',
     'author': "OeMEdical Team",
     'category': 'Generic Modules/Others',
-    'depends': ['oemedical'],
+    'depends': ['oemedical_emr'],
     'application': True,
     'description': """
 
-About OeMedical gynecology and obstetrics
------------------------------------------
+About OeMedical Data
+---------------------
 
-- Ginecology
-    - Mestrual History
-- Detection
-    - Mammography History
-- PAP / COLPO
-    - PAP History
-    - Colposcopy History
-- Obstetrics
-    - Pregnancy history
+Core Data for oemedical, is kept as a separate module to overcome need of
+localizing core data.
 
-
-
+    
 """,
     "website": "http://launchpad.net/oemedical",
     "licence": "AGPL v3",
     "data": [
-        'views/oemedical_gynecology_and_obstetrics_view.xml',   # view has errors, please correct before enabling....
-        'views/oemedical_menu.xml',
-        'security/ir.model.access.csv',
+        'data/medicament_categories.xml',
+        'data/WHO_products.xml',
+        'data/WHO_list_of_essential_medicines.xml',
+        'data/health_specialties.xml',
+        'data/ethnic_groups.xml',
+        'data/occupations.xml',
+        'data/dose_units.xml',
+        'data/drug_routes.xml',
+        'data/medicament_form.xml',
+        'data/medication_frequencies.xml',
+        'data/disease_categories.xml',
+        'data/diseases.xml',
     ],
     "demo": [
 
     ],
     'test':[
+            
     ],
     'css': [
+
     ],
     'js': [
+
     ],
     'qweb': [
-    ],
+
+    ], 
     "active": False,
-    "installable": True,
+    "installable": False,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
