@@ -1,9 +1,138 @@
+What is Odoo Medical
+---
+
+Odoo Medical is a multi-user, highly scalable, centralized Electronic
+Medical Record (EMR) and Hospital Information System for odoo.
+
+Odoo Medical provides a free universal Health and Hospital Information System,
+so doctors and institutions all over the world,
+specially in developing countries will benefit from a centralized,
+high quality, secure and scalable system.
+
+Odoo Medical at a glance:
+
+    * Strong focus in family medicine and Primary Health Care
+
+    * Major interest in Socio-economics (housing conditions, substance abuse,
+    education...)
+
+    * Diseases and Medical procedures standards (like ICD-10 / ICD-10-PCS ...)
+
+    * Patient Genetic and Hereditary risks : Over 4200 genes related to
+    diseases (NCBI / Genecards)
+
+    * Epidemiological and other statistical reports
+
+    * 100% paperless patient examination and history taking
+
+    * Patient Administration
+    (creation, evaluations / consultations, history ... )
+
+    * Doctor Administration
+
+    * Lab Administration
+
+    * Medicine / Drugs information (vademécum)
+
+    * Medical stock and supply chain management
+
+    * Hospital Financial Administration
+
+    * Designed with industry standards in mind
+
+    * Open Source : Licensed under AGPL
+
+Hacking Odoo Medical
+---
+
+1. Clone this repository:
+
+    ```bash
+    $ git clone git@github.com:oca/vertical-medical.git
+    $ cd medical && checkout 8.0
+    ```
+
+2. Create your own branch locally.
+
+    ```bash
+    $ git checkout -b 8.0-your_new_feature_theme
+    ```
+
+3. Push your first change branch to know you start to work on.
+
+    ```bash
+    $ git push -u origin 8.0-your_new_feature_theme
+    ```
+
+4. Prepare your enviroment to work with this repository and the mandatory ones to have all the enviroment ready.
+
+    ```bash
+    $ git clone https://github.com/odoo/odoo.git
+    $ git clone https://github.com/vauxoo-dev/instance-vauxoo-com.git
+    $ cd odoo && checkout 8.0
+    $ cd instance-vauxoo-com && checkout 8.0
+    ```
+
+5. Create a postgres user (only for this work to avoid problems not related to this enviroment).
+
+    ```bash
+    $ sudo su postgres
+    $ createuser medicaluser -P
+    #put your password just (1) for example.
+    $ createdb medical -U medicaluser -O medicaluser -T remplate0 -E UTF8
+    ```
+
+6. Run the development enviroment.
+
+    ```bash
+    $ cd path/to/odoo/odoo
+    $ ./openerp-server --addons-path=addons/,../medical -r \
+    medicaluser -w 1 --db-filter=medical \
+    -i oemedical -d medical
+    ```
+
+7. Do your code, and update it passing -u module -d medical (replacing this paramenter above).
+
+8. Before be sure all is ok, we can delete and create db again with -i
+   paramenter to ensure all install correctly.
+
+    ```bash
+    $ sudo su postgres
+    $ dropbd medical
+    $ createdb medical -U medicaluser -O medicaluser -T remplate0 -E UTF8
+    $ ./openerp-server --addons-path=addons/,../medical -r \
+    medicaluser -w 1 --db-filter=medical \
+    -i oemedical -d medical
+    ```
+
+9. If all is ok installing, please test your enviroment running your code with ‘test-enabled’.
+
+    ```bash
+    $ ./openerp-server --addons-path=addons/,../medical -r \
+    medicaluser -w 1 --db-filter=medical \
+    -i oemedical -d medical --test-enable
+    ```
+
+**Note:**
+
+    This will take a time, just do it before commit your change and make push.
+
+10. Add your changes to have them versioned.
+
+    ```bash
+    $ git add .
+    ```
+
+11. Commit your changes.
+
+    ```bash
+    $ git commit -m "[TAG] module: what you did"
+    ```
+
+12. Push your first change branch to know you start to work on.
+
+    ```bash
+    $ git push -u origin 8.0-your_new_feature_theme
+    ```
 [![Build Status](https://travis-ci.org/OCA/vertical-medical.svg?branch=8.0)](https://travis-ci.org/OCA/vertical-medical)
 [![Coverage Status](https://coveralls.io/repos/OCA/vertical-medical/badge.png?branch=8.0)](https://coveralls.io/r/OCA/vertical-medical?branch=8.0)
-
-Medical
-=======
-
-Project to manage oemedical project.
-
-Based on the main idea to bring the healthcare to OpenERP in a communitary way.
