@@ -87,7 +87,7 @@ OeMedical at a glance:
     * Open Source : Licensed under AGPL
 
 """,
-    "website": "http://launchpad.net/oemedical",
+    "website": "http://github.com/oca/vertical-medical",
     "licence": "AGPL v3",
     "data": [
         'views/oemedical_sequence.xml',
