@@ -23,7 +23,7 @@
 from openerp.osv import fields, orm
 from openerp.tools.translate import _
 
-from openerp.addons.oemedical.oemedical_constants import days, hours, minutes
+from openerp.addons.medical.oemedical_constants import days, hours, minutes
 
 
 class oemedical_physician_schedule_template(orm.Model):

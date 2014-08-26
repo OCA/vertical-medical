@@ -1,7 +1,7 @@
 ##############################################################################
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
-#    OeMedical, HMS Opensource Solution
+#    Odoo Medical, HMS Opensource Solution
 ##############################################################################
 #    Collaborators of this module:
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
@@ -34,26 +34,29 @@
 ##############################################################################
 {
 
-    'name': 'OeMedical : Free Health and Hospital Information System',
+    'name': 'Odoo Medical : Open Source Health and Hospital Information System',
     'version': '1.0',
-    'author': "OeMEdical Team",
-    'category': 'Generic Modules/Others',
-    'depends': ['base', 'product'],
+    'author': 'Odoo Medical Team',
+    'category': 'Medical',
+    'depends': [
+        'base',
+        'product'
+        ],
     'application': True,
     'description': """
 
-About OeMedical
+About Odoo Medical
 ---------------
 
-OeMedical is a multi-user, highly scalable, centralized Electronic
+Odoo Medical is a multi-user, highly scalable, centralized Electronic
 Medical Record (EMR) and Hospital Information System for openERP.
 
-OeMedical provides a free universal Health and Hospital Information System,
+Odoo Medical provides a free universal Health and Hospital Information System,
 so doctors and institutions all over the world,
 specially in developing countries will benefit from a centralized,
 high quality, secure and scalable system.
 
-OeMedical at a glance:
+Odoo Medical at a glance:
 
     * Strong focus in family medicine and Primary Health Care
 
