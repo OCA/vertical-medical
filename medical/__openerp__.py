@@ -41,7 +41,7 @@
     'depends': [
         'base',
         'product'
-        ],
+    ],
     'application': True,
     'description': """
 
@@ -108,10 +108,10 @@ Odoo Medical at a glance:
 
     ],
     'test': [
-            'tests/physician.yml',
-            'tests/patient.yml',
-            'tests/partners.yml',
-            'tests/physician_speciality.yml'
+        'tests/physician.yml',
+        'tests/patient.yml',
+        'tests/partners.yml',
+        'tests/physician_speciality.yml'
     ],
     'css': [
 
