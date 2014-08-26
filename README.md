@@ -1,46 +1,95 @@
 What is Odoo Medical
 ---
 
-Odoo Medical is a multi-user, highly scalable, centralized Electronic
-Medical Record (EMR) and Hospital Information System for odoo.
+**Odoo Medical** is a multi-user, highly scalable, centralized Electronic Medical
+Record (EMR) and Hospital Information System for odoo.
 
-Odoo Medical provides a free universal Health and Hospital Information System,
-so doctors and institutions all over the world,
-specially in developing countries will benefit from a centralized,
-high quality, secure and scalable system.
+**Odoo Medical** provides a free universal Health and Hospital Information System,
+so doctors and institutions all over the world, specially in developing
+countries will benefit from a centralized, high quality, secure and scalable
+system.
 
 Odoo Medical at a glance:
+---
 
-    * Strong focus in family medicine and Primary Health Care
+- Strong focus in family medicine and Primary Health Care
 
-    * Major interest in Socio-economics (housing conditions, substance abuse,
-    education...)
+- Major interest in Socio-economics (housing conditions, substance abuse,
+education...)
 
-    * Diseases and Medical procedures standards (like ICD-10 / ICD-10-PCS ...)
+- Diseases and Medical procedures standards (like ICD-10 / ICD-10-PCS ...)
 
-    * Patient Genetic and Hereditary risks : Over 4200 genes related to
-    diseases (NCBI / Genecards)
+- Patient Genetic and Hereditary risks : Over 4200 genes related to
+diseases (NCBI / Genecards)
 
-    * Epidemiological and other statistical reports
+- Epidemiological and other statistical reports
 
-    * 100% paperless patient examination and history taking
+- 100% paperless patient examination and history taking
 
-    * Patient Administration
-    (creation, evaluations / consultations, history ... )
+- Patient Administration
+(creation, evaluations / consultations, history ... )
 
-    * Doctor Administration
+- Doctor Administration
 
-    * Lab Administration
+- Lab Administration
 
-    * Medicine / Drugs information (vademécum)
+- Medicine / Drugs information (vademécum)
 
-    * Medical stock and supply chain management
+- Medical stock and supply chain management
 
-    * Hospital Financial Administration
+- Hospital Financial Administration
 
-    * Designed with industry standards in mind
+- Designed with industry standards in mind
 
-    * Open Source : Licensed under AGPL
+- Open Source : Licensed under AGPL
+
+
+Contributing
+---
+
+Contributions are welcome, and they are greatly appreciated! Every
+little bit helps, and credit will always be given. 
+
+You can contribute in many ways:
+
+Types of Contributions
+---
+
+*Report Bugs*
+
+Report bugs at https://github.com/oca/vertical-medical/issues.
+
+If you are reporting a bug, please include:
+
+- Your operating system name and version.
+- Any details about your local setup that might be helpful in troubleshooting.
+- Detailed steps to reproduce the bug.
+
+*Fix Bugs*
+
+Look through the GitHub issues for bugs. Anything tagged with "bug"
+is open to whoever wants to implement it.
+
+*Implement Features*
+
+Look through the GitHub issues for features. Anything tagged with "feature"
+is open to whoever wants to implement it.
+
+*Write Documentation*
+
+Try to comment your code using PEP guidelines, and don’t repeat yourself.
+TODO: Link the oca standars here.
+
+*Submit Feedback*
+
+The best way to send feedback is to file an issue at https://github.com/oca/vertical-medical/issues.
+
+If you are proposing a feature:
+
+* Explain in detail how it would work.
+* Keep the scope as narrow as possible, to make it easier to implement.
+* Remember that this is a volunteer-driven project, and that contributions
+  are welcome :)
 
 Hacking Odoo Medical
 ---
@@ -68,9 +117,9 @@ Hacking Odoo Medical
 
     ```bash
     $ git clone https://github.com/odoo/odoo.git
-    $ git clone https://github.com/vauxoo-dev/instance-vauxoo-com.git
+    $ git clone https://github.com/oca/vertical-medical.git
     $ cd odoo && checkout 8.0
-    $ cd instance-vauxoo-com && checkout 8.0
+    $ cd vertical-medical && checkout 8.0
     ```
 
 5. Create a postgres user (only for this work to avoid problems not related to this enviroment).
@@ -88,7 +137,7 @@ Hacking Odoo Medical
     $ cd path/to/odoo/odoo
     $ ./openerp-server --addons-path=addons/,../medical -r \
     medicaluser -w 1 --db-filter=medical \
-    -i oemedical -d medical
+    -i medical -d medical
     ```
 
 7. Do your code, and update it passing -u module -d medical (replacing this paramenter above).
@@ -102,7 +151,7 @@ Hacking Odoo Medical
     $ createdb medical -U medicaluser -O medicaluser -T remplate0 -E UTF8
     $ ./openerp-server --addons-path=addons/,../medical -r \
     medicaluser -w 1 --db-filter=medical \
-    -i oemedical -d medical
+    -i medical -d medical
     ```
 
 9. If all is ok installing, please test your enviroment running your code with ‘test-enabled’.
@@ -110,7 +159,7 @@ Hacking Odoo Medical
     ```bash
     $ ./openerp-server --addons-path=addons/,../medical -r \
     medicaluser -w 1 --db-filter=medical \
-    -i oemedical -d medical --test-enable
+    -i medical -d medical --test-enable
     ```
 
 **Note:**
@@ -134,5 +183,6 @@ Hacking Odoo Medical
     ```bash
     $ git push -u origin 8.0-your_new_feature_theme
     ```
+
 [![Build Status](https://travis-ci.org/OCA/vertical-medical.svg?branch=8.0)](https://travis-ci.org/OCA/vertical-medical)
 [![Coverage Status](https://coveralls.io/repos/OCA/vertical-medical/badge.png?branch=8.0)](https://coveralls.io/r/OCA/vertical-medical?branch=8.0)

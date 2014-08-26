@@ -1,45 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<openerp>
-	<data>
-		<menuitem id="oemedical_root" name="OeMedical" sequence="10" />
+<?xml version = "1.0" encoding = "UTF-8"?>
+<openerp >
+	<data >
+		<menuitem id = "oemedical_root" name = "OeMedical" sequence = "10" / >
 
 
-<!--Menu Patient-->
+<!--Menu Patient - - >
 
-		<menuitem id="oemedical_patient_root" name="Patient" parent="oemedical_root"
-			sequence="10" />
-		<menuitem id="oemedical_patient" name=" Patient"
-			parent="oemedical_patient_root" sequence="10"
-			action="act_open_oemedical_patient_view" />
+		<menuitem id = "oemedical_patient_root" name = "Patient" parent = "oemedical_root"
+			sequence = "10" / >
+		<menuitem id = "oemedical_patient" name = " Patient"
+			parent = "oemedical_patient_root" sequence = "10"
+			action = "act_open_oemedical_patient_view" / >
 
-		<menuitem id="oemedical_family" name=" Family" parent="oemedical_patient_root"
-			sequence="20" action="act_open_oemedical_family_view" />
+		<menuitem id = "oemedical_family" name = " Family" parent = "oemedical_patient_root"
+			sequence = "20" action = "act_open_oemedical_family_view" / >
 
-		<menuitem id="oemedical_family_member" name=" Family Member"
-			parent="oemedical_patient_root" sequence="30"
-			action="act_open_oemedical_family_member_view" />
+		<menuitem id = "oemedical_family_member" name = " Family Member"
+			parent = "oemedical_patient_root" sequence = "30"
+			action = "act_open_oemedical_family_member_view" / >
 
 
-<!--Appointment-->
+<!--Appointment - - >
 
-		<menuitem id="oemedical_appoitment_root" name="Appoitment"
-			parent="oemedical_root" sequence="20" />
+		<menuitem id = "oemedical_appoitment_root" name = "Appoitment"
+			parent = "oemedical_root" sequence = "20" / >
 
-		<menuitem id="oemedical_appointment" name=" Appointment"
-			parent="oemedical_appoitment_root" sequence="10"
-			action="act_open_oemedical_appointment_view" />
+		<menuitem id = "oemedical_appointment" name = " Appointment"
+			parent = "oemedical_appoitment_root" sequence = "10"
+			action = "act_open_oemedical_appointment_view" / >
 
-<!--Prescriptions-->
+<!--Prescriptions - - >
 
-		<menuitem id="oemedical_prescription_root" name="Prescription"
-			parent="oemedical_root" sequence="30" />
+		<menuitem id = "oemedical_prescription_root" name = "Prescription"
+			parent = "oemedical_root" sequence = "30" / >
 
-		<menuitem id="oemedical_prescription_order" name="Prescription Order"
-			parent="oemedical_prescription_root" sequence="10"
-			action="act_open_oemedical_prescription_order_view" />
+		<menuitem id = "oemedical_prescription_order" name = "Prescription Order"
+			parent = "oemedical_prescription_root" sequence = "10"
+			action = "act_open_oemedical_prescription_order_view" / >
 
-<!--       Laboratory    -->
-		<menuitem name="Laboratory" id="oemedical_laboratory_menu" 
+<!-- Laboratory - - >
+		<menuitem name = "Laboratory" id = "oemedical_laboratory_menu"
             parent="oemedical_root" sequence="4"/>
 
 
