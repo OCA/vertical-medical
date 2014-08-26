@@ -1,0 +1,8 @@
+-
+  Create New Insurance Plan
+-
+  !record {model: oemedical.insurance.plan, id: oe_insplan_1}:
+    name: Medical Insurance - Surgery
+    is_default: True
+    company: ins_com_lombard
+    

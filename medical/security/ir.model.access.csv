@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_product,model,model_product_product,group_oemedical_user,1,1,1,0
+access_res_partner,model,model_res_partner,group_oemedical_user,1,1,1,0
+access_oemedical_physician,model,model_oemedical_physician,group_oemedical_user,1,1,1,0
+access_oemedical_patient,model,model_oemedical_patient,group_oemedical_user,1,1,1,0
+access_oemedical_appointment_history,model,model_oemedical_appointment_history,group_oemedical_user,1,1,1,0
+access_oemedical_appointment,model,model_oemedical_appointment,group_oemedical_user,1,1,1,0
+access_oemedical_specialty,model,model_oemedical_specialty,group_oemedical_user,1,1,1,0
+access_oemedical_physician_schedule_template,access_oemedical_physician_schedule_template,model_oemedical_physician_schedule_template,,1,1,1,1
+access_oemedical_patient_med_center_rel,access_oemedical_patient_med_center_rel,model_oemedical_patient_med_center_rel,,1,1,1,1
