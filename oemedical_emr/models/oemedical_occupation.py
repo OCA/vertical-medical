@@ -21,7 +21,6 @@
 #/#############################################################################
 
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class OeMedicalOccupation(orm.Model):
@@ -29,7 +28,7 @@ class OeMedicalOccupation(orm.Model):
 
     _columns = {
         'code': fields.char(size=256, string='Code'),
-        'name': fields.char(size=256, string='Name', required=True ,
+        'name': fields.char(size=256, string='Name', required=True,
                             translate=True),
     }
     _sql_constraints = [

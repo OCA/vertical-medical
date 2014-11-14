@@ -21,7 +21,6 @@
 #/#############################################################################
 
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class OeMedicalDirections(orm.Model):
@@ -29,9 +28,9 @@ class OeMedicalDirections(orm.Model):
 
     _columns = {
         'procedure_id': fields.many2one('oemedical.procedure',
-                                        string='Procedure',required=True),
+                                        string='Procedure', required=True),
         'evaluation_id': fields.many2one('oemedical.patient.evaluation',
-                                         string='Evaluation',readonly=True ),
+                                         string='Evaluation', readonly=True),
         'comments': fields.char(size=256, string='Comments'),
     }
 

@@ -21,7 +21,6 @@
 #/#############################################################################
 
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class OeMedicalMedicationDosage(orm.Model):
@@ -29,9 +28,9 @@ class OeMedicalMedicationDosage(orm.Model):
 
     _columns = {
         'abbreviation': fields.char(size=256, string='Abbreviation',
-            help='Dosage abbreviation, such as tid in the US or tds in the UK'),
+                                    help='Dosage abbreviation, such as tid in the US or tds in the UK'),
         'code': fields.char(size=8, string='Code',
-            help='Dosage Code,for example: SNOMED 229798009 = 3 times per day'),
+                            help='Dosage Code,for example: SNOMED 229798009 = 3 times per day'),
         'name': fields.char(size=256, string='Frequency', required=True,
                             translate=True),
     }

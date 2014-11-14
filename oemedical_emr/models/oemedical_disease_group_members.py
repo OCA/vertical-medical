@@ -21,7 +21,6 @@
 #/#############################################################################
 
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class OeMedicalDiseaseGroupMembers(orm.Model):
@@ -29,9 +28,9 @@ class OeMedicalDiseaseGroupMembers(orm.Model):
 
     _columns = {
         'disease_group_id': fields.many2one('oemedical.pathology.group',
-                                            string='Group',required=True ),
+                                            string='Group', required=True),
         'name': fields.many2one('oemedical.pathology', string='Disease',
-                                readonly=True ),
+                                readonly=True),
     }
 
 

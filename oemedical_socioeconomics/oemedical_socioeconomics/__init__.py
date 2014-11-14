@@ -21,4 +21,4 @@
 ##############################################################################
 
 
-import oemedical_socioeconomics
+from . import oemedical_socioeconomics

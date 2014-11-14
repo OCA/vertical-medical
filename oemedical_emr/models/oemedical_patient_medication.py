@@ -21,7 +21,6 @@
 #/#############################################################################
 
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class OeMedicalPatientMedication(orm.Model):
@@ -29,21 +28,21 @@ class OeMedicalPatientMedication(orm.Model):
 
     _columns = {
         'patient_id': fields.many2one('oemedical.patient', string='Patient',),
-#        'name': fields.many2one('oemedical.patient', string='Patient',
-#                                readonly=True ),
-        'doctor': fields.many2one('oemedical.physician', string='Physician', 
-                                help='Physician who prescribed the medicament'),
+        #        'name': fields.many2one('oemedical.patient', string='Patient',
+        #                                readonly=True ),
+        'doctor': fields.many2one('oemedical.physician', string='Physician',
+                                  help='Physician who prescribed the medicament'),
         'adverse_reaction': fields.text(string='Adverse Reactions',
-        help='Side effects or adverse reactions that the patient experienced'),
+                                        help='Side effects or adverse reactions that the patient experienced'),
         'notes': fields.text(string='Extra Info'),
-        'is_active': fields.boolean(string='Active', 
-                help='Check if the patient is currently taking the medication'),
+        'is_active': fields.boolean(string='Active',
+                                    help='Check if the patient is currently taking the medication'),
         'course_completed': fields.boolean(string='Course Completed'),
         'template': fields.many2one('oemedical.medication.template',
                                     string='Medication Template', ),
         'discontinued_reason': fields.char(size=256,
                                            string='Reason for discontinuation',
-                    help='Short description for discontinuing the treatment'),
+                                           help='Short description for discontinuing the treatment'),
         'discontinued': fields.boolean(string='Discontinued'),
     }
 

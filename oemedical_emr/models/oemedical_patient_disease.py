@@ -21,7 +21,6 @@
 #/#############################################################################
 
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class OeMedicalPatientDisease(orm.Model):
@@ -32,15 +31,15 @@ class OeMedicalPatientDisease(orm.Model):
                                              string='Treatment Description'),
         'healed_date': fields.date(string='Healed'),
         'pathology': fields.many2one('oemedical.pathology',
-                                     string='Disease',help='Disease'),
+                                     string='Disease', help='Disease'),
         'disease_severity': fields.selection([
             ('1_mi', 'Mild'),
             ('2_mo', 'Moderate'),
             ('3_sv', 'Severe'),
-        ], string='Severity',select=True, sort=False),
+        ], string='Severity', select=True, sort=False),
         'is_allergy': fields.boolean(string='Allergic Disease'),
-        'doctor': fields.many2one('oemedical.physician', string='Physician', 
-                        help='Physician who treated or diagnosed the patient'),
+        'doctor': fields.many2one('oemedical.physician', string='Physician',
+                                  help='Physician who treated or diagnosed the patient'),
         'pregnancy_warning': fields.boolean(string='Pregnancy warning'),
         'weeks_of_pregnancy': fields.integer(
             string='Contracted in pregnancy week #'),
@@ -54,29 +53,29 @@ class OeMedicalPatientDisease(orm.Model):
             ('h', 'healed'),
             ('i', 'improving'),
             ('w', 'worsening'),
-        ], string='Status of the disease',select=True, sort=False),
+        ], string='Status of the disease', select=True, sort=False),
         'is_active': fields.boolean(string='Active disease'),
-        'date_stop_treatment': fields.date(string='End', 
+        'date_stop_treatment': fields.date(string='End',
                                            help='End of treatment date'),
-        'pcs_code': fields.many2one('oemedical.procedure', string='Code', 
-        help='Procedure code, for example, ICD-10-PCS Code 7-character string'),
+        'pcs_code': fields.many2one('oemedical.procedure', string='Code',
+                                    help='Procedure code, for example, ICD-10-PCS Code 7-character string'),
         'is_infectious': fields.boolean(string='Infectious Disease',
-                                help='Check if the patient has an infectious' \
-                                'transmissible disease'),
+                                        help='Check if the patient has an infectious'
+                                        'transmissible disease'),
         'allergy_type': fields.selection([
             ('da', 'Drug Allergy'),
             ('fa', 'Food Allergy'),
             ('ma', 'Misc Allergy'),
             ('mc', 'Misc Contraindication'),
-        ], string='Allergy type',select=True, sort=False),
+        ], string='Allergy type', select=True, sort=False),
         'patient_id': fields.many2one('oemedical.patient', string='Patient', ),
-        'age': fields.integer(string='Age when diagnosed',  
-          help='Patient age at the moment of the diagnosis. Can be estimative'),
-        'date_start_treatment': fields.date(string='Start', 
+        'age': fields.integer(string='Age when diagnosed',
+                              help='Patient age at the moment of the diagnosis. Can be estimative'),
+        'date_start_treatment': fields.date(string='Start',
                                             help='Start of treatment date'),
         'short_comment': fields.char(size=256, string='Remarks',
-        help='Brief, one-line remark of the disease. Longer description will'\
-        ' go on the Extra info field'),
+                                     help='Brief, one-line remark of the disease. Longer description will'
+                                     ' go on the Extra info field'),
     }
 
 

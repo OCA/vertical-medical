@@ -19,8 +19,8 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #/#############################################################################
-import oemedical_insurance
-import oemedical_insurance_plan
+from . import oemedical_insurance
+from . import oemedical_insurance_plan
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

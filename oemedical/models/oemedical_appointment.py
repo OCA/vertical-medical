@@ -24,7 +24,6 @@ import time
 from datetime import datetime
 
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 from openerp.addons.oemedical.oemedical_constants import hours, minutes
 
@@ -35,15 +34,15 @@ class OeMedicalAppointment(orm.Model):
     _columns = {
         'user_id': fields.many2one('res.users', 'Responsible', readonly=True, states={'draft': [('readonly', False)]}),
         'patient_id': fields.many2one('oemedical.patient', string='Patient',
-                                   required=True, select=True,
-                                   help='Patient Name'),
+                                      required=True, select=True,
+                                      help='Patient Name'),
         'name': fields.char(size=256, string='Appointment ID', readonly=True),
         'appointment_date': fields.datetime(string='Date and Time'),
         'appointment_day': fields.date(string='Date'),
         'appointment_hour': fields.selection(hours,
-            string='Hour'),
+                                             string='Hour'),
         'appointment_minute': fields.selection(minutes,
-            string='Minute'),
+                                               string='Minute'),
 
         'duration': fields.float('Duration'),
         'doctor': fields.many2one('oemedical.physician',
@@ -60,7 +59,7 @@ class OeMedicalAppointment(orm.Model):
                                        string='Health Center',
                                        help='Medical Center',
                                        domain="[('is_institution', '=', True)]"),
-#        'institution': fields.related('user_id','parent_id', type='many2one', relation='res.partner', string='Institution', store=True, domain="[('is_institution', '=', True)]"), #, readonly=True
+        # 'institution': fields.related('user_id','parent_id', type='many2one', relation='res.partner', string='Institution', store=True, domain="[('is_institution', '=', True)]"), #, readonly=True
         'consultations': fields.many2one('product.product',
                                          string='Consultation Services',
                                          help='Consultation Services',
@@ -80,7 +79,7 @@ class OeMedicalAppointment(orm.Model):
             ('in_consultation', 'In consultation'),
             ('done', 'Done'),
             ('canceled', 'Canceled'),
-             ],
+        ],
             string='State'),
         'history_ids': fields.one2many('oemedical.appointment.history', 'appointment_id_history', 'History lines', states={'start': [('readonly', True)]}),
 
@@ -93,17 +92,19 @@ class OeMedicalAppointment(orm.Model):
         'urgency': 'a',
         'state': 'draft',
         'user_id': lambda s, cr, u, c: u,
-                 }
+    }
 
     def create(self, cr, uid, vals, context=None):
         val_history = {}
-        ait_obj = self.pool.get('oemedical.appointment.history')
-        date_time_str = vals['appointment_day'] + ' ' + vals['appointment_hour'] + ':' + vals['appointment_minute']
-        vals['appointment_date'] = datetime.strptime(date_time_str, '%Y-%m-%d %H:%M')
+        date_time_str = vals['appointment_day'] + ' ' + \
+            vals['appointment_hour'] + ':' + vals['appointment_minute']
+        vals['appointment_date'] = datetime.strptime(
+            date_time_str, '%Y-%m-%d %H:%M')
 
         val_history['name'] = uid
         val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
-        val_history['action'] = "--------------------------------  Changed to Comfirm  ------------------------------------\n"
+        val_history[
+            'action'] = "--------------------------------  Changed to Comfirm  ------------------------------------\n"
 
         vals['history_ids'] = val_history
 
@@ -119,18 +120,24 @@ class OeMedicalAppointment(orm.Model):
         for order in self.browse(cr, uid, ids, context=context):
             if order.state == 'confirm':
                 self.write(cr, uid, ids, {'state': 'draft'}, context=context)
-                val_history['action'] = "--------------------------------  Changed to Draft  ------------------------------------\n"
+                val_history[
+                    'action'] = "--------------------------------  Changed to Draft  ------------------------------------\n"
             if order.state == 'waiting':
-                val_history['action'] = "--------------------------------  Changed to Confirm  ------------------------------------\n"
+                val_history[
+                    'action'] = "--------------------------------  Changed to Confirm  ------------------------------------\n"
                 self.write(cr, uid, ids, {'state': 'confirm'}, context=context)
             if order.state == 'in_consultation':
-                val_history['action'] = "--------------------------------  Changed to Waiting  ------------------------------------\n"
+                val_history[
+                    'action'] = "--------------------------------  Changed to Waiting  ------------------------------------\n"
                 self.write(cr, uid, ids, {'state': 'waiting'}, context=context)
             if order.state == 'done':
-                val_history['action'] = "--------------------------------  Changed to In Consultation  ------------------------------------\n"
-                self.write(cr, uid, ids, {'state': 'in_consultation'}, context=context)
+                val_history[
+                    'action'] = "--------------------------------  Changed to In Consultation  ------------------------------------\n"
+                self.write(
+                    cr, uid, ids, {'state': 'in_consultation'}, context=context)
             if order.state == 'canceled':
-                val_history['action'] = "--------------------------------  Changed to Draft  ------------------------------------\n"
+                val_history[
+                    'action'] = "--------------------------------  Changed to Draft  ------------------------------------\n"
                 self.write(cr, uid, ids, {'state': 'draft'}, context=context)
 
         val_history['appointment_id_history'] = ids[0]
@@ -151,7 +158,8 @@ class OeMedicalAppointment(orm.Model):
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
         val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
-        val_history['action'] = "--------------------------------  Changed to Comfirm  ------------------------------------\n"
+        val_history[
+            'action'] = "--------------------------------  Changed to Comfirm  ------------------------------------\n"
         ait_obj.create(cr, uid, val_history)
 
         return True
@@ -166,7 +174,8 @@ class OeMedicalAppointment(orm.Model):
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
         val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
-        val_history['action'] = "--------------------------------  Changed to Waiting  ------------------------------------\n"
+        val_history[
+            'action'] = "--------------------------------  Changed to Waiting  ------------------------------------\n"
         ait_obj.create(cr, uid, val_history)
 
         return True
@@ -181,7 +190,8 @@ class OeMedicalAppointment(orm.Model):
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
         val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
-        val_history['action'] = "--------------------------------  Changed to In Consultation  ------------------------------------\n"
+        val_history[
+            'action'] = "--------------------------------  Changed to In Consultation  ------------------------------------\n"
         ait_obj.create(cr, uid, val_history)
 
         return True
@@ -196,7 +206,8 @@ class OeMedicalAppointment(orm.Model):
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
         val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
-        val_history['action'] = "--------------------------------  Changed to Done  ------------------------------------\n"
+        val_history[
+            'action'] = "--------------------------------  Changed to Done  ------------------------------------\n"
         ait_obj.create(cr, uid, val_history)
 
         return True
@@ -211,7 +222,8 @@ class OeMedicalAppointment(orm.Model):
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
         val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
-        val_history['action'] = "--------------------------------  Changed to Canceled  ------------------------------------\n"
+        val_history[
+            'action'] = "--------------------------------  Changed to Canceled  ------------------------------------\n"
         ait_obj.create(cr, uid, val_history)
 
         return True
@@ -230,7 +242,7 @@ class OeMedicalAppointment_history(orm.Model):
     }
 
     _defaults = {
-                 }
+    }
 
 OeMedicalAppointment_history()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

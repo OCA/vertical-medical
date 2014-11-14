@@ -21,7 +21,6 @@
 #/#############################################################################
 
 from openerp.osv import fields, orm, orm
-from openerp.tools.translate import _
 
 from dateutil.relativedelta import relativedelta
 from datetime import datetime
@@ -36,7 +35,8 @@ class oemedical_patient_med_center_rel(orm.Model):
         'identification_code': fields.char(size=256, string='ID', help='Patient Identifier provided by the Health Center.Is not the Social Security Number'),
     }
     _sql_constraints = [
-        ('uniq_patient_center', 'unique(patient_id, medical_center_id)', "You cannot have twice a medical center for a patient"),
+        ('uniq_patient_center', 'unique(patient_id, medical_center_id)',
+         "You cannot have twice a medical center for a patient"),
     ]
 
 
@@ -62,8 +62,8 @@ class OeMedicalPatient(orm.Model):
                     delta = relativedelta(now, dob)
                     deceased = ''
                 years_months_days = str(delta.years) + 'y ' \
-                        + str(delta.months) + 'm ' \
-                        + str(delta.days) + 'd' + deceased
+                    + str(delta.months) + 'm ' \
+                    + str(delta.days) + 'd' + deceased
             else:
                 years_months_days = 'No DoB !'
 
@@ -98,7 +98,8 @@ class OeMedicalPatient(orm.Model):
     }
 
     def create(self, cr, uid, vals, context=None):
-        sequence = unicode(self.pool.get('ir.sequence').get(cr, uid, 'oemedical.patient'))
+        sequence = unicode(
+            self.pool.get('ir.sequence').get(cr, uid, 'oemedical.patient'))
         vals['identification_code'] = sequence
         vals['is_patient'] = True
         vals['customer'] = True

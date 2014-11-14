@@ -21,7 +21,6 @@
 #/#############################################################################
 
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class OeMedicalInsurance(orm.Model):
@@ -33,17 +32,16 @@ class OeMedicalInsurance(orm.Model):
             res[record.id] = record.company.name
         return res
 
-
     _columns = {
         'name': fields.function(_get_name, type='char', string='Name', help="", multi=False),
         'company': fields.many2one('res.partner', 'Insurance Company', required=True),
-        'patient_id':fields.many2one('oemedical.patient', 'Patient'),
+        'patient_id': fields.many2one('oemedical.patient', 'Patient'),
         'plan_id': fields.many2one('oemedical.insurance.plan', string='Plan',  help='Insurance company plan'),
         'insurance_type': fields.selection([
             ('state', 'State'),
             ('labour_union', 'Labour Union / Syndical'),
             ('private', 'Private'),
-        ], string='Insurance Type',select=True),
+        ], string='Insurance Type', select=True),
         'number': fields.char(size=256, string='Number', required=True),
         'member_since': fields.date(string='Member since'),
         'member_exp': fields.date(string='Expiration date'),

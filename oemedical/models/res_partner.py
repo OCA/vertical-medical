@@ -21,7 +21,6 @@
 #/#############################################################################
 
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class ResPartner(orm.Model):
@@ -32,7 +31,7 @@ class ResPartner(orm.Model):
         #                                       'relation_id',
         #                                       string='Insurance Plans', ),
         'is_insurance_company': fields.boolean(string='Insurance Company',
-                            help='Check if the party is an Insurance Company'),
+                                               help='Check if the party is an Insurance Company'),
         'relationship': fields.char(size=256, string='Relationship'),
         'insurance_company_type': fields.selection([
             ('state', 'State'),
@@ -40,18 +39,18 @@ class ResPartner(orm.Model):
             ('private', 'Private'), ],
             string='Insurance Type', select=True),
         'is_institution': fields.boolean(string='Institution',
-                                help='Check if the party is a Medical Center'),
+                                         help='Check if the party is a Medical Center'),
         'relative_id': fields.many2one('res.partner', string='Contact', ),
         'is_doctor': fields.boolean(string='Health Prof',
-                            help='Check if the party is a health professional'),
+                                    help='Check if the party is a health professional'),
         'is_patient': fields.boolean(string='Patient',
                                      help='Check if the party is a patient'),
         'alias': fields.char(size=256, string='Alias',
                              help='Common name that the Party is reffered'),
         'internal_user': fields.many2one('res.users', string='Internal User',
-        help='In GNU Health is the user (doctor, nurse) that logins.When the' \
-        ' party is a doctor or a health professional, it will be the user' \
-        ' that maps the doctor\'s party name. It must be present.'),
+                                         help='In GNU Health is the user (doctor, nurse) that logins.When the'
+                                         ' party is a doctor or a health professional, it will be the user'
+                                         ' that maps the doctor\'s party name. It must be present.'),
         'activation_date': fields.date(string='Activation date',
                                        help='Date of activation of the party'),
         'lastname': fields.char(size=256, string='Last Name', help='Last Name'),

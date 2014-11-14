@@ -21,7 +21,6 @@
 #/#############################################################################
 
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class OeMedicalHospitalWard(orm.Model):
@@ -31,14 +30,14 @@ class OeMedicalHospitalWard(orm.Model):
         'building': fields.many2one('oemedical.hospital.building',
                                     string='Building', ),
         'ac': fields.boolean(string='Air Conditioning'),
-        'name': fields.char(size=256, string='Name', required=True, 
+        'name': fields.char(size=256, string='Name', required=True,
                             help='Ward / Room code'),
         'floor': fields.integer(string='Floor Number'),
         'tv': fields.boolean(string='Television'),
         'gender': fields.selection([('men', 'Men Ward'),
                                     ('women', 'Women Ward'),
                                     ('unisex', 'Unisex')],
-                                   string='Gender',required=True),
+                                   string='Gender', required=True),
         'unit': fields.many2one('oemedical.hospital.unit', string='Unit', ),
         'private_bathroom': fields.boolean(string='Private Bathroom'),
         'telephone': fields.boolean(string='Telephone access'),
@@ -55,8 +54,8 @@ class OeMedicalHospitalWard(orm.Model):
                                          help='Number of patients per ward'),
         'internet': fields.boolean(string='Internet Access'),
         'bio_hazard': fields.boolean(string='Bio Hazard',
-                        help='Check this option if there is biological hazard'),
-        'institution': fields.many2one('res.partner', string='Institution', 
+                                     help='Check this option if there is biological hazard'),
+        'institution': fields.many2one('res.partner', string='Institution',
                                        help='Medical Center'),
         'refrigerator': fields.boolean(string='Refrigetator'),
         'extra_info': fields.text(string='Extra Info'),

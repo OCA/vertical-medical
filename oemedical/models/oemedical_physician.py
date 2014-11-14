@@ -33,15 +33,15 @@ class oemedical_physician_schedule_template(orm.Model):
         'day': fields.selection(days,
                                 string='Day', sort=False),
         'start_hour': fields.selection(hours,
-            string='Hour'),
+                                       string='Hour'),
         'start_minute': fields.selection(minutes,
-            string='Minute'),
+                                         string='Minute'),
         'end_hour': fields.selection(hours,
-            string='Hour'),
+                                     string='Hour'),
         'end_minute': fields.selection(minutes,
-            string='Minute'),
+                                       string='Minute'),
         'duration': fields.selection(minutes,
-            string='Duration'),
+                                     string='Duration'),
     }
 
 
@@ -69,27 +69,30 @@ class OeMedicalPhysician(orm.Model):
 
     def action_update_schedule(self, cr, uid, ids, context=None):
 
-        schedule_template_proxy = self.pool.get('oemedical.physician.schedule.template')
-
         this = self.browse(cr, uid, ids)[0]
         defined_templates = len(this.schedule_template_ids)
 
-        #check for overlapping ranges
+        # check for overlapping ranges
         for i in range(defined_templates):
             day_1 = this.schedule_template_ids[i].day
-            start_time_1 = this.schedule_template_ids[i].start_hour * 60 + this.schedule_template_ids[i].start_minute
-            end_time_1 = this.schedule_template_ids[i].end_hour * 60 + this.schedule_template_ids[i].end_minute
+            start_time_1 = this.schedule_template_ids[
+                i].start_hour * 60 + this.schedule_template_ids[i].start_minute
+            end_time_1 = this.schedule_template_ids[
+                i].end_hour * 60 + this.schedule_template_ids[i].end_minute
 
             for j in range(i + 1, defined_templates):
                 day_2 = this.schedule_template_ids[j].day
-                start_time_2 = this.schedule_template_ids[j].start_hour * 60 + this.schedule_template_ids[j].start_minute
-                end_time_2 = this.schedule_template_ids[j].end_hour * 60 + this.schedule_template_ids[j].end_minute
+                start_time_2 = this.schedule_template_ids[
+                    j].start_hour * 60 + this.schedule_template_ids[j].start_minute
+                end_time_2 = this.schedule_template_ids[
+                    j].end_hour * 60 + this.schedule_template_ids[j].end_minute
                 if day_1 == day_2 and \
-                    start_time_1 < end_time_2 and \
-                    end_time_1 > start_time_2:
+                        start_time_1 < end_time_2 and \
+                        end_time_1 > start_time_2:
                     # overlaped ranges
-                    raise orm.except_orm(_('Error!'), _('Overlapped ranges for day "%s" ') % (days[day_1][1]))
-        #create
+                    raise orm.except_orm(
+                        _('Error!'), _('Overlapped ranges for day "%s" ') % (days[day_1][1]))
+        # create
 
         return True
 

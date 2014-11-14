@@ -21,25 +21,25 @@
 ##############################################################################
 
 {
-    "name" : "Medical Invoice",
-    "version" : "0.1",
-    "author" : "Silix",
-    "description" : """ 
+    "name": "Medical Invoice",
+    "version": "0.1",
+    "author": "Silix",
+    "description" : """
         This module add functionality to create invoices for doctor's consulting charge.
 
         Features:
         -Invoice of multiple appointments at a time.
         """,
-    "website" : "http://www.silix.com.ar",
-    "depends" : ["medical","medical_lab"],
-    "category" : "Generic Modules/Others",
-    "init_xml" : [],
-    "demo_xml" : [],
-    "update_xml" : [
+    "website": "http://www.silix.com.ar",
+    "depends": ["medical", "medical_lab"],
+    "category": "Generic Modules/Others",
+    "init_xml": [],
+    "demo_xml": [],
+    "update_xml": [
         "views/medical_invoice_view.xml",
         "views/appointment_invoice.xml",
         "views/prescription_invoice.xml",
-        "views/create_lab_invoice.xml"           
+        "views/create_lab_invoice.xml"
     ],
     'installable': False,
     'active': False,

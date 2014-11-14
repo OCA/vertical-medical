@@ -21,7 +21,6 @@
 #/#############################################################################
 
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class OeMedicalPathologyGroup(orm.Model):
@@ -29,9 +28,9 @@ class OeMedicalPathologyGroup(orm.Model):
 
     _columns = {
         'info': fields.text(string='Detailed information'),
-        'code': fields.char(size=256, string='Code', required=True, 
-          help='for example MDG6 code will contain the Millennium Development'\
-                    ' Goals # 6 diseases : Tuberculosis, Malaria and HIV/AIDS'),
+        'code': fields.char(size=256, string='Code', required=True,
+                            help='for example MDG6 code will contain the Millennium Development'
+                            ' Goals # 6 diseases : Tuberculosis, Malaria and HIV/AIDS'),
         'name': fields.char(size=256, string='Name', required=True,
                             translate=True, help='Group name'),
         'desc': fields.char(size=256, string='Short Description',

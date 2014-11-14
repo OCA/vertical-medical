@@ -20,7 +20,7 @@
 #
 ##############################################################################
 
-import oemedical_constants
-import models
+from . import oemedical_constants
+from . import models
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

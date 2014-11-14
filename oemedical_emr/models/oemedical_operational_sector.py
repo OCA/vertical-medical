@@ -21,7 +21,6 @@
 #/#############################################################################
 
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class OeMedicalOperationalSector(orm.Model):
@@ -31,7 +30,7 @@ class OeMedicalOperationalSector(orm.Model):
         'info': fields.text(string='Extra Information'),
         'operational_area_id': fields.many2one('oemedical.operational_area',
                                                string='Operational Area', ),
-        'name': fields.char(size=256, string='Op. Sector', required=True, 
+        'name': fields.char(size=256, string='Op. Sector', required=True,
                             help='Region included in an operational area'),
     }
     _sql_constraints = [

@@ -21,7 +21,6 @@
 #/#############################################################################
 
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class OeMedicalMedicamentCategory(orm.Model):
@@ -32,11 +31,11 @@ class OeMedicalMedicamentCategory(orm.Model):
                                   'parent_id', string='Children', ),
         'name': fields.char(size=256, string='Name', required=True),
         'parent_id': fields.many2one('oemedical.medicament.category',
-                                  string='Parent', select=True),
+                                     string='Parent', select=True),
     }
     _constraints = [
-        (orm.Model._check_recursion, 'Error ! You cannot create recursive \n' 
-        'Category.', ['parent_id'])
+        (orm.Model._check_recursion, 'Error ! You cannot create recursive \n'
+         'Category.', ['parent_id'])
     ]
 
 
