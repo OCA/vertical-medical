@@ -3,7 +3,6 @@
 #
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010  Adrián Bernardi, Mario Puntin
-#    $Id$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -19,10 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
 from . import medical_invoice
 from . import wizard_appointment_invoice
 from . import wizard_prescription_invoice
 from . import wizard_create_lab_invoice
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

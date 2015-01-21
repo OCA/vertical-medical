@@ -1,3 +1,4 @@
+# -*- coding: utf8 -*-
 ##############################################################################
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
@@ -33,7 +34,6 @@
 #
 ##############################################################################
 {
-
     'name': 'OeMedical : Free Health and Hospital Information System',
     'version': '1.0',
     'author': "OeMEdical Team",
@@ -90,8 +90,10 @@ OeMedical at a glance:
     "website": "http://launchpad.net/oemedical",
     "licence": "AGPL v3",
     "data": [
-        # 'views/oemedical_lab_view.xml',  # view has errors, please correct before enabling....
-        # 'views/oemedical_lab_report.xml',  # not checked yet....
+        # view has errors, please correct before enabling....
+        # 'views/oemedical_lab_view.xml',
+        # not checked yet....
+        # 'views/oemedical_lab_report.xml',
         'security/oemedical_security.xml',
         'security/ir.model.access.csv',
         'oemedical_menu.xml',
@@ -119,4 +121,3 @@ OeMedical at a glance:
     "active": False,
     "installable": False,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

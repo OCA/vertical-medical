@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+##############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,7 +18,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
+##############################################################################
 
 from . import oemedical_secondary_condition
 from . import oemedical_operational_sector
@@ -46,6 +46,3 @@ from . import oemedical_occupation
 from . import oemedical_disease_group_members
 from . import oemedical_medicament
 from . import oemedical_pathology_group
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

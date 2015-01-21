@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ##############################################################################
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
@@ -131,13 +132,17 @@ OeMedical at a glance:
         'views/oemedical_disease_group_members_view.xml',
         'views/oemedical_medicament_view.xml',
         'views/oemedical_pathology_group_view.xml',
-        # 'views/oemedical_gynecology_and_obstetrics_view.xml',   # view has errors, please correct before enabling....
-        #'views/oemedical_lifestyle_view.xml',
+        # view has errors, please correct before enabling....
+        # 'views/oemedical_gynecology_and_obstetrics_view.xml',
+        # 'views/oemedical_lifestyle_view.xml',
         'views/data/recreational_drugs.xml',
-        # 'views/oemedical_disease_gene_view.xml',  # view has errors, please correct before enabling....
+        # view has errors, please correct before enabling....
+        # 'views/oemedical_disease_gene_view.xml',
         'views/data/disease_genes.xml',
-        # 'views/oemedical_socioeconomics_view.xml', # view has errors, please correct before enabling....
-        # 'views/oemedical_lab_view.xml',  # view has errors, please correct before enabling....
+        # view has errors, please correct before enabling....
+        # 'views/oemedical_socioeconomics_view.xml',
+        # view has errors, please correct before enabling....
+        # 'views/oemedical_lab_view.xml',
         'security/oemedical_security.xml',
         'security/ir.model.access.csv',
         'oemedical_menu.xml',
@@ -165,4 +170,3 @@ OeMedical at a glance:
     "active": False,
     "installable": False,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -3,7 +3,6 @@
 #
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010  Adrián Bernardi, Mario Puntin
-#    $Id$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -19,7 +18,6 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
 import logging
 
 from openerp.osv import orm
@@ -53,63 +51,85 @@ class make_medical_appointment_invoice(orm.TransientModel):
 
                 if appointment.validity_status == 'invoiced':
                     if len(apps) > 1:
-                        raise orm.except_orm(_('UserError'), _(
-                            'At least one of the selected appointments is already invoiced'))
+                        raise orm.except_orm(
+                            _('UserError'),
+                            _('At least one of the selected appointments is'
+                              ' already invoiced'))
                     else:
                         raise orm.except_orm(
                             _('UserError'), _('Appointment already invoiced'))
                 if appointment.validity_status == 'no':
                     if len(apps) > 1:
-                        raise orm.except_orm(_('UserError'), _(
-                            'At least one of the selected appointments can not be invoiced'))
+                        raise orm.except_orm(
+                            _('UserError'),
+                            _('At least one of the selected appointments can'
+                              ' not be invoiced'))
                     else:
                         raise orm.except_orm(
-                            _('UserError'), _('You can not invoice this appointment'))
+                            _('UserError'),
+                            _('You can not invoice this appointment'))
 
             if appointment.patient.name.id:
                 invoice_data['partner_id'] = appointment.patient.name.id
                 res = self.pool.get('res.partner').address_get(
-                    cr, uid, [appointment.patient.name.id], ['contact', 'invoice'])
+                    cr, uid, [appointment.patient.name.id],
+                    ['contact', 'invoice'])
+                account = appointment.patient.name.property_account_receivable
+                fiscal_position_id = (
+                    appointment.patient.name.property_account_position
+                    and appointment.patient.name.property_account_position.id
+                    or False)
+                payment_term_id = (
+                    appointment.patient.name.property_payment_term
+                    and appointment.patient.name.property_payment_term.id
+                    or False)
                 invoice_data['address_contact_id'] = res['contact']
                 invoice_data['address_invoice_id'] = res['invoice']
-                invoice_data[
-                    'account_id'] = appointment.patient.name.property_account_receivable.id
-                invoice_data[
-                    'fiscal_position'] = appointment.patient.name.property_account_position and appointment.patient.name.property_account_position.id or False
-                invoice_data[
-                    'payment_term'] = appointment.patient.name.property_payment_term and appointment.patient.name.property_payment_term.id or False
+                invoice_data['account_id'] = account.id
+                invoice_data['fiscal_position'] = fiscal_position_id
+                invoice_data['payment_term'] = payment_term_id
 
             prods_data = {}
             for app_id in apps:
                 appointment = appointment_obj.browse(cr, uid, app_id)
                 logging.debug(
-                    'appointment = %s; appointment.consultations = %s', appointment, appointment.consultations)
+                    'appointment = %s; appointment.consultations = %s',
+                    appointment, appointment.consultations)
                 if appointment.consultations:
-                    logging.debug('appointment.consultations = %s; appointment.consultations.id = %s',
-                                  appointment.consultations, appointment.consultations.id)
-                    if prods_data.has_key(appointment.consultations.id):
-                        prods_data[appointment.consultations.id][
-                            'quantity'] += 1
+                    logging.debug(
+                        'appointment.consultations = %s;'
+                        'appointment.consultations.id = %s',
+                        appointment.consultations,
+                        appointment.consultations.id)
+                    consultation = appointment.consultations
+                    if consultation.id in prods_data:
+                        prods_data[consultation.id]['quantity'] += 1
                     else:
-                        a = appointment.consultations.product_tmpl_id.property_account_income.id
-                        if not a:
-                            a = appointment.consultations.categ_id.property_account_income_categ.id
-                        prods_data[appointment.consultations.id] = {'product_id': appointment.consultations.id,
-                                                                    'name': appointment.consultations.name,
-                                                                    'quantity': 1,
-                                                                    'account_id': a,
-                                                                    'price_unit': appointment.consultations.lst_price}
+                        prod_tmpl = consultation.product_tmpl_id
+                        account = prod_tmpl.property_account_income.id
+                        if not account:
+                            category = consultation.categ_id
+                            account = category.property_account_income_categ.id
+                        prods_data[appointment.consultations.id] = {
+                            'product_id': appointment.consultations.id,
+                            'name': appointment.consultations.name,
+                            'quantity': 1,
+                            'account_id': account,
+                            'price_unit': appointment.consultations.lst_price}
                 else:
-                    raise orm.except_orm(_('UserError'), _(
-                        'No consultation service is connected with the selected appointments'))
+                    raise orm.except_orm(
+                        _('UserError'),
+                        _('No consultation service is connected with the'
+                          'selected appointments'))
 
             product_lines = []
             for prod_id, prod_data in prods_data.items():
-                product_lines.append((0, 0, {'product_id': prod_data['product_id'],
-                                             'name': prod_data['name'],
-                                             'quantity': prod_data['quantity'],
-                                             'account_id': prod_data['account_id'],
-                                             'price_unit': prod_data['price_unit']}))
+                product_lines.append((0, 0, {
+                    'product_id': prod_data['product_id'],
+                    'name': prod_data['name'],
+                    'quantity': prod_data['quantity'],
+                    'account_id': prod_data['account_id'],
+                    'price_unit': prod_data['price_unit']}))
 
             invoice_data['invoice_line'] = product_lines
             invoice_id = invoice_obj.create(cr, uid, invoice_data)
@@ -127,5 +147,7 @@ class make_medical_appointment_invoice(orm.TransientModel):
             }
 
         else:
-            raise orm.except_orm(_('UserError'), _(
-                'When multiple appointments are selected, patient must be the same'))
+            raise orm.except_orm(
+                _('UserError'),
+                _('When multiple appointments are selected, patient must be'
+                  'the same'))

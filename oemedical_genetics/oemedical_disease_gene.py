@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+##############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,8 +18,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
-
+##############################################################################
 from openerp.osv import fields, orm
 
 
@@ -29,20 +28,23 @@ class OeMedicalDiseaseGene(orm.Model):
     _description = 'Disease Genes'
 
     _columns = {
-        'name': fields.char('Official Symbol', size=256, required=True),
+        'name': fields.char(
+            'Official Symbol', size=256, required=True),
         'gene_id': fields.char('Gene ID', size=256),
-        'long_name': fields.char('Official Long Name', size=256, required=True),
-        'location': fields.char('Location', size=256, required=True, help="Locus of the chromosome"),
-        'chromosome': fields.char('Affected Chromosome', size=256, required=True),
+        'long_name': fields.char(
+            'Official Long Name', size=256, required=True),
+        'location': fields.char(
+            'Location', size=256, required=True,
+            help="Locus of the chromosome"),
+        'chromosome': fields.char(
+            'Affected Chromosome', size=256, required=True),
         'info': fields.text(string='Information'),
-        'dominance': fields.selection([
-            ('d', 'dominant'),
-            ('r', 'recessive'),
-        ], 'Dominance', select=True)
+        'dominance': fields.selection(
+            [('d', 'dominant'),
+             ('r', 'recessive')],
+            'Dominance', select=True)
 
     }
-
-OeMedicalDiseaseGene()
 
 
 class PatientGeneticRisk(orm.Model):
@@ -50,10 +52,13 @@ class PatientGeneticRisk(orm.Model):
     _name = 'oemedical.patient.genetic.risk'
     _description = 'Patient Genetic Risks'
     _columns = {
-        'patient_id': fields.many2one('oemedical.patient', 'Patient', select=True),
-        'disease_gene': fields.many2one('oemedical.disease.gene', 'Disease Gene', required=True),
+        'patient_id': fields.many2one(
+            'oemedical.patient',
+            'Patient', select=True),
+        'disease_gene': fields.many2one(
+            'oemedical.disease.gene',
+            'Disease Gene', required=True),
     }
-PatientGeneticRisk()
 
 
 class FamilyDiseases(orm.Model):
@@ -61,8 +66,12 @@ class FamilyDiseases(orm.Model):
     _name = 'oemedical.patient.family.diseases'
     _description = 'Family Diseases'
     _columns = {
-        'patient_id': fields.many2one('oemedical.patient', 'Patient', select=True),
-        'name': fields.many2one('oemedical.pathology', 'Disease', required=True),
+        'patient_id': fields.many2one(
+            'oemedical.patient',
+            'Patient', select=True),
+        'name': fields.many2one(
+            'oemedical.pathology',
+            'Disease', required=True),
         'xory': fields.selection([
             ('m', 'Maternal'),
             ('f', 'Paternal'),
@@ -79,13 +88,12 @@ class FamilyDiseases(orm.Model):
             ('grandfather', 'Grandfather'),
             ('grandmother', 'Grandmother'),
             ('cousin', 'Cousin'),
-        ], 'Relative',
+            ], 'Relative',
             help="First degree = siblings, mother and father; second degree = "
-            "Uncles, nephews and Nieces; third degree = Grandparents and cousins",
+                 "Uncles, nephews and Nieces; third degree = Grandparents and "
+                 "cousins",
             required=True),
     }
-
-FamilyDiseases()
 
 
 class oemedicalPatient(orm.Model):
@@ -94,11 +102,10 @@ class oemedicalPatient(orm.Model):
         'and family risks'
     _inherit = 'oemedical.patient'
     _columns = {
-        'genetic_risks': fields.one2many('oemedical.patient.genetic.risk', 'patient_id', 'Genetic Risks'),
-        'family_history': fields.one2many('oemedical.patient.family.diseases', 'patient_id', 'Family History'),
+        'genetic_risks': fields.one2many(
+            'oemedical.patient.genetic.risk', 'patient_id',
+            'Genetic Risks'),
+        'family_history': fields.one2many(
+            'oemedical.patient.family.diseases', 'patient_id',
+            'Family History'),
     }
-
-oemedicalPatient()
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

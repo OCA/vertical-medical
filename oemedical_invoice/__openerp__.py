@@ -3,7 +3,6 @@
 #
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010  Adrián Bernardi, Mario Puntin
-#    $Id$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -19,17 +18,17 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
 {
     "name": "Medical Invoice",
     "version": "0.1",
     "author": "Silix",
-    "description" : """
-        This module add functionality to create invoices for doctor's consulting charge.
+    "description": """
+This module add functionality to create invoices for doctor's consulting
+charge.
 
-        Features:
-        -Invoice of multiple appointments at a time.
-        """,
+Features:
+-Invoice of multiple appointments at a time.
+""",
     "website": "http://www.silix.com.ar",
     "depends": ["medical", "medical_lab"],
     "category": "Generic Modules/Others",
@@ -44,4 +43,3 @@
     'installable': False,
     'active': False,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

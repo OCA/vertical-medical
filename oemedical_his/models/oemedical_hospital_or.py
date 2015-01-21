@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+##############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,7 +18,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
+##############################################################################
 
 from openerp.osv import fields, orm
 
@@ -40,4 +40,3 @@ class OeMedicalHospitalOr(orm.Model):
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
     ]
 OeMedicalHospitalOr()
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

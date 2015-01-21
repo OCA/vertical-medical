@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+# flake8: noqa
 class OeMedicalAppointment(orm.Model):
 
     '''

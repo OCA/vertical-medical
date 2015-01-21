@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ##############################################################################
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
@@ -34,7 +35,8 @@
 ##############################################################################
 {
 
-    'name': 'OeMedical EMR : Electronic Medical Record management for OeMedical',
+    'name': 'OeMedical EMR',
+    'summary': 'Electronic Medical Record management for OeMedical',
     'version': '1.0',
     'author': "OeMEdical Team",
     'category': 'Generic Modules/Others',
@@ -138,4 +140,3 @@ OeMedical at a glance:
     "active": False,
     "installable": True,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -3,7 +3,6 @@
 #
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010  Adrián Bernardi, Mario Puntin
-#    $Id$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -19,10 +18,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
 from openerp.osv import fields, orm
 
 import datetime
+import time
 
 
 class patient_data (orm.Model):
@@ -30,9 +29,12 @@ class patient_data (orm.Model):
     _inherit = "medical.patient"
 
     _columns = {
-        'receivable': fields.related('name', 'credit', type='float', string='Receivable', help='Total amount this patient owes you', readonly=True),
+        'receivable': fields.related(
+            'name', 'credit', type='float',
+            string='Receivable',
+            readonly=True,
+            help='Total amount this patient owes you'),
     }
-patient_data()
 
 
 # Add Invoicing information to the Appointment
@@ -57,15 +59,18 @@ class appointment (orm.Model):
     _columns = {
         'no_invoice': fields.boolean('Invoice exempt'),
         'appointment_validity_date': fields.datetime('Validity Date'),
-        'validity_status': fields.selection([('invoiced', 'Invoiced'), ('tobe', 'To be Invoiced')], 'Status'),
-        'consultations': fields.many2one('product.product', 'Consultation Service', domain=[('type', '=', "service")], help="Consultation Services", required=True),
+        'validity_status': fields.selection(
+            [('invoiced', 'Invoiced'),
+             ('tobe', 'To be Invoiced')], 'Status'),
+        'consultations': fields.many2one(
+            'product.product', 'Consultation Service',
+            domain=[('type', '=', "service")],
+            help="Consultation Services", required=True),
     }
     _defaults = {
         'validity_status': lambda *a: 'tobe',
         'no_invoice': lambda *a: True
     }
-
-appointment()
 
 # Add Invoicing information to the Lab Test
 
@@ -76,7 +81,10 @@ class labtest (orm.Model):
 
     _columns = {
         'no_invoice': fields.boolean('Invoice exempt'),
-        'invoice_status': fields.selection([('invoiced', 'Invoiced'), ('tobe', 'To be Invoiced')], 'Invoice Status'),
+        'invoice_status': fields.selection(
+            [('invoiced', 'Invoiced'),
+             ('tobe', 'To be Invoiced')],
+            'Invoice Status'),
     }
 
     _defaults = {
@@ -84,9 +92,6 @@ class labtest (orm.Model):
         'no_invoice': lambda *a: True
 
     }
-
-
-labtest()
 
 
 class patient_prescription_order (orm.Model):
@@ -96,13 +101,13 @@ class patient_prescription_order (orm.Model):
 
     _columns = {
         'no_invoice': fields.boolean('Invoice exempt'),
-        'invoice_status': fields.selection([('invoiced', 'Invoiced'), ('tobe', 'To be Invoiced')], 'Invoice Status'),
+        'invoice_status': fields.selection(
+            [('invoiced', 'Invoiced'),
+             ('tobe', 'To be Invoiced')],
+            'Invoice Status'),
     }
 
     _defaults = {
         'invoice_status': lambda *a: 'tobe',
         'no_invoice': lambda *a: True
     }
-
-
-patient_prescription_order()

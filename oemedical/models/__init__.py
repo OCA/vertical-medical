@@ -26,5 +26,3 @@ from . import res_partner
 from . import oemedical_patient
 from . import oemedical_appointment
 from . import oemedical_specialty
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
