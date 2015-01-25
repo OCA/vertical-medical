@@ -43,7 +43,7 @@ class appointment (orm.Model):
     _name = "medical.appointment"
     _inherit = "medical.appointment"
 
-    def copy(self, cr, uid, id, default=None, context={}):
+    def copy(self, cr, uid, id, default=None, context=None):
         default.update({'validity_status': 'tobe'})
         return super(appointment, self).copy(cr, uid, id, default, context)
 

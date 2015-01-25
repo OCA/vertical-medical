@@ -125,9 +125,6 @@ class OeMedicalAppointment(orm.Model):
         }
         vals['history_ids'] = val_history
 
-        print ("create", vals['history_ids'], val_history,
-               '     ------    ', vals)
-
         return super(OeMedicalAppointment, self
                      ).create(cr, uid, vals, context=context)
 

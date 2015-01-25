@@ -29,7 +29,7 @@ logging.basicConfig(level=logging.DEBUG)
 class make_medical_prescription_invoice(orm.TransientModel):
     _name = "medical.prescription.invoice"
 
-    def create_prescription_invoice(self, cr, uid, ids, context={}):
+    def create_prescription_invoice(self, cr, uid, ids, context=None):
 
         invoice_obj = self.pool.get('account.invoice')
         pres_request_obj = self.pool.get('medical.prescription.order')

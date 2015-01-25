@@ -198,10 +198,9 @@ class PatientRecreationalDrugs(orm.Model):
             'oemedical.drugs_recreational', 'Recreational Drug'),
     }
 
-''' CAGE questionnaire to assess patient dependency to alcohol '''
-
 
 class PatientCAGE(orm.Model):
+    ''' CAGE questionnaire to assess patient dependency to alcohol '''
 
     _name = 'oemedical.patient.cage'
     _description = 'Patient CAGE Questionnaire'

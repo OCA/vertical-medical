@@ -29,10 +29,12 @@ logging.basicConfig(level=logging.DEBUG)
 class create_test_invoice(orm.TransientModel):
     _name = 'medical.lab.test.invoice'
 
-    def create_lab_invoice(self, cr, uid, ids, context={}):
+    def create_lab_invoice(self, cr, uid, ids, context=None):
+        if context is None:
+            context = {}
 
-        invoice_obj = self.pool.get('account.invoice')
-        test_request_obj = self.pool.get('medical.patient.lab.test')
+        invoice_obj = self.pool['account.invoice']
+        test_request_obj = self.pool['medical.patient.lab.test']
 
         tests = context.get('active_ids')
         logging.debug('tests = %s', repr(tests))

@@ -85,18 +85,20 @@ class PrenatalEvaluation(orm.Model):
 
     def _get_patient_evaluation_data(self, cr, uid, ids, field_name, args,
                                      context=None):
-        result = dict([(i, {}.fromkeys(field_name, 0.0)) for i in ids])
-        print result
-#        print ids, field_name, arg
-#        if name == 'gestational_weeks':
-#            gestational_age = datetime.datetime.date(self.evaluation_date) - \
-#                self.name.lmp
-#            return (gestational_age.days) / 7
-#        if name == 'gestational_days':
-#            gestational_age = datetime.datetime.date(self.evaluation_date) - \
-#                self.name.lmp
-#            return gestational_age.days
+        # TODO
+        # result = dict([(i, {}.fromkeys(field_name, 0.0)) for i in ids])
+        # print result
         return 20
+
+        #   print ids, field_name, arg
+        #   if name == 'gestational_weeks':
+        #       gestational_age = (datetime.datetime.date(self.evaluation_date)
+        #            - self.name.lmp)
+        #        return (gestational_age.days) / 7
+        #    if name == 'gestational_days':
+        #        gestational_age = (datetime.datetime.date(
+        #                           self.evaluation_date) - self.name.lmp)
+        #        return gestational_age.days
 
     _columns = {
         'name': fields.many2one(

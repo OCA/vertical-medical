@@ -18,6 +18,6 @@ class OeMedicalDoc(web.http.Controller):
 
     @web.http.httprequest
     def index(self, req, s_action=None, **kw):
-#        html = read_template("index.html") XXX failed on pep8 check
+        # html = read_template("index.html") XXX failed on pep8 check
         html = read_base_doc("index.html")
         return html

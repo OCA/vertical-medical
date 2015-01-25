@@ -129,12 +129,12 @@ class oemedical_test_critearea(orm.Model):
 class oemedical_patient_lab_test(orm.Model):
     _name = 'oemedical.patient.lab.test'
 
-    def _get_default_dr(self, cr, uid, context={}):
+    def _get_default_dr(self, cr, uid, context=None):
         partner_id = self.pool.get('res.partner').search(
-            cr, uid, [('user_id', '=', uid)])
+            cr, uid, [('user_id', '=', uid)], context=context)
         if partner_id:
             dr_id = self.pool.get('oemedical.physician').search(
-                cr, uid, [('name', '=', partner_id[0])])
+                cr, uid, [('name', '=', partner_id[0])], context=context)
             if dr_id:
                 return dr_id[0]
             # else:
@@ -170,5 +170,5 @@ class oemedical_patient_lab_test(orm.Model):
         'date': lambda *a: time.strftime('%Y-%m-%d %H:%M:%S'),
         'state': lambda *a: 'draft',
         'doctor_id': _get_default_dr,
-        #'invoice_status': lambda *a: 'tobe',
+        # 'invoice_status': lambda *a: 'tobe',
     }

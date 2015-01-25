@@ -29,9 +29,11 @@ logging.basicConfig(level=logging.DEBUG)
 class make_medical_appointment_invoice(orm.TransientModel):
     _name = "medical.appointment.invoice"
 
-    def create_invoice(self, cr, uid, ids, context={}):
-        invoice_obj = self.pool.get('account.invoice')
-        appointment_obj = self.pool.get('medical.appointment')
+    def create_invoice(self, cr, uid, ids, context=None):
+        if context is None:
+            context = {}
+        invoice_obj = self.pool['account.invoice']
+        appointment_obj = self.pool['medical.appointment']
 
         apps = context.get('active_ids')
         pats = []
@@ -44,7 +46,8 @@ class make_medical_appointment_invoice(orm.TransientModel):
             for app_id in apps:
                 appointment = appointment_obj.browse(cr, uid, app_id)
 
-# Check if the appointment is invoice exempt, and stop the invoicing process
+                # Check if the appointment is invoice exempt, and stop the
+                # invoicing process
                 if appointment.no_invoice:
                     raise orm.except_orm(
                         _('UserError'), _('The appointment is invoice exempt'))

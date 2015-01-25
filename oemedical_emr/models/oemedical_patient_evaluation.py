@@ -26,7 +26,9 @@ class OeMedicalPatientEvaluation(orm.Model):
     _name = 'oemedical.patient.evaluation'
     _rec_name = 'patient_id'
     _columns = {
-        'patient_id': fields.many2one('oemedical.patient', 'Patient'),
+        'patient_id': fields.many2one(
+            'oemedical.patient',
+            'Patient'),
         'information_source': fields.char(
             string='Source', size=256,
             help="Source of" "Information, eg : Self, relative, friend ..."),
@@ -140,8 +142,6 @@ class OeMedicalPatientEvaluation(orm.Model):
             string='Abstraction',
             help='Check this box if the patient presents abnormalities in'
                  ' abstract reasoning'),
-        'patient_id': fields.many2one(
-            'oemedical.patient', string='Patient',),
         'derived_from': fields.many2one('oemedical.physician',
                                         string='Derived from',
                                         help='Physician who derived the case'),

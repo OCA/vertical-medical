@@ -26,7 +26,6 @@ class OeMedicalPrescriptionLine(orm.Model):
     _name = 'oemedical.prescription.line'
 
     def _get_medicament(self, cr, uid, ids, name, args, context=None):
-        print '_get_medicament', name, args, context, ids
         result = {}
 
 #        if name == 'form':
