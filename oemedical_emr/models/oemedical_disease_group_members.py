@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+##############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,10 +18,8 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
-
+##############################################################################
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class OeMedicalDiseaseGroupMembers(orm.Model):
@@ -29,10 +27,7 @@ class OeMedicalDiseaseGroupMembers(orm.Model):
 
     _columns = {
         'disease_group_id': fields.many2one('oemedical.pathology.group',
-                                            string='Group',required=True ),
+                                            string='Group', required=True),
         'name': fields.many2one('oemedical.pathology', string='Disease',
-                                readonly=True ),
+                                readonly=True),
     }
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

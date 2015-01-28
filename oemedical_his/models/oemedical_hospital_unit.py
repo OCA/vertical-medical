@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+##############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,10 +18,8 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
-
+##############################################################################
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class OeMedicalHospitalUnit(orm.Model):
@@ -29,12 +27,14 @@ class OeMedicalHospitalUnit(orm.Model):
 
     _columns = {
         'code': fields.char(size=8, string='Code'),
-        'institution': fields.many2one('res.partner', string='Institution', 
-                                       help='Medical Center'),
-        'name': fields.char(size=256, string='Name', required=True,
-                    help='Name of the unit, eg Neonatal, Intensive Care, ...'),
+        'institution': fields.many2one(
+            'res.partner',
+            string='Institution',
+            help='Medical Center'),
+        'name': fields.char(
+            string='Name',
+            size=256,
+            required=True,
+            help='Name of the unit, eg Neonatal, Intensive Care, ...'),
         'extra_info': fields.text(string='Extra Info'),
     }
-
-OeMedicalHospitalUnit()
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

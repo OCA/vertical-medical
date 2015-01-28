@@ -61,14 +61,15 @@ About OeMedical gynecology and obstetrics
     "website": "http://launchpad.net/oemedical",
     "licence": "AGPL v3",
     "data": [
-        'views/oemedical_gynecology_and_obstetrics_view.xml',   # view has errors, please correct before enabling....
+        # view has errors, please correct before enabling....
+        'views/oemedical_gynecology_and_obstetrics_view.xml',
         'views/oemedical_menu.xml',
         'security/ir.model.access.csv',
     ],
     "demo": [
 
     ],
-    'test':[
+    'test': [
     ],
     'css': [
     ],
@@ -79,4 +80,3 @@ About OeMedical gynecology and obstetrics
     "active": False,
     "installable": True,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ##############################################################################
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
@@ -56,36 +57,36 @@ high quality, secure and scalable system.
 OeMedical at a glance:
 
     * Strong focus in family medicine and Primary Health Care
-    
+
     * Major interest in Socio-economics (housing conditions, substance abuse,
     education...)
-    
+
     * Diseases and Medical procedures standards (like ICD-10 / ICD-10-PCS ...)
-    
+
     * Patient Genetic and Hereditary risks : Over 4200 genes related to
     diseases (NCBI / Genecards)
-    
+
     * Epidemiological and other statistical reports
-    
+
     * 100% paperless patient examination and history taking
-    
-    * Patient Administration 
+
+    * Patient Administration
     (creation, evaluations / consultations, history ... )
-    
+
     * Doctor Administration
-    
+
     * Lab Administration
-    
+
     * Medicine / Drugs information (vademécum)
-    
+
     * Medical stock and supply chain management
-    
+
     * Hospital Financial Administration
-    
+
     * Designed with industry standards in mind
-    
+
     * Open Source : Licensed under AGPL
-    
+
 """,
     "website": "http://launchpad.net/oemedical",
     "licence": "AGPL v3",
@@ -131,13 +132,17 @@ OeMedical at a glance:
         'views/oemedical_disease_group_members_view.xml',
         'views/oemedical_medicament_view.xml',
         'views/oemedical_pathology_group_view.xml',
-        #'views/oemedical_gynecology_and_obstetrics_view.xml',   # view has errors, please correct before enabling....
-        #'views/oemedical_lifestyle_view.xml',
+        # view has errors, please correct before enabling....
+        # 'views/oemedical_gynecology_and_obstetrics_view.xml',
+        # 'views/oemedical_lifestyle_view.xml',
         'views/data/recreational_drugs.xml',
-        #'views/oemedical_disease_gene_view.xml',  # view has errors, please correct before enabling....
+        # view has errors, please correct before enabling....
+        # 'views/oemedical_disease_gene_view.xml',
         'views/data/disease_genes.xml',
-        #'views/oemedical_socioeconomics_view.xml', # view has errors, please correct before enabling....
-        #'views/oemedical_lab_view.xml',  # view has errors, please correct before enabling....
+        # view has errors, please correct before enabling....
+        # 'views/oemedical_socioeconomics_view.xml',
+        # view has errors, please correct before enabling....
+        # 'views/oemedical_lab_view.xml',
         'security/oemedical_security.xml',
         'security/ir.model.access.csv',
         'oemedical_menu.xml',
@@ -145,13 +150,13 @@ OeMedical at a glance:
     "demo": [
 
     ],
-    'test':[
-            'test/physician.yml',
-            'test/patient.yml',
-            'test/partners.yml',
-            'test/insurance_plan.yml',
-            'test/insurance.yml',
-            'test/physician_speciality.yml'
+    'test': [
+        'test/physician.yml',
+        'test/patient.yml',
+        'test/partners.yml',
+        'test/insurance_plan.yml',
+        'test/insurance.yml',
+        'test/physician_speciality.yml'
     ],
     'css': [
 
@@ -165,4 +170,3 @@ OeMedical at a glance:
     "active": False,
     "installable": False,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+##############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,10 +18,8 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
-
+##############################################################################
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class OeMedicalMedicamentCategory(orm.Model):
@@ -32,12 +30,9 @@ class OeMedicalMedicamentCategory(orm.Model):
                                   'parent_id', string='Children', ),
         'name': fields.char(size=256, string='Name', required=True),
         'parent_id': fields.many2one('oemedical.medicament.category',
-                                  string='Parent', select=True),
+                                     string='Parent', select=True),
     }
     _constraints = [
-        (orm.Model._check_recursion, 'Error ! You cannot create recursive \n' 
-        'Category.', ['parent_id'])
+        (orm.Model._check_recursion, 'Error ! You cannot create recursive \n'
+         'Category.', ['parent_id'])
     ]
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

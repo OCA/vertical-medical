@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+##############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,22 +18,27 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
-
+##############################################################################
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class ProductProduct(orm.Model):
     _inherit = 'product.product'
 
     _columns = {
-        'is_medicament': fields.boolean(string='Medicament', help='Check if the product is a medicament'),
-        'is_bed': fields.boolean(string='Bed', help='Check if the product is a bed on the gnuhealth.center'),
-        'is_vaccine': fields.boolean(string='Vaccine', help='Check if the product is a vaccine'),
-        'is_medical_supply': fields.boolean(string='Medical Supply', help='Check if the product is a medical supply'),
-        'is_insurance_plan': fields.boolean(string='Insurance Plan', help='Check if the product is an insurance plan'),
+        'is_medicament': fields.boolean(
+            string='Medicament',
+            help='Check if the product is a medicament'),
+        'is_bed': fields.boolean(
+            string='Bed',
+            help='Check if the product is a bed on the gnuhealth.center'),
+        'is_vaccine': fields.boolean(
+            string='Vaccine',
+            help='Check if the product is a vaccine'),
+        'is_medical_supply': fields.boolean(
+            string='Medical Supply',
+            help='Check if the product is a medical supply'),
+        'is_insurance_plan': fields.boolean(
+            string='Insurance Plan',
+            help='Check if the product is an insurance plan'),
     }
-
-ProductProduct()
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

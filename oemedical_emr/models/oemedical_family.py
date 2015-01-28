@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+##############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,10 +18,8 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
-
+##############################################################################
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class OeMedicalFamily(orm.Model):
@@ -31,7 +29,7 @@ class OeMedicalFamily(orm.Model):
         'info': fields.text(string='Extra Information'),
         'operational_sector': fields.many2one('oemedical.operational_sector',
                                               string='Operational Sector', ),
-        'name': fields.char(size=256, string='Family', required=True, 
+        'name': fields.char(size=256, string='Family', required=True,
                             help='Family code within an operational sector'),
         'members': fields.one2many('oemedical.family_member', 'family_id',
                                    string='Family Members', ),
@@ -39,6 +37,3 @@ class OeMedicalFamily(orm.Model):
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Family Code must be unique!'),
     ]
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

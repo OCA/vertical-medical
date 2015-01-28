@@ -3,7 +3,6 @@
 #
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2010  Adrián Bernardi, Mario Puntin
-#    $Id$
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -19,101 +18,139 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
 import logging
-import pooler
-import sys
 
-from openerp.osv import fields, orm
+from openerp.osv import orm
 from openerp.tools.translate import _
 
 logging.basicConfig(level=logging.DEBUG)
 
+
 class create_test_invoice(orm.TransientModel):
-    _name='medical.lab.test.invoice'
+    _name = 'medical.lab.test.invoice'
 
-    def create_lab_invoice(self, cr, uid, ids, context={}):
+    def create_lab_invoice(self, cr, uid, ids, context=None):
+        if context is None:
+            context = {}
 
-        invoice_obj = self.pool.get('account.invoice')
-        test_request_obj = self.pool.get('medical.patient.lab.test')
+        invoice_obj = self.pool['account.invoice']
+        test_request_obj = self.pool['medical.patient.lab.test']
 
-
-        tests = context.get ('active_ids')
+        tests = context.get('active_ids')
         logging.debug('tests = %s', repr(tests))
-        
+
         pats = []
         for test_id in tests:
-            #pats.append(test_request_obj.browse(cr, uid, test_id).patient_id)
+            # pats.append(test_request_obj.browse(cr, uid, test_id).patient_id)
             cur_test = test_request_obj.browse(cr, uid, test_id)
-            logging.debug('cur_test = %s; pats = %s', repr(cur_test), repr(pats))
+            logging.debug(
+                'cur_test = %s; pats = %s', repr(cur_test), repr(pats))
             pats.append(cur_test.patient_id)
-    
+
         logging.debug('pats = %s', repr(pats))
-    
+
         if pats.count(pats[0]) == len(pats):
             invoice_data = {}
             for test_id in tests:
-                #test = self.browse(cr, uid, test_id)
+                # test = self.browse(cr, uid, test_id)
                 test = test_request_obj.browse(cr, uid, test_id)
                 logging.debug('test = %s', repr(test))
                 if test.invoice_status == 'invoiced':
                     if len(tests) > 1:
-                        raise  orm.except_orm(_('UserError'), _('At least one of the selected lab tests is already invoiced'))
+                        raise orm.except_orm(
+                            _('UserError'),
+                            _('At least one of the selected lab tests is'
+                              ' already invoiced'))
                     else:
-                        raise  orm.except_orm(_('UserError'), _('Lab test already invoiced'))
+                        raise orm.except_orm(
+                            _('UserError'),
+                            _('Lab test already invoiced'))
                 if test.invoice_status == 'no':
                     if len(tests) > 1:
-                        raise  orm.except_orm(_('UserError'), _('At least one of the selected lab tests can not be invoiced'))
+                        raise orm.except_orm(
+                            _('UserError'),
+                            _('At least one of the selected lab tests can not'
+                              ' be invoiced'))
                     else:
-                        raise  orm.except_orm(_('UserError'), _('You can not invoice this lab test'))
-    
-            logging.debug('test.patient_id = %s; test.patient_id.id = %s', test.patient_id, test.patient_id.id)
+                        raise orm.except_orm(
+                            _('UserError'),
+                            _('You can not invoice this lab test'))
+
+            logging.debug(
+                'test.patient_id = %s; test.patient_id.id = %s',
+                test.patient_id, test.patient_id.id)
             if test.patient_id.name.id:
-                invoice_data['partner_id'] = test.patient_id.name.id
-                res = self.pool.get('res.partner').address_get(cr, uid, [test.patient_id.name.id], ['contact', 'invoice'])
-                invoice_data['address_contact_id'] = res['contact']
-                invoice_data['address_invoice_id'] = res['invoice']
-                invoice_data['account_id'] = test.patient_id.name.property_account_receivable.id
-                invoice_data['fiscal_position'] = test.patient_id.name.property_account_position and test.patient_id.name.property_account_position.id or False
-                invoice_data['payment_term'] = test.patient_id.name.property_payment_term and test.patient_id.name.property_payment_term.id or False
-    
+                res = self.pool['res.partner'].address_get(
+                    cr, uid, [test.patient_id.name.id], ['contact', 'invoice'])
+                patient_name = test.patient_id.name
+                account_id = patient_name.property_account_receivable.id
+                fiscal_position_id = (
+                    test.patient_id.name.property_account_position
+                    and test.patient_id.name.property_account_position.id
+                    or False)
+                payment_term_id = (
+                    test.patient_id.name.property_payment_term
+                    and test.patient_id.name.property_payment_term.id
+                    or False)
+                invoice_data.update({
+                    'partner_id': test.patient_id.name.id,
+                    'address_contact_id': res['contact'],
+                    'address_invoice_id': res['invoice'],
+                    'account_id': account_id,
+                    'fiscal_position': fiscal_position_id,
+                    'payment_term': payment_term_id,
+                })
             prods_data = {}
 
-            tests = context.get ('active_ids')
+            tests = context.get('active_ids')
             logging.debug('tests = %s', repr(tests))
-        
+
             for test_id in tests:
                 test = test_request_obj.browse(cr, uid, test_id)
-                logging.debug('test.name = %s; test.name.product_id = %s; test.name.product_id.id = %s', test.name, test.name.product_id, test.name.product_id.id)
-    
-                if prods_data.has_key(test.name.product_id.id):
-                    logging.debug('prods_data = %s; test.name.product_id.id = %s', prods_data, test.name.product_id.id)
+                logging.debug(
+                    'test.name = %s; test.name.product_id = %s;'
+                    ' test.name.product_id.id = %s',
+                    test.name, test.name.product_id, test.name.product_id.id)
+
+                if test.name.product_id.id in prods_data:
+                    logging.debug(
+                        'prods_data = %s; test.name.product_id.id = %s',
+                        prods_data, test.name.product_id.id)
                     prods_data[test.name.product_id.id]['quantity'] += 1
                 else:
-                    logging.debug('test.name.product_id.id = %s', test.name.product_id.id)
-                    a = test.name.product_id.product_tmpl_id.property_account_income.id
+                    logging.debug(
+                        'test.name.product_id.id = %s',
+                        test.name.product_id.id)
+                    prod_tmpl = test.name.product_id.product_tmpl_id
+                    a = prod_tmpl.property_account_income.id
                     if not a:
-                        a = test.name.product_id.categ_id.property_account_income_categ.id
-                    prods_data[test.name.product_id.id] = {'product_id':test.name.product_id.id,
-                                    'name':test.name.product_id.name,
-                                    'quantity':1,
-                                    'account_id':a,
-                                    'price_unit':test.name.product_id.lst_price}
-                    logging.debug('prods_data[test.name.product_id.id] = %s', prods_data[test.name.product_id.id])
-    
+                        categ = test.name.product_id.categ_id
+                        a = categ.property_account_income_categ.id
+                    prods_data[test.name.product_id.id] = {
+                        'product_id': test.name.product_id.id,
+                        'name': test.name.product_id.name,
+                        'quantity': 1,
+                        'account_id': a,
+                        'price_unit': test.name.product_id.lst_price}
+                    logging.debug(
+                        'prods_data[test.name.product_id.id] = %s',
+                        prods_data[test.name.product_id.id])
+
             product_lines = []
             for prod_id, prod_data in prods_data.items():
-                product_lines.append((0, 0, {'product_id':prod_data['product_id'],
-                        'name':prod_data['name'],
-                        'quantity':prod_data['quantity'],
-                        'account_id':prod_data['account_id'],
-                        'price_unit':prod_data['price_unit']}))
-                
+                product_lines.append(
+                    (0, 0, {'product_id': prod_data['product_id'],
+                            'name': prod_data['name'],
+                            'quantity': prod_data['quantity'],
+                            'account_id': prod_data['account_id'],
+                            'price_unit': prod_data['price_unit']}))
+
             invoice_data['invoice_line'] = product_lines
             invoice_id = invoice_obj.create(cr, uid, invoice_data)
-            
-            test_request_obj.write(cr, uid, tests, {'invoice_status':'invoiced'})
-    
+
+            test_request_obj.write(
+                cr, uid, tests, {'invoice_status': 'invoiced'})
+
             return {
                 'domain': "[('id','=', " + str(invoice_id) + ")]",
                 'name': 'Create Lab Invoice',
@@ -122,12 +159,9 @@ class create_test_invoice(orm.TransientModel):
                 'res_model': 'account.invoice',
                 'type': 'ir.actions.act_window'
             }
-    
+
         else:
-            raise  orm.except_orm(_('UserError'), _('When multiple lab tests are selected, patient must be the same'))
-
-
-create_test_invoice()
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+            raise orm.except_orm(
+                _('UserError'),
+                _('When multiple lab tests are selected, patient must be the '
+                  'same'))

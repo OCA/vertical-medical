@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+##############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,21 +18,16 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
-
+##############################################################################
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class OeMedicalFamilyMember(orm.Model):
     _name = 'oemedical.family_member'
     _columns = {
-        'member': fields.many2one('res.partner', string='Member', 
+        'member': fields.many2one('res.partner', string='Member',
                                   help='Family Member Name'),
         'role': fields.char(size=256, string='Role', required=True),
-        'family_id': fields.many2one('oemedical.family', string='Family', 
+        'family_id': fields.many2one('oemedical.family', string='Family',
                                      help='Family code'),
     }
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+##############################################################################
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -14,7 +14,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
+##############################################################################
 
 from . import oemedical_hospital_bed
 from . import oemedical_hospital_building
@@ -24,5 +24,3 @@ from . import oemedical_hospital_ward
 from . import oemedical_operational_area
 from . import oemedical_operational_sector
 from . import oemedical_surgery
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

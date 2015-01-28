@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+##############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,10 +18,9 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
+##############################################################################
 
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class OeMedicalHospitalOr(orm.Model):
@@ -32,7 +31,7 @@ class OeMedicalHospitalOr(orm.Model):
                                     select=True),
         'name': fields.char(size=256, string='Name', required=True,
                             help='Name of the Operating Room'),
-        'institution': fields.many2one('res.partner', string='Institution', 
+        'institution': fields.many2one('res.partner', string='Institution',
                                        help='Medical Center'),
         'unit': fields.many2one('oemedical.hospital.unit', string='Unit', ),
         'extra_info': fields.text(string='Extra Info'),
@@ -41,4 +40,3 @@ class OeMedicalHospitalOr(orm.Model):
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
     ]
 OeMedicalHospitalOr()
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

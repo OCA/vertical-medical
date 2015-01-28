@@ -48,7 +48,7 @@ About OeMedical Data
 Core Data for oemedical, is kept as a separate module to overcome need of
 localizing core data.
 
-    
+
 """,
     "website": "http://launchpad.net/oemedical",
     "licence": "AGPL v3",
@@ -69,8 +69,8 @@ localizing core data.
     "demo": [
 
     ],
-    'test':[
-            
+    'test': [
+
     ],
     'css': [
 
@@ -80,7 +80,6 @@ localizing core data.
     ],
     'qweb': [
 
-    ], 
+    ],
     "active": False
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

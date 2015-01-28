@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+##############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,10 +18,8 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
-
+##############################################################################
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class OeMedicalSignsAndSymptoms(orm.Model):
@@ -29,15 +27,12 @@ class OeMedicalSignsAndSymptoms(orm.Model):
 
     _columns = {
         'clinical_id': fields.many2one('oemedical.pathology',
-                                       'Sign or Symptom',required=True ),
+                                       'Sign or Symptom', required=True),
         'evaluation_id': fields.many2one('oemedical.patient.evaluation',
-                                         string='Evaluation',readonly=True),
+                                         string='Evaluation', readonly=True),
         'sign_or_symptom': fields.selection([
             ('sign', 'Sign'),
             ('symptom', 'Symptom'),
-        ], string='Subjective / Objective',required=True),
+        ], string='Subjective / Objective', required=True),
         'comments': fields.char(size=256, string='Comments'),
     }
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

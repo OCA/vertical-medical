@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+##############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,34 +18,31 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
+##############################################################################
 
-import oemedical_secondary_condition
-import oemedical_operational_sector
-import oemedical_operational_area
-import oemedical_pathology_category
-import oemedical_signs_and_symptoms
-import oemedical_directions
-import oemedical_pathology
-import oemedical_ethnicity
-import oemedical_prescription_order
-import oemedical_medicament_category
-import oemedical_diagnostic_hypothesis
-import oemedical_procedure
-import oemedical_medication_template
-import oemedical_medication_dosage
-import oemedical_family_member
-import oemedical_drug_form
-import oemedical_patient_medication
-import oemedical_patient_evaluation
-import oemedical_prescription_line
-import oemedical_patient_disease
-import oemedical_drug_route
-import oemedical_family
-import oemedical_occupation
-import oemedical_disease_group_members
-import oemedical_medicament
-import oemedical_pathology_group
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+from . import oemedical_secondary_condition
+from . import oemedical_operational_sector
+from . import oemedical_operational_area
+from . import oemedical_pathology_category
+from . import oemedical_signs_and_symptoms
+from . import oemedical_directions
+from . import oemedical_pathology
+from . import oemedical_ethnicity
+from . import oemedical_prescription_order
+from . import oemedical_medicament_category
+from . import oemedical_diagnostic_hypothesis
+from . import oemedical_procedure
+from . import oemedical_medication_template
+from . import oemedical_medication_dosage
+from . import oemedical_family_member
+from . import oemedical_drug_form
+from . import oemedical_patient_medication
+from . import oemedical_patient_evaluation
+from . import oemedical_prescription_line
+from . import oemedical_patient_disease
+from . import oemedical_drug_route
+from . import oemedical_family
+from . import oemedical_occupation
+from . import oemedical_disease_group_members
+from . import oemedical_medicament
+from . import oemedical_pathology_group

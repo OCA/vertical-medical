@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+##############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,10 +18,8 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
-
+##############################################################################
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class OeMedicalPathologyGroup(orm.Model):
@@ -29,14 +27,14 @@ class OeMedicalPathologyGroup(orm.Model):
 
     _columns = {
         'info': fields.text(string='Detailed information'),
-        'code': fields.char(size=256, string='Code', required=True, 
-          help='for example MDG6 code will contain the Millennium Development'\
-                    ' Goals # 6 diseases : Tuberculosis, Malaria and HIV/AIDS'),
+        'code': fields.char(
+            string='Code', size=256,
+            required=True,
+            help='for example MDG6 code will contain the Millennium '
+                 'Development Goals # 6 diseases : Tuberculosis, Malaria and '
+                 'HIV/AIDS'),
         'name': fields.char(size=256, string='Name', required=True,
                             translate=True, help='Group name'),
         'desc': fields.char(size=256, string='Short Description',
                             required=True),
     }
-
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
