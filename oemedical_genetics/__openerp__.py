@@ -37,7 +37,7 @@
 
     'name': 'OeMedical : Free Health and Hospital Information System',
     'version': '1.0',
-    'author': "OeMEdical Team",
+    'author': "OeMEdical Team,Odoo Community Association (OCA)",
     'category': 'Generic Modules/Others',
     'depends': ['base', 'sale', 'purchase', 'account', 'product'],
     'application': True,

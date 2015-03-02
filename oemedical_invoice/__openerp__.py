@@ -21,7 +21,7 @@
 {
     "name": "Medical Invoice",
     "version": "0.1",
-    "author": "Silix",
+    "author": "Silix,Odoo Community Association (OCA)",
     "description": """
 This module add functionality to create invoices for doctor's consulting
 charge.

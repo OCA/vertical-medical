@@ -36,7 +36,7 @@
 
     'name': 'OeMedical : gynecology and obstetrics',
     'version': '1.0.1',
-    'author': "OeMEdical Team",
+    'author': "OeMEdical Team,Odoo Community Association (OCA)",
     'category': 'Generic Modules/Others',
     'depends': ['oemedical'],
     'application': True,

@@ -38,7 +38,7 @@
     'name': 'OeMedical EMR',
     'summary': 'Electronic Medical Record management for OeMedical',
     'version': '1.0',
-    'author': "OeMEdical Team",
+    'author': "OeMEdical Team,Odoo Community Association (OCA)",
     'category': 'Generic Modules/Others',
     'depends': ['oemedical'],
     'application': True,
