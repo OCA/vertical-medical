@@ -1,0 +1,211 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<openerp >
+	<data >
+		<menuitem id = "medical_root" name = "Medical" sequence = "10" / >
+
+
+<!--Menu Patient - - >
+
+		<menuitem id = "medical_patient_root" name = "Patient" parent = "medical_root"
+			sequence = "10" / >
+		<menuitem id = "medical_patient" name = " Patient"
+			parent = "medical_patient_root" sequence = "10"
+			action = "act_open_medical_patient_view" / >
+
+		<menuitem id = "medical_family" name = " Family" parent = "medical_patient_root"
+			sequence = "20" action = "act_open_medical_family_view" / >
+
+		<menuitem id = "medical_family_member" name = " Family Member"
+			parent = "medical_patient_root" sequence = "30"
+			action = "act_open_medical_family_member_view" / >
+
+
+<!--Appointment - - >
+
+		<menuitem id = "medical_appoitment_root" name = "Appoitment"
+			parent = "medical_root" sequence = "20" / >
+
+		<menuitem id = "medical_appointment" name = " Appointment"
+			parent = "medical_appoitment_root" sequence = "10"
+			action = "act_open_medical_appointment_view" / >
+
+<!--Prescriptions - - >
+
+		<menuitem id = "medical_prescription_root" name = "Prescription"
+			parent = "medical_root" sequence = "30" / >
+
+		<menuitem id = "medical_prescription_order" name = "Prescription Order"
+			parent = "medical_prescription_root" sequence = "10"
+			action = "act_open_medical_prescription_order_view" / >
+
+<!-- Laboratory - - >
+		<menuitem name = "Laboratory" id = "medical_laboratory_menu"
+            parent="medical_root" sequence="4"/>
+
+
+<!--Configurations-->
+
+		<menuitem id="medical_root_sub" name="Configuration"
+			parent="medical_root" sequence="100" />
+
+<!--       Laboratory       -->
+		<menuitem name="Laboratory" id="medical_conf_laboratory" 
+            parent="medical_root_sub" sequence="3"/>
+
+
+<!-- Diseases -->
+
+		<menuitem id="medical_root_disease" name="Disease"
+			parent="medical_root_sub" sequence="10" />
+
+<!--  Menu of Pathology-->
+
+		<menuitem id="medical_pathology_category" name=" Pathology Category"	
+            parent="medical_root_disease" sequence="10"	
+            action="act_open_medical_pathology_category_view" />
+
+		<menuitem id="medical_pathology" name=" Pathology" 
+            parent="medical_root_disease"   sequence="30" 
+            action="act_open_medical_pathology_view" />
+
+		<menuitem id="medical_pathology_group" name=" Pathology Group" 
+            parent="medical_root_disease" sequence="20"
+            action="act_open_medical_pathology_group_view" />
+
+		<menuitem id="medical_root_disease_cat" name="Categories"
+			parent="medical_root_disease" sequence="100" />
+
+		<menuitem id="medical_disease_group_members" name=" Disease Group"
+			parent="medical_root_disease_cat" sequence="10"
+			action="act_open_medical_disease_group_members_view" />
+
+<!-- Misc -->
+
+		<menuitem id="medical_root_misc" name="Misc"
+			parent="medical_root_sub" sequence="200" />
+
+<!-- Occupation  ( Config/misc/Occupation) )--> 
+
+		<menuitem id="medical_occupation" name=" Occupation"
+			parent="medical_root_misc" sequence="20"
+			action="act_open_medical_occupation_view" />
+
+<!-- Medical Specialty  ( Config/misc/specialty) )--> 
+
+		<menuitem id="medical_specialty" name=" Medical Specialty"
+            parent="medical_root_misc" sequence="10" 
+            action="act_open_medical_specialty_view" />
+
+<!-- Ethnicity  ( Config/misc/Ethnicity) )--> 
+
+		<menuitem id="medical_ethnicity" name="Ethnicity" parent="medical_root_misc"
+			sequence="10" action="act_open_medical_ethnicity_view" />
+
+
+
+
+
+
+<!--Medicaments-->
+
+		<menuitem id="medical_medicament_root" name="Medicaments"
+			parent="medical_root_sub" sequence="50" />
+
+
+		<menuitem id="medical_medicament" name="Medicaments"
+			parent="medical_medicament_root" sequence="10"
+			action="act_open_medical_medicament_view" />
+
+		<menuitem id="medical_medication_template" name=" Medication Template"
+			parent="medical_medicament_root" sequence="20"
+			action="act_open_medical_medication_template_view" />
+
+		<menuitem id="medical_medication_frequencies" name="Medication Frequencies"
+			parent="medical_medicament_root" sequence="30"
+			action="act_open_medical_medication_dosage_view" />
+
+		<menuitem id="medical_drug_route" name=" Drug Admin Route"
+			parent="medical_medicament_root" sequence="80"
+			action="act_open_medical_drug_route_view" />
+
+		<menuitem id="medical_drug_form" name=" Drug Form"
+            parent="medical_medicament_root" sequence="90"
+            action="act_open_medical_drug_form_view" />
+
+
+		<menuitem id="medical_medicament_category" name=" Medicament Category"
+			parent="medical_medicament_root" sequence="100"
+			action="act_open_medical_medicament_category_view" />
+
+<!--Hospital Centers-->
+
+		<menuitem id="medical_health_center_root" name="Health Center"
+			parent="medical_root_sub" sequence="10" />
+
+		<menuitem id="medical_hospital_building" name=" Hospital Building"
+			parent="medical_health_center_root" sequence="10"
+			action="act_open_medical_hospital_building_view" />
+
+		<menuitem id="medical_hospital_unit" name=" Hospital Unit"
+			parent="medical_health_center_root" sequence="20"
+			action="act_open_medical_hospital_unit_view" />
+
+		<menuitem id="medical_hospital_ward" name=" Hospital Ward"
+			parent="medical_health_center_root" sequence="30"
+			action="act_open_medical_hospital_ward_view" />
+
+		<menuitem id="medical_hospital_or" name=" Hospital Or"
+			parent="medical_health_center_root" sequence="40"
+			action="act_open_medical_hospital_or_view" />
+		
+		<menuitem id="medical_hospital_bed" name=" Hospital Bed"
+			parent="medical_health_center_root" sequence="50"
+			action="act_open_medical_hospital_bed_view" />
+
+		<menuitem id="medical_operational_area" name=" Operational Area"
+			parent="medical_health_center_root" sequence="60"
+			action="act_open_medical_operational_area_view" />
+
+		<menuitem id="medical_operational_sector" name=" Operational Sector"
+			parent="medical_health_center_root" sequence="70"
+			action="act_open_medical_operational_sector_view" />
+
+
+<!--    Physician Conf    -->
+
+        <menuitem name="Health Professionals" id="medical_conf_physicians"
+            parent="medical_root_sub" sequence="20" />
+
+		<menuitem id="medical_physician" name=" Physician" parent="medical_conf_physicians"
+			sequence="10" action="act_open_medical_physician_view" />
+
+
+<!--    Insurance     -->
+
+        <menuitem name="Insurances" id="medical_conf_insurances"
+            parent="medical_root_misc" sequence="20" />
+
+		<menuitem id="medical_insurance" name=" Insurance" 
+            parent="medical_conf_insurances"	sequence="10" 
+            action="act_open_medical_insurance_view" />
+
+		<menuitem id="medical_insurance_plan" name=" Insurance Plan"
+			parent="medical_conf_insurances" sequence="20"
+			action="act_open_medical_insurance_plan_view" />
+
+
+
+
+		<menuitem id="medical_diagnostic_hypothesis" name=" Diagnostic Hypothesis"
+			parent="medical_root_sub" sequence="10"
+			action="act_open_medical_diagnostic_hypothesis_view" />
+		<menuitem id="medical_predure" name=" Procedure" parent="medical_root_sub"
+			sequence="10" action="act_open_medical_procedure_view" />
+
+		<menuitem id="medical_vaccination" name=" Vaccination"
+			parent="medical_root_sub" sequence="10"
+			action="act_open_medical_vaccination_view" />
+
+
+	</data>
+</openerp>

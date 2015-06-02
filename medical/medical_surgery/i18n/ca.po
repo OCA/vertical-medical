@@ -1,11 +1,11 @@
-# Catalan translation for oemedical
+# Catalan translation for medical
 # Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
-# This file is distributed under the same license as the oemedical package.
+# This file is distributed under the same license as the medical package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: oemedical\n"
+"Project-Id-Version: medical\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2010-12-05 21:38+0000\n"
 "PO-Revision-Date: 2013-12-31 09:43+0000\n"

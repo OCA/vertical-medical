@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
- 		<record id="view_oemedical_patient_tree" model="ir.ui.view"> 
- 			<field name="name">oemedical.patient.tree</field> 
- 			<field name="model">oemedical.patient</field> 
+ 		<record id="view_medical_patient_tree" model="ir.ui.view"> 
+ 			<field name="name">medical.patient.tree</field> 
+ 			<field name="model">medical.patient</field> 
  			<field name="priority" eval="8" /> 
  			<field name="arch" type="xml"> 
  				<tree string="Oemedical Patient"> 
@@ -16,9 +16,9 @@
  			</field> 
  		</record> 
 
- 		<record id="view_oemedical_patient_form" model="ir.ui.view"> 
- 			<field name="name">oemedical.patient.form</field> 
- 			<field name="model">oemedical.patient</field> 
+ 		<record id="view_medical_patient_form" model="ir.ui.view"> 
+ 			<field name="name">medical.patient.form</field> 
+ 			<field name="model">medical.patient</field> 
  			<field name="priority" eval="8" /> 
  			<field name="arch" type="xml"> 
  			 <form string="Patient" version="7.0"> 
@@ -97,9 +97,9 @@
  			</field> 
  		</record> 
 
-        <record model="ir.ui.view" id="view_oemedical_patient_kanban">
-            <field name="name">oemedical.patient.kanban</field>
-            <field name="model">oemedical.patient</field>
+        <record model="ir.ui.view" id="view_medical_patient_kanban">
+            <field name="name">medical.patient.kanban</field>
+            <field name="model">medical.patient</field>
             <field name="type">kanban</field>
             <field name="arch" type="xml">
                 <kanban version="7.0" class="oe_background_grey">
@@ -108,7 +108,7 @@
                         <t t-name="kanban-box">
                             <div class="oe_kanban_content">
                                 <div class="oe_kanban_vignette oe_semantic_html_override">
-                                    <a type="open"><img t-att-src="kanban_image('oemedical.patient', 'image', record.id.value)" width="150" height="110" class="oe_employee_picture"/></a>
+                                    <a type="open"><img t-att-src="kanban_image('medical.patient', 'image', record.id.value)" width="150" height="110" class="oe_employee_picture"/></a>
                                     <div class="oe_kanban_details">
                                         <h3>
                                             <a type="open"><field name="name"/></a>
@@ -127,9 +127,9 @@
             </field>
         </record>
 
- 		<record id="view_oemedical_patient_search" model="ir.ui.view"> 
- 			<field name="name">oemedical.patient.search</field> 
- 			<field name="model">oemedical.patient</field> 
+ 		<record id="view_medical_patient_search" model="ir.ui.view"> 
+ 			<field name="name">medical.patient.search</field> 
+ 			<field name="model">medical.patient</field> 
  			<field name="priority" eval="8" /> 
  			<field name="arch" type="xml"> 
  				<search string="Oemedical Patient"> 
@@ -150,36 +150,36 @@
  			</field> 
  		</record> 
 
- 		<record model="ir.actions.act_window" id="act_open_oemedical_patient_view"> 
+ 		<record model="ir.actions.act_window" id="act_open_medical_patient_view"> 
  			<field name="name">Patient</field> 
  			<field name="type">ir.actions.act_window</field> 
- 			<field name="res_model">oemedical.patient</field> 
+ 			<field name="res_model">medical.patient</field> 
  			<field name="view_type">form</field> 
  			<field name="view_mode">kanban,tree,form</field> 
- 			<field name="search_view_id" ref="view_oemedical_patient_search" /> 
+ 			<field name="search_view_id" ref="view_medical_patient_search" /> 
  			<field name="domain">[]</field> 
  			<field name="context">{}</field> 
  		</record> 
 
- 		<record model="ir.actions.act_window.view" id="act_open_oemedical_patient_view_form"> 
- 			<field name="act_window_id" ref="act_open_oemedical_patient_view" /> 
+ 		<record model="ir.actions.act_window.view" id="act_open_medical_patient_view_form"> 
+ 			<field name="act_window_id" ref="act_open_medical_patient_view" /> 
  			<field name="sequence" eval="20" /> 
  			<field name="view_mode">form</field> 
- 			<field name="view_id" ref="view_oemedical_patient_form" /> 
+ 			<field name="view_id" ref="view_medical_patient_form" /> 
  		</record> 
 
- 		<record model="ir.actions.act_window.view" id="act_open_oemedical_patient_view_tree"> 
- 			<field name="act_window_id" ref="act_open_oemedical_patient_view" /> 
+ 		<record model="ir.actions.act_window.view" id="act_open_medical_patient_view_tree"> 
+ 			<field name="act_window_id" ref="act_open_medical_patient_view" /> 
  			<field name="sequence" eval="30" /> 
  			<field name="view_mode">tree</field> 
- 			<field name="view_id" ref="view_oemedical_patient_tree" /> 
+ 			<field name="view_id" ref="view_medical_patient_tree" /> 
  		</record> 
 
- 		<record model="ir.actions.act_window.view" id="act_open_oemedical_patient_view_kanban"> 
- 			<field name="act_window_id" ref="act_open_oemedical_patient_view" /> 
+ 		<record model="ir.actions.act_window.view" id="act_open_medical_patient_view_kanban"> 
+ 			<field name="act_window_id" ref="act_open_medical_patient_view" /> 
  			<field name="sequence" eval="10" /> 
  			<field name="view_mode">kanban</field> 
- 			<field name="view_id" ref="view_oemedical_patient_kanban" /> 
+ 			<field name="view_id" ref="view_medical_patient_kanban" /> 
  		</record> 
 
 

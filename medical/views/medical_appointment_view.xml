@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
-		<record id="view_oemedical_appointment_tree" model="ir.ui.view">
-			<field name="name">oemedical.appointment.tree</field>
-			<field name="model">oemedical.appointment</field>
+		<record id="view_medical_appointment_tree" model="ir.ui.view">
+			<field name="name">medical.appointment.tree</field>
+			<field name="model">medical.appointment</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Appointment" colors="grey:state=='cancel';green:state=='draft';blue:state in ('done');red:state in ('waiting')">
@@ -21,9 +21,9 @@
 			</field>
 		</record>
 
-		<record id="view_oemedical_appointment_form" model="ir.ui.view">
-			<field name="name">oemedical.appointment.form</field>
-			<field name="model">oemedical.appointment</field>
+		<record id="view_medical_appointment_form" model="ir.ui.view">
+			<field name="name">medical.appointment.form</field>
+			<field name="model">medical.appointment</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Appointment"  version="7.0">
@@ -88,9 +88,9 @@
 			</field>
 		</record>
 
-        <record id="view_oemedical_appointment_calendar" model="ir.ui.view">
-            <field name="name">oemedical.appointment.calendar</field>
-            <field name="model">oemedical.appointment</field>
+        <record id="view_medical_appointment_calendar" model="ir.ui.view">
+            <field name="name">medical.appointment.calendar</field>
+            <field name="model">medical.appointment</field>
             <field eval="2" name="priority"/>
             <field name="arch" type="xml">
                 <calendar color="doctor" date_start="appointment_date" string="Calendar View">
@@ -102,9 +102,9 @@
         </record>
 
 
-		<record id="view_oemedical_appointment_search" model="ir.ui.view">
-			<field name="name">oemedical.appointment.search</field>
-			<field name="model">oemedical.appointment</field>
+		<record id="view_medical_appointment_search" model="ir.ui.view">
+			<field name="name">medical.appointment.search</field>
+			<field name="model">medical.appointment</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<search string="Oemedical Appointment">
@@ -137,9 +137,9 @@
 			</field>
 		</record>
 
-        <record model="ir.ui.view" id="view_oemedical_appointment_kanban">
-            <field name="name">oemedical.appointement.kanban</field>
-            <field name="model">oemedical.appointment</field>
+        <record model="ir.ui.view" id="view_medical_appointment_kanban">
+            <field name="name">medical.appointement.kanban</field>
+            <field name="model">medical.appointment</field>
             <field name="type">kanban</field>
             <field name="arch" type="xml">
                 <kanban version="7.0" class="oe_background_grey">
@@ -167,42 +167,42 @@
         </record>
 
 
-		<record model="ir.actions.act_window" id="act_open_oemedical_appointment_view">
+		<record model="ir.actions.act_window" id="act_open_medical_appointment_view">
 			<field name="name">Appointment</field>
 			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">oemedical.appointment</field>
+			<field name="res_model">medical.appointment</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">kanban,tree,form,calendar</field>
-			<field name="search_view_id" ref="view_oemedical_appointment_search" />
+			<field name="search_view_id" ref="view_medical_appointment_search" />
 			<field name="context">{}</field>
 		</record>
 			<!-- field name="domain">['|',('patient_id.user_id.id','=',uid),('doctor.user_id.id','=',uid)]</field -->
 		
-		<record model="ir.actions.act_window.view" id="act_open_oemedical_appointment_view_form">
-			<field name="act_window_id" ref="act_open_oemedical_appointment_view" />
+		<record model="ir.actions.act_window.view" id="act_open_medical_appointment_view_form">
+			<field name="act_window_id" ref="act_open_medical_appointment_view" />
 			<field name="sequence" eval="40" />
 			<field name="view_mode">form</field>
-			<field name="view_id" ref="view_oemedical_appointment_form" />
+			<field name="view_id" ref="view_medical_appointment_form" />
 		</record>
 
-		<record model="ir.actions.act_window.view" id="act_open_oemedical_appointment_view_tree">
-			<field name="act_window_id" ref="act_open_oemedical_appointment_view" />
+		<record model="ir.actions.act_window.view" id="act_open_medical_appointment_view_tree">
+			<field name="act_window_id" ref="act_open_medical_appointment_view" />
 			<field name="sequence" eval="30" />
 			<field name="view_mode">tree</field>
-			<field name="view_id" ref="view_oemedical_appointment_tree" />
+			<field name="view_id" ref="view_medical_appointment_tree" />
 		</record>
 
-		<record model="ir.actions.act_window.view" id="act_open_oemedical_appointment_view_calendar">
-			<field name="act_window_id" ref="act_open_oemedical_appointment_view" />
+		<record model="ir.actions.act_window.view" id="act_open_medical_appointment_view_calendar">
+			<field name="act_window_id" ref="act_open_medical_appointment_view" />
 			<field name="sequence" eval="20" />
 			<field name="view_mode">calendar</field>
-			<field name="view_id" ref="view_oemedical_appointment_calendar" />
+			<field name="view_id" ref="view_medical_appointment_calendar" />
 		</record>
- 		<record model="ir.actions.act_window.view" id="act_open_oemedical_appointment_view_kanban"> 
- 			<field name="act_window_id" ref="act_open_oemedical_appointment_view" /> 
+ 		<record model="ir.actions.act_window.view" id="act_open_medical_appointment_view_kanban"> 
+ 			<field name="act_window_id" ref="act_open_medical_appointment_view" /> 
  			<field name="sequence" eval="10" /> 
  			<field name="view_mode">kanban</field> 
- 			<field name="view_id" ref="view_oemedical_appointment_kanban" /> 
+ 			<field name="view_id" ref="view_medical_appointment_kanban" /> 
  		</record> 
 
 
