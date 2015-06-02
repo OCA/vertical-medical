@@ -28,7 +28,7 @@ class ResPartner(orm.Model):
     _inherit = 'res.partner'
 
     _columns = {
-        #'insurance_plan_ids': fields.one2many('oemedical.insurance.plan',
+        #'insurance_plan_ids': fields.one2many('medical.insurance.plan',
         #                                       'relation_id',
         #                                       string='Insurance Plans', ),
         'is_insurance_company': fields.boolean(string='Insurance Company',
@@ -63,9 +63,9 @@ class ResPartner(orm.Model):
                                       help='Check if the party is a Pharmacy'),
         'ref': fields.char(size=256, string='ID/SSN',
                            help='Patient Social Security Number or equivalent'),
-        #'insurance': fields.one2many('oemedical.insurance', 'relation_id',
+        #'insurance': fields.one2many('medical.insurance', 'relation_id',
         #                               string='Insurance', ),
-        'patient_ids': fields.one2many('oemedical.patient.med.center.rel', 'medical_center_id', 'Related Patients'),
+        'patient_ids': fields.one2many('medical.patient.med.center.rel', 'medical_center_id', 'Related Patients'),
     }
 
 ResPartner()

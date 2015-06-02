@@ -27,11 +27,11 @@ from dateutil.relativedelta import relativedelta
 from datetime import datetime
 
 
-class oemedical_patient_med_center_rel(orm.Model):
-    _name = 'oemedical.patient.med.center.rel'
+class medical_patient_med_center_rel(orm.Model):
+    _name = 'medical.patient.med.center.rel'
     _rec_name = 'patient_id'
     _columns = {
-        'patient_id': fields.many2one('oemedical.patient', 'Patient', required=True, select=1, ondelete='cascade'),
+        'patient_id': fields.many2one('medical.patient', 'Patient', required=True, select=1, ondelete='cascade'),
         'medical_center_id': fields.many2one('res.partner', 'Medical Center', required=True, select=1, ondelete='cascade', domain="[('is_institution', '=', True)]"),
         'identification_code': fields.char(size=256, string='ID', help='Patient Identifier provided by the Health Center.Is not the Social Security Number'),
     }
@@ -40,8 +40,8 @@ class oemedical_patient_med_center_rel(orm.Model):
     ]
 
 
-class OeMedicalPatient(orm.Model):
-    _name = 'oemedical.patient'
+class MedicalPatient(orm.Model):
+    _name = 'medical.patient'
     _inherits = {
         'res.users': 'user_id',
     }
@@ -82,7 +82,7 @@ class OeMedicalPatient(orm.Model):
         'sex': fields.selection([('m', 'Male'), ('f', 'Female'), ], string='Sex', required=True),
         'general_info': fields.text(string='General Information', help='General information about the patient'),
         'dob': fields.date(string='DoB'),
-        'medical_center_ids': fields.one2many('oemedical.patient.med.center.rel', 'patient_id', 'Related Medical Centers', readonly=True),
+        'medical_center_ids': fields.one2many('medical.patient.med.center.rel', 'patient_id', 'Related Medical Centers', readonly=True),
         'age': fields.function(_get_age, type='char', string='Age', help="It shows the age of the patient in years(y), months(m) and days(d).\nIf the patient has died, the age shown is the age at time of death, the age corresponding to the date on the death certificate. It will show also \"deceased\" on the field", multi=False),
         'marital_status': fields.selection([('s', 'Single'), ('m', 'Married'),
                                             ('w', 'Widowed'),
@@ -96,13 +96,18 @@ class OeMedicalPatient(orm.Model):
         'identification_code': fields.char(size=256, string='ID', help='Patient Identifier provided by the Health Center.Is not the Social Security Number'),
         'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the patient without removing it."),
     }
+    
+    
+    _defaults = {
+                 'active':True,
+                 }
 
     def create(self, cr, uid, vals, context=None):
-        sequence = unicode(self.pool.get('ir.sequence').get(cr, uid, 'oemedical.patient'))
+        sequence = unicode(self.pool.get('ir.sequence').get(cr, uid, 'medical.patient'))
         vals['identification_code'] = sequence
         vals['is_patient'] = True
         vals['customer'] = True
-        return super(OeMedicalPatient, self).create(cr, uid, vals, context=context)
+        return super(MedicalPatient, self).create(cr, uid, vals, context=context)
 
-OeMedicalPatient()
+MedicalPatient()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
