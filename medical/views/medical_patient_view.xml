@@ -27,23 +27,23 @@
                             <field name="image" widget='image' class="oe_left oe_avatar"/> 
                             <div> 
                                  <h1> 
-		                            <field name="name" placeholder="First Name" style="width: 20%%" /> 
-		                            <field name="login" placeholder="Login" style="width: 20%%" /> 
+		                            <field name="name" placeholder="First Name" style="width: 20%" /> 
+		                            <field name="login" placeholder="Login" style="width: 20%" /> 
 		                         </h1> 
                             </div> 
      						<div> 
      							<label for="sex" class="oe_edit_only"/> 
-     							<field name="sex" style="width: 30%%"/> 
+     							<field name="sex" style="width: 30%"/> 
      							<label for="ref"/> 
-     							<field name="ref" style="width: 20%%"/> 
+     							<field name="ref" style="width: 20%"/> 
      							<label for="identification_code"/> 
-     							<field name="identification_code" style="width: 17%%" attrs="{'readonly': True }"/> 
+     							<field name="identification_code" style="width: 17%" attrs="{'readonly': True }"/> 
      						</div> 
                             <div>
      							<label for="dob"/> 
-     							<field name="dob" style="width: 30%%"/> 
+     							<field name="dob" style="width: 30%"/> 
      							<label for="age"/> 
-     							<field name="age" style="width: 30%%"/> 
+     							<field name="age" style="width: 30%"/> 
                             </div> 
                         </div>
                     <notebook> 
@@ -57,9 +57,9 @@
                                         <field name="street" placeholder="Street..." />
                                         <field name="street2" />
                                         <div class="address_format">
-                                            <field name="city" placeholder="City" style="width: 40%%" />
-                                            <field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' />
-                                            <field name="zip" placeholder="ZIP" style="width: 20%%" />
+                                            <field name="city" placeholder="City" style="width: 40%" />
+                                            <field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%" options='{"no_open": True}' />
+                                            <field name="zip" placeholder="ZIP" style="width: 20%" />
                                         </div>
                                         <field name="country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True}' />
                                     </div>
@@ -108,7 +108,7 @@
                         <t t-name="kanban-box">
                             <div class="oe_kanban_content">
                                 <div class="oe_kanban_vignette oe_semantic_html_override">
-                                    <a type="open"><img t-att-src="kanban_image('medical.patient', 'image', record.id.value)" width="150" height="110" class="oe_employee_picture"/></a>
+                                    <a type="open"><img t-att-src="kanban_image('medical.patient', 'image', record.id.value)" width="110" height="110" class="oe_employee_picture"/></a>
                                     <div class="oe_kanban_details">
                                         <h3>
                                             <a type="open"><field name="name"/></a>
