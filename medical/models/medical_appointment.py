@@ -229,7 +229,6 @@ class MedicalAppointment(orm.Model):
 
         return True
 
-MedicalAppointment()
 
 
 class MedicalAppointment_history(orm.Model):
@@ -247,5 +246,4 @@ class MedicalAppointment_history(orm.Model):
     _defaults = {
                  }
 
-MedicalAppointment_history()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

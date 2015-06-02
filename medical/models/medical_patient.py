@@ -136,5 +136,4 @@ class MedicalPatient(orm.Model):
         return super(MedicalPatient, self).create(cr, uid, vals,
                                                   context=context)
 
-MedicalPatient()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
