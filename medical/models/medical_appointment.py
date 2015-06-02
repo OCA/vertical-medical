@@ -26,15 +26,15 @@ from datetime import datetime
 from openerp.osv import fields, orm
 from openerp.tools.translate import _
 
-from openerp.addons.medical.oemedical_constants import hours, minutes
+from openerp.addons.medical.medical_constants import hours, minutes
 
 
-class OeMedicalAppointment(orm.Model):
-    _name = 'oemedical.appointment'
+class MedicalAppointment(orm.Model):
+    _name = 'medical.appointment'
 
     _columns = {
         'user_id': fields.many2one('res.users', 'Responsible', readonly=True, states={'draft': [('readonly', False)]}),
-        'patient_id': fields.many2one('oemedical.patient', string='Patient',
+        'patient_id': fields.many2one('medical.patient', string='Patient',
                                    required=True, select=True,
                                    help='Patient Name'),
         'name': fields.char(size=256, string='Appointment ID', readonly=True),
@@ -46,7 +46,7 @@ class OeMedicalAppointment(orm.Model):
             string='Minute'),
 
         'duration': fields.float('Duration'),
-        'doctor': fields.many2one('oemedical.physician',
+        'doctor': fields.many2one('medical.physician',
                                   string='Physician', select=True,
                                   help='Physician\'s Name'),
         'alias': fields.char(size=256, string='Alias', ),
@@ -70,7 +70,7 @@ class OeMedicalAppointment(orm.Model):
             ('b', 'Urgent'),
             ('c', 'Medical Emergency'), ],
             string='Urgency Level'),
-        'speciality': fields.many2one('oemedical.specialty',
+        'speciality': fields.many2one('medical.specialty',
                                       string='Specialty',
                                       help='Medical Specialty / Sector'),
         'state': fields.selection([
@@ -82,13 +82,13 @@ class OeMedicalAppointment(orm.Model):
             ('canceled', 'Canceled'),
              ],
             string='State'),
-        'history_ids': fields.one2many('oemedical.appointment.history', 'appointment_id_history', 'History lines', states={'start': [('readonly', True)]}),
+        'history_ids': fields.one2many('medical.appointment.history', 'appointment_id_history', 'History lines', states={'start': [('readonly', True)]}),
 
     }
 
     _defaults = {
         'name': lambda obj, cr, uid, context:
-            obj.pool.get('ir.sequence').get(cr, uid, 'oemedical.appointment'),
+            obj.pool.get('ir.sequence').get(cr, uid, 'medical.appointment'),
         'duration': 30.00,
         'urgency': 'a',
         'state': 'draft',
@@ -97,7 +97,7 @@ class OeMedicalAppointment(orm.Model):
 
     def create(self, cr, uid, vals, context=None):
         val_history = {}
-        ait_obj = self.pool.get('oemedical.appointment.history')
+        ait_obj = self.pool.get('medical.appointment.history')
         date_time_str = vals['appointment_day'] + ' ' + vals['appointment_hour'] + ':' + vals['appointment_minute']
         vals['appointment_date'] = datetime.strptime(date_time_str, '%Y-%m-%d %H:%M')
 
@@ -109,12 +109,12 @@ class OeMedicalAppointment(orm.Model):
 
         print "create", vals['history_ids'], val_history, '     ------    ', vals
 
-        return super(OeMedicalAppointment, self).create(cr, uid, vals, context=context)
+        return super(MedicalAppointment, self).create(cr, uid, vals, context=context)
 
     def button_back(self, cr, uid, ids, context=None):
 
         val_history = {}
-        ait_obj = self.pool.get('oemedical.appointment.history')
+        ait_obj = self.pool.get('medical.appointment.history')
 
         for order in self.browse(cr, uid, ids, context=context):
             if order.state == 'confirm':
@@ -144,7 +144,7 @@ class OeMedicalAppointment(orm.Model):
     def button_confirm(self, cr, uid, ids, context=None):
 
         val_history = {}
-        ait_obj = self.pool.get('oemedical.appointment.history')
+        ait_obj = self.pool.get('medical.appointment.history')
 
         self.write(cr, uid, ids, {'state': 'confirm'}, context=context)
 
@@ -159,7 +159,7 @@ class OeMedicalAppointment(orm.Model):
     def button_waiting(self, cr, uid, ids, context=None):
 
         val_history = {}
-        ait_obj = self.pool.get('oemedical.appointment.history')
+        ait_obj = self.pool.get('medical.appointment.history')
 
         self.write(cr, uid, ids, {'state': 'waiting'}, context=context)
 
@@ -174,7 +174,7 @@ class OeMedicalAppointment(orm.Model):
     def button_in_consultation(self, cr, uid, ids, context=None):
 
         val_history = {}
-        ait_obj = self.pool.get('oemedical.appointment.history')
+        ait_obj = self.pool.get('medical.appointment.history')
 
         self.write(cr, uid, ids, {'state': 'in_consultation'}, context=context)
 
@@ -189,7 +189,7 @@ class OeMedicalAppointment(orm.Model):
     def button_done(self, cr, uid, ids, context=None):
 
         val_history = {}
-        ait_obj = self.pool.get('oemedical.appointment.history')
+        ait_obj = self.pool.get('medical.appointment.history')
 
         self.write(cr, uid, ids, {'state': 'done'}, context=context)
 
@@ -204,7 +204,7 @@ class OeMedicalAppointment(orm.Model):
     def button_cancel(self, cr, uid, ids, context=None):
 
         val_history = {}
-        ait_obj = self.pool.get('oemedical.appointment.history')
+        ait_obj = self.pool.get('medical.appointment.history')
 
         self.write(cr, uid, ids, {'state': 'canceled'}, context=context)
 
@@ -216,14 +216,14 @@ class OeMedicalAppointment(orm.Model):
 
         return True
 
-OeMedicalAppointment()
+MedicalAppointment()
 
 
-class OeMedicalAppointment_history(orm.Model):
-    _name = 'oemedical.appointment.history'
+class MedicalAppointment_history(orm.Model):
+    _name = 'medical.appointment.history'
 
     _columns = {
-        'appointment_id_history': fields.many2one('oemedical.appointment', 'History', ondelete='cascade'),
+        'appointment_id_history': fields.many2one('medical.appointment', 'History', ondelete='cascade'),
         'date': fields.datetime(string='Date and Time'),
         'name': fields.many2one('res.users', string='User', help=''),
         'action': fields.text('Action'),
@@ -232,5 +232,5 @@ class OeMedicalAppointment_history(orm.Model):
     _defaults = {
                  }
 
-OeMedicalAppointment_history()
+MedicalAppointment_history()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

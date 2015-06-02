@@ -21,10 +21,10 @@
 ##############################################################################
 
 import product_product
-import oemedical_physician
+import medical_physician
 import res_partner
-import oemedical_patient
-import oemedical_appointment
-import oemedical_specialty
+import medical_patient
+import medical_appointment
+import medical_specialty
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

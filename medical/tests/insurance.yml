@@ -1,7 +1,7 @@
 -
   Create New Insurance
 -
-  !record {model: oemedical.insurance, id: oe_ins_1}:
+  !record {model: medical.insurance, id: oe_ins_1}:
     name: Medical Insurance
     category: Medical
     company: ins_com_lombard
