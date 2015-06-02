@@ -24,9 +24,8 @@ import time
 from datetime import datetime
 
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
-from openerp.addons.oemedical.oemedical_constants import hours, minutes
+from openerp.addons.medical.oemedical_constants import hours, minutes
 
 
 class OeMedicalAppointment(orm.Model):

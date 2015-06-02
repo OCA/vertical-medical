@@ -7,12 +7,12 @@
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
 #    Coded by: Parthiv Patel <parthiv@techreceptives.com>
 #    Coded by: Ruchir Shukla <ruchir@techreceptives.com>
-#    Planifyied by: Parthiv Patel <parthiv@techreceptives.com>
-#    Planifyied by: Nhomar Hernandéz <nhomar@vauxoo.com>
+#    Planned by: Parthiv Patel <parthiv@techreceptives.com>
+#    Planned by: Nhomar Hernandéz <nhomar@vauxoo.com>
 #
 ##############################################################################
-#    This project is mantained by OeMEdical Team:
-#    https://launchpad.net/oemedical
+#    This project is mantained by Vertical Medical Team:
+#    https://github.com/oca/vertical-medical
 #
 ##############################################################################
 #    It is a collaborative effort between several companies that want to join
@@ -38,7 +38,13 @@
     'version': '1.0',
     'author': "OeMEdical Team,Odoo Community Association (OCA)",
     'category': 'Generic Modules/Others',
-    'depends': ['base', 'sale', 'purchase', 'account', 'product'],
+    'depends': [
+        'base',
+        'sale',
+        'purchase',
+        'account',
+        'product'
+    ],
     'application': True,
     'description': """
 
@@ -56,36 +62,36 @@ high quality, secure and scalable system.
 OeMedical at a glance:
 
     * Strong focus in family medicine and Primary Health Care
-    
+
     * Major interest in Socio-economics (housing conditions, substance abuse,
     education...)
-    
+
     * Diseases and Medical procedures standards (like ICD-10 / ICD-10-PCS ...)
-    
+
     * Patient Genetic and Hereditary risks : Over 4200 genes related to
     diseases (NCBI / Genecards)
-    
+
     * Epidemiological and other statistical reports
-    
+
     * 100% paperless patient examination and history taking
-    
-    * Patient Administration 
+
+    * Patient Administration
     (creation, evaluations / consultations, history ... )
-    
+
     * Doctor Administration
-    
+
     * Lab Administration
-    
+
     * Medicine / Drugs information (vademécum)
-    
+
     * Medical stock and supply chain management
-    
+
     * Hospital Financial Administration
-    
+
     * Designed with industry standards in mind
-    
+
     * Open Source : Licensed under AGPL
-    
+
 """,
     "website": "http://launchpad.net/oemedical",
     "licence": "AGPL v3",
@@ -143,7 +149,6 @@ OeMedical at a glance:
         'oemedical_menu.xml',
     ],
     "demo": [
-
     ],
     'test':[
             'test/physician.yml',
@@ -162,7 +167,7 @@ OeMedical at a glance:
     'qweb': [
 
     ],
-    "active": False
-    "installable": False,}
+    "active": False,
+    "installable": False,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

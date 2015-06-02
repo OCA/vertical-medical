@@ -20,7 +20,7 @@
 #
 #/#############################################################################
 
-from openerp.osv import fields, orm, orm
+from openerp.osv import fields, orm
 from openerp.tools.translate import _
 
 from dateutil.relativedelta import relativedelta

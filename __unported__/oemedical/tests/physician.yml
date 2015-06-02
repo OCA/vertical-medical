@@ -1,8 +1,0 @@
--
-  Create New Physician Vikas M Haribhakti
--
-  !record {model: oemedical.physician,id: oe_physician_1}:
-    name: Vikas M Haribhakti
-    info: 'General Physician'
-    code: 'PH101'
-    
