@@ -8,7 +8,7 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <notebook position="inside">
-                    <page string="OeMedical">
+                    <page string="Medical">
                         <group colspan="4" col="6">
                             <field name="is_insurance_company" />
                             <field name="relationship" />

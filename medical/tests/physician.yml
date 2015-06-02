@@ -1,14 +1,14 @@
 -
   Create New Specialty
 -
-  !record {model: oemedical.specialty,id: oe_specialty_1}:
+  !record {model: medical.specialty,id: oe_specialty_1}:
     name: test Specialty
     code: test Specialty Code
 
 -
   Create New Physician Vikas M Haribhakti
 -
-  !record {model: oemedical.physician,id: oe_physician_1}:
+  !record {model: medical.physician,id: oe_physician_1}:
     name: Vikas M Haribhakti
     login: vikas@example.com
     info: 'General Physician'
