@@ -1,56 +1,56 @@
 -
   Create New Physician Specialty
 -
-  !record {model: oemedical.specialty, id: oe_speciality_gen}:
+  !record {model: medical.specialty, id: oe_speciality_gen}:
     name: General Physician
     code: GP
 
 -
   Create New Physician Specialty
 -
-  !record {model: oemedical.specialty, id: oe_speciality_optha}:
+  !record {model: medical.specialty, id: oe_speciality_optha}:
     name: Ophthalmologists‎
     code: OL
 
 -
   Create New Physician Specialty
 -
-  !record {model: oemedical.specialty, id: oe_speciality_pd}:
+  !record {model: medical.specialty, id: oe_speciality_pd}:
     name: Pediatricians‎
     code: PD
 
 -
   Create New Physician Specialty
 -
-  !record {model: oemedical.specialty, id: oe_speciality_lep}:
+  !record {model: medical.specialty, id: oe_speciality_lep}:
     name: Leprologists‎
     code: LP
 
 -
   Create New Physician Specialty
 -
-  !record {model: oemedical.specialty, id: oe_speciality_cardi}:
+  !record {model: medical.specialty, id: oe_speciality_cardi}:
     name: Cardiologists‎
     code: CD
 
 -
   Create New Physician Specialty
 -
-  !record {model: oemedical.speciality, id: oe_speciality_ana}:
+  !record {model: medical.speciality, id: oe_speciality_ana}:
     name: Anesthesiologists‎
     code: AL
 
 -
   Create New Physician Specialty
 -
-  !record {model: oemedical.specialty, id: oe_speciality_skin}:
+  !record {model: medical.specialty, id: oe_speciality_skin}:
     name: Dermatologists‎
     code: DL
 
 -
   Create New Physician Specialty
 -
-  !record {model: oemedical.specialty, id: oe_speciality_gyn}:
+  !record {model: medical.specialty, id: oe_speciality_gyn}:
     name: Gynaecologists‎
     code: GL
 ‎

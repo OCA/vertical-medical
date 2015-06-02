@@ -23,13 +23,13 @@
 from openerp.osv import fields, orm
 from openerp.tools.translate import _
 
-from openerp.addons.medical.oemedical_constants import days, hours, minutes
+from openerp.addons.medical.medical_constants import days, hours, minutes
 
 
-class oemedical_physician_schedule_template(orm.Model):
-    _name = 'oemedical.physician.schedule.template'
+class medical_physician_schedule_template(orm.Model):
+    _name = 'medical.physician.schedule.template'
     _columns = {
-        'physician_id': fields.many2one('oemedical.physician', 'Physician', required=True, select=1, ondelete='cascade'),
+        'physician_id': fields.many2one('medical.physician', 'Physician', required=True, select=1, ondelete='cascade'),
         'day': fields.selection(days,
                                 string='Day', sort=False),
         'start_hour': fields.selection(hours,
@@ -45,8 +45,8 @@ class oemedical_physician_schedule_template(orm.Model):
     }
 
 
-class OeMedicalPhysician(orm.Model):
-    _name = 'oemedical.physician'
+class MedicalPhysician(orm.Model):
+    _name = 'medical.physician'
     _inherits = {
         'res.users': 'user_id',
     }
@@ -56,20 +56,20 @@ class OeMedicalPhysician(orm.Model):
             'res.users', 'Related User', required=True,
             ondelete='cascade', help='User-related data of the physician'),
         'code': fields.char(size=256, string='ID'),
-        'specialty': fields.many2one('oemedical.specialty', string='Specialty', required=True, help='Specialty Code'),
+        'specialty': fields.many2one('medical.specialty', string='Specialty', required=True, help='Specialty Code'),
         'info': fields.text(string='Extra info'),
         'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the physician without removing it."),
-        'schedule_template_ids': fields.one2many('oemedical.physician.schedule.template', 'physician_id', 'Related schedules'),
+        'schedule_template_ids': fields.one2many('medical.physician.schedule.template', 'physician_id', 'Related schedules'),
     }
 
     def create(self, cr, uid, vals, context=None):
         vals['is_doctor'] = True
         vals['supplier'] = True
-        return super(OeMedicalPhysician, self).create(cr, uid, vals, context=context)
+        return super(MedicalPhysician, self).create(cr, uid, vals, context=context)
 
     def action_update_schedule(self, cr, uid, ids, context=None):
 
-        schedule_template_proxy = self.pool.get('oemedical.physician.schedule.template')
+        schedule_template_proxy = self.pool.get('medical.physician.schedule.template')
 
         this = self.browse(cr, uid, ids)[0]
         defined_templates = len(this.schedule_template_ids)
