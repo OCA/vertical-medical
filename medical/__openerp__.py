@@ -34,19 +34,20 @@
 ##############################################################################
 {
 
-    'name': 'Odoo Medical : Open Source Health and Hospital Information System',
+    'name': 'Odoo Medical',
     'version': '1.0',
-    'author': 'Odoo Medical Team',
     'category': 'Medical',
     'depends': [
         'base',
         'product'
     ],
+    'author': "OeMEdical Team,Odoo Community Association (OCA)",
+    'category': 'Generic Modules/Others',
     'application': True,
     'description': """
 
 About Odoo Medical
----------------
+------------------
 
 Odoo Medical is a multi-user, highly scalable, centralized Electronic
 Medical Record (EMR) and Hospital Information System for openERP.
