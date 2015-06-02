@@ -96,6 +96,10 @@ class MedicalPatient(orm.Model):
         'identification_code': fields.char(size=256, string='ID', help='Patient Identifier provided by the Health Center.Is not the Social Security Number'),
         'active': fields.boolean('Active', help="If unchecked, it will allow you to hide the patient without removing it."),
     }
+    
+    _defaults = {
+                 'active':True,
+                 }
 
     def create(self, cr, uid, vals, context=None):
         sequence = unicode(self.pool.get('ir.sequence').get(cr, uid, 'medical.patient'))
