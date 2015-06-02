@@ -25,37 +25,37 @@
 	                    <button name="action_update_schedule" string="Update Schedule" type="object" />
 	                </header>
 				    <sheet>
-						<field name="image" widget='image' class="oe_left oe_avatar"/> 
-						<div> 
-							<h1> 
-								<field name="name" placeholder="Doctor's Name" style="width: 20%%" /> 
-	                            <field name="login" placeholder="Login" style="width: 20%%" /> 
-							</h1> 
-						</div> 
-						<div> 
-							<label for="code"/> 
+						<field name="image" widget='image' class="oe_left oe_avatar"/>
+						<div>
+							<h1>
+								<field name="name" placeholder="Doctor's Name" style="width: 20%%" />
+	                            <field name="login" placeholder="Login" style="width: 20%%" />
+							</h1>
+						</div>
+						<div>
+							<label for="code"/>
 	   					    <field name="code" style="width: 20%%"/>
 	   					    <label for="specialty"/>
 							<field name="specialty" style="width: 20%%"/>
-						</div> 
+						</div>
 						<group>
-						<label for="ref"/> 
-						<field name="ref" style="width: 20%%"/> 
+						<label for="ref"/>
+						<field name="ref" style="width: 20%%"/>
 						<field name="parent_id" />
 						<newline/>
 						<field name="info" colspan="4"/>
 						</group>
-	                    <notebook> 
-	                        <page string="General Information"> 
-			                    <group> 
+	                    <notebook>
+	                        <page string="General Information">
+			                    <group>
 			                        <field name="active"/>
 			                        <field name="phone" placeholder="e.g. +506 5555 5555"/>
 			                        <field name="mobile"/>
 			                        <field name="fax"/>
 			                       	<field name="user_ids" invisible="1"/>
 			                        <field name="email" widget="email" attrs="{'required': [('user_ids','!=', [])]}"/>
-			                    </group> 
-			                    <group> 
+			                    </group>
+			                    <group>
 			                       	<label for="street" string="Address"/>
 			                        <div>
 			                            <field name="use_parent_address" invisible="1"/>
@@ -63,12 +63,12 @@
 			                            <field name="street2"  attrs="{'readonly': [('use_parent_address','=',True)]}"/>
 			                            <div class="address_format">
 			                                <field name="city" placeholder="City" style="width: 40%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-			                                <field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' on_change="onchange_state(state_id)" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+			                                <field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}"/>
 			                                <field name="zip" placeholder="ZIP" style="width: 20%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
 			                            </div>
 			                            <field name="country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}"/>
 			                        </div>
-			                    </group> 
+			                    </group>
 			                </page>
 	                        <page string="Schedule Template">
 	                            <field name="schedule_template_ids">
@@ -83,7 +83,7 @@
    	                                </tree>
 	                            </field>
                             </page>
-                        </notebook> 
+                        </notebook>
                     </sheet>
 				</form>
 			</field>
