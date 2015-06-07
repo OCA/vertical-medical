@@ -26,11 +26,10 @@ from openerp.tools.translate import _
 
 class MedicalPatientMedication(orm.Model):
     _name = 'medical.patient.medication'
+    _rec_name = 'patient_id'
 
     _columns = {
         'patient_id': fields.many2one('medical.patient', string='Patient',),
-#        'name': fields.many2one('medical.patient', string='Patient',
-#                                readonly=True ),
         'doctor': fields.many2one('medical.physician', string='Physician', 
                                 help='Physician who prescribed the medicament'),
         'adverse_reaction': fields.text(string='Adverse Reactions',
@@ -46,6 +45,5 @@ class MedicalPatientMedication(orm.Model):
                     help='Short description for discontinuing the treatment'),
         'discontinued': fields.boolean(string='Discontinued'),
     }
-
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

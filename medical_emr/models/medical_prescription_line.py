@@ -27,8 +27,6 @@ from openerp.tools.translate import _
 class MedicalPrescriptionLine(orm.Model):
     _name = 'medical.prescription.line'
 
-
-
     def _get_medicament(self, cr, uid, ids, name, args, context=None):
         print '_get_medicament', name, args, context, ids
         medication_obj = self.pool.get('medical.medication.template')
@@ -160,7 +158,5 @@ class MedicalPrescriptionLine(orm.Model):
         'prnt' : True,
 
                 }
-
-
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

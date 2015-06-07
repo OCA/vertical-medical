@@ -34,8 +34,6 @@ class MedicalEthnicity(orm.Model):
                             translate=True),
     }
     _sql_constraints = [
-        ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
+        ('name_uniq', 'UNIQUE(name)', 'Ethnicity name must be unique!'),
     ]
-
-
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

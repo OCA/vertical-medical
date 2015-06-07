@@ -87,7 +87,7 @@ Medical at a glance:
     * Open Source : Licensed under AGPL
     
 """,
-    "website": "http://launchpad.net/medical",
+    "website": "http://github.com/oca/vertical-medical",
     "licence": "AGPL v3",
     "data": [
         'views/medical_sequence.xml',
@@ -136,6 +136,6 @@ Medical at a glance:
 
     ],
     "active": False,
-    'installable': False,
+    "installable": True
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

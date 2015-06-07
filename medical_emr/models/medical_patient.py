@@ -52,5 +52,4 @@ class MedicalPatient(orm.Model):
         'cod': fields.many2one('medical.pathology', string='Cause of Death',),
     }
     
-
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -71,5 +71,4 @@ class MedicalMedicationTemplate(orm.Model):
         'dose_unit': fields.many2one('product.uom', string='dose unit', help='Unit of measure for the medication to be taken'),
     }
 
-
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
