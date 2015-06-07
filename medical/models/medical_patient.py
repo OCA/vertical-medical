@@ -100,9 +100,9 @@ class MedicalPatient(orm.Model):
 
     _columns = {
         'id': fields.integer('ID', readonly=True),
-        'user_id': fields.many2one(
-            'res.users', 'Related User', required=True,
-            ondelete='cascade', help='User-related data of the patient'),
+        'partner_id': fields.many2one(
+            'res.partner', 'Related Partner', required=True,
+            ondelete='cascade', help='Partner-related data of the patient'),
         'sex': fields.selection([('m', 'Male'), ('f', 'Female')],
                                 string='Sex', required=True),
         'general_info': fields.text(string='General Information',

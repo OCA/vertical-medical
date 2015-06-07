@@ -141,7 +141,7 @@ class MedicalAppointment(orm.Model):
     }
 
     _defaults = {
-        'name': '/'
+        'name': '/',
         'duration': 30.00,
         'urgency': 'a',
         'stage_id': lambda s, cr, uid, c: s._get_default_stage_id(cr, uid, c),

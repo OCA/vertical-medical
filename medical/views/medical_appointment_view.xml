@@ -47,8 +47,6 @@
                             <page string="Main">
                                 <group >
                                     <group> 
-					                    <field name="current_user_related_centers" invisible="1"/>
-					                    <field name="doctor_med_center" class="oe_edit_only"  on_change="onchange_doctor_med_center(doctor_med_center)"/>
 					                    <field name="physician_id" />
                                         <field name="institution_id" />
 					                    <field name="specialty" />

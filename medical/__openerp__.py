@@ -98,6 +98,7 @@ Odoo Medical at a glance:
         'views/medical_sequence.xml',
         'views/product_product_view.xml',
         'views/res_partner_view.xml',
+        'wizard/medical_physician_unavailable_view.xml',
         'views/medical_physician_view.xml',
         'views/medical_patient_view.xml',
         'views/medical_appointment_view.xml',
@@ -106,7 +107,6 @@ Odoo Medical at a glance:
         'security/medical_security.xml',
         'security/ir.model.access.csv',
         'views/medical_menu.xml',
-        'wizard/medical_physician_unavailable_view.xml',
     ],
     "demo": [
 
