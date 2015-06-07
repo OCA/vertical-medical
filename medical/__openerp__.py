@@ -7,12 +7,13 @@
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
 #    Coded by: Parthiv Patel <parthiv@techreceptives.com>
 #    Coded by: Ruchir Shukla <ruchir@techreceptives.com>
+#    Coded by: Mario Arias   <support@cysfuturo.com>
 #    Planifyied by: Parthiv Patel <parthiv@techreceptives.com>
 #    Planifyied by: Nhomar Hernandéz <nhomar@vauxoo.com>
 #
 ##############################################################################
-#    This project is mantained by OeMEdical Team:
-#    https://launchpad.net/medical
+#    This project is mantained by Odoo Medical Team:
+#    http://github.com/oca/vertical-medical
 #
 ##############################################################################
 #    It is a collaborative effort between several companies that want to join
@@ -34,19 +35,20 @@
 ##############################################################################
 {
 
-    'name': 'Odoo Medical : Open Source Health and Hospital Information System',
+    'name': 'Odoo Medical',
     'version': '1.0',
-    'author': 'Odoo Medical Team',
     'category': 'Medical',
     'depends': [
         'base',
         'product'
     ],
+    'author': "Odoo Medical Team,Odoo Community Association (OCA)",
+    'category': 'Generic Modules/Others',
     'application': True,
     'description': """
 
 About Odoo Medical
----------------
+------------------
 
 Odoo Medical is a multi-user, highly scalable, centralized Electronic
 Medical Record (EMR) and Hospital Information System for openERP.
@@ -99,10 +101,12 @@ Odoo Medical at a glance:
         'views/medical_physician_view.xml',
         'views/medical_patient_view.xml',
         'views/medical_appointment_view.xml',
+        'data/medical_appointment_data.xml',
         'views/medical_specialty_view.xml',
         'security/medical_security.xml',
         'security/ir.model.access.csv',
         'views/medical_menu.xml',
+        'wizard/medical_physician_unavailable_view.xml',
     ],
     "demo": [
 

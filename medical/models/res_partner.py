@@ -48,13 +48,6 @@ class ResPartner(orm.Model):
                                      help='Check if the party is a patient'),
         'alias': fields.char(size=256, string='Alias',
                              help='Common name that the Party is reffered'),
-        'internal_user': fields.many2one('res.users', string='Internal User',
-                                         help='In GNU Health is the user '
-                                         '(doctor, nurse) that logins.When the'
-                                         ' party is a doctor or a health '
-                                         'professional, it will be the user'
-                                         ' that maps the doctor\'s party name.'
-                                         'It must be present.'),
         'activation_date': fields.date(string='Activation date',
                                        help='Date of activation of the party'),
         'lastname': fields.char(size=256, string='Last Name',

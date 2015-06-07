@@ -46,9 +46,13 @@
         <menuitem name="Health Professionals" id="medical_conf_physicians"
             parent="medical_root_sub" sequence="20" />
 
-		<menuitem id="medical_physician" name=" Physician" parent="medical_conf_physicians"
-			sequence="10" action="act_open_medical_physician_view" />
-
-
+		<menuitem id="medical_physician_admin" name=" Physician [Admin]" parent="medical_conf_physicians"
+			sequence="10" action="act_open_medical_physician_view" groups="group_medical_manager"/>
+		<menuitem id="medical_physician_self" name=" Physician [Self]" parent="medical_conf_physicians"
+			sequence="10" action="act_open_medical_physician_view_self" groups="group_medical_doctor"/>
+		<menuitem id="medical_physician_assistant" name=" Physician [Asistant]" parent="medical_conf_physicians"
+			sequence="10" action="act_open_medical_physician_view" groups="group_medical_assistant"/>
 	</data>
 </openerp>
+
+

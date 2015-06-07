@@ -27,7 +27,7 @@ from dateutil.relativedelta import relativedelta
 from datetime import datetime
 
 
-class medical_patient_med_center_rel(orm.Model):
+class MedicalPatientMedCenterRel(orm.Model):
     _name = 'medical.patient.med.center.rel'
     _rec_name = 'patient_id'
     _columns = {
@@ -51,10 +51,25 @@ class medical_patient_med_center_rel(orm.Model):
 
 
 class MedicalPatient(orm.Model):
+    '''
+    The concept of Patient included in medical.
+
+    A patient is an User with extra elements due to the fact that we will
+    re-use all the ACL related to users to manage the security of a patient
+    form around medical.
+    '''
     _name = 'medical.patient'
     _inherits = {
-        'res.users': 'user_id',
+        'res.partner': 'partner_id',
     }
+
+    def _get_default_patient_id(self, cr, uid, context=None):
+        """ Gives default patient_id """
+        patient_ids = self.search(cr, uid, [('name', '=', 'Libre')], context=context)
+        if not patient_ids:
+            raise orm.except_orm(_('Error!'), _('No default patient defined') )
+           
+        return patient_ids[0]
 
     def _get_age(self, cr, uid, ids, field_name, arg, context=None):
         res = {}
@@ -114,7 +129,7 @@ class MedicalPatient(orm.Model):
                                            sort=False),
         'deceased': fields.boolean(string='Deceased'),
         'dod': fields.datetime(string='Date of Death'),
-        'identification_code': fields.char(size=256, string='ID',
+        'identification_code': fields.char(size=256, string='Internal Identification',
                                            help='Patient Identifier provided '
                                            'by the Health Center.Is not the '
                                            'Social Security Number'),
@@ -124,6 +139,8 @@ class MedicalPatient(orm.Model):
     }
 
     _defaults = {
+        'is_patient': True,
+        'customer': True,
         'active': True,
     }
 
@@ -131,8 +148,15 @@ class MedicalPatient(orm.Model):
         sequence = unicode(
             self.pool.get('ir.sequence').get(cr, uid, 'medical.patient'))
         vals['identification_code'] = sequence
-        vals['is_patient'] = True
-        vals['customer'] = True
+
+        '''
+        When we create a patient we need ensure it belong to the group with
+        ACL's patients.
+        '''
+        groups_proxy = self.pool['res.groups']
+        group_ids = groups_proxy.search(cr, uid, [('name', '=', 'OEMedical User')], context=context)
+        vals['groups_id'] = [(6,0,group_ids)]
+
         return super(MedicalPatient, self).create(cr, uid, vals,
                                                   context=context)
 

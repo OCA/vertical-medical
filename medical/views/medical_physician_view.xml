@@ -22,30 +22,37 @@
 			<field name="arch" type="xml">
 				<form string="Oemedical Physician" version="7.0">
 	                <header>
-	                    <button name="action_update_schedule" string="Update Schedule" type="object" />
+                        <button name="action_update_schedule" string="Update Schedule" type="object" />
+                        <button name="%(medical_physician_unavailable_wizard_act)d" string="Create unavailability" type="action" context="{'default_physician_id': active_id}" />
 	                </header>
 				    <sheet>
-						<field name="image" widget='image' class="oe_left oe_avatar"/>
-						<div>
-							<h1>
-								<field name="name" placeholder="Doctor's Name" style="width: 20%%" />
-	                            <field name="login" placeholder="Login" style="width: 20%%" />
-							</h1>
-						</div>
-						<div>
-							<label for="code"/>
-	   					    <field name="code" style="width: 20%%"/>
-	   					    <label for="specialty"/>
-							<field name="specialty" style="width: 20%%"/>
-						</div>
-						<group>
-						<label for="ref"/>
-						<field name="ref" style="width: 20%%"/>
-						<field name="parent_id" />
-						<newline/>
-						<field name="info" colspan="4"/>
-						</group>
-	                    <notebook>
+                        <field name="image" widget='image' class="oe_left oe_avatar"/>
+                        <div>
+	                        <h1>
+                                <field name="name" placeholder="Physician's Name" style="width: 20%" />
+	                        </h1> 
+                        </div> 
+                        <div> 
+                            <h3> 
+                                <field name="login" placeholder="Login" style="width: 20%" /> 
+                            </h3> 
+                        </div> 
+                        <div> 
+                            <label for="ref"/> 
+                            <field name="ref" style="width: 20%"/> 
+                            <label for="code"/>
+                            <field name="code" style="width: 20%"/>
+                            <label for="specialty"/>
+                            <field name="specialty" style="width: 20%"/>
+                        </div>
+                        <group>
+                            <label for="ref"/>
+                            <field name="ref" style="width: 20%"/>
+                            <field name="parent_id" />
+                            <newline/>
+                            <field name="info" colspan="4"/>
+                        </group>
+                        <notebook>
 	                        <page string="General Information">
 			                    <group>
 			                        <field name="active"/>
@@ -71,9 +78,10 @@
 			                    </group>
 			                </page>
 	                        <page string="Schedule Template">
-	                            <field name="schedule_template_ids">
+	                            <field name="schedule_template_ids" context="{'default_physician_id': id}">
 	                                colspan="4"
 	                                <tree string="Schedule Template" editable="bottom">
+	                                    <field name="physician_id" invisible="1"/>
 	                                    <field name="day" />
 	                                    <field name="start_hour" />
 	                                    <field name="start_minute" />
@@ -110,6 +118,17 @@
 					</group>
 				</search>
 			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="act_open_medical_physician_view_self">
+			<field name="name">Physician</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.physician</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_physician_search" />
+			<field name="domain">[('user_id', '=', uid)]</field>
+			<field name="context">{}</field>
 		</record>
 
 		<record model="ir.actions.act_window" id="act_open_medical_physician_view">

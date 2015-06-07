@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# #############################################################################
+##############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,19 +18,8 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-# #############################################################################
-from openerp.osv import fields, orm
-from openerp.tools.translate import _
+##############################################################################
 
+from . import medical_physician_unavailable
 
-class MedicalSpecialty(orm.Model):
-    _name = 'medical.specialty'
-    _columns = {
-        'code': fields.char(size=256, string='Code'),
-        'name': fields.char(size=256, string='Specialty', required=True,
-                            translate=True),
-    }
-    _sql_constraints = [
-        ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
-    ]
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
