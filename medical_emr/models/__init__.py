@@ -40,6 +40,7 @@ import medical_patient_medication
 import medical_patient_evaluation
 import medical_prescription_line
 import medical_patient_disease
+import medical_patient
 import medical_drug_route
 import medical_family
 import medical_occupation

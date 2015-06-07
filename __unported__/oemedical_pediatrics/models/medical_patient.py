@@ -48,6 +48,7 @@ class MedicalPatient(orm.Model):
         'critical_info': fields.text( string='Important disease, allergy or procedures information', help='Write any important information on the patient\'s disease, surgeries, allergies, ...'),
         'diseases': fields.one2many('medical.patient.disease', 'patient_id', string='Diseases', help='Mark if the patient has died'),
         'ethnic_group': fields.many2one('medical.ethnicity', string='Ethnic group',),
+        #'vaccinations': fields.one2many('medical.vaccination', 'patient_id', 'Vaccinations',),
         'cod': fields.many2one('medical.pathology', string='Cause of Death',),
     }
     

@@ -111,6 +111,7 @@ Medical at a glance:
         'views/medical_patient_evaluation_view.xml',
         'views/medical_prescription_line_view.xml',
         'views/medical_patient_disease_view.xml',
+        'views/medical_patient_view.xml',
         'views/medical_drug_route_view.xml',
         'views/medical_family_view.xml',
         'views/medical_occupation_view.xml',
