@@ -27,8 +27,7 @@
                             <field name="image" widget='image' class="oe_left oe_avatar"/> 
                             <div> 
                                  <h1> 
-		                            <field name="name" placeholder="First Name" style="width: 20%" /> 
-		                            <field name="login" placeholder="Login" style="width: 20%" /> 
+		                            <field name="name" placeholder="First Name" style="width: 20%%" /> 
 		                         </h1> 
                             </div> 
      						<div> 
@@ -74,6 +73,11 @@
                             </group>
                             <group  col="4" colspan="4"> 
              					<field name="marital_status" colspan="2"/> 
+             					<field name="parent_id" colspan="2" string="Legal Representative" domain="[('is_patient','=',True)]"/> 
+							</group> 
+                            <group  col="4" colspan="4"> 
+             					<field name="lang" colspan="2"/> 
+             					<field name="opt_out" string="I don't want to receive comercial messages" colspan="2"/>
              				</group> 
          				</page> 
                         <page string="Medical Centers">
@@ -91,6 +95,99 @@
                                 </form>
                             </field>
                         </page>
+		                <page string="Dependants">
+		                    <field name="child_ids" context="{'default_contact_id': active_id, 'default_use_parent_address': True, 'default_is_patient': True, 'default_customer': True}}" mode="kanban" domain="[('is_patient', '=', True)]">
+		                        <kanban>
+		                            <field name="color"/>
+		                            <field name="name"/>
+		                            <field name="title"/>
+		                            <field name="email"/>
+		                            <field name="parent_id"/>
+		                            <field name="is_company"/>
+		                            <field name="function"/>
+		                            <field name="phone" data-inputmask="'mask': '9999-9999'"/>
+		                            <field name="street"/>
+		                            <field name="street2"/>
+		                            <field name="zip"/>
+		                            <field name="city"/>
+		                            <field name="country_id"/>
+		                            <field name="mobile" data-inputmask="'mask': '9999-9999'"/>
+		                            <field name="fax" data-inputmask="'mask': '9999-9999'"/>
+		                            <field name="state_id"/>
+		                            <field name="has_image"/>
+		                            <templates>
+		                                <t t-name="kanban-box">
+		                                    <t t-set="color" t-value="kanban_color(record.color.raw_value)"/>
+		                                    <div t-att-class="color + (record.title.raw_value == 1 ? ' oe_kanban_color_alert' : '')" style="position: relative">
+		                                        <a t-if="! read_only_mode" type="delete" style="position: absolute; right: 0; padding: 4px; diplay: inline-block">X</a>
+		                                        <div class="oe_module_vignette">
+		                                        <a type="open">
+		                                            <t t-if="record.has_image.raw_value === true">
+		                                                <img t-att-src="kanban_image('medical.physician', 'image', record.id.value, {'preview_image': 'image_small'})" class="oe_avatar oe_kanban_avatar_smallbox"/>
+		                                            </t>
+		                                            <t t-if="record.image and record.image.raw_value !== false">
+		                                                <img t-att-src="'data:image/png;base64,'+record.image.raw_value" class="oe_avatar oe_kanban_avatar_smallbox"/>
+		                                            </t>
+		                                            <t t-if="record.has_image.raw_value === false and (!record.image or record.image.raw_value === false)">
+		                                                <t t-if="record.is_company.raw_value === true">
+		                                                    <img t-att-src='_s + "/base/static/src/img/company_image.png"' class="oe_kanban_image oe_kanban_avatar_smallbox"/>
+		                                                </t>
+		                                                <t t-if="record.is_company.raw_value === false">
+		                                                    <img t-att-src='_s + "/base/static/src/img/avatar.png"' class="oe_kanban_image oe_kanban_avatar_smallbox"/>
+		                                                </t>
+		                                            </t>
+		                                        </a>
+		                                            <div class="oe_module_desc">
+		                                                <div class="oe_kanban_box_content oe_kanban_color_bglight oe_kanban_color_border">
+		                                                    <table class="oe_kanban_table">
+		                                                        <tr>
+		                                                            <td class="oe_kanban_title1" align="left" valign="middle">
+		                                                                <h4><a type="open"><field name="name"/></a></h4>
+		                                                                <div><a t-if="record.email.raw_value" title="Mail" t-att-href="'mailto:'+record.email.value">
+		                                                                    <field name="email"/>
+		                                                                </a></div>
+		                                                                <div t-if="record.phone.raw_value">Phone: <field name="phone" data-inputmask="'mask': '9999-9999'"/></div>
+		                                                                <div t-if="record.mobile.raw_value">Mobile: <field name="mobile" data-inputmask="'mask': '9999-9999'"/></div>
+		                                                                <div t-if="record.fax.raw_value">Fax: <field name="fax" data-inputmask="'mask': '9999-9999'"/></div>
+		                                                            </td>
+		                                                        </tr>
+		                                                    </table>
+		                                                </div>
+		                                            </div>
+		                                        </div>
+		                                    </div>
+		                                </t>
+		                            </templates>
+		                        </kanban>
+		                        <form string="Dependants" version="7.0">
+		                            <sheet>
+		                                <field name="image" widget='image' class="oe_avatar oe_left" options='{"preview_image": "image_medium"}'/>
+		                                <div class="oe_title">
+			                                    <label for="name" string="Dependant" class="oe_edit_only"/>
+			                                    <h1><field name="name" style="width: 90%%" placeholder="Dependant Name" required="True"/></h1>
+			                                    <field name="category_id" widget="many2many_tags" placeholder="Tags..." style="width: 70%%"/>
+		                                </div>
+
+                                                <group col="2" colspan="2">
+                                                    <field name="customer" invisible="True"/>
+                                                    <field name="use_parent_address" invisible="True"/>
+                                                    <field class="oe_inline" name="type" invisible="True"/>
+                                                    <label for="street" string="Address"/>
+                                                    <div name="div_address">
+                                                        <field name="street" placeholder="Street..." attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                        <field name="street2" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                        <div class="address_format">
+                                                            <field name="city" placeholder="City" style="width: 40%%" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                            <field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' on_change="onchange_state(state_id)" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                            <field name="zip" placeholder="ZIP" style="width: 20%%" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                        </div>
+                                                        <field name="country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                    </div>
+                                                </group>
+		                            </sheet>
+		                        </form>
+		                    </field>
+		                </page>
                     </notebook> 
  				</sheet> 
  				</form> 

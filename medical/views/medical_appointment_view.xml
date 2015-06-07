@@ -6,17 +6,17 @@
 			<field name="model">medical.appointment</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<tree string="Oemedical Appointment" colors="grey:state=='cancel';green:state=='draft';blue:state in ('done');red:state in ('waiting')">
+				<tree string="Medical Appointment" colors="grey:stage_id=='Canceled';green:stage_id=='Draft';blue:stage_id in ('Done');red:stage_id in ('Waiting','Unavailable')">
 					<field name="name" />
 					<field name="patient_id" />
    					<field name="alias" />
 					<field name="appointment_date" />
-					<field name="doctor" />
+					<field name="physician_id" />
 					<field name="appointment_type" />
-					<field name="institution" />
+					<field name="institution_id" />
 					<field name="urgency" />
-					<field name="speciality" />
-					<field name="state" />
+					<field name="specialty" />
+					<field name="stage_id" />
 				</tree>
 			</field>
 		</record>
@@ -28,15 +28,9 @@
 			<field name="arch" type="xml">
 				<form string="Oemedical Appointment"  version="7.0">
                     <header>
-<!--                        <button name="action_quotation_send" string="Send by e-mail" type="object" class="oe_highlight" groups="base.group_user"/>-->
-<!--                        <button name="print_prescription" string="Print" type="object"  class="oe_highlight" groups="base.group_user"/>-->
-                        <button name="button_back" states="confirm,waiting,in_consultation,done,canceled" string="Back"  type="object" groups="base.group_user"/>
-                        <button name="button_confirm" states="draft" string="Confirm" class="oe_highlight"  type="object" groups="base.group_user"/>
-                        <button name="button_waiting" states="confirm" string="Waiting" class="oe_highlight"  type="object" groups="base.group_user"/>
-                        <button name="button_in_consultation" states="waiting" string="In Consultation" class="oe_highlight"  type="object" groups="base.group_user"/>
-                        <button name="button_done" states="in_consultation" string="Done" class="oe_highlight"  type="object" groups="base.group_user"/>
-                        <button name="button_cancel" states="confirm,in_consultation" string="Cancel"  type="object" groups="base.group_user"/>
-                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm,waiting,in_consultation,done,canceled" statusbar_colors='{"canceled":"red","waiting":"blue"}'/>
+	                    <field name="stage_id" widget="statusbar" clickable="True"
+	                            options="{'fold_field': 'fold'}" 
+	                             />
                     </header>
                     <sheet>
                         <h1>
@@ -44,27 +38,26 @@
 				            <field name="name"/>
                         </h1>
                         <group col="4" colspan="4">
-                            <field name="institution" />
-			                <field name="consultations" />
-    		                <field name="appointment_type" />
+                            <field name="patient_id" on_change="onchange_patient_id(patient_id)"/>
+                            <field name="alias" />
+                            <field name="appointment_type" />
 			                <field name="urgency" />
                         </group>
                         <notebook>
                             <page string="Main">
-                                <group col="4" colspan="4">
-                					<field name="alias" />
-                                    <field name="patient_id" />
-					                <field name="doctor" />
-					                <field name="speciality" />
-                                    <group colspan="2" col="6">
-					                    <field name="appointment_date" nolabel="0"/>
-					                    <field name="appointment_day" nolabel="0"/>
-					                    <field name="appointment_hour" nolabel="1"/>
-					                    <field name="appointment_minute" nolabel="1"/>
+                                <group >
+                                    <group> 
+					                    <field name="current_user_related_centers" invisible="1"/>
+					                    <field name="doctor_med_center" class="oe_edit_only"  on_change="onchange_doctor_med_center(doctor_med_center)"/>
+					                    <field name="physician_id" />
+                                        <field name="institution_id" />
+					                    <field name="specialty" />
+					                </group>
+                                    <group>
+						                <field name="consultations" />
+					                    <field name="appointment_date"/>
+                                        <field name="duration" widget="float_time"/>
                                     </group>
-   					                <field name="duration" widget="float_time"/>
-
-       				                <field name="appointment_date" invisible="1"/>
                                 </group>
                                 <group col="4" colspan="4" string="Notes">
 					                <field name="comments" colspan="4" nolabel="1"/>
@@ -93,14 +86,13 @@
             <field name="model">medical.appointment</field>
             <field eval="2" name="priority"/>
             <field name="arch" type="xml">
-                <calendar color="doctor" date_start="appointment_date" string="Calendar View">
+                <calendar color="physician_id" date_start="appointment_date" date_stop="date_end" string="Calendar View" mode="week" >
                     <field name="patient_id"/>
-                    <field name="doctor"/>
+                    <field name="physician_id"/>
                     <field name="duration"/>
                 </calendar>
             </field>
         </record>
-
 
 		<record id="view_medical_appointment_search" model="ir.ui.view">
 			<field name="name">medical.appointment.search</field>
@@ -110,13 +102,13 @@
 				<search string="Oemedical Appointment">
 					<field name="name" />
 					<field name="patient_id" />
-					<field name="doctor" />
+					<field name="physician_id" />
 					<field name="appointment_date" />
 					<field name="appointment_type" />
 					<field name="urgency" />
 					<field name="consultations" />
-					<field name="institution" />
-					<field name="speciality" />
+					<field name="institution_id" />
+					<field name="specialty" />
 					<newline />
 					<group expand="0" string="Group By...">
 						<filter string="Consultation Services" domain="[]"
@@ -126,12 +118,12 @@
 							context="{'group_by':'name'}" />
 						<filter string="Date and Time" domain="[]"
 							context="{'group_by':'appointment_date'}" />
-						<filter string="Physician" domain="[]" context="{'group_by':'doctor'}" />
+						<filter string="Physician" domain="[]" context="{'group_by':'physician_id'}" />
 						<filter string="Comments" domain="[]" context="{'group_by':'comments'}" />
 						<filter string="Health Center" domain="[]"
-							context="{'group_by':'institution'}" />
+							context="{'group_by':'institution_id'}" />
 						<filter string="Specialty" domain="[]"
-							context="{'group_by':'speciality'}" />
+							context="{'group_by':'specialty'}" />
 					</group>
 				</search>
 			</field>
@@ -142,7 +134,8 @@
             <field name="model">medical.appointment</field>
             <field name="type">kanban</field>
             <field name="arch" type="xml">
-                <kanban version="7.0" class="oe_background_grey">
+                <kanban version="7.0" class="oe_background_grey" default_group_by="stage_id">
+                    <field name="stage_id"/>
                     <field name="name"/>
                     <templates>
                         <t t-name="kanban-box">
@@ -154,7 +147,7 @@
                                         </h3>
                                         <ul>
                                             <li t-if="record.patient_id.raw_value"><b>Patient:</b> <field name="patient_id"/></li>
-                                            <li t-if="record.doctor.raw_value"><b>Doctor:</b> <field name="doctor"/></li>
+                                            <li t-if="record.physician_id.raw_value"><b>Physician:</b> <field name="physician_id"/></li>
                                             <li t-if="record.duration.raw_value"><b>Duration:</b> <field name="duration"/></li>
                                         </ul>
                                     </div>
@@ -165,7 +158,6 @@
                 </kanban>
             </field>
         </record>
-
 
 		<record model="ir.actions.act_window" id="act_open_medical_appointment_view">
 			<field name="name">Appointment</field>
@@ -204,7 +196,6 @@
  			<field name="view_mode">kanban</field> 
  			<field name="view_id" ref="view_medical_appointment_kanban" /> 
  		</record> 
-
 
 	</data>
 </openerp>
