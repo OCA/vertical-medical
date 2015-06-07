@@ -99,7 +99,7 @@ class MedicalPhysician(orm.Model):
         'active': fields.boolean('Active',
                                  help="If unchecked, it will allow you to "
                                  "hide the physician without removing it."),
-        'schedule_template_ids': fields.one2many('medical.physician.schedule.'template',
+        'schedule_template_ids': fields.one2many('medical.physician.schedule.template',
 												 'physician_id', 'Related schedules'),
     }
 
