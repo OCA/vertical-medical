@@ -107,6 +107,7 @@ class MedicalAppointment(orm.Model):
         'duration': fields.float('Duration'),
         'physician_id': fields.many2one('medical.physician',
                                   string='Physician', select=True,
+                                  required=True,
                                   help='Physician\'s Name'),
         'alias': fields.char(size=256, string='Alias', ),
         'comments': fields.text(string='Comments'),
@@ -204,8 +205,8 @@ class MedicalAppointment(orm.Model):
         vals['date_end'] = date_end
         
         ## !!!! revisar que no choque con otra ya existente.  Si la otra esta libre eliminarla, sino dar error !!!
-        self._remove_empty_clashes(cr, uid, [], [physician_id], [], date_start, date_end, context=context)
-        current_appointments = self._get_appointments(cr, uid, [physician_id], [], date_start, date_end, context=context)
+        self._remove_empty_clashes(cr, uid, [], [vals['physician_id']], [], date_start, date_end, context=context)
+        current_appointments = self._get_appointments(cr, uid, [vals['physician_id']], [], date_start, date_end, context=context)
         if current_appointments:
             raise orm.except_orm(_('Error!'), _('Appointment clashes with other'))
 
