@@ -135,8 +135,7 @@ class MedicalAppointment(orm.Model):
         'stage_id': fields.many2one('medical.appointment.stage', 'Stage', track_visibility='onchange'),
         'history_ids': fields.one2many('medical.appointment.history',
                                        'appointment_id_history',
-                                       'History lines',
-                                       states={'start': [('readonly', True)]}),
+                                       'History lines'),
 
     }
 

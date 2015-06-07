@@ -38,7 +38,7 @@
 				            <field name="name"/>
                         </h1>
                         <group col="4" colspan="4">
-                            <field name="patient_id" on_change="onchange_patient_id(patient_id)"/>
+                            <field name="patient_id"/>
                             <field name="alias" />
                             <field name="appointment_type" />
 			                <field name="urgency" />

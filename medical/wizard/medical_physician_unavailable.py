@@ -44,20 +44,6 @@ class medical_physician_unavailable_wizard(osv.TransientModel):
         'date_end': fields.date.today(),
     }
 
-    def onchange_physician_id(self, cr, uid, ids, physician_id, context=None):
-        if not ids:
-            return {}
-
-        if context is None:
-            context = {}
-            
-        physician_proxy = self.pool['medical.physician']
-        physician_institutions = physician_proxy.read(cr, uid, physician_id, ['other_contact_ids'], context=context)
-
-        domain = {'institution_id':[('is_institution', '=', True), ('contact_id', 'in', physician_institutions)]}
-        return {'domain':domain}
-
-
     def action_cancel(self, cr, uid, ids, context=None):
         return {'type':'ir.actions.act_window_close'}
 
