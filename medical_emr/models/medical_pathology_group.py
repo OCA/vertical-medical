@@ -24,8 +24,8 @@ from openerp.osv import fields, orm
 from openerp.tools.translate import _
 
 
-class OeMedicalPathologyGroup(orm.Model):
-    _name = 'oemedical.pathology.group'
+class MedicalPathologyGroup(orm.Model):
+    _name = 'medical.pathology.group'
 
     _columns = {
         'info': fields.text(string='Detailed information'),

@@ -24,14 +24,14 @@ from openerp.osv import fields, orm
 from openerp.tools.translate import _
 
 
-class OeMedicalMedicamentCategory(orm.Model):
-    _name = 'oemedical.medicament.category'
+class MedicalMedicamentCategory(orm.Model):
+    _name = 'medical.medicament.category'
 
     _columns = {
-        'childs': fields.one2many('oemedical.medicament.category',
+        'childs': fields.one2many('medical.medicament.category',
                                   'parent_id', string='Children', ),
         'name': fields.char(size=256, string='Name', required=True),
-        'parent_id': fields.many2one('oemedical.medicament.category',
+        'parent_id': fields.many2one('medical.medicament.category',
                                   string='Parent', select=True),
     }
     _constraints = [

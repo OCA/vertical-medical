@@ -24,8 +24,8 @@ from openerp.osv import fields, orm
 from openerp.tools.translate import _
 
 
-class OeMedicalMedicationTemplate(orm.Model):
-    _name = 'oemedical.medication.template'
+class MedicalMedicationTemplate(orm.Model):
+    _name = 'medical.medication.template'
 
     def _get_name(self, cr, uid, ids, field_name, arg, context=None):
         res = {}
@@ -35,14 +35,14 @@ class OeMedicalMedicationTemplate(orm.Model):
 
 
     _columns = {
-        'medicament_id': fields.many2one('oemedical.medicament', string='Medicament', requered=True, help='Product Name', ondelete='cascade'),
+        'medicament_id': fields.many2one('medical.medicament', string='Medicament', requered=True, help='Product Name', ondelete='cascade'),
         'name': fields.function(_get_name, type='char', string='Medicament', help="", multi=False),
-        'indication': fields.many2one('oemedical.pathology', string='Indication', help='Choose a disease for this medicament from the disease list. It'\
+        'indication': fields.many2one('medical.pathology', string='Indication', help='Choose a disease for this medicament from the disease list. It'\
                         ' can be an existing disease of the patient or a prophylactic.'),
         'start_treatment': fields.datetime(string='Start', help='Date of start of Treatment'),
         'end_treatment': fields.datetime(string='End', help='Date of start of Treatment'),
-        'form': fields.many2one('oemedical.drug.form', string='Form', help='Drug form, such as tablet or gel'),
-        'route': fields.many2one('oemedical.drug.route', string='Administration Route', help='Drug administration route code.'),
+        'form': fields.many2one('medical.drug.form', string='Form', help='Drug form, such as tablet or gel'),
+        'route': fields.many2one('medical.drug.route', string='Administration Route', help='Drug administration route code.'),
         'duration_period': fields.selection([
             ('minutes', 'minutes'),
             ('hours', 'hours'),
@@ -66,7 +66,7 @@ class OeMedicalMedicationTemplate(orm.Model):
         'frequency_prn': fields.boolean(string='PRN',  help='Use it as needed, pro re nata'),
         'frequency': fields.integer(string='Frequency',  help='Time in between doses the patient must wait (ie, for 1 pill'\
             ' each 8 hours, put here 8 and select \"hours\" in the unit field'),
-        'common_dosage': fields.many2one('oemedical.medication.dosage', string='Frequency', help='Common / standard dosage frequency for this medicament'),
+        'common_dosage': fields.many2one('medical.medication.dosage', string='Frequency', help='Common / standard dosage frequency for this medicament'),
         'admin_times': fields.char(size=256, string='Admin hours', help='Suggested administration hours. For example, at 08:00, 13:00 and 18:00 can be encoded like 08 13 18'),
         'dose_unit': fields.many2one('product.uom', string='dose unit', help='Unit of measure for the medication to be taken'),
     }

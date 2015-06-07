@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
- 		<record id="view_oemedical_patient_form_emr" model="ir.ui.view"> 
- 			<field name="name">oemedical.patient.form</field> 
- 			<field name="model">oemedical.patient</field> 
-	                <field name="inherit_id" ref="oemedical.view_oemedical_patient_form"/>
+ 		<record id="view_medical_patient_form_emr" model="ir.ui.view"> 
+ 			<field name="name">medical.patient.form</field> 
+ 			<field name="model">medical.patient</field> 
+	                <field name="inherit_id" ref="medical.view_medical_patient_form"/>
  			<field name="priority" eval="8" /> 
  			<field name="arch" type="xml"> 
  			 <form string="Patient" version="7.0"> 

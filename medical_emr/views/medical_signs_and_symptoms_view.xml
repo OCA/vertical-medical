@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
-		<record id="view_oemedical_signs_and_symptoms_tree" model="ir.ui.view">
-			<field name="name">oemedical.signs_and_symptoms.tree</field>
-			<field name="model">oemedical.signs_and_symptoms</field>
+		<record id="view_medical_signs_and_symptoms_tree" model="ir.ui.view">
+			<field name="name">medical.signs_and_symptoms.tree</field>
+			<field name="model">medical.signs_and_symptoms</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Signs_And_Symptoms">
@@ -15,9 +15,9 @@
 			</field>
 		</record>
 
-		<record id="view_oemedical_signs_and_symptoms_form" model="ir.ui.view">
-			<field name="name">oemedical.signs_and_symptoms.form</field>
-			<field name="model">oemedical.signs_and_symptoms</field>
+		<record id="view_medical_signs_and_symptoms_form" model="ir.ui.view">
+			<field name="name">medical.signs_and_symptoms.form</field>
+			<field name="model">medical.signs_and_symptoms</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Signs_And_Symptoms">
@@ -29,9 +29,9 @@
 			</field>
 		</record>
 
-		<record id="view_oemedical_signs_and_symptoms_search" model="ir.ui.view">
-			<field name="name">oemedical.signs_and_symptoms.search</field>
-			<field name="model">oemedical.signs_and_symptoms</field>
+		<record id="view_medical_signs_and_symptoms_search" model="ir.ui.view">
+			<field name="name">medical.signs_and_symptoms.search</field>
+			<field name="model">medical.signs_and_symptoms</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<search string="Oemedical Signs_And_Symptoms">
@@ -50,29 +50,29 @@
 			</field>
 		</record>
 
-		<record model="ir.actions.act_window" id="act_open_oemedical_signs_and_symptoms_view">
+		<record model="ir.actions.act_window" id="act_open_medical_signs_and_symptoms_view">
 			<field name="name">Signs And Symptoms</field>
 			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">oemedical.signs_and_symptoms</field>
+			<field name="res_model">medical.signs_and_symptoms</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">tree,form</field>
-			<field name="search_view_id" ref="view_oemedical_signs_and_symptoms_search" />
+			<field name="search_view_id" ref="view_medical_signs_and_symptoms_search" />
 			<field name="domain">[]</field>
 			<field name="context">{}</field>
 		</record>
 
-		<record model="ir.actions.act_window.view" id="act_open_oemedical_signs_and_symptoms_view_form">
-			<field name="act_window_id" ref="act_open_oemedical_signs_and_symptoms_view" />
+		<record model="ir.actions.act_window.view" id="act_open_medical_signs_and_symptoms_view_form">
+			<field name="act_window_id" ref="act_open_medical_signs_and_symptoms_view" />
 			<field name="sequence" eval="20" />
 			<field name="view_mode">form</field>
-			<field name="view_id" ref="view_oemedical_signs_and_symptoms_form" />
+			<field name="view_id" ref="view_medical_signs_and_symptoms_form" />
 		</record>
 
-		<record model="ir.actions.act_window.view" id="act_open_oemedical_signs_and_symptoms_view_tree">
-			<field name="act_window_id" ref="act_open_oemedical_signs_and_symptoms_view" />
+		<record model="ir.actions.act_window.view" id="act_open_medical_signs_and_symptoms_view_tree">
+			<field name="act_window_id" ref="act_open_medical_signs_and_symptoms_view" />
 			<field name="sequence" eval="10" />
 			<field name="view_mode">tree</field>
-			<field name="view_id" ref="view_oemedical_signs_and_symptoms_tree" />
+			<field name="view_id" ref="view_medical_signs_and_symptoms_tree" />
 		</record>
 
 	</data>

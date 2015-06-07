@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
-		<record id="view_oemedical_prescription_order_tree" model="ir.ui.view">
-			<field name="name">oemedical.prescription.order.tree</field>
-			<field name="model">oemedical.prescription.order</field>
+		<record id="view_medical_prescription_order_tree" model="ir.ui.view">
+			<field name="name">medical.prescription.order.tree</field>
+			<field name="model">medical.prescription.order</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Prescription Order">
@@ -15,9 +15,9 @@
 			</field>
 		</record>
 
-		<record id="view_oemedical_prescription_order_form" model="ir.ui.view">
-			<field name="name">oemedical.prescription.order.form</field>
-			<field name="model">oemedical.prescription.order</field>
+		<record id="view_medical_prescription_order_form" model="ir.ui.view">
+			<field name="name">medical.prescription.order.form</field>
+			<field name="model">medical.prescription.order</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Prescription Order"  version="7.0">
@@ -103,9 +103,9 @@
 			</field>
 		</record>
 
-		<record id="view_oemedical_prescription_order_search" model="ir.ui.view">
-			<field name="name">oemedical.prescription.order.search</field>
-			<field name="model">oemedical.prescription.order</field>
+		<record id="view_medical_prescription_order_search" model="ir.ui.view">
+			<field name="name">medical.prescription.order.search</field>
+			<field name="model">medical.prescription.order</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<search string="Oemedical Prescription Order">
@@ -138,9 +138,9 @@
 			</field>
 		</record>
 
-        <record model="ir.ui.view" id="view_oemedical_prescription_order_kanban">
-            <field name="name">oemedical.Prescription Order kanban</field>
-            <field name="model">oemedical.prescription.order</field>
+        <record model="ir.ui.view" id="view_medical_prescription_order_kanban">
+            <field name="name">medical.Prescription Order kanban</field>
+            <field name="model">medical.prescription.order</field>
             <field name="type">kanban</field>
             <field name="arch" type="xml">
                 <kanban version="7.0" class="oe_background_grey">
@@ -168,36 +168,36 @@
         </record>
 
 
-		<record model="ir.actions.act_window" id="act_open_oemedical_prescription_order_view">
+		<record model="ir.actions.act_window" id="act_open_medical_prescription_order_view">
 			<field name="name">Prescription Order</field>
 			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">oemedical.prescription.order</field>
+			<field name="res_model">medical.prescription.order</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">kanban,tree,form</field>
-			<field name="search_view_id" ref="view_oemedical_prescription_order_search" />
+			<field name="search_view_id" ref="view_medical_prescription_order_search" />
 			<field name="domain">[]</field>
 			<field name="context">{}</field>
 		</record>
 
-		<record model="ir.actions.act_window.view" id="act_open_oemedical_prescription_order_view_form">
-			<field name="act_window_id" ref="act_open_oemedical_prescription_order_view" />
+		<record model="ir.actions.act_window.view" id="act_open_medical_prescription_order_view_form">
+			<field name="act_window_id" ref="act_open_medical_prescription_order_view" />
 			<field name="sequence" eval="30" />
 			<field name="view_mode">form</field>
-			<field name="view_id" ref="view_oemedical_prescription_order_form" />
+			<field name="view_id" ref="view_medical_prescription_order_form" />
 		</record>
 
-		<record model="ir.actions.act_window.view" id="act_open_oemedical_prescription_order_view_tree">
-			<field name="act_window_id" ref="act_open_oemedical_prescription_order_view" />
+		<record model="ir.actions.act_window.view" id="act_open_medical_prescription_order_view_tree">
+			<field name="act_window_id" ref="act_open_medical_prescription_order_view" />
 			<field name="sequence" eval="20" />
 			<field name="view_mode">tree</field>
-			<field name="view_id" ref="view_oemedical_prescription_order_tree" />
+			<field name="view_id" ref="view_medical_prescription_order_tree" />
 		</record>
 
- 		<record model="ir.actions.act_window.view" id="act_open_oemedical_prescription_order_view_kanban"> 
- 			<field name="act_window_id" ref="act_open_oemedical_prescription_order_view" /> 
+ 		<record model="ir.actions.act_window.view" id="act_open_medical_prescription_order_view_kanban"> 
+ 			<field name="act_window_id" ref="act_open_medical_prescription_order_view" /> 
  			<field name="sequence" eval="10" /> 
  			<field name="view_mode">kanban</field> 
- 			<field name="view_id" ref="view_oemedical_prescription_order_kanban" /> 
+ 			<field name="view_id" ref="view_medical_prescription_order_kanban" /> 
  		</record> 
 
 

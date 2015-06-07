@@ -24,8 +24,8 @@ from openerp.osv import fields, orm
 from openerp.tools.translate import _
 
 
-class OeMedicalDrugRoute(orm.Model):
-    _name = 'oemedical.drug.route'
+class MedicalDrugRoute(orm.Model):
+    _name = 'medical.drug.route'
 
     _columns = {
         'code': fields.char(size=256, string='Code'),

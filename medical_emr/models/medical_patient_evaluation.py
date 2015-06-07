@@ -24,11 +24,11 @@ from openerp.osv import fields, orm
 from openerp.tools.translate import _
 
 
-class OeMedicalPatientEvaluation(orm.Model):
-    _name='oemedical.patient.evaluation'
+class MedicalPatientEvaluation(orm.Model):
+    _name='medical.patient.evaluation'
     _rec_name='patient_id'
     _columns={
-        'patient_id':fields.many2one('oemedical.patient', 'Patient'),
+        'patient_id':fields.many2one('medical.patient', 'Patient'),
         'information_source': fields.char(size=256, string='Source',
             help="Source of" "Information, eg : Self, relative, friend ..."),
         'info_diagnosis': fields.text(
@@ -52,7 +52,7 @@ class OeMedicalPatientEvaluation(orm.Model):
         ' associated  to a disease, please encode the correspondent disease'\
         ' on the patient disease history. For example, Moderate'\
         ' protein-energy malnutrition, E44.0 in ICD-10 encoding'),
-        'actions': fields.one2many('oemedical.directions',
+        'actions': fields.one2many('medical.directions',
                                    'evaluation_id', string='Procedures',
                                    help='Procedures / Actions to take'),
         'height': fields.float(string='Height',
@@ -68,7 +68,7 @@ class OeMedicalPatientEvaluation(orm.Model):
            help='If associated  to a disease, please encode it on the patient'\
            ' disease history'),
         'present_illness': fields.text(string='Present Illness'),
-        'evaluation_date': fields.many2one('oemedical.appointment',
+        'evaluation_date': fields.many2one('medical.appointment',
                                            string='Appointment',
             help='Enter or select the date / ID of the appointment related to'\
                  ' this evaluation'),
@@ -86,15 +86,15 @@ class OeMedicalPatientEvaluation(orm.Model):
             ('e', 'Euphoria'),
             ('fl', 'Flat'),
         ], string='Mood'),
-        'doctor': fields.many2one('oemedical.physician', string='Doctor',
+        'doctor': fields.many2one('medical.physician', string='Doctor',
                                   readonly=True),
         'knowledge_current_events': fields.boolean(
             string='Knowledge of Current Events',
             help='Check this box if the patient can not respond to public'\
             ' notorious events'),
-        'next_evaluation': fields.many2one('oemedical.appointment',
+        'next_evaluation': fields.many2one('medical.appointment',
                                            string='Next Appointment',),
-        'signs_and_symptoms': fields.one2many('oemedical.signs_and_symptoms',
+        'signs_and_symptoms': fields.one2many('medical.signs_and_symptoms',
                                               'evaluation_id',
                                               string='Signs and Symptoms',
                                             help="Enter the Signs and Symptoms \
@@ -126,11 +126,11 @@ class OeMedicalPatientEvaluation(orm.Model):
         'abstraction': fields.boolean(string='Abstraction',
             help='Check this box if the patient presents abnormalities in'\
             ' abstract reasoning'),
-        'patient_id': fields.many2one('oemedical.patient', string='Patient',),
-        'derived_from': fields.many2one('oemedical.physician',
+        'patient_id': fields.many2one('medical.patient', string='Patient',),
+        'derived_from': fields.many2one('medical.physician',
                                         string='Derived from',
                                         help='Physician who derived the case'),
-        'specialty': fields.many2one('oemedical.specialty',
+        'specialty': fields.many2one('medical.specialty',
                                      string='Specialty',),
         'loc_verbal': fields.selection([
             ('1', 'Makes no sounds'),
@@ -146,7 +146,7 @@ class OeMedicalPatientEvaluation(orm.Model):
         'bmi': fields.float(string='Body Mass Index'),
         'respiratory_rate': fields.integer(string='Respiratory Rate',
                     help='Respiratory rate expressed in breaths per minute'),
-        'derived_to': fields.many2one('oemedical.physician',
+        'derived_to': fields.many2one('medical.physician',
                                       string='Derived to',
                         help='Physician to whom escalate / derive the case'),
         'hba1c': fields.float(string='Glycated Hemoglobin',
@@ -158,7 +158,7 @@ class OeMedicalPatientEvaluation(orm.Model):
         'evaluation_summary': fields.text(string='Evaluation Summary'),
         'cholesterol_total': fields.integer(string='Last Cholesterol'),
         'diagnostic_hypothesis': fields.one2many(
-            'oemedical.diagnostic_hypothesis',
+            'medical.diagnostic_hypothesis',
             'evaluation_id', string='Hypotheses / DDx',
             help='Presumptive Diagnosis. If no diagnosis can be made'\
             ', encode the main sign or symptom.'),
@@ -170,7 +170,7 @@ class OeMedicalPatientEvaluation(orm.Model):
         'osat': fields.integer(string='Oxygen Saturation',
                                help='Oxygen Saturation(arterial).'),
         'secondary_conditions': fields.one2many(
-            'oemedical.secondary_condition', 'evaluation_id',
+            'medical.secondary_condition', 'evaluation_id',
             string='Secondary Conditions',
             help="Other, Secondary conditions found on the patient"),
         'evaluation_endtime': fields.datetime(string='End', required=True),
@@ -193,7 +193,7 @@ class OeMedicalPatientEvaluation(orm.Model):
         'object_recognition': fields.boolean(string='Object Recognition',
           help='Check this box if the patient suffers from any sort of gnosia'\
           ' disorders, such as agnosia, prosopagnosia ...'),
-        'diagnosis': fields.many2one('oemedical.pathology',
+        'diagnosis': fields.many2one('medical.pathology',
                                      string='Presumptive Diagnosis',),
         'whr': fields.float(string='WHR', help='Waist to hip ratio'),
         'ldl': fields.integer(string='Last LDL',

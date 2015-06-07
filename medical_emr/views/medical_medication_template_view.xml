@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
-		<record id="view_oemedical_medication_template_tree" model="ir.ui.view">
-			<field name="name">oemedical.medication.template.tree</field>
-			<field name="model">oemedical.medication.template</field>
+		<record id="view_medical_medication_template_tree" model="ir.ui.view">
+			<field name="name">medical.medication.template.tree</field>
+			<field name="model">medical.medication.template</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Medication Template">
@@ -27,9 +27,9 @@
 			</field>
 		</record>
 
-		<record id="view_oemedical_medication_template_form" model="ir.ui.view">
-			<field name="name">oemedical.medication.template.form</field>
-			<field name="model">oemedical.medication.template</field>
+		<record id="view_medical_medication_template_form" model="ir.ui.view">
+			<field name="name">medical.medication.template.form</field>
+			<field name="model">medical.medication.template</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Medication Template"  version="7.0">
@@ -85,9 +85,9 @@
 			</field>
 		</record>
 
-		<record id="view_oemedical_medication_template_search" model="ir.ui.view">
-			<field name="name">oemedical.medication.template.search</field>
-			<field name="model">oemedical.medication.template</field>
+		<record id="view_medical_medication_template_search" model="ir.ui.view">
+			<field name="name">medical.medication.template.search</field>
+			<field name="model">medical.medication.template</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<search string="Oemedical Medication Template">
@@ -134,31 +134,31 @@
 			</field>
 		</record>
 
-		<record model="ir.actions.act_window" id="act_open_oemedical_medication_template_view">
+		<record model="ir.actions.act_window" id="act_open_medical_medication_template_view">
 			<field name="name">Medication Template</field>
 			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">oemedical.medication.template</field>
+			<field name="res_model">medical.medication.template</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">tree,form</field>
-			<field name="search_view_id" ref="view_oemedical_medication_template_search" />
+			<field name="search_view_id" ref="view_medical_medication_template_search" />
 			<field name="domain">[]</field>
 			<field name="context">{}</field>
 		</record>
 
 		<record model="ir.actions.act_window.view"
-			id="act_open_oemedical_medication_template_view_form">
-			<field name="act_window_id" ref="act_open_oemedical_medication_template_view" />
+			id="act_open_medical_medication_template_view_form">
+			<field name="act_window_id" ref="act_open_medical_medication_template_view" />
 			<field name="sequence" eval="20" />
 			<field name="view_mode">form</field>
-			<field name="view_id" ref="view_oemedical_medication_template_form" />
+			<field name="view_id" ref="view_medical_medication_template_form" />
 		</record>
 
 		<record model="ir.actions.act_window.view"
-			id="act_open_oemedical_medication_template_view_tree">
-			<field name="act_window_id" ref="act_open_oemedical_medication_template_view" />
+			id="act_open_medical_medication_template_view_tree">
+			<field name="act_window_id" ref="act_open_medical_medication_template_view" />
 			<field name="sequence" eval="10" />
 			<field name="view_mode">tree</field>
-			<field name="view_id" ref="view_oemedical_medication_template_tree" />
+			<field name="view_id" ref="view_medical_medication_template_tree" />
 		</record>
 
 	</data>

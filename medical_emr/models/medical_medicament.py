@@ -24,8 +24,8 @@ from openerp.osv import fields, orm
 from openerp.tools.translate import _
 
 
-class OeMedicalMedicament(orm.Model):
-    _name = 'oemedical.medicament'
+class MedicalMedicament(orm.Model):
+    _name = 'medical.medicament'
 
     def _get_name(self, cr, uid, ids, field_name, arg, context=None):
         res = {}
@@ -37,7 +37,7 @@ class OeMedicalMedicament(orm.Model):
     _columns = {
         'product_id': fields.many2one('product.product', string='Medicament', requered=True, help='Product Name'),
         'name': fields.function(_get_name, type='char', string='Medicament', help="", multi=False),
-        'category': fields.many2one('oemedical.medicament.category', 'Category',select=True),
+        'category': fields.many2one('medical.medicament.category', 'Category',select=True),
         'active_component': fields.char(size=256, string='Active component', help='Active Component'),
         'indications': fields.text(string='Indication', help='Indications'), 
         'therapeutic_action': fields.char(size=256, string='Therapeutic effect', help='Therapeutic action'),

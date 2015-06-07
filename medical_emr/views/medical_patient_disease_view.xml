@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
-		<record id="view_oemedical_patient_disease_tree" model="ir.ui.view">
-			<field name="name">oemedical.patient.disease.tree</field>
-			<field name="model">oemedical.patient.disease</field>
+		<record id="view_medical_patient_disease_tree" model="ir.ui.view">
+			<field name="name">medical.patient.disease.tree</field>
+			<field name="model">medical.patient.disease</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Patient Disease">
@@ -32,9 +32,9 @@
 			</field>
 		</record>
 
-		<record id="view_oemedical_patient_disease_form" model="ir.ui.view">
-			<field name="name">oemedical.patient.disease.form</field>
-			<field name="model">oemedical.patient.disease</field>
+		<record id="view_medical_patient_disease_form" model="ir.ui.view">
+			<field name="name">medical.patient.disease.form</field>
+			<field name="model">medical.patient.disease</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Patient Disease">
@@ -63,9 +63,9 @@
 			</field>
 		</record>
 
-		<record id="view_oemedical_patient_disease_search" model="ir.ui.view">
-			<field name="name">oemedical.patient.disease.search</field>
-			<field name="model">oemedical.patient.disease</field>
+		<record id="view_medical_patient_disease_search" model="ir.ui.view">
+			<field name="name">medical.patient.disease.search</field>
+			<field name="model">medical.patient.disease</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<search string="Oemedical Patient Disease">
@@ -125,29 +125,29 @@
 			</field>
 		</record>
 
-		<record model="ir.actions.act_window" id="act_open_oemedical_patient_disease_view">
+		<record model="ir.actions.act_window" id="act_open_medical_patient_disease_view">
 			<field name="name">Patient Disease</field>
 			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">oemedical.patient.disease</field>
+			<field name="res_model">medical.patient.disease</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">tree,form</field>
-			<field name="search_view_id" ref="view_oemedical_patient_disease_search" />
+			<field name="search_view_id" ref="view_medical_patient_disease_search" />
 			<field name="domain">[]</field>
 			<field name="context">{}</field>
 		</record>
 
-		<record model="ir.actions.act_window.view" id="act_open_oemedical_patient_disease_view_form">
-			<field name="act_window_id" ref="act_open_oemedical_patient_disease_view" />
+		<record model="ir.actions.act_window.view" id="act_open_medical_patient_disease_view_form">
+			<field name="act_window_id" ref="act_open_medical_patient_disease_view" />
 			<field name="sequence" eval="20" />
 			<field name="view_mode">form</field>
-			<field name="view_id" ref="view_oemedical_patient_disease_form" />
+			<field name="view_id" ref="view_medical_patient_disease_form" />
 		</record>
 
-		<record model="ir.actions.act_window.view" id="act_open_oemedical_patient_disease_view_tree">
-			<field name="act_window_id" ref="act_open_oemedical_patient_disease_view" />
+		<record model="ir.actions.act_window.view" id="act_open_medical_patient_disease_view_tree">
+			<field name="act_window_id" ref="act_open_medical_patient_disease_view" />
 			<field name="sequence" eval="10" />
 			<field name="view_mode">tree</field>
-			<field name="view_id" ref="view_oemedical_patient_disease_tree" />
+			<field name="view_id" ref="view_medical_patient_disease_tree" />
 		</record>
 
 	</data>

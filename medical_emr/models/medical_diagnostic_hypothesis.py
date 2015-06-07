@@ -24,13 +24,13 @@ from openerp.osv import fields, orm
 from openerp.tools.translate import _
 
 
-class OeMedicalDiagnosticHypothesis(orm.Model):
-    _name = 'oemedical.diagnostic_hypothesis'
+class MedicalDiagnosticHypothesis(orm.Model):
+    _name = 'medical.diagnostic_hypothesis'
 
     _columns = {
-        'pathology_id': fields.many2one('oemedical.pathology', 'Pathology',
+        'pathology_id': fields.many2one('medical.pathology', 'Pathology',
                                         required=True ),
-        'evaluation_id': fields.many2one('oemedical.patient.evaluation',
+        'evaluation_id': fields.many2one('medical.patient.evaluation',
                                          'Evaluation',readonly=True ),
         'comments': fields.char(size=256, string='Comments'),
     }

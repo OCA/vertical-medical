@@ -24,12 +24,12 @@ from openerp.osv import fields, orm
 from openerp.tools.translate import _
 
 
-class OeMedicalOperationalSector(orm.Model):
-    _name = 'oemedical.operational_sector'
+class MedicalOperationalSector(orm.Model):
+    _name = 'medical.operational_sector'
 
     _columns = {
         'info': fields.text(string='Extra Information'),
-        'operational_area_id': fields.many2one('oemedical.operational_area',
+        'operational_area_id': fields.many2one('medical.operational_area',
                                                string='Operational Area', ),
         'name': fields.char(size=256, string='Op. Sector', required=True, 
                             help='Region included in an operational area'),

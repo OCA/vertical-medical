@@ -24,8 +24,8 @@ from openerp.osv import fields, orm
 from openerp.tools.translate import _
 
 
-class OeMedicalOccupation(orm.Model):
-    _name = 'oemedical.occupation'
+class MedicalOccupation(orm.Model):
+    _name = 'medical.occupation'
 
     _columns = {
         'code': fields.char(size=256, string='Code'),

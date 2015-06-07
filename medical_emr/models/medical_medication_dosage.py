@@ -24,8 +24,8 @@ from openerp.osv import fields, orm
 from openerp.tools.translate import _
 
 
-class OeMedicalMedicationDosage(orm.Model):
-    _name = 'oemedical.medication.dosage'
+class MedicalMedicationDosage(orm.Model):
+    _name = 'medical.medication.dosage'
 
     _columns = {
         'abbreviation': fields.char(size=256, string='Abbreviation',

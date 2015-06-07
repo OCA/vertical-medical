@@ -24,14 +24,14 @@ from openerp.osv import fields, orm
 from openerp.tools.translate import _
 
 
-class OeMedicalPatientDisease(orm.Model):
-    _name = 'oemedical.patient.disease'
+class MedicalPatientDisease(orm.Model):
+    _name = 'medical.patient.disease'
 
     _columns = {
         'treatment_description': fields.char(size=256,
                                              string='Treatment Description'),
         'healed_date': fields.date(string='Healed'),
-        'pathology': fields.many2one('oemedical.pathology',
+        'pathology': fields.many2one('medical.pathology',
                                      string='Disease',help='Disease'),
         'disease_severity': fields.selection([
             ('1_mi', 'Mild'),
@@ -39,7 +39,7 @@ class OeMedicalPatientDisease(orm.Model):
             ('3_sv', 'Severe'),
         ], string='Severity',select=True, sort=False),
         'is_allergy': fields.boolean(string='Allergic Disease'),
-        'doctor': fields.many2one('oemedical.physician', string='Physician', 
+        'doctor': fields.many2one('medical.physician', string='Physician', 
                         help='Physician who treated or diagnosed the patient'),
         'pregnancy_warning': fields.boolean(string='Pregnancy warning'),
         'weeks_of_pregnancy': fields.integer(
@@ -58,7 +58,7 @@ class OeMedicalPatientDisease(orm.Model):
         'is_active': fields.boolean(string='Active disease'),
         'date_stop_treatment': fields.date(string='End', 
                                            help='End of treatment date'),
-        'pcs_code': fields.many2one('oemedical.procedure', string='Code', 
+        'pcs_code': fields.many2one('medical.procedure', string='Code', 
         help='Procedure code, for example, ICD-10-PCS Code 7-character string'),
         'is_infectious': fields.boolean(string='Infectious Disease',
                                 help='Check if the patient has an infectious' \
@@ -69,7 +69,7 @@ class OeMedicalPatientDisease(orm.Model):
             ('ma', 'Misc Allergy'),
             ('mc', 'Misc Contraindication'),
         ], string='Allergy type',select=True, sort=False),
-        'patient_id': fields.many2one('oemedical.patient', string='Patient', ),
+        'patient_id': fields.many2one('medical.patient', string='Patient', ),
         'age': fields.integer(string='Age when diagnosed',  
           help='Patient age at the moment of the diagnosis. Can be estimative'),
         'date_start_treatment': fields.date(string='Start', 

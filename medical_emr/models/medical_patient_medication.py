@@ -24,14 +24,14 @@ from openerp.osv import fields, orm
 from openerp.tools.translate import _
 
 
-class OeMedicalPatientMedication(orm.Model):
-    _name = 'oemedical.patient.medication'
+class MedicalPatientMedication(orm.Model):
+    _name = 'medical.patient.medication'
 
     _columns = {
-        'patient_id': fields.many2one('oemedical.patient', string='Patient',),
-#        'name': fields.many2one('oemedical.patient', string='Patient',
+        'patient_id': fields.many2one('medical.patient', string='Patient',),
+#        'name': fields.many2one('medical.patient', string='Patient',
 #                                readonly=True ),
-        'doctor': fields.many2one('oemedical.physician', string='Physician', 
+        'doctor': fields.many2one('medical.physician', string='Physician', 
                                 help='Physician who prescribed the medicament'),
         'adverse_reaction': fields.text(string='Adverse Reactions',
         help='Side effects or adverse reactions that the patient experienced'),
@@ -39,7 +39,7 @@ class OeMedicalPatientMedication(orm.Model):
         'is_active': fields.boolean(string='Active', 
                 help='Check if the patient is currently taking the medication'),
         'course_completed': fields.boolean(string='Course Completed'),
-        'template': fields.many2one('oemedical.medication.template',
+        'template': fields.many2one('medical.medication.template',
                                     string='Medication Template', ),
         'discontinued_reason': fields.char(size=256,
                                            string='Reason for discontinuation',

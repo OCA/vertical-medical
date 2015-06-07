@@ -1,7 +1,7 @@
 ##############################################################################
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
-#    OeMedical, HMS Opensource Solution
+#    Medical, HMS Opensource Solution
 ##############################################################################
 #    Collaborators of this module:
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
@@ -12,7 +12,7 @@
 #
 ##############################################################################
 #    This project is mantained by OeMEdical Team:
-#    https://launchpad.net/oemedical
+#    https://launchpad.net/medical
 #
 ##############################################################################
 #    It is a collaborative effort between several companies that want to join
@@ -34,26 +34,26 @@
 ##############################################################################
 {
 
-    'name': 'OeMedical EMR : Electronic Medical Record management for OeMedical',
+    'name': 'Medical EMR : Electronic Medical Record management for Medical',
     'version': '1.0',
     'author': "OeMEdical Team,Odoo Community Association (OCA)",
     'category': 'Generic Modules/Others',
-    'depends': ['oemedical'],
+    'depends': ['medical'],
     'application': True,
     'description': """
 
-About OeMedical EMR
+About Medical EMR
 -------------------
 
-OeMedical EMR is a multi-user, highly scalable, centralized Electronic
+Medical EMR is a multi-user, highly scalable, centralized Electronic
 Medical Record (EMR) for openERP.
 
-OeMedical provides a free universal Health Information System,
+Medical provides a free universal Health Information System,
 so doctors and institutions all over the world,
 specially in developing countries will benefit from a centralized,
 high quality, secure and scalable system.
 
-OeMedical at a glance:
+Medical at a glance:
 
     * Strong focus in family medicine and Primary Health Care
     
@@ -87,38 +87,38 @@ OeMedical at a glance:
     * Open Source : Licensed under AGPL
     
 """,
-    "website": "http://launchpad.net/oemedical",
+    "website": "http://launchpad.net/medical",
     "licence": "AGPL v3",
     "data": [
-        'views/oemedical_sequence.xml',
-        'views/oemedical_secondary_condition_view.xml',
-        'views/oemedical_pathology_category_view.xml',
-        'views/oemedical_signs_and_symptoms_view.xml',
-        'views/oemedical_directions_view.xml',
-        'views/oemedical_pathology_view.xml',
-        'views/oemedical_operational_area_view.xml',
-        'views/oemedical_ethnicity_view.xml',
-        'views/oemedical_operational_sector_view.xml',
-        'views/oemedical_prescription_order_view.xml',
-        'views/oemedical_medicament_category_view.xml',
-        'views/oemedical_diagnostic_hypothesis_view.xml',
-        'views/oemedical_procedure_view.xml',
-        'views/oemedical_medication_template_view.xml',
-        'views/oemedical_medication_dosage_view.xml',
-        'views/oemedical_family_member_view.xml',
-        'views/oemedical_drug_form_view.xml',
-        'views/oemedical_patient_medication_view.xml',
-        'views/oemedical_patient_evaluation_view.xml',
-        'views/oemedical_prescription_line_view.xml',
-        'views/oemedical_patient_disease_view.xml',
-        'views/oemedical_drug_route_view.xml',
-        'views/oemedical_family_view.xml',
-        'views/oemedical_occupation_view.xml',
-        'views/oemedical_disease_group_members_view.xml',
-        'views/oemedical_medicament_view.xml',
-        'views/oemedical_pathology_group_view.xml',
+        'views/medical_sequence.xml',
+        'views/medical_secondary_condition_view.xml',
+        'views/medical_pathology_category_view.xml',
+        'views/medical_signs_and_symptoms_view.xml',
+        'views/medical_directions_view.xml',
+        'views/medical_pathology_view.xml',
+        'views/medical_operational_area_view.xml',
+        'views/medical_ethnicity_view.xml',
+        'views/medical_operational_sector_view.xml',
+        'views/medical_prescription_order_view.xml',
+        'views/medical_medicament_category_view.xml',
+        'views/medical_diagnostic_hypothesis_view.xml',
+        'views/medical_procedure_view.xml',
+        'views/medical_medication_template_view.xml',
+        'views/medical_medication_dosage_view.xml',
+        'views/medical_family_member_view.xml',
+        'views/medical_drug_form_view.xml',
+        'views/medical_patient_medication_view.xml',
+        'views/medical_patient_evaluation_view.xml',
+        'views/medical_prescription_line_view.xml',
+        'views/medical_patient_disease_view.xml',
+        'views/medical_drug_route_view.xml',
+        'views/medical_family_view.xml',
+        'views/medical_occupation_view.xml',
+        'views/medical_disease_group_members_view.xml',
+        'views/medical_medicament_view.xml',
+        'views/medical_pathology_group_view.xml',
         'security/ir.model.access.csv',
-        'oemedical_menu.xml',
+        'medical_menu.xml',
     ],
     "demo": [
 

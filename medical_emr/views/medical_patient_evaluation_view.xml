@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
-		<record id="view_oemedical_patient_evaluation_tree" model="ir.ui.view">
-			<field name="name">oemedical.patient.evaluation.tree</field>
-			<field name="model">oemedical.patient.evaluation</field>
+		<record id="view_medical_patient_evaluation_tree" model="ir.ui.view">
+			<field name="name">medical.patient.evaluation.tree</field>
+			<field name="model">medical.patient.evaluation</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Patient Evaluation">
@@ -74,9 +74,9 @@
 			</field>
 		</record>
 
-		<record id="view_oemedical_patient_evaluation_form" model="ir.ui.view">
-			<field name="name">oemedical.patient.evaluation.form</field>
-			<field name="model">oemedical.patient.evaluation</field>
+		<record id="view_medical_patient_evaluation_form" model="ir.ui.view">
+			<field name="name">medical.patient.evaluation.form</field>
+			<field name="model">medical.patient.evaluation</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Patient Evaluation">
@@ -147,9 +147,9 @@
 			</field>
 		</record>
 
-		<record id="view_oemedical_patient_evaluation_search" model="ir.ui.view">
-			<field name="name">oemedical.patient.evaluation.search</field>
-			<field name="model">oemedical.patient.evaluation</field>
+		<record id="view_medical_patient_evaluation_search" model="ir.ui.view">
+			<field name="name">medical.patient.evaluation.search</field>
+			<field name="model">medical.patient.evaluation</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<search string="Oemedical Patient Evaluation">
@@ -303,29 +303,29 @@
 			</field>
 		</record>
 
-		<record model="ir.actions.act_window" id="act_open_oemedical_patient_evaluation_view">
+		<record model="ir.actions.act_window" id="act_open_medical_patient_evaluation_view">
 			<field name="name">Patient Evaluation</field>
 			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">oemedical.patient.evaluation</field>
+			<field name="res_model">medical.patient.evaluation</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">tree,form</field>
-			<field name="search_view_id" ref="view_oemedical_patient_evaluation_search" />
+			<field name="search_view_id" ref="view_medical_patient_evaluation_search" />
 			<field name="domain">[]</field>
 			<field name="context">{}</field>
 		</record>
 
-		<record model="ir.actions.act_window.view" id="act_open_oemedical_patient_evaluation_view_form">
-			<field name="act_window_id" ref="act_open_oemedical_patient_evaluation_view" />
+		<record model="ir.actions.act_window.view" id="act_open_medical_patient_evaluation_view_form">
+			<field name="act_window_id" ref="act_open_medical_patient_evaluation_view" />
 			<field name="sequence" eval="20" />
 			<field name="view_mode">form</field>
-			<field name="view_id" ref="view_oemedical_patient_evaluation_form" />
+			<field name="view_id" ref="view_medical_patient_evaluation_form" />
 		</record>
 
-		<record model="ir.actions.act_window.view" id="act_open_oemedical_patient_evaluation_view_tree">
-			<field name="act_window_id" ref="act_open_oemedical_patient_evaluation_view" />
+		<record model="ir.actions.act_window.view" id="act_open_medical_patient_evaluation_view_tree">
+			<field name="act_window_id" ref="act_open_medical_patient_evaluation_view" />
 			<field name="sequence" eval="10" />
 			<field name="view_mode">tree</field>
-			<field name="view_id" ref="view_oemedical_patient_evaluation_tree" />
+			<field name="view_id" ref="view_medical_patient_evaluation_tree" />
 		</record>
 
 	</data>
