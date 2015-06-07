@@ -49,6 +49,33 @@
 				                    <field name="discontinued" />
 			                    </form>
                             </field>
+<!-- Patient Vaccinations -->
+                            <separator string="Vaccinations" colspan="4"/>
+          					<field name="vaccinations"  nolabel="1" colspan="4">
+			                    <tree string="Oemedical Vaccination">
+				                    <field name="name" />
+				                    <field name="vaccine_lot" />
+				                    <field name="patient_id" />
+				                    <field name="vaccine" />
+				                    <field name="dose" />
+				                    <field name="observations" />
+				                    <field name="date" />
+				                    <field name="institution" />
+				                    <field name="next_dose_date" />
+			                    </tree>
+			                    <form string="Oemedical Vaccination">
+				                    <field name="name" />
+				                    <field name="vaccine_lot" />
+				                    <field name="patient_id" />
+				                    <field name="vaccine" />
+				                    <field name="dose" />
+				                    <field name="observations" />
+				                    <field name="date" />
+				                    <field name="institution" />
+				                    <field name="next_dose_date" />
+			                    </form>
+                            </field>
+
                         </page>
 
 <!-- Patient Diseases -->
