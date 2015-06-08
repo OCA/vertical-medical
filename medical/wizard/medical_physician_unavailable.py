@@ -1,8 +1,8 @@
 # -*- encoding: utf-8 -*-
 ############################################################################################
 #
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
+# OpenERP, Open Source Management Solution
+# Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
 #    Copyright (C) 2008-2009 AJM Technologies S.A. (<http://www.ajm.lu). All Rights Reserved
 #    Copyright (C) 2010-2011 Thamini S.à.R.L (<http://www.thamini.com>). All Rights Reserved
 #    $Id$
@@ -37,7 +37,8 @@ class medical_physician_unavailable_wizard(osv.TransientModel):
         'physician_id': fields.many2one('medical.physician', 'Physician', required=True),
         'date_start': fields.datetime(string='Inicio', required=True),
         'date_end': fields.datetime(string='Fin', required=True),
-        'institution_id': fields.many2one('res.partner', 'Medical Center',  select=1, domain="[('is_institution', '=', True), ]"),
+        'institution_id': fields.many2one('res.partner', 'Medical Center', select=1,
+                                          domain="[('is_institution', '=', True), ]"),
     }
     _defaults = {
         'date_start': fields.date.today(),
@@ -45,12 +46,12 @@ class medical_physician_unavailable_wizard(osv.TransientModel):
     }
 
     def action_cancel(self, cr, uid, ids, context=None):
-        return {'type':'ir.actions.act_window_close'}
+        return {'type': 'ir.actions.act_window_close'}
 
     def action_set_unavailable(self, cr, uid, ids, context=None):
         if not ids:
             return {}
-        
+
         appointment_proxy = self.pool['medical.appointment']
 
         this = self.browse(cr, uid, ids)[0]
@@ -60,14 +61,16 @@ class medical_physician_unavailable_wizard(osv.TransientModel):
             institution_ids = [institution_id]
         else:
             institution_ids = []
-            
+
         date_start = this.date_start
         date_end = this.date_end
 
-        appointment_proxy._remove_empty_clashes(cr, uid, [], [physician_id], institution_ids, date_start, date_end, context=context)
-        appointment_proxy._set_clashes_state_to_review(cr, uid, [physician_id], institution_ids, date_start, date_end, context=context)
-        
-        return  {'type':'ir.actions.act_window_close'}
+        appointment_proxy._remove_empty_clashes(cr, uid, [], [physician_id], institution_ids, date_start, date_end,
+                                                context=context)
+        appointment_proxy._set_clashes_state_to_review(cr, uid, [physician_id], institution_ids, date_start, date_end,
+                                                       context=context)
+
+        return {'type': 'ir.actions.act_window_close'}
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

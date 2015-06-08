@@ -11,7 +11,7 @@
                     <field name="institution_id" />
                     <field name="date_start" />
                     <field name="date_end" />
-	                <separator colspan="4"/>
+                    <separator colspan="4"/>
                     <group colspan="4">
                         <button string="_Cancel" icon="gtk-cancel" special="cancel"/>
                         <button name="action_set_unavailable" string="_Apply" icon="gtk-apply" type="object" />

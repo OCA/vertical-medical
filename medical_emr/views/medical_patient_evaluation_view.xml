@@ -7,69 +7,16 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Patient Evaluation">
-					<field name="patient_id" />
-					<field name="information_source" />
-					<field name="info_diagnosis" />
-					<field name="orientation" />
-					<field name="weight" />
-					<!--field name="evaluation_type"/ -->
-					<field name="malnutrition" />
-					<!--field name="actions"/ -->
-					<field name="height" />
-					<field name="dehydration" />
-					<field name="tag" />
-					<field name="tremor" />
-					<field name="present_illness" />
 					<field name="evaluation_date" />
-					<field name="evaluation_start" />
-					<field name="loc" />
-					<field name="user_id" />
-					<!--field name="mood"/ -->
-					<field name="doctor" />
-					<field name="knowledge_current_events" />
-					<field name="next_evaluation" />
-					<!--field name="signs_and_symptoms"/ -->
-					<!--field name="loc_motor"/ -->
-					<field name="reliable_info" />
-					<field name="systolic" />
-					<field name="vocabulary" />
-					<field name="praxis" />
-					<field name="hip" />
-					<field name="memory" />
-					<field name="abstraction" />
 					<field name="patient_id" />
-					<field name="derived_from" />
-					<field name="specialty" />
-					<!--field name="loc_verbal"/ -->
-					<field name="glycemia" />
-					<field name="head_circumference" />
-					<field name="bmi" />
-					<field name="respiratory_rate" />
-					<field name="derived_to" />
-					<field name="hba1c" />
-					<field name="violent" />
-					<field name="directions" />
-					<field name="evaluation_summary" />
-					<field name="cholesterol_total" />
-					<!--field name="diagnostic_hypothesis"/ -->
-					<field name="judgment" />
-					<field name="temperature" />
-					<field name="osat" />
-<!-- 					<field name="secondary_conditions"/> -->
-					<field name="evaluation_endtime" />
-					<field name="notes" />
-					<field name="calculation_ability" />
-					<field name="bpm" />
+					<field name="physician_id" />
 					<field name="chief_complaint" />
-					<!--field name="loc_eyes"/ -->
-					<field name="abdominal_circ" />
-					<field name="object_recognition" />
 					<field name="diagnosis" />
-					<field name="whr" />
-					<field name="ldl" />
-					<field name="notes_complaint" />
-					<field name="hdl" />
+					<field name="info_diagnosis" />
 					<field name="diastolic" />
+					<field name="systolic" />
+					<field name="specialty" />
+					<field name="user_id" />
 				</tree>
 			</field>
 		</record>
@@ -80,39 +27,51 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Patient Evaluation">
-					<field name="patient_id" />
-					<field name="information_source" />
+                    <sheet>
+                        <div>
+                            <h1>
+                                <field name="patient_id" readonly="1"/>
+                             </h1>
+                        </div>
+                        <div>
+                            <field name="physician_id" />
+                            <field name="evaluation_type"/>
+        					<field name="specialty" />
+                        </div>
+                        <div>
+                            <field name="evaluation_date" />
+                        </div>
+					<field name="chief_complaint" />
+					<field name="present_illness" />
+					<field name="evaluation_summary" />
+					<field name="diagnosis" />
 					<field name="info_diagnosis" />
+					<field name="information_source" />
 					<field name="orientation" />
 					<field name="weight" />
-					<!--field name="evaluation_type"/ -->
 					<field name="malnutrition" />
 					<!--field name="actions"/ -->
 					<field name="height" />
 					<field name="dehydration" />
 					<field name="tag" />
 					<field name="tremor" />
-					<field name="present_illness" />
-					<field name="evaluation_date" />
 					<field name="evaluation_start" />
 					<field name="loc" />
 					<field name="user_id" />
 					<!--field name="mood"/ -->
-					<field name="doctor" />
 					<field name="knowledge_current_events" />
 					<field name="next_evaluation" />
 					<!--field name="signs_and_symptoms"/ -->
 					<!--field name="loc_motor"/ -->
 					<field name="reliable_info" />
+					<field name="diastolic" />
 					<field name="systolic" />
 					<field name="vocabulary" />
 					<field name="praxis" />
 					<field name="hip" />
 					<field name="memory" />
 					<field name="abstraction" />
-					<field name="patient_id" />
 					<field name="derived_from" />
-					<field name="specialty" />
 					<!--field name="loc_verbal"/ -->
 					<field name="glycemia" />
 					<field name="head_circumference" />
@@ -122,7 +81,6 @@
 					<field name="hba1c" />
 					<field name="violent" />
 					<field name="directions" />
-					<field name="evaluation_summary" />
 					<field name="cholesterol_total" />
 					<!--field name="diagnostic_hypothesis"/ -->
 					<field name="judgment" />
@@ -133,16 +91,14 @@
 					<field name="notes" />
 					<field name="calculation_ability" />
 					<field name="bpm" />
-					<field name="chief_complaint" />
 					<!--field name="loc_eyes"/ -->
 					<field name="abdominal_circ" />
 					<field name="object_recognition" />
-					<field name="diagnosis" />
 					<field name="whr" />
 					<field name="ldl" />
 					<field name="notes_complaint" />
 					<field name="hdl" />
-					<field name="diastolic" />
+     				</sheet>
 				</form>
 			</field>
 		</record>
@@ -168,7 +124,7 @@
 					<field name="evaluation_start" />
 					<field name="loc" />
 					<field name="user_id" />
-					<field name="doctor" />
+					<field name="physician_id" />
 					<field name="knowledge_current_events" />
 					<field name="next_evaluation" />
 					<field name="reliable_info" />
@@ -233,7 +189,7 @@
 							context="{'group_by':'loc'}" />
 						<filter string="Last Changed by" domain="[]"
 							context="{'group_by':'user_id'}" />
-						<filter string="Doctor" domain="[]" context="{'group_by':'doctor'}" />
+						<filter string="Physician" domain="[]" context="{'group_by':'physician_id'}" />
 						<filter string="Knowledge of Current Events" domain="[]"
 							context="{'group_by':'knowledge_current_events'}" />
 						<filter string="Next Appointment" domain="[]"

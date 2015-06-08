@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+# #############################################################################
 #
-#    Tech-Receptives Solutions Pvt. Ltd.
-#    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
+# Tech-Receptives Solutions Pvt. Ltd.
+# Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
+# #############################################################################
 
 from openerp.osv import fields, orm
 from openerp.tools.translate import _
@@ -29,9 +29,9 @@ class MedicalDiagnosticHypothesis(orm.Model):
 
     _columns = {
         'pathology_id': fields.many2one('medical.pathology', 'Pathology',
-                                        required=True ),
+                                        required=True),
         'evaluation_id': fields.many2one('medical.patient.evaluation',
-                                         'Evaluation',readonly=True ),
+                                         'Evaluation', readonly=True),
         'comments': fields.char(size=256, string='Comments'),
     }
 

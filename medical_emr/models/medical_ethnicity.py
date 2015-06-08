@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+# #############################################################################
 #
-#    Tech-Receptives Solutions Pvt. Ltd.
+# Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
 #
@@ -18,7 +18,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
+# #############################################################################
 
 from openerp.osv import fields, orm
 from openerp.tools.translate import _
@@ -30,10 +30,11 @@ class MedicalEthnicity(orm.Model):
     _columns = {
         'notes': fields.char(size=256, string='Notes'),
         'code': fields.char(size=256, string='Code'),
-        'name': fields.char(size=256, string='Name', required=True ,
+        'name': fields.char(size=256, string='Name', required=True,
                             translate=True),
     }
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Ethnicity name must be unique!'),
     ]
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+# #############################################################################
 #
-#    Tech-Receptives Solutions Pvt. Ltd.
+# Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
 #
@@ -18,7 +18,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
+# #############################################################################
 
 from openerp.osv import fields, orm
 from openerp.tools.translate import _
@@ -29,9 +29,9 @@ class MedicalDirections(orm.Model):
 
     _columns = {
         'procedure_id': fields.many2one('medical.procedure',
-                                        string='Procedure',required=True),
+                                        string='Procedure', required=True),
         'evaluation_id': fields.many2one('medical.patient.evaluation',
-                                         string='Evaluation',readonly=True ),
+                                         string='Evaluation', readonly=True),
         'comments': fields.char(size=256, string='Comments'),
     }
 

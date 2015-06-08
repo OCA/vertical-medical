@@ -1,5 +1,5 @@
 ##############################################################################
-#    OpenERP, Open Source Management Solution
+# OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
 #    Medical, HMS Opensource Solution
 ##############################################################################
@@ -124,7 +124,7 @@ Medical at a glance:
     "demo": [
 
     ],
-    'test':[
+    'test': [
 
     ],
     'css': [

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+# #############################################################################
 #
-#    Tech-Receptives Solutions Pvt. Ltd.
-#    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
-#    Special Credit and Thanks to Thymbra Latinoamericana S.A.
+# Tech-Receptives Solutions Pvt. Ltd.
+# Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
+# Special Credit and Thanks to Thymbra Latinoamericana S.A.
 #
-#    This program is free software: you can redistribute it and/or modify
+# This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
 #    published by the Free Software Foundation, either version 3 of the
 #    License, or (at your option) any later version.
@@ -18,7 +18,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
+# #############################################################################
 
 from openerp.osv import fields, orm
 from openerp.tools.translate import _
@@ -29,20 +29,20 @@ class MedicalPatientMedication(orm.Model):
     _rec_name = 'patient_id'
 
     _columns = {
-        'patient_id': fields.many2one('medical.patient', string='Patient',),
-        'doctor': fields.many2one('medical.physician', string='Physician', 
-                                help='Physician who prescribed the medicament'),
+        'patient_id': fields.many2one('medical.patient', string='Patient', ),
+        'doctor': fields.many2one('medical.physician', string='Physician',
+                                  help='Physician who prescribed the medicament'),
         'adverse_reaction': fields.text(string='Adverse Reactions',
-        help='Side effects or adverse reactions that the patient experienced'),
+                                        help='Side effects or adverse reactions that the patient experienced'),
         'notes': fields.text(string='Extra Info'),
-        'is_active': fields.boolean(string='Active', 
-                help='Check if the patient is currently taking the medication'),
+        'is_active': fields.boolean(string='Active',
+                                    help='Check if the patient is currently taking the medication'),
         'course_completed': fields.boolean(string='Course Completed'),
         'template': fields.many2one('medical.medication.template',
                                     string='Medication Template', ),
         'discontinued_reason': fields.char(size=256,
                                            string='Reason for discontinuation',
-                    help='Short description for discontinuing the treatment'),
+                                           help='Short description for discontinuing the treatment'),
         'discontinued': fields.boolean(string='Discontinued'),
     }
 

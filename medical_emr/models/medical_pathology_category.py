@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+# #############################################################################
 #
-#    Tech-Receptives Solutions Pvt. Ltd.
-#    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
+# Tech-Receptives Solutions Pvt. Ltd.
+# Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
+# #############################################################################
 
 from openerp.osv import fields, orm
 from openerp.tools.translate import _
@@ -33,11 +33,11 @@ class MedicalPathologyCategory(orm.Model):
                                   string='Children Category', ),
         'name': fields.char(size=256, string='Category Name', required=True),
         'parent_id': fields.many2one('medical.pathology.category',
-                                  string='Parent Category', select=True),
+                                     string='Parent Category', select=True),
     }
     _constraints = [
-        (orm.Model._check_recursion, 'Error ! You cannot create recursive \n' 
-        'Category.', ['parent_id'])
+        (orm.Model._check_recursion, 'Error ! You cannot create recursive \n'
+                                     'Category.', ['parent_id'])
     ]
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
