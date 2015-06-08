@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 # #############################################################################
 #
-#    Tech-Receptives Solutions Pvt. Ltd.
-#    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
-#    Special Credit and Thanks to Thymbra Latinoamericana S.A.
+# Tech-Receptives Solutions Pvt. Ltd.
+# Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
+# Special Credit and Thanks to Thymbra Latinoamericana S.A.
 #
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
 #
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #    GNU Affero General Public License for more details.
 #
@@ -31,6 +31,7 @@ import logging
 
 _logger = logging.getLogger(__name__)
 
+
 class MedicalPhysicianServices(orm.Model):
     '''
     Services provided by the Physician on a specific medical center.
@@ -49,7 +50,7 @@ class MedicalPhysicianServices(orm.Model):
                                       ondelete='restrict', help='Product related information for Appointment Type'),
         'physician_id': fields.many2one('medical.physician', 'Physician', required=True, select=1, ondelete='cascade'),
         'service_duration': fields.selection(minutes,
-            string='Duration'),
+                                             string='Duration'),
     }
 
 
@@ -98,9 +99,9 @@ class MedicalPhysician(orm.Model):
         'info': fields.text(string='Extra info'),
         'active': fields.boolean('Active',
                                  help="If unchecked, it will allow you to "
-                                 "hide the physician without removing it."),
+                                      "hide the physician without removing it."),
         'schedule_template_ids': fields.one2many('medical.physician.schedule.template',
-												 'physician_id', 'Related schedules'),
+                                                 'physician_id', 'Related schedules'),
     }
 
     _defaults = {
@@ -112,14 +113,14 @@ class MedicalPhysician(orm.Model):
     def create(self, cr, uid, vals, context=None):
         groups_proxy = self.pool['res.groups']
         group_ids = groups_proxy.search(cr, uid, [('name', '=', 'Medical Doctor')], context=context)
-        vals['groups_id'] = [(6,0,group_ids)]
+        vals['groups_id'] = [(6, 0, group_ids)]
         return super(MedicalPhysician, self).create(cr, uid, vals, context=context)
 
     def action_update_schedule(self, cr, uid, ids, context=None):
 
         patient_proxy = self.pool['medical.patient']
         default_patient = patient_proxy._get_default_patient_id(cr, uid, context=None)
-        
+
         schedule_template_proxy = self.pool['medical.physician.schedule.template']
         appointment_proxy = self.pool['medical.appointment']
 
@@ -127,48 +128,48 @@ class MedicalPhysician(orm.Model):
         MaxDays = int(ICP.get_param(cr, uid, 'max.appointment.days'))
         if not MaxDays:
             raise orm.except_orm(_('Error!'), _('max.appointment.days: Maximun days for future agenda not defined'))
-            
+
         this = self.browse(cr, uid, ids)[0]
         defined_templates = len(this.schedule_template_ids)
-        
-        templates_per_day = {0:[],1:[],2:[],3:[],4:[],5:[],6:[]}
+
+        templates_per_day = {0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: []}
 
         # check for overlapping ranges
         for i in range(defined_templates):
             day_1 = this.schedule_template_ids[i].day
-            templates_per_day[day_1]+=[this.schedule_template_ids[i]]
-            start_time_1 = this.schedule_template_ids[i].start_hour * 60 +\
-                this.schedule_template_ids[i].start_minute
-            end_time_1 = this.schedule_template_ids[i].end_hour * 60 +\
-                this.schedule_template_ids[i].end_minute
+            templates_per_day[day_1] += [this.schedule_template_ids[i]]
+            start_time_1 = this.schedule_template_ids[i].start_hour * 60 + \
+                           this.schedule_template_ids[i].start_minute
+            end_time_1 = this.schedule_template_ids[i].end_hour * 60 + \
+                         this.schedule_template_ids[i].end_minute
 
             for j in range(i + 1, defined_templates):
                 day_2 = this.schedule_template_ids[j].day
-                start_time_2 = this.schedule_template_ids[j].start_hour * 60 +\
-                    this.schedule_template_ids[j].start_minute
+                start_time_2 = this.schedule_template_ids[j].start_hour * 60 + \
+                               this.schedule_template_ids[j].start_minute
                 end_time_2 = this.schedule_template_ids[j].end_hour * 60 + \
-                    this.schedule_template_ids[j].end_minute
+                             this.schedule_template_ids[j].end_minute
                 if day_1 == day_2 and \
-                   start_time_1 < end_time_2 and \
-                   end_time_1 > start_time_2:
-                        raise orm.except_orm(_('Error!'),
-                                             _('Overlapped ranges for day "%s"'
-                                               ) % (days[day_1][1])
-                                             )
-        
+                                start_time_1 < end_time_2 and \
+                                end_time_1 > start_time_2:
+                    raise orm.except_orm(_('Error!'),
+                                         _('Overlapped ranges for day "%s"'
+                                           ) % (days[day_1][1])
+                                         )
+
         current_day = date.today()
         current_day_str = current_day.strftime("%Y-%m-%d ")
-        
+
         last_day = (date.today() + timedelta(MaxDays))
         last_day_str = last_day.strftime("%Y-%m-%d ")
-        
+
         appointment_proxy._remove_empty_clashes(cr, uid, [], ids, [], current_day_str, last_day_str, context=context)
         appointment_proxy._set_clashes_state_to_review(cr, uid, ids, [], current_day_str, last_day_str, context=context)
 
         appointment_vals = {
             'user_id': uid,
             'patient_id': default_patient,
-            'appointment_type':'outpatient',
+            'appointment_type': 'outpatient',
             'urgency': 'a',
         }
 
@@ -188,7 +189,7 @@ class MedicalPhysician(orm.Model):
                                              "%Y-%m-%d %H:%M") + user_timedelta
                 one_slot = timedelta(minutes=int(slot.duration))
                 while start_time + one_slot <= end_time:
-                    appointment_vals['name'] = self.pool['ir.sequence'].get(cr, uid, 'medical.appointment') 
+                    appointment_vals['name'] = self.pool['ir.sequence'].get(cr, uid, 'medical.appointment')
                     appointment_vals['doctor_med_center'] = slot.institution_id.id
                     appointment_vals['physician_id'] = slot.institution_id.contact_id.id
                     appointment_vals['institution_id'] = slot.institution_id.parent_id.id
@@ -197,7 +198,7 @@ class MedicalPhysician(orm.Model):
                     appointment_proxy.create(cr, uid, appointment_vals, context=context)
                     start_time += one_slot
             current_day += one_day
-            
+
         return True
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
