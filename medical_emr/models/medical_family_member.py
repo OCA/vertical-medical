@@ -26,10 +26,10 @@ from openerp.osv import fields, orm
 class MedicalFamilyMember(orm.Model):
     _name = 'medical.family_member'
     _columns = {
-        'member': fields.many2one('res.partner', string='Member', 
+        'member': fields.many2one('res.partner', string='Member',
                                   help='Family Member Name'),
         'role': fields.char(size=256, string='Role', required=True),
-        'family_id': fields.many2one('medical.family', string='Family', 
+        'family_id': fields.many2one('medical.family', string='Family',
                                      help='Family code'),
     }
 

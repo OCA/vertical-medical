@@ -6,17 +6,17 @@
 # Special Credit and Thanks to Thymbra Latinoamericana S.A.
 #
 # This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
 #
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
 #
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 # #############################################################################
 
@@ -31,24 +31,23 @@ class MedicalPrescriptionLine(orm.Model):
         medication_obj = self.pool.get('medical.medication.template')
         result = {}
 
-        #        if name == 'form':
-        #            result = {'value': {
-        #                        'form' : medication_obj.browse(cr, uid, medication, context = None).form.id ,
-        #                         } }
+        # if name == 'form':
+        # result = {'value': {
+        # 'form' : medication_obj.browse(cr, uid, medication, context = None).form.id ,
+        # } }
         return result
 
-    #    def _get_dose(self, cr, uid, ids, field_name, arg, context=None):
-    #        res = {}
-    #        for record in self.browse(cr, uid, ids, context=context):
-    #            res[record.id] = record.template.dose
-    #        return res
+    # def _get_dose(self, cr, uid, ids, field_name, arg, context=None):
+    # res = {}
+    # for record in self.browse(cr, uid, ids, context=context):
+    # res[record.id] = record.template.dose
+    # return res
 
-    #    def _get_frecuency(self, cr, uid, ids, field_name, arg, context=None):
-    #        res = {}
-    #        for record in self.browse(cr, uid, ids, context=context):
+    # def _get_frecuency(self, cr, uid, ids, field_name, arg, context=None):
+    # res = {}
+    # for record in self.browse(cr, uid, ids, context=context):
     #            res[record.id] = 1
     #        return res
-
 
     #    def _get_duration(self, cr, uid, ids, field_name, arg, context=None):
     #        res = {}
@@ -107,12 +106,11 @@ class MedicalPrescriptionLine(orm.Model):
         }}
         return res
 
-
     _columns = {
         'name': fields.many2one('medical.prescription.order', string='Prescription ID', ),
         'template': fields.many2one('medical.medication.template', string='Medication', ),
         'indication': fields.many2one('medical.pathology', string='Indication',
-                                      help='Choose a disease for this medicament from the disease list. It' \
+                                      help='Choose a disease for this medicament from the disease list. It'
                                            ' can be an existing disease of the patient or a prophylactic.'),
         'allow_substitution': fields.boolean(string='Allow substitution'),
         'prnt': fields.boolean(string='Print', help='Check this box to print this line of the prescription.'),

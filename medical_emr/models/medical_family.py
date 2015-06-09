@@ -30,7 +30,7 @@ class MedicalFamily(orm.Model):
         'info': fields.text(string='Extra Information'),
         'operational_sector': fields.many2one('medical.operational_sector',
                                               string='Operational Sector', ),
-        'name': fields.char(size=256, string='Family', required=True, 
+        'name': fields.char(size=256, string='Family', required=True,
                             help='Family code within an operational sector'),
         'members': fields.one2many('medical.family_member', 'family_id',
                                    string='Family Members', ),

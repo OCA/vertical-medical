@@ -10,13 +10,13 @@
 # published by the Free Software Foundation, either version 3 of the
 # License, or (at your option) any later version.
 #
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
 #
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 # #############################################################################
 
@@ -60,7 +60,7 @@ class MedicalPatientDisease(orm.Model):
         'pcs_code': fields.many2one('medical.procedure', string='Code',
                                     help='Procedure code, for example, ICD-10-PCS Code 7-character string'),
         'is_infectious': fields.boolean(string='Infectious Disease',
-                                        help='Check if the patient has an infectious' \
+                                        help='Check if the patient has an infectious'
                                              'transmissible disease'),
         'allergy_type': fields.selection([
             ('da', 'Drug Allergy'),
@@ -74,7 +74,7 @@ class MedicalPatientDisease(orm.Model):
         'date_start_treatment': fields.date(string='Start',
                                             help='Start of treatment date'),
         'short_comment': fields.char(size=256, string='Remarks',
-                                     help='Brief, one-line remark of the disease. Longer description will' \
+                                     help='Brief, one-line remark of the disease. Longer description will'
                                           ' go on the Extra info field'),
     }
 

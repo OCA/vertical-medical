@@ -32,13 +32,12 @@ class MedicalMedicationTemplate(orm.Model):
             res[record.id] = record.medicament_id.name
         return res
 
-
     _columns = {
         'medicament_id': fields.many2one('medical.medicament', string='Medicament', requered=True, help='Product Name',
                                          ondelete='cascade'),
         'name': fields.function(_get_name, type='char', string='Medicament', help="", multi=False),
         'indication': fields.many2one('medical.pathology', string='Indication',
-                                      help='Choose a disease for this medicament from the disease list. It' \
+                                      help='Choose a disease for this medicament from the disease list. It'
                                            ' can be an existing disease of the patient or a prophylactic.'),
         'start_treatment': fields.datetime(string='Start', help='Date of start of Treatment'),
         'end_treatment': fields.datetime(string='End', help='Date of start of Treatment'),
@@ -65,11 +64,11 @@ class MedicalMedicationTemplate(orm.Model):
         ], string='unit'),
         'dose': fields.float(string='Dose', help='Amount of medication (eg, 250 mg) per dose'),
         'duration': fields.integer(string='Treatment duration',
-                                   help='Period that the patient must take the medication. in minutes,' \
+                                   help='Period that the patient must take the medication. in minutes,'
                                         ' hours, days, months, years or indefinately'),
         'frequency_prn': fields.boolean(string='PRN', help='Use it as needed, pro re nata'),
         'frequency': fields.integer(string='Frequency',
-                                    help='Time in between doses the patient must wait (ie, for 1 pill' \
+                                    help='Time in between doses the patient must wait (ie, for 1 pill'
                                          ' each 8 hours, put here 8 and select \"hours\" in the unit field'),
         'common_dosage': fields.many2one('medical.medication.dosage', string='Frequency',
                                          help='Common / standard dosage frequency for this medicament'),
