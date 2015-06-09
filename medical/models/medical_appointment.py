@@ -21,15 +21,12 @@
 # #############################################################################
 
 import time
-from datetime import datetime, date, timedelta
-import pytz
+from datetime import datetime, timedelta
 
 from openerp.osv import fields, orm
 from openerp.tools.translate import _
 from openerp import SUPERUSER_ID
-from openerp.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT, DATETIME_FORMATS_MAP
-
-from openerp.addons.medical.medical_constants import hours, minutes
+from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
 
 import logging
 
@@ -227,7 +224,6 @@ class MedicalAppointment(orm.Model):
             vals['name'] = self.pool['ir.sequence'].get(cr, uid, 'medical.appointment')
 
         val_history = {}
-        ait_obj = self.pool['medical.appointment.history']
 
         val_history['name'] = uid
         val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
@@ -250,7 +246,6 @@ class MedicalAppointment(orm.Model):
         if 'appointment_date' in vals or 'duration' in vals:
 
             physician_id = vals.get('physician_id', original_values['physician_id'][0])
-            institution_id = vals.get('institution_id', original_values['institution_id'][0])
             duration = vals.get('duration', original_values['duration'])
 
             date_end = (datetime.strptime(date_start, "%Y-%m-%d %H:%M:%S") + timedelta(minutes=duration)).strftime(
@@ -280,23 +275,6 @@ class MedicalAppointment(orm.Model):
                 'date': time.strftime('%Y-%m-%d %H:%M:%S'),
             }
             ait_obj.create(cr, uid, val_history)
-
-            """
-            if context and context.get('tz'):
-                tz_name = context['tz']
-            else:
-                tz_name = user_record.tz
-            if not tz_name:
-                tz_name = 'UTC'
-
-            user_date_format = lang_record.date_format
-            user_time_format = lang_record.time_format
-
-            utc = pytz.timezone('UTC')
-            context_tz = pytz.timezone(tz_name)
-            utc_timestamp = utc.localize(original_date)
-            localized_datetime = utc_timestamp.astimezone(context_tz)
-            """
 
             user_record = self.pool['res.users'].browse(cr, SUPERUSER_ID, uid)
             lang_id = self.pool['res.lang'].search(cr, SUPERUSER_ID, [('code', '=', user_record.lang)])
