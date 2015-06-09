@@ -12,8 +12,8 @@
 #
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
@@ -217,7 +217,7 @@ class MedicalAppointment(orm.Model):
             "%Y-%m-%d %H:%M")
         vals['date_end'] = date_end
 
-        ## !!!! revisar que no choque con otra ya existente.  Si la otra esta libre eliminarla, sino dar error !!!
+        # !!!! revisar que no choque con otra ya existente.  Si la otra esta libre eliminarla, sino dar error !!!
         self._remove_empty_clashes(cr, uid, [], [vals['physician_id']], [], date_start, date_end, context=context)
         current_appointments = self._get_appointments(cr, uid, [vals['physician_id']], [], date_start, date_end,
                                                       context=context)

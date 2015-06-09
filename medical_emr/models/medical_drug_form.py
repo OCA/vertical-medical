@@ -21,7 +21,6 @@
 # #############################################################################
 
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class MedicalDrugForm(orm.Model):
@@ -35,4 +34,5 @@ class MedicalDrugForm(orm.Model):
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Drug name must be unique!'),
     ]
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
