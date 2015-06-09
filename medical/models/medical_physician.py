@@ -60,7 +60,7 @@ class MedicalPhysicianScheduleTemplate(orm.Model):
 
     ie: A physiscian will be able to say, in this schedule on this days.
 
-    The objective is to show the availbles spaces for every physiscian 
+    The objective is to show the availbles spaces for every physiscian
     '''
     _name = 'medical.physician.schedule.template'
     _columns = {
@@ -178,7 +178,7 @@ class MedicalPhysician(orm.Model):
         user_time = fields.datetime.context_timestamp(cr, uid, utc_time, context=context).replace(tzinfo=None)
         user_timedelta = utc_time - user_time
         one_day = timedelta(1)
-        #create appointments
+        # create appointments
         while current_day < last_day:
             current_day_str = current_day.strftime("%Y-%m-%d ")
             day_of_week = current_day.weekday()

@@ -160,10 +160,10 @@ class MedicalAppointment(orm.Model):
     def _get_appointments(self, cr, uid, physician_ids, institution_ids, date_start, date_end, context=None):
         """ Get appointments between given dates, excluding pending review and cancelled ones """
 
-        pending_review_id = \
-            self.pool.get('ir.model.data').get_object_reference(cr, uid, 'medical', 'stage_appointment_in_review')[1]
-        cancelled_id = \
-            self.pool.get('ir.model.data').get_object_reference(cr, uid, 'medical', 'stage_appointment_canceled')[1]
+        pending_review_id = self.pool.get('ir.model.data').get_object_reference(cr, uid, 'medical',
+                                                                                'stage_appointment_in_review')[1]
+        cancelled_id = self.pool.get('ir.model.data').get_object_reference(cr, uid, 'medical',
+                                                                           'stage_appointment_canceled')[1]
         domain = [('physician_id', 'in', physician_ids),
                   ('date_end', '>', date_start), ('appointment_date', '<', date_end),
                   ('stage_id', 'not in', [pending_review_id, cancelled_id])]
@@ -197,7 +197,6 @@ class MedicalAppointment(orm.Model):
                                          context=context)).difference(excluded_ids)
 
         self.unlink(cr, uid, empty_appointments, context)
-
 
     def _set_clashes_state_to_review(self, cr, uid, physician_ids, institution_ids, date_start, date_end, context=None):
         dummy, review_stage_id = self.pool['ir.model.data'].get_object_reference(cr, uid, 'medical',
@@ -244,9 +243,9 @@ class MedicalAppointment(orm.Model):
         else:
             context = context.copy()
 
-        original_values = \
-            self.read(cr, uid, ids, ['physician_id', 'institution_id', 'appointment_date', 'date_end', 'duration'],
-                      context=context)[0]
+        original_values = self.read(cr, uid, ids, ['physician_id', 'institution_id', 'appointment_date',
+                                                   'date_end', 'duration'],
+                                    context=context)[0]
         date_start = vals.get('appointment_date', original_values['appointment_date'])
         if 'appointment_date' in vals or 'duration' in vals:
 
@@ -257,8 +256,8 @@ class MedicalAppointment(orm.Model):
             date_end = (datetime.strptime(date_start, "%Y-%m-%d %H:%M:%S") + timedelta(minutes=duration)).strftime(
                 "%Y-%m-%d %H:%M")
             vals['date_end'] = date_end
-            #_logger.warning("write original values:  '%s'" % (str(original_values),))
-            #_logger.warning("write new values:  '%s'" % (str(vals),))
+            # _logger.warning("write original values:  '%s'" % (str(original_values),))
+            # _logger.warning("write new values:  '%s'" % (str(vals),))
             self._remove_empty_clashes(cr, uid, ids, [physician_id], [], date_start, date_end, context=context)
             current_appointments = self._get_appointments(cr, uid, [physician_id], [], date_start, date_end,
                                                           context=context).remove(ids[0])
@@ -272,7 +271,7 @@ class MedicalAppointment(orm.Model):
             ait_obj = self.pool['medical.appointment.history']
             stage_proxy = self.pool['medical.appointment.stage']
             stage_name = stage_proxy.name_get(cr, uid, vals['stage_id'], context=context)[0][1]
-            #### update history and any other for stage_id.onchange....   
+            # ### update history and any other for stage_id.onchange....
             val_history = {
                 'action': "--------------------  Changed to {0}  ------------------------------------".format(
                     stage_name),
@@ -282,14 +281,14 @@ class MedicalAppointment(orm.Model):
             }
             ait_obj.create(cr, uid, val_history)
 
-            """            
+            """
             if context and context.get('tz'):
                 tz_name = context['tz']
             else:
                 tz_name = user_record.tz
             if not tz_name:
                 tz_name = 'UTC'
-                
+
             user_date_format = lang_record.date_format
             user_time_format = lang_record.time_format
 
