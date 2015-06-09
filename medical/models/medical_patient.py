@@ -149,10 +149,8 @@ class MedicalPatient(orm.Model):
             self.pool.get('ir.sequence').get(cr, uid, 'medical.patient'))
         vals['identification_code'] = sequence
 
-        '''
-        When we create a patient we need ensure it belong to the group with
-        ACL's patients.
-        '''
+        # When we create a patient we need ensure it belong to the group with
+        # ACL's patients.
         groups_proxy = self.pool['res.groups']
         group_ids = groups_proxy.search(cr, uid, [('name', '=', 'OEMedical User')], context=context)
         vals['groups_id'] = [(6, 0, group_ids)]

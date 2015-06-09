@@ -22,11 +22,8 @@
 #
 ############################################################################################
 
-from openerp.osv import orm, osv
+from openerp.osv import osv
 from openerp.osv import fields
-import random
-from openerp.tools import float_round, float_is_zero, float_compare
-from openerp.tools.translate import _
 
 
 class medical_physician_unavailable_wizard(osv.TransientModel):

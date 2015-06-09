@@ -121,7 +121,6 @@ class MedicalPhysician(orm.Model):
         patient_proxy = self.pool['medical.patient']
         default_patient = patient_proxy._get_default_patient_id(cr, uid, context=None)
 
-        schedule_template_proxy = self.pool['medical.physician.schedule.template']
         appointment_proxy = self.pool['medical.appointment']
 
         ICP = self.pool['ir.config_parameter']
