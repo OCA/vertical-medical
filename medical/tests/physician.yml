@@ -1,7 +1,7 @@
 -
   Create New Specialty
 -
-  !record {model: medical.specialty,id: oe_specialty_1}:
+  !record {model: medical.specialty, id: oe_specialty_1}:
     name: test Specialty
     code: test Specialty Code
 
@@ -13,4 +13,4 @@
     login: vikas@example.com
     info: 'General Physician'
     code: 'PH101'
-    specialty: ref('medical.oe_specialty_1')
+    specialty: ref('oe_specialty_1')
