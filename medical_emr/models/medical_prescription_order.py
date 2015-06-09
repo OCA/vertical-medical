@@ -20,8 +20,9 @@
 #
 # #############################################################################
 
-from openerp.osv import fields, orm
+import time
 
+from openerp.osv import fields, orm
 
 class MedicalPrescriptionOrder(orm.Model):
     _name = 'medical.prescription.order'
