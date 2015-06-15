@@ -28,8 +28,8 @@ class ResPartner(orm.Model):
 
     _columns = {
         'is_insurance_company': fields.boolean(string='Insurance Company',
-                                               help='Check if the party is an '
-                                               'Insurance Company'),
+                                               help='Check if the party'
+                                                    'is an Insurance Company'),
         'relationship': fields.char(size=256, string='Relationship'),
         'insurance_company_type': fields.selection([
             ('state', 'State'),

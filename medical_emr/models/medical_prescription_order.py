@@ -24,18 +24,26 @@ import time
 
 from openerp.osv import fields, orm
 
+
 class MedicalPrescriptionOrder(orm.Model):
     _name = 'medical.prescription.order'
 
     _columns = {
-        'patient_id': fields.many2one('medical.patient', string='Patient', required=True),
-        'pregnancy_warning': fields.boolean(string='Pregancy Warning', readonly=True),
+        'patient_id': fields.many2one('medical.patient', string='Patient',
+                                      required=True),
+        'pregnancy_warning': fields.boolean(string='Pregancy Warning',
+                                            readonly=True),
         'notes': fields.text(string='Prescription Notes'),
-        'prescription_line': fields.one2many('medical.prescription.line', 'name', string='Prescription line', ),
+        'prescription_line': fields.one2many('medical.prescription.line',
+                                             'name',
+                                             string='Prescription line', ),
         'pharmacy': fields.many2one('res.partner', string='Pharmacy', ),
         'prescription_date': fields.datetime(string='Prescription Date'),
-        'prescription_warning_ack': fields.boolean(string='Prescription verified'),
-        'physician_id': fields.many2one('medical.physician', string='Prescribing Doctor', required=True),
+        'prescription_warning_ack': fields.boolean(string='Prescription '
+                                                          'verified'),
+        'physician_id': fields.many2one('medical.physician',
+                                        string='Prescribing Doctor',
+                                        required=True),
         'name': fields.char(size=256, string='Prescription ID', required=True,
                             help='Type in the ID of this prescription'),
     }
@@ -51,15 +59,20 @@ class MedicalPrescriptionOrder(orm.Model):
     def print_prescription(self, cr, uid, ids, context=None):
         '''
         '''
-        #        assert len(ids) == 1, 'This option should only be used for a single id at a time'
+        #        assert len(ids) == 1, 'This option should only be used for '
+        #                              'a single id at a time'
         #        wf_service = netsvc.LocalService("workflow")
-        #        wf_service.trg_validate(uid, 'medical.prescription.order', ids[0], 'prescription_sent', cr)
+        #        wf_service.trg_validate(uid, 'medical.prescription.order',
+        #                                ids[0], 'prescription_sent', cr)
         datas = {
             'model': 'medical.prescription.order',
             'ids': ids,
             'form': self.read(cr, uid, ids[0], context=context),
         }
-        return {'type': 'ir.actions.report.xml', 'report_name': 'prescription.order', 'datas': datas, 'nodestroy': True}
+        return {'type': 'ir.actions.report.xml',
+                'report_name': 'prescription.order',
+                'datas': datas,
+                'nodestroy': True}
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
