@@ -20,13 +20,13 @@
 #
 # #############################################################################
 
-from . import medical_secondary_condition
-from . import medical_operational_sector
-from . import medical_operational_area
+# TBD from . import medical_operational_sector
+# TBD from . import medical_operational_area
 from . import medical_pathology_category
 from . import medical_signs_and_symptoms
 from . import medical_directions
 from . import medical_pathology
+from . import medical_secondary_condition
 from . import medical_ethnicity
 from . import medical_prescription_order
 from . import medical_medicament_category

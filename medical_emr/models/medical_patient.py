@@ -24,7 +24,6 @@ from openerp.osv import fields, orm, orm
 
 
 class MedicalPatient(orm.Model):
-    _name = 'medical.patient'
     _inherit = 'medical.patient'
 
     _columns = {

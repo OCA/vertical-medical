@@ -50,7 +50,27 @@
 			                    </form>
                             </field>
                         </page>
-
+<!-- Patient Evaluations -->
+                        <page string="Evaluations" >
+							<separator string="Evaluations" colspan="4"/>
+							<field name="evaluations"  nolabel="1" colspan="4">
+								<tree string="Oemedical Patient Evaluations">
+									<field name="visit_type"/>
+									<field name="evaluation_type"/>
+									<field name="evaluation_start"/>
+									<field name="specialty"/>
+									<field name="physician_id"/>
+									<field name="state"/>
+									<field name="urgency"/>
+									<field name="systolic"/>
+									<field name="diastolic"/>
+									<field name="diagnosis"/>
+									<!--TBD field name="signed_by"/-->
+									<!--TBD field name="institution"/-->
+									<field name="bmi"/>
+								</tree>
+							</field>
+						</page>
 <!-- Patient Diseases -->
                         <page string="Diseases" >
                                 <separator string="Diseases" colspan="4"/>

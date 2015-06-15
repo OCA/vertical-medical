@@ -20,7 +20,7 @@
 #
 # #############################################################################
 
-from openerp.osv import fields, orm
+from openerp.osv import fields, orm, osv
 
 
 class MedicalPathologyCategory(orm.Model):
@@ -29,13 +29,14 @@ class MedicalPathologyCategory(orm.Model):
     _columns = {
         'childs': fields.one2many('medical.pathology.category',
                                   'parent_id',
-                                  string='Children Category', ),
+                                  string='Children Categories', ),
         'name': fields.char(size=256, string='Category Name', required=True),
         'parent_id': fields.many2one('medical.pathology.category',
                                      string='Parent Category', select=True),
     }
+
     _constraints = [
-        (orm.Model._check_recursion, 'Error ! You cannot create recursive \n'
+        (osv.osv._check_recursion, 'Error ! You cannot create recursive \n'
                                      'Category.', ['parent_id'])
     ]
 

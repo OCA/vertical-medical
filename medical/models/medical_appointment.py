@@ -103,10 +103,10 @@ class MedicalAppointment(orm.Model):
                                       context=context):
             fold[stage.id] = stage.fold or False
         return result, fold
-
+    STATES = {'draft': [('readonly', False)]}
     _columns = {
         'user_id': fields.many2one('res.users', 'Responsible', readonly=True,
-                                   states={'draft': [('readonly', False)]}),
+                                   states=STATES),
         'patient_id': fields.many2one('medical.patient', string='Patient',
                                       required=True, select=True,
                                       help='Patient Name'),

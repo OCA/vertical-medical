@@ -24,11 +24,11 @@ from openerp.osv import fields, orm
 
 
 class MedicalOperationalArea(orm.Model):
-    _name = 'medical.operational_area'
+    _name = 'medical.operational.area'
 
     _columns = {
         'info': fields.text(string='Extra Information'),
-        'operational_sector': fields.one2many('medical.operational_sector',
+        'operational_sector': fields.one2many('medical.operational.sector',
                                               'operational_area_id',
                                               string='Operational Sector',
                                               readonly=True),
