@@ -2,9 +2,8 @@
   Create New Specialty
 -
   !record {model: medical.specialty, id: oe_specialty_1}:
-    name: test Specialty
-    code: test Specialty Code
-
+    name: Test Specialty
+    code: TSC
 -
   Create New Physician Vikas M Haribhakti
 -

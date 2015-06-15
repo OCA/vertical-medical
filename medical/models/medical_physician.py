@@ -80,24 +80,26 @@ class MedicalPhysicianScheduleTemplate(orm.Model):
 class MedicalPhysician(orm.Model):
     _name = 'medical.physician'
     _inherits = {'res.users': 'user_id', }
-    _columns = {'id': fields.integer('ID', readonly=True),
-                'user_id': fields.many2one('res.users', 'Related User',
-                                           required=True, ondelete='cascade',
-                                           help='User-related data '
-                                                'of the physician'),
-                'code': fields.char(size=256, string='ID'),
-                'specialty': fields.many2one('medical.specialty',
-                                             string='Specialty',
-                                             required=True,
-                                             help='Specialty Code'),
-                'info': fields.text(string='Extra info'),
-                'active': fields.boolean('Active',
-                                         help="If unchecked, it will allow you"
-                                              " to hide the physician without "
-                                              "removing it."),
-                'schedule_template_ids': fields.one2many(
-                    'medical.physician.schedule.template', 'physician_id',
-                    'Related schedules'), }
+    _columns = {
+        'id': fields.integer('ID', readonly=True),
+        'user_id': fields.many2one('res.users', 'Related User',
+                                   required=True, ondelete='cascade',
+                                   help='User-related data '
+                                        'of the physician'),
+        'code': fields.char(size=256, string='ID'),
+        'specialty': fields.many2one('medical.specialty',
+                                     string='Specialty',
+                                     required=True,
+                                     help='Specialty Code'),
+        'info': fields.text(string='Extra info'),
+        'active': fields.boolean('Active',
+                                 help='If unchecked, it will allow you'
+                                      ' to hide the physician without '
+                                      'removing it.'),
+        'schedule_template_ids': fields.one2many(
+            'medical.physician.schedule.template', 'physician_id',
+            'Related schedules')
+    }
 
     _defaults = {'is_doctor': True, 'supplier': True, 'active': True, }
 
@@ -193,12 +195,12 @@ class MedicalPhysician(orm.Model):
                 while start_time + one_slot <= end_time:
                     appointment_vals['name'] = self.pool[
                         'ir.sequence'].get(cr, uid, 'medical.appointment')
-                    appointment_vals['doctor_med_center'] = \
-                        slot.institution_id.id
+                    #appointment_vals['doctor_med_center'] = \
+                    #    slot.institution_id.id
                     appointment_vals['physician_id'] = \
-                        slot.institution_id.contact_id.id
+                        slot.physician_id.id
                     appointment_vals['institution_id'] = \
-                        slot.institution_id.parent_id.id
+                        slot.physician_id.parent_id.id
                     appointment_vals['appointment_date'] = \
                         start_time.strftime("%Y-%m-%d %H:%M")
                     appointment_vals['duration'] = slot.duration
