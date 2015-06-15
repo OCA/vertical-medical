@@ -196,7 +196,7 @@ class MedicalPhysician(orm.Model):
                     appointment_vals['doctor_med_center'] = \
                         slot.institution_id.id
                     appointment_vals['physician_id'] = \
-                        slot.institution_id\.contact_id.id
+                        slot.institution_id.contact_id.id
                     appointment_vals['institution_id'] = \
                         slot.institution_id.parent_id.id
                     appointment_vals['appointment_date'] = \
