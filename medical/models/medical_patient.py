@@ -152,9 +152,10 @@ class MedicalPatient(orm.Model):
     _defaults = {'is_patient': True, 'customer': True, 'active': True, }
 
     def create(self, cr, uid, vals, context=None):
-        sequence = unicode(
-            self.pool.get('ir.sequence').get(cr, uid, 'medical.patient'))
-        vals['identification_code'] = sequence
+        if vals.get('identification_code',False):
+            sequence = unicode(
+                self.pool.get('ir.sequence').get(cr, uid, 'medical.patient'))
+            vals['identification_code'] = sequence
 
         # When we create a patient we need ensure it belong to the group with
         # ACL's patients.
