@@ -195,7 +195,7 @@ class MedicalPhysician(orm.Model):
                 while start_time + one_slot <= end_time:
                     appointment_vals['name'] = self.pool[
                         'ir.sequence'].get(cr, uid, 'medical.appointment')
-                    #appointment_vals['doctor_med_center'] = \
+                    # appointment_vals['doctor_med_center'] = \
                     #    slot.institution_id.id
                     appointment_vals['physician_id'] = \
                         slot.physician_id.id
