@@ -32,11 +32,11 @@ class MedicalPatientEvaluation(orm.Model):
     _columns = {
         'patient_id': fields.many2one('medical.patient', 'Patient'),
         'appointment_id': fields.many2one('medical.appointment',
-                                           domain="[('patient_id', '=', "
-                                                  "patient_id)]",
-                                           string='Appointment',
-                                           help='Select the related appointment'
-                                                ' for this evaluation'),
+                                          domain="[('patient_id', '=', "
+                                                 "patient_id)]",
+                                          string='Appointment',
+                                          help='Select the related appointment'
+                                               ' for this evaluation'),
         'evaluation_start': fields.datetime(string='Start', required=True),
         'evaluation_endtime': fields.datetime(string='End', required=True),
         'state': fields.selection([
@@ -46,7 +46,7 @@ class MedicalPatientEvaluation(orm.Model):
         ], string='State', index=True, readonly=True),
 
         'next_appointment': fields.many2one('medical.appointment',
-                                           string='Next Appointment', ),
+                                            string='Next Appointment', ),
         'physician_id': fields.many2one('medical.physician',
                                         string='Physician',
                                         readonly=True),
@@ -79,8 +79,8 @@ class MedicalPatientEvaluation(orm.Model):
                                         help='Physician who derived the case'),
         'derived_to': fields.many2one('medical.physician',
                                       string='Derived to',
-                                      help='Physician to whom escalate / derive '
-                                           'the case'),
+                                      help='Physician to whom escalate / '
+                                           'derive the case'),
         'evaluation_type': fields.selection([
             (None, ''),
             ('ambulatory', 'Ambulatory'),
@@ -98,7 +98,8 @@ class MedicalPatientEvaluation(orm.Model):
                                  help='Last blood glucose level. Can be '
                                       'approximative.'),
         'hba1c': fields.float(string='Glycated Hemoglobin',
-                              help='Last Glycated Hb level. Can be approximative'),
+                              help='Last Glycated Hb level. '
+                                   'Can be approximative'),
         'cholesterol_total': fields.integer(string='Last Cholesterol'),
         'hdl': fields.integer(string='Last HDL'),
         'ldl': fields.integer(string='Last LDL',
@@ -112,8 +113,8 @@ class MedicalPatientEvaluation(orm.Model):
         'bpm': fields.integer(string='Heart Rate',
                               help='Heart rate expressed in beats per minute'),
         'respiratory_rate': fields.integer(string='Respiratory Rate',
-                                           help='Respiratory rate expressed in '
-                                                'breaths per minute'),
+                                           help='Respiratory rate expressed '
+                                                'in breaths per minute'),
         'osat': fields.integer(string='Oxygen Saturation',
                                help='Oxygen Saturation(arterial).'),
         'malnutrition': fields.boolean(string='Malnutrition',
@@ -177,8 +178,8 @@ class MedicalPatientEvaluation(orm.Model):
                                       'encode it on the patient'
                                       ' disease history'),
         'violent': fields.boolean(string='Violent Behaviour',
-                                  help='Check this box if the patient is agressive'
-                                       ' or violent at the moment'),
+                                  help='Check this box if the patient is '
+                                       'agressive or violent at the moment'),
         'mood': fields.selection([
             ('n', 'Normal'),
             ('s', 'Sad'),
@@ -201,24 +202,26 @@ class MedicalPatientEvaluation(orm.Model):
             help='Check this box if the patient can not respond to public'
                  ' notorious events'),
         'judgment': fields.boolean(string='Jugdment',
-                                   help='Check this box if the patient can not '
-                                        'interpret basic scenario solutions'),
+                                   help='Check this box if the patient can not'
+                                        ' interpret basic scenario solutions'),
         'abstraction': fields.boolean(string='Abstraction',
-                                      help='Check this box if the patient presents'
-                                           ' abnormalities in abstract reasoning'),
+                                      help='Check this box if the patient '
+                                           'presents abnormalities in abstract'
+                                           ' reasoning'),
         'vocabulary': fields.boolean(string='Vocabulary',
                                      help='Check this box if the patient '
                                           'lacks basic intelectual capacity, '
                                           'when she/he can not describe '
                                           'elementary objects'),
         'calculation_ability': fields.boolean(string='Calculation Ability',
-                                              help='Check this box if the patient'
-                                                   'can not do simple arithmetic '
-                                                   'problems'),
+                                              help='Check this box if the '
+                                                   'patient can not do simple '
+                                                   'arithmetic problems'),
         'object_recognition': fields.boolean(string='Object Recognition',
-                                             help='Check this box if the patient '
-                                                  'suffers from any sort of gnosia'
-                                                  ' disorders, such as agnosia, '
+                                             help='Check this box if the '
+                                                  'patient suffers from any '
+                                                  'sort of gnosia disorders, '
+                                                  'such as agnosia, '
                                                   'prosopagnosia ...'),
         'praxis': fields.boolean(string='Praxis',
                                  help='Check this box if the patient is unable'

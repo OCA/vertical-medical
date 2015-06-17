@@ -37,7 +37,7 @@ class MedicalPathologyCategory(orm.Model):
 
     _constraints = [
         (osv.osv._check_recursion, 'Error ! You cannot create recursive \n'
-                                     'Category.', ['parent_id'])
+                                   'Category.', ['parent_id'])
     ]
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
