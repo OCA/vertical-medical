@@ -1,16 +1,15 @@
 -
   Create New Specialty
 -
-  !record {model: medical.specialty,id: oe_specialty_1}:
-    name: test Specialty
-    code: test Specialty Code
-
+  !record {model: medical.specialty, id: oe_specialty_1}:
+    name: 'Test Specialty'
+    code: 'TSC'
 -
   Create New Physician Vikas M Haribhakti
 -
   !record {model: medical.physician,id: oe_physician_1}:
-    name: Vikas M Haribhakti
-    login: vikas@example.com
+    name: 'Vikas M Haribhakti'
+    login: 'vikas@example.com'
     info: 'General Physician'
     code: 'PH101'
-    specialty: ref('medical.oe_specialty_1')
+    specialty: !eval (ref('oe_specialty_1'))

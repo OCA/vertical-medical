@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="view_medical_pathology_tree" model="ir.ui.view">
+			<field name="name">medical.pathology.tree</field>
+			<field name="model">medical.pathology</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<tree string="Oemedical Pathology">
+					<field name="category" />
+					<field name="info" />
+					<field name="code" />
+					<field name="name" />
+					<!--field name="groups"/ -->
+					<field name="protein" />
+					<field name="gene" />
+					<field name="chromosome" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_medical_pathology_form" model="ir.ui.view">
+			<field name="name">medical.pathology.form</field>
+			<field name="model">medical.pathology</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<form string="Oemedical Pathology">
+					<field name="code" />
+					<field name="name" />
+					<field name="category" />
+					<!--field name="groups"/ -->
+					<field name="protein" />
+					<field name="gene" />
+					<field name="chromosome" />
+                    <group colspan="4" string="Extra Info">
+    					<field name="info" nolabel="1" colspan="4"/>
+                    </group>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_medical_pathology_search" model="ir.ui.view">
+			<field name="name">medical.pathology.search</field>
+			<field name="model">medical.pathology</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<search string="Oemedical Pathology">
+					<field name="category" />
+					<field name="info" />
+					<field name="code" />
+					<field name="name" />
+					<field name="protein" />
+					<field name="gene" />
+					<field name="chromosome" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Main Category" domain="[]"
+							context="{'group_by':'category'}" />
+						<filter string="Extra Info" domain="[]" context="{'group_by':'info'}" />
+						<filter string="Code" domain="[]" context="{'group_by':'code'}" />
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+						<filter string="Protein involved" domain="[]"
+							context="{'group_by':'protein'}" />
+						<filter string="Gene" domain="[]" context="{'group_by':'gene'}" />
+						<filter string="Affected Chromosome" domain="[]"
+							context="{'group_by':'chromosome'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="act_open_medical_pathology_view">
+			<field name="name">Pathology</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.pathology</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_pathology_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_open_medical_pathology_view_form">
+			<field name="act_window_id" ref="act_open_medical_pathology_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_pathology_form" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_open_medical_pathology_view_tree">
+			<field name="act_window_id" ref="act_open_medical_pathology_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_pathology_tree" />
+		</record>
+
+	</data>
+</openerp>

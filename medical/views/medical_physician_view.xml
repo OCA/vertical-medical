@@ -1,141 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
-	<data>
-		<record id="view_medical_physician_tree" model="ir.ui.view">
-			<field name="name">medical.physician.tree</field>
-			<field name="model">medical.physician</field>
-			<field name="priority" eval="8" />
-			<field name="arch" type="xml">
-				<tree string="Oemedical Physician">
-					<field name="name" />
-					<field name="code" />
-					<field name="specialty" />
-					<field name="parent_id" />
-				</tree>
-			</field>
-		</record>
+    <data>
+        <record id="view_medical_physician_tree" model="ir.ui.view">
+            <field name="name">medical.physician.tree</field>
+            <field name="model">medical.physician</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Oemedical Physician">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="specialty" />
+                    <field name="parent_id" />
+                </tree>
+            </field>
+        </record>
 
-		<record id="view_medical_physician_form" model="ir.ui.view">
-			<field name="name">medical.physician.form</field>
-			<field name="model">medical.physician</field>
-			<field name="priority" eval="8" />
-			<field name="arch" type="xml">
-				<form string="Oemedical Physician" version="7.0">
-	                <header>
-	                    <button name="action_update_schedule" string="Update Schedule" type="object" />
-	                </header>
-				    <sheet>
-						<field name="image" widget='image' class="oe_left oe_avatar"/>
-						<div>
-							<h1>
-								<field name="name" placeholder="Doctor's Name" style="width: 20%%" />
-	                            <field name="login" placeholder="Login" style="width: 20%%" />
-							</h1>
-						</div>
-						<div>
-							<label for="code"/>
-	   					    <field name="code" style="width: 20%%"/>
-	   					    <label for="specialty"/>
-							<field name="specialty" style="width: 20%%"/>
-						</div>
-						<group>
-						<label for="ref"/>
-						<field name="ref" style="width: 20%%"/>
-						<field name="parent_id" />
-						<newline/>
-						<field name="info" colspan="4"/>
-						</group>
-	                    <notebook>
-	                        <page string="General Information">
-			                    <group>
-			                        <field name="active"/>
-			                        <field name="phone" placeholder="e.g. +506 5555 5555"/>
-			                        <field name="mobile"/>
-			                        <field name="fax"/>
-			                       	<field name="user_ids" invisible="1"/>
-			                        <field name="email" widget="email" attrs="{'required': [('user_ids','!=', [])]}"/>
-			                    </group>
-			                    <group>
-			                       	<label for="street" string="Address"/>
-			                        <div>
-			                            <field name="use_parent_address" invisible="1"/>
-			                            <field name="street" placeholder="Street..."  attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-			                            <field name="street2"  attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-			                            <div class="address_format">
-			                                <field name="city" placeholder="City" style="width: 40%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-			                                <field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-			                                <field name="zip" placeholder="ZIP" style="width: 20%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-			                            </div>
-			                            <field name="country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-			                        </div>
-			                    </group>
-			                </page>
-	                        <page string="Schedule Template">
-	                            <field name="schedule_template_ids">
-	                                colspan="4"
-	                                <tree string="Schedule Template" editable="bottom">
-	                                    <field name="day" />
-	                                    <field name="start_hour" />
-	                                    <field name="start_minute" />
-	                                    <field name="end_hour" />
-	                                    <field name="end_minute" />
-	                                    <field name="duration" />
-   	                                </tree>
-	                            </field>
+        <record id="view_medical_physician_form" model="ir.ui.view">
+            <field name="name">medical.physician.form</field>
+            <field name="model">medical.physician</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Oemedical Physician" version="7.0">
+                    <header>
+                        <button name="action_update_schedule" string="Update Schedule" type="object" />
+                        <button name="%(medical_physician_unavailable_wizard_act)d" string="Create unavailability" type="action" context="{'default_physician_id': active_id}" />
+                    </header>
+                    <sheet>
+                        <field name="image" widget='image' class="oe_left oe_avatar"/>
+                        <div>
+                            <h1>
+                                <field name="name" placeholder="Physician's Name" style="width: 20%" />
+                            </h1>
+                        </div> 
+                        <div> 
+                            <h3> 
+                                <field name="login" placeholder="Login" style="width: 20%" /> 
+                            </h3> 
+                        </div> 
+                        <div> 
+                            <label for="ref"/> 
+                            <field name="ref" style="width: 20%"/> 
+                            <label for="code"/>
+                            <field name="code" style="width: 20%"/>
+                            <label for="specialty"/>
+                            <field name="specialty" style="width: 20%"/>
+                        </div>
+                        <group>
+                            <label for="ref"/>
+                            <field name="ref" style="width: 20%"/>
+                            <field name="parent_id" />
+                            <newline/>
+                            <field name="info" colspan="4"/>
+                        </group>
+                        <notebook>
+                            <page string="General Information">
+                                <group>
+                                    <field name="active"/>
+                                    <field name="phone" placeholder="e.g. +506 5555 5555"/>
+                                    <field name="mobile"/>
+                                    <field name="fax"/>
+                                       <field name="user_ids" invisible="1"/>
+                                    <field name="email" widget="email" attrs="{'required': [('user_ids','!=', [])]}"/>
+                                </group>
+                                <group>
+                                       <label for="street" string="Address"/>
+                                    <div>
+                                        <field name="use_parent_address" invisible="1"/>
+                                        <field name="street" placeholder="Street..."  attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                        <field name="street2"  attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                        <div class="address_format">
+                                            <field name="city" placeholder="City" style="width: 40%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                            <field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                            <field name="zip" placeholder="ZIP" style="width: 20%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                        </div>
+                                        <field name="country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                    </div>
+                                </group>
+                            </page>
+                            <page string="Schedule Template">
+                                <field name="schedule_template_ids" context="{'default_physician_id': id}">
+                                    colspan="4"
+                                    <tree string="Schedule Template" editable="bottom">
+                                        <field name="physician_id" invisible="1"/>
+                                        <field name="day" />
+                                        <field name="start_hour" />
+                                        <field name="start_minute" />
+                                        <field name="end_hour" />
+                                        <field name="end_minute" />
+                                        <field name="duration" />
+                                       </tree>
+                                </field>
                             </page>
                         </notebook>
                     </sheet>
-				</form>
-			</field>
-		</record>
+                </form>
+            </field>
+        </record>
 
-		<record id="view_medical_physician_search" model="ir.ui.view">
-			<field name="name">medical.physician.search</field>
-			<field name="model">medical.physician</field>
-			<field name="priority" eval="8" />
-			<field name="arch" type="xml">
-				<search string="Oemedical Physician">
-					<field name="name" />
-					<field name="code" />
-					<field name="specialty" />
-					<field name="parent_id" />
-					<field name="info" />
-					<newline />
-					<group expand="0" string="Group By...">
-						<filter string="Extra info" domain="[]" context="{'group_by':'info'}" />
-						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
-						<filter string="ID" domain="[]" context="{'group_by':'code'}" />
-						<filter string="Specialty" domain="[]"	context="{'group_by':'specialty'}" />
-						<filter string="Institution" domain="[]" context="{'group_by':'parent_id'}" />
-					</group>
-				</search>
-			</field>
-		</record>
+        <record id="view_medical_physician_search" model="ir.ui.view">
+            <field name="name">medical.physician.search</field>
+            <field name="model">medical.physician</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Oemedical Physician">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="specialty" />
+                    <field name="parent_id" />
+                    <field name="info" />
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Extra info" domain="[]" context="{'group_by':'info'}" />
+                        <filter string="Name" domain="[]" context="{'group_by':'name'}" />
+                        <filter string="ID" domain="[]" context="{'group_by':'code'}" />
+                        <filter string="Specialty" domain="[]"    context="{'group_by':'specialty'}" />
+                        <filter string="Institution" domain="[]" context="{'group_by':'parent_id'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
 
-		<record model="ir.actions.act_window" id="act_open_medical_physician_view">
-			<field name="name">Physician</field>
-			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">medical.physician</field>
-			<field name="view_type">form</field>
-			<field name="view_mode">tree,form</field>
-			<field name="search_view_id" ref="view_medical_physician_search" />
-			<field name="domain">[]</field>
-			<field name="context">{}</field>
-		</record>
+        <record model="ir.actions.act_window" id="act_open_medical_physician_view_self">
+            <field name="name">Physician</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.physician</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_medical_physician_search" />
+            <field name="domain">[('user_id', '=', uid)]</field>
+            <field name="context">{}</field>
+        </record>
 
-		<record model="ir.actions.act_window.view" id="act_open_medical_physician_view_form">
-			<field name="act_window_id" ref="act_open_medical_physician_view" />
-			<field name="sequence" eval="20" />
-			<field name="view_mode">form</field>
-			<field name="view_id" ref="view_medical_physician_form" />
-		</record>
+        <record model="ir.actions.act_window" id="act_open_medical_physician_view">
+            <field name="name">Physician</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.physician</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_medical_physician_search" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
 
-		<record model="ir.actions.act_window.view" id="act_open_medical_physician_view_tree">
-			<field name="act_window_id" ref="act_open_medical_physician_view" />
-			<field name="sequence" eval="10" />
-			<field name="view_mode">tree</field>
-			<field name="view_id" ref="view_medical_physician_tree" />
-		</record>
+        <record model="ir.actions.act_window.view" id="act_open_medical_physician_view_form">
+            <field name="act_window_id" ref="act_open_medical_physician_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_medical_physician_form" />
+        </record>
 
-	</data>
+        <record model="ir.actions.act_window.view" id="act_open_medical_physician_view_tree">
+            <field name="act_window_id" ref="act_open_medical_physician_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_medical_physician_tree" />
+        </record>
+
+    </data>
 </openerp>

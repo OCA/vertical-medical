@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+<!--Menu Patient-->
+		<menuitem id="medical_family" name=" Family" parent="medical.medical_patient_root"
+			sequence="20" action="act_open_medical_family_view" />
+
+		<menuitem id="medical_family_member" name=" Family Member"
+			parent="medical.medical_patient_root" sequence="30"
+			action="act_open_medical_family_member_view" />
+
+
+<!--Prescriptions-->
+		<menuitem id="medical_prescription_root" name="Prescription"
+			parent="medical.medical_root" sequence="30" />
+
+		<menuitem id="medical_prescription_order" name="Prescription Order"
+			parent="medical_prescription_root" sequence="10"
+			action="act_open_medical_prescription_order_view" />
+
+<!-- Diseases -->
+		<menuitem id="medical_root_disease" name="Disease"
+			parent="medical.medical_root_sub" sequence="10" />
+
+<!--  Menu of Pathology-->
+
+		<menuitem id="medical_pathology_category" name=" Pathology Category"	
+            parent="medical_root_disease" sequence="10"	
+            action="act_open_medical_pathology_category_view" />
+
+		<menuitem id="medical_pathology" name=" Pathology" 
+            parent="medical_root_disease"   sequence="30" 
+            action="act_open_medical_pathology_view" />
+
+		<menuitem id="medical_pathology_group" name=" Pathology Group" 
+            parent="medical_root_disease" sequence="20"
+            action="act_open_medical_pathology_group_view" />
+
+		<menuitem id="medical_root_disease_cat" name="Categories"
+			parent="medical_root_disease" sequence="100" />
+
+		<menuitem id="medical_disease_group_members" name=" Disease Group"
+			parent="medical_root_disease_cat" sequence="10"
+			action="act_open_medical_disease_group_members_view" />
+
+<!-- Occupation  ( Config/misc/Occupation) )--> 
+		<menuitem id="medical_occupation" name=" Occupation"
+			parent="medical.medical_root_misc" sequence="20"
+			action="act_open_medical_occupation_view" />
+
+<!-- Ethnicity  ( Config/misc/Ethnicity) )--> 
+		<menuitem id="medical_ethnicity" name="Ethnicity" parent="medical.medical_root_misc"
+			sequence="10" action="act_open_medical_ethnicity_view" />
+
+<!--Medicaments-->
+
+		<menuitem id="medical_medicament_root" name="Medicaments"
+			parent="medical.medical_root_sub" sequence="50" />
+
+
+		<menuitem id="medical_medicament" name="Medicaments"
+			parent="medical_medicament_root" sequence="10"
+			action="act_open_medical_medicament_view" />
+
+		<menuitem id="medical_medication_template" name=" Medication Template"
+			parent="medical_medicament_root" sequence="20"
+			action="act_open_medical_medication_template_view" />
+
+		<menuitem id="medical_medication_frequencies" name="Medication Frequencies"
+			parent="medical_medicament_root" sequence="30"
+			action="act_open_medical_medication_dosage_view" />
+
+		<menuitem id="medical_drug_route" name=" Drug Admin Route"
+			parent="medical_medicament_root" sequence="80"
+			action="act_open_medical_drug_route_view" />
+
+		<menuitem id="medical_drug_form" name=" Drug Form"
+            parent="medical_medicament_root" sequence="90"
+            action="act_open_medical_drug_form_view" />
+
+
+		<menuitem id="medical_medicament_category" name=" Medicament Category"
+			parent="medical_medicament_root" sequence="100"
+			action="act_open_medical_medicament_category_view" />
+
+
+		<menuitem id="medical_diagnostic_hypothesis" name=" Diagnostic Hypothesis"
+			parent="medical.medical_root_sub" sequence="10"
+			action="act_open_medical_diagnostic_hypothesis_view" />
+		<menuitem id="medical_predure" name=" Procedure" parent="medical.medical_root_sub"
+			sequence="10" action="act_open_medical_procedure_view" />
+
+	</data>
+</openerp>
