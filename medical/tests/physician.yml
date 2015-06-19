@@ -12,4 +12,4 @@
     login: 'vikas@example.com'
     info: 'General Physician'
     code: 'PH101'
-    specialty: !eval (ref('medical.oe_specialty_1'))
+    specialty: !eval (ref('oe_specialty_1'))
