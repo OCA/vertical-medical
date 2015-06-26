@@ -8,25 +8,25 @@
             <field name="factor">1.0</field>
         </record>
 		
-        <record model="product.uom" id="product_uom_ml">
+        <record id="product_uom_ml">
             <field name="name">mL</field>
             <field name="category_id" ref="product.product_uom_categ_vol"/>
             <field name="uom_type">smaller</field>
             <field name="factor" eval="1000"/>
         </record>
-        <record model="product.uom" id="mg">
+        <record id="mg">
             <field name="name">mg</field>
             <field name="factor" eval="10000"/>
             <field name="category_id" ref="product.product_uom_categ_kgm"/>
             <field name="uom_type">smaller</field>
         </record>
-        <record model="product.uom" id="mmol">
+        <record id="mmol">
             <field name="name">mmol</field>
             <field name="factor" eval="1"/>
             <field name="category_id" ref="product.product_uom_categ_unit"/>
             <field name="uom_type">smaller</field>
         </record>
-        <record model="product.uom" id="ug">
+        <record id="ug">
             <field name="name">ug</field>
             <field name="factor" eval="100000"/>
             <field name="category_id" ref="product.product_uom_categ_kgm"/>
