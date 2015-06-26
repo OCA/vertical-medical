@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="view_medical_patient_disease_tree" model="ir.ui.view">
+			<field name="name">medical.patient.disease.tree</field>
+			<field name="model">medical.patient.disease</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<tree string="Oemedical Patient Disease">
+					<field name="treatment_description" />
+					<field name="healed_date" />
+					<field name="pathology" />
+					<!--field name="disease_severity"/ -->
+					<field name="is_allergy" />
+					<field name="doctor" />
+					<field name="pregnancy_warning" />
+					<field name="weeks_of_pregnancy" />
+					<field name="is_on_treatment" />
+					<field name="diagnosed_date" />
+					<field name="extra_info" />
+					<!--field name="status"/ -->
+					<field name="is_active" />
+					<field name="date_stop_treatment" />
+					<field name="pcs_code" />
+					<field name="is_infectious" />
+					<!--field name="allergy_type"/ -->
+					<field name="patient_id" />
+					<field name="age" />
+					<field name="date_start_treatment" />
+					<field name="short_comment" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_medical_patient_disease_form" model="ir.ui.view">
+			<field name="name">medical.patient.disease.form</field>
+			<field name="model">medical.patient.disease</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<form string="Oemedical Patient Disease">
+					<field name="treatment_description" />
+					<field name="healed_date" />
+					<field name="pathology" />
+					<!--field name="disease_severity"/ -->
+					<field name="is_allergy" />
+					<field name="doctor" />
+					<field name="pregnancy_warning" />
+					<field name="weeks_of_pregnancy" />
+					<field name="is_on_treatment" />
+					<field name="diagnosed_date" />
+					<field name="extra_info" />
+					<!--field name="status"/ -->
+					<field name="is_active" />
+					<field name="date_stop_treatment" />
+					<field name="pcs_code" />
+					<field name="is_infectious" />
+					<!--field name="allergy_type"/ -->
+					<field name="patient_id" />
+					<field name="age" />
+					<field name="date_start_treatment" />
+					<field name="short_comment" />
+				</form>
+			</field>
+		</record>
+
+		<record id="view_medical_patient_disease_search" model="ir.ui.view">
+			<field name="name">medical.patient.disease.search</field>
+			<field name="model">medical.patient.disease</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<search string="Oemedical Patient Disease">
+					<field name="treatment_description" />
+					<field name="healed_date" />
+					<field name="pathology" />
+					<field name="is_allergy" />
+					<field name="doctor" />
+					<field name="pregnancy_warning" />
+					<field name="weeks_of_pregnancy" />
+					<field name="is_on_treatment" />
+					<field name="diagnosed_date" />
+					<field name="extra_info" />
+					<field name="is_active" />
+					<field name="date_stop_treatment" />
+					<field name="pcs_code" />
+					<field name="is_infectious" />
+					<field name="patient_id" />
+					<field name="age" />
+					<field name="date_start_treatment" />
+					<field name="short_comment" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Treatment Description" domain="[]"
+							context="{'group_by':'treatment_description'}" />
+						<filter string="Healed" domain="[]" context="{'group_by':'healed_date'}" />
+						<filter string="Disease" domain="[]" context="{'group_by':'pathology'}" />
+						<filter string="Allergic Disease" domain="[]"
+							context="{'group_by':'is_allergy'}" />
+						<filter string="Physician" domain="[]" context="{'group_by':'doctor'}" />
+						<filter string="Pregnancy warning" domain="[]"
+							context="{'group_by':'pregnancy_warning'}" />
+						<filter string="Contracted in pregnancy week #" domain="[]"
+							context="{'group_by':'weeks_of_pregnancy'}" />
+						<filter string="Currently on Treatment" domain="[]"
+							context="{'group_by':'is_on_treatment'}" />
+						<filter string="Date of Diagnosis" domain="[]"
+							context="{'group_by':'diagnosed_date'}" />
+						<filter string="Extra Info" domain="[]"
+							context="{'group_by':'extra_info'}" />
+						<filter string="Active disease" domain="[]"
+							context="{'group_by':'is_active'}" />
+						<filter string="End" domain="[]"
+							context="{'group_by':'date_stop_treatment'}" />
+						<filter string="Code" domain="[]" context="{'group_by':'pcs_code'}" />
+						<filter string="Infectious Disease" domain="[]"
+							context="{'group_by':'is_infectious'}" />
+						<filter string="Patient" domain="[]" context="{'group_by':'patient_id'}" />
+						<filter string="Age when diagnosed" domain="[]"
+							context="{'group_by':'age'}" />
+						<filter string="Start" domain="[]"
+							context="{'group_by':'date_start_treatment'}" />
+						<filter string="Remarks" domain="[]"
+							context="{'group_by':'short_comment'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="act_open_medical_patient_disease_view">
+			<field name="name">Patient Disease</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.patient.disease</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_patient_disease_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_open_medical_patient_disease_view_form">
+			<field name="act_window_id" ref="act_open_medical_patient_disease_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_patient_disease_form" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_open_medical_patient_disease_view_tree">
+			<field name="act_window_id" ref="act_open_medical_patient_disease_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_patient_disease_tree" />
+		</record>
+
+	</data>
+</openerp>
