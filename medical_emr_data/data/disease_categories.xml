@@ -20,11 +20,10 @@
 		        <field name="name">IV Endocrine, nutritional and metabolic diseases</field>
 	        </record>
 
-                <record model="medical.pathology.category" id="icdcat5">
-                        <field name="name">V Mental and behavioural disorders</field>
-                </record>
-
-
+			<record model="medical.pathology.category" id="icdcat5">
+					<field name="name">V Mental and behavioural disorders</field>
+			</record>
+			
 	        <record model="medical.pathology.category" id="icdcat6">
 		        <field name="name">VI Diseases of the nervous system</field>
 	        </record>
