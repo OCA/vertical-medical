@@ -4,7 +4,7 @@
 
 <!-- Add list of products -->
     <record model="medical.medicament" id="meds_em1">
-        <field name="name" search="[('name', '=', 'halothane')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'halothane')]"/>
         <field name="active_component">halothane</field>
         <field name="category" ref="em_1_1_1"/>
         <field name="pregnancy_warning">True</field>
@@ -13,7 +13,7 @@
     </record>
     
     <record model="medical.medicament" id="meds_em3">
-        <field name="name" search="[('name', '=', 'nitrous oxide')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'nitrous oxide')]"/>
         <field name="active_component">nitrous oxide</field>
         <field name="category" ref="em_1_1_1"/>
         <field name="pregnancy_warning">True</field>
@@ -22,7 +22,7 @@
     </record>
     
     <record model="medical.medicament" id="meds_em5">
-        <field name="name" search="[('name', '=', 'ketamine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'ketamine')]"/>
         <field name="active_component">ketamine</field>
         <field name="category" ref="em_1_1_2"/>
         <field name="pregnancy_warning">True</field>
@@ -33,7 +33,7 @@ Injection: 10 mg/ml; 20 mg/ml</field>
     
     <record model="medical.medicament" id="meds_em7">
 <!--        <field name="name">bupivacaine</field>-->
-        <field name="name" search="[('name', '=', 'bupivacaine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'bupivacaine')]"/>
         <field name="active_component">bupivacaine</field>
         <field name="category" ref="em_1_2"/>
         <field name="pregnancy_warning">True</field>
@@ -45,7 +45,7 @@ Injection for spinal anaesthesia: 0.5% (hydrochloride) in
     
     <record model="medical.medicament" id="meds_em9">
 <!--        <field name="name">lidocaine + epinephrine (adrenaline)</field>-->
-        <field name="name" search="[('name', '=', 'lidocaine + epinephrine (adrenaline)')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'lidocaine + epinephrine (adrenaline)')]"/>
         <field name="active_component">lidocaine + epinephrine (adrenaline)</field>
         <field name="category" ref="em_1_2"/>
         <field name="pregnancy_warning">False</field>
@@ -57,7 +57,7 @@ Injection: 1%; 2% (hydrochloride or sulfate) + epinephrine
     
     <record model="medical.medicament" id="meds_em11">
 <!--        <field name="name">atropine</field>-->
-        <field name="name" search="[('name', '=', 'atropine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'atropine')]"/>
         <field name="active_component">atropine</field>
         <field name="category" ref="em_1_3"/>
         <field name="pregnancy_warning">True</field>
@@ -67,7 +67,7 @@ Injection: 1%; 2% (hydrochloride or sulfate) + epinephrine
     
     <record model="medical.medicament" id="meds_em13">
 <!--        <field name="name">morphine</field>-->
-        <field name="name" search="[('name', '=', 'morphine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'morphine')]"/>
         <field name="active_component">morphine</field>
         <field name="category" ref="em_1_3"/>
         <field name="pregnancy_warning">True</field>
@@ -77,7 +77,7 @@ Injection: 1%; 2% (hydrochloride or sulfate) + epinephrine
     
     <record model="medical.medicament" id="meds_em15">
 <!--        <field name="name">ibuprofen</field>-->
-        <field name="name" search="[('name', '=', 'ibuprofen')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'ibuprofen')]"/>
         <field name="active_component">ibuprofen</field>
         <field name="category" ref="em_2_1"/>
         <field name="pregnancy_warning">True</field>
@@ -88,7 +88,7 @@ Tablet: 200 mg; 400 mg</field>
     
     <record model="medical.medicament" id="meds_em17">
 <!--        <field name="name">acetylsalicylic acid</field>-->
-        <field name="name" search="[('name', '=', 'acetylsalicylic acid')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'acetylsalicylic acid')]"/>
         <field name="active_component">acetylsalicylic acid</field>
         <field name="category" ref="em_2_1c"/>
         <field name="pregnancy_warning">True</field>
@@ -100,7 +100,7 @@ For use for rheumatic fever, juvenile arthritis, Kawasaki disease.</field>
     
     <record model="medical.medicament" id="meds_em19">
 <!--        <field name="name">morphine</field>-->
-        <field name="name" search="[('name', '=', 'morphine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'morphine')]"/>
         <field name="active_component">morphine</field>
         <field name="category" ref="em_2_2"/>
         <field name="pregnancy_warning">True</field>
@@ -113,7 +113,7 @@ Tablet (prolonged release): 10 mg; 30 mg; 60 mg (morphine sulfate). </field>
     
     <record model="medical.medicament" id="meds_em21">
 <!--        <field name="name">choloroquine</field>-->
-        <field name="name" search="[('name', '=', 'choloroquine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'choloroquine')]"/>
         <field name="active_component">choloroquine</field>
         <field name="category" ref="em_2_4"/>
         <field name="pregnancy_warning">True</field>
@@ -123,7 +123,7 @@ Tablet (prolonged release): 10 mg; 30 mg; 60 mg (morphine sulfate). </field>
     
     <record model="medical.medicament" id="meds_em23">
 <!--        <field name="name">hydroxychloroquine</field>-->
-        <field name="name" search="[('name', '=', 'hydroxychloroquine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'hydroxychloroquine')]"/>
         <field name="active_component">hydroxychloroquine</field>
         <field name="category" ref="em_2_4"/>
         <field name="pregnancy_warning">True</field>
@@ -133,7 +133,7 @@ Tablet (prolonged release): 10 mg; 30 mg; 60 mg (morphine sulfate). </field>
     
     <record model="medical.medicament" id="meds_em25">
 <!--        <field name="name">chlorphenamine</field>-->
-        <field name="name" search="[('name', '=', 'chlorphenamine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'chlorphenamine')]"/>
         <field name="active_component">chlorphenamine</field>
         <field name="category" ref="em_3"/>
         <field name="pregnancy_warning">False</field>
@@ -145,7 +145,7 @@ Tablet: 4 mg (hydrogen maleate)</field>
     
     <record model="medical.medicament" id="meds_em27">
 <!--        <field name="name">epinefrine (adrenaline)</field>-->
-        <field name="name" search="[('name', '=', 'epinefrine (adrenaline)')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'epinefrine (adrenaline)')]"/>
         <field name="active_component">epinefrine (adrenaline)</field>
         <field name="category" ref="em_3"/>
         <field name="pregnancy_warning">True</field>
@@ -155,7 +155,7 @@ Tablet: 4 mg (hydrogen maleate)</field>
     
     <record model="medical.medicament" id="meds_em29">
 <!--        <field name="name">prednisolone</field>-->
-        <field name="name" search="[('name', '=', 'prednisolone')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'prednisolone')]"/>
         <field name="active_component">prednisolone</field>
         <field name="category" ref="em_3"/>
         <field name="pregnancy_warning">True</field>
@@ -166,7 +166,7 @@ Tablet: 5 mg; 25 mg.</field>
     
     <record model="medical.medicament" id="meds_em31">
 <!--        <field name="name">acetylcysteine</field>-->
-        <field name="name" search="[('name', '=', 'acetylcysteine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'acetylcysteine')]"/>
         <field name="active_component">acetylcysteine</field>
         <field name="category" ref="em_4_2"/>
         <field name="pregnancy_warning">False</field>
@@ -177,7 +177,7 @@ Oral liquid: 10% ; 20%  </field>
     
     <record model="medical.medicament" id="meds_em33">
 <!--        <field name="name">calcium gluconate</field>-->
-        <field name="name" search="[('name', '=', 'calcium gluconate')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'calcium gluconate')]"/>
         <field name="active_component">calcium gluconate</field>
         <field name="category" ref="em_4_2"/>
         <field name="pregnancy_warning">True</field>
@@ -187,7 +187,7 @@ Oral liquid: 10% ; 20%  </field>
     
     <record model="medical.medicament" id="meds_em35">
 <!--        <field name="name">naloxone</field>-->
-        <field name="name" search="[('name', '=', 'naloxone')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'naloxone')]"/>
         <field name="active_component">naloxone</field>
         <field name="category" ref="em_4_2"/>
         <field name="pregnancy_warning">True</field>
@@ -197,7 +197,7 @@ Oral liquid: 10% ; 20%  </field>
     
     <record model="medical.medicament" id="meds_em37">
 <!--        <field name="name">potassium ferric hexacyano‐ferrate(II) ‐ 2H20 (Prussian blue)</field>-->
-        <field name="name" search="[('name', '=', 'potassium ferric hexacyano‐ferrate(II) ‐ 2H20 (Prussian blue)')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'potassium ferric hexacyano‐ferrate(II) ‐ 2H20 (Prussian blue)')]"/>
         <field name="active_component">potassium ferric hexacyano‐ferrate(II) ‐ 2H20 (Prussian blue)</field>
         <field name="category" ref="em_4_2"/>
         <field name="pregnancy_warning">True</field>
@@ -207,7 +207,7 @@ Oral liquid: 10% ; 20%  </field>
     
     <record model="medical.medicament" id="meds_em39">
 <!--        <field name="name">sodium thiosulfate</field>-->
-        <field name="name" search="[('name', '=', 'sodium thiosulfate')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'sodium thiosulfate')]"/>
         <field name="active_component">sodium thiosulfate</field>
         <field name="category" ref="em_4_2"/>
         <field name="pregnancy_warning">True</field>
@@ -217,7 +217,7 @@ Oral liquid: 10% ; 20%  </field>
     
     <record model="medical.medicament" id="meds_em41">
 <!--        <field name="name">dimercaprol</field>-->
-        <field name="name" search="[('name', '=', 'dimercaprol')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'dimercaprol')]"/>
         <field name="active_component">dimercaprol</field>
         <field name="category" ref="em_4_2c"/>
         <field name="pregnancy_warning">True</field>
@@ -227,7 +227,7 @@ Oral liquid: 10% ; 20%  </field>
     
     <record model="medical.medicament" id="meds_em43">
 <!--        <field name="name">succimer</field>-->
-        <field name="name" search="[('name', '=', 'succimer')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'succimer')]"/>
         <field name="active_component">succimer</field>
         <field name="category" ref="em_4_2c"/>
         <field name="pregnancy_warning">True</field>
@@ -237,7 +237,7 @@ Oral liquid: 10% ; 20%  </field>
     
     <record model="medical.medicament" id="meds_em45">
 <!--        <field name="name">diazepam</field>-->
-        <field name="name" search="[('name', '=', 'diazepam')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'diazepam')]"/>
         <field name="active_component">diazepam</field>
         <field name="category" ref="em_5"/>
         <field name="pregnancy_warning">True</field>
@@ -247,7 +247,7 @@ Oral liquid: 10% ; 20%  </field>
     
     <record model="medical.medicament" id="meds_em47">
 <!--        <field name="name">magnesium sulfate</field>-->
-        <field name="name" search="[('name', '=', 'magnesium sulfate')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'magnesium sulfate')]"/>
         <field name="active_component">magnesium sulfate</field>
         <field name="category" ref="em_5"/>
         <field name="pregnancy_warning">False</field>
@@ -260,7 +260,7 @@ convulsant disorders.</field>
     
     <record model="medical.medicament" id="meds_em49">
 <!--        <field name="name">phenytoin</field>-->
-        <field name="name" search="[('name', '=', 'phenytoin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'phenytoin')]"/>
         <field name="active_component">phenytoin</field>
         <field name="category" ref="em_5"/>
         <field name="pregnancy_warning">True</field>
@@ -278,7 +278,7 @@ dispensing and should be avoided. </field>
     
     <record model="medical.medicament" id="meds_em51">
 <!--        <field name="name">ethosuximide</field>-->
-        <field name="name" search="[('name', '=', 'ethosuximide')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'ethosuximide')]"/>
         <field name="active_component">ethosuximide</field>
         <field name="category" ref="em_5c"/>
         <field name="pregnancy_warning">True</field>
@@ -289,7 +289,7 @@ Oral liquid: 250 mg/5 ml</field>
     
     <record model="medical.medicament" id="meds_em53">
 <!--        <field name="name">levamisole</field>-->
-        <field name="name" search="[('name', '=', 'levamisole')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'levamisole')]"/>
         <field name="active_component">levamisole</field>
         <field name="category" ref="em_6_1_1"/>
         <field name="pregnancy_warning">True</field>
@@ -299,7 +299,7 @@ Oral liquid: 250 mg/5 ml</field>
     
     <record model="medical.medicament" id="meds_em55">
 <!--        <field name="name">niclosamide</field>-->
-        <field name="name" search="[('name', '=', 'niclosamide')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'niclosamide')]"/>
         <field name="active_component">niclosamide</field>
         <field name="category" ref="em_6_1_1"/>
         <field name="pregnancy_warning">False</field>
@@ -310,7 +310,7 @@ Niclosamide is listed for use when praziquantel treatment fails</field>
     
     <record model="medical.medicament" id="meds_em57">
 <!--        <field name="name">pyrantel</field>-->
-        <field name="name" search="[('name', '=', 'pyrantel')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'pyrantel')]"/>
         <field name="active_component">pyrantel</field>
         <field name="category" ref="em_6_1_1"/>
         <field name="pregnancy_warning">True</field>
@@ -321,7 +321,7 @@ Tablet (chewable): 250 mg (as embonate or pamoate).</field>
     
     <record model="medical.medicament" id="meds_em59">
 <!--        <field name="name">diethylcarbamazine</field>-->
-        <field name="name" search="[('name', '=', 'diethylcarbamazine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'diethylcarbamazine')]"/>
         <field name="active_component">diethylcarbamazine</field>
         <field name="category" ref="em_6_1_2"/>
         <field name="pregnancy_warning">True</field>
@@ -331,7 +331,7 @@ Tablet (chewable): 250 mg (as embonate or pamoate).</field>
     
     <record model="medical.medicament" id="meds_em61">
 <!--        <field name="name">praziquantel</field>-->
-        <field name="name" search="[('name', '=', 'praziquantel')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'praziquantel')]"/>
         <field name="active_component">praziquantel</field>
         <field name="category" ref="em_6_1_3"/>
         <field name="pregnancy_warning">False</field>
@@ -341,7 +341,7 @@ Tablet (chewable): 250 mg (as embonate or pamoate).</field>
     
     <record model="medical.medicament" id="meds_em63">
 <!--        <field name="name">oxamniquine</field>-->
-        <field name="name" search="[('name', '=', 'oxamniquine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'oxamniquine')]"/>
         <field name="active_component">oxamniquine</field>
         <field name="category" ref="em_6_1_3c"/>
         <field name="pregnancy_warning">True</field>
@@ -351,7 +351,7 @@ Tablet (chewable): 250 mg (as embonate or pamoate).</field>
     
     <record model="medical.medicament" id="meds_em65">
 <!--        <field name="name">amoxicillin + clavulanic acid </field>-->
-        <field name="name" search="[('name', '=', 'amoxicillin + clavulanic acid ')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'amoxicillin + clavulanic acid ')]"/>
         <field name="active_component">amoxicillin + clavulanic acid </field>
         <field name="category" ref="em_6_2_1"/>
         <field name="pregnancy_warning">False</field>
@@ -362,7 +362,7 @@ Tablet: 500 mg (as trihydrate) + 125 mg (as potassium salt).</field>
     
     <record model="medical.medicament" id="meds_em67">
 <!--        <field name="name">benzathine benzylpenicillin</field>-->
-        <field name="name" search="[('name', '=', 'benzathine benzylpenicillin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'benzathine benzylpenicillin')]"/>
         <field name="active_component">benzathine benzylpenicillin</field>
         <field name="category" ref="em_6_2_1"/>
         <field name="pregnancy_warning">False</field>
@@ -372,7 +372,7 @@ Tablet: 500 mg (as trihydrate) + 125 mg (as potassium salt).</field>
     
     <record model="medical.medicament" id="meds_em69">
 <!--        <field name="name">cefalexin</field>-->
-        <field name="name" search="[('name', '=', 'cefalexin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'cefalexin')]"/>
         <field name="active_component">cefalexin</field>
         <field name="category" ref="em_6_2_1"/>
         <field name="pregnancy_warning">False</field>
@@ -383,7 +383,7 @@ Tablet: 500 mg (as trihydrate) + 125 mg (as potassium salt).</field>
     
     <record model="medical.medicament" id="meds_em71">
 <!--        <field name="name">cefixime</field>-->
-        <field name="name" search="[('name', '=', 'cefixime')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'cefixime')]"/>
         <field name="active_component">cefixime</field>
         <field name="category" ref="em_6_2_1"/>
         <field name="pregnancy_warning">False</field>
@@ -395,7 +395,7 @@ genital gonorrhoea.</field>
     
     <record model="medical.medicament" id="meds_em73">
 <!--        <field name="name">cloxacillin</field>-->
-        <field name="name" search="[('name', '=', 'cloxacillin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'cloxacillin')]"/>
         <field name="active_component">cloxacillin</field>
         <field name="category" ref="em_6_2_1"/>
         <field name="pregnancy_warning">False</field>
@@ -407,7 +407,7 @@ Powder for injection: 500 mg (as sodium salt) in vial.
     
     <record model="medical.medicament" id="meds_em75">
 <!--        <field name="name">procaine benzylpenicillin</field>-->
-        <field name="name" search="[('name', '=', 'procaine benzylpenicillin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'procaine benzylpenicillin')]"/>
         <field name="active_component">procaine benzylpenicillin</field>
         <field name="category" ref="em_6_2_1"/>
         <field name="pregnancy_warning">False</field>
@@ -418,7 +418,7 @@ Procaine benzylpenicillin is not recommended as first‐line treatment for neona
     
     <record model="medical.medicament" id="meds_em77">
 <!--        <field name="name">ceftazidime</field>-->
-        <field name="name" search="[('name', '=', 'ceftazidime')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'ceftazidime')]"/>
         <field name="active_component">ceftazidime</field>
         <field name="category" ref="em_6_2_1c"/>
         <field name="pregnancy_warning">False</field>
@@ -428,7 +428,7 @@ Procaine benzylpenicillin is not recommended as first‐line treatment for neona
     
     <record model="medical.medicament" id="meds_em79">
 <!--        <field name="name">azithromycin</field>-->
-        <field name="name" search="[('name', '=', 'azithromycin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'azithromycin')]"/>
         <field name="active_component">azithromycin</field>
         <field name="category" ref="em_6_2_2"/>
         <field name="pregnancy_warning">False</field>
@@ -440,7 +440,7 @@ Oral liquid: 200 mg/5 ml.
     
     <record model="medical.medicament" id="meds_em81">
 <!--        <field name="name">chloramphenicol</field>-->
-        <field name="name" search="[('name', '=', 'chloramphenicol')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'chloramphenicol')]"/>
         <field name="active_component">chloramphenicol</field>
         <field name="category" ref="em_6_2_2"/>
         <field name="pregnancy_warning">True</field>
@@ -455,7 +455,7 @@ Powder for injection: 1 g (sodium succinate) in vial.</field>
     
     <record model="medical.medicament" id="meds_em83">
 <!--        <field name="name">doxycycline</field>-->
-        <field name="name" search="[('name', '=', 'doxycycline')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'doxycycline')]"/>
         <field name="active_component">doxycycline</field>
         <field name="category" ref="em_6_2_2"/>
         <field name="pregnancy_warning">True</field>
@@ -467,7 +467,7 @@ Use in children less than 8 years only for life-threatening infections when no a
     
     <record model="medical.medicament" id="meds_em85">
 <!--        <field name="name">gentamicin</field>-->
-        <field name="name" search="[('name', '=', 'gentamicin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'gentamicin')]"/>
         <field name="active_component">gentamicin</field>
         <field name="category" ref="em_6_2_2"/>
         <field name="pregnancy_warning">True</field>
@@ -477,7 +477,7 @@ Use in children less than 8 years only for life-threatening infections when no a
     
     <record model="medical.medicament" id="meds_em87">
 <!--        <field name="name">nitrofurantoin</field>-->
-        <field name="name" search="[('name', '=', 'nitrofurantoin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'nitrofurantoin')]"/>
         <field name="active_component">nitrofurantoin</field>
         <field name="category" ref="em_6_2_2"/>
         <field name="pregnancy_warning">False</field>
@@ -488,7 +488,7 @@ Tablet: 100 mg</field>
     
     <record model="medical.medicament" id="meds_em89">
 <!--        <field name="name">sulfamethoxazole + trimethoprim</field>-->
-        <field name="name" search="[('name', '=', 'sulfamethoxazole + trimethoprim')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'sulfamethoxazole + trimethoprim')]"/>
         <field name="active_component">sulfamethoxazole + trimethoprim</field>
         <field name="category" ref="em_6_2_2"/>
         <field name="pregnancy_warning">True</field>
@@ -503,7 +503,7 @@ Tablet: 100 mg</field>
     
     <record model="medical.medicament" id="meds_em91">
 <!--        <field name="name">clindamycin</field>-->
-        <field name="name" search="[('name', '=', 'clindamycin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'clindamycin')]"/>
         <field name="active_component">clindamycin</field>
         <field name="category" ref="em_6_2_2"/>
         <field name="pregnancy_warning">False</field>
@@ -515,7 +515,7 @@ Oral liquid: 75 mg/5 ml (as palmitate) [c].</field>
     
     <record model="medical.medicament" id="meds_em93">
 <!--        <field name="name">clofazimine</field>-->
-        <field name="name" search="[('name', '=', 'clofazimine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'clofazimine')]"/>
         <field name="active_component">clofazimine</field>
         <field name="category" ref="em_6_2_3"/>
         <field name="pregnancy_warning">True</field>
@@ -525,7 +525,7 @@ Oral liquid: 75 mg/5 ml (as palmitate) [c].</field>
     
     <record model="medical.medicament" id="meds_em95">
 <!--        <field name="name">rifampicin</field>-->
-        <field name="name" search="[('name', '=', 'rifampicin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'rifampicin')]"/>
         <field name="active_component">rifampicin</field>
         <field name="category" ref="em_6_2_3"/>
         <field name="pregnancy_warning">True</field>
@@ -535,7 +535,7 @@ Oral liquid: 75 mg/5 ml (as palmitate) [c].</field>
     
     <record model="medical.medicament" id="meds_em97">
 <!--        <field name="name">ethambutol + isoniazid</field>-->
-        <field name="name" search="[('name', '=', 'ethambutol + isoniazid')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'ethambutol + isoniazid')]"/>
         <field name="active_component">ethambutol + isoniazid</field>
         <field name="category" ref="em_6_2_4"/>
         <field name="pregnancy_warning">True</field>
@@ -545,7 +545,7 @@ Oral liquid: 75 mg/5 ml (as palmitate) [c].</field>
     
     <record model="medical.medicament" id="meds_em99">
 <!--        <field name="name">ethambutol + isoniazid + rifampicin</field>-->
-        <field name="name" search="[('name', '=', 'ethambutol + isoniazid + rifampicin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'ethambutol + isoniazid + rifampicin')]"/>
         <field name="active_component">ethambutol + isoniazid + rifampicin</field>
         <field name="category" ref="em_6_2_4"/>
         <field name="pregnancy_warning">True</field>
@@ -555,7 +555,7 @@ Oral liquid: 75 mg/5 ml (as palmitate) [c].</field>
     
     <record model="medical.medicament" id="meds_em101">
 <!--        <field name="name">isoniazid + pyrazinamide + rifampicin</field>-->
-        <field name="name" search="[('name', '=', 'isoniazid + pyrazinamide + rifampicin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'isoniazid + pyrazinamide + rifampicin')]"/>
         <field name="active_component">isoniazid + pyrazinamide + rifampicin</field>
         <field name="category" ref="em_6_2_4"/>
         <field name="pregnancy_warning">True</field>
@@ -567,7 +567,7 @@ Oral liquid: 75 mg/5 ml (as palmitate) [c].</field>
     
     <record model="medical.medicament" id="meds_em103">
 <!--        <field name="name">pyrazinamide</field>-->
-        <field name="name" search="[('name', '=', 'pyrazinamide')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'pyrazinamide')]"/>
         <field name="active_component">pyrazinamide</field>
         <field name="category" ref="em_6_2_4"/>
         <field name="pregnancy_warning">True</field>
@@ -580,7 +580,7 @@ Tablet (scored): 150 mg.</field>
     
     <record model="medical.medicament" id="meds_em105">
 <!--        <field name="name">rifampicin</field>-->
-        <field name="name" search="[('name', '=', 'rifampicin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'rifampicin')]"/>
         <field name="active_component">rifampicin</field>
         <field name="category" ref="em_6_2_4"/>
         <field name="pregnancy_warning">True</field>
@@ -591,7 +591,7 @@ Solid oral dosage form: 150 mg; 300 mg.</field>
     
     <record model="medical.medicament" id="meds_em107">
 <!--        <field name="name">amikacin</field>-->
-        <field name="name" search="[('name', '=', 'amikacin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'amikacin')]"/>
         <field name="active_component">amikacin</field>
         <field name="category" ref="em_6_2_4c"/>
         <field name="pregnancy_warning">True</field>
@@ -601,7 +601,7 @@ Solid oral dosage form: 150 mg; 300 mg.</field>
     
     <record model="medical.medicament" id="meds_em109">
 <!--        <field name="name">cycloserine</field>-->
-        <field name="name" search="[('name', '=', 'cycloserine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'cycloserine')]"/>
         <field name="active_component">cycloserine</field>
         <field name="category" ref="em_6_2_4c"/>
         <field name="pregnancy_warning">True</field>
@@ -611,7 +611,7 @@ Solid oral dosage form: 150 mg; 300 mg.</field>
     
     <record model="medical.medicament" id="meds_em111">
 <!--        <field name="name">kanamycin</field>-->
-        <field name="name" search="[('name', '=', 'kanamycin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'kanamycin')]"/>
         <field name="active_component">kanamycin</field>
         <field name="category" ref="em_6_2_4c"/>
         <field name="pregnancy_warning">True</field>
@@ -621,7 +621,7 @@ Solid oral dosage form: 150 mg; 300 mg.</field>
     
     <record model="medical.medicament" id="meds_em113">
 <!--        <field name="name">p‐aminosalicylic acid</field>-->
-        <field name="name" search="[('name', '=', 'p‐aminosalicylic acid')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'p‐aminosalicylic acid')]"/>
         <field name="active_component">p‐aminosalicylic acid</field>
         <field name="category" ref="em_6_2_4c"/>
         <field name="pregnancy_warning">True</field>
@@ -632,7 +632,7 @@ Tablet: 500 mg.</field>
     
     <record model="medical.medicament" id="meds_em115">
 <!--        <field name="name">fluconazole</field>-->
-        <field name="name" search="[('name', '=', 'fluconazole')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'fluconazole')]"/>
         <field name="active_component">fluconazole</field>
         <field name="category" ref="em_6_3"/>
         <field name="pregnancy_warning">True</field>
@@ -644,7 +644,7 @@ Oral liquid: 50 mg/5 ml</field>
     
     <record model="medical.medicament" id="meds_em117">
 <!--        <field name="name">nystatin</field>-->
-        <field name="name" search="[('name', '=', 'nystatin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'nystatin')]"/>
         <field name="active_component">nystatin</field>
         <field name="category" ref="em_6_3"/>
         <field name="pregnancy_warning">True</field>
@@ -657,7 +657,7 @@ Tablet: 100 000 IU; 500 000 IU.</field>
     
     <record model="medical.medicament" id="meds_em119">
 <!--        <field name="name">flucytosine</field>-->
-        <field name="name" search="[('name', '=', 'flucytosine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'flucytosine')]"/>
         <field name="active_component">flucytosine</field>
         <field name="category" ref="em_6_3c"/>
         <field name="pregnancy_warning">True</field>
@@ -668,7 +668,7 @@ Infusion: 2.5 g in 250 ml.</field>
     
     <record model="medical.medicament" id="meds_em121">
 <!--        <field name="name">aciclovir</field>-->
-        <field name="name" search="[('name', '=', 'aciclovir')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'aciclovir')]"/>
         <field name="active_component">aciclovir</field>
         <field name="category" ref="em_6_4_1"/>
         <field name="pregnancy_warning">False</field>
@@ -680,7 +680,7 @@ Tablet: 200 mg.</field>
     
     <record model="medical.medicament" id="meds_em123">
 <!--        <field name="name">didanosine (ddI)</field>-->
-        <field name="name" search="[('name', '=', 'didanosine (ddI)')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'didanosine (ddI)')]"/>
         <field name="active_component">didanosine (ddI)</field>
         <field name="category" ref="em_6_4_2_1"/>
         <field name="pregnancy_warning">False</field>
@@ -692,7 +692,7 @@ Tablet (buffered chewable, dispersible): 25 mg; 50 mg; 100 mg;150 mg; 200 mg.</f
     
     <record model="medical.medicament" id="meds_em125">
 <!--        <field name="name">tenofovir disoproxil fumarate (TDF)</field>-->
-        <field name="name" search="[('name', '=', 'tenofovir disoproxil fumarate (TDF)')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'tenofovir disoproxil fumarate (TDF)')]"/>
         <field name="active_component">tenofovir disoproxil fumarate (TDF)</field>
         <field name="category" ref="em_6_4_2_1"/>
         <field name="pregnancy_warning">False</field>
@@ -702,7 +702,7 @@ Tablet (buffered chewable, dispersible): 25 mg; 50 mg; 100 mg;150 mg; 200 mg.</f
     
     <record model="medical.medicament" id="meds_em127">
 <!--        <field name="name">efavirenz (EFV or EFZ)</field>-->
-        <field name="name" search="[('name', '=', 'efavirenz (EFV or EFZ)')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'efavirenz (EFV or EFZ)')]"/>
         <field name="active_component">efavirenz (EFV or EFZ)</field>
         <field name="category" ref="em_6_4_2_2"/>
         <field name="pregnancy_warning">True</field>
@@ -715,7 +715,7 @@ Tablet: 600 mg.
     
     <record model="medical.medicament" id="meds_em129">
 <!--        <field name="name">atazanavir</field>-->
-        <field name="name" search="[('name', '=', 'atazanavir')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'atazanavir')]"/>
         <field name="active_component">atazanavir</field>
         <field name="category" ref="em_6_4_2_3"/>
         <field name="pregnancy_warning">False</field>
@@ -726,7 +726,7 @@ Tablet: 600 mg.
     
     <record model="medical.medicament" id="meds_em131">
 <!--        <field name="name">lopinavir + ritonavir (LPV/r)</field>-->
-        <field name="name" search="[('name', '=', 'lopinavir + ritonavir (LPV/r)')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'lopinavir + ritonavir (LPV/r)')]"/>
         <field name="active_component">lopinavir + ritonavir (LPV/r)</field>
         <field name="category" ref="em_6_4_2_3"/>
         <field name="pregnancy_warning">True</field>
@@ -738,7 +738,7 @@ Tablet (heat stable): 100 mg + 25 mg; 200 mg + 50 mg.</field>
     
     <record model="medical.medicament" id="meds_em133">
 <!--        <field name="name">saquinavir (SQV)</field>-->
-        <field name="name" search="[('name', '=', 'saquinavir (SQV)')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'saquinavir (SQV)')]"/>
         <field name="active_component">saquinavir (SQV)</field>
         <field name="category" ref="em_6_4_2_3"/>
         <field name="pregnancy_warning">False</field>
@@ -749,7 +749,7 @@ Tablet (heat stable): 100 mg + 25 mg; 200 mg + 50 mg.</field>
     
     <record model="medical.medicament" id="meds_em135">
 <!--        <field name="name">emtricitabine + tenofovir</field>-->
-        <field name="name" search="[('name', '=', 'emtricitabine + tenofovir')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'emtricitabine + tenofovir')]"/>
         <field name="active_component">emtricitabine + tenofovir</field>
         <field name="category" ref="em_6_4_2_3"/>
         <field name="pregnancy_warning">False</field>
@@ -761,7 +761,7 @@ Tablet (heat stable): 100 mg + 25 mg; 200 mg + 50 mg.</field>
     
     <record model="medical.medicament" id="meds_em137">
 <!--        <field name="name">lamivudine + nevirapine + zidovudine</field>-->
-        <field name="name" search="[('name', '=', 'lamivudine + nevirapine + zidovudine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'lamivudine + nevirapine + zidovudine')]"/>
         <field name="active_component">lamivudine + nevirapine + zidovudine</field>
         <field name="category" ref="em_6_4_2_3"/>
         <field name="pregnancy_warning">True</field>
@@ -771,7 +771,7 @@ Tablet (heat stable): 100 mg + 25 mg; 200 mg + 50 mg.</field>
     
     <record model="medical.medicament" id="meds_em139">
 <!--        <field name="name">oseltamivir</field>-->
-        <field name="name" search="[('name', '=', 'oseltamivir')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'oseltamivir')]"/>
         <field name="active_component">oseltamivir</field>
         <field name="category" ref="em_6_4_3"/>
         <field name="pregnancy_warning">True</field>
@@ -783,7 +783,7 @@ Oral powder: 12 mg/ml.
     
     <record model="medical.medicament" id="meds_em141">
 <!--        <field name="name">diloxanide</field>-->
-        <field name="name" search="[('name', '=', 'diloxanide')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'diloxanide')]"/>
         <field name="active_component">diloxanide</field>
         <field name="category" ref="em_6_5_1"/>
         <field name="pregnancy_warning">True</field>
@@ -794,7 +794,7 @@ Oral powder: 12 mg/ml.
     
     <record model="medical.medicament" id="meds_em143">
 <!--        <field name="name">amphotericin B</field>-->
-        <field name="name" search="[('name', '=', 'amphotericin B')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'amphotericin B')]"/>
         <field name="active_component">amphotericin B</field>
         <field name="category" ref="em_6_5_2"/>
         <field name="pregnancy_warning">False</field>
@@ -805,7 +805,7 @@ As sodium deoxycholate or liposomal complex.</field>
     
     <record model="medical.medicament" id="meds_em145">
 <!--        <field name="name">paromomycin</field>-->
-        <field name="name" search="[('name', '=', 'paromomycin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'paromomycin')]"/>
         <field name="active_component">paromomycin</field>
         <field name="category" ref="em_6_5_2"/>
         <field name="pregnancy_warning">True</field>
@@ -815,7 +815,7 @@ As sodium deoxycholate or liposomal complex.</field>
     
     <record model="medical.medicament" id="meds_em147">
 <!--        <field name="name">amodiaquine</field>-->
-        <field name="name" search="[('name', '=', 'amodiaquine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'amodiaquine')]"/>
         <field name="active_component">amodiaquine</field>
         <field name="category" ref="em_6_5_3_1"/>
         <field name="pregnancy_warning">True</field>
@@ -826,7 +826,7 @@ As sodium deoxycholate or liposomal complex.</field>
     
     <record model="medical.medicament" id="meds_em149">
 <!--        <field name="name">artemether + lumefantrine</field>-->
-        <field name="name" search="[('name', '=', 'artemether + lumefantrine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'artemether + lumefantrine')]"/>
         <field name="active_component">artemether + lumefantrine</field>
         <field name="category" ref="em_6_5_3_1"/>
         <field name="pregnancy_warning">True</field>
@@ -839,7 +839,7 @@ children below 5 kg.</field>
     
     <record model="medical.medicament" id="meds_em151">
 <!--        <field name="name">artesunate + amodiaquine</field>-->
-        <field name="name" search="[('name', '=', 'artesunate + amodiaquine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'artesunate + amodiaquine')]"/>
         <field name="active_component">artesunate + amodiaquine</field>
         <field name="category" ref="em_6_5_3_1"/>
         <field name="pregnancy_warning">True</field>
@@ -850,7 +850,7 @@ children below 5 kg.</field>
     
     <record model="medical.medicament" id="meds_em153">
 <!--        <field name="name">doxycycline</field>-->
-        <field name="name" search="[('name', '=', 'doxycycline')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'doxycycline')]"/>
         <field name="active_component">doxycycline</field>
         <field name="category" ref="em_6_5_3_1"/>
         <field name="pregnancy_warning">True</field>
@@ -862,7 +862,7 @@ Tablet (dispersible): 100 mg (as monohydrate).
     
     <record model="medical.medicament" id="meds_em155">
 <!--        <field name="name">primaquine</field>-->
-        <field name="name" search="[('name', '=', 'primaquine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'primaquine')]"/>
         <field name="active_component">primaquine</field>
         <field name="category" ref="em_6_5_3_1"/>
         <field name="pregnancy_warning">True</field>
@@ -874,7 +874,7 @@ infections, given for 14 days.</field>
     
     <record model="medical.medicament" id="meds_em157">
 <!--        <field name="name">sulfadoxine + pyrimethamine</field>-->
-        <field name="name" search="[('name', '=', 'sulfadoxine + pyrimethamine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'sulfadoxine + pyrimethamine')]"/>
         <field name="active_component">sulfadoxine + pyrimethamine</field>
         <field name="category" ref="em_6_5_3_1"/>
         <field name="pregnancy_warning">True</field>
@@ -885,7 +885,7 @@ infections, given for 14 days.</field>
     
     <record model="medical.medicament" id="meds_em159">
 <!--        <field name="name">doxycycline</field>-->
-        <field name="name" search="[('name', '=', 'doxycycline')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'doxycycline')]"/>
         <field name="active_component">doxycycline</field>
         <field name="category" ref="em_6_5_3_2"/>
         <field name="pregnancy_warning">True</field>
@@ -896,7 +896,7 @@ infections, given for 14 days.</field>
     
     <record model="medical.medicament" id="meds_em161">
 <!--        <field name="name">proguanil</field>-->
-        <field name="name" search="[('name', '=', 'proguanil')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'proguanil')]"/>
         <field name="active_component">proguanil</field>
         <field name="category" ref="em_6_5_3_2"/>
         <field name="pregnancy_warning">True</field>
@@ -907,7 +907,7 @@ infections, given for 14 days.</field>
     
     <record model="medical.medicament" id="meds_em163">
 <!--        <field name="name">sulfadiazine</field>-->
-        <field name="name" search="[('name', '=', 'sulfadiazine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'sulfadiazine')]"/>
         <field name="active_component">sulfadiazine</field>
         <field name="category" ref="em_6_5_4"/>
         <field name="pregnancy_warning">True</field>
@@ -917,7 +917,7 @@ infections, given for 14 days.</field>
     
     <record model="medical.medicament" id="meds_em165">
 <!--        <field name="name">pentamidine</field>-->
-        <field name="name" search="[('name', '=', 'pentamidine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'pentamidine')]"/>
         <field name="active_component">pentamidine</field>
         <field name="category" ref="em_6_5_4c"/>
         <field name="pregnancy_warning">True</field>
@@ -927,7 +927,7 @@ infections, given for 14 days.</field>
     
     <record model="medical.medicament" id="meds_em167">
 <!--        <field name="name">suramin sodium</field>-->
-        <field name="name" search="[('name', '=', 'suramin sodium')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'suramin sodium')]"/>
         <field name="active_component">suramin sodium</field>
         <field name="category" ref="em_6_5_5_1"/>
         <field name="pregnancy_warning">True</field>
@@ -938,7 +938,7 @@ infections, given for 14 days.</field>
     
     <record model="medical.medicament" id="meds_em169">
 <!--        <field name="name">melarsoprol</field>-->
-        <field name="name" search="[('name', '=', 'melarsoprol')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'melarsoprol')]"/>
         <field name="active_component">melarsoprol</field>
         <field name="category" ref="em_6_5_5_1"/>
         <field name="pregnancy_warning">True</field>
@@ -949,7 +949,7 @@ Injection: 3.6% solution, 5‐ml ampoule (180 mg of active compound)</field>
     
     <record model="medical.medicament" id="meds_em171">
 <!--        <field name="name">melarsoprol</field>-->
-        <field name="name" search="[('name', '=', 'melarsoprol')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'melarsoprol')]"/>
         <field name="active_component">melarsoprol</field>
         <field name="category" ref="em_6_5_5_1c"/>
         <field name="pregnancy_warning">True</field>
@@ -960,7 +960,7 @@ Injection: 3.6% solution in 5‐ml ampoule (180 mg of active compound).</field>
     
     <record model="medical.medicament" id="meds_em173">
 <!--        <field name="name">nifurtimox</field>-->
-        <field name="name" search="[('name', '=', 'nifurtimox')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'nifurtimox')]"/>
         <field name="active_component">nifurtimox</field>
         <field name="category" ref="em_6_5_5_2"/>
         <field name="pregnancy_warning">True</field>
@@ -970,7 +970,7 @@ Injection: 3.6% solution in 5‐ml ampoule (180 mg of active compound).</field>
     
     <record model="medical.medicament" id="meds_em175">
 <!--        <field name="name">ibuprofen</field>-->
-        <field name="name" search="[('name', '=', 'ibuprofen')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'ibuprofen')]"/>
         <field name="active_component">ibuprofen</field>
         <field name="category" ref="em_7_1"/>
         <field name="pregnancy_warning">True</field>
@@ -980,7 +980,7 @@ Injection: 3.6% solution in 5‐ml ampoule (180 mg of active compound).</field>
     
     <record model="medical.medicament" id="meds_em177">
 <!--        <field name="name">propranolol</field>-->
-        <field name="name" search="[('name', '=', 'propranolol')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'propranolol')]"/>
         <field name="active_component">propranolol</field>
         <field name="category" ref="em_7_2"/>
         <field name="pregnancy_warning">True</field>
@@ -990,7 +990,7 @@ Injection: 3.6% solution in 5‐ml ampoule (180 mg of active compound).</field>
     
     <record model="medical.medicament" id="meds_em179">
 <!--        <field name="name">ciclosporin</field>-->
-        <field name="name" search="[('name', '=', 'ciclosporin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'ciclosporin')]"/>
         <field name="active_component">ciclosporin</field>
         <field name="category" ref="em_8_1c"/>
         <field name="pregnancy_warning">True</field>
@@ -1001,7 +1001,7 @@ Concentrate for injection: 50 mg/ml in 1‐ml ampoule for organ transplantation.
     
     <record model="medical.medicament" id="meds_em181">
 <!--        <field name="name">asparaginase</field>-->
-        <field name="name" search="[('name', '=', 'asparaginase')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'asparaginase')]"/>
         <field name="active_component">asparaginase</field>
         <field name="category" ref="em_8_2c"/>
         <field name="pregnancy_warning">True</field>
@@ -1011,7 +1011,7 @@ Concentrate for injection: 50 mg/ml in 1‐ml ampoule for organ transplantation.
     
     <record model="medical.medicament" id="meds_em183">
 <!--        <field name="name">calcium folinate</field>-->
-        <field name="name" search="[('name', '=', 'calcium folinate')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'calcium folinate')]"/>
         <field name="active_component">calcium folinate</field>
         <field name="category" ref="em_8_2c"/>
         <field name="pregnancy_warning">True</field>
@@ -1022,7 +1022,7 @@ Tablet: 15 mg</field>
     
     <record model="medical.medicament" id="meds_em185">
 <!--        <field name="name">chlorambucil</field>-->
-        <field name="name" search="[('name', '=', 'chlorambucil')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'chlorambucil')]"/>
         <field name="active_component">chlorambucil</field>
         <field name="category" ref="em_8_2c"/>
         <field name="pregnancy_warning">True</field>
@@ -1032,7 +1032,7 @@ Tablet: 15 mg</field>
     
     <record model="medical.medicament" id="meds_em187">
 <!--        <field name="name">cytarabine</field>-->
-        <field name="name" search="[('name', '=', 'cytarabine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'cytarabine')]"/>
         <field name="active_component">cytarabine</field>
         <field name="category" ref="em_8_2c"/>
         <field name="pregnancy_warning">True</field>
@@ -1042,7 +1042,7 @@ Tablet: 15 mg</field>
     
     <record model="medical.medicament" id="meds_em189">
 <!--        <field name="name">dactinomycin</field>-->
-        <field name="name" search="[('name', '=', 'dactinomycin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'dactinomycin')]"/>
         <field name="active_component">dactinomycin</field>
         <field name="category" ref="em_8_2c"/>
         <field name="pregnancy_warning">True</field>
@@ -1052,7 +1052,7 @@ Tablet: 15 mg</field>
     
     <record model="medical.medicament" id="meds_em191">
 <!--        <field name="name">docetaxel</field>-->
-        <field name="name" search="[('name', '=', 'docetaxel')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'docetaxel')]"/>
         <field name="active_component">docetaxel</field>
         <field name="category" ref="em_8_2c"/>
         <field name="pregnancy_warning">True</field>
@@ -1062,7 +1062,7 @@ Tablet: 15 mg</field>
     
     <record model="medical.medicament" id="meds_em193">
 <!--        <field name="name">etoposide</field>-->
-        <field name="name" search="[('name', '=', 'etoposide')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'etoposide')]"/>
         <field name="active_component">etoposide</field>
         <field name="category" ref="em_8_2c"/>
         <field name="pregnancy_warning">True</field>
@@ -1073,7 +1073,7 @@ Injection: 20 mg/ml in 5‐ml ampoule</field>
     
     <record model="medical.medicament" id="meds_em195">
 <!--        <field name="name">hydroxycarbamide</field>-->
-        <field name="name" search="[('name', '=', 'hydroxycarbamide')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'hydroxycarbamide')]"/>
         <field name="active_component">hydroxycarbamide</field>
         <field name="category" ref="em_8_2c"/>
         <field name="pregnancy_warning">True</field>
@@ -1083,7 +1083,7 @@ Injection: 20 mg/ml in 5‐ml ampoule</field>
     
     <record model="medical.medicament" id="meds_em197">
 <!--        <field name="name">mercaptopurine</field>-->
-        <field name="name" search="[('name', '=', 'mercaptopurine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'mercaptopurine')]"/>
         <field name="active_component">mercaptopurine</field>
         <field name="category" ref="em_8_2c"/>
         <field name="pregnancy_warning">True</field>
@@ -1093,7 +1093,7 @@ Injection: 20 mg/ml in 5‐ml ampoule</field>
     
     <record model="medical.medicament" id="meds_em199">
 <!--        <field name="name">methotrexate</field>-->
-        <field name="name" search="[('name', '=', 'methotrexate')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'methotrexate')]"/>
         <field name="active_component">methotrexate</field>
         <field name="category" ref="em_8_2c"/>
         <field name="pregnancy_warning">True</field>
@@ -1104,7 +1104,7 @@ Tablet: 2.5 mg (as sodium salt).</field>
     
     <record model="medical.medicament" id="meds_em201">
 <!--        <field name="name">procarbazine</field>-->
-        <field name="name" search="[('name', '=', 'procarbazine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'procarbazine')]"/>
         <field name="active_component">procarbazine</field>
         <field name="category" ref="em_8_2c"/>
         <field name="pregnancy_warning">True</field>
@@ -1114,7 +1114,7 @@ Tablet: 2.5 mg (as sodium salt).</field>
     
     <record model="medical.medicament" id="meds_em203">
 <!--        <field name="name">vinblastine</field>-->
-        <field name="name" search="[('name', '=', 'vinblastine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'vinblastine')]"/>
         <field name="active_component">vinblastine</field>
         <field name="category" ref="em_8_2c"/>
         <field name="pregnancy_warning">True</field>
@@ -1124,7 +1124,7 @@ Tablet: 2.5 mg (as sodium salt).</field>
     
     <record model="medical.medicament" id="meds_em205">
 <!--        <field name="name">dexamethasone</field>-->
-        <field name="name" search="[('name', '=', 'dexamethasone')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'dexamethasone')]"/>
         <field name="active_component">dexamethasone</field>
         <field name="category" ref="em_8_3c"/>
         <field name="pregnancy_warning">True</field>
@@ -1134,7 +1134,7 @@ Tablet: 2.5 mg (as sodium salt).</field>
     
     <record model="medical.medicament" id="meds_em207">
 <!--        <field name="name">methylprednisolone</field>-->
-        <field name="name" search="[('name', '=', 'methylprednisolone')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'methylprednisolone')]"/>
         <field name="active_component">methylprednisolone</field>
         <field name="category" ref="em_8_3c"/>
         <field name="pregnancy_warning">True</field>
@@ -1144,7 +1144,7 @@ Tablet: 2.5 mg (as sodium salt).</field>
     
     <record model="medical.medicament" id="meds_em209">
 <!--        <field name="name">tamoxifen</field>-->
-        <field name="name" search="[('name', '=', 'tamoxifen')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'tamoxifen')]"/>
         <field name="active_component">tamoxifen</field>
         <field name="category" ref="em_8_3c"/>
         <field name="pregnancy_warning">True</field>
@@ -1154,7 +1154,7 @@ Tablet: 2.5 mg (as sodium salt).</field>
     
     <record model="medical.medicament" id="meds_em211">
 <!--        <field name="name">cyclizine</field>-->
-        <field name="name" search="[('name', '=', 'cyclizine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'cyclizine')]"/>
         <field name="active_component">cyclizine</field>
         <field name="category" ref="em_8_4"/>
         <field name="pregnancy_warning">False</field>
@@ -1165,7 +1165,7 @@ Tablet: 50 mg. [c]</field>
     
     <record model="medical.medicament" id="meds_em213">
 <!--        <field name="name">diazepam</field>-->
-        <field name="name" search="[('name', '=', 'diazepam')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'diazepam')]"/>
         <field name="active_component">diazepam</field>
         <field name="category" ref="em_8_4"/>
         <field name="pregnancy_warning">True</field>
@@ -1179,7 +1179,7 @@ Tablet: 5 mg; 10 mg
     
     <record model="medical.medicament" id="meds_em215">
 <!--        <field name="name">fluoxetine</field>-->
-        <field name="name" search="[('name', '=', 'fluoxetine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'fluoxetine')]"/>
         <field name="active_component">fluoxetine</field>
         <field name="category" ref="em_8_4"/>
         <field name="pregnancy_warning">True</field>
@@ -1190,7 +1190,7 @@ Tablet: 5 mg; 10 mg
     
     <record model="medical.medicament" id="meds_em217">
 <!--        <field name="name">ibuprofen</field>-->
-        <field name="name" search="[('name', '=', 'ibuprofen')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'ibuprofen')]"/>
         <field name="active_component">ibuprofen</field>
         <field name="category" ref="em_8_4"/>
         <field name="pregnancy_warning">True</field>
@@ -1202,7 +1202,7 @@ Tablet: 200 mg; 400 mg; 600 mg.
     
     <record model="medical.medicament" id="meds_em219">
 <!--        <field name="name">midazolam</field>-->
-        <field name="name" search="[('name', '=', 'midazolam')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'midazolam')]"/>
         <field name="active_component">midazolam</field>
         <field name="category" ref="em_8_4"/>
         <field name="pregnancy_warning">True</field>
@@ -1212,7 +1212,7 @@ Tablet: 200 mg; 400 mg; 600 mg.
     
     <record model="medical.medicament" id="meds_em221">
 <!--        <field name="name">ondansetron</field>-->
-        <field name="name" search="[('name', '=', 'ondansetron')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'ondansetron')]"/>
         <field name="active_component">ondansetron</field>
         <field name="category" ref="em_8_4"/>
         <field name="pregnancy_warning">False</field>
@@ -1225,7 +1225,7 @@ Solid oral dosage form: Eq 4 mg base; Eq 8 mg base.
     
     <record model="medical.medicament" id="meds_em223">
 <!--        <field name="name">biperiden</field>-->
-        <field name="name" search="[('name', '=', 'biperiden')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'biperiden')]"/>
         <field name="active_component">biperiden</field>
         <field name="category" ref="em_9"/>
         <field name="pregnancy_warning">True</field>
@@ -1236,7 +1236,7 @@ Tablet: 2 mg (hydrochloride).</field>
     
     <record model="medical.medicament" id="meds_em225">
 <!--        <field name="name">ferrous salt</field>-->
-        <field name="name" search="[('name', '=', 'ferrous salt')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'ferrous salt')]"/>
         <field name="active_component">ferrous salt</field>
         <field name="category" ref="em_10_1"/>
         <field name="pregnancy_warning">True</field>
@@ -1247,7 +1247,7 @@ Tablet: equivalent to 60 mg iron.</field>
     
     <record model="medical.medicament" id="meds_em227">
 <!--        <field name="name">folic acid</field>-->
-        <field name="name" search="[('name', '=', 'folic acid')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'folic acid')]"/>
         <field name="active_component">folic acid</field>
         <field name="category" ref="em_10_1"/>
         <field name="pregnancy_warning">False</field>
@@ -1257,7 +1257,7 @@ Tablet: equivalent to 60 mg iron.</field>
     
     <record model="medical.medicament" id="meds_em229">
 <!--        <field name="name">heparin sodium</field>-->
-        <field name="name" search="[('name', '=', 'heparin sodium')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'heparin sodium')]"/>
         <field name="active_component">heparin sodium</field>
         <field name="category" ref="em_10_2"/>
         <field name="pregnancy_warning">True</field>
@@ -1267,7 +1267,7 @@ Tablet: equivalent to 60 mg iron.</field>
     
     <record model="medical.medicament" id="meds_em231">
 <!--        <field name="name">protamine sulfate</field>-->
-        <field name="name" search="[('name', '=', 'protamine sulfate')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'protamine sulfate')]"/>
         <field name="active_component">protamine sulfate</field>
         <field name="category" ref="em_10_2"/>
         <field name="pregnancy_warning">True</field>
@@ -1277,7 +1277,7 @@ Tablet: equivalent to 60 mg iron.</field>
     
     <record model="medical.medicament" id="meds_em233">
 <!--        <field name="name">warfarin</field>-->
-        <field name="name" search="[('name', '=', 'warfarin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'warfarin')]"/>
         <field name="active_component">warfarin</field>
         <field name="category" ref="em_10_2"/>
         <field name="pregnancy_warning">True</field>
@@ -1287,7 +1287,7 @@ Tablet: equivalent to 60 mg iron.</field>
     
     <record model="medical.medicament" id="meds_em235">
 <!--        <field name="name">protamine sulfate</field>-->
-        <field name="name" search="[('name', '=', 'protamine sulfate')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'protamine sulfate')]"/>
         <field name="active_component">protamine sulfate</field>
         <field name="category" ref="em_10_2c"/>
         <field name="pregnancy_warning">True</field>
@@ -1297,7 +1297,7 @@ Tablet: equivalent to 60 mg iron.</field>
     
     <record model="medical.medicament" id="meds_em237">
 <!--        <field name="name">deferoxamine</field>-->
-        <field name="name" search="[('name', '=', 'deferoxamine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'deferoxamine')]"/>
         <field name="active_component">deferoxamine</field>
         <field name="category" ref="em_10_3c"/>
         <field name="pregnancy_warning">True</field>
@@ -1308,7 +1308,7 @@ Tablet: equivalent to 60 mg iron.</field>
     
     <record model="medical.medicament" id="meds_em239">
 <!--        <field name="name">dextran 70</field>-->
-        <field name="name" search="[('name', '=', 'dextran 70')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'dextran 70')]"/>
         <field name="active_component">dextran 70</field>
         <field name="category" ref="em_11_1"/>
         <field name="pregnancy_warning">True</field>
@@ -1319,7 +1319,7 @@ Tablet: equivalent to 60 mg iron.</field>
     
     <record model="medical.medicament" id="meds_em241">
 <!--        <field name="name">factor IX complex (coagulation factors, II, VII, IX, X) concentrate</field>-->
-        <field name="name" search="[('name', '=', 'factor IX complex (coagulation factors, II, VII, IX, X) concentrate')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'factor IX complex (coagulation factors, II, VII, IX, X) concentrate')]"/>
         <field name="active_component">factor IX complex (coagulation factors, II, VII, IX, X) concentrate</field>
         <field name="category" ref="em_11_2c"/>
         <field name="pregnancy_warning">True</field>
@@ -1329,7 +1329,7 @@ Tablet: equivalent to 60 mg iron.</field>
     
     <record model="medical.medicament" id="meds_em243">
 <!--        <field name="name">bisoprolol</field>-->
-        <field name="name" search="[('name', '=', 'bisoprolol')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'bisoprolol')]"/>
         <field name="active_component">bisoprolol</field>
         <field name="category" ref="em_12_1"/>
         <field name="pregnancy_warning">True</field>
@@ -1340,7 +1340,7 @@ Tablet: equivalent to 60 mg iron.</field>
     
     <record model="medical.medicament" id="meds_em245">
 <!--        <field name="name">isosorbide dinitrate</field>-->
-        <field name="name" search="[('name', '=', 'isosorbide dinitrate')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'isosorbide dinitrate')]"/>
         <field name="active_component">isosorbide dinitrate</field>
         <field name="category" ref="em_12_1"/>
         <field name="pregnancy_warning">True</field>
@@ -1350,7 +1350,7 @@ Tablet: equivalent to 60 mg iron.</field>
     
     <record model="medical.medicament" id="meds_em247">
 <!--        <field name="name">bisoprolol</field>-->
-        <field name="name" search="[('name', '=', 'bisoprolol')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'bisoprolol')]"/>
         <field name="active_component">bisoprolol</field>
         <field name="category" ref="em_12_2"/>
         <field name="pregnancy_warning">True</field>
@@ -1361,7 +1361,7 @@ Tablet: equivalent to 60 mg iron.</field>
     
     <record model="medical.medicament" id="meds_em249">
 <!--        <field name="name">epinephrine (adrenaline)</field>-->
-        <field name="name" search="[('name', '=', 'epinephrine (adrenaline)')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'epinephrine (adrenaline)')]"/>
         <field name="active_component">epinephrine (adrenaline)</field>
         <field name="category" ref="em_12_2"/>
         <field name="pregnancy_warning">True</field>
@@ -1371,7 +1371,7 @@ Tablet: equivalent to 60 mg iron.</field>
     
     <record model="medical.medicament" id="meds_em251">
 <!--        <field name="name">verapamil</field>-->
-        <field name="name" search="[('name', '=', 'verapamil')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'verapamil')]"/>
         <field name="active_component">verapamil</field>
         <field name="category" ref="em_12_2"/>
         <field name="pregnancy_warning">True</field>
@@ -1382,7 +1382,7 @@ Tablet: 40 mg; 80 mg (hydrochloride).</field>
     
     <record model="medical.medicament" id="meds_em253">
 <!--        <field name="name">amlodipine</field>-->
-        <field name="name" search="[('name', '=', 'amlodipine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'amlodipine')]"/>
         <field name="active_component">amlodipine</field>
         <field name="category" ref="em_12_3"/>
         <field name="pregnancy_warning">True</field>
@@ -1392,7 +1392,7 @@ Tablet: 40 mg; 80 mg (hydrochloride).</field>
     
     <record model="medical.medicament" id="meds_em255">
 <!--        <field name="name">enalapril</field>-->
-        <field name="name" search="[('name', '=', 'enalapril')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'enalapril')]"/>
         <field name="active_component">enalapril</field>
         <field name="category" ref="em_12_3"/>
         <field name="pregnancy_warning">True</field>
@@ -1402,7 +1402,7 @@ Tablet: 40 mg; 80 mg (hydrochloride).</field>
     
     <record model="medical.medicament" id="meds_em257">
 <!--        <field name="name">hydrochlorothiazide</field>-->
-        <field name="name" search="[('name', '=', 'hydrochlorothiazide')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'hydrochlorothiazide')]"/>
         <field name="active_component">hydrochlorothiazide</field>
         <field name="category" ref="em_12_3"/>
         <field name="pregnancy_warning">False</field>
@@ -1413,7 +1413,7 @@ Solid oral dosage form: 12.5 mg; 25 mg.</field>
     
     <record model="medical.medicament" id="meds_em259">
 <!--        <field name="name">sodium nitroprusside</field>-->
-        <field name="name" search="[('name', '=', 'sodium nitroprusside')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'sodium nitroprusside')]"/>
         <field name="active_component">sodium nitroprusside</field>
         <field name="category" ref="em_12_3c"/>
         <field name="pregnancy_warning">True</field>
@@ -1423,7 +1423,7 @@ Solid oral dosage form: 12.5 mg; 25 mg.</field>
     
     <record model="medical.medicament" id="meds_em261">
 <!--        <field name="name">digoxin</field>-->
-        <field name="name" search="[('name', '=', 'digoxin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'digoxin')]"/>
         <field name="active_component">digoxin</field>
         <field name="category" ref="em_12_4"/>
         <field name="pregnancy_warning">True</field>
@@ -1435,7 +1435,7 @@ Tablet: 62.5 micrograms; 250 micrograms.</field>
     
     <record model="medical.medicament" id="meds_em263">
 <!--        <field name="name">furosemide</field>-->
-        <field name="name" search="[('name', '=', 'furosemide')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'furosemide')]"/>
         <field name="active_component">furosemide</field>
         <field name="category" ref="em_12_4"/>
         <field name="pregnancy_warning">True</field>
@@ -1447,7 +1447,7 @@ Tablet: 40 mg.</field>
     
     <record model="medical.medicament" id="meds_em265">
 <!--        <field name="name">dopamine</field>-->
-        <field name="name" search="[('name', '=', 'dopamine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'dopamine')]"/>
         <field name="active_component">dopamine</field>
         <field name="category" ref="em_12_4c"/>
         <field name="pregnancy_warning">True</field>
@@ -1457,7 +1457,7 @@ Tablet: 40 mg.</field>
     
     <record model="medical.medicament" id="meds_em267">
 <!--        <field name="name">streptokinase</field>-->
-        <field name="name" search="[('name', '=', 'streptokinase')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'streptokinase')]"/>
         <field name="active_component">streptokinase</field>
         <field name="category" ref="em_12_5c"/>
         <field name="pregnancy_warning">True</field>
@@ -1467,7 +1467,7 @@ Tablet: 40 mg.</field>
     
     <record model="medical.medicament" id="meds_em269">
 <!--        <field name="name">miconazole</field>-->
-        <field name="name" search="[('name', '=', 'miconazole')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'miconazole')]"/>
         <field name="active_component">miconazole</field>
         <field name="category" ref="em_13_1"/>
         <field name="pregnancy_warning">True</field>
@@ -1477,7 +1477,7 @@ Tablet: 40 mg.</field>
     
     <record model="medical.medicament" id="meds_em271">
 <!--        <field name="name">sodium thiosulfate</field>-->
-        <field name="name" search="[('name', '=', 'sodium thiosulfate')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'sodium thiosulfate')]"/>
         <field name="active_component">sodium thiosulfate</field>
         <field name="category" ref="em_13_1"/>
         <field name="pregnancy_warning">True</field>
@@ -1487,7 +1487,7 @@ Tablet: 40 mg.</field>
     
     <record model="medical.medicament" id="meds_em273">
 <!--        <field name="name">mupirocin</field>-->
-        <field name="name" search="[('name', '=', 'mupirocin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'mupirocin')]"/>
         <field name="active_component">mupirocin</field>
         <field name="category" ref="em_13_2"/>
         <field name="pregnancy_warning">False</field>
@@ -1498,7 +1498,7 @@ Ointment: 2%.</field>
     
     <record model="medical.medicament" id="meds_em275">
 <!--        <field name="name">silver sulfadiazine</field>-->
-        <field name="name" search="[('name', '=', 'silver sulfadiazine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'silver sulfadiazine')]"/>
         <field name="active_component">silver sulfadiazine</field>
         <field name="category" ref="em_13_2"/>
         <field name="pregnancy_warning">True</field>
@@ -1509,7 +1509,7 @@ Ointment: 2%.</field>
     
     <record model="medical.medicament" id="meds_em277">
 <!--        <field name="name">calamine</field>-->
-        <field name="name" search="[('name', '=', 'calamine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'calamine')]"/>
         <field name="active_component">calamine</field>
         <field name="category" ref="em_13_3"/>
         <field name="pregnancy_warning">True</field>
@@ -1519,7 +1519,7 @@ Ointment: 2%.</field>
     
     <record model="medical.medicament" id="meds_em279">
 <!--        <field name="name">benzoyl peroxide</field>-->
-        <field name="name" search="[('name', '=', 'benzoyl peroxide')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'benzoyl peroxide')]"/>
         <field name="active_component">benzoyl peroxide</field>
         <field name="category" ref="em_13_4"/>
         <field name="pregnancy_warning">True</field>
@@ -1529,7 +1529,7 @@ Ointment: 2%.</field>
     
     <record model="medical.medicament" id="meds_em281">
 <!--        <field name="name">dithranol</field>-->
-        <field name="name" search="[('name', '=', 'dithranol')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'dithranol')]"/>
         <field name="active_component">dithranol</field>
         <field name="category" ref="em_13_4"/>
         <field name="pregnancy_warning">True</field>
@@ -1539,7 +1539,7 @@ Ointment: 2%.</field>
     
     <record model="medical.medicament" id="meds_em283">
 <!--        <field name="name">podophyllum resin</field>-->
-        <field name="name" search="[('name', '=', 'podophyllum resin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'podophyllum resin')]"/>
         <field name="active_component">podophyllum resin</field>
         <field name="category" ref="em_13_4"/>
         <field name="pregnancy_warning">True</field>
@@ -1549,7 +1549,7 @@ Ointment: 2%.</field>
     
     <record model="medical.medicament" id="meds_em285">
 <!--        <field name="name">urea</field>-->
-        <field name="name" search="[('name', '=', 'urea')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'urea')]"/>
         <field name="active_component">urea</field>
         <field name="category" ref="em_13_4"/>
         <field name="pregnancy_warning">True</field>
@@ -1559,7 +1559,7 @@ Ointment: 2%.</field>
     
     <record model="medical.medicament" id="meds_em287">
 <!--        <field name="name">permethrin</field>-->
-        <field name="name" search="[('name', '=', 'permethrin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'permethrin')]"/>
         <field name="active_component">permethrin</field>
         <field name="category" ref="em_13_5"/>
         <field name="pregnancy_warning">False</field>
@@ -1570,7 +1570,7 @@ Lotion: 1%.</field>
     
     <record model="medical.medicament" id="meds_em289">
 <!--        <field name="name">tropicamide</field>-->
-        <field name="name" search="[('name', '=', 'tropicamide')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'tropicamide')]"/>
         <field name="active_component">tropicamide</field>
         <field name="category" ref="em_14_1"/>
         <field name="pregnancy_warning">True</field>
@@ -1580,7 +1580,7 @@ Lotion: 1%.</field>
     
     <record model="medical.medicament" id="meds_em291">
 <!--        <field name="name">barium sulfate</field>-->
-        <field name="name" search="[('name', '=', 'barium sulfate')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'barium sulfate')]"/>
         <field name="active_component">barium sulfate</field>
         <field name="category" ref="em_14_2"/>
         <field name="pregnancy_warning">True</field>
@@ -1590,7 +1590,7 @@ Lotion: 1%.</field>
     
     <record model="medical.medicament" id="meds_em293">
 <!--        <field name="name">barium sulfate</field>-->
-        <field name="name" search="[('name', '=', 'barium sulfate')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'barium sulfate')]"/>
         <field name="active_component">barium sulfate</field>
         <field name="category" ref="em_14_2c"/>
         <field name="pregnancy_warning">True</field>
@@ -1600,7 +1600,7 @@ Lotion: 1%.</field>
     
     <record model="medical.medicament" id="meds_em295">
 <!--        <field name="name">chlorhexidine</field>-->
-        <field name="name" search="[('name', '=', 'chlorhexidine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'chlorhexidine')]"/>
         <field name="active_component">chlorhexidine</field>
         <field name="category" ref="em_15_1"/>
         <field name="pregnancy_warning">True</field>
@@ -1610,7 +1610,7 @@ Lotion: 1%.</field>
     
     <record model="medical.medicament" id="meds_em297">
 <!--        <field name="name">polyvidone iodine</field>-->
-        <field name="name" search="[('name', '=', 'polyvidone iodine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'polyvidone iodine')]"/>
         <field name="active_component">polyvidone iodine</field>
         <field name="category" ref="em_15_1"/>
         <field name="pregnancy_warning">False</field>
@@ -1620,7 +1620,7 @@ Lotion: 1%.</field>
     
     <record model="medical.medicament" id="meds_em299">
 <!--        <field name="name">chloroxylenol</field>-->
-        <field name="name" search="[('name', '=', 'chloroxylenol')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'chloroxylenol')]"/>
         <field name="active_component">chloroxylenol</field>
         <field name="category" ref="em_15_2"/>
         <field name="pregnancy_warning">True</field>
@@ -1630,7 +1630,7 @@ Lotion: 1%.</field>
     
     <record model="medical.medicament" id="meds_em301">
 <!--        <field name="name">amiloride</field>-->
-        <field name="name" search="[('name', '=', 'amiloride')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'amiloride')]"/>
         <field name="active_component">amiloride</field>
         <field name="category" ref="em_16"/>
         <field name="pregnancy_warning">False</field>
@@ -1640,7 +1640,7 @@ Lotion: 1%.</field>
     
     <record model="medical.medicament" id="meds_em303">
 <!--        <field name="name">hydrochlorothiazide</field>-->
-        <field name="name" search="[('name', '=', 'hydrochlorothiazide')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'hydrochlorothiazide')]"/>
         <field name="active_component">hydrochlorothiazide</field>
         <field name="category" ref="em_16"/>
         <field name="pregnancy_warning">False</field>
@@ -1650,7 +1650,7 @@ Lotion: 1%.</field>
     
     <record model="medical.medicament" id="meds_em305">
 <!--        <field name="name">spironolactone</field>-->
-        <field name="name" search="[('name', '=', 'spironolactone')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'spironolactone')]"/>
         <field name="active_component">spironolactone</field>
         <field name="category" ref="em_16"/>
         <field name="pregnancy_warning">True</field>
@@ -1660,7 +1660,7 @@ Lotion: 1%.</field>
     
     <record model="medical.medicament" id="meds_em307">
 <!--        <field name="name">mannitol</field>-->
-        <field name="name" search="[('name', '=', 'mannitol')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'mannitol')]"/>
         <field name="active_component">mannitol</field>
         <field name="category" ref="em_16c"/>
         <field name="pregnancy_warning">True</field>
@@ -1670,7 +1670,7 @@ Lotion: 1%.</field>
     
     <record model="medical.medicament" id="meds_em309">
 <!--        <field name="name">pancreatic enzymes</field>-->
-        <field name="name" search="[('name', '=', 'pancreatic enzymes')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'pancreatic enzymes')]"/>
         <field name="active_component">pancreatic enzymes</field>
         <field name="category" ref="em_17c"/>
         <field name="pregnancy_warning">True</field>
@@ -1680,7 +1680,7 @@ Lotion: 1%.</field>
     
     <record model="medical.medicament" id="meds_em311">
 <!--        <field name="name">ranitidine</field>-->
-        <field name="name" search="[('name', '=', 'ranitidine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'ranitidine')]"/>
         <field name="active_component">ranitidine</field>
         <field name="category" ref="em_17_1"/>
         <field name="pregnancy_warning">False</field>
@@ -1692,7 +1692,7 @@ Tablet: 150 mg (as hydrochloride).</field>
     
     <record model="medical.medicament" id="meds_em313">
 <!--        <field name="name">metoclopramide</field>-->
-        <field name="name" search="[('name', '=', 'metoclopramide')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'metoclopramide')]"/>
         <field name="active_component">metoclopramide</field>
         <field name="category" ref="em_17_2"/>
         <field name="pregnancy_warning">False</field>
@@ -1705,7 +1705,7 @@ Tablet: 10 mg (hydrochloride).
     
     <record model="medical.medicament" id="meds_em315">
 <!--        <field name="name">sulfasalazine</field>-->
-        <field name="name" search="[('name', '=', 'sulfasalazine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'sulfasalazine')]"/>
         <field name="active_component">sulfasalazine</field>
         <field name="category" ref="em_17_3"/>
         <field name="pregnancy_warning">False</field>
@@ -1717,7 +1717,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em317">
 <!--        <field name="name">senna</field>-->
-        <field name="name" search="[('name', '=', 'senna')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'senna')]"/>
         <field name="active_component">senna</field>
         <field name="category" ref="em_17_4"/>
         <field name="pregnancy_warning">True</field>
@@ -1727,7 +1727,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em319">
 <!--        <field name="name">zinc sulfate</field>-->
-        <field name="name" search="[('name', '=', 'zinc sulfate')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'zinc sulfate')]"/>
         <field name="active_component">zinc sulfate</field>
         <field name="category" ref="em_17_5_2"/>
         <field name="pregnancy_warning">True</field>
@@ -1738,7 +1738,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em321">
 <!--        <field name="name">hydrocortisone</field>-->
-        <field name="name" search="[('name', '=', 'hydrocortisone')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'hydrocortisone')]"/>
         <field name="active_component">hydrocortisone</field>
         <field name="category" ref="em_18_1"/>
         <field name="pregnancy_warning">True</field>
@@ -1748,7 +1748,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em323">
 <!--        <field name="name">ethinylestradiol +   levonorgestrel</field>-->
-        <field name="name" search="[('name', '=', 'ethinylestradiol +   levonorgestrel')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'ethinylestradiol +   levonorgestrel')]"/>
         <field name="active_component">ethinylestradiol +   levonorgestrel</field>
         <field name="category" ref="em_18_3_1"/>
         <field name="pregnancy_warning">True</field>
@@ -1758,7 +1758,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em325">
 <!--        <field name="name">levonorgestrel</field>-->
-        <field name="name" search="[('name', '=', 'levonorgestrel')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'levonorgestrel')]"/>
         <field name="active_component">levonorgestrel</field>
         <field name="category" ref="em_18_3_1"/>
         <field name="pregnancy_warning">True</field>
@@ -1768,7 +1768,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em327">
 <!--        <field name="name">medroxyprogesterone acetate</field>-->
-        <field name="name" search="[('name', '=', 'medroxyprogesterone acetate')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'medroxyprogesterone acetate')]"/>
         <field name="active_component">medroxyprogesterone acetate</field>
         <field name="category" ref="em_18_3_2"/>
         <field name="pregnancy_warning">True</field>
@@ -1778,7 +1778,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em329">
 <!--        <field name="name">copper‐containing device</field>-->
-        <field name="name" search="[('name', '=', 'copper‐containing device')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'copper‐containing device')]"/>
         <field name="active_component">copper‐containing device</field>
         <field name="category" ref="em_18_3_3"/>
         <field name="pregnancy_warning">True</field>
@@ -1788,7 +1788,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em331">
 <!--        <field name="name">diaphragms</field>-->
-        <field name="name" search="[('name', '=', 'diaphragms')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'diaphragms')]"/>
         <field name="active_component">diaphragms</field>
         <field name="category" ref="em_18_3_4"/>
         <field name="pregnancy_warning">True</field>
@@ -1798,7 +1798,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em333">
 <!--        <field name="name">glibenclamide</field>-->
-        <field name="name" search="[('name', '=', 'glibenclamide')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'glibenclamide')]"/>
         <field name="active_component">glibenclamide</field>
         <field name="category" ref="em_18_5"/>
         <field name="pregnancy_warning">True</field>
@@ -1808,7 +1808,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em335">
 <!--        <field name="name">insulin injection (soluble)</field>-->
-        <field name="name" search="[('name', '=', 'insulin injection (soluble)')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'insulin injection (soluble)')]"/>
         <field name="active_component">insulin injection (soluble)</field>
         <field name="category" ref="em_18_5"/>
         <field name="pregnancy_warning">False</field>
@@ -1818,7 +1818,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em337">
 <!--        <field name="name">metformin</field>-->
-        <field name="name" search="[('name', '=', 'metformin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'metformin')]"/>
         <field name="active_component">metformin</field>
         <field name="category" ref="em_18_5"/>
         <field name="pregnancy_warning">False</field>
@@ -1828,7 +1828,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em339">
 <!--        <field name="name">clomifene</field>-->
-        <field name="name" search="[('name', '=', 'clomifene')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'clomifene')]"/>
         <field name="active_component">clomifene</field>
         <field name="category" ref="em_18_6"/>
         <field name="pregnancy_warning">True</field>
@@ -1838,7 +1838,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em341">
 <!--        <field name="name">levothyroxine</field>-->
-        <field name="name" search="[('name', '=', 'levothyroxine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'levothyroxine')]"/>
         <field name="active_component">levothyroxine</field>
         <field name="category" ref="em_18_8"/>
         <field name="pregnancy_warning">False</field>
@@ -1848,7 +1848,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em343">
 <!--        <field name="name">propylthiouracil</field>-->
-        <field name="name" search="[('name', '=', 'propylthiouracil')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'propylthiouracil')]"/>
         <field name="active_component">propylthiouracil</field>
         <field name="category" ref="em_18_8"/>
         <field name="pregnancy_warning">True</field>
@@ -1858,7 +1858,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em345">
 <!--        <field name="name">potassium iodide</field>-->
-        <field name="name" search="[('name', '=', 'potassium iodide')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'potassium iodide')]"/>
         <field name="active_component">potassium iodide</field>
         <field name="category" ref="em_18_8c"/>
         <field name="pregnancy_warning">True</field>
@@ -1868,7 +1868,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em347">
 <!--        <field name="name">tuberculin, purified protein derivative (PPD)</field>-->
-        <field name="name" search="[('name', '=', 'tuberculin, purified protein derivative (PPD)')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'tuberculin, purified protein derivative (PPD)')]"/>
         <field name="active_component">tuberculin, purified protein derivative (PPD)</field>
         <field name="category" ref="em_19_1"/>
         <field name="pregnancy_warning">True</field>
@@ -1878,7 +1878,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em349">
 <!--        <field name="name">antitetanus immunoglobulin (human)</field>-->
-        <field name="name" search="[('name', '=', 'antitetanus immunoglobulin (human)')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'antitetanus immunoglobulin (human)')]"/>
         <field name="active_component">antitetanus immunoglobulin (human)</field>
         <field name="category" ref="em_19_2"/>
         <field name="pregnancy_warning">True</field>
@@ -1888,7 +1888,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em351">
 <!--        <field name="name">diphtheria antitoxin</field>-->
-        <field name="name" search="[('name', '=', 'diphtheria antitoxin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'diphtheria antitoxin')]"/>
         <field name="active_component">diphtheria antitoxin</field>
         <field name="category" ref="em_19_2"/>
         <field name="pregnancy_warning">True</field>
@@ -1898,7 +1898,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em353">
 <!--        <field name="name">BCG vaccine</field>-->
-        <field name="name" search="[('name', '=', 'BCG vaccine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'BCG vaccine')]"/>
         <field name="active_component">BCG vaccine</field>
         <field name="category" ref="em_19_3"/>
         <field name="pregnancy_warning">True</field>
@@ -1908,7 +1908,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em355">
 <!--        <field name="name">diphtheria vaccine</field>-->
-        <field name="name" search="[('name', '=', 'diphtheria vaccine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'diphtheria vaccine')]"/>
         <field name="active_component">diphtheria vaccine</field>
         <field name="category" ref="em_19_3"/>
         <field name="pregnancy_warning">True</field>
@@ -1918,7 +1918,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em357">
 <!--        <field name="name">hepatitis B vaccine</field>-->
-        <field name="name" search="[('name', '=', 'hepatitis B vaccine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'hepatitis B vaccine')]"/>
         <field name="active_component">hepatitis B vaccine</field>
         <field name="category" ref="em_19_3"/>
         <field name="pregnancy_warning">True</field>
@@ -1928,7 +1928,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em359">
 <!--        <field name="name">influenza vaccine</field>-->
-        <field name="name" search="[('name', '=', 'influenza vaccine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'influenza vaccine')]"/>
         <field name="active_component">influenza vaccine</field>
         <field name="category" ref="em_19_3"/>
         <field name="pregnancy_warning">True</field>
@@ -1938,7 +1938,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em361">
 <!--        <field name="name">measles vaccine</field>-->
-        <field name="name" search="[('name', '=', 'measles vaccine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'measles vaccine')]"/>
         <field name="active_component">measles vaccine</field>
         <field name="category" ref="em_19_3"/>
         <field name="pregnancy_warning">True</field>
@@ -1948,7 +1948,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em363">
 <!--        <field name="name">mumps vaccine</field>-->
-        <field name="name" search="[('name', '=', 'mumps vaccine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'mumps vaccine')]"/>
         <field name="active_component">mumps vaccine</field>
         <field name="category" ref="em_19_3"/>
         <field name="pregnancy_warning">True</field>
@@ -1958,7 +1958,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em365">
 <!--        <field name="name">pneumococcal vaccine</field>-->
-        <field name="name" search="[('name', '=', 'pneumococcal vaccine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'pneumococcal vaccine')]"/>
         <field name="active_component">pneumococcal vaccine</field>
         <field name="category" ref="em_19_3"/>
         <field name="pregnancy_warning">True</field>
@@ -1968,7 +1968,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em367">
 <!--        <field name="name">rabies vaccine</field>-->
-        <field name="name" search="[('name', '=', 'rabies vaccine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'rabies vaccine')]"/>
         <field name="active_component">rabies vaccine</field>
         <field name="category" ref="em_19_3"/>
         <field name="pregnancy_warning">True</field>
@@ -1978,7 +1978,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em369">
 <!--        <field name="name">rubella vaccine</field>-->
-        <field name="name" search="[('name', '=', 'rubella vaccine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'rubella vaccine')]"/>
         <field name="active_component">rubella vaccine</field>
         <field name="category" ref="em_19_3"/>
         <field name="pregnancy_warning">True</field>
@@ -1988,7 +1988,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em371">
 <!--        <field name="name">typhoid vaccine</field>-->
-        <field name="name" search="[('name', '=', 'typhoid vaccine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'typhoid vaccine')]"/>
         <field name="active_component">typhoid vaccine</field>
         <field name="category" ref="em_19_3"/>
         <field name="pregnancy_warning">True</field>
@@ -1998,7 +1998,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em373">
 <!--        <field name="name">yellow fever vaccine</field>-->
-        <field name="name" search="[('name', '=', 'yellow fever vaccine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'yellow fever vaccine')]"/>
         <field name="active_component">yellow fever vaccine</field>
         <field name="category" ref="em_19_3"/>
         <field name="pregnancy_warning">True</field>
@@ -2008,7 +2008,7 @@ Tablet: 500 mg</field>
     
     <record model="medical.medicament" id="meds_em375">
 <!--        <field name="name">neostigmine</field>-->
-        <field name="name" search="[('name', '=', 'neostigmine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'neostigmine')]"/>
         <field name="active_component">neostigmine</field>
         <field name="category" ref="em_20"/>
         <field name="pregnancy_warning">True</field>
@@ -2019,7 +2019,7 @@ Tablet: 15 mg (bromide).</field>
     
     <record model="medical.medicament" id="meds_em377">
 <!--        <field name="name">vecuronium</field>-->
-        <field name="name" search="[('name', '=', 'vecuronium')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'vecuronium')]"/>
         <field name="active_component">vecuronium</field>
         <field name="category" ref="em_20"/>
         <field name="pregnancy_warning">True</field>
@@ -2029,7 +2029,7 @@ Tablet: 15 mg (bromide).</field>
     
     <record model="medical.medicament" id="meds_em379">
 <!--        <field name="name">vecuronium</field>-->
-        <field name="name" search="[('name', '=', 'vecuronium')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'vecuronium')]"/>
         <field name="active_component">vecuronium</field>
         <field name="category" ref="em_20c"/>
         <field name="pregnancy_warning">True</field>
@@ -2039,7 +2039,7 @@ Tablet: 15 mg (bromide).</field>
     
     <record model="medical.medicament" id="meds_em381">
 <!--        <field name="name">gentamicin</field>-->
-        <field name="name" search="[('name', '=', 'gentamicin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'gentamicin')]"/>
         <field name="active_component">gentamicin</field>
         <field name="category" ref="em_21_1"/>
         <field name="pregnancy_warning">True</field>
@@ -2049,7 +2049,7 @@ Tablet: 15 mg (bromide).</field>
     
     <record model="medical.medicament" id="meds_em383">
 <!--        <field name="name">prednisolone</field>-->
-        <field name="name" search="[('name', '=', 'prednisolone')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'prednisolone')]"/>
         <field name="active_component">prednisolone</field>
         <field name="category" ref="em_21_2"/>
         <field name="pregnancy_warning">True</field>
@@ -2059,7 +2059,7 @@ Tablet: 15 mg (bromide).</field>
     
     <record model="medical.medicament" id="meds_em385">
 <!--        <field name="name">acetazolamide</field>-->
-        <field name="name" search="[('name', '=', 'acetazolamide')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'acetazolamide')]"/>
         <field name="active_component">acetazolamide</field>
         <field name="category" ref="em_21_4"/>
         <field name="pregnancy_warning">True</field>
@@ -2069,7 +2069,7 @@ Tablet: 15 mg (bromide).</field>
     
     <record model="medical.medicament" id="meds_em387">
 <!--        <field name="name">timolol</field>-->
-        <field name="name" search="[('name', '=', 'timolol')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'timolol')]"/>
         <field name="active_component">timolol</field>
         <field name="category" ref="em_21_4"/>
         <field name="pregnancy_warning">True</field>
@@ -2079,7 +2079,7 @@ Tablet: 15 mg (bromide).</field>
     
     <record model="medical.medicament" id="meds_em389">
 <!--        <field name="name">epinephrine (adrenaline)</field>-->
-        <field name="name" search="[('name', '=', 'epinephrine (adrenaline)')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'epinephrine (adrenaline)')]"/>
         <field name="active_component">epinephrine (adrenaline)</field>
         <field name="category" ref="em_21_5c"/>
         <field name="pregnancy_warning">True</field>
@@ -2089,7 +2089,7 @@ Tablet: 15 mg (bromide).</field>
     
     <record model="medical.medicament" id="meds_em391">
 <!--        <field name="name">misoprostol</field>-->
-        <field name="name" search="[('name', '=', 'misoprostol')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'misoprostol')]"/>
         <field name="active_component">misoprostol</field>
         <field name="category" ref="em_22_1"/>
         <field name="pregnancy_warning">True</field>
@@ -2105,7 +2105,7 @@ are available.</field>
     
     <record model="medical.medicament" id="meds_em393">
 <!--        <field name="name">mifepristone – misoprostol</field>-->
-        <field name="name" search="[('name', '=', 'mifepristone – misoprostol')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'mifepristone – misoprostol')]"/>
         <field name="active_component">mifepristone – misoprostol</field>
         <field name="category" ref="em_22_1c"/>
         <field name="pregnancy_warning">True</field>
@@ -2117,7 +2117,7 @@ Where permitted under national law and where culturally acceptable.
     
     <record model="medical.medicament" id="meds_em395">
 <!--        <field name="name">intraperitoneal dialysis solution (of appropriate composition)</field>-->
-        <field name="name" search="[('name', '=', 'intraperitoneal dialysis solution (of appropriate composition)')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'intraperitoneal dialysis solution (of appropriate composition)')]"/>
         <field name="active_component">intraperitoneal dialysis solution (of appropriate composition)</field>
         <field name="category" ref="em_23"/>
         <field name="pregnancy_warning">True</field>
@@ -2127,7 +2127,7 @@ Where permitted under national law and where culturally acceptable.
     
     <record model="medical.medicament" id="meds_em397">
 <!--        <field name="name">fluphenazine</field>-->
-        <field name="name" search="[('name', '=', 'fluphenazine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'fluphenazine')]"/>
         <field name="active_component">fluphenazine</field>
         <field name="category" ref="em_24_1"/>
         <field name="pregnancy_warning">True</field>
@@ -2137,7 +2137,7 @@ Where permitted under national law and where culturally acceptable.
     
     <record model="medical.medicament" id="meds_em399">
 <!--        <field name="name">chlorpromazine</field>-->
-        <field name="name" search="[('name', '=', 'chlorpromazine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'chlorpromazine')]"/>
         <field name="active_component">chlorpromazine</field>
         <field name="category" ref="em_24_1c"/>
         <field name="pregnancy_warning">True</field>
@@ -2149,7 +2149,7 @@ Tablet: 10 mg; 25 mg; 50 mg; 100 mg (hydrochloride)</field>
     
     <record model="medical.medicament" id="meds_em401">
 <!--        <field name="name">amitriptyline</field>-->
-        <field name="name" search="[('name', '=', 'amitriptyline')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'amitriptyline')]"/>
         <field name="active_component">amitriptyline</field>
         <field name="category" ref="em_24_2_1"/>
         <field name="pregnancy_warning">True</field>
@@ -2159,7 +2159,7 @@ Tablet: 10 mg; 25 mg; 50 mg; 100 mg (hydrochloride)</field>
     
     <record model="medical.medicament" id="meds_em403">
 <!--        <field name="name">carbamazepine</field>-->
-        <field name="name" search="[('name', '=', 'carbamazepine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'carbamazepine')]"/>
         <field name="active_component">carbamazepine</field>
         <field name="category" ref="em_24_2_2"/>
         <field name="pregnancy_warning">True</field>
@@ -2169,7 +2169,7 @@ Tablet: 10 mg; 25 mg; 50 mg; 100 mg (hydrochloride)</field>
     
     <record model="medical.medicament" id="meds_em405">
 <!--        <field name="name">valproic acid (sodium valproate)</field>-->
-        <field name="name" search="[('name', '=', 'valproic acid (sodium valproate)')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'valproic acid (sodium valproate)')]"/>
         <field name="active_component">valproic acid (sodium valproate)</field>
         <field name="category" ref="em_24_2_2"/>
         <field name="pregnancy_warning">True</field>
@@ -2179,7 +2179,7 @@ Tablet: 10 mg; 25 mg; 50 mg; 100 mg (hydrochloride)</field>
     
     <record model="medical.medicament" id="meds_em407">
 <!--        <field name="name">clomipramine</field>-->
-        <field name="name" search="[('name', '=', 'clomipramine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'clomipramine')]"/>
         <field name="active_component">clomipramine</field>
         <field name="category" ref="em_24_4"/>
         <field name="pregnancy_warning">True</field>
@@ -2189,7 +2189,7 @@ Tablet: 10 mg; 25 mg; 50 mg; 100 mg (hydrochloride)</field>
     
     <record model="medical.medicament" id="meds_em409">
 <!--        <field name="name">methadone</field>-->
-        <field name="name" search="[('name', '=', 'methadone')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'methadone')]"/>
         <field name="active_component">methadone</field>
         <field name="category" ref="em_24_5c"/>
         <field name="pregnancy_warning">True</field>
@@ -2201,7 +2201,7 @@ Oral liquid: 5 mg/5 ml; 10 mg/5 ml (hydrochloride).
     
     <record model="medical.medicament" id="meds_em411">
 <!--        <field name="name">budesonide</field>-->
-        <field name="name" search="[('name', '=', 'budesonide')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'budesonide')]"/>
         <field name="active_component">budesonide</field>
         <field name="category" ref="em_25_1"/>
         <field name="pregnancy_warning">True</field>
@@ -2211,7 +2211,7 @@ Oral liquid: 5 mg/5 ml; 10 mg/5 ml (hydrochloride).
     
     <record model="medical.medicament" id="meds_em413">
 <!--        <field name="name">ipratropium bromide</field>-->
-        <field name="name" search="[('name', '=', 'ipratropium bromide')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'ipratropium bromide')]"/>
         <field name="active_component">ipratropium bromide</field>
         <field name="category" ref="em_25_1"/>
         <field name="pregnancy_warning">False</field>
@@ -2221,7 +2221,7 @@ Oral liquid: 5 mg/5 ml; 10 mg/5 ml (hydrochloride).
     
     <record model="medical.medicament" id="meds_em415">
 <!--        <field name="name">oral rehydration salts</field>-->
-        <field name="name" search="[('name', '=', 'oral rehydration salts')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'oral rehydration salts')]"/>
         <field name="active_component">oral rehydration salts</field>
         <field name="category" ref="em_26_1"/>
         <field name="pregnancy_warning">True</field>
@@ -2245,7 +2245,7 @@ Powder for dilution in 200 ml; 500 ml; 1 L. </field>
     
     <record model="medical.medicament" id="meds_em417">
 <!--        <field name="name">glucose</field>-->
-        <field name="name" search="[('name', '=', 'glucose')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'glucose')]"/>
         <field name="active_component">glucose</field>
         <field name="category" ref="em_26_2"/>
         <field name="pregnancy_warning">True</field>
@@ -2255,7 +2255,7 @@ Powder for dilution in 200 ml; 500 ml; 1 L. </field>
     
     <record model="medical.medicament" id="meds_em419">
 <!--        <field name="name">potassium chloride</field>-->
-        <field name="name" search="[('name', '=', 'potassium chloride')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'potassium chloride')]"/>
         <field name="active_component">potassium chloride</field>
         <field name="category" ref="em_26_2"/>
         <field name="pregnancy_warning">True</field>
@@ -2266,7 +2266,7 @@ Solution for dilution: 7.5% (equivalent to K 1 mmol/ml and Cl 1 mmol/ml) [c]; 15
     
     <record model="medical.medicament" id="meds_em421">
 <!--        <field name="name">sodium hydrogen carbonate</field>-->
-        <field name="name" search="[('name', '=', 'sodium hydrogen carbonate')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'sodium hydrogen carbonate')]"/>
         <field name="active_component">sodium hydrogen carbonate</field>
         <field name="category" ref="em_26_2"/>
         <field name="pregnancy_warning">True</field>
@@ -2277,7 +2277,7 @@ Solution: 8.4% in 10‐ml ampoule (equivalent to Na+ 1000 mmol/L, HCO3‐1000 mm
     
     <record model="medical.medicament" id="meds_em423">
 <!--        <field name="name">water for injection</field>-->
-        <field name="name" search="[('name', '=', 'water for injection')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'water for injection')]"/>
         <field name="active_component">water for injection</field>
         <field name="category" ref="em_26_3"/>
         <field name="pregnancy_warning">True</field>
@@ -2287,7 +2287,7 @@ Solution: 8.4% in 10‐ml ampoule (equivalent to Na+ 1000 mmol/L, HCO3‐1000 mm
     
     <record model="medical.medicament" id="meds_em425">
 <!--        <field name="name">cholecalciferol</field>-->
-        <field name="name" search="[('name', '=', 'cholecalciferol')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'cholecalciferol')]"/>
         <field name="active_component">cholecalciferol</field>
         <field name="category" ref="em_27"/>
         <field name="pregnancy_warning">True</field>
@@ -2299,7 +2299,7 @@ Solid oral dosage form: 400 IU; 1000 IU.[c]
     
     <record model="medical.medicament" id="meds_em427">
 <!--        <field name="name">iodine</field>-->
-        <field name="name" search="[('name', '=', 'iodine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'iodine')]"/>
         <field name="active_component">iodine</field>
         <field name="category" ref="em_27"/>
         <field name="pregnancy_warning">True</field>
@@ -2309,7 +2309,7 @@ Solid oral dosage form: 400 IU; 1000 IU.[c]
     
     <record model="medical.medicament" id="meds_em429">
 <!--        <field name="name">pyridoxine</field>-->
-        <field name="name" search="[('name', '=', 'pyridoxine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'pyridoxine')]"/>
         <field name="active_component">pyridoxine</field>
         <field name="category" ref="em_27"/>
         <field name="pregnancy_warning">True</field>
@@ -2319,7 +2319,7 @@ Solid oral dosage form: 400 IU; 1000 IU.[c]
     
     <record model="medical.medicament" id="meds_em431">
 <!--        <field name="name">riboflavin</field>-->
-        <field name="name" search="[('name', '=', 'riboflavin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'riboflavin')]"/>
         <field name="active_component">riboflavin</field>
         <field name="category" ref="em_27"/>
         <field name="pregnancy_warning">True</field>
@@ -2329,7 +2329,7 @@ Solid oral dosage form: 400 IU; 1000 IU.[c]
     
     <record model="medical.medicament" id="meds_em433">
 <!--        <field name="name">thiamine</field>-->
-        <field name="name" search="[('name', '=', 'thiamine')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'thiamine')]"/>
         <field name="active_component">thiamine</field>
         <field name="category" ref="em_27"/>
         <field name="pregnancy_warning">True</field>
@@ -2339,7 +2339,7 @@ Solid oral dosage form: 400 IU; 1000 IU.[c]
     
     <record model="medical.medicament" id="meds_em435">
 <!--        <field name="name">acetic acid</field>-->
-        <field name="name" search="[('name', '=', 'acetic acid')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'acetic acid')]"/>
         <field name="active_component">acetic acid</field>
         <field name="category" ref="em_28"/>
         <field name="pregnancy_warning">True</field>
@@ -2349,7 +2349,7 @@ Solid oral dosage form: 400 IU; 1000 IU.[c]
     
     <record model="medical.medicament" id="meds_em437">
 <!--        <field name="name">ciprofloxacin</field>-->
-        <field name="name" search="[('name', '=', 'ciprofloxacin')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'ciprofloxacin')]"/>
         <field name="active_component">ciprofloxacin</field>
         <field name="category" ref="em_28"/>
         <field name="pregnancy_warning">True</field>
@@ -2359,7 +2359,7 @@ Solid oral dosage form: 400 IU; 1000 IU.[c]
     
     <record model="medical.medicament" id="meds_em439">
 <!--        <field name="name">caffeine citrate</field>-->
-        <field name="name" search="[('name', '=', 'caffeine citrate')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'caffeine citrate')]"/>
         <field name="active_component">caffeine citrate</field>
         <field name="category" ref="em_29"/>
         <field name="pregnancy_warning">True</field>
@@ -2370,7 +2370,7 @@ Oral liquid: 20 mg/ml (equivalent to 10 mg caffeine base/ml).</field>
     
     <record model="medical.medicament" id="meds_em441">
 <!--        <field name="name">prostaglandin E</field>-->
-        <field name="name" search="[('name', '=', 'prostaglandin E')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'prostaglandin E')]"/>
         <field name="active_component">prostaglandin E</field>
         <field name="category" ref="em_29c"/>
         <field name="pregnancy_warning">True</field>
@@ -2382,7 +2382,7 @@ Prostaglandin E2: 1 mg/ml.</field>
     
     <record model="medical.medicament" id="meds_em441">
 <!--        <field name="name">prostaglandin E</field>-->
-        <field name="name" search="[('name', '=', 'prostaglandin E')]"/>
+        <field name="name" model="product.product" search="[('name', '=', 'prostaglandin E')]"/>
         <field name="active_component">prostaglandin E</field>
         <field name="category" ref="em_29c"/>
         <field name="pregnancy_warning">True</field>
