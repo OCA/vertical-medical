@@ -1,9 +1,8 @@
 -
   Create New Patient Arun B Soni
 -
-  !record {model: medical.patient, id: oe_patient_arun}:
-    name: Arun
-    lastname: Johanson
+  !record {model: medical.patient, id: patient_arun}:
+    name: Arun Johanson
     login: arun@example.com
     dob: !eval time.strftime('1990-07-24')
     ssn: 'BDM87654PN'
