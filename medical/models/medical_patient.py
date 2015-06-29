@@ -21,7 +21,6 @@
 # #############################################################################
 
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 from dateutil.relativedelta import relativedelta
 from datetime import datetime
