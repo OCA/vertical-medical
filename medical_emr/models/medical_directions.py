@@ -30,9 +30,9 @@ class MedicalDirections(orm.Model):
 
     _columns = {
         'procedure_id': fields.many2one('medical.procedure',
-                                        string='Procedure',required=True),
+                                        string='Procedure', required=True),
         'evaluation_id': fields.many2one('medical.patient.evaluation',
-                                         string='Evaluation',readonly=True ),
+                                         string='Evaluation', readonly=True),
         'comments': fields.char(size=256, string='Comments'),
     }
 

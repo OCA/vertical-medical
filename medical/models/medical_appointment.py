@@ -80,7 +80,7 @@ class MedicalAppointment(orm.Model):
             ('in_consultation', 'In consultation'),
             ('done', 'Done'),
             ('canceled', 'Canceled'),
-             ],
+        ],
             string='State'),
         'history_ids': fields.one2many('medical.appointment.history',
                                        'appointment_id_history',
@@ -96,7 +96,7 @@ class MedicalAppointment(orm.Model):
         'urgency': 'a',
         'state': 'draft',
         'user_id': lambda s, cr, u, c: u,
-                 }
+    }
 
     def create(self, cr, uid, vals, context=None):
         val_history = {}
@@ -230,7 +230,6 @@ class MedicalAppointment(orm.Model):
         return True
 
 
-
 class MedicalAppointment_history(orm.Model):
     _name = 'medical.appointment.history'
 
@@ -244,6 +243,6 @@ class MedicalAppointment_history(orm.Model):
     }
 
     _defaults = {
-                 }
+    }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -49,7 +49,7 @@ About Medical Data
 Core Data for medical, is kept as a separate module to overcome need of
 localizing core data.
 
-    
+
 """,
     "website": "http://launchpad.net/medical",
     "licence": "AGPL v3",
@@ -70,8 +70,8 @@ localizing core data.
     "demo": [
 
     ],
-    'test':[
-            
+    'test': [
+
     ],
     'css': [
 
@@ -81,7 +81,7 @@ localizing core data.
     ],
     'qweb': [
 
-    ], 
+    ],
     "active": True,
     "installable": True,
 }

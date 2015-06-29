@@ -34,11 +34,11 @@ class MedicalPathologyCategory(orm.Model):
                                   string='Children Category', ),
         'name': fields.char(size=256, string='Category Name', required=True),
         'parent_id': fields.many2one('medical.pathology.category',
-                                  string='Parent Category', select=True),
+                                     string='Parent Category', select=True),
     }
     _constraints = [
-        (orm.Model._check_recursion, 'Error ! You cannot create recursive \n' 
-        'Category.', ['parent_id'])
+        (orm.Model._check_recursion, 'Error ! You cannot create recursive \n'
+         'Category.', ['parent_id'])
     ]
 
 

@@ -33,11 +33,11 @@ class MedicalMedicamentCategory(orm.Model):
                                   'parent_id', string='Children', ),
         'name': fields.char(size=256, string='Name', required=True),
         'parent_id': fields.many2one('medical.medicament.category',
-                                  string='Parent', select=True),
+                                     string='Parent', select=True),
     }
     _constraints = [
-        (orm.Model._check_recursion, 'Error ! You cannot create recursive \n' 
-        'Category.', ['parent_id'])
+        (orm.Model._check_recursion, 'Error ! You cannot create recursive \n'
+         'Category.', ['parent_id'])
     ]
 
 

@@ -30,13 +30,13 @@ class MedicalSignsAndSymptoms(orm.Model):
 
     _columns = {
         'clinical_id': fields.many2one('medical.pathology',
-                                       'Sign or Symptom',required=True ),
+                                       'Sign or Symptom', required=True),
         'evaluation_id': fields.many2one('medical.patient.evaluation',
-                                         string='Evaluation',readonly=True),
+                                         string='Evaluation', readonly=True),
         'sign_or_symptom': fields.selection([
             ('sign', 'Sign'),
             ('symptom', 'Symptom'),
-        ], string='Subjective / Objective',required=True),
+        ], string='Subjective / Objective', required=True),
         'comments': fields.char(size=256, string='Comments'),
     }
 

@@ -32,7 +32,7 @@ class OeMedicalHospitalOr(orm.Model):
                                     select=True),
         'name': fields.char(size=256, string='Name', required=True,
                             help='Name of the Operating Room'),
-        'institution': fields.many2one('res.partner', string='Institution', 
+        'institution': fields.many2one('res.partner', string='Institution',
                                        help='Medical Center'),
         'unit': fields.many2one('oemedical.hospital.unit', string='Unit', ),
         'extra_info': fields.text(string='Extra Info'),

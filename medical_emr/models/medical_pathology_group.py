@@ -29,14 +29,24 @@ class MedicalPathologyGroup(orm.Model):
     _name = 'medical.pathology.group'
 
     _columns = {
-        'info': fields.text(string='Detailed information'),
-        'code': fields.char(size=256, string='Code', required=True, 
-          help='for example MDG6 code will contain the Millennium Development'\
-                    ' Goals # 6 diseases : Tuberculosis, Malaria and HIV/AIDS'),
-        'name': fields.char(size=256, string='Name', required=True,
-                            translate=True, help='Group name'),
-        'desc': fields.char(size=256, string='Short Description',
-                            required=True),
+        'info': fields.text(
+            string='Detailed information'),
+        'code': fields.char(
+            size=256,
+            string='Code',
+            required=True,
+            help='for example MDG6 code will contain the Millennium Development'
+            ' Goals # 6 diseases : Tuberculosis, Malaria and HIV/AIDS'),
+        'name': fields.char(
+            size=256,
+            string='Name',
+            required=True,
+            translate=True,
+            help='Group name'),
+        'desc': fields.char(
+            size=256,
+            string='Short Description',
+            required=True),
     }
 
 

@@ -29,29 +29,71 @@ from datetime import datetime
 
 
 class MedicalPatient(orm.Model):
-    _name= 'medical.patient'
-    _inherit= 'medical.patient'
+    _name = 'medical.patient'
+    _inherit = 'medical.patient'
 
-    _columns={
-        'family': fields.many2one('medical.family', string='Family', help='Family Code'),
-        'blood_type': fields.selection([
-                                        ('A', 'A'), 
-                                        ('B', 'B'),
-                                        ('AB', 'AB'),
-                                        ('O', 'O'), ], string='Blood Type'),
-        'rh': fields.selection([
-                                        ('+', '+'), 
-                                        ('-', '-'), ], string='Rh'),
-        'primary_care_doctor': fields.many2one('medical.physician', 'Primary Care Doctor', help='Current primary care / family doctor'),
+    _columns = {
+        'family': fields.many2one(
+            'medical.family',
+            string='Family',
+            help='Family Code'),
+        'blood_type': fields.selection(
+            [
+                ('A',
+                 'A'),
+                ('B',
+                 'B'),
+                ('AB',
+                 'AB'),
+                ('O',
+                 'O'),
+            ],
+            string='Blood Type'),
+        'rh': fields.selection(
+            [
+                ('+',
+                 '+'),
+                ('-',
+                 '-'),
+            ],
+            string='Rh'),
+        'primary_care_doctor': fields.many2one(
+            'medical.physician',
+            'Primary Care Doctor',
+            help='Current primary care / family doctor'),
         'childbearing_age': fields.boolean('Potential for Childbearing'),
-        'medications': fields.one2many('medical.patient.medication', 'patient_id', string='Medications',),
-        'evaluations': fields.one2many('medical.patient.evaluation', 'patient_id', string='Evaluations',),
-        'critical_info': fields.text( string='Important disease, allergy or procedures information', help='Write any important information on the patient\'s disease, surgeries, allergies, ...'),
-        'diseases': fields.one2many('medical.patient.disease', 'patient_id', string='Diseases', help='Mark if the patient has died'),
-        'ethnic_group': fields.many2one('medical.ethnicity', string='Ethnic group',),
-        'vaccinations': fields.one2many('medical.vaccination', 'patient_id', 'Vaccinations',),
-        'cod': fields.many2one('medical.pathology', string='Cause of Death',),
+        'medications': fields.one2many(
+            'medical.patient.medication',
+            'patient_id',
+            string='Medications',
+        ),
+        'evaluations': fields.one2many(
+            'medical.patient.evaluation',
+            'patient_id',
+            string='Evaluations',
+        ),
+        'critical_info': fields.text(
+            string='Important disease, allergy or procedures information',
+            help='Write any important information on the patient\'s disease, surgeries, allergies, ...'),
+        'diseases': fields.one2many(
+            'medical.patient.disease',
+            'patient_id',
+            string='Diseases',
+            help='Mark if the patient has died'),
+        'ethnic_group': fields.many2one(
+            'medical.ethnicity',
+            string='Ethnic group',
+        ),
+        'vaccinations': fields.one2many(
+            'medical.vaccination',
+            'patient_id',
+            'Vaccinations',
+        ),
+        'cod': fields.many2one(
+            'medical.pathology',
+            string='Cause of Death',
+        ),
     }
-    
+
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -30,9 +30,9 @@ class MedicalDiseaseGroupMembers(orm.Model):
 
     _columns = {
         'disease_group_id': fields.many2one('medical.pathology.group',
-                                            string='Group',required=True ),
+                                            string='Group', required=True),
         'name': fields.many2one('medical.pathology', string='Disease',
-                                readonly=True ),
+                                readonly=True),
     }
 
 

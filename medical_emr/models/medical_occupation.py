@@ -30,7 +30,7 @@ class MedicalOccupation(orm.Model):
 
     _columns = {
         'code': fields.char(size=256, string='Code'),
-        'name': fields.char(size=256, string='Name', required=True ,
+        'name': fields.char(size=256, string='Name', required=True,
                             translate=True),
     }
     _sql_constraints = [

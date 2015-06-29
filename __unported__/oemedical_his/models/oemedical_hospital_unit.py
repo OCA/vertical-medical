@@ -28,12 +28,20 @@ class OeMedicalHospitalUnit(orm.Model):
     _name = 'oemedical.hospital.unit'
 
     _columns = {
-        'code': fields.char(size=8, string='Code'),
-        'institution': fields.many2one('res.partner', string='Institution', 
-                                       help='Medical Center'),
-        'name': fields.char(size=256, string='Name', required=True,
-                    help='Name of the unit, eg Neonatal, Intensive Care, ...'),
-        'extra_info': fields.text(string='Extra Info'),
+        'code': fields.char(
+            size=8,
+            string='Code'),
+        'institution': fields.many2one(
+            'res.partner',
+            string='Institution',
+            help='Medical Center'),
+        'name': fields.char(
+            size=256,
+            string='Name',
+            required=True,
+            help='Name of the unit, eg Neonatal, Intensive Care, ...'),
+        'extra_info': fields.text(
+            string='Extra Info'),
     }
 
 OeMedicalHospitalUnit()

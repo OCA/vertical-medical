@@ -101,10 +101,10 @@ class MedicalPhysician(orm.Model):
                 if day_1 == day_2 and \
                    start_time_1 < end_time_2 and \
                    end_time_1 > start_time_2:
-                        raise orm.except_orm(_('Error!'),
-                                             _('Overlapped ranges for day "%s"'
-                                               ) % (days[day_1][1])
-                                             )
+                    raise orm.except_orm(_('Error!'),
+                                         _('Overlapped ranges for day "%s"'
+                                           ) % (days[day_1][1])
+                                         )
         return True
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

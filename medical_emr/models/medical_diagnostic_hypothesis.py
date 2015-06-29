@@ -30,9 +30,9 @@ class MedicalDiagnosticHypothesis(orm.Model):
 
     _columns = {
         'pathology_id': fields.many2one('medical.pathology', 'Pathology',
-                                        required=True ),
+                                        required=True),
         'evaluation_id': fields.many2one('medical.patient.evaluation',
-                                         'Evaluation',readonly=True ),
+                                         'Evaluation', readonly=True),
         'comments': fields.char(size=256, string='Comments'),
     }
 
