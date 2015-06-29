@@ -63,7 +63,7 @@ class MedicalPatientDisease(orm.Model):
         'pcs_code': fields.many2one(
             'medical.procedure', string='Code',
             help='Procedure code, for example, ICD-10-PCS Code 7-character'
-                ' string'
+            ' string'
         ),
         'is_infectious': fields.boolean(
             string='Infectious Disease',

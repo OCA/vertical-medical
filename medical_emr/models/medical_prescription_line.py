@@ -28,7 +28,7 @@ class MedicalPrescriptionLine(orm.Model):
     _name = 'medical.prescription.line'
 
     def _get_medicament(self, cr, uid, ids, name, args, context=None):
-        #medication_obj = self.pool.get('medical.medication.template')
+        # medication_obj = self.pool.get('medical.medication.template')
         result = {}
 
         return result

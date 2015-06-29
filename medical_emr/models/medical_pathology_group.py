@@ -35,8 +35,8 @@ class MedicalPathologyGroup(orm.Model):
             string='Code',
             required=True,
             help='for example MDG6 code will contain the Millennium '
-                'Development Goals # 6 diseases : '
-                'Tuberculosis, Malaria and HIV/AIDS'
+            'Development Goals # 6 diseases : '
+            'Tuberculosis, Malaria and HIV/AIDS'
         ),
         'name': fields.char(
             size=256,

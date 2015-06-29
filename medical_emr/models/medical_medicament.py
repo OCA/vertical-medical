@@ -47,8 +47,8 @@ class MedicalMedicament(orm.Model):
             size=256, string='Therapeutic effect', help='Therapeutic action'
         ),
         'pregnancy_category': fields.selection([
-                ('A', 'A'), ('B', 'B'), ('C', 'C'),
-                ('D', 'D'), ('X', 'X'), ('N', 'N'),
+            ('A', 'A'), ('B', 'B'), ('C', 'C'),
+            ('D', 'D'), ('X', 'X'), ('N', 'N'),
         ],
             string='Pregnancy Category',
             help='** FDA Pregancy Categories ***\n'

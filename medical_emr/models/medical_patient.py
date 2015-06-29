@@ -23,9 +23,6 @@
 
 from openerp.osv import fields, orm, orm
 
-from dateutil.relativedelta import relativedelta
-from datetime import datetime
-
 
 class MedicalPatient(orm.Model):
     _name = 'medical.patient'

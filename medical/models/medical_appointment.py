@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# #############################################################################
+###############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,7 +18,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-# #############################################################################
+###############################################################################
 
 import time
 from datetime import datetime
@@ -100,7 +100,7 @@ class MedicalAppointment(orm.Model):
 
     def create(self, cr, uid, vals, context=None):
         val_history = {}
-        #ait_obj = self.pool.get('medical.appointment.history')
+        # ait_obj = self.pool.get('medical.appointment.history')
         date_time_str = vals['appointment_day'] + ' ' + \
             vals['appointment_hour'] + ':' + \
             vals['appointment_minute']
