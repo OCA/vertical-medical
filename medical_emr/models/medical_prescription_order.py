@@ -22,7 +22,6 @@
 ###############################################################################
 
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 from openerp import netsvc
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
