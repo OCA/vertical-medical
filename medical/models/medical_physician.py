@@ -78,8 +78,8 @@ class MedicalPhysician(orm.Model):
 
     def action_update_schedule(self, cr, uid, ids, context=None):
 
-        schedule_template_proxy = self.pool.get('medical.physician.schedule.'
-                                                'template')
+        #schedule_template_proxy = self.pool.get('medical.physician.schedule.'
+        #                                        'template')
 
         this = self.browse(cr, uid, ids)[0]
         defined_templates = len(this.schedule_template_ids)
