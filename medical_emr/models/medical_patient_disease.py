@@ -39,8 +39,10 @@ class MedicalPatientDisease(orm.Model):
             ('3_sv', 'Severe'),
         ], string='Severity', select=True, sort=False),
         'is_allergy': fields.boolean(string='Allergic Disease'),
-        'doctor': fields.many2one('medical.physician', string='Physician',
-                                  help='Physician who treated or diagnosed the patient'),
+        'doctor': fields.many2one(
+            'medical.physician', string='Physician',
+            help='Physician who treated or diagnosed the patient'
+        ),
         'pregnancy_warning': fields.boolean(string='Pregnancy warning'),
         'weeks_of_pregnancy': fields.integer(
             string='Contracted in pregnancy week #'),
@@ -58,11 +60,15 @@ class MedicalPatientDisease(orm.Model):
         'is_active': fields.boolean(string='Active disease'),
         'date_stop_treatment': fields.date(string='End',
                                            help='End of treatment date'),
-        'pcs_code': fields.many2one('medical.procedure', string='Code',
-                                    help='Procedure code, for example, ICD-10-PCS Code 7-character string'),
-        'is_infectious': fields.boolean(string='Infectious Disease',
-                                        help='Check if the patient has an infectious'
-                                        'transmissible disease'),
+        'pcs_code': fields.many2one(
+            'medical.procedure', string='Code',
+            help='Procedure code, for example, ICD-10-PCS Code 7-character string'
+        ),
+        'is_infectious': fields.boolean(
+            string='Infectious Disease',
+            help='Check if the patient has an infectious'
+            'transmissible disease'
+        ),
         'allergy_type': fields.selection([
             ('da', 'Drug Allergy'),
             ('fa', 'Food Allergy'),
@@ -70,13 +76,20 @@ class MedicalPatientDisease(orm.Model):
             ('mc', 'Misc Contraindication'),
         ], string='Allergy type', select=True, sort=False),
         'patient_id': fields.many2one('medical.patient', string='Patient', ),
-        'age': fields.integer(string='Age when diagnosed',
-                              help='Patient age at the moment of the diagnosis. Can be estimative'),
-        'date_start_treatment': fields.date(string='Start',
-                                            help='Start of treatment date'),
-        'short_comment': fields.char(size=256, string='Remarks',
-                                     help='Brief, one-line remark of the disease. Longer description will'
-                                     ' go on the Extra info field'),
+        'age': fields.integer(
+            string='Age when diagnosed',
+            help='Patient age at the moment of the diagnosis.'
+            ' Can be estimative'
+        ),
+        'date_start_treatment': fields.date(
+            string='Start',
+            help='Start of treatment date'
+        ),
+        'short_comment': fields.char(
+            size=256, string='Remarks',
+            help='Brief, one-line remark of the disease. Longer description'
+            ' will go on the Extra info field'
+        ),
     }
 
 

@@ -31,9 +31,9 @@ class MedicalPathology(orm.Model):
         'category': fields.many2one(
             'medical.pathology.category',
             string='Main Category',
-            help='Select the main category for this disease This is usually'
-            'associated to the standard. For instance, the chapter on the ICD-10'
-            'will be the main category for de disease'),
+            help='Select the main category for this disease This is usually '
+            'associated to the standard. For instance, the chapter on the '
+            'ICD-10 will be the main category for de disease'),
         'info': fields.text(
             string='Extra Info'),
         'code': fields.char(

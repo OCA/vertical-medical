@@ -73,7 +73,9 @@ class MedicalPatient(orm.Model):
         ),
         'critical_info': fields.text(
             string='Important disease, allergy or procedures information',
-            help='Write any important information on the patient\'s disease, surgeries, allergies, ...'),
+            help='Write any important information on the patient\'s disease, '
+                 'surgeries, allergies, ...'
+        ),
         'diseases': fields.one2many(
             'medical.patient.disease',
             'patient_id',
