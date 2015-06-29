@@ -28,13 +28,9 @@ class MedicalPrescriptionLine(orm.Model):
     _name = 'medical.prescription.line'
 
     def _get_medicament(self, cr, uid, ids, name, args, context=None):
-        medication_obj = self.pool.get('medical.medication.template')
+        #medication_obj = self.pool.get('medical.medication.template')
         result = {}
 
-#        if name == 'form':
-#            result = {'value': {
-#                        'form' : medication_obj.browse(cr, uid, medication, context = None).form.id ,
-#                         } }
         return result
 
 #    def _get_dose(self, cr, uid, ids, field_name, arg, context=None):
@@ -62,7 +58,8 @@ class MedicalPrescriptionLine(orm.Model):
 #            res[record.id] = 1
 #        return res
 
-#    def _get_frecuency_unit(self, cr, uid, ids, field_name, arg, context=None):
+#    def _get_frequency_unit(self, cr, uid, ids, field_name, arg,
+#                           context=None):
 #        res = {}
 #        return res
 
@@ -70,7 +67,8 @@ class MedicalPrescriptionLine(orm.Model):
 #        res = {}
 #        return res
 
-#    def _get_start_treatment(self, cr, uid, ids, field_name, arg, context=None):
+#    def _get_start_treatment(self, cr, uid, ids, field_name, arg,
+#                               context=None):
 #        ops = self.browse(cr, uid, ids, context=context)
 #        res = {}
 #        for op in ops:
@@ -84,7 +82,8 @@ class MedicalPrescriptionLine(orm.Model):
 #            res[op.id] = False
 #        return res
 
-#    def _get_duration_period(self, cr, uid, ids, field_name, arg, context=None):
+#    def _get_duration_period(self, cr, uid, ids, field_name, arg,
+#                               context=None):
 #        res = {}
 #        for line in self.browse(cr, uid, ids, context=context):
 #            res[line.id] = 'days'
@@ -194,7 +193,8 @@ class MedicalPrescriptionLine(orm.Model):
         'refills': fields.integer(string='Refills #'),
         'review': fields.datetime(string='Review'),
         'short_comment': fields.char(
-            size=256, string='Comment', help='Short comment on the specific drug'
+            size=256, string='Comment',
+            help='Short comment on the specific drug'
         ),
     }
 

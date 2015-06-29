@@ -22,9 +22,6 @@
 ###############################################################################
 
 from openerp.osv import fields, orm
-from openerp import netsvc
-from datetime import datetime, timedelta
-from dateutil.relativedelta import relativedelta
 import time
 
 
@@ -63,9 +60,10 @@ class MedicalPrescriptionOrder(orm.Model):
     def print_prescription(self, cr, uid, ids, context=None):
         '''
         '''
-#        assert len(ids) == 1, 'This option should only be used for a single id at a time'
+#        assert len(ids) == 1, 'Should only be used for a single id at a time'
 #        wf_service = netsvc.LocalService("workflow")
-#        wf_service.trg_validate(uid, 'medical.prescription.order', ids[0], 'prescription_sent', cr)
+#        wf_service.trg_validate(uid, 'medical.prescription.order', ids[0],
+#                               'prescription_sent', cr)
         datas = {
             'model': 'medical.prescription.order',
             'ids': ids,

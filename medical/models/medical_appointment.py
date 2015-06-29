@@ -100,7 +100,7 @@ class MedicalAppointment(orm.Model):
 
     def create(self, cr, uid, vals, context=None):
         val_history = {}
-        ait_obj = self.pool.get('medical.appointment.history')
+        #ait_obj = self.pool.get('medical.appointment.history')
         date_time_str = vals['appointment_day'] + ' ' + \
             vals['appointment_hour'] + ':' + \
             vals['appointment_minute']

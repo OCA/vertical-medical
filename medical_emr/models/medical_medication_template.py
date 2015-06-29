@@ -42,8 +42,9 @@ class MedicalMedicationTemplate(orm.Model):
                                 help="", multi=False),
         'indication': fields.many2one(
             'medical.pathology', string='Indication',
-            help='Choose a disease for this medicament from the disease list. It'
-                 ' can be an existing disease of the patient or a prophylactic.'
+            help='Choose a disease for this medicament from the disease list.'
+                 ' It can be an existing disease of the patient or a'
+                 ' prophylactic.'
         ),
         'start_treatment': fields.datetime(string='Start',
                                            help='Date of start of Treatment'),
@@ -51,7 +52,8 @@ class MedicalMedicationTemplate(orm.Model):
                                          help='Date of start of Treatment'),
         'form': fields.many2one('medical.drug.form', string='Form',
                                 help='Drug form, such as tablet or gel'),
-        'route': fields.many2one('medical.drug.route', string='Administration Route',
+        'route': fields.many2one('medical.drug.route',
+                                 string='Administration Route',
                                  help='Drug administration route code.'),
         'duration_period': fields.selection(
             [
@@ -78,12 +80,14 @@ class MedicalMedicationTemplate(orm.Model):
             ('weeks', 'weeks'),
             ('wr', 'when required'),
         ], string='unit'),
-        'dose': fields.float(string='Dose',
-                             help='Amount of medication (eg, 250 mg) per dose'),
+        'dose': fields.float(
+            string='Dose',
+            help='Amount of medication (eg, 250 mg) per dose'
+        ),
         'duration': fields.integer(
             string='Treatment duration',
-            help='Period that the patient must take the medication. in minutes,'
-                 ' hours, days, months, years or indefinately'
+            help='Period that the patient must take the medication. in'
+                 ' minutes, hours, days, months, years or indefinately'
         ),
         'frequency_prn': fields.boolean(string='PRN',
                                         help='Use it as needed, pro re nata'),

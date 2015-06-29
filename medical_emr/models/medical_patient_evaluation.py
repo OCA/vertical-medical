@@ -38,7 +38,7 @@ class MedicalPatientEvaluation(orm.Model):
         'orientation': fields.boolean(
             string='Orientation',
             help='Check this box if the patient is disoriented in time and/or'
-                ' space'
+            ' space'
         ),
         'weight': fields.float(string='Weight',
                                help='Weight in Kilos'),
@@ -77,7 +77,7 @@ class MedicalPatientEvaluation(orm.Model):
         'tremor': fields.boolean(
             string='Tremor',
             help='If associated  to a disease, please encode it on the patient'
-                ' disease history'
+            ' disease history'
         ),
         'present_illness': fields.text(string='Present Illness'),
         'evaluation_date': fields.many2one(
@@ -185,7 +185,7 @@ class MedicalPatientEvaluation(orm.Model):
         'violent': fields.boolean(
             string='Violent Behaviour',
             help='Check this box if the patient is agressive or violent at the'
-                ' moment'
+            ' moment'
         ),
         'directions': fields.text(string='Plan'),
         'evaluation_summary': fields.text(string='Evaluation Summary'),
@@ -197,8 +197,8 @@ class MedicalPatientEvaluation(orm.Model):
             ', encode the main sign or symptom.'),
         'judgment': fields.boolean(
             string='Jugdment',
-            help='Check this box if the patient can not interpret basic scenario'
-                ' solutions'
+            help='Check this box if the patient can not interpret basic'
+            ' scenario solutions'
         ),
         'temperature': fields.float(string='Temperature',
                                     help='Temperature in celcius'),
@@ -213,7 +213,7 @@ class MedicalPatientEvaluation(orm.Model):
         'calculation_ability': fields.boolean(
             string='Calculation Ability',
             help='Check this box if the patient can not do simple arithmetic'
-                ' problems'
+            ' problems'
         ),
         'bpm': fields.integer(string='Heart Rate',
                               help='Heart rate expressed in beats per minute'),
@@ -229,8 +229,8 @@ class MedicalPatientEvaluation(orm.Model):
         'abdominal_circ': fields.float(string='Waist'),
         'object_recognition': fields.boolean(
             string='Object Recognition',
-            help='Check this box if the patient suffers from any sort of gnosia'
-                ' disorders, such as agnosia, prosopagnosia ...'
+            help='Check this box if the patient suffers from any sort of'
+            ' gnosia disorders, such as agnosia, prosopagnosia ...'
         ),
         'diagnosis': fields.many2one('medical.pathology',
                                      string='Presumptive Diagnosis',),

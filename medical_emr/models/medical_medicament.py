@@ -49,7 +49,8 @@ class MedicalMedicament(orm.Model):
         'pregnancy_category': fields.selection([
                 ('A', 'A'), ('B', 'B'), ('C', 'C'),
                 ('D', 'D'), ('X', 'X'), ('N', 'N'),
-            ], string='Pregnancy Category',
+        ],
+            string='Pregnancy Category',
             help='** FDA Pregancy Categories ***\n'
             'CATEGORY A :Adequate and well-controlled human studies have'
             ' failed to demonstrate a risk to the fetus in the first'
