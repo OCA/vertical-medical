@@ -6,7 +6,7 @@
 			<field name="model">medical.appointment</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<tree string="Oemedical Appointment" colors="grey:state=='cancel';green:state=='draft';blue:state in ('done');red:state in ('waiting')">
+				<tree string="Medical Appointment" colors="grey:state=='cancel';green:state=='draft';blue:state in ('done');red:state in ('waiting')">
 					<field name="name" />
 					<field name="patient_id" />
    					<field name="alias" />
@@ -26,15 +26,15 @@
 			<field name="model">medical.appointment</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Appointment"  version="7.0">
+				<form string="Medical Appointment"  version="7.0">
                     <header>
-<!--                        <button name="action_quotation_send" string="Send by e-mail" type="object" class="oe_highlight" groups="base.group_user"/>-->
-<!--                        <button name="print_prescription" string="Print" type="object"  class="oe_highlight" groups="base.group_user"/>-->
+<!--                        <button name="action_quotation_send" string="Send by e-mail" type="object" class="highlight" groups="base.group_user"/>-->
+<!--                        <button name="print_prescription" string="Print" type="object"  class="highlight" groups="base.group_user"/>-->
                         <button name="button_back" states="confirm,waiting,in_consultation,done,canceled" string="Back"  type="object" groups="base.group_user"/>
-                        <button name="button_confirm" states="draft" string="Confirm" class="oe_highlight"  type="object" groups="base.group_user"/>
-                        <button name="button_waiting" states="confirm" string="Waiting" class="oe_highlight"  type="object" groups="base.group_user"/>
-                        <button name="button_in_consultation" states="waiting" string="In Consultation" class="oe_highlight"  type="object" groups="base.group_user"/>
-                        <button name="button_done" states="in_consultation" string="Done" class="oe_highlight"  type="object" groups="base.group_user"/>
+                        <button name="button_confirm" states="draft" string="Confirm" class="highlight"  type="object" groups="base.group_user"/>
+                        <button name="button_waiting" states="confirm" string="Waiting" class="highlight"  type="object" groups="base.group_user"/>
+                        <button name="button_in_consultation" states="waiting" string="In Consultation" class="highlight"  type="object" groups="base.group_user"/>
+                        <button name="button_done" states="in_consultation" string="Done" class="highlight"  type="object" groups="base.group_user"/>
                         <button name="button_cancel" states="confirm,in_consultation" string="Cancel"  type="object" groups="base.group_user"/>
                         <field name="state" widget="statusbar" statusbar_visible="draft,confirm,waiting,in_consultation,done,canceled" statusbar_colors='{"canceled":"red","waiting":"blue"}'/>
                     </header>
@@ -107,7 +107,7 @@
 			<field name="model">medical.appointment</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<search string="Oemedical Appointment">
+				<search string="Medical Appointment">
 					<field name="name" />
 					<field name="patient_id" />
 					<field name="doctor" />
@@ -142,13 +142,13 @@
             <field name="model">medical.appointment</field>
             <field name="type">kanban</field>
             <field name="arch" type="xml">
-                <kanban version="7.0" class="oe_background_grey">
+                <kanban version="7.0" class="background_grey">
                     <field name="name"/>
                     <templates>
                         <t t-name="kanban-box">
-                            <div class="oe_kanban_content">
-                                <div class="oe_kanban_vignette oe_semantic_html_override">
-                                    <div class="oe_kanban_details">
+                            <div class="kanban_content">
+                                <div class="kanban_vignette semantic_html_override">
+                                    <div class="kanban_details">
                                         <h3>
                                             <a type="open"><field name="name"/></a>
                                         </h3>

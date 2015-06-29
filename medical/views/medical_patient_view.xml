@@ -6,7 +6,7 @@
  			<field name="model">medical.patient</field> 
  			<field name="priority" eval="8" /> 
  			<field name="arch" type="xml"> 
- 				<tree string="Oemedical Patient"> 
+ 				<tree string="Medical Patient"> 
  					<field name="name" />
  					<field name="ref" /> 
  					<field name="identification_code" /> 
@@ -24,7 +24,7 @@
  			 <form string="Patient" version="7.0"> 
                     <sheet> 
                         <div>
-                            <field name="image" widget='image' class="oe_left oe_avatar"/> 
+                            <field name="image" widget='image' class="left avatar"/> 
                             <div> 
                                  <h1> 
 		                            <field name="name" placeholder="First Name" style="width: 20%" /> 
@@ -32,7 +32,7 @@
 		                         </h1> 
                             </div> 
      						<div> 
-     							<label for="sex" class="oe_edit_only"/> 
+     							<label for="sex" class="edit_only"/> 
      							<field name="sex" style="width: 30%"/> 
      							<label for="ref"/> 
      							<field name="ref" style="width: 20%"/> 
@@ -52,16 +52,16 @@
                                 <group>
                                     <label for="street" string="Address"/>
                                     <div>
-                                        <field name="use_parent_address" class="oe_edit_only oe_inline" invisible="1"/>
-                                        <label for="use_parent_address" class="oe_edit_only" invisible="1"/>
+                                        <field name="use_parent_address" class="edit_only inline" invisible="1"/>
+                                        <label for="use_parent_address" class="edit_only" invisible="1"/>
                                         <field name="street" placeholder="Street..." />
                                         <field name="street2" />
                                         <div class="address_format">
                                             <field name="city" placeholder="City" style="width: 40%" />
-                                            <field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%" options='{"no_open": True}' />
+                                            <field name="state_id" class="no_button" placeholder="State" style="width: 37%" options='{"no_open": True}' />
                                             <field name="zip" placeholder="ZIP" style="width: 20%" />
                                         </div>
-                                        <field name="country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True}' />
+                                        <field name="country_id" placeholder="Country" class="no_button" options='{"no_open": True}' />
                                     </div>
                                     <field name="website" widget="url" placeholder="e.g. www.openerp.com"/>
                                 </group>
@@ -102,14 +102,14 @@
             <field name="model">medical.patient</field>
             <field name="type">kanban</field>
             <field name="arch" type="xml">
-                <kanban version="7.0" class="oe_background_grey">
+                <kanban version="7.0" class="background_grey">
                     <field name="name"/>
                     <templates>
                         <t t-name="kanban-box">
-                            <div class="oe_kanban_content">
-                                <div class="oe_kanban_vignette oe_semantic_html_override">
-                                    <a type="open"><img t-att-src="kanban_image('medical.patient', 'image', record.id.value)" width="110" height="110" class="oe_employee_picture"/></a>
-                                    <div class="oe_kanban_details">
+                            <div class="kanban_content">
+                                <div class="kanban_vignette semantic_html_override">
+                                    <a type="open"><img t-att-src="kanban_image('medical.patient', 'image', record.id.value)" width="110" height="110" class="employee_picture"/></a>
+                                    <div class="kanban_details">
                                         <h3>
                                             <a type="open"><field name="name"/></a>
                                         </h3>
@@ -132,7 +132,7 @@
  			<field name="model">medical.patient</field> 
  			<field name="priority" eval="8" /> 
  			<field name="arch" type="xml"> 
- 				<search string="Oemedical Patient"> 
+ 				<search string="Medical Patient"> 
  					<field name="name" /> 
  					<field name="general_info" /> 
  					<field name="ref" /> 

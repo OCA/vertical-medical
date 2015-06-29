@@ -1,9 +1,9 @@
 -
   Create New Insurance
 -
-  !record {model: medical.insurance, id: oe_ins_1}:
+  !record {model: medical.insurance, id: ins_1}:
     name: Medical Insurance
     category: Medical
     company: ins_com_lombard
-    plan_id: oe_insplan_1
+    plan_id: insplan_1
     number: 101   
