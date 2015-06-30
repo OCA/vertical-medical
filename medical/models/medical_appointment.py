@@ -128,12 +128,12 @@ class MedicalAppointment(orm.Model):
                 Changed to Confirm  ------------------------------------\n'''
                 self.write(cr, uid, ids, {'state': 'confirm'}, context=context)
             if order.state == 'in_consultation':
-                val_history['action'] = '''-------------------------------- 
+                val_history['action'] = '''--------------------------------
                 Changed to Waiting  ------------------------------------\n'''
                 self.write(cr, uid, ids, {'state': 'waiting'}, context=context)
             if order.state == 'done':
                 val_history['action'] = '''--------------------------------
-                Changed to In Consultation  -------------------------------\n'''
+                Changed to In Consultation -------------------------------\n'''
                 self.write(cr, uid, ids, {'state': 'in_consultation'},
                            context=context)
             if order.state == 'canceled':
