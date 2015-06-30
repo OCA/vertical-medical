@@ -24,7 +24,7 @@ from openerp.osv import fields, orm
 
 
 class MedicalSecondaryCondition(orm.Model):
-    _name = 'medical.secondary.condition'
+    _name = 'medical.secondary_condition'
 
     _columns = {
         'pathology_id': fields.many2one('medical.pathology',

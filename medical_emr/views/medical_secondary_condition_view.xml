@@ -2,8 +2,8 @@
 <openerp>
 	<data>
 		<record id="view_medical_secondary_condition_tree" model="ir.ui.view">
-			<field name="name">medical.secondary.condition.tree</field>
-			<field name="model">medical.secondary.condition</field>
+			<field name="name">medical.secondary_condition.tree</field>
+			<field name="model">medical.secondary_condition</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Secondary_Condition">
@@ -15,8 +15,8 @@
 		</record>
 
 		<record id="view_medical_secondary_condition_form" model="ir.ui.view">
-			<field name="name">medical.secondary.condition.form</field>
-			<field name="model">medical.secondary.condition</field>
+			<field name="name">medical.secondary_condition.form</field>
+			<field name="model">medical.secondary_condition</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Secondary_Condition">
@@ -28,8 +28,8 @@
 		</record>
 
 		<record id="view_medical_secondary_condition_search" model="ir.ui.view">
-			<field name="name">medical.secondary.condition.search</field>
-			<field name="model">medical.secondary.condition</field>
+			<field name="name">medical.secondary_condition.search</field>
+			<field name="model">medical.secondary_condition</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<search string="Oemedical Secondary_Condition">
@@ -51,7 +51,7 @@
 		<record model="ir.actions.act_window" id="act_open_medical_secondary_condition_view">
 			<field name="name">Secondary Condition</field>
 			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">medical.secondary.condition</field>
+			<field name="res_model">medical.secondary_condition</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">tree,form</field>
 			<field name="search_view_id" ref="view_medical_secondary_condition_search" />
