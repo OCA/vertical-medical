@@ -9,7 +9,7 @@
 				<tree string="Oemedical Patient Evaluation">
 					<field name="evaluation_date" />
 					<field name="patient_id" />
-					<field name="physician_id" />
+					<field name="doctor" />
 					<field name="chief_complaint" />
 					<field name="diagnosis" />
 					<field name="info_diagnosis" />
@@ -40,7 +40,7 @@
                              </h1>
                         </div>
                         <div>
-                            <field name="physician_id" />
+                            <field name="doctor" />
                             <field name="evaluation_type"/>
         					<field name="specialty" />
                         </div>
@@ -130,7 +130,7 @@
 					<field name="evaluation_start" />
 					<field name="loc" />
 					<field name="user_id" />
-					<field name="physician_id" />
+					<field name="doctor" />
 					<field name="knowledge_current_events" />
 					<field name="next_evaluation" />
 					<field name="reliable_info" />
@@ -194,7 +194,7 @@
 							context="{'group_by':'loc'}" />
 						<filter string="Last Changed by" domain="[]"
 							context="{'group_by':'user_id'}" />
-						<filter string="Physician" domain="[]" context="{'group_by':'physician_id'}" />
+						<filter string="Physician" domain="[]" context="{'group_by':'doctor'}" />
 						<filter string="Knowledge of Current Events" domain="[]"
 							context="{'group_by':'knowledge_current_events'}" />
 						<filter string="Next Appointment" domain="[]"
