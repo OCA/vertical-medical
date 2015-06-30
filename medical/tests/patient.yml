@@ -3,7 +3,7 @@
 -
   !record {model: medical.patient, id: patient_arun}:
     name: Arun Johanson
-    login: arun@example.com
+    user_id: arun@example.com
     dob: !eval time.strftime('1990-07-24')
     ref: 'BDM87654PN'
     age: 22
