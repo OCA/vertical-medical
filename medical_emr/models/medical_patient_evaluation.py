@@ -204,7 +204,7 @@ class MedicalPatientEvaluation(orm.Model):
         'osat': fields.integer(string='Oxygen Saturation',
                                help='Oxygen Saturation(arterial).'),
         'secondary_conditions': fields.one2many(
-            'medical.secondary_condition', 'evaluation_id',
+            'medical.secondary.condition', 'evaluation_id',
             string='Secondary Conditions',
             help="Other, Secondary conditions found on the patient"),
         'evaluation_endtime': fields.datetime(string='End', required=True),
