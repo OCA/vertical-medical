@@ -13,4 +13,4 @@
     login: vikas@example.com
     info: 'General Physician'
     code: 'PH101'
-    specialty: ref('medical.specialty.specialty_1')
+    specialty: ref('medical_specialty.specialty_1')
