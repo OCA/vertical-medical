@@ -1,5 +1,5 @@
 -
-  Create New User
+  Create New Partner for patient
 -
   !record {model: res.partner, id: partner_patient_arun }:
     name: User Johanson
@@ -10,6 +10,20 @@
     country_id: base.us
     phone: +1-888-888-8888
     email: arun@example.com
+  
+-
+  Create New User for patient
+-
+  !record {model: res.users, id: user_patient_arun }:
+    name: User Johanson
+    is_company: False
+    street: 123 Test St
+    street2: Suite 1337
+    city: Las Vegas
+    country_id: base.us
+    phone: +1-888-888-8888
+    email: arun@example.com
+    partner_id: partner_patient_arun
 
 
 -
@@ -17,7 +31,7 @@
 -
   !record {model: medical.patient, id: patient_arun}:
     name: Arun Johanson
-    user_id: partner_patient_arun
+    user_id: user_patient_arun
     dob: !eval time.strftime('1990-07-24')
     ref: 'BDM87654PN'
     age: 22
