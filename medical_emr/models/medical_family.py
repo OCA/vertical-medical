@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
-###############################################################################
+# #############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
-#    Ported to 8.0 by Dave Lasley - LasLabs (https://laslabs.com)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,7 +18,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-###############################################################################
+# #############################################################################
 
 from openerp.osv import fields, orm
 
@@ -29,8 +28,9 @@ class MedicalFamily(orm.Model):
 
     _columns = {
         'info': fields.text(string='Extra Information'),
-        'operational_sector': fields.many2one('medical.operational_sector',
-                                              string='Operational Sector', ),
+        # TBD
+        # 'operational_sector': fields.many2one('medical.operational.sector',
+        #                                      string='Operational Sector', ),
         'name': fields.char(size=256, string='Family', required=True,
                             help='Family code within an operational sector'),
         'members': fields.one2many('medical.family_member', 'family_id',
@@ -39,6 +39,5 @@ class MedicalFamily(orm.Model):
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Family Code must be unique!'),
     ]
-
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

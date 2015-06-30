@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-###############################################################################
+# #############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,15 +18,15 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-###############################################################################
+# #############################################################################
 
-from . import medical_secondary_condition
-from . import medical_operational_sector
-from . import medical_operational_area
+# TBD from . import medical_operational_sector
+# TBD from . import medical_operational_area
 from . import medical_pathology_category
 from . import medical_signs_and_symptoms
 from . import medical_directions
 from . import medical_pathology
+from . import medical_secondary_condition
 from . import medical_ethnicity
 from . import medical_prescription_order
 from . import medical_medicament_category
@@ -40,6 +40,7 @@ from . import medical_patient_medication
 from . import medical_patient_evaluation
 from . import medical_prescription_line
 from . import medical_patient_disease
+from . import medical_patient
 from . import medical_drug_route
 from . import medical_family
 from . import medical_occupation

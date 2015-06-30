@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
-###############################################################################
+# #############################################################################
 #
-#    Tech-Receptives Solutions Pvt. Ltd.
-#    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
+# Tech-Receptives Solutions Pvt. Ltd.
+# Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
-#    Ported to 8.0 by Dave Lasley - LasLabs (https://laslabs.com)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,10 +18,11 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-###############################################################################
+# #############################################################################
+
+import time
 
 from openerp.osv import fields, orm
-import time
 
 
 class MedicalPrescriptionOrder(orm.Model):
@@ -36,12 +36,11 @@ class MedicalPrescriptionOrder(orm.Model):
         'notes': fields.text(string='Prescription Notes'),
         'prescription_line': fields.one2many('medical.prescription.line',
                                              'name',
-                                             string='Prescription line',),
-        'pharmacy': fields.many2one('res.partner', string='Pharmacy',),
+                                             string='Prescription line', ),
+        'pharmacy': fields.many2one('res.partner', string='Pharmacy', ),
         'prescription_date': fields.datetime(string='Prescription Date'),
-        'prescription_warning_ack': fields.boolean(
-            string='Prescription verified'
-        ),
+        'prescription_warning_ack': fields.boolean(string='Prescription '
+                                                          'verified'),
         'physician_id': fields.many2one('medical.physician',
                                         string='Prescribing Doctor',
                                         required=True),
@@ -60,20 +59,20 @@ class MedicalPrescriptionOrder(orm.Model):
     def print_prescription(self, cr, uid, ids, context=None):
         '''
         '''
-#        assert len(ids) == 1, 'Should only be used for a single id at a time'
-#        wf_service = netsvc.LocalService("workflow")
-#        wf_service.trg_validate(uid, 'medical.prescription.order', ids[0],
-#                               'prescription_sent', cr)
+        #        assert len(ids) == 1, 'This option should only be used for '
+        #                              'a single id at a time'
+        #        wf_service = netsvc.LocalService("workflow")
+        #        wf_service.trg_validate(uid, 'medical.prescription.order',
+        #                                ids[0], 'prescription_sent', cr)
         datas = {
             'model': 'medical.prescription.order',
             'ids': ids,
             'form': self.read(cr, uid, ids[0], context=context),
         }
-        return {
-            'type': 'ir.actions.report.xml',
-            'report_name': 'prescription.order',
-            'datas': datas,
-            'nodestroy': True}
+        return {'type': 'ir.actions.report.xml',
+                'report_name': 'prescription.order',
+                'datas': datas,
+                'nodestroy': True}
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

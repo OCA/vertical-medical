@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
-###############################################################################
+# #############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
-#    Ported to 8.0 by Dave Lasley - LasLabs (https://laslabs.com)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,17 +18,17 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-###############################################################################
+# #############################################################################
 
 from openerp.osv import fields, orm
 
 
 class MedicalOperationalSector(orm.Model):
-    _name = 'medical.operational_sector'
+    _name = 'medical.operational.sector'
 
     _columns = {
         'info': fields.text(string='Extra Information'),
-        'operational_area_id': fields.many2one('medical.operational_area',
+        'operational_area_id': fields.many2one('medical.operational.area',
                                                string='Operational Area', ),
         'name': fields.char(size=256, string='Op. Sector', required=True,
                             help='Region included in an operational area'),
@@ -37,6 +36,5 @@ class MedicalOperationalSector(orm.Model):
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
     ]
-
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

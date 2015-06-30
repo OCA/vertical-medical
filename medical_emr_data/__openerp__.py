@@ -1,7 +1,7 @@
 ##############################################################################
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
-#    Medical, HMS Opensource Solution
+#    OeMedical, HMS Opensource Solution
 ##############################################################################
 #    Collaborators of this module:
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
@@ -9,11 +9,10 @@
 #    Coded by: Ruchir Shukla <ruchir@techreceptives.com>
 #    Planifyied by: Parthiv Patel <parthiv@techreceptives.com>
 #    Planifyied by: Nhomar Hernandéz <nhomar@vauxoo.com>
-#    Ported to 8.0 by: Dave Lasley <dave@laslabs.com>
 #
 ##############################################################################
 #    This project is mantained by OeMEdical Team:
-#    https://launchpad.net/medical
+#    https://launchpad.net/oemedical
 #
 ##############################################################################
 #    It is a collaborative effort between several companies that want to join
@@ -35,23 +34,23 @@
 ##############################################################################
 {
 
-    'name': 'Medical EMR: Module Data',
+    'name': 'OeMedical EMR: Module Data',
     'version': '1.0',
     'author': "OeMEdical Team,Odoo Community Association (OCA)",
     'category': 'Generic Modules/Others',
-    'depends': ['medical_emr'],
+    'depends': ['oemedical_emr'],
     'application': True,
     'description': """
 
-About Medical Data
+About OeMedical Data
 ---------------------
 
-Core Data for medical, is kept as a separate module to overcome need of
+Core Data for oemedical, is kept as a separate module to overcome need of
 localizing core data.
 
 
 """,
-    "website": "http://launchpad.net/medical",
+    "website": "http://launchpad.net/oemedical",
     "licence": "AGPL v3",
     "data": [
         'data/medicament_categories.xml',
@@ -82,7 +81,7 @@ localizing core data.
     'qweb': [
 
     ],
-    "active": True,
-    "installable": True,
+    "active": False,
+    "installable": False,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

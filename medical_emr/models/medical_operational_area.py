@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
-###############################################################################
+# #############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
-#    Ported to 8.0 by Dave Lasley - LasLabs (https://laslabs.com)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,17 +18,17 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-###############################################################################
+# #############################################################################
 
 from openerp.osv import fields, orm
 
 
 class MedicalOperationalArea(orm.Model):
-    _name = 'medical.operational_area'
+    _name = 'medical.operational.area'
 
     _columns = {
         'info': fields.text(string='Extra Information'),
-        'operational_sector': fields.one2many('medical.operational_sector',
+        'operational_sector': fields.one2many('medical.operational.sector',
                                               'operational_area_id',
                                               string='Operational Sector',
                                               readonly=True),

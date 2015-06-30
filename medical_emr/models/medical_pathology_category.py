@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
-###############################################################################
+# #############################################################################
 #
-#    Tech-Receptives Solutions Pvt. Ltd.
-#    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
+# Tech-Receptives Solutions Pvt. Ltd.
+# Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
-#    Ported to 8.0 by Dave Lasley - LasLabs (https://laslabs.com)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,9 +18,9 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-###############################################################################
+# #############################################################################
 
-from openerp.osv import fields, orm
+from openerp.osv import fields, orm, osv
 
 
 class MedicalPathologyCategory(orm.Model):
@@ -30,15 +29,15 @@ class MedicalPathologyCategory(orm.Model):
     _columns = {
         'childs': fields.one2many('medical.pathology.category',
                                   'parent_id',
-                                  string='Children Category', ),
+                                  string='Children Categories', ),
         'name': fields.char(size=256, string='Category Name', required=True),
         'parent_id': fields.many2one('medical.pathology.category',
                                      string='Parent Category', select=True),
     }
-    _constraints = [
-        (orm.Model._check_recursion, 'Error ! You cannot create recursive \n'
-         'Category.', ['parent_id'])
-    ]
 
+    _constraints = [
+        (osv.osv._check_recursion, 'Error ! You cannot create recursive \n'
+                                   'Category.', ['parent_id'])
+    ]
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

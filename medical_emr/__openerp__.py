@@ -1,5 +1,5 @@
 ##############################################################################
-#    OpenERP, Open Source Management Solution
+# OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
 #    Medical, HMS Opensource Solution
 ##############################################################################
@@ -9,7 +9,6 @@
 #    Coded by: Ruchir Shukla <ruchir@techreceptives.com>
 #    Planifyied by: Parthiv Patel <parthiv@techreceptives.com>
 #    Planifyied by: Nhomar Hernandéz <nhomar@vauxoo.com>
-#    Ported to 8.0 by: Dave Lasley <dave@laslabs.com>
 #
 ##############################################################################
 #    This project is mantained by OeMEdical Team:
@@ -88,7 +87,7 @@ Medical at a glance:
     * Open Source : Licensed under AGPL
 
 """,
-    "website": "http://launchpad.net/medical",
+    "website": "http://github.com/oca/vertical-medical",
     "licence": "AGPL v3",
     "data": [
         'views/medical_sequence.xml',
@@ -97,9 +96,9 @@ Medical at a glance:
         'views/medical_signs_and_symptoms_view.xml',
         'views/medical_directions_view.xml',
         'views/medical_pathology_view.xml',
-        'views/medical_operational_area_view.xml',
+        # TBD 'views/medical_operational_area_view.xml',
         'views/medical_ethnicity_view.xml',
-        'views/medical_operational_sector_view.xml',
+        # TBD 'views/medical_operational_sector_view.xml',
         'views/medical_prescription_order_view.xml',
         'views/medical_medicament_category_view.xml',
         'views/medical_diagnostic_hypothesis_view.xml',
@@ -112,6 +111,7 @@ Medical at a glance:
         'views/medical_patient_evaluation_view.xml',
         'views/medical_prescription_line_view.xml',
         'views/medical_patient_disease_view.xml',
+        'views/medical_patient_view.xml',
         'views/medical_drug_route_view.xml',
         'views/medical_family_view.xml',
         'views/medical_occupation_view.xml',
@@ -136,7 +136,7 @@ Medical at a glance:
     'qweb': [
 
     ],
-    "active": True,
-    'installable': True,
+    "active": False,
+    "installable": True
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
