@@ -27,11 +27,6 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Medical Patient Evaluation">
-                    <header>
-                        <field name="state" widget="statusbar" clickable="True"
-                                options="{'fold_field': 'fold'}"
-                                 />
-                    </header>
                     <sheet>
                         <div>
                             <h1>
