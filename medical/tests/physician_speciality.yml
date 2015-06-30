@@ -53,4 +53,3 @@
   !record {model: medical.specialty, id: speciality_gyn}:
     name: Gynaecologists‎
     code: GL
-‎
