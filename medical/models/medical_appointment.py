@@ -109,7 +109,7 @@ class MedicalAppointment(orm.Model):
 
         val_history['name'] = uid
         val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
-        val_history['action'] = "--------------------------------"
+        val_history['action'] = "--------------------------------"\
         "Changed to Comfirm  ------------------------------------\n"
         vals['history_ids'] = val_history
         return super(MedicalAppointment, self).create(cr, uid, vals,
@@ -121,23 +121,23 @@ class MedicalAppointment(orm.Model):
         for order in self.browse(cr, uid, ids, context=context):
             if order.state == 'confirm':
                 self.write(cr, uid, ids, {'state': 'draft'}, context=context)
-                val_history['action'] = "--------------------------------"
+                val_history['action'] = "--------------------------------"\
                 "Changed to Draft  ------------------------------------\n"
             if order.state == 'waiting':
-                val_history['action'] = "--------------------------------  "
+                val_history['action'] = "--------------------------------  "\
                 "Changed to Confirm  ------------------------------------\n"
                 self.write(cr, uid, ids, {'state': 'confirm'}, context=context)
             if order.state == 'in_consultation':
-                val_history['action'] = "--------------------------------  "
+                val_history['action'] = "--------------------------------  "\
                 "Changed to Waiting  ------------------------------------\n"
                 self.write(cr, uid, ids, {'state': 'waiting'}, context=context)
             if order.state == 'done':
-                val_history['action'] = "--------------------------------  "
+                val_history['action'] = "--------------------------------  "\
                 "Changed to In Consultation  -------------------------------\n"
                 self.write(cr, uid, ids, {'state': 'in_consultation'},
                            context=context)
             if order.state == 'canceled':
-                val_history['action'] = "--------------------------------"
+                val_history['action'] = "--------------------------------"\
                 "Changed to Draft  ------------------------------------\n"
                 self.write(cr, uid, ids, {'state': 'draft'}, context=context)
 
@@ -159,7 +159,7 @@ class MedicalAppointment(orm.Model):
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
         val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
-        val_history['action'] = "--------------------------------"
+        val_history['action'] = "--------------------------------"\
         "Changed to Comfirm  ------------------------------------\n"
         ait_obj.create(cr, uid, val_history)
 
@@ -175,7 +175,7 @@ class MedicalAppointment(orm.Model):
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
         val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
-        val_history['action'] = "--------------------------------"
+        val_history['action'] = "--------------------------------"\
         "Changed to Waiting  ------------------------------------\n"
         ait_obj.create(cr, uid, val_history)
 
@@ -191,7 +191,7 @@ class MedicalAppointment(orm.Model):
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
         val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
-        val_history['action'] = "--------------------------------"
+        val_history['action'] = "--------------------------------"\
         "Changed to In Consultation  ------------------------------------\n"
         ait_obj.create(cr, uid, val_history)
 
@@ -207,7 +207,7 @@ class MedicalAppointment(orm.Model):
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
         val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
-        val_history['action'] = "--------------------------------"
+        val_history['action'] = "--------------------------------"\
         "Changed to Done  ------------------------------------\n"
         ait_obj.create(cr, uid, val_history)
 
@@ -223,7 +223,7 @@ class MedicalAppointment(orm.Model):
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
         val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
-        val_history['action'] = "--------------------------------  "
+        val_history['action'] = "--------------------------------  "\
         "Changed to Canceled  ------------------------------------\n"
         ait_obj.create(cr, uid, val_history)
 

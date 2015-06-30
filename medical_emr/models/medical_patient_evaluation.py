@@ -150,7 +150,6 @@ class MedicalPatientEvaluation(orm.Model):
             help='Check this box if the patient presents abnormalities in'
             ' abstract reasoning'
         ),
-        'patient_id': fields.many2one('medical.patient', string='Patient',),
         'derived_from': fields.many2one('medical.physician',
                                         string='Derived from',
                                         help='Physician who derived the case'),

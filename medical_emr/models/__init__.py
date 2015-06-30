@@ -20,32 +20,32 @@
 #
 ###############################################################################
 
-import medical_secondary_condition
-import medical_operational_sector
-import medical_operational_area
-import medical_pathology_category
-import medical_signs_and_symptoms
-import medical_directions
-import medical_pathology
-import medical_ethnicity
-import medical_prescription_order
-import medical_medicament_category
-import medical_diagnostic_hypothesis
-import medical_procedure
-import medical_medication_template
-import medical_medication_dosage
-import medical_family_member
-import medical_drug_form
-import medical_patient_medication
-import medical_patient_evaluation
-import medical_prescription_line
-import medical_patient_disease
-import medical_drug_route
-import medical_family
-import medical_occupation
-import medical_disease_group_members
-import medical_medicament
-import medical_pathology_group
+from . import medical_secondary_condition
+from . import medical_operational_sector
+from . import medical_operational_area
+from . import medical_pathology_category
+from . import medical_signs_and_symptoms
+from . import medical_directions
+from . import medical_pathology
+from . import medical_ethnicity
+from . import medical_prescription_order
+from . import medical_medicament_category
+from . import medical_diagnostic_hypothesis
+from . import medical_procedure
+from . import medical_medication_template
+from . import medical_medication_dosage
+from . import medical_family_member
+from . import medical_drug_form
+from . import medical_patient_medication
+from . import medical_patient_evaluation
+from . import medical_prescription_line
+from . import medical_patient_disease
+from . import medical_drug_route
+from . import medical_family
+from . import medical_occupation
+from . import medical_disease_group_members
+from . import medical_medicament
+from . import medical_pathology_group
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
