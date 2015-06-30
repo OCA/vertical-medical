@@ -41,7 +41,7 @@ class MedicalPrescriptionOrder(orm.Model):
         'prescription_date': fields.datetime(string='Prescription Date'),
         'prescription_warning_ack': fields.boolean(string='Prescription '
                                                           'verified'),
-        'physician_id': fields.many2one('medical.physician',
+        'primary_care_doctor': fields.many2one('medical.physician',
                                         string='Prescribing Doctor',
                                         required=True),
         'name': fields.char(size=256, string='Prescription ID', required=True,
