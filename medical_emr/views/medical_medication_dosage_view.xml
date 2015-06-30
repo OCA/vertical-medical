@@ -6,7 +6,7 @@
 			<field name="model">medical.medication.dosage</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<tree string="Oemedical Medication Dosage">
+				<tree string="Medical Medication Dosage">
 					<field name="abbreviation" />
 					<field name="code" />
 					<field name="name" />
@@ -19,7 +19,7 @@
 			<field name="model">medical.medication.dosage</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Medication Dosage">
+				<form string="Medical Medication Dosage">
 					<field name="abbreviation" />
 					<field name="code" />
 					<field name="name" />
@@ -32,7 +32,7 @@
 			<field name="model">medical.medication.dosage</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<search string="Oemedical Medication Dosage">
+				<search string="Medical Medication Dosage">
 					<field name="abbreviation" />
 					<field name="code" />
 					<field name="name" />

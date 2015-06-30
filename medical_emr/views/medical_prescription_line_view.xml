@@ -6,7 +6,7 @@
 			<field name="model">medical.prescription.line</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<tree string="Oemedical Prescription Line">
+				<tree string="Medical Prescription Line">
 					<field name="name" />
 					<field name="allow_substitution" />
 					<field name="prnt" />
@@ -23,7 +23,7 @@
 			<field name="model">medical.prescription.line</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Prescription Line">
+				<form string="Medical Prescription Line">
 					<field name="name" />
 					<field name="allow_substitution" />
 					<field name="prnt" />
@@ -40,7 +40,7 @@
 			<field name="model">medical.prescription.line</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<search string="Oemedical Prescription Line">
+				<search string="Medical Prescription Line">
 					<field name="name" />
 					<field name="name" />
 					<field name="allow_substitution" />

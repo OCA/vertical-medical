@@ -6,7 +6,7 @@
 			<field name="model">medical.pathology</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<tree string="Oemedical Pathology">
+				<tree string="Medical Pathology">
 					<field name="category" />
 					<field name="info" />
 					<field name="code" />
@@ -24,7 +24,7 @@
 			<field name="model">medical.pathology</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Pathology">
+				<form string="Medical Pathology">
 					<field name="code" />
 					<field name="name" />
 					<field name="category" />
@@ -44,7 +44,7 @@
 			<field name="model">medical.pathology</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<search string="Oemedical Pathology">
+				<search string="Medical Pathology">
 					<field name="category" />
 					<field name="info" />
 					<field name="code" />

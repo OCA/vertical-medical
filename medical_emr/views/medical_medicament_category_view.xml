@@ -6,7 +6,7 @@
 			<field name="model">medical.medicament.category</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<tree string="Oemedical Medicament Category">
+				<tree string="Medical Medicament Category">
 					<field name="childs" />
 					<field name="name" />
 					<field name="parent_id" />
@@ -19,7 +19,7 @@
 			<field name="model">medical.medicament.category</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Medicament Category">
+				<form string="Medical Medicament Category">
 					<field name="childs" />
 					<field name="name" />
 					<field name="parent_id" />
@@ -32,7 +32,7 @@
 			<field name="model">medical.medicament.category</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<search string="Oemedical Medicament Category">
+				<search string="Medical Medicament Category">
 					<field name="name" />
 					<field name="parent_id" />
 					<newline />

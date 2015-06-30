@@ -6,7 +6,7 @@
 			<field name="model">medical.pathology.group</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<tree string="Oemedical Pathology Group">
+				<tree string="Medical Pathology Group">
 					<field name="info" />
 					<field name="code" />
 					<field name="name" />
@@ -20,7 +20,7 @@
 			<field name="model">medical.pathology.group</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Pathology Group">
+				<form string="Medical Pathology Group">
 					<field name="info" />
 					<field name="code" />
 					<field name="name" />
@@ -34,7 +34,7 @@
 			<field name="model">medical.pathology.group</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<search string="Oemedical Pathology Group">
+				<search string="Medical Pathology Group">
 					<field name="info" />
 					<field name="code" />
 					<field name="name" />

@@ -6,7 +6,7 @@
             <field name="model">medical.specialty</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <tree string="Oemedical Specialty">
+                <tree string="Medical Specialty">
                     <field name="code" />
                     <field name="name" />
                 </tree>
@@ -18,7 +18,7 @@
             <field name="model">medical.specialty</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <form string="Oemedical Specialty">
+                <form string="Medical Specialty">
                     <field name="code" />
                     <field name="name" />
                 </form>
@@ -30,7 +30,7 @@
             <field name="model">medical.specialty</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <search string="Oemedical Specialty">
+                <search string="Medical Specialty">
                     <field name="code" />
                     <field name="name" />
                     <newline />

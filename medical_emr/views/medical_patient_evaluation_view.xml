@@ -6,7 +6,7 @@
 			<field name="model">medical.patient.evaluation</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<tree string="Oemedical Patient Evaluation">
+				<tree string="Medical Patient Evaluation">
 					<field name="evaluation_date" />
 					<field name="patient_id" />
 					<field name="doctor" />
@@ -109,7 +109,7 @@
 			<field name="model">medical.patient.evaluation</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<search string="Oemedical Patient Evaluation">
+				<search string="Medical Patient Evaluation">
 					<field name="patient_id" />
 					<field name="information_source" />
 					<field name="info_diagnosis" />

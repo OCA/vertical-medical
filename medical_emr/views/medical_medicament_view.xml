@@ -6,7 +6,7 @@
 			<field name="model">medical.medicament</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<tree string="Oemedical Medicament">
+				<tree string="Medical Medicament">
 					<field name="product_id" />
 					<field name="category" />
 					<field name="indications" />
@@ -31,7 +31,7 @@
 			<field name="model">medical.medicament</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Medicament" version="7.0">
+				<form string="Medical Medicament" version="7.0">
                     <sheet>
                         <H1>
         			        <field name="product_id" domain="[('is_medicament','=', True )]"/>
@@ -90,7 +90,7 @@
 			<field name="model">medical.medicament</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<search string="Oemedical Medicament">
+				<search string="Medical Medicament">
 					<field name="product_id" />
 					<field name="category" />
 					<field name="indications" />

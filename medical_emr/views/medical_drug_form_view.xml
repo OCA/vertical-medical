@@ -6,7 +6,7 @@
 			<field name="model">medical.drug.form</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<tree string="Oemedical Drug Form">
+				<tree string="Medical Drug Form">
 					<field name="code" />
 					<field name="name" />
 				</tree>
@@ -18,7 +18,7 @@
 			<field name="model">medical.drug.form</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Drug Form">
+				<form string="Medical Drug Form">
 					<field name="code" />
 					<field name="name" />
 				</form>
@@ -30,7 +30,7 @@
 			<field name="model">medical.drug.form</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<search string="Oemedical Drug Form">
+				<search string="Medical Drug Form">
 					<field name="code" />
 					<field name="name" />
 					<newline />

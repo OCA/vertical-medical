@@ -6,7 +6,7 @@
 			<field name="model">medical.directions</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<tree string="Oemedical Directions">
+				<tree string="Medical Directions">
 					<field name="evaluation_id" />
 					<field name="procedure_id" />
 					<field name="comments" />
@@ -19,7 +19,7 @@
 			<field name="model">medical.directions</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Directions">
+				<form string="Medical Directions">
 					<field name="procedure_id" />
 					<field name="evaluation_id" />
 					<field name="comments" />
@@ -32,7 +32,7 @@
 			<field name="model">medical.directions</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<search string="Oemedical Directions">
+				<search string="Medical Directions">
 					<field name="procedure_id" />
 					<field name="evaluation_id" />
 					<field name="comments" />

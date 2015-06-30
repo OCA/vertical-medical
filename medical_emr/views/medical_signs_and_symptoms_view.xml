@@ -6,7 +6,7 @@
 			<field name="model">medical.signs_and_symptoms</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<tree string="Oemedical Signs_And_Symptoms">
+				<tree string="Medical Signs_And_Symptoms">
 					<field name="clinical_id" />
 					<field name="evaluation_id" />
 					<!--field name="sign_or_symptom"/ -->
@@ -20,7 +20,7 @@
 			<field name="model">medical.signs_and_symptoms</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Signs_And_Symptoms">
+				<form string="Medical Signs_And_Symptoms">
 					<field name="clinical_id" />
 					<field name="evaluation_id" />
 					<!--field name="sign_or_symptom"/ -->
@@ -34,7 +34,7 @@
 			<field name="model">medical.signs_and_symptoms</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<search string="Oemedical Signs_And_Symptoms">
+				<search string="Medical Signs_And_Symptoms">
 					<field name="clinical_id" />
 					<field name="evaluation_id" />
 					<field name="comments" />

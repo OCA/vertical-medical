@@ -6,7 +6,7 @@
 			<field name="model">medical.medication.template</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<tree string="Oemedical Medication Template">
+				<tree string="Medical Medication Template">
 					<field name="name" />
 					<field name="start_treatment" />
 					<field name="form" />
@@ -32,7 +32,7 @@
 			<field name="model">medical.medication.template</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Medication Template"  version="7.0">
+				<form string="Medical Medication Template"  version="7.0">
                     <sheet>
                         <h1>
                             <label string="Medicament:"/>
@@ -90,7 +90,7 @@
 			<field name="model">medical.medication.template</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<search string="Oemedical Medication Template">
+				<search string="Medical Medication Template">
 					<field name="name" />
 					<field name="start_treatment" />
 					<field name="form" />

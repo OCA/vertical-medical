@@ -26,7 +26,7 @@
             <field name="model">medical.appointment</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <form string="Oemedical Appointment"  version="7.0">
+                <form string="Medical Appointment"  version="7.0">
                     <header>
                         <field name="stage_id" widget="statusbar" clickable="True"
                                 options="{'fold_field': 'fold'}"
@@ -97,7 +97,7 @@
             <field name="model">medical.appointment</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <search string="Oemedical Appointment">
+                <search string="Medical Appointment">
                     <field name="name" />
                     <field name="patient_id" />
                     <field name="physician_id" />
@@ -132,14 +132,14 @@
             <field name="model">medical.appointment</field>
             <field name="type">kanban</field>
             <field name="arch" type="xml">
-                <kanban version="7.0" class="oe_background_grey" default_group_by="stage_id">
+                <kanban version="7.0" class="background_grey" default_group_by="stage_id">
                     <field name="stage_id"/>
                     <field name="name"/>
                     <templates>
                         <t t-name="kanban-box">
-                            <div class="oe_kanban_content">
-                                <div class="oe_kanban_vignette oe_semantic_html_override">
-                                    <div class="oe_kanban_details">
+                            <div class="kanban_content">
+                                <div class="kanban_vignette semantic_html_override">
+                                    <div class="kanban_details">
                                         <h3>
                                             <a type="open"><field name="name"/></a>
                                         </h3>

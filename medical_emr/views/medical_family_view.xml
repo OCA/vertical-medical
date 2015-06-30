@@ -6,7 +6,7 @@
 			<field name="model">medical.family</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<tree string="Oemedical Family">
+				<tree string="Medical Family">
 					<field name="name" />
 					<!--TBD field name="operational_sector" /-->
 				</tree>
@@ -18,7 +18,7 @@
 			<field name="model">medical.family</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Family" version="7.0">
+				<form string="Medical Family" version="7.0">
                     <sheet>
                         <H1>
                             <label string="Family: "/>
@@ -71,7 +71,7 @@
 			<field name="model">medical.family</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<search string="Oemedical Family">
+				<search string="Medical Family">
 					<field name="info" />
 					<!-- TBD field name="operational_sector" /-->
 					<field name="name" />

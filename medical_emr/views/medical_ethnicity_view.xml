@@ -6,7 +6,7 @@
 			<field name="model">medical.ethnicity</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<tree string="Oemedical Ethnicity">
+				<tree string="Medical Ethnicity">
 					<field name="notes" />
 					<field name="code" />
 					<field name="name" />
@@ -19,7 +19,7 @@
 			<field name="model">medical.ethnicity</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Ethnicity">
+				<form string="Medical Ethnicity">
 					<field name="notes" />
 					<field name="code" />
 					<field name="name" />
@@ -32,7 +32,7 @@
 			<field name="model">medical.ethnicity</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<search string="Oemedical Ethnicity">
+				<search string="Medical Ethnicity">
 					<field name="notes" />
 					<field name="code" />
 					<field name="name" />

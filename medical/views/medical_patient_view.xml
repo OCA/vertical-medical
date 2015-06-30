@@ -6,7 +6,7 @@
              <field name="model">medical.patient</field>
              <field name="priority" eval="8" />
              <field name="arch" type="xml">
-                 <tree string="Oemedical Patient">
+                 <tree string="Medical Patient">
                      <field name="name" />
                      <field name="ref" />
                      <field name="identification_code" />
@@ -24,7 +24,7 @@
               <form string="Patient" version="7.0">
                     <sheet> 
                         <div>
-                            <field name="image" widget='image' class="oe_left oe_avatar"/> 
+                            <field name="image" widget='image' class="left avatar"/> 
                             <div> 
                                  <h1> 
                                     <field name="name" placeholder="First Name" style="width: 20%" />
@@ -37,7 +37,7 @@
                                  <field name="identification_code" style="width: 30%" attrs="{'readonly': True }"/>
                              </div>
                             <div>
-                                 <label for="sex" class="oe_edit_only"/>
+                                 <label for="sex" class="edit_only"/>
                                  <field name="sex" style="width: 30%"/>
                                  <label for="dob"/>
                                  <field name="dob" style="width: 30%"/>
@@ -51,16 +51,16 @@
                                 <group>
                                     <label for="street" string="Address"/>
                                     <div>
-                                        <field name="use_parent_address" class="oe_edit_only oe_inline" invisible="1"/>
-                                        <label for="use_parent_address" class="oe_edit_only" invisible="1"/>
+                                        <field name="use_parent_address" class="edit_only inline" invisible="1"/>
+                                        <label for="use_parent_address" class="edit_only" invisible="1"/>
                                         <field name="street" placeholder="Street..." />
                                         <field name="street2" />
                                         <div class="address_format">
                                             <field name="city" placeholder="City" style="width: 40%" />
-                                            <field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%" options='{"no_open": True}' />
+                                            <field name="state_id" class="no_button" placeholder="State" style="width: 37%" options='{"no_open": True}' />
                                             <field name="zip" placeholder="ZIP" style="width: 20%" />
                                         </div>
-                                        <field name="country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True}' />
+                                        <field name="country_id" placeholder="Country" class="no_button" options='{"no_open": True}' />
                                     </div>
                                     <field name="website" widget="url" placeholder="e.g. www.openerp.com"/>
                                 </group>
@@ -118,30 +118,30 @@
                                     <templates>
                                         <t t-name="kanban-box">
                                             <t t-set="color" t-value="kanban_color(record.color.raw_value)"/>
-                                            <div t-att-class="color + (record.title.raw_value == 1 ? ' oe_kanban_color_alert' : '')" style="position: relative">
+                                            <div t-att-class="color + (record.title.raw_value == 1 ? ' kanban_color_alert' : '')" style="position: relative">
                                                 <a t-if="! read_only_mode" type="delete" style="position: absolute; right: 0; padding: 4px; diplay: inline-block">X</a>
-                                                <div class="oe_module_vignette">
+                                                <div class="module_vignette">
                                                 <a type="open">
                                                     <t t-if="record.has_image.raw_value === true">
-                                                        <img t-att-src="kanban_image('medical.physician', 'image', record.id.value, {'preview_image': 'image_small'})" class="oe_avatar oe_kanban_avatar_smallbox"/>
+                                                        <img t-att-src="kanban_image('medical.physician', 'image', record.id.value, {'preview_image': 'image_small'})" class="avatar kanban_avatar_smallbox"/>
                                                     </t>
                                                     <t t-if="record.image and record.image.raw_value !== false">
-                                                        <img t-att-src="'data:image/png;base64,'+record.image.raw_value" class="oe_avatar oe_kanban_avatar_smallbox"/>
+                                                        <img t-att-src="'data:image/png;base64,'+record.image.raw_value" class="avatar kanban_avatar_smallbox"/>
                                                     </t>
                                                     <t t-if="record.has_image.raw_value === false and (!record.image or record.image.raw_value === false)">
                                                         <t t-if="record.is_company.raw_value === true">
-                                                            <img t-att-src='_s + "/base/static/src/img/company_image.png"' class="oe_kanban_image oe_kanban_avatar_smallbox"/>
+                                                            <img t-att-src='_s + "/base/static/src/img/company_image.png"' class="kanban_image kanban_avatar_smallbox"/>
                                                         </t>
                                                         <t t-if="record.is_company.raw_value === false">
-                                                            <img t-att-src='_s + "/base/static/src/img/avatar.png"' class="oe_kanban_image oe_kanban_avatar_smallbox"/>
+                                                            <img t-att-src='_s + "/base/static/src/img/avatar.png"' class="kanban_image kanban_avatar_smallbox"/>
                                                         </t>
                                                     </t>
                                                 </a>
-                                                    <div class="oe_module_desc">
-                                                        <div class="oe_kanban_box_content oe_kanban_color_bglight oe_kanban_color_border">
-                                                            <table class="oe_kanban_table">
+                                                    <div class="module_desc">
+                                                        <div class="kanban_box_content kanban_color_bglight kanban_color_border">
+                                                            <table class="kanban_table">
                                                                 <tr>
-                                                                    <td class="oe_kanban_title1" align="left" valign="middle">
+                                                                    <td class="kanban_title1" align="left" valign="middle">
                                                                         <h4><a type="open"><field name="name"/></a></h4>
                                                                         <div><a t-if="record.email.raw_value" title="Mail" t-att-href="'mailto:'+record.email.value">
                                                                             <field name="email"/>
@@ -161,9 +161,9 @@
                                 </kanban>
                                 <form string="Dependants" version="7.0">
                                     <sheet>
-                                        <field name="image" widget='image' class="oe_avatar oe_left" options='{"preview_image": "image_medium"}'/>
-                                        <div class="oe_title">
-                                                <label for="name" string="Dependant" class="oe_edit_only"/>
+                                        <field name="image" widget='image' class="avatar left" options='{"preview_image": "image_medium"}'/>
+                                        <div class="title">
+                                                <label for="name" string="Dependant" class="edit_only"/>
                                                 <h1><field name="name" style="width: 90%%" placeholder="Dependant Name" required="True"/></h1>
                                                 <field name="category_id" widget="many2many_tags" placeholder="Tags..." style="width: 70%%"/>
                                         </div>
@@ -171,17 +171,17 @@
                                                 <group col="2" colspan="2">
                                                     <field name="customer" invisible="True"/>
                                                     <field name="use_parent_address" invisible="True"/>
-                                                    <field class="oe_inline" name="type" invisible="True"/>
+                                                    <field class="inline" name="type" invisible="True"/>
                                                     <label for="street" string="Address"/>
                                                     <div name="div_address">
                                                         <field name="street" placeholder="Street..." attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
                                                         <field name="street2" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
                                                         <div class="address_format">
                                                             <field name="city" placeholder="City" style="width: 40%%" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
-                                                            <field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' on_change="onchange_state(state_id)" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                            <field name="state_id" class="no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' on_change="onchange_state(state_id)" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
                                                             <field name="zip" placeholder="ZIP" style="width: 20%%" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
                                                         </div>
-                                                        <field name="country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                        <field name="country_id" placeholder="Country" class="no_button" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
                                                     </div>
                                                 </group>
                                     </sheet>
@@ -199,14 +199,14 @@
             <field name="model">medical.patient</field>
             <field name="type">kanban</field>
             <field name="arch" type="xml">
-                <kanban version="7.0" class="oe_background_grey">
+                <kanban version="7.0" class="background_grey">
                     <field name="name"/>
                     <templates>
                         <t t-name="kanban-box">
-                            <div class="oe_kanban_content">
-                                <div class="oe_kanban_vignette oe_semantic_html_override">
-                                    <a type="open"><img t-att-src="kanban_image('medical.patient', 'image', record.id.value)" width="110" height="110" class="oe_employee_picture"/></a>
-                                    <div class="oe_kanban_details">
+                            <div class="kanban_content">
+                                <div class="kanban_vignette semantic_html_override">
+                                    <a type="open"><img t-att-src="kanban_image('medical.patient', 'image', record.id.value)" width="110" height="110" class="employee_picture"/></a>
+                                    <div class="kanban_details">
                                         <h3>
                                             <a type="open"><field name="name"/></a>
                                         </h3>
@@ -229,7 +229,7 @@
              <field name="model">medical.patient</field>
              <field name="priority" eval="8" />
              <field name="arch" type="xml">
-                 <search string="Oemedical Patient">
+                 <search string="Medical Patient">
                      <field name="name" />
                      <field name="general_info" />
                      <field name="ref" />

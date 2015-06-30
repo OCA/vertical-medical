@@ -1,7 +1,7 @@
 ##############################################################################
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
-#    OeMedical, HMS Opensource Solution
+#    Medical, HMS Opensource Solution
 ##############################################################################
 #    Collaborators of this module:
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
@@ -12,7 +12,7 @@
 #
 ##############################################################################
 #    This project is mantained by OeMEdical Team:
-#    https://launchpad.net/oemedical
+#    https://launchpad.net/medical
 #
 ##############################################################################
 #    It is a collaborative effort between several companies that want to join
@@ -34,23 +34,23 @@
 ##############################################################################
 {
 
-    'name': 'OeMedical EMR: Module Data',
+    'name': 'Medical EMR: Module Data',
     'version': '1.0',
     'author': "OeMEdical Team,Odoo Community Association (OCA)",
     'category': 'Generic Modules/Others',
-    'depends': ['oemedical_emr'],
+    'depends': ['medical_emr'],
     'application': True,
     'description': """
 
-About OeMedical Data
+About Medical Data
 ---------------------
 
-Core Data for oemedical, is kept as a separate module to overcome need of
+Core Data for medical, is kept as a separate module to overcome need of
 localizing core data.
 
 
 """,
-    "website": "http://launchpad.net/oemedical",
+    "website": "http://launchpad.net/medical",
     "licence": "AGPL v3",
     "data": [
         'data/medicament_categories.xml',

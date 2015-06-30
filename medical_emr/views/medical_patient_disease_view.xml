@@ -6,7 +6,7 @@
 			<field name="model">medical.patient.disease</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<tree string="Oemedical Patient Disease">
+				<tree string="Medical Patient Disease">
 					<field name="treatment_description" />
 					<field name="healed_date" />
 					<field name="pathology" />
@@ -37,7 +37,7 @@
 			<field name="model">medical.patient.disease</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Patient Disease">
+				<form string="Medical Patient Disease">
 					<field name="treatment_description" />
 					<field name="healed_date" />
 					<field name="pathology" />
@@ -68,7 +68,7 @@
 			<field name="model">medical.patient.disease</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<search string="Oemedical Patient Disease">
+				<search string="Medical Patient Disease">
 					<field name="treatment_description" />
 					<field name="healed_date" />
 					<field name="pathology" />

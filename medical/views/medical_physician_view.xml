@@ -6,7 +6,7 @@
             <field name="model">medical.physician</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <tree string="Oemedical Physician">
+                <tree string="Medical Physician">
                     <field name="name" />
                     <field name="code" />
                     <field name="specialty" />
@@ -20,13 +20,13 @@
             <field name="model">medical.physician</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <form string="Oemedical Physician" version="7.0">
+                <form string="Medical Physician" version="7.0">
                     <header>
                         <button name="action_update_schedule" string="Update Schedule" type="object" />
                         <button name="%(medical_physician_unavailable_wizard_act)d" string="Create unavailability" type="action" context="{'default_physician_id': active_id}" />
                     </header>
                     <sheet>
-                        <field name="image" widget='image' class="oe_left oe_avatar"/>
+                        <field name="image" widget='image' class="left avatar"/>
                         <div>
                             <h1>
                                 <field name="name" placeholder="Physician's Name" style="width: 20%" />
@@ -70,10 +70,10 @@
                                         <field name="street2"  attrs="{'readonly': [('use_parent_address','=',True)]}"/>
                                         <div class="address_format">
                                             <field name="city" placeholder="City" style="width: 40%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-                                            <field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                            <field name="state_id" class="no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}"/>
                                             <field name="zip" placeholder="ZIP" style="width: 20%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
                                         </div>
-                                        <field name="country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                        <field name="country_id" placeholder="Country" class="no_button" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}"/>
                                     </div>
                                 </group>
                             </page>
@@ -102,7 +102,7 @@
             <field name="model">medical.physician</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <search string="Oemedical Physician">
+                <search string="Medical Physician">
                     <field name="name" />
                     <field name="code" />
                     <field name="specialty" />
