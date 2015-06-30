@@ -7,7 +7,7 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Oemedical Patient Evaluation">
-					<field name="appointment_id" />
+					<field name="evaluation_date" />
 					<field name="patient_id" />
 					<field name="physician_id" />
 					<field name="chief_complaint" />
@@ -45,7 +45,7 @@
         					<field name="specialty" />
                         </div>
                         <div>
-                            <field name="appointment_id" />
+                            <field name="evaluation_date" />
                         </div>
 					<field name="chief_complaint" />
 					<field name="present_illness" />
@@ -66,7 +66,7 @@
 					<field name="user_id" />
 					<!--field name="mood"/ -->
 					<field name="knowledge_current_events" />
-					<field name="next_appointment" />
+					<field name="next_evaluation" />
 					<!--field name="signs_and_symptoms"/ -->
 					<!--field name="loc_motor"/ -->
 					<field name="reliable_info" />
@@ -126,13 +126,13 @@
 					<field name="tag" />
 					<field name="tremor" />
 					<field name="present_illness" />
-					<field name="appointment_id" />
+					<field name="evaluation_date" />
 					<field name="evaluation_start" />
 					<field name="loc" />
 					<field name="user_id" />
 					<field name="physician_id" />
 					<field name="knowledge_current_events" />
-					<field name="next_appointment" />
+					<field name="next_evaluation" />
 					<field name="reliable_info" />
 					<field name="systolic" />
 					<field name="vocabulary" />
@@ -187,7 +187,7 @@
 						<filter string="Present Illness" domain="[]"
 							context="{'group_by':'present_illness'}" />
 						<filter string="Appointment" domain="[]"
-							context="{'group_by':'appointment_id'}" />
+							context="{'group_by':'evaluation_date'}" />
 						<filter string="Start" domain="[]"
 							context="{'group_by':'evaluation_start'}" />
 						<filter string="Level of Consciousness" domain="[]"
@@ -198,7 +198,7 @@
 						<filter string="Knowledge of Current Events" domain="[]"
 							context="{'group_by':'knowledge_current_events'}" />
 						<filter string="Next Appointment" domain="[]"
-							context="{'group_by':'next_appointment'}" />
+							context="{'group_by':'next_evaluation'}" />
 						<filter string="Reliable" domain="[]"
 							context="{'group_by':'reliable_info'}" />
 						<filter string="Systolic Pressure" domain="[]"
