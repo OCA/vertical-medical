@@ -24,6 +24,7 @@ from openerp.osv import fields, orm
 
 from dateutil.relativedelta import relativedelta
 from datetime import datetime
+from openerp.tools.translate import _
 
 
 class MedicalPatientMedCenterRel(orm.Model):
