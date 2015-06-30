@@ -10,7 +10,7 @@
 					<field name="prescription_date" />
 					<field name="name" />
 					<field name="patient_id" />
-					<field name="doctor" />
+					<field name="physician_id" />
 				</tree>
 			</field>
 		</record>
@@ -33,7 +33,7 @@
                         <group col="4" colspan="4">
 					        <field name="patient_id" />
 					        <field name="prescription_date" />
-					        <field name="doctor" />
+					        <field name="physician_id" />
                         </group>
                         <group col="6" colspan="4">
 					        <field name="pharmacy" />
@@ -115,7 +115,7 @@
 					<field name="pregnancy_warning" />
 					<field name="pharmacy" />
 					<field name="prescription_warning_ack" />
-					<field name="doctor" />
+					<field name="physician_id" />
 					<field name="notes"/>
 					<newline />
 					<group expand="0" string="Group By...">
@@ -130,7 +130,7 @@
 						<filter string="Prescription verified" domain="[]"
 							context="{'group_by':'prescription_warning_ack'}" />
 						<filter string="Prescribing Doctor" domain="[]"
-							context="{'group_by':'doctor'}" />
+							context="{'group_by':'physician_id'}" />
 						<filter string="Prescription ID" domain="[]"
 							context="{'group_by':'name'}" />
 					</group>
@@ -156,7 +156,7 @@
                                         <ul>
                                             <li t-if="record.prescription_date.raw_value"><b>Date:</b> <field name="prescription_date"/></li>
                                             <li t-if="record.patient_id.raw_value"><b>Patient:</b> <field name="patient_id"/></li>
-                                            <li t-if="record.doctor.raw_value"><b>Physician:</b> <field name="doctor"/></li>
+                                            <li t-if="record.physician_id.raw_value"><b>Physician:</b> <field name="physician_id"/></li>
                                         </ul>
                                     </div>
                                 </div>

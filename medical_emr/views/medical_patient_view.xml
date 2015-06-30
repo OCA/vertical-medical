@@ -58,7 +58,7 @@
 									<field name="evaluation_type"/>
 									<field name="evaluation_start"/>
 									<field name="specialty"/>
-									<field name="doctor"/>
+									<field name="physician_id"/>
 									<field name="urgency"/>
 									<field name="systolic"/>
 									<field name="diastolic"/>
