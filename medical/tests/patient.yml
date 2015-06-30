@@ -16,15 +16,9 @@
 -
   !record {model: res.users, id: user_patient_arun, context: {no_reset_password: True} }:
     name: User Johanson
-    is_company: False
-    street: 123 Test St
-    street2: Suite 1337
-    city: Las Vegas
-    country_id: base.us
-    phone: +1-888-888-8888
-    email: arun@example.com
     partner_id: partner_patient_arun
-
+    login: arun@example.com
+    password: password
 
 -
   Create New Patient Arun B Soni
