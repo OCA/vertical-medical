@@ -13,4 +13,4 @@
     login: vikas@example.com
     info: 'General Physician'
     code: 'PH101'
-    specialty_id: 'specialty_1'
+    specialty: 'specialty_1'
