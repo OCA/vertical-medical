@@ -99,7 +99,7 @@
 					                    <field name="extra_info" />
 					                    <field name="is_active" />
 					                    <field name="date_stop_treatment" />
-					                    <field name="pcs_code" />
+					                    <field name="identification_code" />
 					                    <field name="is_infectious" />
 					                    <field name="patient_id" />
 					                    <field name="age" />
