@@ -14,7 +14,7 @@
 -
   Create New User for patient
 -
-  !record {model: res.users, id: user_patient_arun, no_reset_password: True, context: "{'no_reset_password': True}" }:
+  !record {model: res.users, id: user_patient_arun, no_reset_password: True, context: {no_reset_password: True} }:
     name: User Johanson
     is_company: False
     street: 123 Test St
