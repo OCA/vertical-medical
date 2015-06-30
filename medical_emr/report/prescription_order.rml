@@ -261,7 +261,7 @@
             <para style="P6">
                 <font color="white"> </font>
             </para>
-            <para style="P12l">[[ o.physician_id.name ]]</para>
+            <para style="P12l">[[ o.doctor.name ]]</para>
 
         </td>
         <td>
