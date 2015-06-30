@@ -1,9 +1,23 @@
 -
+  Create New User
+-
+  !record {model: res.users, id: partner_patient_arun }:
+    name: User Johanson
+    is_company: False
+    street: 123 Test St
+    street2: Suite 1337
+    city: Las Vegas
+    country_id: base.us
+    phone: +1-888-888-8888
+    email: arun@example.com
+
+
+-
   Create New Patient Arun B Soni
 -
   !record {model: medical.patient, id: patient_arun}:
     name: Arun Johanson
-    user_id: arun@example.com
+    user_id: partner_patient_arun
     dob: !eval time.strftime('1990-07-24')
     ref: 'BDM87654PN'
     age: 22
