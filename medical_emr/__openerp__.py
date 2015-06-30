@@ -11,7 +11,7 @@
 #    Planifyied by: Nhomar Hernandéz <nhomar@vauxoo.com>
 #
 ##############################################################################
-#    This project is mantained by OeMEdical Team:
+#    This project is mantained by Medical Team:
 #    https://launchpad.net/medical
 #
 ##############################################################################
@@ -36,7 +36,7 @@
 
     'name': 'Medical EMR : Electronic Medical Record management for Medical',
     'version': '1.0',
-    'author': "OeMEdical Team,Odoo Community Association (OCA)",
+    'author': "Medical Team,Odoo Community Association (OCA)",
     'category': 'Generic Modules/Others',
     'depends': ['medical'],
     'application': True,

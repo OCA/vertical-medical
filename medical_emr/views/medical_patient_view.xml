@@ -28,7 +28,7 @@
 <!-- Patient Medications -->
                             <separator string="Medications" colspan="4"/>
           					<field name="medications"  nolabel="1" colspan="4">  
-			                    <tree string="Oemedical Patient Medication">
+			                    <tree string="Medical Patient Medication">
 				                    <field name="doctor" />
 				                    <field name="adverse_reaction" />
 				                    <field name="notes" />
@@ -38,7 +38,7 @@
 				                    <field name="discontinued_reason" />
 				                    <field name="discontinued" />
 			                    </tree>
-			                    <form string="Oemedical Patient Medication">
+			                    <form string="Medical Patient Medication">
 				                    <field name="doctor" />
 				                    <field name="adverse_reaction" />
 				                    <field name="notes" />
@@ -54,8 +54,7 @@
                         <page string="Evaluations" >
 							<separator string="Evaluations" colspan="4"/>
 							<field name="evaluations"  nolabel="1" colspan="4">
-								<tree string="Oemedical Patient Evaluations">
-									<field name="visit_type"/>
+								<tree string="Medical Patient Evaluations">
 									<field name="evaluation_type"/>
 									<field name="evaluation_start"/>
 									<field name="specialty"/>
@@ -75,7 +74,7 @@
                         <page string="Diseases" >
                                 <separator string="Diseases" colspan="4"/>
               					<field name="diseases"  nolabel="1" colspan="4">  
-				                    <tree string="Oemedical Patient Disease">
+				                    <tree string="Medical Patient Disease">
 					                    <field name="treatment_description" />
 					                    <field name="healed_date" />
 					                    <field name="pathology" />
@@ -86,7 +85,7 @@
 					                    <field name="is_on_treatment" />
 					                    <field name="diagnosed_date" />
 				                    </tree>
-				                    <form string="Oemedical Patient Disease">
+				                    <form string="Medical Patient Disease">
 					                    <field name="treatment_description" />
 					                    <field name="healed_date" />
 					                    <field name="pathology" />
