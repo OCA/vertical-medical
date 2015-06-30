@@ -15,7 +15,7 @@
      							<field name="blood_type" style="width: 8%%"/> 
      							<field name="rh" nolabel="1"/> 
                					<field name="ethnic_group" /> 
-             					<field name="family" invisivle="1" colspan="2"/> 
+             					<field name="relative_id" invisivle="1" colspan="2"/> 
                                 </group>
                                 <group colspan="4" col="4">
                  					<field name="primary_care_doctor" />
