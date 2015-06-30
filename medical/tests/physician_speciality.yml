@@ -36,7 +36,7 @@
 -
   Create New Physician Specialty
 -
-  !record {model: medical.speciality, id: speciality_ana}:
+  !record {model: medical.specialty, id: speciality_ana}:
     name: Anesthesiologists‎
     code: AL
 
