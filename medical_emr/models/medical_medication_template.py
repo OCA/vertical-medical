@@ -101,4 +101,4 @@ class MedicalMedicationTemplate(orm.Model):
                                           'to be taken'),
     }
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+

@@ -56,4 +56,4 @@ class MedicalPathology(orm.Model):
 #        ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
 #    ]
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+

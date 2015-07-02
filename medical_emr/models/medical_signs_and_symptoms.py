@@ -38,4 +38,4 @@ class MedicalSignsAndSymptoms(orm.Model):
         'comments': fields.char(size=256, string='Comments'),
     }
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+

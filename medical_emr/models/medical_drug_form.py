@@ -35,4 +35,4 @@ class MedicalDrugForm(orm.Model):
         ('name_uniq', 'UNIQUE(name)', 'Drug name must be unique!'),
     ]
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+

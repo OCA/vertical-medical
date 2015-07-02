@@ -363,4 +363,4 @@ class MedicalAppointment_history(orm.Model):
 
     _defaults = {}
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+

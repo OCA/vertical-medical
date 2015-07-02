@@ -170,4 +170,4 @@ class create_test_invoice(orm.TransientModel):
 create_test_invoice()
 
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+

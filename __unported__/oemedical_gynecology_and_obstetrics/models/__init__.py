@@ -23,4 +23,4 @@
 from . import oemedical_gynecology_and_obstetrics
 
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+

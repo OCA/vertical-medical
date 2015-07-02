@@ -33,4 +33,4 @@ class MedicalFamilyMember(orm.Model):
                                      help='Family code'),
     }
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+
