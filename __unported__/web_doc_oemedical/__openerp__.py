@@ -1,7 +1,7 @@
 {
     'name': 'OeMedical CMS',
     'category': 'CMS',
-    'description':"""
+    'description': """
 OeMedical Documentation management.
 ===================================
 
@@ -13,8 +13,7 @@ This module is to manage all documentation embedded on OeMedical.
     'depends': [],
     'js': [],
     'css': [],
-    'qweb' : [],
+    'qweb': [],
     'auto_install': False,
     "installable": False,
 }
- 

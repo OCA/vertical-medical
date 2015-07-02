@@ -21,7 +21,6 @@
 # #############################################################################
 
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
 
 
 class ProductProduct(orm.Model):
@@ -42,5 +41,3 @@ class ProductProduct(orm.Model):
                                             help='Check if the product is an '
                                             'insurance plan'),
     }
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

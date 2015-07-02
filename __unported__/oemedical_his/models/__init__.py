@@ -24,5 +24,3 @@ from . import oemedical_hospital_ward
 from . import oemedical_operational_area
 from . import oemedical_operational_sector
 from . import oemedical_surgery
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

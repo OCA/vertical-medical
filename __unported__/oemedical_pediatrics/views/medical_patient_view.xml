@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+ 		<record id="view_medical_patient_form_pediatrics" model="ir.ui.view"> 
+ 			<field name="name">medical.patient.form.pediatrics</field> 
+ 			<field name="model">medical.patient</field> 
+	                <field name="inherit_id" ref="medical.view_medical_patient_form"/>
+ 			<field name="priority" eval="8" /> 
+ 			<field name="arch" type="xml"> 
+ 			 <form string="Patient" version="7.0"> 
+                    <page string="Medication" position="inside">
+<!-- Patient Vaccinations -->
+                        <separator string="Vaccinations" colspan="4"/>
+                        <field name="vaccinations"  nolabel="1" colspan="4"> 
+                            <tree string="Oemedical Vaccination">
+                                <field name="name" />
+                                <field name="vaccine_lot" />
+                                <field name="patient_id" />
+                                <field name="vaccine" />
+                                <field name="dose" />
+                                <field name="observations" />
+                                <field name="date" />
+                                <field name="institution" />
+                                <field name="next_dose_date" />
+                            </tree>
+                            <form string="Oemedical Vaccination">
+                                <field name="name" />
+                                <field name="vaccine_lot" />
+                                <field name="patient_id" />
+                                <field name="vaccine" />
+                                <field name="dose" />
+                                <field name="observations" />
+                                <field name="date" />
+                                <field name="institution" />
+                                <field name="next_dose_date" />
+                            </form>
+                        </field>
+                    </page>
+ 				</form> 
+ 			</field> 
+ 		</record> 
+	</data>
+</openerp>

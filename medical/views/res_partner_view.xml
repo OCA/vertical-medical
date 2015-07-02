@@ -18,7 +18,6 @@
                             <field name="is_doctor" />
                             <field name="is_patient" />
                             <field name="alias" />
-                            <field name="internal_user" />
                             <field name="activation_date" />
                             <field name="is_work" />
                             <field name="is_person" />
