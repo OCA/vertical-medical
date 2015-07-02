@@ -27,4 +27,4 @@ from . import medical_patient
 from . import medical_appointment
 from . import medical_specialty
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+

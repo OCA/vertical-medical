@@ -22,4 +22,4 @@
 
 from . import medical_physician_unavailable
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+
