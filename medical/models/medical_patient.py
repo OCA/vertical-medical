@@ -167,5 +167,3 @@ class MedicalPatient(orm.Model):
 
         return super(MedicalPatient, self).create(cr, uid, vals,
                                                   context=context)
-
-

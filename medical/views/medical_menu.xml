@@ -54,5 +54,3 @@
             sequence="10" action="act_open_medical_physician_view" groups="group_medical_assistant"/>
     </data>
 </openerp>
-
-

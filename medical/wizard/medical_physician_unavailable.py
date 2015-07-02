@@ -76,5 +76,3 @@ class medical_physician_unavailable_wizard(osv.TransientModel):
                                                        context=context)
 
         return {'type': 'ir.actions.act_window_close'}
-
-
