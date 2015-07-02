@@ -34,7 +34,7 @@
                         </div> 
                         <div> 
                             <h3> 
-                                <field name="login" placeholder="Login" style="width: 20%" /> 
+                                <field name="company" placeholder="Company" style="width: 20%" /> 
                             </h3> 
                         </div> 
                         <div> 
