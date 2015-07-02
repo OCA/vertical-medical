@@ -79,12 +79,12 @@ class MedicalPhysicianScheduleTemplate(orm.Model):
 
 class MedicalPhysician(orm.Model):
     _name = 'medical.physician'
-    _inherits = {'res.users': 'user_id', }
+    _inherits = {'res.partner': 'partner_id', }
     _columns = {
         'id': fields.integer('ID', readonly=True),
-        'user_id': fields.many2one('res.users', 'Related User',
+        'partner_id': fields.many2one('res.partner', 'Related Partner',
                                    required=True, ondelete='cascade',
-                                   help='User-related data '
+                                   help='Partner related data '
                                         'of the physician'),
         'code': fields.char(size=256, string='ID'),
         'specialty': fields.many2one('medical.specialty',
