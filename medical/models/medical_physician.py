@@ -83,9 +83,9 @@ class MedicalPhysician(orm.Model):
     _columns = {
         'id': fields.integer('ID', readonly=True),
         'partner_id': fields.many2one('res.partner', 'Related Partner',
-                                   required=True, ondelete='cascade',
-                                   help='Partner related data '
-                                        'of the physician'),
+                                      required=True, ondelete='cascade',
+                                      help='Partner related data '
+                                           'of the physician'),
         'code': fields.char(size=256, string='ID'),
         'specialty': fields.many2one('medical.specialty',
                                      string='Specialty',
