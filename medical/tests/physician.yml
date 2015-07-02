@@ -10,7 +10,6 @@
 -
   !record {model: res.company,id: company_vikas}:
     name: Horrible Doctors, Inc.
-    is_company: True
     street: 3rd Floor Sunclare
     street2: 21 Dreyer Street
     city: Claremont
