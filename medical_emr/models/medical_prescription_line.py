@@ -27,72 +27,8 @@ class MedicalPrescriptionLine(orm.Model):
     _name = 'medical.prescription.line'
 
     def _get_medicament(self, cr, uid, ids, name, args, context=None):
-        # print '_get_medicament', name, args, context, ids
-        # medication_obj = self.pool.get('medical.medication.template')
         result = {}
-
-        # if name == 'form':
-        # result = {'value': {
-        # 'form' : medication_obj.browse(
-        #     cr, uid, medication, context = None).form.id ,
-        # } }
         return result
-
-    # def _get_dose(self, cr, uid, ids, field_name, arg, context=None):
-    # res = {}
-    # for record in self.browse(cr, uid, ids, context=context):
-    # res[record.id] = record.template.dose
-    # return res
-
-    # def _get_frecuency(self, cr, uid, ids, field_name, arg, context=None):
-    # res = {}
-    # for record in self.browse(cr, uid, ids, context=context):
-    #            res[record.id] = 1
-    #        return res
-
-    #    def _get_duration(self, cr, uid, ids, field_name, arg, context=None):
-    #        res = {}
-    #        for record in self.browse(cr, uid, ids, context=context):
-    #            res[record.id] = 1
-    #        return res
-
-    #    def _get_qty(self, cr, uid, ids, field_name, arg, context=None):
-    #        res = {}
-    #        for record in self.browse(cr, uid, ids, context=context):
-    #            res[record.id] = 1
-    #        return res
-
-    #    def _get_frecuency_unit(self, cr, uid, ids, field_name, arg,
-    #        context=None):
-    #        res = {}
-    #        return res
-
-    #    def _get_admin_times(self, cr, uid, ids, name, args, context=None):
-    #        res = {}
-    #        return res
-
-    #    def _get_start_treatment(self, cr, uid, ids, field_name, arg,
-    #        context=None):
-    #        ops = self.browse(cr, uid, ids, context=context)
-    #        res = {}
-    #        for op in ops:
-    #            res[op.id] = False
-    #        return res
-
-    #    def _get_end_treatment(self, cr, uid, ids, field_name, arg,
-    #        context=None):
-    #        ops = self.browse(cr, uid, ids, context=context)
-    #        res = {}
-    #        for op in ops:
-    #            res[op.id] = False
-    #        return res
-
-    #    def _get_duration_period(self, cr, uid, ids, field_name, arg,
-    #        context=None):
-    #        res = {}
-    #        for line in self.browse(cr, uid, ids, context=context):
-    #            res[line.id] = 'days'
-    #        return res
 
     def onchange_template(self, cr, uid, ids, medication, context=None):
         medication_obj = self.pool.get('medical.medication.template')
