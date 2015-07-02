@@ -34,5 +34,3 @@ class MedicalDrugForm(orm.Model):
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Drug name must be unique!'),
     ]
-
-

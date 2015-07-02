@@ -66,4 +66,3 @@ class OeMedicalVaccination(orm.Model):
     }
 
 OeMedicalVaccination()
-

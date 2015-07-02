@@ -37,5 +37,3 @@ class MedicalPathologyGroup(orm.Model):
         'desc': fields.char(size=256, string='Short Description',
                             required=True),
     }
-
-

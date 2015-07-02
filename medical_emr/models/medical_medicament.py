@@ -97,5 +97,3 @@ class MedicalMedicament(orm.Model):
         'presentation': fields.text(string='Presentation'),
         'composition': fields.text(string='Composition', help='Components'),
     }
-
-

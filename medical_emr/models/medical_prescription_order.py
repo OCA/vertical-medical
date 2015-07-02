@@ -73,6 +73,3 @@ class MedicalPrescriptionOrder(orm.Model):
                 'report_name': 'prescription.order',
                 'datas': datas,
                 'nodestroy': True}
-
-
-

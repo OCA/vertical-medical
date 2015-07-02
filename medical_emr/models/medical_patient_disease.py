@@ -92,6 +92,3 @@ class MedicalPatientDisease(orm.Model):
             ' will go on the Extra info field'
         ),
     }
-
-
-

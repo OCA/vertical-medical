@@ -32,5 +32,3 @@ class MedicalFamilyMember(orm.Model):
         'family_id': fields.many2one('medical.family', string='Family',
                                      help='Family code'),
     }
-
-

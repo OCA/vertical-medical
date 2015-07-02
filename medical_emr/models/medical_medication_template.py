@@ -100,5 +100,3 @@ class MedicalMedicationTemplate(orm.Model):
                                      help='Unit of measure for the medication '
                                           'to be taken'),
     }
-
-

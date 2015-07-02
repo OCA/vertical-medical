@@ -242,6 +242,3 @@ class MedicalPatientEvaluation(orm.Model):
         'hdl': fields.integer(string='Last HDL'),
         'diastolic': fields.integer(string='Diastolic Pressure'),
     }
-
-
-

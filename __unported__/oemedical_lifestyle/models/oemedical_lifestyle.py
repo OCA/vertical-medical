@@ -318,6 +318,3 @@ class MedicalPatient(orm.Model):
     }
 
 MedicalPatient()
-
-
-

@@ -84,4 +84,3 @@ localizing core data.
     "active": False,
     "installable": False,
 }
-

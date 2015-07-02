@@ -168,6 +168,3 @@ class create_test_invoice(orm.TransientModel):
 
 
 create_test_invoice()
-
-
-

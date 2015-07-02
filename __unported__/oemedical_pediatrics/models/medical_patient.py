@@ -51,5 +51,3 @@ class MedicalPatient(orm.Model):
         #'vaccinations': fields.one2many('medical.vaccination', 'patient_id', 'Vaccinations',),
         'cod': fields.many2one('medical.pathology', string='Cause of Death',),
     }
-    
-

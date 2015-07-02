@@ -41,4 +41,3 @@ class OeMedicalHospitalOr(orm.Model):
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
     ]
 OeMedicalHospitalOr()
-

@@ -33,5 +33,3 @@ class MedicalSecondaryCondition(orm.Model):
                                          string='Evaluation', readonly=True),
         'comments': fields.char(size=256, string='Comments'),
     }
-
-

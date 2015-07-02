@@ -58,5 +58,3 @@ class MedicalPatient(orm.Model):
                                         string='Ethnic group', ),
         'cod': fields.many2one('medical.pathology', string='Cause of Death', ),
     }
-
-

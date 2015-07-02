@@ -411,6 +411,3 @@ class PatientColposcopyHistory(orm.Model):
         ], 'result', help="Please check the lab test results if the module is installed", sort=False),
         'comments': fields.char('Remarks'),
     }
-
-
-

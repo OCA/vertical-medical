@@ -115,4 +115,3 @@ OeMedical at a glance:
     "active": False,
     "installable": False,
 }
-

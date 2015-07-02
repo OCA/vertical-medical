@@ -53,4 +53,3 @@ class OeMedicalHospitalBed(orm.Model):
     }
 
 OeMedicalHospitalBed()
-

@@ -63,4 +63,3 @@ class OeMedicalHospitalWard(orm.Model):
     }
 
 OeMedicalHospitalWard()
-

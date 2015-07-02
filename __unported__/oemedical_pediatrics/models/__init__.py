@@ -21,6 +21,3 @@
 #/#############################################################################
 import medical_vaccination
 import medical_patient
-
-
-

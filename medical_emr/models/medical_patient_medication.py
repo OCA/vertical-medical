@@ -53,6 +53,3 @@ class MedicalPatientMedication(orm.Model):
         ),
         'discontinued': fields.boolean(string='Discontinued'),
     }
-
-
-

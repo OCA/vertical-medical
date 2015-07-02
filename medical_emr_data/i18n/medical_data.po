@@ -6516,4 +6516,3 @@ msgstr ""
 #: model:medical.occupation,name:medical_data.occ57
 msgid "Clerk"
 msgstr ""
-

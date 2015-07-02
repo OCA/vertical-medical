@@ -47,6 +47,3 @@ from . import medical_occupation
 from . import medical_disease_group_members
 from . import medical_medicament
 from . import medical_pathology_group
-
-
-

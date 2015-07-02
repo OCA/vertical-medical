@@ -49,4 +49,3 @@ class OeMedicalInsurancePlan(orm.Model):
     }
 
 OeMedicalInsurancePlan()
-

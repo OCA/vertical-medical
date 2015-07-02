@@ -37,5 +37,3 @@ class MedicalSignsAndSymptoms(orm.Model):
         ], string='Subjective / Objective', required=True),
         'comments': fields.char(size=256, string='Comments'),
     }
-
-

@@ -33,6 +33,3 @@ class MedicalDiseaseGroupMembers(orm.Model):
         'name': fields.many2one('medical.pathology', string='Disease',
                                 readonly=True),
     }
-
-
-

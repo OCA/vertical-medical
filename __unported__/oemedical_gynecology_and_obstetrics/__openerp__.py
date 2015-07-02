@@ -80,4 +80,3 @@ About OeMedical gynecology and obstetrics
     "active": False,
     'installable': False,
 }
-

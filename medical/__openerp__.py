@@ -128,4 +128,3 @@ Odoo Medical at a glance:
     ],
     "active": False
 }
-

@@ -41,5 +41,3 @@ class ProductProduct(orm.Model):
                                             help='Check if the product is an '
                                             'insurance plan'),
     }
-
-

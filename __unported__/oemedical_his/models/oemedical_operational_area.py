@@ -40,4 +40,3 @@ class OeMedicalOperationalArea(orm.Model):
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
     ]
 OeMedicalOperationalArea()
-

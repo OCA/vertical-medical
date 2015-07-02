@@ -64,5 +64,3 @@ class ResPartner(orm.Model):
                                        'medical_center_id',
                                        'Related Patients'),
     }
-
-

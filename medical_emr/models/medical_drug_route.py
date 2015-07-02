@@ -34,5 +34,3 @@ class MedicalDrugRoute(orm.Model):
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Drug Route name must be unique!'),
     ]
-
-

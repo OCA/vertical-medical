@@ -362,5 +362,3 @@ class MedicalAppointment_history(orm.Model):
         'action': fields.text('Action'), }
 
     _defaults = {}
-
-

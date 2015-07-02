@@ -44,4 +44,3 @@
     'installable': False,
     'active': False,
 }
-

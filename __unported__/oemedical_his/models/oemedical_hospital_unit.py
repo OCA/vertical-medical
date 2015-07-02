@@ -45,4 +45,3 @@ class OeMedicalHospitalUnit(orm.Model):
     }
 
 OeMedicalHospitalUnit()
-

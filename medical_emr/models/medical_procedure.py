@@ -31,5 +31,3 @@ class MedicalProcedure(orm.Model):
                                    translate=True),
         'name': fields.char(size=256, string='Code', required=True),
     }
-
-

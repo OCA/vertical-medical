@@ -210,5 +210,3 @@ class MedicalPhysician(orm.Model):
             current_day += one_day
 
         return True
-
-

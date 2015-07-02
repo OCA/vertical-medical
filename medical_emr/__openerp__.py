@@ -139,4 +139,3 @@ Medical at a glance:
     "active": False,
     "installable": True
 }
-

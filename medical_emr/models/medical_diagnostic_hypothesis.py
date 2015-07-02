@@ -34,5 +34,3 @@ class MedicalDiagnosticHypothesis(orm.Model):
                                          'Evaluation', readonly=True),
         'comments': fields.char(size=256, string='Comments'),
     }
-
-

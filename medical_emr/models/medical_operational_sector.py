@@ -36,5 +36,3 @@ class MedicalOperationalSector(orm.Model):
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
     ]
-
-

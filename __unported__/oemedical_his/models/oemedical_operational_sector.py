@@ -38,4 +38,3 @@ class OeMedicalOperationalSector(orm.Model):
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
     ]
 OeMedicalOperationalSector()
-

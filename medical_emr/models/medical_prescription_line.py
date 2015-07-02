@@ -181,5 +181,3 @@ class MedicalPrescriptionLine(orm.Model):
         'prnt': True,
 
     }
-
-

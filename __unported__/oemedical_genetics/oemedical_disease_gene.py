@@ -109,6 +109,3 @@ class oemedicalPatient(orm.Model):
     }
 
 oemedicalPatient()
-
-
-
