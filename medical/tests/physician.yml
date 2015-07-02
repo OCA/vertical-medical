@@ -6,11 +6,23 @@
     code: test Specialty Code
 
 -
+  Create New Company Horrible Doctors, Inc.
+-
+  !record {model: res.company,id: company_vikas}:
+    name: Horrible Doctors, Inc.
+    is_company: True
+    street: 3rd Floor Sunclare
+    street2: 21 Dreyer Street
+    city: Claremont
+    country_id: base.us
+    phone: +1-234-567-8901
+    email: doctors@horrible.example.com
+-
   Create New Physician Vikas M Haribhakti
 -
   !record {model: medical.physician,id: physician_1}:
     name: Vikas M Haribhakti
-    login: vikas@example.com
+    company_id: company_vikas
     info: 'General Physician'
     code: 'PH101'
     specialty: 'specialty_1'
