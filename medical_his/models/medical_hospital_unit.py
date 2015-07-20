@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+##############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,9 +18,17 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
+##############################################################################
 
-import models
+from openerp import fields, models
 
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+class MedicalHospitalUnit(models.Model):
+    _name = 'medical.hospital.unit'
+    _description = 'Medical Hospital Unit'
+
+    name = fields.Char(string='Name')
+    code = fields.Char(string='Code')
+    notes = fields.Text(string='Notes')
+    partner_id = fields.Many2one(
+        comodel_name='res.partner', string='Institution')

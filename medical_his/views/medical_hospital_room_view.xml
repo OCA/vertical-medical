@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_medical_hospital_room_tree" model="ir.ui.view">
+            <field name="name">medical.hospital.room.tree</field>
+            <field name="model">medical.hospital.room</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Hospital Room">
+                    <field name="name" />
+                    <field name="zone_id" />
+                    <field name="unit_id" />
+                    <field name="state"/>
+                    <field name="phone" />
+                    <field name="private" />
+                    <field name="capacity" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_medical_hospital_room_form" model="ir.ui.view">
+            <field name="name">medical.hospital.room.form</field>
+            <field name="model">medical.hospital.room</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <form string="Medical Hospital Room">
+                    <header>
+                        <field name="state" />
+                    </header>
+                    <sheet>
+                        <field name="name" />
+                        <field name="phone" />
+                        <field name="notes" />
+                        <field name="capacity" />
+                        <field name="zone_id" />
+                        <field name="unit_id" />
+                        <field name="private" />
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_medical_hospital_room_search" model="ir.ui.view">
+            <field name="name">medical.hospital.room.search</field>
+            <field name="model">medical.hospital.room</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Medical Hospital Room">
+                    <field name="zone_id" />
+                    <field name="name" />
+                    <field name="phone" />
+                    <field name="private" />
+                    <field name="capacity" />
+                    <field name="notes" />
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Building" domain="[]" context="{'group_by':'zone_id'}" />
+                        <filter string="Name" domain="[]" context="{'group_by':'name'}" />
+                        <filter string="Unit" domain="[]" context="{'group_by':'unit_id'}" />
+                        <filter string="Phone Access" domain="[]"
+                            context="{'group_by':'phone'}" />
+                        <filter string="Private" domain="[]" context="{'group_by':'private'}" />
+                        <filter string="Number of beds" domain="[]"
+                            context="{'group_by':'capacity'}" />
+                        <filter string="Institution" domain="[]"
+                            context="{'group_by':'partner_id'}" />
+                        <filter string="Notes" domain="[]"
+                            context="{'group_by':'notes'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_medical_hospital_room_view">
+            <field name="name">Hospital Room</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.hospital.room</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_medical_hospital_room_search" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_medical_hospital_room_view_form">
+            <field name="act_window_id" ref="act_open_medical_hospital_room_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_medical_hospital_room_form" />
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_medical_hospital_room_view_tree">
+            <field name="act_window_id" ref="act_open_medical_hospital_room_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_medical_hospital_room_tree" />
+        </record>
+
+    </data>
+</openerp>

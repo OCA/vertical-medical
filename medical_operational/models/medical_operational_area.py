@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+##############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,9 +18,28 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
+##############################################################################
 
-import models
+from openerp import fields, models, api
+from openerp.exceptions import ValidationError
 
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+class MedicalOperationalArea(models.Model):
+    _name = 'medical.operational.area'
+    _description = 'Medical Operational Area'
+
+    @api.one
+    @api.constrains('name', 'sector_id')
+    def _check_uniq_name(self):
+        domain = [
+            ('name', '=', self.name),
+            ('sector_id', '=', self.sector_id),
+        ]
+        if self.search(domain):
+            raise ValidationError(
+                'Name is unique by sector')
+
+    name = fields.Char(string='Name')
+    notes = fields.Text(string='Notes')
+    sector_id = fields.Many2one(
+        string='Sector', comodel_name='medical.operational.sector', index=1)
