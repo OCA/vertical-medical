@@ -48,3 +48,11 @@ class TestMedicalHospitalRoom(SharedSetupTransactionCase):
         }
         with self.assertRaises(ValidationError):
             medical_hospital_room.create(vals)
+
+    def test_display_name(self):
+        child_zone = self.env.ref('%s.zone_1_l14' % self._module_ns)
+        room = self.env.ref('%s.room_1' % self._module_ns)
+        self.assertEquals(
+            room.display_name,
+            '%s/%s' % (child_zone.display_name, room.code),
+            'Display name is compute with zone_code/current code')

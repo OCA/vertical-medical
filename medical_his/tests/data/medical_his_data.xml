@@ -7,13 +7,13 @@
             <field name="code">A</field>
         </record>
         <record id="zone_1_l14" model="medical.hospital.zone">
-            <field name="name">Floor 014</field>
-            <field name="code">014</field>
+            <field name="name">Floor 01</field>
+            <field name="code">01</field>
             <field name="parent_id" ref="zone_1" />
         </record>
         <record id="zone_1_l15" model="medical.hospital.zone">
-            <field name="name">Floor 015</field>
-            <field name="code">015</field>
+            <field name="name">Floor 02</field>
+            <field name="code">02</field>
             <field name="parent_id" ref="zone_1" />
         </record>
         <!-- ROOM -->

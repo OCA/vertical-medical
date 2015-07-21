@@ -27,6 +27,7 @@ from openerp.exceptions import ValidationError
 class MedicalHospitalZone(models.Model):
     _name = 'medical.hospital.zone'
     _description = 'Medical Hospital Zone'
+    _rec_name = 'display_name'
 
     @api.one
     @api.constrains('code', 'parent_id')
@@ -44,7 +45,19 @@ class MedicalHospitalZone(models.Model):
         if not self._check_recursion():
             raise ValidationError('Error! You can not create recursive zone.')
 
+    @api.one
+    @api.depends('code', 'parent_id', 'parent_id.code',
+                 'parent_id.display_name')
+    def _compute_display_name(self):
+        if self.parent_id:
+            self.display_name =\
+                '%s/%s' % (self.parent_id.display_name, self.code)
+        else:
+            self.display_name = self.code
+
     name = fields.Char(string='Name')
+    display_name = fields.Char(
+        string='Display Name', compute='_compute_display_name', store=1)
     code = fields.Char(string='Code', required=1)
     notes = fields.Text(string='Notes')
     active = fields.Boolean(string='Active', default=1)

@@ -27,6 +27,7 @@ from openerp.exceptions import ValidationError
 class MedicalHospitalRoom(models.Model):
     _name = 'medical.hospital.room'
     _description = 'Medical Hospital Room'
+    _rec_name = 'display_name'
 
     def _get_selection_state(self):
         return [
@@ -45,7 +46,16 @@ class MedicalHospitalRoom(models.Model):
         if len(self.search(domain)) > 1:
             raise ValidationError('"name" Should be unique per Zone')
 
+    @api.one
+    @api.depends('code', 'zone_id', 'zone_id.code',
+                 'zone_id.display_name')
+    def _compute_display_name(self):
+        self.display_name =\
+            '%s/%s' % (self.zone_id.display_name, self.code)
+
     name = fields.Char(string='Name', required=1)
+    display_name = fields.Char(
+        string='Display Name', compute='_compute_display_name', store=1)
     code = fields.Char(string='Code', required=1)
     phone = fields.Char(string='Name')
     notes = fields.Text(string='Notes')

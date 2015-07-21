@@ -65,3 +65,11 @@ class TestMedicalHospitalBed(SharedSetupTransactionCase):
         bed.write(vals)
         self.assertFalse(bed.active, 'Should be deactivate')
         self.assertFalse(bed.room_id, 'Deactivated bed can have no room_id')
+
+    def test_display_name(self):
+        room = self.env.ref('%s.room_1' % self._module_ns)
+        bed = self.env.ref('%s.bed_1' % self._module_ns)
+        self.assertEquals(
+            bed.display_name,
+            '%s/%s' % (room.display_name, bed.name),
+            'Display name is compute with zone_code/room_code/current code')

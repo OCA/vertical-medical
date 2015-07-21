@@ -51,7 +51,19 @@ class MedicalHospitalBed(models.Model):
         if self.active and not self.room_id:
             raise ValidationError('Room is mandatory for an available bed')
 
+    @api.one
+    @api.depends('name', 'room_id', 'room_id.code',
+                 'room_id.display_name')
+    def _compute_display_name(self):
+        if self.room_id:
+            self.display_name =\
+                '%s/%s' % (self.room_id.display_name, self.name)
+        else:
+            self.display_name = self.name
+
     name = fields.Char(string='Name', required=1)
+    display_name = fields.Char(
+        string='Display Name', compute='_compute_display_name', store=1)
     phone = fields.Char(string='Phone')
     notes = fields.Text(string='Notes')
     active = fields.Boolean(string='Active', default=1)

@@ -29,6 +29,7 @@
                     </header>
                     <sheet>
                         <field name="name" />
+                        <field name="code" />
                         <field name="phone" />
                         <field name="notes" />
                         <field name="capacity" />
