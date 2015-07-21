@@ -48,3 +48,9 @@ class TestMedicalHospitalZone(SharedSetupTransactionCase):
         }
         with self.assertRaises(ValidationError):
             medical_hospital_zone.create(vals)
+
+    def test_recursion_parent_id(self):
+        child_zone = self.env.ref('%s.zone_1_l14' % self._module_ns)
+        parent_zone = self.env.ref('%s.zone_1' % self._module_ns)
+        with self.assertRaises(ValidationError):
+            parent_zone.parent_id = child_zone.id

@@ -38,6 +38,12 @@ class MedicalHospitalZone(models.Model):
         if len(self.search(domain)) > 1:
             raise ValidationError('"name" Should be unique per Parent Zone')
 
+    @api.one
+    @api.constrains('parent_id')
+    def _check_recursion_parent_id(self):
+        if not self._check_recursion():
+            raise ValidationError('Error! You can not create recursive zone.')
+
     name = fields.Char(string='Name')
     code = fields.Char(string='Code', required=1)
     notes = fields.Text(string='Notes')
