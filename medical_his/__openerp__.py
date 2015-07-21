@@ -96,7 +96,7 @@ OeMedical at a glance:
         'views/medical_hospital_zone_view.xml',
         'views/medical_hospital_or_view.xml',
         'views/medical_hospital_unit_view.xml',
-        'views/medical_menu.xml',
+        'views/medical_hospital_menu.xml',
     ],
     'demo': [
     ],

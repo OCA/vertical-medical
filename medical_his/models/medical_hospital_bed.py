@@ -26,6 +26,7 @@ from openerp.exceptions import ValidationError
 
 class MedicalHospitalBed(models.Model):
     _name = 'medical.hospital.bed'
+    _inehrit = ['abstract.medical.hospital']
     _description = 'Medical Hospital Bed'
 
     def _get_selection_state(self):
@@ -67,11 +68,13 @@ class MedicalHospitalBed(models.Model):
     phone = fields.Char(string='Phone')
     notes = fields.Text(string='Notes')
     active = fields.Boolean(string='Active', default=1)
-    state = fields.Selection(_get_selection_state, string='State')
+    state = fields.Selection(
+        _get_selection_state, string='State', default='free')
     bed_type_id = fields.Many2one(
         string='Bed Type', comodel_name='medical.hospital.bed.type', index=1)
     room_id = fields.Many2one(
         string='Room', comodel_name='medical.hospital.room', index=1)
+    expire_date = fields.Datetime(string='Expire Date')
 
 
 class BedType(models.Model):

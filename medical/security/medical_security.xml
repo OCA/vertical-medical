@@ -35,6 +35,12 @@
         <field name="implied_ids" eval="[(4, ref('group_medical_center_manager'))]"/>
     </record>
 
+    <record id="group_medical_configurator" model="res.groups">
+        <field name="name">Medical Configurator</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('group_medical_manager'))]"/>
+    </record>
+
 </data>
 
 <data noupdate="0">

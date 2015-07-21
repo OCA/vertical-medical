@@ -20,32 +20,29 @@
 #
 ##############################################################################
 
-from openerp import fields, models, api
-from openerp.exceptions import ValidationError
+from openerp import models, fields, api
 
 
-class MedicalHospitalOr(models.Model):
-    _name = 'medical.hospital.or'
-    _inherit = ['abstract.medical.hospital']
-    _description = 'Medical Hospital Operating Room'
+class AbstractHospital(models.AbstractModel):
+    _name = 'abstract.medical.hospital'
+    _description = 'Abstract Medical Hospital'
 
     @api.one
-    @api.constrains('name', 'zone_id')
-    def _check_unicity_name(self):
-        domain = [
-            ('name', '=', self.name),
-            ('zone_id', '=', self.zone_id.id),
-        ]
-        if len(self.search(domain)) > 1:
-            raise ValidationError('"name" Should be unique per Zone')
+    @api.depends('active')
+    def _compute_expire_date(self):
+        if self.active:
+            self.expire_date = False
+        else:
+            self.expire_date = fields.datetime.now()
 
-    name = fields.Char(string='Name')
     active = fields.Boolean(string='Active', default=1)
-    zone_id = fields.Many2one(
-        string='Zone', comodel_name='medical.hospital.zone', index=1)
-    partner_id = fields.Many2one(
-        string='Institution', comodel_name='res.partner',
-        domain=[('is_institution', '=', True)], index=1)
-    unit_id = fields.Many2one(
-        string='Unit', comodel_name='medical.hospital.unit', index=1)
-    notes = fields.Text(string='Notes')
+    expire_date = fields.Datetime(string='Expire Date')
+
+    @api.one
+    def action_invalidate(self):
+        self.active = False
+        self.expire_date = fields.datetime.now()
+
+    @api.one
+    def action_revalidate(self):
+        self.active = True

@@ -26,6 +26,7 @@ from openerp.exceptions import ValidationError
 
 class MedicalHospitalUnit(models.Model):
     _name = 'medical.hospital.unit'
+    _inherit = ['abstract.medical.hospital']
     _description = 'Medical Hospital Unit'
 
     @api.one

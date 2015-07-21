@@ -26,6 +26,7 @@ from openerp.exceptions import ValidationError
 
 class MedicalHospitalRoom(models.Model):
     _name = 'medical.hospital.room'
+    _inherit = ['abstract.medical.hospital']
     _description = 'Medical Hospital Room'
     _rec_name = 'display_name'
 
@@ -60,7 +61,8 @@ class MedicalHospitalRoom(models.Model):
     phone = fields.Char(string='Name')
     notes = fields.Text(string='Notes')
     capacity = fields.Integer(string='Capacity')
-    state = fields.Selection(_get_selection_state, string='State')
+    state = fields.Selection(
+        _get_selection_state, string='State', default='free')
     private = fields.Boolean(string='Private')
     active = fields.Boolean(string='Active', default=1)
     unit_id = fields.Many2one(

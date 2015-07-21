@@ -1,83 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
-        <record id="view_medical_hospital_or_tree" model="ir.ui.view">
-            <field name="name">medical.hospital.or.tree</field>
-            <field name="model">medical.hospital.or</field>
-            <field name="priority" eval="8" />
-            <field name="arch" type="xml">
-                <tree string="Medical Hospital Or">
-                    <field name="name" />
-                    <field name="zone_id" />
-                    <field name="partner_id" />
-                    <field name="notes" />
-                </tree>
-            </field>
-        </record>
-
-        <record id="view_medical_hospital_or_form" model="ir.ui.view">
-            <field name="name">medical.hospital.or.form</field>
-            <field name="model">medical.hospital.or</field>
-            <field name="priority" eval="8" />
-            <field name="arch" type="xml">
-                <form string="Medical Hospital Or">
-                    <field name="name" />
-                    <field name="zone_id" />
-                    <field name="partner_id" />
-                    <field name="unit_id" />
-                    <field name="notes" />
-                </form>
-            </field>
-        </record>
-
-        <record id="view_medical_hospital_or_search" model="ir.ui.view">
+        <record id="medical_hospital_or_search_view" model="ir.ui.view">
             <field name="name">medical.hospital.or.search</field>
             <field name="model">medical.hospital.or</field>
-            <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <search string="Medical Hospital Or">
-                    <field name="zone_id" />
+                <search string="Medical Hospital Operating Room" version="7.0">
                     <field name="name" />
+                    <field name="zone_id" />
                     <field name="partner_id" />
                     <field name="unit_id" />
                     <field name="notes" />
-                    <newline />
-                    <group expand="0" string="Group By...">
-                        <filter string="Building" domain="[]" context="{'group_by':'zone_id'}" />
-                        <filter string="Name" domain="[]" context="{'group_by':'name'}" />
-                        <filter string="Institution" domain="[]"
-                            context="{'group_by':'partner_id'}" />
-                        <filter string="Unit" domain="[]" context="{'group_by':'unit_id'}" />
-                        <filter string="Extra Info" domain="[]"
-                            context="{'group_by':'notes'}" />
+
+                    <filter name="unactive" string="Not Active" domain="[('active','=',False)]" />
+
+                    <group expand="0" string="Group By..." name="group_by">
+                        <filter name="zone_id" string="Room" domain="[]" context="{'group_by':'zone_id'}" />
+                        <filter name="unit_id" string="Unit" domain="[]" context="{'group_by':'unit_id'}" />
+                        <filter name="partner_id" string="Institution" domain="[]" context="{'group_by':'partner_id'}" />
                     </group>
                 </search>
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="act_open_medical_hospital_or_view">
-            <field name="name">Hospital Or</field>
+        <record id="medical_hospital_or_tree_view" model="ir.ui.view">
+            <field name="name">medical.hospital.or.tree</field>
+            <field name="model">medical.hospital.or</field>
+            <field name="arch" type="xml">
+                <tree string="Medical Hospital Operating Room" version="7.0">
+                    <field name="name" />
+                    <field name="zone_id" />
+                    <field name="partner_id" />
+                    <field name="unit_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="medical_hospital_or_form_view" model="ir.ui.view">
+            <field name="name">medical.hospital.or.form</field>
+            <field name="model">medical.hospital.or</field>
+            <field name="arch" type="xml">
+                <form string="Medical Hospital Operating Room" version="7.0">
+                    <header>
+                        <span attrs="{'invisible': ['|',('id','=',False),('active','=',False)]}"
+                             groups="medical.group_medical_user">
+                            <button name="action_invalidate" string="Invalidate" type="object"
+                                    confirm="Invalidate Operating Room: proceed anyway?" />
+                            <div attrs="{'invisible': ['|',('id','=',False),('active','=',True)]}">
+                                <button name="action_revalidate" string="Reactivate" type="object"
+                                        confirm="Reactivate document: proceed anyway?" />
+                            </div>
+                        </span>
+                    </header>
+                    <sheet>
+                        <div class="oe_title" name="title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name"   placeholder="Name" /></h1>
+                        </div>
+                        <div class="oe_right oe_button_box" name="buttons">
+                        </div>
+
+                        <group name="data">
+                            <group name="main">
+                                <field name="zone_id" />
+                                <field name="partner_id" />
+                                <field name="unit_id" />
+                            </group>
+                        </group>
+
+                        <group name="state" attrs="{'invisible': [('id','=',False)]}">
+                            <group name="validity">
+                                <field name="create_date" />
+                                <field name="expire_date" attrs="{'invisible': [('active','=',True)]}" />
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page string="Others" name="notes" attrs="{'invisible': [('id','=',False)]}" autofocus="autofocus">
+                                <separator string="Notes"/>
+                                <field name="notes" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div name="configurator" class="oe_form_sheetbg" groups="medical.group_medical_configurator">
+                        <div class="oe_formview oe_form_sheet_width">
+                            <h3>More Info</h3>
+                            <group name="moreinfo">
+                                <field name="id"/>
+                                <field name="active"/>
+                                <field name="display_name"/>
+                            </group>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="medical_hospital_or_action">
+            <field name="name">Hospital Operating Room</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">medical.hospital.or</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_medical_hospital_or_search" />
+            <field name="view_id" ref="medical_hospital_or_tree_view" />
+            <field name="search_view_id" ref="medical_hospital_or_search_view" />
             <field name="domain">[]</field>
             <field name="context">{}</field>
-        </record>
-
-        <record model="ir.actions.act_window.view" id="act_open_medical_hospital_or_view_form">
-            <field name="act_window_id" ref="act_open_medical_hospital_or_view" />
-            <field name="sequence" eval="20" />
-            <field name="view_mode">form</field>
-            <field name="view_id" ref="view_medical_hospital_or_form" />
-        </record>
-
-        <record model="ir.actions.act_window.view" id="act_open_medical_hospital_or_view_tree">
-            <field name="act_window_id" ref="act_open_medical_hospital_or_view" />
-            <field name="sequence" eval="10" />
-            <field name="view_mode">tree</field>
-            <field name="view_id" ref="view_medical_hospital_or_tree" />
         </record>
 
     </data>
