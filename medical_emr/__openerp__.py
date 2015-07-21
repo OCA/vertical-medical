@@ -34,19 +34,17 @@
 ##############################################################################
 {
 
-    'name': 'Medical EMR : Electronic Medical Record management for Medical',
+    'name': 'Odoo Medical : Electronic Medical Record (EMR)',
     'version': '1.0',
-    'author': "Medical Team,Odoo Community Association (OCA)",
-    'category': 'Generic Modules/Others',
+    'category': 'Medical',
+    'author': "Odoo Medical Team,Odoo Community Association (OCA)",
     'depends': ['medical'],
-    'application': True,
     'description': """
-
 About Medical EMR
--------------------
+-----------------
 
 Medical EMR is a multi-user, highly scalable, centralized Electronic
-Medical Record (EMR) for openERP.
+Medical Record (EMR) for Odoo.
 
 Medical provides a free universal Health Information System,
 so doctors and institutions all over the world,
@@ -96,9 +94,7 @@ Medical at a glance:
         'views/medical_signs_and_symptoms_view.xml',
         'views/medical_directions_view.xml',
         'views/medical_pathology_view.xml',
-        # TBD 'views/medical_operational_area_view.xml',
         'views/medical_ethnicity_view.xml',
-        # TBD 'views/medical_operational_sector_view.xml',
         'views/medical_prescription_order_view.xml',
         'views/medical_medicament_category_view.xml',
         'views/medical_diagnostic_hypothesis_view.xml',
@@ -121,21 +117,6 @@ Medical at a glance:
         'security/ir.model.access.csv',
         'medical_menu.xml',
     ],
-    "demo": [
-
-    ],
-    'test': [
-
-    ],
-    'css': [
-
-    ],
-    'js': [
-
-    ],
-    'qweb': [
-
-    ],
-    "active": False,
-    "installable": True
+    'installable': True,
+    'auto_install': False,
 }
