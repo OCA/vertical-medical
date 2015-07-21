@@ -43,6 +43,7 @@ class TestMedicalHospitalRoom(SharedSetupTransactionCase):
         room = self.env.ref('%s.room_1' % self._module_ns)
         vals = {
             'name': room.name,
+            'code': room.code,
             'zone_id': room.zone_id.id,
         }
         with self.assertRaises(ValidationError):

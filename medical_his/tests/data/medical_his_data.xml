@@ -19,6 +19,7 @@
         <!-- ROOM -->
         <record id="room_1" model="medical.hospital.room">
             <field name="name">Room 1</field>
+            <field name="code">1</field>
             <field name="phone">00352145687</field>
             <field name="capacity">5</field>
             <field name="state">full</field>

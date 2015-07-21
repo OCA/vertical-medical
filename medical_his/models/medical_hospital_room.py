@@ -39,13 +39,14 @@ class MedicalHospitalRoom(models.Model):
     @api.constrains('name', 'zone_id')
     def _check_unicity_name(self):
         domain = [
-            ('name', '=', self.name),
+            ('code', '=', self.code),
             ('zone_id', '=', self.zone_id.id),
         ]
         if len(self.search(domain)) > 1:
             raise ValidationError('"name" Should be unique per Zone')
 
-    name = fields.Char(string='Name')
+    name = fields.Char(string='Name', required=1)
+    code = fields.Char(string='Code', required=1)
     phone = fields.Char(string='Name')
     notes = fields.Text(string='Notes')
     capacity = fields.Integer(string='Capacity')
