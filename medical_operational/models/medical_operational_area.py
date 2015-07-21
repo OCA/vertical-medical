@@ -20,26 +20,26 @@
 #
 ##############################################################################
 
-from openerp import fields, models, api
-from openerp.exceptions import ValidationError
+from openerp import fields, models
+from openerp.tools.translate import _
 
 
 class MedicalOperationalArea(models.Model):
     _name = 'medical.operational.area'
     _description = 'Medical Operational Area'
 
-    @api.one
-    @api.constrains('name', 'sector_id')
-    def _check_uniq_name(self):
-        domain = [
-            ('name', '=', self.name),
-            ('sector_id', '=', self.sector_id),
-        ]
-        if self.search(domain):
-            raise ValidationError(
-                'Name is unique by sector')
-
-    name = fields.Char(string='Name')
+    name = fields.Char(string='Name', required=True)
     notes = fields.Text(string='Notes')
-    sector_id = fields.Many2one(
-        string='Sector', comodel_name='medical.operational.sector', index=1)
+    sector_ids = fields.One2many(
+        'medical.operational.sector', 'area_id', string='Operational Sectors')
+
+    _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'Area name must be unique!'),
+    ]
+
+    def copy_data(self, cr, uid, id, default=None, context=None):
+        res = super(MedicalOperationalArea, self).copy_data(
+            cr, uid, id, default=default, context=context)
+        res = dict(res or {})
+        res['name'] = _('%s (copy)') % res.get('name', '?')
+        return res

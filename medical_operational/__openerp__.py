@@ -33,19 +33,17 @@
 #
 ##############################################################################
 {
-
-    'name': 'Medical Operational',
+    'name': 'Odoo Medical : Operational areas and sectors',
     'version': '1.0',
-    'author': 'Odoo Medical Team,Odoo Community Association (OCA)',
-    'category': 'Generic Modules/Others',
-    'depends': ['medical_emr'],
-    'application': True,
+    'category': 'Medical',
+    'author': "Odoo Medical Team,Odoo Community Association (OCA)",
+    'depends': [
+        'medical_emr',
+    ],
     'description': """
-
 About Medical Operational
 -------------------------
-Extention of medical_emr in order to add sector/area concept
-
+Extension of medical_emr in order to add sector/area concept
 """,
     'website': 'http://launchpad.net/medical',
     'licence': 'AGPL v3',
@@ -53,7 +51,9 @@ Extention of medical_emr in order to add sector/area concept
         'security/ir.model.access.csv',
         'views/medical_operational_area_view.xml',
         'views/medical_operational_sector_view.xml',
+        'views/medical_family_view.xml',
+        'views/medical_operational_menu.xml',
     ],
-    'active': False,
     'installable': True,
+    'auto_install': False,
 }

@@ -23,24 +23,10 @@
 from openerp import fields, models
 
 
-class MedicalOperationalSector(models.Model):
-    _name = 'medical.operational.sector'
-    _description = 'Medical Operational Sector'
+class MedicalFamily(models.Model):
+    _inherit = 'medical.family'
 
-    name = fields.Char(string='Name', required=True)
-    area_id = fields.Many2one(
-        string='Operational Area', required=True,
-        comodel_name='medical.operational.area', index=1)
-    notes = fields.Text(string='Notes')
-
-    _sql_constraints = [
-        ('name_uniq', 'UNIQUE(area_id, name)',
-         'Sector name must be unique per area!'),
-    ]
-
-    def copy_data(self, cr, uid, id, default=None, context=None):
-        res = super(MedicalOperationalSector, self).copy_data(
-            cr, uid, id, default=default, context=context)
-        res = dict(res or {})
-        res['name'] = _('%s (copy)') % res.get('name', '?')
-        return res
+    name = fields.Char(help='Family code within an operational sector')
+    sector_id = fields.Many2one(
+        string='Operational Sector',
+        comodel_name='medical.operational.sector', index=1)

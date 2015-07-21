@@ -4,12 +4,9 @@
         <record id="view_medical_operational_area_tree" model="ir.ui.view">
             <field name="name">medical.operational.area.tree</field>
             <field name="model">medical.operational.area</field>
-            <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <tree string="Oemedical Operational_Area">
+                <tree string="Operational Areas">
                     <field name="name" />
-                    <field name="notes" />
-                    <field name="sector_id" />
                 </tree>
             </field>
         </record>
@@ -17,12 +14,29 @@
         <record id="view_medical_operational_area_form" model="ir.ui.view">
             <field name="name">medical.operational.area.form</field>
             <field name="model">medical.operational.area</field>
-            <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <form string="Oemedical Operational_Area">
-                    <field name="name" />
-                    <field name="sector_id"/>
-                    <field name="notes" />
+                <form string="Operational Area">
+                    <header></header>
+                    <sheet>
+                        <div class="oe_title" name="title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" /></h1>
+                        </div>
+                        <div class="oe_right oe_button_box" name="buttons"></div>
+
+                        <notebook>
+                            <page string="Operational Sectors" name="sectors">
+                                <field name="sector_ids" context="{'default_area_id': active_id}">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Notes" name="notes">
+                                <field name="notes"/>
+                            </page>
+                        </notebook>
+                    </sheet>
                 </form>
             </field>
         </record>
@@ -30,47 +44,24 @@
         <record id="view_medical_operational_area_search" model="ir.ui.view">
             <field name="name">medical.operational.area.search</field>
             <field name="model">medical.operational.area</field>
-            <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <search string="Oemedical Operational_Area">
+                <search string="Operational Areas">
                     <field name="name" />
                     <field name="notes" />
-                    <field name="sector_id"/>
-                    <newline />
-                    <group expand="0" string="Group By...">
-                        <filter string="Name" domain="[]" context="{'group_by':'name'}" />
-                    </group>
+                    <field name="sector_ids" widget="many2one"/>
                 </search>
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="act_open_medical_operational_area_view">
-            <field name="name">Operational Area</field>
+        <record id="action_medical_operational_area_view" model="ir.actions.act_window">
+            <field name="name">Operational Areas</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">medical.operational.area</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="view_medical_operational_area_search" />
-            <field name="domain">[]</field>
-            <field name="context">{}</field>
-        </record>
-
-        <record model="ir.actions.act_window.view" id="act_open_medical_operational_area_view_form">
-            <field name="act_window_id" ref="act_open_medical_operational_area_view" />
-            <field name="sequence" eval="20" />
-            <field name="view_mode">form</field>
-            <field name="view_id" ref="view_medical_operational_area_form" />
-        </record>
-
-        <record model="ir.actions.act_window.view" id="act_open_medical_operational_area_view_tree">
-            <field name="act_window_id" ref="act_open_medical_operational_area_view" />
-            <field name="sequence" eval="10" />
-            <field name="view_mode">tree</field>
             <field name="view_id" ref="view_medical_operational_area_tree" />
+            <field name="search_view_id" ref="view_medical_operational_area_search" />
         </record>
-
-        <menuitem id="medical_operational_area" parent="medical.medical_conf_physicians"
-            sequence="60" action="act_open_medical_operational_area_view" />
 
     </data>
 </openerp>
