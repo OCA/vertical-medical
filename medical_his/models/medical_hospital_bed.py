@@ -20,7 +20,8 @@
 #
 ##############################################################################
 
-from openerp import models, fields
+from openerp import models, fields, api
+from openerp.exceptions import ValidationError
 
 
 class MedicalHospitalBed(models.Model):
@@ -34,14 +35,31 @@ class MedicalHospitalBed(models.Model):
             ('occupied', 'Occupied'),
         ]
 
-    name = fields.Char(string='Name')
+    @api.one
+    @api.constrains('name', 'room_id')
+    def _check_unicity_name(self):
+        domain = [
+            ('name', '=', self.name),
+            ('room_id', '=', self.room_id.id),
+        ]
+        if len(self.search(domain)) > 1:
+            raise ValidationError('"name" Should be unique per Room')
+
+    @api.one
+    @api.constrains('room_id', 'active')
+    def _check_room_id(self):
+        if self.active and not self.room_id:
+            raise ValidationError('Room is mandatory for an available bed')
+
+    name = fields.Char(string='Name', required=1)
     phone = fields.Char(string='Phone')
     notes = fields.Text(string='Notes')
+    active = fields.Boolean(string='Active', default=1)
     state = fields.Selection(_get_selection_state, string='State')
     bed_type_id = fields.Many2one(
         string='Bed Type', comodel_name='medical.hospital.bed.type', index=1)
     room_id = fields.Many2one(
-        string='Room', comodel_name='medical.hospital.bed', index=1)
+        string='Room', comodel_name='medical.hospital.room', index=1)
 
 
 class BedType(models.Model):

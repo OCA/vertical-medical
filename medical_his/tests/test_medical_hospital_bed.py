@@ -23,10 +23,45 @@
 #
 ##############################################################################
 
-import openerp.tests.common as common
+from anybox.testing.openerp import SharedSetupTransactionCase
+from openerp.exceptions import ValidationError
 
 
-class TestMedicalHospitalBed(common.TransactionCase):
+class TestMedicalHospitalBed(SharedSetupTransactionCase):
+
+    _data_files = (
+        'data/medical_his_data.xml',
+    )
+
+    _module_ns = 'medical_his'
 
     def setUp(self):
-        common.TransactionCase.setUp(self)
+        SharedSetupTransactionCase.setUp(self)
+
+    def test_unicity(self):
+        medical_hospital_bed = self.env['medical.hospital.bed']
+        bed = self.env.ref('%s.bed_1' % self._module_ns)
+        vals = {
+            'name': bed.name,
+            'room_id': bed.room_id.id,
+        }
+        with self.assertRaises(ValidationError):
+            medical_hospital_bed.create(vals)
+
+    def test_mandatory_room(self):
+        """
+        room_id is mandatory if bed is active.
+        """
+        bed = self.env.ref('%s.bed_1' % self._module_ns)
+        vals = {
+            'room_id': False,
+        }
+        with self.assertRaises(ValidationError):
+            bed.write(vals)
+        vals = {
+            'active': False,
+            'room_id': False,
+        }
+        bed.write(vals)
+        self.assertFalse(bed.active, 'Should be deactivate')
+        self.assertFalse(bed.room_id, 'Deactivated bed can have no room_id')

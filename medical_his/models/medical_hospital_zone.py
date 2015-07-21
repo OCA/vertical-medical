@@ -20,17 +20,30 @@
 #
 ##############################################################################
 
-from openerp import fields, models
+from openerp import fields, models, api
+from openerp.exceptions import ValidationError
 
 
 class MedicalHospitalZone(models.Model):
     _name = 'medical.hospital.zone'
     _description = 'Medical Hospital Zone'
 
+    @api.one
+    @api.constrains('code', 'parent_id')
+    def _check_unicity_name(self):
+        domain = [
+            ('code', '=', self.code),
+            ('parent_id', '=', self.parent_id.id),
+        ]
+        if len(self.search(domain)) > 1:
+            raise ValidationError('"name" Should be unique per Parent Zone')
+
     name = fields.Char(string='Name')
-    code = fields.Char(string='Code')
+    code = fields.Char(string='Code', required=1)
     notes = fields.Text(string='Notes')
+    active = fields.Boolean(string='Active', default=1)
     partner_id = fields.Many2one(
-        string='Institution', comodel_name='res.partner', index=1)
+        string='Institution', comodel_name='res.partner',
+        domain=[('is_institution', '=', True)], index=1)
     parent_id = fields.Many2one(
         string='Parent Zone', comodel_name='medical.hospital.zone', index=1)

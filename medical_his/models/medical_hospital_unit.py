@@ -20,15 +20,29 @@
 #
 ##############################################################################
 
-from openerp import fields, models
+from openerp import fields, models, api
+from openerp.exceptions import ValidationError
 
 
 class MedicalHospitalUnit(models.Model):
     _name = 'medical.hospital.unit'
     _description = 'Medical Hospital Unit'
 
+    @api.one
+    @api.constrains('code')
+    def _check_unicity_name(self):
+        domain = [
+            ('code', '=', self.code),
+        ]
+        if len(self.search(domain)) > 1:
+            raise ValidationError('"code" Should be unique')
+
     name = fields.Char(string='Name')
-    code = fields.Char(string='Code')
+    code = fields.Char(string='Code', required=1)
     notes = fields.Text(string='Notes')
+    active = fields.Boolean(string='Active', default=1)
     partner_id = fields.Many2one(
-        comodel_name='res.partner', string='Institution')
+        comodel_name='res.partner', string='Institution',
+        domain=[('is_institution', '=', True)])
+    parent_id = fields.Many2one(
+        string='Parent Unit', comodel_name='medical.hospital.unit', index=1)

@@ -23,10 +23,28 @@
 #
 ##############################################################################
 
-import openerp.tests.common as common
+from anybox.testing.openerp import SharedSetupTransactionCase
+from openerp.exceptions import ValidationError
 
 
-class TestMedicalHospitalZone(common.TransactionCase):
+class TestMedicalHospitalZone(SharedSetupTransactionCase):
+
+    _data_files = (
+        'data/medical_his_data.xml',
+    )
+
+    _module_ns = 'medical_his'
 
     def setUp(self):
-        common.TransactionCase.setUp(self)
+        SharedSetupTransactionCase.setUp(self)
+
+    def test_unicity(self):
+        medical_hospital_zone = self.env['medical.hospital.zone']
+        zone = self.env.ref('%s.zone_1_l14' % self._module_ns)
+        vals = {
+            'name': zone.name,
+            'code': zone.code,
+            'parent_id': zone.parent_id.id,
+        }
+        with self.assertRaises(ValidationError):
+            medical_hospital_zone.create(vals)
