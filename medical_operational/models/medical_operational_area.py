@@ -20,7 +20,7 @@
 #
 ##############################################################################
 
-from openerp import fields, models
+from openerp import fields, models, api
 from openerp.tools.translate import _
 
 
@@ -37,9 +37,11 @@ class MedicalOperationalArea(models.Model):
         ('name_uniq', 'UNIQUE(name)', 'Area name must be unique!'),
     ]
 
-    def copy_data(self, cr, uid, id, default=None, context=None):
-        res = super(MedicalOperationalArea, self).copy_data(
-            cr, uid, id, default=default, context=context)
-        res = dict(res or {})
-        res['name'] = _('%s (copy)') % res.get('name', '?')
-        return res
+    @api.multi
+    def copy(self, default=None):
+        self.ensure_one()
+        default = default or {}
+        if 'name' not in default:
+            default['name'] = _('%s (copy)') % self.name
+        return super(MedicalOperationalArea, self).copy(
+            default=default)

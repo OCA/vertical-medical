@@ -20,7 +20,8 @@
 #
 ##############################################################################
 
-from openerp import fields, models
+from openerp import fields, models, api
+from openerp.tools.translate import _
 
 
 class MedicalOperationalSector(models.Model):
@@ -38,9 +39,11 @@ class MedicalOperationalSector(models.Model):
          'Sector name must be unique per area!'),
     ]
 
-    def copy_data(self, cr, uid, id, default=None, context=None):
-        res = super(MedicalOperationalSector, self).copy_data(
-            cr, uid, id, default=default, context=context)
-        res = dict(res or {})
-        res['name'] = _('%s (copy)') % res.get('name', '?')
-        return res
+    @api.multi
+    def copy(self, default=None):
+        self.ensure_one()
+        default = default or {}
+        if 'name' not in default:
+            default['name'] = _('%s (copy)') % self.name
+        return super(MedicalOperationalSector, self).copy(
+            default=default)
