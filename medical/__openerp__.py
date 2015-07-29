@@ -10,6 +10,7 @@
 #    Coded by: Mario Arias   <support@cysfuturo.com>
 #    Planifyied by: Parthiv Patel <parthiv@techreceptives.com>
 #    Planifyied by: Nhomar Hernandéz <nhomar@vauxoo.com>
+#    8.0 Port by: Dave Lasley <dave@laslabs.com>
 #
 ##############################################################################
 #    This project is mantained by Odoo Medical Team:
@@ -42,7 +43,7 @@
         'base',
         'product'
     ],
-    'author': "Odoo Medical Team,Odoo Community Association (OCA)",
+    'author': "Odoo Medical Team, LasLabs, Odoo Community Association (OCA)",
     'category': 'Generic Modules/Others',
     'application': True,
     'description': """
