@@ -2796,7 +2796,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em379">
+            <field name="name">vecuronium</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em381">
             <field name="name">gentamicin</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -2813,7 +2820,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em383">
+            <field name="name">prednisolone</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em384">
             <field name="name">tetracaine</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -2919,8 +2933,31 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
-        <record model="product.product" id="prod_em404">
+        <record model="product.product" id="prod_em399">
+            <field name="name">chlorpromazine</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
+        <record model="product.product" id="prod_em401">
+            <field name="name">amitriptyline</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
+        <record model="product.product" id="prod_em403">
+            <field name="name">carbamazepine</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
+        <record model="product.product" id="prod_em405">
             <field name="name">lithium carbonate</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
             <field name="is_medicament">1</field>
@@ -2928,7 +2965,6 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
         <record model="product.product" id="prod_em407">
             <field name="name">clomipramine</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
