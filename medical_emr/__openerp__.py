@@ -9,6 +9,7 @@
 #    Coded by: Ruchir Shukla <ruchir@techreceptives.com>
 #    Planifyied by: Parthiv Patel <parthiv@techreceptives.com>
 #    Planifyied by: Nhomar Hernandéz <nhomar@vauxoo.com>
+#    8.0 Port by: Dave Lasley <dave@laslabs.com>
 #
 ##############################################################################
 #    This project is mantained by Medical Team:
@@ -36,7 +37,7 @@
 
     'name': 'Medical EMR : Electronic Medical Record management for Medical',
     'version': '1.0',
-    'author': "Medical Team,Odoo Community Association (OCA)",
+    'author': "Medical Team, LasLabs, Odoo Community Association (OCA)",
     'category': 'Generic Modules/Others',
     'depends': ['medical'],
     'application': True,
