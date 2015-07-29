@@ -81,6 +81,6 @@ localizing core data.
     'qweb': [
 
     ],
-    "active": False,
-    "installable": False,
+    "active": True,
+    "installable": True,
 }
