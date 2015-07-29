@@ -1132,7 +1132,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em143">
+            <field name="name">amphotericin B</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em144">
             <field name="name">miltefosine</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
