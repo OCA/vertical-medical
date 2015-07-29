@@ -1326,7 +1326,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em171">
+            <field name="name">melarsoprol</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em172">
             <field name="name">benznidazole</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -1335,7 +1342,22 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em173">
+            <field name="name">nifurtimox</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
+        <record model="product.product" id="prod_em175">
+            <field name="name">ibuprofen</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em177">
             <field name="name">propranolol</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
