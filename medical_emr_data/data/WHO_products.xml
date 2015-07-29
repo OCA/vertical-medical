@@ -1607,7 +1607,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em213">
+            <field name="name">diazepam</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em214">
             <field name="name">docusate sodium</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -1632,7 +1639,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em217">
+            <field name="name">ibuprofen</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em218">
             <field name="name">lactulose</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -1641,7 +1655,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em219">
+            <field name="name">midazolam</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em221">
             <field name="name">ondansetron</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
