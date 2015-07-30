@@ -41,16 +41,6 @@
     'category': 'Generic Modules/Others',
     'depends': ['medical_emr'],
     'application': True,
-    'description': """
-
-About Medical Data
----------------------
-
-Core Data for medical, is kept as a separate module to overcome need of
-localizing core data.
-
-
-""",
     "website": "http://launchpad.net/medical",
     "licence": "AGPL v3",
     "data": [
@@ -82,6 +72,5 @@ localizing core data.
     'qweb': [
 
     ],
-    "active": True,
     "installable": True,
 }
