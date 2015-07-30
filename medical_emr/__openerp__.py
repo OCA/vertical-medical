@@ -12,8 +12,8 @@
 #    8.0 Port by: Dave Lasley <dave@laslabs.com>
 #
 ##############################################################################
-#    This project is mantained by Odoo Community Association:
-#    http://github.com/oca/vertical-medical
+#    This project is mantained by Medical Team:
+#    https://launchpad.net/medical
 #
 ##############################################################################
 #    It is a collaborative effort between several companies that want to join
@@ -36,12 +36,13 @@
 {
 
     'name': 'Medical EMR : Electronic Medical Record management for Medical',
-    'version': '8.0.1.1',
-    'author': "Odoo Medical Team, LasLabs, Odoo Community Association (OCA)",
-    'category': 'Medical',
+    'version': '1.0',
+    'author': "Medical Team, LasLabs, Odoo Community Association (OCA)",
+    'category': 'Generic Modules/Others',
     'depends': ['medical'],
+    'application': True,
     "website": "http://github.com/oca/vertical-medical",
-    'license': "AGPL-3",
+    "licence": "AGPL v3",
     "data": [
         'views/medical_sequence.xml',
         'views/medical_secondary_condition_view.xml',
@@ -49,7 +50,9 @@
         'views/medical_signs_and_symptoms_view.xml',
         'views/medical_directions_view.xml',
         'views/medical_pathology_view.xml',
+        # TBD 'views/medical_operational_area_view.xml',
         'views/medical_ethnicity_view.xml',
+        # TBD 'views/medical_operational_sector_view.xml',
         'views/medical_prescription_order_view.xml',
         'views/medical_medicament_category_view.xml',
         'views/medical_diagnostic_hypothesis_view.xml',
@@ -72,7 +75,20 @@
         'security/ir.model.access.csv',
         'medical_menu.xml',
     ],
-    'installable': True,
-    'auto_install': False,
-    'application': True,
+    "demo": [
+
+    ],
+    'test': [
+
+    ],
+    'css': [
+
+    ],
+    'js': [
+
+    ],
+    'qweb': [
+
+    ],
+    "installable": True
 }

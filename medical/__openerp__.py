@@ -13,7 +13,7 @@
 #    8.0 Port by: Dave Lasley <dave@laslabs.com>
 #
 ##############################################################################
-#    This project is mantained by Odoo Community Association:
+#    This project is mantained by Odoo Medical Team:
 #    http://github.com/oca/vertical-medical
 #
 ##############################################################################
@@ -35,17 +35,19 @@
 #
 ##############################################################################
 {
+
     'name': 'Odoo Medical',
-    'version': '8.0.1.1',
+    'version': '1.0',
     'category': 'Medical',
     'depends': [
         'base',
-        'product',
+        'product'
     ],
     'author': "Odoo Medical Team, LasLabs, Odoo Community Association (OCA)",
-    'category': 'Medical',
+    'category': 'Generic Modules/Others',
+    'application': True,
     "website": "http://github.com/oca/vertical-medical",
-    "licence": "AGPL-3",
+    "licence": "AGPL v3",
     "data": [
         'views/medical_sequence.xml',
         'views/product_product_view.xml',
@@ -60,13 +62,23 @@
         'security/ir.model.access.csv',
         'views/medical_menu.xml',
     ],
+    "demo": [
+
+    ],
     'test': [
         'tests/physician.yml',
         'tests/patient.yml',
         'tests/partners.yml',
         'tests/physician_speciality.yml'
     ],
+    'css': [
+
+    ],
+    'js': [
+
+    ],
+    'qweb': [
+
+    ],
     'installable': True,
-    'application': True,
-    'auto_install': False,
 }
