@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <!-- ZONE -->
+        <record id="zone_1" model="medical.hospital.zone">
+            <field name="name">Building A</field>
+            <field name="code">A</field>
+        </record>
+        <record id="zone_1_l14" model="medical.hospital.zone">
+            <field name="name">Floor 01</field>
+            <field name="code">01</field>
+            <field name="parent_id" ref="zone_1" />
+        </record>
+        <record id="zone_1_l15" model="medical.hospital.zone">
+            <field name="name">Floor 02</field>
+            <field name="code">02</field>
+            <field name="parent_id" ref="zone_1" />
+        </record>
+        <!-- ROOM -->
+        <record id="room_1" model="medical.hospital.room">
+            <field name="name">Room 1</field>
+            <field name="code">1</field>
+            <field name="phone">00352145687</field>
+            <field name="capacity">5</field>
+            <field name="state">full</field>
+            <field name="zone_id" ref="zone_1_l14" />
+        </record>
+        <!-- BED -->
+        <record id="bed_1" model="medical.hospital.bed">
+            <field name="name">Lit 1</field>
+            <field name="phone">0035214568795</field>
+            <field name="state">free</field>
+            <field name="room_id" ref="room_1" />
+        </record>
+        <!-- Operating Room -->
+        <record id="or_1" model="medical.hospital.or">
+            <field name="name">OR 1</field>
+            <field name="zone_id" ref="zone_1_l14" />
+        </record>
+        <!-- UNIT -->
+        <record id="unit_1" model="medical.hospital.unit">
+            <field name="name">Unit 1</field>
+            <field name="code">unit_1</field>
+        </record>
+    </data>
+</openerp>

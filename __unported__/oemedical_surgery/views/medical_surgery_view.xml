@@ -1,0 +1,90 @@
+<?xml version="1.0" ?>
+<openerp>
+        <data>
+
+
+<!-- Surgery -->
+
+	<record model="ir.ui.view" id="oemedical_surgery_view">
+		<field name="name">Surgery</field>
+		<field name="model">oemedical.surgery</field>
+		<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Surgery">
+					<field name="name"></field>
+					<field name="description" required="1"></field>
+					<newline/>
+					<field name="pathology"></field>
+					<field name="classification"></field>
+					<newline/>
+					<field name="date"></field>
+					<field name="age"></field>
+					<field name="surgeon"></field>
+					<newline/>
+					<field name="extra_info" colspan='4'></field>
+				</form>
+			</field>
+	</record>
+
+
+		<record model="ir.ui.view" id="oemedical_surgery_tree">
+			<field name="name">Surgery Lists</field>
+			<field name="model">oemedical.surgery</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string='Surgery'>
+					<field name="name"></field>
+					<field name="description"></field>
+					<field name="pathology"></field>
+					<field name="classification"></field>
+					<field name="date"></field>
+				</tree>
+			</field>
+		</record>
+
+
+<!-- Procedure -->
+
+	<record model="ir.ui.view" id="oemedical_procedure_view">
+		<field name="name">Procedure</field>
+		<field name="model">oemedical.procedure</field>
+		<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Procedure">
+					<field name="name"></field>
+					<field name="description"></field>
+				</form>
+			</field>
+	</record>
+
+
+		<record model="ir.ui.view" id="oemedical_procedure_tree">
+			<field name="name">Procedure List</field>
+			<field name="model">oemedical.procedure</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string='Procedure'>
+					<field name="name"></field>
+					<field name="description"></field>
+				</tree>
+			</field>
+		</record>
+
+
+<!-- Include the Surgery page into the Patient History -->
+
+		<record model="ir.ui.view" id="oemedical_patient_view">
+			<field name="name">Patient</field>
+			<field name="model">oemedical.patient</field>
+                        <field name="inherit_id" ref="oemedical.oemedical_patient_view" />
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<notebook>
+				        <page string="Surgeries">
+					        <field name="surgery" colspan="4" nolabel="1" widget="one2many_list"/>
+				        </page>
+				</notebook>
+			</field>
+		</record>
+	</data>
+</openerp>

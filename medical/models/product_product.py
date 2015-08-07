@@ -30,8 +30,6 @@ class ProductProduct(orm.Model):
         'is_medicament': fields.boolean(string='Medicament',
                                         help='Check if the product is a '
                                         'medicament'),
-        'is_bed': fields.boolean(string='Bed', help='Check if the product is '
-                                 'a bed on the gnuhealth.center'),
         'is_vaccine': fields.boolean(string='Vaccine', help='Check if the '
                                      'product is a vaccine'),
         'is_medical_supply': fields.boolean(string='Medical Supply',

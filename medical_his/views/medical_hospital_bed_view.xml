@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="medical_hospital_bed_search_view" model="ir.ui.view">
+            <field name="name">medical.hospital.bed.search</field>
+            <field name="model">medical.hospital.bed</field>
+            <field name="arch" type="xml">
+                <search string="Medical Hospital Bed" version="7.0">
+                    <field name="name" />
+                    <field name="display_name" />
+                    <field name="state" />
+                    <field name="phone" />
+                    <field name="notes" />
+                    <field name="room_id" />
+
+                    <filter name="free" string="Free" domain="[('state','=', 'free')]" />
+                    <separator />
+                    <filter name="occupied" string="Occupied" domain="[('state','=', 'occupied')]" />
+                    <separator />
+                    <filter name="reserved" string="Reserved" domain="[('state','=', 'reserved')]" />
+                    <separator />
+                    <filter name="unactive" string="Not Active" domain="[('active','=',False)]" />
+
+                    <group expand="0" string="Group By..." name="group_by">
+                        <filter name="bed_type_id" string="Bed Type" domain="[]" context="{'group_by':'bed_type_id'}" />
+                        <filter name="room_id" string="Room" domain="[]" context="{'group_by':'room_id'}" />
+                        <filter name="state" string="State" domain="[]" context="{'group_by':'state'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="medical_hospital_bed_tree_view" model="ir.ui.view">
+            <field name="name">medical.hospital.bed.tree</field>
+            <field name="model">medical.hospital.bed</field>
+            <field name="arch" type="xml">
+                <tree string="Medical Hospital Bed" version="7.0">
+                    <field name="display_name" />
+                    <field name="room_id" />
+                    <field name="state" />
+                    <field name="phone" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="medical_hospital_bed_form_view" model="ir.ui.view">
+            <field name="name">medical.hospital.bed.form</field>
+            <field name="model">medical.hospital.bed</field>
+            <field name="arch" type="xml">
+                <form string="Medical Hospital Bed" version="7.0">
+                    <header>
+                        <span attrs="{'invisible': ['|',('id','=',False),('active','=',False)]}"
+                             groups="medical.group_medical_user">
+                            <button name="action_invalidate" string="Invalidate" type="object"
+                                    confirm="Invalidate Bed: proceed anyway?" />
+                            <div attrs="{'invisible': ['|',('id','=',False),('active','=',True)]}">
+                                <button name="action_revalidate" string="Reactivate" type="object"
+                                        confirm="Reactivate document: proceed anyway?" />
+                            </div>
+                        </span>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title" name="title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name"   placeholder="Name" /></h1>
+                        </div>
+                        <div class="oe_right oe_button_box" name="buttons">
+                        </div>
+
+                        <group name="data">
+                            <group name="main">
+                                <field name="room_id" attrs="{
+                                    'required': [('active','=',True)]}" />
+                                <field name="phone" />
+                                <field name="bed_type_id" />
+                            </group>
+                        </group>
+
+                        <group name="state" attrs="{'invisible': [('id','=',False)]}">
+                            <group name="validity">
+                                <field name="create_date" />
+                                <field name="expire_date" attrs="{'invisible': [('active','=',True)]}" />
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page string="Others" name="notes" attrs="{'invisible': [('id','=',False)]}" autofocus="autofocus">
+                                <separator string="Notes"/>
+                                <field name="notes" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div name="configurator" class="oe_form_sheetbg" groups="medical.group_medical_configurator">
+                        <div class="oe_formview oe_form_sheet_width">
+                            <h3>More Info</h3>
+                            <group name="moreinfo">
+                                <field name="id"/>
+                                <field name="active"/>
+                                <field name="display_name"/>
+                            </group>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="medical_hospital_bed_action">
+            <field name="name">Hospital Bed</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.hospital.bed</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="medical_hospital_bed_tree_view" />
+            <field name="search_view_id" ref="medical_hospital_bed_search_view" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+    </data>
+</openerp>

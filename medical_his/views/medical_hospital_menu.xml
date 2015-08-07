@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <menuitem id="medical.medical_health_center_root" name="Health Center"
+            parent="medical.medical_root_sub" sequence="50" />
+
+        <menuitem id="medical_hospital_bed"
+            parent="medical.medical_health_center_root" sequence="10"
+            action="medical_hospital_bed_action" />
+
+        <menuitem id="medical_hospital_room"
+            parent="medical.medical_health_center_root" sequence="20"
+            action="medical_hospital_room_action" />
+
+        <menuitem id="medical_hospital_zone"
+            parent="medical.medical_health_center_root" sequence="30"
+            action="medical_hospital_zone_action" />
+
+        <menuitem id="medical_hospital_or"
+            parent="medical.medical_health_center_root" sequence="40"
+            action="medical_hospital_or_action" />
+
+        <menuitem id="medical_hospital_unit"
+            parent="medical.medical_health_center_root" sequence="50"
+            action="medical_hospital_unit_action" />
+
+    </data>
+</openerp>

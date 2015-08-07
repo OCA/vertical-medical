@@ -28,11 +28,7 @@ class MedicalFamily(orm.Model):
 
     _columns = {
         'info': fields.text(string='Extra Information'),
-        # TBD
-        # 'operational_sector': fields.many2one('medical.operational.sector',
-        #                                      string='Operational Sector', ),
-        'name': fields.char(size=256, string='Family', required=True,
-                            help='Family code within an operational sector'),
+        'name': fields.char(size=256, string='Family', required=True),
         'members': fields.one2many('medical.family_member', 'family_id',
                                    string='Family Members', ),
     }
