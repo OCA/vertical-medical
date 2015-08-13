@@ -35,12 +35,13 @@
                             <group name="main">
                                  <field name="ref"/>
                                  <field name="identification_code"/>
+                                 <field name="medical_center_id"/>
                             </group>
                             <group>
-                                 <field name="sex"/>
                                  <field name="dob"/>
                                  <field name="dod"/>
                                  <field name="age"/>
+                                 <field name="sex"/>
                             </group>
                         </group>
                         <notebook>
@@ -77,21 +78,6 @@
                                      <field name="lang" colspan="2"/>
                                      <field name="opt_out" string="I don't want to receive comercial messages" colspan="2"/>
                                  </group>
-                            </page>
-                            <page string="Medical Centers">
-                                <field name="medical_center_ids">
-                                    colspan="4"
-                                    nolabel="1"
-                                    <tree string="Medical Centers">
-                                        <field name="medical_center_id" />
-                                        <field name="identification_code" />
-                                    </tree>
-                                    <form string="Medical Centers">
-                                        <separator string="Medical Center Information" colspan="4" />
-                                        <field name="medical_center_id" />
-                                        <field name="identification_code" />
-                                    </form>
-                                </field>
                             </page>
                             <page string="Dependants">
                                 <field name="child_ids" context="{'default_contact_id': active_id, 'default_use_parent_address': True, 'default_is_patient': True, 'default_customer': True}}" mode="kanban" domain="[('is_patient', '=', True)]">
@@ -165,23 +151,22 @@
                                                     <h1><field name="name" style="width: 90%%" placeholder="Dependant Name" required="True"/></h1>
                                                     <field name="category_id" widget="many2many_tags" placeholder="Tags..." style="width: 70%%"/>
                                             </div>
-    
-                                                    <group col="2" colspan="2">
-                                                        <field name="customer" invisible="True"/>
-                                                        <field name="use_parent_address" invisible="True"/>
-                                                        <field class="inline" name="type" invisible="True"/>
-                                                        <label for="street" string="Address"/>
-                                                        <div name="div_address">
-                                                            <field name="street" placeholder="Street..." attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
-                                                            <field name="street2" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
-                                                            <div class="address_format">
-                                                                <field name="city" placeholder="City" style="width: 40%%" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
-                                                                <field name="state_id" class="no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' on_change="onchange_state(state_id)" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
-                                                                <field name="zip" placeholder="ZIP" style="width: 20%%" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
-                                                            </div>
-                                                            <field name="country_id" placeholder="Country" class="no_button" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
-                                                        </div>
-                                                    </group>
+                                            <group col="2" colspan="2">
+                                                <field name="customer" invisible="True"/>
+                                                <field name="use_parent_address" invisible="True"/>
+                                                <field class="inline" name="type" invisible="True"/>
+                                                <label for="street" string="Address"/>
+                                                <div name="div_address">
+                                                    <field name="street" placeholder="Street..." attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                    <field name="street2" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                    <div class="address_format">
+                                                        <field name="city" placeholder="City" style="width: 40%%" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                        <field name="state_id" class="no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' on_change="onchange_state(state_id)" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                        <field name="zip" placeholder="ZIP" style="width: 20%%" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                    </div>
+                                                    <field name="country_id" placeholder="Country" class="no_button" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                </div>
+                                            </group>
                                         </sheet>
                                     </form>
                                 </field>
@@ -236,7 +221,6 @@
                      <field name="identification_code" />
                      <newline />
                      <group expand="0" string="Group By...">
-                         <filter string="SSN" domain="[]" context="{'group_by':'ref'}" />
                          <filter string="DoB" domain="[]" context="{'group_by':'dob'}" />
                          <filter string="Age" domain="[]" context="{'group_by':'age'}" />
                          <filter string="ID" domain="[]" context="{'group_by':'identification_code'}" />
