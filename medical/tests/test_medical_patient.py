@@ -25,9 +25,9 @@
 
 from dateutil.relativedelta import relativedelta
 
+from openerp import fields
 from openerp.tests.common import TransactionCase
-from openerp.tools.misc import DEFAULT_SERVER_DATE_FORMAT
-from datetime import datetime, date
+from datetime import date
 
 
 class TestMedicalPatient(TransactionCase):
@@ -50,10 +50,9 @@ class TestMedicalPatient(TransactionCase):
         """
         age = 10
         complete_age = '10y 0m 0d'
-        birth_date = datetime.strftime(
-            date.today() - relativedelta(years=age),
-            DEFAULT_SERVER_DATE_FORMAT)
-        self.vals['dob'] = birth_date,
+        birth_date =\
+            fields.Date.to_string(date.today() - relativedelta(years=age))
+        self.vals['dob'] = birth_date
         patient_id = self.env['medical.patient'].create(self.vals)
         self.assertEquals(
             patient_id.age, complete_age, 'Should be the same age')
