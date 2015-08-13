@@ -5,7 +5,7 @@
             <field name="name">medical.hospital.or.search</field>
             <field name="model">medical.hospital.or</field>
             <field name="arch" type="xml">
-                <search string="Medical Hospital Operating Room" version="7.0">
+                <search string="Medical Hospital Operating Room">
                     <field name="name" />
                     <field name="zone_id" />
                     <field name="partner_id" />
@@ -27,7 +27,7 @@
             <field name="name">medical.hospital.or.tree</field>
             <field name="model">medical.hospital.or</field>
             <field name="arch" type="xml">
-                <tree string="Medical Hospital Operating Room" version="7.0">
+                <tree string="Medical Hospital Operating Room">
                     <field name="name" />
                     <field name="zone_id" />
                     <field name="partner_id" />
@@ -40,7 +40,7 @@
             <field name="name">medical.hospital.or.form</field>
             <field name="model">medical.hospital.or</field>
             <field name="arch" type="xml">
-                <form string="Medical Hospital Operating Room" version="7.0">
+                <form string="Medical Hospital Operating Room">
                     <header>
                         <span attrs="{'invisible': ['|',('id','=',False),('active','=',False)]}"
                              groups="medical.group_medical_user">

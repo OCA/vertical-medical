@@ -5,7 +5,7 @@
             <field name="name">medical.hospital.bed.search</field>
             <field name="model">medical.hospital.bed</field>
             <field name="arch" type="xml">
-                <search string="Medical Hospital Bed" version="7.0">
+                <search string="Medical Hospital Bed">
                     <field name="name" />
                     <field name="display_name" />
                     <field name="state" />
@@ -14,9 +14,7 @@
                     <field name="room_id" />
 
                     <filter name="free" string="Free" domain="[('state','=', 'free')]" />
-                    <separator />
                     <filter name="occupied" string="Occupied" domain="[('state','=', 'occupied')]" />
-                    <separator />
                     <filter name="reserved" string="Reserved" domain="[('state','=', 'reserved')]" />
                     <separator />
                     <filter name="unactive" string="Not Active" domain="[('active','=',False)]" />
@@ -34,7 +32,7 @@
             <field name="name">medical.hospital.bed.tree</field>
             <field name="model">medical.hospital.bed</field>
             <field name="arch" type="xml">
-                <tree string="Medical Hospital Bed" version="7.0">
+                <tree string="Medical Hospital Bed">
                     <field name="display_name" />
                     <field name="room_id" />
                     <field name="state" />
@@ -47,7 +45,7 @@
             <field name="name">medical.hospital.bed.form</field>
             <field name="model">medical.hospital.bed</field>
             <field name="arch" type="xml">
-                <form string="Medical Hospital Bed" version="7.0">
+                <form string="Medical Hospital Bed">
                     <header>
                         <span attrs="{'invisible': ['|',('id','=',False),('active','=',False)]}"
                              groups="medical.group_medical_user">

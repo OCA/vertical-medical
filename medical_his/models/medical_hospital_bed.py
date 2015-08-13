@@ -29,13 +29,6 @@ class MedicalHospitalBed(models.Model):
     _inehrit = ['abstract.medical.hospital']
     _description = 'Medical Hospital Bed'
 
-    def _get_selection_state(self):
-        return [
-            ('free', 'Free'),
-            ('reserved', 'Reserved'),
-            ('occupied', 'Occupied'),
-        ]
-
     @api.one
     @api.constrains('name', 'room_id')
     def _check_unicity_name(self):
@@ -62,18 +55,22 @@ class MedicalHospitalBed(models.Model):
         else:
             self.display_name = self.name
 
-    name = fields.Char(string='Name', required=1)
+    name = fields.Char(string='Name', required=True)
     display_name = fields.Char(
-        string='Display Name', compute='_compute_display_name', store=1)
+        string='Display Name', compute='_compute_display_name', store=True)
     phone = fields.Char(string='Phone')
     notes = fields.Text(string='Notes')
-    active = fields.Boolean(string='Active', default=1)
-    state = fields.Selection(
-        _get_selection_state, string='State', default='free')
+    active = fields.Boolean(default=True)
+    state = fields.Selection([
+        ('free', 'Free'),
+        ('reserved', 'Reserved'),
+        ('occupied', 'Occupied'),
+    ], string='State', default='free')
     bed_type_id = fields.Many2one(
-        string='Bed Type', comodel_name='medical.hospital.bed.type', index=1)
+        string='Bed Type', comodel_name='medical.hospital.bed.type',
+        index=True)
     room_id = fields.Many2one(
-        string='Room', comodel_name='medical.hospital.room', index=1)
+        string='Room', comodel_name='medical.hospital.room', index=True)
     expire_date = fields.Datetime(string='Expire Date')
 
 

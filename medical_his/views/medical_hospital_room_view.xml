@@ -5,7 +5,7 @@
             <field name="name">medical.hospital.room.search</field>
             <field name="model">medical.hospital.room</field>
             <field name="arch" type="xml">
-                <search string="Medical Hospital Room" version="7.0">
+                <search string="Medical Hospital Room">
                     <field name="name" />
                     <field name="code" />
                     <field name="display_name" />
@@ -38,7 +38,7 @@
             <field name="name">medical.hospital.room.tree</field>
             <field name="model">medical.hospital.room</field>
             <field name="arch" type="xml">
-                <tree string="Medical Hospital Room" version="7.0">
+                <tree string="Medical Hospital Room">
                     <field name="display_name" />
                     <field name="zone_id" />
                     <field name="state" />
@@ -52,7 +52,7 @@
             <field name="name">medical.hospital.room.form</field>
             <field name="model">medical.hospital.room</field>
             <field name="arch" type="xml">
-                <form string="Medical Hospital Room" version="7.0">
+                <form string="Medical Hospital Room">
                     <header>
                         <span attrs="{'invisible': ['|',('id','=',False),('active','=',False)]}"
                              groups="medical.group_medical_user">

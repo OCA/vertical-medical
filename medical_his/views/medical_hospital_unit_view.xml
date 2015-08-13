@@ -5,7 +5,7 @@
             <field name="name">medical.hospital.unit.search</field>
             <field name="model">medical.hospital.unit</field>
             <field name="arch" type="xml">
-                <search string="Medical Hospital Unit" version="7.0">
+                <search string="Medical Hospital Unit">
                     <field name="name" />
                     <field name="code" />
                     <field name="notes" />
@@ -26,7 +26,7 @@
             <field name="name">medical.hospital.unit.tree</field>
             <field name="model">medical.hospital.unit</field>
             <field name="arch" type="xml">
-                <tree string="Medical Hospital Unit" version="7.0">
+                <tree string="Medical Hospital Unit">
                     <field name="name" />
                     <field name="code" />
                     <field name="notes" />
@@ -40,7 +40,7 @@
             <field name="name">medical.hospital.unit.form</field>
             <field name="model">medical.hospital.unit</field>
             <field name="arch" type="xml">
-                <form string="Medical Hospital Unit" version="7.0">
+                <form string="Medical Hospital Unit">
                     <header>
                         <span attrs="{'invisible': ['|',('id','=',False),('active','=',False)]}"
                              groups="medical.group_medical_user">

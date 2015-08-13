@@ -11,8 +11,8 @@
 #    Planifyied by: Nhomar Hernandéz <nhomar@vauxoo.com>
 #
 ##############################################################################
-#    This project is mantained by OeMEdical Team:
-#    https://launchpad.net/medical
+#    This project is mantained by Medical Team:
+#    https://github.com/OCA/vertical-medical/
 #
 ##############################################################################
 #    It is a collaborative effort between several companies that want to join
@@ -37,6 +37,7 @@
     'version': '1.0',
     'category': 'Medical',
     'author': "Odoo Medical Team,Odoo Community Association (OCA)",
+    'license': "AGPL-3",
     'depends': [
         'medical_emr',
     ],

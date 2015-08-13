@@ -28,7 +28,7 @@ class MedicalFamily(orm.Model):
 
     _columns = {
         'info': fields.text(string='Extra Information'),
-        'name': fields.char(size=256, string='Family', required=True),
+        'name': fields.char(string='Family', required=True),
         'members': fields.one2many('medical.family_member', 'family_id',
                                    string='Family Members', ),
     }
