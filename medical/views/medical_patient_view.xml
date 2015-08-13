@@ -21,7 +21,7 @@
              <field name="model">medical.patient</field>
              <field name="priority" eval="8" />
              <field name="arch" type="xml">
-              <form string="Patient" version="7.0">
+              <form string="Patient">
                     <header>
                     </header>
                     <sheet>
@@ -143,7 +143,7 @@
                                             </t>
                                         </templates>
                                     </kanban>
-                                    <form string="Dependants" version="7.0">
+                                    <form string="Dependants">
                                         <sheet>
                                             <field name="image" widget='image' class="avatar left" options='{"preview_image": "image_medium"}'/>
                                             <div class="title">
@@ -182,7 +182,7 @@
             <field name="model">medical.patient</field>
             <field name="type">kanban</field>
             <field name="arch" type="xml">
-                <kanban version="7.0" class="background_grey">
+                <kanban class="background_grey">
                     <field name="name"/>
                     <templates>
                         <t t-name="kanban-box">
@@ -223,7 +223,6 @@
                      <group expand="0" string="Group By...">
                          <filter string="DoB" domain="[]" context="{'group_by':'dob'}" />
                          <filter string="Age" domain="[]" context="{'group_by':'age'}" />
-                         <filter string="ID" domain="[]" context="{'group_by':'identification_code'}" />
                      </group>
                  </search>
              </field>

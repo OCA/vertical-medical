@@ -20,7 +20,6 @@
 #
 # #############################################################################
 from openerp import models, fields, api
-from openerp.tools import DEFAULT_SERVER_DATE_FORMAT
 from datetime import datetime
 from openerp.tools.translate import _
 from dateutil.relativedelta import relativedelta
@@ -37,22 +36,6 @@ class MedicalPatient(models.Model):
     _name = 'medical.patient'
     _description = 'Medical Patient'
     _inherits = {'res.partner': 'partner_id', }
-
-    def _get_sex_selection(self):
-        return [
-            ('m', 'Male'),
-            ('f', 'Female'),
-        ]
-
-    def _get_marital_status_selection(self):
-        return [
-            ('s', 'Single'),
-            ('m', 'Married'),
-            ('w', 'Widowed'),
-            ('d', 'Divorced'),
-            ('x', 'Separated'),
-            ('z', 'law marriage'),
-        ]
 
     @api.model
     def _get_default_patient_id(self):
@@ -71,12 +54,10 @@ class MedicalPatient(models.Model):
         """
         now = datetime.now()
         if self.dob:
-            dob = datetime.strptime(
-                self.dob, DEFAULT_SERVER_DATE_FORMAT)
+            dob = fields.Datetime.from_string(self.dob)
 
             if self.deceased:
-                dod = datetime.strptime(
-                    self.dod, DEFAULT_SERVER_DATE_FORMAT)
+                dod = fields.Datetime.from_string(self.dod)
                 delta = relativedelta(dod, dob)
                 deceased = _(' (deceased)')
             else:
@@ -98,18 +79,29 @@ class MedicalPatient(models.Model):
     general_info = fields.Text(string='General Information')
     dob = fields.Date(string='Date of Birth')
     dod = fields.Datetime(string='Deceased Date')
-    active = fields.Boolean(string='Active')
+    active = fields.Boolean(default=True)
     is_patient = fields.Boolean(default=True)
     customer = fields.Boolean(default=True)
     deceased = fields.Boolean(string='Deceased')
     partner_id = fields.Many2one(
-        comodel_name='res.partner', required=1, ondelete='cascade')
-    sex = fields.Selection(selection=_get_sex_selection)
+        comodel_name='res.partner', required=True, ondelete='cascade')
+    sex = fields.Selection(
+        selection=[
+            ('m', 'Male'),
+            ('f', 'Female'),
+        ], string='Gender')
     medical_center_id = fields.Many2one(
         comodel_name='res.partner', domain="[('is_institution', '=', True)]",
         string='Medical Center')
     marital_status = fields.Selection(
-        selection=_get_marital_status_selection, string='Marital Status')
+        selection=[
+            ('s', 'Single'),
+            ('m', 'Married'),
+            ('w', 'Widowed'),
+            ('d', 'Divorced'),
+            ('x', 'Separated'),
+            ('z', 'law marriage'),
+        ], string='Marital Status')
 
     @api.model
     @api.returns('self', lambda value: value.id)
