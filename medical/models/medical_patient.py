@@ -57,6 +57,12 @@ class MedicalPatient(models.Model):
             years_months_days = _('No DoB !')
         self.age = years_months_days
 
+    @api.one
+    def action_invalidate(self):
+        self.active = False
+        self.partner_id.active = False
+        self.dod = fields.Datetime.now()
+
     age = fields.Char(compute='_compute_age')
     identification_code = fields.Char(
         string='Internal Identification',
