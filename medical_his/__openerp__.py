@@ -12,7 +12,7 @@
 #
 ##############################################################################
 #    This project is mantained by OeMEdical Team:
-#    https://launchpad.net/medical
+#    http://github.com/oca/vertical-medical
 #
 ##############################################################################
 #    It is a collaborative effort between several companies that want to join

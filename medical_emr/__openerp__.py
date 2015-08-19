@@ -40,7 +40,7 @@
     'author': "Odoo Medical Team,Odoo Community Association (OCA)",
     'depends': ['medical'],
     "website": "http://github.com/oca/vertical-medical",
-    "licence": "AGPL v3",
+    'license': "AGPL-3",
     "data": [
         'views/medical_sequence.xml',
         'views/medical_secondary_condition_view.xml',
