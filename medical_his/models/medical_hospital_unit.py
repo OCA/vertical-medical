@@ -30,16 +30,16 @@ class MedicalHospitalUnit(models.Model):
     _description = 'Medical Hospital Unit'
 
     @api.one
-    @api.constrains('code')
+    @api.constrains('name')
     def _check_unicity_name(self):
         domain = [
-            ('code', '=', self.code),
+            ('name', '=', self.name),
         ]
         if len(self.search(domain)) > 1:
-            raise ValidationError('"code" Should be unique')
+            raise ValidationError('"name" Should be unique')
 
-    name = fields.Char()
-    code = fields.Char(required=True)
+    name = fields.Char(required=True)
+    label = fields.Char()
     notes = fields.Text()
     active = fields.Boolean(default=True)
     partner_id = fields.Many2one(

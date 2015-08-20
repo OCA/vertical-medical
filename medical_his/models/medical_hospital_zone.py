@@ -31,10 +31,10 @@ class MedicalHospitalZone(models.Model):
     _rec_name = 'display_name'
 
     @api.one
-    @api.constrains('code', 'parent_id')
+    @api.constrains('name', 'parent_id')
     def _check_unicity_name(self):
         domain = [
-            ('code', '=', self.code),
+            ('name', '=', self.name),
             ('parent_id', '=', self.parent_id.id),
         ]
         if len(self.search(domain)) > 1:
@@ -47,18 +47,18 @@ class MedicalHospitalZone(models.Model):
             raise ValidationError('Error! You can not create recursive zone.')
 
     @api.one
-    @api.depends('code', 'parent_id', 'parent_id.code',
+    @api.depends('name', 'parent_id', 'parent_id.name',
                  'parent_id.display_name')
     def _compute_display_name(self):
         if self.parent_id:
             self.display_name =\
-                '%s/%s' % (self.parent_id.display_name, self.code)
+                '%s/%s' % (self.parent_id.display_name, self.name)
         else:
-            self.display_name = self.code
+            self.display_name = self.name
 
-    name = fields.Char()
+    name = fields.Char(required=True)
     display_name = fields.Char(compute='_compute_display_name', store=True)
-    code = fields.Char(required=True)
+    label = fields.Char()
     notes = fields.Text()
     active = fields.Boolean(default=True)
     partner_id = fields.Many2one(

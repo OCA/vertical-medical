@@ -46,7 +46,7 @@ class MedicalHospitalBed(models.Model):
             raise ValidationError('Room is mandatory for an available bed')
 
     @api.one
-    @api.depends('name', 'room_id', 'room_id.code',
+    @api.depends('name', 'room_id', 'room_id.name',
                  'room_id.display_name')
     def _compute_display_name(self):
         if self.room_id:

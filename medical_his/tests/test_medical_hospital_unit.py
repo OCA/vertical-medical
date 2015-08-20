@@ -43,7 +43,7 @@ class TestMedicalHospitalUnit(SharedSetupTransactionCase):
         unit = self.env.ref('%s.unit_1' % self._module_ns)
         vals = {
             'name': unit.name,
-            'code': unit.code,
+            'label': unit.label,
         }
         with self.assertRaises(ValidationError):
             medical_hospital_unit.create(vals)

@@ -43,7 +43,7 @@ class TestMedicalHospitalZone(SharedSetupTransactionCase):
         zone = self.env.ref('%s.zone_1_l14' % self._module_ns)
         vals = {
             'name': zone.name,
-            'code': zone.code,
+            'label': zone.label,
             'parent_id': zone.parent_id.id,
         }
         with self.assertRaises(ValidationError):
@@ -60,17 +60,17 @@ class TestMedicalHospitalZone(SharedSetupTransactionCase):
         parent_zone = self.env.ref('%s.zone_1' % self._module_ns)
         self.assertEquals(
             child_zone.display_name,
-            '%s/%s' % (parent_zone.code, child_zone.code),
+            '%s/%s' % (parent_zone.name, child_zone.name),
             'Display name is compute with parent_code/current code')
-        parent_zone.code = 'B'
+        parent_zone.name = 'B'
         self.assertEquals(
             child_zone.display_name,
-            'B/%s' % child_zone.code,
+            'B/%s' % child_zone.name,
             'Display name is compute with parent_code/current code')
         self.assertEquals(
-            parent_zone.display_name, parent_zone.code,
+            parent_zone.display_name, parent_zone.name,
             'Display name is current code when no parent_id')
         child_zone.parent_id = False
         self.assertEquals(
-            child_zone.display_name, child_zone.code,
+            child_zone.display_name, child_zone.name,
             'Display name is current code when no parent_id')

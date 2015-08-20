@@ -7,6 +7,7 @@
             <field name="arch" type="xml">
                 <search string="Medical Hospital Operating Room">
                     <field name="name" />
+                    <field name="label" />
                     <field name="zone_id" />
                     <field name="partner_id" />
                     <field name="unit_id" />
@@ -62,6 +63,7 @@
 
                         <group name="data">
                             <group name="main">
+                                <field name="label" />
                                 <field name="zone_id" />
                                 <field name="partner_id" />
                                 <field name="unit_id" />

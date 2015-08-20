@@ -43,7 +43,7 @@ class TestMedicalHospitalRoom(SharedSetupTransactionCase):
         room = self.env.ref('%s.room_1' % self._module_ns)
         vals = {
             'name': room.name,
-            'code': room.code,
+            'label': room.label,
             'zone_id': room.zone_id.id,
         }
         with self.assertRaises(ValidationError):
@@ -54,5 +54,5 @@ class TestMedicalHospitalRoom(SharedSetupTransactionCase):
         room = self.env.ref('%s.room_1' % self._module_ns)
         self.assertEquals(
             room.display_name,
-            '%s/%s' % (child_zone.display_name, room.code),
-            'Display name is compute with zone_code/current code')
+            '%s/%s' % (child_zone.display_name, room.name),
+            'Display name is compute with zone_name/current name')

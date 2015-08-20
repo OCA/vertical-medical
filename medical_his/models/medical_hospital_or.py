@@ -39,7 +39,8 @@ class MedicalHospitalOr(models.Model):
         if len(self.search(domain)) > 1:
             raise ValidationError('"name" Should be unique per Zone')
 
-    name = fields.Char()
+    name = fields.Char(required=True)
+    label = fields.Char()
     active = fields.Boolean(default=True)
     zone_id = fields.Many2one(
         string='Zone', comodel_name='medical.hospital.zone', index=True)

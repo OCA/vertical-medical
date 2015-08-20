@@ -7,7 +7,7 @@
             <field name="arch" type="xml">
                 <search string="Medical Hospital Unit">
                     <field name="name" />
-                    <field name="code" />
+                    <field name="label" />
                     <field name="notes" />
                     <field name="parent_id" />
                     <field name="partner_id" />
@@ -28,7 +28,7 @@
             <field name="arch" type="xml">
                 <tree string="Medical Hospital Unit">
                     <field name="name" />
-                    <field name="code" />
+                    <field name="label" />
                     <field name="notes" />
                     <field name="parent_id" />
                     <field name="partner_id" />
@@ -62,7 +62,7 @@
 
                         <group name="data">
                             <group name="main">
-                                <field name="code" />
+                                <field name="label" />
                                 <field name="notes" />
                                 <field name="parent_id" />
                                 <field name="partner_id" />

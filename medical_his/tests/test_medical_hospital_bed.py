@@ -72,4 +72,4 @@ class TestMedicalHospitalBed(SharedSetupTransactionCase):
         self.assertEquals(
             bed.display_name,
             '%s/%s' % (room.display_name, bed.name),
-            'Display name is compute with zone_code/room_code/current code')
+            'Display name is compute with zone_name/room_name/current name')

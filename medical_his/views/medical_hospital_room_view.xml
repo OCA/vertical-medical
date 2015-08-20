@@ -7,7 +7,7 @@
             <field name="arch" type="xml">
                 <search string="Medical Hospital Room">
                     <field name="name" />
-                    <field name="code" />
+                    <field name="label" />
                     <field name="display_name" />
                     <field name="state" />
                     <field name="phone" />
@@ -75,8 +75,8 @@
 
                         <group name="data">
                             <group name="main">
-                                <field name="code" />
                                 <field name="zone_id" />
+                                <field name="label" />
                                 <field name="phone" />
                                 <field name="private" />
                                 <field name="capacity" />
