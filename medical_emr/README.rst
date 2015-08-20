@@ -1,188 +1,64 @@
-[![Build Status](https://travis-ci.org/OCA/vertical-medical.svg?branch=8.0)](https://travis-ci.org/OCA/vertical-medical)
-[![Coverage Status](https://coveralls.io/repos/OCA/vertical-medical/badge.png?branch=8.0)](https://coveralls.io/r/OCA/vertical-medical?branch=8.0)
+.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
+    :alt: License: AGPL-3
 
-What is Odoo Medical
---------------------
+Odoo Medical: Electronic Medical Record (EMR)
+=============================================
 
-**Odoo Medical** is a multi-user, highly scalable, centralized Electronic Medical
-Record (EMR) and Hospital Information System for odoo.
+This module provides extensions of medical in order to include a
+"Centralized Electronic Medical" concept into Odoo.
 
-**Odoo Medical** provides a free universal Health and Hospital Information System,
-so doctors and institutions all over the world, specially in developing
-countries will benefit from a centralized, high quality, secure and scalable
-system.
+Usage
+=====
 
-Odoo Medical at a glance:
----
+.. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
+   :alt: Try me on Runbot
+   :target: https://runbot.odoo-community.org/runbot/159/8.0
 
-- Strong focus in family medicine and Primary Health Care
+.. repo_id is available in https://github.com/OCA/maintainer-tools/blob/master/tools/repos_with_ids.txt
+.. branch is "8.0" for example
 
-- Major interest in Socio-economics (housing conditions, substance abuse,
-education...)
+For further information, please visit:
 
-- Diseases and Medical procedures standards (like ICD-10 / ICD-10-PCS ...)
+* https://www.odoo.com/forum/help-1
 
-- Patient Genetic and Hereditary risks : Over 4200 genes related to
-diseases (NCBI / Genecards)
+Known issues / Roadmap
+======================
 
-- Epidemiological and other statistical reports
-
-- 100% paperless patient examination and history taking
-
-- Patient Administration
-(creation, evaluations / consultations, history ... )
-
-- Doctor Administration
-
-- Lab Administration
-
-- Medicine / Drugs information (vademécum)
-
-- Medical stock and supply chain management
-
-- Hospital Financial Administration
-
-- Designed with industry standards in mind
-
-- Open Source : Licensed under AGPL
+* Improve and provide a full description for this module into the README.rst
 
 
-Contributing
----
+Bug Tracker
+===========
 
-Contributions are welcome, and they are greatly appreciated! Every
-little bit helps, and credit will always be given. 
+Bugs are tracked on `GitHub Issues <https://github.com/OCA/vertical-medical/issues>`_.
+In case of trouble, please check there if your issue has already been reported.
+If you spotted it first, help us smashing it by providing a detailed and welcomed feedback
+`here <https://github.com/OCA/vertical-medical/issues/new?body=module:%20medical_emr%0Aversion:%208.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
-You can contribute in many ways:
 
-Types of Contributions
----
+Credits
+=======
 
-*Report Bugs*
+Contributors
+------------
 
-Report bugs at https://github.com/oca/vertical-medical/issues.
+* Jonathan Nemry <jonathan.nemry@acsone.eu>
+* Parthiv Patel <parthiv@techreceptives.com>
+* Ruchir Shukla <ruchir@techreceptives.com>
+* Parthiv Patel <parthiv@techreceptives.com>
+* Nhomar Hernandéz <nhomar@vauxoo.com>
 
-If you are reporting a bug, please include:
+Maintainer
+----------
 
-- Your operating system name and version.
-- Any details about your local setup that might be helpful in troubleshooting.
-- Detailed steps to reproduce the bug.
+.. image:: https://odoo-community.org/logo.png
+   :alt: Odoo Community Association
+   :target: https://odoo-community.org
 
-*Fix Bugs*
+This module is maintained by the OCA.
 
-Look through the GitHub issues for bugs. Anything tagged with "bug"
-is open to whoever wants to implement it.
+OCA, or the Odoo Community Association, is a nonprofit organization whose
+mission is to support the collaborative development of Odoo features and
+promote its widespread use.
 
-*Implement Features*
-
-Look through the GitHub issues for features. Anything tagged with "feature"
-is open to whoever wants to implement it.
-
-*Write Documentation*
-
-Try to comment your code using PEP guidelines, and don’t repeat yourself.
-TODO: Link the oca standars here.
-
-*Submit Feedback*
-
-The best way to send feedback is to file an issue at https://github.com/oca/vertical-medical/issues.
-
-If you are proposing a feature:
-
-* Explain in detail how it would work.
-* Keep the scope as narrow as possible, to make it easier to implement.
-* Remember that this is a volunteer-driven project, and that contributions
-  are welcome :)
-
-Hacking Odoo Medical
----
-
-1. Clone this repository:
-
-    ```bash
-    $ git clone git@github.com:oca/vertical-medical.git
-    $ cd medical && checkout 8.0
-    ```
-
-2. Create your own branch locally.
-
-    ```bash
-    $ git checkout -b 8.0-your_new_feature_theme
-    ```
-
-3. Push your first change branch to know you start to work on.
-
-    ```bash
-    $ git push -u origin 8.0-your_new_feature_theme
-    ```
-
-4. Prepare your enviroment to work with this repository and the mandatory ones to have all the enviroment ready.
-
-    ```bash
-    $ git clone https://github.com/odoo/odoo.git
-    $ git clone https://github.com/oca/vertical-medical.git
-    $ cd odoo && checkout 8.0
-    $ cd vertical-medical && checkout 8.0
-    ```
-
-5. Create a postgres user (only for this work to avoid problems not related to this enviroment).
-
-    ```bash
-    $ sudo su postgres
-    $ createuser medicaluser -P
-    #put your password just (1) for example.
-    $ createdb medical -U medicaluser -O medicaluser -T remplate0 -E UTF8
-    ```
-
-6. Run the development enviroment.
-
-    ```bash
-    $ cd path/to/odoo/odoo
-    $ ./openerp-server --addons-path=addons/,../medical -r \
-    medicaluser -w 1 --db-filter=medical \
-    -i medical -d medical
-    ```
-
-7. Do your code, and update it passing -u module -d medical (replacing this paramenter above).
-
-8. Before be sure all is ok, we can delete and create db again with -i
-   paramenter to ensure all install correctly.
-
-    ```bash
-    $ sudo su postgres
-    $ dropbd medical
-    $ createdb medical -U medicaluser -O medicaluser -T remplate0 -E UTF8
-    $ ./openerp-server --addons-path=addons/,../medical -r \
-    medicaluser -w 1 --db-filter=medical \
-    -i medical -d medical
-    ```
-
-9. If all is ok installing, please test your enviroment running your code with ‘test-enabled’.
-
-    ```bash
-    $ ./openerp-server --addons-path=addons/,../medical -r \
-    medicaluser -w 1 --db-filter=medical \
-    -i medical -d medical --test-enable
-    ```
-
-**Note:**
-
-    This will take a time, just do it before commit your change and make push.
-
-10. Add your changes to have them versioned.
-
-    ```bash
-    $ git add .
-    ```
-
-11. Commit your changes.
-
-    ```bash
-    $ git commit -m "[TAG] module: what you did"
-    ```
-
-12. Push your first change branch to know you start to work on.
-
-    ```bash
-    $ git push -u origin 8.0-your_new_feature_theme
-    ```
+To contribute to this module, please visit http://odoo-community.org.

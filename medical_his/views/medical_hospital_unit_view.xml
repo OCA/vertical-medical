@@ -62,7 +62,6 @@
 
                         <group name="data">
                             <group name="main">
-                                <field name="name" />
                                 <field name="code" />
                                 <field name="notes" />
                                 <field name="parent_id" />

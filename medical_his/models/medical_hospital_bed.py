@@ -55,28 +55,27 @@ class MedicalHospitalBed(models.Model):
         else:
             self.display_name = self.name
 
-    name = fields.Char(string='Name', required=True)
-    display_name = fields.Char(
-        string='Display Name', compute='_compute_display_name', store=True)
-    phone = fields.Char(string='Phone')
-    notes = fields.Text(string='Notes')
+    name = fields.Char(required=True)
+    display_name = fields.Char(compute='_compute_display_name', store=True)
+    phone = fields.Char()
+    notes = fields.Text()
     active = fields.Boolean(default=True)
     state = fields.Selection([
         ('free', 'Free'),
         ('reserved', 'Reserved'),
         ('occupied', 'Occupied'),
-    ], string='State', default='free')
+    ], default='free')
     bed_type_id = fields.Many2one(
         string='Bed Type', comodel_name='medical.hospital.bed.type',
         index=True)
     room_id = fields.Many2one(
         string='Room', comodel_name='medical.hospital.room', index=True)
-    expire_date = fields.Datetime(string='Expire Date')
+    expire_date = fields.Datetime()
 
 
 class BedType(models.Model):
     _name = 'medical.hospital.bed.type'
     _description = 'Medical Hospital Bed Type'
 
-    name = fields.Char(string='Name')
-    code = fields.Char(string='Code')
+    name = fields.Char()
+    code = fields.Char()

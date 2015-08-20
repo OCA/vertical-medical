@@ -56,14 +56,13 @@ class MedicalHospitalZone(models.Model):
         else:
             self.display_name = self.code
 
-    name = fields.Char(string='Name')
-    display_name = fields.Char(
-        string='Display Name', compute='_compute_display_name', store=1)
-    code = fields.Char(string='Code', required=1)
-    notes = fields.Text(string='Notes')
-    active = fields.Boolean(string='Active', default=1)
+    name = fields.Char()
+    display_name = fields.Char(compute='_compute_display_name', store=True)
+    code = fields.Char(required=True)
+    notes = fields.Text()
+    active = fields.Boolean(default=True)
     partner_id = fields.Many2one(
         string='Institution', comodel_name='res.partner',
-        domain=[('is_institution', '=', True)], index=1)
+        domain=[('is_institution', '=', True)], index=True)
     parent_id = fields.Many2one(
-        string='Parent Zone', comodel_name='medical.hospital.zone', index=1)
+        string='Parent Zone', comodel_name='medical.hospital.zone', index=True)

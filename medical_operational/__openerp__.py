@@ -41,11 +41,6 @@
     'depends': [
         'medical_emr',
     ],
-    'description': """
-About Medical Operational
--------------------------
-Extension of medical_emr in order to add sector/area concept
-""",
     'website': 'http://launchpad.net/medical',
     'license': "AGPL-3",
     'data': [

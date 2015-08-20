@@ -30,13 +30,6 @@ class MedicalHospitalRoom(models.Model):
     _description = 'Medical Hospital Room'
     _rec_name = 'display_name'
 
-    def _get_selection_state(self):
-        return [
-            ('free', 'Free'),
-            ('beds_available', 'Beds available'),
-            ('full', 'Full'),
-        ]
-
     @api.one
     @api.constrains('name', 'zone_id')
     def _check_unicity_name(self):
@@ -54,19 +47,20 @@ class MedicalHospitalRoom(models.Model):
         self.display_name =\
             '%s/%s' % (self.zone_id.display_name, self.code)
 
-    name = fields.Char(string='Name', required=1)
-    display_name = fields.Char(
-        string='Display Name', compute='_compute_display_name', store=1)
-    code = fields.Char(string='Code', required=1)
-    phone = fields.Char(string='Name')
-    notes = fields.Text(string='Notes')
-    capacity = fields.Integer(string='Capacity')
-    state = fields.Selection(
-        _get_selection_state, string='State', default='free')
-    private = fields.Boolean(string='Private')
-    active = fields.Boolean(string='Active', default=1)
+    name = fields.Char(required=True)
+    display_name = fields.Char(compute='_compute_display_name', store=True)
+    code = fields.Char(required=True)
+    phone = fields.Char()
+    notes = fields.Text()
+    capacity = fields.Integer()
+    state = fields.Selection([
+        ('free', 'Free'),
+        ('beds_available', 'Beds available'),
+        ('full', 'Full'), ], default='free')
+    private = fields.Boolean()
+    active = fields.Boolean(default=True)
     unit_id = fields.Many2one(
-        string='Unit', comodel_name='medical.hospital.unit', index=1)
+        string='Unit', comodel_name='medical.hospital.unit', index=True)
     zone_id = fields.Many2one(
-        string='Zone', comodel_name='medical.hospital.zone', index=1,
-        required=1)
+        string='Zone', comodel_name='medical.hospital.zone', index=True,
+        required=True)

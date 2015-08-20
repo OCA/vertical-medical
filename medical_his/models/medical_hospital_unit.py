@@ -38,12 +38,12 @@ class MedicalHospitalUnit(models.Model):
         if len(self.search(domain)) > 1:
             raise ValidationError('"code" Should be unique')
 
-    name = fields.Char(string='Name')
-    code = fields.Char(string='Code', required=1)
-    notes = fields.Text(string='Notes')
-    active = fields.Boolean(string='Active', default=1)
+    name = fields.Char()
+    code = fields.Char(required=True)
+    notes = fields.Text()
+    active = fields.Boolean(default=True)
     partner_id = fields.Many2one(
         comodel_name='res.partner', string='Institution',
-        domain=[('is_institution', '=', True)])
+        domain=[('is_institution', '=', True)], index=True)
     parent_id = fields.Many2one(
-        string='Parent Unit', comodel_name='medical.hospital.unit', index=1)
+        string='Parent Unit', comodel_name='medical.hospital.unit', index=True)

@@ -35,9 +35,9 @@ class AbstractHospital(models.AbstractModel):
         else:
             self.expire_date = fields.Datetime.now()
 
-    active = fields.Boolean(string='Active', default=1)
+    active = fields.Boolean(default=True)
     expire_date = fields.Datetime(
-        compute='_compute_expire_date', string='Expire Date', store=True)
+        compute='_compute_expire_date', store=True)
 
     @api.one
     def action_invalidate(self):
