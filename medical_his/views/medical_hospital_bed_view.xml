@@ -47,14 +47,14 @@
             <field name="arch" type="xml">
                 <form string="Medical Hospital Bed">
                     <header>
-                        <span attrs="{'invisible': ['|',('id','=',False),('active','=',False)]}"
+                        <span attrs="{'invisible': [('id','=',False)]}"
                              groups="medical.group_medical_user">
-                            <button name="action_invalidate" string="Invalidate" type="object"
-                                    confirm="Invalidate Bed: proceed anyway?" />
-                            <div attrs="{'invisible': ['|',('id','=',False),('active','=',True)]}">
-                                <button name="action_revalidate" string="Reactivate" type="object"
-                                        confirm="Reactivate document: proceed anyway?" />
-                            </div>
+                            <button attrs="{'invisible': [('active','=',False)]}"
+                                name="action_invalidate" string="Invalidate" type="object"
+                                confirm="Invalidate Bed: proceed anyway?" />
+                            <button attrs="{'invisible': [('active','=',True)]}"
+                                name="action_revalidate" string="Reactivate" type="object"
+                                confirm="Reactivate document: proceed anyway?" />
                         </span>
                         <field name="state" widget="statusbar"/>
                     </header>
