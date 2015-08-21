@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/OCA/vertical-medical.svg?branch=8.0)](https://travis-ci.org/OCA/vertical-medical)
 [![Coverage Status](https://coveralls.io/repos/OCA/vertical-medical/badge.png?branch=8.0)](https://coveralls.io/r/OCA/vertical-medical?branch=8.0)
 
+*Important note*: in order to facilitate the review process, work to migrate to 8.0 is currently done on the 8.0-incubator branch because it implies several PR's depending on each others and is currently in unstable state. As soon as this stabilizes, it will be merged back in the 8.0 branch and the normal OCA process will resume.
+
 What is Odoo Medical
 ---
 
