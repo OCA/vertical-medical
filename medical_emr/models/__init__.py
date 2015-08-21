@@ -20,8 +20,6 @@
 #
 # #############################################################################
 
-# TBD from . import medical_operational_sector
-# TBD from . import medical_operational_area
 from . import medical_pathology_category
 from . import medical_signs_and_symptoms
 from . import medical_directions

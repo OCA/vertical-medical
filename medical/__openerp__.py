@@ -34,19 +34,16 @@
 #
 ##############################################################################
 {
-
     'name': 'Odoo Medical',
     'version': '1.0',
     'category': 'Medical',
+    'author': "Odoo Medical Team,Odoo Community Association (OCA)",
     'depends': [
         'base',
-        'product'
+        'product',
     ],
-    'author': "Odoo Medical Team,Odoo Community Association (OCA)",
-    'category': 'Generic Modules/Others',
     'application': True,
     'description': """
-
 About Odoo Medical
 ------------------
 
@@ -108,23 +105,12 @@ Odoo Medical at a glance:
         'security/ir.model.access.csv',
         'views/medical_menu.xml',
     ],
-    "demo": [
-
-    ],
     'test': [
         'tests/physician.yml',
         'tests/patient.yml',
         'tests/partners.yml',
         'tests/physician_speciality.yml'
     ],
-    'css': [
-
-    ],
-    'js': [
-
-    ],
-    'qweb': [
-
-    ],
-    "active": False
+    'installable': True,
+    'auto_install': False,
 }

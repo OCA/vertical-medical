@@ -1,7 +1,7 @@
 ##############################################################################
-# OpenERP, Open Source Management Solution
+#    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
-#    Medical, HMS Opensource Solution
+#    OeMedical, HMS Opensource Solution
 ##############################################################################
 #    Collaborators of this module:
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
@@ -12,7 +12,7 @@
 #
 ##############################################################################
 #    This project is mantained by Medical Team:
-#    https://launchpad.net/medical
+#    https://github.com/OCA/vertical-medical/
 #
 ##############################################################################
 #    It is a collaborative effort between several companies that want to join
@@ -33,43 +33,22 @@
 #
 ##############################################################################
 {
-
-    'name': 'Odoo Medical : Electronic Medical Record (EMR)',
+    'name': 'Odoo Medical : Operational areas and sectors',
     'version': '1.0',
     'category': 'Medical',
     'author': "Odoo Medical Team,Odoo Community Association (OCA)",
-    'depends': ['medical'],
-    "website": "http://github.com/oca/vertical-medical",
     'license': "AGPL-3",
-    "data": [
-        'views/medical_sequence.xml',
-        'views/medical_secondary_condition_view.xml',
-        'views/medical_pathology_category_view.xml',
-        'views/medical_signs_and_symptoms_view.xml',
-        'views/medical_directions_view.xml',
-        'views/medical_pathology_view.xml',
-        'views/medical_ethnicity_view.xml',
-        'views/medical_prescription_order_view.xml',
-        'views/medical_medicament_category_view.xml',
-        'views/medical_diagnostic_hypothesis_view.xml',
-        'views/medical_procedure_view.xml',
-        'views/medical_medication_template_view.xml',
-        'views/medical_medication_dosage_view.xml',
-        'views/medical_family_member_view.xml',
-        'views/medical_drug_form_view.xml',
-        'views/medical_patient_medication_view.xml',
-        'views/medical_patient_evaluation_view.xml',
-        'views/medical_prescription_line_view.xml',
-        'views/medical_patient_disease_view.xml',
-        'views/medical_patient_view.xml',
-        'views/medical_drug_route_view.xml',
-        'views/medical_family_view.xml',
-        'views/medical_occupation_view.xml',
-        'views/medical_disease_group_members_view.xml',
-        'views/medical_medicament_view.xml',
-        'views/medical_pathology_group_view.xml',
+    'depends': [
+        'medical_emr',
+    ],
+    'website': 'http://launchpad.net/medical',
+    'license': "AGPL-3",
+    'data': [
         'security/ir.model.access.csv',
-        'medical_menu.xml',
+        'views/medical_operational_area_view.xml',
+        'views/medical_operational_sector_view.xml',
+        'views/medical_family_view.xml',
+        'views/medical_operational_menu.xml',
     ],
     'installable': True,
     'auto_install': False,

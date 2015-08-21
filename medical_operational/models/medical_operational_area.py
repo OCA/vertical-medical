@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# #############################################################################
+##############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,20 +18,30 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-# #############################################################################
+##############################################################################
 
-from openerp.osv import fields, orm
+from openerp import fields, models, api
+from openerp.tools.translate import _
 
 
-class MedicalFamily(orm.Model):
-    _name = 'medical.family'
+class MedicalOperationalArea(models.Model):
+    _name = 'medical.operational.area'
+    _description = 'Medical Operational Area'
 
-    _columns = {
-        'info': fields.text(string='Extra Information'),
-        'name': fields.char(string='Family', required=True),
-        'members': fields.one2many('medical.family_member', 'family_id',
-                                   string='Family Members', ),
-    }
+    name = fields.Char(string='Name', required=True)
+    notes = fields.Text(string='Notes')
+    sector_ids = fields.One2many(
+        'medical.operational.sector', 'area_id', string='Operational Sectors')
+
     _sql_constraints = [
-        ('name_uniq', 'UNIQUE(name)', 'Family Code must be unique!'),
+        ('name_uniq', 'UNIQUE(name)', 'Area name must be unique!'),
     ]
+
+    @api.multi
+    def copy(self, default=None):
+        self.ensure_one()
+        default = default or {}
+        if 'name' not in default:
+            default['name'] = _('%s (copy)') % self.name
+        return super(MedicalOperationalArea, self).copy(
+            default=default)

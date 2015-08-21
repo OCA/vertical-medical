@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
+#    Tech-Receptives Solutions Pvt. Ltd.
+#    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
+#    Special Credit and Thanks to Thymbra Latinoamericana S.A.
+#
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
 #    published by the Free Software Foundation, either version 3 of the
@@ -16,4 +20,29 @@
 #
 ##############################################################################
 
-from . import medical_surgery
+from openerp import models, fields, api
+
+
+class AbstractHospital(models.AbstractModel):
+    _name = 'abstract.medical.hospital'
+    _description = 'Abstract Medical Hospital'
+
+    @api.one
+    @api.depends('active')
+    def _compute_expire_date(self):
+        if self.active:
+            self.expire_date = False
+        else:
+            self.expire_date = fields.Datetime.now()
+
+    active = fields.Boolean(default=True)
+    expire_date = fields.Datetime(
+        compute='_compute_expire_date', store=True)
+
+    @api.one
+    def action_invalidate(self):
+        self.active = False
+
+    @api.one
+    def action_revalidate(self):
+        self.active = True
