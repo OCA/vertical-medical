@@ -28,16 +28,24 @@ class OeMedicalInsurancePlan(orm.Model):
     _name = 'oemedical.insurance.plan'
 
     _columns = {
-        'name': fields.char(string='Name', size=264,required=True,  
-                            help='Insurance company plan'),
-        'is_default': fields.boolean(string='Default plan', 
-        help='Check if this is the default plan when assigning this insurance'\
-        ' company to a patient'),
-        'company': fields.many2one('res.partner', string='Insurance Company',
-                                   required=True),
-        'notes': fields.text(string='Extra info'),
-        'plan': fields.many2one('product.product', string='Plan'),
+        'name': fields.char(
+            string='Name',
+            size=264,
+            required=True,
+            help='Insurance company plan'),
+        'is_default': fields.boolean(
+            string='Default plan',
+            help='Check if this is the default plan when assigning this insurance'
+            ' company to a patient'),
+        'company': fields.many2one(
+            'res.partner',
+            string='Insurance Company',
+            required=True),
+        'notes': fields.text(
+            string='Extra info'),
+        'plan': fields.many2one(
+            'product.product',
+            string='Plan'),
     }
 
 OeMedicalInsurancePlan()
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

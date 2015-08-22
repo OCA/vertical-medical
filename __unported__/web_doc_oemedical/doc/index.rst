@@ -45,4 +45,3 @@ Coding Guidelines
     :maxdepth: 2
 
     api_oemedical_index.rst
-

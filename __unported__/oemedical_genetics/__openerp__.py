@@ -150,13 +150,13 @@ OeMedical at a glance:
     ],
     "demo": [
     ],
-    'test':[
-            'test/physician.yml',
-            'test/patient.yml',
-            'test/partners.yml',
-            'test/insurance_plan.yml',
-            'test/insurance.yml',
-            'test/physician_speciality.yml'
+    'test': [
+        'test/physician.yml',
+        'test/patient.yml',
+        'test/partners.yml',
+        'test/insurance_plan.yml',
+        'test/insurance.yml',
+        'test/physician_speciality.yml'
     ],
     'css': [
 
@@ -170,4 +170,3 @@ OeMedical at a glance:
     "active": False,
     "installable": False,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -188,4 +188,3 @@ Hacking Odoo Medical
     ```bash
     $ git push -u origin 8.0-your_new_feature_theme
     ```
-

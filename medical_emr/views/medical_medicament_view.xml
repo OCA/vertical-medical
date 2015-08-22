@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="view_medical_medicament_tree" model="ir.ui.view">
+			<field name="name">medical.medicament.tree</field>
+			<field name="model">medical.medicament</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<tree string="Medical Medicament">
+					<field name="product_id" />
+					<field name="category" />
+					<field name="indications" />
+					<field name="therapeutic_action" />
+					<!--field name="pregnancy_category"/ -->
+					<field name="overdosage" />
+					<field name="pregnancy_warning" />
+					<field name="notes" />
+					<field name="storage" />
+					<field name="adverse_reaction" />
+					<field name="active_component" />
+					<field name="dosage" />
+					<field name="pregnancy" />
+					<field name="presentation" />
+					<field name="composition" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_medical_medicament_form" model="ir.ui.view">
+			<field name="name">medical.medicament.form</field>
+			<field name="model">medical.medicament</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<form string="Medical Medicament" version="7.0">
+                    <sheet>
+                        <H1>
+        			        <field name="product_id" domain="[('is_medicament','=', True )]"/>
+				            <field name="name"  invisible="1"/>
+                        </H1>
+                        <notebook>
+                            <page string="Main">
+                                <group colspan="4" col="4">
+    					            <field name="category" />
+    					            <field name="active_component" />
+        					        <field name="therapeutic_action" colspan="4"/>
+                                </group>
+                                <separator string="Indications" colspan="4"/>
+					            <field name="indications" nolabel="1" colspan="4"/>
+                            </page>
+                            <page string="Presentation">
+					            <field name="presentation" colspan="4" nolabel="1"/>
+
+                            </page>
+                            <page string="Composition">
+					            <field name="composition" nolabel="1" colspan="4"/>
+                            </page>
+                            <page string="Dosage">
+                                <separator string="Dosage" colspan="2"/>
+					            <field name="dosage" nolabel="1" colspan="2"/>
+                                <separator string="Overdosage" colspan="2"/>
+					            <field name="overdosage" nolabel="1" colspan="2"/>
+                            </page>
+                            <page string="Pregnancy">
+                                <group colspan="4">
+					                <field name="pregnancy_warning" />
+					                <field name="pregnancy_category" />
+                                    <separator string="Notes" colspan="4"/>
+                                    <newline/>
+                                    <field colspan="4" name="pregnancy" nolabel="1"/>
+                                </group>
+                            </page>
+                            <page string="Adverse Reactions">
+					            <field name="adverse_reaction" nolabel="1" colspan="4"/>
+                            </page>
+                            <page string="Storage">
+                                <field name="storage" colspan="4" nolabel="1" />
+                            </page>
+
+                            <page string="Notes">
+					            <field name="notes" nolabel="1" colspan="4"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_medical_medicament_search" model="ir.ui.view">
+			<field name="name">medical.medicament.search</field>
+			<field name="model">medical.medicament</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<search string="Medical Medicament">
+					<field name="product_id" />
+					<field name="category" />
+					<field name="indications" />
+					<field name="therapeutic_action" />
+					<field name="overdosage" />
+					<field name="pregnancy_warning" />
+					<field name="notes" />
+					<field name="storage" />
+					<field name="adverse_reaction" />
+					<field name="active_component" />
+					<field name="dosage" />
+					<field name="pregnancy" />
+					<field name="presentation" />
+					<field name="composition" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Category" domain="[]" context="{'group_by':'category'}" />
+						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
+						<filter string="Indication" domain="[]"
+							context="{'group_by':'indications'}" />
+						<filter string="Therapeutic effect" domain="[]"
+							context="{'group_by':'therapeutic_action'}" />
+						<filter string="Product" domain="[]" context="{'group_by':'product'}" />
+						<filter string="Overdosage" domain="[]"
+							context="{'group_by':'overdosage'}" />
+						<filter string="Pregnancy Warning" domain="[]"
+							context="{'group_by':'pregnancy_warning'}" />
+						<filter string="Extra Info" domain="[]" context="{'group_by':'notes'}" />
+						<filter string="Storage Conditions" domain="[]"
+							context="{'group_by':'storage'}" />
+						<filter string="Adverse Reactions" domain="[]"
+							context="{'group_by':'adverse_reaction'}" />
+						<filter string="Active component" domain="[]"
+							context="{'group_by':'active_component'}" />
+						<filter string="Dosage Instructions" domain="[]"
+							context="{'group_by':'dosage'}" />
+						<filter string="Pregnancy and Lactancy" domain="[]"
+							context="{'group_by':'pregnancy'}" />
+						<filter string="Presentation" domain="[]"
+							context="{'group_by':'presentation'}" />
+						<filter string="Composition" domain="[]"
+							context="{'group_by':'composition'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="act_open_medical_medicament_view">
+			<field name="name">Medicament</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.medicament</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_medical_medicament_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_open_medical_medicament_view_form">
+			<field name="act_window_id" ref="act_open_medical_medicament_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="view_medical_medicament_form" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="act_open_medical_medicament_view_tree">
+			<field name="act_window_id" ref="act_open_medical_medicament_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="view_medical_medicament_tree" />
+		</record>
+
+	</data>
+</openerp>
