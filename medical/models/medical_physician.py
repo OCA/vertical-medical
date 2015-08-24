@@ -21,11 +21,7 @@
 # #############################################################################
 
 from openerp.osv import fields, orm
-from openerp.tools.translate import _
-
 from openerp.addons.medical.medical_constants import days, hours, minutes
-
-from datetime import datetime, date, timedelta
 
 import logging
 
@@ -111,102 +107,3 @@ class MedicalPhysician(orm.Model):
         vals['groups_id'] = [(6, 0, group_ids)]
         return super(MedicalPhysician, self).create(cr, uid, vals,
                                                     context=context)
-
-    def action_update_schedule(self, cr, uid, ids, context=None):
-
-        patient_proxy = self.pool['medical.patient']
-        default_patient = patient_proxy._get_default_patient_id(cr, uid,
-                                                                context=None)
-
-        appointment_proxy = self.pool['medical.appointment']
-
-        ICP = self.pool['ir.config_parameter']
-        MaxDays = int(ICP.get_param(cr, uid, 'max.appointment.days'))
-        if not MaxDays:
-            raise orm.except_orm(_('Error!'),
-                                 _('max.appointment.days: Maximun days for '
-                                   'future agenda not defined'))
-
-        this = self.browse(cr, uid, ids)[0]
-        defined_templates = len(this.schedule_template_ids)
-
-        templates_per_day = {0: [], 1: [], 2: [], 3: [], 4: [], 5: [], 6: []}
-
-        # check for overlapping ranges
-        for i in range(defined_templates):
-            day_1 = this.schedule_template_ids[i].day
-            templates_per_day[day_1] += [this.schedule_template_ids[i]]
-            start_time_1 = this.schedule_template_ids[i].start_hour * 60 + \
-                this.schedule_template_ids[i].start_minute
-            end_time_1 = this.schedule_template_ids[i].end_hour * 60 + \
-                this.schedule_template_ids[i].end_minute
-
-            for j in range(i + 1, defined_templates):
-                day_2 = this.schedule_template_ids[j].day
-                start_time_2 = this.schedule_template_ids[j].start_hour * 60 +\
-                    this.schedule_template_ids[j].start_minute
-                end_time_2 = this.schedule_template_ids[j].end_hour * 60 + \
-                    this.schedule_template_ids[j].end_minute
-                if day_1 == day_2 and start_time_1 < end_time_2 and \
-                   end_time_1 > start_time_2:
-                    raise orm.except_orm(_('Error!'),
-                                         _('Overlapped ranges for day "%s"'
-                                           ) % (days[day_1][1]))
-
-        current_day = date.today()
-        current_day_str = current_day.strftime("%Y-%m-%d ")
-
-        last_day = (date.today() + timedelta(MaxDays))
-        last_day_str = last_day.strftime("%Y-%m-%d ")
-
-        appointment_proxy._remove_empty_clashes(cr, uid, [], ids, [],
-                                                current_day_str, last_day_str,
-                                                context=context)
-        appointment_proxy._set_clashes_state_to_review(cr, uid, ids, [],
-                                                       current_day_str,
-                                                       last_day_str,
-                                                       context=context)
-
-        appointment_vals = {'user_id': uid, 'patient_id': default_patient,
-                            'appointment_type': 'outpatient', 'urgency': 'a', }
-
-        # get timedelta between user timezone and UTC
-        utc_time = datetime.now()
-        user_time = fields.datetime.context_timestamp(
-            cr, uid, utc_time, context=context).replace(tzinfo=None)
-        user_timedelta = utc_time - user_time
-        one_day = timedelta(1)
-        # create appointments
-        while current_day < last_day:
-            current_day_str = current_day.strftime("%Y-%m-%d ")
-            day_of_week = current_day.weekday()
-            for slot in templates_per_day[day_of_week]:
-                start_time = datetime.strptime(current_day_str +
-                                               slot.start_hour + ':' +
-                                               slot.start_minute,
-                                               "%Y-%m-%d %H:%M") + \
-                    user_timedelta
-                end_time = datetime.strptime(current_day_str +
-                                             slot.end_hour + ':' +
-                                             slot.end_minute,
-                                             "%Y-%m-%d %H:%M") +\
-                    user_timedelta
-                one_slot = timedelta(minutes=int(slot.duration))
-                while start_time + one_slot <= end_time:
-                    appointment_vals['name'] = self.pool[
-                        'ir.sequence'].get(cr, uid, 'medical.appointment')
-                    # appointment_vals['doctor_med_center'] = \
-                    #    slot.institution_id.id
-                    appointment_vals['physician_id'] = \
-                        slot.physician_id.id
-                    appointment_vals['institution_id'] = \
-                        slot.physician_id.parent_id.id
-                    appointment_vals['appointment_date'] = \
-                        start_time.strftime("%Y-%m-%d %H:%M")
-                    appointment_vals['duration'] = slot.duration
-                    appointment_proxy.create(cr, uid, appointment_vals,
-                                             context=context)
-                    start_time += one_slot
-            current_day += one_day
-
-        return True

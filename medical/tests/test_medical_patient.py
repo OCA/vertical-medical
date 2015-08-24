@@ -36,7 +36,7 @@ class TestMedicalPatient(TransactionCase):
         super(TestMedicalPatient, self).setUp()
         self.vals = {
             'name': 'Patient 1',
-            'sex': 'm',
+            'gender': 'm',
         }
 
     def test_sequence(self):
@@ -56,3 +56,14 @@ class TestMedicalPatient(TransactionCase):
         patient_id = self.env['medical.patient'].create(self.vals)
         self.assertEquals(
             patient_id.age, complete_age, 'Should be the same age')
+        age = 5
+        vals = {
+            'deceased': True,
+            'dod': fields.Date.to_string(
+                date.today() - relativedelta(years=age))
+        }
+        patient_id = patient_id.copy(default=vals)
+        dod_age = '5y 0m 0d'
+        self.assertEquals(
+            patient_id.age, '%s (deceased)' % dod_age,
+            'Should be the same age')

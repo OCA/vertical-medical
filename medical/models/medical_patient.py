@@ -29,22 +29,13 @@ class MedicalPatient(models.Model):
     '''
     The concept of Patient included in medical.
 
-    A patient is an User with extra elements due to the fact that we will
+    A patient is an Partner with extra elements due to the fact that we will
     re-use all the ACL related to users to manage the security of a patient
     form around medical.
     '''
     _name = 'medical.patient'
     _description = 'Medical Patient'
     _inherits = {'res.partner': 'partner_id', }
-
-    @api.model
-    def _get_default_patient_id(self):
-        """ Gives default patient_id """
-        domain = [('name', '=', 'Libre')]
-        patient_ids = self.search(domain)
-        if not len(patient_ids) == 1:
-            raise Warning(_('No default patient defined'))
-        return patient_ids.id
 
     @api.one
     def _compute_age(self):
@@ -70,8 +61,7 @@ class MedicalPatient(models.Model):
             years_months_days = _('No DoB !')
         self.age = years_months_days
 
-    age = fields.Char(
-        string='Age', compute='_compute_age')
+    age = fields.Char(compute='_compute_age')
     identification_code = fields.Char(
         string='Internal Identification',
         help='Patient Identifier provided by the Health Center.'
@@ -82,14 +72,15 @@ class MedicalPatient(models.Model):
     active = fields.Boolean(default=True)
     is_patient = fields.Boolean(default=True)
     customer = fields.Boolean(default=True)
-    deceased = fields.Boolean(string='Deceased')
+    deceased = fields.Boolean()
     partner_id = fields.Many2one(
-        comodel_name='res.partner', required=True, ondelete='cascade')
-    sex = fields.Selection(
+        comodel_name='res.partner', required=True, ondelete='cascade',
+        index=True)
+    gender = fields.Selection(
         selection=[
             ('m', 'Male'),
             ('f', 'Female'),
-        ], string='Gender')
+        ])
     medical_center_id = fields.Many2one(
         comodel_name='res.partner', domain="[('is_institution', '=', True)]",
         string='Medical Center')
@@ -101,7 +92,7 @@ class MedicalPatient(models.Model):
             ('d', 'Divorced'),
             ('x', 'Separated'),
             ('z', 'law marriage'),
-        ], string='Marital Status')
+        ])
 
     @api.model
     @api.returns('self', lambda value: value.id)
