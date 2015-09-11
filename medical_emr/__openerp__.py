@@ -37,7 +37,7 @@
 
     'name': 'Medical EMR : Electronic Medical Record management for Medical',
     'version': '1.0',
-    'author': "Medical Team, LasLabs, Odoo Community Association (OCA)",
+    'author': "Odoo Medical Team, LasLabs, Odoo Community Association (OCA)",
     'category': 'Generic Modules/Others',
     'depends': ['medical'],
     'application': True,
