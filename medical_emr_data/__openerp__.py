@@ -12,8 +12,8 @@
 #    8.0 Port by: Dave Lasley <dave@laslabs.com>
 #
 ##############################################################################
-#    This project is mantained by OeMEdical Team:
-#    https://launchpad.net/medical
+#    This project is mantained by Odoo Community Association:
+#    http://github.com/oca/vertical-medical
 #
 ##############################################################################
 #    It is a collaborative effort between several companies that want to join
@@ -36,13 +36,12 @@
 {
 
     'name': 'Medical EMR: Module Data',
-    'version': '1.0',
-    'author': "Odoo Medical Team, LasLabs, Odoo Community Association (OCA)",
-    'category': 'Generic Modules/Others',
+    'version': '8.0.1.1',
+    'author': "Odoo Team, LasLabs, Odoo Community Association (OCA)",
+    'category': 'Medical',
     'depends': ['medical_emr'],
-    'application': True,
     "website": "http://launchpad.net/medical",
-    "licence": "AGPL v3",
+    "licence": "AGPL-3",
     "data": [
         'data/medicament_categories.xml',
         'data/WHO_products.xml',
@@ -57,20 +56,7 @@
         'data/disease_categories.xml',
         'data/diseases.xml',
     ],
-    "demo": [
-
-    ],
-    'test': [
-
-    ],
-    'css': [
-
-    ],
-    'js': [
-
-    ],
-    'qweb': [
-
-    ],
-    "installable": True,
+    "active": False,
+    "installable": False,
+    'application': True,
 }
