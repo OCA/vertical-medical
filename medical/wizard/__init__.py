@@ -20,4 +20,4 @@
 #
 ##############################################################################
 
-from . import medical_physician_unavailable
+import medical_physician_unavailable

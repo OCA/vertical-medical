@@ -21,16 +21,14 @@
 #
 ###############################################################################
 
-from openerp.osv import fields, orm
+from openerp import models, fields
 
 
-class MedicalDirections(orm.Model):
+class MedicalDirections(models.Model):
     _name = 'medical.directions'
 
-    _columns = {
-        'procedure_id': fields.many2one('medical.procedure',
-                                        string='Procedure', required=True),
-        'evaluation_id': fields.many2one('medical.patient.evaluation',
-                                         string='Evaluation', readonly=True),
-        'comments': fields.char(size=256, string='Comments'),
-    }
+    procedure_id = fields.Many2one('medical.procedure',
+                                   string='Procedure', required=True)
+    evaluation_id = fields.Many2one('medical.patient.evaluation',
+                                    string='Evaluation', readonly=True)
+    comments = fields.Char(size=256, string='Comments')

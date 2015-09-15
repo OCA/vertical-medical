@@ -10,10 +10,9 @@
 #    Coded by: Mario Arias   <support@cysfuturo.com>
 #    Planifyied by: Parthiv Patel <parthiv@techreceptives.com>
 #    Planifyied by: Nhomar Hernandéz <nhomar@vauxoo.com>
-#    8.0 Port by: Dave Lasley <dave@laslabs.com>
 #
 ##############################################################################
-#    This project is mantained by Odoo Community Association:
+#    This project is mantained by Odoo Medical Team:
 #    http://github.com/oca/vertical-medical
 #
 ##############################################################################
@@ -36,13 +35,14 @@
 ##############################################################################
 {
     'name': 'Odoo Medical',
-    'version': '8.0.1.1',
+    'version': '1.0',
     'category': 'Medical',
+    'author': "Odoo Medical Team,Odoo Community Association (OCA)",
     'depends': [
         'base',
         'product',
     ],
-    'author': "Odoo Medical Team, LasLabs, Odoo Community Association (OCA)",
+    'application': True,
     "website": "http://github.com/oca/vertical-medical",
     "licence": "AGPL-3",
     "data": [
@@ -66,6 +66,5 @@
         'tests/physician_speciality.yml'
     ],
     'installable': True,
-    'application': True,
     'auto_install': False,
 }

@@ -20,22 +20,24 @@
 #
 # #############################################################################
 
-from openerp.osv import fields, orm, osv
+from openerp import api, fields, models
+from openerp.exceptions import ValidationError
 
 
-class MedicalPathologyCategory(orm.Model):
+class MedicalPathologyCategory(models.Model):
     _name = 'medical.pathology.category'
+    _description = 'Medical Pathology Category'
 
-    _columns = {
-        'childs': fields.one2many('medical.pathology.category',
-                                  'parent_id',
-                                  string='Children Categories', ),
-        'name': fields.char(size=256, string='Category Name', required=True),
-        'parent_id': fields.many2one('medical.pathology.category',
-                                     string='Parent Category', select=True),
-    }
+    @api.one
+    @api.constrains('parent_id')
+    def _check_recursion_parent_id(self):
+        if not self._check_recursion():
+            raise ValidationError('Error! You can not create recursive zone.')
 
-    _constraints = [
-        (osv.osv._check_recursion, 'Error ! You cannot create recursive \n'
-                                   'Category.', ['parent_id'])
-    ]
+    name = fields.Char(string='Name', required=True)
+    child_ids = fields.One2many(
+        comodel_name='medical.pathology.category', inverse_name='parent_id',
+        string='Children Categories')
+    parent_id = fields.Many2one(
+        comodel_name='medical.pathology.category', string='Parent Category',
+        select=True)

@@ -35,7 +35,7 @@ class MedicalPatientEvaluation(orm.Model):
         ),
         'info_diagnosis': fields.text(
             string='Presumptive Diagnosis: Extra Info'),
-        'orientation': fields.boolean(
+        'is_disoriented': fields.boolean(
             string='Orientation',
             help='Check this box if the patient is disoriented in time and/or'
             ' space'
@@ -51,19 +51,19 @@ class MedicalPatientEvaluation(orm.Model):
             ('p', 'Phone call'),
             ('t', 'Telemedicine'),
         ], string='Type'),
-        'malnutrition': fields.boolean(
+        'is_malnutritious': fields.boolean(
             string='Malnutrition',
             help='Check this box if the patient show signs of malnutrition. If'
             ' associated  to a disease, please encode the correspondent'
             ' disease on the patient disease history. For example, Moderate'
             ' protein-energy malnutrition, E44.0 in ICD-10 encoding'
         ),
-        'actions': fields.one2many('medical.directions',
-                                   'evaluation_id', string='Procedures',
-                                   help='Procedures / Actions to take'),
+        'action_ids': fields.one2many('medical.directions',
+                                      'evaluation_id', string='Procedures',
+                                      help='Procedures / Actions to take'),
         'height': fields.float(string='Height',
                                help='Height in centimeters, eg 175'),
-        'dehydration': fields.boolean(
+        'is_dehydrated': fields.boolean(
             string='Dehydration',
             help='Check this box if the patient show signs of dehydration. If'
             ' associated  to a disease, please encode the correspondent'
@@ -74,17 +74,18 @@ class MedicalPatientEvaluation(orm.Model):
             string='Last TAGs',
             help='Triacylglycerol(triglicerides) level. Can be approximative'
         ),
-        'tremor': fields.boolean(
+        'is_tremor': fields.boolean(
             string='Tremor',
-            help='If associated  to a disease, please encode it on the patient'
-            ' disease history'
+            help='Check this box is the patient shows signs of tremors',
         ),
         'present_illness': fields.text(string='Present Illness'),
-        'evaluation_date': fields.many2one(
+        'evaluation_id': fields.many2one(
             'medical.appointment', string='Appointment',
             help='Enter or select the date / ID of the appointment related to'
             ' this evaluation'
         ),
+        'evaluation_date': fields.related('evaluation_id', 'appointment_date',
+                                          string='Evaluation Date', readonly=True),
         'evaluation_start': fields.datetime(string='Start', required=True),
         'loc': fields.integer(string='Level of Consciousness'),
         'user_id': fields.many2one('res.users', string='Last Changed by',
@@ -99,15 +100,15 @@ class MedicalPatientEvaluation(orm.Model):
             ('e', 'Euphoria'),
             ('fl', 'Flat'),
         ], string='Mood'),
-        'doctor': fields.many2one('medical.physician', string='Doctor',
-                                  readonly=True),
-        'knowledge_current_events': fields.boolean(
+        'doctor_id': fields.many2one('medical.physician', string='Doctor',
+                                     readonly=True),
+        'is_incognizant': fields.boolean(
             string='Knowledge of Current Events',
             help='Check this box if the patient can not respond to public'
             ' notorious events'),
-        'next_evaluation': fields.many2one('medical.appointment',
-                                           string='Next Appointment',),
-        'signs_and_symptoms': fields.one2many(
+        'next_evaluation_id': fields.many2one('medical.appointment',
+                                              string='Next Appointment',),
+        'signs_and_symptoms_ids': fields.one2many(
             'medical.signs_and_symptoms', 'evaluation_id',
             string='Signs and Symptoms',
             help="Enter the Signs and Symptoms for the patient in this"
@@ -122,39 +123,40 @@ class MedicalPatientEvaluation(orm.Model):
             ('5', 'Localizes painful stimuli'),
             ('6', 'Obeys commands'),
         ], string='Glasgow - Motor'),
-        'reliable_info': fields.boolean(
-            string='Reliable',
+        'is_reliable_info': fields.boolean(
+            string='Reliable', default=True,
             help="Uncheck this option"
             "if the information provided by the source seems not reliable"
         ),
         'systolic': fields.integer(string='Systolic Pressure'),
         'vocabulary': fields.boolean(
             string='Vocabulary',
-            help='Check this box if the patient lacks basic intelectual'
+            help='Check this box if the patient lacks basic intellectual'
             ' capacity, when she/he can not describe elementary objects'
         ),
-        'praxis': fields.boolean(
-            string='Praxis',
+        'is_catatonic': fields.boolean(
+            string='Catatonic',
             help='Check this box if the patient is unable to make voluntary'
             'movements'
         ),
         'hip': fields.float(string='Hip',
                             help='Hip circumference in centimeters, eg 100'),
-        'memory': fields.boolean(
+        'is_forgetful': fields.boolean(
             string='Memory',
             help='Check this box if the patient has problems in short or long'
             ' term memory'
         ),
-        'abstraction': fields.boolean(
+        'is_abstracting': fields.boolean(
             string='Abstraction',
             help='Check this box if the patient presents abnormalities in'
             ' abstract reasoning'
         ),
-        'derived_from': fields.many2one('medical.physician',
-                                        string='Derived from',
-                                        help='Physician who derived the case'),
-        'specialty': fields.many2one('medical.specialty',
-                                     string='Specialty',),
+        'referred_from_id': fields.many2one('medical.physician',
+                                           string='Derived/Referred from',
+                                           help='Physician who ' +
+                                           'derived/referred the case'),
+        'specialty_id': fields.many2one('medical.specialty',
+                                        string='Specialty',),
         'loc_verbal': fields.selection([
             ('1', 'Makes no sounds'),
             ('2', 'Incomprehensible sounds'),
@@ -173,15 +175,15 @@ class MedicalPatientEvaluation(orm.Model):
             string='Respiratory Rate',
             help='Respiratory rate expressed in breaths per minute'
         ),
-        'derived_to': fields.many2one(
-            'medical.physician', string='Derived to',
-            help='Physician to whom escalate / derive the case'
+        'referred_to_id': fields.many2one(
+            'medical.physician', string='Derived/Referred to',
+            help='Physician to whom escalate / refer the case'
         ),
         'hba1c': fields.float(
             string='Glycated Hemoglobin',
             help='Last Glycated Hb level. Can be approximative.'
         ),
-        'violent': fields.boolean(
+        'is_violent': fields.boolean(
             string='Violent Behaviour',
             help='Check this box if the patient is agressive or violent at the'
             ' moment'
@@ -189,7 +191,7 @@ class MedicalPatientEvaluation(orm.Model):
         'directions': fields.text(string='Plan'),
         'evaluation_summary': fields.text(string='Evaluation Summary'),
         'cholesterol_total': fields.integer(string='Last Cholesterol'),
-        'diagnostic_hypothesis': fields.one2many(
+        'diagnostic_hypothesis_id': fields.one2many(
             'medical.diagnostic_hypothesis',
             'evaluation_id', string='Hypotheses / DDx',
             help='Presumptive Diagnosis. If no diagnosis can be made'
@@ -203,7 +205,7 @@ class MedicalPatientEvaluation(orm.Model):
                                     help='Temperature in celcius'),
         'osat': fields.integer(string='Oxygen Saturation',
                                help='Oxygen Saturation(arterial).'),
-        'secondary_conditions': fields.one2many(
+        'secondary_condition_ids': fields.one2many(
             'medical.secondary_condition', 'evaluation_id',
             string='Secondary Conditions',
             help="Other, Secondary conditions found on the patient"),
@@ -226,13 +228,13 @@ class MedicalPatientEvaluation(orm.Model):
             ('4', 'Opens eyes spontaneously'),
         ], string='Glasgow - Eyes'),
         'abdominal_circ': fields.float(string='Waist'),
-        'object_recognition': fields.boolean(
+        'not_perceiving': fields.boolean(
             string='Object Recognition',
             help='Check this box if the patient suffers from any sort of'
             ' gnosia disorders, such as agnosia, prosopagnosia ...'
         ),
-        'diagnosis': fields.many2one('medical.pathology',
-                                     string='Presumptive Diagnosis',),
+        'diagnosis_id': fields.many2one('medical.pathology',
+                                        string='Presumptive Diagnosis',),
         'whr': fields.float(string='WHR', help='Waist to hip ratio'),
         'ldl': fields.integer(
             string='Last LDL',

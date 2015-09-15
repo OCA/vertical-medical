@@ -21,15 +21,13 @@
 #
 ###############################################################################
 
-from openerp.osv import fields, orm
+from openerp import models, fields
 
 
-class MedicalDiseaseGroupMembers(orm.Model):
+class MedicalDiseaseGroupMembers(models.Model):
     _name = 'medical.disease_group.members'
 
-    _columns = {
-        'disease_group_id': fields.many2one('medical.pathology.group',
-                                            string='Group', required=True),
-        'name': fields.many2one('medical.pathology', string='Disease',
-                                readonly=True),
-    }
+    disease_group_id = fields.Many2one('medical.pathology.group',
+                                       string='Group', required=True)
+    name = fields.Many2one('medical.pathology', string='Disease',
+                           readonly=True)
