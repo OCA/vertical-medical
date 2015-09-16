@@ -35,14 +35,14 @@ class MedicalPrescriptionLine(orm.Model):
         medication_template = medication_obj.browse(cr, uid, medication,
                                                     context=None)
         res = {'value': {
-            'disease_id': medication_template.indication.id,
-            'drug_form_id': medication_template.form.id,
-            'drug_route_id': medication_template.route.id,
+            'disease_id': medication_template.disease_id.id,
+            'drug_form_id': medication_template.drug_form_id.id,
+            'drug_route_id': medication_template.drug_route_id.id,
             'dose': medication_template.dose,
-            'dose_unit_id': medication_template.dose_unit.id,
+            'dose_unit_id': medication_template.dose_unit_id.id,
             'qty': medication_template.qty,
             'admin_times': medication_template.admin_times,
-            'common_dose_id': medication_template.common_dosage.id,
+            'common_dose_id': medication_template.common_dosage_id.id,
             'frequency': medication_template.frequency,
             'frequency_unit': medication_template.frequency_unit,
         }}
