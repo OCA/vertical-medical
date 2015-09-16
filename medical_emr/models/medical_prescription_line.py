@@ -50,23 +50,20 @@ class MedicalPrescriptionLine(orm.Model):
 
     _columns = {
         'prescription_id': fields.many2one('medical.prescription.order',
-                                 string='Prescription ID', ),
+                                           string='Prescription ID', ),
         'template_id': fields.many2one('medical.medication.template',
                                        string='Medication', ),
-        'disease_id': fields.many2one('medical.pathology',
-                                         string='Indication',
-                                         help='Choose a disease for this '
-                                         'medicament from the disease list. '
-                                         'It can be an existing disease of '
-                                         'the patient or a prophylactic.'),
+        'disease_id': fields.many2one(
+            'medical.pathology', string='Indication',
+            help='Choose a disease for this medicament from the disease list. '
+            'It can be an existing disease of the patient or a prophylactic.'),
         'is_substitutable': fields.boolean(string='Allow substitution'),
-        'is_printed': fields.boolean(string='Print',
-                                   help='Check this box to ' +
-                                   'print this line of the '
-                                   'prescription.'),
+        'is_printed': fields.boolean(
+            string='Print',
+            help='Check this box to print this line of the prescription.'),
         'quantity': fields.integer(string='Units',
                                    help='Number of units of the medicament. '
-                                        'Example: 30 capsules of amoxicillin'),
+                                   'Example: 30 capsules of amoxicillin'),
         'active_component': fields.char(size=256, string='Active component',
                                         help='Active Component'),
         'start_treatment': fields.datetime(string='Start'),
@@ -85,10 +82,9 @@ class MedicalPrescriptionLine(orm.Model):
         'drug_route_id': fields.many2one('medical.drug.route', string='Route',
                                          help='Drug form, ' +
                                          'such as tablet or gel'),
-        'common_dose_id': fields.many2one('medical.medication.dosage',
-                                            string='Frequency',
-                                            help='Drug form, such as pill or '
-                                            'gel'),
+        'common_dose_id': fields.many2one(
+            'medical.medication.dosage', string='Frequency',
+            help='Drug form, such as pill or gel'),
         'admin_times': fields.char('Admin Hours', size=255),
         'frequency': fields.integer('Frequency'),
         'frequency_unit': fields.selection([

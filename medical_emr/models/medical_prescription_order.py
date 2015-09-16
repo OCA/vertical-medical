@@ -36,7 +36,7 @@ class MedicalPrescriptionOrder(orm.Model):
         'notes': fields.text(string='Prescription Notes'),
         'prescription_line_ids': fields.one2many('medical.prescription.line',
                                                  'prescription_id',
-                                                string='Prescription line', ),
+                                                 string='Prescription line', ),
         'pharmacy_id': fields.many2one('res.partner', string='Pharmacy', ),
         'prescription_date': fields.datetime(string='Prescription Date'),
         'is_verified': fields.boolean(string='Prescription verified'),

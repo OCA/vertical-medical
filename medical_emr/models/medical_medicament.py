@@ -84,9 +84,9 @@ class MedicalMedicament(orm.Model):
                  'CATEGORY N : Not yet classified'),
 
         'overdosage': fields.text(string='Overdosage', help='Overdosage'),
-        'is_pregnant': fields.boolean(string='Pregnancy Warning',
-                                            help='The drug represents risk to '
-                                            'pregnancy or lactancy'),
+        'is_pregnant': fields.boolean(
+            string='Pregnancy Warning',
+            help='The drug represents risk to pregnancy or lactancy'),
         'notes': fields.text(string='Extra Info'),
         'storage': fields.text(string='Storage Conditions'),
         'adverse_reaction': fields.text(string='Adverse Reactions'),

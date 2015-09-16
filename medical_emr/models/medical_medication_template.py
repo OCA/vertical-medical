@@ -92,9 +92,9 @@ class MedicalMedicationTemplate(orm.Model):
                                          'each 8 hours, put here 8 and select '
                                          '\"hours\" in the unit field'),
         'common_dose_id': fields.many2one('medical.medication.dosage',
-                                            string='Frequency',
-                                            help='Common / standard dosage '
-                                            'frequency for this medicament'),
+                                          string='Frequency',
+                                          help='Common / standard dosage '
+                                          'frequency for this medicament'),
         'admin_times': fields.char(size=256, string='Admin hours',
                                    help='Suggested administration hours. '
                                         'For example, at 08:00, 13:00 and '

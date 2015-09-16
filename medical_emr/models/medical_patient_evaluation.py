@@ -84,8 +84,9 @@ class MedicalPatientEvaluation(orm.Model):
             help='Enter or select the date / ID of the appointment related to'
             ' this evaluation'
         ),
-        'evaluation_date': fields.related('evaluation_id', 'appointment_date',
-                                          string='Evaluation Date', readonly=True),
+        'evaluation_date': fields.related(
+            'evaluation_id', 'appointment_date', string='Evaluation Date',
+            readonly=True),
         'evaluation_start': fields.datetime(string='Start', required=True),
         'loc': fields.integer(string='Level of Consciousness'),
         'user_id': fields.many2one('res.users', string='Last Changed by',
@@ -151,10 +152,9 @@ class MedicalPatientEvaluation(orm.Model):
             help='Check this box if the patient presents abnormalities in'
             ' abstract reasoning'
         ),
-        'referred_from_id': fields.many2one('medical.physician',
-                                           string='Derived/Referred from',
-                                           help='Physician who ' +
-                                           'derived/referred the case'),
+        'referred_from_id': fields.many2one(
+            'medical.physician', string='Derived/Referred from',
+            help='Physician who derived/referred the case'),
         'specialty_id': fields.many2one('medical.specialty',
                                         string='Specialty',),
         'loc_verbal': fields.selection([

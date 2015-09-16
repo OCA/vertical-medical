@@ -36,7 +36,7 @@
 {
 
     'name': 'Medical EMR: Module Data',
-    'version': '8.0.1.1',
+    'version': '8.0.1.0',
     'author': "Odoo Team, LasLabs, Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': ['medical_emr'],
