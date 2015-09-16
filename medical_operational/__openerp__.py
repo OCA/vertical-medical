@@ -42,7 +42,6 @@
         'medical_emr',
     ],
     'website': 'http://launchpad.net/medical',
-    'license': "AGPL-3",
     'data': [
         'security/ir.model.access.csv',
         'views/medical_operational_area_view.xml',
