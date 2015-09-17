@@ -98,12 +98,3 @@ class MedicalPhysician(orm.Model):
     }
 
     _defaults = {'is_doctor': True, 'supplier': True, 'active': True, }
-
-    def create(self, cr, uid, vals, context=None):
-        groups_proxy = self.pool['res.groups']
-        group_ids = groups_proxy.search(cr, uid,
-                                        [('name', '=', 'Medical Doctor')],
-                                        context=context)
-        vals['groups_id'] = [(6, 0, group_ids)]
-        return super(MedicalPhysician, self).create(cr, uid, vals,
-                                                    context=context)
