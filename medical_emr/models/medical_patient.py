@@ -20,41 +20,42 @@
 #
 # #############################################################################
 
-from openerp.osv import fields, orm, orm
+from openerp import api, fields, models
 
 
-class MedicalPatient(orm.Model):
+class MedicalPatient(models.Model):
     _inherit = 'medical.patient'
 
-    _columns = {
-        'family': fields.many2one('medical.family', string='Family',
-                                  help='Family Code'),
-        'blood_type': fields.selection([
-            ('A', 'A'),
-            ('B', 'B'),
-            ('AB', 'AB'),
-            ('O', 'O'), ], string='Blood Type'),
-        'rh': fields.selection([
-            ('+', '+'),
-            ('-', '-'), ], string='Rh'),
-        'primary_care_doctor': fields.many2one('medical.physician',
-                                               'Primary Care Doctor',
-                                               help='Current primary care / '
-                                                    'family doctor'),
-        'childbearing_age': fields.boolean('Potential for Childbearing'),
-        'medications': fields.one2many('medical.patient.medication',
-                                       'patient_id', string='Medications', ),
-        'evaluations': fields.one2many('medical.patient.evaluation',
-                                       'patient_id', string='Evaluations', ),
-        'critical_info': fields.text(string='Important disease, allergy or '
-                                            'procedures information',
-                                     help='Write any important information on '
-                                          'the patient\'s disease, surgeries, '
-                                          'allergies, ...'),
-        'diseases': fields.one2many('medical.patient.disease', 'patient_id',
-                                    string='Diseases',
-                                    help='Mark if the patient has died'),
-        'ethnic_group': fields.many2one('medical.ethnicity',
-                                        string='Ethnic group', ),
-        'cod': fields.many2one('medical.pathology', string='Cause of Death', ),
-    }
+    @api.one
+    def action_invalidate(self):
+        super(MedicalPatient, self).action_invalidate()
+        self.disease_ids.action_invalidate()
+
+    family_id = fields.Many2one(
+        comodel_name='medical.family', string='Family')
+    blood_type = fields.Selection([
+        ('A', 'A'),
+        ('B', 'B'),
+        ('AB', 'AB'),
+        ('O', 'O'), ], string='Blood Type')
+    rh = fields.Selection([
+        ('+', '+'),
+        ('-', '-')], string='Rh')
+    primary_care_physician_id = fields.Many2one(
+        comodel_name='medical.physician', string='Primary Care Doctor')
+    childbearing_age = fields.Boolean(string='Childbearing Age')
+    medication_ids = fields.One2many(
+        comodel_name='medical.patient.medication', inverse_name='patient_id',
+        string='Medications')
+    evaluation_ids = fields.One2many(
+        comodel_name='medical.patient.evaluation', inverse_name='patient_id',
+        string='Evaluations')
+    critical_info = fields.Text(
+        string='Important disease, allergy or procedures information')
+    disease_ids = fields.One2many(
+        comodel_name='medical.patient.disease', inverse_name='patient_id',
+        string='Diseases')
+    ethnicity_id = fields.Many2one(
+        comodel_name='medical.ethnicity', string='Ethnicity')
+    cause_of_death_pathology_id = fields.Many2one(
+        comodel_name='medical.pathology', string='Cause of Death Pathology')

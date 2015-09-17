@@ -146,8 +146,24 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
+        <record model="product.product" id="prod_em17">
+            <field name="name">acetylsalicylic acid</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em18">
             <field name="name">codeine</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
+        <record model="product.product" id="prod_em19">
+            <field name="name">morphine</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
             <field name="is_medicament">1</field>
             <field name="uom_id" ref="product.product_uom_unit"/>
@@ -210,7 +226,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em27">
+            <field name="name">epinefrine (adrenaline)</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em28">
             <field name="name">hydrocortisone</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -461,7 +484,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em61">
+            <field name="name">praziquantel</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em62">
             <field name="name">triclabendazole</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -646,7 +676,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em85">
+            <field name="name">gentamicin</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em86">
             <field name="name">metronidazole</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -799,7 +836,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em105">
+            <field name="name">rifampicin</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em106">
             <field name="name">streptomycin</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -1088,7 +1132,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em143">
+            <field name="name">amphotericin B</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em144">
             <field name="name">miltefosine</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -1161,7 +1212,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em153">
+            <field name="name">doxycycline</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em154">
             <field name="name">mefloquine</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -1194,7 +1252,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em159">
+            <field name="name">doxycycline</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em161">
             <field name="name">proguanil</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -1261,7 +1326,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em171">
+            <field name="name">melarsoprol</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em172">
             <field name="name">benznidazole</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -1270,7 +1342,22 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em173">
+            <field name="name">nifurtimox</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
+        <record model="product.product" id="prod_em175">
+            <field name="name">ibuprofen</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em177">
             <field name="name">propranolol</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -1431,6 +1518,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
+        <record model="product.product" id="prod_em199">
+            <field name="name">methotrexate</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em200">
             <field name="name">paclitaxel</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -1471,7 +1566,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em205">
+            <field name="name">dexamethasone</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em207">
             <field name="name">methylprednisolone</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -1505,7 +1607,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em213">
+            <field name="name">diazepam</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em214">
             <field name="name">docusate sodium</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -1530,7 +1639,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em217">
+            <field name="name">ibuprofen</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em218">
             <field name="name">lactulose</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -1539,7 +1655,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em219">
+            <field name="name">midazolam</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em221">
             <field name="name">ondansetron</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -1645,14 +1768,29 @@
             <field name="standard_price" eval="0.0"/>
         </record>
         <record model="product.product" id="prod_em234">
-            <field name="name">heparin sodium </field>
+            <field name="name">heparin sodium</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
             <field name="is_medicament">1</field>
             <field name="uom_id" ref="product.product_uom_unit"/>
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em235">
+            <field name="name">protamine sulfate</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
+        <record model="product.product" id="prod_em237">
+            <field name="name">deferoxamine</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em239">
             <field name="name">dextran 70</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -1717,7 +1855,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em247">
+            <field name="name">bisoprolol</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em248">
             <field name="name">digoxin</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -1734,7 +1879,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em251">
+            <field name="name">verapamil</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em252">
             <field name="name">amiodarone</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -1792,7 +1944,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em261">
+            <field name="name">digoxin</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em263">
             <field name="name">furosemide</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -1843,7 +2002,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em271">
+            <field name="name">sodium thiosulfate</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em272">
             <field name="name">terbinafine</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -1998,7 +2164,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em293">
+            <field name="name">barium sulfate</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em294">
             <field name="name">meglumine iotroxate</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -2063,7 +2236,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em303">
+            <field name="name">hydrochlorothiazide</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em304">
             <field name="name">mannitol</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -2080,7 +2260,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em307">
+            <field name="name">mannitol</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em309">
             <field name="name">pancreatic enzymes</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -2123,7 +2310,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em317">
+            <field name="name">senna</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em319">
             <field name="name">zinc sulfate</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -2140,7 +2334,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em321">
+            <field name="name">hydrocortisone</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em322">
             <field name="name">testosterone</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -2304,7 +2505,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em345">
+            <field name="name">potassium iodide</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em347">
             <field name="name">tuberculin, purified protein derivative (PPD)</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -2588,7 +2796,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em379">
+            <field name="name">vecuronium</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em381">
             <field name="name">gentamicin</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -2605,7 +2820,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em383">
+            <field name="name">prednisolone</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em384">
             <field name="name">tetracaine</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -2638,7 +2860,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em389">
+            <field name="name">epinephrine (adrenaline)</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em390">
             <field name="name">ergometrine</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -2711,8 +2940,31 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
-        <record model="product.product" id="prod_em404">
+        <record model="product.product" id="prod_em399">
+            <field name="name">chlorpromazine</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
+        <record model="product.product" id="prod_em401">
+            <field name="name">amitriptyline</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
+        <record model="product.product" id="prod_em403">
+            <field name="name">carbamazepine</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
+        <record model="product.product" id="prod_em405">
             <field name="name">lithium carbonate</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
             <field name="is_medicament">1</field>
@@ -2720,7 +2972,6 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
         <record model="product.product" id="prod_em407">
             <field name="name">clomipramine</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -2810,7 +3061,14 @@
             <field name="list_price" eval="0.0"/>
             <field name="standard_price" eval="0.0"/>
         </record>
-
+        <record model="product.product" id="prod_em419">
+            <field name="name">potassium chloride</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
         <record model="product.product" id="prod_em420">
             <field name="name">sodium chloride</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
@@ -2925,6 +3183,14 @@
         </record>
         <record model="product.product" id="prod_em435">
             <field name="name">acetic acid</field>
+            <field name="categ_id" ref="prod_medicament_WHO"/>
+            <field name="is_medicament">1</field>
+            <field name="uom_id" ref="product.product_uom_unit"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="standard_price" eval="0.0"/>
+        </record>
+        <record model="product.product" id="prod_em437">
+            <field name="name">ciprofloxacin</field>
             <field name="categ_id" ref="prod_medicament_WHO"/>
             <field name="is_medicament">1</field>
             <field name="uom_id" ref="product.product_uom_unit"/>

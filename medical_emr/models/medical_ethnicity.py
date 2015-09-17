@@ -20,18 +20,17 @@
 #
 # #############################################################################
 
-from openerp.osv import fields, orm
+from openerp import models, fields
 
 
-class MedicalEthnicity(orm.Model):
+class MedicalEthnicity(models.Model):
     _name = 'medical.ethnicity'
 
-    _columns = {
-        'notes': fields.char(size=256, string='Notes'),
-        'code': fields.char(size=256, string='Code'),
-        'name': fields.char(size=256, string='Name', required=True,
-                            translate=True),
-    }
+    notes = fields.Char(size=256, string='Notes')
+    code = fields.Char(size=256, string='Code')
+    name = fields.Char(size=256, string='Name', required=True,
+                       translate=True)
+
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Ethnicity name must be unique!'),
     ]

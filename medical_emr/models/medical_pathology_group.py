@@ -20,20 +20,17 @@
 #
 # #############################################################################
 
-from openerp.osv import fields, orm
+from openerp import fields, models
 
 
-class MedicalPathologyGroup(orm.Model):
+class MedicalPathologyGroup(models.Model):
     _name = 'medical.pathology.group'
+    _description = 'Medical Pathology Group'
 
-    _columns = {
-        'info': fields.text(string='Detailed information'),
-        'code': fields.char(size=256, string='Code', required=True,
-                            help='for example MDG6 code will contain the '
-                                 'Millennium Development Goals # 6 diseases : '
-                                 'Tuberculosis, Malaria and HIV/AIDS'),
-        'name': fields.char(size=256, string='Name', required=True,
-                            translate=True, help='Group name'),
-        'desc': fields.char(size=256, string='Short Description',
-                            required=True),
-    }
+    name = fields.Char(string='Name', required=True, translate=True)
+    notes = fields.Text(string='Notes')
+    code = fields.Char(
+        string='Code', required=True, help='for example MDG6 code will contain'
+        ' the Millennium Development Goals # 6 diseases : Tuberculosis, '
+        'Malaria and HIV/AIDS')
+    desc = fields.Char(string='Short Description', required=True)

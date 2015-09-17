@@ -35,9 +35,9 @@
 {
 
     'name': 'Odoo Medical : Free Health and Hospital Information System',
-    'version': '1.0',
+    'version': '8.0.1.0',
     'author': 'Odoo Medical Team,Odoo Community Association (OCA)',
-    'category': 'Generic Modules/Others',
+    'category': 'Medical',
     'depends': ['medical'],
     'application': True,
     'website': 'https://github.com/OCA/vertical-medical/',
@@ -50,10 +50,6 @@
         'views/medical_hospital_or_view.xml',
         'views/medical_hospital_unit_view.xml',
         'views/medical_hospital_menu.xml',
-    ],
-    'demo': [
-    ],
-    'qweb': [
     ],
     'active': False,
     'installable': True,
