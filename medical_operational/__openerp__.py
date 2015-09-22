@@ -34,14 +34,13 @@
 ##############################################################################
 {
     'name': 'Odoo Medical : Operational areas and sectors',
-    'version': '1.0',
+    'version': '8.0.1.0',
     'category': 'Medical',
-    'author': "Odoo Medical Team,Odoo Community Association (OCA)",
-    'license': "AGPL-3",
+    'author': "Odoo Medical Team, Odoo Community Association (OCA)",
     'depends': [
         'medical_emr',
     ],
-    'website': 'http://launchpad.net/medical',
+    "website": "http://github.com/oca/vertical-medical",
     'data': [
         'security/ir.model.access.csv',
         'views/medical_operational_area_view.xml',

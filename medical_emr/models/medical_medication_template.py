@@ -39,7 +39,7 @@ class MedicalMedicationTemplate(orm.Model):
                                          ondelete='cascade'),
         'name': fields.function(_get_name, type='char', string='Medicament',
                                 help="", multi=False),
-        'indication': fields.many2one('medical.pathology', string='Indication',
+        'disease_id': fields.many2one('medical.pathology', string='Indication',
                                       help='Choose a disease for this '
                                            'medicament from the disease list. '
                                            'It can be an existing disease of '
@@ -48,11 +48,14 @@ class MedicalMedicationTemplate(orm.Model):
                                            help='Date of start of Treatment'),
         'end_treatment': fields.datetime(string='End',
                                          help='Date of start of Treatment'),
-        'form': fields.many2one('medical.drug.form', string='Form',
-                                help='Drug form, such as tablet or gel'),
-        'route': fields.many2one('medical.drug.route',
-                                 string='Administration Route',
-                                 help='Drug administration route code.'),
+        'drug_form_id': fields.many2one('medical.drug.form', string='Form',
+                                        help='Drug form, ' +
+                                        'such as tablet or gel'),
+        'drug_route_id': fields.many2one('medical.drug.route',
+                                         string='Administration ' +
+                                         'Route',
+                                         help='Drug administration ' +
+                                         'route code.'),
         'duration_period': fields.selection([
             ('minutes', 'minutes'),
             ('hours', 'hours'),
@@ -88,15 +91,15 @@ class MedicalMedicationTemplate(orm.Model):
                                          'must wait (ie, for 1 pill '
                                          'each 8 hours, put here 8 and select '
                                          '\"hours\" in the unit field'),
-        'common_dosage': fields.many2one('medical.medication.dosage',
-                                         string='Frequency',
-                                         help='Common / standard dosage '
-                                              'frequency for this medicament'),
+        'common_dose_id': fields.many2one('medical.medication.dosage',
+                                          string='Frequency',
+                                          help='Common / standard dosage '
+                                          'frequency for this medicament'),
         'admin_times': fields.char(size=256, string='Admin hours',
                                    help='Suggested administration hours. '
                                         'For example, at 08:00, 13:00 and '
                                         '18:00 can be encoded like 08 13 18'),
-        'dose_unit': fields.many2one('product.uom', string='dose unit',
-                                     help='Unit of measure for the medication '
-                                          'to be taken'),
+        'dose_unit_id': fields.many2one(
+            'product.uom', help='Unit of measure for that the medication is '
+            'dosed in.'),
     }

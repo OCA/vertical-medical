@@ -9,10 +9,11 @@
 #    Coded by: Ruchir Shukla <ruchir@techreceptives.com>
 #    Planifyied by: Parthiv Patel <parthiv@techreceptives.com>
 #    Planifyied by: Nhomar Hernandéz <nhomar@vauxoo.com>
+#    8.0 Port by: Dave Lasley <dave@laslabs.com>
 #
 ##############################################################################
-#    This project is mantained by Medical Team:
-#    https://launchpad.net/medical
+#    This project is mantained by Odoo Community Association:
+#    http://github.com/oca/vertical-medical
 #
 ##############################################################################
 #    It is a collaborative effort between several companies that want to join
@@ -34,10 +35,10 @@
 ##############################################################################
 {
 
-    'name': 'Odoo Medical : Electronic Medical Record (EMR)',
-    'version': '1.0',
+    'name': 'Medical EMR : Electronic Medical Record management for Medical',
+    'version': '8.0.1.1',
+    'author': "Odoo Medical Team, LasLabs, Odoo Community Association (OCA)",
     'category': 'Medical',
-    'author': "Odoo Medical Team,Odoo Community Association (OCA)",
     'depends': ['medical'],
     "website": "http://github.com/oca/vertical-medical",
     'license': "AGPL-3",
@@ -72,4 +73,5 @@
     ],
     'installable': True,
     'auto_install': False,
+    'application': True,
 }

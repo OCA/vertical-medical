@@ -2,7 +2,7 @@
 <openerp>
     <data>
 
-        <record id="view_medical_pathology_search" model="ir.ui.view">
+        <record id="medical_pathology_view_search" model="ir.ui.view">
             <field name="name">medical.pathology.search</field>
             <field name="model">medical.pathology</field>
             <field name="arch" type="xml">
@@ -28,7 +28,7 @@
             </field>
         </record>
 
-        <record id="view_medical_pathology_tree" model="ir.ui.view">
+        <record id="medical_pathology_view_tree" model="ir.ui.view">
             <field name="name">medical.pathology.tree</field>
             <field name="model">medical.pathology</field>
             <field name="arch" type="xml">
@@ -43,7 +43,7 @@
             </field>
         </record>
 
-        <record id="view_medical_pathology_form" model="ir.ui.view">
+        <record id="medical_pathology_view_form" model="ir.ui.view">
             <field name="name">medical.pathology.form</field>
             <field name="model">medical.pathology</field>
             <field name="arch" type="xml">
@@ -90,15 +90,15 @@
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="act_open_medical_pathology_view">
+        <record model="ir.actions.act_window" id="medical_pathology_action">
             <field name="name">Pathologies</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">medical.pathology</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="view_id">tree,form</field>
-            <field name="view_id" ref="view_medical_pathology_tree" />
-            <field name="search_view_id" ref="view_medical_pathology_search" />
+            <field name="view_id" ref="medical_pathology_view_tree" />
+            <field name="search_view_id" ref="medical_pathology_view_search" />
             <field name="domain">[]</field>
             <field name="context">{}</field>
         </record>

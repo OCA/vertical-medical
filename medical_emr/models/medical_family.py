@@ -20,18 +20,15 @@
 #
 # #############################################################################
 
-from openerp.osv import fields, orm
+from openerp import models, fields
 
 
-class MedicalFamily(orm.Model):
+class MedicalFamily(models.Model):
     _name = 'medical.family'
-
-    _columns = {
-        'info': fields.text(string='Extra Information'),
-        'name': fields.char(string='Family', required=True),
-        'members': fields.one2many('medical.family_member', 'family_id',
-                                   string='Family Members', ),
-    }
+    info = fields.Text(string='Extra Information')
+    name = fields.Char(string='Family', required=True)
+    member_ids = fields.One2many('medical.family_member', 'family_id',
+                                 string='Family Members', )
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Family Code must be unique!'),
     ]
