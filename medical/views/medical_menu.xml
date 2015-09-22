@@ -10,7 +10,7 @@
             sequence="10" />
         <menuitem id="medical_patient" name=" Patient"
             parent="medical_patient_root" sequence="10"
-            action="act_open_medical_patient_view" />
+            action="medical_patient_action" />
 
 
 <!--Appointment-->
@@ -20,7 +20,7 @@
 
         <menuitem id="medical_appointment" name=" Appointment"
             parent="medical_appoitment_root" sequence="10"
-            action="act_open_medical_appointment_view" />
+            action="medical_appointment_action" />
 
 
 
@@ -39,14 +39,23 @@
 
         <menuitem id="medical_specialty" name=" Medical Specialty"
             parent="medical_root_misc" sequence="10" 
-            action="act_open_medical_specialty_view" />
+            action="medical_specialty_action" />
 
 <!--    Physician Conf    -->
 
         <menuitem name="Health Professionals" id="medical_conf_physicians"
             parent="medical_root_sub" sequence="20" />
 
+<<<<<<< HEAD
         <menuitem id="medical_physician_assistant" parent="medical_conf_physicians"
             sequence="10" action="act_open_medical_physician_view" groups="group_medical_assistant"/>
+=======
+        <menuitem id="medical_physician_admin" name=" Physician [Admin]" parent="medical_conf_physicians"
+            sequence="10" action="medical_physician_action" groups="group_medical_manager"/>
+        <menuitem id="medical_physician_self" name=" Physician [Self]" parent="medical_conf_physicians"
+            sequence="10" action="medical_physician_action_self" groups="group_medical_doctor"/>
+        <menuitem id="medical_physician_assistant" name=" Physician [Asistant]" parent="medical_conf_physicians"
+            sequence="10" action="medical_physician_action" groups="group_medical_assistant"/>
+>>>>>>> [IMP] Update ids, naming, etc. to OCA standards (medical & medical_emr)
     </data>
 </openerp>
