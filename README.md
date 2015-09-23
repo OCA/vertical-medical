@@ -189,3 +189,31 @@ Hacking Odoo Medical
     $ git push -u origin 8.0-your_new_feature_theme
     ```
 
+
+[//]: # (addons)
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
+[medical](medical/) | 1.0 | Odoo Medical
+
+Unported addons
+---------------
+addon | version | summary
+--- | --- | ---
+[oemedical_emr](__unported__/oemedical_emr/) | 1.0 (unported) | OeMedical EMR : Electronic Medical Record management for OeMedical
+[oemedical_emr_data](__unported__/oemedical_emr_data/) | 1.0 (unported) | OeMedical EMR: Module Data
+[oemedical_genetics](__unported__/oemedical_genetics/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
+[oemedical_gynecology_and_obstetrics](__unported__/oemedical_gynecology_and_obstetrics/) | 1.0.1 (unported) | OeMedical : gynecology and obstetrics
+[oemedical_his](__unported__/oemedical_his/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
+[oemedical_icu](__unported__/oemedical_icu/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
+[oemedical_insurance](__unported__/oemedical_insurance/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
+[oemedical_invoice](__unported__/oemedical_invoice/) | 0.1 (unported) | Medical Invoice
+[oemedical_lab](__unported__/oemedical_lab/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
+[oemedical_lifestyle](__unported__/oemedical_lifestyle/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
+[oemedical_pediatrics](__unported__/oemedical_pediatrics/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
+[oemedical_socioeconomics](__unported__/oemedical_socioeconomics/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
+[oemedical_surgery](__unported__/oemedical_surgery/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
+[web_doc_oemedical](__unported__/web_doc_oemedical/) | 0.1 (unported) | OeMedical CMS
+
+[//]: # (end addons)
