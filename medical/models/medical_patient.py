@@ -28,10 +28,6 @@ from dateutil.relativedelta import relativedelta
 class MedicalPatient(models.Model):
     '''
     The concept of Patient included in medical.
-
-    A patient is an Partner with extra elements due to the fact that we will
-    re-use all the ACL related to users to manage the security of a patient
-    form around medical.
     '''
     _name = 'medical.patient'
     _description = 'Medical Patient'
@@ -70,8 +66,6 @@ class MedicalPatient(models.Model):
     dob = fields.Date(string='Date of Birth')
     dod = fields.Datetime(string='Deceased Date')
     active = fields.Boolean(default=True)
-    is_patient = fields.Boolean(default=True)
-    customer = fields.Boolean(default=True)
     deceased = fields.Boolean()
     partner_id = fields.Many2one(
         comodel_name='res.partner', required=True, ondelete='cascade',
