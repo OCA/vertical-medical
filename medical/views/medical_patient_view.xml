@@ -26,7 +26,8 @@
                     </header>
                     <sheet>
                         <div class="oe_title" name="title">
-                            <field name="image" widget='image' class="left avatar"/>
+                            <field name="image" widget='image'
+                                class="oe_left oe_avatar" options="{'preview_image': 'image_medium', 'size': [90, 90]}"/>
                             <h1><field name="name" placeholder="First Name Last Name" /></h1>
                         </div>
                         <div class="oe_right oe_button_box" name="buttons">
