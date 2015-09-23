@@ -91,6 +91,7 @@ class MedicalPatient(models.Model):
     @api.model
     @api.returns('self', lambda value: value.id)
     def create(self, vals):
+        vals['is_patient'] = True
         if not vals.get('identification_code'):
             sequence = self.env['ir.sequence'].get('medical.patient')
             vals['identification_code'] = sequence
