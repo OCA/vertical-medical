@@ -24,18 +24,18 @@ from openerp.osv import fields, orm
 from openerp.tools.translate import _
 
 
-class OeMedicalInsurance(orm.Model):
-    _name = 'oemedical.insurance'
+class MedicalInsurance(orm.Model):
+    _name = 'medical.insurance'
 
-    def _get_name(self, cr, uid, ids, field_name, arg, context=None):
+    def _compute_name(self, cr, uid, ids, field_name, arg, context=None):
         res = {}
         for record in self.browse(cr, uid, ids, context=context):
             res[record.id] = record.company.name
         return res
 
     _columns = {
-        'name': fields.function(_get_name, type='char', string='Name', help="", multi=False),
-        'company': fields.many2one('res.partner', 'Insurance Company', required=True),
+        'name': fields.function(_compute_name, type='char', string='Name', help="", multi=False),
+        'company_id': fields.many2one('res.partner', 'Insurance Company', required=True),
         'patient_id': fields.many2one('oemedical.patient', 'Patient'),
         'plan_id': fields.many2one('oemedical.insurance.plan', string='Plan', help='Insurance company plan'),
         'insurance_type': fields.selection([
@@ -47,7 +47,7 @@ class OeMedicalInsurance(orm.Model):
         'member_since': fields.date(string='Member since'),
         'member_exp': fields.date(string='Expiration date'),
         'notes': fields.text(string='Extra Info'),
-        'owner': fields.many2one('res.partner', string='Owner'),
+        'owner_id': fields.many2one('res.partner', string='Owner'),
     }
 
-OeMedicalInsurance()
+MedicalInsurance()
