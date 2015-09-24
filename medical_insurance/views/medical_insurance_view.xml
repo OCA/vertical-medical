@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="medical_insurance_view_tree" model="ir.ui.view">
+			<field name="name">medical.insurance.view.tree</field>
+			<field name="model">medical.insurance</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<tree string="Medical Insurance">
+					<field name="name" />
+					<field name="plan_id" />
+					<field name="patient_id"/>
+					<field name="insurance_type"/>
+					<field name="company_id" />
+					<field name="number" />
+					<field name="member_since" />
+					<field name="member_exp" />
+					<field name="notes" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="medical_insurance_view_form" model="ir.ui.view">
+			<field name="name">medical.insurance.view.form</field>
+			<field name="model">medical.insurance</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<form string="Medical Insurance"  version="7.0">
+                    <sheet>
+                        <h1>
+                            <label string="Insurance:"/>
+					        <field name="name" invisible="1"/>
+					        <field name="company_id" />
+                        </h1>
+                        <group colspan="4" col="4">
+					        <field name="plan_id" />
+					        <field name="patient_id"/>
+					        <field name="insurance_type"/>
+					        <field name="number" />
+					        <field name="member_since" />
+					        <field name="member_exp" />
+                        </group>
+                        <group colspan="4" col="4" string="Notes">
+					        <field name="notes" colspan="4" nolabel="1"/>
+                        </group>
+                    </sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="medical_insurance_view_search" model="ir.ui.view">
+			<field name="name">medical.insurance.view.search</field>
+			<field name="model">medical.insurance</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<search string="Medical Insurance">
+					<field name="plan_id" />
+					<field name="patient_id"/>
+					<field name="company_id" />
+					<field name="number" />
+					<field name="member_since" />
+					<field name="member_exp" />
+					<field name="notes" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Plan" domain="[]" context="{'group_by':'plan_id'}" />
+						<filter string="Member since" domain="[]"
+							context="{'group_by':'member_since'}" />
+						<filter string="Insurance Company" domain="[]"
+							context="{'group_by':'company'}" />
+						<filter string="Number" domain="[]" context="{'group_by':'number'}" />
+						<filter string="Expiration date" domain="[]"
+							context="{'group_by':'member_exp'}" />
+						<filter string="Extra Info" domain="[]" context="{'group_by':'notes'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="medical_insurance_action_view">
+			<field name="name">Insurance</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.insurance</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="medical_insurance_view_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+		<record model="ir.actions.act_window.view" id="medical_insurance_action_form">
+			<field name="act_window_id" ref="medical_insurance_action_view" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="medical_insurance_view_form" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="medical_insurance_action_tree">
+			<field name="act_window_id" ref="medical_insurance_action_view" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="medical_insurance_view_tree" />
+		</record>
+		
+	</data>
+</openerp>
