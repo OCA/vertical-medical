@@ -19,5 +19,33 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #/#############################################################################
-import oemedical_insurance
-import oemedical_insurance_plan
+
+from openerp.osv import fields, orm
+from openerp.tools.translate import _
+
+
+class MedicalInsurancePlan(orm.Model):
+    _name = 'medical.insurance.plan'
+
+    _columns = {
+        'name': fields.char(
+            string='Name',
+            size=264,
+            required=True,
+            help='Insurance company plan'),
+        'is_default': fields.boolean(
+            string='Default plan',
+            help='Check if this is the default plan when assigning this'
+            ' insurance company to a patient'),
+        'company_id': fields.many2one(
+            'res.partner',
+            string='Insurance Company',
+            required=True),
+        'notes': fields.text(
+            string='Extra info'),
+        'plan_id': fields.many2one(
+            'product.product',
+            string='Plan'),
+    }
+
+MedicalInsurancePlan()

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
-		<record id="view_oemedical_insurance_tree" model="ir.ui.view">
-			<field name="name">oemedical.insurance.tree</field>
-			<field name="model">oemedical.insurance</field>
+		<record id="medical_insurance_view_tree" model="ir.ui.view">
+			<field name="name">medical.insurance.view.tree</field>
+			<field name="model">medical.insurance</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<tree string="Oemedical Insurance">
+				<tree string="Medical Insurance">
 					<field name="name" />
 					<field name="plan_id" />
 					<field name="patient_id"/>
 					<field name="insurance_type"/>
-					<field name="company" />
+					<field name="company_id" />
 					<field name="number" />
 					<field name="member_since" />
 					<field name="member_exp" />
@@ -20,17 +20,17 @@
 			</field>
 		</record>
 
-		<record id="view_oemedical_insurance_form" model="ir.ui.view">
-			<field name="name">oemedical.insurance.form</field>
-			<field name="model">oemedical.insurance</field>
+		<record id="medical_insurance_view_form" model="ir.ui.view">
+			<field name="name">medical.insurance.view.form</field>
+			<field name="model">medical.insurance</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<form string="Oemedical Insurance"  version="7.0">
+				<form string="Medical Insurance"  version="7.0">
                     <sheet>
                         <h1>
                             <label string="Insurance:"/>
 					        <field name="name" invisible="1"/>
-					        <field name="company" />
+					        <field name="company_id" />
                         </h1>
                         <group colspan="4" col="4">
 					        <field name="plan_id" />
@@ -48,15 +48,15 @@
 			</field>
 		</record>
 
-		<record id="view_oemedical_insurance_search" model="ir.ui.view">
-			<field name="name">oemedical.insurance.search</field>
-			<field name="model">oemedical.insurance</field>
+		<record id="medical_insurance_view_search" model="ir.ui.view">
+			<field name="name">medical.insurance.view.search</field>
+			<field name="model">medical.insurance</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<search string="Oemedical Insurance">
+				<search string="Medical Insurance">
 					<field name="plan_id" />
 					<field name="patient_id"/>
-					<field name="company" />
+					<field name="company_id" />
 					<field name="number" />
 					<field name="member_since" />
 					<field name="member_exp" />
@@ -77,30 +77,30 @@
 			</field>
 		</record>
 
-		<record model="ir.actions.act_window" id="act_open_oemedical_insurance_view">
+		<record model="ir.actions.act_window" id="medical_insurance_action_view">
 			<field name="name">Insurance</field>
 			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">oemedical.insurance</field>
+			<field name="res_model">medical.insurance</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">tree,form</field>
-			<field name="search_view_id" ref="view_oemedical_insurance_search" />
+			<field name="search_view_id" ref="medical_insurance_view_search" />
 			<field name="domain">[]</field>
 			<field name="context">{}</field>
 		</record>
 
-		<record model="ir.actions.act_window.view" id="act_open_oemedical_insurance_view_form">
-			<field name="act_window_id" ref="act_open_oemedical_insurance_view" />
+		<record model="ir.actions.act_window.view" id="medical_insurance_action_form">
+			<field name="act_window_id" ref="medical_insurance_action_view" />
 			<field name="sequence" eval="20" />
 			<field name="view_mode">form</field>
-			<field name="view_id" ref="view_oemedical_insurance_form" />
+			<field name="view_id" ref="medical_insurance_view_form" />
 		</record>
 
-		<record model="ir.actions.act_window.view" id="act_open_oemedical_insurance_view_tree">
-			<field name="act_window_id" ref="act_open_oemedical_insurance_view" />
+		<record model="ir.actions.act_window.view" id="medical_insurance_action_tree">
+			<field name="act_window_id" ref="medical_insurance_action_view" />
 			<field name="sequence" eval="10" />
 			<field name="view_mode">tree</field>
-			<field name="view_id" ref="view_oemedical_insurance_tree" />
+			<field name="view_id" ref="medical_insurance_view_tree" />
 		</record>
-
+		
 	</data>
 </openerp>
