@@ -20,10 +20,10 @@
 #
 ##############################################################################
 
-from openerp import fields, orm
+from openerp import fields, models
 
 
-class MedicalInsurance(orm.Model):
+class MedicalInsurance(models.Model):
     _name = 'medical.insurance'
 
     def _compute_name(self, cr, uid, ids, field_name, arg, context=None):
@@ -32,30 +32,45 @@ class MedicalInsurance(orm.Model):
             res[record.id] = record.company.name
         return res
 
-    _columns = {
-        'name': fields.function(
-            _compute_name, type='char', string='Name', help="", multi=False
-        ),
-        'company_id': fields.many2one(
-            'res.partner', 'Insurance Company', required=True
-        ),
-        'patient_id': fields.many2one(
-            'oemedical.patient', 'Patient'
-        ),
-        'plan_id': fields.many2one(
-            'oemedical.insurance.plan', string='Plan',
-            help='Insurance company plan'
-        ),
-        'insurance_type': fields.selection([
-            ('state', 'State'),
-            ('labour_union', 'Labour Union / Syndical'),
-            ('private', 'Private'),
-        ], string='Insurance Type', select=True),
-        'number': fields.char(size=256, string='Number', required=True),
-        'member_since': fields.date(string='Member since'),
-        'member_exp': fields.date(string='Expiration date'),
-        'notes': fields.text(string='Extra Info'),
-        'owner_id': fields.many2one('res.partner', string='Owner'),
-    }
+    name = fields.Char(
+        compute='_compute_name',
+        string='Name',
+        help="",
+    )
+    company_id = fields.Many2one(
+        'res.partner',
+        string='Insurance Company',
+        required=True,
+    )
+    patient_id = fields.Many2one(
+        'medical.patient',
+        string='Patient',
+    )
+    plan_id = fields.Many2one(
+        'medical.insurance.plan',
+        string='Plan',
+        help='Insurance plan name'
+    )
+    insurance_type = fields.Selection([
+        ('state', 'State'),
+        ('labour_union', 'Labour Union / Syndical'),
+        ('private', 'Private'),
+    ],)
+    number = fields.Char(
+        required=True,
+    )
+    member_since = fields.Date(
+        string='Member Since',
+    )
+    member_exp = fields.Date(
+        string='Expiration Date',
+    )
+    notes = fields.Text(
+        string='Extra Info',
+    )
+    owner_id = fields.Many2one(
+        'res.partner',
+        string='Owner',
+    )
 
 MedicalInsurance()
