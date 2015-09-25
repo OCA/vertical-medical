@@ -96,6 +96,10 @@
                                 <separator string="Notes"/>
                                 <field name="notes" />
                             </page>
+                            <page string="Beds" name="bed_ids"
+                                attrs="{'invisible': ['|', ('id','=',False), ('bed_ids','=',[])]}" autofocus="autofocus">
+                                <field name="bed_ids" />
+                            </page>
                         </notebook>
                     </sheet>
                     <div name="configurator" class="oe_form_sheetbg" groups="medical.group_medical_configurator">

@@ -82,6 +82,14 @@
                                 <separator string="Notes"/>
                                 <field name="notes" />
                             </page>
+                            <page string="Children Zone" name="children_zone"
+                                attrs="{'invisible': ['|', ('id','=',False), ('child_ids','=',[])]}" autofocus="autofocus">
+                                <field name="child_ids" />
+                            </page>
+                            <page string="Rooms" name="room_ids"
+                                attrs="{'invisible': ['|', ('id','=',False), ('room_ids','=',[])]}" autofocus="autofocus">
+                                <field name="room_ids" />
+                            </page>
                         </notebook>
                     </sheet>
                     <div name="configurator" class="oe_form_sheetbg" groups="medical.group_medical_configurator">

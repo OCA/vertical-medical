@@ -66,3 +66,9 @@ class MedicalHospitalZone(models.Model):
         domain=[('is_institution', '=', True)], index=True)
     parent_id = fields.Many2one(
         string='Parent Zone', comodel_name='medical.hospital.zone', index=True)
+    child_ids = fields.One2many(
+        string='Children', comodel_name='medical.hospital.zone',
+        inverse_name='parent_id')
+    room_ids = fields.One2many(
+        string='Rooms', comodel_name='medical.hospital.room',
+        inverse_name='zone_id')
