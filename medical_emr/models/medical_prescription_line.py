@@ -42,7 +42,7 @@ class MedicalPrescriptionLine(orm.Model):
             'dose_unit_id': medication_template.dose_unit_id.id,
             'qty': medication_template.qty,
             'admin_times': medication_template.admin_times,
-            'common_dose_id': medication_template.common_dosage_id.id,
+            'common_dose_id': medication_template.common_dose_id.id,
             'frequency': medication_template.frequency,
             'frequency_unit': medication_template.frequency_unit,
         }}
