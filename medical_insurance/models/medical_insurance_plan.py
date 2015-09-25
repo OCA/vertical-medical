@@ -20,31 +20,32 @@
 #
 ###############################################################################
 
-from openerp.osv import fields, orm
+from openerp import fields, models
 
 
-class MedicalInsurancePlan(orm.Model):
+class MedicalInsurancePlan(models.Model):
     _name = 'medical.insurance.plan'
 
-    _columns = {
-        'name': fields.char(
-            string='Name',
-            size=264,
-            required=True,
-            help='Insurance company plan'),
-        'is_default': fields.boolean(
-            string='Default plan',
-            help='Check if this is the default plan when assigning this'
-            ' insurance company to a patient'),
-        'company_id': fields.many2one(
-            'res.partner',
-            string='Insurance Company',
-            required=True),
-        'notes': fields.text(
-            string='Extra info'),
-        'plan_id': fields.many2one(
-            'product.product',
-            string='Plan'),
-    }
+    name = fields.Char(
+        required=True,
+        help='Insurance plan name',
+    )
+    is_default = fields.Boolean(
+        string='Default Plan',
+        help='Check if this is the default plan when assigning this'
+        ' insurance company to a patient',   
+    )
+    company_id = fields.Many2one(
+        'res.partner',
+        string='Insurance Company',
+        required=True,
+    )
+    notes = fields.Text(
+        string='Extra Info',
+    )
+    plan_id = fields.Many2one(
+        'product.product',
+        string='Plan',
+    )
 
 MedicalInsurancePlan()
