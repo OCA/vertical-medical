@@ -60,7 +60,7 @@ class ResPartner(orm.Model):
         'ref': fields.char(size=256, string='ID/SSN',
                            help='Patient Social Security Number or '
                            'equivalent'),
-        'patient_ids': fields.one2many('medical.patient.med.center.rel',
-                                       'medical_center_id',
-                                       'Related Patients'),
+        'patient_ids': fields.one2many(
+            'medical.patient', fields_id='medical_center_id',
+            string='Related Patients'),
     }

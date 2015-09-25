@@ -21,7 +21,7 @@
 # #############################################################################
 
 import time
-from datetime import datetime, timedelta
+from datetime import datetime
 
 from openerp.osv import fields, orm
 from openerp.tools.translate import _
@@ -177,39 +177,6 @@ class MedicalAppointment(orm.Model):
 
         return self.search(cr, uid, domain, context=context)
 
-    def _get_empty_appointments(self, cr, uid, physician_ids, institution_ids,
-                                date_start, date_end, context=None):
-        """ Get  empty appointments between given dates """
-
-        patient_proxy = self.pool['medical.patient']
-        default_patient = patient_proxy._get_default_patient_id(cr, uid,
-                                                                context=None)
-
-        domain = [('physician_id', 'in', physician_ids),
-                  ('patient_id', '=', default_patient),
-                  ('date_end', '>', date_start),
-                  ('appointment_date', '<', date_end)]
-        if institution_ids:
-            domain += [('institution_id', 'in', institution_ids)]
-
-        _logger.warning("get empty appointments domain:  '%s'" % (str(domain)))
-
-        return self.search(cr, uid, domain, context=context)
-
-    def _remove_empty_clashes(self, cr, uid, excluded_ids, physician_ids,
-                              institution_ids, date_start, date_end,
-                              context=None):
-        """ Remove empty appointments that clash with given one """
-
-        # remove from list those ids in excluded_ids
-        empty_appointments = set(
-            self._get_empty_appointments(cr, uid, physician_ids,
-                                         institution_ids, date_start, date_end,
-                                         context=context)).difference(
-            excluded_ids)
-
-        self.unlink(cr, uid, empty_appointments, context)
-
     def _set_clashes_state_to_review(self, cr, uid, physician_ids,
                                      institution_ids, date_start, date_end,
                                      context=None):
@@ -230,33 +197,10 @@ class MedicalAppointment(orm.Model):
                        {'stage_id': review_stage_id})
 
     def create(self, cr, uid, vals, context=None):
-        date_start = vals['appointment_date']
-        duration = int(vals['duration'])
-        date_end = (
-            datetime.strptime(date_start, "%Y-%m-%d %H:%M:%S") +
-            timedelta(minutes=duration)).strftime("%Y-%m-%d %H:%M")
-        vals['date_end'] = date_end
-
-        self._remove_empty_clashes(cr, uid, [], [vals['physician_id']], [],
-                                   date_start, date_end, context=context)
-        current_appointments = self._get_appointments(cr, uid,
-                                                      [vals['physician_id']],
-                                                      [], date_start, date_end,
-                                                      context=context)
-        if current_appointments:
-            raise orm.except_orm(_('Error!'),
-                                 _('Appointment clashes with other'))
-
-        if vals.get('name', '/') == '/':
-            vals['name'] = self.pool['ir.sequence'].get(cr, uid,
-                                                        'medical.appointment')
-
         val_history = {}
-
         val_history['name'] = uid
         val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
         val_history['action'] = "----  Created  ----"
-
         vals['history_ids'] = val_history
         return super(MedicalAppointment, self).create(cr, uid, vals,
                                                       context=context)
@@ -274,25 +218,6 @@ class MedicalAppointment(orm.Model):
                                     context=context)[0]
         date_start = vals.get('appointment_date',
                               original_values['appointment_date'])
-        if 'appointment_date' in vals or 'duration' in vals:
-
-            physician_id = vals.get('physician_id',
-                                    original_values['physician_id'][0])
-            duration = vals.get('duration', original_values['duration'])
-
-            date_end = (
-                datetime.strptime(date_start, "%Y-%m-%d %H:%M:%S") +
-                timedelta(minutes=duration)).strftime("%Y-%m-%d %H:%M")
-            vals['date_end'] = date_end
-            self._remove_empty_clashes(cr, uid, ids, [physician_id], [],
-                                       date_start, date_end, context=context)
-            current_appointments = self._get_appointments(
-                cr, uid, [physician_id], [], date_start, date_end,
-                context=context).remove(ids[0])
-            if current_appointments:
-                raise orm.except_orm(_('Error!'),
-                                     _('Appointment clashes with other'))
-
         result = super(MedicalAppointment, self).write(cr, uid, ids, vals,
                                                        context=context)
 
