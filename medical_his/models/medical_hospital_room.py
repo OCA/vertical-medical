@@ -64,3 +64,6 @@ class MedicalHospitalRoom(models.Model):
     zone_id = fields.Many2one(
         string='Zone', comodel_name='medical.hospital.zone', index=True,
         required=True)
+    bed_ids = fields.One2many(
+        string='Beds', comodel_name='medical.hospital.bed',
+        inverse_name='room_id')
