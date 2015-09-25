@@ -62,7 +62,11 @@
                             <group name="main">
                                 <field name="label"/>
                                 <field name="parent_id"/>
-                                <field name="partner_id"/>
+                                <field name="partner_id"
+                                    context="{
+                                        'default_is_company': True,
+                                        'default_is_institution': True,
+                                    }"/>
                             </group>
                         </group>
 
