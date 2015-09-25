@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#/#############################################################################
+##############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,10 +18,9 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#/#############################################################################
+##############################################################################
 
-from openerp.osv import fields, orm
-from openerp.tools.translate import _
+from openerp import fields, orm
 
 
 class MedicalInsurance(orm.Model):
@@ -34,10 +33,19 @@ class MedicalInsurance(orm.Model):
         return res
 
     _columns = {
-        'name': fields.function(_compute_name, type='char', string='Name', help="", multi=False),
-        'company_id': fields.many2one('res.partner', 'Insurance Company', required=True),
-        'patient_id': fields.many2one('oemedical.patient', 'Patient'),
-        'plan_id': fields.many2one('oemedical.insurance.plan', string='Plan', help='Insurance company plan'),
+        'name': fields.function(
+            _compute_name, type='char', string='Name', help="", multi=False
+        ),
+        'company_id': fields.many2one(
+            'res.partner', 'Insurance Company', required=True
+        ),
+        'patient_id': fields.many2one(
+            'oemedical.patient', 'Patient'
+        ),
+        'plan_id': fields.many2one(
+            'oemedical.insurance.plan', string='Plan',
+            help='Insurance company plan'
+        ),
         'insurance_type': fields.selection([
             ('state', 'State'),
             ('labour_union', 'Labour Union / Syndical'),
