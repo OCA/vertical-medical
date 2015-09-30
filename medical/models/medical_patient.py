@@ -61,7 +61,6 @@ class MedicalPatient(models.Model):
     def action_invalidate(self):
         self.active = False
         self.partner_id.active = False
-        self.dod = fields.Datetime.now()
 
     age = fields.Char(compute='_compute_age')
     identification_code = fields.Char(
