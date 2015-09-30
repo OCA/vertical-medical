@@ -37,13 +37,14 @@ class MedicalPatient(models.Model):
         ('A', 'A'),
         ('B', 'B'),
         ('AB', 'AB'),
-        ('O', 'O'), ], string='Blood Type')
+        ('O', 'O'), ])
     rh = fields.Selection([
         ('+', '+'),
-        ('-', '-')], string='Rh')
+        ('-', '-')])
     primary_care_physician_id = fields.Many2one(
-        comodel_name='medical.physician', string='Primary Care Doctor')
-    childbearing_age = fields.Boolean(string='Childbearing Age')
+        comodel_name='medical.physician', string='Primary Care Doctor',
+        index=True)
+    childbearing_age = fields.Boolean()
     medication_ids = fields.One2many(
         comodel_name='medical.patient.medication', inverse_name='patient_id',
         string='Medications')
@@ -51,11 +52,13 @@ class MedicalPatient(models.Model):
         comodel_name='medical.patient.evaluation', inverse_name='patient_id',
         string='Evaluations')
     critical_info = fields.Text(
-        string='Important disease, allergy or procedures information')
+        help='Important diseases, allergies or procedures information',
+        string='Critical Information')
     disease_ids = fields.One2many(
         comodel_name='medical.patient.disease', inverse_name='patient_id',
         string='Diseases')
     ethnicity_id = fields.Many2one(
-        comodel_name='medical.ethnicity', string='Ethnicity')
+        comodel_name='medical.ethnicity', string='Ethnicity', index=True)
     cause_of_death_pathology_id = fields.Many2one(
-        comodel_name='medical.pathology', string='Cause of Death Pathology')
+        comodel_name='medical.pathology', string='Cause of Death Pathology',
+        index=True)

@@ -25,12 +25,13 @@ from openerp import fields, models
 
 class MedicalPathologyGroup(models.Model):
     _name = 'medical.pathology.group'
-    _description = 'Medical Pathology Group'
+    _descriptionription = 'Medical Pathology Group'
 
-    name = fields.Char(string='Name', required=True, translate=True)
-    notes = fields.Text(string='Notes')
+    name = fields.Char(required=True, translate=True)
+    notes = fields.Text(translate=True)
     code = fields.Char(
-        string='Code', required=True, help='for example MDG6 code will contain'
+        required=True, help='for example MDG6 code will contain'
         ' the Millennium Development Goals # 6 diseases : Tuberculosis, '
         'Malaria and HIV/AIDS')
-    desc = fields.Char(string='Short Description', required=True)
+    description = fields.Text(
+        string='Short Description', required=True, translate=True)

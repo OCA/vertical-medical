@@ -9,7 +9,6 @@
                 <search string="Medical Pathology Category">
                     <field name="name" />
                     <field name="parent_id" />
-                    <field name="child_ids" />
                     <newline />
                     <group expand="0" string="Group By...">
                         <filter string="Parent Category" domain="[]"
@@ -39,7 +38,8 @@
                     </header>
                     <sheet>
                         <div class="oe_title" name="title">
-                            <h1><field name="name" placeholder="Name" /></h1>
+                            <label for="name" class="edit_only"/>
+                            <h1><field name="name" /></h1>
                         </div>
                         <div class="oe_right oe_button_box" name="buttons">
                         </div>
@@ -66,7 +66,7 @@
         </record>
 
         <record model="ir.actions.act_window" id="act_open_medical_pathology_category_view">
-            <field name="name">Pathology Category</field>
+            <field name="name">Pathology Categories</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">medical.pathology.category</field>
             <field name="view_type">form</field>

@@ -37,15 +37,16 @@ class MedicalPathology(models.Model):
         if len(self.search(domain)) > 1:
             raise ValidationError('"code" Should be unique per Pathology')
 
-    name = fields.Char(string='Name', required=True, translate=True)
-    code = fields.Char(string='Code', required=True)
-    notes = fields.Text(string='Notes')
+    name = fields.Char(required=True, translate=True)
+    code = fields.Char(required=True)
+    notes = fields.Text(translate=True)
     protein = fields.Char(string='Protein involved')
     chromosome = fields.Char(string='Affected Chromosome')
-    gene = fields.Char(string='Gene')
+    gene = fields.Char()
     category_id = fields.Many2one(
         comodel_name='medical.pathology.category',
-        string='Category of Pathology', select=True)
-    medical_disease_group_members_ids = fields.One2many(
-        comodel_name='medical.disease_group.members',
-        inverse_name='disease_group_id', string='Disease Groups')
+        string='Category of Pathology', index=True)
+    medical_pathology_group_m2m_ids = fields.Many2many(
+        comodel_name='medical.pathology.group', column1='pathology_id',
+        colmun2='pathology_group_id', string='Medical Pathology Groups',
+        relation="pathology_id_pathology_group_id_rel")

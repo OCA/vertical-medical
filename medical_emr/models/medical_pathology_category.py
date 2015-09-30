@@ -34,10 +34,10 @@ class MedicalPathologyCategory(models.Model):
         if not self._check_recursion():
             raise ValidationError('Error! You can not create recursive zone.')
 
-    name = fields.Char(string='Name', required=True)
+    name = fields.Char(required=True, translate=True)
     child_ids = fields.One2many(
         comodel_name='medical.pathology.category', inverse_name='parent_id',
         string='Children Categories')
     parent_id = fields.Many2one(
         comodel_name='medical.pathology.category', string='Parent Category',
-        select=True)
+        index=True)

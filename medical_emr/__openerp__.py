@@ -65,7 +65,6 @@
         'views/medical_drug_route_view.xml',
         'views/medical_family_view.xml',
         'views/medical_occupation_view.xml',
-        'views/medical_disease_group_members_view.xml',
         'views/medical_medicament_view.xml',
         'views/medical_pathology_group_view.xml',
         'security/ir.model.access.csv',

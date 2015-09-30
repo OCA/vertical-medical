@@ -11,7 +11,7 @@
                     <field name="notes" />
                     <field name="code" />
                     <field name="name" />
-                    <field name="desc" />
+                    <field name="description" />
                 </search>
             </field>
         </record>
@@ -23,7 +23,6 @@
                 <tree string="Medical Pathology Group">
                     <field name="name" />
                     <field name="code" />
-                    <field name="desc" />
                 </tree>
             </field>
         </record>
@@ -37,7 +36,8 @@
                     </header>
                     <sheet>
                         <div class="oe_title" name="title">
-                            <h1><field name="name" placeholder="Name" /></h1>
+                            <label for="name" class="edit_only"/>
+                            <h1><field name="name"/></h1>
                         </div>
                         <div class="oe_right oe_button_box" name="buttons">
                         </div>
@@ -45,12 +45,12 @@
                         <group name="data">
                             <group name="main">
                                 <field name="code" />
-                                <field name="desc" />
+                                <field name="description" />
                             </group>
                         </group>
 
                         <notebook>
-                            <page string="Others" name="notes" attrs="{'invisible': [('id','=',False)]}" autofocus="autofocus">
+                            <page string="Others" name="notes" autofocus="autofocus">
                                 <separator string="Notes"/>
                                 <field name="notes" />
                             </page>

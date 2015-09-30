@@ -52,21 +52,20 @@ class MedicalPatientDisease(models.Model):
     def action_revalidate(self):
         self.active = True
 
-    name = fields.Char(string='Name', compute='_compute_name', store=True)
-    treatment_description = fields.Char(string='Treatment Description')
-    expire_date = fields.Datetime(
-        string='Expire Date', compute='_compute_expire_date', store=True)
-    short_comment = fields.Char(string='Short Comment')
+    name = fields.Char(compute='_compute_name', store=True)
+    treatment_description = fields.Char()
+    expire_date = fields.Datetime(compute='_compute_expire_date', store=True)
+    short_comment = fields.Char()
     pathology_id = fields.Many2one(
-        comodel_name='medical.pathology', string='Pathology', select=True,
+        comodel_name='medical.pathology', string='Pathology', index=True,
         required=True)
     physician_id = fields.Many2one(
-        comodel_name='medical.physician', string='Physician', select=True)
+        comodel_name='medical.physician', string='Physician', index=True)
     pcs_code = fields.Many2one(
-        comodel_name='medical.procedure', string='Procedure code', select=True)
+        comodel_name='medical.procedure', string='Procedure code', index=True)
     patient_id = fields.Many2one(
         comodel_name='medical.patient', string='Patient', required=True,
-        select=True)
+        index=True)
     disease_severity = fields.Selection([
         ('1_mi', 'Mild'),
         ('2_mo', 'Moderate'),
@@ -85,18 +84,18 @@ class MedicalPatientDisease(models.Model):
         ('fa', 'Food Allergy'),
         ('ma', 'Misc Allergy'),
         ('mc', 'Misc Contraindication'),
-    ], string='Allergy type')
+    ])
     weeks_of_pregnancy = fields.Integer(
-        string='Contracted in pregnancy week #')
+        help='Week number of pregnancy when disease contracted',
+        string='Pregnancy Week#')
     age = fields.Integer(string='Age when diagnosed')
     active = fields.Boolean(default=True)
     is_infectious = fields.Boolean(string='Infectious Disease')
-    is_allergy = fields.Boolean(string='Allergic Disease', default=True)
-    pregnancy_warning = fields.Boolean(string='Pregnancy warning')
+    is_allergy = fields.Boolean(string='Allergic Disease')
+    pregnancy_warning = fields.Boolean()
     is_on_treatment = fields.Boolean(string='Currently on Treatment')
-    date_start_treatment = fields.Date(
-        string='Treatment Start Date')
-    date_stop_treatment = fields.Date(string='End of treatment date')
+    treatment_start_date = fields.Date()
+    treatment_end_date = fields.Date()
     diagnosed_date = fields.Date(string='Date of Diagnosis')
-    healed_date = fields.Date(string='Healed')
-    notes = fields.Text(string='Notes')
+    healed_date = fields.Date(string='Date of Healing')
+    notes = fields.Text()

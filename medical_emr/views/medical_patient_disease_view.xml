@@ -16,17 +16,17 @@
                     <field name="weeks_of_pregnancy" />
                     <field name="diagnosed_date" />
                     <field name="notes" />
-                    <field name="date_stop_treatment" />
+                    <field name="treatment_end_date" />
                     <field name="pcs_code" />
                     <field name="patient_id" />
                     <field name="age" />
-                    <field name="date_start_treatment" />
+                    <field name="treatment_start_date" />
                     <field name="short_comment" />
                     <filter name="is_on_treatment" string="Is on Treatment"
-                        domain="[('is_on_treatment', '=', False)]" />
+                        domain="[('is_on_treatment', '=', True)]" />
                     <separator/>
                     <filter name="is_allergy" string="Is Allergy"
-                        domain="[('is_allergy', '=', False)]" />
+                        domain="[('is_allergy', '=', True)]" />
                     <separator/>
                     <filter name="inactive" string="Inactive"
                         domain="[('active', '=', False)]" />
@@ -60,9 +60,7 @@
                         <filter string="Age when diagnosed" domain="[]"
                             context="{'group_by':'age'}" />
                         <filter string="Start" domain="[]"
-                            context="{'group_by':'date_start_treatment'}" />
-                        <filter string="Remarks" domain="[]"
-                            context="{'group_by':'short_comment'}" />
+                            context="{'group_by':'treatment_start_date'}" />
                         <filter string="State" domain="[]"
                             context="{'group_by':'state'}" />
                     </group>
@@ -79,20 +77,18 @@
                     <field name="name" />
                     <field name="patient_id" />
                     <field name="physician_id" />
-                    <field name="pathology_id" />
                     <field name="weeks_of_pregnancy" />
                     <field name="pcs_code" />
                     <field name="age" />
                     <field name="healed_date" />
                     <field name="diagnosed_date" />
-                    <field name="date_stop_treatment" />
-                    <field name="date_start_treatment" />
+                    <field name="treatment_end_date" />
+                    <field name="treatment_start_date" />
                     <field name="pregnancy_warning" />
                     <field name="is_allergy" />
                     <field name="is_on_treatment" />
                     <field name="is_infectious" />
                     <field name="state" />
-                    <field name="active" invisible="1"/>
                 </tree>
             </field>
         </record>
@@ -105,7 +101,7 @@
                     <header>
                         <span attrs="{'invisible': [('id','=',False)]}" groups="medical.group_medical_user">
                             <button name="action_invalidate" string="Invalidate" type="object"
-                                    confirm="Invalidate Bed: proceed anyway?"
+                                    confirm="Invalidate Disease: proceed anyway?"
                                     attrs="{'invisible': [('active','=', False)]}"/>
                             <button name="action_revalidate" string="Reactivate" type="object"
                                     confirm="Reactivate document: proceed anyway?"
@@ -115,7 +111,8 @@
                     </header>
                     <sheet>
                         <div class="oe_title" name="title">
-                            <h1><field name="name" placeholder="Name" /></h1>
+                            <label for="name" class="edit_only"/>
+                            <h1><field name="name"/></h1>
                         </div>
                         <div class="oe_right oe_button_box" name="buttons">
                         </div>
@@ -139,15 +136,14 @@
                                     <field name="age"/>
                                     <field name="is_infectious"/>
                                     <field name="is_allergy"/>
-                                    <field name="is_on_treatment"/>
-                                    <field name="is_allergy"/>
                                     <field name="pregnancy_warning"/>
                                 </group>
                                 <group name="dates">
                                     <field name="diagnosed_date"/>
+                                    <field name="treatment_start_date"/>
+                                    <field name="treatment_end_date"/>
+                                    <field name="is_on_treatment"/>
                                     <field name="healed_date"/>
-                                    <field name="date_start_treatment"/>
-                                    <field name="date_stop_treatment"/>
                                 </group>
                             </group>
                         </group>
@@ -160,7 +156,7 @@
                         </group>
 
                         <notebook>
-                            <page string="Others" name="notes" attrs="{'invisible': [('id','=',False)]}" autofocus="autofocus">
+                            <page string="Others" name="notes" autofocus="autofocus">
                                 <separator string="Notes"/>
                                 <field name="notes" />
                             </page>
@@ -181,7 +177,7 @@
         </record>
 
         <record model="ir.actions.act_window" id="act_open_medical_patient_disease_view">
-            <field name="name">Patient Disease</field>
+            <field name="name">Patient Diseases</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">medical.patient.disease</field>
             <field name="view_type">form</field>

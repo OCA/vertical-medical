@@ -30,7 +30,7 @@
                                 <label for="blood_type" string="Blood Type"/>
                                 <div class="oe_inline">
                                     <field name="blood_type" style="width: 30%"/>
-                                    <field name="rh" nolabel="1" style="width: 30%"/>
+                                    <field name="rh" attrs="{'required': [('blood_type', '!=', False)]}" nolabel="1" style="width: 30%"/>
                                 </div>
                             </group>
                             <group>
@@ -42,22 +42,25 @@
                         <separator string="Patient Allergies and Critical Informations" />
                         <field name="critical_info" nolabel="1" />
                     </page>
-                    <page string="Medication">
+                    <page string="Medications">
                         <separator string="Medications"/>
-                        <field name="medication_ids" nolabel="1" />
+                        <field name="medication_ids"/>
                     </page>
                     <page string="Evaluations">
                         <separator string="Evaluations"/>
-                        <field name="evaluation_ids" nolabel="1" />
+                        <field name="evaluation_ids"/>
                     </page>
                     <page string="Diseases">
                         <separator string="Diseases"/>
-                        <field name="disease_ids" nolabel="1">
+                        <field name="disease_ids">
                             <tree>
                                 <field name="name"/>
                                 <field name="patient_id"/>
-                                <field name="pathology_id"/>
                                 <field name="physician_id"/>
+                                <field name="age"/>
+                                <field name="treatment_start_date"/>
+                                <field name="treatment_end_date"/>
+                                <field name="healed_date"/>
                             </tree>
                         </field>
                     </page>

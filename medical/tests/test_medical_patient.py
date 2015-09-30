@@ -79,4 +79,3 @@ class TestMedicalPatient(TransactionCase):
         patient_id.action_invalidate()
         self.assertFalse(patient_id.active, 'Should be inactive')
         self.assertFalse(patient_id.partner_id.active, 'Should be inactive')
-        self.assertTrue(patient_id.dod, 'Should be set')
