@@ -2,7 +2,7 @@
 <openerp>
     <data>
 
-        <record id="view_medical_pathology_group_search" model="ir.ui.view">
+        <record id="medical_pathology_view_group_search" model="ir.ui.view">
             <field name="name">medical.pathology.group.search</field>
             <field name="model">medical.pathology.group</field>
             <field name="priority" eval="8" />
@@ -16,7 +16,7 @@
             </field>
         </record>
 
-        <record id="view_medical_pathology_group_tree" model="ir.ui.view">
+        <record id="medical_pathology_view_group_tree" model="ir.ui.view">
             <field name="name">medical.pathology.group.tree</field>
             <field name="model">medical.pathology.group</field>
             <field name="arch" type="xml">
@@ -27,7 +27,7 @@
             </field>
         </record>
 
-        <record id="view_medical_pathology_group_form" model="ir.ui.view">
+        <record id="medical_pathology_view_group_form" model="ir.ui.view">
             <field name="name">medical.pathology.group.form</field>
             <field name="model">medical.pathology.group</field>
             <field name="arch" type="xml">
@@ -68,14 +68,14 @@
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="act_open_medical_pathology_group_view">
+        <record model="ir.actions.act_window" id="medical_pathology_group_action">
             <field name="name">Pathology Group</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">medical.pathology.group</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="view_medical_pathology_group_tree" />
-            <field name="search_view_id" ref="view_medical_pathology_group_search" />
+            <field name="view_id" ref="medical_pathology_view_group_tree" />
+            <field name="search_view_id" ref="medical_pathology_view_group_search" />
             <field name="domain">[]</field>
             <field name="context">{}</field>
         </record>

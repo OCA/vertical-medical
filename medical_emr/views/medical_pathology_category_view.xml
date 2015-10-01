@@ -2,7 +2,7 @@
 <openerp>
     <data>
 
-        <record id="view_medical_pathology_category_search" model="ir.ui.view">
+        <record id="medical_pathology_view_category_search" model="ir.ui.view">
             <field name="name">medical.pathology.category.search</field>
             <field name="model">medical.pathology.category</field>
             <field name="arch" type="xml">
@@ -18,7 +18,7 @@
             </field>
         </record>
 
-        <record id="view_medical_pathology_category_tree" model="ir.ui.view">
+        <record id="medical_pathology_view_category_tree" model="ir.ui.view">
             <field name="name">medical.pathology.category.tree</field>
             <field name="model">medical.pathology.category</field>
             <field name="arch" type="xml">
@@ -29,7 +29,7 @@
             </field>
         </record>
 
-        <record id="view_medical_pathology_category_form" model="ir.ui.view">
+        <record id="medical_pathology_view_category_form" model="ir.ui.view">
             <field name="name">medical.pathology.category.form</field>
             <field name="model">medical.pathology.category</field>
             <field name="arch" type="xml">
@@ -65,14 +65,14 @@
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="act_open_medical_pathology_category_view">
+        <record model="ir.actions.act_window" id="medical_pathology_category_action">
             <field name="name">Pathology Categories</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">medical.pathology.category</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="view_medical_pathology_category_tree" />
-            <field name="search_view_id" ref="view_medical_pathology_category_search" />
+            <field name="view_id" ref="medical_pathology_view_category_tree" />
+            <field name="search_view_id" ref="medical_pathology_view_category_search" />
             <field name="domain">[]</field>
             <field name="context">{}</field>
         </record>

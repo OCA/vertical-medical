@@ -31,7 +31,7 @@ class MedicalPatientMedication(orm.Model):
         'patient_id': fields.many2one('medical.patient', string='Patient',),
         #        'name': fields.many2one('medical.patient', string='Patient',
         #                                readonly=True ),
-        'doctor': fields.many2one(
+        'doctor_id': fields.many2one(
             'medical.physician', string='Physician',
             help='Physician who prescribed the medicament'
         ),
@@ -44,12 +44,12 @@ class MedicalPatientMedication(orm.Model):
             string='Active',
             help='Check if the patient is currently taking the medication'
         ),
-        'course_completed': fields.boolean(string='Course Completed'),
-        'template': fields.many2one('medical.medication.template',
-                                    string='Medication Template', ),
+        'is_course_complete': fields.boolean(string='Course Completed'),
+        'template_id': fields.many2one('medical.medication.template',
+                                       string='Medication Template', ),
         'discontinued_reason': fields.char(
             size=256, string='Reason for discontinuation',
             help='Short description for discontinuing the treatment'
         ),
-        'discontinued': fields.boolean(string='Discontinued'),
+        'is_discontinued': fields.boolean(string='Discontinued'),
     }

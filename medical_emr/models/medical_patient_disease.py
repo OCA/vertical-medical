@@ -93,6 +93,7 @@ class MedicalPatientDisease(models.Model):
     is_infectious = fields.Boolean(string='Infectious Disease')
     is_allergy = fields.Boolean(string='Allergic Disease')
     pregnancy_warning = fields.Boolean()
+    is_pregnant = fields.Boolean(string='Pregnancy warning')
     is_on_treatment = fields.Boolean(string='Currently on Treatment')
     treatment_start_date = fields.Date()
     treatment_end_date = fields.Date()

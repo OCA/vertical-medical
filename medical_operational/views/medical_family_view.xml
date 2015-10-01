@@ -5,7 +5,7 @@
         <record id="view_medical_family_tree" model="ir.ui.view">
             <field name="name">medical.family.tree</field>
             <field name="model">medical.family</field>
-            <field name="inherit_id" ref="medical_emr.view_medical_family_tree"/>
+            <field name="inherit_id" ref="medical_emr.medical_family_view_tree"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='name']" position="after">
                     <field name="sector_id" />
@@ -16,7 +16,7 @@
         <record id="view_medical_family_form" model="ir.ui.view">
             <field name="name">medical.family.form</field>
             <field name="model">medical.family</field>
-            <field name="inherit_id" ref="medical_emr.view_medical_family_form"/>
+            <field name="inherit_id" ref="medical_emr.medical_family_view_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//notebook" position="before">
                     <group>
@@ -29,7 +29,7 @@
         <record id="view_medical_family_search" model="ir.ui.view">
             <field name="name">medical.family.search</field>
             <field name="model">medical.family</field>
-            <field name="inherit_id" ref="medical_emr.view_medical_family_search"/>
+            <field name="inherit_id" ref="medical_emr.medical_family_view_search"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='name']" position="after">
                     <field name="sector_id" />

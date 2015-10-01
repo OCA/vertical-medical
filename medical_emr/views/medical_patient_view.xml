@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
-        <record id="view_medical_patient_form_emr" model="ir.ui.view">
+        <record id="medical_patient_view_form" model="ir.ui.view">
             <field name="name">medical.patient.form (medical_emr)</field>
             <field name="model">medical.patient</field>
-            <field name="inherit_id" ref="medical.view_medical_patient_form" />
+            <field name="inherit_id" ref="medical.medical_patient_view_form" />
             <field name="arch" type="xml">
                 <xpath expr="//header" position="inside">
                     <span attrs="{'invisible': [('id','=',False)]}"
@@ -15,7 +15,7 @@
                     </span>
                 </xpath>
                 <xpath expr="//div[@name='buttons']" position="inside">
-                    <button name="%(medical_emr.act_open_medical_patient_disease_view)d"
+                    <button name="%(medical_emr.medical_patient_disease_action)d"
                         type="action"
                         class="oe_stat_button"
                         icon="fa-list"

@@ -20,15 +20,13 @@
 #
 # #############################################################################
 
-from openerp.osv import fields, orm
+from openerp import models, fields
 
 
-class MedicalFamilyMember(orm.Model):
+class MedicalFamilyMember(models.Model):
     _name = 'medical.family_member'
-    _columns = {
-        'member': fields.many2one('res.partner', string='Member',
-                                  help='Family Member Name'),
-        'role': fields.char(size=256, string='Role', required=True),
-        'family_id': fields.many2one('medical.family', string='Family',
-                                     help='Family code'),
-    }
+    member_id = fields.Many2one('res.partner', string='Member',
+                                help='Family Member Name')
+    role = fields.Char(size=256, string='Role', required=True)
+    family_id = fields.Many2one('medical.family', string='Family',
+                                help='Family code')

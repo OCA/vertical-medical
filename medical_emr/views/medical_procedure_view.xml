@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
-		<record id="view_medical_procedure_tree" model="ir.ui.view">
+		<record id="medical_procedure_view_tree" model="ir.ui.view">
 			<field name="name">medical.procedure.tree</field>
 			<field name="model">medical.procedure</field>
 			<field name="priority" eval="8" />
@@ -13,7 +13,7 @@
 			</field>
 		</record>
 
-		<record id="view_medical_procedure_form" model="ir.ui.view">
+		<record id="medical_procedure_view_form" model="ir.ui.view">
 			<field name="name">medical.procedure.form</field>
 			<field name="model">medical.procedure</field>
 			<field name="priority" eval="8" />
@@ -25,7 +25,7 @@
 			</field>
 		</record>
 
-		<record id="view_medical_procedure_search" model="ir.ui.view">
+		<record id="medical_procedure_view_search" model="ir.ui.view">
 			<field name="name">medical.procedure.search</field>
 			<field name="model">medical.procedure</field>
 			<field name="priority" eval="8" />
@@ -43,29 +43,29 @@
 			</field>
 		</record>
 
-		<record model="ir.actions.act_window" id="act_open_medical_procedure_view">
+		<record model="ir.actions.act_window" id="medical_procedure_action">
 			<field name="name">Procedure</field>
 			<field name="type">ir.actions.act_window</field>
 			<field name="res_model">medical.procedure</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">tree,form</field>
-			<field name="search_view_id" ref="view_medical_procedure_search" />
+			<field name="search_view_id" ref="medical_procedure_view_search" />
 			<field name="domain">[]</field>
 			<field name="context">{}</field>
 		</record>
 
-		<record model="ir.actions.act_window.view" id="act_open_medical_procedure_view_form">
-			<field name="act_window_id" ref="act_open_medical_procedure_view" />
+		<record model="ir.actions.act_window.view" id="medical_procedure_action_form">
+			<field name="act_window_id" ref="medical_procedure_action" />
 			<field name="sequence" eval="20" />
 			<field name="view_mode">form</field>
-			<field name="view_id" ref="view_medical_procedure_form" />
+			<field name="view_id" ref="medical_procedure_view_form" />
 		</record>
 
-		<record model="ir.actions.act_window.view" id="act_open_medical_procedure_view_tree">
-			<field name="act_window_id" ref="act_open_medical_procedure_view" />
+		<record model="ir.actions.act_window.view" id="medical_procedure_action_tree">
+			<field name="act_window_id" ref="medical_procedure_action" />
 			<field name="sequence" eval="10" />
 			<field name="view_mode">tree</field>
-			<field name="view_id" ref="view_medical_procedure_tree" />
+			<field name="view_id" ref="medical_procedure_view_tree" />
 		</record>
 
 	</data>

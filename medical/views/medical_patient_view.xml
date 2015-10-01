@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
-         <record id="view_medical_patient_tree" model="ir.ui.view">
+         <record id="medical_patient_view_tree" model="ir.ui.view">
              <field name="name">medical.patient.tree</field>
              <field name="model">medical.patient</field>
              <field name="priority" eval="8" />
@@ -16,7 +16,7 @@
              </field>
          </record>
 
-         <record id="view_medical_patient_form" model="ir.ui.view">
+         <record id="medical_patient_view_form" model="ir.ui.view">
              <field name="name">medical.patient.form</field>
              <field name="model">medical.patient</field>
              <field name="priority" eval="8" />
@@ -187,7 +187,7 @@
              </field>
          </record>
 
-        <record model="ir.ui.view" id="view_medical_patient_kanban">
+        <record model="ir.ui.view" id="medical_patient_view_kanban">
             <field name="name">medical.patient.kanban</field>
             <field name="model">medical.patient</field>
             <field name="type">kanban</field>
@@ -217,7 +217,7 @@
             </field>
         </record>
 
-         <record id="view_medical_patient_search" model="ir.ui.view">
+         <record id="medical_patient_view_search" model="ir.ui.view">
              <field name="name">medical.patient.search</field>
              <field name="model">medical.patient</field>
              <field name="priority" eval="8" />
@@ -238,36 +238,36 @@
              </field>
          </record>
 
-         <record model="ir.actions.act_window" id="act_open_medical_patient_view">
+         <record model="ir.actions.act_window" id="medical_patient_action">
              <field name="name">Patient</field>
              <field name="type">ir.actions.act_window</field>
              <field name="res_model">medical.patient</field>
              <field name="view_type">form</field>
              <field name="view_mode">kanban,tree,form</field>
-             <field name="search_view_id" ref="view_medical_patient_search" />
+             <field name="search_view_id" ref="medical_patient_view_search" />
              <field name="domain">[]</field>
              <field name="context">{}</field>
          </record>
 
-         <record model="ir.actions.act_window.view" id="act_open_medical_patient_view_form">
-             <field name="act_window_id" ref="act_open_medical_patient_view" />
+         <record model="ir.actions.act_window.view" id="medical_patient_action_form">
+             <field name="act_window_id" ref="medical_patient_action" />
              <field name="sequence" eval="20" />
              <field name="view_mode">form</field>
-             <field name="view_id" ref="view_medical_patient_form" />
+             <field name="view_id" ref="medical_patient_view_form" />
          </record>
 
-         <record model="ir.actions.act_window.view" id="act_open_medical_patient_view_tree">
-             <field name="act_window_id" ref="act_open_medical_patient_view" />
+         <record model="ir.actions.act_window.view" id="medical_patient_action_tree">
+             <field name="act_window_id" ref="medical_patient_action" />
              <field name="sequence" eval="30" />
              <field name="view_mode">tree</field>
-             <field name="view_id" ref="view_medical_patient_tree" />
+             <field name="view_id" ref="medical_patient_view_tree" />
          </record>
 
-         <record model="ir.actions.act_window.view" id="act_open_medical_patient_view_kanban">
-             <field name="act_window_id" ref="act_open_medical_patient_view" />
+         <record model="ir.actions.act_window.view" id="medical_patient_action_kanban">
+             <field name="act_window_id" ref="medical_patient_action" />
              <field name="sequence" eval="10" />
              <field name="view_mode">kanban</field>
-             <field name="view_id" ref="view_medical_patient_kanban" />
+             <field name="view_id" ref="medical_patient_view_kanban" />
          </record>
 
 
