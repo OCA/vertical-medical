@@ -42,6 +42,5 @@ from . import medical_patient
 from . import medical_drug_route
 from . import medical_family
 from . import medical_occupation
-from . import medical_disease_group_members
 from . import medical_medicament
 from . import medical_pathology_group

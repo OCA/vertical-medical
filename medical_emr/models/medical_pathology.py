@@ -20,38 +20,33 @@
 #
 # #############################################################################
 
-from openerp.osv import fields, orm
+from openerp import api, fields, models
+from openerp.exceptions import ValidationError
 
 
-class MedicalPathology(orm.Model):
+class MedicalPathology(models.Model):
     _name = 'medical.pathology'
+    _description = 'Medical Pathology'
 
-    _columns = {
-        'category': fields.many2one('medical.pathology.category',
-                                    string='Main Category',
-                                    help='Select the main category for this '
-                                         'disease This is usually associated '
-                                         'to the standard. For instance, the '
-                                         'chapter on the ICD-10 '
-                                         'will be the main category for the '
-                                         'disease'),
-        'info': fields.text(string='Extra Info'),
-        'code': fields.char(size=256, string='Code', required=True,
-                            help='Specific Code for the Disease (eg, ICD-10)'),
-        'name': fields.char(size=256, string='Name', required=True,
-                            translate=True, help='Disease name'),
-        'groups': fields.one2many('medical.disease_group.members',
-                                  'disease_group_id', string='Groups',
-                                  help='Specify the groups this pathology '
-                                       'belongs. Some automated processes act '
-                                       'upon the code of the group'),
-        'protein': fields.char(size=256, string='Protein involved',
-                               help='Name of the protein(s) affected'),
-        'gene': fields.char(size=256, string='Gene'),
-        'chromosome': fields.char(size=256, string='Affected Chromosome',
-                                  help='chromosome number'),
-    }
+    @api.one
+    @api.constrains('code')
+    def _check_unicity_name(self):
+        domain = [
+            ('code', '=', self.code),
+        ]
+        if len(self.search(domain)) > 1:
+            raise ValidationError('"code" Should be unique per Pathology')
 
-#    _sql_constraints = [
-#        ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
-#    ]
+    name = fields.Char(required=True, translate=True)
+    code = fields.Char(required=True)
+    notes = fields.Text(translate=True)
+    protein = fields.Char(string='Protein involved')
+    chromosome = fields.Char(string='Affected Chromosome')
+    gene = fields.Char()
+    category_id = fields.Many2one(
+        comodel_name='medical.pathology.category',
+        string='Category of Pathology', index=True)
+    medical_pathology_group_m2m_ids = fields.Many2many(
+        comodel_name='medical.pathology.group', column1='pathology_id',
+        colmun2='pathology_group_id', string='Medical Pathology Groups',
+        relation="pathology_id_pathology_group_id_rel")

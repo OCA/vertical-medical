@@ -6,111 +6,74 @@
             <field name="model">medical.patient</field>
             <field name="inherit_id" ref="medical.view_medical_patient_form" />
             <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <span attrs="{'invisible': [('id','=',False)]}"
+                        groups="medical.group_medical_user">
+                        <button attrs="{'invisible': [('active','=',False)]}"
+                            name="action_invalidate" string="Invalidate" type="object"
+                            confirm="Invalidate Patient: proceed anyway?" />
+                    </span>
+                </xpath>
+                <xpath expr="//div[@name='buttons']" position="inside">
+                    <button name="%(medical_emr.act_open_medical_patient_disease_view)d"
+                        type="action"
+                        class="oe_stat_button"
+                        icon="fa-list"
+                        context="{'search_default_patient_id': active_id}">
+                        <div>Diseases</div>
+                    </button>
+                </xpath>
                 <xpath expr="//notebook" position="inside">
                     <page string="Basic Medical Information">
-                        <group col="6" colspan="4">
-                            <field name="blood_type" style="width: 8%%" />
-                            <field name="rh" nolabel="1" />
-                            <field name="ethnic_group" />
-                            <field name="relative_id" invisivle="1" colspan="2" />
+                        <group name="basis_medical_information">
+                            <group>
+                                <label for="blood_type" string="Blood Type"/>
+                                <div class="oe_inline">
+                                    <field name="blood_type" style="width: 30%"/>
+                                    <field name="rh" attrs="{'required': [('blood_type', '!=', False)]}" nolabel="1" style="width: 30%"/>
+                                </div>
+                            </group>
+                            <group>
+                                <field name="ethnicity_id" />
+                                <field name="relative_id"/>
+                                <field name="primary_care_physician_id" />
+                            </group>
                         </group>
-                        <group colspan="4" col="4">
-                            <field name="primary_care_doctor" />
-                        </group>
-                        <separator colspan="4"
-                            string="Patient Allergies and Critical Information" />
-                        <field name="critical_info" colspan="4" nolabel="1" />
+                        <separator string="Patient Allergies and Critical Informations" />
+                        <field name="critical_info" nolabel="1" />
                     </page>
-                    <page string="Medication">
-                        <!-- Patient Medications -->
-                        <separator string="Medications" colspan="4" />
-                        <field name="medications" nolabel="1" colspan="4">
-                            <tree string="Medical Patient Medication">
-                                <field name="doctor" />
-                                <field name="adverse_reaction" />
-                                <field name="notes" />
-                                <field name="is_active" />
-                                <field name="course_completed" />
-                                <field name="template" />
-                                <field name="discontinued_reason" />
-                                <field name="discontinued" />
-                            </tree>
-                            <form string="Medical Patient Medication">
-                                <field name="doctor" />
-                                <field name="adverse_reaction" />
-                                <field name="notes" />
-                                <field name="is_active" />
-                                <field name="course_completed" />
-                                <field name="template" />
-                                <field name="discontinued_reason" />
-                                <field name="discontinued" />
-                            </form>
-                        </field>
+                    <page string="Medications">
+                        <separator string="Medications"/>
+                        <field name="medication_ids"/>
                     </page>
-                    <!-- Patient Evaluations -->
                     <page string="Evaluations">
-                        <separator string="Evaluations" colspan="4" />
-                        <field name="evaluations" nolabel="1" colspan="4">
-                            <tree string="Medical Patient Evaluations">
-                                <field name="evaluation_type" />
-                                <field name="evaluation_start" />
-                                <field name="specialty" />
-                                <field name="doctor" />
-                                <field name="systolic" />
-                                <field name="diastolic" />
-                                <field name="diagnosis" />
-                                <!--TBD field name="signed_by"/ -->
-                                <!--TBD field name="institution"/ -->
-                                <field name="bmi" />
-                            </tree>
-                        </field>
+                        <separator string="Evaluations"/>
+                        <field name="evaluation_ids"/>
                     </page>
-                    <!-- Patient Diseases -->
                     <page string="Diseases">
-                        <separator string="Diseases" colspan="4" />
-                        <field name="diseases" nolabel="1" colspan="4">
-                            <tree string="Medical Patient Disease">
-                                <field name="treatment_description" />
-                                <field name="healed_date" />
-                                <field name="pathology" />
-                                <field name="is_allergy" />
-                                <field name="doctor" />
-                                <field name="pregnancy_warning" />
-                                <field name="weeks_of_pregnancy" />
-                                <field name="is_on_treatment" />
-                                <field name="diagnosed_date" />
+                        <separator string="Diseases"/>
+                        <field name="disease_ids">
+                            <tree>
+                                <field name="name"/>
+                                <field name="patient_id"/>
+                                <field name="physician_id"/>
+                                <field name="age"/>
+                                <field name="treatment_start_date"/>
+                                <field name="treatment_end_date"/>
+                                <field name="healed_date"/>
                             </tree>
-                            <form string="Medical Patient Disease">
-                                <field name="treatment_description" />
-                                <field name="healed_date" />
-                                <field name="pathology" />
-                                <field name="is_allergy" />
-                                <field name="doctor" />
-                                <field name="pregnancy_warning" />
-                                <field name="weeks_of_pregnancy" />
-                                <field name="is_on_treatment" />
-                                <field name="diagnosed_date" />
-                                <field name="extra_info" />
-                                <field name="is_active" />
-                                <field name="date_stop_treatment" />
-                                <field name="pcs_code" />
-                                <field name="is_infectious" />
-                                <field name="patient_id" />
-                                <field name="age" />
-                                <field name="date_start_treatment" />
-                                <field name="short_comment" />
-                            </form>
                         </field>
                     </page>
                     <page string="Misc">
                         <group colspan="4" col="4">
                             <separator colspan="4" string="Patient Extra Information" />
-                            <field name="general_info" nolabel="1" colspan="4" />
+                            <field name="general_info" nolabel="1"/>
                         </group>
                     </page>
                 </xpath>
                 <xpath expr="//field[@name='dod']" position="after">
-                    <field name="cod" attrs="{'invisible':[('dod','=',False)]}" />
+                    <field name="cause_of_death_pathology_id"
+                        attrs="{'invisible':[('dod','=',False)]}" />
                 </xpath>
             </field>
         </record>

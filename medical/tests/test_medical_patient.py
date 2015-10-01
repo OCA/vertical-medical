@@ -67,3 +67,15 @@ class TestMedicalPatient(TransactionCase):
         self.assertEquals(
             patient_id.age, '%s (deceased)' % dod_age,
             'Should be the same age')
+
+    def test_invalidate(self):
+        """
+        Invalidate a patient should invalidate its diseases
+        """
+        patient_id = self.env['medical.patient'].create(self.vals)
+        self.assertTrue(patient_id.active, 'Should be active')
+        self.assertTrue(patient_id.partner_id.active, 'Should be inactive')
+        self.assertFalse(patient_id.dod, 'Should be empty')
+        patient_id.action_invalidate()
+        self.assertFalse(patient_id.active, 'Should be inactive')
+        self.assertFalse(patient_id.partner_id.active, 'Should be inactive')
