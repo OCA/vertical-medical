@@ -136,7 +136,7 @@ class MedicalAppointment(orm.Model):
         'urgency': fields.selection(
             [('a', 'Normal'), ('b', 'Urgent'), ('c', 'Medical Emergency'), ],
             string='Urgency Level'),
-        'specialty': fields.many2one('medical.specialty', string='Specialty',
+        'specialty_id': fields.many2one('medical.specialty', string='Specialty',
                                      help='Medical Specialty / Sector'),
         'stage_id': fields.many2one('medical.appointment.stage', 'Stage',
                                     track_visibility='onchange'),

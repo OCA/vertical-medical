@@ -6,13 +6,14 @@
             <field name="model">medical.physician.unavailable.wizard</field>
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <form string="Asistente para la definicion de indisponibilidades" col="2">
-                    <field name="physician_id" />
-                    <field name="institution_id" />
-                    <field name="date_start" />
-                    <field name="date_end" />
-                    <separator colspan="4"/>
-                    <group colspan="4">
+                <form>
+                    <group>
+                        <field name="physician_id" />
+                        <field name="institution_id" />
+                        <field name="date_start" />
+                        <field name="date_end" />
+                    </group>
+                    <group>
                         <button string="_Cancel" icon="gtk-cancel" special="cancel"/>
                         <button name="action_set_unavailable" string="_Apply" icon="gtk-apply" type="object" />
                     </group>
@@ -21,7 +22,7 @@
         </record>
 
         <record model="ir.actions.act_window" id="medical_physician_unavailable_wizard_act">
-            <field name="name">Definicion de indisponibilidades</field>
+            <field name="name">Block Off Schedule</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">medical.physician.unavailable.wizard</field>
             <field name="view_type">form</field>

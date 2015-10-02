@@ -22,7 +22,6 @@ Known issues / Roadmap
 ======================
 
 * Improve and provide a full description for this module into the README.rst
-* Physician schedules should take into account HR leaves?
 
 
 Bug Tracker
