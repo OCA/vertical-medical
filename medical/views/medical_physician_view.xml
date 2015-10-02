@@ -26,30 +26,22 @@
                         <button name="%(medical_physician_unavailable_wizard_act)d" string="Create unavailability" type="action" context="{'default_physician_id': active_id}" />
                     </header>
                     <sheet>
-                        <field name="image" widget='image' class="left avatar"/>
-                        <div>
+                        <field name="image" widget='image' class="oe_avatar" options='{"preview_image": "image_medium", "size": [90, 90]}'/>
+                        <div class="oe_title">
                             <h1>
-                                <field name="name" placeholder="Physician's Name" style="width: 20%" />
+                                <field name="name" placeholder="Physician's Name" />
                             </h1>
                         </div> 
-                        <div> 
+                        <div class="o_row">
                             <h3> 
-                                <field name="company_id" placeholder="Company" style="width: 20%" /> 
+                                <field name="company_id" placeholder="Company" /> 
                             </h3> 
                         </div> 
-                        <div> 
-                            <label for="ref"/> 
-                            <field name="ref" style="width: 20%"/> 
-                            <label for="code"/>
-                            <field name="code" style="width: 20%"/>
-                            <label for="specialty"/>
-                            <field name="specialty" style="width: 20%"/>
-                        </div>
                         <group>
-                            <label for="ref"/>
-                            <field name="ref" style="width: 20%"/>
+                            <field name="ref"/>
+                            <field name="code"/>
+                            <field name="specialty"/>
                             <field name="parent_id" />
-                            <newline/>
                             <field name="info" colspan="4"/>
                         </group>
                         <notebook>
@@ -63,7 +55,7 @@
                                     <field name="email" widget="email" attrs="{'required': [('user_ids','!=', [])]}"/>
                                 </group>
                                 <group>
-                                       <label for="street" string="Address"/>
+                                    <label for="street" string="Address"/>
                                     <div>
                                         <field name="use_parent_address" invisible="1"/>
                                         <field name="street" placeholder="Street..."  attrs="{'readonly': [('use_parent_address','=',True)]}"/>
@@ -77,9 +69,8 @@
                                     </div>
                                 </group>
                             </page>
-                            <page string="Schedule Template">
+                            <page string="Schedule">
                                 <field name="schedule_template_ids" context="{'default_physician_id': id}">
-                                    colspan="4"
                                     <tree string="Schedule Template" editable="bottom">
                                         <field name="physician_id" invisible="1"/>
                                         <field name="day" />
