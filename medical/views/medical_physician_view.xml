@@ -4,12 +4,11 @@
         <record id="view_medical_physician_tree" model="ir.ui.view">
             <field name="name">medical.physician.tree</field>
             <field name="model">medical.physician</field>
-            <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <tree string="Medical Physician">
                     <field name="name" />
                     <field name="code" />
-                    <field name="specialty" />
+                    <field name="specialty_id" />
                     <field name="parent_id" />
                 </tree>
             </field>
@@ -18,29 +17,29 @@
         <record id="view_medical_physician_form" model="ir.ui.view">
             <field name="name">medical.physician.form</field>
             <field name="model">medical.physician</field>
-            <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <form string="Medical Physician" version="7.0">
                     <header>
-                        <button name="action_update_schedule" string="Update Schedule" type="object" />
-                        <button name="%(medical_physician_unavailable_wizard_act)d" string="Create unavailability" type="action" context="{'default_physician_id': active_id}" />
+                        <button name="%(medical_physician_unavailable_wizard_act)d"
+                                string="Create unavailability" type="action"
+                                context="{'default_physician_id': active_id}"
+                                attrs="{'invisible': [('name', '=', False)]}" />
                     </header>
                     <sheet>
-                        <field name="image" widget='image' class="oe_avatar" options='{"preview_image": "image_medium", "size": [90, 90]}'/>
+                        <field name="image" widget='image' class="oe_avatar pull-left"
+                               options='{"preview_image": "image_medium", }'/>
                         <div class="oe_title">
                             <h1>
                                 <field name="name" placeholder="Physician's Name" />
                             </h1>
-                        </div> 
-                        <div class="o_row">
                             <h3> 
                                 <field name="company_id" placeholder="Company" /> 
                             </h3> 
-                        </div> 
+                        </div>
                         <group>
-                            <field name="ref"/>
-                            <field name="code"/>
-                            <field name="specialty"/>
+                            <field name="ref" string="Legal ID"/>
+                            <field name="code" string="Internal ID"/>
+                            <field name="specialty_id"/>
                             <field name="parent_id" />
                             <field name="info" colspan="4"/>
                         </group>
@@ -58,14 +57,21 @@
                                     <label for="street" string="Address"/>
                                     <div>
                                         <field name="use_parent_address" invisible="1"/>
-                                        <field name="street" placeholder="Street..."  attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                        <field name="street" placeholder="Street..."
+                                               attrs="{'readonly': [('use_parent_address','=',True)]}"/>
                                         <field name="street2"  attrs="{'readonly': [('use_parent_address','=',True)]}"/>
                                         <div class="address_format">
-                                            <field name="city" placeholder="City" style="width: 40%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-                                            <field name="state_id" class="no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-                                            <field name="zip" placeholder="ZIP" style="width: 20%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                            <field name="city" placeholder="City" style="width: 40%%"
+                                                   attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                            <field name="state_id" class="no_button" placeholder="State"
+                                                   style="width: 37%%" options='{"no_open": True}'
+                                                   attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                            <field name="zip" placeholder="ZIP" style="width: 20%%"
+                                                   attrs="{'readonly': [('use_parent_address','=',True)]}"/>
                                         </div>
-                                        <field name="country_id" placeholder="Country" class="no_button" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                        <field name="country_id" placeholder="Country" class="no_button"
+                                               options='{"no_open": True}'
+                                               attrs="{'readonly': [('use_parent_address','=',True)]}"/>
                                     </div>
                                 </group>
                             </page>
@@ -91,12 +97,11 @@
         <record id="view_medical_physician_search" model="ir.ui.view">
             <field name="name">medical.physician.search</field>
             <field name="model">medical.physician</field>
-            <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <search string="Medical Physician">
                     <field name="name" />
                     <field name="code" />
-                    <field name="specialty" />
+                    <field name="specialty_id" />
                     <field name="parent_id" />
                     <field name="info" />
                     <newline />
@@ -104,7 +109,7 @@
                         <filter string="Extra info" domain="[]" context="{'group_by':'info'}" />
                         <filter string="Name" domain="[]" context="{'group_by':'name'}" />
                         <filter string="ID" domain="[]" context="{'group_by':'code'}" />
-                        <filter string="Specialty" domain="[]"    context="{'group_by':'specialty'}" />
+                        <filter string="Specialty" domain="[]"    context="{'group_by':'specialty_id'}" />
                         <filter string="Institution" domain="[]" context="{'group_by':'parent_id'}" />
                     </group>
                 </search>

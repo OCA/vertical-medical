@@ -15,7 +15,7 @@
                     <field name="appointment_type" />
                     <field name="institution_id" />
                     <field name="urgency" />
-                    <field name="specialty" />
+                    <field name="specialty_id" />
                     <field name="stage_id" />
                 </tree>
             </field>
@@ -49,7 +49,7 @@
                                     <group> 
                                         <field name="physician_id" />
                                         <field name="institution_id" />
-                                        <field name="specialty" />
+                                        <field name="specialty_id" />
                                     </group>
                                     <group>
                                         <field name="consultations" />
@@ -106,7 +106,7 @@
                     <field name="urgency" />
                     <field name="consultations" />
                     <field name="institution_id" />
-                    <field name="specialty" />
+                    <field name="specialty_id" />
                     <newline />
                     <group expand="0" string="Group By...">
                         <filter string="Consultation Services" domain="[]"
@@ -121,7 +121,7 @@
                         <filter string="Health Center" domain="[]"
                             context="{'group_by':'institution_id'}" />
                         <filter string="Specialty" domain="[]"
-                            context="{'group_by':'specialty'}" />
+                            context="{'group_by':'specialty_id'}" />
                     </group>
                 </search>
             </field>

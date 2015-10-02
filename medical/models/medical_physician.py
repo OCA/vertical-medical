@@ -20,7 +20,7 @@
 #
 # #############################################################################
 
-from openerp.osv import fields, orm
+from openerp import fields, models
 from openerp.addons.medical.medical_constants import days, hours, minutes
 
 import logging
@@ -28,7 +28,7 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
-class MedicalPhysicianServices(orm.Model):
+class MedicalPhysicianServices(models.Model):
     '''
     Services provided by the Physician on a specific medical center.
 
@@ -39,19 +39,17 @@ class MedicalPhysicianServices(orm.Model):
     '''
     _name = 'medical.physician.services'
     _inherits = {'product.product': 'product_id', }
-    _columns = {
-        'product_id': fields.many2one('product.product', 'Related Product',
-                                      required=True, ondelete='restrict',
-                                      help='Product related information for'
-                                           'Appointment Type'),
-        'physician_id': fields.many2one('medical.physician', 'Physician',
-                                        required=True, select=1,
-                                        ondelete='cascade'),
-        'service_duration': fields.selection(minutes, string='Duration'),
-    }
+    product_id = fields.Many2one('product.product', 'Related Product',
+                                  required=True, ondelete='restrict',
+                                  help='Product related information for'
+                                       'Appointment Type')
+    physician_id = fields.Many2one('medical.physician', 'Physician',
+                                    required=True, select=1,
+                                    ondelete='cascade')
+    service_duration = fields.Selection(minutes, string='Duration')
 
 
-class MedicalPhysicianScheduleTemplate(orm.Model):
+class MedicalPhysicianScheduleTemplate(models.Model):
     '''
     Available schedule for the Physiscian.
 
@@ -60,42 +58,40 @@ class MedicalPhysicianScheduleTemplate(orm.Model):
     The objective is to show the availbles spaces for every physiscian
     '''
     _name = 'medical.physician.schedule.template'
-    _columns = {
-        'physician_id': fields.many2one('medical.physician', 'Physician',
-                                        required=True, select=1,
-                                        ondelete='cascade'),
-        'day': fields.selection(days, string='Day', sort=False),
-        'start_hour': fields.selection(hours, string='Hour'),
-        'start_minute': fields.selection(minutes, string='Minute'),
-        'end_hour': fields.selection(hours, string='Hour'),
-        'end_minute': fields.selection(minutes, string='Minute'),
-        'duration': fields.selection(minutes, string='Duration'),
-    }
+    physician_id = fields.Many2one('medical.physician', 'Physician',
+                                    required=True, select=1,
+                                    ondelete='cascade')
+    day = fields.Selection(days, string='Day', sort=False)
+    start_hour = fields.Selection(hours, string='Hour')
+    start_minute = fields.Selection(minutes, string='Minute')
+    end_hour = fields.Selection(hours, string='Hour')
+    end_minute = fields.Selection(minutes, string='Minute')
+    duration = fields.Selection(minutes, string='Duration')
 
 
-class MedicalPhysician(orm.Model):
+class MedicalPhysician(models.Model):
     _name = 'medical.physician'
     _inherits = {'res.partner': 'partner_id', }
-    _columns = {
-        'id': fields.integer('ID', readonly=True),
-        'partner_id': fields.many2one('res.partner', 'Related Partner',
-                                      required=True, ondelete='cascade',
-                                      help='Partner related data '
-                                           'of the physician'),
-        'code': fields.char(size=256, string='ID'),
-        'specialty': fields.many2one('medical.specialty',
-                                     string='Specialty',
-                                     required=True,
-                                     help='Specialty Code'),
-        'info': fields.text(string='Extra info'),
-        'active': fields.boolean('Active',
-                                 help='If unchecked, it will allow you'
-                                      ' to hide the physician without '
-                                      'removing it.'),
-        'schedule_template_ids': fields.one2many(
-            'medical.physician.schedule.template', 'physician_id',
-            'Related schedules')
-    }
+    id = fields.Integer('ID', readonly=True)
+    partner_id = fields.Many2one(
+        'res.partner', 'Related Partner', required=True, ondelete='cascade',
+        help='Partner related data of the physician'
+    )
+    code = fields.Char(size=256, string='ID')
+    specialty_id = fields.Many2one(
+        'medical.specialty', string='Specialty', required=True,
+        help='Specialty Code'
+    )
+    info = fields.Text(string='Extra info')
+    active = fields.Boolean(
+        'Active', default=True,
+        help='If unchecked, it will allow you to hide the physician without '
+             'removing it.'
+    )
+    schedule_template_ids = fields.One2many(
+        'medical.physician.schedule.template', 'physician_id',
+        'Related schedules'
+    )
 
     _defaults = {'is_doctor': True, 'supplier': True, 'active': True, }
 

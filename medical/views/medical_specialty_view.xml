@@ -7,10 +7,8 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <tree string="Medical Specialty">
-                    <group>
-                        <field name="code" />
-                        <field name="name" />
-                    </group>
+                    <field name="code" />
+                    <field name="name" />
                 </tree>
             </field>
         </record>

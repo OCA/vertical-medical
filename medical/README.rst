@@ -84,6 +84,7 @@ Contributors
 ------------
 
 * Jonathan Nemry <jonathan.nemry@acsone.eu>
+* Dave Lasley <dave@laslabs.com>
 * Parthiv Patel <parthiv@techreceptives.com>
 * Ruchir Shukla <ruchir@techreceptives.com>
 * Parthiv Patel <parthiv@techreceptives.com>
