@@ -20,7 +20,7 @@
 #
 # #############################################################################
 
-from openerp import fields, models
+from openerp import fields, models, api
 from openerp.addons.medical.medical_constants import days, hours, minutes
 
 import logging
@@ -35,17 +35,20 @@ class MedicalPhysicianServices(models.Model):
     A physician could have "surgeries" on one center but only
     "general consultation" in another center,
     or the same service with different prices for each medical center.
-    That's the reason to link this to res.partner instead of medical_physician.
+    That's the reason to link this to res.partner instead of
+    medical_physician.
     '''
     _name = 'medical.physician.services'
     _inherits = {'product.product': 'product_id', }
-    product_id = fields.Many2one('product.product', 'Related Product',
-                                  required=True, ondelete='restrict',
-                                  help='Product related information for'
-                                       'Appointment Type')
-    physician_id = fields.Many2one('medical.physician', 'Physician',
-                                    required=True, select=1,
-                                    ondelete='cascade')
+    product_id = fields.Many2one(
+        'product.product', 'Related Product', required=True,
+        ondelete='restrict',
+        help='Product related information for Appointment Type'
+    )
+    physician_id = fields.Many2one(
+        'medical.physician', 'Physician', required=True, select=1,
+        ondelete='cascade'
+    )
     service_duration = fields.Selection(minutes, string='Duration')
 
 
@@ -58,9 +61,10 @@ class MedicalPhysicianScheduleTemplate(models.Model):
     The objective is to show the availbles spaces for every physiscian
     '''
     _name = 'medical.physician.schedule.template'
-    physician_id = fields.Many2one('medical.physician', 'Physician',
-                                    required=True, select=1,
-                                    ondelete='cascade')
+    physician_id = fields.Many2one(
+        'medical.physician', 'Physician', required=True, select=1,
+        ondelete='cascade'
+    )
     day = fields.Selection(days, string='Day', sort=False)
     start_hour = fields.Selection(hours, string='Hour')
     start_minute = fields.Selection(minutes, string='Minute')
@@ -95,11 +99,9 @@ class MedicalPhysician(models.Model):
 
     _defaults = {'is_doctor': True, 'supplier': True, 'active': True, }
 
-    def create(self, cr, uid, vals, context=None):
-        groups_proxy = self.pool['res.groups']
-        group_ids = groups_proxy.search(cr, uid,
-                                        [('name', '=', 'Medical Doctor')],
-                                        context=context)
+    @api.model
+    def create(self, vals,):
+        groups_proxy = self.env['res.groups']
+        group_ids = groups_proxy.search([('name', '=', 'Medical Doctor')])
         vals['groups_id'] = [(6, 0, group_ids)]
-        return super(MedicalPhysician, self).create(cr, uid, vals,
-                                                    context=context)
+        return super(MedicalPhysician, self).create(vals)
