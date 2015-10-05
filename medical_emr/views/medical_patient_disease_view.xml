@@ -2,7 +2,7 @@
 <openerp>
     <data>
 
-        <record id="view_medical_patient_disease_search" model="ir.ui.view">
+        <record id="medical_patient_view_disease_search" model="ir.ui.view">
             <field name="name">medical.patient.disease.search</field>
             <field name="model">medical.patient.disease</field>
             <field name="priority" eval="8" />
@@ -31,8 +31,8 @@
                     <filter name="inactive" string="Inactive"
                         domain="[('active', '=', False)]" />
                     <separator/>
-                    <filter name="pregnancy_warning" string="Pregnancy Warning"
-                        domain="[('pregnancy_warning', '=', True)]" />
+                    <filter name="is_pregnant" string="Pregnancy Warning"
+                        domain="[('is_pregnant', '=', True)]" />
                     <separator/>
                     <filter name="is_infectious" string="Is Infectious"
                         domain="[('is_infectious', '=', True)]" />
@@ -46,7 +46,7 @@
                             context="{'group_by':'is_allergy'}" />
                         <filter string="Physician" domain="[]" context="{'group_by':'physician_id'}" />
                         <filter string="Pregnancy warning" domain="[]"
-                            context="{'group_by':'pregnancy_warning'}" />
+                            context="{'group_by':'is_pregnant'}" />
                         <filter string="Contracted in pregnancy week #" domain="[]"
                             context="{'group_by':'weeks_of_pregnancy'}" />
                         <filter string="Currently on Treatment" domain="[]"
@@ -68,7 +68,7 @@
             </field>
         </record>
 
-        <record id="view_medical_patient_disease_tree" model="ir.ui.view">
+        <record id="medical_patient_view_disease_tree" model="ir.ui.view">
             <field name="name">medical.patient.disease.tree</field>
             <field name="model">medical.patient.disease</field>
             <field name="priority" eval="8" />
@@ -93,7 +93,7 @@
             </field>
         </record>
 
-        <record id="view_medical_patient_disease_form" model="ir.ui.view">
+        <record id="medical_patient_view_disease_form" model="ir.ui.view">
             <field name="name">medical.patient.disease.form</field>
             <field name="model">medical.patient.disease</field>
             <field name="arch" type="xml">
@@ -130,13 +130,14 @@
                                     <field name="allergy_type"
                                        attrs="{'invisible': [('is_allergy', '=', False)]}"/>
                                     <field name="weeks_of_pregnancy"
-                                       attrs="{'invisible': [('pregnancy_warning', '=', False)]}"/>
+                                       attrs="{'invisible': [('is_pregnant', '=', False)]}"/>
                                 </group>
                                 <group name="complementary_informations">
                                     <field name="age"/>
                                     <field name="is_infectious"/>
                                     <field name="is_allergy"/>
                                     <field name="pregnancy_warning"/>
+                                    <field name="is_pregnant"/>
                                 </group>
                                 <group name="dates">
                                     <field name="diagnosed_date"/>
@@ -176,14 +177,14 @@
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="act_open_medical_patient_disease_view">
+        <record model="ir.actions.act_window" id="medical_patient_disease_action">
             <field name="name">Patient Diseases</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">medical.patient.disease</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="view_medical_patient_disease_tree" />
-            <field name="search_view_id" ref="view_medical_patient_disease_search" />
+            <field name="view_id" ref="medical_patient_view_disease_tree" />
+            <field name="search_view_id" ref="medical_patient_view_disease_search" />
             <field name="domain">[]</field>
             <field name="context">{}</field>
         </record>

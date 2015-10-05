@@ -4,11 +4,11 @@
 
 <!--Menu Patient-->
         <menuitem id="medical_family" name="Family" parent="medical.medical_patient_root"
-            sequence="20" action="act_open_medical_family_view" />
+            sequence="20" action="medical_family_action" />
 
         <menuitem id="medical_family_member" name="Family Member"
             parent="medical.medical_patient_root" sequence="30"
-            action="act_open_medical_family_member_view" />
+            action="medical_family_member_action" />
 
 
 <!--Prescriptions-->
@@ -17,7 +17,7 @@
 
         <menuitem id="medical_prescription_order" name="Prescription Order"
             parent="medical_prescription_root" sequence="10"
-            action="act_open_medical_prescription_order_view" />
+            action="medical_prescription_order_action" />
 
 <!-- Diseases -->
         <menuitem id="medical_root_disease" name="Disease"
@@ -27,19 +27,19 @@
 
         <menuitem id="medical_sub_disease"
             parent="medical_root_disease" sequence="1" 
-            action="act_open_medical_patient_disease_view" />
+            action="medical_patient_disease_action" />
 
         <menuitem id="medical_pathology"
             parent="medical_root_disease" sequence="10" 
-            action="act_open_medical_pathology_view" />
+            action="medical_pathology_action" />
 
         <menuitem id="medical_pathology_category"
             parent="medical_root_disease" sequence="20"
-            action="act_open_medical_pathology_category_view" />
+            action="medical_pathology_category_action" />
 
         <menuitem id="medical_pathology_group"
             parent="medical_root_disease" sequence="30"
-            action="act_open_medical_pathology_group_view" />
+            action="medical_pathology_group_action" />
 
         <menuitem id="medical_root_disease_cat" name="Categories"
             parent="" sequence="100" />
@@ -47,11 +47,11 @@
 <!-- Occupation  ( Config/misc/Occupation) )--> 
         <menuitem id="medical_occupation" name="Occupation"
             parent="medical.medical_root_misc" sequence="20"
-            action="act_open_medical_occupation_view" />
+            action="medical_occupation_action" />
 
 <!-- Ethnicity  ( Config/misc/Ethnicity) )--> 
         <menuitem id="medical_ethnicity" name="Ethnicity" parent="medical.medical_root_misc"
-            sequence="10" action="act_open_medical_ethnicity_view" />
+            sequence="10" action="medical_ethnicity_action" />
 
 <!--Medicaments-->
 
@@ -61,35 +61,35 @@
 
         <menuitem id="medical_medicament" name="Medicaments"
             parent="medical_medicament_root" sequence="10"
-            action="act_open_medical_medicament_view" />
+            action="medical_medicament_action" />
 
         <menuitem id="medical_medication_template" name="Medication Template"
             parent="medical_medicament_root" sequence="20"
-            action="act_open_medical_medication_template_view" />
+            action="medical_medication_template_action" />
 
         <menuitem id="medical_medication_frequencies" name="Medication Frequencies"
             parent="medical_medicament_root" sequence="30"
-            action="act_open_medical_medication_dosage_view" />
+            action="medical_medication_dosage_action" />
 
         <menuitem id="medical_drug_route" name="Drug Admin Route"
             parent="medical_medicament_root" sequence="80"
-            action="act_open_medical_drug_route_view" />
+            action="medical_drug_route_action" />
 
         <menuitem id="medical_drug_form" name="Drug Form"
             parent="medical_medicament_root" sequence="90"
-            action="act_open_medical_drug_form_view" />
+            action="medical_drug_form_action" />
 
 
         <menuitem id="medical_medicament_category" name="Medicament Category"
             parent="medical_medicament_root" sequence="100"
-            action="act_open_medical_medicament_category_view" />
+            action="medical_medicament_category_action" />
 
 
         <menuitem id="medical_diagnostic_hypothesis" name="Diagnostic Hypothesis"
             parent="medical.medical_root_sub" sequence="10"
-            action="act_open_medical_diagnostic_hypothesis_view" />
+            action="medical_diagnostic_hypothesis_action" />
         <menuitem id="medical_predure" name="Procedure" parent="medical.medical_root_sub"
-            sequence="10" action="act_open_medical_procedure_view" />
+            sequence="10" action="medical_procedure_action" />
 
     </data>
 </openerp>

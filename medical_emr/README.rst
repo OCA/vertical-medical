@@ -1,5 +1,5 @@
-.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
-    :alt: License: AGPL-3
+About Medical EMR
+-------------------
 
 Odoo Medical: Electronic Medical Record (EMR)
 =============================================
@@ -44,6 +44,7 @@ Contributors
 * Ruchir Shukla <ruchir@techreceptives.com>
 * Parthiv Patel <parthiv@techreceptives.com>
 * Nhomar Hernandéz <nhomar@vauxoo.com>
+* Dave Lasley <dave@laslabs.com>
 
 Maintainer
 ----------

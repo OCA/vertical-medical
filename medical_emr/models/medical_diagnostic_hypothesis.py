@@ -21,16 +21,14 @@
 #
 ###############################################################################
 
-from openerp.osv import fields, orm
+from openerp import models, fields
 
 
-class MedicalDiagnosticHypothesis(orm.Model):
+class MedicalDiagnosticHypothesis(models.Model):
     _name = 'medical.diagnostic_hypothesis'
 
-    _columns = {
-        'pathology_id': fields.many2one('medical.pathology', 'Pathology',
-                                        required=True),
-        'evaluation_id': fields.many2one('medical.patient.evaluation',
-                                         'Evaluation', readonly=True),
-        'comments': fields.char(size=256, string='Comments'),
-    }
+    pathology_id = fields.Many2one('medical.pathology', 'Pathology',
+                                   required=True)
+    evaluation_id = fields.Many2one('medical.patient.evaluation',
+                                    'Evaluation', readonly=True)
+    comments = fields.Char(size=256, string='Comments')

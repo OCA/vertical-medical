@@ -9,10 +9,11 @@
 #    Coded by: Ruchir Shukla <ruchir@techreceptives.com>
 #    Planifyied by: Parthiv Patel <parthiv@techreceptives.com>
 #    Planifyied by: Nhomar Hernandéz <nhomar@vauxoo.com>
+#    8.0 Port by: Dave Lasley <dave@laslabs.com>
 #
 ##############################################################################
-#    This project is mantained by OeMEdical Team:
-#    https://launchpad.net/medical
+#    This project is mantained by Odoo Community Association:
+#    http://github.com/oca/vertical-medical
 #
 ##############################################################################
 #    It is a collaborative effort between several companies that want to join
@@ -35,23 +36,12 @@
 {
 
     'name': 'Medical EMR: Module Data',
-    'version': '1.0',
-    'author': "OeMEdical Team,Odoo Community Association (OCA)",
-    'category': 'Generic Modules/Others',
+    'version': '8.0.1.0',
+    'author': "Odoo Team, LasLabs, Odoo Community Association (OCA)",
+    'category': 'Medical',
     'depends': ['medical_emr'],
-    'application': True,
-    'description': """
-
-About Medical Data
----------------------
-
-Core Data for medical, is kept as a separate module to overcome need of
-localizing core data.
-
-
-""",
     "website": "http://launchpad.net/medical",
-    "licence": "AGPL v3",
+    "licence": "AGPL-3",
     "data": [
         'data/medicament_categories.xml',
         'data/WHO_products.xml',
@@ -66,21 +56,7 @@ localizing core data.
         'data/disease_categories.xml',
         'data/diseases.xml',
     ],
-    "demo": [
-
-    ],
-    'test': [
-
-    ],
-    'css': [
-
-    ],
-    'js': [
-
-    ],
-    'qweb': [
-
-    ],
     "active": False,
     "installable": False,
+    'application': True,
 }

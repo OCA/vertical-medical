@@ -20,17 +20,15 @@
 #
 # #############################################################################
 
-from openerp.osv import fields, orm
+from openerp import models, fields
 
 
-class MedicalDrugForm(orm.Model):
+class MedicalDrugForm(models.Model):
     _name = 'medical.drug.form'
 
-    _columns = {
-        'code': fields.char(size=256, string='Code'),
-        'name': fields.char(size=256, string='Form', required=True,
-                            translate=True),
-    }
+    code = fields.Char(size=256, string='Code')
+    name = fields.Char(size=256, string='Form', required=True,
+                       translate=True)
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Drug name must be unique!'),
     ]

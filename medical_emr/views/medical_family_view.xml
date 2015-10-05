@@ -2,7 +2,7 @@
 <openerp>
     <data>
 
-        <record id="view_medical_family_tree" model="ir.ui.view">
+        <record id="medical_family_view_tree" model="ir.ui.view">
             <field name="name">medical.family.tree</field>
             <field name="model">medical.family</field>
             <field name="arch" type="xml">
@@ -12,7 +12,7 @@
             </field>
         </record>
 
-        <record id="view_medical_family_form" model="ir.ui.view">
+        <record id="medical_family_view_form" model="ir.ui.view">
             <field name="name">medical.family.form</field>
             <field name="model">medical.family</field>
             <field name="arch" type="xml">
@@ -26,11 +26,11 @@
                         <div class="oe_right oe_button_box" name="buttons"></div>
 
                         <notebook>
-                            <page string="Members" name="members">
-                                <field name="members" context="{'default_family_id': active_id}">
+                            <page string="Members" name="member_ids">
+                                <field name="member_ids" context="{'default_family_id': active_id}">
                                     <tree editable="bottom">
                                         <field name="role" />
-                                        <field name="member" />
+                                        <field name="member_id" />
                                     </tree>
                                 </field>
                             </page>
@@ -43,7 +43,7 @@
             </field>
         </record>
 
-        <record id="view_medical_family_search" model="ir.ui.view">
+        <record id="medical_family_view_search" model="ir.ui.view">
             <field name="name">medical.family.search</field>
             <field name="model">medical.family</field>
             <field name="arch" type="xml">
@@ -54,14 +54,14 @@
             </field>
         </record>
 
-        <record id="act_open_medical_family_view" model="ir.actions.act_window">
+        <record id="medical_family_action" model="ir.actions.act_window">
             <field name="name">Families</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">medical.family</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="view_medical_family_tree" />
-            <field name="search_view_id" ref="view_medical_family_search" />
+            <field name="view_id" ref="medical_family_view_tree" />
+            <field name="search_view_id" ref="medical_family_view_search" />
         </record>
 
     </data>

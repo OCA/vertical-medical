@@ -31,16 +31,15 @@ class MedicalPrescriptionOrder(orm.Model):
     _columns = {
         'patient_id': fields.many2one('medical.patient', string='Patient',
                                       required=True),
-        'pregnancy_warning': fields.boolean(string='Pregancy Warning',
-                                            readonly=True),
+        'is_pregnant': fields.boolean(string='Pregancy Warning',
+                                      readonly=True),
         'notes': fields.text(string='Prescription Notes'),
-        'prescription_line': fields.one2many('medical.prescription.line',
-                                             'name',
-                                             string='Prescription line', ),
-        'pharmacy': fields.many2one('res.partner', string='Pharmacy', ),
+        'prescription_line_ids': fields.one2many('medical.prescription.line',
+                                                 'prescription_id',
+                                                 string='Prescription line', ),
+        'pharmacy_id': fields.many2one('res.partner', string='Pharmacy', ),
         'prescription_date': fields.datetime(string='Prescription Date'),
-        'prescription_warning_ack': fields.boolean(string='Prescription '
-                                                          'verified'),
+        'is_verified': fields.boolean(string='Prescription verified'),
         'physician_id': fields.many2one('medical.physician',
                                         string='Prescribing Doctor',
                                         required=True),
@@ -67,7 +66,7 @@ class MedicalPrescriptionOrder(orm.Model):
         datas = {
             'model': 'medical.prescription.order',
             'ids': ids,
-            'form': self.read(cr, uid, ids[0], context=context),
+            'drug_form_id': self.read(cr, uid, ids[0], context=context),
         }
         return {'type': 'ir.actions.report.xml',
                 'report_name': 'prescription.order',
