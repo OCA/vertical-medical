@@ -17,7 +17,6 @@
                     <field name="diagnosed_date" />
                     <field name="notes" />
                     <field name="treatment_end_date" />
-                    <field name="pcs_code" />
                     <field name="patient_id" />
                     <field name="age" />
                     <field name="treatment_start_date" />
@@ -53,7 +52,6 @@
                             context="{'group_by':'is_on_treatment'}" />
                         <filter string="Date of Diagnosis" domain="[]"
                             context="{'group_by':'diagnosed_date'}" />
-                        <filter string="Code" domain="[]" context="{'group_by':'pcs_code'}" />
                         <filter string="Infectious Disease" domain="[]"
                             context="{'group_by':'is_infectious'}" />
                         <filter string="Patient" domain="[]" context="{'group_by':'patient_id'}" />
@@ -78,7 +76,6 @@
                     <field name="patient_id" />
                     <field name="physician_id" />
                     <field name="weeks_of_pregnancy" />
-                    <field name="pcs_code" />
                     <field name="age" />
                     <field name="healed_date" />
                     <field name="diagnosed_date" />
