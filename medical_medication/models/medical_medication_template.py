@@ -20,86 +20,64 @@
 #
 # #############################################################################
 
-from openerp.osv import fields, orm
+from openerp import fields, models, api
 
 
-class MedicalMedicationTemplate(orm.Model):
+class MedicalMedicationTemplate(models.Model):
     _name = 'medical.medication.template'
+    _description = 'Medical Medication Template'
+    _rec_name = 'pathology_id'
 
-    def _get_name(self, cr, uid, ids, field_name, arg, context=None):
-        res = {}
-        for record in self.browse(cr, uid, ids, context=context):
-            res[record.id] = record.medicament_id.name
+    @api.multi
+    def name_get(self):
+        res = []
+        for rec in self:
+            if self.medication_dosage_id:
+                name = self.medication_dosage_id.name
+            elif self.frequency and self.frequency_unit:
+                name = '%s / %s' % (self.frequency, self.frequency_unit)
+            elif self.pathology_id:
+                name = self.pathology_id.name
+            else:
+                name = self.medicament_id.name
+            res.append((rec.id, name))
         return res
 
-    _columns = {
-        'medicament_id': fields.many2one('medical.medicament',
-                                         string='Medicament', requered=True,
-                                         help='Product Name',
-                                         ondelete='cascade'),
-        'name': fields.function(_get_name, type='char', string='Medicament',
-                                help="", multi=False),
-        'disease_id': fields.many2one('medical.pathology', string='Indication',
-                                      help='Choose a disease for this '
-                                           'medicament from the disease list. '
-                                           'It can be an existing disease of '
-                                           'the patient or a prophylactic.'),
-        'start_treatment': fields.datetime(string='Start',
-                                           help='Date of start of Treatment'),
-        'end_treatment': fields.datetime(string='End',
-                                         help='Date of start of Treatment'),
-        'drug_form_id': fields.many2one('medical.drug.form', string='Form',
-                                        help='Drug form, ' +
-                                        'such as tablet or gel'),
-        'drug_route_id': fields.many2one('medical.drug.route',
-                                         string='Administration ' +
-                                         'Route',
-                                         help='Drug administration ' +
-                                         'route code.'),
-        'duration_period': fields.selection([
-            ('minutes', 'minutes'),
-            ('hours', 'hours'),
-            ('days', 'days'),
-            ('months', 'months'),
-            ('years', 'years'),
-            ('indefinite', 'indefinite'),
-        ], string='Treatment period',
-            help='Period that the patient must take the medication in minutes,'
-                 'hours, days, months, years or indefinately'),
-        'qty': fields.integer(string='x',
-                              help='Quantity of units (eg, 2 capsules) of the '
-                                   'medicament'),
-        'frequency_unit': fields.selection([
-            ('seconds', 'seconds'),
-            ('minutes', 'minutes'),
-            ('hours', 'hours'),
-            ('days', 'days'),
-            ('weeks', 'weeks'),
-            ('wr', 'when required'),
-        ], string='unit'),
-        'dose': fields.float(string='Dose', help='Amount of medication (eg, '
-                                                 '250 mg) per dose'),
-        'duration': fields.integer(string='Treatment duration',
-                                   help='Period that the patient must take the'
-                                        ' medication. in minutes,'
-                                        ' hours, days, months, years or '
-                                        'indefinately'),
-        'frequency_prn': fields.boolean(string='PRN',
-                                        help='Use it as needed, pro re nata'),
-        'frequency': fields.integer(string='Frequency',
-                                    help='Time in between doses the patient '
-                                         'must wait (ie, for 1 pill '
-                                         'each 8 hours, put here 8 and select '
-                                         '\"hours\" in the unit field'),
-        'common_dose_id': fields.many2one('medical.medication.dosage',
-                                          string='Frequency',
-                                          help='Common / standard dosage '
-                                          'frequency for this medicament'),
-        'admin_times': fields.char(size=256, string='Admin hours',
-                                   help='Suggested administration hours. '
-                                        'For example, at 08:00, 13:00 and '
-                                        '18:00 can be encoded like 08 13 18'),
-        'dose_unit_id': fields.many2one(
-            'product.uom', help='Unit of measure for that the medication is '
-            'dosed in.'),
-    }
+    medicament_id = fields.Many2one(
+        comodel_name='medical.medicament', string='Medicament', required=True)
+    pathology_id = fields.Many2one(
+        comodel_name='medical.pathology', string='Pathology',
+        help='Choose a disease for this medicament from the disease list. '
+        'It can be an existing disease of the patient or a prophylactic.')
+    duration = fields.Integer(
+        help='Period that the patient must take the medication. in minutes,'
+        ' hours, days, months, years or indefinately')
+    duration_period = fields.Selection(selection=[
+        ('minutes', 'Minutes'),
+        ('hours', 'Hours'),
+        ('days', 'Days'),
+        ('months', 'Months'),
+        ('years', 'Years'),
+        ('indefinite', 'Indefinite'),
+    ], help='Period that the patient must take the medication in minutes, '
+        'hours, days, months, years or indefinately')
+    frequency = fields.Integer(
+        help='Time in between doses the patient must wait (ie, for 1 pill '
+        'each 8 hours, put here 8 and select "hours\" in the unit field')
+    frequency_unit = fields.Selection(selection=[
+        ('seconds', 'seconds'),
+        ('minutes', 'minutes'),
+        ('hours', 'hours'),
+        ('days', 'days'),
+        ('weeks', 'weeks'),
+        ('wr', 'when required'),
+    ])
+    frequency_prn = fields.Boolean(help='Use it as needed, pro re nata')
+    medication_dosage_id = fields.Many2one(
+        comodel_name='medical.medication.dosage', string='Common Dose',
+        help='Common / standard dosage frequency for this medicament')
+    suggested_administration_hours = fields.Float()
+    quantity = fields.Integer(
+        help='Quantity of units (eg, 2 capsules) of the medicament')
+    dose_unit_id = fields.Many2one(
+        comodel_name='product.uom', string='Dose Unit')

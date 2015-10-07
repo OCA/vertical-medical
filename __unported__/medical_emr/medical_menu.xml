@@ -38,10 +38,6 @@
             parent="medical_medicament_root" sequence="10"
             action="medical_medicament_action" />
 
-        <menuitem id="medical_medication_template" name="Medication Template"
-            parent="medical_medicament_root" sequence="20"
-            action="medical_medication_template_action" />
-
         <menuitem id="medical_medication_frequencies" name="Medication Frequencies"
             parent="medical_medicament_root" sequence="30"
             action="medical_medication_dosage_action" />
@@ -53,11 +49,6 @@
         <menuitem id="medical_drug_form" name="Drug Form"
             parent="medical_medicament_root" sequence="90"
             action="medical_drug_form_action" />
-
-
-        <menuitem id="medical_medicament_category" name="Medicament Category"
-            parent="medical_medicament_root" sequence="100"
-            action="medical_medicament_category_action" />
 
 
         <menuitem id="medical_diagnostic_hypothesis" name="Diagnostic Hypothesis"

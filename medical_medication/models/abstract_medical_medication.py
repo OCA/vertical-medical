@@ -20,19 +20,23 @@
 #
 # #############################################################################
 
-from openerp import fields, models
+from openerp import fields, models, api
+from openerp.models import MAGIC_COLUMNS
 
 
-class MedicalMedicationDosage(models.Model):
-    _name = 'medical.medication.dosage'
-    _description = 'Medical Medication Dosage'
+class AbstractMedicalMedication(models.AbstractModel):
+    _name = 'abstract.medical.medication'
+    _description = 'Abstract Medical Medication'
 
-    name = fields.Char(required=True, translate=True)
-    abbreviation = fields.Char(
-        help='Dosage abbreviation, such as tid in the US or tds in the UK')
-    code = fields.Char(
-        help='Dosage Code,for example: SNOMED 229798009 = 3 times per day')
+    @api.one
+    @api.onchange('medication_template_id')
+    def onchange_template_id(self):
+        if self.medication_template_id:
+            values = self.medication_template_id.read()[0]
+            for k in values.keys():
+                if k not in MAGIC_COLUMNS:
+                    setattr(self, k, getattr(self.medication_template_id, k))
 
-    _sql_constraints = [
-        ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
-    ]
+    medication_template_id = fields.Many2one(
+        comodel_name='medical.medication.template',
+        string='Medication Template', index=True)
