@@ -21,35 +21,31 @@
 #
 ###############################################################################
 
-from openerp.osv import fields, orm
+from openerp import fields, models
 
 
-class MedicalPatientMedication(orm.Model):
+class MedicalPatientMedication(models.Model):
     _name = 'medical.patient.medication'
+    _description = 'Medical Patient Medication'
+    _inherit = ['abstract.medical.medication', 'medical.medication.template']
+    _rec_name = 'patient_id'
 
-    _columns = {
-        'patient_id': fields.many2one('medical.patient', string='Patient',),
-        #        'name': fields.many2one('medical.patient', string='Patient',
-        #                                readonly=True ),
-        'doctor_id': fields.many2one(
-            'medical.physician', string='Physician',
-            help='Physician who prescribed the medicament'
-        ),
-        'adverse_reaction': fields.text(
-            string='Adverse Reactions',
-            help='Side effects or adverse reactions that patient experienced'
-        ),
-        'notes': fields.text(string='Extra Info'),
-        'is_active': fields.boolean(
-            string='Active',
-            help='Check if the patient is currently taking the medication'
-        ),
-        'is_course_complete': fields.boolean(string='Course Completed'),
-        'template_id': fields.many2one('medical.medication.template',
-                                       string='Medication Template', ),
-        'discontinued_reason': fields.char(
-            size=256, string='Reason for discontinuation',
-            help='Short description for discontinuing the treatment'
-        ),
-        'is_discontinued': fields.boolean(string='Discontinued'),
-    }
+    patient_id = fields.Many2one(
+        comodel_name='medical.patient', string='Patient', index=True,
+        required=True)
+    physician_id = fields.Many2one(
+        comodel_name='medical.physician', string='Physician',
+        help='Physician who prescribed the medicament', index=True,
+        required=True)
+    active = fields.Boolean(
+        help='Check if the patient is currently taking the medication',
+        default=True)
+    is_course_complete = fields.Boolean(string='Course Completed')
+    is_discontinued = fields.Boolean()
+    date_start_treatment = fields.Datetime(required=True)
+    date_stop_treatment = fields.Datetime()
+    discontinued_reason = fields.Char(
+        help='Short description for discontinuing the treatment')
+    adverse_reaction = fields.Text(
+        help='Side effects or adverse reactions that patient experienced')
+    notes = fields.Text()
