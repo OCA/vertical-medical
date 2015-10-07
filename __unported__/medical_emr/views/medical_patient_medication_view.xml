@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="medical_patient_view_medication_tree" model="ir.ui.view">
+			<field name="name">medical.patient.medication.tree</field>
+			<field name="model">medical.patient.medication</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<tree string="Medical Patient Medication">
+					<field name="patient_id" />
+					<field name="doctor_id" />
+					<field name="adverse_reaction" />
+					<field name="notes" />
+					<field name="is_active" />
+					<field name="is_course_complete" />
+					<field name="template_id" />
+					<field name="discontinued_reason" />
+					<field name="is_discontinued" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="medical_patient_view_medication_form" model="ir.ui.view">
+			<field name="name">medical.patient.medication.form</field>
+			<field name="model">medical.patient.medication</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<form string="Medical Patient Medication">
+					<field name="patient_id" />
+					<field name="doctor_id" />
+					<field name="adverse_reaction" />
+					<field name="notes" />
+					<field name="is_active" />
+					<field name="is_course_complete" />
+					<field name="template_id" />
+					<field name="discontinued_reason" />
+					<field name="is_discontinued" />
+				</form>
+			</field>
+		</record>
+
+		<record id="medical_patient_view_medication_search" model="ir.ui.view">
+			<field name="name">medical.patient.medication.search</field>
+			<field name="model">medical.patient.medication</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<search string="Medical Patient Medication">
+					<field name="patient_id" />
+					<field name="doctor_id" />
+					<field name="adverse_reaction" />
+					<field name="notes" />
+					<field name="is_active" />
+					<field name="is_course_complete" />
+					<field name="template_id" />
+					<field name="discontinued_reason" />
+					<field name="is_discontinued" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Patient" domain="[]" context="{'group_by':'patient_id'}" />
+						<filter string="Physician" domain="[]" context="{'group_by':'doctor_id'}" />
+						<filter string="Adverse Reactions" domain="[]"
+							context="{'group_by':'adverse_reaction'}" />
+						<filter string="Extra Info" domain="[]" context="{'group_by':'notes'}" />
+						<filter string="Active" domain="[]" context="{'group_by':'is_active'}" />
+						<filter string="Course Completed" domain="[]"
+							context="{'group_by':'is_course_complete'}" />
+						<filter string="Medication Template" domain="[]"
+							context="{'group_by':'template_id'}" />
+						<filter string="Reason for discontinuation" domain="[]"
+							context="{'group_by':'discontinued_reason'}" />
+						<filter string="Discontinued" domain="[]"
+							context="{'group_by':'is_discontinued'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="medical_patient_medication_action">
+			<field name="name">Patient Medication</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.patient.medication</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="medical_patient_view_medication_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+		<record model="ir.actions.act_window.view" id="medical_patient_medication_action_form">
+			<field name="act_window_id" ref="medical_patient_medication_action" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="medical_patient_view_medication_form" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="medical_patient_medication_action_tree">
+			<field name="act_window_id" ref="medical_patient_medication_action" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="medical_patient_view_medication_tree" />
+		</record>
+
+	</data>
+</openerp>
