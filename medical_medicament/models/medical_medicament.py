@@ -20,40 +20,47 @@
 #
 # #############################################################################
 
-from openerp.osv import fields, orm
+from openerp import models, fields, api
 
 
-class MedicalMedicament(orm.Model):
+class MedicalMedicament(models.Model):
     _name = 'medical.medicament'
+    _inherit = ['mail.thread']
+    _inherits = {'product.product': 'product_id'}
 
-    def _get_name(self, cr, uid, ids, field_name, arg, context=None):
-        res = {}
-        for record in self.browse(cr, uid, ids, context=context):
-            res[record.id] = record.product_id.name
+    @api.multi
+    def onchange_type(self, _type):
+        return self.product_id.onchange_type(_type)
+
+    @api.multi
+    def onchange_uom(self, uom_id, uom_po_id):
+        return self.product_id.onchange_uom(uom_id, uom_po_id)
+
+    @api.multi
+    def name_get(self):
+        res = []
+        for rec in self:
+            name = '%s - %s' % (self.product_id.name, self.drug_form_id.name)
+            res.append((rec.id, name))
         return res
 
-    _columns = {
-        'product_id': fields.many2one('product.product', string='Medicament',
-                                      required=True, help='Product Name'),
-        'name': fields.function(_get_name, type='char', string='Medicament',
-                                help="", multi=False),
-        'category_id': fields.many2one('medical.medicament.category',
-                                       'Category', select=True),
-        'active_component': fields.char(size=256, string='Active component',
-                                        help='Active Component'),
-        'indications': fields.text(string='Indication', help='Indications'),
-        'therapeutic_action': fields.char(size=256,
-                                          string='Therapeutic effect',
-                                          help='Therapeutic action'),
-        'pregnancy_category': fields.selection([
-            ('A', 'A'),
-            ('B', 'B'),
-            ('C', 'C'),
-            ('D', 'D'),
-            ('X', 'X'),
-            ('N', 'N'),
-        ], string='Pregnancy Category',
-            help='** FDA Pregancy Categories ***\n'
+    product_id = fields.Many2one(
+        comodel_name='product.product', required=True, ondelete="cascade")
+    drug_form_id = fields.Many2one(
+        comodel_name='medical.drug.form', string='Drug Form', required=True)
+    drug_route_id = fields.Many2one(
+        comodel_name='medical.drug.route', string='Drug Route')
+    active_component = fields.Char()
+    indications = fields.Text()
+    therapeutic_action = fields.Char()
+    pregnancy_category = fields.Selection([
+            ('a', 'A'),
+            ('b', 'B'),
+            ('c', 'C'),
+            ('d', 'D'),
+            ('x', 'X'),
+            ('n', 'N'),
+        ], help='** FDA Pregancy Categories ***\n'
                  'CATEGORY A :Adequate and well-controlled human studies have'
                  'failed to demonstrate a risk to the fetus in the first'
                  'trimester of pregnancy (and there is no evidence of risk in '
@@ -81,19 +88,23 @@ class MedicalMedicament(orm.Model):
                  'investigational or marketing experience, and the risks '
                  'involved in use of the drug in pregnant'
                  ' women clearly outweigh potential benefits.\n\n'
-                 'CATEGORY N : Not yet classified'),
+                 'CATEGORY N : Not yet classified')
+    is_pregnant = fields.Boolean(
+        string='Pregnancy Warning',
+        help='The drug represents risk to pregnancy or lactancy')
+    dosage_instruction = fields.Text(
+        string='Dosage Instructions')
+    pregnancy = fields.Text(
+        string='Pregnancy and Lactancy')
+    notes = fields.Text()
+    overdosage = fields.Text()
+    storage = fields.Text()
+    adverse_reaction = fields.Text()
+    presentation = fields.Text()
+    composition = fields.Text()
 
-        'overdosage': fields.text(string='Overdosage', help='Overdosage'),
-        'is_pregnant': fields.boolean(
-            string='Pregnancy Warning',
-            help='The drug represents risk to pregnancy or lactancy'),
-        'notes': fields.text(string='Extra Info'),
-        'storage': fields.text(string='Storage Conditions'),
-        'adverse_reaction': fields.text(string='Adverse Reactions'),
-        'dosage': fields.text(string='Dosage Instructions',
-                              help='Dosage / Indications'),
-        'pregnancy': fields.text(string='Pregnancy and Lactancy',
-                                 help='Warnings for Pregnant Women'),
-        'presentation': fields.text(string='Presentation'),
-        'composition': fields.text(string='Composition', help='Components'),
-    }
+    @api.model
+    @api.returns('self', lambda value: value.id)
+    def create(self, vals):
+        vals['is_medicament'] = True
+        return super(MedicalMedicament, self).create(vals)

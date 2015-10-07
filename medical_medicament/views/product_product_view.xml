@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="product_normal_form_view" model="ir.ui.view">
+            <field name="name">product.product.form (medical_medicament)</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//label[@for='sale_ok']" position="after">
+                    <group colspan="2" col="6">
+                        <field name="is_medicament" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
