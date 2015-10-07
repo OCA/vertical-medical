@@ -25,10 +25,11 @@ from openerp import models, fields
 
 class MedicalDrugForm(models.Model):
     _name = 'medical.drug.form'
+    _description = 'Medical Drug Form'
 
-    code = fields.Char(size=256, string='Code')
-    name = fields.Char(size=256, string='Form', required=True,
-                       translate=True)
+    name = fields.Char(required=True, translate=True)
+    code = fields.Char()
+
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Drug name must be unique!'),
     ]
