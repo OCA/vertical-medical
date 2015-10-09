@@ -63,3 +63,8 @@ class TestMedicalDisease(TransactionCase):
         self.assertFalse(self.disease_id.active, 'Should be inactive')
         self.assertFalse(
             self.disease_id.patient_id.active, 'Should be inactive')
+
+    def test_compute_disease(self):
+        self.assertEquals(
+            self.disease_id.patient_id.count_disease_ids, 1,
+            'Should have one disease')

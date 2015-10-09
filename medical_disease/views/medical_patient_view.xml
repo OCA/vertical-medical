@@ -11,7 +11,8 @@
                         name="%(medical_disease.medical_patient_disease_action)d"
                         type="action" class="oe_stat_button" icon="fa-list"
                         context="{'search_default_patient_id': active_id}">
-                        <div>Diseases</div>
+                        <field name="count_disease_ids"
+                           widget="statinfo" string="Diseases"/>
                     </button>
                 </xpath>
             </field>
