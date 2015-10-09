@@ -195,7 +195,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
-[medical](medical/) | 1.0 | Odoo Medical
+[medical](medical/) | 8.0.1.0.0 | Odoo Medical
 
 Unported addons
 ---------------
