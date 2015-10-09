@@ -1,149 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
-	<data>
-		<record id="medical_prescription_view_order_tree" model="ir.ui.view">
-			<field name="name">medical.prescription.order.tree</field>
-			<field name="model">medical.prescription.order</field>
-			<field name="priority" eval="8" />
-			<field name="arch" type="xml">
-				<tree string="Medical Prescription Order">
-					<field name="prescription_date" />
-					<field name="name" />
-					<field name="patient_id" />
-					<field name="physician_id" />
-				</tree>
-			</field>
-		</record>
+    <data>
 
-		<record id="medical_prescription_view_order_form" model="ir.ui.view">
-			<field name="name">medical.prescription.order.form</field>
-			<field name="model">medical.prescription.order</field>
-			<field name="priority" eval="8" />
-			<field name="arch" type="xml">
-				<form string="Medical Prescription Order"  version="7.0">
-                    <header>
-<!--                        <button name="action_quotation_send" string="Send by e-mail" type="object" class="highlight" groups="base.group_user"/>-->
-                        <button name="print_prescription" string="Print" type="object"  class="highlight" groups="base.group_user"/>
-                    </header>
+        <record id="medical_prescription_order_search_view" model="ir.ui.view">
+            <field name="name">medical.prescription.order.search</field>
+            <field name="model">medical.prescription.order</field>
+            <field name="arch" type="xml">
+                <search string="Medical Prescription Order">
+                    <field name="name" />
+                    <field name="physician_id" />
+                    <field name="patient_id" />
+                    <field name="partner_id" />
+                    <field name="prescription_date" />
+                    <field name="notes"/>
+                    <newline />
+                    <filter name="is_pregnant" string="Is Pregnant"
+                        domain="[('is_pregnant', '=', True)]"/>
+                    <filter name="is_verified" string="Is Verified"
+                        domain="[('is_verified', '=', True)]"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Patient" domain="[]" context="{'group_by':'patient_id'}" />
+                        <filter string="Pharmacy" domain="[]" context="{'group_by':'partner_id'}" />
+                        <filter string="Prescription Date" domain="[]"
+                            context="{'group_by':'prescription_date'}" />
+                        <filter string="Prescribing Doctor" domain="[]"
+                            context="{'group_by':'physician_id'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="medical_prescription_order_tree_view" model="ir.ui.view">
+            <field name="name">medical.prescription.order.tree</field>
+            <field name="model">medical.prescription.order</field>
+            <field name="arch" type="xml">
+                <tree string="Medical Prescription Order">
+                    <field name="name" />
+                    <field name="patient_id" />
+                    <field name="prescription_date" />
+                    <field name="physician_id" />
+                    <field name="partner_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="medical_prescription_order_form_view" model="ir.ui.view">
+            <field name="name">medical.prescription.order.form</field>
+            <field name="model">medical.prescription.order</field>
+            <field name="arch" type="xml">
+                <form string="Medical Prescription Order">
+                    <header/>
                     <sheet>
-                        <h1>
-                            <label string="Prescription Order "/>
-					        <field name="name" />
-                        </h1>
-                        <group col="4" colspan="4">
-					        <field name="patient_id" />
-					        <field name="prescription_date" />
-					        <field name="physician_id" />
+                        <div class="oe_title" name="title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" placeholder="Name"/></h1>
+                        </div>
+                        <div class="oe_right oe_button_box" name="buttons">
+                        </div>
+                        <group name="data">
+                            <group>
+                                <field name="patient_id" />
+                                <field name="prescription_date" />
+                                <field name="physician_id" />
+                                <field name="prescription_date" />
+                            </group>
+                            <group>
+                                <field name="partner_id" />
+                                <field name="is_pregnant" />
+                                <field name="is_verified" />
+                            </group>
                         </group>
-                        <group col="6" colspan="4">
-					        <field name="pharmacy_id" />
-					        <field name="is_pregnant" />
-					        <field name="is_verified" />
-                        </group>
-                        <group>
-					        <field name="prescription_line_ids" nolabel="1" colspan="4">
-                                <tree string="">
-                                    <field name="is_printed" expand="1"/>
-                                    <field name="template_id" expand="1"/>
-                                    <field name="dose"/>
-                                    <field name="dose_unit_id"/>
-                                    <field name="drug_form_id"/>
-                                    <field name="common_dose_id"/>
-                                    <field name="duration"/>
-                                    <field name="duration_period"/>
-                                </tree>
-                                <form string=""  version="7.0">
-                                    <group colspan="4" col="4">
-                                        <field name="template_id" on_change="onchange_template(template_id, context)" colspan="2"/>
-                                        <field name="disease_id" colspan="2"/>
-                                    </group>
-                                    <group colspan="4" col="8">
-                                        <field name="active_component" colspan="4"/>
-                                        <field name="is_substitutable" colspan="2"/>
-                                        <field name="is_printed" colspan="2"/>
-                                    </group>
-                                    <group colspan="4" col="4">
-                                        <field name="drug_form_id"/>
-                                        <field name="drug_route_id"/>
-                                        <field name="start_treatment"/>
-                                        <field name="end_treatment"/>
-                                    </group>
-                                    <group colspan="4" string="Dosage" id="group_dosage">
-                                        <group colspan="4" col="6">
-                                            <field name="dose"/>
-                                            <field name="dose_unit_id"/>
-                                            <field name="qty"/>
-                                        </group>
-                                        <group colspan="4" string="Common Dosage" col="4">
-                                            <field name="common_dose_id"/>
-                                            <field name="admin_times"/>
-                                        </group>
-                                        <group colspan="4" col="6" string="Specific Dosage" >
-                                            <field name="frequency"/>
-                                            <field name="frequency_unit"/>
-                                            <field name="frequency_prn"/>
-                                        </group>
-                                    </group>
-                                    <group colspan="4" col="4" string="">
-                                        <separator string="" colspan="4"/>
-                                        <field name="duration"/>
-                                        <field name="duration_period"/>
-                                        <field name="review"/>
-                                        <field name="quantity"/>
-                                        <field name="short_comment" />
-                                    </group>
-                                </form>
-                            </field>
-                        </group>
-                        <group>
-					        <field name="notes" colspan="4"/>
-                        </group>
+                        <notebook>
+                            <page string="Order Lines" name="order_lines">
+                                <field name="prescription_order_line_ids" nolabel="1"/>
+                            </page>
+                            <page string="Notes" name="notes">
+                                <field name="notes" nolabel="1"/>
+                            </page>
+                        </notebook>
                     </sheet>
-				</form>
-			</field>
-		</record>
+                </form>
+            </field>
+        </record>
 
-		<record id="medical_prescription_view_order_search" model="ir.ui.view">
-			<field name="name">medical.prescription.order.search</field>
-			<field name="model">medical.prescription.order</field>
-			<field name="priority" eval="8" />
-			<field name="arch" type="xml">
-				<search string="Medical Prescription Order">
-					<field name="name" />
-					<field name="prescription_date" />
-					<field name="patient_id" />
-					<field name="is_pregnant" />
-					<field name="pharmacy_id" />
-					<field name="is_verified" />
-					<field name="physician_id" />
-					<field name="notes"/>
-					<newline />
-					<group expand="0" string="Group By...">
-						<filter string="Patient" domain="[]" context="{'group_by':'patient_id'}" />
-						<filter string="Pregancy Warning" domain="[]"
-							context="{'group_by':'is_pregnant'}" />
-						<filter string="Prescription Notes" domain="[]"
-							context="{'group_by':'notes'}" />
-						<filter string="Pharmacy" domain="[]" context="{'group_by':'pharmacy'}" />
-						<filter string="Prescription Date" domain="[]"
-							context="{'group_by':'prescription_date'}" />
-						<filter string="Prescription verified" domain="[]"
-							context="{'group_by':'is_verified'}" />
-						<filter string="Prescribing Doctor" domain="[]"
-							context="{'group_by':'physician_id'}" />
-						<filter string="Prescription ID" domain="[]"
-							context="{'group_by':'name'}" />
-					</group>
-				</search>
-			</field>
-		</record>
-
-        <record model="ir.ui.view" id="medical_prescription_view_order_kanban">
-            <field name="name">medical.Prescription Order kanban</field>
+        <record model="ir.ui.view" id="medical_prescription_order_kanban_view">
+            <field name="name">medical.prescription.order.kanban</field>
             <field name="model">medical.prescription.order</field>
             <field name="type">kanban</field>
             <field name="arch" type="xml">
-                <kanban version="7.0" class="background_grey">
+                <kanban class="background_grey">
                     <field name="name"/>
                     <templates>
                         <t t-name="kanban-box">
@@ -167,39 +112,22 @@
             </field>
         </record>
 
+        <record model="ir.actions.act_window" id="medical_prescription_order_action">
+            <field name="name">Prescription Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.prescription.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="search_view_id" ref="medical_prescription_order_search_view" />
+            <field name="view_id" ref="medical_prescription_order_tree_view" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
 
-		<record model="ir.actions.act_window" id="medical_prescription_order_action">
-			<field name="name">Prescription Order</field>
-			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">medical.prescription.order</field>
-			<field name="view_type">form</field>
-			<field name="view_mode">kanban,tree,form</field>
-			<field name="search_view_id" ref="medical_prescription_view_order_search" />
-			<field name="domain">[]</field>
-			<field name="context">{}</field>
-		</record>
+        <menuitem id="medical_prescription_root" name="Prescription"
+            parent="medical.medical_root" sequence="30" />
+        <menuitem id="medical_prescription_order_menu" sequence="10"
+            parent="medical_prescription_root" action="medical_prescription_order_action" />
 
-		<record model="ir.actions.act_window.view" id="medical_prescription_order_action_form">
-			<field name="act_window_id" ref="medical_prescription_order_action" />
-			<field name="sequence" eval="30" />
-			<field name="view_mode">form</field>
-			<field name="view_id" ref="medical_prescription_view_order_form" />
-		</record>
-
-		<record model="ir.actions.act_window.view" id="medical_prescription_order_action_tree">
-			<field name="act_window_id" ref="medical_prescription_order_action" />
-			<field name="sequence" eval="20" />
-			<field name="view_mode">tree</field>
-			<field name="view_id" ref="medical_prescription_view_order_tree" />
-		</record>
-
- 		<record model="ir.actions.act_window.view" id="medical_prescription_order_action_kanban"> 
- 			<field name="act_window_id" ref="medical_prescription_order_action" /> 
- 			<field name="sequence" eval="10" /> 
- 			<field name="view_mode">kanban</field> 
- 			<field name="view_id" ref="medical_prescription_view_order_kanban" /> 
- 		</record> 
-
-
-	</data>
+    </data>
 </openerp>

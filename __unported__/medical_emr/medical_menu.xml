@@ -10,15 +10,6 @@
             parent="medical.medical_patient_root" sequence="30"
             action="medical_family_member_action" />
 
-
-<!--Prescriptions-->
-        <menuitem id="medical_prescription_root" name="Prescription"
-            parent="medical.medical_root" sequence="30" />
-
-        <menuitem id="medical_prescription_order" name="Prescription Order"
-            parent="medical_prescription_root" sequence="10"
-            action="medical_prescription_order_action" />
-
 <!-- Occupation  ( Config/misc/Occupation) )--> 
         <menuitem id="medical_occupation" name="Occupation"
             parent="medical.medical_root_misc" sequence="20"
