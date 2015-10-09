@@ -26,7 +26,7 @@
 from openerp import fields, models
 
 
-class ProductProduct(models.Model):
-    _inherit = 'product.product'
+class ProductTemplate(models.Model):
+    _inherit = 'product.template'
 
     is_medicament = fields.Boolean()
