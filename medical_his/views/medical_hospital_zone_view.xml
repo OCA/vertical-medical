@@ -62,7 +62,11 @@
                             <group name="main">
                                 <field name="label"/>
                                 <field name="parent_id"/>
-                                <field name="partner_id"/>
+                                <field name="partner_id"
+                                    context="{
+                                        'default_is_company': True,
+                                        'default_is_institution': True,
+                                    }"/>
                             </group>
                         </group>
 
@@ -77,6 +81,14 @@
                             <page string="Others" name="notes" attrs="{'invisible': [('id','=',False)]}" autofocus="autofocus">
                                 <separator string="Notes"/>
                                 <field name="notes" />
+                            </page>
+                            <page string="Children Zone" name="children_zone"
+                                attrs="{'invisible': ['|', ('id','=',False), ('child_ids','=',[])]}" autofocus="autofocus">
+                                <field name="child_ids" />
+                            </page>
+                            <page string="Rooms" name="room_ids"
+                                attrs="{'invisible': ['|', ('id','=',False), ('room_ids','=',[])]}" autofocus="autofocus">
+                                <field name="room_ids" />
                             </page>
                         </notebook>
                     </sheet>
