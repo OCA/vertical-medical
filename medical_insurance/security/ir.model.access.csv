@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_insurance_user,access.medical.insurance.user,model_medical_insurance,medical.group_medical_user,1,0,0,0
+access_medical_insurance_plan_user,access.medical.insurance.plan.user,model_medical_insurance_plan,medical.group_medical_user,1,0,0,0

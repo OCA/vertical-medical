@@ -3,7 +3,11 @@
     <data>
 
 <!--Menu Patient-->
+<<<<<<< HEAD:__unported__/medical_emr/medical_menu.xml
         <menuitem id="medical_family" name="Family" parent="medical.medical_patient_root"
+=======
+        <menuitem id="medical_family" name=" Family" parent="medical.medical_patient_root"
+>>>>>>> [IMP] Update ids, naming, etc. to OCA standards (medical & medical_emr):medical_emr/medical_menu.xml
             sequence="20" action="medical_family_action" />
 
         <menuitem id="medical_family_member" name="Family Member"
@@ -44,6 +48,13 @@
         <menuitem id="medical_root_disease_cat" name="Categories"
             parent="" sequence="100" />
 
+<<<<<<< HEAD:__unported__/medical_emr/medical_menu.xml
+=======
+        <menuitem id="medical_disease_group_members"
+            parent="medical_root_disease" sequence="40"
+            action="medical_disease_group_members_action" />
+
+>>>>>>> [IMP] Update ids, naming, etc. to OCA standards (medical & medical_emr):medical_emr/medical_menu.xml
 <!-- Occupation  ( Config/misc/Occupation) )--> 
         <menuitem id="medical_occupation" name="Occupation"
             parent="medical.medical_root_misc" sequence="20"
@@ -88,7 +99,11 @@
         <menuitem id="medical_diagnostic_hypothesis" name="Diagnostic Hypothesis"
             parent="medical.medical_root_sub" sequence="10"
             action="medical_diagnostic_hypothesis_action" />
+<<<<<<< HEAD:__unported__/medical_emr/medical_menu.xml
         <menuitem id="medical_predure" name="Procedure" parent="medical.medical_root_sub"
+=======
+        <menuitem id="medical_predure" name=" Procedure" parent="medical.medical_root_sub"
+>>>>>>> [IMP] Update ids, naming, etc. to OCA standards (medical & medical_emr):medical_emr/medical_menu.xml
             sequence="10" action="medical_procedure_action" />
 
     </data>

@@ -19,7 +19,7 @@
 		</record>
 
 		<record id="medical_prescription_view_line_form" model="ir.ui.view">
-			<field name="prescription_id">medical.prescription.line.form</field>
+			<field name="name">medical.prescription.line.form</field>
 			<field name="model">medical.prescription.line</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">

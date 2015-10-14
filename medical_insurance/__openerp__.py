@@ -11,8 +11,8 @@
 #    Planifyied by: Nhomar Hernandéz <nhomar@vauxoo.com>
 #
 ##############################################################################
-#    This project is mantained by OeMEdical Team:
-#    http://github.com/oca/vertical-medical
+#    This project is mantained by Medical Team:
+#    https://github.com/OCA/vertical-medical/
 #
 ##############################################################################
 #    It is a collaborative effort between several companies that want to join
@@ -34,23 +34,23 @@
 ##############################################################################
 {
 
-    'name': 'Odoo Medical : Free Health and Hospital Information System',
+    'name': 'Odoo Medical : Insurance',
     'version': '8.0.1.0',
-    'author': 'Odoo Medical Team,Odoo Community Association (OCA)',
+    'author': "Odoo Medical Team, Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': ['medical'],
-    'application': True,
-    'website': 'https://github.com/OCA/vertical-medical/',
-    'license': "AGPL-3",
-    'data': [
+    "website": "http://github.com/oca/vertical-medical",
+    "licence": "AGPL-3",
+    "data": [
+        'views/medical_insurance_view.xml',
+        'views/medical_insurance_plan_view.xml',
         'security/ir.model.access.csv',
-        'views/medical_hospital_bed_view.xml',
-        'views/medical_hospital_room_view.xml',
-        'views/medical_hospital_zone_view.xml',
-        'views/medical_hospital_or_view.xml',
-        'views/medical_hospital_unit_view.xml',
-        'views/medical_hospital_menu.xml',
+        'views/medical_menu.xml',
     ],
-    'active': False,
+    'test': [
+        'test/insurance_plan.yml',
+        'test/insurance.yml',
+    ],
     'installable': True,
+    'auto_install': False,
 }
