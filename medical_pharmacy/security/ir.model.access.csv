@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_prescription_order_state,access.medical.prescription.order.state.user,model_medical_prescription_order_state,medical.group_medical_user,1,0,0,0
