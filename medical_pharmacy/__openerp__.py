@@ -29,7 +29,7 @@
 ##############################################################################
 {
 
-    'name': 'Odoo Medical : Pharmacy',
+    'name': 'Pharmacy',
     'version': '8.0.1.0',
     'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
     'category': 'Medical',

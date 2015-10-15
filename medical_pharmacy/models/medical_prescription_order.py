@@ -76,19 +76,16 @@ class MedicalPrescriptionOrder(models.Model):
         'Assigned Date'
     )
     legend_blocked = fields.Char(
-        "stage_id",
-        "legend_blocked",
         string='Kanban Blocked Explanation',
+        related='stage_id.legend_blocked'
     )
     legend_done = fields.Char(
-        "stage_id",
-        "legend_done",
         string='Kanban Valid Explanation',
+        related='stage_id.legend_done'
     )
     legend_normal = fields.Char(
-        "stage_id",
-        "legend_normal",
         string='Kanban Ongoing Explanation',
+        related='stage_id.legend_normal'
     )
     color = fields.Integer(
         'Color Index',
