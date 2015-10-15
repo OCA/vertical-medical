@@ -32,7 +32,7 @@ class MedicalPrescriptionLine(models.Model):
         'procurement.order',
         related='order_line_id.procurement_ids',
     )
-    state = field.Selection([
+    state = fields.Selection([
         ('draft', 'Draft'),
         ('progress', 'Open'),
         ('matched', 'Matched Sale'),
