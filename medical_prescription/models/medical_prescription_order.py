@@ -44,4 +44,4 @@ class MedicalPrescriptionOrder(models.Model):
     notes = fields.Text()
     is_pregnant = fields.Boolean()
     is_verified = fields.Boolean()
-    prescription_date = fields.Datetime(default=fields.Datetime.now())
+    date_prescription = fields.Datetime(default=fields.Datetime.now())

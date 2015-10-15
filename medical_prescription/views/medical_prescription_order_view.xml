@@ -11,7 +11,7 @@
                     <field name="physician_id" />
                     <field name="patient_id" />
                     <field name="partner_id" />
-                    <field name="prescription_date" />
+                    <field name="date_prescription" />
                     <field name="notes"/>
                     <newline />
                     <filter name="is_pregnant" string="Is Pregnant"
@@ -22,7 +22,7 @@
                         <filter string="Patient" domain="[]" context="{'group_by':'patient_id'}" />
                         <filter string="Pharmacy" domain="[]" context="{'group_by':'partner_id'}" />
                         <filter string="Prescription Date" domain="[]"
-                            context="{'group_by':'prescription_date'}" />
+                            context="{'group_by':'date_prescription'}" />
                         <filter string="Prescribing Doctor" domain="[]"
                             context="{'group_by':'physician_id'}" />
                     </group>
@@ -37,7 +37,7 @@
                 <tree string="Medical Prescription Order">
                     <field name="name" />
                     <field name="patient_id" />
-                    <field name="prescription_date" />
+                    <field name="date_prescription" />
                     <field name="physician_id" />
                     <field name="partner_id" />
                 </tree>
@@ -60,9 +60,9 @@
                         <group name="data">
                             <group>
                                 <field name="patient_id" />
-                                <field name="prescription_date" />
+                                <field name="date_prescription" />
                                 <field name="physician_id" />
-                                <field name="prescription_date" />
+                                <field name="date_prescription" />
                             </group>
                             <group>
                                 <field name="partner_id" />
@@ -99,7 +99,7 @@
                                             <a type="open"><field name="name"/></a>
                                         </h3>
                                         <ul>
-                                            <li t-if="record.prescription_date.raw_value"><b>Date:</b> <field name="prescription_date"/></li>
+                                            <li t-if="record.date_prescription.raw_value"><b>Date:</b> <field name="date_prescription"/></li>
                                             <li t-if="record.patient_id.raw_value"><b>Patient:</b> <field name="patient_id"/></li>
                                             <li t-if="record.physician_id.raw_value"><b>Physician:</b> <field name="physician_id"/></li>
                                         </ul>
