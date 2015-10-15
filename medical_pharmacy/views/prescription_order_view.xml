@@ -24,7 +24,7 @@
                     <field name="legend_normal"/>
                     <field name="legend_done"/>
                     <field name="name"/>
-                    <field name="prescription_date"/>
+                    <field name="date_prescription"/>
                     <field name="patient_id"/>
                     <field name="physician_id"/>
                     <templates>
@@ -44,7 +44,7 @@
                             <div class="oe_kanban_content">
                                 <div>
                                     <strong>
-                                        <field name="name"/> - <field name="prescription_date"/>
+                                        <field name="name"/> - <field name="date_prescription"/>
                                     </strong>
                                 </div>
                                 <div class="text-muted">
