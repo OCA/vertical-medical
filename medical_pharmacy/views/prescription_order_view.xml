@@ -45,12 +45,13 @@
                             <div class="oe_kanban_content">
                                 <div>
                                     <strong>
-                                        <field name="name"/> - <field name="date_prescription"/>
+                                        <field name="name"/> <br />
+                                        <field name="date_prescription"/>
                                     </strong>
                                 </div>
                                 <div class="text-muted">
-                                    <field name="patient_id"/>
-                                    <field name="physician_id"/>
+                                    For: <field name="patient_id"/> <br />
+                                    By: <field name="physician_id"/>
                                 </div>
                                 <div class="oe_kanban_bottom_left">
                                     <field name="priority" widget="priority"/>
