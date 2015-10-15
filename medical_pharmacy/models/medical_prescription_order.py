@@ -96,6 +96,7 @@ class MedicalPrescriptionOrder(models.Model):
         ('blocked', 'Blocked')
     ],
         'Kanban State',
+        default='normal',
         track_visibility='onchange',
         required=True,
         copy=False,
