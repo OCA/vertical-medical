@@ -23,7 +23,7 @@ from openerp import fields, models
 
 
 class MedicalPrescriptionLine(models.Model):
-    _inherit = 'medical.prescription.line'
+    _inherit = 'medical.prescription.order.line'
 
     order_line_id = fields.Many2one(
         'sale.order.line',
