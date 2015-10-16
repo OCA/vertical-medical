@@ -59,9 +59,6 @@
                         </div>
                         <group name="data">
                             <group>
-                                <field name="patient_id" />
-                                <field name="date_prescription" />
-                                <field name="physician_id" />
                                 <field name="date_prescription" />
                             </group>
                             <group>
@@ -72,10 +69,19 @@
                         </group>
                         <notebook>
                             <page string="Order Lines" name="order_lines">
-                                <field name="prescription_order_line_ids" nolabel="1"/>
+                                <field name="prescription_order_line_ids" nolabel="1">
+                                    <tree>
+                                        <field name="date_start_treatment" />
+                                        <field name="date_stop_treatment" />
+                                        <field name="pathology_id" />
+                                        <field name="medicament_id" />
+                                        <field name="quantity" />
+                                        <field name="dose_unit_id" />
+                                    </tree>
+                                </field>
                             </page>
                             <page string="Notes" name="notes">
-                                <field name="notes" nolabel="1"/>
+                                <field name="notes" nolabel="1" />
                             </page>
                         </notebook>
                     </sheet>
