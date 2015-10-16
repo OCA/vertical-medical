@@ -25,8 +25,12 @@ from openerp import fields, models
 class MedicalPrescriptionLine(models.Model):
     _inherit = 'medical.prescription.order.line'
 
-    order_line_id = fields.Many2one(
+    sale_order_line_id = fields.Many2one(
         'sale.order.line',
+    )
+    sale_order_id = fields.Many2one(
+        'sale.order',
+        related='sale_order_line_id.order_id',
     )
     dispense_ids = fields.One2many(
         'procurement.order',
