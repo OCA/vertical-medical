@@ -53,10 +53,8 @@
             <field name="arch" type="xml">
                 <form string="Medical Medication Template">
                     <sheet>
-                        <div class="oe_title" name="title">
-                            <label for="medicament_id" class="oe_edit_only"/>
-                            <h1><field name="medicament_id"/></h1>
-                        </div>
+                        <label for="medicament_id" class="oe_edit_only"/>
+                        <h1><field name="medicament_id"/></h1>
                         <div class="oe_right oe_button_box" name="buttons"/>
                         <group name="data">
                             <field name="pathology_id"/>
@@ -66,6 +64,7 @@
                                 <group name="dosage">
                                     <field name="quantity"/>
                                     <field name="dose_unit_id"/>
+                                    <field name="medication_dosage_id"/>
                                 </group>
                             </page>
                             <page string="Frequency" name="frequency">
@@ -76,6 +75,7 @@
                                     </group>
                                     <group name="frequency_prn">
                                         <field name="frequency_prn"/>
+                                        <field name="suggested_administration_hours"/>
                                     </group>
                                 </group>
                             </page>
@@ -84,10 +84,6 @@
                                     <group name="duration">
                                         <field name="duration"/>
                                         <field name="duration_period"/>
-                                    </group>
-                                    <group name="medication">
-                                        <field name="medication_dosage_id"/>
-                                        <field name="suggested_administration_hours" widget="float_time"/>
                                     </group>
                                 </group>
                             </page>

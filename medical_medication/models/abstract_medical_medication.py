@@ -20,7 +20,7 @@
 #
 # #############################################################################
 
-from openerp import fields, models, api
+from openerp import models, api
 from openerp.models import MAGIC_COLUMNS
 
 
@@ -36,7 +36,3 @@ class AbstractMedicalMedication(models.AbstractModel):
             for k in values.keys():
                 if k not in MAGIC_COLUMNS:
                     setattr(self, k, getattr(self.medication_template_id, k))
-
-    medication_template_id = fields.Many2one(
-        comodel_name='medical.medication.template',
-        string='Medication Template', index=True)
