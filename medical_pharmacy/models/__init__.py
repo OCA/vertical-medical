@@ -18,8 +18,11 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
+from . import medical_abstract_prescription_state
 from . import medical_prescription_order
 from . import medical_prescription_order_state
-from . import medical_prescription_line
+from . import medical_prescription_order_line
+from . import medical_prescription_order_line_state
 from . import medical_medicament
 from . import sale_order_line
+from . import sale_order

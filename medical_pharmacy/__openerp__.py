@@ -42,6 +42,7 @@
     "data": [
         'views/prescription_order_view.xml',
         'views/prescription_order_line_view.xml',
+        'views/sale_order_view.xml',
     ],
     'test': [
         
