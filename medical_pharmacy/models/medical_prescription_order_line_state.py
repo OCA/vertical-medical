@@ -22,7 +22,7 @@
 from openerp import fields, models
 
 
-class MedicalPrescriptionOrderState(models.Model):
-    _name = 'medical.prescription.order.state'
-    _description = 'Prescription Order States'
+class MedicalPrescriptionOrderLineState(models.Model):
+    _name = 'medical.prescription.order.line.state'
+    _description = 'Prescription Order Line States'
     _inherit = 'medical.abstract.prescription.state'

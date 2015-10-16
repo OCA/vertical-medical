@@ -19,33 +19,19 @@
 #
 ##############################################################################
 
-from openerp import fields, models
+from openerp import fields, models, api
 
 
-class MedicalPrescriptionLine(models.Model):
-    _inherit = 'medical.prescription.order.line'
+class SaleOrder(models.Model):
+    _inherit = 'sale.order'
+    
+    @api.one
+    def _compute_patient_id(self, ):
+        self.patient_id = self.env['medical.patient'].search([
+            ('partner_id', '=', self.partner_id.id)
+        ], limit=1)
 
-    sale_order_line_id = fields.Many2one(
-        'sale.order.line',
-    )
-    sale_order_id = fields.Many2one(
-        'sale.order',
-        related='sale_order_line_id.order_id',
-    )
-    dispense_ids = fields.One2many(
-        'procurement.order',
-        related='sale_order_line_id.procurement_ids',
-    )
-    state = fields.Selection([
-        ('draft', 'Draft'),
-        ('progress', 'Open'),
-        ('matched', 'Matched Sale'),
-        ('manual', 'To Invoice'),
-        ('dispense', 'To Dispense'),
-        ('dispense_except', 'Dispense Exception'),
-        ('invoice_except', 'Invoice Exception'),
-        ('cancel', 'Canceled'),
-        ('dispensed', 'Dispensed'),
-    ],
-        default='draft',
+    patient_id = fields.Many2one(
+        'medical.patient',
+        compute='_compute_patient_id',
     )

@@ -19,13 +19,52 @@
 #
 ##############################################################################
 
-from openerp import fields, models
+from openerp import fields, models, api
 
 
-class MedicalPrescriptionOrder(models.Model):
-    _inherit = 'medical.prescription.order'
-    _order = 'priority desc, sequence, date_prescription, name, id'
-    
+class MedicalPrescriptionOrderLine(models.Model):
+    _inherit = 'medical.prescription.order.line'
+    _order = 'priority desc, sequence, date_start_treatment, id'
+
+    @api.one
+    def _compute_dispensings_and_orders(self, ):
+        dispense_ids, order_ids = [], []
+        for line_id in self.sale_order_line_ids:
+            dispense_ids.append(p.id for p in line_id.procurement_ids)
+            order_ids.append(line_id.order_id)
+        self.order_ids = self.env['sale.order'].browse(set(order_ids))
+        self.dispense_ids = self.env['procurement.order'].browse(dispense_ids)
+
+    product_id = fields.Many2one(
+        'product.product',
+        related='medical_medication_id.medicament_id.product_id'
+    )
+    sale_order_line_ids = fields.One2many(
+        comodel_name='sale.order.line',
+        inverse_name='prescription_order_line_id',
+    )
+    sale_order_ids = fields.Many2many(
+        comodel_name='sale.order',
+        compute='_compute_dispensings_and_orders',
+    )
+    dispense_ids = fields.One2many(
+        'procurement.order',
+        compute='_compute_dispensings_and_orders',
+        readonly=True,
+    )
+    state = fields.Selection([
+        ('draft', 'Draft'),
+        ('progress', 'Open'),
+        ('matched', 'Matched Sale'),
+        ('manual', 'To Invoice'),
+        ('dispense', 'To Dispense'),
+        ('dispense_except', 'Dispense Exception'),
+        ('invoice_except', 'Invoice Exception'),
+        ('cancel', 'Canceled'),
+        ('dispensed', 'Dispensed'),
+    ],
+        default='draft',
+    )
     sequence = fields.Integer(
         default=10,
         help="Sequence order when displaying a list of Rxs",
@@ -61,7 +100,7 @@ class MedicalPrescriptionOrder(models.Model):
         help = 'When the Rx was received',
     )
     state_id = fields.Many2one(
-        'medical.prescription.order.state',
+        'medical.prescription.order.line.state',
         'State',
         track_visibility='onchange',
         select=True,
