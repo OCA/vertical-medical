@@ -34,7 +34,7 @@ class MedicalPrescriptionLine(models.Model):
     )
     dispense_ids = fields.One2many(
         'procurement.order',
-        related='order_line_id.procurement_ids',
+        related='sale_order_line_id.procurement_ids',
     )
     state = fields.Selection([
         ('draft', 'Draft'),
