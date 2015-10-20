@@ -24,7 +24,7 @@ from openerp import fields, models, api
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
-    
+
     @api.one
     def _compute_patient_id(self, ):
         self.patient_id = self.env['medical.patient'].search([

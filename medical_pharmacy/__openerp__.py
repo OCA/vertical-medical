@@ -45,7 +45,7 @@
         'views/sale_order_view.xml',
     ],
     'test': [
-        
+
     ],
     'installable': True,
     'auto_install': False,
