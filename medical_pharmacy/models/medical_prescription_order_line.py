@@ -95,9 +95,9 @@ class MedicalPrescriptionOrderLine(models.Model):
         help='Method of Rx verification',
     )
     receive_date = fields.Datetime(
-        default = fields.Datetime.now,
-        string = 'Receipt Date',
-        help = 'When the Rx was received',
+        default=fields.Datetime.now,
+        string='Receipt Date',
+        help='When the Rx was received',
     )
     state_id = fields.Many2one(
         'medical.prescription.order.line.state',
