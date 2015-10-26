@@ -2,13 +2,13 @@
 <openerp>
 	<data>
  		<record id="view_oemedical_patient_form_emr" model="ir.ui.view"> 
- 			<field name="name">oemedical.patient.form</field> 
- 			<field name="model">oemedical.patient</field> 
-	                <field name="inherit_id" ref="oemedical.view_oemedical_patient_form"/>
+ 			<field name="name">medical.patient.form</field> 
+ 			<field name="model">medical.patient</field> 
+	                <field name="inherit_id" ref="medical.view_medical_patient_form"/>
  			<field name="priority" eval="8" /> 
  			<field name="arch" type="xml"> 
- 			 <form string="Patient" version="7.0"> 
-                    <sheet> 
+<!--  			 <form string="Patient" version="7.0">  -->
+<!--                     <sheet>  -->
                 <notebook position="inside">
                         <page string="Basic Medical Information"> 
                             <group  col="6" colspan="4"> 
@@ -16,13 +16,13 @@
      							<field name="rh" nolabel="1"/> 
                					<field name="ethnic_group" /> 
              					<field name="family" invisivle="1" colspan="2"/> 
-                                </group>
-                                <group colspan="4" col="4">
-                 					<field name="primary_care_doctor" />
-                                </group>
-                                <separator colspan="4" string="Patient Allergies and Critical Information"/>
-             					<field name="critical_info" colspan="4" nolabel="1"/> 
-             				</group> 
+                            </group>
+                            <group colspan="4" col="4">
+             					<field name="primary_care_doctor" />
+                            </group>
+                            <separator colspan="4" string="Patient Allergies and Critical Information"/>
+         					<field name="critical_info" colspan="4" nolabel="1"/> 
+<!--              				</group>  -->
          				</page> 
                         <page string="Medication" >
 <!-- Patient Medications -->
@@ -50,31 +50,31 @@
 			                    </form>
                             </field>
 <!-- Patient Vaccinations -->
-                            <separator string="Vaccinations" colspan="4"/>
-          					<field name="vaccinations"  nolabel="1" colspan="4"> 
-			                    <tree string="Oemedical Vaccination">
-				                    <field name="name" />
-				                    <field name="vaccine_lot" />
-				                    <field name="patient_id" />
-				                    <field name="vaccine" />
-				                    <field name="dose" />
-				                    <field name="observations" />
-				                    <field name="date" />
-				                    <field name="institution" />
-				                    <field name="next_dose_date" />
-			                    </tree>
-			                    <form string="Oemedical Vaccination">
-				                    <field name="name" />
-				                    <field name="vaccine_lot" />
-				                    <field name="patient_id" />
-				                    <field name="vaccine" />
-				                    <field name="dose" />
-				                    <field name="observations" />
-				                    <field name="date" />
-				                    <field name="institution" />
-				                    <field name="next_dose_date" />
-			                    </form>
-                            </field>
+<!--                             <separator string="Vaccinations" colspan="4"/> -->
+<!--           					<field name="vaccinations"  nolabel="1" colspan="4">  -->
+<!-- 			                    <tree string="Oemedical Vaccination"> -->
+<!-- 				                    <field name="name" /> -->
+<!-- 				                    <field name="vaccine_lot" /> -->
+<!-- 				                    <field name="patient_id" /> -->
+<!-- 				                    <field name="vaccine" /> -->
+<!-- 				                    <field name="dose" /> -->
+<!-- 				                    <field name="observations" /> -->
+<!-- 				                    <field name="date" /> -->
+<!-- 				                    <field name="institution" /> -->
+<!-- 				                    <field name="next_dose_date" /> -->
+<!-- 			                    </tree> -->
+<!-- 			                    <form string="Oemedical Vaccination"> -->
+<!-- 				                    <field name="name" /> -->
+<!-- 				                    <field name="vaccine_lot" /> -->
+<!-- 				                    <field name="patient_id" /> -->
+<!-- 				                    <field name="vaccine" /> -->
+<!-- 				                    <field name="dose" /> -->
+<!-- 				                    <field name="observations" /> -->
+<!-- 				                    <field name="date" /> -->
+<!-- 				                    <field name="institution" /> -->
+<!-- 				                    <field name="next_dose_date" /> -->
+<!-- 			                    </form> -->
+<!--                             </field> -->
 
                         </page>
 
@@ -123,10 +123,11 @@
                         </page>
                     </notebook> 
 		        <field name="dod" position="after">
+                    <field name="deceased"/>
 		        	<field name="cod" attrs="{'invisible':[('deceased','=',False)]}"/>
 		        </field>
- 				</sheet> 
- 				</form> 
+<!--  				</sheet>  -->
+<!--  				</form>  -->
  			</field> 
  		</record> 
 	</data>

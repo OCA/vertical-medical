@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
-<data noupdate="0">
+<data noupdate="1">
 
 <!-- Add list of products -->
     <record model="oemedical.medicament" id="meds_em1">

@@ -115,6 +115,7 @@ OeMedical at a glance:
         'views/oemedical_family_view.xml',
         'views/oemedical_occupation_view.xml',
         'views/oemedical_disease_group_members_view.xml',
+        'views/oemedical_patient_view.xml',
         'views/oemedical_medicament_view.xml',
         'views/oemedical_pathology_group_view.xml',
         'security/ir.model.access.csv',
