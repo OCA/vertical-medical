@@ -36,6 +36,7 @@ import oemedical_medication_template
 import oemedical_medication_dosage
 import oemedical_family_member
 import oemedical_drug_form
+#import oemedical_patient
 import oemedical_patient_medication
 import oemedical_patient_evaluation
 import oemedical_prescription_line

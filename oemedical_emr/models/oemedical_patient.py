@@ -27,9 +27,9 @@ from dateutil.relativedelta import relativedelta
 from datetime import datetime
 
 
-class OeMedicalPatient(orm.Model):
-    _name= 'oemedical.patient'
-    _inherit= 'oemedical.patient'
+class MedicalPatient(orm.Model):
+#    _name= 'oemedical.patient'
+    _inherit= 'medical.patient'
 
     _columns={
         'family': fields.many2one('oemedical.family', string='Family', help='Family Code'),
@@ -41,14 +41,14 @@ class OeMedicalPatient(orm.Model):
         'rh': fields.selection([
                                         ('+', '+'), 
                                         ('-', '-'), ], string='Rh'),
-        'primary_care_doctor': fields.many2one('oemedical.physician', 'Primary Care Doctor', help='Current primary care / family doctor'),
+        'primary_care_doctor': fields.many2one('medical.physician', 'Primary Care Doctor', help='Current primary care / family doctor'),
         'childbearing_age': fields.boolean('Potential for Childbearing'),
         'medications': fields.one2many('oemedical.patient.medication', 'patient_id', string='Medications',),
         'evaluations': fields.one2many('oemedical.patient.evaluation', 'patient_id', string='Evaluations',),
-        'critical_info': fields.text( string='Important disease, allergy or procedures information', help='Write any important information on the patient\'s disease, surgeries, allergies, ...'),
+        'critical_info': fields.text(string='Important disease, allergy or procedures information', help='Write any important information on the patient\'s disease, surgeries, allergies, ...'),
         'diseases': fields.one2many('oemedical.patient.disease', 'patient_id', string='Diseases', help='Mark if the patient has died'),
         'ethnic_group': fields.many2one('oemedical.ethnicity', string='Ethnic group',),
-        'vaccinations': fields.one2many('oemedical.vaccination', 'patient_id', 'Vaccinations',),
+#        'vaccinations': fields.one2many('oemedical.vaccination', 'patient_id', 'Vaccinations',),
         'cod': fields.many2one('oemedical.pathology', string='Cause of Death',),
     }
     

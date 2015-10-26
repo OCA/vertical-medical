@@ -200,7 +200,7 @@ PatientCAGE()
 
 class MedicalPatient(orm.Model):
 
-    _inherit='oemedical.patient'
+    _inherit='medical.patient'
 
     _columns = {
 
