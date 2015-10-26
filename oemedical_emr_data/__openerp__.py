@@ -56,7 +56,7 @@ localizing core data.
         'data/medicament_categories.xml',
         'data/WHO_products.xml',
         'data/WHO_list_of_essential_medicines.xml',
-        'data/health_specialties.xml',
+#        'data/health_specialties.xml',
         'data/ethnic_groups.xml',
         'data/occupations.xml',
         'data/dose_units.xml',
@@ -81,7 +81,7 @@ localizing core data.
     'qweb': [
 
     ], 
-    "active": False,
-    "installable": False,
+    "active": True,
+    "installable": True,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -38,7 +38,7 @@
     'version': '1.0',
     'author': "OeMEdical Team,Odoo Community Association (OCA)",
     'category': 'Generic Modules/Others',
-    'depends': ['oemedical'],
+    'depends': ['medical'],
     'application': True,
     'description': """
 
@@ -136,6 +136,6 @@ OeMedical at a glance:
 
     ],
     "active": False,
-    'installable': False,
+    'installable': True,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

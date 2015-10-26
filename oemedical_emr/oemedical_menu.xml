@@ -3,17 +3,17 @@
 	<data>
 
 <!--Menu Patient-->
-		<menuitem id="oemedical_family" name=" Family" parent="oemedical.oemedical_patient_root"
+		<menuitem id="oemedical_family" name=" Family" parent="medical.group_medical_user"
 			sequence="20" action="act_open_oemedical_family_view" />
 
 		<menuitem id="oemedical_family_member" name=" Family Member"
-			parent="oemedical.oemedical_patient_root" sequence="30"
+			parent="medical.group_medical_user" sequence="30"
 			action="act_open_oemedical_family_member_view" />
 
 
 <!--Prescriptions-->
 		<menuitem id="oemedical_prescription_root" name="Prescription"
-			parent="oemedical.oemedical_root" sequence="30" />
+			parent="medical.medical_root" sequence="30" />
 
 		<menuitem id="oemedical_prescription_order" name="Prescription Order"
 			parent="oemedical_prescription_root" sequence="10"
@@ -21,7 +21,7 @@
 
 <!-- Diseases -->
 		<menuitem id="oemedical_root_disease" name="Disease"
-			parent="oemedical.oemedical_root_sub" sequence="10" />
+			parent="medical.medical_root_sub" sequence="10" />
 
 <!--  Menu of Pathology-->
 
@@ -46,17 +46,17 @@
 
 <!-- Occupation  ( Config/misc/Occupation) )--> 
 		<menuitem id="oemedical_occupation" name=" Occupation"
-			parent="oemedical.oemedical_root_misc" sequence="20"
+			parent="medical.medical_root_misc" sequence="20"
 			action="act_open_oemedical_occupation_view" />
 
 <!-- Ethnicity  ( Config/misc/Ethnicity) )--> 
-		<menuitem id="oemedical_ethnicity" name="Ethnicity" parent="oemedical.oemedical_root_misc"
+		<menuitem id="oemedical_ethnicity" name="Ethnicity" parent="medical.medical_root_misc"
 			sequence="10" action="act_open_oemedical_ethnicity_view" />
 
 <!--Medicaments-->
 
 		<menuitem id="oemedical_medicament_root" name="Medicaments"
-			parent="oemedical.oemedical_root_sub" sequence="50" />
+			parent="medical.medical_root_sub" sequence="50" />
 
 
 		<menuitem id="oemedical_medicament" name="Medicaments"
@@ -86,9 +86,9 @@
 
 
 		<menuitem id="oemedical_diagnostic_hypothesis" name=" Diagnostic Hypothesis"
-			parent="oemedical.oemedical_root_sub" sequence="10"
+			parent="medical.medical_root_sub" sequence="10"
 			action="act_open_oemedical_diagnostic_hypothesis_view" />
-		<menuitem id="oemedical_predure" name=" Procedure" parent="oemedical.oemedical_root_sub"
+		<menuitem id="oemedical_predure" name=" Procedure" parent="medical.medical_root_sub"
 			sequence="10" action="act_open_oemedical_procedure_view" />
 
 	</data>
