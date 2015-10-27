@@ -5,10 +5,10 @@
 <!--    Insurance     -->
 
         <menuitem name="Insurances" id="oemedical_conf_insurances"
-            parent="oemedical.oemedical_root_misc" sequence="20" />
+            parent="medical.medical_root_misc" sequence="20"/>
 
 		<menuitem id="oemedical_insurance" name=" Insurance" 
-            parent="oemedical_conf_insurances"	sequence="10" 
+            parent="oemedical_conf_insurances"  sequence="10" 
             action="act_open_oemedical_insurance_view" />
 
 		<menuitem id="oemedical_insurance_plan" name=" Insurance Plan"

@@ -21,10 +21,14 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Hospital Building">
+					<sheet>
+                    <group colspan="4">
 					<field name="code" />
 					<field name="institution" />
 					<field name="name" />
 					<field name="extra_info" />
+					</group>
+					</sheet>
 				</form>
 			</field>
 		</record>

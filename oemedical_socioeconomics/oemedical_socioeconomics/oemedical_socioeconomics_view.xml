@@ -3,13 +3,13 @@
 	<data>
 
         <record model="ir.ui.view" id="view_oemedical_patient_form_socio_economics">
-            <field name="name">oemedical.patient.view.inherit.socio_economics</field>
-            <field name="model">oemedical.patient</field>
-            <field name="inherit_id" ref="oemedical.view_oemedical_patient_form" />
+            <field name="name">medical.patient.view.inherit.socio_economics</field>
+            <field name="model">medical.patient</field>
+            <field name="inherit_id" ref="medical.view_medical_patient_form" />
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <data>
-                    <xpath expr="//notebook/page[@string='Misc']" position="before">
+                    <xpath expr="//notebook/page[@string='General Information']" position="after">
                         <page string="Socioeconomics" id="page_socioeconomics">
                             <notebook>
                                 <page string="Main" id="page_ses_main">

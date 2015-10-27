@@ -23,12 +23,16 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Hospital Bed">
+				<sheet>
+                <group colspan="4">
 					<field name="name" />
 					<!--field name="bed_type"/ -->
 					<field name="telephone_number" />
 					<!--field name="state"/ -->
 					<field name="ward" />
 					<field name="extra_info" />
+				</group>
+				</sheet>
 				</form>
 			</field>
 		</record>

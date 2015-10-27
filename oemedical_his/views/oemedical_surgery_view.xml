@@ -75,8 +75,8 @@
 
 		<record model="ir.ui.view" id="oemedical_patient_view">
 			<field name="name">Patient</field>
-			<field name="model">oemedical.patient</field>
-                        <field name="inherit_id" ref="oemedical.oemedical_patient_view" />
+			<field name="model">medical.patient</field>
+                        <field name="inherit_id" ref="medical.view_medical_patient_form" />
 			<field name="type">form</field>
 			<field name="arch" type="xml">
 				<notebook>

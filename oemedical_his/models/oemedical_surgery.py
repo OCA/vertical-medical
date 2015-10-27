@@ -45,8 +45,8 @@ surgery ()
 # Add to the Medical patient_data class (oemedical.patient) the surgery field.
 
 class oemedical_patient (orm.Model):
-	_name = "oemedical.patient"
-	_inherit = "oemedical.patient"
+	_name = "medical.patient"
+	_inherit = "medical.patient"
 	_columns = {
 		'surgery' : fields.many2many ('oemedical.surgery', 'patient_surgery_rel','patient_id','surgery_id', 'Surgeries'),
 		

@@ -28,7 +28,7 @@ from datetime import datetime
 
 class OeMedicalSocioeconomics(orm.Model):
 
-    _inherit='oemedical.patient'
+    _inherit = "medical.patient"
 
     _columns={
             'ses' : fields.selection([

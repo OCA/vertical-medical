@@ -4,7 +4,7 @@
 <!--Hospital Centers-->
 
 		<menuitem id="oemedical_health_center_root" name="Health Center"
-			parent="oemedical.oemedical_root_sub" sequence="10" />
+			parent="medical.medical_root_sub" sequence="10"/>
 
 		<menuitem id="oemedical_hospital_building" name=" Hospital Building"
 			parent="oemedical_health_center_root" sequence="10"

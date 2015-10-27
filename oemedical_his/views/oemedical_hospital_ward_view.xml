@@ -6,7 +6,7 @@
 			<field name="model">oemedical.hospital.ward</field>
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<tree string="Oemedical Hospital Ward">
+				<tree string="Oemedical Hospital Ward">				
 					<field name="building" />
 					<field name="ac" />
 					<field name="name" />
@@ -36,6 +36,8 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Hospital Ward">
+				<sheet>
+                <group colspan="4" cols="2">
 					<field name="building" />
 					<field name="ac" />
 					<field name="name" />
@@ -55,6 +57,8 @@
 					<field name="institution" />
 					<field name="refrigerator" />
 					<field name="extra_info" />
+				</group>
+                </sheet>
 				</form>
 			</field>
 		</record>

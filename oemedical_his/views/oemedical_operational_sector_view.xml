@@ -19,11 +19,15 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Operational_Sector">
+					<sheet>
+                    <group colspan="4">
 					<field name="name" />
 					<field name="operational_area_id" />
                     <group colspan="4" string="Extra Infomation">
     					<field name="info" colspan="4" nolabel="1" />
                     </group>
+                    </group>
+                    </sheet>
 				</form>
 			</field>
 		</record>

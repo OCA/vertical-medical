@@ -38,7 +38,7 @@
     'version': '1.0',
     'author': "OeMEdical Team,Odoo Community Association (OCA)",
     'category': 'Generic Modules/Others',
-    'depends': ['oemedical'],
+    'depends': ['medical'],
     'application': True,
     'description': """
 
@@ -92,16 +92,16 @@ OeMedical at a glance:
     "data": [
         'views/oemedical_insurance_view.xml',
         'views/oemedical_insurance_plan_view.xml',
-        'security/oemedical_security.xml',
-        'security/ir.model.access.csv',
+        #'security/oemedical_security.xml',
+        #'security/ir.model.access.csv',
         'views/oemedical_menu.xml',
     ],
     "demo": [
 
     ],
     'test':[
-            'test/insurance_plan.yml',
-            'test/insurance.yml',
+#            'test/insurance_plan.yml',
+#            'test/insurance.yml',
     ],
     'css': [
 
@@ -112,7 +112,7 @@ OeMedical at a glance:
     'qweb': [
 
     ],
-    "active": False,
-    "installable": False,
+    "active": True,
+    "installable": True,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
