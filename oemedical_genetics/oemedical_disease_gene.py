@@ -89,16 +89,16 @@ class FamilyDiseases(orm.Model):
 
 FamilyDiseases()
 
-class oemedicalPatient(orm.Model):
+class MedicalPatient(orm.Model):
     'Add to the Medical patient_data class (oemedical.patient) the genetic ' \
     'and family risks'
-    _inherit='oemedical.patient'
+    _inherit='medical.patient'
     _columns = {
             'genetic_risks' : fields.one2many('oemedical.patient.genetic.risk', 'patient_id', 'Genetic Risks'),
             'family_history' : fields.one2many('oemedical.patient.family.diseases', 'patient_id', 'Family History'),
                 }
 
-oemedicalPatient()
+MedicalPatient()
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

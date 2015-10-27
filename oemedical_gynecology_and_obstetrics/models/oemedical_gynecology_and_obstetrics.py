@@ -246,9 +246,9 @@ class OemedicalPerinatal(orm.Model):
 
 
 
-class OeMedicalPatient(orm.Model):
+class MedicalPatient(orm.Model):
 
-    _inherit='oemedical.patient'
+    _inherit='medical.patient'
 
     def _get_pregnancy_info(self, cr, uid, ids, name, args, context=None):
 #        if name == 'currently_pregnant':

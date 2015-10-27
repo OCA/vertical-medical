@@ -87,13 +87,13 @@
         </record>
 
         <record model="ir.ui.view" id="view_oemedical_patient_form_disease_gen">
-            <field name="name">oemedical.patient.view.inherit.disease.gen</field>
-            <field name="model">oemedical.patient</field>
-            <field name="inherit_id" ref="oemedical.view_oemedical_patient_form" />
+            <field name="name">medical.patient.view.inherit.disease.gen</field>
+            <field name="model">medical.patient</field>
+            <field name="inherit_id" ref="medical.view_medical_patient_form" />
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <data>
-                    <xpath expr="//notebook/page[@string='Misc']" position="before">
+                    <xpath expr="//notebook/page[@string='General Information']" position="after">
                         <page string="Genetics">
                             <separator string="Genetic Risk" />
                             <field name="genetic_risks">

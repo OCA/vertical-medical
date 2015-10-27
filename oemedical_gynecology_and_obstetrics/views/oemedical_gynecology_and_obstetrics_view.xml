@@ -3,14 +3,14 @@
 	<data>
 
         <record model="ir.ui.view" id="view_oemedical_patient_form_gyneco">
-            <field name="name">oemedical.patient.view.inherit.gyneco</field>
-            <field name="model">oemedical.patient</field>
-            <field name="inherit_id" ref="oemedical.view_oemedical_patient_form" />
+            <field name="name">medical.patient.view.inherit.gyneco</field>
+            <field name="model">medical.patient</field>
+            <field name="inherit_id" ref="medical.view_medical_patient_form" />
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <data>
                     <xpath expr="//notebook/page[@string='General Information']" position="after">
-                        <page string="Gyneco / Obs" attrs="{'invisible':[('sex','=', 'm')]}" >
+                        <page string="Gyneco / Obs" attrs="{'invisible':[('sex','!=', 'f')]}" >
                             <notebook>
                                 <page string="Gyneco" >
                                     <group colspan="4" col="6" string="General" >

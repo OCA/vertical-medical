@@ -38,7 +38,7 @@
     'version': '1.0.1',
     'author': "OeMEdical Team,Odoo Community Association (OCA)",
     'category': 'Generic Modules/Others',
-    'depends': ['oemedical'],
+    'depends': ['medical'],
     'application': True,
     'description': """
 
@@ -62,8 +62,8 @@ About OeMedical gynecology and obstetrics
     "licence": "AGPL v3",
     "data": [
         'views/oemedical_gynecology_and_obstetrics_view.xml',   # view has errors, please correct before enabling....
-        'views/oemedical_menu.xml',
-        'security/ir.model.access.csv',
+#        'views/oemedical_menu.xml',
+#        'security/ir.model.access.csv',
     ],
     "demo": [
 
@@ -76,7 +76,7 @@ About OeMedical gynecology and obstetrics
     ],
     'qweb': [
     ],
-    "active": False,
-    'installable': False,
+    "active": True,
+    'installable': True,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
