@@ -90,22 +90,22 @@ OeMedical at a glance:
     "website": "http://launchpad.net/oemedical",
     "licence": "AGPL v3",
     "data": [
-        #'views/oemedical_lab_view.xml',  # view has errors, please correct before enabling....
         #'views/oemedical_lab_report.xml',  # not checked yet....
         'security/oemedical_security.xml',
-        'security/ir.model.access.csv',
-        'oemedical_menu.xml',
+#        'security/ir.model.access.csv',
+        'views/oemedical_lab_view.xml',  # view has errors, please correct before enabling....
+#        'oemedical_menu.xml',
     ],
     "demo": [
 
     ],
     'test':[
-            'test/physician.yml',
-            'test/patient.yml',
-            'test/partners.yml',
-            'test/insurance_plan.yml',
-            'test/insurance.yml',
-            'test/physician_speciality.yml'
+#            'test/physician.yml',
+#            'test/patient.yml',
+#            'test/partners.yml',
+#            'test/insurance_plan.yml',
+#            'test/insurance.yml',
+#            'test/physician_speciality.yml'
     ],
     'css': [
 
@@ -116,7 +116,7 @@ OeMedical at a glance:
     'qweb': [
 
     ],
-    "active": False,
-    "installable": False,
+    "active": True,
+    "installable": True,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

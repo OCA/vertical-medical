@@ -24,6 +24,15 @@ from openerp.osv import fields, orm
 from openerp.tools.translate import _
 
 
+class MedicalPatient(orm.Model):
+#    _name= 'oemedical.patient'
+    _inherit= 'medical.patient'
+
+    _columns={
+        'vaccinations': fields.one2many('oemedical.vaccination', 'patient_id', 'Vaccinations',),
+    }
+
+
 class OeMedicalVaccination(orm.Model):
     _name = 'oemedical.vaccination'
 
@@ -32,7 +41,7 @@ class OeMedicalVaccination(orm.Model):
         'vaccine_lot': fields.char(size=256, string='Lot Number', 
         help='Please check on the vaccine (product) production lot numberand'\
         ' tracking number when available !'),
-        'patient_id': fields.many2one('oemedical.patient', string='Patient',
+        'patient_id': fields.many2one('medical.patient', string='Patient',
                                       readonly=True ),
         'vaccine': fields.many2one('product.product', string='Vaccine',
                                    required=True, 

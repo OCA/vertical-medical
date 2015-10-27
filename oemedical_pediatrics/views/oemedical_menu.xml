@@ -202,9 +202,6 @@
 		<menuitem id="oemedical_predure" name=" Procedure" parent="oemedical_root_sub"
 			sequence="10" action="act_open_oemedical_procedure_view" />
 
-		<menuitem id="oemedical_vaccination" name=" Vaccination"
-			parent="oemedical_root_sub" sequence="10"
-			action="act_open_oemedical_vaccination_view" />
 
 
 	</data>
