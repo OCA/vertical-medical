@@ -43,7 +43,7 @@ class PatientPregnancy(orm.Model):
 
 
     _columns = {
-                'name' : fields.many2one('oemedical.patient', 'Patient ID'),
+                'name' : fields.many2one('medical.patient', 'Patient ID'),
                 'gravida' : fields.integer('Pregnancy #', required=True),
                 'warning' : fields.boolean('Warn', help='Check this box if this is pregancy is or was NOT normal'),
                 'lmp' : fields.date('LMP', help="Last Menstrual Period", required=True),
@@ -129,7 +129,7 @@ class PuerperiumMonitor(orm.Model):
     _description = 'Puerperium Monitor'
 
     _columns = {
-        'name' : fields.many2one('oemedical.patient', string='Patient ID'),
+        'name' : fields.many2one('medical.patient', string='Patient ID'),
         'date' : fields.datetime('Date and Time', required=True),
         'systolic' : fields.integer('Systolic Pressure'),
         'diastolic' : fields.integer('Diastolic Pressure'),
@@ -159,7 +159,7 @@ class PerinatalMonitor(orm.Model):
     _name = 'oemedical.perinatal.monitor'
     _description = 'Perinatal monitor'
     _columns = {
-            'name' : fields.many2one('oemedical.patient', string='patient_id'),
+            'name' : fields.many2one('medical.patient', string='patient_id'),
             'date' : fields.datetime('Date and Time'),
             'systolic' : fields.integer('Systolic Pressure'),
             'diastolic' : fields.integer('Diastolic Pressure'),
@@ -187,7 +187,7 @@ class OemedicalPerinatal(orm.Model):
     _name = 'oemedical.perinatal'
     _description =  'Perinatal Information'
     _columns={
-            'name' : fields.many2one('oemedical.patient', string='Perinatal Infomation'),
+            'name' : fields.many2one('medical.patient', string='Perinatal Infomation'),
             'admission_code' : fields.char('Admission Code', size=64),
             'gravida_number' : fields.integer('Gravida #'),
             'abortion' : fields.boolean('Abortion'),
@@ -296,7 +296,7 @@ class PatientMenstrualHistory(orm.Model):
     _name = 'oemedical.patient.menstrual_history'
     _description =  'Menstrual History'
     _columns={
-            'name' : fields.many2one('oemedical.patient', 'Patient', readonly=True, required=True),
+            'name' : fields.many2one('medical.patient', 'Patient', readonly=True, required=True),
             'evaluation' : fields.many2one('oemedical.patient.evaluation', 'Evaluation'),
             'evaluation_date' : fields.date('Date', help="Evaluation Date",  required=True),
             'lmp' : fields.date('LMP', help="Last Menstrual Period", required=True),
@@ -325,7 +325,7 @@ class PatientMammographyHistory(orm.Model):
     _name = 'oemedical.patient.mammography_history'
     _description =  'Mammography History'
     _columns={
-            'name' : fields.many2one('oemedical.patient', 'Patient', readonly=True, required=True),
+            'name' : fields.many2one('medical.patient', 'Patient', readonly=True, required=True),
             'evaluation' : fields.many2one('oemedical.patient.evaluation', 'Evaluation'),
             'evaluation_date' : fields.date('Date', help=" Date"),
             'last_mammography' : fields.date('Date', help="Last Mammography", required=True),
@@ -344,7 +344,7 @@ class PatientPAPHistory(orm.Model):
     _name = 'oemedical.patient.pap_history'
     _description =  'PAP Test History'
     _columns={
-            'name' : fields.many2one('oemedical.patient', 'Patient', readonly=True, required=True),
+            'name' : fields.many2one('medical.patient', 'Patient', readonly=True, required=True),
             'evaluation' : fields.many2one('oemedical.patient.evaluation', 'Evaluation'),
             'evaluation_date' : fields.date('Date', help=" Date"),
             'last_pap' : fields.date('Date', help="Last Papanicolau", required=True),
@@ -367,7 +367,7 @@ class PatientColposcopyHistory(orm.Model):
     _name = 'oemedical.patient.colposcopy_history'
     _description =  'Colposcopy History'
     _columns={
-            'name' : fields.many2one('oemedical.patient', 'Patient', readonly=True, required=True),
+            'name' : fields.many2one('medical.patient', 'Patient', readonly=True, required=True),
             'evaluation' : fields.many2one('oemedical.patient.evaluation', 'Evaluation'),
             'evaluation_date' : fields.date('Date', help=" Date"),
             'last_colposcopy' : fields.date('Date', help="Last colposcopy", required=True),

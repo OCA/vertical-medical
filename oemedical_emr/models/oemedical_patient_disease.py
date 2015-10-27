@@ -39,7 +39,7 @@ class OeMedicalPatientDisease(orm.Model):
             ('3_sv', 'Severe'),
         ], string='Severity',select=True, sort=False),
         'is_allergy': fields.boolean(string='Allergic Disease'),
-        'doctor': fields.many2one('oemedical.physician', string='Physician', 
+        'doctor': fields.many2one('medical.physician', string='Physician', 
                         help='Physician who treated or diagnosed the patient'),
         'pregnancy_warning': fields.boolean(string='Pregnancy warning'),
         'weeks_of_pregnancy': fields.integer(
@@ -69,7 +69,7 @@ class OeMedicalPatientDisease(orm.Model):
             ('ma', 'Misc Allergy'),
             ('mc', 'Misc Contraindication'),
         ], string='Allergy type',select=True, sort=False),
-        'patient_id': fields.many2one('oemedical.patient', string='Patient', ),
+        'patient_id': fields.many2one('medical.patient', string='Patient', ),
         'age': fields.integer(string='Age when diagnosed',  
           help='Patient age at the moment of the diagnosis. Can be estimative'),
         'date_start_treatment': fields.date(string='Start', 

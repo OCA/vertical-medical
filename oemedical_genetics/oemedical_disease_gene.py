@@ -52,7 +52,7 @@ class PatientGeneticRisk(orm.Model):
     _name = 'oemedical.patient.genetic.risk'
     _description = 'Patient Genetic Risks'
     _columns = {
-            'patient_id' : fields.many2one('oemedical.patient', 'Patient', select=True),
+            'patient_id' : fields.many2one('medical.patient', 'Patient', select=True),
             'disease_gene' : fields.many2one('oemedical.disease.gene', 'Disease Gene', required=True),
                 }
 PatientGeneticRisk()
@@ -63,7 +63,7 @@ class FamilyDiseases(orm.Model):
     _name = 'oemedical.patient.family.diseases'
     _description = 'Family Diseases'
     _columns = {
-    'patient_id' : fields.many2one('oemedical.patient', 'Patient', select=True),
+    'patient_id' : fields.many2one('medical.patient', 'Patient', select=True),
     'name' : fields.many2one('oemedical.pathology', 'Disease', required=True),
     'xory' : fields.selection([
             ('m', 'Maternal'),
@@ -90,7 +90,7 @@ class FamilyDiseases(orm.Model):
 FamilyDiseases()
 
 class MedicalPatient(orm.Model):
-    'Add to the Medical patient_data class (oemedical.patient) the genetic ' \
+    'Add to the Medical patient_data class (medical.patient) the genetic ' \
     'and family risks'
     _inherit='medical.patient'
     _columns = {

@@ -173,7 +173,7 @@ class PatientRecreationalDrugs(orm.Model):
     _description = 'Patient use of Recreational Drugs'
 
     _columns = {
-            'patient_id' : fields.many2one('oemedical.patient', 'Patient'),
+            'patient_id' : fields.many2one('medical.patient', 'Patient'),
             'recreational_drug' : fields.many2one('oemedical.drugs_recreational', 'Recreational Drug'),
                 }
 
@@ -186,7 +186,7 @@ class PatientCAGE(orm.Model):
     _description =  'Patient CAGE Questionnaire'
     _columns = {
 
-    'name' : fields.many2one('oemedical.patient', 'Patient', required=True),
+    'name' : fields.many2one('medical.patient', 'Patient', required=True),
     'evaluation_date' : fields.datetime('Date'),
     'cage_c' : fields.boolean('Hard to Cut down', help='Have you ever felt you needed to Cut down on your drinking ?'),
     'cage_a' : fields.boolean('Angry with Critics', help='Have people Annoyed you by criticizing your drinking ?'),

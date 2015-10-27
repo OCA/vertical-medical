@@ -28,10 +28,10 @@ class OeMedicalPatientMedication(orm.Model):
     _name = 'oemedical.patient.medication'
 
     _columns = {
-        'patient_id': fields.many2one('oemedical.patient', string='Patient',),
-#        'name': fields.many2one('oemedical.patient', string='Patient',
+        'patient_id': fields.many2one('medical.patient', string='Patient',),
+#        'name': fields.many2one('medical.patient', string='Patient',
 #                                readonly=True ),
-        'doctor': fields.many2one('oemedical.physician', string='Physician', 
+        'doctor': fields.many2one('medical.physician', string='Physician', 
                                 help='Physician who prescribed the medicament'),
         'adverse_reaction': fields.text(string='Adverse Reactions',
         help='Side effects or adverse reactions that the patient experienced'),

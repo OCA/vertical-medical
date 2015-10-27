@@ -28,7 +28,7 @@ class OeMedicalPatientEvaluation(orm.Model):
     _name='oemedical.patient.evaluation'
     _rec_name='patient_id'
     _columns={
-        'patient_id':fields.many2one('oemedical.patient', 'Patient'),
+        'patient_id':fields.many2one('medical.patient', 'Patient'),
         'information_source': fields.char(size=256, string='Source',
             help="Source of" "Information, eg : Self, relative, friend ..."),
         'info_diagnosis': fields.text(
@@ -86,7 +86,7 @@ class OeMedicalPatientEvaluation(orm.Model):
             ('e', 'Euphoria'),
             ('fl', 'Flat'),
         ], string='Mood'),
-        'doctor': fields.many2one('oemedical.physician', string='Doctor',
+        'doctor': fields.many2one('medical.physician', string='Doctor',
                                   readonly=True),
         'knowledge_current_events': fields.boolean(
             string='Knowledge of Current Events',
@@ -126,8 +126,8 @@ class OeMedicalPatientEvaluation(orm.Model):
         'abstraction': fields.boolean(string='Abstraction',
             help='Check this box if the patient presents abnormalities in'\
             ' abstract reasoning'),
-        'patient_id': fields.many2one('oemedical.patient', string='Patient',),
-        'derived_from': fields.many2one('oemedical.physician',
+        'patient_id': fields.many2one('medical.patient', string='Patient',),
+        'derived_from': fields.many2one('medical.physician',
                                         string='Derived from',
                                         help='Physician who derived the case'),
         'specialty': fields.many2one('oemedical.specialty',
@@ -146,7 +146,7 @@ class OeMedicalPatientEvaluation(orm.Model):
         'bmi': fields.float(string='Body Mass Index'),
         'respiratory_rate': fields.integer(string='Respiratory Rate',
                     help='Respiratory rate expressed in breaths per minute'),
-        'derived_to': fields.many2one('oemedical.physician',
+        'derived_to': fields.many2one('medical.physician',
                                       string='Derived to',
                         help='Physician to whom escalate / derive the case'),
         'hba1c': fields.float(string='Glycated Hemoglobin',
