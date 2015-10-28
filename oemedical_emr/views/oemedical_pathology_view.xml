@@ -25,6 +25,8 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Pathology">
+				<sheet>
+				<group col="4" colspan="2">
 					<field name="code" />
 					<field name="name" />
 					<field name="category" />
@@ -35,6 +37,8 @@
                     <group colspan="4" string="Extra Info">
     					<field name="info" nolabel="1" colspan="4"/>
                     </group>
+                </group>
+                </sheet>
 				</form>
 			</field>
 		</record>

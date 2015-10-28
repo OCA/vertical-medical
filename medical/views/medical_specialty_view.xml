@@ -19,8 +19,12 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Specialty">
+				<sheet>
+				<group col="4" colspan="2">
 					<field name="code" />
 					<field name="name" />
+				</group>
+				</sheet>
 				</form>
 			</field>
 		</record>

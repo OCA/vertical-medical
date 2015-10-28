@@ -20,10 +20,14 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Pathology Category">
+				<sheet>
+				<group col="4" colspan="2">
 					<field name="name" />
 					<field name="parent_id" />
 					<newline/>
 					<field name="childs" colspan="4"/>
+				</group>
+				</sheet>
 				</form>
 			</field>
 		</record>

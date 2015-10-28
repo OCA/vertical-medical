@@ -153,10 +153,12 @@
 				        		<field name="state"/>
 			        		</tree>
 			        		<form string="Lab Tests">
+			        		<group col="4" colspan="2">
 				        		<field name="name"/>
 				        		<field name="doctor_id"/>
 				        		<field name="date"/>
 				        		<field name="state"/>
+				        	</group>
 			        		</form>
 		        		</field>
 					</page>

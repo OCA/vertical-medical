@@ -24,6 +24,8 @@
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Oemedical Disease Gene">
+                <sheet>
+                <group colspan ="4">
                     <field name="name"/>
                     <field name="gene_id"/>
                     <field name="long_name"/>
@@ -32,6 +34,8 @@
                     <field name="chromosome"/>
                     <newline/>
                     <field name="info" colspan="4"/>
+                </group>
+                </sheet>
                 </form>
             </field>
         </record>
@@ -95,47 +99,31 @@
                 <data>
                     <xpath expr="//notebook/page[@string='General Information']" position="after">
                         <page string="Genetics">
-                            <separator string="Genetic Risk" />
+                            <separator string="Genetic Risk" colspan="4"/>
                             <field name="genetic_risks">
                                 <tree string="Patient Genetic Risks">
-                                    <field name="disease_gene" expand="1"/>
+                                    <field name="disease_gene"/>
                                 </tree>
                                 <form string="Patient Genetic Risks">
-                                    <field name="disease_gene">
-                                        <tree string="Oemedical Disease Gene">
-                                            <field name="info"/>
-                                            <field name="name"/>
-                                            <field name="gene_id"/>
-                                            <field name="long_name"/>
-                                            <field name="location"/>
-                                            <field name="dominance"/>
-                                            <field name="chromosome"/>
-                                        </tree>
-                                        <form string="Oemedical Disease Gene">   
-                                            <field name="name"/>
-                                            <field name="gene_id"/>
-                                            <field name="long_name"/>
-                                            <field name="location"/>
-                                            <field name="dominance"/>
-                                            <field name="chromosome"/>
-                                            <newline/>
-                                            <field name="info" colspan="4"/>
-                                        </form>
-                                    </field>
+                                <group col="4">
+                                    <field name="disease_gene"/>
+                                </group>
                                 </form>
                             </field>
-                            <separator string="Family History" />
+                            <separator string="Family History" colspan="4"/>
                             <field name="family_history">
                                 <tree string="Genetic Family Diseases">
                                     <field name="name"/>
                                     <field name="xory"/>
-                                    <field name="relative" expand="1"/>
+                                    <field name="relative"/>
                                 </tree>
                                 <form string="Patient Genetic Family Diseases">
-                                    <field colspan="4" name="name"/>
+                                <group col="4">
+                                    <field colspan="4" name="name" string="Name"/>
                                     <newline/>
                                     <field name="xory"/>
                                     <field name="relative"/>
+                                </group>
                                 </form>
                             </field>
                         </page>

@@ -26,6 +26,7 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Patient Medication">
+				<group col="4" colspan="2">
 					<field name="patient_id" />
 					<field name="doctor" />
 					<field name="adverse_reaction" />
@@ -35,6 +36,7 @@
 					<field name="template" />
 					<field name="discontinued_reason" />
 					<field name="discontinued" />
+				</group>
 				</form>
 			</field>
 		</record>

@@ -97,11 +97,13 @@
                                         <page string="Recreational Drugs" id="page_recreational_drugs">
                                             <field name="recreational_drugs" >
                                                 <tree string="Patient Recreational Drugs">
-                                                    <field name="recreational_drug" expand="1"/>
+                                                    <field name="recreational_drug"/>
                                                 </tree>
                                                 <form string="Patient Recreational Drugs">
-                                                    <field name="recreational_drug">
-                                                        <tree string="Recreational Drugs">
+                                                <group col="4">
+                                                    <field name="recreational_drug"/>
+                                                </group>
+                                                        <!-- <tree string="Recreational Drugs">
                                                             <field name="name"/>
                                                             <field name="category"/>
                                                             <field name="toxicity"/>
@@ -163,7 +165,7 @@
 
                                                             <field name="info" colspan="4"/>
                                                         </form>
-                                                    </field>
+                                                    </field> -->
                                                 </form>
                                             </field>
                                         </page>

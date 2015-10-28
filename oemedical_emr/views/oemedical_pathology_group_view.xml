@@ -21,10 +21,14 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Pathology Group">
+				<sheet>
+				<group col="4" colspan="2">
 					<field name="info" />
 					<field name="code" />
 					<field name="name" />
 					<field name="desc" />
+				</group>
+				</sheet>
 				</form>
 			</field>
 		</record>

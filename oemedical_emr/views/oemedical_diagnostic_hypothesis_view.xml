@@ -20,9 +20,13 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Diagnostic_Hypothesis">
+				<sheet>
+				<group col="4" colspan="2">
 					<field name="pathology_id" />
 					<field name="evaluation_id" />
 					<field name="comments" />
+				</group>
+				</sheet>
 				</form>
 			</field>
 		</record>

@@ -20,9 +20,13 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Medicament Category">
+				<sheet>
+				<group cols="4" colspan="2">
 					<field name="childs" />
 					<field name="name" />
 					<field name="parent_id" />
+				</group>
+				</sheet>
 				</form>
 			</field>
 		</record>

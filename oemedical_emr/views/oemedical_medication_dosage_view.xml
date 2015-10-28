@@ -20,9 +20,13 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Medication Dosage">
+				<sheet>
+                <group cols="4" colspan="2">
 					<field name="abbreviation" />
 					<field name="code" />
 					<field name="name" />
+                </group>
+                </sheet>
 				</form>
 			</field>
 		</record>

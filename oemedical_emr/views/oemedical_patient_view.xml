@@ -39,6 +39,7 @@
 				                    <field name="discontinued" />
 			                    </tree>
 			                    <form string="Oemedical Patient Medication">
+			                    <group col="4" colspan="2">
 				                    <field name="doctor" />
 				                    <field name="adverse_reaction" />
 				                    <field name="notes" />
@@ -47,6 +48,7 @@
 				                    <field name="template" />
 				                    <field name="discontinued_reason" />
 				                    <field name="discontinued" />
+				                </group>
 			                    </form>
                             </field>
 <!-- Patient Vaccinations -->
@@ -94,6 +96,7 @@
 					                    <field name="diagnosed_date" />
 				                    </tree>
 				                    <form string="Oemedical Patient Disease">
+				                    <group col="4" colspan="2">
 					                    <field name="treatment_description" />
 					                    <field name="healed_date" />
 					                    <field name="pathology" />
@@ -112,6 +115,7 @@
 					                    <field name="age" />
 					                    <field name="date_start_treatment" />
 					                    <field name="short_comment" />
+					                    </group>
 				                    </form>
                                 </field>
                         </page>

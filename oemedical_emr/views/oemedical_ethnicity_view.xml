@@ -20,9 +20,11 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Oemedical Ethnicity">
+				<group col="4" colspan="2">
 					<field name="notes" />
 					<field name="code" />
 					<field name="name" />
+				</group>
 				</form>
 			</field>
 		</record>
