@@ -34,8 +34,10 @@
 				<form string="Oemedical Medicament" version="7.0">
                     <sheet>
                         <H1>
+                            <group colspan="4" col="4">
         			        <field name="product_id" domain="[('is_medicament','=', True )]"/>
 				            <field name="name"  invisible="1"/>
+				            </group>
                         </H1>
                         <notebook>
                             <page string="Main">

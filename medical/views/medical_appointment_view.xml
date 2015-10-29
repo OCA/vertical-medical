@@ -76,7 +76,9 @@
                                         <field name="action" />
                                     </tree>
                                     <form String="History">
+                                    <group col="4" colspan="2">
                                         <field name="name" />
+                                    </group>
                                     </form>
                                 </field>
                             </page>

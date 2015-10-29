@@ -20,7 +20,7 @@
 			<field name="arch" type="xml">
 				<form string="Oemedical Operational_Sector">
 					<sheet>
-                    <group colspan="4">
+                    <group colspan="2" cols="4">
 					<field name="name" />
 					<field name="operational_area_id" />
                     <group colspan="4" string="Extra Infomation">

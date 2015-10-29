@@ -21,7 +21,7 @@
 			<field name="arch" type="xml">
 				<form string="Oemedical Operational_Area">
 					<sheet>
-                    <group colspan="4">
+                    <group colspan="2" cols="4">
 					<field name="info" />
 					<!--field name="operational_sector"/ -->
 					<field name="name" />
