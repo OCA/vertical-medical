@@ -18,8 +18,7 @@
 
        <act_window name="Create Lab Invoice"
             res_model="medical.lab.test.invoice"
-            src_model="medical.patient.lab.test"
-            view_mode="form"
+            src_model="oemedical.patient.lab.test"
             target="new"
             key2="client_action_multi"
             id="action_create_lab_invoice"/>

@@ -21,8 +21,8 @@
 ##############################################################################
 
 import logging
-import pooler
-import sys
+#import pooler
+#import sys
 
 from openerp.osv import fields, orm
 from openerp.tools.translate import _
@@ -35,7 +35,7 @@ class create_test_invoice(orm.TransientModel):
     def create_lab_invoice(self, cr, uid, ids, context={}):
 
         invoice_obj = self.pool.get('account.invoice')
-        test_request_obj = self.pool.get('medical.patient.lab.test')
+        test_request_obj = self.pool.get('oemedical.patient.lab.test')
 
 
         tests = context.get ('active_ids')

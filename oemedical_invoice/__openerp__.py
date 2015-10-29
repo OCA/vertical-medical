@@ -31,7 +31,7 @@
         -Invoice of multiple appointments at a time.
         """,
     "website" : "http://www.silix.com.ar",
-    "depends" : ["medical","medical_lab"],
+    "depends" : ["medical", "oemedical_lab"],
     "category" : "Generic Modules/Others",
     "init_xml" : [],
     "demo_xml" : [],
@@ -41,7 +41,7 @@
         "views/prescription_invoice.xml",
         "views/create_lab_invoice.xml"           
     ],
-    'installable': False,
-    'active': False,
+    'installable': True,
+    'active': True,
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

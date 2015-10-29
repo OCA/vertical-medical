@@ -8,9 +8,9 @@
 			<field name="name">Patient</field>
 			<field name="model">medical.patient</field>
 			<field name="type">form</field>
-			<field name="inherit_id" ref="medical.medical_patient_view"/>
+			<field name="inherit_id" ref="medical.view_medical_patient_form"/>
 				<field name="arch" type="xml">
-					<field name="family_code" position="after">
+					<field name="dod" position="after">
 						<field name="receivable"/>
 					</field>
 				</field>
@@ -23,7 +23,7 @@
 			<field name="name">Appointment</field>
 			<field name="model">medical.appointment</field>
 			<field name="type">form</field>
-			<field name="inherit_id" ref="medical.medical_appointment_view"/>
+			<field name="inherit_id" ref="medical.view_medical_appointment_form"/>
 			<field name="arch" type="xml">
 				<field name="speciality" position="after">
 					<newline/>
@@ -41,12 +41,12 @@
 		</record>	
 
 
-		<menuitem name="Invoices" id="medical_invoice_menu" parent="medical.medical_menu" sequence="5"/>
+		<menuitem name="Invoices" id="medical_invoice_menu" parent="medical.medical_root" sequence="50"/>
 	
 		<record model="ir.actions.act_window" id="medical_action_tobeinvoiced_labtest_request">
 			<field name="name">Lab Requests to be invoiced</field>
 			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">medical.patient.lab.test</field>
+			<field name="res_model">oemedical.patient.lab.test</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">tree,form</field>
 			<field name="domain">[('invoice_status','=','tobe')]</field>
@@ -57,7 +57,7 @@
 		<record model="ir.actions.act_window" id="medical_action_today_tobeinvoiced_labtest_request">
 			<field name="name">Today's Lab Requests to be invoiced</field>
 			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">medical.patient.lab.test</field>
+			<field name="res_model">oemedical.patient.lab.test</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">tree,form</field>
 			<field name="domain">[('invoice_status','=','tobe'),('date','&gt;=',time.strftime('%Y-%m-%d 00:00:01')),('date','&lt;=',time.strftime('%Y-%m-%d 23:59:59'))]</field>
@@ -79,9 +79,9 @@
 
 		<record model="ir.ui.view" id="medical_prescription_invoice_view">
 			<field name="name">Prescription</field>
-			<field name="model">medical.prescription.order</field>
+			<field name="model">oemedical.prescription.order</field>
 			<field name="type">form</field>
-			<field name="inherit_id" ref="medical.medical_prescription_view"/>
+			<field name="inherit_id" ref="oemedical_emr.view_oemedical_prescription_order_form"/>
 			<field name="arch" type="xml">
 				<field name="pharmacy" position="after">
 					<newline/>
@@ -97,21 +97,21 @@
 		
 		<record model="ir.ui.view" id="medical_prescription_invoice_tree">
 			<field name="name">Prescription</field>
-			<field name="model">medical.prescription.order</field>
+			<field name="model">oemedical.prescription.order</field>
 			<field name="type">tree</field>
-			<field name="inherit_id" ref="medical.medical_prescription_tree"/>
+			<field name="inherit_id" ref="oemedical_emr.view_oemedical_prescription_order_tree"/>
 			<field name="arch" type="xml">
-				<tree string='Prescription'>
+                <field name="physician_id" position="after">
 					<field name="no_invoice"/>
 					<field name="invoice_status"></field>
-				</tree>
+				</field>
 			</field>
 		</record>
 
 		<record model="ir.actions.act_window" id="medical_action_tobeinvoiced_prescription">
 			<field name="name">Prescriptions to be invoiced</field>
 			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">medical.prescription.order</field>
+			<field name="res_model">oemedical.prescription.order</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">tree,form</field>
 			<field name="domain">[('invoice_status','=','tobe')]</field>
