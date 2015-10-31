@@ -50,7 +50,7 @@ class make_medical_prescription_invoice(orm.TransientModel):
 
         for pres_id in prescriptions:
             pres=pres_request_obj.browse(cr, uid, pres_id)
-            pats.append(pres.name)
+            pats.append(pres.patient_id.user_id.id)
             logging.debug('pres = %s; pats = %s', repr(pres), repr(pats))
     
         if pats.count(pats[0]) == len(pats):
@@ -75,14 +75,14 @@ class make_medical_prescription_invoice(orm.TransientModel):
                         raise  orm.except_orm(_('UserError'), _('You can not invoice this prescription'))
     
             logging.debug('pres.name = %s', repr(pres.name))
-            if pres.name.name.id:
-                invoice_data['partner_id'] = pres.name.name.id
-                res = self.pool.get('res.partner').address_get(cr, uid, [pres.name.name.id], ['contact', 'invoice'])
+            if pres.patient_id.user_id.id:
+                invoice_data['partner_id'] = pres.patient_id.user_id.id
+                res = self.pool.get('res.partner').address_get(cr, uid, [pres.patient_id.user_id.partner_id.id], ['contact', 'invoice'])
                 invoice_data['address_contact_id'] = res['contact']
                 invoice_data['address_invoice_id'] = res['invoice']
-                invoice_data['account_id'] = pres.name.name.property_account_receivable.id
-                invoice_data['fiscal_position'] = pres.name.name.property_account_position and pres.name.name.property_account_position.id or False
-                invoice_data['payment_term'] = pres.name.name.property_payment_term and pres.name.name.property_payment_term.id or False
+                invoice_data['account_id'] = pres.patient_id.user_id.partner_id.property_account_receivable.id
+                invoice_data['fiscal_position'] = pres.patient_id.user_id.partner_id.property_account_position and pres.patient_id.user_id.partner_id.property_account_position.id or False
+                invoice_data['payment_term'] = pres.patient_id.user_id.partner_id.property_payment_term and pres.patient_id.user_id.partner_id.property_payment_term.id or False
     
             prods_data = {}
             for pres_id in prescriptions:
@@ -95,20 +95,23 @@ class make_medical_prescription_invoice(orm.TransientModel):
                     raise  orm.except_orm(_('UserError'), _('You need to have at least one prescription item in your invoice'))            
                 
                 for pres_line in pres.prescription_line:
-                    logging.debug('pres_line = %s; pres_line.medicament.name = %s; pres_line.quantity = %s', pres_line, pres_line.medicament.name, pres_line.quantity)
+                    logging.debug('pres_line = %s; pres_line.medicament.name = %s; pres_line.quantity = %s', pres_line, pres_line.template.medicament_id.product_id.product_tmpl_id.name, pres_line.quantity)
     
-                    if prods_data.has_key(pres_line.medicament.name):
-                        prods_data[pres_line.medicament.name]['quantity'] += pres_line.quantity
+                    if prods_data.has_key(pres_line.template.medicament_id.product_id.product_tmpl_id.name):
+                        prods_data[pres_line.template.medicament_id.product_id.product_tmpl_id.name]['quantity'] += pres_line.quantity
                     else:
-                        a = pres_line.medicament.name.product_tmpl_id.property_account_income.id
+                        if pres_line.template.medicament_id.product_id.product_tmpl_id.property_account_income.id:
+                            a = pres_line.template.medicament_id.product_id.product_tmpl_id.property_account_income.id
+                        else:
+                            raise  orm.except_orm(_('UserError'), _('Fill Income Account for your Product'))
                         if not a:
-                            a = pres_line.medicament.name.categ_id.property_account_income_categ.id
+                            a = pres_line.template.medicament_id.product_id.product_tmpl_id.categ_id.property_account_income_categ.id
 
-                        prods_data[pres_line.medicament.name] = {'product_id':pres_line.medicament.name.id,
-                                        'name':pres_line.medicament.name.name,
+                        prods_data[pres_line.template.medicament_id.product_id.product_tmpl_id.name] = {'product_id':pres_line.template.medicament_id.product_id.id,
+                                        'name':pres_line.template.medicament_id.product_id.product_tmpl_id.name,
                                         'quantity':pres_line.quantity,
                                         'account_id':a,
-                                        'price_unit':pres_line.medicament.name.lst_price}
+                                        'price_unit':pres_line.template.medicament_id.product_id.product_tmpl_id.list_price}
                     
     
             product_lines = []

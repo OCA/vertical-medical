@@ -37,13 +37,13 @@ class make_medical_appointment_invoice(orm.TransientModel):
         apps = context.get ('active_ids')
         pats = []
         for app_id in apps:
-            pats.append(appointment_obj.browse( cr, uid, app_id).patient.name.id)
+            pats.append(appointment_obj.browse( cr, uid, app_id).patient_id.user_id.id)
 
         if pats.count(pats[0]) == len(pats):
             invoice_data={}
             for app_id in apps:
                 appointment = appointment_obj.browse( cr, uid, app_id)
-
+                print "appointment.patient_id.user_id.partner_id.property_account_receivable.id, appointment.patient_id.user_id.property_account_receivable.id,  appointment.patient_id.user_id.id, appointment.patient_id.user_id.partner_id.id ####################################", appointment.patient_id.user_id.partner_id.property_account_receivable.id, appointment.patient_id.user_id.property_account_receivable.id, appointment.patient_id.user_id.id, appointment.patient_id.user_id.partner_id.id
 # Check if the appointment is invoice exempt, and stop the invoicing process
                 if appointment.no_invoice :
                     raise orm.except_orm(_('UserError'), _('The appointment is invoice exempt'))                
@@ -59,14 +59,14 @@ class make_medical_appointment_invoice(orm.TransientModel):
                     else:
                         raise orm.except_orm(_('UserError'),_('You can not invoice this appointment'))
 
-            if appointment.patient.name.id:
-                invoice_data['partner_id'] = appointment.patient.name.id
-                res = self.pool.get('res.partner').address_get(cr, uid, [appointment.patient.name.id], ['contact', 'invoice'])
+            if appointment.patient_id.user_id.partner_id.id:
+                invoice_data['partner_id'] = appointment.patient_id.user_id.partner_id.id
+                res = self.pool.get('res.partner').address_get(cr, uid, [appointment.patient_id.user_id.partner_id.id], ['contact', 'invoice'])
                 invoice_data['address_contact_id'] = res['contact']
                 invoice_data['address_invoice_id'] = res['invoice']
-                invoice_data['account_id'] = appointment.patient.name.property_account_receivable.id
-                invoice_data['fiscal_position'] = appointment.patient.name.property_account_position and appointment.patient.name.property_account_position.id or False
-                invoice_data['payment_term'] = appointment.patient.name.property_payment_term and appointment.patient.name.property_payment_term.id or False
+                invoice_data['account_id'] = appointment.patient_id.user_id.partner_id.property_account_receivable.id
+                invoice_data['fiscal_position'] = appointment.patient_id.user_id.partner_id.property_account_position and appointment.patient_id.user_id.partner_id.property_account_position.id or False
+                invoice_data['payment_term'] = appointment.patient_id.user_id.partner_id.property_payment_term and appointment.patient_id.user_id.partner_id.property_payment_term.id or False
 
             prods_data = {}
             for app_id in apps:

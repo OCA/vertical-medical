@@ -46,7 +46,7 @@ class create_test_invoice(orm.TransientModel):
             #pats.append(test_request_obj.browse(cr, uid, test_id).patient_id)
             cur_test = test_request_obj.browse(cr, uid, test_id)
             logging.debug('cur_test = %s; pats = %s', repr(cur_test), repr(pats))
-            pats.append(cur_test.patient_id)
+            pats.append(cur_test.patient_id.user_id.id)
     
         logging.debug('pats = %s', repr(pats))
     
@@ -68,14 +68,14 @@ class create_test_invoice(orm.TransientModel):
                         raise  orm.except_orm(_('UserError'), _('You can not invoice this lab test'))
     
             logging.debug('test.patient_id = %s; test.patient_id.id = %s', test.patient_id, test.patient_id.id)
-            if test.patient_id.name.id:
-                invoice_data['partner_id'] = test.patient_id.name.id
-                res = self.pool.get('res.partner').address_get(cr, uid, [test.patient_id.name.id], ['contact', 'invoice'])
+            if test.patient_id.user_id.id:
+                invoice_data['partner_id'] = test.patient_id.user_id.partner_id.id
+                res = self.pool.get('res.partner').address_get(cr, uid, [test.patient_id.user_id.partner_id.id], ['contact', 'invoice'])
                 invoice_data['address_contact_id'] = res['contact']
                 invoice_data['address_invoice_id'] = res['invoice']
-                invoice_data['account_id'] = test.patient_id.name.property_account_receivable.id
-                invoice_data['fiscal_position'] = test.patient_id.name.property_account_position and test.patient_id.name.property_account_position.id or False
-                invoice_data['payment_term'] = test.patient_id.name.property_payment_term and test.patient_id.name.property_payment_term.id or False
+                invoice_data['account_id'] = test.patient_id.user_id.partner_id.property_account_receivable.id
+                invoice_data['fiscal_position'] = test.patient_id.user_id.partner_id.property_account_position and test.patient_id.user_id.partner_id.property_account_position.id or False
+                invoice_data['payment_term'] = test.patient_id.user_id.partner_id.property_payment_term and test.patient_id.user_id.partner_id.property_payment_term.id or False
     
             prods_data = {}
 

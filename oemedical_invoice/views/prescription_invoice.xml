@@ -19,6 +19,7 @@
        <act_window name="Create Prescription Invoice"
             res_model="medical.prescription.invoice"
             src_model="oemedical.prescription.order"
+            view_mode="form"
             target="new"
             key2="client_action_multi"
             id="action_create_prescription_invoice"/>

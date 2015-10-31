@@ -31,7 +31,7 @@ class patient_data (orm.Model):
     _inherit = "medical.patient"
 
     _columns = {
-        'receivable' : fields.related('name','credit',type='float',string='Receivable',help='Total amount this patient owes you',readonly=True),
+        'receivable' : fields.related('user_id', 'partner_id','credit',type='float',string='Receivable',help='Total amount this patient owes you',readonly=True),
     }
 patient_data()
 
