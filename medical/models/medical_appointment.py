@@ -21,7 +21,7 @@
 # #############################################################################
 
 import time
-from datetime import datetime
+from datetime import datetime   
 
 from openerp.osv import fields, orm
 
@@ -99,21 +99,40 @@ class MedicalAppointment(orm.Model):
                  }
 
     def create(self, cr, uid, vals, context=None):
-        val_history = {}
-        ait_obj = self.pool.get('medical.appointment.history')
+        
         date_time_str = vals['appointment_day'] + ' ' + \
             vals['appointment_hour'] + ':' + \
             vals['appointment_minute']
         vals['appointment_date'] = datetime.strptime(date_time_str,
                                                      '%Y-%m-%d %H:%M')
+        
+        vals['history_ids'] = [(0, 0, {'name':uid, 'action':"------RECORD CREATED------", 'date':time.strftime('%Y-%m-%d %H:%M:%S')})]
+        
+        res = super(MedicalAppointment, self).create(cr, uid, vals, context=context)
+        
+        return res
 
-        val_history['name'] = uid
-        val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
-        val_history['action'] = "--------------------------------"
-        "Changed to Comfirm  ------------------------------------\n"
-        vals['history_ids'] = val_history
-        return super(MedicalAppointment, self).create(cr, uid, vals,
-                                                      context=context)
+    def write(self, cr, uid, ids, vals, context=None):
+        
+        super(MedicalAppointment, self).write(cr, uid, ids, vals, context=context)
+        
+        app = self.browse(cr, uid, ids[0])
+
+        vals['appointment_day'] = app.appointment_day
+        vals['appointment_hour'] = app.appointment_hour
+        vals['appointment_minute'] = app.appointment_minute
+        
+        date_time_str = vals['appointment_day'] + ' ' + \
+            vals['appointment_hour'] + ':' + \
+            vals['appointment_minute']
+
+        vals['appointment_date'] = datetime.strptime(date_time_str,
+                                                     '%Y-%m-%d %H:%M')
+
+        vals['history_ids'] = [(0, 0, {'appointment_id_history' : ids[0],'name':uid, 'action':"--------RECORD MODIFIED ---------", 'date':time.strftime('%Y-%m-%d %H:%M:%S')})]
+
+        return super(MedicalAppointment, self).write(cr, uid, ids, vals, context=context)
+
 
     def button_back(self, cr, uid, ids, context=None):
         val_history = {}

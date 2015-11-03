@@ -27,7 +27,6 @@ from openerp.tools.translate import _
 import datetime
 
 class patient_data (orm.Model):
-    _name = "medical.patient"
     _inherit = "medical.patient"
 
     _columns = {

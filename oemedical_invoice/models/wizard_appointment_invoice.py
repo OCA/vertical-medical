@@ -43,7 +43,7 @@ class make_medical_appointment_invoice(orm.TransientModel):
             invoice_data={}
             for app_id in apps:
                 appointment = appointment_obj.browse( cr, uid, app_id)
-                print "appointment.patient_id.user_id.partner_id.property_account_receivable.id, appointment.patient_id.user_id.property_account_receivable.id,  appointment.patient_id.user_id.id, appointment.patient_id.user_id.partner_id.id ####################################", appointment.patient_id.user_id.partner_id.property_account_receivable.id, appointment.patient_id.user_id.property_account_receivable.id, appointment.patient_id.user_id.id, appointment.patient_id.user_id.partner_id.id
+                #print "appointment.patient_id.user_id.partner_id.property_account_receivable.id, appointment.patient_id.user_id.property_account_receivable.id,  appointment.patient_id.user_id.id, appointment.patient_id.user_id.partner_id.id ####################################", appointment.patient_id.user_id.partner_id.property_account_receivable.id, appointment.patient_id.user_id.property_account_receivable.id, appointment.patient_id.user_id.id, appointment.patient_id.user_id.partner_id.id
 # Check if the appointment is invoice exempt, and stop the invoicing process
                 if appointment.no_invoice :
                     raise orm.except_orm(_('UserError'), _('The appointment is invoice exempt'))                

@@ -79,8 +79,6 @@
          				</page> 
                         <page string="Medical Centers">
                             <field name="medical_center_ids">
-                                colspan="4"
-                                nolabel="1"
                                 <tree string="Medical Centers">
                                     <field name="medical_center_id" />
                                     <field name="identification_code" />

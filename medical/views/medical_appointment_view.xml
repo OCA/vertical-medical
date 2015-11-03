@@ -44,7 +44,7 @@
                             <field name="name"/>
                         </h1>
                         <group col="4" colspan="4">
-                            <field name="institution" />
+                            <field name="institution" context="{'default_is_institution': True}"/>
                             <field name="consultations" />
                             <field name="appointment_type" />
                             <field name="urgency" />

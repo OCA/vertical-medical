@@ -33,9 +33,9 @@
 						<field name="appointment_validity_date"/>
 					</group>
 					<newline/>
-					<group colspan="4">
+					<!--<group colspan="4">
 						<field name="consultations" select="2"></field>
-					</group>
+					</group>  -->
 				</field>
 			</field>
 		</record>	
