@@ -92,7 +92,7 @@ OeMedical at a glance:
     "data": [
         #'views/oemedical_lab_report.xml',  # not checked yet....
         'security/oemedical_security.xml',
-#        'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/oemedical_lab_view.xml',  # view has errors, please correct before enabling....
 #        'oemedical_menu.xml',
     ],

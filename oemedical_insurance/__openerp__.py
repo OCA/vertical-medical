@@ -93,7 +93,7 @@ OeMedical at a glance:
         'views/oemedical_insurance_view.xml',
         'views/oemedical_insurance_plan_view.xml',
         #'security/oemedical_security.xml',
-        #'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/oemedical_menu.xml',
     ],
     "demo": [

@@ -1,2 +1,9 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_oemedical_lab_group,model,model_oemedical_lab_group,group_oemedical_lab_user,1,1,1,0
+access_oemedical_test_type,model,model_oemedical_test_type,group_oemedical_lab_user,1,1,1,0
+access_oemedical_lab,model,model_oemedical_lab,group_oemedical_lab_user,1,1,1,0
+access_oemedical_lab_test_units,model,model_oemedical_lab_test_units,group_oemedical_lab_user,1,1,1,0
+access_oemedical_test_critearea,model,model_oemedical_test_critearea,group_oemedical_lab_user,1,1,1,0
+access_oemedical_patient_lab_test,model,model_oemedical_patient_lab_test,group_oemedical_lab_user,1,1,1,0
+access_oemedical_medical_physician_lab_user,model,medical.model_medical_physician,group_oemedical_lab_user,1,0,0,0
+access_oemedical_medical_patient_lab_user,model,medical.model_medical_patient,group_oemedical_lab_user,1,0,0,0
+access_oemedical_medical_patient_lab_user,model,medical.model_medical_patient,group_oemedical_lab_user,1,0,0,0

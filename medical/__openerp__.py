@@ -94,6 +94,7 @@ Odoo Medical at a glance:
     "website": "http://github.com/oca/vertical-medical",
     "licence": "AGPL v3",
     "data": [
+        'security/medical_security.xml',
         'views/medical_sequence.xml',
         'views/product_product_view.xml',
         'views/res_partner_view.xml',
@@ -101,7 +102,6 @@ Odoo Medical at a glance:
         'views/medical_patient_view.xml',
         'views/medical_appointment_view.xml',
         'views/medical_specialty_view.xml',
-        'security/medical_security.xml',
         'security/ir.model.access.csv',
         'views/medical_menu.xml',
     ],

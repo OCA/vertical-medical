@@ -139,19 +139,19 @@ OeMedical at a glance:
         #'views/oemedical_socioeconomics_view.xml', # view has errors, please correct before enabling....
         #'views/oemedical_lab_view.xml',  # view has errors, please correct before enabling....
 #        'security/oemedical_security.xml',
-#        'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
 #        'views/oemedical_menu.xml',
     ],
     "demo": [
 
     ],
     'test':[
-            'test/physician.yml',
-            'test/patient.yml',
-            'test/partners.yml',
-            'test/insurance_plan.yml',
-            'test/insurance.yml',
-            'test/physician_speciality.yml'
+#            'test/physician.yml',
+#            'test/patient.yml',
+#            'test/partners.yml',
+#            'test/insurance_plan.yml',
+#            'test/insurance.yml',
+#            'test/physician_speciality.yml'
     ],
     'css': [
 

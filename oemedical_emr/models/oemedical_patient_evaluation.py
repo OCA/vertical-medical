@@ -68,7 +68,7 @@ class OeMedicalPatientEvaluation(orm.Model):
            help='If associated  to a disease, please encode it on the patient'\
            ' disease history'),
         'present_illness': fields.text(string='Present Illness'),
-        'evaluation_date': fields.many2one('oemedical.appointment',
+        'evaluation_date': fields.many2one('medical.appointment',
                                            string='Appointment',
             help='Enter or select the date / ID of the appointment related to'\
                  ' this evaluation'),
@@ -92,7 +92,7 @@ class OeMedicalPatientEvaluation(orm.Model):
             string='Knowledge of Current Events',
             help='Check this box if the patient can not respond to public'\
             ' notorious events'),
-        'next_evaluation': fields.many2one('oemedical.appointment',
+        'next_evaluation': fields.many2one('medical.appointment',
                                            string='Next Appointment',),
         'signs_and_symptoms': fields.one2many('oemedical.signs_and_symptoms',
                                               'evaluation_id',
@@ -130,7 +130,7 @@ class OeMedicalPatientEvaluation(orm.Model):
         'derived_from': fields.many2one('medical.physician',
                                         string='Derived from',
                                         help='Physician who derived the case'),
-        'specialty': fields.many2one('oemedical.specialty',
+        'specialty': fields.many2one('medical.specialty',
                                      string='Specialty',),
         'loc_verbal': fields.selection([
             ('1', 'Makes no sounds'),

@@ -38,7 +38,7 @@
     'version': '1.0.1',
     'author': "OeMEdical Team,Odoo Community Association (OCA)",
     'category': 'Generic Modules/Others',
-    'depends': ['medical'],
+    'depends': ['oemedical_emr'],
     'application': True,
     'description': """
 
@@ -63,7 +63,7 @@ About OeMedical gynecology and obstetrics
     "data": [
         'views/oemedical_gynecology_and_obstetrics_view.xml',   # view has errors, please correct before enabling....
 #        'views/oemedical_menu.xml',
-#        'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
     ],
     "demo": [
 

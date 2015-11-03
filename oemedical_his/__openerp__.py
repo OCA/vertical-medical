@@ -38,7 +38,7 @@
     'version': '1.0',
     'author': "OeMEdical Team,Odoo Community Association (OCA)",
     'category': 'Generic Modules/Others',
-    'depends': ['base', 'sale', 'purchase', 'account', 'product'],
+    'depends': ['base', 'sale', 'purchase', 'account', 'product', 'oemedical_emr'],
     'application': True,
     'description': """
 
@@ -139,7 +139,7 @@ OeMedical at a glance:
         #'views/oemedical_socioeconomics_view.xml', # view has errors, please correct before enabling....
         #'views/oemedical_lab_view.xml',  # view has errors, please correct before enabling....
 #        'security/oemedical_security.xml',
-#        'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/oemedical_menu.xml',
         'views/oemedical_surgery_view.xml',
     ],

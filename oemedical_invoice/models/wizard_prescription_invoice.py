@@ -103,7 +103,7 @@ class make_medical_prescription_invoice(orm.TransientModel):
                         if pres_line.template.medicament_id.product_id.product_tmpl_id.property_account_income.id:
                             a = pres_line.template.medicament_id.product_id.product_tmpl_id.property_account_income.id
                         else:
-                            raise  orm.except_orm(_('UserError'), _('Fill Income Account for your Product'))
+                            raise orm.except_orm(_('UserError'), _('Income Account is not configured in your Product.'))
                         if not a:
                             a = pres_line.template.medicament_id.product_id.product_tmpl_id.categ_id.property_account_income_categ.id
 

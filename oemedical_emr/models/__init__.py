@@ -36,7 +36,6 @@ import oemedical_medication_template
 import oemedical_medication_dosage
 import oemedical_family_member
 import oemedical_drug_form
-import oemedical_patient
 import oemedical_patient_medication
 import oemedical_patient_evaluation
 import oemedical_prescription_line
@@ -47,6 +46,6 @@ import oemedical_occupation
 import oemedical_disease_group_members
 import oemedical_medicament
 import oemedical_pathology_group
-
+import oemedical_patient
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

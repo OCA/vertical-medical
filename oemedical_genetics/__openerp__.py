@@ -145,7 +145,7 @@ OeMedical at a glance:
         #'views/oemedical_socioeconomics_view.xml', # view has errors, please correct before enabling....
         #'views/oemedical_lab_view.xml',  # view has errors, please correct before enabling....
 #        'security/oemedical_security.xml',
-#        'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
 #        'oemedical_menu.xml',
     ],
     "demo": [

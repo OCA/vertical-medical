@@ -7,7 +7,7 @@
 <!--Menu Patient-->
 
 		<menuitem id="medical_patient_root" name="Patient" parent="medical_root"
-			sequence="10" />
+			sequence="10" groups="medical.group_medical_user"/>
 		<menuitem id="medical_patient" name=" Patient"
 			parent="medical_patient_root" sequence="10"
 			action="act_open_medical_patient_view" />
