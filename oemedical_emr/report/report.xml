@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+        <report auto="False"
+                id="oemedical_prescription_order_report"
+                model="oemedical.prescription.order"
+                name="prescription.order"
+                rml="oemedical_emr/report/prescription_order.rml"
+                string="Prescription Order Lines"/>
+
+    </data>
+</openerp>
