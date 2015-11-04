@@ -22,7 +22,7 @@
 
 <!--Appointment-->
 
-		<menuitem id="oemedical_appoitment_root" name="Appoitment"
+		<menuitem id="oemedical_appoitment_root" name="Appointment"
 			parent="oemedical_root" sequence="20" />
 
 		<menuitem id="oemedical_appointment" name=" Appointment"
