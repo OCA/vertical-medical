@@ -38,7 +38,7 @@ class OeMedicalHospitalBed(orm.Model):
             ('low_air_loss', 'Low Air Loss'),
             ('circo_electric', 'Circo Electric'),
             ('clinitron', 'Clinitron'),
-        ], string='Bed Type',required=True),
+        ], string='Bed Type',required=False),
         'telephone_number': fields.char(size=256, string='Telephone Number', 
                                         help='Telephone number / Extension'),
         'state': fields.selection([

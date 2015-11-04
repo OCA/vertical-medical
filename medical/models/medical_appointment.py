@@ -139,26 +139,24 @@ class MedicalAppointment(orm.Model):
         ait_obj = self.pool.get('medical.appointment.history')
         for order in self.browse(cr, uid, ids, context=context):
             if order.state == 'confirm':
-                self.write(cr, uid, ids, {'state': 'draft'}, context=context)
-                val_history['action'] = "--------------------------------"
-                "Changed to Draft  ------------------------------------\n"
+                val_history['action'] = "-----------CHANGED TO DRAFT------------"
+                super(MedicalAppointment,self).write(cr, uid, ids, {'state': 'draft'}, context=context)
+                
             if order.state == 'waiting':
-                val_history['action'] = "--------------------------------  "
-                "Changed to Confirm  ------------------------------------\n"
-                self.write(cr, uid, ids, {'state': 'confirm'}, context=context)
+                val_history['action'] = "-----------CHANGED TO CONFIRM------------"
+                super(MedicalAppointment,self).write(cr, uid, ids, {'state': 'confirm'}, context=context)
+                
             if order.state == 'in_consultation':
-                val_history['action'] = "--------------------------------  "
-                "Changed to Waiting  ------------------------------------\n"
-                self.write(cr, uid, ids, {'state': 'waiting'}, context=context)
+                val_history['action'] = "-----------CHANGED TO WAITING------------"
+                super(MedicalAppointment,self).write(cr, uid, ids, {'state': 'waiting'}, context=context)
+                
             if order.state == 'done':
-                val_history['action'] = "--------------------------------  "
-                "Changed to In Consultation  -------------------------------\n"
-                self.write(cr, uid, ids, {'state': 'in_consultation'},
-                           context=context)
+                val_history['action'] = "-----------CHANGED TO IN CONSULTATION------------"
+                super(MedicalAppointment,self).write(cr, uid, ids, {'state': 'in_consultation'}, context=context)
+                
             if order.state == 'canceled':
-                val_history['action'] = "--------------------------------"
-                "Changed to Draft  ------------------------------------\n"
-                self.write(cr, uid, ids, {'state': 'draft'}, context=context)
+                val_history['action'] = "-----------CHANGED TO DRAFT------------"
+                super(MedicalAppointment,self).write(cr, uid, ids, {'state': 'draft'}, context=context)
 
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
@@ -173,13 +171,13 @@ class MedicalAppointment(orm.Model):
         val_history = {}
         ait_obj = self.pool.get('medical.appointment.history')
 
-        self.write(cr, uid, ids, {'state': 'confirm'}, context=context)
+        super(MedicalAppointment,self).write(cr, uid, ids, {'state': 'confirm'}, context=context)
 
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
         val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
-        val_history['action'] = "--------------------------------"
-        "Changed to Comfirm  ------------------------------------\n"
+        val_history['action'] = "-----------CHANGED TO CONFIRM------------"
+        
         ait_obj.create(cr, uid, val_history)
 
         return True
@@ -189,13 +187,13 @@ class MedicalAppointment(orm.Model):
         val_history = {}
         ait_obj = self.pool.get('medical.appointment.history')
 
-        self.write(cr, uid, ids, {'state': 'waiting'}, context=context)
+        super(MedicalAppointment,self).write(cr, uid, ids, {'state': 'waiting'}, context=context)
 
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
         val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
-        val_history['action'] = "--------------------------------"
-        "Changed to Waiting  ------------------------------------\n"
+        val_history['action'] = "-----------CHANGED TO WAITING------------"
+
         ait_obj.create(cr, uid, val_history)
 
         return True
@@ -205,13 +203,13 @@ class MedicalAppointment(orm.Model):
         val_history = {}
         ait_obj = self.pool.get('medical.appointment.history')
 
-        self.write(cr, uid, ids, {'state': 'in_consultation'}, context=context)
+        super(MedicalAppointment,self).write(cr, uid, ids, {'state': 'in_consultation'}, context=context)
 
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
         val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
-        val_history['action'] = "--------------------------------"
-        "Changed to In Consultation  ------------------------------------\n"
+        val_history['action'] = "-----------CHANGED TO IN CONSULTATION------------"
+
         ait_obj.create(cr, uid, val_history)
 
         return True
@@ -221,13 +219,13 @@ class MedicalAppointment(orm.Model):
         val_history = {}
         ait_obj = self.pool.get('medical.appointment.history')
 
-        self.write(cr, uid, ids, {'state': 'done'}, context=context)
+        super(MedicalAppointment,self).write(cr, uid, ids, {'state': 'done'}, context=context)
 
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
         val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
-        val_history['action'] = "--------------------------------"
-        "Changed to Done  ------------------------------------\n"
+        val_history['action'] = "-----------CHANGED TO DONE------------"
+
         ait_obj.create(cr, uid, val_history)
 
         return True
@@ -237,13 +235,13 @@ class MedicalAppointment(orm.Model):
         val_history = {}
         ait_obj = self.pool.get('medical.appointment.history')
 
-        self.write(cr, uid, ids, {'state': 'canceled'}, context=context)
+        super(MedicalAppointment,self).write(cr, uid, ids, {'state': 'canceled'}, context=context)
 
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
         val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')
-        val_history['action'] = "--------------------------------  "
-        "Changed to Canceled  ------------------------------------\n"
+        val_history['action'] = "-----------CHANGED TO CANCELED------------"
+
         ait_obj.create(cr, uid, val_history)
 
         return True

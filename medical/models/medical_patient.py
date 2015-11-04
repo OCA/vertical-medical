@@ -64,7 +64,7 @@ class MedicalPatient(orm.Model):
             if (record.dob):
                 dob = datetime.strptime(str(record.dob), '%Y-%m-%d')
 
-                if record.deceased:
+                if record.deceased and record.dod:
                     dod = datetime.strptime(record.dod, '%Y-%m-%d %H:%M:%S')
                     delta = relativedelta(dod, dob)
                     deceased = ' (deceased)'

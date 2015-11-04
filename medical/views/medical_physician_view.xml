@@ -38,8 +38,8 @@
 	   					    <label for="specialty"/>
 							<field name="specialty" style="width: 20%%"/>
 						</div>
-						<group>
-						<label for="ref"/>
+						<group col="4" colspan="2">
+<!--						<label for="ref"/-->
 						<field name="ref" style="width: 20%%"/>
 						<field name="parent_id" />
 						<newline/>

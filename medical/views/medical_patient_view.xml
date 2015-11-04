@@ -74,7 +74,7 @@
                             </group>
                             <group  col="4" colspan="4"> 
              					<field name="marital_status" colspan="2"/> 
-                                <field name="dod"/>
+                                <field name="dod" attrs="{'invisible':[('deceased','=',False)]}"/>
              				</group> 
          				</page> 
                         <page string="Medical Centers">

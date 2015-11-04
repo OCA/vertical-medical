@@ -69,6 +69,10 @@ class MedicalPhysician(orm.Model):
                                                  'template', 'physician_id',
                                                  'Related schedules'),
     }
+    
+    _defaults = {
+        'active': True,
+    }
 
     def create(self, cr, uid, vals, context=None):
         vals['is_doctor'] = True

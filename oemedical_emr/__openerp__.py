@@ -120,6 +120,7 @@ OeMedical at a glance:
         'views/oemedical_pathology_group_view.xml',
         'security/ir.model.access.csv',
         'oemedical_menu.xml',
+        'report/report.xml',
     ],
     "demo": [
 

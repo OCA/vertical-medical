@@ -37,7 +37,7 @@
 			<field name="arch" type="xml">
 				<form string="Oemedical Hospital Ward">
 				<sheet>
-                <group colspan="4" cols="2">
+                <group col="4">
 					<field name="building" />
 					<field name="ac" />
 					<field name="name" />
@@ -56,8 +56,8 @@
 					<field name="bio_hazard" />
 					<field name="institution" />
 					<field name="refrigerator" />
-					<field name="extra_info" />
 				</group>
+				<field name="extra_info" placeholder="Write extra information here..."/>
                 </sheet>
 				</form>
 			</field>

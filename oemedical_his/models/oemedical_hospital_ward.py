@@ -38,7 +38,7 @@ class OeMedicalHospitalWard(orm.Model):
         'gender': fields.selection([('men', 'Men Ward'),
                                     ('women', 'Women Ward'),
                                     ('unisex', 'Unisex')],
-                                   string='Gender',required=True),
+                                   string='Gender',required=False),
         'unit': fields.many2one('oemedical.hospital.unit', string='Unit', ),
         'private_bathroom': fields.boolean(string='Private Bathroom'),
         'telephone': fields.boolean(string='Telephone access'),
