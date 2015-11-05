@@ -9,6 +9,7 @@
 #    Coded by: Ruchir Shukla <ruchir@techreceptives.com>
 #    Planifyied by: Parthiv Patel <parthiv@techreceptives.com>
 #    Planifyied by: Nhomar Hernandéz <nhomar@vauxoo.com>
+#    Migrated by: Serpent Consulting Services Pvt. Ltd. <contact@serpentcs.com>
 #
 ##############################################################################
 #    This project is mantained by OeMEdical Team:
@@ -38,7 +39,7 @@
     'version': '1.0',
     'author': "OeMEdical Team,Odoo Community Association (OCA)",
     'category': 'Generic Modules/Others',
-    'depends': ['medical'],
+    'depends': ['medical','report'],
     'application': True,
     'description': """
 
@@ -121,6 +122,7 @@ OeMedical at a glance:
         'security/ir.model.access.csv',
         'oemedical_menu.xml',
         'report/report.xml',
+        'report/report_prescription.xml'
     ],
     "demo": [
 

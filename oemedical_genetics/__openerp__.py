@@ -9,6 +9,7 @@
 #    Coded by: Ruchir Shukla <ruchir@techreceptives.com>
 #    Planned by: Parthiv Patel <parthiv@techreceptives.com>
 #    Planned by: Nhomar Hernandéz <nhomar@vauxoo.com>
+#    Migrated by: Serpent Consulting Services Pvt. Ltd. <contact@serpentcs.com>
 #
 ##############################################################################
 #    This project is mantained by Vertical Medical Team:

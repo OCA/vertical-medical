@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+<data>
+<template id="report_prescription">
+    <t t-call="report.html_container">
+        <t t-call="report.external_layout">
+        <t t-foreach="docs" t-as="o">
+            
+                    <div class="page">
+                        <center>
+                            <h2>Prescription Details</h2>
+                        </center><br/><br/><br/><br/><br/><br/>
+
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <strong>Patient Name</strong>
+                            <p t-esc="o.patient_id.name"/>
+                        </div>
+                        <div class="col-xs-4 pull-right">
+                            <strong>Date and Time</strong>
+                            <p t-esc="o.prescription_date"/>
+                        </div>
+                    </div><br/><br/><br/>
+
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Medicaments</th>
+                        <th>Active Component</th>
+                        <th>Dose</th>
+                        <th>Frequency</th>
+                    </tr>
+                </thead>
+                <tbody class="invoice_tbody">
+                    <tr t-foreach="o.prescription_line" t-as="a">
+                        <td><span t-field="a.template.medicament_id.product_id.name"/></td>
+                        <td><span t-field="a.active_component"/></td>
+                        <td><span t-field="a.dose"/>&#160;&#160;<span t-field="a.dose_unit.name"/>&#160;&#160;<span t-field="a.duration"/>&#160;&#160;<span t-field="a.duration_period"/></td>
+                        <td><span t-field="a.frequency"/>&#160;&#160;(<span t-field="a.admin_times"/>)</td>
+                    </tr>
+                </tbody>
+                
+                <tfooter>
+                </tfooter>
+                
+            </table>
+                    <div><br/><br/><br/><br/>
+                        <center><strong><h4><span t-field="o.physician_id.name"/></h4></strong></center>
+                    </div>
+                    <br/><br/>
+                </div>
+            </t>
+        </t>
+    </t>
+</template>
+</data>
+</openerp>

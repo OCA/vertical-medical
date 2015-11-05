@@ -113,51 +113,72 @@ class MedicalAppointment(orm.Model):
         return res
 
     def write(self, cr, uid, ids, vals, context=None):
-        
-        super(MedicalAppointment, self).write(cr, uid, ids, vals, context=context)
+        if context is None:
+            context = {}
         
         app = self.browse(cr, uid, ids[0])
-
-        vals['appointment_day'] = app.appointment_day
-        vals['appointment_hour'] = app.appointment_hour
-        vals['appointment_minute'] = app.appointment_minute
         
+        try:
+            vals['appointment_day'] = vals['appointment_day']
+        except:
+            vals['appointment_day'] = app.appointment_day
+            
+        try:
+            vals['appointment_hour'] = vals['appointment_hour']
+        except:
+            vals['appointment_hour'] = app.appointment_hour
+            
+        try:
+            vals['appointment_minute'] = vals['appointment_minute']
+        except:
+            vals['appointment_minute'] = app.appointment_minute
+            
         date_time_str = vals['appointment_day'] + ' ' + \
             vals['appointment_hour'] + ':' + \
             vals['appointment_minute']
 
         vals['appointment_date'] = datetime.strptime(date_time_str,
                                                      '%Y-%m-%d %H:%M')
-
-        vals['history_ids'] = [(0, 0, {'appointment_id_history' : ids[0],'name':uid, 'action':"--------RECORD MODIFIED ---------", 'date':time.strftime('%Y-%m-%d %H:%M:%S')})]
+        if not context.get('no_history'):
+            vals['history_ids'] = [(0, 0, {'appointment_id_history' : ids[0],'name':uid, 'action':"--------RECORD MODIFIED ---------", 'date':time.strftime('%Y-%m-%d %H:%M:%S')})]
 
         return super(MedicalAppointment, self).write(cr, uid, ids, vals, context=context)
 
 
     def button_back(self, cr, uid, ids, context=None):
+        
+        if context is None:
+            context = {}
+        ctx = context.copy()
+        ctx.update({'no_history': True})
         val_history = {}
         ait_obj = self.pool.get('medical.appointment.history')
+        
         for order in self.browse(cr, uid, ids, context=context):
+            vals={}
+            
             if order.state == 'confirm':
                 val_history['action'] = "-----------CHANGED TO DRAFT------------"
-                super(MedicalAppointment,self).write(cr, uid, ids, {'state': 'draft'}, context=context)
+                vals.update({'state': 'draft'})
                 
-            if order.state == 'waiting':
+            elif order.state == 'waiting':
                 val_history['action'] = "-----------CHANGED TO CONFIRM------------"
-                super(MedicalAppointment,self).write(cr, uid, ids, {'state': 'confirm'}, context=context)
+                vals.update({'state': 'confirm'})
                 
-            if order.state == 'in_consultation':
+            elif order.state == 'in_consultation':
                 val_history['action'] = "-----------CHANGED TO WAITING------------"
-                super(MedicalAppointment,self).write(cr, uid, ids, {'state': 'waiting'}, context=context)
+                vals.update({'state': 'waiting'})
                 
-            if order.state == 'done':
+            elif order.state == 'done':
                 val_history['action'] = "-----------CHANGED TO IN CONSULTATION------------"
-                super(MedicalAppointment,self).write(cr, uid, ids, {'state': 'in_consultation'}, context=context)
+                vals.update({'state': 'in_consultation'})
                 
-            if order.state == 'canceled':
+            elif order.state == 'canceled':
                 val_history['action'] = "-----------CHANGED TO DRAFT------------"
-                super(MedicalAppointment,self).write(cr, uid, ids, {'state': 'draft'}, context=context)
-
+                vals.update({'state': 'draft'})
+                
+            self.write(cr, uid, [order.id], vals, context=ctx)
+            
         val_history['appointment_id_history'] = ids[0]
         val_history['name'] = uid
         val_history['date'] = time.strftime('%Y-%m-%d %H:%M:%S')

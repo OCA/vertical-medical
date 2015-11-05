@@ -1,13 +1,13 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data>
-
-        <report auto="False"
-                id="oemedical_prescription_order_report"
-                model="oemedical.prescription.order"
-                name="prescription.order"
-                rml="oemedical_emr/report/prescription_order.rml"
-                string="Prescription Order Lines"/>
-
+        <report 
+            id="oemedical_prescription_order_report"
+            model="oemedical.prescription.order"
+            string="Prescription Details"
+            report_type="qweb-html"
+            name="oemedical_emr.report_prescription"
+            file="oemedical_emr.report_prescription"
+        />
     </data>
 </openerp>

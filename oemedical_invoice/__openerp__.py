@@ -17,9 +17,12 @@
 #
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+##############################################################################
+#    Collaborators of this module:
+#    Migrated by: Serpent Consulting Services Pvt. Ltd. <contact@serpentcs.com>
 #
 ##############################################################################
-
 {
     "name" : "Medical Invoice",
     "version" : "0.1",
