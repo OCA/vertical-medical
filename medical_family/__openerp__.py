@@ -48,7 +48,7 @@
     "website": "http://github.com/oca/vertical-medical",
     "licence": "AGPL-3",
     "data": [
-        'views/medical_family_member_view.xml',
+        'views/medical_patient_view.xml',
         'views/medical_family_view.xml',
     ],
     'test': [
