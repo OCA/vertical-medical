@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# #############################################################################
+###############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,17 +18,6 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-# #############################################################################
+###############################################################################
 
-from openerp import models, fields
-
-
-class MedicalFamily(models.Model):
-    _name = 'medical.family'
-    info = fields.Text(string='Extra Information')
-    name = fields.Char(string='Family', required=True)
-    member_ids = fields.One2many('medical.family_member', 'family_id',
-                                 string='Family Members', )
-    _sql_constraints = [
-        ('name_uniq', 'UNIQUE(name)', 'Family Code must be unique!'),
-    ]
+from . import models

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# #############################################################################
+###############################################################################
 #
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
@@ -18,15 +18,20 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-# #############################################################################
+###############################################################################
 
 from openerp import models, fields
 
 
 class MedicalFamilyMember(models.Model):
-    _name = 'medical.family_member'
-    member_id = fields.Many2one('res.partner', string='Member',
-                                help='Family Member Name')
-    role = fields.Char(size=256, string='Role', required=True)
-    family_id = fields.Many2one('medical.family', string='Family',
-                                help='Family code')
+    _name = 'medical.family.member'
+    member_id = fields.Many2one(
+        'res.partner',
+        help='Family Member'
+    )
+    role_id = fields.Many2one(
+        'medical.family.role',
+    )
+    family_id = fields.Many2one(
+        'medical.family',
+    )
