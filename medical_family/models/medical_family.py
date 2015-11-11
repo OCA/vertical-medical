@@ -33,10 +33,10 @@ class MedicalFamily(models.Model):
         required=True
     )
     member_ids = fields.One2many(
-        'medical.family.member',
+        'medical.patient',
         'family_id',
         string='Family Members',
     )
     _sql_constraints = [
-        ('name_uniq', 'UNIQUE(name)', 'Family Code must be unique!'),
+        ('name_uniq', 'UNIQUE(name)', 'Family name must be unique!'),
     ]

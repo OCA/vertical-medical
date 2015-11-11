@@ -21,5 +21,5 @@
 ###############################################################################
 
 from . import medical_family
-from . import medical_family_member
+from . import medical_patient
 from . import medical_family_role
