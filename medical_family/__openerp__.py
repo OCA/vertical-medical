@@ -50,6 +50,7 @@
     "data": [
         'views/medical_patient_view.xml',
         'views/medical_family_view.xml',
+        'security/ir.model.access.csv',
     ],
     'test': [
     ],
