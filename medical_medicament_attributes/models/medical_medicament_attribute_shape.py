@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from openerp import fields, models
+from openerp import models
 
 
 class MedicalMedicamentAttributeShape(models.Model):

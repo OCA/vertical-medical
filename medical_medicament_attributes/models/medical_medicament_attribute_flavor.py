@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from openerp import fields, models
+from openerp import models
 
 
 class MedicalMedicamentAttributeFlavor(models.Model):
