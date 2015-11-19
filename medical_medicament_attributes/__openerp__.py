@@ -38,6 +38,7 @@
     'version': '8.0.1.0',
     'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
     'category': 'Medical',
+    'license': "AGPL-3",
     'depends': [
         'medical_medicament',
     ],
