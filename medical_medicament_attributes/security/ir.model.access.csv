@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_medicament_attribute_color,access.medical.medicament.attribute.color.user,model_access_medical_medicament_attribute_color,medical.group_medical_user,1,0,0,0
+access_medical_medicament_attribute_shape,access.medical.medicament.attribute.shape.user,model_access_medical_medicament_attribute_shape,medical.group_medical_user,1,0,0,0
+access_medical_medicament_attribute_flavor,access.medical.medicament.attribute.flavor.user,model_access_medical_medicament_attribute_flavor,medical.group_medical_user,1,0,0,0
