@@ -20,9 +20,11 @@
 			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Patient Ethnicity">
-					<field name="notes" />
-					<field name="code" />
-					<field name="name" />
+					<group>
+						<field name="notes" />
+						<field name="code" />
+						<field name="name" />
+					</group>
 				</form>
 			</field>
 		</record>
