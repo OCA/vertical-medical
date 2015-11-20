@@ -6,8 +6,10 @@
 ##############################################################################
 #
 #    Collaborators of this module:
-#       Written By: Dave Lasley <dave@laslabs.com>
-#       Originally in `medical_emr` By: Tech-Receptives(<http://www.techreceptives.com>)
+#       Ported By:
+#              Dave Lasley <dave@laslabs.com>
+#       Original in `medical_emr` By:
+#              Tech-Receptives(<http://www.techreceptives.com>)
 #
 ##############################################################################
 #
