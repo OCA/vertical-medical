@@ -48,7 +48,7 @@
     "website": "http://github.com/oca/vertical-medical",
     "licence": "AGPL-3",
     "data": [
-        'views/medical_medicament_view.xml',
+        'views/medical_patient_ethnicity_view.xml',
     ],
     'installable': True,
     'auto_install': False,
