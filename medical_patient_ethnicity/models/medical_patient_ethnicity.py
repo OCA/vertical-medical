@@ -23,8 +23,8 @@
 from openerp import models, fields
 
 
-class MedicalEthnicity(models.Model):
-    _name = 'medical.ethnicity'
+class MedicalPatientEthnicity(models.Model):
+    _name = 'medical.patient.ethnicity'
 
     notes = fields.Char(size=256, string='Notes')
     code = fields.Char(size=256, string='Code')
@@ -33,4 +33,5 @@ class MedicalEthnicity(models.Model):
 
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Ethnicity name must be unique!'),
+        ('code_uniq', 'UNIQUE(code)', 'Ethnicity code must be unique!'),
     ]
