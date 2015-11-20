@@ -25,11 +25,14 @@ from openerp import fields, models
 class MedicalMedicament(models.Model):
     _inherit = 'medical.medicament'
     color_id = fields.Many2one(
-        'medical.medicament.attribute.color',
+        comodel_name='medical.medicament.attribute.color',
+        string='Color',
     )
     shape_id = fields.Many2one(
-        'medical.medicament.attribute.shape'
+        comodel_name='medical.medicament.attribute.shape',
+        string='Shape',
     )
     flavor_id = fields.Many2one(
-        'medical.medicament.attribute.flavor'
+        comodel_name='medical.medicament.attribute.flavor',
+        string='Flavor',
     )
