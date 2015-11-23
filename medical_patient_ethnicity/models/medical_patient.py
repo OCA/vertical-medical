@@ -24,5 +24,5 @@ from openerp import models, fields
 
 
 class MedicalPatient(models.Model):
-    _name = 'medical.patient'
+    _inherit = 'medical.patient'
     ethnicity_id = fields.Many2one('medical.patient.ethnicity', 'Ethnicity')
