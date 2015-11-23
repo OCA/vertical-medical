@@ -24,4 +24,5 @@ from openerp import models
 
 class MedicalMedicamentAttributeShape(models.Model):
     _name = 'medical.medicament.attribute.shape'
+    _description = 'Medical Medicament Physical Attributes - Shape'
     _inherit = 'medical.medicament.attribute.abstract'

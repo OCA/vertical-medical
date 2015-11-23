@@ -24,4 +24,5 @@ from openerp import models
 
 class MedicalMedicamentAttributeColor(models.Model):
     _name = 'medical.medicament.attribute.color'
+    _description = 'Medical Medicament Physical Attributes - Color'
     _inherit = 'medical.medicament.attribute.abstract'

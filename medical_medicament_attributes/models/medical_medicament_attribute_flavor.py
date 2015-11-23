@@ -24,4 +24,5 @@ from openerp import models
 
 class MedicalMedicamentAttributeFlavor(models.Model):
     _name = 'medical.medicament.attribute.flavor'
+    _description = 'Medical Medicament Physical Attributes - Flavor'
     _inherit = 'medical.medicament.attribute.abstract'
