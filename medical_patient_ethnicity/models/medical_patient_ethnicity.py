@@ -25,7 +25,7 @@ from openerp import models, fields
 
 class MedicalPatientEthnicity(models.Model):
     _name = 'medical.patient.ethnicity'
-
+    _description = 'Medical Patient Ethnicity'
     notes = fields.Char()
     code = fields.Char(required=True, )
     name = fields.Char(required=True, translate=True)
