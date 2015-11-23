@@ -4,7 +4,6 @@
 		<record id="medical_patient_occupation_view_tree" model="ir.ui.view">
 			<field name="name">medical.patient.occupation.tree</field>
 			<field name="model">medical.patient.occupation</field>
-			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<tree string="Patient Occupation">
 					<field name="code" />
@@ -16,13 +15,15 @@
 		<record id="medical_patient_occupation_view_form" model="ir.ui.view">
 			<field name="name">medical.patient.occupation.form</field>
 			<field name="model">medical.patient.occupation</field>
-			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<form string="Patient Occupation">
-					<group>
-						<field name="code" />
-						<field name="name" />
-					</group>
+					<header />
+					<sheet>
+						<group name="data">
+							<field name="code" />
+							<field name="name" />
+						</group>
+					</sheet>
 				</form>
 			</field>
 		</record>
@@ -30,16 +31,10 @@
 		<record id="medical_patient_occupation_view_search" model="ir.ui.view">
 			<field name="name">medical.patient.occupation.search</field>
 			<field name="model">medical.patient.occupation</field>
-			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
 				<search string="Patient Occupation">
 					<field name="code" />
 					<field name="name" />
-					<newline />
-					<group expand="0" string="Group By...">
-						<filter string="Code" domain="[]" context="{'group_by':'code'}" />
-						<filter string="Name" domain="[]" context="{'group_by':'name'}" />
-					</group>
 				</search>
 			</field>
 		</record>
@@ -53,20 +48,6 @@
 			<field name="search_view_id" ref="medical_patient_occupation_view_search" />
 			<field name="domain">[]</field>
 			<field name="context">{}</field>
-		</record>
-
-		<record model="ir.actions.act_window.view" id="medical_patient_occupation_action_form">
-			<field name="act_window_id" ref="medical_patient_occupation_action" />
-			<field name="sequence" eval="20" />
-			<field name="view_mode">form</field>
-			<field name="view_id" ref="medical_patient_occupation_view_form" />
-		</record>
-
-		<record model="ir.actions.act_window.view" id="medical_patient_occupation_action_tree">
-			<field name="act_window_id" ref="medical_patient_occupation_action" />
-			<field name="sequence" eval="10" />
-			<field name="view_mode">tree</field>
-			<field name="view_id" ref="medical_patient_occupation_view_tree" />
 		</record>
 
 	</data>

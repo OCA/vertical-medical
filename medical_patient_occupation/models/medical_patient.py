@@ -26,4 +26,7 @@ from openerp import fields, models
 
 class MedicalPatient(models.Model):
     _inherit = 'medical.patient'
-    occupation_id = fields.Many2one('medical.patient.occupation')
+    occupation_id = fields.Many2one(
+        'medical.patient.occupation',
+        string='Occupation'
+    )
