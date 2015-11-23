@@ -27,7 +27,7 @@ class MedicalPatientEthnicity(models.Model):
     _name = 'medical.patient.ethnicity'
 
     notes = fields.Char()
-    code = fields.Char()
+    code = fields.Char(required=True, )
     name = fields.Char(required=True, translate=True)
 
     _sql_constraints = [
