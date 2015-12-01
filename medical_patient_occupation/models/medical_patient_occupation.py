@@ -21,17 +21,14 @@
 #
 ###############################################################################
 
-from openerp.osv import fields, orm
+from openerp import fields, models
 
 
-class MedicalOccupation(orm.Model):
-    _name = 'medical.occupation'
-
-    _columns = {
-        'code': fields.char(size=256, string='Code'),
-        'name': fields.char(size=256, string='Name', required=True,
-                            translate=True),
-    }
+class MedicalPatientOccupation(models.Model):
+    _name = 'medical.patient.occupation'
+    _description = 'Medical Patient Occupation'
+    code = fields.Char()
+    name = fields.Char(required=True, translate=True, )
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
     ]

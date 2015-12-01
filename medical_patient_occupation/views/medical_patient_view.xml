@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<record id="view_medical_patient_form" model="ir.ui.view">
+			<field name="name">medical.patient.form</field>
+			<field name="model">medical.patient</field>
+			<field name="inherit_id" ref="medical.view_medical_patient_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='gender']" position="after">
+					<field name="occupation_id" />
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>
