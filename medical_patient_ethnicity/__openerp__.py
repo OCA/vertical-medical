@@ -49,6 +49,7 @@
     "licence": "AGPL-3",
     "data": [
         'views/medical_patient_ethnicity_view.xml',
+        'views/medical_patient_view.xml',
         'security/ir.model.access.csv',
     ],
     'installable': True,
