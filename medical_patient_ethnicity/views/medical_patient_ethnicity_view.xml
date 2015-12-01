@@ -45,11 +45,15 @@
 			</field>
 		</record>
 
-		<record model="ir.actions.act_window.view" id="medical_patient_ethnicity_action_tree">
-			<field name="act_window_id" ref="medical_patient_ethnicity_action" />
-			<field name="sequence" eval="10" />
-			<field name="view_mode">tree</field>
-			<field name="view_id" ref="medical_patient_ethnicity_view_tree" />
+		<record model="ir.actions.act_window" id="medical_patient_ethnicity_action">
+			<field name="name">Ethnicity</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.patient.ethnicity</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="medical_patient_ethnicity_view_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
 		</record>
 
 	</data>
