@@ -4,7 +4,7 @@
 Odoo Medical Pharmacy
 ========================
 
-Extension of medical_medication that provides US Locale
+Extension of medical_pharmacy that provides US Locale
 
 
 Usage
@@ -22,6 +22,7 @@ Known issues / Roadmap
 ======================
 
 * Improve and provide a full description for this module into the README.rst
+* Break this into individual modules once everything is settled
 
 
 Bug Tracker
