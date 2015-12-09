@@ -20,79 +20,61 @@
             <field name="model">medical.physician</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <form string="Medical Physician" version="7.0">
-                    <header>
-                        <button name="action_update_schedule" string="Update Schedule" type="object" />
-                        <button name="%(medical_physician_unavailable_wizard_act)d" string="Create unavailability" type="action" context="{'default_physician_id': active_id}" />
-                    </header>
+                <form string="Medical Physician" >
+                    <header/>
                     <sheet>
-                        <field name="image" widget='image' class="left avatar"/>
-                        <div>
-                            <h1>
-                                <field name="name" placeholder="Physician's Name" style="width: 20%" />
-                            </h1>
-                        </div> 
-                        <div> 
-                            <h3> 
-                                <field name="company_id" placeholder="Company" style="width: 20%" /> 
-                            </h3> 
-                        </div> 
-                        <div> 
-                            <label for="ref"/> 
-                            <field name="ref" style="width: 20%"/> 
-                            <label for="code"/>
-                            <field name="code" style="width: 20%"/>
-                            <label for="specialty"/>
-                            <field name="specialty" style="width: 20%"/>
+                        <div class="oe_title" name="title">
+                            <field name="image" widget='image' class="left avatar"/>
+                            <h1><field name="name" placeholder="First Name Last Name" /></h1>
                         </div>
-                        <group>
-                            <label for="ref"/>
-                            <field name="ref" style="width: 20%"/>
-                            <field name="parent_id" />
-                            <newline/>
-                            <field name="info" colspan="4"/>
+                        <div class="oe_right oe_button_box" name="buttons">
+                        </div>
+                        <group name="data">
+                            <group name="main">
+                                <field name="specialty"/>
+                                <field name="ref"/>
+                                <field name="code"/>
+                            </group>
                         </group>
                         <notebook>
-                            <page string="General Information">
-                                <group>
-                                    <field name="active"/>
-                                    <field name="phone" placeholder="e.g. +506 5555 5555"/>
-                                    <field name="mobile"/>
-                                    <field name="fax"/>
-                                       <field name="user_ids" invisible="1"/>
-                                    <field name="email" widget="email" attrs="{'required': [('user_ids','!=', [])]}"/>
-                                </group>
-                                <group>
-                                       <label for="street" string="Address"/>
-                                    <div>
-                                        <field name="use_parent_address" invisible="1"/>
-                                        <field name="street" placeholder="Street..."  attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-                                        <field name="street2"  attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-                                        <div class="address_format">
-                                            <field name="city" placeholder="City" style="width: 40%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-                                            <field name="state_id" class="no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-                                            <field name="zip" placeholder="ZIP" style="width: 20%%" attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-                                        </div>
-                                        <field name="country_id" placeholder="Country" class="no_button" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-                                    </div>
-                                </group>
+                            <page string="Notes">
+                                <field name="info"/>
                             </page>
-                            <page string="Schedule Template">
-                                <field name="schedule_template_ids" context="{'default_physician_id': id}">
-                                    colspan="4"
-                                    <tree string="Schedule Template" editable="bottom">
-                                        <field name="physician_id" invisible="1"/>
-                                        <field name="day" />
-                                        <field name="start_hour" />
-                                        <field name="start_minute" />
-                                        <field name="end_hour" />
-                                        <field name="end_minute" />
-                                        <field name="duration" />
-                                       </tree>
-                                </field>
+                            <page string="General Information"> 
+                                <group string="Contact Information">
+                                    <group>
+                                        <label for="street" string="Address"/>
+                                        <div>
+                                            <field name="use_parent_address" class="edit_only inline" invisible="1"/>
+                                            <label for="use_parent_address" class="edit_only" invisible="1"/>
+                                            <field name="street" placeholder="Street..." />
+                                            <field name="street2" />
+                                            <div class="address_format">
+                                                <field name="city" placeholder="City" style="width: 40%" />
+                                                <field name="state_id" class="no_button" placeholder="State" style="width: 37%" options='{"no_open": True}' />
+                                                <field name="zip" placeholder="ZIP" style="width: 20%" />
+                                            </div>
+                                            <field name="country_id" placeholder="Country" class="no_button" options='{"no_open": True}' />
+                                        </div>
+                                        <field name="website" widget="url" placeholder="e.g. www.openerp.com"/>
+                                    </group>
+                                    <group>
+                                        <field name="phone" placeholder="e.g. +32.81.81.37.00"/>
+                                        <field name="mobile"/>
+                                        <field name="fax"/>
+                                        <field name="email" widget="email"/>
+                                    </group>
+                                </group>
+                                <group  col="4" colspan="4"> 
+                                    <field name="parent_id" colspan="2" string="Legal Representative" domain="[('is_patient','=',True)]"/>
+                                </group>
+                                <group  col="4" colspan="4"> 
+                                     <field name="lang" colspan="2"/>
+                                     <field name="opt_out" string="I don't want to receive comercial messages" colspan="2"/>
+                                 </group>
                             </page>
                         </notebook>
-                    </sheet>
+                     </sheet>
                 </form>
             </field>
         </record>

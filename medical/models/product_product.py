@@ -27,9 +27,6 @@ class ProductProduct(orm.Model):
     _inherit = 'product.product'
 
     _columns = {
-        'is_medicament': fields.boolean(string='Medicament',
-                                        help='Check if the product is a '
-                                        'medicament'),
         'is_vaccine': fields.boolean(string='Vaccine', help='Check if the '
                                      'product is a vaccine'),
         'is_medical_supply': fields.boolean(string='Medical Supply',

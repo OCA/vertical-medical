@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="medical_medication_template_search_view" model="ir.ui.view">
+            <field name="name">medical.medication.template.search</field>
+            <field name="model">medical.medication.template</field>
+            <field name="arch" type="xml">
+                <search string="Medical Medication Template">
+                    <field name="pathology_id" />
+                    <field name="medication_dosage_id" />
+                    <field name="quantity" />
+                    <field name="duration" />
+                    <field name="frequency" />
+                    <field name="suggested_administration_hours" />
+                    <field name="dose_unit_id" />
+                    <newline />
+                    <filter string="Is Frequency PRN"
+                        name="frequency_prn" domain="[('frequency_prn', '=', True)]" />
+                    <group expand="0" string="Group By...">
+                        <filter string="Treatment duration" domain="[]"
+                            context="{'group_by':'duration'}" />
+                        <filter string="Frequency" domain="[]"
+                            context="{'group_by':'frequency'}" />
+                        <filter string="Pathology" domain="[]"
+                            context="{'group_by':'pathology_id'}" />
+                        <filter string="Frequency" domain="[]"
+                            context="{'group_by':'medication_dosage_id'}" />
+                        <filter string="Administration hours" domain="[]"
+                            context="{'group_by':'suggested_administration_hours'}" />
+                        <filter string="Dose Unit" domain="[]"
+                            context="{'group_by':'dose_unit_id'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="medical_medication_template_tree_view" model="ir.ui.view">
+            <field name="name">medical.medication.template.tree</field>
+            <field name="model">medical.medication.template</field>
+            <field name="arch" type="xml">
+                <tree string="Medical Medication Template">
+                    <field name="pathology_id"/>
+                    <field name="medicament_id"/>
+                    <field name="duration_period"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="medical_medication_template_form_view" model="ir.ui.view">
+            <field name="name">medical.medication.template.form</field>
+            <field name="model">medical.medication.template</field>
+            <field name="arch" type="xml">
+                <form string="Medical Medication Template">
+                    <sheet>
+                        <div class="oe_title" name="title">
+                            <label for="medicament_id" class="oe_edit_only"/>
+                            <h1><field name="medicament_id"/></h1>
+                        </div>
+                        <div class="oe_right oe_button_box" name="buttons"/>
+                        <group name="data">
+                            <field name="pathology_id"/>
+                        </group>
+                        <notebook>
+                            <page string="Dosage" name="dosage">
+                                <group name="dosage">
+                                    <field name="quantity"/>
+                                    <field name="dose_unit_id"/>
+                                </group>
+                            </page>
+                            <page string="Frequency" name="frequency">
+                                <group>
+                                    <group name="frequency">
+                                        <field name="frequency"/>
+                                        <field name="frequency_unit"/>
+                                    </group>
+                                    <group name="frequency_prn">
+                                        <field name="frequency_prn"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Treament Duration" name="treatment_duration">
+                                <group>
+                                    <group name="duration">
+                                        <field name="duration"/>
+                                        <field name="duration_period"/>
+                                    </group>
+                                    <group name="medication">
+                                        <field name="medication_dosage_id"/>
+                                        <field name="suggested_administration_hours" widget="float_time"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_medication_template_action" model="ir.actions.act_window">
+            <field name="name">Medication Template</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.medication.template</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="search_view_id" ref="medical_medication_template_search_view" />
+            <field name="view_id" ref="medical_medication_template_tree_view" />
+        </record>
+
+        <menuitem id="medical_medication_template"
+            parent="medical_medicament.medical_medicament_root" sequence="20"
+            action="medical_medication_template_action" />
+
+    </data>
+</openerp>

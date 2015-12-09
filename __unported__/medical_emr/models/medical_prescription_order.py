@@ -20,40 +20,11 @@
 #
 # #############################################################################
 
-import time
-
-from openerp.osv import fields, orm
+from openerp import models, fields
 
 
-class MedicalPrescriptionOrder(orm.Model):
-    _name = 'medical.prescription.order'
-
-    _columns = {
-        'patient_id': fields.many2one('medical.patient', string='Patient',
-                                      required=True),
-        'is_pregnant': fields.boolean(string='Pregancy Warning',
-                                      readonly=True),
-        'notes': fields.text(string='Prescription Notes'),
-        'prescription_line_ids': fields.one2many('medical.prescription.line',
-                                                 'prescription_id',
-                                                 string='Prescription line', ),
-        'pharmacy_id': fields.many2one('res.partner', string='Pharmacy', ),
-        'prescription_date': fields.datetime(string='Prescription Date'),
-        'is_verified': fields.boolean(string='Prescription verified'),
-        'physician_id': fields.many2one('medical.physician',
-                                        string='Prescribing Doctor',
-                                        required=True),
-        'name': fields.char(size=256, string='Prescription ID', required=True,
-                            help='Type in the ID of this prescription'),
-    }
-
-    _defaults = {
-        'name': lambda obj, cr, uid, context:
-        obj.pool.get('ir.sequence').get(cr, uid,
-                                        'medical.prescription.order'),
-        'prescription_date': lambda *a: time.strftime('%Y-%m-%d %H:%M:%S'),
-
-    }
+class MedicalPrescriptionOrder(models.Model):
+    _inherit = 'medical.prescription.order'
 
     def print_prescription(self, cr, uid, ids, context=None):
         '''
@@ -72,3 +43,13 @@ class MedicalPrescriptionOrder(orm.Model):
                 'report_name': 'prescription.order',
                 'datas': datas,
                 'nodestroy': True}
+
+
+class MedicalPrescriptionOrderLine(models.Model):
+    _inherit = 'medical.prescription.order.line'
+
+    is_printed = fields.Boolean(
+        help='Check this box to print this line of the prescription.',
+        default=True)
+    refills = fields.Integer(string='Refills #')
+    review = fields.Datetime()

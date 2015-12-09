@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="medical_patient_view_disease_search" model="ir.ui.view">
+            <field name="name">medical.patient.disease.search</field>
+            <field name="model">medical.patient.disease</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="Medical Patient Disease">
+                    <field name="name" />
+                    <field name="treatment_description" />
+                    <field name="healed_date" />
+                    <field name="pathology_id" />
+                    <field name="physician_id" />
+                    <field name="weeks_of_pregnancy" />
+                    <field name="diagnosed_date" />
+                    <field name="notes" />
+                    <field name="treatment_end_date" />
+                    <field name="patient_id" />
+                    <field name="age" />
+                    <field name="treatment_start_date" />
+                    <field name="short_comment" />
+                    <filter name="is_on_treatment" string="Is on Treatment"
+                        domain="[('is_on_treatment', '=', True)]" />
+                    <separator/>
+                    <filter name="is_allergy" string="Is Allergy"
+                        domain="[('is_allergy', '=', True)]" />
+                    <separator/>
+                    <filter name="inactive" string="Inactive"
+                        domain="[('active', '=', False)]" />
+                    <separator/>
+                    <filter name="is_pregnant" string="Pregnancy Warning"
+                        domain="[('is_pregnant', '=', True)]" />
+                    <separator/>
+                    <filter name="is_infectious" string="Is Infectious"
+                        domain="[('is_infectious', '=', True)]" />
+                    <filter name="is_not_infectious" string="Not Infectious"
+                        domain="[('is_infectious', '=', False)]" />
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Healed" domain="[]" context="{'group_by':'healed_date'}" />
+                        <filter string="Disease" domain="[]" context="{'group_by':'pathology_id'}" />
+                        <filter string="Allergic Disease" domain="[]"
+                            context="{'group_by':'is_allergy'}" />
+                        <filter string="Physician" domain="[]" context="{'group_by':'physician_id'}" />
+                        <filter string="Pregnancy warning" domain="[]"
+                            context="{'group_by':'is_pregnant'}" />
+                        <filter string="Contracted in pregnancy week #" domain="[]"
+                            context="{'group_by':'weeks_of_pregnancy'}" />
+                        <filter string="Currently on Treatment" domain="[]"
+                            context="{'group_by':'is_on_treatment'}" />
+                        <filter string="Date of Diagnosis" domain="[]"
+                            context="{'group_by':'diagnosed_date'}" />
+                        <filter string="Infectious Disease" domain="[]"
+                            context="{'group_by':'is_infectious'}" />
+                        <filter string="Patient" domain="[]" context="{'group_by':'patient_id'}" />
+                        <filter string="Age when diagnosed" domain="[]"
+                            context="{'group_by':'age'}" />
+                        <filter string="Start" domain="[]"
+                            context="{'group_by':'treatment_start_date'}" />
+                        <filter string="State" domain="[]"
+                            context="{'group_by':'state'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="medical_patient_view_disease_tree" model="ir.ui.view">
+            <field name="name">medical.patient.disease.tree</field>
+            <field name="model">medical.patient.disease</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="Medical Patient Disease">
+                    <field name="name" />
+                    <field name="patient_id" />
+                    <field name="physician_id" />
+                    <field name="weeks_of_pregnancy" />
+                    <field name="age" />
+                    <field name="healed_date" />
+                    <field name="diagnosed_date" />
+                    <field name="treatment_end_date" />
+                    <field name="treatment_start_date" />
+                    <field name="pregnancy_warning" />
+                    <field name="is_allergy" />
+                    <field name="is_on_treatment" />
+                    <field name="is_infectious" />
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="medical_patient_view_disease_form" model="ir.ui.view">
+            <field name="name">medical.patient.disease.form</field>
+            <field name="model">medical.patient.disease</field>
+            <field name="arch" type="xml">
+                <form string="Medical Patient Disease">
+                    <header>
+                        <span attrs="{'invisible': [('id','=',False)]}" groups="medical.group_medical_user">
+                            <button name="action_invalidate" string="Invalidate" type="object"
+                                    confirm="Invalidate Disease: proceed anyway?"
+                                    attrs="{'invisible': [('active','=', False)]}"/>
+                            <button name="action_revalidate" string="Reactivate" type="object"
+                                    confirm="Reactivate document: proceed anyway?"
+                                    attrs="{'invisible': [('active','=',True)]}"/>
+                        </span>
+                        <field name="state" widget="statusbar" clickable="True" />
+                    </header>
+                    <sheet>
+                        <div class="oe_title" name="title">
+                            <label for="name" class="edit_only"/>
+                            <h1><field name="name"/></h1>
+                        </div>
+                        <div class="oe_right oe_button_box" name="buttons">
+                        </div>
+
+                        <group name="data">
+                            <group name="main">
+                                <group name="main_informations1">
+                                    <field name="patient_id"/>
+                                    <field name="short_comment"/>
+                                    <field name="treatment_description"/>
+                                </group>
+                                <group name="main_informations2">
+                                    <field name="pathology_id"/>
+                                    <field name="physician_id"/>
+                                    <field name="allergy_type"
+                                       attrs="{'invisible': [('is_allergy', '=', False)]}"/>
+                                    <field name="weeks_of_pregnancy"
+                                       attrs="{'invisible': [('is_pregnant', '=', False)]}"/>
+                                </group>
+                                <group name="complementary_informations">
+                                    <field name="age"/>
+                                    <field name="is_infectious"/>
+                                    <field name="is_allergy"/>
+                                    <field name="pregnancy_warning"/>
+                                    <field name="is_pregnant"/>
+                                </group>
+                                <group name="dates">
+                                    <field name="diagnosed_date"/>
+                                    <field name="treatment_start_date"/>
+                                    <field name="treatment_end_date"/>
+                                    <field name="is_on_treatment"/>
+                                    <field name="healed_date"/>
+                                </group>
+                            </group>
+                        </group>
+
+                        <group name="state" attrs="{'invisible': [('id','=',False)]}">
+                            <group name="validity">
+                                <field name="create_date" />
+                                <field name="expire_date" attrs="{'invisible': [('active','=',True)]}" />
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page string="Others" name="notes" autofocus="autofocus">
+                                <separator string="Notes"/>
+                                <field name="notes" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div name="configurator" class="oe_form_sheetbg" groups="medical.group_medical_configurator">
+                        <div class="oe_formview oe_form_sheet_width">
+                            <h3>More Info</h3>
+                            <group name="moreinfo">
+                                <field name="id"/>
+                                <field name="active"/>
+                                <field name="display_name"/>
+                            </group>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="medical_patient_disease_action">
+            <field name="name">Patient Diseases</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.patient.disease</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="medical_patient_view_disease_tree" />
+            <field name="search_view_id" ref="medical_patient_view_disease_search" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+    </data>
+</openerp>

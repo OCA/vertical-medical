@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="medical_medicament_search_view" model="ir.ui.view">
+            <field name="name">medical.medicament.search</field>
+            <field name="model">medical.medicament</field>
+            <field name="inherit_id"
+                ref="product.product_template_search_view"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="product_id" />
+                    <field name="categ_id" />
+                    <field name="indications" />
+                    <field name="therapeutic_action" />
+                    <field name="overdosage" />
+                    <field name="is_pregnant" />
+                    <field name="notes" />
+                    <field name="storage" />
+                    <field name="adverse_reaction" />
+                    <field name="active_component" />
+                    <field name="dosage_instruction" />
+                    <field name="pregnancy" />
+                    <field name="presentation" />
+                    <field name="composition" />
+                </xpath>
+                <xpath expr="//group" position="inside">
+                    <filter string="Category" domain="[]" context="{'group_by':'categ_id'}" />
+                    <filter string="Name" domain="[]" context="{'group_by':'name'}" />
+                    <filter string="Indication" domain="[]"
+                        context="{'group_by':'indications'}" />
+                    <filter string="Therapeutic effect" domain="[]"
+                        context="{'group_by':'therapeutic_action'}" />
+                    <filter string="Product" domain="[]" context="{'group_by':'product'}" />
+                    <filter string="Overdosage" domain="[]"
+                        context="{'group_by':'overdosage'}" />
+                    <filter string="Pregnancy Warning" domain="[]"
+                        context="{'group_by':'is_pregnant'}" />
+                    <filter string="Extra Info" domain="[]" context="{'group_by':'notes'}" />
+                    <filter string="Storage Conditions" domain="[]"
+                        context="{'group_by':'storage'}" />
+                    <filter string="Adverse Reactions" domain="[]"
+                        context="{'group_by':'adverse_reaction'}" />
+                    <filter string="Active component" domain="[]"
+                        context="{'group_by':'active_component'}" />
+                    <filter string="Dosage Instructions" domain="[]"
+                        context="{'group_by':'dosage_instruction'}" />
+                    <filter string="Pregnancy and Lactancy" domain="[]"
+                        context="{'group_by':'pregnancy'}" />
+                    <filter string="Presentation" domain="[]"
+                        context="{'group_by':'presentation'}" />
+                    <filter string="Composition" domain="[]"
+                        context="{'group_by':'composition'}" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="medical_medicament_view_tree" model="ir.ui.view">
+            <field name="name">medical.medicament.tree</field>
+            <field name="model">medical.medicament</field>
+            <field name="inherit_id"
+                ref="product.product_product_tree_view"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="drug_form_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="medical_medicament_view_form" model="ir.ui.view">
+            <field name="name">medical.medicament.form</field>
+            <field name="model">medical.medicament</field>
+            <field name="inherit_id"
+                ref="product.product_template_form_view"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                 <xpath expr="//notebook" position="inside">
+                    <page name="medicament" string="Medicaments">
+                        <group>
+                            <group string="Drug Info" name="drug_info">
+                                <field name="drug_form_id"/>
+                                <field name="drug_route_id"/>
+                                <field name="active_component"/>
+                                <field name="therapeutic_action"/>
+                            </group>
+                            <group string="Pregnancy" name="pregnancy">
+                                <field name="is_pregnant" />
+                                <field name="pregnancy_category" />
+                                <label for="pregnancy" string="Pregnancy Notes"/>
+                                <field name="pregnancy" nolabel="1" colspan="4"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Indications">
+                                <field name="indications" nolabel="1"/>
+                            </group>
+                            <group string="Dosage">
+                                <field name="dosage_instruction" colspan="2" nolabel="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Overdosage">
+                                <field name="overdosage" colspan="2" nolabel="1"/>
+                            </group>
+                            <group string="Presentation">
+                                <field name="presentation" colspan="4" nolabel="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Composition">
+                                <field name="composition" nolabel="1" colspan="4"/>
+                            </group>
+                            <group string="Adverse Reactions">
+                                <field name="adverse_reaction" colspan="4" nolabel="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Storage">
+                                <field name="storage" colspan="4" nolabel="1" />
+                            </group>
+                            <group string="Notes">
+                                <field name="notes" colspan="4" nolabel="1"/>
+                            </group>
+                        </group>
+                    </page>
+                 </xpath>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="medical_medicament_action">
+            <field name="name">Medicaments</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.medicament</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="search_view_id" ref="medical_medicament_search_view" />
+            <field name="res_id" ref="medical_medicament_view_tree" />
+        </record>
+
+        <menuitem id="medical_medicament_root" name="Medicaments"
+            parent="medical.medical_root_sub" sequence="50" />
+
+        <menuitem id="medical_medicament" name="Medicaments"
+            parent="medical_medicament_root" sequence="10"
+            action="medical_medicament_action" />
+
+    </data>
+</openerp>

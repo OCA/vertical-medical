@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2014-2015 LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    The licence is in the file __openerp__.py
+-->
+
+<openerp>
+    <data>
+        
+        <record id="medical_prescription_order_line_tree_view" model="ir.ui.view">
+            <field name="name">Prescription Order Lines</field>
+            <field name="model">medical.prescription.order.line</field>
+            <field name='inherit_id' ref='medical_prescription.medical_prescription_order_line_tree_view'/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='prescription_order_id']" position="after">
+                    <field name="sale_order_ids"/>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="medical_prescription_order_line_form_view" model="ir.ui.view">
+            <field name="name">Prescription Order Line</field>
+            <field name="model">medical.prescription.order.line</field>
+            <field name='inherit_id' ref='medical_prescription.medical_prescription_order_line_form_view'/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='prescription_order_id']" position="after">
+                    <field name="sale_order_ids"/>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="medical_prescription_order_line_search_view" model="ir.ui.view">
+            <field name="name">Prescription Order Line Search</field>
+            <field name="model">medical.prescription.order.line</field>
+            <field name='inherit_id' ref='medical_prescription.medical_prescription_order_line_search_view'/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='prescription_order_id']" position="after">
+                    <field name="sale_order_ids"/>
+                </xpath>
+                <xpath expr="//group" position="inside">
+                    <filter string="Sale Order"
+                        domain="[]" context="{'group_by':'sale_order_ids'}" />
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="medical_prescription_order_line_kanban_view" model="ir.ui.view">
+            <field name="name">Prescription Order Lines</field>
+            <field name="model">medical.prescription.order.line</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="state_id" class="o_kanban_small_column">
+                    <field name="color"/>
+                    <field name="priority"/>
+                    <field name="state_id" options='{"group_by_tooltip": {"description": "Stage Description", "legend_priority": "Use of stars"}}'/>
+                    <field name="sequence"/>
+                    <field name="legend_blocked"/>
+                    <field name="legend_normal"/>
+                    <field name="legend_done"/>
+                    <field name="medicament_id"/>
+                    <field name="date_start_treatment"/>
+                    <field name="patient_id"/>
+                    <field name="physician_id"/>
+                    <field name="user_id"/>
+                    <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click">
+                            <div class="oe_kanban_content">
+                                <div>
+                                    <strong>
+                                        <field name="medicament_id"/> <br />
+                                        <field name="date_start_treatment"/>
+                                    </strong>
+                                </div>
+                                <div class="text-muted">
+                                    For: <field name="patient_id"/> <br />
+                                    By: <field name="physician_id"/>
+                                </div>
+                                <div class="oe_kanban_bottom_left">
+                                    <field name="priority" widget="priority"/>
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <img t-att-src="kanban_image('res.users', 'image_small', record.user_id.raw_value)" t-att-title="record.user_id.value" width="24" height="24" class="oe_kanban_avatar pull-right"/>
+                                    <div class="pull-left" groups="base.group_user">
+                                        <field name="kanban_state" widget="kanban_state_selection"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="oe_clear"></div>
+                        </div>
+                    </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        
+        <record id="medical_prescription.medical_prescription_order_line_action" model="ir.actions.act_window">
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+        
+    </data>
+</openerp>

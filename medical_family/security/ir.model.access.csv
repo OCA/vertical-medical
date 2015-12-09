@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_family_role_user,medical.family_role_user,model_medical_family_role,medical.group_medical_user,1,0,0,0
+access_medical_family_user,medical.family_user,model_medical_family,medical.group_medical_user,1,0,0,0
+access_medical_family_role_doctor,medical.family_role_doctor,model_medical_family_role,medical.group_medical_doctor,1,1,1,0
+access_medical_family_doctor,medical.family_doctor,model_medical_family,medical.group_medical_doctor,1,1,1,0
+access_medical_family_role_assistant,medical.family_role_assistant,model_medical_family_role,medical.group_medical_assistant,1,1,1,0
+access_medical_family_assistant,medical.family_assistant,model_medical_family,medical.group_medical_assistant,1,1,1,0
