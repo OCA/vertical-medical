@@ -43,6 +43,7 @@
         'views/prescription_order_view.xml',
         'views/prescription_order_line_view.xml',
         'views/sale_order_view.xml',
+        'security/ir.model.access.csv',
     ],
     'test': [
 
