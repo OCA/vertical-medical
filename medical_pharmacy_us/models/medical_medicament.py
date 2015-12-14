@@ -26,5 +26,14 @@ class MedicalMedicament(models.Model):
     _inherit = 'medical.medicament'
     ndc = fields.Char(
         string='NDC',
-        help='NDC code of medication'
+        help='National Drug Code for medication'
+    )
+    control_code = fields.Selection([
+        ('c1', 'C1'),
+        ('c2', 'C2'),
+        ('c3', 'C3'),
+        ('c4', 'C4'),
+        ('c5', 'C5'),
+    ],
+        help='Federal drug scheduling code',
     )
