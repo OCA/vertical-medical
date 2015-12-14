@@ -27,9 +27,7 @@ class SaleOrder(models.Model):
 
     @api.one
     def _compute_patient_id(self, ):
-        self.patient_id = self.env['medical.patient'].search([
-            ('partner_id', '=', self.partner_id.id)
-        ], limit=1)
+        self.patient_id = self.env['medical.patient'].get(self.partner_id.id)
 
     patient_id = fields.Many2one(
         'medical.patient',
