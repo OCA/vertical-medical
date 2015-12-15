@@ -52,6 +52,9 @@ class SaleOrderLine(models.Model):
         readonly=True,
         compute='_compute_dispense_qty',
     )
+    state = fields.Selection(selection_add=[
+        ('rx_verify', 'Rx Verification'),
+    ])
     
     @api.one
     @api.constrains(
@@ -110,5 +113,3 @@ class SaleOrderLine(models.Model):
                     self.name, self.dispense_qty - rx_line.can_dispense_qty
                 )
             ))
-
-        return True

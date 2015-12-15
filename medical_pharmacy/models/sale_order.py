@@ -33,3 +33,7 @@ class SaleOrder(models.Model):
         'medical.patient',
         compute='_compute_patient_id',
     )
+
+    state = fields.Selection(selection_add=[
+        ('rx_verify', 'Rx Verification'),
+    ])
