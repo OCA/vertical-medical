@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from openerp import fields, models, _
+from openerp import fields, models, api, _
 from openerp.exceptions import ValidationError
 
 
@@ -30,10 +30,11 @@ class SaleOrderLine(models.Model):
     def _compute_dispense_qty(self, ):
         rx_line = self.prescription_order_line_id
         if self.product_uom == rx_line.dispense_uom_id:
-            return self.product_uom_qty
-        return proc_id.product_uom._compute_qty_obj(
-            self.product_uom_qty, rx_line.dispense_uom_id
-        )
+            self.dispense_qty = self.product_uom_qty
+        else:
+            self.dispense_qty = proc_id.product_uom._compute_qty_obj(
+                self.product_uom_qty, rx_line.dispense_uom_id
+            )
     
     patient_id = fields.Many2one(
         'medical.patient',
