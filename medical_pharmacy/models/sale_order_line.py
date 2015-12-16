@@ -35,10 +35,11 @@ class SaleOrderLine(models.Model):
             self.dispense_qty = proc_id.product_uom._compute_qty_obj(
                 self.product_uom_qty, rx_line.dispense_uom_id
             )
-    
+
     patient_id = fields.Many2one(
-        'medical.patient',
-        related='order_id.patient_id',
+        string='Patient',
+        comodel_name='medical.patient',
+        related='prescription_order_line_id.patient_id',
     )
     prescription_order_line_id = fields.Many2one(
         'medical.prescription.order.line',

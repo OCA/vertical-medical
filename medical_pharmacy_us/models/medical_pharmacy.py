@@ -22,8 +22,8 @@
 from openerp import fields, models
 
 
-class ResCompany(models.Model):
-    _inherit = 'res.company'
+class MedicalPharmacy(models.Model):
+    _inherit = 'medical.pharmacy'
     nabp_num = fields.Integer(
         help='National Boards of Pharmacy Id #',
     )

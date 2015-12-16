@@ -38,19 +38,17 @@ class MedicalPrescriptionToSaleWizard(models.TransientModel):
         default=_compute_default_session,
     )
     split_orders = fields.Selection([
-        ('customer', 'By Customer'),
+        ('partner', 'By Customer'),
         ('patient', 'By Patient'),
         ('all', 'By Rx Line'),
     ],
-        help='How to split the orders'
-    )
-    order_ids = fields.Many2many(
-        comodel_name='sale.order',
-        string='Orders',
-        help='Created orders',
+        help='How to split the new orders'
     )
     order_date = fields.Datetime()
-    pharmacy_id = fields.
+    pharmacy_id = fields.Many2one(
+        string='Pharmacy',
+        comodel_name='medical.pharmacy',
+    )
     state = fields.Selection([
         ('start', 'Started'),
         ('partial', 'Partial'),
@@ -58,8 +56,8 @@ class MedicalPrescriptionToSaleWizard(models.TransientModel):
         ('cancel', 'Cancelled'),
     ])
 
-
-class MedicalPrescriptionToSaleWizardSale(models.TransientModel):
-    _name = 'medical.prescription.to.sale.wizard.sale'
-    _description = 'Temporary order info for Sale2Rx workflow'
-    product_uom_qty = fields.Integer()
+    sale_wizard_ids = fields.Many2many(
+        string='Orders',
+        help='Temporary orders created during this session',
+        comodel_name='medical.sale.wizard',
+    )

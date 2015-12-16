@@ -25,13 +25,15 @@ from openerp import fields, models, api
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
-    @api.one
-    def _compute_patient_id(self, ):
-        self.patient_id = self.env['medical.patient'].get(self.partner_id.id)
-
-    patient_id = fields.Many2one(
-        'medical.patient',
-        compute='_compute_patient_id',
+    patient_ids = fields.Many2many(
+        string='Patients',
+        comodel_name='medical.patient',
+        related='order_line.patient_id',
+        readonly=True,
+    )
+    pharmacy_id = fields.Many2one(
+        string='Pharmacy',
+        comodel_name='medical.pharmacy',
     )
 
     state = fields.Selection(selection_add=[
