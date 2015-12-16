@@ -42,11 +42,12 @@ class SaleOrderLine(models.Model):
         related='prescription_order_line_id.patient_id',
     )
     prescription_order_line_id = fields.Many2one(
-        'medical.prescription.order.line',
+        string='Prescription Line',
+        comodel_name='medical.prescription.order.line',
     )
-    prescription_order_line_medicament_id = fields.Many2one(
-        'product.product',
-        related='prescription_order_line_id.product_id'
+    medication_id = fields.Many2one(
+        string='Medication',
+        comodel_name='medical.patient.medication',
     )
     dispense_qty = fields.Float(
         default=0.0,
@@ -60,7 +61,6 @@ class SaleOrderLine(models.Model):
     @api.one
     @api.constrains(
         'product_id', 'prescription_order_line_id', 'patient_id',
-        'prescription_order_product_id',
     )
     def _check_sale_line_prescription(self, ):
         '''
@@ -86,7 +86,7 @@ class SaleOrderLine(models.Model):
                 ),
             ))
         
-        if self.prescription_order_product_id != self.product_id:
+        if rx_line.product_id != self.product_id:
             if not self.is_substitutable:
                 raise ValidationError(_(
                     'Products must be same on Order and Rx lines. '
