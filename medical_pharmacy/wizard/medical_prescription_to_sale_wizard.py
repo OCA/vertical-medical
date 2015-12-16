@@ -34,30 +34,55 @@ class MedicalPrescriptionToSaleWizard(models.TransientModel):
     prescription_id = fields.Many2one(
         comodel_name='medical.prescription.order',
         string='Prescription',
-        required=True,
         default=_compute_default_session,
+        required=True,
+        readonly=True,
     )
     split_orders = fields.Selection([
         ('partner', 'By Customer'),
         ('patient', 'By Patient'),
         ('all', 'By Rx Line'),
     ],
-        help='How to split the new orders'
+        help='How to split the new orders',
     )
-    order_date = fields.Datetime()
+    order_date = fields.Datetime(
+        help='Date for the new orders',
+    )
     pharmacy_id = fields.Many2one(
         string='Pharmacy',
         comodel_name='medical.pharmacy',
+        help='Pharmacy to dispense orders from',
     )
-    state = fields.Selection([
-        ('start', 'Started'),
-        ('partial', 'Partial'),
-        ('done', 'Completed'),
-        ('cancel', 'Cancelled'),
-    ])
-
     sale_wizard_ids = fields.Many2many(
         string='Orders',
-        help='Temporary orders created during this session',
+        help='Orders to create when wizard is completed',
         comodel_name='medical.sale.wizard',
     )
+    state_id = fields.Many2one(
+        string='State',
+        comodel_name='medical.prescription.order.state',
+        related='prescription_id.state_id',
+        select=True,
+        readonly=True,
+        copy=False,
+    )
+    # state = fields.Selection([
+    #     ('start', 'Started'),
+    #     ('partial', 'Partial'),
+    #     ('done', 'Completed'),
+    #     ('cancel', 'Cancelled'),
+    # ],
+    #     readonly=True,
+    # )
+
+    @api.one
+    def _do_rx_sale_conversions(self, ):
+        sale_obj = self.env['sale.order']
+        sale_ids = None
+        for sale_wizard_id in self.sale_wizard_ids:
+            sale_id = sale_obj.create(sale_wizard_id._to_vals())
+            try:
+                sale_ids += sale_id
+            except TypeError:
+                sale_ids = sale_id
+        return sale_ids
