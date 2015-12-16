@@ -44,7 +44,7 @@ class SaleOrderLine(models.Model):
     prescription_order_line_id = fields.Many2one(
         'medical.prescription.order.line',
     )
-    prescription_order_product_id = fields.Many2one(
+    prescription_order_line_medicament_id = fields.Many2one(
         'product.product',
         related='prescription_order_line_id.product_id'
     )

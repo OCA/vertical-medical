@@ -31,48 +31,68 @@ class MedicalSaleWizard(models.TransientModel):
     _name = 'medical.sale.wizard'
     _inherit = 'sale.order'
     _description = 'Temporary order info for Sale2Rx workflow'
-    
-    partner_id = fields.Many2one(
-        string='Customer',
-        comodel_name='res.partner',
-    )
-    pharmacy_id = fields.Many2one(
-        string='Pharmacy',
-        comodel_name='medical.pharmacy',
-    )
-    line_wizard_ids = fields.One2many(
+
+    order_line = fields.One2many(
         'medical.sale.line.wizard',
         required=True,
     )
-    order_date = fields.Datetime()
 
     @api.multi
-    def _to_vals(self, ):
+    def _to_insert(self, ):
+        return list(self._to_insert_iter())
+
+    @api.multi
+    def _to_insert_iter(self, ):
         ''' Generator of values dicts for ORM methods '''
         for sale_id in self:
-            line_ids = [l.id for l in line_id.order_line]
-            vals = {
-                'prescription_order_id': line_id.prescription_order_id.id,
-                'prescription_line_page_ids': (6, 0, page_ids),
-                'medical_medication_id': line_id.medical_medication_id.id,
-                'is_substitutable': line_id.is_substitutable,
-            }
-            if line_id.id:
-                vals['fax_rx_id'] = line_id.id
-            yield vals
+            yield (6, 0, {
+                'address_allotment_id': self.address_allotment_id.id,
+                'salesman_id': self.salesman_id.id,
+                'sequence': self.sequence,
+                'company_id': self.company_id.id,
+                'delay': self.delay,
+                'discount': self.discount,
+                'partner_id': self.partner_id.id,
+                'partner_invoice_id': self.partner_invoice_id.id,
+                'partner_shipping_id': self.partner_shipping_id.id,
+                'pharmacy_id': self.pharmacy_id.id,
+                'order_line': sale_id.order_line._to_insert(),
+            })
     
 
 class MedicalSaleLineWizard(models.TransientModel, MedicalSaleWizardAbstract):
     _name = 'medical.sale.line.wizard'
+    _inherit = 'sale.order.line'
     _description = 'Temporary order line info for Sale2Rx workflow'
     
-    sale_wizard_id = fields.Many2one(
+    order_id = fields.Many2one(
         'medical.sale.wizard',
         readonly=True,
         required=True,
     )
-    medicament_id = fields.Many2one(
+    product_id = fields.Many2one(
         string='Medicament',
         comodel_name='medical.medicament',
         required=True,
     )
+
+    @api.multi
+    def _to_insert(self, ):
+        return list(self._to_insert_iter())
+
+    @api.multi
+    def _to_insert_iter(self, ):
+        ''' Generator of values dicts for ORM methods '''
+        for sale_id in self:
+            yield (6, 0, {
+                'name': self.product_id.display_name,
+                'sequence': self.sequence,
+                'delay': self.delay,
+                'product_id': self.product_id.id,
+                'product_uom': self.product_uom.id,
+                'product_uom_qty': self.product_uom_qty,
+                'price_unit': self.price_unit,
+                'price_reduce': self.price_reduce,
+                'tax_id': self.tax_id,
+                'discount': self.discount,
+            })

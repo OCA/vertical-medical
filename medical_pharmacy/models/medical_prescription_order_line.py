@@ -80,10 +80,6 @@ class MedicalPrescriptionOrderLine(models.Model):
             self.can_dispense = False
             self.can_dispense_qty = self.qty - total
 
-    product_id = fields.Many2one(
-        'product.product',
-        related='medical_medication_id.medicament_id.product_id'
-    )
     sale_order_line_ids = fields.One2many(
         comodel_name='sale.order.line',
         inverse_name='prescription_order_line_id',
