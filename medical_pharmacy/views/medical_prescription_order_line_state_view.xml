@@ -14,7 +14,7 @@
             <field name="model">medical.prescription.order.line.state</field>
             <field name='inherit_id' ref='medical_abstract_prescription_state_view_form'/>
             <field name="arch" type="xml">
-                <xpath expr="//form[@string='State']" position="attributes">
+                <xpath expr="//form" position="attributes">
                     <attribute name="string">Rx Line State</attribute>
                 </xpath>
             </field>
@@ -25,7 +25,7 @@
             <field name="model">medical.prescription.order.line.state</field>
             <field name='inherit_id' ref='medical_abstract_prescription_state_view_tree'/>
             <field name="arch" type="xml">
-                <xpath expr="//form[@string='States']" position="attributes">
+                <xpath expr="//tree" position="attributes">
                     <attribute name="string">Rx Line States</attribute>
                 </xpath>
             </field>
