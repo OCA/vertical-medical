@@ -34,6 +34,18 @@ class SaleOrder(models.Model):
                 patient_ids += patient_id
         self.patient_ids = patient_ids 
 
+    @api.one
+    def _compute_prescription_order_ids(self, ):
+        prescription_ids = self.env['medical.prescription.order']
+        prescription_line_ids = self.env['medical.prescription.order.line']
+        for line_id in self.prescription_order_line_ids:
+            if line_id not in prescription_line_ids:
+                prescription_line_ids += line_id
+            if line_id.prescription_order_id not in prescription_ids:
+                prescription_ids += line_id.prescription_order_id
+        self.prescription_order_ids = prescription_ids
+        self.prescription_order_line_ids = prescription_line_ids
+
     patient_ids = fields.Many2many(
         string='Patients',
         comodel_name='medical.patient',
@@ -44,7 +56,18 @@ class SaleOrder(models.Model):
         string='Pharmacy',
         comodel_name='medical.pharmacy',
     )
-
+    prescription_order_ids = fields.Many2many(
+        string='Prescriptions',
+        comodel_name='medical.prescription.order',
+        compute='_compute_prescription_order_ids',
+        readonly=True,
+    )
+    prescription_order_line_ids = fields.Many2many(
+        string='Prescription Lines',
+        comodel_name='medical.prescription.order.line',
+        compute='_compute_prescription_order_ids',
+        readonly=True,
+    )
     state = fields.Selection(selection_add=[
         ('rx_verify', 'Rx Verification'),
     ])
