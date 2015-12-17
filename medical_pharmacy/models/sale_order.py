@@ -24,6 +24,15 @@ from openerp import fields, models, api
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
+    
+    @api.one
+    def _compute_patient_ids(self, ):
+        patient_ids = self.env['medical.patient']
+        for line_id in self.order_line:
+            patient_id = line_id.patient_id
+            if patient_id not in patient_ids:
+                patient_ids += patient_id
+        self.patient_ids = patient_ids 
 
     patient_ids = fields.Many2many(
         string='Patients',
