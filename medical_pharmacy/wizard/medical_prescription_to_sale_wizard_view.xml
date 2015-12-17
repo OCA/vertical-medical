@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2014-[Now] LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    The licence is in the file __openerp__.py
+-->
+
+<openerp>
+    <data>
+        
+        <record model="ir.ui.view"
+                id="medical_prescription_to_sale_wizard_view_form">
+            <field name="name">medical.prescription.to.sale.wizard.view.form</field>
+            <field name="model">medical.prescription.to.sale.wizard</field>
+            <field name="arch" type="xml">
+                
+                <form string="Rx2Sale">
+
+                    <header>
+                        <h1>
+                            <field name="prescription_id" />
+                        </h1>
+                        <field name="state_id" widget="statusbar" />
+                    </header>
+                    
+                    <sheet>
+                        <notebook>
+                            <page string="Sale Information">
+                                
+                                <group name="data">
+                                    <field name="split_orders" />
+                                    <field name="order_date" />
+                                    <field name="pharmacy_id" />
+                                    <field name="sale_wizard_ids" />
+                                </group>
+                                
+                            </page>
+                        </notebook>
+                    </sheet>
+                    
+                    <footer>
+                        <button special="cancel"
+                                string="Cancel" />
+                        <button name="_do_rx_sale_conversions"
+                                type="object"
+                                string="Create"
+                                class="oe_highlight" />
+                    </footer>
+                    
+                </form>
+            </field>
+        </record>
+
+        <act_window src_model="medical.prescription.order"
+                    res_model="medical.prescription.to.sale.wizard"
+                    id="medical_prescription_to_sale_wizard_action"
+                    name="Create Sale(s)"
+                    view_mode="form"
+                    target="new"
+                    key2="client_action_multi"/>
+        
+    </data>
+</openerp>
