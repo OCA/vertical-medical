@@ -40,6 +40,10 @@
     "website": "http://github.com/oca/vertical-medical",
     "licence": "AGPL-3",
     "data": [
+        'views/medical_menu.xml',
+        'views/medical_abstract_prescription_state_view.xml',
+        'views/medical_prescription_order_line_state_view.xml',
+        'views/medical_prescription_order_state_view.xml',
         'views/prescription_order_view.xml',
         'views/prescription_order_line_view.xml',
         'views/sale_order_view.xml',
