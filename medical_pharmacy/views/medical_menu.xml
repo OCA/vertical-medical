@@ -12,7 +12,7 @@
         <!-- Prescription [Config/Prescription] -->
 
         <menuitem id="medical_root_prescription" name="Prescription"
-                  parent="medical_root_sub" sequence="190" />
+                  parent="medical.medical_root_sub" sequence="190" />
 
 
         <!-- Medical Prescription Order States  ( Config/Prescription/Order States) )--> 
