@@ -27,16 +27,41 @@ class MedicalSaleWizard(models.TransientModel):
     _inherit = 'sale.order'
     _description = 'Temporary order info for Sale2Rx workflow'
 
+    def _compute_default_session(self, ):
+        return self.env['medical.prescription.order'].browse(
+            self._context.get('active_id')
+        )
+
     order_line = fields.One2many(
-        'medical.sale.line.wizard',
+        string='Order Lines',
+        comodel_name='medical.sale.line.wizard',
+        inverse_name='order_id',
         required=True,
+    )
+    prescription_wizard_id = fields.Many2one(
+        comodel_name='medical.prescription.to.sale.wizard',
+        inverse_name='sale_wizard_ids',
+        readonly=True,
+    )
+    patient_id = fields.Many2one(
+        string='Patient',
+        help='Patient (used for defaults when creating sale lines)',
+        comodel_name='medical.patient',
+        related='prescription_wizard_id.patient_id',
+    )
+    prescription_order_id = fields.Many2one(
+        string='Prescription',
+        comodel_name='medical.prescription.order',
+        default=_compute_default_session,
+        required=True,
+        readonly=True,
     )
 
     @api.multi
     def _to_insert(self, ):
         ''' List of insert tuples for ORM methods '''
         return list(
-            (6, 0, v) for v in self._to_vals_iter()
+            (0, 0, v) for v in self._to_vals_iter()
         )
             
     @api.multi

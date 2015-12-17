@@ -20,6 +20,7 @@
 ##############################################################################
 
 from openerp import models, api, fields, _
+from collections import defaultdict
 
 
 class MedicalPrescriptionToSaleWizard(models.TransientModel):
@@ -32,8 +33,8 @@ class MedicalPrescriptionToSaleWizard(models.TransientModel):
         )
     
     prescription_id = fields.Many2one(
-        comodel_name='medical.prescription.order',
         string='Prescription',
+        comodel_name='medical.prescription.order',
         default=_compute_default_session,
         required=True,
         readonly=True,
@@ -43,37 +44,78 @@ class MedicalPrescriptionToSaleWizard(models.TransientModel):
         ('patient', 'By Patient'),
         ('all', 'By Rx Line'),
     ],
-        help='How to split the new orders',
+        help=_('How to split the new orders'),
     )
     order_date = fields.Datetime(
-        help='Date for the new orders',
+        help=_('Date for the new orders'),
     )
     pharmacy_id = fields.Many2one(
         string='Pharmacy',
+        help=_('Pharmacy to dispense orders from'),
         comodel_name='medical.pharmacy',
-        help='Pharmacy to dispense orders from',
     )
     sale_wizard_ids = fields.Many2many(
         string='Orders',
-        help='Orders to create when wizard is completed',
+        help=_('Orders to create when wizard is completed'),
         comodel_name='medical.sale.wizard',
+        inverse_name='prescription_wizard_id',
     )
-    state_id = fields.Many2one(
-        string='State',
-        comodel_name='medical.prescription.order.state',
-        related='prescription_id.state_id',
-        select=True,
+    patient_id = fields.Many2one(
+        string='Patient',
+        comodel_name='medical.patient',
+        default='prescription_id.patient_id',
         readonly=True,
-        copy=False,
     )
-    # state = fields.Selection([
-    #     ('start', 'Started'),
-    #     ('partial', 'Partial'),
-    #     ('done', 'Completed'),
-    #     ('cancel', 'Cancelled'),
-    # ],
-    #     readonly=True,
-    # )
+    state = fields.Selection([
+        ('start', 'Started'),
+        ('partial', 'Partial'),
+        ('done', 'Completed'),
+        ('cancel', 'Cancelled'),
+    ],
+        readonly=True,
+    )
+    
+    @api.multi
+    def _create_sale_wizards(self, ):
+        
+        self.ensure_one()
+        order_map = defaultdict(list)
+        order_inserts = []
+        
+        for rx_line in self.prescription_id.prescription_order_line_ids:
+            if self.split_orders == 'partner':
+                raise NotImplementedError(_(
+                    'Patient and Customers are currently identical concepts'
+                ))
+            elif self.split_orders == 'patient':
+                order_map[rx_line.patient_id].append(rx_line)
+            else:
+                order_map[None].append(rx_line)
+
+        for order in order_map.values():
+            
+            order_lines = list((0, 0, {
+                'product_id': l.medical_medication_id.id,
+                'product_uom_id': l.uom_id.id,
+                'product_uom_qty': l.qty,
+                'price_unit': l.list_price,
+                'patient_id': l.patient_id.id,
+                
+            }) for l in self.prescription_id.prescription_order_line_ids)
+            
+            order_inserts.append((0, 0, {
+                'prescription_wizard_id': self.id,
+                'partner_id': self.patient_id.id,
+                'partner_invoice_id': self.patient_id.id,
+                'partner_shipping_id': self.patient_id.id,
+                'prescription_order_id': self.prescription_id.id,
+                'order_line': order_lines,
+            }))
+        
+        self.write({
+            'sale_wizard_ids': order_inserts,
+            'state': 'start',
+        })
 
     @api.one
     def _do_rx_sale_conversions(self, ):

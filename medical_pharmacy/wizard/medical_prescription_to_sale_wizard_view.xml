@@ -21,7 +21,7 @@
                         <h1>
                             <field name="prescription_id" />
                         </h1>
-                        <field name="state_id" widget="statusbar" />
+                        <field name="state" widget="statusbar" />
                     </header>
                     
                     <sheet>
@@ -32,7 +32,14 @@
                                     <field name="split_orders" />
                                     <field name="order_date" />
                                     <field name="pharmacy_id" />
-                                    <field name="sale_wizard_ids" />
+                                    <field name="sale_wizard_ids"
+                                           context="{
+                                                'default_order_id': order_id,
+                                                'default_pharmacy_id': pharmacy_id,
+                                                'default_patient_id': patient_id,
+                                                'default_order_date': order_date,
+                                                'default_pr
+                                           }" />
                                 </group>
                                 
                             </page>

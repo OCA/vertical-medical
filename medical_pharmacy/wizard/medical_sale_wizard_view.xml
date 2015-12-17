@@ -13,7 +13,9 @@
             <field name="name">medical.sale.wizard.view.form</field>
             <field name="model">medical.sale.wizard</field>
             <field name="inherit_id" ref="sale.view_order_form" />
-            <field name="arch" type="xml" />
+            <field name="arch" type="xml">
+                
+            </field>
         </record>
         
     </data>

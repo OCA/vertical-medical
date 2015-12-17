@@ -26,9 +26,16 @@ class MedicalSaleLineWizard(models.TransientModel):
     _name = 'medical.sale.line.wizard'
     _inherit = 'sale.order.line'
     _description = 'Temporary order line info for Sale2Rx workflow'
-    
+
+    def _compute_default_session(self, ):
+        rx_obj = self.env['medical.prescription.order.line']
+        if self.prescription_wizard_id:
+            return self.prescription_wizard_id.prescription_id
+        return rx_obj.browse(self._context.get('active_id'))
+
     order_id = fields.Many2one(
-        'medical.sale.wizard',
+        string='Order',
+        comodel_name='medical.sale.wizard',
         readonly=True,
         required=True,
     )
@@ -42,7 +49,7 @@ class MedicalSaleLineWizard(models.TransientModel):
     def _to_insert(self, ):
         ''' List of insert tuples for ORM methods '''
         return list(
-            (6, 0, v) for v in self._to_vals_iter()
+            (0, 0, v) for v in self._to_vals_iter()
         )
 
     @api.multi
