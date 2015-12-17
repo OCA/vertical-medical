@@ -33,7 +33,7 @@
         
         <record model="ir.actions.act_window" id="medical_prescription_order_state_action">
              <field name="name">Rx Line States</field>
-             <field name="model">medical.prescription.order.state</field>
+             <field name="res_model">medical.prescription.order.state</field>
              <field name='inherit_id' ref='medical_abstract_prescription_state_action'/>
          </record>
         
