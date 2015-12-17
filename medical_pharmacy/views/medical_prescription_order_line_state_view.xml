@@ -20,8 +20,8 @@
             </field>
         </record>
         
-        <record id="medical_prescription_order_line_state_tree" model="ir.ui.view">
-            <field name="name">medical.prescription.order.line.state.tree.form</field>
+        <record id="medical_prescription_order_line_state_view_tree" model="ir.ui.view">
+            <field name="name">medical.prescription.order.line.state.view.tree</field>
             <field name="model">medical.prescription.order.line.state</field>
             <field name='inherit_id' ref='medical_abstract_prescription_state_tree_form'/>
             <field name="arch" type="xml">
