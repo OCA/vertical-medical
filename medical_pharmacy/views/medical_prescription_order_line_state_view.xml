@@ -23,7 +23,7 @@
         <record id="medical_prescription_order_line_state_view_tree" model="ir.ui.view">
             <field name="name">medical.prescription.order.line.state.view.tree</field>
             <field name="model">medical.prescription.order.line.state</field>
-            <field name='inherit_id' ref='medical_abstract_prescription_state_tree_form'/>
+            <field name='inherit_id' ref='medical_abstract_prescription_state_view_tree'/>
             <field name="arch" type="xml">
                 <xpath expr="//form[@string='States']" position="attributes">
                     <attribute name="string">Rx Line States</attribute>
