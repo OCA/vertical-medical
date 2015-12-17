@@ -37,7 +37,7 @@ class SaleOrder(models.Model):
     patient_ids = fields.Many2many(
         string='Patients',
         comodel_name='medical.patient',
-        related='order_line.patient_id',
+        compute='_compute_patient_ids',
         readonly=True,
     )
     pharmacy_id = fields.Many2one(
