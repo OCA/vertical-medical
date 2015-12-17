@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2014-2015 LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    The licence is in the file __openerp__.py
+-->
+
+<openerp>
+    <data>
+        
+        <record id="medical_prescription_order_state_view_form" model="ir.ui.view">
+            <field name="name">medical.prescription.order.state.view.form</field>
+            <field name="model">medical.prescription.order.state</field>
+            <field name='inherit_id' ref='medical_abstract_prescription_state_view_form'/>
+            <field name="arch" type="xml">
+                <xpath expr="//form[@string='State']" position="attributes">
+                    <attribute name="string">Rx State</attribute>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="medical_prescription_order_state_tree_form" model="ir.ui.view">
+            <field name="name">medical.prescription.order.state.tree.form</field>
+            <field name="model">medical.prescription.order.state</field>
+            <field name='inherit_id' ref='medical_abstract_prescription_state_tree_form'/>
+            <field name="arch" type="xml">
+                <xpath expr="//form[@string='States']" position="attributes">
+                    <attribute name="string">Rx States</attribute>
+                </xpath>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="medical_prescription_order_state_action">
+             <field name="name">Rx Line States</field>
+             <field name="model">medical.prescription.order.state</field>
+             <field name='inherit_id' ref='medical_abstract_prescription_state_action'/>
+         </record>
+        
+    </data>
+</openerp>

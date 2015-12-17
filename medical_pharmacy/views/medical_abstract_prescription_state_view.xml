@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2014-2015 LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    The licence is in the file __openerp__.py
+-->
+
+<openerp>
+    <data>
+        
+        <record model="ir.ui.view" id="medical_abstract_prescription_state_view_form">
+            <field name="name">medical.abstract.prescription.state.view.form</field>
+            <field name="model">medical.abstract.prescription.state</field>
+            <field name="arch" type="xml">
+                <form string="State">
+                    <header />
+                    <sheet>
+                        <group name="abstract_data">
+                            <group name="state_info">
+                                <field name="name" />
+                                <field name="sequence" />
+                                <field name="fold" />
+                                <field name="color" />
+                                <field name="description" />
+                            </group>
+                            <group name="kanban_info">
+                                <field name="legend_priority" />
+                                <field name="legend_blocked" />
+                                <field name="legend_done" />
+                                <field name="legend_normal" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="medical_abstract_prescription_state_view_tree">
+            <field name="name">medical.abstract.prescription.state.view.form</field>
+            <field name="model">medical.abstract.prescription.state</field>
+            <field name="arch" type="xml">
+                <tree string="States">
+                    <field name="name" />
+                    <field name="sequence" />
+                    <field name="color" />
+                    <field name="legend_priority" />
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="medical_abstract_prescription_state_action">
+             <field name="name">Abstract States</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="res_model">medical.abstract.prescription.state</field>
+             <field name="view_type">tree</field>
+             <field name="view_mode">tree,form</field>
+         </record>
+        
+    </data>
+</openerp>
