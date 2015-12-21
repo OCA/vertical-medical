@@ -70,7 +70,8 @@
                         </group>
                         <notebook>
                             <page string="Order Lines" name="order_lines">
-                                <field name="prescription_order_line_ids" nolabel="1">
+                                <field name="prescription_order_line_ids" nolabel="1"
+                                       context="{'default_patient_id': patient_id, }">
                                     <tree>
                                         <field name="date_start_treatment" />
                                         <field name="date_stop_treatment" />
