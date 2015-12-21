@@ -34,7 +34,6 @@
                                     <field name="pharmacy_id" />
                                     <field name="sale_wizard_ids"
                                            context="{
-                                                'default_order_id': order_id,
                                                 'default_pharmacy_id': pharmacy_id,
                                                 'default_patient_id': patient_id,
                                                 'default_order_date': order_date,
