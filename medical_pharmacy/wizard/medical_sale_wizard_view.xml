@@ -42,7 +42,7 @@
                                        domain="[('type','in',['view','normal','contract'])]" />
                             </group>
                             <group name="order">
-                                <field name="order_date" />
+                                <field name="date_order" />
                                 <field name="client_order_ref" />
                                 <field name="pharmacy_id"
                                        domain="[('is_pharmacy', '=', True)]" /> <!-- @TODO: pharmacy=>warehouse link -->

@@ -83,7 +83,7 @@ class MedicalSaleWizard(models.TransientModel):
             'partner_invoice_id': self.partner_invoice_id.id,
             'partner_shipping_id': self.partner_shipping_id.id,
             'pharmacy_id': self.pharmacy_id.id,
-            'order_date': self.order_date,
+            'date_order': self.date_order,
             'client_order_ref': self.client_order_ref,
             'order_line': sale_id.order_line._to_insert(),
         }
