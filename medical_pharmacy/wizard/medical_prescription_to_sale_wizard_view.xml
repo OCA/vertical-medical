@@ -60,7 +60,7 @@
                                 string="Continue Workflow"
                                 class="oe_highlight" />
                     </footer>
-                    <footer state="partial">
+                    <footer states="partial">
                         <button special="cancel"
                                 string="Cancel" />
                         <button name="_do_rx_sale_conversions"
