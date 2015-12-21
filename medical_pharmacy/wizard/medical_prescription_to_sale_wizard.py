@@ -54,11 +54,11 @@ class MedicalPrescriptionToSaleWizard(models.TransientModel):
         help=_('Pharmacy to dispense orders from'),
         comodel_name='medical.pharmacy',
     )
-    sale_wizard_ids = fields.One2many(
+    sale_wizard_ids = fields.Many2many(
         string='Orders',
         help=_('Orders to create when wizard is completed'),
         comodel_name='medical.sale.wizard',
-        inverse_name='prescription_wizard_id',
+        inverse_name='prescription_wizard_ids',
     )
     patient_id = fields.Many2one(
         string='Patient',
