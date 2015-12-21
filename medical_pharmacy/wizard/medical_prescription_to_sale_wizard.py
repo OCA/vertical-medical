@@ -36,7 +36,7 @@ class MedicalRxSaleWizard(models.TransientModel):
         if self.prescription_id:
             return self.prescription_id.patient_id
         else:
-            return _compute_default_session().patient_id
+            return self._compute_default_session().patient_id
     
     prescription_id = fields.Many2one(
         string='Prescription',
