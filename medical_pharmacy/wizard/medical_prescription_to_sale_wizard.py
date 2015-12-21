@@ -35,6 +35,8 @@ class MedicalRxSaleWizard(models.TransientModel):
     def _compute_default_patient(self, ):
         if self.prescription_id:
             return self.prescription_id.patient_id
+        else:
+            return _compute_default_session().patient_id
     
     prescription_id = fields.Many2one(
         string='Prescription',
@@ -67,7 +69,6 @@ class MedicalRxSaleWizard(models.TransientModel):
         string='Patient',
         comodel_name='medical.patient',
         default=_compute_default_patient,
-        readonly=True,
     )
     state = fields.Selection([
         ('start', _('Started')),
