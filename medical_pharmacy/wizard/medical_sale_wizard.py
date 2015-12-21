@@ -39,11 +39,7 @@ class MedicalSaleWizard(models.TransientModel):
         required=True,
     )
     prescription_wizard_ids = fields.Many2many(
-        comodel_name='medical.prescription.to.sale.wizard',
-        inverse_name='sale_wizard_ids',
-        relation='medical_prescription_to_sale_sale_rel_wiz_ids',
-        column2='sale_wizard_ids',
-        column1='prescription_wizard_ids',
+        comodel_name='medical.rx.sale.wizard',
         readonly=True,
     )
     patient_id = fields.Many2one(
