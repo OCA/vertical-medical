@@ -59,11 +59,14 @@
                         </div>
                         <group name="data">
                             <group>
-                                <field name="patient_id" domain="[('is_patient', '=', True)]" />
-                                <field name="date_prescription" domain="[('is_doctor', '=', True)]" />
+                                <field name="patient_id" domain="[('is_patient', '=', True)]"
+                                       context="{'default_is_patient': True}" />
+                                <field name="date_prescription" domain="[('is_doctor', '=', True)]"
+                                       context="{'default_is_doctor': True}" />
                             </group>
                             <group>
-                                <field name="partner_id" domain="[('is_pharmacy', '=', True)]" />
+                                <field name="partner_id" domain="[('is_pharmacy', '=', True)]"
+                                       context="{'default_is_pharmacy': True}" />
                                 <field name="is_pregnant" />
                                 <field name="is_verified" />
                             </group>
