@@ -14,7 +14,9 @@
             <field name="model">medical.sale.wizard</field>
             <field name="inherit_id" ref="sale.view_order_form" />
             <field name="arch" type="xml">
-                
+                <xpath expr="//form" position="Attributes">
+                    <attribute name="string">Rx2Sale Wizard</attribute>
+                </xpath>
             </field>
         </record>
         
