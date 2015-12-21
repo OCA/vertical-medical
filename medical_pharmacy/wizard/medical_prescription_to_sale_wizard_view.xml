@@ -26,17 +26,20 @@
                     
                     <sheet>
                         <group name="data">
-                            <field name="patient_id" domain="[('is_patient', '=', True)]"
+                            <field name="patient_id"
+                                   domain="[('is_patient', '=', True)]"
                                    context="{'default_is_patient': True}" />
-                            <field name="pharmacy_id" domain="[('is_pharmacy', '=', True)]"
+                            <field name="pharmacy_id"
+                                   domain="[('is_pharmacy', '=', True)]"
                                    context="{'default_is_pharmacy': True}" />
-                            <field name="order_date" />
+                            <field name="date_order" />
                             <field name="split_orders" />
                             <field name="sale_wizard_ids"
+                                   editable="bottom"
                                    context="{
                                         'default_pharmacy_id': pharmacy_id,
                                         'default_patient_id': patient_id,
-                                        'default_order_date': order_date,
+                                        'default_date_order': date_order,
                                    }" />
                         </group>
                     </sheet>

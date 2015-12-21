@@ -52,7 +52,7 @@ class MedicalRxSaleWizard(models.TransientModel):
     ],
         help=_('How to split the new orders'),
     )
-    order_date = fields.Datetime(
+    date_order = fields.Datetime(
         help=_('Date for the new orders'),
     )
     pharmacy_id = fields.Many2one(
