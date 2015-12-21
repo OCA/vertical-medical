@@ -29,9 +29,10 @@
                             <page string="Sale Information">
                                 
                                 <group name="data">
-                                    <field name="split_orders" />
-                                    <field name="order_date" />
+                                    <field name="patient_id" />
                                     <field name="pharmacy_id" />
+                                    <field name="order_date" />
+                                    <field name="split_orders" />
                                     <field name="sale_wizard_ids"
                                            context="{
                                                 'default_pharmacy_id': pharmacy_id,
