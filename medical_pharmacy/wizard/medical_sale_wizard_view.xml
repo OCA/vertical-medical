@@ -145,5 +145,16 @@
             </field>
         </record>
         
+        <record model="ir.actions.act_window" id="medical_sale_wizard_action">
+            <field name="name">Rx2Sale</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.sale.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="medical_sale_wizard_view_form" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        
     </data>
 </openerp>

@@ -72,12 +72,13 @@ class MedicalRxSaleWizard(models.TransientModel):
         readonly=True,
     )
     state = fields.Selection([
+        ('new', _('Not Started')),
         ('start', _('Started')),
-        ('partial', _('Partial')),
+        ('partial', _('Wizards Complete')),
         ('done', _('Completed')),
-        ('cancel', _('Cancelled')),
     ],
         readonly=True,
+        default='new',
     )
     
     @api.multi
@@ -121,6 +122,57 @@ class MedicalRxSaleWizard(models.TransientModel):
             'sale_wizard_ids': order_inserts,
             'state': 'start',
         })
+        return self._next_wizard()
+    
+    @api.multi
+    def _wizard_action_iter(self, only_states=None, ):
+        self.ensure_one()
+        model_obj = self.env['ir.model.data']
+        wizard_id = model_obj.xmlid_to_object(
+            'medical_pharmacy.medical_sale_wizard_view_form'
+        )
+        action_id = model_obj.xmlid_to_object(
+            'medical_sale_wizard_action'
+        )
+        context = self._context.copy()
+        for wizard in self.sale_wizard_ids:
+            if only_states and wizard.state in only_states:
+                continue
+            yield {
+                'name': action_id.name,
+                'help': action_id.help,
+                'type': action_id.type,
+                'views': [
+                    (wizard_id.id, 'form'),
+                ],
+                'target': action_id.target,
+                'context': context,
+                'res_model': action_id.res_model,
+            }
+            
+    @api.model
+    def _next_wizard(self, ):
+        try:
+            return next(self._wizard_action_iter(['draft']))
+        except StopIteration:
+            self.state = 'partial'
+            wizard_id = model_obj.xmlid_to_object(
+                'medical_pharmacy.medical_rx_sale_wizard_view_form'
+            )
+            action_id = model_obj.xmlid_to_object(
+                'medical_rx_sale_wizard_action'
+            )
+            return {
+                'name': action_id.name,
+                'help': action_id.help,
+                'type': action_id.type,
+                'views': [
+                    (wizard_id.id, 'form'),
+                ],
+                'target': action_id.target,
+                'context': context,
+                'res_model': action_id.res_model,
+            }
 
     @api.one
     def _do_rx_sale_conversions(self, ):
