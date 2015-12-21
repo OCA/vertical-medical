@@ -25,20 +25,18 @@
                     </header>
                     
                     <sheet>
-                        <notebook>
-                                <group name="data">
-                                    <field name="patient_id" />
-                                    <field name="pharmacy_id" />
-                                    <field name="order_date" />
-                                    <field name="split_orders" />
-                                    <field name="sale_wizard_ids"
-                                           context="{
-                                                'default_pharmacy_id': pharmacy_id,
-                                                'default_patient_id': patient_id,
-                                                'default_order_date': order_date,
-                                           }" />
-                                </group>
-                        </notebook>
+                        <group name="data">
+                            <field name="patient_id" />
+                            <field name="pharmacy_id" />
+                            <field name="order_date" />
+                            <field name="split_orders" />
+                            <field name="sale_wizard_ids"
+                                   context="{
+                                        'default_pharmacy_id': pharmacy_id,
+                                        'default_patient_id': patient_id,
+                                        'default_order_date': order_date,
+                                   }" />
+                        </group>
                     </sheet>
                     
                     <footer>
