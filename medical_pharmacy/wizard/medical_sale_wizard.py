@@ -38,6 +38,14 @@ class MedicalSaleWizard(models.TransientModel):
         inverse_name='order_id',
         required=True,
     )
+    prescription_wizard_ids = fields.Many2many(
+        comodel_name='medical.prescription.to.sale.wizard',
+        inverse_name='sale_wizard_ids',
+        relation='medical_prescription_to_sale_sale_rel_wiz_ids',
+        column2='sale_wizard_ids',
+        column1='prescription_wizard_ids',
+        readonly=True,
+    )
     patient_id = fields.Many2one(
         string='Patient',
         help='Patient (used for defaults when creating sale lines)',
