@@ -19,15 +19,13 @@
 
                     <header>
                         <h1>
-                            <field name="prescription_id" />
+                            Prescription: <field name="prescription_id" />
                         </h1>
                         <field name="state" widget="statusbar" />
                     </header>
                     
                     <sheet>
                         <notebook>
-                            <page string="Sale Information">
-                                
                                 <group name="data">
                                     <field name="patient_id" />
                                     <field name="pharmacy_id" />
@@ -40,8 +38,6 @@
                                                 'default_order_date': order_date,
                                            }" />
                                 </group>
-                                
-                            </page>
                         </notebook>
                     </sheet>
                     
