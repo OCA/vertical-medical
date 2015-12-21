@@ -23,8 +23,8 @@ from openerp import models, api, fields, _
 from collections import defaultdict
 
 
-class MedicalRxToSaleWizard(models.TransientModel):
-    _name = 'medical.rx.to.sale.wizard'
+class MedicalRxSaleWizard(models.TransientModel):
+    _name = 'medical.rx.sale.wizard'
     _description = 'Convert Medical Prescription(s) to Sale Order(s)'
 
     def _compute_default_session(self, ):
@@ -62,7 +62,6 @@ class MedicalRxToSaleWizard(models.TransientModel):
     patient_id = fields.Many2one(
         string='Patient',
         comodel_name='medical.patient',
-        default='prescription_id.patient_id',
         readonly=True,
     )
     state = fields.Selection([
