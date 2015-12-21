@@ -69,6 +69,7 @@ class MedicalRxSaleWizard(models.TransientModel):
         string='Patient',
         comodel_name='medical.patient',
         default=_compute_default_patient,
+        readonly=True,
     )
     state = fields.Selection([
         ('start', _('Started')),
