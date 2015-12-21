@@ -38,7 +38,6 @@
                                                 'default_pharmacy_id': pharmacy_id,
                                                 'default_patient_id': patient_id,
                                                 'default_order_date': order_date,
-                                                'default_pr
                                            }" />
                                 </group>
                                 
