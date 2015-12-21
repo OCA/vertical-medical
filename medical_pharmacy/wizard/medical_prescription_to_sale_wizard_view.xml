@@ -15,10 +15,10 @@
             <field name="model">medical.rx.sale.wizard</field>
             <field name="arch" type="xml">
                 
-                <form string="Rx2Sale">
+                <form string="Rx2Sales">
 
                     <header>
-                        <h1>
+                        <h1 class="pull-left">
                             Prescription: <field name="prescription_id" />
                         </h1>
                         <field name="state" widget="statusbar" />
