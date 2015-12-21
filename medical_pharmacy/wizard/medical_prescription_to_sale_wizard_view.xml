@@ -10,9 +10,9 @@
     <data>
         
         <record model="ir.ui.view"
-                id="medical_prescription_to_sale_wizard_view_form">
-            <field name="name">medical.prescription.to.sale.wizard.view.form</field>
-            <field name="model">medical.prescription.to.sale.wizard</field>
+                id="medical_rx_sale_wizard_view_form">
+            <field name="name">medical.rx.sale.wizard.view.form</field>
+            <field name="model">medical.rx.sale.wizard</field>
             <field name="arch" type="xml">
                 
                 <form string="Rx2Sale">
@@ -60,8 +60,8 @@
         </record>
 
         <act_window src_model="medical.prescription.order"
-                    res_model="medical.prescription.to.sale.wizard"
-                    id="medical_prescription_to_sale_wizard_action"
+                    res_model="medical.rx.sale.wizard"
+                    id="medical_rx_sale_wizard_action"
                     name="Create Sale(s)"
                     view_mode="form"
                     target="new"
