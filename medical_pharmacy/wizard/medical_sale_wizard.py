@@ -85,5 +85,6 @@ class MedicalSaleWizard(models.TransientModel):
             'pharmacy_id': self.pharmacy_id.id,
             'date_order': self.date_order,
             'client_order_ref': self.client_order_ref,
+            'warehouse_id': self.warehouse_id,
             'order_line': sale_id.order_line._to_insert(),
         }

@@ -34,8 +34,7 @@
     'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': [
-        'sale',
-        'stock',
+        'sale_stock',
         'medical_prescription',
     ],
     "website": "http://github.com/oca/vertical-medical",
