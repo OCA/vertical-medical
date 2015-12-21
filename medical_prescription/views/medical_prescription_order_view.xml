@@ -61,8 +61,9 @@
                             <group>
                                 <field name="patient_id" domain="[('is_patient', '=', True)]"
                                        context="{'default_is_patient': True}" />
-                                <field name="date_prescription" domain="[('is_doctor', '=', True)]"
+                                <field name="physician_id" domain="[('is_doctor', '=', True)]"
                                        context="{'default_is_doctor': True}" />
+                                <field name="date_prescription" />
                             </group>
                             <group>
                                 <field name="partner_id" domain="[('is_pharmacy', '=', True)]"
