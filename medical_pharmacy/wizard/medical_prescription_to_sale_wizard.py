@@ -82,7 +82,7 @@ class MedicalRxSaleWizard(models.TransientModel):
     )
     
     @api.multi
-    def _create_sale_wizards(self, ):
+    def create_sale_wizards(self, ):
         
         self.ensure_one()
         order_map = defaultdict(list)
@@ -151,7 +151,7 @@ class MedicalRxSaleWizard(models.TransientModel):
             }
             
     @api.model
-    def _next_wizard(self, ):
+    def next_wizard(self, ):
         try:
             return next(self._wizard_action_iter(['draft']))
         except StopIteration:
@@ -175,7 +175,7 @@ class MedicalRxSaleWizard(models.TransientModel):
             }
 
     @api.one
-    def _do_rx_sale_conversions(self, ):
+    def do_rx_sale_conversions(self, ):
         sale_obj = self.env['sale.order']
         sale_ids = None
         for sale_wizard_id in self.sale_wizard_ids:

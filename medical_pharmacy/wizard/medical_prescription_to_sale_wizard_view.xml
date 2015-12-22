@@ -47,7 +47,7 @@
                     <footer states="new">
                         <button special="cancel"
                                 string="Cancel" />
-                        <button name="_create_sale_wizards"
+                        <button name="create_sale_wizards"
                                 type="object"
                                 string="Generate Template(s)"
                                 class="oe_highlight" />
@@ -55,7 +55,7 @@
                     <footer states="start">
                         <button special="cancel"
                                 string="Cancel" />
-                        <button name="_next_wizard"
+                        <button name="next_wizard"
                                 type="object"
                                 string="Continue Workflow"
                                 class="oe_highlight" />
@@ -63,7 +63,7 @@
                     <footer states="partial">
                         <button special="cancel"
                                 string="Cancel" />
-                        <button name="_do_rx_sale_conversions"
+                        <button name="do_rx_sale_conversions"
                                 type="object"
                                 string="Create Sale(s)"
                                 class="oe_highlight" />
