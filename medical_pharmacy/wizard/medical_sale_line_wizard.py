@@ -39,11 +39,6 @@ class MedicalSaleLineWizard(models.TransientModel):
         readonly=True,
         required=True,
     )
-    product_id = fields.Many2one(
-        string='Medication',
-        comodel_name='medical.patient.medication',
-        required=True,
-    )
 
     @api.multi
     def _to_insert(self, ):

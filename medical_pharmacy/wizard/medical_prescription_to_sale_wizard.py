@@ -101,8 +101,8 @@ class MedicalRxSaleWizard(models.TransientModel):
         for order in order_map.values():
             
             order_lines = list((0, 0, {
-                'product_id': l.medical_medication_id.id,
-                'product_uom_id': l.medical_medication_id.uom_id.id,
+                'product_id': l.medical_medication_id.product_id.id,
+                'product_uom_id': l.medical_medication_id.product_id.uom_id.id,
                 'product_uom_qty': l.qty,
                 'price_unit': l.list_price,
                 'patient_id': l.patient_id.id,
