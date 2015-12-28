@@ -22,27 +22,43 @@
 from openerp import fields, models, api
 
 
-class MedicalInsurancePlan(models.Model):
-    _name = 'medical.insurance.plan'
-    _inherits = {'medical.insurance.template': 'insurance_template_id', }
-    insurance_template_id = fields.Many2one(
-        string='Plan Template',
-        help='Insurance Plan Template',
+class MedicalInsuranceTemplate(models.Model):
+    _name = 'medical.insurance.template'
+    _inherits = {'product.product': 'product_id', }
+    name = fields.Char(
+        required=True,
+        help='Insurance Plan Name',
     )
-    patient_id = fields.Many2one(
-        'medical.patient',
-        string='Patient',
-    )
-    number = fields.Char(
+    plan_number = fields.Char(
         required=True,
     )
-    member_since = fields.Date(
-        string='Member Since',
+    is_default = fields.Boolean(
+        string='Default Plan',
+        help='Check this if the plan should be the default when assigning'
+        'company to patient',
     )
-    member_exp = fields.Date(
-        string='Expiration Date',
+    insurance_company_id = fields.Many2one(
+        string='Insurance Company',
+        comodel_name='medical.insurance.company',
     )
     notes = fields.Text(
         string='Extra Info',
     )
-    
+    product_id = fields.Many2one(
+        string='Insurance Product',
+        comodel_name='product.product',
+    )
+    insurance_affiliation = fields.Selection([
+        ('state', 'State'),
+        ('labor_union', 'Labor Union / Syndical'),
+        ('private', 'Private'),
+    ],
+        help='What type of entity is this insurance provided to?'
+    )
+
+
+    @api.model
+    @api.returns('self', lambda value: value.id)
+    def create(self, vals):
+        vals['is_insurance_plan'] = True
+        return super(MedicalInsuranceTemplate, self).create(vals)

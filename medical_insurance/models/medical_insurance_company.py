@@ -22,27 +22,22 @@
 from openerp import fields, models, api
 
 
-class MedicalInsurancePlan(models.Model):
-    _name = 'medical.insurance.plan'
-    _inherits = {'medical.insurance.template': 'insurance_template_id', }
-    insurance_template_id = fields.Many2one(
-        string='Plan Template',
-        help='Insurance Plan Template',
+class MedicalInsuranceCompany(models.Model):
+    _name = 'medical.insurance.company'
+    _inherits = {'res.partner': 'partner_id', }
+    partner_id = fields.Many2one(
+        string='Related Partner',
+        comodel_name='res.partner',
     )
-    patient_id = fields.Many2one(
-        'medical.patient',
-        string='Patient',
-    )
-    number = fields.Char(
-        required=True,
-    )
-    member_since = fields.Date(
-        string='Member Since',
-    )
-    member_exp = fields.Date(
-        string='Expiration Date',
-    )
-    notes = fields.Text(
-        string='Extra Info',
-    )
+    insurance_type = fields.Selection([
+        ('state', 'State'),
+        ('labor_union', 'Labor Union / Syndical'),
+        ('private', 'Private'),
+    ],)
+    
+    @api.model
+    @api.returns('self', lambda value: value.id)
+    def create(self, vals):
+        vals['is_insurance_company'] = True
+        return super(MedicalInsuranceCompany, self).create(vals)
     

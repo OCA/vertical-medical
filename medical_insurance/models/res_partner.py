@@ -19,30 +19,12 @@
 #
 ##############################################################################
 
-from openerp import fields, models, api
+from openerp import fields, models
 
 
-class MedicalInsurancePlan(models.Model):
-    _name = 'medical.insurance.plan'
-    _inherits = {'medical.insurance.template': 'insurance_template_id', }
-    insurance_template_id = fields.Many2one(
-        string='Plan Template',
-        help='Insurance Plan Template',
+class ResPartner(models.Model):
+    _inherit = 'res.partner'
+    is_insurance_company = fields.Boolean(
+        string='Insurance Company',
+        help='Check if this entity is an insurance company',
     )
-    patient_id = fields.Many2one(
-        'medical.patient',
-        string='Patient',
-    )
-    number = fields.Char(
-        required=True,
-    )
-    member_since = fields.Date(
-        string='Member Since',
-    )
-    member_exp = fields.Date(
-        string='Expiration Date',
-    )
-    notes = fields.Text(
-        string='Extra Info',
-    )
-    
