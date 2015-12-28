@@ -27,15 +27,7 @@ class ResPartner(orm.Model):
     _inherit = 'res.partner'
 
     _columns = {
-        'is_insurance_company': fields.boolean(string='Insurance Company',
-                                               help='Check if the party'
-                                                    'is an Insurance Company'),
         'relationship': fields.char(size=256, string='Relationship'),
-        'insurance_company_type': fields.selection([
-            ('state', 'State'),
-            ('labour_union', 'Labour Union / Syndical'),
-            ('private', 'Private'), ],
-            string='Insurance Type', select=True),
         'is_institution': fields.boolean(string='Institution',
                                          help='Check if the party is a '
                                          'Medical Center'),
