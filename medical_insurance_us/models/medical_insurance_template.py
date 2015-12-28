@@ -22,27 +22,28 @@
 from openerp import fields, models, api
 
 
-class MedicalInsurancePlan(models.Model):
-    _name = 'medical.insurance.plan'
-    _inherits = {'medical.insurance.template': 'insurance_template_id', }
-    insurance_template_id = fields.Many2one(
-        string='Plan Template',
-        help='Insurance Plan Template',
-    )
-    patient_id = fields.Many2one(
-        'medical.patient',
-        string='Patient',
-    )
-    number = fields.Char(
+class MedicalInsuranceTemplate(models.Model):
+    _inherit = 'medical.insurance.template'
+    group_number = fields.Char(
         required=True,
     )
-    member_since = fields.Date(
-        string='Member Since',
+    rx_bin = fields.Char(
+        required=True,
     )
-    member_exp = fields.Date(
-        string='Expiration Date',
+    rx_pcn = fields.Char(
+        required=True,
     )
-    notes = fields.Text(
-        string='Extra Info',
+    rx_group = fields.Char(
+        required=True,
     )
-    
+    insurance_type = fields.Selection([
+        ('ppo', 'PPO'),
+        ('hmo', 'HMO'),
+        ('fsa', 'FSA'),
+    ])
+    insurance_affiliation = fields.Selection([
+        ('medicaid', 'Medicaid'),
+        ('state', 'State'),
+        ('employer', 'Employer'),
+        ('private', 'Private'),
+    ])

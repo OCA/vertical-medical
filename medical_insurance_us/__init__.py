@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Author: Dave Lasley <dave@laslabs.com>
-#    Copyright: 2015 LasLabs, Inc [https://laslabs.com]
+#    Tech-Receptives Solutions Pvt. Ltd.
+#    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
+#    Special Credit and Thanks to Thymbra Latinoamericana S.A.
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,30 +20,4 @@
 #
 ##############################################################################
 
-from openerp import fields, models, api
-
-
-class MedicalInsurancePlan(models.Model):
-    _name = 'medical.insurance.plan'
-    _inherits = {'medical.insurance.template': 'insurance_template_id', }
-    insurance_template_id = fields.Many2one(
-        string='Plan Template',
-        help='Insurance Plan Template',
-    )
-    patient_id = fields.Many2one(
-        'medical.patient',
-        string='Patient',
-    )
-    number = fields.Char(
-        required=True,
-    )
-    member_since = fields.Date(
-        string='Member Since',
-    )
-    member_exp = fields.Date(
-        string='Expiration Date',
-    )
-    notes = fields.Text(
-        string='Extra Info',
-    )
-    
+from . import models

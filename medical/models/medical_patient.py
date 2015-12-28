@@ -81,8 +81,10 @@ class MedicalPatient(models.Model):
             ('f', 'Female'),
         ])
     medical_center_id = fields.Many2one(
-        comodel_name='res.partner', domain="[('is_institution', '=', True)]",
-        string='Medical Center')
+        comodel_name='res.partner',
+        domain="[('is_institution', '=', True)]",
+        string='Medical Center'
+    )
     marital_status = fields.Selection(
         selection=[
             ('s', 'Single'),
