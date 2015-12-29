@@ -28,7 +28,7 @@ class MedicalSaleWizard(models.TransientModel):
     _description = 'Temporary order info for Sale2Rx workflow'
 
     def _compute_default_session(self, ):
-        return self.env['medical.prescription.order'].browse(
+        return self.env['medical.sale.wizard'].browse(
             self._context.get('active_id')
         )
 
@@ -38,8 +38,10 @@ class MedicalSaleWizard(models.TransientModel):
         inverse_name='order_id',
         required=True,
     )
-    prescription_wizard_ids = fields.Many2many(
+    prescription_wizard_id = fields.Many2one(
         comodel_name='medical.rx.sale.wizard',
+        inverse_name='sale_wizard_ids',
+        default=_compute_default_session,
         readonly=True,
     )
     patient_id = fields.Many2one(
@@ -50,7 +52,6 @@ class MedicalSaleWizard(models.TransientModel):
     prescription_order_id = fields.Many2one(
         string='Prescription',
         comodel_name='medical.prescription.order',
-        default=_compute_default_session,
         required=True,
         readonly=True,
     )

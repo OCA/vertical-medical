@@ -21,6 +21,10 @@
 
 from openerp import models, api, fields, _
 from collections import defaultdict
+import logging
+
+
+_logger = logging.getLogger(__name__)
 
 
 class MedicalRxSaleWizard(models.TransientModel):
@@ -50,6 +54,8 @@ class MedicalRxSaleWizard(models.TransientModel):
         ('patient', 'By Patient'),
         ('all', 'By Rx Line'),
     ],
+        default='patient',
+        required=True,
         help=_('How to split the new orders'),
     )
     date_order = fields.Datetime(
@@ -60,10 +66,11 @@ class MedicalRxSaleWizard(models.TransientModel):
         help=_('Pharmacy to dispense orders from'),
         comodel_name='medical.pharmacy',
     )
-    sale_wizard_ids = fields.Many2many(
+    sale_wizard_ids = fields.One2many(
         string='Orders',
         help=_('Orders to create when wizard is completed'),
         comodel_name='medical.sale.wizard',
+        inverse_name='prescription_wizard_id',
     )
     patient_id = fields.Many2one(
         string='Patient',
@@ -91,7 +98,7 @@ class MedicalRxSaleWizard(models.TransientModel):
         for rx_line in self.prescription_id.prescription_order_line_ids:
             if self.split_orders == 'partner':
                 raise NotImplementedError(_(
-                    'Patient and Customers are currently identical concepts'
+                    'Patient and Customers are currently identical concepts.'
                 ))
             elif self.split_orders == 'patient':
                 order_map[rx_line.patient_id].append(rx_line)
@@ -100,68 +107,51 @@ class MedicalRxSaleWizard(models.TransientModel):
 
         for order in order_map.values():
             
-            order_lines = list((0, 0, {
-                'product_id': l.medical_medication_id.product_id.id,
-                'product_uom_id': l.medical_medication_id.product_id.uom_id.id,
-                'product_uom_qty': l.qty,
-                'price_unit': l.list_price,
-                'patient_id': l.patient_id.id,
-                
-            }) for l in self.prescription_id.prescription_order_line_ids)
+            order_lines = []
+            for l in self.prescription_id.prescription_order_line_ids:
+                medicament_id = l.medical_medication_id.medicament_id
+                order_lines.append((0, 0, {
+                    'product_id': medicament_id.product_id.id,
+                    'product_uom_id': medicament_id.product_id.uom_id.id,
+                    'product_uom_qty': l.qty,
+                    'price_unit': medicament_id.product_id.list_price,
+                    'patient_id': l.patient_id.id,
+                }))
             
             order_inserts.append((0, 0, {
-                'prescription_wizard_id': self.id,
+                #'prescription_wizard_id': [(4, self.id, 0)],
                 'partner_id': self.patient_id.id,
                 'partner_invoice_id': self.patient_id.id,
                 'partner_shipping_id': self.patient_id.id,
                 'prescription_order_id': self.prescription_id.id,
+                'state': 'draft',
                 'order_line': order_lines,
             }))
+        
+        _logger.debug(order_inserts)
         
         self.write({
             'sale_wizard_ids': order_inserts,
             'state': 'start',
         })
-        return self._next_wizard()
+        
+        return self.next_wizard()
     
-    @api.multi
-    def _wizard_action_iter(self, only_states=None, ):
-        self.ensure_one()
+    @api.model
+    def _get_next_sale_wizard(self, only_states=None, ):
         model_obj = self.env['ir.model.data']
         wizard_id = model_obj.xmlid_to_object(
             'medical_pharmacy.medical_sale_wizard_view_form'
         )
         action_id = model_obj.xmlid_to_object(
-            'medical_sale_wizard_action'
+            'medical_pharmacy.medical_sale_wizard_action'
         )
         context = self._context.copy()
         for wizard in self.sale_wizard_ids:
-            if only_states and wizard.state in only_states:
+            _logger.debug(wizard)
+            if only_states and wizard.state not in only_states:
                 continue
-            yield {
-                'name': action_id.name,
-                'help': action_id.help,
-                'type': action_id.type,
-                'views': [
-                    (wizard_id.id, 'form'),
-                ],
-                'target': action_id.target,
-                'context': context,
-                'res_model': action_id.res_model,
-            }
-            
-    @api.model
-    def next_wizard(self, ):
-        try:
-            return next(self._wizard_action_iter(['draft']))
-        except StopIteration:
-            self.state = 'partial'
-            wizard_id = model_obj.xmlid_to_object(
-                'medical_pharmacy.medical_rx_sale_wizard_view_form'
-            )
-            action_id = model_obj.xmlid_to_object(
-                'medical_rx_sale_wizard_action'
-            )
+            context['active_id'] = wizard.id
             return {
                 'name': action_id.name,
                 'help': action_id.help,
@@ -169,7 +159,37 @@ class MedicalRxSaleWizard(models.TransientModel):
                 'views': [
                     (wizard_id.id, 'form'),
                 ],
-                'target': action_id.target,
+                'target': 'new',
+                'context': context,
+                'res_model': action_id.res_model,
+                'res_id': wizard.id,
+            }
+        return False
+            
+    @api.model
+    def next_wizard(self, ):
+        action = self._get_next_sale_wizard(['draft'])
+        _logger.debug('Got action: %s', action)
+        if action:
+            return action
+        else:
+            self.state = 'partial'
+            model_obj = self.env['ir.model.data']
+            wizard_id = model_obj.xmlid_to_object(
+                'medical_pharmacy.medical_rx_sale_wizard_view_form'
+            )
+            action_id = model_obj.xmlid_to_object(
+                'medical_pharmacy.medical_rx_sale_wizard_action'
+            )
+            context = self._context.copy()
+            return {
+                'name': action_id.name,
+                'help': action_id.help,
+                'type': action_id.type,
+                'views': [
+                    (wizard_id.id, 'form'),
+                ],
+                'target': 'new',
                 'context': context,
                 'res_model': action_id.res_model,
             }

@@ -14,7 +14,9 @@
             <field name="model">medical.sale.wizard</field>
             <field name="arch" type="xml">
                 <form>
-                    <header />
+                    <header>
+                        <field name="state" invisible="True"/>
+                    </header>
                     <sheet>
                         <group name="data">
                             <group name="partner">
@@ -152,8 +154,6 @@
             <field name="view_type">form</field>
             <field name="view_mode">form</field>
             <field name="view_id" ref="medical_sale_wizard_view_form" />
-            <field name="domain">[]</field>
-            <field name="context">{}</field>
         </record>
         
     </data>
