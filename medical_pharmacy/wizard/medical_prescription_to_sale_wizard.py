@@ -60,6 +60,8 @@ class MedicalRxSaleWizard(models.TransientModel):
     )
     date_order = fields.Datetime(
         help=_('Date for the new orders'),
+        required=True,
+        default=fields.Datetime.now,
     )
     pharmacy_id = fields.Many2one(
         string='Pharmacy',
@@ -81,7 +83,7 @@ class MedicalRxSaleWizard(models.TransientModel):
     state = fields.Selection([
         ('new', _('Not Started')),
         ('start', _('Started')),
-        ('partial', _('Wizards Complete')),
+        ('partial', _('Open')),
         ('done', _('Completed')),
     ],
         readonly=True,
@@ -118,14 +120,24 @@ class MedicalRxSaleWizard(models.TransientModel):
                     'patient_id': l.patient_id.id,
                 }))
             
+            if self.patient_id.property_product_pricelist:
+                pricelist_id = self.patient_id.property_product_pricelist.id
+            else:
+                pricelist_id = False
+                
             order_inserts.append((0, 0, {
                 #'prescription_wizard_id': [(4, self.id, 0)],
-                'partner_id': self.patient_id.id,
+                'patient_id': self.patient_id.id,
+                'partner_id': self.patient_id.partner_id.id,
+                'pricelist_id': pricelist_id,
                 'partner_invoice_id': self.patient_id.id,
                 'partner_shipping_id': self.patient_id.id,
                 'prescription_order_id': self.prescription_id.id,
+                'pharmacy_id': self.pharmacy_id.id,
+                'client_order_ref': self.prescription_id.name,
                 'state': 'draft',
                 'order_line': order_lines,
+                'date_order': self.date_order,
             }))
         
         _logger.debug(order_inserts)
@@ -182,6 +194,7 @@ class MedicalRxSaleWizard(models.TransientModel):
                 'medical_pharmacy.medical_rx_sale_wizard_action'
             )
             context = self._context.copy()
+            context['active_id'] = self.prescription_id.id
             return {
                 'name': action_id.name,
                 'help': action_id.help,
@@ -192,6 +205,7 @@ class MedicalRxSaleWizard(models.TransientModel):
                 'target': 'new',
                 'context': context,
                 'res_model': action_id.res_model,
+                'res_id': self.id,
             }
 
     @api.one

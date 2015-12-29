@@ -34,13 +34,7 @@
                                    context="{'default_is_pharmacy': True}" />
                             <field name="date_order" />
                             <field name="split_orders" />
-                            <field name="sale_wizard_ids"
-                                   editable="bottom"
-                                   context="{
-                                        'default_pharmacy_id': pharmacy_id,
-                                        'default_patient_id': patient_id,
-                                        'default_date_order': date_order,
-                                   }" />
+                            <field name="sale_wizard_ids" />
                         </group>
                     </sheet>
                     

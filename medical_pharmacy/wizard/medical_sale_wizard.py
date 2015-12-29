@@ -20,6 +20,10 @@
 ##############################################################################
 
 from openerp import models, fields, api
+import logging
+
+
+_logger = logging.getLogger(__name__)
 
 
 class MedicalSaleWizard(models.TransientModel):
@@ -57,6 +61,15 @@ class MedicalSaleWizard(models.TransientModel):
     )
 
     @api.multi
+    def next_wizard(self, ):
+        self.ensure_one()
+        self.state = 'sent'
+        #   @TODO: allow this workflow without a parent wizard
+        wizard_action = self.prescription_wizard_id.next_wizard()
+        _logger.debug('next_wizard: %s', wizard_action)
+        return wizard_action
+
+    @api.multi
     def _to_insert(self, ):
         ''' List of insert tuples for ORM methods '''
         return list(
@@ -74,18 +87,14 @@ class MedicalSaleWizard(models.TransientModel):
         ''' Return a values dictionary to create in real model '''
         self.ensure_one()
         return {
-            'address_allotment_id': self.address_allotment_id.id,
-            'salesman_id': self.salesman_id.id,
-            'sequence': self.sequence,
+            'user_id': self.user_id.id,
             'company_id': self.company_id.id,
-            'delay': self.delay,
-            'discount': self.discount,
             'partner_id': self.partner_id.id,
             'partner_invoice_id': self.partner_invoice_id.id,
             'partner_shipping_id': self.partner_shipping_id.id,
             'pharmacy_id': self.pharmacy_id.id,
             'date_order': self.date_order,
             'client_order_ref': self.client_order_ref,
-            'warehouse_id': self.warehouse_id,
-            'order_line': sale_id.order_line._to_insert(),
+            'warehouse_id': self.warehouse_id.id,
+            'order_line': self.order_line._to_insert(),
         }

@@ -20,11 +20,11 @@
 ##############################################################################
 
 from openerp import models, fields, api
+import openerp.addons.decimal_precision as dp
 
 
 class MedicalSaleLineWizard(models.TransientModel):
     _name = 'medical.sale.line.wizard'
-    _inherit = 'sale.order.line'
     _description = 'Temporary order line info for Sale2Rx workflow'
 
     def _compute_default_session(self, ):
@@ -32,12 +32,39 @@ class MedicalSaleLineWizard(models.TransientModel):
         if self.prescription_wizard_id:
             return self.prescription_wizard_id.prescription_id
         return rx_obj.browse(self._context.get('active_id'))
+    
+    def _compute_price_subtotal(self, ):
+        self.price_subtotal = self.price_unit * self.product_uom_qty
 
     order_id = fields.Many2one(
         string='Order',
         comodel_name='medical.sale.wizard',
         readonly=True,
         required=True,
+    )
+    sequence = fields.Integer()
+    product_id = fields.Many2one(
+        string='Product',
+        comodel_name='product.product',
+    )
+    product_uom = fields.Many2one(
+        string='Unit of Measure',
+        comodel_name='product.uom',
+    )
+    product_uom_qty = fields.Float(
+        'Quantity',
+        digits_compute= dp.get_precision('Product UoS'),
+        required=True,
+    )
+    price_unit = fields.Float(
+        'Unit Price',
+        digits_compute= dp.get_precision('Product UoS'),
+        required=True,
+    )
+    price_subtotal = fields.Float(
+        digits_compute= dp.get_precision('Product UoS'),
+        required=True,
+        compute='_compute_price_subtotal',
     )
 
     @api.multi
@@ -60,12 +87,8 @@ class MedicalSaleLineWizard(models.TransientModel):
         return {
             'name': self.product_id.display_name,
             'sequence': self.sequence,
-            'delay': self.delay,
-            'product_id': self.product_id.product_id.id,
+            'product_id': self.product_id.id,
             'product_uom': self.product_uom.id,
             'product_uom_qty': self.product_uom_qty,
             'price_unit': self.price_unit,
-            'price_reduce': self.price_reduce,
-            'tax_id': self.tax_id,
-            'discount': self.discount,
         }
