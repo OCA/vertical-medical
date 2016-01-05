@@ -194,28 +194,8 @@ class MedicalRxSaleWizard(models.TransientModel):
         if action:
             return action
         else:
-            self.state = 'partial'
-            model_obj = self.env['ir.model.data']
-            wizard_id = model_obj.xmlid_to_object(
-                'medical_pharmacy.medical_rx_sale_wizard_view_form'
-            )
-            action_id = model_obj.xmlid_to_object(
-                'medical_pharmacy.medical_rx_sale_wizard_action'
-            )
-            context = self._context.copy()
-            context['active_id'] = self.prescription_id.id
-            return {
-                'name': action_id.name,
-                'help': action_id.help,
-                'type': action_id.type,
-                'views': [
-                    (wizard_id.id, 'form'),
-                ],
-                'target': 'new',
-                'context': context,
-                'res_model': action_id.res_model,
-                'res_id': self.id,
-            }
+            self.state = 'done'
+            return do_rx_sale_conversions()
 
     @api.multi
     def do_rx_sale_conversions(self, ):
