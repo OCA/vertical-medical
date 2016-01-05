@@ -90,6 +90,11 @@ class MedicalRxSaleWizard(models.TransientModel):
         readonly=True,
         default='new',
     )
+    warehouse_id = fields.Many2one(
+        string='Warehouse',
+        comodel_name='stock.warehouse',
+        required=True,
+    )
 
     @api.multi
     def create_sale_wizards(self, ):
@@ -118,7 +123,7 @@ class MedicalRxSaleWizard(models.TransientModel):
                     'product_uom': medicament_id.product_id.uom_id.id,
                     'product_uom_qty': l.quantity,
                     'price_unit': medicament_id.product_id.list_price,
-                    'patient_id': l.patient_id.id,
+                    'prescription_order_line_id': l.id,
                 }))
             
             if self.patient_id.property_product_pricelist:
@@ -136,9 +141,12 @@ class MedicalRxSaleWizard(models.TransientModel):
                 'prescription_order_id': self.prescription_id.id,
                 'pharmacy_id': self.pharmacy_id.id,
                 'client_order_ref': self.prescription_id.name,
-                'state': 'draft',
                 'order_line': order_lines,
                 'date_order': self.date_order,
+                'origin': self.prescription_id.name,
+                'warehouse_id': self.warehouse_id.id,
+                'user_id': self.env.user.id,
+                'company_id': self.env.user.company_id.id,
             }))
         
         _logger.debug(order_inserts)
@@ -181,7 +189,7 @@ class MedicalRxSaleWizard(models.TransientModel):
             
     @api.model
     def next_wizard(self, ):
-        action = self._get_next_sale_wizard(['draft'])
+        action = self._get_next_sale_wizard(['new', 'start'])
         _logger.debug('Got action: %s', action)
         if action:
             return action

@@ -33,8 +33,9 @@ class MedicalSaleLineWizard(models.TransientModel):
             return self.prescription_wizard_id.prescription_id
         return rx_obj.browse(self._context.get('active_id'))
     
-    def _compute_price_subtotal(self, ):
+    def _compute_all_amounts(self, ):
         self.price_subtotal = self.price_unit * self.product_uom_qty
+        #taxes = self.env['account.tax'].compute_all()
 
     order_id = fields.Many2one(
         string='Order',
@@ -53,18 +54,22 @@ class MedicalSaleLineWizard(models.TransientModel):
     )
     product_uom_qty = fields.Float(
         'Quantity',
-        digits_compute= dp.get_precision('Product UoM'),
+        digits_compute=dp.get_precision('Product UoM'),
         required=True,
     )
     price_unit = fields.Float(
         'Unit Price',
-        digits_compute= dp.get_precision('Product Price'),
+        digits_compute=dp.get_precision('Product Price'),
         required=True,
     )
     price_subtotal = fields.Float(
-        digits_compute= dp.get_precision('Product Subtotal'),
+        digits_compute=dp.get_precision('Account'),
         required=True,
-        compute='_compute_price_subtotal',
+        compute='_compute_all_amounts',
+    )
+    prescription_order_line_id = fields.Many2one(
+        string='Prescription Line',
+        comodel_name='medical.prescription.order.line',
     )
 
     @api.multi
@@ -84,11 +89,17 @@ class MedicalSaleLineWizard(models.TransientModel):
     def _to_vals(self, ):
         ''' Return a values dictionary to create in real model '''
         self.ensure_one()
+        name = '%s - %s' % (
+            self.prescription_order_line_id.prescription_order_id.name,
+            self.product_id.display_name,
+        )
         return {
-            'name': self.product_id.display_name,
+            'name': name,
             'sequence': self.sequence,
             'product_id': self.product_id.id,
             'product_uom': self.product_uom.id,
             'product_uom_qty': self.product_uom_qty,
+            'prescription_order_line_id': self.prescription_order_line_id.id,
+            'state': 'rx_verify',
             'price_unit': self.price_unit,
         }

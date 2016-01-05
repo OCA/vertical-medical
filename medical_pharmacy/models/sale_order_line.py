@@ -53,6 +53,7 @@ class SaleOrderLine(models.Model):
     medication_id = fields.Many2one(
         string='Medication',
         comodel_name='medical.patient.medication',
+        related='prescription_order_line_id.medical_medication_id',
     )
     dispense_qty = fields.Float(
         default=0.0,

@@ -34,6 +34,7 @@
                                    domain="[('is_pharmacy', '=', True)]"
                                    context="{'default_is_pharmacy': True}"
                                    states="new,start" />
+                            <field name="warehouse_id" />
                             <field name="date_order"
                                    states="new,start" />
                             <field name="split_orders"
