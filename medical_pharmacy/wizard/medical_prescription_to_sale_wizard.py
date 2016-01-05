@@ -67,6 +67,7 @@ class MedicalRxSaleWizard(models.TransientModel):
         string='Pharmacy',
         help=_('Pharmacy to dispense orders from'),
         comodel_name='medical.pharmacy',
+        required=True,
     )
     sale_wizard_ids = fields.One2many(
         string='Orders',
@@ -89,7 +90,7 @@ class MedicalRxSaleWizard(models.TransientModel):
         readonly=True,
         default='new',
     )
-    
+
     @api.multi
     def create_sale_wizards(self, ):
         
@@ -114,8 +115,8 @@ class MedicalRxSaleWizard(models.TransientModel):
                 medicament_id = l.medical_medication_id.medicament_id
                 order_lines.append((0, 0, {
                     'product_id': medicament_id.product_id.id,
-                    'product_uom_id': medicament_id.product_id.uom_id.id,
-                    'product_uom_qty': l.qty,
+                    'product_uom': medicament_id.product_id.uom_id.id,
+                    'product_uom_qty': l.quantity,
                     'price_unit': medicament_id.product_id.list_price,
                     'patient_id': l.patient_id.id,
                 }))
@@ -208,14 +209,39 @@ class MedicalRxSaleWizard(models.TransientModel):
                 'res_id': self.id,
             }
 
-    @api.one
+    @api.multi
     def do_rx_sale_conversions(self, ):
+        self.ensure_one()
         sale_obj = self.env['sale.order']
         sale_ids = None
         for sale_wizard_id in self.sale_wizard_ids:
-            sale_id = sale_obj.create(sale_wizard_id._to_vals())
+            sale_vals = sale_wizard_id._to_vals()
+            _logger.debug(sale_vals)
+            sale_id = sale_obj.create(sale_vals)
             try:
                 sale_ids += sale_id
             except TypeError:
                 sale_ids = sale_id
-        return sale_ids
+        model_obj = self.env['ir.model.data']
+        form_id = model_obj.xmlid_to_object('sale.view_order_form')
+        tree_id = model_obj.xmlid_to_object('sale.view_quotation_tree')
+        action_id = model_obj.xmlid_to_object('sale.action_quotations')
+        context = self._context.copy()
+        _logger.info('Created %s', sale_ids)
+        _logger.debug('%s %s %s', form_id, tree_id, action_id)
+        sale_ids = [s.id for s in sale_ids]
+        return {
+            'name': action_id.name,
+            'help': action_id.help,
+            'type': action_id.type,
+            'view_mode': 'tree',
+            'view_id': tree_id.id,
+            'views': [
+                (tree_id.id, 'tree'), (form_id.id, 'form'),
+            ],
+            'target': 'current',
+            'context': context,
+            'res_model': action_id.res_model,
+            'res_ids': sale_ids,
+            'domain': [('id', 'in', sale_ids)],
+        }

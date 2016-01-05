@@ -35,6 +35,9 @@ class MedicalSaleWizard(models.TransientModel):
         return self.env['medical.sale.wizard'].browse(
             self._context.get('active_id')
         )
+    
+    def _compute_line_cnt(self, ):
+        self.line_cnt = len(self.order_line)
 
     order_line = fields.One2many(
         string='Order Lines',
@@ -58,6 +61,10 @@ class MedicalSaleWizard(models.TransientModel):
         comodel_name='medical.prescription.order',
         required=True,
         readonly=True,
+    )
+    line_cnt = fields.Integer(
+        string='Order Line Count',
+        compute='_compute_line_cnt',
     )
 
     @api.multi

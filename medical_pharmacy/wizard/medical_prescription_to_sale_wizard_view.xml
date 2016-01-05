@@ -28,13 +28,25 @@
                         <group name="data">
                             <field name="patient_id"
                                    domain="[('is_patient', '=', True)]"
-                                   context="{'default_is_patient': True}" />
+                                   context="{'default_is_patient': True}"
+                                   states="new,start" />
                             <field name="pharmacy_id"
                                    domain="[('is_pharmacy', '=', True)]"
-                                   context="{'default_is_pharmacy': True}" />
-                            <field name="date_order" />
-                            <field name="split_orders" />
-                            <field name="sale_wizard_ids" />
+                                   context="{'default_is_pharmacy': True}"
+                                   states="new,start" />
+                            <field name="date_order"
+                                   states="new,start" />
+                            <field name="split_orders"
+                                   states="new,start" />
+                            <field name="sale_wizard_ids"
+                                   states="partial"
+                                   context="{'default_prescription_wizard_id': True}">
+                                <tree string="Orders">
+                                    <field name="patient_id" />
+                                    <field name="prescription_order_id" />
+                                    <field name="line_cnt" />
+                                </tree>
+                            </field>
                         </group>
                     </sheet>
                     

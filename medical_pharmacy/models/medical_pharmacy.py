@@ -42,3 +42,11 @@ class MedicalPharmacy(models.Model):
     def create(self, vals):
         vals['is_pharmacy'] = True
         return super(MedicalPharmacy, self).create(vals)
+
+    @api.multi
+    def onchange_state(self, state_id):
+        return self.partner_id.onchange_state(state_id)
+
+    @api.multi
+    def onchange_address(self, use_parent_address, parent_id, ):
+        return self.partner_id.onchange_address(use_parent_address, parent_id)

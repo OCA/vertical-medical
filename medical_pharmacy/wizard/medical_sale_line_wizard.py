@@ -53,16 +53,16 @@ class MedicalSaleLineWizard(models.TransientModel):
     )
     product_uom_qty = fields.Float(
         'Quantity',
-        digits_compute= dp.get_precision('Product UoS'),
+        digits_compute= dp.get_precision('Product UoM'),
         required=True,
     )
     price_unit = fields.Float(
         'Unit Price',
-        digits_compute= dp.get_precision('Product UoS'),
+        digits_compute= dp.get_precision('Product Price'),
         required=True,
     )
     price_subtotal = fields.Float(
-        digits_compute= dp.get_precision('Product UoS'),
+        digits_compute= dp.get_precision('Product Subtotal'),
         required=True,
         compute='_compute_price_subtotal',
     )

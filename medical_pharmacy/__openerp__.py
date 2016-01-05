@@ -30,7 +30,7 @@
 {
 
     'name': 'Pharmacy',
-    'version': '8.0.1.0',
+    'version': '8.0.1.0.0',
     'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': [
@@ -44,6 +44,7 @@
         'views/medical_abstract_prescription_state_view.xml',
         'views/medical_prescription_order_line_state_view.xml',
         'views/medical_prescription_order_state_view.xml',
+        'views/medical_pharmacy_view.xml',
         'views/prescription_order_view.xml',
         'views/prescription_order_line_view.xml',
         'views/sale_order_view.xml',
