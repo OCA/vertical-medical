@@ -195,7 +195,7 @@ class MedicalRxSaleWizard(models.TransientModel):
             return action
         else:
             self.state = 'done'
-            return do_rx_sale_conversions()
+            return self.do_rx_sale_conversions()
 
     @api.multi
     def do_rx_sale_conversions(self, ):
