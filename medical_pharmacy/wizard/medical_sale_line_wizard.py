@@ -32,7 +32,7 @@ class MedicalSaleLineWizard(models.TransientModel):
         if self.prescription_wizard_id:
             return self.prescription_wizard_id.prescription_id
         return rx_obj.browse(self._context.get('active_id'))
-    
+
     def _compute_all_amounts(self, ):
         self.price_subtotal = self.price_unit * self.product_uom_qty
         #taxes = self.env['account.tax'].compute_all()
