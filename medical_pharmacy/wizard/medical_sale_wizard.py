@@ -42,12 +42,10 @@ class MedicalSaleWizard(models.TransientModel):
 
     @api.one
     def _compute_all_amounts(self, ):
-        #curr = self.pricelist_id.currency_id
+        # curr = self.pricelist_id.currency_id
         untaxed = 0.0
-        taxes = 0.0
         for line in self.order_line:
             untaxed += line.price_subtotal
-            #taxes += line.amount_tax
         self.write({
             'amount_untaxed': untaxed,
         })
@@ -164,7 +162,7 @@ class MedicalSaleWizard(models.TransientModel):
     def next_wizard(self, ):
         self.ensure_one()
         self.state = 'done'
-        #   @TODO: allow this workflow without a parent wizard
+        # @TODO: allow this workflow without a parent wizard
         wizard_action = self.prescription_wizard_id.next_wizard()
         _logger.debug('next_wizard: %s', wizard_action)
         return wizard_action

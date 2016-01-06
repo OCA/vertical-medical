@@ -132,7 +132,7 @@ class MedicalRxSaleWizard(models.TransientModel):
                 pricelist_id = False
 
             order_inserts.append((0, 0, {
-                #'prescription_wizard_id': [(4, self.id, 0)],
+                # 'prescription_wizard_id': [(4, self.id, 0)],
                 'patient_id': self.patient_id.id,
                 'partner_id': self.patient_id.partner_id.id,
                 'pricelist_id': pricelist_id,
