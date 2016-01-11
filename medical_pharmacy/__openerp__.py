@@ -35,6 +35,7 @@
     'category': 'Medical',
     'depends': [
         'sale_stock',
+        'crm',
         'medical_prescription',
     ],
     "website": "http://github.com/oca/vertical-medical",
@@ -50,8 +51,8 @@
         'views/sale_order_view.xml',
         
         # Wizards
-        'wizard/medical_prescription_to_sale_wizard_view.xml',
-        'wizard/medical_sale_wizard_view.xml',
+        'wizards/medical_prescription_to_sale_wizard_view.xml',
+        'wizards/medical_sale_wizard_view.xml',
         
         # Menu & Access
         'views/medical_menu.xml',

@@ -89,5 +89,13 @@
                     target="new"
                     key2="client_action_multi"/>
         
+        <act_window src_model="medical.prescription.order"
+                    res_model="medical.rx.sale.wizard"
+                    id="medical_rx_sale_wizard_action"
+                    name="Create Sale(s)"
+                    view_mode="form"
+                    target="new"
+                    key2="client_action_multi"/>
+        
     </data>
 </openerp>
