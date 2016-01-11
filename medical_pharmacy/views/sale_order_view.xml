@@ -14,6 +14,9 @@
             <field name="model">sale.order</field>
             <field name='inherit_id' ref='sale.view_order_form' />
             <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id]" position="after">
+                    <field name="patient_id" />
+                </xpath>
                 <xpath expr="//field[@name='order_line']/form//field[@name='product_id']" position="after">
                     <field name="patient_id" invisible="True" />
                     <field name="medication_id" invisible="True" />
@@ -24,8 +27,7 @@
                     <field name="patient_id" invisible="True" />
                     <field name="medication_id" invisible="True" />
                     <field name="prescription_order_line_id" string="Prescription Line"
-                           domain="[('patient_id', '=', patient_id),
-                                    ('product_id', '=', prescription_order_product_id)]" />
+                           domain="[('patient_id', '=', patient_id)]" />
                 </xpath>
             </field>
         </record>
