@@ -18,8 +18,7 @@
                     <field name="patient_id" invisible="True" />
                     <field name="medication_id" invisible="True" />
                     <field name="prescription_order_line_id" string="Prescription Line"
-                           domain="[('patient_id', '=', patient_id),
-                                    ('product_id', '=', prescription_order_product_id)]" />
+                           domain="[('patient_id', '=', patient_id)]" />
                 </xpath>
                 <xpath expr="//field[@name='order_line']/tree/field[@name='name']" position="after">
                     <field name="patient_id" invisible="True" />
