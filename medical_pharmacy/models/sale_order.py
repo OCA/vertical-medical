@@ -38,7 +38,10 @@ class SaleOrder(models.Model):
     def _compute_prescription_order_ids(self, ):
         prescription_ids = self.env['medical.prescription.order']
         prescription_line_ids = self.env['medical.prescription.order.line']
-        for line_id in self.prescription_order_line_ids:
+        for order_line_id in self.order_line:
+            if not order_line_id.prescription_order_line_id:
+                continue
+            line_id = order_line_id.prescription_order_line_id
             if line_id not in prescription_line_ids:
                 prescription_line_ids += line_id
             if line_id.prescription_order_id not in prescription_ids:
