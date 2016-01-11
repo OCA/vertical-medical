@@ -1,15 +1,20 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
+#
 #    Copyright (C) LasLabs, Inc [https://laslabs.com]. All Rights Reserved
+#
 ##############################################################################
+#
 #    Collaborators of this module:
 #       Written By: Dave Lasley <dave@laslabs.com>
 #
 ##############################################################################
+#
 #    This project is mantained by Medical Team:
 #    https://github.com/OCA/vertical-medical/
 #
 ##############################################################################
+#
 #    It is a collaborative effort between several companies that want to join
 #    efforts in have a proposal solid and strong in the Health Care environment
 #
