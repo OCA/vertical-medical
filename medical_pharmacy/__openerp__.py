@@ -35,7 +35,7 @@
     'category': 'Medical',
     'depends': [
         'sale_stock',
-        'crm',
+        'sale_crm',
         'medical_prescription',
     ],
     "website": "http://github.com/oca/vertical-medical",
