@@ -27,3 +27,4 @@ from . import medical_medicament
 from . import sale_order_line
 from . import sale_order
 from . import medical_pharmacy
+from . import crm_lead

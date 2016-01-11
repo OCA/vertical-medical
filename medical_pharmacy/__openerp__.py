@@ -49,6 +49,7 @@
         'views/prescription_order_view.xml',
         'views/prescription_order_line_view.xml',
         'views/sale_order_view.xml',
+        'views/crm_lead_view.xml',
         
         # Wizards
         'wizards/medical_prescription_to_sale_wizard_view.xml',
