@@ -68,6 +68,3 @@ class SaleOrder(models.Model):
         compute='_compute_prescription_order_ids',
         readonly=True,
     )
-    state = fields.Selection(selection_add=[
-        ('rx_verify', 'Rx Verification'),
-    ])

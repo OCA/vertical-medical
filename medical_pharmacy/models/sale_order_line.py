@@ -60,9 +60,7 @@ class SaleOrderLine(models.Model):
         readonly=True,
         compute='_compute_dispense_qty',
     )
-    state = fields.Selection(selection_add=[
-        ('rx_verify', 'Rx Verification'),
-    ])
+
     # 
     # @api.one
     # @api.constrains(

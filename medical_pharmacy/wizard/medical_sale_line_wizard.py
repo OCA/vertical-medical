@@ -100,6 +100,6 @@ class MedicalSaleLineWizard(models.TransientModel):
             'product_uom': self.product_uom.id,
             'product_uom_qty': self.product_uom_qty,
             'prescription_order_line_id': self.prescription_order_line_id.id,
-            'state': 'rx_verify',
+            'state': 'sale',
             'price_unit': self.price_unit,
         }

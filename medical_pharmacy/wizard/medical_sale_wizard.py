@@ -198,7 +198,7 @@ class MedicalSaleWizard(models.TransientModel):
             'date_order': self.date_order,
             'client_order_ref': self.client_order_ref,
             'warehouse_id': self.warehouse_id.id,
-            'state': 'rx_verify',
+            'state': 'progress',
             'order_line': self.order_line._to_insert(),
             'currency_id': self.currency_id.id,
             'origin': self.origin,
