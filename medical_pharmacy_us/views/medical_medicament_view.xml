@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-    Copyright (C) 2014-2015 LasLabs [https://laslabs.com]
+    Copyright (C) 2014-[Now] LasLabs [https://laslabs.com]
     @author Dave Lasley <dave@laslabs.com>
     The licence is in the file __openerp__.py
 -->
@@ -28,6 +28,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='drug_form_id']" position="before">
                     <field name="ndc"/>
+                    <field name="control_code"/>
                 </xpath>
             </field>
         </record>

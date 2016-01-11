@@ -30,19 +30,31 @@
 {
 
     'name': 'Pharmacy',
-    'version': '8.0.1.0',
+    'version': '8.0.1.0.0',
     'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': [
-        'sale',
+        'sale_stock',
         'medical_prescription',
     ],
     "website": "http://github.com/oca/vertical-medical",
     "licence": "AGPL-3",
     "data": [
+        # Views
+        'views/medical_abstract_prescription_state_view.xml',
+        'views/medical_prescription_order_line_state_view.xml',
+        'views/medical_prescription_order_state_view.xml',
+        'views/medical_pharmacy_view.xml',
         'views/prescription_order_view.xml',
         'views/prescription_order_line_view.xml',
         'views/sale_order_view.xml',
+        
+        # Wizards
+        'wizard/medical_prescription_to_sale_wizard_view.xml',
+        'wizard/medical_sale_wizard_view.xml',
+        
+        # Menu & Access
+        'views/medical_menu.xml',
         'security/ir.model.access.csv',
     ],
     'test': [

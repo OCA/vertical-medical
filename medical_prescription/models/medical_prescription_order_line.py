@@ -36,3 +36,4 @@ class MedicalPrescriptionOrderLine(models.Model):
         comodel_name='medical.patient.medication', string='Medication',
         required=True, ondelete='cascade')
     is_substitutable = fields.Boolean()
+    qty = fields.Float(string='Quantity')

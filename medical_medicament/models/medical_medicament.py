@@ -40,7 +40,7 @@ class MedicalMedicament(models.Model):
     def name_get(self):
         res = []
         for rec in self:
-            name = '%s - %s' % (self.product_id.name, self.drug_form_id.name)
+            name = '%s - %s' % (rec.product_id.name, rec.drug_form_id.name)
             res.append((rec.id, name))
         return res
 

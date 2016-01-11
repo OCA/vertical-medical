@@ -76,8 +76,9 @@ class MedicalMedicationTemplate(models.Model):
     medication_dosage_id = fields.Many2one(
         comodel_name='medical.medication.dosage', string='Common Dose',
         help='Common / standard dosage frequency for this medicament')
-    suggested_administration_hours = fields.Float()
+    suggested_administration_hours = fields.Char()
     quantity = fields.Integer(
+        string='Dose Quantity',
         help='Quantity of units (eg, 2 capsules) of the medicament')
     dose_unit_id = fields.Many2one(
         comodel_name='product.uom', string='Dose Unit')

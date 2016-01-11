@@ -30,19 +30,21 @@ class MedicalPatientMedication(models.Model):
     _inherit = ['abstract.medical.medication', 'medical.medication.template']
     _rec_name = 'patient_id'
 
+    medication_template_id = fields.Many2one(
+        comodel_name='medical.medication.template',
+        string='Medication Template', index=True)
     patient_id = fields.Many2one(
         comodel_name='medical.patient', string='Patient', index=True,
         required=True)
     physician_id = fields.Many2one(
         comodel_name='medical.physician', string='Physician',
-        help='Physician who prescribed the medicament', index=True,
-        required=True)
+        help='Physician who prescribed the medicament', index=True)
     active = fields.Boolean(
         help='Check if the patient is currently taking the medication',
         default=True)
     is_course_complete = fields.Boolean(string='Course Completed')
     is_discontinued = fields.Boolean()
-    date_start_treatment = fields.Datetime(required=True)
+    date_start_treatment = fields.Datetime()
     date_stop_treatment = fields.Datetime()
     discontinued_reason = fields.Char(
         help='Short description for discontinuing the treatment')

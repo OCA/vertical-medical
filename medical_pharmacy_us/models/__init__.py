@@ -20,3 +20,5 @@
 ##############################################################################
 
 from . import medical_medicament
+from . import medical_medication_template
+from . import medical_pharmacy

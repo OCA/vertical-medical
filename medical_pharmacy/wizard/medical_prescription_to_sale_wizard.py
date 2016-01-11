@@ -35,13 +35,13 @@ class MedicalRxSaleWizard(models.TransientModel):
         return self.env['medical.prescription.order'].browse(
             self._context.get('active_id')
         )
-
+    
     def _compute_default_patient(self, ):
         if self.prescription_id:
             return self.prescription_id.patient_id
         else:
             return self._compute_default_session().patient_id
-
+    
     prescription_id = fields.Many2one(
         string='Prescription',
         comodel_name='medical.prescription.order',
@@ -98,11 +98,11 @@ class MedicalRxSaleWizard(models.TransientModel):
 
     @api.multi
     def create_sale_wizards(self, ):
-
+        
         self.ensure_one()
         order_map = defaultdict(list)
         order_inserts = []
-
+        
         for rx_line in self.prescription_id.prescription_order_line_ids:
             if self.split_orders == 'partner':
                 raise NotImplementedError(_(
@@ -114,7 +114,7 @@ class MedicalRxSaleWizard(models.TransientModel):
                 order_map[None].append(rx_line)
 
         for order in order_map.values():
-
+            
             order_lines = []
             for l in self.prescription_id.prescription_order_line_ids:
                 medicament_id = l.medical_medication_id.medicament_id
@@ -125,14 +125,14 @@ class MedicalRxSaleWizard(models.TransientModel):
                     'price_unit': medicament_id.product_id.list_price,
                     'prescription_order_line_id': l.id,
                 }))
-
+            
             if self.patient_id.property_product_pricelist:
                 pricelist_id = self.patient_id.property_product_pricelist.id
             else:
                 pricelist_id = False
-
+                
             order_inserts.append((0, 0, {
-                # 'prescription_wizard_id': [(4, self.id, 0)],
+                #'prescription_wizard_id': [(4, self.id, 0)],
                 'patient_id': self.patient_id.id,
                 'partner_id': self.patient_id.partner_id.id,
                 'pricelist_id': pricelist_id,
@@ -148,16 +148,16 @@ class MedicalRxSaleWizard(models.TransientModel):
                 'user_id': self.env.user.id,
                 'company_id': self.env.user.company_id.id,
             }))
-
+        
         _logger.debug(order_inserts)
-
+        
         self.write({
             'sale_wizard_ids': order_inserts,
             'state': 'start',
         })
-
+        
         return self.next_wizard()
-
+    
     @api.model
     def _get_next_sale_wizard(self, only_states=None, ):
         model_obj = self.env['ir.model.data']
@@ -186,7 +186,7 @@ class MedicalRxSaleWizard(models.TransientModel):
                 'res_id': wizard.id,
             }
         return False
-
+            
     @api.model
     def next_wizard(self, ):
         action = self._get_next_sale_wizard(['new', 'start'])

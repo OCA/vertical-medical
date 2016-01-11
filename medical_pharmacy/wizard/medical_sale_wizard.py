@@ -35,17 +35,19 @@ class MedicalSaleWizard(models.TransientModel):
         return self.env['medical.sale.wizard'].browse(
             self._context.get('active_id')
         )
-
+    
     @api.one
     def _compute_line_cnt(self, ):
         self.line_cnt = len(self.order_line)
 
     @api.one
     def _compute_all_amounts(self, ):
-        # curr = self.pricelist_id.currency_id
+        #curr = self.pricelist_id.currency_id
         untaxed = 0.0
+        taxes = 0.0
         for line in self.order_line:
             untaxed += line.price_subtotal
+            #taxes += line.amount_tax
         self.write({
             'amount_untaxed': untaxed,
         })
@@ -162,7 +164,7 @@ class MedicalSaleWizard(models.TransientModel):
     def next_wizard(self, ):
         self.ensure_one()
         self.state = 'done'
-        # @TODO: allow this workflow without a parent wizard
+        #   @TODO: allow this workflow without a parent wizard
         wizard_action = self.prescription_wizard_id.next_wizard()
         _logger.debug('next_wizard: %s', wizard_action)
         return wizard_action
@@ -173,13 +175,13 @@ class MedicalSaleWizard(models.TransientModel):
         return list(
             (0, 0, v) for v in self._to_vals_iter()
         )
-
+            
     @api.multi
     def _to_vals_iter(self, ):
         ''' Generator of values dicts for ORM methods '''
         for sale_id in self:
             yield self._to_vals()
-
+            
     @api.multi
     def _to_vals(self, ):
         ''' Return a values dictionary to create in real model '''
