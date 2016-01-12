@@ -55,11 +55,11 @@
         'views/prescription_order_line_view.xml',
         'views/sale_order_view.xml',
         'views/crm_lead_view.xml',
-        
+
         # Wizards
         'wizards/medical_prescription_to_sale_wizard_view.xml',
         'wizards/medical_sale_wizard_view.xml',
-        
+
         # Menu & Access
         'views/medical_menu.xml',
         'security/ir.model.access.csv',

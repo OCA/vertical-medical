@@ -29,7 +29,7 @@ _logger = logging.getLogger(__name__)
 
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
-    
+
     @api.model
     def _compute_dispense_qty(self, ):
         return True
@@ -61,7 +61,7 @@ class SaleOrderLine(models.Model):
         compute='_compute_dispense_qty',
     )
 
-    # 
+    #
     # @api.one
     # @api.constrains(
     #     'product_id', 'prescription_order_line_id', 'patient_id',
@@ -73,14 +73,14 @@ class SaleOrderLine(models.Model):
     #     :returns: bool -- If line can be processed
     #     :raises: :class:`openerp.exceptions.ValidationError`
     #     '''
-    # 
+    #
     #     if not self.medication_id.medicament_id.is_medicament:
     #         return True
     #     if not self.medication_id.medicament_id.is_prescription:
     #         return True
-    # 
+    #
     #     rx_line = self.prescription_order_line_id
-    # 
+    #
     #     if self.patient_id != rx_line.patient_id:
     #         raise ValidationError(_(
     #             'Patients must be same on Order and Rx lines. '
@@ -89,7 +89,7 @@ class SaleOrderLine(models.Model):
     #                 rx_line.patient_id.name, rx_line.id,
     #             ),
     #         ))
-    #     
+    #
     #     if rx_line.product_id != self.product_id:
     #         if not self.is_substitutable:
     #             raise ValidationError(_(
@@ -103,7 +103,7 @@ class SaleOrderLine(models.Model):
     #             raise NotImplementedError(_(
     #                 'Drug substitution validation has not been implemented.'
     #             ))
-    # 
+    #
     #     if not rx_line.can_dispense:
     #         raise ValidationError(_(
     #             'Cannot dispense - currently %f pending and %f exception.' % (
@@ -111,12 +111,12 @@ class SaleOrderLine(models.Model):
     #                 rx_line.exception_dispense_qty,
     #             )
     #         ))
-    # 
+    #
     #     if self.dispense_qty > rx_line.can_dispense_qty:
     #         raise ValidationError(_(
     #             'Cannot dispense - Order line %s goes over Rx qty by %d' % (
     #                 self.name, self.dispense_qty - rx_line.can_dispense_qty
     #             )
     #         ))
-    #     
+    #
     #     return True

@@ -29,23 +29,23 @@ class MedicalPrescriptionOrderLine(models.Model):
     @api.one
     def _compute_dispensings_and_orders(self, ):
         ''' Get related dispensings and orders. Also sets dispense qty's '''
-        
+
         dispense_ids, order_ids = [], []
         dispense_qty, pending_qty, cancel_qty, except_qty = 0.0, 0.0, 0.0, 0.0
         for line_id in self.sale_order_line_ids:
-            
+
             order_ids.append(line_id.order_id)
             for proc_id in line_id.procurement_ids:
-                
+
                 dispense_ids.append(proc_id.id)
-                
+
                 if proc_id.product_uom.id != self.dispense_uom_id.id:
                     _qty = proc_id.product_uom._compute_qty_obj(
                         proc_id.product_qty, self.dispense_uom_id
                     )
                 else:
                     _qty = self.dispense_uom_id
-                
+
                 if proc_id.state == 'done':
                     dispense_qty += _qty
                 elif proc_id.state in ['confirmed', 'running']:
@@ -54,7 +54,7 @@ class MedicalPrescriptionOrderLine(models.Model):
                     cancel_qty += _qty
                 else:
                     except_qty += _qty
-                
+
         self.cancelled_dispense_qty = cancel_qty
         self.dispensed_qty = dispense_qty
         self.pending_dispense_qty = pending_qty
@@ -69,7 +69,7 @@ class MedicalPrescriptionOrderLine(models.Model):
         Determine whether Rx can be dispensed based on current dispensings,
         and what qty
         '''
-        
+
         total = sum(self.dispensed_qty, self.exception_dispense_qty,
                     self.pending_dispense_qty)
 
@@ -130,7 +130,7 @@ class MedicalPrescriptionOrderLine(models.Model):
         default=0.0,
         help='Amount that can be dispensed (using medicine dosage)',
     )
-    
+
     receive_method = fields.Selection([
         ('online', 'E-Prescription'),
         ('phone', 'Phoned In'),
@@ -154,7 +154,7 @@ class MedicalPrescriptionOrderLine(models.Model):
         string='Receipt Date',
         help='When the Rx was received',
     )
-    
+
     # Kanban/Project Management
     state = fields.Selection([
         ('draft', 'Draft'),
