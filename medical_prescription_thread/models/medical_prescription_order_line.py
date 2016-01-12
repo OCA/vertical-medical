@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from openerp import fields, models, api
+from openerp import models
 
 
 class MedicalPrescriptionOrderLine(models.Model):
