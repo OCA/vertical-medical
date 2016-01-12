@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016-[Now] LasLabs [https://laslabs.com]
+    @author James Foster <jfoster@laslabs.com>
+    The licence is in the file __openerp__.py
+-->
+
 <openerp>
     <data>
 
@@ -8,7 +15,6 @@
             <field name="inherit_id" ref="medical_prescription.medical_prescription_order_line_form_view"/>
             <field name="arch" type="xml">
                 <data>
-                    <xpath expr="//page[@string='Notes']" position="replace"/>
                     <xpath expr="//sheet" position="after">
                         <div class="oe_chatter">
                             <field name="message_follower_ids" widget="mail_followers"/>

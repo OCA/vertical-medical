@@ -6,7 +6,7 @@
 ##############################################################################
 #
 #    Collaborators of this module:
-#       Written By: Dave Lasley <dave@laslabs.com>
+#       Written By: James Foster <jfoster@laslabs.com>
 #
 ##############################################################################
 #
@@ -40,7 +40,7 @@
     'depends': [
         'medical_prescription',
     ],
-    "website": "http://github.com/oca/vertical-medical",
+    "website": "https://laslabs.com/",
     "licence": "AGPL-3",
     "data": [
         'views/medical_prescription_order_view.xml',

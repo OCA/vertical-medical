@@ -40,7 +40,7 @@ Credits
 Contributors
 ------------
 
-* Dave Lasley <dave@laslabs.com>
+* James Foster <jfoster@laslabs.com>
 
 Maintainer
 ----------
