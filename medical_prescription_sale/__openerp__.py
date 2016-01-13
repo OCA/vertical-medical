@@ -34,18 +34,27 @@
 ##############################################################################
 {
 
-    'name': 'Medical Pharmacy',
+    'name': 'Medical Prescription Sales Processes',
     'version': '8.0.0.0.1',
     'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': [
-        'medical',
+        'sale_stock',
+        'sale_crm',
+        'medical_prescription',
+        'medical_pharmacy',
     ],
     "website": "https://laslabs.com",
     "licence": "AGPL-3",
     "data": [
-        'views/medical_pharmacy_view.xml',
-        'security/ir.model.access.csv',
+        # Views
+        'views/prescription_order_line_view.xml',
+        'views/sale_order_view.xml',
+        'views/crm_lead_view.xml',
+
+        # Wizards
+        'wizards/medical_prescription_to_sale_wizard_view.xml',
+        'wizards/medical_sale_wizard_view.xml',
     ],
     'installable': True,
     'auto_install': False,

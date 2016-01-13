@@ -22,10 +22,9 @@
 from openerp import fields, models
 
 
-class MedicalAbstractPrescriptionState(models.AbstractModel):
-    _name = 'medical.abstract.prescription.state'
-    _description = 'Prescription Order Abstract States'
-    _order = 'sequence'
+class MedicalPrescriptionOrderState(models.Model):
+    _name = 'medical.prescription.order.state'
+    _description = 'Prescription Order States'
     name = fields.Char(
         'State Name',
         required=True,

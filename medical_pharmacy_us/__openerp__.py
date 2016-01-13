@@ -34,17 +34,15 @@
 ##############################################################################
 {
 
-    'name': 'Medical Medicine - US Locale',
-    'version': '8.0.1.0',
+    'name': 'Medical Pharmacy - US Locale',
+    'version': '8.0.0.0.1',
     'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': [
-        'medical_medication',
+        'medical_pharmacy',
     ],
-    "website": "http://github.com/oca/vertical-medical",
+    "website": "https://laslabs.com",
     "licence": "AGPL-3",
-    "data": [
-    ],
     'installable': True,
     'auto_install': False,
 }

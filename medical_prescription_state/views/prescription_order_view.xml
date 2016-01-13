@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-    Copyright (C) 2014-[Now] LasLabs [https://laslabs.com]
+    Copyright (C) 2016-[Now] LasLabs [https://laslabs.com]
     @author Dave Lasley <dave@laslabs.com>
     The licence is in the file __openerp__.py
 -->
@@ -59,6 +59,12 @@
                 </kanban>
                 </xpath>
             </field>
+        </record>
+        
+        <record id="medical_prescription.medical_prescription_order_action" model="ir.actions.act_window">
+            <field name="inherit_id" ref="medical_prescription.medical_prescription_order_action" />
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_id" ref="medical_prescription_order_kanban_view" />
         </record>
         
     </data>

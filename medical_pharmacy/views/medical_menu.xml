@@ -14,15 +14,7 @@
         <menuitem id="medical_root_prescription" name="Prescription"
                   parent="medical.medical_root_sub" sequence="190" />
 
-
-        <!-- Medical Prescription Order States  ( Config/Prescription/Order States) )--> 
-
-        <menuitem id="medical_prescription_order_state"
-                  name="Order States"
-                  parent="medical_root_prescription" sequence="50"
-                  action="medical_prescription_order_state_action" />
-        
-        <!-- Medical Prescription Order States  ( Config/Prescription/Order Line States) )--> 
+        <!-- Medical Prescription Order States  [Config/Prescription/Order Line States] )--> 
 
         <menuitem id="medical_prescription_order_line_state"
                   name="Order Line States"

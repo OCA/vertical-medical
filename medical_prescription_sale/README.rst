@@ -1,10 +1,10 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
     :alt: License: AGPL-3
 
-Odoo Medical Pharmacy
-========================
+Odoo Medical Prescription Sales
+===============================
 
-Extension of medical that adds a pharmacy namespace on partners
+Extension of medical_prescription that allows for integration into sales workflows
 
 
 Usage

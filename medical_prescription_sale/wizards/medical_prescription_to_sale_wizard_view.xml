@@ -12,24 +12,20 @@
         <record model="ir.ui.view"
                 id="medical_rx_sale_wizard_view_form">
             <field name="name">medical.rx.sale.wizard.view.form</field>
-            <field name="model">medical.rx.sale.wizard</field>
+            <field name="model">rx.sale.wizard</field>
             <field name="arch" type="xml">
                 
                 <form string="Rx2Sales">
 
                     <header>
                         <h1 class="pull-left">
-                            Prescription: <field name="prescription_id" />
+                            Prescription Line(s): <field name="prescription_line_ids" />
                         </h1>
                         <field name="state" widget="statusbar" />
                     </header>
                     
                     <sheet>
                         <group name="data">
-                            <field name="patient_id"
-                                   domain="[('is_patient', '=', True)]"
-                                   context="{'default_is_patient': True}"
-                                   states="new,start" />
                             <field name="pharmacy_id"
                                    domain="[('is_pharmacy', '=', True)]"
                                    context="{'default_is_pharmacy': True}"
@@ -81,16 +77,8 @@
             </field>
         </record>
 
-        <act_window src_model="medical.prescription.order"
-                    res_model="medical.rx.sale.wizard"
-                    id="medical_rx_sale_wizard_action"
-                    name="Create Sale(s)"
-                    view_mode="form"
-                    target="new"
-                    key2="client_action_multi"/>
-        
-        <act_window src_model="medical.prescription.order"
-                    res_model="medical.rx.sale.wizard"
+        <act_window src_model="medical.prescription.order.line"
+                    res_model="rx.sale.wizard"
                     id="medical_rx_sale_wizard_action"
                     name="Create Sale(s)"
                     view_mode="form"

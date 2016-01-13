@@ -19,10 +19,4 @@
 #
 ##############################################################################
 
-from openerp import models
-
-
-class MedicalPrescriptionOrderState(models.Model):
-    _name = 'medical.prescription.order.state'
-    _description = 'Prescription Order States'
-    _inherit = 'medical.abstract.prescription.state'
+from . import models

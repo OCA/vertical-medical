@@ -18,11 +18,9 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-
-from openerp import models
-
-
-class MedicalPrescriptionOrderLineState(models.Model):
-    _name = 'medical.prescription.order.line.state'
-    _description = 'Prescription Order Line States'
-    _inherit = 'medical.abstract.prescription.state'
+from . import medical_prescription_order
+from . import medical_prescription_order_line
+from . import medical_medicament
+from . import sale_order_line
+from . import sale_order
+from . import crm_lead

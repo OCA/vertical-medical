@@ -14,7 +14,6 @@
 #    https://github.com/OCA/vertical-medical/
 #
 ##############################################################################
-#
 #    It is a collaborative effort between several companies that want to join
 #    efforts in have a proposal solid and strong in the Health Care environment
 #
@@ -34,17 +33,22 @@
 ##############################################################################
 {
 
-    'name': 'Medical Pharmacy',
+    'name': 'Medical Prescription Order States',
     'version': '8.0.0.0.1',
     'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': [
-        'medical',
+        'medical_prescription',
     ],
     "website": "https://laslabs.com",
     "licence": "AGPL-3",
     "data": [
-        'views/medical_pharmacy_view.xml',
+        # Views
+        'views/medical_prescription_order_state_view.xml',
+        'views/prescription_order_view.xml',
+
+        # Menu & Access
+        'views/medical_menu.xml',
         'security/ir.model.access.csv',
     ],
     'installable': True,

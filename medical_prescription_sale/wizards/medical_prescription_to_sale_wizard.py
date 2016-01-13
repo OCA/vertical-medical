@@ -28,23 +28,17 @@ _logger = logging.getLogger(__name__)
 
 
 class MedicalRxSaleWizard(models.TransientModel):
-    _name = 'medical.rx.sale.wizard'
-    _description = 'Convert Medical Prescription(s) to Sale Order(s)'
+    _name = 'rx.sale.wizard'
+    _description = 'Convert Medical Prescription Line(s) to Sale Order(s)'
 
     def _compute_default_session(self, ):
-        return self.env['medical.prescription.order'].browse(
-            self._context.get('active_id')
+        return self.env['medical.prescription.order.line'].browse(
+            self._context.get('active_ids')
         )
 
-    def _compute_default_patient(self, ):
-        if self.prescription_id:
-            return self.prescription_id.patient_id
-        else:
-            return self._compute_default_session().patient_id
-
-    prescription_id = fields.Many2one(
+    prescription_line_ids = fields.Many2many(
         string='Prescription',
-        comodel_name='medical.prescription.order',
+        comodel_name='medical.prescription.order.line',
         default=_compute_default_session,
         required=True,
         readonly=True,
@@ -75,12 +69,6 @@ class MedicalRxSaleWizard(models.TransientModel):
         comodel_name='medical.sale.wizard',
         inverse_name='prescription_wizard_id',
     )
-    patient_id = fields.Many2one(
-        string='Patient',
-        comodel_name='medical.patient',
-        default=_compute_default_patient,
-        readonly=True,
-    )
     state = fields.Selection([
         ('new', _('Not Started')),
         ('start', _('Started')),
@@ -103,7 +91,7 @@ class MedicalRxSaleWizard(models.TransientModel):
         order_map = defaultdict(list)
         order_inserts = []
 
-        for rx_line in self.prescription_id.prescription_order_line_ids:
+        for rx_line in self.prescription_line_ids:
             if self.split_orders == 'partner':
                 raise NotImplementedError(_(
                     'Patient and Customers are currently identical concepts.'
@@ -116,7 +104,7 @@ class MedicalRxSaleWizard(models.TransientModel):
         for order in order_map.values():
 
             order_lines = []
-            for l in self.prescription_id.prescription_order_line_ids:
+            for l in self.prescription_line_ids:
                 medicament_id = l.medical_medication_id.medicament_id
                 order_lines.append((0, 0, {
                     'product_id': medicament_id.product_id.id,
@@ -124,26 +112,25 @@ class MedicalRxSaleWizard(models.TransientModel):
                     'product_uom_qty': l.quantity,
                     'price_unit': medicament_id.product_id.list_price,
                     'prescription_order_line_id': l.id,
+                    'patient_id': l.patient_id.id,
                 }))
 
-            if self.patient_id.property_product_pricelist:
-                pricelist_id = self.patient_id.property_product_pricelist.id
+            if order.patient_id.property_product_pricelist:
+                pricelist_id = order.patient_id.property_product_pricelist.id
             else:
                 pricelist_id = False
 
             order_inserts.append((0, 0, {
-                #'prescription_wizard_id': [(4, self.id, 0)],
-                'patient_id': self.patient_id.id,
-                'partner_id': self.patient_id.partner_id.id,
+                'partner_id': order.patient_id.partner_id.id,
                 'pricelist_id': pricelist_id,
-                'partner_invoice_id': self.patient_id.id,
-                'partner_shipping_id': self.patient_id.id,
-                'prescription_order_id': self.prescription_id.id,
+                'partner_invoice_id': order.patient_id.id,
+                'partner_shipping_id': order.patient_id.id,
+                'prescription_order_id': order.prescription_order_id.id,
                 'pharmacy_id': self.pharmacy_id.id,
-                'client_order_ref': self.prescription_id.name,
+                'client_order_ref': order.prescription_order_id.name,
                 'order_line': order_lines,
                 'date_order': self.date_order,
-                'origin': self.prescription_id.name,
+                'origin': order.prescription_order_id.name,
                 'warehouse_id': self.warehouse_id.id,
                 'user_id': self.env.user.id,
                 'company_id': self.env.user.company_id.id,

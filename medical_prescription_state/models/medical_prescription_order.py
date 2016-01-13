@@ -24,7 +24,7 @@ from openerp import fields, models
 
 class MedicalPrescriptionOrder(models.Model):
     _inherit = 'medical.prescription.order'
-    _order = 'priority desc, sequence, date_prescription, name, id'
+    _order = 'priority desc, sequence, date_prescription, name'
 
     sequence = fields.Integer(
         default=10,
@@ -36,29 +36,6 @@ class MedicalPrescriptionOrder(models.Model):
         (10, 'High'),
     ],
         select=True,
-    )
-    receive_method = fields.Selection([
-        ('online', 'E-Prescription'),
-        ('phone', 'Phoned In'),
-        ('fax', 'Fax'),
-        ('mail', 'Physical Mail'),
-        ('transfer', 'Transferred In'),
-    ],
-        default='fax',
-        string='Receipt Method',
-        help='How the Rx was received',
-    )
-    verify_method = fields.Selection([
-        ('none', 'Not Verified'),
-        ('doctor_phone', 'Called Doctor'),
-    ],
-        default='none',
-        help='Method of Rx verification',
-    )
-    receive_date = fields.Datetime(
-        default=fields.Datetime.now,
-        string='Receipt Date',
-        help='When the Rx was received',
     )
     state_id = fields.Many2one(
         'medical.prescription.order.state',

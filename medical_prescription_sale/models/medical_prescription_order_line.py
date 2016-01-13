@@ -24,7 +24,7 @@ from openerp import fields, models, api
 
 class MedicalPrescriptionOrderLine(models.Model):
     _inherit = 'medical.prescription.order.line'
-    _order = 'priority desc, sequence, date_start_treatment, id'
+    _order = 'priority desc, date_start_treatment, id'
 
     @api.one
     def _compute_dispensings_and_orders(self, ):
@@ -153,78 +153,4 @@ class MedicalPrescriptionOrderLine(models.Model):
         default=fields.Datetime.now,
         string='Receipt Date',
         help='When the Rx was received',
-    )
-
-    # Kanban/Project Management
-    state = fields.Selection([
-        ('draft', 'Draft'),
-        ('progress', 'Open'),
-        ('matched', 'Matched Sale'),
-        ('manual', 'To Invoice'),
-        ('dispense', 'To Dispense'),
-        ('dispense_except', 'Dispense Exception'),
-        ('invoice_except', 'Invoice Exception'),
-        ('cancel', 'Canceled'),
-        ('dispensed', 'Dispensed'),
-    ],
-        default='draft',
-    )
-    sequence = fields.Integer(
-        default=10,
-        help="Sequence order when displaying a list of Rxs",
-    )
-    priority = fields.Selection([
-        (0, 'Normal'),
-        (5, 'Medium'),
-        (10, 'High'),
-    ],
-        select=True,
-    )
-    state_id = fields.Many2one(
-        'medical.prescription.order.line.state',
-        'State',
-        track_visibility='onchange',
-        select=True,
-        copy=False,
-    )
-    user_id = fields.Many2one(
-        'res.users',
-        'Assigned To',
-        select=True,
-        track_visibility='onchange',
-    )
-    date_assign = fields.Datetime(
-        'Assigned Date'
-    )
-    legend_blocked = fields.Char(
-        string='Kanban Blocked Explanation',
-        related='state_id.legend_blocked'
-    )
-    legend_done = fields.Char(
-        string='Kanban Valid Explanation',
-        related='state_id.legend_done'
-    )
-    legend_normal = fields.Char(
-        string='Kanban Ongoing Explanation',
-        related='state_id.legend_normal'
-    )
-    color = fields.Integer(
-        'Color Index',
-    )
-    kanban_state = fields.Selection([
-        ('normal', 'In Progress'),
-        ('done', 'Ready for next stage'),
-        ('blocked', 'Blocked')
-    ],
-        'Kanban State',
-        default='normal',
-        track_visibility='onchange',
-        required=True,
-        copy=False,
-        help="An Rx's kanban state indicates special situations affecting it:"
-        "\n * Normal is the default situation"
-        "\n * Blocked indicates something is preventing the progress of this"
-        " Rx"
-        "\n * Ready for next stage indicates the Rx is ready to be pulled to"
-        " the next stage",
     )
