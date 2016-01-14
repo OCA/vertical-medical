@@ -4,7 +4,7 @@
 Odoo Medical Insurance
 ========================
 
-Extension of medical_insurance in order to add sector/area concept
+Extension of medical that provides Insurance concept
 
 
 Usage
