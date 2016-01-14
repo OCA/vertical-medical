@@ -4,7 +4,6 @@
          <record id="view_medical_pharmacy_tree" model="ir.ui.view">
              <field name="name">medical.pharmacy.tree</field>
              <field name="model">medical.pharmacy</field>
-             <field name="priority" eval="8" />
              <field name="arch" type="xml">
                  <tree string="Medical Pharmacy">
                      <field name="name" />
@@ -20,7 +19,6 @@
          <record id="view_medical_pharmacy_form" model="ir.ui.view">
              <field name="name">medical.pharmacy.form</field>
              <field name="model">medical.pharmacy</field>
-             <field name="priority" eval="8" />
              <field name="arch" type="xml">
               <form string="Pharmacy">
                     <header>
@@ -278,10 +276,12 @@
                             </page>
 						</notebook>
                      </sheet>
-                    <div name="configurator" class="oe_form_sheetbg" groups="medical.group_medical_configurator">
+                    <div name="configurator"
+						 class="oe_form_sheetbg"
+                         groups="medical.group_medical_configurator">
                         <div class="oe_formview oe_form_sheet_width">
                             <h3>More Info</h3>
-                            <group name="moreinfo">
+                            <group name="more_info">
                                 <field name="id"/>
                                 <field name="active"/>
                             </group>
@@ -294,7 +294,6 @@
          <record id="view_medical_pharmacy_search" model="ir.ui.view">
              <field name="name">medical.pharmacy.search</field>
              <field name="model">medical.pharmacy</field>
-             <field name="priority" eval="8" />
              <field name="arch" type="xml">
                  <search string="Medical Pharmacy">
                      <field name="name" />
@@ -305,9 +304,15 @@
                      <field name="zip" />
                      <newline />
                      <group expand="0" string="Group By...">
-                        <filter string="Company" domain="[]" context="{'group_by':'parent_id'}" />
-                        <filter string="State" domain="[]" context="{'group_by': 'state_id'}" />
-                        <filter string="Zip" domain="[]" context="{'group_by':'zip'}" />
+                        <filter string="Company"
+                                domain="[]"
+                                context="{'group_by':'parent_id'}" />
+                        <filter string="State"
+                                domain="[]"
+                                context="{'group_by': 'state_id'}" />
+                        <filter string="Zip"
+                                domain="[]"
+                                context="{'group_by':'zip'}" />
                      </group>
                  </search>
              </field>
