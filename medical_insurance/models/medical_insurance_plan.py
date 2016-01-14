@@ -19,14 +19,16 @@
 #
 ##############################################################################
 
-from openerp import fields, models, api
+from openerp import fields, models
 
 
 class MedicalInsurancePlan(models.Model):
     _name = 'medical.insurance.plan'
+    _description = 'Medical Insurance Providers'
     _inherits = {'medical.insurance.template': 'insurance_template_id', }
     insurance_template_id = fields.Many2one(
         string='Plan Template',
+        comodel_name='medical.insurance.template',
         help='Insurance Plan Template',
     )
     patient_id = fields.Many2one(
@@ -35,6 +37,7 @@ class MedicalInsurancePlan(models.Model):
     )
     number = fields.Char(
         required=True,
+        help='Identification number for insurance account',
     )
     member_since = fields.Date(
         string='Member Since',
@@ -42,7 +45,3 @@ class MedicalInsurancePlan(models.Model):
     member_exp = fields.Date(
         string='Expiration Date',
     )
-    notes = fields.Text(
-        string='Extra Info',
-    )
-    

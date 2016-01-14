@@ -24,6 +24,7 @@ from openerp import fields, models, api
 
 class MedicalInsuranceTemplate(models.Model):
     _name = 'medical.insurance.template'
+    _description = 'Medical Insurance Templates'
     _inherits = {'product.product': 'product_id', }
     name = fields.Char(
         required=True,
@@ -31,6 +32,7 @@ class MedicalInsuranceTemplate(models.Model):
     )
     plan_number = fields.Char(
         required=True,
+        help='Identification number for plan',
     )
     is_default = fields.Boolean(
         string='Default Plan',
@@ -38,11 +40,13 @@ class MedicalInsuranceTemplate(models.Model):
         'company to patient',
     )
     insurance_company_id = fields.Many2one(
-        string='Insurance Company',
+        string='Insurance Provider',
         comodel_name='medical.insurance.company',
+        help='Insurance Provider',
     )
     notes = fields.Text(
         string='Extra Info',
+        help='Additional Information',
     )
     product_id = fields.Many2one(
         string='Insurance Product',
@@ -55,7 +59,6 @@ class MedicalInsuranceTemplate(models.Model):
     ],
         help='What type of entity is this insurance provided to?'
     )
-
 
     @api.model
     @api.returns('self', lambda value: value.id)

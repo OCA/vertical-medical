@@ -24,20 +24,15 @@ from openerp import fields, models, api
 
 class MedicalInsuranceCompany(models.Model):
     _name = 'medical.insurance.company'
+    _description = 'Medical Insurance Providers'
     _inherits = {'res.partner': 'partner_id', }
     partner_id = fields.Many2one(
         string='Related Partner',
         comodel_name='res.partner',
     )
-    insurance_type = fields.Selection([
-        ('state', 'State'),
-        ('labor_union', 'Labor Union / Syndical'),
-        ('private', 'Private'),
-    ],)
-    
+
     @api.model
     @api.returns('self', lambda value: value.id)
     def create(self, vals):
         vals['is_insurance_company'] = True
         return super(MedicalInsuranceCompany, self).create(vals)
-    
