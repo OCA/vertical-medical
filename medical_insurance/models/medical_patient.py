@@ -22,9 +22,10 @@
 from openerp import fields, models
 
 
-class ResPartner(models.Model):
-    _inherit = 'res.partner'
-    is_insurance_company = fields.Boolean(
-        string='Insurance Company',
-        help='Check if this entity is an insurance company',
+class MedicalPatient(models.Model):
+    _inherit = 'medical.patient'
+    insurance_plan_ids = fields.Many2many(
+        string='Insurance Plans',
+        comodel_name='medical.insurance.plan',
+        help='Past & Present Insurance Plans',
     )
