@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Tech-Receptives Solutions Pvt. Ltd.
-#    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
-#    Special Credit and Thanks to Thymbra Latinoamericana S.A.
+#    Author: Dave Lasley <dave@laslabs.com>
+#    Copyright: 2015 LasLabs, Inc [https://laslabs.com]
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,6 +18,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import medical_insurance
-from . import medical_insurance_plan
-from . import medical_insurance_company
+
+from openerp import fields, models
+
+
+class MedicalInsurancePlan(models.Model):
+    _inherit = 'medical.insurance.plan'
+    person_num = fields.Integer('Person Number')

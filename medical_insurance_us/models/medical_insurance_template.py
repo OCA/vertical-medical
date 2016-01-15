@@ -29,21 +29,22 @@ class MedicalInsuranceTemplate(models.Model):
     )
     rx_bin = fields.Char(
         required=True,
+        help='RX BIN Number',
     )
     rx_pcn = fields.Char(
         required=True,
+        help='RX Processor Control Number (PCN)',
     )
     rx_group = fields.Char(
         required=True,
+        help='RX Group Number',
     )
     insurance_type = fields.Selection([
         ('ppo', 'PPO'),
         ('hmo', 'HMO'),
         ('fsa', 'FSA'),
     ])
-    insurance_affiliation = fields.Selection([
+    insurance_affiliation = fields.Selection(selection_add=[
         ('medicaid', 'Medicaid'),
-        ('state', 'State'),
         ('employer', 'Employer'),
-        ('private', 'Private'),
     ])

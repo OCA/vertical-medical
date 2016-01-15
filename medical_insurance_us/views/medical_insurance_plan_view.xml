@@ -4,80 +4,34 @@
 		<record id="medical_insurance_plan_view_tree" model="ir.ui.view">
 			<field name="name">medical.insurance.plan.tree</field>
 			<field name="model">medical.insurance.plan</field>
-			<field name="priority" eval="8" />
+			<field name="inherit_id" ref="medical_insurance.medical_insurance_plan_view_tree" />
 			<field name="arch" type="xml">
-				<tree string="Medical Insurance Plan">
-					<field name="name" />
-					<field name="is_default" />
-					<field name="company_id" />
-					<field name="notes" />
-					<field name="plan_id" />
-				</tree>
+				<xpath expr="//field[@name='patient_id']" position="after">
+					<field name="person_num" />
+				</xpath>
 			</field>
 		</record>
 
 		<record id="medical_insurance_plan_view_form" model="ir.ui.view">
 			<field name="name">medical.insurance.plan.form</field>
 			<field name="model">medical.insurance.plan</field>
-			<field name="priority" eval="8" />
+			<field name="inherit_id" ref="medical_insurance.medical_insurance_plan_view_form" />
 			<field name="arch" type="xml">
-				<form string="Medical Insurance Plan">
-					<field name="name" />
-					<field name="is_default" />
-					<field name="company_id" />
-					<field name="notes" />
-					<field name="plan_id" />
-				</form>
+				<xpath expr="//field[@name='patient_id']" position="after">
+					<field name="person_num" />
+				</xpath>
 			</field>
 		</record>
-
+		
 		<record id="medical_insurance_plan_view_search" model="ir.ui.view">
 			<field name="name">medical.insurance.plan.search</field>
 			<field name="model">medical.insurance.plan</field>
-			<field name="priority" eval="8" />
+			<field name="inherit_id" ref="medical_insurance.medical_insurance_plan_view_search" />
 			<field name="arch" type="xml">
-				<search string="Medical Insurance Plan">
-					<field name="name" />
-					<field name="is_default" />
-					<field name="company_id" />
-					<field name="notes" />
-					<field name="plan_id" />
-					<newline />
-					<group expand="0" string="Group By...">
-						<filter string="Default plan" domain="[]"
-							context="{'group_by':'is_default'}" />
-						<filter string="Insurance Company" domain="[]"
-							context="{'group_by':'company_id'}" />
-						<filter string="Extra info" domain="[]" context="{'group_by':'notes'}" />
-						<filter string="Plan" domain="[]" context="{'group_by':'plan_id'}" />
-					</group>
-				</search>
+				<xpath expr="//field[@name='patient_id']" position="after">
+					<field name="person_num" />
+				</xpath>
 			</field>
-		</record>
-
-		<record model="ir.actions.act_window" id="medical_insurance_plan_action_view">
-			<field name="name">Insurance Plan</field>
-			<field name="type">ir.actions.act_window</field>
-			<field name="res_model">medical.insurance.plan</field>
-			<field name="view_type">form</field>
-			<field name="view_mode">tree,form</field>
-			<field name="search_view_id" ref="medical_insurance_plan_view_search" />
-			<field name="domain">[]</field>
-			<field name="context">{}</field>
-		</record>
-
-		<record model="ir.actions.act_window.view" id="medical_insurance_plan_action_form">
-			<field name="act_window_id" ref="medical_insurance_plan_action_view" />
-			<field name="sequence" eval="20" />
-			<field name="view_mode">form</field>
-			<field name="view_id" ref="medical_insurance_plan_view_form" />
-		</record>
-
-		<record model="ir.actions.act_window.view" id="medical_insurance_plan_action_tree">
-			<field name="act_window_id" ref="medical_insurance_plan_action_view" />
-			<field name="sequence" eval="10" />
-			<field name="view_mode">tree</field>
-			<field name="view_id" ref="medical_insurance_plan_view_tree" />
 		</record>
 
 	</data>
