@@ -37,6 +37,3 @@ class MedicalFamily(models.Model):
         'family_id',
         string='Family Members',
     )
-    _sql_constraints = [
-        ('name_uniq', 'UNIQUE(name)', 'Family name must be unique!'),
-    ]
