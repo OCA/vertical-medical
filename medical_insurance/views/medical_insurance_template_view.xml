@@ -5,7 +5,7 @@
 			<field name="name">medical.insurance.template.tree</field>
 			<field name="model">medical.insurance.template</field>
 			<field name="arch" type="xml">
-				<tree string="Insurance Plan Template">
+				<tree string="Insurance Plan Templates">
 					<field name="name" />
 					<field name="plan_number" />
 					<field name="insurance_company_id" />
@@ -20,7 +20,7 @@
 			<field name="name">medical.insurance.template.form</field>
 			<field name="model">medical.insurance.template</field>
 			<field name="arch" type="xml">
-				<form string="Medical Insurance Plan">
+				<form string="Insurance Plan Template">
 					<header />
 					<sheet>
 						<group name="data">
@@ -49,9 +49,8 @@
 		<record id="medical_insurance_template_view_search" model="ir.ui.view">
 			<field name="name">medical.insurance.template.search</field>
 			<field name="model">medical.insurance.template</field>
-			<field name="priority" eval="8" />
 			<field name="arch" type="xml">
-				<search string="Medical Insurance Plan">
+				<search string="Insurance Plan Templates">
 					<field name="name" />
 					<field name="plan_number" />
 					<field name="insurance_company_id" />

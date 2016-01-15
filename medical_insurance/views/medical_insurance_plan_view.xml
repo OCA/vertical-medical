@@ -55,8 +55,11 @@
 			<field name="arch" type="xml">
 				<search string="Insurance Plans">
 					<field name="name" />
+					<field name="patient_id" />
+					<field name="number" />
 					<field name="is_default" />
 					<field name="insurance_company_id" />
+					<field name="insurance_template_id" />
 					<field name="notes" />
 					<field name="plan_number" />
 					<field name="product_id" />
@@ -74,7 +77,10 @@
 						<filter string="Insurance Product"
 								domain="[]"
 							    context="{'group_by':'product_id'}" />
-						<filter string="Plan"
+						<filter string="Insurance Template"
+								domain="[]"
+								context="{'group_by':'insurance_template_id'}" />
+						<filter string="Plan Number"
 								domain="[]"
 								context="{'group_by':'plan_number'}" />
 					</group>
