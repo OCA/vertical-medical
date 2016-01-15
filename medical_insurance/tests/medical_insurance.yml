@@ -1,0 +1,36 @@
+-
+  Create New Medical Insurance - Default Insurance
+-
+  !record {model: medical.patient, id: insco_1 }:
+    name: Default Insurance
+
+-
+  Create New Insurance Template
+-
+  !record {model: medical.insurance.template, id: instemp_1}:
+    name: Medical Insurance Template
+    plan_number: Cheap Plan
+    is_default: True
+    insurance_company_id: insco_1
+    notes: These are the notes!
+    insurance_affiliation: state
+ 
+-
+  Create New Non-Expired Insurance Plan
+-
+  !record {model: medical.insurance.plan, id: insplan_1}:
+    template_id: instemp_1
+    patient_id: medical.patient_arun,
+    number: PlanNumber!
+    member_since: 2015-01-01
+    member_exp: 3000-12-31
+    
+-
+  Create New Expired Insurance Plan
+-
+  !record {model: medical.insurance.plan, id: insplan_2}:
+    template_id: instemp_1
+    patient_id: medical.patient_arun,
+    number: PlanNumber!
+    member_since: 2015-01-01
+    member_exp: 2015-12-31

@@ -9,14 +9,18 @@
                     <header />
                     <sheet>
                         <div class="oe_title" name="title">
-                            <field name="image" widget='image' class="oe_left oe_avatar"
-								   options="{'preview_image': 'image_medium', 'size': [90, 90]}"/>
+                            <field name="image"
+								   widget='image'
+								   class="oe_left oe_avatar"
+								   options="{'preview_image': 'image_medium',
+								             'size': [90, 90]}" />
                             <h1>
                                 <field name="name" placeholder="Insurance Provider Name" />
                                 <field name="is_company" invisible="True" />
                             </h1>
                             <field name="parent_id" placeholder="Parent Company"
-                                   domain="[('is_company', '=', True), ('is_pharmacy', '=', False)]"
+                                   domain="[('is_company', '=', True),
+								            ('is_pharmacy', '=', False)]"
                                    context="{'default_is_company': True,
                                              'default_is_insurance_company': False,
                                              'default_supplier': supplier,
