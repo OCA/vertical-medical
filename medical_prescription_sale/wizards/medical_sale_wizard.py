@@ -42,12 +42,12 @@ class MedicalSaleWizard(models.TransientModel):
 
     @api.one
     def _compute_all_amounts(self, ):
-        #curr = self.pricelist_id.currency_id
+        # curr = self.pricelist_id.currency_id
         untaxed = 0.0
-        taxes = 0.0
+        # taxes = 0.0
         for line in self.order_line:
             untaxed += line.price_subtotal
-            #taxes += line.amount_tax
+            # taxes += line.amount_tax
         self.write({
             'amount_untaxed': untaxed,
         })

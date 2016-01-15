@@ -1,10 +1,10 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
     :alt: License: AGPL-3
 
-Odoo Medical Insurance
-========================
+Odoo Medical Insurance US
+=========================
 
-Extension of medical_insurance in order to add sector/area concept
+Extension of medical_insurance in order to provide US Locale
 
 
 Usage
@@ -39,11 +39,7 @@ Credits
 Contributors
 ------------
 
-* Jonathan Nemry <jonathan.nemry@acsone.eu>
-* Parthiv Patel <parthiv@techreceptives.com>
-* Ruchir Shukla <ruchir@techreceptives.com>
-* Parthiv Patel <parthiv@techreceptives.com>
-* Nhomar Hernandéz <nhomar@vauxoo.com>
+* Dave Lasley <dave@laslabs.com>
 
 Maintainer
 ----------

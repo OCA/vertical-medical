@@ -50,29 +50,32 @@ class CrmMakeSale(models.TransientModel):
         """
         if not self.is_prescription:
             return super(CrmMakeSale)
-        model_obj = self.env['ir.model.data']
-        wizard_id = model_obj.xmlid_to_object(
-            'medical_pharmacy.medical_rx_sale_wizard_form_view',
+        raise NotImplementedError(
+            'Todo, v9 breaks this so not worth the effort here',
         )
-        action_id = model_obj.xmlid_to_object(
-            'medical_pharmacy.medical_rx_sale_wizard_action',
-        )
-        context = self._context.copy()
-        _logger.info('Created %s', sale_ids)
-        _logger.debug('%s %s %s', form_id, tree_id, action_id)
-        sale_ids = [s.id for s in sale_ids]
-        return {
-            'name': action_id.name,
-            'help': action_id.help,
-            'type': action_id.type,
-            'view_mode': 'tree',
-            'view_id': tree_id.id,
-            'views': [
-                (tree_id.id, 'tree'), (form_id.id, 'form'),
-            ],
-            'target': 'current',
-            'context': context,
-            'res_model': action_id.res_model,
-            'res_ids': sale_ids,
-            'domain': [('id', 'in', sale_ids)],
-        }
+        # model_obj = self.env['ir.model.data']
+        # wizard_id = model_obj.xmlid_to_object(
+        #     'medical_pharmacy.medical_rx_sale_wizard_form_view',
+        # )
+        # action_id = model_obj.xmlid_to_object(
+        #     'medical_pharmacy.medical_rx_sale_wizard_action',
+        # )
+        # context = self._context.copy()
+        # _logger.info('Created %s', sale_ids)
+        # _logger.debug('%s %s %s', form_id, tree_id, action_id)
+        # sale_ids = [s.id for s in sale_ids]
+        # return {
+        #     'name': action_id.name,
+        #     'help': action_id.help,
+        #     'type': action_id.type,
+        #     'view_mode': 'tree',
+        #     'view_id': tree_id.id,
+        #     'views': [
+        #         (tree_id.id, 'tree'), (form_id.id, 'form'),
+        #     ],
+        #     'target': 'current',
+        #     'context': context,
+        #     'res_model': action_id.res_model,
+        #     'res_ids': sale_ids,
+        #     'domain': [('id', 'in', sale_ids)],
+        # }

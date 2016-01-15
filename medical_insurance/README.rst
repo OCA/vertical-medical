@@ -39,6 +39,7 @@ Credits
 Contributors
 ------------
 
+* Dave Lasley <dave@laslabs.com>
 * Jonathan Nemry <jonathan.nemry@acsone.eu>
 * Parthiv Patel <parthiv@techreceptives.com>
 * Ruchir Shukla <ruchir@techreceptives.com>

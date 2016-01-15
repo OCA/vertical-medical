@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from openerp import fields, models, api
+from openerp import fields, models
 
 
 class MedicalInsuranceTemplate(models.Model):
@@ -43,7 +43,9 @@ class MedicalInsuranceTemplate(models.Model):
         ('ppo', 'PPO'),
         ('hmo', 'HMO'),
         ('fsa', 'FSA'),
-    ])
+    ],
+        required=True,
+    )
     insurance_affiliation = fields.Selection(selection_add=[
         ('medicaid', 'Medicaid'),
         ('employer', 'Employer'),

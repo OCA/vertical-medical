@@ -35,7 +35,7 @@ class MedicalSaleLineWizard(models.TransientModel):
 
     def _compute_all_amounts(self, ):
         self.price_subtotal = self.price_unit * self.product_uom_qty
-        #taxes = self.env['account.tax'].compute_all()
+        # taxes = self.env['account.tax'].compute_all()
 
     order_id = fields.Many2one(
         string='Order',
