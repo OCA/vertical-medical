@@ -23,14 +23,6 @@
 from openerp import models, fields
 
 
-class MedicalEthnicity(models.Model):
-    _name = 'medical.ethnicity'
-
-    notes = fields.Char(size=256, string='Notes')
-    code = fields.Char(size=256, string='Code')
-    name = fields.Char(size=256, string='Name', required=True,
-                       translate=True)
-
-    _sql_constraints = [
-        ('name_uniq', 'UNIQUE(name)', 'Ethnicity name must be unique!'),
-    ]
+class MedicalPatient(models.Model):
+    _inherit = 'medical.patient'
+    ethnicity_id = fields.Many2one('medical.patient.ethnicity', 'Ethnicity')
