@@ -4,12 +4,11 @@
         <record id="view_medical_physician_tree" model="ir.ui.view">
             <field name="name">medical.physician.tree</field>
             <field name="model">medical.physician</field>
-            <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <tree string="Medical Physician">
                     <field name="name" />
                     <field name="code" />
-                    <field name="specialty" />
+                    <field name="specialty_id" />
                     <field name="parent_id" />
                 </tree>
             </field>
@@ -18,52 +17,57 @@
         <record id="view_medical_physician_form" model="ir.ui.view">
             <field name="name">medical.physician.form</field>
             <field name="model">medical.physician</field>
-            <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <form string="Medical Physician" >
                     <header/>
                     <sheet>
-                        <div class="oe_title" name="title">
-                            <field name="image" widget='image' class="left avatar"/>
-                            <h1><field name="name" placeholder="First Name Last Name" /></h1>
+                        <field name="image" widget='image' class="oe_avatar pull-left"
+                               options='{"preview_image": "image_medium", }'/>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Physician's Name" />
+                            </h1>
+                            <h3> 
+                                <field name="company_id" placeholder="Company" /> 
+                            </h3> 
                         </div>
-                        <div class="oe_right oe_button_box" name="buttons">
-                        </div>
-                        <group name="data">
-                            <group name="main">
-                                <field name="specialty"/>
-                                <field name="ref"/>
-                                <field name="code"/>
-                            </group>
+                        <group>
+                            <field name="ref" string="Legal ID"/>
+                            <field name="code" string="Internal ID"/>
+                            <field name="specialty_id"/>
+                            <field name="parent_id" />
+                            <field name="info" colspan="4"/>
                         </group>
                         <notebook>
-                            <page string="Notes">
-                                <field name="info"/>
-                            </page>
-                            <page string="General Information"> 
-                                <group string="Contact Information">
-                                    <group>
-                                        <label for="street" string="Address"/>
-                                        <div>
-                                            <field name="use_parent_address" class="edit_only inline" invisible="1"/>
-                                            <label for="use_parent_address" class="edit_only" invisible="1"/>
-                                            <field name="street" placeholder="Street..." />
-                                            <field name="street2" />
-                                            <div class="address_format">
-                                                <field name="city" placeholder="City" style="width: 40%" />
-                                                <field name="state_id" class="no_button" placeholder="State" style="width: 37%" options='{"no_open": True}' />
-                                                <field name="zip" placeholder="ZIP" style="width: 20%" />
-                                            </div>
-                                            <field name="country_id" placeholder="Country" class="no_button" options='{"no_open": True}' />
+                            <page string="General Information">
+                                <group>
+                                    <field name="active"/>
+                                    <field name="phone" placeholder="e.g. +506 5555 5555"/>
+                                    <field name="mobile"/>
+                                    <field name="fax"/>
+                                       <field name="user_ids" invisible="1"/>
+                                    <field name="email" widget="email" attrs="{'required': [('user_ids','!=', [])]}"/>
+                                </group>
+                                <group>
+                                    <label for="street" string="Address"/>
+                                    <div>
+                                        <field name="use_parent_address" invisible="1"/>
+                                        <field name="street" placeholder="Street..."
+                                               attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                        <field name="street2"  attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                        <div class="address_format">
+                                            <field name="city" placeholder="City" style="width: 40%%"
+                                                   attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                            <field name="state_id" class="no_button" placeholder="State"
+                                                   style="width: 37%%" options='{"no_open": True}'
+                                                   attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                            <field name="zip" placeholder="ZIP" style="width: 20%%"
+                                                   attrs="{'readonly': [('use_parent_address','=',True)]}"/>
                                         </div>
-                                        <field name="website" widget="url" placeholder="e.g. www.openerp.com"/>
-                                    </group>
-                                    <group>
-                                        <field name="phone" placeholder="e.g. +32.81.81.37.00"/>
-                                        <field name="mobile"/>
-                                        <field name="fax"/>
-                                        <field name="email" widget="email"/>
-                                    </group>
+                                        <field name="country_id" placeholder="Country" class="no_button"
+                                               options='{"no_open": True}'
+                                               attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                    </div>
                                 </group>
                                 <group  col="4" colspan="4"> 
                                     <field name="parent_id" colspan="2" string="Legal Representative" domain="[('is_patient','=',True)]"/>
@@ -82,12 +86,11 @@
         <record id="view_medical_physician_search" model="ir.ui.view">
             <field name="name">medical.physician.search</field>
             <field name="model">medical.physician</field>
-            <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <search string="Medical Physician">
                     <field name="name" />
                     <field name="code" />
-                    <field name="specialty" />
+                    <field name="specialty_id" />
                     <field name="parent_id" />
                     <field name="info" />
                     <newline />
@@ -95,7 +98,7 @@
                         <filter string="Extra info" domain="[]" context="{'group_by':'info'}" />
                         <filter string="Name" domain="[]" context="{'group_by':'name'}" />
                         <filter string="ID" domain="[]" context="{'group_by':'code'}" />
-                        <filter string="Specialty" domain="[]"    context="{'group_by':'specialty'}" />
+                        <filter string="Specialty" domain="[]"    context="{'group_by':'specialty_id'}" />
                         <filter string="Institution" domain="[]" context="{'group_by':'parent_id'}" />
                     </group>
                 </search>

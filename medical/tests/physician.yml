@@ -24,4 +24,4 @@
     company_id: company_vikas
     info: 'General Physician'
     code: 'PH101'
-    specialty: 'specialty_1'
+    specialty_id: 'specialty_1'
