@@ -3,7 +3,7 @@
 
 [report]
 include =
-    */OCA/<YOUR_PROJECT_NAME_HERE>/*
+    */OCA/vertical-medical/*
 
 omit =
     */tests/*
