@@ -24,11 +24,18 @@
 ##############################################################################
 {
     'name': 'Medical Medicament',
+<<<<<<< HEAD
     'version': '8.0.1.0.0',
     'author': 'ACSONE SA/NV, Odoo Community Association (OCA)',
     'maintainer': 'ACSONE SA/NV, Odoo Community Association (OCA)',
     'website': 'http://www.acsone.eu',
     'license': 'AGPL-3',
+=======
+    'version': '9.0.1.0.0',
+    "author": "ACSONE SA/NV, Odoo Community Association (OCA)",
+    "maintainer": "ACSONE SA/NV,Odoo Community Association (OCA)",
+    "website": "http://www.acsone.eu",
+>>>>>>> Update active module versions to v9. Leave unported for organization while still in conversion phases
     'category': 'Medical',
     'depends': [
         'medical',

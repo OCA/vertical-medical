@@ -35,7 +35,7 @@
 {
 
     'name': 'Medical Medicament Physical Attributes',
-    'version': '8.0.1.0.0',
+    'version': '9.0.1.1.0',
     'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': [
