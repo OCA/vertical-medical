@@ -34,9 +34,9 @@
 ##############################################################################
 {
 
-    'name': 'Odoo Medical : Free Health and Hospital Information System',
-    'version': '8.0.1.0',
-    'author': 'Odoo Medical Team,Odoo Community Association (OCA)',
+    'name': 'Medical Hospital',
+    'version': '8.0.1.0.0',
+    'author': 'Odoo Medical Team, Odoo Community Association (OCA)',
     'category': 'Medical',
     'depends': ['medical'],
     'application': True,

@@ -4,7 +4,7 @@
         <record id="medical_patient_view_form" model="ir.ui.view">
             <field name="name">medical.patient.form (medical_disease)</field>
             <field name="model">medical.patient</field>
-            <field name="inherit_id" ref="medical.view_medical_patient_form" />
+            <field name="inherit_id" ref="medical.medical_patient_view_form" />
             <field name="arch" type="xml">
                 <xpath expr="//div[@name='buttons']" position="inside">
                     <button
