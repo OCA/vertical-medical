@@ -65,6 +65,6 @@
         'test/medical_insurance_template.yml',
         'test/medical_insurance_plan.yml',
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
 }

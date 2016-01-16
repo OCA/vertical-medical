@@ -46,8 +46,14 @@
     'depends': [
         'medical_pharmacy',
     ],
+<<<<<<< 3345650fa340e892a6e759e68e0f6babb348eb39
     'website': 'https://laslabs.com',
     'license': 'AGPL-3',
     'installable': True,
+=======
+    "website": "https://laslabs.com",
+    "licence": "AGPL-3",
+    'installable': False,
+>>>>>>> Disable module installation on unconverted
     'auto_install': False,
 }

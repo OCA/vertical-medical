@@ -52,5 +52,10 @@
         'views/medical_hospital_unit_view.xml',
         'views/medical_hospital_menu.xml',
     ],
+<<<<<<< 3345650fa340e892a6e759e68e0f6babb348eb39
     'installable': True,
+=======
+    'active': False,
+    'installable': False,
+>>>>>>> Disable module installation on unconverted
 }
