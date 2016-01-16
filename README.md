@@ -1,8 +1,6 @@
 [![Build Status](https://travis-ci.org/OCA/vertical-medical.svg?branch=8.0)](https://travis-ci.org/OCA/vertical-medical)
 [![Coverage Status](https://coveralls.io/repos/OCA/vertical-medical/badge.png?branch=8.0)](https://coveralls.io/r/OCA/vertical-medical?branch=8.0)
 
-*Important note*: in order to facilitate the review process, work to migrate to 8.0 is currently done on the 8.0-incubator branch because it implies several PR's depending on each others and is currently in unstable state. As soon as this stabilizes, it will be merged back in the 8.0 branch and the normal OCA process will resume.
-
 What is Odoo Medical
 ---
 
@@ -188,32 +186,3 @@ Hacking Odoo Medical
     ```bash
     $ git push -u origin 8.0-your_new_feature_theme
     ```
-
-
-[//]: # (addons)
-Available addons
-----------------
-addon | version | summary
---- | --- | ---
-[medical](medical/) | 8.0.1.0.0 | Odoo Medical
-
-Unported addons
----------------
-addon | version | summary
---- | --- | ---
-[oemedical_emr](oemedical_emr/) | 1.0 (unported) | OeMedical EMR : Electronic Medical Record management for OeMedical
-[oemedical_emr_data](oemedical_emr_data/) | 1.0 (unported) | OeMedical EMR: Module Data
-[oemedical_genetics](oemedical_genetics/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
-[oemedical_gynecology_and_obstetrics](oemedical_gynecology_and_obstetrics/) | 1.0.1 (unported) | OeMedical : gynecology and obstetrics
-[oemedical_his](oemedical_his/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
-[oemedical_icu](oemedical_icu/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
-[oemedical_insurance](oemedical_insurance/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
-[oemedical_invoice](oemedical_invoice/) | 0.1 (unported) | Medical Invoice
-[oemedical_lab](oemedical_lab/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
-[oemedical_lifestyle](oemedical_lifestyle/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
-[oemedical_pediatrics](oemedical_pediatrics/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
-[oemedical_socioeconomics](oemedical_socioeconomics/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
-[oemedical_surgery](oemedical_surgery/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
-[web_doc_oemedical](web_doc_oemedical/) | 0.1 (unported) | OeMedical CMS
-
-[//]: # (end addons)

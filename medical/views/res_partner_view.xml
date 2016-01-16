@@ -5,26 +5,28 @@
             <field name="name">res.partner.form</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
-            <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <notebook position="inside">
-                    <page string="Medical">
-                        <group colspan="4" col="6">
-                            <field name="is_insurance_company" />
-                            <field name="relationship" />
-                            <!--field name="insurance_company_type"/ -->
-                            <field name="is_institution" />
-                            <field name="relative_id" />
-                            <field name="is_doctor" />
-                            <field name="is_patient" />
-                            <field name="alias" />
-                            <field name="internal_user" />
-                            <field name="activation_date" />
-                            <field name="is_work" />
-                            <field name="is_person" />
-                            <field name="is_school" />
-                            <field name="is_pharmacy" />
-                            <!--field name="insurance"/ -->
+                    <page string="Medical" name="medical_page">
+                        <group name="patient_data" attrs="{'invisible': [('is_patient', '!=', True)]}">
+                            <group name="patient_data_main">
+                                <field name="alias" />
+                                <field name="relationship" />
+                                <field name="relative_id" />
+                                <field name="activation_date" />
+                            </group>
+                        </group>
+                        <group name="entity_data">
+                            <group name="entity_data_main">
+                                <field name="is_insurance_company" />
+                                <field name="is_institution" />
+                                <field name="is_doctor" />
+                                <field name="is_patient" />
+                                <field name="is_person" />
+                                <field name="is_school" />
+                                <field name="is_pharmacy" />
+                                <field name="is_work" />
+                            </group>
                         </group>
                     </page>
                 </notebook>

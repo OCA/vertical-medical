@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2014-[Now] LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    The licence is in the file __openerp__.py
+-->
+
+<openerp>
+    <data>
+        
+        <record id="crm_case_form_view_oppor" model="ir.ui.view">
+            <field name="name">crm.lead.form</field>
+            <field name="model">crm.lead</field>
+            <field name='inherit_id' ref='crm.crm_case_form_view_oppor' />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Prescription">
+                        <group>
+                            <field name="patient_ids" />
+                            <field name="pharmacy_id" />
+                            <field name="prescription_order_line_ids" />
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

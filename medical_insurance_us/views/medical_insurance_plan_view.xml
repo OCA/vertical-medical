@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="medical_insurance_plan_view_tree" model="ir.ui.view">
+			<field name="name">medical.insurance.plan.tree</field>
+			<field name="model">medical.insurance.plan</field>
+			<field name="inherit_id" ref="medical_insurance.medical_insurance_plan_view_tree" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='patient_id']" position="after">
+					<field name="person_num" />
+				</xpath>
+			</field>
+		</record>
+
+		<record id="medical_insurance_plan_view_form" model="ir.ui.view">
+			<field name="name">medical.insurance.plan.form</field>
+			<field name="model">medical.insurance.plan</field>
+			<field name="inherit_id" ref="medical_insurance.medical_insurance_plan_view_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='patient_id']" position="after">
+					<field name="person_num" />
+				</xpath>
+			</field>
+		</record>
+		
+		<record id="medical_insurance_plan_view_search" model="ir.ui.view">
+			<field name="name">medical.insurance.plan.search</field>
+			<field name="model">medical.insurance.plan</field>
+			<field name="inherit_id" ref="medical_insurance.medical_insurance_plan_view_search" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='patient_id']" position="after">
+					<field name="person_num" />
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

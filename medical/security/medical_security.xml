@@ -35,6 +35,12 @@
         <field name="implied_ids" eval="[(4, ref('group_medical_center_manager'))]"/>
     </record>
 
+    <record id="group_medical_configurator" model="res.groups">
+        <field name="name">Medical Configurator</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('group_medical_manager'))]"/>
+    </record>
+
 </data>
 
 <data noupdate="0">
@@ -43,7 +49,7 @@
         <field name="model_id" ref="model_medical_appointment"/>
         <field name="global" eval="True"/>
         <field name="groups" eval="[(4, ref('group_medical_doctor'))]"/>
-        <field name="domain_force">[('doctor.user_id', '=', user.id)]</field>
+        <field name="domain_force">[('physician_id.user_id', '=', user.id)]</field>
     </record>
 
     <record id="medical_appointment_access_rule_assistant" model="ir.rule">
@@ -51,7 +57,16 @@
         <field name="model_id" ref="model_medical_appointment"/>
         <field name="global" eval="True"/>
         <field name="groups" eval="[(4, ref('group_medical_assistant'))]"/>
-        <field name="domain_force">[('institution','=',user.parent_id.id)]</field>
+        <field name="domain_force">['|', ('institution_id','=',user.parent_id.id), ('institution','child_of',user.parent_id.id)]</field>
     </record>
 </data>
+<!--    
+    <record id="medical_partner_access_rule_assistant" model="ir.rule">
+        <field name="name">Partner Access rule for Assistants</field>
+        <field name="model_id" ref="model_res_partner"/>
+        <field name="global" eval="True"/>
+        <field name="groups" eval="[(4, ref('group_medical_assistant'))]"/>
+        <field name="domain_force">['|', '|', ('parent_id','=',user.parent_id.id), ('parent_id','child_of',user.parent_id.id)]</field>
+    </record>
+-->
 </openerp>

@@ -1,121 +1,209 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
-	<data>
- 		<record id="view_medical_patient_tree" model="ir.ui.view"> 
- 			<field name="name">medical.patient.tree</field> 
- 			<field name="model">medical.patient</field> 
- 			<field name="priority" eval="8" /> 
- 			<field name="arch" type="xml"> 
- 				<tree string="Oemedical Patient"> 
- 					<field name="name" />
- 					<field name="ref" /> 
- 					<field name="identification_code" /> 
- 					<field name="age" />
- 					<field name="sex" /> 
- 				</tree> 
- 			</field> 
- 		</record> 
+    <data>
+         <record id="medical_patient_view_tree" model="ir.ui.view">
+             <field name="name">medical.patient.tree</field>
+             <field name="model">medical.patient</field>
+             <field name="arch" type="xml">
+                 <tree string="Medical Patient">
+                     <field name="name" />
+                     <field name="ref" />
+                     <field name="identification_code" />
+                     <field name="age" />
+                     <field name="gender" />
+                 </tree>
+             </field>
+         </record>
 
- 		<record id="view_medical_patient_form" model="ir.ui.view"> 
- 			<field name="name">medical.patient.form</field> 
- 			<field name="model">medical.patient</field> 
- 			<field name="priority" eval="8" /> 
- 			<field name="arch" type="xml"> 
- 			 <form string="Patient" version="7.0"> 
-                    <sheet> 
-                        <div>
-                            <field name="image" widget='image' class="oe_left oe_avatar"/> 
-                            <div> 
-                                 <h1> 
-		                            <field name="name" placeholder="First Name" style="width: 20%" /> 
-		                            <field name="login" placeholder="Login" style="width: 20%" /> 
-		                         </h1> 
-                            </div> 
-     						<div> 
-     							<label for="sex" class="oe_edit_only"/> 
-     							<field name="sex" style="width: 30%"/> 
-     							<label for="ref"/> 
-     							<field name="ref" style="width: 20%"/> 
-     							<label for="identification_code"/> 
-     							<field name="identification_code" style="width: 17%" attrs="{'readonly': True }"/> 
-     						</div> 
-                            <div>
-     							<label for="dob"/> 
-     							<field name="dob" style="width: 30%"/> 
-     							<label for="age"/> 
-     							<field name="age" style="width: 30%"/> 
-                            </div> 
+         <record id="medical_patient_view_form" model="ir.ui.view">
+             <field name="name">medical.patient.form</field>
+             <field name="model">medical.patient</field>
+             <field name="arch" type="xml">
+              <form string="Patient">
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="oe_title" name="title">
+                            <field name="image" widget='image'
+                                class="oe_left oe_avatar" options="{'preview_image': 'image_medium', 'size': [90, 90]}"/>
+                            <h1><field name="name" placeholder="First Name Last Name" /></h1>
                         </div>
-                    <notebook> 
-                        <page string="General Information"> 
-                            <group string="Contact Information">
-                                <group>
-                                    <label for="street" string="Address"/>
-                                    <div>
-                                        <field name="use_parent_address" class="oe_edit_only oe_inline" invisible="1"/>
-                                        <label for="use_parent_address" class="oe_edit_only" invisible="1"/>
-                                        <field name="street" placeholder="Street..." />
-                                        <field name="street2" />
-                                        <div class="address_format">
-                                            <field name="city" placeholder="City" style="width: 40%" />
-                                            <field name="state_id" class="oe_no_button" placeholder="State" style="width: 37%" options='{"no_open": True}' />
-                                            <field name="zip" placeholder="ZIP" style="width: 20%" />
-                                        </div>
-                                        <field name="country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True}' />
-                                    </div>
-                                    <field name="website" widget="url" placeholder="e.g. www.openerp.com"/>
-                                </group>
-                                <group>
-                                    <field name="phone" placeholder="e.g. +32.81.81.37.00"/>
-                                    <field name="mobile"/>
-                                    <field name="fax"/>
-                                    <field name="email" widget="email"/>
-                                </group>
+                        <div class="oe_right oe_button_box" name="buttons">
+                        </div>
+                        <group name="data">
+                            <group name="main">
+                                 <field name="ref"/>
+                                 <field name="identification_code"/>
+                                 <field name="medical_center_id"/>
                             </group>
-                            <group  col="4" colspan="4"> 
-             					<field name="marital_status" colspan="2"/> 
-             				</group> 
-         				</page> 
-                        <page string="Medical Centers">
-                            <field name="medical_center_ids">
-                                colspan="4"
-                                nolabel="1"
-                                <tree string="Medical Centers">
-                                    <field name="medical_center_id" />
-                                    <field name="identification_code" />
-                                </tree>
-                                <form string="Medical Centers">
-                                    <separator string="Medical Center Information" colspan="4" />
-                                    <field name="medical_center_id" />
-                                    <field name="identification_code" />
-                                </form>
-                            </field>
-                        </page>
-                    </notebook> 
- 				</sheet> 
- 				</form> 
- 			</field> 
- 		</record> 
+                            <group>
+                                 <field name="dob"/>
+                                 <field name="dod"/>
+                                 <field name="age"/>
+                                 <field name="gender"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="General Information"> 
+                                <group string="Contact Information">
+                                    <group>
+                                        <label for="street" string="Address"/>
+                                        <div>
+                                            <field name="use_parent_address" class="edit_only inline" invisible="1"/>
+                                            <label for="use_parent_address" class="edit_only" invisible="1"/>
+                                            <field name="street" placeholder="Street..." />
+                                            <field name="street2" />
+                                            <div class="address_format">
+                                                <field name="city" placeholder="City" style="width: 40%" />
+                                                <field name="state_id" class="no_button" placeholder="State" style="width: 37%" options='{"no_open": True}' />
+                                                <field name="zip" placeholder="ZIP" style="width: 20%" />
+                                            </div>
+                                            <field name="country_id" placeholder="Country" class="no_button" options='{"no_open": True}' />
+                                        </div>
+                                        <field name="website" widget="url" placeholder="e.g. www.openerp.com"/>
+                                    </group>
+                                    <group>
+                                        <field name="phone" placeholder="e.g. +32.81.81.37.00"/>
+                                        <field name="mobile"/>
+                                        <field name="fax"/>
+                                        <field name="email" widget="email"/>
+                                    </group>
+                                </group>
+                                <group  col="4" colspan="4"> 
+                                    <field name="marital_status" colspan="2"/>
+                                    <field name="parent_id" colspan="2" string="Legal Representative" domain="[('is_patient','=',True)]"/>
+                                </group>
+                                <group  col="4" colspan="4"> 
+                                     <field name="lang" colspan="2"/>
+                                     <field name="opt_out" string="I don't want to receive comercial messages" colspan="2"/>
+                                 </group>
+                            </page>
+                            <page string="Dependants">
+                                <field name="child_ids" context="{'default_contact_id': active_id, 'default_use_parent_address': True, 'default_is_patient': True, 'default_customer': True}}" mode="kanban" domain="[('is_patient', '=', True)]">
+                                    <kanban>
+                                        <field name="color"/>
+                                        <field name="name"/>
+                                        <field name="title"/>
+                                        <field name="email"/>
+                                        <field name="parent_id"/>
+                                        <field name="is_company"/>
+                                        <field name="function"/>
+                                        <field name="phone" data-inputmask="'mask': '9999-9999'"/>
+                                        <field name="street"/>
+                                        <field name="street2"/>
+                                        <field name="zip"/>
+                                        <field name="city"/>
+                                        <field name="country_id"/>
+                                        <field name="mobile" data-inputmask="'mask': '9999-9999'"/>
+                                        <field name="fax" data-inputmask="'mask': '9999-9999'"/>
+                                        <field name="state_id"/>
+                                        <field name="has_image"/>
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <t t-set="color" t-value="kanban_color(record.color.raw_value)"/>
+                                                <div t-att-class="color + (record.title.raw_value == 1 ? ' kanban_color_alert' : '')" style="position: relative">
+                                                    <a t-if="! read_only_mode" type="delete" style="position: absolute; right: 0; padding: 4px; diplay: inline-block">X</a>
+                                                    <div class="module_vignette">
+                                                    <a type="open">
+                                                        <t t-if="record.has_image.raw_value === true">
+                                                            <img t-att-src="kanban_image('medical.physician', 'image', record.id.value, {'preview_image': 'image_small'})" class="avatar kanban_avatar_smallbox"/>
+                                                        </t>
+                                                        <t t-if="record.image and record.image.raw_value !== false">
+                                                            <img t-att-src="'data:image/png;base64,'+record.image.raw_value" class="avatar kanban_avatar_smallbox"/>
+                                                        </t>
+                                                        <t t-if="record.has_image.raw_value === false and (!record.image or record.image.raw_value === false)">
+                                                            <t t-if="record.is_company.raw_value === true">
+                                                                <img t-att-src='_s + "/base/static/src/img/company_image.png"' class="kanban_image kanban_avatar_smallbox"/>
+                                                            </t>
+                                                            <t t-if="record.is_company.raw_value === false">
+                                                                <img t-att-src='_s + "/base/static/src/img/avatar.png"' class="kanban_image kanban_avatar_smallbox"/>
+                                                            </t>
+                                                        </t>
+                                                    </a>
+                                                        <div class="module_desc">
+                                                            <div class="kanban_box_content kanban_color_bglight kanban_color_border">
+                                                                <table class="kanban_table">
+                                                                    <tr>
+                                                                        <td class="kanban_title1" align="left" valign="middle">
+                                                                            <h4><a type="open"><field name="name"/></a></h4>
+                                                                            <div><a t-if="record.email.raw_value" title="Mail" t-att-href="'mailto:'+record.email.value">
+                                                                                <field name="email"/>
+                                                                            </a></div>
+                                                                            <div t-if="record.phone.raw_value">Phone: <field name="phone" data-inputmask="'mask': '9999-9999'"/></div>
+                                                                            <div t-if="record.mobile.raw_value">Mobile: <field name="mobile" data-inputmask="'mask': '9999-9999'"/></div>
+                                                                            <div t-if="record.fax.raw_value">Fax: <field name="fax" data-inputmask="'mask': '9999-9999'"/></div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                    <form string="Dependants">
+                                        <sheet>
+                                            <field name="image" widget='image' class="avatar left" options='{"preview_image": "image_medium"}'/>
+                                            <div class="title">
+                                                    <label for="name" string="Dependant" class="edit_only"/>
+                                                    <h1><field name="name" style="width: 90%%" placeholder="Dependant Name" required="True"/></h1>
+                                                    <field name="category_id" widget="many2many_tags" placeholder="Tags..." style="width: 70%%"/>
+                                            </div>
+                                            <group col="2" colspan="2">
+                                                <field name="customer" invisible="True"/>
+                                                <field name="use_parent_address" invisible="True"/>
+                                                <field class="inline" name="type" invisible="True"/>
+                                                <label for="street" string="Address"/>
+                                                <div name="div_address">
+                                                    <field name="street" placeholder="Street..." attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                    <field name="street2" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                    <div class="address_format">
+                                                        <field name="city" placeholder="City" style="width: 40%%" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                        <field name="state_id" class="no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' on_change="onchange_state(state_id)" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                        <field name="zip" placeholder="ZIP" style="width: 20%%" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                    </div>
+                                                    <field name="country_id" placeholder="Country" class="no_button" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                </div>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook> 
+                     </sheet>
+                    <div name="configurator" class="oe_form_sheetbg" groups="medical.group_medical_configurator">
+                        <div class="oe_formview oe_form_sheet_width">
+                            <h3>More Info</h3>
+                            <group name="moreinfo">
+                                <field name="id"/>
+                                <field name="active"/>
+                            </group>
+                        </div>
+                    </div>
+                 </form>
+             </field>
+         </record>
 
-        <record model="ir.ui.view" id="view_medical_patient_kanban">
+        <record model="ir.ui.view" id="medical_patient_view_kanban">
             <field name="name">medical.patient.kanban</field>
             <field name="model">medical.patient</field>
             <field name="type">kanban</field>
             <field name="arch" type="xml">
-                <kanban version="7.0" class="oe_background_grey">
+                <kanban class="background_grey">
                     <field name="name"/>
                     <templates>
                         <t t-name="kanban-box">
-                            <div class="oe_kanban_content">
-                                <div class="oe_kanban_vignette oe_semantic_html_override">
-                                    <a type="open"><img t-att-src="kanban_image('medical.patient', 'image', record.id.value)" width="110" height="110" class="oe_employee_picture"/></a>
-                                    <div class="oe_kanban_details">
+                            <div class="kanban_content">
+                                <div class="kanban_vignette semantic_html_override">
+                                    <a type="open"><img t-att-src="kanban_image('medical.patient', 'image', record.id.value)" width="110" height="110" class="employee_picture"/></a>
+                                    <div class="kanban_details">
                                         <h3>
                                             <a type="open"><field name="name"/></a>
                                         </h3>
                                         <ul>
                                             <li t-if="record.age.raw_value"><b>Age:</b> <field name="age"/></li>
-                                            <li t-if="record.sex.raw_value"><b>Sex:</b> <field name="sex"/></li>
+                                            <li t-if="record.gender.raw_value"><b>Sex:</b> <field name="gender"/></li>
                                             <li t-if="record.ref.raw_value"><b>SSN:</b> <field name="ref"/></li>
                                         </ul>
                                     </div>
@@ -127,61 +215,36 @@
             </field>
         </record>
 
- 		<record id="view_medical_patient_search" model="ir.ui.view"> 
- 			<field name="name">medical.patient.search</field> 
- 			<field name="model">medical.patient</field> 
- 			<field name="priority" eval="8" /> 
- 			<field name="arch" type="xml"> 
- 				<search string="Oemedical Patient"> 
- 					<field name="name" /> 
- 					<field name="general_info" /> 
- 					<field name="ref" /> 
- 					<field name="dob" /> 
- 					<field name="age" /> 
- 					<field name="identification_code" /> 
- 					<newline /> 
- 					<group expand="0" string="Group By...">  
- 						<filter string="SSN" domain="[]" context="{'group_by':'ref'}" /> 
- 						<filter string="DoB" domain="[]" context="{'group_by':'dob'}" /> 
- 						<filter string="Age" domain="[]" context="{'group_by':'age'}" /> 
- 						<filter string="ID" domain="[]" context="{'group_by':'identification_code'}" /> 
- 					</group> 
- 				</search> 
- 			</field> 
- 		</record> 
+         <record id="medical_patient_view_search" model="ir.ui.view">
+             <field name="name">medical.patient.search</field>
+             <field name="model">medical.patient</field>
+             <field name="arch" type="xml">
+                 <search string="Medical Patient">
+                     <field name="name" />
+                     <field name="general_info" />
+                     <field name="ref" />
+                     <field name="dob" />
+                     <field name="age" />
+                     <field name="identification_code" />
+                     <newline />
+                     <group expand="0" string="Group By...">
+                         <filter string="DoB" domain="[]" context="{'group_by':'dob'}" />
+                         <filter string="Age" domain="[]" context="{'group_by':'age'}" />
+                     </group>
+                 </search>
+             </field>
+         </record>
 
- 		<record model="ir.actions.act_window" id="act_open_medical_patient_view"> 
- 			<field name="name">Patient</field> 
- 			<field name="type">ir.actions.act_window</field> 
- 			<field name="res_model">medical.patient</field> 
- 			<field name="view_type">form</field> 
- 			<field name="view_mode">kanban,tree,form</field> 
- 			<field name="search_view_id" ref="view_medical_patient_search" /> 
- 			<field name="domain">[]</field> 
- 			<field name="context">{}</field> 
- 		</record> 
+         <record model="ir.actions.act_window" id="medical_patient_action">
+             <field name="name">Patient</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="res_model">medical.patient</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">kanban,tree,form</field>
+             <field name="search_view_id" ref="medical_patient_view_search" />
+             <field name="domain">[]</field>
+             <field name="context">{}</field>
+         </record>
 
- 		<record model="ir.actions.act_window.view" id="act_open_medical_patient_view_form"> 
- 			<field name="act_window_id" ref="act_open_medical_patient_view" /> 
- 			<field name="sequence" eval="20" /> 
- 			<field name="view_mode">form</field> 
- 			<field name="view_id" ref="view_medical_patient_form" /> 
- 		</record> 
-
- 		<record model="ir.actions.act_window.view" id="act_open_medical_patient_view_tree"> 
- 			<field name="act_window_id" ref="act_open_medical_patient_view" /> 
- 			<field name="sequence" eval="30" /> 
- 			<field name="view_mode">tree</field> 
- 			<field name="view_id" ref="view_medical_patient_tree" /> 
- 		</record> 
-
- 		<record model="ir.actions.act_window.view" id="act_open_medical_patient_view_kanban"> 
- 			<field name="act_window_id" ref="act_open_medical_patient_view" /> 
- 			<field name="sequence" eval="10" /> 
- 			<field name="view_mode">kanban</field> 
- 			<field name="view_id" ref="view_medical_patient_kanban" /> 
- 		</record> 
-
-
-	</data>
+    </data>
 </openerp>

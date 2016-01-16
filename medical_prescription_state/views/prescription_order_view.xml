@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016-[Now] LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    The licence is in the file __openerp__.py
+-->
+
+<openerp>
+    <data>
+        
+        <record id="medical_prescription_order_kanban_view" model="ir.ui.view">
+            <field name="name">Prescription Orders</field>
+            <field name="model">medical.prescription.order</field>
+            <field name='inherit_id' ref='medical_prescription.medical_prescription_order_kanban_view'/>
+            <field name="arch" type="xml">
+                <xpath expr="//kanban" position="replace">
+                <kanban default_group_by="state_id" class="o_kanban_small_column">
+                    <field name="color"/>
+                    <field name="priority"/>
+                    <field name="state_id" options='{"group_by_tooltip": {"description": "Stage Description", "legend_priority": "Use of stars"}}'/>
+                    <field name="sequence"/>
+                    <field name="legend_blocked"/>
+                    <field name="legend_normal"/>
+                    <field name="legend_done"/>
+                    <field name="name"/>
+                    <field name="date_prescription"/>
+                    <field name="patient_id"/>
+                    <field name="physician_id"/>
+                    <field name="user_id"/>
+                    <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click">
+                            <div class="oe_kanban_content">
+                                <div>
+                                    <strong>
+                                        <field name="name"/> <br />
+                                        <field name="date_prescription"/>
+                                    </strong>
+                                </div>
+                                <div class="text-muted">
+                                    For: <field name="patient_id"/> <br />
+                                    By: <field name="physician_id"/>
+                                </div>
+                                <div class="oe_kanban_bottom_left">
+                                    <field name="priority" widget="priority"/>
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <img t-att-src="kanban_image('res.users', 'image_small', record.user_id.raw_value)" t-att-title="record.user_id.value" width="24" height="24" class="oe_kanban_avatar pull-right"/>
+                                    <div class="pull-left" groups="base.group_user">
+                                        <field name="kanban_state" widget="kanban_state_selection"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="oe_clear"></div>
+                        </div>
+                    </t>
+                    </templates>
+                </kanban>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="medical_prescription.medical_prescription_order_action" model="ir.actions.act_window">
+            <field name="inherit_id" ref="medical_prescription.medical_prescription_order_action" />
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_id" ref="medical_prescription_order_kanban_view" />
+        </record>
+        
+    </data>
+</openerp>

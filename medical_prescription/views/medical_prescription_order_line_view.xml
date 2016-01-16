@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="medical_prescription_order_line_search_view" model="ir.ui.view">
+            <field name="name">medical.prescription.order.line.search</field>
+            <field name="model">medical.prescription.order.line</field>
+            <field name="mode">primary</field>
+            <field name="inherit_id"
+                ref="medical_medication.medical_patient_medication_search_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='dose_unit_id']" position="after">
+                    <field name="prescription_order_id" />
+                </xpath>
+                <xpath expr="//filter[@name='frequency_prn']" position="after">
+                    <filter name="is_substitutable" string="Is Substitutable"
+                        domain="[('is_substitutable', '=', True)]"/>
+                </xpath>
+                <xpath expr="//group" position="inside">
+                    <filter string="Prescription Order"
+                        domain="[]" context="{'group_by':'prescription_order_id'}" />
+                    <filter string="Medication"
+                        domain="[]" context="{'group_by':'medical_medication_id'}" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="medical_prescription_order_line_tree_view" model="ir.ui.view">
+            <field name="name">medical.prescription.order.line.tree</field>
+            <field name="model">medical.prescription.order.line</field>
+            <field name="mode">primary</field>
+            <field name="inherit_id"
+                ref="medical_medication.medical_patient_medication_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='patient_id']" position="before">
+                    <field name="prescription_order_id" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="medical_prescription_order_line_form_view" model="ir.ui.view">
+            <field name="name">medical.prescription.order.line.form</field>
+            <field name="model">medical.prescription.order.line</field>
+            <field name="mode">primary</field>
+            <field name="inherit_id"
+                ref="medical_medication.medical_patient_medication_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='medication_template_id']/parent::group" postition="inside">
+                    <field name="prescription_order_id" required="1"/>
+                    <field name="qty"/>
+                    <field name="is_substitutable"/>
+                </xpath>
+                <xpath expr="//field[@name='physician_id']" position='attributes'>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='adverse_reaction']" position='attributes'>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="medical_prescription_order_line_action">
+            <field name="name">Prescription Order Lines</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.prescription.order.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="medical_prescription_order_line_search_view" />
+            <field name="view_id" ref="medical_prescription_order_line_tree_view" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem id="medical_prescription_order_line_menu" sequence="20"
+            parent="medical_prescription_root" action="medical_prescription_order_line_action" />
+
+    </data>
+</openerp>
