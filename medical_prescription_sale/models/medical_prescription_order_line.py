@@ -24,7 +24,6 @@ from openerp import fields, models, api
 
 class MedicalPrescriptionOrderLine(models.Model):
     _inherit = 'medical.prescription.order.line'
-    _order = 'priority desc, date_start_treatment, id'
 
     @api.one
     def _compute_dispensings_and_orders(self, ):
