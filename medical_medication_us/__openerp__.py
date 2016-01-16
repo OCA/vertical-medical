@@ -45,6 +45,6 @@
     "licence": "AGPL-3",
     "data": [
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
 }

@@ -52,6 +52,6 @@
         'views/medical_patient_view.xml',
         'security/ir.model.access.csv',
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
 }

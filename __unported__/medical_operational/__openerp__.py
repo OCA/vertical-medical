@@ -48,6 +48,6 @@
         'views/medical_family_view.xml',
         'views/medical_operational_menu.xml',
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
 }

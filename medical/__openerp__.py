@@ -65,7 +65,7 @@
         'tests/partners.yml',
         'tests/physician_speciality.yml'
     ],
-    'installable': True,
+    'installable': False,
     'application': True,
     'auto_install': False,
 }
