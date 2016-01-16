@@ -4,7 +4,7 @@
 Odoo Medical Patient Occupations
 ================================
 
-Extension of medical that provides patient occupation support
+Extension of medical that adds occupational attributes to medical_patient
 
 
 Usage
@@ -40,6 +40,7 @@ Contributors
 ------------
 
 * Dave Lasley <dave@laslabs.com>
+* Original in `medical_emr` by TechReceptives
 
 Maintainer
 ----------

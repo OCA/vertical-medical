@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
-###############################################################################
+##############################################################################
 #
-#    Tech-Receptives Solutions Pvt. Ltd.
-#    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
-#    Special Credit and Thanks to Thymbra Latinoamericana S.A.
-#    Ported to 8.0 by Dave Lasley - LasLabs (https://laslabs.com)
+#    Author: Dave Lasley <dave@laslabs.com>
+#    Copyright: 2015 LasLabs, Inc [https://laslabs.com]
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,7 +17,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-###############################################################################
+##############################################################################
 
 from openerp import fields, models
 
@@ -27,6 +25,6 @@ from openerp import fields, models
 class MedicalPatient(models.Model):
     _inherit = 'medical.patient'
     occupation_id = fields.Many2one(
-        'medical.patient.occupation',
-        string='Occupation'
+        string='Occupation',
+        comodel_name='medical.patient.occupation',
     )

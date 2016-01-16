@@ -1,10 +1,10 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
     :alt: License: AGPL-3
 
-Odoo Medical Medicament Attributes
-==================================
+Odoo Medical Medicament Ethnicity
+=================================
 
-Extension of medical_medicament that provides physical attribute codes
+Extension of medical that provides ethnicity attributes to medical_patient
 
 
 Usage
@@ -40,6 +40,7 @@ Contributors
 ------------
 
 * Dave Lasley <dave@laslabs.com>
+* Original in `medical_emr` by TechReceptives
 
 Maintainer
 ----------

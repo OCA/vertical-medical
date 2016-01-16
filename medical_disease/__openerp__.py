@@ -24,7 +24,7 @@
 ##############################################################################
 {
     'name': 'Medical Disease',
-    'version': '8.0.1.0.0',
+    'version': '8.0.1.1.0',
     "author": "ACSONE SA/NV, Odoo Community Association (OCA)",
     "maintainer": "ACSONE SA/NV,Odoo Community Association (OCA)",
     "website": "http://www.acsone.eu",

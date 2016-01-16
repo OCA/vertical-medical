@@ -34,7 +34,7 @@
 {
 
     'name': 'Medical Prescription Threaded',
-    'version': '8.0.0.0.1',
+    'version': '8.0.1.1.0',
     'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': [
@@ -45,8 +45,6 @@
     "data": [
         'views/medical_prescription_order_view.xml',
         'views/medical_prescription_order_line_view.xml'
-    ],
-    'test': [
     ],
     'installable': True,
     'auto_install': False,

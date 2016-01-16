@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 *-
 ##############################################################################
 #
 #    Copyright (C) LasLabs, Inc [https://laslabs.com]. All Rights Reserved
@@ -38,14 +38,14 @@
 {
 
     'name': 'Medical Patient Occupation',
-    'version': '8.0.1.0.0',
+    'version': '8.0.1.1.0',
     'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
     'category': 'Medical',
     'license': "AGPL-3",
     'depends': [
         'medical',
     ],
-    "website": "http://github.com/oca/vertical-medical",
+    "website": "https://laslabs.com",
     "licence": "AGPL-3",
     "data": [
         'views/medical_patient_occupation_view.xml',

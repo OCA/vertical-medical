@@ -36,13 +36,13 @@
 ##############################################################################
 {
     'name': 'Odoo Medical',
-    'version': '8.0.1.1',
+    'version': '8.0.1.1.0',
     'category': 'Medical',
     'depends': [
         'base',
         'product',
     ],
-    'author': "Odoo Medical Team, LasLabs, Odoo Community Association (OCA)",
+    'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
     "website": "http://github.com/oca/vertical-medical",
     "licence": "AGPL-3",
     "data": [

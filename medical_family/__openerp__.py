@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
+#
 # OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
 #    Medical, HMS Opensource Solution
+#
 ##############################################################################
+#
 #    Collaborators of this module:
 #    8.0 Port by: Dave Lasley <dave@laslabs.com>
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
@@ -39,20 +42,18 @@
 {
 
     'name': 'Medical Family',
-    'version': '8.0.1.0',
+    'version': '8.0.1.1.0',
     'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': [
         'medical',
     ],
-    "website": "http://github.com/oca/vertical-medical",
+    "website": "https://laslabs.com",
     "licence": "AGPL-3",
     "data": [
         'views/medical_patient_view.xml',
         'views/medical_family_view.xml',
         'security/ir.model.access.csv',
-    ],
-    'test': [
     ],
     'installable': True,
     'auto_install': False,

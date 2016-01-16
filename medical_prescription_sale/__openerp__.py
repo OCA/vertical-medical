@@ -35,7 +35,7 @@
 {
 
     'name': 'Medical Prescription Sales Processes',
-    'version': '8.0.0.0.1',
+    'version': '8.0.1.0.0',
     'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': [

@@ -1,8 +1,8 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
     :alt: License: AGPL-3
 
-Odoo Medical Pharmacy
-========================
+Odoo Medical Prescription Threading
+===================================
 
 Extension of medical_prescription that adds message threading functionality
     to Prescription Orders and Prescription Order Lines

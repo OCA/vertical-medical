@@ -43,11 +43,13 @@
 ##############################################################################
 {
 
-    'name': 'Medical Insurance',
-    'version': '8.0.0.0.1',
+    'name': 'Medical Insurance - US',
+    'version': '8.0.1.1.0',
     'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
     'category': 'Medical',
-    'depends': ['medical'],
+    'depends': [
+        'medical_insurance'
+    ],
     "website": "https://laslabs.com",
     "licence": "AGPL-3",
     "data": [
