@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_patient_ethnicity_user,access.medical.patient.ethnicity.user,model_medical_patient_ethnicity,medical.group_medical_user,1,0,0,0
+access_medical_patient_ethnicity_manager,access.medical.patient.ethnicity.manager,model_medical_patient_ethnicity,medical.group_medical_center_manager,1,1,1,1
