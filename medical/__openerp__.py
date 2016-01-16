@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
 #    Odoo Medical, HMS Opensource Solution
+#
 ##############################################################################
+#
 #    Collaborators of this module:
 #    8.0 Port by: Dave Lasley <dave@laslabs.com>
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
@@ -14,6 +17,7 @@
 #    Planifyied by: Nhomar Hernandéz <nhomar@vauxoo.com>
 #
 ##############################################################################
+#
 #    This project is mantained by Odoo Community Association:
 #    http://github.com/oca/vertical-medical
 #
@@ -66,7 +70,7 @@
         'tests/partners.yml',
         'tests/physician_speciality.yml'
     ],
-    'installable': False,
+    'installable': True,
     'application': True,
     'auto_install': False,
 }
