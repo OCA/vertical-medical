@@ -42,8 +42,7 @@
 {
 
     'name': 'Medical Family',
-    'version': '9    'installable': False,
-.0.1.1.0',
+    'version': '9.0.1.1.0',
     'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': [
@@ -56,6 +55,6 @@
         'views/medical_family_view.xml',
         'security/ir.model.access.csv',
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
 }
