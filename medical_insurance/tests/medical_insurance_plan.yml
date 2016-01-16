@@ -1,0 +1,19 @@
+-
+  Create New Non-Expired Insurance Plan
+-
+  !record {model: medical.insurance.plan, id: insplan_1}:
+    template_id: instemp_1
+    patient_id: medical.patient_arun,
+    number: PlanNumber!
+    member_since: 2015-01-01
+    member_exp: 3000-12-31
+    
+-
+  Create New Expired Insurance Plan
+-
+  !record {model: medical.insurance.plan, id: insplan_2}:
+    template_id: instemp_1
+    patient_id: medical.patient_arun,
+    number: PlanNumber!
+    member_since: 2015-01-01
+    member_exp: 2015-12-31

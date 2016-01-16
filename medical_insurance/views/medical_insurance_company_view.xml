@@ -1,40 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
-    <data>
-         <record id="view_medical_pharmacy_tree" model="ir.ui.view">
-             <field name="name">medical.pharmacy.tree</field>
-             <field name="model">medical.pharmacy</field>
-             <field name="arch" type="xml">
-                 <tree string="Medical Pharmacy">
-                     <field name="name" />
-                     <field name="parent_id" />
-                     <field name="street" />
-                     <field name="city" />
-                     <field name="state_id" />
-                     <field name="zip" />
-                 </tree>
-             </field>
-         </record>
-
-         <record id="view_medical_pharmacy_form" model="ir.ui.view">
-             <field name="name">medical.pharmacy.form</field>
-             <field name="model">medical.pharmacy</field>
-             <field name="arch" type="xml">
-              <form string="Pharmacy">
-                    <header>
-                    </header>
+	<data>
+		<record id="medical_insurance_company_view_form" model="ir.ui.view">
+			<field name="name">medical.insurance.company.view.form</field>
+			<field name="model">medical.insurance.company</field>
+			<field name="arch" type="xml">
+				<form string="Insurance Provider">
+                    <header />
                     <sheet>
                         <div class="oe_title" name="title">
-                            <field name="image" widget='image' class="oe_left oe_avatar"
-                                   options="{'preview_image': 'image_medium', 'size': [90, 90]}"/>
+                            <field name="image"
+								   widget='image'
+								   class="oe_left oe_avatar"
+								   options="{'preview_image': 'image_medium',
+								             'size': [90, 90]}" />
                             <h1>
-                                <field name="name" placeholder="Pharmacy Name" />
+                                <field name="name" placeholder="Insurance Provider Name" />
                                 <field name="is_company" invisible="True" />
                             </h1>
                             <field name="parent_id" placeholder="Parent Company"
-                                   domain="[('is_company', '=', True), ('is_pharmacy', '=', False)]"
+                                   domain="[('is_company', '=', True),
+								            ('is_pharmacy', '=', False)]"
                                    context="{'default_is_company': True,
-                                             'default_is_pharmacy': False,
+                                             'default_is_insurance_company': False,
                                              'default_supplier': supplier,
                                              'default_customer': customer}" />
                         </div>
@@ -275,8 +263,8 @@
                                 </field>
                             </page>
 						</notebook>
-                     </sheet>
-                    <div name="configurator"
+					</sheet>
+					<div name="configurator"
 						 class="oe_form_sheetbg"
                          groups="medical.group_medical_configurator">
                         <div class="oe_formview oe_form_sheet_width">
@@ -287,15 +275,30 @@
                             </group>
                         </div>
                     </div>
-                 </form>
-             </field>
-         </record>
+				</form>
+			</field>
+		</record>
 
-         <record id="view_medical_pharmacy_search" model="ir.ui.view">
-             <field name="name">medical.pharmacy.search</field>
-             <field name="model">medical.pharmacy</field>
-             <field name="arch" type="xml">
-                 <search string="Medical Pharmacy">
+		<record id="medical_insurance_company_view_tree" model="ir.ui.view">
+			<field name="name">medical.insurance.company.view.tree</field>
+			<field name="model">medical.insurance.company</field>
+			<field name="arch" type="xml">
+				<tree string="Insurance Providers">
+                     <field name="name" />
+                     <field name="parent_id" />
+                     <field name="street" />
+                     <field name="city" />
+                     <field name="state_id" />
+                     <field name="zip" />
+                 </tree>
+			</field>
+		</record>
+
+		<record id="medical_insurance_company_view_search" model="ir.ui.view">
+			<field name="name">medical.insurance.company.view.search</field>
+			<field name="model">medical.insurance.company</field>
+			<field name="arch" type="xml">
+				<search string="Insurance Providers">
                      <field name="name" />
                      <field name="parent_id" />
                      <field name="street" />
@@ -305,27 +308,29 @@
                      <newline />
                      <group expand="0" string="Group By...">
                         <filter string="Company"
-                                domain="[]"
-                                context="{'group_by':'parent_id'}" />
+								domain="[]"
+								context="{'group_by':'parent_id'}" />
                         <filter string="State"
-                                domain="[]"
-                                context="{'group_by': 'state_id'}" />
+								domain="[]"
+								context="{'group_by': 'state_id'}" />
                         <filter string="Zip"
-                                domain="[]"
-                                context="{'group_by':'zip'}" />
+								domain="[]"
+								context="{'group_by':'zip'}" />
                      </group>
                  </search>
-             </field>
-         </record>
+			</field>
+		</record>
 
-         <record model="ir.actions.act_window" id="act_open_medical_pharmacy_view">
-             <field name="name">Pharmacy</field>
-             <field name="type">ir.actions.act_window</field>
-             <field name="res_model">medical.pharmacy</field>
-             <field name="view_type">form</field>
-             <field name="view_mode">tree,form</field>
-             <field name="search_view_id" ref="view_medical_pharmacy_search" />
-         </record>
+		<record model="ir.actions.act_window" id="medical_insurance_company_action">
+			<field name="name">Insurance Providers</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.insurance.company</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="medical_insurance_company_view_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
 
-    </data>
+	</data>
 </openerp>
