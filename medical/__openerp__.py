@@ -58,8 +58,6 @@
         'wizard/medical_physician_unavailable_view.xml',
         'views/medical_physician_view.xml',
         'views/medical_patient_view.xml',
-        'views/medical_appointment_view.xml',
-        'data/medical_appointment_data.xml',
         'views/medical_specialty_view.xml',
         'security/medical_security.xml',
         'security/ir.model.access.csv',

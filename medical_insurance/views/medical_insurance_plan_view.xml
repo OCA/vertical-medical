@@ -48,7 +48,7 @@
 				</form>
 			</field>
 		</record>
-
+		
 		<record id="medical_insurance_plan_view_search" model="ir.ui.view">
 			<field name="name">medical.insurance.plan.search</field>
 			<field name="model">medical.insurance.plan</field>
