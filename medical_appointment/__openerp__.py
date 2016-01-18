@@ -40,6 +40,7 @@
     'author': 'LasLabs, Odoo Medical Team, Odoo Community Association (OCA)',
     'category': 'Medical',
     'depends': [
+        'medical_base_history',
         'medical_physician',
     ],
     'data': [
