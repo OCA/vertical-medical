@@ -50,23 +50,40 @@ class TestMedicalPatient(TransactionCase):
         """
         age = 10
         complete_age = '10y 0m 0d'
-        birth_date =\
-            fields.Date.to_string(date.today() - relativedelta(years=age))
+        birth_date = fields.Date.to_string(
+            date.today() - relativedelta(years=age)
+        )
         self.vals['dob'] = birth_date
         patient_id = self.env['medical.patient'].create(self.vals)
         self.assertEquals(
-            patient_id.age, complete_age, 'Should be the same age')
+            patient_id.age, complete_age,
+            'Should be the same age.\rGot: %s\rExpected: %s' % (
+                patient_id.age, complete_age
+            )
+        )
+
+    def test_age_computation_deceased(self, ):
+        """ Check proper handling of deceased patient """
         age = 5
-        vals = {
+        birth_date = fields.Date.to_string(
+            date.today() - relativedelta(years=age*2)
+        )
+        self.vals.update({
+            'dob': birth_date,
             'deceased': True,
             'dod': fields.Date.to_string(
-                date.today() - relativedelta(years=age))
-        }
-        patient_id = patient_id.copy(default=vals)
+                date.today() - relativedelta(years=age)
+            )
+        })
+        patient_id = self.env['medical.patient'].create(self.vals)
         dod_age = '5y 0m 0d'
+        expect = '%s (deceased)' % dod_age
         self.assertEquals(
-            patient_id.age, '%s (deceased)' % dod_age,
-            'Should be the same age')
+            patient_id.age, expect,
+            'Did not properly handle deceased.\rGot: %s\rExpected: %s' % (
+                patient_id.age, expect
+            )
+        )
 
     def test_invalidate(self):
         """

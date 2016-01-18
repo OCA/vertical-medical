@@ -19,30 +19,30 @@
 #
 ##############################################################################
 
-from openerp import fields, models
+from openerp import fields, models, api
 
 
 class MedicalHistoryAbstract(models.AbstractModel):
     '''
-    MedicalHistoryAbstract model is meant to be inherited by any model that
-    needs change audit logging capabilities.
-    
+    Inherit this to provide change audit logging capabilities to any model.
+
     Public attributes and methods will be prefixed with history_entry in order
     to avoid name collisions with models that will inherit from this class.
-    
+
     Attributes:
-        _audit_on List of methods to log. Supports create, write, and delete
+        _audit_on: List of methods to log. Supports create, write, and delete
             Override this in child classes in order to add/remove attrs
     '''
+
     _name = 'medical.history.abstract'
     _description = 'Provides inheritable model for change history auditing'
-    _audit_on = ['create', 'write', 'delete', ] # @TODO: Read
+    _audit_on = ['create', 'write', 'delete', ]  # @TODO: Read
 
     history_entry_ids = fields.One2many(
         string='History Entries',
         help='History entries that apply to this record',
         comodel_name='medical.history.entry',
-        inverse_name='associated_model_id_int',
+        inverse_name='associated_record_id_int',
         domain=lambda self: [('associated_model_name', '=', self._name)],
         auto_join=True,
     )
@@ -52,9 +52,12 @@ class MedicalHistoryAbstract(models.AbstractModel):
     def history_entry_new(self, code, vals, ):
         '''
         Create a new history entry given values
-        :param code: Entry type code
-        :type code: str
-        :return: Recordset
+
+        Args:
+            code: Str representing Entry type code
+
+        Returns:
+            Recordset - of the new entries created
         '''
         entry_ids = self.env['medical.history.entry']
         entry_type_id = self.env['medical.history.type'].get_by_code(code)

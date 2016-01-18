@@ -8,7 +8,7 @@
 
 <openerp>
     
-    <data noupdate="1">
+    <data noupdate="0">
         
         <record model="medical.history.type" id="history_audit_create">
             <field name="name">Created</field>

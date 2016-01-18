@@ -31,7 +31,8 @@
                             </group>
                         </group>
                         <group name="audit_options">
-                            <field name="save_changed_cols" />
+                            <field name="old_cols_to_save" />
+                            <field name="new_cols_to_save" />
                         </group>
                     </sheet>
                     <footer />
@@ -46,7 +47,8 @@
                 <tree string="History Types">
                     <field name="name" />
                     <field name="code" />
-                    <field name="save_changed_cols" />
+                    <field name="old_cols_to_save" />
+                    <field name="new_cols_to_save" />
                 </tree>
             </field>
         </record>
@@ -58,12 +60,16 @@
                 <search string="History Types">
                     <field name="name" />
                     <field name="code" />
-                    <field name="save_changed_cols" />
+                    <field name="old_cols_to_save" />
+                    <field name="new_cols_to_save" />
                     <newline />
                     <group expand="0" string="Group By">
-                        <filter string="Save Changed Cols"
+                        <filter string="Old Cols"
                                 domain=""
-                                context="{'group_by': 'save_changed_cols'}" />
+                                context="{'group_by': 'old_cols_to_save'}" />
+                        <filter string="New Cols"
+                                domain=""
+                                context="{'group_by': 'new_cols_to_save'}" />
                     </group>
                 </search>
             </field>

@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
     <data noupdate="1">
-
-        <!-- Sequences for medical.patient -->
-        <record id="seq_type_medical_patient" model="ir.sequence.type">
-            <field name="name">Medical Patient</field>
-            <field name="code">medical.patient</field>
-        </record>
-
+        
         <record id="seq_medical_patient" model="ir.sequence">
             <field name="name">Medical Patient</field>
             <field name="code">medical.patient</field>

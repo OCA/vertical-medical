@@ -19,11 +19,15 @@
 #
 ##############################################################################
 
-from openerp import fields, models
+from openerp import fields, models, api
 from openerp.exceptions import ValidationError
 
 
 class MedicalHistoryType(models.Model):
+    '''
+    Provides History Types to be used as classification for change logging
+    '''
+
     _name = 'medical.history.type'
     _description = 'Medical History Types'
 
@@ -57,6 +61,7 @@ class MedicalHistoryType(models.Model):
     new_cols_to_save = fields.Selection([
         ('none', 'None'),
         ('changed', 'Changed'),
+        ('all', 'All'),
     ],
         help='New columns to save in the history record',
         default='none',
@@ -74,7 +79,7 @@ class MedicalHistoryType(models.Model):
             }
 
     @api.multi
-    @api.contrains('code')
+    @api.constrains('code')
     def _check_unique_code(self, ):
         ''' Constrain that code is unique '''
         for rec_id in self:
@@ -95,7 +100,6 @@ class MedicalHistoryType(models.Model):
         if vals.get('code'):
             vals['code'] = vals['code'].capitalize()
         return super(MedicalHistoryType, self).write(vals)
-
 
     @api.model
     @api.returns('self')

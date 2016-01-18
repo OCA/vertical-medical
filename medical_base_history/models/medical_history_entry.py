@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from openerp import fields, models, _
+from openerp import fields, models, api, _
 from openerp.exceptions import ValidationError
 
 
@@ -31,8 +31,7 @@ except ImportError:
 
 class MedicalHistoryEntry(models.Model):
     '''
-    Provides an abstract change history object for compliance and other
-        useful things
+    Provides an abstract change log entry object to record changes on models
     '''
 
     _name = 'medical.history.entry'
@@ -47,7 +46,7 @@ class MedicalHistoryEntry(models.Model):
     entry_type_id = fields.Many2one(
         string='Entry Type',
         help='Action type that was performed on the record',
-        comodel_name='medical.history.action',
+        comodel_name='medical.history.type',
         required=True,
     )
     name = fields.Char(
@@ -132,12 +131,14 @@ class MedicalHistoryEntry(models.Model):
 
     @api.multi
     def _compute_associated_record_details(self, ):
+        ''' Compute the record name and other details for abstract context '''
         for rec_id in self:
             associated_id = self.get_associated_record_id()
             rec_id.associated_record_name = associated_id.name
 
     @api.multi
     def write(self, vals, ):
+        ''' Overload write & disable if state is complete '''
         for rec_id in self:
             if rec_id.state == 'complete':
                 raise ValidationError(_(
@@ -147,6 +148,7 @@ class MedicalHistoryEntry(models.Model):
 
     @api.multi
     def unlink(self, ):
+        ''' Overload unlink & disable '''
         raise ValidationError(_(
             'In order to preserve a compliant timeline, this history '
             'record cannot be destroyed once created. [%s]' % self,
@@ -156,7 +158,12 @@ class MedicalHistoryEntry(models.Model):
     def get_associated_record_id(self, ):
         '''
         Returns the Data Record that this History Record is associated with
-        :rtype: Recordset Singleton (unknown model)
+
+        Raises:
+            AssertionError: When a Singleton Recordset is not supplied
+
+        Returns:
+            `Recordset` - Singleton associated with input record -unknown Model
         '''
         self.ensure_one()
         model_obj = self.env[self.associated_model_id.model]
@@ -166,17 +173,18 @@ class MedicalHistoryEntry(models.Model):
     def get_changed_cols(self, record_obj, new_vals, ):
         '''
         Returns a dictionary of the old values that are about to be changed
-        :param new_vals: New values to check against current record
-        :type new_vals: dict
-        :return: Old values that are about to be changed
-        :rtype: dict or None
+
+        Args:
+            new_vals: Dict of new values to check against current record
+
+        Returns:
+            `dict` or `None` - Old values that are about to be changed
         '''
         changed = {}
-        for key, val in vals.items():
+        for key, val in new_vals.items():
             current_val = self.get(key, None)
             if current_val.get and current_val.get('id'):
-                # Replace col w/ record id if applicable
-                current_val = col['id']
+                current_val = current_val.id
             if val != current_val:
                 changed[key] = current_val
         return len(changed) and changed or None
@@ -184,29 +192,35 @@ class MedicalHistoryEntry(models.Model):
     @api.model
     def _do_history_actions(self, record_id, new_vals, ):
         '''
+        Perform history actions for record_id
+
         Hooks into new_entry to add history actions as defined by the entry
-            type. Overload this method in order to provide custom history 
+            type. Overload this method in order to provide custom history
             auditing features
-        :param new_vals: New values to check against current record
-        :type new_vals: dict
-        :param record_id: Record that the entry is being created for
-        :type record_id: Recordset
-        :return: Values for the new history record
-        :rtype: dict
+
+        Args:
+            new_vals: Dict of new values to check against current record
+            record_id: Recordset that the entry is being created for
+
+        Returns:
+            `dict` - Values for the new history record
         '''
         entry_type_id = new_vals['entry_type_id']
-        changed_cols = record_id.get_changed_cols(vals)
+        changed_cols = record_id.get_changed_cols(new_vals)
 
+        # Old col saving
         if entry_type_id.cols_to_save == 'changed':
             new_vals['old_record_dict'] = changed_cols
         elif entry_type_id.cols_to_save == 'all':
             new_vals['old_record_dict'] = record_id.read()
 
+        # New col saving
         if entry_type_id.new_cols_to_save == 'changed':
             new_vals['new_record_dict'] = new_vals
+        elif entry_type_id.new_cols_to_save == 'all':
+            new_vals['new_record_dict'] = record_id.read()
+            new_vals['new_record_dict'].update(new_vals)
 
-        if self.save_changed_cols:
-            new_vals['old_record_dict'] = changed_cols
         return new_vals
 
     @api.model
@@ -214,14 +228,15 @@ class MedicalHistoryEntry(models.Model):
     def new_entry(self, record_id, entry_type_id, new_vals, ):
         '''
         Create a new entry from the record and proposed new vals for it
-        :param record_id: Record that the entry is being created for
-        :type record_id: Recordset
-        :param entry_type_id: Entry type to create
-        :type entry_type_id: Recordset Singleton
-        :param new_vals: New values to check against current record
-        :type new_vals: dict
-        :return: New history entry
-        :rtype: Recordset Singleton
+
+        Args:
+            record_id: Recordset Singleton that the entry is being created for
+            entry_type_id: Recordset Singleton of `medical.history.type` to
+                create
+            new_vals: Dict of new values to check against current record
+
+        Returns:
+            `Recordset` - Singleton of new history entry
         '''
         entry_vals = {
             'user_id': self.env.user,
@@ -238,4 +253,3 @@ class MedicalHistoryEntry(models.Model):
     def state_complete(self, ):
         ''' Complete the history entry, indicating a valid record '''
         return self.write({'state': 'complete'})
-multi

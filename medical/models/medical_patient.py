@@ -90,7 +90,7 @@ class MedicalPatient(models.Model):
         for rec_id in self:
             if rec_id.dob:
                 dob = fields.Datetime.from_string(rec_id.dob)
-    
+
                 if rec_id.deceased:
                     dod = fields.Datetime.from_string(rec_id.dod)
                     delta = relativedelta(dod, dob)
@@ -98,7 +98,7 @@ class MedicalPatient(models.Model):
                 else:
                     delta = relativedelta(now, dob)
                     deceased = ''
-                years_months_days = '%s%s %s%s %s%s [%s]' % (
+                years_months_days = '%s%s %s%s %s%s%s' % (
                     delta.years, _('y'), delta.months, _('m'),
                     delta.days, _('d'), deceased
                 )
@@ -116,6 +116,6 @@ class MedicalPatient(models.Model):
     def create(self, vals, ):
         vals['is_patient'] = True
         if not vals.get('identification_code'):
-            sequence = self.env['ir.sequence'].get('medical.patient')
+            sequence = self.env['ir.sequence'].next_by_code('medical.patient')
             vals['identification_code'] = sequence
         return super(MedicalPatient, self).create(vals)

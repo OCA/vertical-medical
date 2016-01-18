@@ -8,11 +8,7 @@
 ##############################################################################
 #
 #    Collaborators of this module:
-<<<<<<< 9efe90ecb8471e540152ccf197e5bee228f9b114
-#    8.0 Port by: Dave Lasley <dave@laslabs.com>
-=======
 #    8.0 & 9.0: Dave Lasley <dave@laslabs.com>
->>>>>>> Move is_vaccine to medicament & remove product from medical
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
 #    Coded by: Parthiv Patel <parthiv@techreceptives.com>
 #    Coded by: Ruchir Shukla <ruchir@techreceptives.com>
@@ -50,6 +46,7 @@
     'category': 'Medical',
     'depends': [
         'base',
+        'product',
     ],
     'author': 'LasLabs, Odoo Medical Team, Odoo Community Association (OCA)',
     'website': 'http://github.com/oca/vertical-medical',

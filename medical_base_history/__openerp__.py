@@ -40,14 +40,14 @@
     'author': 'LasLabs, Odoo Medical Team, Odoo Community Association (OCA)',
     'category': 'Medical',
     'depends': [
-        'base',
+        'medical',
     ],
     'data': [
         'views/medical_history_entry_view.xml',
         'views/medical_history_type_view.xml',
         'views/medical_menu.xml',
         'security/ir.model.access.csv',
-        'data/medical_history_data.xml',
+        'data/medical_history_type_data.xml',
     ],
     'website': 'https://laslabs.com',
     'licence': 'AGPL-3',
