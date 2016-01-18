@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright (C) 2015-TODAY LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    @license AGPL-3
+-->
+
+<openerp>
+    
+    <data noupdate="1">
+        
+        <record model="medical.history.type" id="history_audit_create">
+            <field name="name">Created</field>
+            <field name="code">CREATE</field>
+            <field name="new_cols_to_save">all</field>
+            <field name="old_cols_to_save">none</field>
+        </record>
+        
+        <record model="medical.history.type" id="history_audit_write">
+            <field name="name">Updated</field>
+            <field name="code">UPDATE</field>
+            <field name="new_cols_to_save">changed</field>
+            <field name="old_cols_to_save">changed</field>
+        </record>
+        
+        <record model="medical.history.type" id="history_audit_unlink">
+            <field name="name">Deleted</field>
+            <field name="code">DELETE</field>
+            <field name="new_cols_to_save">none</field>
+            <field name="old_cols_to_save">all</field>
+        </record>
+        
+        <!-- @TODO: READ -->
+        
+    </data>
+    
+</openerp>

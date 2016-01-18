@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016-[Now] LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    @license AGPL-3
+-->
+
+<openerp>
+    <data>
+        
+        <record id="medical_history_type_view_form" model="ir.ui.view">
+            <field name="name">medical.history.type.view.form</field>
+            <field name="model">medical.history.type</field>
+            <field name="arch" type="xml">
+                <form string="History Type">
+                    <header>
+                        <h1>
+                            <field name="display_name" />
+                        </h1>
+                    </header>
+                    <sheet>
+                        <group name="data">
+                            <group name="type_data">
+                                <field name="name" />
+                                <field name="code" />
+                            </group>
+                            <group name="display_data">
+                                <field name="prefix" />
+                                <field name="suffix" />
+                            </group>
+                        </group>
+                        <group name="audit_options">
+                            <field name="save_changed_cols" />
+                        </group>
+                    </sheet>
+                    <footer />
+                </form>
+            </field>
+        </record>
+        
+        <record id="medical_history_type_view_tree" model="ir.ui.view">
+            <field name="name">medical.history.type.view.tree</field>
+            <field name="model">medical.history.type</field>
+            <field name="arch" type="xml">
+                <tree string="History Types">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="save_changed_cols" />
+                </tree>
+            </field>
+        </record>
+        
+        <record id="medical_history_type_view_search" model="ir.ui.view">
+            <field name="name">medical.history.type.view.search</field>
+            <field name="model">medical.history.type</field>
+            <field name="arch" type="xml">
+                <search string="History Types">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="save_changed_cols" />
+                    <newline />
+                    <group expand="0" string="Group By">
+                        <filter string="Save Changed Cols"
+                                domain=""
+                                context="{'group_by': 'save_changed_cols'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record id="medical_history_type_action" model="ir.actions.act_window">
+            <field name="name">medical.history.type.action</field>
+            <field name="res_model">medical.history.type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">tree</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+    </data>
+</openerp>

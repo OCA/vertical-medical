@@ -46,6 +46,7 @@
     'depends': [
         'base',
         'product',
+        'medical_base_history',
     ],
     'author': 'LasLabs, Odoo Medical Team, Odoo Community Association (OCA)',
     'website': 'http://github.com/oca/vertical-medical',
