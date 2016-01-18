@@ -39,7 +39,9 @@
     'version': '9.0.1.1.0',
     'author': 'LasLabs, Odoo Medical Team, Odoo Community Association (OCA)',
     'category': 'Medical',
-    'depends': [],
+    'depends': [
+        'base',
+    ],
     'data': [
         'views/medical_history_entry_view.xml',
         'views/medical_history_type_view.xml',
