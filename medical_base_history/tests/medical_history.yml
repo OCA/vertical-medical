@@ -24,8 +24,8 @@
   Create new MedicalHistoryType
 -
   !record {model: medical.history.type, id: med_hist_type_create}:
-    name: Created
-    code: CREATE
+    name: YML Test
+    code: YML_TEST
     prefix: '#'
     suffix: '!'
     old_cols_to_save: none
