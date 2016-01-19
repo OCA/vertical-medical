@@ -19,7 +19,6 @@
 #
 ##############################################################################
 
-from openerp import fields
 from openerp.tests.common import TransactionCase
 import mock
 import pickle
@@ -57,14 +56,31 @@ class TestMedicalHistoryEntry(TransactionCase):
         })
 
     # Computes, inverses, defaults
-    def test_compute_old_record_dict(self, ):
-        ''' Validate unpickle of old record '''
+    @mock.patch('%s.pickle' % entry_mdl)
+    def test_compute_old_record_dict_calls_pickle_loads_with_rec(self, mk, ):
         self.entry_type_id.old_cols_to_save = 'all'
         rec_id = self.new_entry()
-        rec_id.read()
-        self.assertDictEqual(
-            self.vals, rec_id.old_record_dict,
+        rec_id.read('old_record_dict')
+        mk.loads.assert_called_with(self.vals)
+
+    @mock.patch('%s.pickle' % entry_mdl)
+    def test_compute_old_record_dict_sets_property_to_pickle_return(self, mk, ):
+        expect = 'Expect'
+        mk.loads.return_value = expect
+        self.entry_type_id.old_cols_to_save = 'all'
+        rec_id = self.new_entry()
+        got = rec_id.read('old_record_dict')
+        self.assertEqual(
+            expect, got,
         )
+
+    @mock.patch('%s.pickle' % entry_mdl)
+    def test_write_old_record_dict_calls_pickle_dumps_with_rec(self, mk, ):
+        self.entry_type_id.new_cols_to_save = 'all'
+        rec_id = self.new_entry()
+        mk.dumps.assert_called_with(self.vals)
+
+    # @TODO: Figure out how to test attr assignment without triggering compute
 
     # New Entry
     def test_new_entry_calls_do_history_actions_with_correct_params(self, ):
@@ -90,7 +106,7 @@ class TestMedicalHistoryEntry(TransactionCase):
                 expect = {
                     'user_id': self.env.user,
                     'entry_type_id': self.entry_type_id.id,
-                    'associated_model_id': self.record_id.model.id,
+                    'associated_model_id': self.record_id._model.id,
                     'associated_record_id_int': self.record_id.id,
                 }
                 self.new_entry()
