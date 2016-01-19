@@ -63,7 +63,7 @@ class TestMedicalPatient(TransactionCase):
         self.vals['dob'] = birth_date
         patient_id = self.model_obj.create(self.vals)
         self.assertEquals(
-            patient_id.age, complete_age,
+            complete_age, patient_id.age,
             'Should be the same age.\rGot: %s\rExpected: %s' % (
                 patient_id.age, complete_age
             )
@@ -86,7 +86,7 @@ class TestMedicalPatient(TransactionCase):
         dod_age = '5y 0m 0d'
         expect = '%s (deceased)' % dod_age
         self.assertEquals(
-            patient_id.age, expect,
+            expect, patient_id.age,
             'Did not properly handle deceased.\rGot: %s\rExpected: %s' % (
                 patient_id.age, expect
             )
