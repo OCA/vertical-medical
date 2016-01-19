@@ -31,8 +31,8 @@ class TestMedicalHistoryEntry(TransactionCase):
         super(TestMedicalHistoryEntry, self).setUp()
         self.model_obj = self.env['medical.history.entry']
         self.entry_type_id = self.env['medical.history.type'].create({
-            'name': 'Created',
-            'code': 'CREATE',
+            'name': 'Derped',
+            'code': 'DERP',
             'old_cols_to_save': 'none',
             'new_cols_to_save': 'none',
         })
