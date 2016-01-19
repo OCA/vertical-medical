@@ -160,7 +160,7 @@ class MedicalHistoryEntry(models.Model):
             `Recordset` - Singleton associated with input record -unknown Model
         '''
         self.ensure_one()
-        model_obj = self.env[self.associated_model_id.model]
+        model_obj = self.env[self.associated_model_id._name]
         return model_obj.browse(self.associated_record_id_int)
 
     @api.multi
@@ -235,7 +235,7 @@ class MedicalHistoryEntry(models.Model):
         entry_vals = {
             'user_id': self.env.user,
             'entry_type_id': entry_type_id.id,
-            'associated_model_id': record_id.model.id,
+            'associated_model_id': record_id._model.id,
             'associated_record_id_int': record_id.id,
         }
         entry_vals.update(
