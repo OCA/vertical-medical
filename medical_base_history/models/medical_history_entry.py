@@ -149,28 +149,35 @@ class MedicalHistoryEntry(models.Model):
             AssertionError: When a Singleton Recordset is not supplied
 
         Returns:
-            `Recordset` - Singleton associated with input record -unknown Model
+            `Recordset` Singleton associated with input record -unknown Model
         '''
         self.ensure_one()
         model_obj = self.env[self.associated_model_name]
         return model_obj.browse(self.associated_record_id_int)
 
-    @api.multi
-    def get_changed_cols(self, record_obj, new_vals, ):
+    @api.model
+    def get_changed_cols(self, record_id, new_vals, ):
         '''
         Returns a dictionary of the old values that are about to be changed
 
+        Note that this method should be called *before* the record is updated;
+        except in the instances of create, which is called after to circumvent
+        known issue with col saving and no record existing.
+
         Args:
-            new_vals: Dict of new values to check against current record
+            record_id: `Recordset` that is being evaluated for changed cols
+            new_vals: `dict` of new values to check against current record
 
         Returns:
             `dict` or `None` - Old values that are about to be changed
         '''
         changed = {}
         for key, val in new_vals.items():
-            current_val = self.get(key, None)
-            if current_val.get and current_val.get('id'):
+            current_val = getattr(record_id, key, None)
+            try: # Handle Recordsets
                 current_val = current_val.id
+            except AttributeError:
+                pass
             if val != current_val:
                 changed[key] = current_val
         return len(changed) and changed or None
@@ -185,14 +192,14 @@ class MedicalHistoryEntry(models.Model):
             auditing features
 
         Args:
-            new_vals: Dict of new values to check against current record
-            record_id: Recordset that the entry is being created for
+            record_id: `Recordset` that the entry is being created for
+            new_vals: `dict` of new values to check against current record
 
         Returns:
-            `dict` - Values for the new history record
+            `dict` of values for the new history record
         '''
         entry_type_id = new_vals['entry_type_id']
-        changed_cols = record_id.get_changed_cols(new_vals)
+        changed_cols = self.get_changed_cols(record_id, new_vals)
 
         # Old col saving
         if entry_type_id.cols_to_save == 'changed':
@@ -216,13 +223,13 @@ class MedicalHistoryEntry(models.Model):
         Create a new entry from the record and proposed new vals for it
 
         Args:
-            record_id: Recordset Singleton that the entry is being created for
-            entry_type_id: Recordset Singleton of `medical.history.type` to
+            record_id: `Recordset` Singleton of the entry is being created
+            entry_type_id: `Recordset` Singleton of `medical.history.type` to
                 create
-            new_vals: Dict of new values to check against current record
+            new_vals: `dict` of new values to check against current record
 
         Returns:
-            `Recordset` - Singleton of new history entry
+            `Recordset` Singleton of new history entry
         '''
         entry_vals = {
             'user_id': self.env.user,
@@ -230,9 +237,7 @@ class MedicalHistoryEntry(models.Model):
             'associated_model_name': record_id._name,
             'associated_record_id_int': record_id.id,
         }
-        entry_vals.update(
-            self._do_history_actions(record_id, new_vals)
-        )
+        entry_vals = self._do_history_actions(record_id, entry_vals)
         return self.create(entry_vals)
 
     @api.multi

@@ -30,7 +30,7 @@ class MedicalHistoryAbstract(models.AbstractModel):
     to avoid name collisions with models that will inherit from this class.
 
     Attributes:
-        _audit_on: List of methods to log. Supports create, write, and delete
+        _audit_on: `list` of methods to log. Supports create, write, and delete
             Override this in child classes in order to add/remove attrs
     '''
 
@@ -86,10 +86,10 @@ class MedicalHistoryAbstract(models.AbstractModel):
         Create a new history entry given values
 
         Args:
-            code: Str representing Entry type code
+            code: `str` representing Entry type code
 
         Returns:
-            Recordset - of the new entries created
+            `Recordset` of the new entries created
         '''
         entry_ids = self.env['medical.history.entry']
         entry_type_id = self.env['medical.history.type'].get_by_code(code)

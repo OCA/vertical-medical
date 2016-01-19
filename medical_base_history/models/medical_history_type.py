@@ -106,9 +106,12 @@ class MedicalHistoryType(models.Model):
     def get_by_code(self, code, ):
         '''
         Return a Recordset singleton for the code
-        :param code: History type code to search for
-        :type code: str
-        :rtype: Recordset Singleton
+
+        Args:
+            code: `str` of History Type code to search for
+
+        Returns:
+            `Recordset` Singleton of the History Type matching code
         '''
         return self.search([
             ('code', '=', code),
@@ -116,13 +119,17 @@ class MedicalHistoryType(models.Model):
 
     @api.model
     @api.returns('self')
-    def get_by_name(self, name, ):
+    def get_by_name(self, name, operator='=', ):
         '''
         Return a Recordset for the name
-        :param name: History type name to search for
-        :type name: str
-        :rtype: Recordset
+
+        Args:
+            name: `str` of History Type name to search for
+            operator: `str` domain operator to apply (`like`, `=like`, etc.)
+
+        Returns:
+            `Recordset` of History Type(s) matching name
         '''
         return self.search([
-            ('name', '=', name)
+            ('name', operator, name)
         ])

@@ -20,6 +20,7 @@
 ##############################################################################
 
 from openerp.tests.common import TransactionCase
+from openerp.exceptions import ValidationError
 import mock
 
 
@@ -81,6 +82,18 @@ class TestMedicalHistoryEntry(TransactionCase):
         mk.dumps.assert_called_with(self.vals)
 
     # @TODO: Figure out how to test attr assignment without triggering compute
+
+    # Standard CRUD overloads
+    def test_write_is_disabled_on_complete_records(self, ):
+        rec_id = self.new_entry()
+        rec_id.state = 'complete'
+        with self.assertRaises(ValidationError):
+            rec_id.write({'state': 'incomplete'})
+
+    def test_unlink_is_disabled_on_all_records(self, ):
+        rec_id = self.new_entry()
+        with self.assertRaises(ValidationError):
+            rec_id.write({'state': 'incomplete'})
 
     # New Entry
     def test_new_entry_calls_do_history_actions_with_correct_params(self, ):
