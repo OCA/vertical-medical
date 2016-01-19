@@ -19,7 +19,22 @@
 #
 ##############################################################################
 
-from . import medical_history_abstract
-from . import medical_history_type
-from . import medical_history_entry
-from . import medical_history_example
+from openerp import models, fields
+
+
+class MedicalHistoryExample(models.Models):
+    '''
+    This is an example of how to use the MedicalHistoryAbstract
+    
+    @TODO: Example of custom logging method
+    
+    Examples:
+        _audit_on: This is being declared in order to override the default
+            change logging columns (`create`, `write`, `delete` - but could be
+            more/less by other inherits) Example only audits on `create`.
+    '''
+    _inherit = 'medical.history.abstract'
+    _name = 'medical.history.example'
+    _description = 'Example of a model with audit logging'
+    _audit_on = ['create', ]
+    example_col = fields.Char()
