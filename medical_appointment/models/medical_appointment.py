@@ -19,11 +19,9 @@
 #
 ##############################################################################
 
-from openerp import fields, models, exceptions, _
+from openerp import fields, models, exceptions, api, _
+from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
 from datetime import timedelta
-import logging
-
-_logger = logging.getLogger(__name__)
 
 
 class MedicalAppointment(models.Model):
@@ -41,7 +39,7 @@ class MedicalAppointment(models.Model):
         comodel_name='res.users',
         readonly=True,
         states=STATES,
-        default=lambda: self.env.user,
+        default=lambda self: self.env.user,
     )
     patient_id = fields.Many2one(
         string='Patient',
@@ -87,9 +85,9 @@ class MedicalAppointment(models.Model):
         help='Any additional notes',
     )
     appointment_type = fields.Selection([
-            ('ambulatory', 'Ambulatory'),
-            ('outpatient', 'Outpatient'),
-            ('inpatient', 'Inpatient'),
+        ('ambulatory', 'Ambulatory'),
+        ('outpatient', 'Outpatient'),
+        ('inpatient', 'Inpatient'),
     ],
         string='Type',
         help='Type of appointment',
@@ -126,7 +124,7 @@ class MedicalAppointment(models.Model):
         help='Current appointment stage',
         comodel_name='medical.appointment.stage',
         track_visibility='onchange',
-        default=_default_stage_id,
+        default=lambda s: s._default_stage_id(),
     )
 
     _group_by_full = {
@@ -198,7 +196,7 @@ class MedicalAppointment(models.Model):
     def write(self, vals, ):
         result = super(MedicalAppointment, self).write(vals)
         if 'stage_id' in vals:
-            rec_id._change_stage(vals)
+            self._change_stage(vals)
         return result
 
     @api.multi
@@ -207,45 +205,48 @@ class MedicalAppointment(models.Model):
 
         stage_proxy = self.env['medical.appointment.stage']
         stage_name = stage_proxy.name_get(vals['stage_id'])[0][1]
-        date_start = vals.get(
-            'appointment_date', original_values['appointment_date']
-        )
+        
+        for rec_id in self:
 
-        history_entry_ids = self.history_entry_new('STAGE', vals)
-
-        localized_datetime = fields.Datetime.context_timestamp(
-            datetime.strptime(date_start, DEFAULT_SERVER_DATETIME_FORMAT),
-        )
-        context['appointment_date'] = localized_datetime.strftime(
-            self.env.user.lang.date_format
-        )
-        context['appointment_time'] = localized_datetime.strftime(
-            self.env.user.lang.time_format
-        )
-
-        email_template_name = None
-
-        if stage_name == 'Pending Review':
-            # Should create template and change name here
-            email_template_name = 'email_template_appointment_confirmation'
-
-        elif stage_name == 'Confirm':
-            email_template_name = 'email_template_appointment_confirmation'
-
-        elif stage_name == 'Canceled':
-            # Should create template and change name here
-            email_template_name = 'email_template_appointment_confirmation'
-
-        if email_template_name:
-            email_template_proxy = self.env['email.template']
-            _, template_id = self.env['ir.model.data'].get_object_reference(
-                'medical', email_template_name
+            history_entry_ids = self.history_entry_new('STAGE', vals)
+            date_start = vals.get(
+                'appointment_date', rec_id.appointment_date
             )
-            map(
-                lambda t: email_template_proxy.send_mail(
-                    template_id, t, True, context=context
-                ), ids
+            localized_datetime = fields.Datetime.context_timestamp(
+                datetime.strptime(date_start, DEFAULT_SERVER_DATETIME_FORMAT),
             )
+            context = self._context.copy()
+            context.update({
+                'appointment_date': localized_datetime.strftime(
+                    self.env.user.lang.date_format
+                ),
+                'appointment_time': localized_datetime.strftime(
+                    self.env.user.lang.time_format
+                )
+            })
+            email_template_name = None
+    
+            if stage_name == 'Pending Review':
+                # Should create template and change name here
+                email_template_name = 'email_template_appointment_confirmation'
+    
+            elif stage_name == 'Confirm':
+                email_template_name = 'email_template_appointment_confirmation'
+    
+            elif stage_name == 'Canceled':
+                # Should create template and change name here
+                email_template_name = 'email_template_appointment_confirmation'
+    
+            if email_template_name:
+                email_template_proxy = self.env['email.template']
+                _, template_id = self.env['ir.model.data'].get_object_reference(
+                    'medical', email_template_name
+                )
+                map(
+                    lambda t: email_template_proxy.send_mail(
+                        template_id, t, True, context=context
+                    ), self
+                )
 
         history_entry_ids.state_complete()
 
