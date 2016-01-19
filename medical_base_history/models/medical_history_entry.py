@@ -120,7 +120,7 @@ class MedicalHistoryEntry(models.Model):
         ''' Compute the record name and other details for abstract context '''
         for rec_id in self:
             associated_id = self.get_associated_record_id()
-            rec_id.associated_record_name = associated_id.name
+            rec_id.associated_record_name = associated_id.get_name()
 
     @api.multi
     def write(self, vals, ):
