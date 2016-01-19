@@ -69,11 +69,11 @@ class TestMedicalHistoryEntry(TransactionCase):
         with mock.patch.object(self.model_obj, '_do_history_actions') as mk:
             with mock.patch.object(self.model_obj, 'create'):
                 self.new_entry()
-                mk.assert_called_once_with(self.record_id, vals)
+                mk.assert_called_once_with(self.record_id, self.vals)
 
     def test_new_entry_updates_default_with_do_history_actions_return(self, ):
         with mock.patch.object(self.model_obj, '_do_history_actions') as mk:
-            with mock.patch.object(self.model_obj, 'create'):
+            with mock.patch.object(self.model_obj, 'create') as cr_mk:
                 expect = {'state': 'Should be injected', }
                 mk.return_value = expect
                 self.new_entry()
