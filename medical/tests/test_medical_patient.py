@@ -41,14 +41,14 @@ class TestMedicalPatient(TransactionCase):
         }
 
     def test_sequence(self):
-        patient_id = model_obj.create(self.vals)
+        patient_id = self.model_obj.create(self.vals)
         self.assertTrue(
             patient_id.identification_code, 'Should have a sequence'
         )
 
     def test_is_patient(self, ):
         ''' Validate that is_patient is set on the partner '''
-        patient_id = model_obj.create(self.vals)
+        patient_id = self.model_obj.create(self.vals)
         self.assertTrue(
             patient_id.is_patient, '`is_patient` not set on partner'
         )
@@ -61,7 +61,7 @@ class TestMedicalPatient(TransactionCase):
             date.today() - relativedelta(years=age)
         )
         self.vals['dob'] = birth_date
-        patient_id = model_obj.create(self.vals)
+        patient_id = self.model_obj.create(self.vals)
         self.assertEquals(
             patient_id.age, complete_age,
             'Should be the same age.\rGot: %s\rExpected: %s' % (
@@ -82,7 +82,7 @@ class TestMedicalPatient(TransactionCase):
                 date.today() - relativedelta(years=age)
             )
         })
-        patient_id = model_obj.create(self.vals)
+        patient_id = self.model_obj.create(self.vals)
         dod_age = '5y 0m 0d'
         expect = '%s (deceased)' % dod_age
         self.assertEquals(
@@ -96,7 +96,7 @@ class TestMedicalPatient(TransactionCase):
         """
         Invalidate a patient should invalidate its diseases
         """
-        patient_id = model_obj.create(self.vals)
+        patient_id = self.model_obj.create(self.vals)
         self.assertTrue(patient_id.active, 'Should be active')
         self.assertTrue(patient_id.partner_id.active, 'Should be inactive')
         self.assertFalse(patient_id.dod, 'Should be empty')
