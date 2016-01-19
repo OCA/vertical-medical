@@ -42,7 +42,7 @@ class TestMedicalHistoryEntry(TransactionCase):
         self.vals = {
             'entry_type_id': self.record_id.id,
             'associated_model_id': self.record_id._model.id,
-            'assocaited_record_id': self.record_id.id,
+            'associated_record_id_int': self.record_id.id,
             'state': 'incomplete',
         }
 
@@ -94,6 +94,36 @@ class TestMedicalHistoryEntry(TransactionCase):
         rec_id = self.new_entry()
         with self.assertRaises(ValidationError):
             rec_id.write({'state': 'incomplete'})
+
+    # Get associated record
+    def test_get_associated_record_id_ensures_one(self, ):
+        entry_ids = [self.new_entry(), self.new_entry()]
+        with self.assertRaises(AssertionError):
+            entry_ids.get_associated_record_id()
+
+    def test_get_associacted_record_id_gets_model_obj(self, ):
+        with mock.patch.object(self.model_obj, 'env') as mk:
+            entry_id = self.new_entry()
+            entry_id.get_associated_record_id()
+            mk.__getitem__.called_once_with(self.record_id._name)
+
+    def test_get_associated_record_id_browses_model_for_id(self, ):
+        with mock.patch.object(self.model_obj, 'env') as mk:
+            entry_id = self.new_entry()
+            get_mk = mock.MagicMock()
+            mk.__getitem__.return_value = get_mk
+            entry_id.get_associated_record_id()
+            get_mk.browse.called_once_with(self.record_id.id)
+
+    def test_get_associated_record_id_returns_result_of_browse(self, ):
+        with mock.patch.object(self.model_obj, 'env') as mk:
+            entry_id = self.new_entry()
+            expect = 'Expect'
+            get_mk = mock.MagicMock()
+            mk.__getitem__.return_value = get_mk
+            get_mk.browse.return_value = expect
+            result = entry_id.get_associated_record_id()
+            self.assertEqual(expect, result)
 
     # New Entry
     def test_new_entry_calls_do_history_actions_with_correct_params(self, ):
