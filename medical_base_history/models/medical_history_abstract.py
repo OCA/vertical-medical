@@ -47,24 +47,6 @@ class MedicalHistoryAbstract(models.AbstractModel):
         auto_join=True,
     )
 
-    @api.multi
-    @api.returns('medical.history.entry')
-    def history_entry_new(self, code, vals, ):
-        '''
-        Create a new history entry given values
-
-        Args:
-            code: Str representing Entry type code
-
-        Returns:
-            Recordset - of the new entries created
-        '''
-        entry_ids = self.env['medical.history.entry']
-        entry_type_id = self.env['medical.history.type'].get_by_code(code)
-        for res_id in self:
-            entry_ids += entry_ids.new_entry(self, entry_type_id, vals)
-        return entry_ids
-
     @api.model
     def create(self, vals, ):
         ''' Overload create to create history '''
@@ -96,3 +78,21 @@ class MedicalHistoryAbstract(models.AbstractModel):
         except NameError:
             pass
         return res
+
+    @api.multi
+    @api.returns('medical.history.entry')
+    def history_entry_new(self, code, vals, ):
+        '''
+        Create a new history entry given values
+
+        Args:
+            code: Str representing Entry type code
+
+        Returns:
+            Recordset - of the new entries created
+        '''
+        entry_ids = self.env['medical.history.entry']
+        entry_type_id = self.env['medical.history.type'].get_by_code(code)
+        for res_id in self:
+            entry_ids += entry_ids.new_entry(self, entry_type_id, vals)
+        return entry_ids
