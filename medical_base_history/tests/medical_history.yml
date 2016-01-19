@@ -34,7 +34,7 @@
 -
   Crete new MedicalHistoryExample
 -
-  !record {model: medical.history.example, id: med_hist_ex_inc}
+  !record {model: medical.history.example, id: med_hist_ex_inc}:
     example_col: Example Col Test
     
 -

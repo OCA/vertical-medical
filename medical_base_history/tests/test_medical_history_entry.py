@@ -25,6 +25,8 @@ import mock
 import pickle
 
 
+entry_mdl = 'openerp.addons.medical_base_history.models.medical_history_entry'
+
 class TestMedicalHistoryEntry(TransactionCase):
 
     def setUp(self,):
@@ -39,7 +41,7 @@ class TestMedicalHistoryEntry(TransactionCase):
         self.record_id = self.test_record()
         self.vals = {
             'entry_type_id': self.record_id.id,
-            'associated_model_id': self.record_id.model.id,
+            'associated_model_id': self.record_id._model.id,
             'assocaited_record_id': self.record_id.id,
             'state': 'incomplete',
         }
