@@ -37,12 +37,6 @@ class MedicalHistoryEntry(models.Model):
     _name = 'medical.history.entry'
     _description = 'Medical History Historying Entries'
 
-    user_id = fields.Many2one(
-        string='User',
-        help='User that logged history record',
-        comodel_name='res.users',
-        required=True,
-    )
     entry_type_id = fields.Many2one(
         string='Entry Type',
         help='Action type that was performed on the record',

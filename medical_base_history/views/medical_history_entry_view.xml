@@ -23,7 +23,7 @@
                         <group name="data">
                             <field name="display_name" />
                             <field name="associated_record_name" />
-                            <field name="user_id" />
+                            <field name="create_uid" />
                             <!-- @TODO: SMD-108: Display the old_record_dict in a template -->
                             <field name="entry_type_id" />
                         </group>
@@ -46,7 +46,7 @@
                     <field name="display_name" />
                     <field name="associated_record_name" />
                     <field name="entry_type_id" />
-                    <field name="user_id" />
+                    <field name="create_uid" />
                 </tree>
             </field>
         </record>
@@ -59,7 +59,7 @@
                     <field name="display_name" />
                     <field name="associated_record_name" />
                     <field name="entry_type_id" />
-                    <field name="user_id" />
+                    <field name="create_uid" />
                     <newline />
                     <group expand="0" string="Group By">
                         <filter string="Associated Record"
