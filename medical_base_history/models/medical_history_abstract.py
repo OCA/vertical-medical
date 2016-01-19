@@ -93,6 +93,6 @@ class MedicalHistoryAbstract(models.AbstractModel):
         '''
         entry_ids = self.env['medical.history.entry']
         entry_type_id = self.env['medical.history.type'].get_by_code(code)
-        for res_id in self:
-            entry_ids += entry_ids.new_entry(self, entry_type_id, vals)
+        for rec_id in self:
+            entry_ids += entry_ids.new_entry(rec_id, entry_type_id, vals)
         return entry_ids

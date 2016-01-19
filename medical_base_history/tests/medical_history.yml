@@ -32,7 +32,7 @@
     new_cols_to_save: none
     
 -
-  Crete new MedicalHistoryExample
+  Create new MedicalHistoryExample
 -
   !record {model: medical.history.example, id: med_hist_ex_inc}:
     example_col: Example Col Test

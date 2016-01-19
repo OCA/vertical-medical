@@ -37,6 +37,12 @@ class MedicalHistoryEntry(models.Model):
     _name = 'medical.history.entry'
     _description = 'Medical History Historying Entries'
 
+    user_id = fields.Many2one(
+        string='Responsible User',
+        help='User responsible for this history entry',
+        comodel_name='res.users',
+        required=True,
+    )
     entry_type_id = fields.Many2one(
         string='Entry Type',
         help='Action type that was performed on the record',
@@ -174,7 +180,7 @@ class MedicalHistoryEntry(models.Model):
         changed = {}
         for key, val in new_vals.items():
             current_val = getattr(record_id, key, None)
-            try: # Handle Recordsets
+            try:  # Handle Recordsets
                 current_val = current_val.id
             except AttributeError:
                 pass
@@ -198,13 +204,15 @@ class MedicalHistoryEntry(models.Model):
         Returns:
             `dict` of values for the new history record
         '''
-        entry_type_id = new_vals['entry_type_id']
-        changed_cols = self.get_changed_cols(record_id, new_vals)
+        entry_type_id = self.env['medical.history.type'].browse(
+            new_vals['entry_type_id']
+        )
 
         # Old col saving
-        if entry_type_id.cols_to_save == 'changed':
+        if entry_type_id.old_cols_to_save == 'changed':
+            changed_cols = self.get_changed_cols(record_id, new_vals)
             new_vals['old_record_dict'] = changed_cols
-        elif entry_type_id.cols_to_save == 'all':
+        elif entry_type_id.old_cols_to_save == 'all':
             new_vals['old_record_dict'] = record_id.read()
 
         # New col saving
@@ -232,7 +240,7 @@ class MedicalHistoryEntry(models.Model):
             `Recordset` Singleton of new history entry
         '''
         entry_vals = {
-            'user_id': self.env.user,
+            'user_id': self.env.user.id,
             'entry_type_id': entry_type_id.id,
             'associated_model_name': record_id._name,
             'associated_record_id_int': record_id.id,
