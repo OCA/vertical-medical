@@ -219,7 +219,7 @@ class MedicalHistoryEntry(models.Model):
         if entry_type_id.new_cols_to_save == 'changed':
             new_vals['new_record_dict'] = new_vals
         elif entry_type_id.new_cols_to_save == 'all':
-            new_vals['new_record_dict'] = record_id.read()
+            new_vals['new_record_dict'] = record_id.read()[0]
             new_vals['new_record_dict'].update(new_vals)
 
         return new_vals

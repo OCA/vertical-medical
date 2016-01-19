@@ -30,7 +30,7 @@ type_mdl = 'openerp.addons.medical_base_history.models.medical_history_type'
 class TestMedicalHistoryType(TransactionCase):
 
     def setUp(self,):
-        super(TestMedicalHistoryEntry, self).setUp()
+        super(TestMedicalHistoryType, self).setUp()
         self.model_obj = self.env['medical.history.type']
         self.code = 'DERP'
         self.name = 'Derped'
