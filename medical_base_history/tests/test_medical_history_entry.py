@@ -67,13 +67,13 @@ class TestMedicalHistoryEntry(TransactionCase):
     # New Entry
     def test_new_entry_calls_do_history_actions_with_correct_params(self, ):
         with mock.patch.object(self.model_obj, '_do_history_actions') as mk:
-            with mock.patch.object(self.model_obj, 'create') as _:
+            with mock.patch.object(self.model_obj, 'create'):
                 self.new_entry()
                 mk.assert_called_once_with(self.record_id, vals)
 
     def test_new_entry_updates_default_with_do_history_actions_return(self, ):
         with mock.patch.object(self.model_obj, '_do_history_actions') as mk:
-            with mock.patch.object(self.model_obj, 'create') as cr_mk:
+            with mock.patch.object(self.model_obj, 'create'):
                 expect = {'state': 'Should be injected', }
                 mk.return_value = expect
                 self.new_entry()
@@ -83,7 +83,7 @@ class TestMedicalHistoryEntry(TransactionCase):
                 )
 
     def test_new_entry_calls_create_with_entry_vals(self, ):
-        with mock.patch.object(self.model_obj, '_do_history_actions') as mk:
+        with mock.patch.object(self.model_obj, '_do_history_actions'):
             with mock.patch.object(self.model_obj, 'create') as cr_mk:
                 expect = {
                     'user_id': self.env.user,
@@ -92,6 +92,4 @@ class TestMedicalHistoryEntry(TransactionCase):
                     'associated_record_id_int': self.record_id.id,
                 }
                 self.new_entry()
-                cr.mk_assert_called_with(expect)
-        
-
+                cr_mk.assert_called_with(expect)

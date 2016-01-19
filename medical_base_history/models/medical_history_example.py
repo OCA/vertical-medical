@@ -25,9 +25,9 @@ from openerp import models, fields
 class MedicalHistoryExample(models.Models):
     '''
     This is an example of how to use the MedicalHistoryAbstract
-    
+
     @TODO: Example of custom logging method
-    
+
     Examples:
         _audit_on: This is being declared in order to override the default
             change logging columns (`create`, `write`, `delete` - but could be
