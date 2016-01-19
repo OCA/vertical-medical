@@ -49,6 +49,9 @@
         'security/ir.model.access.csv',
         'data/medical_history_type_data.xml',
     ],
+    'test': [
+        'tests/medical_history.yml',
+    ],
     'website': 'https://laslabs.com',
     'licence': 'AGPL-3',
     'installable': True,

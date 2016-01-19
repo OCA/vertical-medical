@@ -1,0 +1,48 @@
+-
+  Create New Partner for patient
+-
+  !record {model: res.partner, id: partner_admin_laslabs }:
+    name: Admin LasLabs
+    is_company: False
+    street: 123 Test St
+    street2: Suite 1337
+    city: Las Vegas
+    country_id: base.us
+    phone: +1-888-888-8888
+    email: admin_laslabs@example.com
+    
+-
+  Create New User for History record
+-
+  !record {model: res.users, id: user_admin_laslabs, context: {no_reset_password: True} }:
+    name: Admin LasLabs
+    partner_id: partner_admin_laslabs
+    login: admin_laslabs@example.com
+    password: password
+    
+-
+  Create new MedicalHistoryType
+-
+  !record {model: medical.history.type, id: med_hist_type_create}:
+    name: Created
+    code: CREATE
+    prefix: '#'
+    suffix: '!'
+    old_cols_to_save: none
+    new_cols_to_save: none
+    
+-
+  Crete new MedicalHistoryExample
+-
+  !record {model: medical.history.example, id: med_hist_ex_inc}
+    example_col: Example Col Test
+    
+-
+  Create New Incomplete MedicalHistoryEntry
+-
+  !record {model: res.partner, id: med_hist_entry_1}:
+    user_id: user_admin_laslabs
+    entry_type_id: med_hist_type_create
+    associated_model_id: model_medical_history_example
+    associated_record_id_int: med_hist_ex_1.id
+    state: incomplete
