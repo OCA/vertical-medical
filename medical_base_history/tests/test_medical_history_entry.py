@@ -40,7 +40,6 @@ class TestMedicalHistoryEntry(TransactionCase):
         })
         self.record_id = self._test_record()
         self.vals = {
-            'entry_type_id': self.entry_type_id.id,
             'associated_model_id': self.record_id._model.id,
             'associated_record_id_int': self.record_id.id,
             'state': 'incomplete',
