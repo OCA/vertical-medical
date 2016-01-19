@@ -53,6 +53,6 @@
     ],
     'website': 'https://laslabs.com',
     'licence': 'AGPL-3',
-    'installable': False,
+    'installable': True,
     'auto_install': False,
 }
