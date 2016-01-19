@@ -22,7 +22,7 @@
 from openerp import models, fields
 
 
-class MedicalHistoryExample(models.Models):
+class MedicalHistoryExample(models.Model):
     '''
     This is an example of how to use the MedicalHistoryAbstract
 
