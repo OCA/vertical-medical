@@ -9,6 +9,15 @@
 <openerp>
     
     <data noupdate="0">
+        <record model="medical.history.type" id="history_audit_create">
+            <field name="name">Stage Changed</field>
+            <field name="code">STAGE</field>
+            <field name="new_cols_to_save">changed</field>
+            <field name="old_cols_to_save">changed</field>
+        </record>
+    </data>
+    
+    <data noupdate="0">
 
         <!-- Medical Appointment stages -->
         <record model="medical.appointment.stage" id="stage_appointment_in_review">

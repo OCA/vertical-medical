@@ -30,7 +30,6 @@ class MedicalAppointment(models.Model):
     _name = 'medical.appointment'
     _inherit = 'medical.history.abstract'
     _description = 'Medical Appointments'
-    _audit_on = ['stage_change', 'create', 'write', 'unlink', ]
 
     STATES = {
         'draft': [('readonly', False)]
