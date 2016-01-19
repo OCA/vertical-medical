@@ -20,7 +20,6 @@
 ##############################################################################
 
 from openerp import fields, models
-import logging
 
 
 class MedicalAppointmentStage(models.Model):

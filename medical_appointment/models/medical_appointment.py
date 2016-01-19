@@ -21,7 +21,7 @@
 
 from openerp import fields, models, exceptions, api, _
 from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
-from datetime import timedelta
+from datetime import timedelta, datetime
 
 
 class MedicalAppointment(models.Model):
@@ -128,7 +128,7 @@ class MedicalAppointment(models.Model):
     )
 
     _group_by_full = {
-        'stage_id': _group_stage_ids,
+        'stage_id': lambda s: s._group_stage_ids(),
     }
 
     def _default_stage_id(self, ):
@@ -205,7 +205,7 @@ class MedicalAppointment(models.Model):
 
         stage_proxy = self.env['medical.appointment.stage']
         stage_name = stage_proxy.name_get(vals['stage_id'])[0][1]
-        
+
         for rec_id in self:
 
             history_entry_ids = self.history_entry_new('STAGE', vals)
@@ -225,21 +225,22 @@ class MedicalAppointment(models.Model):
                 )
             })
             email_template_name = None
-    
+
             if stage_name == 'Pending Review':
                 # Should create template and change name here
                 email_template_name = 'email_template_appointment_confirmation'
-    
+
             elif stage_name == 'Confirm':
                 email_template_name = 'email_template_appointment_confirmation'
-    
+
             elif stage_name == 'Canceled':
                 # Should create template and change name here
                 email_template_name = 'email_template_appointment_confirmation'
-    
+
             if email_template_name:
                 email_template_proxy = self.env['email.template']
-                _, template_id = self.env['ir.model.data'].get_object_reference(
+                model_obj = self.env['ir.model.data']
+                _, template_id = model_obj.get_object_reference(
                     'medical', email_template_name
                 )
                 map(
