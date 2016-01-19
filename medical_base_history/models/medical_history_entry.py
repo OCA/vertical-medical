@@ -227,7 +227,7 @@ class MedicalHistoryEntry(models.Model):
         entry_vals = {
             'user_id': self.env.user,
             'entry_type_id': entry_type_id.id,
-            'associated_model_name': record_id.name,
+            'associated_model_name': record_id._name,
             'associated_record_id_int': record_id.id,
         }
         entry_vals.update(
