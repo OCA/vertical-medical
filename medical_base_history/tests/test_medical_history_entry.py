@@ -21,10 +21,10 @@
 
 from openerp.tests.common import TransactionCase
 import mock
-import pickle
 
 
 entry_mdl = 'openerp.addons.medical_base_history.models.medical_history_entry'
+
 
 class TestMedicalHistoryEntry(TransactionCase):
 
@@ -64,7 +64,7 @@ class TestMedicalHistoryEntry(TransactionCase):
         mk.loads.assert_called_with(self.vals)
 
     @mock.patch('%s.pickle' % entry_mdl)
-    def test_compute_old_record_dict_sets_property_to_pickle_return(self, mk, ):
+    def test_compute_old_record_dict_sets_property_to_pickle(self, mk, ):
         expect = 'Expect'
         mk.loads.return_value = expect
         self.entry_type_id.old_cols_to_save = 'all'
@@ -77,7 +77,7 @@ class TestMedicalHistoryEntry(TransactionCase):
     @mock.patch('%s.pickle' % entry_mdl)
     def test_write_old_record_dict_calls_pickle_dumps_with_rec(self, mk, ):
         self.entry_type_id.new_cols_to_save = 'all'
-        rec_id = self.new_entry()
+        self.new_entry()
         mk.dumps.assert_called_with(self.vals)
 
     # @TODO: Figure out how to test attr assignment without triggering compute
