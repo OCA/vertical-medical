@@ -89,19 +89,6 @@ class MedicalHistoryType(models.Model):
                 )
 
     @api.model
-    def create(self, vals, ):
-        ''' Overload create & capitalize vals['code'] before save '''
-        vals['code'] = vals.get('code', '').capitalize()
-        return super(MedicalHistoryType, self).create(vals)
-
-    @api.multi
-    def write(self, vals, ):
-        ''' Overload write & capitalize vals['code'] before save '''
-        if vals.get('code'):
-            vals['code'] = vals['code'].capitalize()
-        return super(MedicalHistoryType, self).write(vals)
-
-    @api.model
     @api.returns('self')
     def get_by_code(self, code, ):
         '''

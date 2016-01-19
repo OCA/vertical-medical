@@ -19,4 +19,5 @@
 #
 ##############################################################################
 
-from . import test_medical_history_entry
+#from . import test_medical_history_entry
+from . import test_medical_history_type
