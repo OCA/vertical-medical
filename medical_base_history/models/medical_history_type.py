@@ -83,7 +83,7 @@ class MedicalHistoryType(models.Model):
     def _check_unique_code(self, ):
         ''' Constrain that code is unique '''
         for rec_id in self:
-            if len(self.search(['code', '=', rec_id.code])) > 1:
+            if len(self.search([('code', '=', rec_id.code)])) > 1:
                 raise ValidationError(
                     'Code (%s) must be unique.' % rec_id.code,
                 )
