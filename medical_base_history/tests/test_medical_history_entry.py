@@ -40,7 +40,7 @@ class TestMedicalHistoryEntry(TransactionCase):
         })
         self.record_id = self._test_record()
         self.vals = {
-            'entry_type_id': self.record_id.id,
+            'entry_type_id': self.entry_type_id.id,
             'associated_model_id': self.record_id._model.id,
             'associated_record_id_int': self.record_id.id,
             'state': 'incomplete',
@@ -156,12 +156,29 @@ class TestMedicalHistoryEntry(TransactionCase):
                 mk.assert_called_with(self.record_id, self.vals)
 
     def test_do_history_actions_saved_old_changed_cols(self, ):
+        self.entry_type_id.old_cols_to_save = 'changed'
         with mock.patch.object(self.model_obj, 'env'):
             with mock.patch.object(self.model_obj, 'get_changed_cols') as mk:
                 expect = 'Expect'
                 mk.return_value = expect
                 vals = self._history_action()
                 self.assertEqual(expect, vals['old_record_dict'])
+
+    def test_do_history_actions_saved_old_all_cols(self, ):
+        self.entry_type_id.old_cols_to_save = 'all'
+        with mock.patch.object(self.model_obj, 'env'):
+            expect = 'Expect'
+            mk = mock.MagicMock()
+            mk.read.return_value = expect
+            self.record_id = mk
+            self._history_action()
+            mk.assert_called_once_with()
+
+    def test_do_history_actions_saved_new_changed_cols(self, ):
+        self.entry_type_id.new_cols_to_save = 'changed'
+        with mock.patch.object(self.model_obj, 'env'):
+            vals = self._history_action()
+            self.assertDictEqual(self.vals, vals['new_record_dict'])
 
     # New Entry
     def test__new_entry_calls_do_history_actions_with_correct_params(self, ):
