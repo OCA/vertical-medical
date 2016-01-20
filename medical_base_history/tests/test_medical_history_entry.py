@@ -51,8 +51,10 @@ class TestMedicalHistoryEntry(TransactionCase):
         )
 
     def _history_action(self, ):
+        vals = {'entry_type_id': self.entry_type_id.id, }
+        vals.update(self.vals)
         return self.model_obj._do_history_actions(
-            self.record_id, self.vals
+            self.record_id, vals
         )
 
     def _test_record(self, ):
@@ -65,6 +67,7 @@ class TestMedicalHistoryEntry(TransactionCase):
     def test_compute_old_record_dict_calls_pickle_loads_with_rec(self, mk, ):
         self.entry_type_id.old_cols_to_save = 'all'
         rec_id = self._new_entry()
+        self.model_obj.env.invalidate_all()
         rec_id.read(['old_record_dict'])
         mk.loads.assert_called_with(self.vals)
 
@@ -103,7 +106,7 @@ class TestMedicalHistoryEntry(TransactionCase):
     def test_get_associated_record_id_ensures_one(self, ):
         entry_ids = self._new_entry()
         entry_ids += self._new_entry()
-        with self.assertRaises(AssertionError):
+        with self.assertRaises(ValueError):
             entry_ids.get_associated_record_id()
 
     def test_get_associacted_record_id_gets_model_obj(self, ):
@@ -131,25 +134,24 @@ class TestMedicalHistoryEntry(TransactionCase):
             self.assertEqual(expect, result)
 
     # Default History Actions
-    def test_do_history_actions_gets_entry_type_model(self, ):
-        with mock.patch.object(self.model_obj, 'env') as mk:
-            with mock.patch.object(self.model_obj, 'get_changed_cols'):
-                get_mk = mock.MagicMock()
-                mk.__getitem__.return_value = get_mk
-                self._history_action()
-                get_mk.assert_called_once_with('medical.history.type')
-
     def test_do_history_actions_gets_entry_type_id(self, ):
         with mock.patch.object(self.model_obj, 'env') as mk:
             with mock.patch.object(self.model_obj, 'get_changed_cols'):
                 get_mk = mock.MagicMock()
                 mk.__getitem__.return_value = get_mk
                 self._history_action()
-                get_mk.browse().assert_called_once_with(
+                get_mk.browse.assert_called_once_with(
                     self.entry_type_id.id
                 )
 
+    def test_do_history_actions_calls_doesnt_call_get_changed_for_none(self, ):
+        with mock.patch.object(self.model_obj, 'env'):
+            with mock.patch.object(self.model_obj, 'get_changed_cols') as mk:
+                self._history_action()
+                mk.assert_not_called()
+
     def test_do_history_actions_calls_get_changed_cols_with_args(self, ):
+        self.entry_type_id.old_cols_to_save = 'changed'
         with mock.patch.object(self.model_obj, 'env'):
             with mock.patch.object(self.model_obj, 'get_changed_cols') as mk:
                 self._history_action()
@@ -157,37 +159,34 @@ class TestMedicalHistoryEntry(TransactionCase):
 
     def test_do_history_actions_saved_old_changed_cols(self, ):
         self.entry_type_id.old_cols_to_save = 'changed'
-        with mock.patch.object(self.model_obj, 'env'):
-            with mock.patch.object(self.model_obj, 'get_changed_cols') as mk:
-                expect = 'Expect'
-                mk.return_value = expect
-                vals = self._history_action()
-                self.assertEqual(expect, vals['old_record_dict'])
+        with mock.patch.object(self.model_obj, 'get_changed_cols') as mk:
+            expect = 'Expect'
+            mk.return_value = expect
+            vals = self._history_action()
+            self.assertEqual(expect, vals.get('old_record_dict'))
 
     def test_do_history_actions_saved_old_all_cols(self, ):
         self.entry_type_id.old_cols_to_save = 'all'
-        with mock.patch.object(self.model_obj, 'env'):
-            expect = 'Expect'
-            mk = mock.MagicMock()
-            mk.read.return_value = expect
-            self.record_id = mk
-            self._history_action()
-            mk.assert_called_once_with()
+        expect = 'Expect'
+        mk = mock.MagicMock()
+        mk.read.return_value = expect
+        self.record_id = mk
+        self._history_action()
+        mk.assert_called_once_with()
 
     def test_do_history_actions_saved_new_changed_cols(self, ):
         self.entry_type_id.new_cols_to_save = 'changed'
-        with mock.patch.object(self.model_obj, 'env'):
-            vals = self._history_action()
-            self.assertDictEqual(self.vals, vals['new_record_dict'])
+        vals = self._history_action()
+        self.assertDictEqual(self.vals, vals.get('new_record_dict'))
 
     # New Entry
-    def test__new_entry_calls_do_history_actions_with_correct_params(self, ):
+    def test_new_entry_calls_do_history_actions_with_correct_params(self, ):
         with mock.patch.object(self.model_obj, '_do_history_actions') as mk:
             with mock.patch.object(self.model_obj, 'create'):
                 self._new_entry()
                 mk.assert_called_once_with(self.record_id, self.vals)
 
-    def test__new_entry_updates_default_with_do_history_actions_return(self, ):
+    def test_new_entry_updates_default_with_do_history_actions_return(self, ):
         with mock.patch.object(self.model_obj, '_do_history_actions') as mk:
             with mock.patch.object(self.model_obj, 'create') as cr_mk:
                 expect = {'state': 'Should be injected', }
@@ -198,14 +197,8 @@ class TestMedicalHistoryEntry(TransactionCase):
                     expect['state'], call_args.get('state'),
                 )
 
-    def test__new_entry_calls_create_with_entry_vals(self, ):
-        with mock.patch.object(self.model_obj, '_do_history_actions'):
+    def test_new_entry_calls_create_with_entry_vals(self, ):
+        with mock.patch.object(self.model_obj, '_do_history_actions') as exp:
             with mock.patch.object(self.model_obj, 'create') as cr_mk:
-                expect = {
-                    'user_id': self.env.user,
-                    'entry_type_id': self.entry_type_id.id,
-                    'associated_model_name': self.record_id.name,
-                    'associated_record_id_int': self.record_id.id,
-                }
                 self._new_entry()
-                cr_mk.assert_called_with(expect)
+                cr_mk.assert_called_with(exp)

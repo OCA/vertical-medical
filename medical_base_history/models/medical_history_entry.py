@@ -22,7 +22,6 @@
 from openerp import fields, models, api, _
 from openerp.exceptions import ValidationError
 
-
 try:
     import cPickle as pickle
 except ImportError:
@@ -98,35 +97,41 @@ class MedicalHistoryEntry(models.Model):
     )
 
     @api.multi
+    @api.depends('old_record_dict')
     def _compute_old_record_dict(self, ):
         ''' Unpickle the old record for usage '''
         for rec_id in self:
-            rec_id.old_record_dict = pickle.loads(rec_id.old_record_dict)
+            if rec_id.old_record_dict:
+                self.old_record_dict = pickle.loads(rec_id.old_record_dict)
 
     @api.multi
     def _write_old_record_dict(self, ):
         ''' Pickle the old record for storage '''
         for rec_id in self:
-            rec_id.old_record_dict = pickle.dumps(rec_id.old_record_dict)
+            if rec_id.old_record_dict:
+                self.old_record_dict = pickle.dumps(rec_id.old_record_dict)
 
     @api.multi
+    @api.depends('new_record_dict')
     def _compute_new_record_dict(self, ):
         ''' Unpickle the new record for usage '''
         for rec_id in self:
-            rec_id.new_record_dict = pickle.loads(rec_id.new_record_dict)
+            if rec_id.new_record_dict:
+                self.new_record_dict = pickle.loads(rec_id.new_record_dict)
 
     @api.multi
     def _write_new_record_dict(self, ):
         ''' Pickle the new record for storage '''
         for rec_id in self:
-            rec_id.new_record_dict = pickle.dumps(rec_id.new_record_dict)
+            if rec_id.new_record_dict:
+                self.new_record_dict = pickle.dumps(rec_id.new_record_dict)
 
     @api.multi
     def _compute_associated_record_details(self, ):
         ''' Compute the record name and other details for abstract context '''
         for rec_id in self:
             associated_id = self.get_associated_record_id()
-            rec_id.associated_record_name = associated_id.get_name()
+            self.associated_record_name = associated_id.get_name()
 
     @api.multi
     def write(self, vals, ):
@@ -189,7 +194,7 @@ class MedicalHistoryEntry(models.Model):
         return len(changed) and changed or None
 
     @api.model
-    def _do_history_actions(self, record_id, new_vals, ):
+    def _do_history_actions(self, record_id, entry_type_id, new_vals, ):
         '''
         Perform history actions for record_id
 
@@ -204,9 +209,6 @@ class MedicalHistoryEntry(models.Model):
         Returns:
             `dict` of values for the new history record
         '''
-        entry_type_id = self.env['medical.history.type'].browse(
-            new_vals['entry_type_id']
-        )
 
         # Old col saving
         if entry_type_id.old_cols_to_save == 'changed':
@@ -231,7 +233,8 @@ class MedicalHistoryEntry(models.Model):
         Create a new entry from the record and proposed new vals for it
 
         Args:
-            record_id: `Recordset` Singleton of the entry is being created
+            record_id: `Recordset` Singleton that the entry is being created
+                for
             entry_type_id: `Recordset` Singleton of `medical.history.type` to
                 create
             new_vals: `dict` of new values to check against current record
@@ -245,7 +248,9 @@ class MedicalHistoryEntry(models.Model):
             'associated_model_name': record_id._name,
             'associated_record_id_int': record_id.id,
         }
-        entry_vals = self._do_history_actions(record_id, entry_vals)
+        entry_vals = self._do_history_actions(
+            record_id, entry_type_id, new_vals
+        )
         return self.create(entry_vals)
 
     @api.multi

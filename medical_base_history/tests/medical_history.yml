@@ -36,7 +36,7 @@
 -
   !record {model: medical.history.example, id: med_hist_ex}:
     id: 9000
-    example_col: Example Incomplete Test
+    example_col: MedicalHistoryExampleExample
     
 -
   Create New Incomplete MedicalHistoryEntry
@@ -44,8 +44,8 @@
   !record {model: medical.history.entry, id: med_hist_ent_inc}:
     user_id: user_admin_laslabs
     entry_type_id: med_hist_type_test
-    associated_model_name: med_hist_ex_inc._name
-    associated_record_id_int: med_hist_ex_inc.id
+    associated_model_name: medical.history.example
+    associated_record_id_int: 9000
     state: incomplete
     
 -
@@ -54,6 +54,6 @@
   !record {model: medical.history.entry, id: med_hist_ent_cmp}:
     user_id: user_admin_laslabs
     entry_type_id: med_hist_type_test
-    associated_model_name: med_hist_ex_inc._name
+    associated_model_name: medical.history.example
     associated_record_id_int: 9000
     state: complete
