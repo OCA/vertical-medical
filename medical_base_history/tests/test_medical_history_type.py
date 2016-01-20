@@ -21,7 +21,6 @@
 
 from openerp.tests.common import TransactionCase
 from openerp.exceptions import ValidationError
-import mock
 
 
 type_mdl = 'openerp.addons.medical_base_history.models.medical_history_type'
@@ -79,7 +78,7 @@ class TestMedicalHistoryType(TransactionCase):
     def test_get_by_name_multiple(self, ):
         expect = [self._new_type().id]
         self.vals['code'] = 'dsfdfgrg'
-        expect.append(seof._new_type().id)
+        expect.append(self._new_type().id)
         got = self.model_obj.get_by_name(self.name)
         got = [g.id for g in got]
         self.assertListEqual(expect, got)

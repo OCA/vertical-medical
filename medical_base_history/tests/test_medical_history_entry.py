@@ -40,7 +40,7 @@ class TestMedicalHistoryEntry(TransactionCase):
         })
         self.record_id = self._test_record()
         self.vals = {
-            'associated_model_id': self.record_id._model.id,
+            'associated_model_name': self.record_id._name,
             'associated_record_id_int': self.record_id.id,
             'state': 'incomplete',
         }
@@ -51,7 +51,7 @@ class TestMedicalHistoryEntry(TransactionCase):
         )
 
     def _history_action(self, ):
-        return self.model_obj._do_history_action(
+        return self.model_obj._do_history_actions(
             self.record_id, self.vals
         )
 
@@ -65,7 +65,7 @@ class TestMedicalHistoryEntry(TransactionCase):
     def test_compute_old_record_dict_calls_pickle_loads_with_rec(self, mk, ):
         self.entry_type_id.old_cols_to_save = 'all'
         rec_id = self._new_entry()
-        rec_id.read('old_record_dict')
+        rec_id.read(['old_record_dict'])
         mk.loads.assert_called_with(self.vals)
 
     @mock.patch('%s.pickle' % entry_mdl)
@@ -74,7 +74,7 @@ class TestMedicalHistoryEntry(TransactionCase):
         mk.loads.return_value = expect
         self.entry_type_id.old_cols_to_save = 'all'
         rec_id = self._new_entry()
-        got = rec_id.read('old_record_dict')
+        got = rec_id.read(['old_record_dict'])
         self.assertEqual(
             expect, got,
         )
@@ -101,7 +101,8 @@ class TestMedicalHistoryEntry(TransactionCase):
 
     # Get associated record
     def test_get_associated_record_id_ensures_one(self, ):
-        entry_ids = [self._new_entry(), self._new_entry()]
+        entry_ids = self._new_entry()
+        entry_ids += self._new_entry()
         with self.assertRaises(AssertionError):
             entry_ids.get_associated_record_id()
 
@@ -203,7 +204,7 @@ class TestMedicalHistoryEntry(TransactionCase):
                 expect = {
                     'user_id': self.env.user,
                     'entry_type_id': self.entry_type_id.id,
-                    'associated_model_id': self.record_id._model.id,
+                    'associated_model_name': self.record_id.name,
                     'associated_record_id_int': self.record_id.id,
                 }
                 self._new_entry()
