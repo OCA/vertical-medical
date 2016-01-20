@@ -51,10 +51,8 @@ class TestMedicalHistoryEntry(TransactionCase):
         )
 
     def _history_action(self, ):
-        vals = {'entry_type_id': self.entry_type_id.id, }
-        vals.update(self.vals)
         return self.model_obj._do_history_actions(
-            self.record_id, vals
+            self.record_id, self.entry_type_id, self.vals
         )
 
     def _test_record(self, ):
@@ -62,31 +60,32 @@ class TestMedicalHistoryEntry(TransactionCase):
             'example_col': 'Test',
         })
 
-    # Computes, inverses, defaults
-    @mock.patch('%s.pickle' % entry_mdl)
-    def test_compute_old_record_dict_calls_pickle_loads_with_rec(self, mk, ):
-        self.entry_type_id.old_cols_to_save = 'all'
-        rec_id = self._new_entry()
-        self.model_obj.env.invalidate_all()
-        rec_id.read(['old_record_dict'])
-        mk.loads.assert_called_with(self.vals)
-
-    @mock.patch('%s.pickle' % entry_mdl)
-    def test_compute_old_record_dict_sets_property_to_pickle(self, mk, ):
-        expect = 'Expect'
-        mk.loads.return_value = expect
-        self.entry_type_id.old_cols_to_save = 'all'
-        rec_id = self._new_entry()
-        got = rec_id.read(['old_record_dict'])
-        self.assertEqual(
-            expect, got,
-        )
-
-    @mock.patch('%s.pickle' % entry_mdl)
-    def test_write_old_record_dict_calls_pickle_dumps_with_rec(self, mk, ):
-        self.entry_type_id.new_cols_to_save = 'all'
-        self._new_entry()
-        mk.dumps.assert_called_with(self.vals)
+    # # Computes, inverses, defaults
+    # @mock.patch('%s.pickle' % entry_mdl)
+    # def test_compute_old_record_dict_calls_pickle_loads_with_rec(self, mk, ):
+    #     self.entry_type_id.old_cols_to_save = 'all'
+    #     rec_id = self._new_entry()
+    #     self.model_obj.env.invalidate_all()
+    #     rec_id.read(['old_record_dict'])
+    #     mk.loads.assert_called_with(self.vals)
+    #
+    # @mock.patch('%s.pickle' % entry_mdl)
+    # def test_compute_old_record_dict_sets_property_to_pickle(self, mk, ):
+    #     expect = 'Expect'
+    #     mk.loads.return_value = expect
+    #     self.entry_type_id.old_cols_to_save = 'all'
+    #     rec_id = self._new_entry()
+    #     self.model_obj.env.invalidate_all()
+    #     got = rec_id.old_record_dict
+    #     self.assertEqual(
+    #         expect, got,
+    #     )
+    #
+    # @mock.patch('%s.pickle' % entry_mdl)
+    # def test_write_old_record_dict_calls_pickle_dumps_with_rec(self, mk, ):
+    #     self.entry_type_id.new_cols_to_save = 'all'
+    #     self._new_entry()
+    #     mk.dumps.assert_called_with(self.vals)
 
     # @TODO: Figure out how to test attr assignment without triggering compute
 
@@ -100,7 +99,7 @@ class TestMedicalHistoryEntry(TransactionCase):
     def test_unlink_is_disabled_on_all_records(self, ):
         rec_id = self._new_entry()
         with self.assertRaises(ValidationError):
-            rec_id.write({'state': 'incomplete'})
+            rec_id.unlink()
 
     # Get associated record
     def test_get_associated_record_id_ensures_one(self, ):
@@ -109,41 +108,20 @@ class TestMedicalHistoryEntry(TransactionCase):
         with self.assertRaises(ValueError):
             entry_ids.get_associated_record_id()
 
-    def test_get_associacted_record_id_gets_model_obj(self, ):
-        with mock.patch.object(self.model_obj, 'env') as mk:
-            entry_id = self._new_entry()
-            entry_id.get_associated_record_id()
-            mk.__getitem__.called_once_with(self.record_id._name)
-
     def test_get_associated_record_id_browses_model_for_id(self, ):
+        entry_id = self._new_entry()
         with mock.patch.object(self.model_obj, 'env') as mk:
-            entry_id = self._new_entry()
-            get_mk = mock.MagicMock()
-            mk.__getitem__.return_value = get_mk
             entry_id.get_associated_record_id()
-            get_mk.browse.called_once_with(self.record_id.id)
+            mk[self.record_id._name].browse.called_once_with(
+                self.record_id.id
+            )
 
     def test_get_associated_record_id_returns_result_of_browse(self, ):
-        with mock.patch.object(self.model_obj, 'env') as mk:
-            entry_id = self._new_entry()
-            expect = 'Expect'
-            get_mk = mock.MagicMock()
-            mk.__getitem__.return_value = get_mk
-            get_mk.browse.return_value = expect
-            result = entry_id.get_associated_record_id()
-            self.assertEqual(expect, result)
+        entry_id = self._new_entry()
+        result = entry_id.get_associated_record_id()
+        self.assertEqual(self.record_id.id, result.id)
 
     # Default History Actions
-    def test_do_history_actions_gets_entry_type_id(self, ):
-        with mock.patch.object(self.model_obj, 'env') as mk:
-            with mock.patch.object(self.model_obj, 'get_changed_cols'):
-                get_mk = mock.MagicMock()
-                mk.__getitem__.return_value = get_mk
-                self._history_action()
-                get_mk.browse.assert_called_once_with(
-                    self.entry_type_id.id
-                )
-
     def test_do_history_actions_calls_doesnt_call_get_changed_for_none(self, ):
         with mock.patch.object(self.model_obj, 'env'):
             with mock.patch.object(self.model_obj, 'get_changed_cols') as mk:
@@ -167,12 +145,10 @@ class TestMedicalHistoryEntry(TransactionCase):
 
     def test_do_history_actions_saved_old_all_cols(self, ):
         self.entry_type_id.old_cols_to_save = 'all'
-        expect = 'Expect'
         mk = mock.MagicMock()
-        mk.read.return_value = expect
         self.record_id = mk
         self._history_action()
-        mk.assert_called_once_with()
+        mk.read.assert_called_once_with()
 
     def test_do_history_actions_saved_new_changed_cols(self, ):
         self.entry_type_id.new_cols_to_save = 'changed'
@@ -184,7 +160,9 @@ class TestMedicalHistoryEntry(TransactionCase):
         with mock.patch.object(self.model_obj, '_do_history_actions') as mk:
             with mock.patch.object(self.model_obj, 'create'):
                 self._new_entry()
-                mk.assert_called_once_with(self.record_id, self.vals)
+                mk.assert_called_once_with(
+                    self.record_id, self.entry_type_id, self.vals
+                )
 
     def test_new_entry_updates_default_with_do_history_actions_return(self, ):
         with mock.patch.object(self.model_obj, '_do_history_actions') as mk:
@@ -197,8 +175,15 @@ class TestMedicalHistoryEntry(TransactionCase):
                     expect['state'], call_args.get('state'),
                 )
 
-    def test_new_entry_calls_create_with_entry_vals(self, ):
-        with mock.patch.object(self.model_obj, '_do_history_actions') as exp:
-            with mock.patch.object(self.model_obj, 'create') as cr_mk:
-                self._new_entry()
-                cr_mk.assert_called_with(exp)
+    def test_new_entry_returns_new_entry_obj(self, ):
+        rec_id = self._new_entry()
+        expect = {
+            'user_id': self.model_obj.env.user,
+            'entry_type_id': self.entry_type_id,
+            'associated_model_name': self.record_id._name,
+            'associated_record_id_int': self.record_id.id,
+        }
+        for key, val in expect.items():
+            self.assertEqual(
+                getattr(rec_id, key), val
+            )

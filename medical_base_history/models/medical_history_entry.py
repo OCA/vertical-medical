@@ -59,7 +59,7 @@ class MedicalHistoryEntry(models.Model):
     display_name = fields.Char(
         related='entry_type_id.display_name',
     )
-    old_record_dict = fields.Binary(
+    old_record_dict = fields.Text(
         help='Copy of old record for history auditing',
         readonly=True,
         store=True,
@@ -67,7 +67,7 @@ class MedicalHistoryEntry(models.Model):
         compute='_compute_old_record_dict',
         inverse='_write_old_record_dict',
     )
-    new_record_dict = fields.Binary(
+    new_record_dict = fields.Text(
         help='Copy of new record for history auditing',
         readonly=True,
         store=True,
@@ -180,7 +180,7 @@ class MedicalHistoryEntry(models.Model):
             new_vals: `dict` of new values to check against current record
 
         Returns:
-            `dict` or `None` - Old values that are about to be changed
+            `dict` - Old values that are about to be changed
         '''
         changed = {}
         for key, val in new_vals.items():
@@ -191,7 +191,7 @@ class MedicalHistoryEntry(models.Model):
                 pass
             if val != current_val:
                 changed[key] = current_val
-        return len(changed) and changed or None
+        return len(changed) and changed or {}
 
     @api.model
     def _do_history_actions(self, record_id, entry_type_id, new_vals, ):
@@ -210,21 +210,23 @@ class MedicalHistoryEntry(models.Model):
             `dict` of values for the new history record
         '''
 
+        vals = {}
+
         # Old col saving
         if entry_type_id.old_cols_to_save == 'changed':
             changed_cols = self.get_changed_cols(record_id, new_vals)
-            new_vals['old_record_dict'] = changed_cols
+            vals['old_record_dict'] = changed_cols
         elif entry_type_id.old_cols_to_save == 'all':
-            new_vals['old_record_dict'] = record_id.read()
+            vals['old_record_dict'] = record_id.read()[0]
 
         # New col saving
         if entry_type_id.new_cols_to_save == 'changed':
-            new_vals['new_record_dict'] = new_vals
+            vals['new_record_dict'] = new_vals
         elif entry_type_id.new_cols_to_save == 'all':
-            new_vals['new_record_dict'] = record_id.read()[0]
-            new_vals['new_record_dict'].update(new_vals)
+            vals['new_record_dict'] = record_id.read()[0]
+            vals['new_record_dict'].update(new_vals)
 
-        return new_vals
+        return vals
 
     @api.model
     @api.returns('self')
@@ -248,8 +250,10 @@ class MedicalHistoryEntry(models.Model):
             'associated_model_name': record_id._name,
             'associated_record_id_int': record_id.id,
         }
-        entry_vals = self._do_history_actions(
-            record_id, entry_type_id, new_vals
+        entry_vals.update(
+            self._do_history_actions(
+                record_id, entry_type_id, new_vals
+            )
         )
         return self.create(entry_vals)
 
