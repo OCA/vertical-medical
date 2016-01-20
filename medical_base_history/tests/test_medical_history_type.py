@@ -50,7 +50,7 @@ class TestMedicalHistoryType(TransactionCase):
 
     # Computes, contraints, etc
     def test_compute_display_name(self, ):
-        expect = '[%{code}s] %{prefix}s%{name}s%{suffix}s' % {
+        expect = '[%(code)s] %(prefix)s%(name)s%(suffix)s' % {
             'code': self.code,
             'name': self.name,
             'prefix': self.prefix,

@@ -71,7 +71,7 @@ class MedicalHistoryType(models.Model):
     def _compute_display_name(self, ):
         ''' Compute name for representation to user '''
         for rec_id in self:
-            rec_id.display_name = '[%{code}s] %{prefix}s%{name}s%{suffix}s' % {
+            rec_id.display_name = '[%(code)s] %(prefix)s%(name)s%(suffix)s' % {
                 'code': self.code,
                 'name': self.name,
                 'prefix': self.prefix,
