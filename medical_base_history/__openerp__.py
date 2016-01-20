@@ -36,7 +36,7 @@
 
     'name': 'Medical Base - History',
     'summary': 'Add concept of abstract history object for change auditing',
-    'version': '9.0.1.1.0',
+    'version': '9.0.2.0.0',
     'author': 'LasLabs, Odoo Medical Team, Odoo Community Association (OCA)',
     'category': 'Medical',
     'depends': [

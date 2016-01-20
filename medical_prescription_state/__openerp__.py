@@ -34,13 +34,8 @@
 {
 
     'name': 'Medical Prescription Order States',
-<<<<<<< HEAD
-    'version': '8.0.1.1.0',
-    'author': 'LasLabs, Odoo Medical Team, Odoo Community Association (OCA)',
-=======
-    'version': '9.0.1.1.0',
+    'version': '9.0.2.0.0',
     'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
->>>>>>> Update active module versions to v9. Leave unported for organization while still in conversion phases
     'category': 'Medical',
     'depends': [
         'medical_prescription',
@@ -50,7 +45,7 @@
     'data': [
         # Views
         'views/medical_prescription_order_state_view.xml',
-        'views/prescription_order_view.xml',
+        'views/medical_prescription_order_view.xml',
 
         # Menu & Access
         'views/medical_menu.xml',
