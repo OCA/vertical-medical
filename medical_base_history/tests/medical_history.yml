@@ -40,7 +40,7 @@
 -
   Create New Incomplete MedicalHistoryEntry
 -
-  !record {model: res.partner, id: med_hist_entry_1}:
+  !record {model: medical.history.example, id: med_hist_entry_1}:
     user_id: user_admin_laslabs
     entry_type_id: med_hist_type_create
     associated_model_id: model_medical_history_example
