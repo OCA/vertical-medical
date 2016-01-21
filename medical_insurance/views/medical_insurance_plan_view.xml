@@ -88,7 +88,7 @@
 			</field>
 		</record>
 
-		<record model="ir.actions.act_window" id="medical_insurance_plan_action_view">
+		<record model="ir.actions.act_window" id="medical_insurance_plan_action">
 			<field name="name">Insurance Plans</field>
 			<field name="type">ir.actions.act_window</field>
 			<field name="res_model">medical.insurance.plan</field>
