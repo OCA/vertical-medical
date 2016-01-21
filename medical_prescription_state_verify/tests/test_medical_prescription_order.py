@@ -71,7 +71,7 @@ class TestMedicalPrescriptionOrder(TransactionCase):
         with self.assertRaises(ValidationError):
             record_id.write({'state_id': state_id.id, })
 
-    @mock.patch('%s.__builtin__.super' % state_mdl)
+    @mock.patch('%s.__builtin__.super' % rx_mdl)
     def test_write_state_is_allowed_when_allowed(self, mk):
         record_id = self._new_record()
         record_id.state = 'verified'
@@ -83,7 +83,7 @@ class TestMedicalPrescriptionOrder(TransactionCase):
         record_id.write(expect)
         mk.assert_called_with_args(expect)
 
-    @mock.patch('%s.__builtin__.super' % state_mdl)
+    @mock.patch('%s.__builtin__.super' % rx_mdl)
     def test_write_is_allowed_when_not_verified(self, mk):
         record_id = self._new_record()
         state_id = self.env['medical.prescription.order.state'].create({
