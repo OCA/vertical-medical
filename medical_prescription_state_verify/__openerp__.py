@@ -44,7 +44,7 @@
     "licence": "AGPL-3",
     "data": [
         'views/medical_prescription_order_state_view.xml',
-        'views/prescription_order_view.xml',
+        'data/medical_prescription_order_state_data.xml',
     ],
     'test': [
         

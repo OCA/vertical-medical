@@ -20,4 +20,5 @@
 ##############################################################################
 
 from . import medical_prescription_order
+from . import medical_prescription_order_line
 from . import medical_prescription_order_state

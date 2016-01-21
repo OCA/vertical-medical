@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from openerp import fields, models, exceptions, _
+from openerp import fields, models, exceptions, api, _
 
 
 class MedicalPrescriptionOrder(models.Model):

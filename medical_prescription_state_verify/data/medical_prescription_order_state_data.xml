@@ -19,10 +19,6 @@
             <field name="type">normal</field>
             <field name="sequence">10</field>
             <field name="fold">False</field>
-            <field name="color">1</field>
-            <field name="legend_done">
-                <!-- SOmething? -->
-            </field>
         </record>
         
         <record id="medical_prescription_order_state_exception"
@@ -34,10 +30,6 @@
             <field name="type">exception</field>
             <field name="sequence">20</field>
             <field name="fold">False</field>
-            <field name="color">9</field>
-            <field name="legend_done">
-                <!-- SOmething? -->
-            </field>
         </record>
         
         <record id="medical_prescription_order_state_verified"
@@ -50,7 +42,6 @@
             <field name="type">verified</field>
             <field name="sequence">30</field>
             <field name="fold">False</field>
-            <field name="color">1</field>
         </record>
         
         <record id="medical_prescription_order_state_complete"
@@ -63,7 +54,6 @@
             <field name="type">verified</field>
             <field name="sequence">40</field>
             <field name="fold">True</field>
-            <field name="color">1</field>
         </record>
         
         <record id="medical_prescription_order_state_cancel"
@@ -75,7 +65,6 @@
             <field name="type">cancel</field>
             <field name="sequence">50</field>
             <field name="fold">True</field>
-            <field name="color">1</field>
         </record>
         
     </data>
