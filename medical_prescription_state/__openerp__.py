@@ -51,6 +51,9 @@
         'views/medical_menu.xml',
         'security/ir.model.access.csv',
     ],
+    'test': [
+        'tests/medical_prescription_order_state.yml',
+    ],
     'installable': False,
     'auto_install': False,
 }

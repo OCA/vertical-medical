@@ -1,0 +1,7 @@
+-
+  Create New MedicalPrescriptionOrderState
+-
+  !record {model: medical.prescription.order.state, id: prescription_order_state_test }:
+    name: :"Test (allthethings)"
+    description: This is a testing state
+    sequence: 10
