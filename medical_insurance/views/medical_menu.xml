@@ -22,7 +22,7 @@
 		<menuitem id="medical_insurance_template_menu"
 				  name="Insurance Plan Templates"
 			      parent="medical_conf_insurance_menu"
-			      action="medical_insurance_template_action_view"
+			      action="medical_insurance_template_action"
 				  sequence="30" />
 
 	</data>

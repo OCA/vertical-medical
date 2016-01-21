@@ -74,7 +74,7 @@
 			</field>
 		</record>
 
-		<record model="ir.actions.act_window" id="medical_insurance_template_action_view">
+		<record model="ir.actions.act_window" id="medical_insurance_template_action">
 			<field name="name">Insurance Plan Templates</field>
 			<field name="type">ir.actions.act_window</field>
 			<field name="res_model">medical.insurance.template</field>
