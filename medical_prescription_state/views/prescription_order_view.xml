@@ -62,7 +62,6 @@
         </record>
         
         <record id="medical_prescription.medical_prescription_order_action" model="ir.actions.act_window">
-            <field name="inherit_id" ref="medical_prescription.medical_prescription_order_action" />
             <field name="view_mode">kanban,tree,form</field>
             <field name="view_id" ref="medical_prescription_order_kanban_view" />
         </record>
