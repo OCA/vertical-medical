@@ -21,8 +21,7 @@
 #
 ###############################################################################
 
-from openerp import api, fields, models
-from openerp.exceptions import ValidationError
+from openerp import fields, models
 
 
 class MedicalPathology(models.Model):

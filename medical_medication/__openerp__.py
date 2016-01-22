@@ -39,7 +39,7 @@
     'category': 'Medical',
     'depends': [
         'medical',
-        'medical_disease',
+        'medical_patient_disease',
         'medical_medicament',
     ],
     'summary': 'Introduce medication notion into the medical addons',

@@ -133,7 +133,6 @@
                                     <field name="age"/>
                                     <field name="is_infectious"/>
                                     <field name="is_allergy"/>
-                                    <field name="pregnancy_warning"/>
                                     <field name="is_pregnancy_warning"/>
                                 </group>
                                 <group name="dates">

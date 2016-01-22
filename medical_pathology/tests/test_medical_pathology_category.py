@@ -38,4 +38,4 @@ class TestMedicalPathologyCategory(TransactionCase):
 
     def test_check_recursive_parent(self, ):
         with self.assertRaises(ValidationError):
-            self.record_id = self.record_id.id
+            self.parent_id = self.record_id.id

@@ -20,7 +20,7 @@
 ##############################################################################
 
 from openerp.tests.common import TransactionCase
-from openerp.exceptions import ValidationError
+from psycopg2 import IntegrityError
 
 
 class TestMedicalPathology(TransactionCase):
@@ -38,5 +38,5 @@ class TestMedicalPathology(TransactionCase):
         return self.model_obj.create(self.vals)
 
     def test_check_unique_code(self, ):
-        with self.assertRaises(ValidationError):
+        with self.assertRaises(IntegrityError):
             self._test_record()

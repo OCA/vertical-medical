@@ -2,27 +2,9 @@
 <openerp>
     <data>
 
-    <!-- Diseases -->
-        <menuitem id="medical_root_disease" name="Disease"
-            parent="medical.medical_root_sub" sequence="10" />
-
-<!--  Menu of Pathology-->
-
         <menuitem id="medical_sub_disease"
-            parent="medical_root_disease" sequence="1" 
+            parent="medical_pathology.medical_root_pathology" sequence="1" 
             action="medical_patient_disease_action" />
-
-        <menuitem id="medical_pathology"
-            parent="medical_root_disease" sequence="10" 
-            action="medical_pathology_action" />
-
-        <menuitem id="medical_pathology_category"
-            parent="medical_root_disease" sequence="20"
-            action="medical_pathology_category_action" />
-
-        <menuitem id="medical_pathology_group"
-            parent="medical_root_disease" sequence="30"
-            action="medical_pathology_group_action" />
 
     </data>
 </openerp>
