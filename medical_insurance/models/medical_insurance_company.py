@@ -29,6 +29,8 @@ class MedicalInsuranceCompany(models.Model):
     partner_id = fields.Many2one(
         string='Related Partner',
         comodel_name='res.partner',
+        required=True,
+        ondelete='cascade',
     )
 
     @api.model

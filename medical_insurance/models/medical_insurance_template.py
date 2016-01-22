@@ -51,6 +51,8 @@ class MedicalInsuranceTemplate(models.Model):
     product_id = fields.Many2one(
         string='Insurance Product',
         comodel_name='product.product',
+        required=True,
+        ondelete='cascade',
     )
     insurance_affiliation = fields.Selection([
         ('state', 'State'),
