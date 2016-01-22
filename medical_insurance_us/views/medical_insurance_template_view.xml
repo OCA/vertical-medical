@@ -43,7 +43,7 @@
 					<field name="rx_pcn" />
 					<field name="rx_group" />
 				</xpath>
-				<xpath expr="//field[@name='insurance_company_id]" position="after">
+				<xpath expr="//field[@name='insurance_company_id']" position="after">
 					<field name="insurance_type" />
 					<field name="insurance_affiliation" />
 				</xpath>
