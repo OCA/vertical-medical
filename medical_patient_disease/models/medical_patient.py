@@ -20,18 +20,27 @@
 #
 # #############################################################################
 
-from openerp import fields, models
+from openerp import api, fields, models
 
 
-class MedicalPathologyGroup(models.Model):
-    _name = 'medical.pathology.group'
-    _descriptionription = 'Medical Pathology Group'
+class MedicalPatient(models.Model):
+    _inherit = 'medical.patient'
 
-    name = fields.Char(required=True, translate=True)
-    notes = fields.Text(translate=True)
-    code = fields.Char(
-        required=True, help='for example MDG6 code will contain'
-        ' the Millennium Development Goals # 6 diseases : Tuberculosis, '
-        'Malaria and HIV/AIDS')
-    description = fields.Text(
-        string='Short Description', required=True, translate=True)
+    disease_ids = fields.One2many(
+        comodel_name='medical.patient.disease',
+        inverse_name='patient_id',
+        string='Diseases'
+    )
+    count_disease_ids = fields.Integer(
+        compute='compute_count_disease_ids',
+        string='NB. Disease'
+    )
+
+    @api.multi
+    def action_invalidate(self):
+        super(MedicalPatient, self).action_invalidate()
+        self.disease_ids.action_invalidate()
+
+    @api.multi
+    def compute_count_disease_ids(self):
+        self.count_disease_ids = len(self.disease_ids)

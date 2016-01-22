@@ -70,7 +70,7 @@
 
                         <notebook>
                             <page string="Disease Groups" name="notes" autofocus="autofocus">
-                                <field name="medical_pathology_group_m2m_ids" />
+                                <field name="medical_pathology_group_ids" />
                             </page>
                             <page string="Others" name="others">
                                 <separator string="Notes"/>

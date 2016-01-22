@@ -1,0 +1,8 @@
+-
+  Create New MedicalPathologyGroup
+-
+  !record {model: medical.pathology.group, id: med_path_grp_doom }:
+    name: Disease Group of Doom
+    notes: I wouldn't want any of these!
+    code: DOOM
+    description: You will die

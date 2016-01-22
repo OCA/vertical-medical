@@ -23,33 +23,22 @@
 #
 ##############################################################################
 {
-    'name': 'Medical Disease',
-<<<<<<< HEAD
-    'version': '8.0.1.1.0',
-    'author': 'ACSONE SA/NV, Odoo Community Association (OCA)',
-    'maintainer': 'ACSONE SA/NV,Odoo Community Association (OCA)',
-    'website': 'http://www.acsone.eu',
-    'license': 'AGPL-3',
-=======
-    'version': '9.0.1.1.0',
-    "author": "ACSONE SA/NV, Odoo Community Association (OCA)",
-    "maintainer": "ACSONE SA/NV,Odoo Community Association (OCA)",
+    'name': 'Medical Patient Disease',
+    'version': '9.0.2.0.0',
+    "author": "LasLabs, ACSONE SA/NV, Odoo Community Association (OCA)",
+    "maintainer": "LasLabs, ACSONE SA/NV,Odoo Community Association (OCA)",
     "website": "http://www.acsone.eu",
->>>>>>> Update active module versions to v9. Leave unported for organization while still in conversion phases
     'category': 'Medical',
     'depends': [
-        'medical',
+        'medical_pathology',
     ],
     'summary': 'Introduce disease notion into the medical category',
     'data': [
         'security/ir.model.access.csv',
-        'views/medical_pathology_view.xml',
-        'views/medical_pathology_category_view.xml',
-        'views/medical_pathology_group_view.xml',
         'views/medical_patient_disease_view.xml',
         'views/medical_patient_view.xml',
-        'views/medical_disease_view.xml',
+        'views/medical_menu.xml',
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
 }

@@ -30,8 +30,8 @@
                     <filter name="inactive" string="Inactive"
                         domain="[('active', '=', False)]" />
                     <separator/>
-                    <filter name="is_pregnant" string="Pregnancy Warning"
-                        domain="[('is_pregnant', '=', True)]" />
+                    <filter name="is_pregnancy_warning" string="Pregnancy Warning"
+                        domain="[('is_pregnancy_warning', '=', True)]" />
                     <separator/>
                     <filter name="is_infectious" string="Is Infectious"
                         domain="[('is_infectious', '=', True)]" />
@@ -45,7 +45,7 @@
                             context="{'group_by':'is_allergy'}" />
                         <filter string="Physician" domain="[]" context="{'group_by':'physician_id'}" />
                         <filter string="Pregnancy warning" domain="[]"
-                            context="{'group_by':'is_pregnant'}" />
+                            context="{'group_by':'is_pregnancy_warning'}" />
                         <filter string="Contracted in pregnancy week #" domain="[]"
                             context="{'group_by':'weeks_of_pregnancy'}" />
                         <filter string="Currently on Treatment" domain="[]"
@@ -81,7 +81,7 @@
                     <field name="diagnosed_date" />
                     <field name="treatment_end_date" />
                     <field name="treatment_start_date" />
-                    <field name="pregnancy_warning" />
+                    <field name="is_pregnancy_warning" />
                     <field name="is_allergy" />
                     <field name="is_on_treatment" />
                     <field name="is_infectious" />
@@ -127,14 +127,14 @@
                                     <field name="allergy_type"
                                        attrs="{'invisible': [('is_allergy', '=', False)]}"/>
                                     <field name="weeks_of_pregnancy"
-                                       attrs="{'invisible': [('is_pregnant', '=', False)]}"/>
+                                       attrs="{'invisible': [('is_pregnancy_warning', '=', False)]}"/>
                                 </group>
                                 <group name="complementary_informations">
                                     <field name="age"/>
                                     <field name="is_infectious"/>
                                     <field name="is_allergy"/>
                                     <field name="pregnancy_warning"/>
-                                    <field name="is_pregnant"/>
+                                    <field name="is_pregnancy_warning"/>
                                 </group>
                                 <group name="dates">
                                     <field name="diagnosed_date"/>

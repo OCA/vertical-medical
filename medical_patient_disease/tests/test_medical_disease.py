@@ -67,4 +67,5 @@ class TestMedicalDisease(TransactionCase):
     def test_compute_disease(self):
         self.assertEquals(
             self.disease_id.patient_id.count_disease_ids, 1,
-            'Should have one disease')
+            'Should have one disease'
+        )
