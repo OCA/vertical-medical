@@ -20,4 +20,4 @@
 ##############################################################################
 
 from . import medical_insurance_plan
-from . import medical_insurance_company
+from . import medical_insurance_template
