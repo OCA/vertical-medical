@@ -35,14 +35,14 @@
 
     'name': 'Medical Prescription Order States',
     'version': '8.0.1.1.0',
-    'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
+    'author': 'LasLabs, Odoo Medical Team, Odoo Community Association (OCA)',
     'category': 'Medical',
     'depends': [
         'medical_prescription',
     ],
-    "website": "https://laslabs.com",
-    "licence": "AGPL-3",
-    "data": [
+    'website': 'https://laslabs.com',
+    'licence': 'AGPL-3',
+    'data': [
         # Views
         'views/medical_prescription_order_state_view.xml',
         'views/prescription_order_view.xml',

@@ -36,13 +36,13 @@
 
     'name': 'Medical Pharmacy - US Locale',
     'version': '8.0.1.1.0',
-    'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
+    'author': 'LasLabs, Odoo Medical Team, Odoo Community Association (OCA)',
     'category': 'Medical',
     'depends': [
         'medical_pharmacy',
     ],
-    "website": "https://laslabs.com",
-    "licence": "AGPL-3",
+    'website': 'https://laslabs.com',
+    'licence': 'AGPL-3',
     'installable': True,
     'auto_install': False,
 }

@@ -25,9 +25,10 @@
 {
     'name': 'Medical Medicament',
     'version': '8.0.1.0.0',
-    "author": "ACSONE SA/NV, Odoo Community Association (OCA)",
-    "maintainer": "ACSONE SA/NV,Odoo Community Association (OCA)",
-    "website": "http://www.acsone.eu",
+    'author': 'ACSONE SA/NV, Odoo Community Association (OCA)',
+    'maintainer': 'ACSONE SA/NV, Odoo Community Association (OCA)',
+    'website': 'http://www.acsone.eu',
+    'license': 'AGPL-3',
     'category': 'Medical',
     'depends': [
         'medical',

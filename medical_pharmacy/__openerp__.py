@@ -35,14 +35,14 @@
 {
     'name': 'Medical Pharmacy',
     'version': '8.0.1.1.0',
-    'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
+    'author': 'LasLabs, Odoo Medical Team, Odoo Community Association (OCA)',
     'category': 'Medical',
     'depends': [
         'medical',
     ],
-    "website": "https://laslabs.com",
-    "licence": "AGPL-3",
-    "data": [
+    'website': 'https://laslabs.com',
+    'licence': 'AGPL-3',
+    'data': [
         'views/medical_pharmacy_view.xml',
         'security/ir.model.access.csv',
     ],

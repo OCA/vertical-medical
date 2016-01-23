@@ -34,15 +34,15 @@
 {
 
     'name': 'Medical Prescription Threaded',
-    'version': '8.0.1.1.0',
-    'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
+    'version': '8.0.1.0.0',
+    'author': 'LasLabs, Odoo Medical Team, Odoo Community Association (OCA)',
     'category': 'Medical',
     'depends': [
         'medical_prescription',
     ],
-    "website": "https://laslabs.com/",
-    "licence": "AGPL-3",
-    "data": [
+    'website': 'https://laslabs.com/',
+    'licence': 'AGPL-3',
+    'data': [
         'views/medical_prescription_order_view.xml',
         'views/medical_prescription_order_line_view.xml'
     ],

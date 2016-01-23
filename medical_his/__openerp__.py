@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ##############################################################################
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
@@ -51,6 +52,5 @@
         'views/medical_hospital_unit_view.xml',
         'views/medical_hospital_menu.xml',
     ],
-    'active': False,
     'installable': True,
 }
