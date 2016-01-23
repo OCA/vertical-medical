@@ -1,16 +1,17 @@
+# -*- coding: utf-8 -*-
 ##############################################################################
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
 #    Odoo Medical, HMS Opensource Solution
 ##############################################################################
 #    Collaborators of this module:
+#    8.0 Port by: Dave Lasley <dave@laslabs.com>
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
 #    Coded by: Parthiv Patel <parthiv@techreceptives.com>
 #    Coded by: Ruchir Shukla <ruchir@techreceptives.com>
 #    Coded by: Mario Arias   <support@cysfuturo.com>
 #    Planifyied by: Parthiv Patel <parthiv@techreceptives.com>
 #    Planifyied by: Nhomar Hernandéz <nhomar@vauxoo.com>
-#    8.0 Port by: Dave Lasley <dave@laslabs.com>
 #
 ##############################################################################
 #    This project is mantained by Odoo Community Association:
@@ -42,10 +43,10 @@
         'base',
         'product',
     ],
-    'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
-    "website": "http://github.com/oca/vertical-medical",
-    "licence": "AGPL-3",
-    "data": [
+    'author': 'LasLabs, Odoo Medical Team, Odoo Community Association (OCA)',
+    'website': 'http://github.com/oca/vertical-medical',
+    'licence': 'AGPL-3',
+    'data': [
         'views/medical_sequence.xml',
         'views/product_product_view.xml',
         'views/res_partner_view.xml',
