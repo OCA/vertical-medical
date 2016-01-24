@@ -49,7 +49,7 @@
         'medical',
     ],
     'website': 'https://laslabs.com',
-    'licence': 'AGPL-3',
+    'license': 'AGPL-3',
     'data': [
         'views/medical_patient_view.xml',
         'views/medical_family_view.xml',

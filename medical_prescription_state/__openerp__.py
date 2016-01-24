@@ -41,7 +41,7 @@
         'medical_prescription',
     ],
     'website': 'https://laslabs.com',
-    'licence': 'AGPL-3',
+    'license': 'AGPL-3',
     'data': [
         # Views
         'views/medical_prescription_order_state_view.xml',

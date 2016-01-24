@@ -41,12 +41,11 @@
     'version': '8.0.1.1.0',
     'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
     'category': 'Medical',
-    'license': "AGPL-3",
     'depends': [
         'medical',
     ],
     "website": "https://laslabs.com",
-    "licence": "AGPL-3",
+    "license": "AGPL-3",
     "data": [
         'views/medical_patient_ethnicity_view.xml',
         'views/medical_patient_view.xml',

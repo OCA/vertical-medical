@@ -277,7 +277,7 @@ class MedicalAppointment(orm.Model):
         return result
 
 
-class MedicalAppointment_history(orm.Model):
+class MedicalAppointmentHistory(orm.Model):
     _name = 'medical.appointment.history'
 
     _columns = {

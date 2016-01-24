@@ -45,7 +45,7 @@
     ],
     'author': 'LasLabs, Odoo Medical Team, Odoo Community Association (OCA)',
     'website': 'http://github.com/oca/vertical-medical',
-    'licence': 'AGPL-3',
+    'license': 'AGPL-3',
     'data': [
         'views/medical_sequence.xml',
         'views/product_product_view.xml',

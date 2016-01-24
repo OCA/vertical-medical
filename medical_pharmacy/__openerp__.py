@@ -41,7 +41,7 @@
         'medical',
     ],
     'website': 'https://laslabs.com',
-    'licence': 'AGPL-3',
+    'license': 'AGPL-3',
     'data': [
         'views/medical_pharmacy_view.xml',
         'security/ir.model.access.csv',
