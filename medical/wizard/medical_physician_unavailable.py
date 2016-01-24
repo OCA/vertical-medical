@@ -28,7 +28,7 @@ from openerp.osv import osv
 from openerp.osv import fields
 
 
-class medical_physician_unavailable_wizard(osv.TransientModel):
+class MedicalPhysicianUnavailableWizard(osv.TransientModel):
     _name = 'medical.physician.unavailable.wizard'
     _description = 'Asistente para la definicion de indisponibilidades'
 
