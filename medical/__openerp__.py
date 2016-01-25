@@ -52,7 +52,7 @@
     'website': 'http://github.com/oca/vertical-medical',
     'license': 'AGPL-3',
     'data': [
-        'views/medical_sequence.xml',
+        'data/ir_sequence_data.xml',
         'views/res_partner_view.xml',
         'wizard/medical_physician_unavailable_view.xml',
         'views/medical_physician_view.xml',

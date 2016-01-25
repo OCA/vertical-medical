@@ -37,17 +37,20 @@ class MedicalPatientDisease(models.Model):
         comodel_name='medical.pathology',
         index=True,
         required=True,
+        help='Pathology (disease type) that patient was diagnosed with.',
     )
     physician_id = fields.Many2one(
         string='Physician',
         comodel_name='medical.physician',
         index=True,
+        help='Physician that diagnosed this disease.'
     )
     patient_id = fields.Many2one(
         string='Patient',
         comodel_name='medical.patient',
         required=True,
         index=True,
+        help='Patient that was diagnosed with this disease.'
     )
     disease_severity = fields.Selection([
         ('1_mi', 'Mild'),
@@ -78,7 +81,8 @@ class MedicalPatientDisease(models.Model):
     )
     weeks_of_pregnancy = fields.Integer(
         string='Pregnancy Week #',
-        help='Week number of pregnancy when disease was contracted.',
+        help='Indicate how far along the pregnancy was when patient was'
+        ' diagnosed with this disease.',
     )
     age = fields.Integer(
         string='Age When Diagnosed',
@@ -97,10 +101,10 @@ class MedicalPatientDisease(models.Model):
         string='Allergic Disease',
         help='Check this box to indicate that the disease is an allergy.',
     )
-    is_pregnancy_warning = fields.Boolean(
+    is_pregnant = fields.Boolean(
         string='Pregnancy Warning',
-        help='Check this box to indicate that the disease is of particular'
-        ' risk to pregnant women.'
+        help='Check this box to indicate that the patient was pregnant at'
+        ' the time of disease diagnosis.'
     )
     is_on_treatment = fields.Boolean(
         string='Currently on Treatment',

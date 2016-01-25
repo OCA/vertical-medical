@@ -35,25 +35,14 @@
 {
 
     'name': 'Medical Pharmacy - US Locale',
-<<<<<<< HEAD
-    'version': '8.0.1.1.0',
-    'author': 'LasLabs, Odoo Medical Team, Odoo Community Association (OCA)',
-=======
     'version': '9.0.1.1.0',
     'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
->>>>>>> Update active module versions to v9. Leave unported for organization while still in conversion phases
     'category': 'Medical',
     'depends': [
         'medical_pharmacy',
     ],
-<<<<<<< 3345650fa340e892a6e759e68e0f6babb348eb39
-    'website': 'https://laslabs.com',
-    'license': 'AGPL-3',
-    'installable': True,
-=======
     "website": "https://laslabs.com",
     "licence": "AGPL-3",
     'installable': False,
->>>>>>> Disable module installation on unconverted
     'auto_install': False,
 }
