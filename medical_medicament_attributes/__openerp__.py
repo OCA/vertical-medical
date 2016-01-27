@@ -38,12 +38,11 @@
     'version': '9.0.1.1.0',
     'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
     'category': 'Medical',
-    'license': "AGPL-3",
     'depends': [
         'medical_medicament',
     ],
     "website": "http://github.com/oca/vertical-medical",
-    "licence": "AGPL-3",
+    "license": "AGPL-3",
     "data": [
         'views/medical_medicament_view.xml',
     ],

@@ -23,4 +23,5 @@ from openerp import models
 
 
 class MedicalPrescriptionOrder(models.Model):
+    _name = 'medical.prescription.order'
     _inherit = ['medical.prescription.order', 'mail.thread']

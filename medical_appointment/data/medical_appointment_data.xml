@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright (C) 2015-TODAY LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    @license AGPL-3
+-->
+
+<openerp>
+    
+    <data noupdate="0">
+        <record model="medical.history.type" id="history_audit_create">
+            <field name="name">Stage Changed</field>
+            <field name="code">STAGE</field>
+            <field name="new_cols_to_save">changed</field>
+            <field name="old_cols_to_save">changed</field>
+        </record>
+    </data>
+    
+    <data noupdate="0">
+
+        <!-- Medical Appointment stages -->
+        <record model="medical.appointment.stage" id="stage_appointment_in_review">
+            <field name="name">Pending Review</field>
+            <field name="sequence">5</field>
+            <field name="fold">True</field>
+        </record>
+        <record model="medical.appointment.stage" id="stage_appointment_new">
+            <field name="name">Draft</field>
+            <field name="sequence">10</field>
+            <field name="is_default">True</field>
+        </record>
+        <record model="medical.appointment.stage" id="stage_appointment_confirm">
+            <field name="name">Confirm</field>
+            <field name="sequence">20</field>
+        </record>
+        <record model="medical.appointment.stage" id="stage_appointment_waiting">
+            <field name="name">Waiting</field>
+            <field name="sequence">30</field>
+        </record>
+        <record model="medical.appointment.stage" id="stage_appointment_in_consultation">
+            <field name="name">In Consultation</field>
+            <field name="sequence">35</field>
+        </record>
+        <record model="medical.appointment.stage" id="stage_appointment_done">
+            <field name="name">Done</field>
+            <field name="sequence">40</field>
+            <field name="fold">True</field>
+            </record>
+        <record model="medical.appointment.stage" id="stage_appointment_cancelled">
+            <field name="name">Cancelled</field>
+            <field name="sequence">50</field>
+            <field name="fold">True</field>
+        </record>
+        <record model="medical.appointment.stage" id="stage_unavailable">
+            <field name="name">Unavailable</field>
+            <field name="sequence">60</field>
+            <field name="fold">True</field>
+        </record>
+    </data>
+    
+    <data noupdate="0">
+        <!--Email template -->
+        <record id="email_template_appointment_confirmation" model="email.template">
+            <field name="name">Appointment Confirmation - Email</field>
+            <field name="email_from"><![CDATA[${object.institution_id.name} <${(object.institution_id.email or user.email)|safe}>]]></field>
+            <field name="subject"><![CDATA[${object.institution_id.name} <${(object.institution_id.email or user.email)|safe}>]]> - Appointment Confirmation</field>
+            <field name="email_to">${object.patient_id.email}</field>
+            <field name="model_id" ref="medical.model_medical_appointment"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="lang">${object.patient_id.partner_id.lang}</field>
+            <field name="body_html"><![CDATA[
+                <div class="content-wrapper" style="max-width:650px;">
+                    <div class="col-sm-12 highlight">
+                        <p> <b>Dear ${object.patient_id.name}</b> </p>
+                        <p>The following appointment has been created successfully</p>
+                        <div class="row"></div>
+
+                        <div class="col-sm-8 highlight">
+                            <p>Doctor....: <b>${object.physician_id.name}</b></p>
+                            <p>Date.....: <b>${ctx.get('appointment_date') or object.appointment_date[:10]}</b><img class="img-responsive" style="float:right;" src="http://agendese.com/website/static/src/img/Agendese/Banners/calendar.png"></p>
+                            <p>Time......: <b>${ctx.get('appointment_time') or object.appointment_date[11:]}</b></p>
+                            <p>Clinic...: <b>${object.institution_id.name}</b></p>
+                            <p>Phone..: <b>${object.institution_id.phone}</b></p>
+                            <p>Address.: <b>${object.institution_id.street} ${object.institution_id.street2}</b></p>
+                        </div>
+                    </div>
+                </div>
+            ]]></field>
+        </record>
+        <record id="sms_template_appointment_confirmation" model="email.template">
+            <field name="name">Appointment Confirmation - SMS</field>
+            <field name="email_from"><![CDATA[${object.institution_id.name}]]></field>
+            <field name="subject"><![CDATA[${object.institution_id.name}]]>  -  Confirmación de Cita</field>
+            <field name="email_to">${object.patient_id.mobile}</field>
+            <field name="model_id" ref="medical.model_medical_appointment"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="lang">${object.patient_id.partner_id.lang}</field>
+            <field name="body_html"><![CDATA[
+<p>Your appointment with Dr. ${object.physician_id.lastname} on ${ctx.get('appointment_date') or object.appointment_date[:10]} ${ctx.get('appointment_time') or object.appointment_date[11:]} has been confirmed.</p>
+            ]]></field>
+        </record>
+        
+    </data>
+
+</openerp>

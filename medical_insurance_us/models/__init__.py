@@ -18,6 +18,6 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from . import medical_insurance
+
 from . import medical_insurance_plan
-from . import medical_insurance_company
+from . import medical_insurance_template

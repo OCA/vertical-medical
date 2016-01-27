@@ -40,9 +40,9 @@
     'depends': [
         'medical_prescription',
     ],
-    "website": "https://laslabs.com/",
-    "licence": "AGPL-3",
-    "data": [
+    'website': 'https://laslabs.com/',
+    'license': 'AGPL-3',
+    'data': [
         'views/medical_prescription_order_view.xml',
         'views/medical_prescription_order_line_view.xml'
     ],

@@ -32,10 +32,10 @@
 			</field>
 		</record>
 
-		<record id="medical_insurance_plan_view_search" model="ir.ui.view">
-			<field name="name">medical.insurance.plan.search</field>
-			<field name="model">medical.insurance.plan</field>
-			<field name="inherit_id" ref="medical_insurance.medical_insurance_plan_view_search" />
+		<record id="medical_insurance_template_view_search" model="ir.ui.view">
+			<field name="name">medical.insurance.template.search</field>
+			<field name="model">medical.insurance.template</field>
+			<field name="inherit_id" ref="medical_insurance.medical_insurance_template_view_search" />
 			<field name="arch" type="xml">
 				<xpath expr="//field[@name='plan_number']" position="after">
 					<field name="group_number" />
@@ -43,7 +43,7 @@
 					<field name="rx_pcn" />
 					<field name="rx_group" />
 				</xpath>
-				<xpath expr="//field[@name='insurance_company_id]" position="after">
+				<xpath expr="//field[@name='insurance_company_id']" position="after">
 					<field name="insurance_type" />
 					<field name="insurance_affiliation" />
 				</xpath>

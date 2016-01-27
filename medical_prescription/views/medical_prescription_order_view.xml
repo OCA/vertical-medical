@@ -14,8 +14,8 @@
                     <field name="date_prescription" />
                     <field name="notes"/>
                     <newline />
-                    <filter name="is_pregnant" string="Is Pregnant"
-                        domain="[('is_pregnant', '=', True)]"/>
+                    <filter name="is_pregnancy_warning" string="Is Pregnant"
+                        domain="[('is_pregnancy_warning', '=', True)]"/>
                     <filter name="is_verified" string="Is Verified"
                         domain="[('is_verified', '=', True)]"/>
                     <group expand="0" string="Group By...">
@@ -68,7 +68,7 @@
                             <group>
                                 <field name="partner_id" domain="[('is_pharmacy', '=', True)]"
                                        context="{'default_is_pharmacy': True}" />
-                                <field name="is_pregnant" />
+                                <field name="is_pregnancy_warning" />
                                 <field name="is_verified" />
                             </group>
                         </group>

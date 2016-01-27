@@ -40,9 +40,9 @@
     'depends': [
         'medical',
     ],
-    "website": "https://laslabs.com",
-    "licence": "AGPL-3",
-    "data": [
+    'website': 'https://laslabs.com',
+    'license': 'AGPL-3',
+    'data': [
         'views/medical_pharmacy_view.xml',
         'security/ir.model.access.csv',
     ],

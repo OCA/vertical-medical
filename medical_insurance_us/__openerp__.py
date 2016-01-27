@@ -50,9 +50,9 @@
     'depends': [
         'medical_insurance'
     ],
-    "website": "https://laslabs.com",
-    "licence": "AGPL-3",
-    "data": [
+    'website': 'https://laslabs.com',
+    'license': 'AGPL-3',
+    'data': [
         'views/medical_insurance_plan_view.xml',
         'views/medical_insurance_template_view.xml',
     ],

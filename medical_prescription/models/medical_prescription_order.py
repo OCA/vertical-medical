@@ -42,6 +42,6 @@ class MedicalPrescriptionOrder(models.Model):
         comodel_name='medical.prescription.order.line',
         inverse_name='prescription_order_id', string='Prescription Order Line')
     notes = fields.Text()
-    is_pregnant = fields.Boolean()
+    is_pregnancy_warning = fields.Boolean()
     is_verified = fields.Boolean()
     date_prescription = fields.Datetime(default=fields.Datetime.now())

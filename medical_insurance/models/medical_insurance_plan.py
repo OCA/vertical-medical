@@ -29,6 +29,8 @@ class MedicalInsurancePlan(models.Model):
     insurance_template_id = fields.Many2one(
         string='Plan Template',
         comodel_name='medical.insurance.template',
+        required=True,
+        ondelete='cascade',
         help='Insurance Plan Template',
     )
     patient_id = fields.Many2one(

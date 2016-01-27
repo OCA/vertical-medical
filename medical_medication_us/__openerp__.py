@@ -41,9 +41,9 @@
     'depends': [
         'medical_medication',
     ],
-    "website": "https://laslabs.com",
-    "licence": "AGPL-3",
-    "data": [
+    'website': 'https://laslabs.com',
+    'license': 'AGPL-3',
+    'data': [
     ],
     'installable': False,
     'auto_install': False,

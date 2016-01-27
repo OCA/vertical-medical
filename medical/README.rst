@@ -1,4 +1,4 @@
-.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
+.. image:: https://img.shields.io/badge/license-AGPL--3-blue.svg
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 
@@ -22,20 +22,17 @@ Odoo Medical at a glance:
 
 - Strong focus in family medicine and Primary Health Care
 
-- Major interest in Socio-economics (housing conditions, substance abuse,
-education...)
+- Major interest in Socio-economics (housing conditions, substance abuse, education...)
 
 - Diseases and Medical procedures standards (like ICD-10 / ICD-10-PCS ...)
 
-- Patient Genetic and Hereditary risks : Over 4200 genes related to
-diseases (NCBI / Genecards)
+- Patient Genetic and Hereditary risks : Over 4200 genes related to diseases (NCBI / Genecards)
 
 - Epidemiological and other statistical reports
 
 - 100% paperless patient examination and history taking
 
-- Patient Administration
-(creation, evaluations / consultations, history ... )
+- Patient Administration (creation, evaluations / consultations, history ... )
 
 - Doctor Administration
 
@@ -74,7 +71,11 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/vertical-medical/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed feedback
+<<<<<<< HEAD
 `here <https://github.com/OCA/vertical-medical/issues/new?body=module:%20medical%0Aversion:%209.0.1.1.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+=======
+`here <https://github.com/OCA/vertical-medical/issues/new?body=module:%20medical%0Aversion:%209.0.2.0.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+>>>>>>> feature/SMD-88-upgrade-allergy-support-in-medical.-9.0
 
 
 Credits

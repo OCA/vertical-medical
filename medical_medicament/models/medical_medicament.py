@@ -89,7 +89,7 @@ class MedicalMedicament(models.Model):
         'involved in use of the drug in pregnant'
         ' women clearly outweigh potential benefits.\n\n'
         'CATEGORY N : Not yet classified')
-    is_pregnant = fields.Boolean(
+    is_pregnancy_warning = fields.Boolean(
         string='Pregnancy Warning',
         help='The drug represents risk to pregnancy or lactancy')
     dosage_instruction = fields.Text(
