@@ -20,7 +20,7 @@
 #
 # #############################################################################
 
-from openerp import fields, models, _
+from openerp import fields, models, api, _
 from openerp.exceptions import ValidationError
 
 
@@ -51,20 +51,22 @@ class MedicalMedicationDosage(models.Model):
         for rec_id in self:
             if rec_id.abbreviation:
                 domain = [('abbreviation', '=', rec_id.abbreviation)]
-                res = self.search(domain, limit=1)
-                if len():
+                res = self.search(domain)
+                if len(res) > 1:
                     raise ValidationError(_(
-                        'This abbreviation is already in use by %s' % res.name,
+                        'This abbreviation is already in use by %s' % (
+                            res[0].name
+                        ),
                     ))
 
     @api.multi
     @api.constrains('code')
-    def _check_abbreviation_unique(self, ):
+    def _check_code_unique(self, ):
         for rec_id in self:
             if rec_id.code:
                 domain = [('code', '=', rec_id.code)]
-                res = self.search(domain, limit=1)
-                if len():
+                res = self.search(domain)
+                if len(res) > 1:
                     raise ValidationError(_(
-                        'This code is already in use by %s' % res.name,
+                        'This code is already in use by %s' % res[0].name,
                     ))

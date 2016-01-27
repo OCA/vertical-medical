@@ -20,7 +20,7 @@
 #
 # #############################################################################
 
-from openerp import fields, models, api
+from openerp import fields, models, api, _
 
 
 class MedicalMedicationTemplate(models.Model):
@@ -35,9 +35,11 @@ class MedicalMedicationTemplate(models.Model):
     )
     pathology_id = fields.Many2one(
         string='Pathology',
-        comodel_name='medical.pathology', 
-        help=_('Choose a disease for this medicament from the disease list.'
-        ' It can be an existing disease of the patient or a prophylactic.'),
+        comodel_name='medical.pathology',
+        help=_(
+            'Choose a disease for this medicament from the disease list.'
+            ' It can be an existing disease of the patient or a prophylactic.'
+        ),
     )
     duration = fields.Integer(
         help=_('Period that the patient must take the medication'),
@@ -49,11 +51,15 @@ class MedicalMedicationTemplate(models.Model):
         help=_('Measurement unit for medication duration'),
     )
     frequency = fields.Integer(
-        help=_('Time in between doses the patient must wait (ie, for 1 pill '
-        'each 8 hours, put here 8 and select "hours\" in the unit field'),
+        help=_(
+            'Time in between doses the patient must wait (ie, for 1 pill '
+            'each 8 hours, put here 8 and select "hours\" in the unit field'
+        ),
     )
     frequency_uom_id = fields.Many2one(
         string='Frequency UoM',
+        comodel_name='product.uom',
+        domain=[('category_id.name', '=', 'Time')],
         help=_('Measurement unit for medication frequency'),
     )
     frequency_prn = fields.Boolean(
@@ -72,7 +78,8 @@ class MedicalMedicationTemplate(models.Model):
         help=_('Quantity of units (eg, 2 capsules) of the medicament'),
     )
     dose_uom_id = fields.Many2one(
-        comodel_name='product.uom', string='Dose Unit',
+        string='Dose Unit',
+        comodel_name='product.uom',
         help=_('Measurement unit for dosage quantity'),
     )
 

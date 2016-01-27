@@ -29,7 +29,6 @@ class TestMedicalMedicationDosage(TransactionCase):
     def setUp(self,):
         super(TestMedicalMedicationDosage, self).setUp()
         self.model_obj = self.env['medical.medication.dosage']
-        self.record_id = self._test_record()
         self.vals = {
             'name': 'Test Dosage',
         }

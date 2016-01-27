@@ -53,10 +53,14 @@ class TestMedicalMedication(TransactionCase):
             'dose_uom_id': self.env.ref(
                 '%s.product_uom_ml' % self._module_ns).id,
             'frequency': 1,
-            'frequency_uom_id': 'wr',
+            'frequency_uom_id': self.env.ref(
+                '%s.product_uom_minute' % self._module_ns
+            ).id,
             'frequency_prn': True,
             'duration': 1,
-            'duration_uom_id': 'indefinite',
+            'duration_uom_id':  self.env.ref(
+                '%s.product_uom_indef' % self._module_ns
+            ).id,
             'medication_dosage_id': self.env.ref(
                 '%s.229797004' % self._module_ns).id,
             'suggested_administration_hours': 8,
@@ -73,7 +77,7 @@ class TestMedicalMedication(TransactionCase):
         speciality_id = self.medical_speciality.create(vals)
         vals = {
             'name': 'physician',
-            'specialty': speciality_id.id,
+            'specialty_id': speciality_id.id,
         }
         physician_id = self.medical_physician.create(vals)
         vals = {

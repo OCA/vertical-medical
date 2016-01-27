@@ -31,7 +31,7 @@ class MedicalPatientMedication(models.Model):
     _rec_name = 'patient_id'
 
     medication_template_id = fields.Many2one(
-        string='Medication Template', 
+        string='Medication Template',
         comodel_name='medical.medication.template',
         index=True,
         help=_('Template to apply to this medication'),
