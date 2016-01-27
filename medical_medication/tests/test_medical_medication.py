@@ -50,13 +50,13 @@ class TestMedicalMedication(TransactionCase):
         temp_vals = {
             'medicament_id': medicament_id.id,
             'quantity': 1,
-            'dose_unit_id': self.env.ref(
+            'dose_uom_id': self.env.ref(
                 '%s.product_uom_ml' % self._module_ns).id,
             'frequency': 1,
-            'frequency_unit': 'wr',
+            'frequency_uom_id': 'wr',
             'frequency_prn': True,
             'duration': 1,
-            'duration_period': 'indefinite',
+            'duration_uom_id': 'indefinite',
             'medication_dosage_id': self.env.ref(
                 '%s.229797004' % self._module_ns).id,
             'suggested_administration_hours': 8,

@@ -28,11 +28,13 @@ class AbstractMedicalMedication(models.AbstractModel):
     _name = 'abstract.medical.medication'
     _description = 'Abstract Medical Medication'
 
-    @api.one
+    @api.multi
     @api.onchange('medication_template_id')
     def onchange_template_id(self):
-        if self.medication_template_id:
-            values = self.medication_template_id.read()[0]
-            for k in values.keys():
-                if k not in MAGIC_COLUMNS:
-                    setattr(self, k, getattr(self.medication_template_id, k))
+        for rec_id in self:
+            if rec_id.medication_template_id:
+                values = rec_id.medication_template_id.read()[0]
+                for k in values.keys():
+                    if k not in MAGIC_COLUMNS:
+                        attr = getattr(rec_id.medication_template_id, k)
+                        setattr(self, k, attr)

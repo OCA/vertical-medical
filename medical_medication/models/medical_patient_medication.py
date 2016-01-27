@@ -4,7 +4,7 @@
 #    Tech-Receptives Solutions Pvt. Ltd.
 #    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
-#    Ported to 8.0 by Dave Lasley - LasLabs (https://laslabs.com)
+#    Ported to 8.0 & 9.0 by Dave Lasley - LasLabs (https://laslabs.com)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -21,7 +21,7 @@
 #
 ###############################################################################
 
-from openerp import fields, models
+from openerp import fields, models, _
 
 
 class MedicalPatientMedication(models.Model):
@@ -31,23 +31,51 @@ class MedicalPatientMedication(models.Model):
     _rec_name = 'patient_id'
 
     medication_template_id = fields.Many2one(
+        string='Medication Template', 
         comodel_name='medical.medication.template',
-        string='Medication Template', index=True)
+        index=True,
+        help=_('Template to apply to this medication'),
+    )
     patient_id = fields.Many2one(
-        comodel_name='medical.patient', string='Patient', index=True,
-        required=True)
+        string='Patient',
+        comodel_name='medical.patient',
+        index=True,
+        required=True,
+        help=_('Patient that is taking this medication'),
+    )
     physician_id = fields.Many2one(
-        comodel_name='medical.physician', string='Physician',
-        help='Physician who prescribed the medicament', index=True)
+        string='Physician',
+        comodel_name='medical.physician',
+        index=True,
+        help=_('Physician who prescribed the medicament'),
+    )
     active = fields.Boolean(
-        help='Check if the patient is currently taking the medication',
-        default=True)
-    is_course_complete = fields.Boolean(string='Course Completed')
-    is_discontinued = fields.Boolean()
-    date_start_treatment = fields.Datetime()
-    date_stop_treatment = fields.Datetime()
+        help=_('Check if the patient is currently taking the medication'),
+        default=True,
+    )
+    is_course_complete = fields.Boolean(
+        string='Course Completed',
+        help=_(
+            'Check this if the patient is no longer taking this medication'
+        ),
+    )
+    is_discontinued = fields.Boolean(
+        help=_('Check this if the medication has been discontinued'),
+    )
     discontinued_reason = fields.Char(
-        help='Short description for discontinuing the treatment')
+        help=_(
+            'Short description explaining why the medication was discontinued'
+        ),
+    )
+    date_start_treatment = fields.Datetime(
+        help=_('When the patient began taking this medication'),
+    )
+    date_stop_treatment = fields.Datetime(
+        help=_('When the patient is scheduled to stop this medication'),
+    )
     adverse_reaction = fields.Text(
-        help='Side effects or adverse reactions that patient experienced')
-    notes = fields.Text()
+        help=_('Side effects or adverse reactions that patient experienced'),
+    )
+    notes = fields.Text(
+        help=_('Any additional information regarding this treatment'),
+    )

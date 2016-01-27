@@ -20,12 +20,15 @@
 #
 # #############################################################################
 
-from openerp import fields, models
+from openerp import fields, models, _
 
 
 class MedicalPatient(models.Model):
     _inherit = 'medical.patient'
 
     medication_ids = fields.One2many(
-        comodel_name='medical.patient.medication', inverse_name='patient_id',
-        string='Medications')
+        string='Medications',
+        comodel_name='medical.patient.medication',
+        inverse_name='patient_id',
+        help=_('Medications that the patient is currently on'),
+    )

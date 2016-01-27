@@ -24,9 +24,9 @@
 ##############################################################################
 {
     'name': 'Medical Medication',
-    'version': '9.0.1.1.0',
-    "author": "ACSONE SA/NV, Odoo Community Association (OCA)",
-    "maintainer": "ACSONE SA/NV,Odoo Community Association (OCA)",
+    'version': '9.0.2.0.0',
+    "author": "LasLabs, ACSONE SA/NV, Odoo Community Association (OCA)",
+    "maintainer": "LasLabs, ACSONE SA/NV, Odoo Community Association (OCA)",
     "website": "http://www.acsone.eu",
     'category': 'Medical',
     'depends': [
@@ -44,6 +44,6 @@
         'views/medical_patient_medication_view.xml',
         'views/medical_patient_view.xml',
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
 }
