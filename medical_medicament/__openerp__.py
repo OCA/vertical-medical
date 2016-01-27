@@ -43,6 +43,6 @@
         'views/medical_drug_form_view.xml',
         'views/medical_drug_route_view.xml',
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
 }
