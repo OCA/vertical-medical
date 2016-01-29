@@ -20,10 +20,7 @@
 ##############################################################################
 
 import mock
-from psycopg2 import IntegrityError
-
 from openerp.tests.common import TransactionCase
-from openerp.exceptions import ValidationError
 
 
 class TestMedicalMedicationDosage(TransactionCase):

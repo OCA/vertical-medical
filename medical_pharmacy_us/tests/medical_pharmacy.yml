@@ -1,0 +1,8 @@
+-
+  Create New Pharmacy LasLabs Pharm US
+-
+  !record {model: medical.pharmacy, id: pharmacy_laspharm_us}:
+    name: LasLabs Pharm US
+    nabp_num: 242343
+    medicaid_num: 2324
+    npi_num: 12134
