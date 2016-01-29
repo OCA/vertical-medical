@@ -1,0 +1,5 @@
+-
+  Create New Pharmacy LasLabs Pharm
+-
+  !record {model: medical.pharmacy, id: pharmacy_laspharm}:
+    name: LasLabs Pharm
