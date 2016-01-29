@@ -25,8 +25,8 @@
 {
     'name': 'Medical Prescription',
     'version': '9.0.1.1.0',
-    "author": "ACSONE SA/NV, Odoo Community Association (OCA)",
-    "maintainer": "ACSONE SA/NV,Odoo Community Association (OCA)",
+    "author": "ACSONE SA/NV, LasLabs, Odoo Community Association (OCA)",
+    "maintainer": "ACSONE SA/NV, LasLabs, Odoo Community Association (OCA)",
     "website": "http://www.acsone.eu",
     'category': 'Medical',
     'depends': [
@@ -42,6 +42,6 @@
         'views/medical_prescription_order_view.xml',
         'views/medical_prescription_order_line_view.xml',
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
 }
