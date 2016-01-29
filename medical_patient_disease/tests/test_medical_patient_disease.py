@@ -78,6 +78,19 @@ class TestMedicalPatientDisease(TransactionCase):
             'Patient should be inactive after invalidation'
         )
 
+    def test_revalidate(self):
+        self.disease_id.active = False
+        self.disease_id.patient_id.active = False
+        self.disease_id.patient_id.action_revalidate()
+        self.assertTrue(
+            self.disease_id.patient_id.active,
+            'Patient should be active after revalidation'
+        )
+        self.assertTrue(
+            self.disease_id.active,
+            'Disease should be active after revalidation'
+        )
+
     def test_compute_disease(self):
         self.assertEquals(
             self.disease_id.patient_id.count_disease_ids, 1,

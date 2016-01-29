@@ -151,8 +151,10 @@ class MedicalPatientDisease(models.Model):
 
     @api.multi
     def action_invalidate(self):
-        self.active = False
+        for rec_id in self:
+            rec_id.active = False
 
     @api.multi
     def action_revalidate(self):
-        self.active = True
+        for rec_id in self:
+            rec_id.active = True

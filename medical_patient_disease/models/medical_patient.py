@@ -45,5 +45,15 @@ class MedicalPatient(models.Model):
     def action_invalidate(self, ):
         for rec_id in self:
             super(MedicalPatient, rec_id).action_invalidate()
-            for disease_id in rec_id.disease_ids:
-                disease_id.action_invalidate()
+            rec_id.disease_ids.action_invalidate()
+
+    @api.multi
+    def action_revalidate(self, ):
+        for rec_id in self:
+            rec_id.active = True
+            rec_id.partner_id.active = True
+            disease_ids = self.env['medical.patient.disease'].search([
+                ('patient_id', '=', self.id),
+                ('active', '=', False),
+            ])
+            disease_ids.action_revalidate()
