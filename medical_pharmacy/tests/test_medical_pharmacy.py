@@ -21,12 +21,13 @@
 
 import mock
 from openerp.tests.common import TransactionCase
+from openerp.addons.base.res.res_partner import res_partner
 
 
-class TestMedicalMedicationDosage(TransactionCase):
+class TestMedicalPharmacy(TransactionCase):
 
     def setUp(self,):
-        super(TestMedicalMedicationDosage, self).setUp()
+        super(TestMedicalPharmacy, self).setUp()
         self.model_obj = self.env['medical.pharmacy']
         self.vals = {
             'name': 'Test Pharm',
@@ -43,15 +44,7 @@ class TestMedicalMedicationDosage(TransactionCase):
     def test_onchange_state_passthru(self, ):
         ''' Validate that onchange_state is passed thru to partner '''
         rec_id = self._new_record()
-        with mock.patch.object(rec_id, 'partner_id') as mk:
+        with mock.patch.object(res_partner, 'onchange_state') as mk:
             expect = 'Expect'
             rec_id.onchange_state(expect)
-            mk.onchange_state.assert_called_once_with(expect)
-
-    def test_onchange_address_passthru(self, ):
-        ''' Validate that onchange_address is passed thru to partner '''
-        rec_id = self._new_record()
-        with mock.patch.object(rec_id, 'partner_id') as mk:
-            expect = 'Expect', 'Expect2'
-            rec_id.onchange_address(*expect)
-            mk.onchange_state.onchange_address(*expect)
+            mk.assert_called_once_with(expect)

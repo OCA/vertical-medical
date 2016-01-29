@@ -48,7 +48,6 @@
                                             <div class="oe_edit_only">
                                                 <field name="use_parent_address"
 													   class="oe_inline"
-                                                       on_change="onchange_address(use_parent_address, parent_id)"
                                                        attrs="{'invisible': ['|', ('is_company', '=', True),
 													                              ('parent_id', '=', False)]}" />
                                                 <label for="use_parent_address"
@@ -137,7 +136,7 @@
                                         <field name="mobile"/>
                                         <field name="fax"/>
                                         <field name="state_id"/>
-                                        <field name="has_image"/>
+                                        <field name="image"/>
                                         <templates>
                                             <t t-name="kanban-box">
                                                 <t t-set="color"
@@ -151,7 +150,7 @@
 													</a>
                                                     <div class="oe_module_vignette">
                                                     <a type="open">
-                                                        <t t-if="record.has_image.raw_value === true">
+                                                        <t t-if="record.image.raw_value === true">
                                                             <img t-att-src="kanban_image('res.partner', 'image_small', record.id.value)"
 																 class="oe_avatar oe_kanban_avatar_smallbox" />
                                                         </t>
@@ -159,7 +158,7 @@
                                                             <img t-att-src="'data:image/png;base64,'+record.image.raw_value"
 																 class="oe_avatar oe_kanban_avatar_smallbox" />
                                                         </t>
-                                                        <t t-if="record.has_image.raw_value === false and (!record.image or record.image.raw_value === false)">
+                                                        <t t-if="record.image.raw_value === false and (!record.image or record.image.raw_value === false)">
                                                             <t t-if="record.is_company.raw_value === true">
                                                                 <img t-att-src="_s + '/base/static/src/img/company_image.png'"
 																	 class="oe_kanban_image oe_kanban_avatar_smallbox" />
