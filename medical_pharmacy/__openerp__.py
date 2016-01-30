@@ -46,6 +46,9 @@
         'views/medical_pharmacy_view.xml',
         'security/ir.model.access.csv',
     ],
-    'installable': False,
+    'test': [
+        'tests/medical_pharmacy.yml',
+    ],
+    'installable': True,
     'auto_install': False,
 }

@@ -203,6 +203,9 @@ addon | version | summary
 [medical_medicament](medical_medicament/) | 9.0.1.0.0 | Add concept of drugs and medicaments
 [medical_medication](medical_medication/) | 9.0.2.0.0 | Adds medicine templates and applies medicament concept to patient
 [medical_medication_us](medical_medication_us/) | 9.0.1.1.0 | US Locale for Medications
+[medical_pharmacy](medical_pharmacy/) | 9.0.1.1.0 | Isolates pharmacy concept from partners
+[medical_pharmacy_us](medical_pharmacy_us/) | 9.0.1.1.0 | Add US Locale to pharmacy concept
+[medical_prescription](medical_prescription/) | 9.0.1.1.0 | Add concept of prescription orders applied to medications
 
 
 
@@ -217,9 +220,6 @@ addon | version | summary
 [medical_medicament_attributes](medical_medicament_attributes/) | 9.0.1.1.0 | Adds physical attributes to medicaments
 [medical_patient_ethnicity](medical_patient_ethnicity/) | 9.0.1.1.0 | Adds ethnicity concept to patients
 [medical_patient_occupation](medical_patient_occupation/) | 9.0.1.1.0 | Adds occupation concept to patients
-[medical_pharmacy](medical_pharmacy/) | 9.0.1.1.0 | Isolates pharmacy concept from partners
-[medical_pharmacy_us](medical_pharmacy_us/) | 9.0.1.1.0 | Add US Locale to pharmacy concept
-[medical_prescription](medical_prescription/) | 9.0.1.1.0 | Add concept of prescription orders applied to medications
 [medical_prescription_sale](medical_prescription_sale/) | 9.0.1.0.0 | Provide sale workflow for prescription orders
 [medical_prescription_state](medical_prescription_state/) | 9.0.2.0.0 | Add Kanban states to prescription orders
 [medical_prescription_state_verify](medical_prescription_state_verify) | 9.0.1.0.0 | Add concept of verified prescription states & provide a hook for actions
