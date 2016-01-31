@@ -26,6 +26,6 @@ class MedicalMedicationTemplate(models.Model):
     _inherit = 'medical.medication.template'
     dispense_uom_id = fields.Many2one(
         comodel_name='product.uom',
-        string='Dispense UOM',
+        string='Dispense UoM',
         help='Dispense Unit of Measure',
     )
