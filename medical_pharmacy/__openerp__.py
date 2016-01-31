@@ -34,8 +34,8 @@
 ##############################################################################
 {
     'name': 'Medical Pharmacy',
-    'version': '8.0.1.1.0',
-    'author': 'LasLabs, Odoo Medical Team, Odoo Community Association (OCA)',
+    'version': '9.0.1.1.0',
+    'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': [
         'medical',
@@ -46,6 +46,9 @@
         'views/medical_pharmacy_view.xml',
         'security/ir.model.access.csv',
     ],
-    'installable': False,
+    'test': [
+        'tests/medical_pharmacy.yml',
+    ],
+    'installable': True,
     'auto_install': False,
 }
