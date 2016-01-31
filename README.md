@@ -186,3 +186,54 @@ Hacking Odoo Medical
     ```bash
     $ git push -u origin 9.0-your_new_feature_theme
     ```
+
+
+[//]: # (addons)
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
+[medical](medical/) | 9.0.2.0.0 | Odoo Medical
+[medical_base_history](medical_base_history/) | 9.0.2.0.0 | Assists in logging history of abstract records
+[medical_physician](medical_physician/) | 9.0.2.0.0 | Adds physician concept
+[medical_appointment](medical_appointment/) | 9.0.2.0.0 | Schedule physician appointments
+[medical_pathology](medical_pathology/) | 9.0.2.0.0 | Adds a base concept of diseases & categorization
+[medical_patient_disease](medical_patient_disease/) | 9.0.2.0.0 | Applies the disease pathologies at the patient level
+[medical_patient_disease_allergy](medical_patient_disease_allergy/) | 9.0.2.0.0 | Isolates the allergy concept from diseases
+[medical_medicament](medical_medicament/) | 9.0.1.0.0 | Add concept of drugs and medicaments
+[medical_medication](medical_medication/) | 9.0.2.0.0 | Adds medicine templates and applies medicament concept to patient
+[medical_medication_us](medical_medication_us/) | 9.0.1.1.0 | US Locale for Medications
+[medical_pharmacy](medical_pharmacy/) | 9.0.1.1.0 | Isolates pharmacy concept from partners
+[medical_pharmacy_us](medical_pharmacy_us/) | 9.0.1.1.0 | Add US Locale to pharmacy concept
+[medical_prescription](medical_prescription/) | 9.0.1.1.0 | Add concept of prescription orders applied to medications
+
+
+
+Unported addons
+---------------
+addon | version | summary
+--- | --- | ---
+[medical_insurance](medical_insurance/) | 9.0.1.1.0 | Medical Insurance
+[medical_insurance_us](medical_insurance_us/) | 9.0.1.1.0 | US Locale for Insurance concept
+[medical_his](medical_his/) | 9.0.1.1.0 | Medical Hospital
+[medical_family](medical_family/) | 9.0.1.1.0 | Medical Family
+[medical_medicament_attributes](medical_medicament_attributes/) | 9.0.1.1.0 | Adds physical attributes to medicaments
+[medical_patient_ethnicity](medical_patient_ethnicity/) | 9.0.1.1.0 | Adds ethnicity concept to patients
+[medical_patient_occupation](medical_patient_occupation/) | 9.0.1.1.0 | Adds occupation concept to patients
+[medical_prescription_sale](medical_prescription_sale/) | 9.0.1.0.0 | Provide sale workflow for prescription orders
+[medical_prescription_state](medical_prescription_state/) | 9.0.2.0.0 | Add Kanban states to prescription orders
+[medical_prescription_state_verify](medical_prescription_state_verify) | 9.0.1.0.0 | Add concept of verified prescription states & provide a hook for actions
+[medical_prescription_thread](medical_prescription_thread/) | 9.0.1.1.0 | Add mail.thread capabilities to prescription orders and lines
+[oemedical_emr_data](oemedical_emr_data/) | 1.0 (unported) | OeMedical EMR: Module Data
+[oemedical_genetics](oemedical_genetics/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
+[oemedical_gynecology_and_obstetrics](oemedical_gynecology_and_obstetrics/) | 1.0.1 (unported) | OeMedical : gynecology and obstetrics
+[oemedical_icu](oemedical_icu/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
+[oemedical_invoice](oemedical_invoice/) | 0.1 (unported) | Medical Invoice
+[oemedical_lab](oemedical_lab/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
+[oemedical_lifestyle](oemedical_lifestyle/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
+[oemedical_pediatrics](oemedical_pediatrics/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
+[oemedical_socioeconomics](oemedical_socioeconomics/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
+[oemedical_surgery](oemedical_surgery/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
+[web_doc_oemedical](web_doc_oemedical/) | 0.1 (unported) | OeMedical CMS
+
+[//]: # (end addons)
