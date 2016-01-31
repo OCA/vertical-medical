@@ -1,0 +1,22 @@
+-
+  Create New Partner for pharmacy
+-
+  !record {model: res.partner, id: partner_pharmacy_laspharm_us }:
+    name: LasLabs Pharm US
+    is_company: True
+    street: 123 Test St
+    street2: Suite 1337
+    city: Las Vegas
+    country_id: base.us
+    phone: +1-888-888-8888
+    email: pharmus@example.com
+
+-
+  Create New Pharmacy LasLabs Pharm US
+-
+  !record {model: medical.pharmacy, id: pharmacy_laspharm_us}:
+    name: LasLabs Pharm US
+    nabp_num: 242343
+    medicaid_num: 2324
+    npi_num: 12134
+    partner_id: partner_pharmacy_laspharm_us
