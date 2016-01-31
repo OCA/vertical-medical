@@ -23,10 +23,16 @@
 #
 ##############################################################################
 
-from openerp import fields, models
+from openerp import fields, models, _
 
 
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
-    is_medicament = fields.Boolean()
+    is_medicament = fields.Boolean(
+        help=_('Check if the product is a medicament'),
+    )
+    is_vaccine = fields.Boolean(
+        string='Vaccine',
+        help=_('Check if the product is a vaccine'),
+    )
