@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="product_product_advil_1" model="product.product">
+        <field name="name">Advil</field>
+        <field name="uom_id" ref="product.product_uom_gram" />
+        <field name="uom_po_id" ref="product.product_uom_gram" />
+        <field name="weight">22.6796</field>
+        <field name="volume">0.008</field>
+        <field name="categ_id" ref="product.product_category_5" />
+        <field name="type">consu</field>
+        <field name="description_sale">Advil 200 Capsules 200mg</field>
+        <field name="pricelist_id" ref="product.list0" />
+        <field name="standard_price">15.25</field>
+        <field name="list_price">24.99</field>
+        <field name="currency_id" ref="base.USD" />
+        <field name="default_code">ADV</field>
+    </record>
+
+    <record id="medical_medicament_advil_1" model="medical.medicament">
+        <field name="name">Advil</field>
+        <field name="drug_form_id" ref="medical_medicament.CAP" />
+        <field name="strength">0.2</field>
+        <field name="strength_uom_id" ref="product.product_uom_gram" />
+        <field name="is_pregnancy_warning">True</field>
+        <field name="drug_route_id" ref="medical_medicament.route_34" />
+        <field name="product_id" ref="medical_medicament.product_product_advil_1" />
+        <field name="pregnancy_category">d</field>
+    </record>
+
+    <record id="product_product_advil_2" model="product.product">
+        <field name="name">Advil Extra Strength</field>
+        <field name="uom_id" ref="product.product_uom_gram" />
+        <field name="uom_po_id" ref="product.product_uom_gram" />
+        <field name="weight">15</field>
+        <field name="volume">0.0033</field>
+        <field name="categ_id" ref="product.product_category_5" />
+        <field name="type">consu</field>
+        <field name="description_sale">Advil Extra Strength 24 Capsules 400mg</field>
+        <field name="pricelist_id" ref="product.list0" />
+        <field name="standard_price">4.50</field>
+        <field name="list_price">10.99</field>
+        <field name="currency_id" ref="base.USD" />
+        <field name="default_code">ADV-XSTNGTH</field>
+    </record>
+    
+    <record id="medical_medicament_advil_2" model="medical.medicament">
+        <field name="name">Advil Extra Strength</field>
+        <field name="type">consu</field>
+        <field name="drug_form_id" ref="medical_medicament.CAP" />
+        <field name="strength">0.4</field>
+        <field name="strength_uom_id" ref="product.product_uom_gram" />
+        <field name="is_pregnancy_warning">True</field>
+        <field name="drug_route_id" ref="medical_medicament.route_34" />
+        <field name="product_id" ref="medical_medicament.product_product_advil_2" />
+        <field name="pregnancy_category">d</field>
+    </record>
+        
+</odoo>

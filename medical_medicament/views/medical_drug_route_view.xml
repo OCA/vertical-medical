@@ -1,66 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openerp>
-    <data>
+<odoo>
 
-        <record id="medical_drug_route_search_view" model="ir.ui.view">
-            <field name="name">medical.drug.route.search</field>
-            <field name="model">medical.drug.route</field>
-            <field name="priority" eval="8" />
-            <field name="arch" type="xml">
-                <search string="Medical Drug Route">
-                    <field name="name" />
-                    <field name="code" />
-                </search>
-            </field>
-        </record>
+    <record id="medical_drug_route_search_view" model="ir.ui.view">
+        <field name="name">medical.drug.route.search</field>
+        <field name="model">medical.drug.route</field>
+        <field name="priority" eval="8" />
+        <field name="arch" type="xml">
+            <search string="Medical Drug Route">
+                <field name="name" />
+                <field name="code" />
+            </search>
+        </field>
+    </record>
 
-        <record id="medical_drug_route_tree_view" model="ir.ui.view">
-            <field name="name">medical.drug.route.tree</field>
-            <field name="model">medical.drug.route</field>
-            <field name="arch" type="xml">
-                <tree string="Medical Drug Route">
-                    <field name="code" />
-                    <field name="name" />
-                </tree>
-            </field>
-        </record>
+    <record id="medical_drug_route_tree_view" model="ir.ui.view">
+        <field name="name">medical.drug.route.tree</field>
+        <field name="model">medical.drug.route</field>
+        <field name="arch" type="xml">
+            <tree string="Medical Drug Route">
+                <field name="code" />
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
 
-        <record id="medical_drug_route_form_view" model="ir.ui.view">
-            <field name="name">medical.drug.route.form</field>
-            <field name="model">medical.drug.route</field>
-            <field name="arch" type="xml">
-                <form string="Medical Drug Route">
-                    <header/>
-                    <sheet>
-                        <div class="oe_title" name="title">
-                            <label for="name" class="oe_edit_only"/>
-                            <h1><field name="name" placeholder="Name"/></h1>
-                        </div>
-                        <div class="oe_right oe_button_box" name="buttons">
-                        </div>
-                        <group name="data">
-                            <field name="code"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+    <record id="medical_drug_route_form_view" model="ir.ui.view">
+        <field name="name">medical.drug.route.form</field>
+        <field name="model">medical.drug.route</field>
+        <field name="arch" type="xml">
+            <form string="Medical Drug Route">
+                <header/>
+                <sheet>
+                    <div class="oe_title" name="title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name" placeholder="Name"/></h1>
+                    </div>
+                    <div class="oe_right oe_button_box" name="buttons">
+                    </div>
+                    <group name="data">
+                        <field name="code"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-        <record id="medical_drug_route_action" model="ir.actions.act_window">
-            <field name="name">Drug Routes</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">medical.drug.route</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="medical_drug_route_search_view" />
-            <field name="res_id" ref="medical_drug_route_tree_view" />
-            <field name="domain">[]</field>
-            <field name="context">{}</field>
-        </record>
+    <record id="medical_drug_route_action" model="ir.actions.act_window">
+        <field name="name">Drug Routes</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.drug.route</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="medical_drug_route_search_view" />
+        <field name="res_id" ref="medical_drug_route_tree_view" />
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
 
-        <menuitem id="medical_drug_route" name="Drug Admin Route"
-            parent="medical_medicament_root" sequence="98"
-            action="medical_drug_route_action" />
-
-    </data>
-</openerp>
+</odoo>
