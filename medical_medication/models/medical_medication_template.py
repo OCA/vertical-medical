@@ -20,7 +20,7 @@
 #
 # #############################################################################
 
-from openerp import fields, models, api
+from openerp import fields, models, api, _
 
 
 class MedicalMedicationTemplate(models.Model):
@@ -28,57 +28,72 @@ class MedicalMedicationTemplate(models.Model):
     _description = 'Medical Medication Template'
     _rec_name = 'pathology_id'
 
+    medicament_id = fields.Many2one(
+        string='Medicament',
+        comodel_name='medical.medicament',
+        required=True,
+    )
+    pathology_id = fields.Many2one(
+        string='Pathology',
+        comodel_name='medical.pathology',
+        help=_(
+            'Choose a disease for this medicament from the disease list.'
+            ' It can be an existing disease of the patient or a prophylactic.'
+        ),
+    )
+    duration = fields.Integer(
+        help=_('Period that the patient must take the medication'),
+    )
+    duration_uom_id = fields.Many2one(
+        string='Duration UoM',
+        comodel_name='product.uom',
+        domain=[('category_id.name', '=', 'Time')],
+        help=_('Measurement unit for medication duration'),
+    )
+    frequency = fields.Integer(
+        help=_(
+            'Time in between doses the patient must wait (ie, for 1 pill '
+            'each 8 hours, put here 8 and select "hours\" in the unit field'
+        ),
+    )
+    frequency_uom_id = fields.Many2one(
+        string='Frequency UoM',
+        comodel_name='product.uom',
+        domain=[('category_id.name', '=', 'Time')],
+        help=_('Measurement unit for medication frequency'),
+    )
+    frequency_prn = fields.Boolean(
+        help=_('Use medication as needed (pro re nata)'),
+    )
+    medication_dosage_id = fields.Many2one(
+        string='Common Dose',
+        comodel_name='medical.medication.dosage',
+        help=_('Common / standard dosage frequency for this medicament'),
+    )
+    suggested_administration_hours = fields.Char(
+        help=_('Time that medication should typically be administered'),
+    )
+    quantity = fields.Integer(
+        string='Dose Quantity',
+        help=_('Quantity of units (eg, 2 capsules) of the medicament'),
+    )
+    dose_uom_id = fields.Many2one(
+        string='Dose Unit',
+        comodel_name='product.uom',
+        help=_('Measurement unit for dosage quantity'),
+    )
+
     @api.multi
     def name_get(self):
         res = []
         for rec in self:
             if self.medication_dosage_id:
                 name = self.medication_dosage_id.name
-            elif self.frequency and self.frequency_unit:
-                name = '%s / %s' % (self.frequency, self.frequency_unit)
+            elif self.frequency and self.frequency_uom_id:
+                name = '%s / %s' % (self.frequency, self.frequency_uom_id)
             elif self.pathology_id:
                 name = self.pathology_id.name
             else:
                 name = self.medicament_id.name
             res.append((rec.id, name))
         return res
-
-    medicament_id = fields.Many2one(
-        comodel_name='medical.medicament', string='Medicament', required=True)
-    pathology_id = fields.Many2one(
-        comodel_name='medical.pathology', string='Pathology',
-        help='Choose a disease for this medicament from the disease list. '
-        'It can be an existing disease of the patient or a prophylactic.')
-    duration = fields.Integer(
-        help='Period that the patient must take the medication. in minutes,'
-        ' hours, days, months, years or indefinately')
-    duration_period = fields.Selection(selection=[
-        ('minutes', 'Minutes'),
-        ('hours', 'Hours'),
-        ('days', 'Days'),
-        ('months', 'Months'),
-        ('years', 'Years'),
-        ('indefinite', 'Indefinite'),
-    ], help='Period that the patient must take the medication in minutes, '
-        'hours, days, months, years or indefinately')
-    frequency = fields.Integer(
-        help='Time in between doses the patient must wait (ie, for 1 pill '
-        'each 8 hours, put here 8 and select "hours\" in the unit field')
-    frequency_unit = fields.Selection(selection=[
-        ('seconds', 'seconds'),
-        ('minutes', 'minutes'),
-        ('hours', 'hours'),
-        ('days', 'days'),
-        ('weeks', 'weeks'),
-        ('wr', 'when required'),
-    ])
-    frequency_prn = fields.Boolean(help='Use it as needed, pro re nata')
-    medication_dosage_id = fields.Many2one(
-        comodel_name='medical.medication.dosage', string='Common Dose',
-        help='Common / standard dosage frequency for this medicament')
-    suggested_administration_hours = fields.Char()
-    quantity = fields.Integer(
-        string='Dose Quantity',
-        help='Quantity of units (eg, 2 capsules) of the medicament')
-    dose_unit_id = fields.Many2one(
-        comodel_name='product.uom', string='Dose Unit')

@@ -24,15 +24,14 @@
 ##############################################################################
 {
     'name': 'Medical Medication',
-    'version': '8.0.1.0.0',
-    'author': 'ACSONE SA/NV, Odoo Community Association (OCA)',
-    'maintainer': 'ACSONE SA/NV, Odoo Community Association (OCA)',
-    'website': 'http://www.acsone.eu',
-    'license': 'AGPL-3',
+    'version': '9.0.2.0.0',
+    "author": "LasLabs, ACSONE SA/NV, Odoo Community Association (OCA)",
+    "maintainer": "LasLabs, ACSONE SA/NV, Odoo Community Association (OCA)",
+    "website": "http://www.acsone.eu",
     'category': 'Medical',
     'depends': [
         'medical',
-        'medical_disease',
+        'medical_patient_disease',
         'medical_medicament',
     ],
     'summary': 'Introduce medication notion into the medical addons',
@@ -45,6 +44,6 @@
         'views/medical_patient_medication_view.xml',
         'views/medical_patient_view.xml',
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
 }
