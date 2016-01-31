@@ -52,5 +52,5 @@
         'views/medical_hospital_unit_view.xml',
         'views/medical_hospital_menu.xml',
     ],
-    'installable': True,
+    'installable': False,
 }

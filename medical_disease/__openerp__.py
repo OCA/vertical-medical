@@ -43,6 +43,6 @@
         'views/medical_patient_view.xml',
         'views/medical_disease_view.xml',
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
 }
