@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="medical_insurance_template_view_tree" model="ir.ui.view">
+			<field name="name">medical.insurance.template.tree</field>
+			<field name="model">medical.insurance.template</field>
+			<field name="inherit_id" ref="medical_insurance.medical_insurance_template_view_tree" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='plan_number']" position="after">
+					<field name="group_number" />
+					<field name="insurance_type" />
+					<field name="insurance_affiliation" />
+				</xpath>
+			</field>
+		</record>
+
+		<record id="medical_insurance_template_view_form" model="ir.ui.view">
+			<field name="name">medical.insurance.template.form</field>
+			<field name="model">medical.insurance.template</field>
+			<field name="inherit_id" ref="medical_insurance.medical_insurance_template_view_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//group[@name='plan_info']" position="inside">
+					<field name="group_number" />
+					<field name="rx_bin" />
+					<field name="rx_pcn" />
+					<field name="rx_group" />
+				</xpath>
+				<xpath expr="//group[@name='provider_info']" position="inside">
+					<field name="insurance_type" />
+					<field name="insurance_affiliation" />
+				</xpath>
+			</field>
+		</record>
+
+		<record id="medical_insurance_template_view_search" model="ir.ui.view">
+			<field name="name">medical.insurance.template.search</field>
+			<field name="model">medical.insurance.template</field>
+			<field name="inherit_id" ref="medical_insurance.medical_insurance_template_view_search" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='plan_number']" position="after">
+					<field name="group_number" />
+					<field name="rx_bin" />
+					<field name="rx_pcn" />
+					<field name="rx_group" />
+				</xpath>
+				<xpath expr="//field[@name='insurance_company_id']" position="after">
+					<field name="insurance_type" />
+					<field name="insurance_affiliation" />
+				</xpath>
+				<xpath expr="//group" position="inside">
+					<filter string="Group Number"
+							domain="[]"
+							context="{'group_by': 'group_number', }" />
+					<filter string="Insurance Type"
+							domain="[]"
+							context="{'group_by': 'insurance_type', }" />
+					<filter string="Insurance Affiliation"
+							domain="[]"
+							context="{'group_by': 'insurance_affiliation', }" />
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</openerp>

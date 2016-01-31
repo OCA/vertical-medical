@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="medical_patient_view_form" model="ir.ui.view">
+            <field name="name">medical.patient.form</field>
+            <field name="model">medical.patient</field>
+            <field name="inherit_id" ref="medical.medical_patient_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='main']" position="after">
+                    <group name="family">
+                        <field name="family_id" string="Family Name"/>
+                        <field name="role_id" string="Family Role"/>
+                    </group>
+                </xpath>
+                
+                <xpath expr="//notebook">
+                    <page string="Family">
+                        <field name="family_member_ids" mode="kanban" domain="[('is_patient', '=', True)]"
+                               context="{'default_contact_id': active_id, 'default_use_parent_address': True, 'default_is_patient': True, 'default_customer': True}}">
+                            <kanban>
+                                <field name="color"/>
+                                <field name="name"/>
+                                <field name="title"/>
+                                <field name="email"/>
+                                <field name="parent_id"/>
+                                <field name="is_company"/>
+                                <field name="function"/>
+                                <field name="phone" data-inputmask="'mask': '9999-9999'"/>
+                                <field name="street"/>
+                                <field name="street2"/>
+                                <field name="zip"/>
+                                <field name="city"/>
+                                <field name="country_id"/>
+                                <field name="mobile" data-inputmask="'mask': '9999-9999'"/>
+                                <field name="fax" data-inputmask="'mask': '9999-9999'"/>
+                                <field name="state_id"/>
+                                <field name="has_image"/>
+                                <templates>
+                                    <t t-name="kanban-box">
+                                        <t t-set="color" t-value="kanban_color(record.color.raw_value)"/>
+                                        <div t-att-class="color + (record.title.raw_value == 1 ? ' kanban_color_alert' : '')" style="position: relative">
+                                            <a t-if="! read_only_mode" type="delete" style="position: absolute; right: 0; padding: 4px; diplay: inline-block">X</a>
+                                            <div class="module_vignette">
+                                            <a type="open">
+                                                <t t-if="record.has_image.raw_value === true">
+                                                    <img t-att-src="kanban_image('medical.physician', 'image', record.id.value, {'preview_image': 'image_small'})" class="avatar kanban_avatar_smallbox"/>
+                                                </t>
+                                                <t t-if="record.image and record.image.raw_value !== false">
+                                                    <img t-att-src="'data:image/png;base64,'+record.image.raw_value" class="avatar kanban_avatar_smallbox"/>
+                                                </t>
+                                                <t t-if="record.has_image.raw_value === false and (!record.image or record.image.raw_value === false)">
+                                                    <t t-if="record.is_company.raw_value === true">
+                                                        <img t-att-src='_s + "/base/static/src/img/company_image.png"' class="kanban_image kanban_avatar_smallbox"/>
+                                                    </t>
+                                                    <t t-if="record.is_company.raw_value === false">
+                                                        <img t-att-src='_s + "/base/static/src/img/avatar.png"' class="kanban_image kanban_avatar_smallbox"/>
+                                                    </t>
+                                                </t>
+                                            </a>
+                                                <div class="module_desc">
+                                                    <div class="kanban_box_content kanban_color_bglight kanban_color_border">
+                                                        <table class="kanban_table">
+                                                            <tr>
+                                                                <td class="kanban_title1" align="left" valign="middle">
+                                                                    <h4><a type="open"><field name="name"/></a></h4>
+                                                                    <div><a t-if="record.email.raw_value" title="Mail" t-att-href="'mailto:'+record.email.value">
+                                                                        <field name="email"/>
+                                                                    </a></div>
+                                                                    <div t-if="record.phone.raw_value">Phone: <field name="phone" data-inputmask="'mask': '9999-9999'"/></div>
+                                                                    <div t-if="record.mobile.raw_value">Mobile: <field name="mobile" data-inputmask="'mask': '9999-9999'"/></div>
+                                                                    <div t-if="record.fax.raw_value">Fax: <field name="fax" data-inputmask="'mask': '9999-9999'"/></div>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </templates>
+                            </kanban>
+                            <form string="Family">
+                                <sheet>
+                                    <field name="image" widget='image' class="avatar left" options='{"preview_image": "image_medium"}'/>
+                                    <div class="title">
+                                            <label for="name" string="Family" class="edit_only"/>
+                                            <h1><field name="name" style="width: 90%%" placeholder="Family Member Name" required="True"/></h1>
+                                            <field name="category_id" widget="many2many_tags" placeholder="Tags..." style="width: 70%%"/>
+                                    </div>
+                                    <group col="2" colspan="2">
+                                        <field name="customer" invisible="True"/>
+                                        <field name="use_parent_address" invisible="True"/>
+                                        <field class="inline" name="type" invisible="True"/>
+                                        <label for="street" string="Address"/>
+                                        <div name="div_address">
+                                            <field name="street" placeholder="Street..." attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                            <field name="street2" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                            <div class="address_format">
+                                                <field name="city" placeholder="City" style="width: 40%%" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                <field name="state_id" class="no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' on_change="onchange_state(state_id)" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                <field name="zip" placeholder="ZIP" style="width: 20%%" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                            </div>
+                                            <field name="country_id" placeholder="Country" class="no_button" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                        </div>
+                                    </group>
+                                </sheet>
+                            </form>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

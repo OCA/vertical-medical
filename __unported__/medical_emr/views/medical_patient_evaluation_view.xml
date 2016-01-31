@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="medical_patient_view_evaluation_tree" model="ir.ui.view">
+			<field name="name">medical.patient.evaluation.tree</field>
+			<field name="model">medical.patient.evaluation</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<tree string="Medical Patient Evaluation">
+					<field name="evaluation_date" />
+					<field name="patient_id" />
+					<field name="doctor_id" />
+					<field name="chief_complaint" />
+					<field name="diagnosis_id" />
+					<field name="info_diagnosis" />
+					<field name="diastolic" />
+					<field name="systolic" />
+					<field name="specialty_id" />
+					<field name="user_id" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="medical_patient_view_evaluation_form" model="ir.ui.view">
+			<field name="name">medical.patient.evaluation.form</field>
+			<field name="model">medical.patient.evaluation</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<form string="Medical Patient Evaluation">
+                    <sheet>
+                        <div>
+                            <h1>
+                                <label string="Patient"/>
+                                <field name="patient_id" readonly="1"/>
+                             </h1>
+                        </div>
+                        <div>
+                            <field name="doctor_id" />
+                            <field name="evaluation_type"/>
+        					<field name="specialty_id" />
+                        </div>
+                        <div>
+                            <field name="evaluation_date" />
+                        </div>
+					<field name="chief_complaint" />
+					<field name="present_illness" />
+					<field name="evaluation_summary" />
+					<field name="diagnosis_id" />
+					<field name="info_diagnosis" />
+					<field name="information_source" />
+					<field name="is_disoriented" />
+					<field name="weight" />
+					<field name="is_malnutritious" />
+					<!--field name="action_ids"/ -->
+					<field name="height" />
+					<field name="is_dehydrated" />
+					<field name="tag" />
+					<field name="is_tremor" />
+					<field name="evaluation_start" />
+					<field name="loc" />
+					<field name="user_id" />
+					<!--field name="mood"/ -->
+					<field name="is_incognizant" />
+					<field name="next_evaluation_id" />
+					<!--field name="signs_and_symptoms_ids"/ -->
+					<!--field name="loc_motor"/ -->
+					<field name="is_reliable_info" />
+					<field name="diastolic" />
+					<field name="systolic" />
+					<field name="vocabulary" />
+					<field name="is_catatonic" />
+					<field name="hip" />
+					<field name="is_forgetful" />
+					<field name="is_abstracting" />
+					<field name="referred_from_id" />
+					<!--field name="loc_verbal"/ -->
+					<field name="glycemia" />
+					<field name="head_circumference" />
+					<field name="bmi" />
+					<field name="respiratory_rate" />
+					<field name="referred_to_id" />
+					<field name="hba1c" />
+					<field name="is_violent" />
+					<field name="directions" />
+					<field name="cholesterol_total" />
+					<!--field name="diagnostic_hypothesis_id"/ -->
+					<field name="judgment" />
+					<field name="temperature" />
+					<field name="osat" />
+					<field name="secondary_condition_ids"/>
+					<field name="evaluation_endtime" />
+					<field name="notes" />
+					<field name="calculation_ability" />
+					<field name="bpm" />
+					<!--field name="loc_eyes"/ -->
+					<field name="abdominal_circ" />
+					<field name="not_perceiving" />
+					<field name="whr" />
+					<field name="ldl" />
+					<field name="notes_complaint" />
+					<field name="hdl" />
+     				</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="medical_patient_view_evaluation_search" model="ir.ui.view">
+			<field name="name">medical.patient.evaluation.search</field>
+			<field name="model">medical.patient.evaluation</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<search string="Medical Patient Evaluation">
+					<field name="patient_id" />
+					<field name="information_source" />
+					<field name="info_diagnosis" />
+					<field name="is_disoriented" />
+					<field name="weight" />
+					<field name="is_malnutritious" />
+					<field name="height" />
+					<field name="is_dehydrated" />
+					<field name="tag" />
+					<field name="is_tremor" />
+					<field name="present_illness" />
+					<field name="evaluation_date" />
+					<field name="evaluation_start" />
+					<field name="loc" />
+					<field name="user_id" />
+					<field name="doctor_id" />
+					<field name="is_incognizant" />
+					<field name="next_evaluation_id" />
+					<field name="is_reliable_info" />
+					<field name="systolic" />
+					<field name="vocabulary" />
+					<field name="is_catatonic" />
+					<field name="hip" />
+					<field name="is_forgetful" />
+					<field name="is_abstracting" />
+					<field name="referred_from_id" />
+					<field name="specialty_id" />
+					<field name="glycemia" />
+					<field name="head_circumference" />
+					<field name="bmi" />
+					<field name="respiratory_rate" />
+					<field name="referred_to_id" />
+					<field name="hba1c" />
+					<field name="is_violent" />
+					<field name="directions" />
+					<field name="evaluation_summary" />
+					<field name="cholesterol_total" />
+					<field name="judgment" />
+					<field name="temperature" />
+					<field name="osat" />
+					<field name="evaluation_endtime" />
+					<field name="notes" />
+					<field name="calculation_ability" />
+					<field name="bpm" />
+					<field name="chief_complaint" />
+					<field name="abdominal_circ" />
+					<field name="not_perceiving" />
+					<field name="diagnosis_id" />
+					<field name="whr" />
+					<field name="ldl" />
+					<field name="notes_complaint" />
+					<field name="hdl" />
+					<field name="diastolic" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Source" domain="[]"
+							context="{'group_by':'information_source'}" />
+						<filter string="Presumptive Diagnosis: Extra Info" domain="[]"
+							context="{'group_by':'info_diagnosis'}" />
+						<filter string="Orientation" domain="[]"
+							context="{'group_by':'is_disoriented'}" />
+						<filter string="Weight" domain="[]" context="{'group_by':'weight'}" />
+						<filter string="Malnutrition" domain="[]"
+							context="{'group_by':'is_malnutritious'}" />
+						<filter string="Height" domain="[]" context="{'group_by':'height'}" />
+						<filter string="Dehydration" domain="[]"
+							context="{'group_by':'is_dehydrated'}" />
+						<filter string="Last TAGs" domain="[]" context="{'group_by':'tag'}" />
+						<filter string="Tremor" domain="[]" context="{'group_by':'is_tremor'}" />
+						<filter string="Present Illness" domain="[]"
+							context="{'group_by':'present_illness'}" />
+						<filter string="Appointment" domain="[]"
+							context="{'group_by':'evaluation_date'}" />
+						<filter string="Start" domain="[]"
+							context="{'group_by':'evaluation_start'}" />
+						<filter string="Level of Consciousness" domain="[]"
+							context="{'group_by':'loc'}" />
+						<filter string="Last Changed by" domain="[]"
+							context="{'group_by':'user_id'}" />
+						<filter string="Physician" domain="[]" context="{'group_by':'doctor_id'}" />
+						<filter string="Knowledge of Current Events" domain="[]"
+							context="{'group_by':'is_incognizant'}" />
+						<filter string="Next Appointment" domain="[]"
+							context="{'group_by':'next_evaluation_id'}" />
+						<filter string="Reliable" domain="[]"
+							context="{'group_by':'is_reliable_info'}" />
+						<filter string="Systolic Pressure" domain="[]"
+							context="{'group_by':'systolic'}" />
+						<filter string="Vocabulary" domain="[]"
+							context="{'group_by':'vocabulary'}" />
+						<filter string="Praxis" domain="[]" context="{'group_by':'is_catatonic'}" />
+						<filter string="Hip" domain="[]" context="{'group_by':'hip'}" />
+						<filter string="Memory" domain="[]" context="{'group_by':'is_forgetful'}" />
+						<filter string="Abstraction" domain="[]"
+							context="{'group_by':'is_abstracting'}" />
+						<filter string="Patient" domain="[]" context="{'group_by':'patient_id'}" />
+						<filter string="Derived from" domain="[]"
+							context="{'group_by':'referred_from_id'}" />
+						<filter string="Specialty" domain="[]"
+							context="{'group_by':'specialty_id'}" />
+						<filter string="Glycemia" domain="[]" context="{'group_by':'glycemia'}" />
+						<filter string="Head Circumference" domain="[]"
+							context="{'group_by':'head_circumference'}" />
+						<filter string="Body Mass Index" domain="[]"
+							context="{'group_by':'bmi'}" />
+						<filter string="Respiratory Rate" domain="[]"
+							context="{'group_by':'respiratory_rate'}" />
+						<filter string="Derived to" domain="[]"
+							context="{'group_by':'referred_to_id'}" />
+						<filter string="Glycated Hemoglobin" domain="[]"
+							context="{'group_by':'hba1c'}" />
+						<filter string="Violent Behaviour" domain="[]"
+							context="{'group_by':'is_violent'}" />
+						<filter string="Plan" domain="[]" context="{'group_by':'directions'}" />
+						<filter string="Evaluation Summary" domain="[]"
+							context="{'group_by':'evaluation_summary'}" />
+						<filter string="Last Cholesterol" domain="[]"
+							context="{'group_by':'cholesterol_total'}" />
+						<filter string="Jugdment" domain="[]" context="{'group_by':'judgment'}" />
+						<filter string="Temperature" domain="[]"
+							context="{'group_by':'temperature'}" />
+						<filter string="Oxygen Saturation" domain="[]"
+							context="{'group_by':'osat'}" />
+						<filter string="End" domain="[]"
+							context="{'group_by':'evaluation_endtime'}" />
+						<filter string="Notes" domain="[]" context="{'group_by':'notes'}" />
+						<filter string="Calculation Ability" domain="[]"
+							context="{'group_by':'calculation_ability'}" />
+						<filter string="Heart Rate" domain="[]" context="{'group_by':'bpm'}" />
+						<filter string="Chief Complaint" domain="[]"
+							context="{'group_by':'chief_complaint'}" />
+						<filter string="Waist" domain="[]"
+							context="{'group_by':'abdominal_circ'}" />
+						<filter string="Object Recognition" domain="[]"
+							context="{'group_by':'not_perceiving'}" />
+						<filter string="Presumptive Diagnosis" domain="[]"
+							context="{'group_by':'diagnosis_id'}" />
+						<filter string="WHR" domain="[]" context="{'group_by':'whr'}" />
+						<filter string="Last LDL" domain="[]" context="{'group_by':'ldl'}" />
+						<filter string="Complaint details" domain="[]"
+							context="{'group_by':'notes_complaint'}" />
+						<filter string="Last HDL" domain="[]" context="{'group_by':'hdl'}" />
+						<filter string="Diastolic Pressure" domain="[]"
+							context="{'group_by':'diastolic'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="medical_patient_evaluation_action">
+			<field name="name">Patient Evaluation</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.patient.evaluation</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="medical_patient_view_evaluation_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+		<record model="ir.actions.act_window.view" id="medical_patient_evaluation_action_form">
+			<field name="act_window_id" ref="medical_patient_evaluation_action" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="medical_patient_view_evaluation_form" />
+		</record>
+
+		<record model="ir.actions.act_window.view" id="medical_patient_evaluation_action_tree">
+			<field name="act_window_id" ref="medical_patient_evaluation_action" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="medical_patient_view_evaluation_tree" />
+		</record>
+
+	</data>
+</openerp>

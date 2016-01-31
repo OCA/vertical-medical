@@ -1,18 +1,21 @@
+# -*- coding: utf-8 -*-
 ##############################################################################
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
 #    Odoo Medical, HMS Opensource Solution
 ##############################################################################
 #    Collaborators of this module:
+#    8.0 Port by: Dave Lasley <dave@laslabs.com>
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
 #    Coded by: Parthiv Patel <parthiv@techreceptives.com>
 #    Coded by: Ruchir Shukla <ruchir@techreceptives.com>
+#    Coded by: Mario Arias   <support@cysfuturo.com>
 #    Planifyied by: Parthiv Patel <parthiv@techreceptives.com>
 #    Planifyied by: Nhomar Hernandéz <nhomar@vauxoo.com>
 #
 ##############################################################################
-#    This project is mantained by OeMEdical Team:
-#    https://launchpad.net/medical
+#    This project is mantained by Odoo Community Association:
+#    http://github.com/oca/vertical-medical
 #
 ##############################################################################
 #    It is a collaborative effort between several companies that want to join
@@ -33,80 +36,29 @@
 #
 ##############################################################################
 {
-
     'name': 'Odoo Medical',
-    'version': '8.0.1.0.0',
+    'version': '8.0.1.1.0',
     'category': 'Medical',
     'depends': [
         'base',
-        'product'
+        'product',
     ],
-    'author': "OeMEdical Team,Odoo Community Association (OCA)",
-    'category': 'Generic Modules/Others',
-    'application': True,
-    'description': """
-
-About Odoo Medical
-------------------
-
-Odoo Medical is a multi-user, highly scalable, centralized Electronic
-Medical Record (EMR) and Hospital Information System for openERP.
-
-Odoo Medical provides a free universal Health and Hospital Information System,
-so doctors and institutions all over the world,
-specially in developing countries will benefit from a centralized,
-high quality, secure and scalable system.
-
-Odoo Medical at a glance:
-
-    * Strong focus in family medicine and Primary Health Care
-
-    * Major interest in Socio-economics (housing conditions, substance abuse,
-    education...)
-
-    * Diseases and Medical procedures standards (like ICD-10 / ICD-10-PCS ...)
-
-    * Patient Genetic and Hereditary risks : Over 4200 genes related to
-    diseases (NCBI / Genecards)
-
-    * Epidemiological and other statistical reports
-
-    * 100% paperless patient examination and history taking
-
-    * Patient Administration
-    (creation, evaluations / consultations, history ... )
-
-    * Doctor Administration
-
-    * Lab Administration
-
-    * Medicine / Drugs information (vademécum)
-
-    * Medical stock and supply chain management
-
-    * Hospital Financial Administration
-
-    * Designed with industry standards in mind
-
-    * Open Source : Licensed under AGPL
-
-""",
-    "website": "http://github.com/oca/vertical-medical",
-    "licence": "AGPL v3",
-    "data": [
+    'author': 'LasLabs, Odoo Medical Team, Odoo Community Association (OCA)',
+    'website': 'http://github.com/oca/vertical-medical',
+    'license': 'AGPL-3',
+    'data': [
         'views/medical_sequence.xml',
         'views/product_product_view.xml',
         'views/res_partner_view.xml',
+        'wizard/medical_physician_unavailable_view.xml',
         'views/medical_physician_view.xml',
         'views/medical_patient_view.xml',
         'views/medical_appointment_view.xml',
+        'data/medical_appointment_data.xml',
         'views/medical_specialty_view.xml',
         'security/medical_security.xml',
         'security/ir.model.access.csv',
         'views/medical_menu.xml',
-    ],
-    "demo": [
-
     ],
     'test': [
         'tests/physician.yml',
@@ -114,15 +66,7 @@ Odoo Medical at a glance:
         'tests/partners.yml',
         'tests/physician_speciality.yml'
     ],
-    'css': [
-
-    ],
-    'js': [
-
-    ],
-    'qweb': [
-
-    ],
-    "active": False
+    'installable': True,
+    'application': True,
+    'auto_install': False,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

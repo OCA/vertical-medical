@@ -1,0 +1,125 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+	<!-- Patient details -->
+		
+		<record model="ir.ui.view" id="medical_patient_view_referance_source">
+			<field name="name">Patient</field>
+			<field name="model">medical.patient</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="medical.medical_patient_view"/>
+				<field name="arch" type="xml">
+					<field name="family_code" position="after">
+						<field name="receivable"/>
+					</field>
+				</field>
+		</record>
+
+
+	<!-- Appointment details -->
+		
+		<record model="ir.ui.view" id="medical_invoice_appointment_view">
+			<field name="name">Appointment</field>
+			<field name="model">medical.appointment</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="medical.medical_appointment_view"/>
+			<field name="arch" type="xml">
+				<field name="speciality" position="after">
+					<newline/>
+					<group colspan="4">
+						<field name="no_invoice"/>
+						<field name="validity_status" readonly="1"/>
+						<field name="appointment_validity_date"/>
+					</group>
+					<newline/>
+					<group colspan="4">
+						<field name="consultations" select="2"></field>
+					</group>
+				</field>
+			</field>
+		</record>	
+
+
+		<menuitem name="Invoices" id="medical_invoice_menu" parent="medical.medical_menu" sequence="5"/>
+	
+		<record model="ir.actions.act_window" id="medical_action_tobeinvoiced_labtest_request">
+			<field name="name">Lab Requests to be invoiced</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.patient.lab.test</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('invoice_status','=','tobe')]</field>
+		</record>
+		
+		<menuitem action="medical_action_tobeinvoiced_labtest_request" id="medical_tobeinvoiced_labtest_request" parent="medical_invoice_menu"/>
+
+		<record model="ir.actions.act_window" id="medical_action_today_tobeinvoiced_labtest_request">
+			<field name="name">Today's Lab Requests to be invoiced</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.patient.lab.test</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('invoice_status','=','tobe'),('date','&gt;=',time.strftime('%Y-%m-%d 00:00:01')),('date','&lt;=',time.strftime('%Y-%m-%d 23:59:59'))]</field>
+		</record>
+		
+		<menuitem action="medical_action_today_tobeinvoiced_labtest_request" id="medical_today_tobeinvoiced_labtest_request" parent="medical_invoice_menu"/>
+
+		<record model="ir.actions.act_window" id="medical_action_tobeinvoiced_appointment">
+			<field name="name">Appointments to be invoiced</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.appointment</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('validity_status','=','tobe')]</field>
+		</record>
+		
+		<menuitem action="medical_action_tobeinvoiced_appointment" id="medical_tobeinvoiced_appointment" parent="medical_invoice_menu"/>
+
+
+		<record model="ir.ui.view" id="medical_prescription_invoice_view">
+			<field name="name">Prescription</field>
+			<field name="model">medical.prescription.order</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="medical.medical_prescription_view"/>
+			<field name="arch" type="xml">
+				<field name="pharmacy" position="after">
+					<newline/>
+					<field name="no_invoice"/>
+					<field name="invoice_status" readonly="1"/>
+
+				</field>	
+			</field>
+		</record>
+
+
+	<!-- Prescription details -->
+		
+		<record model="ir.ui.view" id="medical_prescription_invoice_tree">
+			<field name="name">Prescription</field>
+			<field name="model">medical.prescription.order</field>
+			<field name="type">tree</field>
+			<field name="inherit_id" ref="medical.medical_prescription_tree"/>
+			<field name="arch" type="xml">
+				<tree string='Prescription'>
+					<field name="no_invoice"/>
+					<field name="invoice_status"></field>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="medical_action_tobeinvoiced_prescription">
+			<field name="name">Prescriptions to be invoiced</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.prescription.order</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('invoice_status','=','tobe')]</field>
+		</record>
+		
+		<menuitem action="medical_action_tobeinvoiced_prescription" id="medical_tobeinvoiced_prescription" parent="medical_invoice_menu"/>
+
+
+	</data>
+	
+</openerp>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="medical_patient_ethnicity_view_tree" model="ir.ui.view">
+			<field name="name">medical.patient.ethnicity.tree</field>
+			<field name="model">medical.patient.ethnicity</field>
+			<field name="arch" type="xml">
+				<tree string="Patient Ethnicity">
+					<field name="notes" />
+					<field name="code" />
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="medical_patient_ethnicity_view_form" model="ir.ui.view">
+			<field name="name">medical.patient.ethnicity.form</field>
+			<field name="model">medical.patient.ethnicity</field>
+			<field name="arch" type="xml">
+				<form string="Patient Ethnicity">
+					<header />
+					<sheet>
+						<div class="oe_title" name="title">
+							<label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" placeholder="Name" /></h1>
+						</div>
+						<group name="data">
+							<field name="code" />
+							<field name="notes" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="medical_patient_ethnicity_view_search" model="ir.ui.view">
+			<field name="name">medical.patient.ethnicity.search</field>
+			<field name="model">medical.patient.ethnicity</field>
+			<field name="arch" type="xml">
+				<search string="Patient Ethnicity">
+					<field name="notes" />
+					<field name="code" />
+					<field name="name" />
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="medical_patient_ethnicity_action">
+			<field name="name">Ethnicity</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.patient.ethnicity</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="medical_patient_ethnicity_view_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+	</data>
+</openerp>

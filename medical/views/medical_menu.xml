@@ -1,54 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
-	<data>
-		<menuitem id="medical_root" name="Medical" sequence="10" />
+    <data>
+        <menuitem id="medical_root" name="Medical" sequence="10" />
 
 
-<!--Menu Patient-->
+        <!--Menu Patient-->
 
-		<menuitem id="medical_patient_root" name="Patient" parent="medical_root"
-			sequence="10" />
-		<menuitem id="medical_patient" name=" Patient"
-			parent="medical_patient_root" sequence="10"
-			action="act_open_medical_patient_view" />
-
-
-<!--Appointment-->
-
-		<menuitem id="medical_appoitment_root" name="Appoitment"
-			parent="medical_root" sequence="20" />
-
-		<menuitem id="medical_appointment" name=" Appointment"
-			parent="medical_appoitment_root" sequence="10"
-			action="act_open_medical_appointment_view" />
+        <menuitem id="medical_patient_root"
+                  name="Patient"
+                  parent="medical_root"
+                  sequence="10" />
+        <menuitem id="medical_patient"
+                  name=" Patient"
+                  parent="medical_patient_root"
+                  sequence="10"
+                  action="medical_patient_action" />
 
 
+        <!--Appointment-->
 
-<!--Configurations-->
+        <menuitem id="medical_appointment_root"
+                  name="Appoitment"
+                  parent="medical_root"
+                  sequence="20" />
 
-		<menuitem id="medical_root_sub" name="Configuration"
-			parent="medical_root" sequence="100" />
-
-<!-- Misc -->
-
-		<menuitem id="medical_root_misc" name="Misc"
-			parent="medical_root_sub" sequence="200" />
-
-
-<!-- Medical Specialty  ( Config/misc/specialty) )--> 
-
-		<menuitem id="medical_specialty" name=" Medical Specialty"
-            parent="medical_root_misc" sequence="10" 
-            action="act_open_medical_specialty_view" />
-
-<!--    Physician Conf    -->
-
-        <menuitem name="Health Professionals" id="medical_conf_physicians"
-            parent="medical_root_sub" sequence="20" />
-
-		<menuitem id="medical_physician" name=" Physician" parent="medical_conf_physicians"
-			sequence="10" action="act_open_medical_physician_view" />
+        <menuitem id="medical_appointment"
+                  name=" Appointment"
+                  parent="medical_appointment_root"
+                  sequence="10"
+                  action="medical_appointment_action" />
 
 
-	</data>
+
+        <!--Configurations-->
+
+        <menuitem id="medical_root_sub"
+                  name="Configuration"
+                  parent="medical_root"
+                  sequence="100" />
+
+        <!-- Misc -->
+
+        <menuitem id="medical_root_misc"
+                  name="Misc"
+                  parent="medical_root_sub"
+                  sequence="200" />
+
+
+        <!-- Medical Specialty  ( Config/misc/specialty) )--> 
+
+        <menuitem id="medical_specialty"
+                  name=" Medical Specialty"
+                  parent="medical_root_misc"
+                  sequence="10"
+                  action="medical_specialty_action" />
+
+        <!--    Physician Conf    -->
+
+        <menuitem name="Health Professionals"
+                  id="medical_conf_physicians"
+                  parent="medical_root_sub"
+                  sequence="20" />
+        
+        <menuitem id="medical_physician_admin"
+                  name=" Physician [Admin]"
+                  parent="medical_conf_physicians"
+                  sequence="10"
+                  action="medical_physician_action"
+                  groups="group_medical_manager" />
+        
+        <menuitem id="medical_physician_self"
+                  name=" Physician [Self]"
+                  parent="medical_conf_physicians"
+                  sequence="10"
+                  action="medical_physician_action_self"
+                  groups="group_medical_doctor" />
+        
+        <menuitem id="medical_physician_assistant"
+                  name=" Physician [Asistant]"
+                  parent="medical_conf_physicians"
+                  sequence="10"
+                  action="medical_physician_action"
+                  groups="group_medical_assistant" />
+
+    </data>
 </openerp>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="medical_patient_occupation_view_tree" model="ir.ui.view">
+			<field name="name">medical.patient.occupation.tree</field>
+			<field name="model">medical.patient.occupation</field>
+			<field name="arch" type="xml">
+				<tree string="Patient Occupation">
+					<field name="code" />
+					<field name="name" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="medical_patient_occupation_view_form" model="ir.ui.view">
+			<field name="name">medical.patient.occupation.form</field>
+			<field name="model">medical.patient.occupation</field>
+			<field name="arch" type="xml">
+				<form string="Patient Occupation">
+					<header />
+					<sheet>
+						<group name="data">
+							<field name="code" />
+							<field name="name" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="medical_patient_occupation_view_search" model="ir.ui.view">
+			<field name="name">medical.patient.occupation.search</field>
+			<field name="model">medical.patient.occupation</field>
+			<field name="arch" type="xml">
+				<search string="Patient Occupation">
+					<field name="code" />
+					<field name="name" />
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="medical_patient_occupation_action">
+			<field name="name">Occupation</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.patient.occupation</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="medical_patient_occupation_view_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+	</data>
+</openerp>

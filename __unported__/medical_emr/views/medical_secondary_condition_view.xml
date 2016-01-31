@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="medical_secondary_view_condition_tree" model="ir.ui.view">
+			<field name="name">medical.secondary_condition.tree</field>
+			<field name="model">medical.secondary_condition</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<tree string="Medical Secondary_Condition">
+					<field name="pathology_id" />
+					<field name="evaluation_id" />
+					<field name="comments" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="medical_secondary_view_condition_form" model="ir.ui.view">
+			<field name="name">medical.secondary_condition.form</field>
+			<field name="model">medical.secondary_condition</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<form string="Medical Secondary_Condition">
+					<field name="pathology_id" />
+					<field name="evaluation_id" />
+					<field name="comments" />
+				</form>
+			</field>
+		</record>
+
+		<record id="medical_secondary_view_condition_search" model="ir.ui.view">
+			<field name="name">medical.secondary_condition.search</field>
+			<field name="model">medical.secondary_condition</field>
+			<field name="priority" eval="8" />
+			<field name="arch" type="xml">
+				<search string="Medical Secondary_Condition">
+					<field name="pathology_id" />
+					<field name="evaluation_id" />
+					<field name="comments" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Pathology" domain="[]"
+							context="{'group_by':'pathology_id'}" />
+						<filter string="Evaluation" domain="[]"
+							context="{'group_by':'evaluation_id'}" />
+						<filter string="Comments" domain="[]" context="{'group_by':'comments'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="medical_secondary_condition_action">
+			<field name="name">Secondary Condition</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.secondary_condition</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="medical_secondary_view_condition_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+		<record model="ir.actions.act_window.view"
+			id="medical_secondary_condition_action_form">
+			<field name="act_window_id" ref="medical_secondary_condition_action" />
+			<field name="sequence" eval="20" />
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="medical_secondary_view_condition_form" />
+		</record>
+
+		<record model="ir.actions.act_window.view"
+			id="medical_secondary_condition_action_tree">
+			<field name="act_window_id" ref="medical_secondary_condition_action" />
+			<field name="sequence" eval="10" />
+			<field name="view_mode">tree</field>
+			<field name="view_id" ref="medical_secondary_view_condition_tree" />
+		</record>
+
+	</data>
+</openerp>

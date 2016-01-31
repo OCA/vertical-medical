@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2014-[Now] LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    The license is in the file __openerp__.py
+-->
+
+<openerp>
+    <data>
+        
+        <record id="medical_prescription_order_line_tree_view" model="ir.ui.view">
+            <field name="name">Prescription Order Lines</field>
+            <field name="model">medical.prescription.order.line</field>
+            <field name='inherit_id' ref='medical_prescription.medical_prescription_order_line_tree_view'/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='prescription_order_id']" position="after">
+                    <field name="sale_order_ids"/>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="medical_prescription_order_line_form_view" model="ir.ui.view">
+            <field name="name">Prescription Order Line</field>
+            <field name="model">medical.prescription.order.line</field>
+            <field name='inherit_id' ref='medical_prescription.medical_prescription_order_line_form_view'/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='prescription_order_id']" position="after">
+                    <field name="sale_order_ids"/>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="medical_prescription_order_line_search_view" model="ir.ui.view">
+            <field name="name">Prescription Order Line Search</field>
+            <field name="model">medical.prescription.order.line</field>
+            <field name='inherit_id' ref='medical_prescription.medical_prescription_order_line_search_view'/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='prescription_order_id']" position="after">
+                    <field name="sale_order_ids"/>
+                </xpath>
+                <xpath expr="//group" position="inside">
+                    <filter string="Sale Order"
+                        domain="[]" context="{'group_by':'sale_order_ids'}" />
+                </xpath>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

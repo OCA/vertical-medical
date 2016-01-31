@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<menuitem id="oemedical_root" name="OeMedical" sequence="10" />
+
+
+<!--Menu Patient-->
+
+		<menuitem id="oemedical_patient_root" name="Patient" parent="oemedical_root"
+			sequence="10" />
+		<menuitem id="oemedical_patient" name=" Patient"
+			parent="oemedical_patient_root" sequence="10"
+			action="act_open_oemedical_patient_view" />
+
+		<menuitem id="oemedical_family" name=" Family" parent="oemedical_patient_root"
+			sequence="20" action="act_open_oemedical_family_view" />
+
+		<menuitem id="oemedical_family_member" name=" Family Member"
+			parent="oemedical_patient_root" sequence="30"
+			action="act_open_oemedical_family_member_view" />
+
+
+<!--Appointment-->
+
+		<menuitem id="oemedical_appoitment_root" name="Appoitment"
+			parent="oemedical_root" sequence="20" />
+
+		<menuitem id="oemedical_appointment" name=" Appointment"
+			parent="oemedical_appoitment_root" sequence="10"
+			action="act_open_oemedical_appointment_view" />
+
+<!--Prescriptions-->
+
+		<menuitem id="oemedical_prescription_root" name="Prescription"
+			parent="oemedical_root" sequence="30" />
+
+		<menuitem id="oemedical_prescription_order" name="Prescription Order"
+			parent="oemedical_prescription_root" sequence="10"
+			action="act_open_oemedical_prescription_order_view" />
+
+<!--       Laboratory    -->
+		<menuitem name="Laboratory" id="oemedical_laboratory_menu" 
+            parent="oemedical_root" sequence="4"/>
+
+
+<!--Configurations-->
+
+		<menuitem id="oemedical_root_sub" name="Configuration"
+			parent="oemedical_root" sequence="100" />
+
+<!--       Laboratory       -->
+		<menuitem name="Laboratory" id="oemedical_conf_laboratory" 
+            parent="oemedical_root_sub" sequence="3"/>
+
+
+<!-- Diseases -->
+
+		<menuitem id="oemedical_root_disease" name="Disease"
+			parent="oemedical_root_sub" sequence="10" />
+
+<!--  Menu of Pathology-->
+
+		<menuitem id="oemedical_pathology_category" name=" Pathology Category"	
+            parent="oemedical_root_disease" sequence="10"	
+            action="act_open_oemedical_pathology_category_view" />
+
+		<menuitem id="oemedical_pathology" name=" Pathology" 
+            parent="oemedical_root_disease"   sequence="30" 
+            action="act_open_oemedical_pathology_view" />
+
+		<menuitem id="oemedical_pathology_group" name=" Pathology Group" 
+            parent="oemedical_root_disease" sequence="20"
+            action="act_open_oemedical_pathology_group_view" />
+
+		<menuitem id="oemedical_root_disease_cat" name="Categories"
+			parent="oemedical_root_disease" sequence="100" />
+
+		<menuitem id="oemedical_disease_group_members" name=" Disease Group"
+			parent="oemedical_root_disease_cat" sequence="10"
+			action="act_open_oemedical_disease_group_members_view" />
+
+<!-- Misc -->
+
+		<menuitem id="oemedical_root_misc" name="Misc"
+			parent="oemedical_root_sub" sequence="200" />
+
+<!-- Occupation  ( Config/misc/Occupation) )--> 
+
+		<menuitem id="oemedical_occupation" name=" Occupation"
+			parent="oemedical_root_misc" sequence="20"
+			action="act_open_oemedical_occupation_view" />
+
+<!-- Medical Specialty  ( Config/misc/specialty) )--> 
+
+		<menuitem id="oemedical_specialty" name=" Medical Specialty"
+            parent="oemedical_root_misc" sequence="10" 
+            action="act_open_oemedical_specialty_view" />
+
+<!-- Ethnicity  ( Config/misc/Ethnicity) )--> 
+
+		<menuitem id="oemedical_ethnicity" name="Ethnicity" parent="oemedical_root_misc"
+			sequence="10" action="act_open_oemedical_ethnicity_view" />
+
+
+
+
+
+
+<!--Medicaments-->
+
+		<menuitem id="oemedical_medicament_root" name="Medicaments"
+			parent="oemedical_root_sub" sequence="50" />
+
+
+		<menuitem id="oemedical_medicament" name="Medicaments"
+			parent="oemedical_medicament_root" sequence="10"
+			action="act_open_oemedical_medicament_view" />
+
+		<menuitem id="oemedical_medication_template" name=" Medication Template"
+			parent="oemedical_medicament_root" sequence="20"
+			action="act_open_oemedical_medication_template_view" />
+
+		<menuitem id="oemedical_medication_frequencies" name="Medication Frequencies"
+			parent="oemedical_medicament_root" sequence="30"
+			action="act_open_oemedical_medication_dosage_view" />
+
+		<menuitem id="oemedical_drug_route" name=" Drug Admin Route"
+			parent="oemedical_medicament_root" sequence="80"
+			action="act_open_oemedical_drug_route_view" />
+
+		<menuitem id="oemedical_drug_form" name=" Drug Form"
+            parent="oemedical_medicament_root" sequence="90"
+            action="act_open_oemedical_drug_form_view" />
+
+
+		<menuitem id="oemedical_medicament_category" name=" Medicament Category"
+			parent="oemedical_medicament_root" sequence="100"
+			action="act_open_oemedical_medicament_category_view" />
+
+<!--Hospital Centers-->
+
+		<menuitem id="oemedical_health_center_root" name="Health Center"
+			parent="oemedical_root_sub" sequence="10" />
+
+		<menuitem id="oemedical_hospital_building" name=" Hospital Building"
+			parent="oemedical_health_center_root" sequence="10"
+			action="act_open_oemedical_hospital_building_view" />
+
+		<menuitem id="oemedical_hospital_unit" name=" Hospital Unit"
+			parent="oemedical_health_center_root" sequence="20"
+			action="act_open_oemedical_hospital_unit_view" />
+
+		<menuitem id="oemedical_hospital_ward" name=" Hospital Ward"
+			parent="oemedical_health_center_root" sequence="30"
+			action="act_open_oemedical_hospital_ward_view" />
+
+		<menuitem id="oemedical_hospital_or" name=" Hospital Or"
+			parent="oemedical_health_center_root" sequence="40"
+			action="act_open_oemedical_hospital_or_view" />
+		
+		<menuitem id="oemedical_hospital_bed" name=" Hospital Bed"
+			parent="oemedical_health_center_root" sequence="50"
+			action="act_open_oemedical_hospital_bed_view" />
+
+		<menuitem id="oemedical_operational_area" name=" Operational Area"
+			parent="oemedical_health_center_root" sequence="60"
+			action="act_open_oemedical_operational_area_view" />
+
+		<menuitem id="oemedical_operational_sector" name=" Operational Sector"
+			parent="oemedical_health_center_root" sequence="70"
+			action="act_open_oemedical_operational_sector_view" />
+
+
+<!--    Physician Conf    -->
+
+        <menuitem name="Health Professionals" id="oemedical_conf_physicians"
+            parent="oemedical_root_sub" sequence="20" />
+
+		<menuitem id="oemedical_physician" name=" Physician" parent="oemedical_conf_physicians"
+			sequence="10" action="act_open_oemedical_physician_view" />
+
+
+<!--    Insurance     -->
+
+        <menuitem name="Insurances" id="oemedical_conf_insurances"
+            parent="oemedical_root_misc" sequence="20" />
+
+		<menuitem id="oemedical_insurance" name=" Insurance" 
+            parent="oemedical_conf_insurances"	sequence="10" 
+            action="act_open_oemedical_insurance_view" />
+
+		<menuitem id="oemedical_insurance_plan" name=" Insurance Plan"
+			parent="oemedical_conf_insurances" sequence="20"
+			action="act_open_oemedical_insurance_plan_view" />
+
+
+
+
+		<menuitem id="oemedical_diagnostic_hypothesis" name=" Diagnostic Hypothesis"
+			parent="oemedical_root_sub" sequence="10"
+			action="act_open_oemedical_diagnostic_hypothesis_view" />
+		<menuitem id="oemedical_predure" name=" Procedure" parent="oemedical_root_sub"
+			sequence="10" action="act_open_oemedical_procedure_view" />
+
+		<menuitem id="oemedical_vaccination" name=" Vaccination"
+			parent="oemedical_root_sub" sequence="10"
+			action="act_open_oemedical_vaccination_view" />
+
+
+	</data>
+</openerp>

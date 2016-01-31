@@ -20,11 +20,9 @@
 #
 ##############################################################################
 
-import product_product
-import medical_physician
-import res_partner
-import medical_patient
-import medical_appointment
-import medical_specialty
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+from . import product_product
+from . import medical_physician
+from . import res_partner
+from . import medical_patient
+from . import medical_appointment
+from . import medical_specialty

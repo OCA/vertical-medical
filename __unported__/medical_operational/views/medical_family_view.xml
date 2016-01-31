@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_medical_family_tree" model="ir.ui.view">
+            <field name="name">medical.family.tree</field>
+            <field name="model">medical.family</field>
+            <field name="inherit_id" ref="medical_emr.medical_family_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="sector_id" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_medical_family_form" model="ir.ui.view">
+            <field name="name">medical.family.form</field>
+            <field name="model">medical.family</field>
+            <field name="inherit_id" ref="medical_emr.medical_family_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="before">
+                    <group>
+                        <field name="sector_id" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_medical_family_search" model="ir.ui.view">
+            <field name="name">medical.family.search</field>
+            <field name="model">medical.family</field>
+            <field name="inherit_id" ref="medical_emr.medical_family_view_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="sector_id" />
+                </xpath>
+                <xpath expr="/search" position="inside">
+                    <group expand="0" string="Group By...">
+                        <filter name="sector" string="Operational Sector" domain="[]"
+                            context="{'group_by':'sector_id'}" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="medical_insurance_template_view_tree" model="ir.ui.view">
+			<field name="name">medical.insurance.template.tree</field>
+			<field name="model">medical.insurance.template</field>
+			<field name="arch" type="xml">
+				<tree string="Insurance Plan Templates">
+					<field name="name" />
+					<field name="plan_number" />
+					<field name="insurance_company_id" />
+					<field name="insurance_affiliation" />
+					<field name="product_id" />
+					<field name="is_default" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="medical_insurance_template_view_form" model="ir.ui.view">
+			<field name="name">medical.insurance.template.form</field>
+			<field name="model">medical.insurance.template</field>
+			<field name="arch" type="xml">
+				<form string="Insurance Plan Template">
+					<header />
+					<sheet>
+						<group name="data">
+							<group name="plan_info" string="Plan Info">
+								<field name="name" />
+								<field name="plan_number" />
+								<field name="product_id" />
+							</group>
+							<group name="provider_info" string="Provider Info">
+								<field name="insurance_company_id" />
+								<field name="insurance_affiliation" />
+								<field name="is_default" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Additional">
+								<field name="notes" />
+							</page>
+						</notebook>
+					</sheet>
+					<footer />
+				</form>
+			</field>
+		</record>
+
+		<record id="medical_insurance_template_view_search" model="ir.ui.view">
+			<field name="name">medical.insurance.template.search</field>
+			<field name="model">medical.insurance.template</field>
+			<field name="arch" type="xml">
+				<search string="Insurance Plan Templates">
+					<field name="name" />
+					<field name="plan_number" />
+					<field name="insurance_company_id" />
+					<field name="is_default" />
+					<field name="notes" />
+					<newline />
+					<group expand="0" string="Group By...">
+						<filter string="Default template"
+								domain="[]"
+							    context="{'group_by':'is_default'}" />
+						<filter string="Insurance Company"
+								domain="[]"
+							    context="{'group_by':'insurance_company_id'}" />
+						<filter string="Insurance Product"
+								domain="[]"
+								context="{'group_by':'product_id'}" />
+						<filter string="Plan" domain="[]"
+								context="{'group_by':'plan_number'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="medical_insurance_template_action">
+			<field name="name">Insurance Plan Templates</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">medical.insurance.template</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="medical_insurance_template_view_search" />
+			<field name="domain">[]</field>
+			<field name="context">{}</field>
+		</record>
+
+	</data>
+</openerp>
