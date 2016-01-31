@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <menuitem id="medical_sub_disease"
+            parent="medical_pathology.medical_root_pathology" sequence="1" 
+            action="medical_patient_disease_action" />
+
+    </data>
+</openerp>
