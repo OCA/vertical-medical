@@ -1,0 +1,59 @@
+-
+  Create New Partner for patient
+-
+  !record {model: res.partner, id: partner_admin_laslabs }:
+    name: Admin LasLabs
+    is_company: False
+    street: 123 Test St
+    street2: Suite 1337
+    city: Las Vegas
+    country_id: base.us
+    phone: +1-888-888-8888
+    email: admin_laslabs@example.com
+    
+-
+  Create New User for History record
+-
+  !record {model: res.users, id: user_admin_laslabs, context: {no_reset_password: True} }:
+    name: Admin LasLabs
+    partner_id: partner_admin_laslabs
+    login: admin_laslabs@example.com
+    password: password
+    
+-
+  Create new MedicalHistoryType
+-
+  !record {model: medical.history.type, id: med_hist_type_test}:
+    name: YML Test
+    code: YML_TEST
+    prefix: '#'
+    suffix: '!'
+    old_cols_to_save: none
+    new_cols_to_save: none
+    
+-
+  Create new MedicalHistoryExample
+-
+  !record {model: medical.history.example, id: med_hist_ex}:
+    id: 9000
+    example_col: MedicalHistoryExampleExample
+    
+-
+  Create New Incomplete MedicalHistoryEntry
+-
+  !record {model: medical.history.entry, id: med_hist_ent_inc}:
+    user_id: user_admin_laslabs
+    entry_type_id: med_hist_type_test
+    associated_model_name: medical.history.example
+    associated_record_id_int: 9000
+    state: incomplete
+    
+-
+  Create New Complete MedicalHistoryEntry
+-
+  !record {model: medical.history.entry, id: med_hist_ent_cmp}:
+    user_id: user_admin_laslabs
+    entry_type_id: med_hist_type_test
+    associated_model_name: medical.history.example
+    associated_record_id_int: 9000
+    state: complete

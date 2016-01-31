@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_history_entry_user,access.medical.history.entry.user,model_medical_history_entry,medical.group_medical_user,1,0,0,0
+access_medical_history_entry_manager,access.medical.history.entry.manager,model_medical_history_entry,medical.group_medical_center_manager,1,1,1,1
+access_medical_history_type_user,access.medical.history.type.user,model_medical_history_type,medical.group_medical_user,1,0,0,0
+access_medical_history_type_configurator,access.medical.history.type.configurator,model_medical_history_type,medical.group_medical_configurator,1,1,1,1
