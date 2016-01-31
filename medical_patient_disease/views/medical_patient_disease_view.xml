@@ -81,7 +81,7 @@
                     <field name="diagnosed_date" />
                     <field name="treatment_end_date" />
                     <field name="treatment_start_date" />
-                    <field name="pregnancy_warning" />
+                    <field name="is_pregnant" />
                     <field name="is_allergy" />
                     <field name="is_on_treatment" />
                     <field name="is_infectious" />
@@ -133,7 +133,6 @@
                                     <field name="age"/>
                                     <field name="is_infectious"/>
                                     <field name="is_allergy"/>
-                                    <field name="pregnancy_warning"/>
                                     <field name="is_pregnant"/>
                                 </group>
                                 <group name="dates">
@@ -174,7 +173,7 @@
             </field>
         </record>
 
-        <record model="ir.actions.act_window" id="medical_patient_disease_action">
+        <record id="medical_patient_disease_action" model="ir.actions.act_window">
             <field name="name">Patient Diseases</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">medical.patient.disease</field>
