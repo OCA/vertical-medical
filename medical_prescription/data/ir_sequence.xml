@@ -2,19 +2,12 @@
 <openerp>
     <data noupdate="1">
 
-        <!-- Sequences for medical.prescription.order -->
-        <record id="seq_type_medical_prescription_order" model="ir.sequence.type">
-            <field name="name">Medical Prescription Order</field>
-            <field name="code">medical.prescription.order</field>
-        </record>
-
         <record id="seq_medical_prescription_order" model="ir.sequence">
             <field name="name">Medical Prescription Order</field>
             <field name="code">medical.prescription.order</field>
             <field name="prefix">PRO</field>
-            <field name="padding">3</field>
+            <field name="padding">4</field>
         </record>
-		
 		
     </data>
 </openerp>
