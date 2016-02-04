@@ -1,24 +1,7 @@
 # -*- coding: utf-8 -*-
-# #############################################################################
-#
-# Tech-Receptives Solutions Pvt. Ltd.
-# Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
-# Special Credit and Thanks to Thymbra Latinoamericana S.A.
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of the
-# License, or (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-# #############################################################################
+# © 2015 LasLabs Inc.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+
 from openerp import models, fields, api, _
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
@@ -37,10 +20,8 @@ class MedicalPatient(models.Model):
     )
     identification_code = fields.Char(
         string='Internal Identification',
-        help=_(
-            'Patient Identifier provided by the Health Center.'
-            '(different from the Social Security Number)'
-        ),
+        help='Patient Identifier provided by the Health Center.'
+             '(different from the Social Security Number)',
     )
     general_info = fields.Text(
         string='General Information',
@@ -81,7 +62,7 @@ class MedicalPatient(models.Model):
     ], )
 
     @api.multi
-    def _compute_age(self, ):
+    def _compute_age(self):
         """
         Age computed depending of the birth date of the
         membership request
@@ -107,13 +88,14 @@ class MedicalPatient(models.Model):
             rec_id.age = years_months_days
 
     @api.multi
-    def action_invalidate(self, ):
-        self.active = False
-        self.partner_id.active = False
+    def action_invalidate(self):
+        for rec_id in self:
+            rec_id.active = False
+            rec_id.partner_id.active = False
 
     @api.model
     @api.returns('self', lambda value: value.id)
-    def create(self, vals, ):
+    def create(self, vals):
         vals['is_patient'] = True
         if not vals.get('identification_code'):
             sequence = self.env['ir.sequence'].next_by_code('medical.patient')
