@@ -24,18 +24,17 @@
 ##############################################################################
 {
     'name': 'Medical Prescription',
-    'version': '8.0.1.1.0',
-    'author': 'ACSONE SA/NV, Odoo Community Association (OCA)',
-    'maintainer': 'ACSONE SA/NV, Odoo Community Association (OCA)',
-    'website': 'http://www.acsone.eu',
-    'license': 'AGPL-3',
+    'version': '9.0.1.1.0',
+    "author": "ACSONE SA/NV, LasLabs, Odoo Community Association (OCA)",
+    "maintainer": "ACSONE SA/NV, LasLabs, Odoo Community Association (OCA)",
+    "website": "http://www.acsone.eu",
     'category': 'Medical',
     'depends': [
         'medical',
         'medical_medicament',
         'medical_medication',
     ],
-    'summary': 'This module introduce the prescription/prescription line '
+    'summary': 'This module introduce the prescription/prescription line'
     'into the medical addons.',
     'data': [
         'security/ir.model.access.csv',
@@ -43,6 +42,6 @@
         'views/medical_prescription_order_view.xml',
         'views/medical_prescription_order_line_view.xml',
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
 }
