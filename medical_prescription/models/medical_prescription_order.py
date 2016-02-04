@@ -27,11 +27,7 @@ class MedicalPrescriptionOrder(models.Model):
     _name = 'medical.prescription.order'
     _description = 'Medical Prescription Order'
 
-    @api.model
-    def _get_default_name(self):
-        return self.env['ir.sequence'].get('medical.prescription.order')
-
-    name = fields.Char(required=True, default=_get_default_name)
+    name = fields.Char(required=True, default=lambda s: s._default_name())
     patient_id = fields.Many2one(
         comodel_name='medical.patient', string='Patient', required=True)
     physician_id = fields.Many2one(
@@ -45,3 +41,9 @@ class MedicalPrescriptionOrder(models.Model):
     is_pregnancy_warning = fields.Boolean()
     is_verified = fields.Boolean()
     date_prescription = fields.Datetime(default=fields.Datetime.now())
+
+    @api.model
+    def _default_name(self):
+        return self.env['ir.sequence'].next_by_code(
+            'medical.prescription.order'
+        )
