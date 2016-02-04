@@ -1,23 +1,6 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    Author: Dave Lasley <dave@laslabs.com>
-#    Copyright: 2015 LasLabs, Inc.
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# © 2016 LasLabs Inc.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import fields, models, api
 
@@ -55,15 +38,17 @@ class MedicalPrescriptionOrderLine(models.Model):
     )
 
     @api.multi
-    def _compute_orders(self, ):
+    def _compute_orders(self):
         for rec_id in self:
-            order_ids = self.env['sale.order']
+            order_ids = []
             for line_id in rec_id.sale_order_line_ids:
-                order_ids += line_id.order_id
-            rec_id.order_ids = set(order_ids)
+                order_ids.append(line_id.order_id.id)
+            rec_id.sale_order_ids = self.env['sale.order'].browse(
+                set(order_ids)
+            )
 
     @api.model
-    def _default_name(self, ):
+    def _default_name(self):
         return self.env['ir.sequence'].next_by_code(
             'medical.prescription.order.line'
         )
