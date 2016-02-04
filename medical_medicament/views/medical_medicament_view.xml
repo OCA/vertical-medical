@@ -25,7 +25,7 @@
                     <field name="presentation" />
                     <field name="composition" />
                 </xpath>
-                <xpath expr="//group" position="inside">
+                <xpath expr="//filter[@name='consumable']" position="after">
                     <filter string="Category" domain="[]" context="{'group_by':'categ_id'}" />
                     <filter string="Name" domain="[]" context="{'group_by':'name'}" />
                     <filter string="Indication" domain="[]"

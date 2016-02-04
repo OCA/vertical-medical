@@ -20,7 +20,7 @@
 #
 # #############################################################################
 
-from openerp import fields, models, api
+from openerp import fields, models
 from openerp.addons.medical.medical_constants import days, hours, minutes
 
 import logging
@@ -31,7 +31,6 @@ _logger = logging.getLogger(__name__)
 class MedicalPhysicianServices(models.Model):
     '''
     Services provided by the Physician on a specific medical center.
-
     A physician could have "surgeries" on one center but only
     "general consultation" in another center,
     or the same service with different prices for each medical center.
@@ -55,9 +54,7 @@ class MedicalPhysicianServices(models.Model):
 class MedicalPhysicianScheduleTemplate(models.Model):
     '''
     Available schedule for the Physiscian.
-
     ie: A physiscian will be able to say, in this schedule on this days.
-
     The objective is to show the availbles spaces for every physiscian
     '''
     _name = 'medical.physician.schedule.template'
@@ -98,10 +95,3 @@ class MedicalPhysician(models.Model):
     )
 
     _defaults = {'is_doctor': True, 'supplier': True, 'active': True, }
-
-    @api.model
-    def create(self, vals,):
-        groups_proxy = self.env['res.groups']
-        group_ids = groups_proxy.search([('name', '=', 'Medical Doctor')])
-        vals['groups_id'] = [(6, 0, group_ids)]
-        return super(MedicalPhysician, self).create(vals)

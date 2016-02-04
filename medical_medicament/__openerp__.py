@@ -24,7 +24,7 @@
 ##############################################################################
 {
     'name': 'Medical Medicament',
-    'version': '8.0.1.0.0',
+    'version': '9.0.1.0.0',
     'author': 'ACSONE SA/NV, Odoo Community Association (OCA)',
     'maintainer': 'ACSONE SA/NV, Odoo Community Association (OCA)',
     'website': 'http://www.acsone.eu',
@@ -44,6 +44,6 @@
         'views/medical_drug_form_view.xml',
         'views/medical_drug_route_view.xml',
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
 }

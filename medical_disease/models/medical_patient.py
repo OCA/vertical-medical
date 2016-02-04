@@ -35,8 +35,7 @@ class MedicalPatient(models.Model):
     def compute_count_disease_ids(self):
         self.count_disease_ids = len(self.disease_ids)
 
-    disease_ids = fields.One2many(
-        comodel_name='medical.patient.disease', inverse_name='patient_id',
-        string='Diseases')
+    disease_ids = fields.One2many('medical.patient.disease', 'patient_id',
+                                   string='Diseases')
     count_disease_ids = fields.Integer(
         compute='compute_count_disease_ids', string='NB. Disease')

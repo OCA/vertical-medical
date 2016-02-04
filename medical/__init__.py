@@ -20,6 +20,6 @@
 #
 ##############################################################################
 
-from . import medical_constants
-from . import models
-from . import wizard
+import medical_constants
+import models
+import wizard

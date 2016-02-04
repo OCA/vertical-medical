@@ -44,12 +44,9 @@ class MedicalMedicament(models.Model):
             res.append((rec.id, name))
         return res
 
-    product_id = fields.Many2one(
-        comodel_name='product.product', required=True, ondelete="cascade")
-    drug_form_id = fields.Many2one(
-        comodel_name='medical.drug.form', string='Drug Form', required=True)
-    drug_route_id = fields.Many2one(
-        comodel_name='medical.drug.route', string='Drug Route')
+    product_id = fields.Many2one('product.product', required=True, ondelete="cascade")
+    drug_form_id = fields.Many2one('medical.drug.form', string='Drug Form', required=True)
+    drug_route_id = fields.Many2one('medical.drug.route', string='Drug Route')
     active_component = fields.Char()
     indications = fields.Text()
     therapeutic_action = fields.Char()
