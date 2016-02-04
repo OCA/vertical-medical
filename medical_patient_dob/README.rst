@@ -2,9 +2,9 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-=========================
+===================
 Medical Patient DOB
-=========================
+===================
 
 This module adds date of birth to patient name in search field autocomplete
 
