@@ -45,6 +45,6 @@
         'views/medical_patient_medication_view.xml',
         'views/medical_patient_view.xml',
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
 }

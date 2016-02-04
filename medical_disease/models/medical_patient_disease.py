@@ -56,14 +56,12 @@ class MedicalPatientDisease(models.Model):
     treatment_description = fields.Char()
     expire_date = fields.Datetime(compute='_compute_expire_date', store=True)
     short_comment = fields.Char()
-    pathology_id = fields.Many2one(
-        comodel_name='medical.pathology', string='Pathology', index=True,
-        required=True)
-    physician_id = fields.Many2one(
-        comodel_name='medical.physician', string='Physician', index=True)
-    patient_id = fields.Many2one(
-        comodel_name='medical.patient', string='Patient', required=True,
-        index=True)
+    pathology_id = fields.Many2one('medical.pathology', string='Pathology',
+                                    index=True,required=True)
+    physician_id = fields.Many2one('medical.physician', string='Physician',
+                                    index=True)
+    patient_id = fields.Many2one('medical.patient', string='Patient', 
+                                  required=True,index=True)
     disease_severity = fields.Selection([
         ('1_mi', 'Mild'),
         ('2_mo', 'Moderate'),
@@ -91,7 +89,7 @@ class MedicalPatientDisease(models.Model):
     is_infectious = fields.Boolean(string='Infectious Disease')
     is_allergy = fields.Boolean(string='Allergic Disease')
     pregnancy_warning = fields.Boolean()
-    is_pregnant = fields.Boolean(string='Pregnancy warning')
+    is_pregnant = fields.Boolean(string='Is Pregnant ?')
     is_on_treatment = fields.Boolean(string='Currently on Treatment')
     treatment_start_date = fields.Date()
     treatment_end_date = fields.Date()

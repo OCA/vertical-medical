@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
+#
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>). All Rights Reserved
 #    Odoo Medical, HMS Opensource Solution
+#
 ##############################################################################
+#
 #    Collaborators of this module:
 #    8.0 Port by: Dave Lasley <dave@laslabs.com>
 #    Special Credit and Thanks to Thymbra Latinoamericana S.A.
@@ -14,10 +17,12 @@
 #    Planifyied by: Nhomar Hernandéz <nhomar@vauxoo.com>
 #
 ##############################################################################
+#
 #    This project is mantained by Odoo Community Association:
 #    http://github.com/oca/vertical-medical
 #
 ##############################################################################
+#
 #    It is a collaborative effort between several companies that want to join
 #    efforts in have a proposal solid and strong in the Health Care environment
 #
@@ -37,7 +42,7 @@
 ##############################################################################
 {
     'name': 'Odoo Medical',
-    'version': '8.0.1.1.0',
+    'version': '9.0.1.0.0',
     'category': 'Medical',
     'depends': [
         'base',
@@ -47,14 +52,11 @@
     'website': 'http://github.com/oca/vertical-medical',
     'license': 'AGPL-3',
     'data': [
-        'views/medical_sequence.xml',
-        'views/product_product_view.xml',
+        'data/ir_sequence_data.xml',
         'views/res_partner_view.xml',
         'wizard/medical_physician_unavailable_view.xml',
         'views/medical_physician_view.xml',
         'views/medical_patient_view.xml',
-        'views/medical_appointment_view.xml',
-        'data/medical_appointment_data.xml',
         'views/medical_specialty_view.xml',
         'security/medical_security.xml',
         'security/ir.model.access.csv',
@@ -66,7 +68,7 @@
         'tests/partners.yml',
         'tests/physician_speciality.yml'
     ],
-    'installable': False,
+    'installable': True,
     'application': True,
     'auto_install': False,
 }
