@@ -61,12 +61,12 @@
     
     <data noupdate="0">
         <!--Email template -->
-        <record id="email_template_appointment_confirmation" model="email.template">
+        <record id="email_template_appointment_confirmation" model="mail.template">
             <field name="name">Appointment Confirmation - Email</field>
             <field name="email_from"><![CDATA[${object.institution_id.name} <${(object.institution_id.email or user.email)|safe}>]]></field>
             <field name="subject"><![CDATA[${object.institution_id.name} <${(object.institution_id.email or user.email)|safe}>]]> - Appointment Confirmation</field>
             <field name="email_to">${object.patient_id.email}</field>
-            <field name="model_id" ref="medical.model_medical_appointment"/>
+            <field name="model_id" ref="model_medical_appointment"/>
             <field name="auto_delete" eval="True"/>
             <field name="lang">${object.patient_id.partner_id.lang}</field>
             <field name="body_html"><![CDATA[
@@ -88,12 +88,12 @@
                 </div>
             ]]></field>
         </record>
-        <record id="sms_template_appointment_confirmation" model="email.template">
+        <record id="sms_template_appointment_confirmation" model="mail.template">
             <field name="name">Appointment Confirmation - SMS</field>
             <field name="email_from"><![CDATA[${object.institution_id.name}]]></field>
             <field name="subject"><![CDATA[${object.institution_id.name}]]>  -  Confirmación de Cita</field>
             <field name="email_to">${object.patient_id.mobile}</field>
-            <field name="model_id" ref="medical.model_medical_appointment"/>
+            <field name="model_id" ref="model_medical_appointment"/>
             <field name="auto_delete" eval="True"/>
             <field name="lang">${object.patient_id.partner_id.lang}</field>
             <field name="body_html"><![CDATA[

@@ -3,8 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import fields, models, exceptions, api, _
-from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
-from datetime import timedelta, datetime
+from datetime import timedelta
 
 
 class MedicalAppointment(models.Model):
@@ -22,7 +21,7 @@ class MedicalAppointment(models.Model):
         comodel_name='res.users',
         readonly=True,
         states=STATES,
-        default=lambda self: self.env.user,
+        default=lambda s: s.env.user,
     )
     patient_id = fields.Many2one(
         string='Patient',
@@ -41,7 +40,15 @@ class MedicalAppointment(models.Model):
     )
     appointment_date = fields.Datetime(
         string='Date and Time',
+        select=True,
         help='Date and Time of Scheduled Appointment'
+    )
+    appointment_end_date = fields.Datetime(
+        string='End Date and Time',
+        readonly=True,
+        select=True,
+        store=True,
+        compute='_compute_appointment_end_date',
     )
     date_end = fields.Datetime(
         string='Stop Displaying On',
@@ -77,15 +84,16 @@ class MedicalAppointment(models.Model):
         required=True,
         default='outpatient',
     )
-    insitution_id = fields.Many2one(
+    institution_id = fields.Many2one(
         string='Medical Center',
         help='Medical center that appointment is located at',
+        comodel_name='res.partner',
         domain="[('is_institution', '=', True)]",
     )
     consultation_ids = fields.Many2one(
         string='Consultation Services',
         help='Services that appointment is being scheduled for',
-        comodel_name='medical.physician.services',
+        comodel_name='medical.physician.service',
         domain="[('physician_id', '=', physician_id)]",
     )
     urgency = fields.Selection([
@@ -114,7 +122,17 @@ class MedicalAppointment(models.Model):
         'stage_id': lambda s: s._group_stage_ids(),
     }
 
-    def _default_stage_id(self, ):
+    @api.multi
+    @api.depends('appointment_date', 'duration')
+    def _compute_appointment_end_date(self):
+        for rec_id in self:
+            start_date = fields.Datetime.from_string(rec_id.appointment_date)
+            rec_id.appointment_end_date = fields.Datetime.to_string(
+                start_date + timedelta(minutes=rec_id.duration)
+            )
+
+    @api.model
+    def _default_stage_id(self):
         ''' Gives default stage_id '''
         stage_id = self.env['medical.appointment.stage'].search([
             ('is_default', '=', True)
@@ -125,8 +143,8 @@ class MedicalAppointment(models.Model):
         return stage_id
 
     @api.multi
-    def _group_stage_ids(self, domain, read_group_order=None,
-                         access_rights_uid=None, ):
+    def _group_stage_ids(self, read_group_order=None,
+                         access_rights_uid=None):
 
         access_rights_uid = access_rights_uid or self.env.user
         stage_obj = self.env['medical.appointment.stage']
@@ -142,7 +160,7 @@ class MedicalAppointment(models.Model):
         stage_ids = stage_obj.sudo(access_rights_uid).search(
             search_domain, order=order
         )
-        result = stage_obj.sudo(access_rights_uid).name_get(stage_ids)
+        result = stage_ids.name_get()
 
         # restore order of the search
         stage_id_ints = [s.id for s in stage_ids]
@@ -156,17 +174,17 @@ class MedicalAppointment(models.Model):
         return result, fold
 
     @api.multi
-    @api.constrains('physician_id', 'appointment_date', 'duration')
-    def _check_not_double_booking(self, ):
+    @api.constrains('physician_id', 'appointment_date', 'duration',
+                    'force_schedule')
+    def _check_not_double_booking(self):
         for rec_id in self:
-            date_start = fields.Datetime.from_string(rec_id.appointment_date)
-            duration_delta = timedelta(minutes=rec_id.duration)
-            date_end = date_start + duration_delta
+            if rec_id.force_schedule:
+                continue
             domain = [
-                ('appointment_date', '>=', date_start),
-                ('appointment_date', '<=', date_end),
                 ('physician_id', '=', rec_id.physician_id.id),
                 ('id', '!=', rec_id.id),
+                ('appointment_date', '<=', rec_id.appointment_end_date),
+                ('appointment_end_date', '>=', rec_id.appointment_date),
             ]
             if len(self.sudo().search(domain)):
                 raise exceptions.ValidationError(_(
@@ -183,11 +201,13 @@ class MedicalAppointment(models.Model):
         return result
 
     @api.multi
-    def _change_stage(self, vals, ):
+    def _change_stage(self, vals):
         ''' @TODO: replace in SMD-118 '''
 
-        stage_proxy = self.env['medical.appointment.stage']
-        stage_name = stage_proxy.name_get(vals['stage_id'])[0][1]
+        stage_id = self.env['medical.appointment.stage'].browse(
+            vals['stage_id']
+        )
+        stage_name = stage_id.name_get()[0][1]
 
         for rec_id in self:
 
@@ -196,15 +216,15 @@ class MedicalAppointment(models.Model):
                 'appointment_date', rec_id.appointment_date
             )
             localized_datetime = fields.Datetime.context_timestamp(
-                datetime.strptime(date_start, DEFAULT_SERVER_DATETIME_FORMAT),
+                rec_id, fields.Datetime.from_string(date_start),
             )
             context = self._context.copy()
             context.update({
-                'appointment_date': localized_datetime.strftime(
-                    self.env.user.lang.date_format
+                'appointment_date': fields.Datetime.to_string(
+                    localized_datetime
                 ),
-                'appointment_time': localized_datetime.strftime(
-                    self.env.user.lang.time_format
+                'appointment_time': fields.Datetime.to_string(
+                    localized_datetime
                 )
             })
             email_template_name = None
@@ -216,62 +236,59 @@ class MedicalAppointment(models.Model):
             elif stage_name == 'Confirm':
                 email_template_name = 'email_template_appointment_confirmation'
 
-            elif stage_name == 'Canceled':
+            elif stage_name == 'Cancelled':
                 # Should create template and change name here
                 email_template_name = 'email_template_appointment_confirmation'
 
             if email_template_name:
-                email_template_proxy = self.env['email.template']
+                email_template_proxy = self.env['mail.template']
                 model_obj = self.env['ir.model.data']
-                _, template_id = model_obj.get_object_reference(
-                    'medical', email_template_name
+                _, template_id_int = model_obj.get_object_reference(
+                    'medical_appointment', email_template_name
                 )
-                map(
-                    lambda t: email_template_proxy.send_mail(
-                        template_id, t, True, context=context
-                    ), self
-                )
+                template_id = email_template_proxy.browse(template_id_int)
+                template_id.send_mail(rec_id.id, True)
 
         history_entry_ids.state_complete()
 
     @api.model
     def _get_appointments(self, physician_ids, institution_ids,
-                          date_start, date_end, ):
+                          date_start, date_end):
         """
         Get appointments between given dates, excluding pending review
         and cancelled ones
         """
 
         model_obj = self.env['ir.model.data']
-        _, pending_review_id = model_obj.get_object_reference(
-            'medical', 'stage_appointment_in_review'
+        _, pending_review_id_int = model_obj.get_object_reference(
+            'medical_appointment', 'stage_appointment_in_review'
         )
-        _, cancelled_id = model_obj.get_object_reference(
-            'medical', 'stage_appointment_cancelled'
+        _, cancelled_id_int = model_obj.get_object_reference(
+            'medical_appointment', 'stage_appointment_cancelled'
         )
 
         domain = [
             ('physician_id', 'in', [p.id for p in physician_ids]),
-            ('date_end', '>', date_start),
-            ('appointment_date', '<', date_end),
-            ('stage_id', 'not in', [pending_review_id.id,
-                                    cancelled_id.id])
+            ('appointment_date', '>=', date_start),
+            ('appointment_date', '<=', date_end),
+            ('stage_id', 'not in', [pending_review_id_int, cancelled_id_int])
         ]
 
-        if institution_ids:
-            domain += [
+        if len(institution_ids):
+            domain.append(
                 ('institution_id', 'in', [i.id for i in institution_ids])
-            ]
+            )
 
         return self.search(domain)
 
+    @api.model
     def _set_clashes_state_to_review(self, physician_ids, institution_ids,
-                                     date_start, date_end, ):
+                                     date_start, date_end):
         model_obj = self.env['ir.model.data']
-        _, review_stage_id = model_obj.get_object_reference(
-            'medical', 'stage_appointment_in_review',
+        _, review_stage_id_int = model_obj.get_object_reference(
+            'medical_appointment', 'stage_appointment_in_review',
         )
-        if not review_stage_id:
+        if not review_stage_id_int:
             raise exceptions.ValidationError(
                 _('No default stage defined for review')
             )
@@ -279,5 +296,7 @@ class MedicalAppointment(models.Model):
         current_appointment_ids = self._get_appointments(
             physician_ids, institution_ids, date_start, date_end,
         )
-        if current_appointment_ids:
-            current_appointment_ids.stage_id = review_stage_id
+        if len(current_appointment_ids):
+            current_appointment_ids.write({
+                'stage_id': review_stage_id_int,
+            })

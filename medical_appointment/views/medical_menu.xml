@@ -11,7 +11,7 @@
 
         <menuitem id="medical_appointment_root"
                   name="Appointment"
-                  parent="medical_root"
+                  parent="medical.medical_root"
                   sequence="20" />
 
         <menuitem id="medical_appointment"

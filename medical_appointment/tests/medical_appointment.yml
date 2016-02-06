@@ -1,0 +1,101 @@
+-
+  Create New Specialty
+-
+  !record {model: medical.specialty, id: specialty_1}:
+    name: Test Specialty
+    code: Test Specialty Code
+
+-
+  Create New Company
+-
+  !record {model: res.company, id: company_1}:
+    name: Test Company
+    street: 123 Street
+    street2: Suite A
+    city: San Francisco
+    country_id: base.us
+    phone: +1-234-567-8900
+    email: test@company.com
+
+-
+  Create New Physician
+-
+  !record {model: medical.physician, id: physician_1}:
+    name: John Do
+    company_id: company_1
+    info: 'General Physician'
+    code: 'PH101'
+    specialty_id: 'specialty_1' 
+
+-
+  Create New Partner for patient
+-
+  !record {model: res.partner, id: partner_1}:
+    name: User Johanson
+    is_company: False
+    street: 123 Test St
+    street2: Suite 1337
+    city: Las Vegas
+    country_id: base.us
+    phone: +1-888-888-8888
+    email: arun@example.com
+
+-
+  Create New Institution
+-
+  !record {model: res.partner, id: partner_2}:
+    name: Test Institution
+    is_institution: True
+    street: 123 Test St
+    street2: Suite 111
+    city: Las Vegas
+    country_id: base.us
+    phone: +1-888-888-8888
+    email: test@example.com
+  
+-
+  Create New User for patient
+-
+  !record {model: res.users, id: user_1, context: {no_reset_password: True}}:
+    name: User Johanson
+    partner_id: partner_1
+    login: arun@example.com
+    password: password
+  
+-
+  Create New Physician Service
+-
+  !record {model: medical.physician.service, id: physer_1}:
+    product_id : product_1
+    physician_id : physician_1
+    service_duration : 60
+
+-
+  Create New Appointment Stage
+-
+  !record {model: medical.appointment.stage, id: appsta_1}:
+    name: scheduled
+    sequence: 1
+    requirements: confirm insurance
+    fold: True
+    is_default: True
+
+-
+  Create New Appointment
+-
+  !record {model: medical.appointment, id: appointment_1}:
+    user_id: user_1
+    patient_id: partner_1
+    name: Appointment for testing 
+    force_schedule: False
+    appointment_date: 2016-1-1 12:00:00.00000
+    date_end: 2016-1-1 12:22:00.00000
+    duration: 22
+    physician_id: physician_1
+    alias: Annual Checkup
+    comments: Testing new appointment
+    appointment_type: outpatient
+    institution_id: partner_2
+    consultation_ids: 
+    urgency: a
+    specialty_id: specialty_1
