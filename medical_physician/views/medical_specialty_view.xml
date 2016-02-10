@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2014-2016 LasLabs, Inc. [https://laslabs.com]
+    @author Ken Mak <kmak@laslabs.com>
+    The licence is in the file __openerp__.py
+-->
+
 <openerp>
     <data>
         <record id="medical_specialty_view_tree" model="ir.ui.view">

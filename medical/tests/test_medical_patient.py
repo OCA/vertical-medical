@@ -73,13 +73,12 @@ class TestMedicalPatient(TransactionCase):
 
     def test_invalidate(self):
         """
-        Invalidate a patient should invalidate itself and partner
+        Invalidate a patient should invalidate its diseases
         """
         patient_id = self.model_obj.create(self.vals)
         self.assertTrue(patient_id.active, 'Should be active')
         self.assertTrue(patient_id.partner_id.active, 'Should be inactive')
         self.assertFalse(patient_id.dod, 'Should be empty')
         patient_id.action_invalidate()
-        self.assertFalse(patient_id.active, 'Patient should be inactive')
-        self.assertFalse(patient_id.partner_id.active,
-                         'Partner should be inactive')
+        self.assertFalse(patient_id.active, 'Should be inactive')
+        self.assertFalse(patient_id.partner_id.active, 'Should be inactive')

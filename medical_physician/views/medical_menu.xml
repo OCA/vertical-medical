@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2014-2016 LasLabs, Inc. [https://laslabs.com]
+    @author Ken Mak <kmak@laslabs.com>
+    The licence is in the file __openerp__.py
+-->
+
+<openerp>
+    <data>
+
+        <!-- Medical Specialty  ( Config/misc/specialty) )--> 
+
+        <menuitem id="medical_specialty"
+                  name=" Medical Specialty"
+                  parent="medical.medical_root_misc"
+                  sequence="10"
+                  action="medical_specialty_action" />
+
+        <!--    Physician Conf    -->
+
+        <menuitem name="Health Professionals"
+                  id="medical_conf_physicians"
+                  parent="medical.medical_root_sub"
+                  sequence="20" />
+        
+        <menuitem id="medical_physician_admin"
+                  name=" Physician [Admin]"
+                  parent="medical_conf_physicians"
+                  sequence="10"
+                  action="medical_physician_action"
+                  groups="medical.group_medical_manager" />
+        
+        <menuitem id="medical_physician_self"
+                  name=" Physician [Self]"
+                  parent="medical_conf_physicians"
+                  sequence="10"
+                  action="medical_physician_action_self"
+                  groups="medical.group_medical_doctor" />
+        
+        <menuitem id="medical_physician_assistant"
+                  name=" Physician [Assistant]"
+                  parent="medical_conf_physicians"
+                  sequence="10"
+                  action="medical_physician_action"
+                  groups="medical.group_medical_assistant" />
+
+    </data>
+</openerp>

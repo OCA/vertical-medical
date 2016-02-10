@@ -1,0 +1,6 @@
+-
+  Create New Physician Specialty
+-
+  !record {model: medical.specialty, id: speciality_1}:
+    name: General Practitioner
+    code: GP

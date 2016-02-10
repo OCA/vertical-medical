@@ -15,19 +15,15 @@
     'data': [
         'data/ir_sequence_data.xml',
         'views/res_partner_view.xml',
-        'wizard/medical_physician_unavailable_view.xml',
-        'views/medical_physician_view.xml',
         'views/medical_patient_view.xml',
-        'views/medical_specialty_view.xml',
         'security/medical_security.xml',
         'security/ir.model.access.csv',
+        'data/ir_sequence_data.xml',
         'views/medical_menu.xml',
     ],
     'test': [
-        'tests/physician.yml',
         'tests/patient.yml',
         'tests/partners.yml',
-        'tests/physician_speciality.yml'
     ],
     'installable': True,
     'application': True,
