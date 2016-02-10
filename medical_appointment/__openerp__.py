@@ -11,7 +11,7 @@
     'category': 'Medical',
     'depends': [
         'medical_base_history',
-        'medical',
+        'medical_physician',
     ],
     'data': [
         'views/medical_appointment_view.xml',
