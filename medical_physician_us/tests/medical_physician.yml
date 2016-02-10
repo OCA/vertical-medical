@@ -1,0 +1,31 @@
+-
+  Create New Specialty
+-
+  !record {model: medical.specialty, id: specialty_1}:
+    name: Test Specialty
+    code: Test Specialty Code
+
+-
+  Create New Company
+-
+  !record {model: res.company, id: company_1}:
+    name: Test Company
+    street: 123 Street
+    street2: Suite A
+    city: San Francisco
+    country_id: base.us
+    phone: +1-234-567-8900
+    email: test@company.com
+
+-
+  Create New Physician
+-
+  !record {model: medical.physician, id: physician_1}:
+    name: John Do
+    company_id: company_1
+    info: General Physician
+    code: PH101
+    specialty_id: specialty_1
+    license_num: 1234567890
+    dea_num: BJ6125341
+    npi_num: 1234567890
