@@ -18,6 +18,7 @@
     "license": "AGPL-3",
     "data": [
         'data/ir_sequence.xml',
+        'data/product_category_data.xml',
         'wizards/medical_sale_wizard_view.xml',
         'wizards/medical_sale_temp_view.xml',
         'views/prescription_order_line_view.xml',

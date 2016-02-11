@@ -1,23 +1,6 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    Author: Dave Lasley <dave@laslabs.com>
-#    Copyright: 2016-TODAY LasLabs, Inc. [https://laslabs.com]
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# © 2016 LasLabs Inc.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp.tests.common import TransactionCase
 from openerp import fields
@@ -139,4 +122,34 @@ class TestPrescriptionSaleOrder(TransactionCase):
         self.assertTrue(
             self.rx_line_id.name,
             'Expected Rx Line name to be set',
+        )
+
+    def test_medicament_is_prescription_direct_descendant(self):
+        prescription_categ_id = self.env.ref(
+            'medical_prescription_sale.product_category_rx'
+        )
+        self.medicament_vals['categ_id'] = prescription_categ_id.id
+        medicament_id = self.env['medical.medicament'].create(
+            self.medicament_vals
+        )
+        self.assertTrue(
+            medicament_id.is_prescription,
+            'Is prescription is not set to True when in Rx categ_id'
+        )
+
+    def test_medicament_is_prescription_indirect_descendant(self):
+        prescription_categ_id = self.env.ref(
+            'medical_prescription_sale.product_category_rx'
+        )
+        prescription_categ_id = self.env['product.category'].create({
+            'name': 'Category',
+            'parent_id': prescription_categ_id.id,
+        })
+        self.medicament_vals['categ_id'] = prescription_categ_id.id
+        medicament_id = self.env['medical.medicament'].create(
+            self.medicament_vals
+        )
+        self.assertTrue(
+            medicament_id.is_prescription,
+            'Is prescription is not set to True when in Rx categ descendant'
         )

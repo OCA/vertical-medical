@@ -7,3 +7,4 @@ from . import medical_prescription_order_line
 from . import medical_medicament
 from . import sale_order_line
 from . import sale_order
+from . import product_category
