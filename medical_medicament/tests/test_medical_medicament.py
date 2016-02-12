@@ -55,3 +55,15 @@ class TestMedicalMedicament(TransactionCase):
         expect = '%s - %s' % (medicament_id.product_id.name,
                               medicament_id.drug_form_id.name)
         self.assertTrue(expect, medicament_id)
+
+    def test_get_by_product(self, ):
+        medicament_id = self._test_record()
+        res = self.medical_medicament_obj.get_by_product(
+            medicament_id.product_id
+        )
+        self.assertEqual(
+            medicament_id, res,
+            'Did not get correct medicament. Expect %s, Got %s' % (
+                medicament_id, res,
+            )
+        )

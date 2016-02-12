@@ -111,3 +111,17 @@ class MedicalMedicament(models.Model):
     def create(self, vals):
         vals['is_medicament'] = True
         return super(MedicalMedicament, self).create(vals)
+
+    @api.model
+    @api.returns('self')
+    def get_by_product(self, product_id):
+        '''
+        Return medicaments associated to a Product Record
+
+        Args:
+            product_id: product.product Record to search for
+
+        Returns:
+            medical.medicament Recordsets associated with input product
+        '''
+        return self.search([('product_id', '=', product_id.id)])
