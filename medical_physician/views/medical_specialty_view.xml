@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-    Copyright (C) 2014-2016 LasLabs, Inc. [https://laslabs.com]
+    Copyright (C) 2014-2016 LasLabs [https://laslabs.com]
     @author Ken Mak <kmak@laslabs.com>
-    The licence is in the file __openerp__.py
+    @license AGPL-3
 -->
 
 <openerp>
