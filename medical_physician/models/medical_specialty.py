@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# © 2015 LasLabs Inc.
+# © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import models, fields
@@ -10,7 +10,7 @@ class MedicalSpecialty(models.Model):
     _description = 'Medical Specialties'
 
     code = fields.Char(
-        string='Code',
+        string='ID',
         help='Speciality Code',
         size=256,
     )

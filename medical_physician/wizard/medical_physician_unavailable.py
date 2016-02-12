@@ -2,36 +2,35 @@
 # © 2015 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models
+from openerp import fields, models, api
 
 
 class MedicalPhysicianUnavailableWizard(models.TransientModel):
     _name = 'medical.physician.unavailable.wizard'
     _description = 'Medical physicians unavailable wizard'
+
     physician_id = fields.Many2one(
         'medical.physician', 'Physician', required=True
-        )
+    )
     date_start = fields.Datetime(
-        string='Start', default=fields.date.today, required=True
-        )
+        string='Start', default=lambda s: fields.Datetime.now(), required=True
+    )
     date_end = fields.Datetime(
-        string='End', default=fields.date.today, required=True
-        )
+        string='End', default=lambda s: fields.Datetime.now(), required=True
+    )
     institution_id = fields.Many2one(
         'res.partner', 'Medical Center', select=True,
         domain=[('is_institution', '=', True)]
-        )
+    )
 
-    def action_cancel(self, cr, uid, ids, context=None):
-        return {'type': 'ir.actions.act_window_close'}
-
+    @api.multi
     def action_set_unavailable(self, cr, uid, ids, context=None):
         if not ids:
             return {}
 
-        appointment_proxy = self.pool['medical.appointment']
+        appointment_proxy = self.env['medical.appointment']
 
-        this = self.browse(cr, uid, ids)[0]
+        this = self.browse(0)
         physician_id = this.physician_id.id
         institution_id = this.institution_id.id
         if institution_id:
