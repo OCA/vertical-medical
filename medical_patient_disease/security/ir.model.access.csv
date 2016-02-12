@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_patient_disease_assistant,medical.patient_disease_assistant,model_medical_patient_disease,medical.group_medical_assistant,1,1,1,0
 access_medical_patient_disease_user,medical.patient_disease_user,model_medical_patient_disease,medical.group_medical_user,1,0,0,0
 access_medical_patient_disease_doctor,medical.patient_disease_doctor,model_medical_patient_disease,medical.group_medical_doctor,1,1,1,0
