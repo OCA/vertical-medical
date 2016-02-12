@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2014-[Now] LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    @license AGPL-3
+-->
+
+<openerp>
+    <data>
+
+        <record id="stock_warehouse_view_form" model="ir.ui.view">
+            <field name="name">Stock Warehouse Pharmacy Form</field>
+            <field name="model">stock.warehouse</field>
+            <field name='inherit_id' ref='stock.view_warehouse'/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='code']" position="after">
+                    <field name="is_pharmacy" groups="stock.group_adv_location"/>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Pharmacy" attrs="{'invisible':[('is_pharmacy', '=', False)]}">
+                        <group>
+                            <field name="prescription_route_id" />
+                            <field name="otc_route_id" />
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        
+    </data>
+</openerp>
