@@ -1,0 +1,10 @@
+-
+  Create New Appointment Stage
+-
+  !record {model: medical.appointment.stage, id: appsta_1}:
+    name: scheduled
+    sequence: 1
+    requirements: confirm insurance
+    fold: True
+    is_default: True
+    
