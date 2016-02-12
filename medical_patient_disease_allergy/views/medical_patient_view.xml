@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016-TODAY LasLabs, Inc. [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    @license AGPL-3
+-->
+
+<openerp>
+    <data>
+
+        <record id="medical_patient_view_form" model="ir.ui.view">
+            <field name="name">medical.patient.view.form (medical_patient_disease_allergy)</field>
+            <field name="model">medical.patient</field>
+            <field name="inherit_id" ref="medical.medical_patient_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='buttons']" position="inside">
+                    <button type="action"
+                            class="oe_stat_button"
+                            icon="fa-list"
+                            name="%(medical_patient_disease_allergy.medical_patient_disease_allergy_action)d"
+                            context="{'search_default_patient_id': active_id}">
+                        <field name="count_allergy_ids"
+                               widget="statinfo"
+                               string="Allergies" />
+                    </button>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
