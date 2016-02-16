@@ -14,8 +14,16 @@
             <field name="model">medical.patient.disease</field>
             <field name='inherit_id' ref='medical_patient_disease.medical_patient_view_disease_form'/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='notes']" position="before">
-                    <field name="prescription_order_line_ids" />
+                <xpath expr="//notebook" position="inside">
+                    <page string="Prescription">
+                        <group name="rx_data">
+                            <field name="id" invisible="True" />
+                            <field name="prescription_order_line_ids"
+                                   context="{'default_pathology_id': pathology_id,
+                                             'default_disease': id,
+                                             'default_patient_id': patient_id,}" />
+                        </group>
+                    </page>
                 </xpath>
             </field>
         </record>

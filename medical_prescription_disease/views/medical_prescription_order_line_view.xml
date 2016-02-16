@@ -15,7 +15,8 @@
             <field name='inherit_id' ref='medical_prescription.medical_prescription_order_line_form_view'/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='patient_id']" position="after">
-                    <field name="disease_id" />
+                    <field name="disease_id"
+                           context="{'default_patient_id': patient_id}"/>
                 </xpath>
             </field>
         </record>
