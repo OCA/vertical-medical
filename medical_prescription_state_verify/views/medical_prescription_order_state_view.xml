@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2015-[Now] LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    @license AGPL-3
+-->
+
+<openerp>
+    <data>
+        
+        <record id="medical_prescription_order_state_view_form" model="ir.ui.view">
+            <field name="name">medical.prescription.order.state.view.form</field>
+            <field name="inherit_id" ref="medical_prescription_state.medical_prescription_order_state_view_form" />
+            <field name="model">medical.prescription.order.state</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']">
+                    <field name="type" />
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="medical_prescription_order_state_view_tree" model="ir.ui.view">
+            <field name="name">medical.prescription.order.state.view.tree</field>
+            <field name="inherit_id" ref="medical_prescription_state.medical_prescription_order_state_view_form" />
+            <field name="model">medical.prescription.order.state</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']">
+                    <field name="type" />
+                </xpath>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="medical_prescription_order_state_action">
+             <field name="name">Rx States</field>
+             <field name="res_model">medical.prescription.order.state</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="view_type">tree</field>
+             <field name="view_mode">tree,form</field>
+         </record>
+        
+    </data>
+</openerp>

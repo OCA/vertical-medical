@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright (C) 2015-TODAY LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    @license AGPL-3
+-->
+
+<openerp>
+    
+    <data noupdate="0">
+        
+        <record id="medical_prescription_order_state_verification"
+                model="medical.prescription.order.state">
+            <field name="name">Verification</field>
+            <field name="description">
+                Indicates that the Prescription has not yet been verified.
+            </field>
+            <field name="type">normal</field>
+            <field name="sequence">10</field>
+            <field name="fold">False</field>
+        </record>
+        
+        <record id="medical_prescription_order_state_exception"
+                model="medical.prescription.order.state">
+            <field name="name">Exception</field>
+            <field name="description">
+                Indicates that the Prescription has an issue that needs to be manually resolved.
+            </field>
+            <field name="type">exception</field>
+            <field name="sequence">20</field>
+            <field name="fold">False</field>
+        </record>
+        
+        <record id="medical_prescription_order_state_verified"
+                model="medical.prescription.order.state">
+            <field name="name">Verified</field>
+            <field name="description">
+                Indicates that the Prescription has been verified, but additional manual action
+                is required.
+            </field>
+            <field name="type">verified</field>
+            <field name="sequence">30</field>
+            <field name="fold">False</field>
+        </record>
+        
+        <record id="medical_prescription_order_state_complete"
+                model="medical.prescription.order.state">
+            <field name="name">Complete</field>
+            <field name="description">
+                Indicates that the Prescription has been verified, and all initial manual action
+                has been completed.
+            </field>
+            <field name="type">verified</field>
+            <field name="sequence">40</field>
+            <field name="fold">True</field>
+        </record>
+        
+        <record id="medical_prescription_order_state_cancel"
+                model="medical.prescription.order.state">
+            <field name="name">Cancelled</field>
+            <field name="description">
+                Indicates that the Prescription was cancelled.
+            </field>
+            <field name="type">cancel</field>
+            <field name="sequence">50</field>
+            <field name="fold">True</field>
+        </record>
+        
+    </data>
+    
+</openerp>
