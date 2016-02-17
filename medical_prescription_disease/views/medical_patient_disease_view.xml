@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2014-[Now] LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    @license AGPL-3
+-->
+
+<openerp>
+    <data>
+
+        <record id="medical_patient_disease_view_form" model="ir.ui.view">
+            <field name="name">Medical Patient Disease Form</field>
+            <field name="model">medical.patient.disease</field>
+            <field name='inherit_id' ref='medical_patient_disease.medical_patient_view_disease_form'/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Prescription">
+                        <group name="rx_data">
+                            <field name="id" invisible="True" />
+                            <field name="prescription_order_line_ids"
+                                   context="{'default_pathology_id': pathology_id,
+                                             'default_disease': id,
+                                             'default_patient_id': patient_id,}" />
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
