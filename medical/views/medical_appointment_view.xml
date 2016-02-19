@@ -84,7 +84,7 @@
             <field name="model">medical.appointment</field>
             <field eval="2" name="priority"/>
             <field name="arch" type="xml">
-                <calendar color="physician_id" date_start="appointment_date" date_stop="date_end" string="Calendar View" mode="week" >
+                <calendar color="physician_id" date_start="appointment_date" date_delay="duration" string="Calendar View" mode="week" >
                     <field name="patient_id"/>
                     <field name="physician_id"/>
                     <field name="duration"/>
