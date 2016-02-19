@@ -55,6 +55,6 @@
         'views/medical_family_view.xml',
         'security/ir.model.access.csv',
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
 }

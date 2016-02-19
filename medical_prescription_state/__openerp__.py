@@ -51,6 +51,6 @@
         'views/medical_menu.xml',
         'security/ir.model.access.csv',
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
 }
