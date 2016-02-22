@@ -5,10 +5,10 @@
 from openerp.tests.common import TransactionCase
 
 
-class TestMedicalPrescriptionOrderLine(TransactionCase):
+class TestMedicalPatientDisease(TransactionCase):
 
     def setUp(self):
-        super(TestMedicalPrescriptionOrderLine, self).setUp()
+        super(TestMedicalPatientDisease, self).setUp()
         self.patient_vals = {
             'name': 'Test Patient',
         }
@@ -73,18 +73,30 @@ class TestMedicalPrescriptionOrderLine(TransactionCase):
             self.vals
         )
 
-    def test_state_inactive_course_complete(self, ):
-        rec_id = self._new_record()
-        rec_id.is_course_complete = True
+    def test_count_prescription_order_lines(self, ):
+        self._new_record()
         self.assertEqual(
-            rec_id.state, 'inactive',
-            'State is active but course is marked complete'
+            self.disease_id.count_prescription_order_lines, 1
         )
 
-    def test_state_inactive_out_of_date(self, ):
-        rec_id = self._new_record()
-        rec_id.date_stop_treatment = '1970-01-01 00:00:00'
+    def test_last_prescription_order_line(self, ):
+        line_1 = self._new_record()
+        line_2 = self.env['medical.prescription.order.line'].create({
+            'disease_id': self.disease_id.id,
+            'medicament_id': self.medicament_id.id,
+            'prescription_order_id': self.rx_id.id,
+            'patient_id': self.patient_id.id,
+            'physician_id': self.physician_id.id,
+        })
+        line_1.date_start_treatment = '2016-01-01 00:00:00'
+        line_2.date_start_treatment = '2016-02-01 00:00:00'
         self.assertEqual(
-            rec_id.state, 'inactive',
-            'State is active but stop treatment date is past'
+            self.disease_id.last_prescription_order_line_id.id, line_2.id
+        )
+
+    def test_last_prescription_order_line_active(self, ):
+        line_id = self._new_record()
+        line_id.date_stop_treatment = '1970-01-01 00:00:00'
+        self.assertEqual(
+            self.disease_id.last_prescription_order_line_active, False
         )

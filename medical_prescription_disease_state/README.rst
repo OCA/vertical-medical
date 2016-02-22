@@ -1,9 +1,9 @@
 .. image:: https://img.shields.io/badge/license-AGPL--3-blue.svg
     :alt: License: AGPL-3
 
-===========================================
-Odoo Medical Prescription Disease Version 2
-===========================================
+==================================
+Medical Prescription Disease State
+==================================
 
 Extension of medical that adds the disease concept into prescription order lines
 in order to maintain a clean patient prescription history.

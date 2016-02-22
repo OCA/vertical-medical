@@ -7,7 +7,7 @@ from openerp import api, fields, models
 
 class MedicalPatientDisease(models.Model):
     _inherit = 'medical.patient.disease'
-    count_prescription_order_line_ids = fields.Integer(
+    count_prescription_order_lines = fields.Integer(
         compute='_compute_prescription_order_lines',
         string='Prescription Order Lines',
     )
@@ -16,8 +16,8 @@ class MedicalPatientDisease(models.Model):
         compute='_compute_prescription_order_lines',
         string='Last Prescription Order Line',
     )
-    last_prescription_order_line_state = fields.Selection(
-        related='last_prescription_order_line_id.state',
+    last_prescription_order_line_active = fields.Boolean(
+        related='last_prescription_order_line_id.active',
     )
 
     @api.multi
@@ -26,7 +26,7 @@ class MedicalPatientDisease(models.Model):
             line_ids = rec_id.prescription_order_line_ids
 
             if line_ids:
-                rec_id.count_prescription_order_line_ids = len(line_ids)
+                rec_id.count_prescription_order_lines = len(line_ids)
 
                 sorted_line_ids = line_ids.sorted(
                     key=lambda r: r.date_start_treatment,

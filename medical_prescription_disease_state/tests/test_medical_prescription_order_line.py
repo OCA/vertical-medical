@@ -5,10 +5,10 @@
 from openerp.tests.common import TransactionCase
 
 
-class TestMedicalPatientDisease(TransactionCase):
+class TestMedicalPrescriptionOrderLine(TransactionCase):
 
     def setUp(self):
-        super(TestMedicalPatientDisease, self).setUp()
+        super(TestMedicalPrescriptionOrderLine, self).setUp()
         self.patient_vals = {
             'name': 'Test Patient',
         }
@@ -73,30 +73,18 @@ class TestMedicalPatientDisease(TransactionCase):
             self.vals
         )
 
-    def test_count_prescription_order_lines(self, ):
-        self._new_record()
+    def test_inactive_course_complete(self, ):
+        rec_id = self._new_record()
+        rec_id.is_course_complete = True
         self.assertEqual(
-            self.disease_id.count_prescription_order_line_ids, 1
+            rec_id.active, False,
+            'Active is true but course is marked complete'
         )
 
-    def test_last_prescription_order_line(self, ):
-        line_1 = self._new_record()
-        line_2 = self.env['medical.prescription.order.line'].create({
-            'disease_id': self.disease_id.id,
-            'medicament_id': self.medicament_id.id,
-            'prescription_order_id': self.rx_id.id,
-            'patient_id': self.patient_id.id,
-            'physician_id': self.physician_id.id,
-        })
-        line_1.date_start_treatment = '2016-01-01 00:00:00'
-        line_2.date_start_treatment = '2016-02-01 00:00:00'
+    def test_inactive_out_of_date(self, ):
+        rec_id = self._new_record()
+        rec_id.date_stop_treatment = '1970-01-01 00:00:00'
         self.assertEqual(
-            self.disease_id.last_prescription_order_line_id.id, line_2.id
-        )
-
-    def test_last_prescription_order_line_state(self, ):
-        line_id = self._new_record()
-        line_id.date_stop_treatment = '1970-01-01 00:00:00'
-        self.assertEqual(
-            self.disease_id.last_prescription_order_line_state, 'inactive'
+            rec_id.active, False,
+            'Active is true but stop treatment date is past'
         )

@@ -4,8 +4,8 @@
 
 {
 
-    'name': 'Medical Prescription Disease Version 2',
-    'summary': 'Additional Prescription Context Added to Medical Disease',
+    'name': 'Medical Prescription Disease State',
+    'summary': 'Adds state and more prescription context to disease concept',
     'version': '9.0.1.0.0',
     'author': "LasLabs, Odoo Community Association (OCA)",
     'category': 'Medical',

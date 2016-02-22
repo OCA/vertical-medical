@@ -2,30 +2,26 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class MedicalPrescriptionOrderLine(models.Model):
     _inherit = 'medical.prescription.order.line'
-    state = fields.Selection(
-        [
-            ('active', 'Active'),
-            ('inactive', 'Inactive'),
-        ],
-        default='active',
-        compute='_compute_state',
+    active = fields.Boolean(
+        default=True,
+        compute='_compute_active',
     )
     is_treatment_stopped = fields.Boolean(
         compute='_compute_is_treatment_stopped'
     )
 
     @api.multi
-    def _compute_state(self, ):
+    def _compute_active(self, ):
         for rec_id in self:
             if rec_id.is_course_complete or rec_id.is_treatment_stopped:
-                rec_id.state = 'inactive'
+                rec_id.active = False
             else:
-                rec_id.state = 'active'
+                rec_id.active = True
 
     @api.multi
     def _compute_is_treatment_stopped(self, ):
