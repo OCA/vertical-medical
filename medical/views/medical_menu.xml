@@ -20,7 +20,7 @@
         <!--Appointment-->
 
         <menuitem id="medical_appointment_root"
-                  name="Appoitment"
+                  name="Appointment"
                   parent="medical_root"
                   sequence="20" />
 
