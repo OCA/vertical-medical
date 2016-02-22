@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016-TODAY LasLabs, Inc. [https://laslabs.com]
+    @author James Foster <jfoster@laslabs.com>
+    @license AGPL-3
+-->
+
+<openerp>
+    <data>
+        <record id="medical_patient_species_view_tree" model="ir.ui.view">
+            <field name="name">medical.patient.species.tree</field>
+            <field name="model">medical.patient.species</field>
+            <field name="arch" type="xml">
+                <tree string="Medical Patient Species">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="medical_patient_species_view_form" model="ir.ui.view">
+            <field name="name">medical.patient.species.form</field>
+            <field name="model">medical.patient.species</field>
+            <field name="arch" type="xml">
+                <form string="Medical Patient Species">
+                    <group>
+                        <field name="name" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_patient_species_view_search" model="ir.ui.view">
+            <field name="name">medical.patient.species.search</field>
+            <field name="model">medical.patient.species</field>
+            <field name="arch" type="xml">
+                <search string="Medical Patient Species">
+                    <field name="name" />
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Species" domain="[]" context="{'group_by':'name'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="medical_patient_species_action">
+            <field name="name">Species</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.patient.species</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="medical_patient_species_view_search" />
+            <field name="view_id" ref="medical_patient_species_view_tree" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        
+        <menuitem id="medical_patient_species"
+          parent="medical.medical_patient_root"
+          sequence="10"
+          action="medical_patient_species_action" />
+
+    </data>
+</openerp>

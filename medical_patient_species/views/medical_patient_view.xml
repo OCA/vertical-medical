@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016-TODAY LasLabs, Inc. [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    @license AGPL-3
+-->
+
+<openerp>
+    <data>
+
+        <record id="medical_patient_view_form" model="ir.ui.view">
+            <field name="name">medical.patient.view.form (medical_patient_species)</field>
+            <field name="model">medical.patient</field>
+            <field name="inherit_id" ref="medical.medical_patient_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='gender']" position="after">
+                    <field name="species_id" />
+                    <field name="is_person" invisible="1" />
+                </xpath>
+                <xpath expr="//field[@name='parent_id']" position="attributes">
+                    <attribute name="attrs">{'required': [('is_person', '=', False)]}</attribute>
+                    <attribute name="options">{'no_create': True}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
