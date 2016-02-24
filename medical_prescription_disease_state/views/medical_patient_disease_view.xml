@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2014-[Now] LasLabs [https://laslabs.com]
+    @author James Foster <jfoster@laslabs.com>
+    @license AGPL-3
+-->
+
+<openerp>
+    <data>
+
+        <record id="medical_patient_disease_view_form" model="ir.ui.view">
+            <field name="name">Medical Patient Disease Form</field>
+            <field name="model">medical.patient.disease</field>
+            <field name='inherit_id' ref='medical_patient_disease.medical_patient_view_disease_form'/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='buttons']" position="inside">
+                    <button
+                        name="%(medical_prescription.medical_prescription_order_line_action)d"
+                        type="action" class="oe_stat_button" icon="fa-list"
+                        context="{'search_default_disease_id': active_id}">
+                        <field name="count_prescription_order_lines"
+                            widget="statinfo" string="Prescription Order Lines"/>
+                    </button>
+                </xpath>
+                <xpath expr="//group[@name='main']" position="inside">
+                    <group name="last_rx">
+                        <field name="last_prescription_order_line_id" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="medical_patient_disease_view_tree" model="ir.ui.view">
+            <field name="name">Medical Patient Disease Tree</field>
+            <field name="model">medical.patient.disease</field>
+            <field name="inherit_id"
+                ref="medical_patient_disease.medical_patient_view_disease_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="/tree" position="attributes">
+                    <attribute name="colors">blue:last_prescription_order_line_active == False</attribute>
+                </xpath>
+                <xpath expr="//field[@name='state']" position="after">
+                    <field name="last_prescription_order_line_id" />
+                    <field name="last_prescription_order_line_active" invisible="1" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

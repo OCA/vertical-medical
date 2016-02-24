@@ -68,14 +68,14 @@ class MedicalMedicationTemplate(models.Model):
     @api.multi
     def name_get(self):
         res = []
-        for rec in self:
-            if self.medication_dosage_id:
-                name = self.medication_dosage_id.name
-            elif self.frequency and self.frequency_uom_id:
-                name = '%s / %s' % (self.frequency, self.frequency_uom_id)
-            elif self.pathology_id:
-                name = self.pathology_id.name
+        for rec_id in self:
+            if rec_id.medication_dosage_id:
+                name = rec_id.medication_dosage_id.name
+            elif rec_id.frequency and rec_id.frequency_uom_id:
+                name = '%s / %s' % (rec_id.frequency, rec_id.frequency_uom_id)
+            elif rec_id.pathology_id:
+                name = rec_id.pathology_id.name
             else:
-                name = self.medicament_id.name
-            res.append((rec.id, name))
+                name = rec_id.medicament_id.name
+            res.append((rec_id.id, name))
         return res
