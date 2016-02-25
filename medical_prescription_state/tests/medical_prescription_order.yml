@@ -1,0 +1,49 @@
+-
+  Create New Patient
+-
+  !record {model: medical.patient, id: patient_1}:
+    name: Test Patient
+    identification_code: 'P101'
+
+-
+  Create New Specialty
+-
+  !record {model: medical.specialty,id: specialty_1}:
+    name: test Specialty
+    code: 'TS'
+
+-
+  Create New Physician
+-
+  !record {model: medical.physician,id: physician_1}:
+    name: Vikas M Haribhakti
+    code: 'PH101'
+    specialty_id: 'specialty_1'
+
+-
+  Create New MedicalPrescriptionOrderState
+-
+  !record {model: medical.prescription.order.state, id: prescription_order_state_1 }:
+    name: Test State
+    description: This is a testing state
+    sequence: 10
+    legend_priority: priority state
+    legend_blocked: blocked state
+    legend_done: done state
+    legend_normal: normal state
+    fold: True
+    color: 1
+
+-
+  Create New MedicalPrescriptionOrder
+-
+  !record {model: medical.prescription.order, id: prescription_order_test }:
+    name: Test Order
+    sequence: 10
+    priority: 0
+    patient_id: 'patient_1'
+    physician_id: 'physician_1'
+    stage_id: 'prescription_order_state_1'
+    date_assign: 2016-01-01 12:00:00
+    color: 1
+    kanban_state: normal
