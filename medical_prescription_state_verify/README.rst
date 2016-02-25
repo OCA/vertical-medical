@@ -1,11 +1,13 @@
-.. image:: https://img.shields.io/badge/license-AGPL--3-blue.svg
+.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
     :alt: License: AGPL-3
 
-===============================
-Odoo Medical Prescription State
-===============================
+============================================
+Odoo Medical Prescription State Verification
+============================================
 
-Extension of medical_prescription that adds Kanban states to Prescription Orders
+Adds a concept of types to MedicalPrescriptionOrderState that may be validated
+on. Defaults with a ``verified`` type that will not allow attribute updates, or
+status changes to types other than ``exception`` and ``cancel``.
 
 
 Usage
@@ -31,7 +33,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/vertical-medical/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed feedback
-`here <https://github.com/OCA/vertical-medical/issues/new?body=module:%20medical_prescription_state%0Aversion:%209.0.2.0.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`here <https://github.com/OCA/vertical-medical/issues/new?body=module:%20medical_prescription_state_verify%0Aversion:%209.0.1.0.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 
 Credits

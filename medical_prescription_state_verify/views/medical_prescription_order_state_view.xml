@@ -11,41 +11,23 @@
         
         <record id="medical_prescription_order_state_view_form" model="ir.ui.view">
             <field name="name">medical.prescription.order.state.view.form</field>
+            <field name="inherit_id" ref="medical_prescription_state.medical_prescription_order_state_view_form" />
             <field name="model">medical.prescription.order.state</field>
             <field name="arch" type="xml">
-                <form string="Rx State">
-                    <header />
-                    <sheet>
-                        <group name="data">
-                            <group name="state_info">
-                                <field name="name" />
-                                <field name="sequence" />
-                                <field name="fold" />
-                                <field name="color" />
-                                <field name="description" />
-                            </group>
-                            <group name="kanban_info">
-                                <field name="legend_priority" />
-                                <field name="legend_blocked" />
-                                <field name="legend_done" />
-                                <field name="legend_normal" />
-                            </group>
-                        </group>
-                    </sheet>
-                </form>
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="type" />
+                </xpath>
             </field>
         </record>
         
         <record id="medical_prescription_order_state_view_tree" model="ir.ui.view">
             <field name="name">medical.prescription.order.state.view.tree</field>
+            <field name="inherit_id" ref="medical_prescription_state.medical_prescription_order_state_view_tree" />
             <field name="model">medical.prescription.order.state</field>
             <field name="arch" type="xml">
-                <tree string="Rx States">
-                    <field name="name" />
-                    <field name="sequence" />
-                    <field name="color" />
-                    <field name="legend_priority" />
-                </tree>
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="type" />
+                </xpath>
             </field>
         </record>
         

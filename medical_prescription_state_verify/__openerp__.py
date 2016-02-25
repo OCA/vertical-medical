@@ -3,26 +3,20 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    'name': 'Medical Prescription Order States',
+    'name': 'Medical Prescription Order State Verification',
     'version': '9.0.1.0.0',
     'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': [
-        'medical_prescription',
+        'medical_prescription_state',
     ],
-    'website': 'http://github.com/oca/vertical-medical',
-    'license': 'AGPL-3',
+    'website': "https://laslabs.com",
+    'licence': "AGPL-3",
     'data': [
-        # Views
         'views/medical_prescription_order_state_view.xml',
-        'views/medical_prescription_order_view.xml',
-
-        # Menu & Access
-        'views/medical_menu.xml',
-        'security/ir.model.access.csv',
+        'data/medical_prescription_order_state_data.xml',
     ],
     'test': [
-        "tests/medical_prescription_order.yml",
         'tests/medical_prescription_order_state.yml',
     ],
     'installable': True,
