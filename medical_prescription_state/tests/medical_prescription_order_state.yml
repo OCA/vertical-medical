@@ -1,0 +1,13 @@
+-
+  Create New MedicalPrescriptionOrderState
+-
+  !record {model: medical.prescription.order.state, id: prescription_order_state_test }:
+    name: Test State
+    description: This is a testing state
+    sequence: 10
+    legend_priority: priority state
+    legend_blocked: blocked state
+    legend_done: done state
+    legend_normal: normal state
+    fold: True
+    color: 1
