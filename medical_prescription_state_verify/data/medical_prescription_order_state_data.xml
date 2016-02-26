@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-    Copyright (C) 2015-TODAY LasLabs [https://laslabs.com]
-    @author Dave Lasley <dave@laslabs.com>
-    @license AGPL-3
+    Copyright (C) 2015-[Now] LasLabs [https://laslabs.com]
+    @author Ken Mak <kmak@laslabs.com>
+    The license is in the file __openerp__.py
 -->
 
 <openerp>
     
     <data noupdate="0">
         
-        <record id="medical_prescription_order_state_verification"
+        <record id="state_verification"
                 model="medical.prescription.order.state">
             <field name="name">Verification</field>
             <field name="description">
@@ -21,7 +21,7 @@
             <field name="fold">False</field>
         </record>
         
-        <record id="medical_prescription_order_state_exception"
+        <record id="state_exception"
                 model="medical.prescription.order.state">
             <field name="name">Exception</field>
             <field name="description">
@@ -32,7 +32,7 @@
             <field name="fold">False</field>
         </record>
         
-        <record id="medical_prescription_order_state_verified"
+        <record id="state_verified"
                 model="medical.prescription.order.state">
             <field name="name">Verified</field>
             <field name="description">
@@ -44,7 +44,7 @@
             <field name="fold">False</field>
         </record>
         
-        <record id="medical_prescription_order_state_complete"
+        <record id="state_complete"
                 model="medical.prescription.order.state">
             <field name="name">Complete</field>
             <field name="description">
@@ -56,7 +56,7 @@
             <field name="fold">True</field>
         </record>
         
-        <record id="medical_prescription_order_state_cancel"
+        <record id="state_cancel"
                 model="medical.prescription.order.state">
             <field name="name">Cancelled</field>
             <field name="description">

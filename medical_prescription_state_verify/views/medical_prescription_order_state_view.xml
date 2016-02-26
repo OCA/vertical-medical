@@ -2,8 +2,8 @@
 
 <!--
     Copyright (C) 2015-[Now] LasLabs [https://laslabs.com]
-    @author Dave Lasley <dave@laslabs.com>
-    @license AGPL-3
+    @author Ken Mak <kmak@laslabs.com>
+    The license is in the file __openerp__.py
 -->
 
 <openerp>
@@ -14,7 +14,7 @@
             <field name="inherit_id" ref="medical_prescription_state.medical_prescription_order_state_view_form" />
             <field name="model">medical.prescription.order.state</field>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='name']">
+                <xpath expr="//field[@name='name']" position="after">
                     <field name="type" />
                 </xpath>
             </field>
@@ -22,10 +22,10 @@
         
         <record id="medical_prescription_order_state_view_tree" model="ir.ui.view">
             <field name="name">medical.prescription.order.state.view.tree</field>
-            <field name="inherit_id" ref="medical_prescription_state.medical_prescription_order_state_view_form" />
+            <field name="inherit_id" ref="medical_prescription_state.medical_prescription_order_state_view_tree" />
             <field name="model">medical.prescription.order.state</field>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='name']">
+                <xpath expr="//field[@name='name']" position="after">
                     <field name="type" />
                 </xpath>
             </field>

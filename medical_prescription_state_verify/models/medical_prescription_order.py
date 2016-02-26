@@ -1,23 +1,6 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    Author: Dave Lasley <dave@laslabs.com>
-#    Copyright: 2015 LasLabs, Inc.
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# © 2016 LasLabs Inc.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import fields, models, exceptions, api, _
 
@@ -38,25 +21,39 @@ class MedicalPrescriptionOrder(models.Model):
     '''
 
     _inherit = 'medical.prescription.order'
-    _ALLOWED_CHANGE_KEYS = ['state_id', ]
+
+    _ALLOWED_CHANGE_KEYS = ['stage_id', ]
     _ALLOWED_CHANGE_STATES = ['verified', 'cancel', 'exception', ]
 
-    state_type = fields.Char(
-        related='state_id.type'
+    stage_id = fields.Many2one(
+        'medical.prescription.order.state',
+        'State',
+        track_visibility='onchange',
+        select=True,
+        copy=False,
+        help="The state in Kanban view",
+        default=lambda self: self.env.ref(
+            'medical_prescription_state_verify.state_verification'
+        ),
+    )
+
+    state_type = fields.Selection(
+        related='stage_id.type',
+        help="The state type for the order",
     )
 
     @api.multi
     def write(self, vals, ):
         '''
         Overload write & perform audit validations
-        
+
         Raises:
             ValidationError: When a write is not allowed due to being in a
                 protected state
         '''
         for rec_id in self:
             if rec_id.state_type == 'verified':
-                
+
                 # Only allow changes for keys in self._ALLOWED_CHANGE_KEYS
                 keys = vals.keys()
                 for allowed_key in self._ALLOWED_CHANGE_KEYS:
@@ -64,7 +61,7 @@ class MedicalPrescriptionOrder(models.Model):
                         del keys[keys.index(allowed_key)]
                     except ValueError:
                         pass
-                if len(keys) > 1:
+                if len(keys) > 0:
                     raise exceptions.ValidationError(_(
                         'You cannot edit this value after an Rx has been'
                         ' verified. Please either cancel it, or mark it as an'
@@ -73,11 +70,11 @@ class MedicalPrescriptionOrder(models.Model):
                     ))
 
                 # Only allow state changes from self._ALLOWED_CHANGE_STATES
-                if vals.get('state_id'):
-                    state_id = self.env['%s.state' % self._name].browse(
-                        vals['state_id']
+                if vals.get('stage_id'):
+                    stage_id = self.env['%s.state' % self._name].browse(
+                        vals['stage_id']
                     )
-                    if state_id.type not in self._ALLOWED_CHANGE_STATES:
+                    if stage_id.type not in self._ALLOWED_CHANGE_STATES:
                         raise exceptions.ValidationError(_(
                             'You cannot move an Rx into this state after it'
                             ' has been verified. [%s]' % rec_id.name

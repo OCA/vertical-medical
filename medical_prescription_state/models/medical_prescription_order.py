@@ -1,28 +1,15 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    Author: Dave Lasley <dave@laslabs.com>
-#    Copyright: 2015 LasLabs, Inc.
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# © 2016 LasLabs Inc.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import fields, models
 
 
 class MedicalPrescriptionOrder(models.Model):
+    '''
+    Add Kanban functionality to MedicalPrescriptionOrder
+    '''
+
     _inherit = 'medical.prescription.order'
     _order = 'priority desc, sequence, date_prescription, name'
 
@@ -36,52 +23,62 @@ class MedicalPrescriptionOrder(models.Model):
         (10, 'High'),
     ],
         select=True,
+        default=0,
+        help="Priority of the order",
     )
-    state_id = fields.Many2one(
+    stage_id = fields.Many2one(
         'medical.prescription.order.state',
         'State',
         track_visibility='onchange',
         select=True,
         copy=False,
+        help="The state in Kanban view",
     )
     user_id = fields.Many2one(
         'res.users',
         'Assigned To',
         select=True,
         track_visibility='onchange',
+        help="The order is assigned to",
     )
     date_assign = fields.Datetime(
-        'Assigned Date'
-    )
-    legend_blocked = fields.Char(
-        string='Kanban Blocked Explanation',
-        related='state_id.legend_blocked'
-    )
-    legend_done = fields.Char(
-        string='Kanban Valid Explanation',
-        related='state_id.legend_done'
-    )
-    legend_normal = fields.Char(
-        string='Kanban Ongoing Explanation',
-        related='state_id.legend_normal'
+        'Assigned Date',
+        help="Date and time when order is assigned",
     )
     color = fields.Integer(
         'Color Index',
+        help="Color of the Kanban card",
+    )
+    legend_blocked = fields.Char(
+        string='Kanban Blocked Explanation',
+        related='stage_id.legend_blocked',
+        help="Kanban blocked explanation",
+    )
+    legend_done = fields.Char(
+        string='Kanban Done Explanation',
+        related='stage_id.legend_done',
+        help="Kanban done explanation",
+    )
+    legend_normal = fields.Char(
+        string='Kanban Ongoing Explanation',
+        related='stage_id.legend_normal',
+        help="Kanban ongoing explanation",
     )
     kanban_state = fields.Selection([
-        ('normal', 'In Progress'),
-        ('done', 'Ready for next stage'),
-        ('blocked', 'Blocked')
+        ('normal', 'Normal Handling'),
+        ('done', 'Ready'),
+        ('blocked', 'Pharmacist Handling'),
     ],
         'Kanban State',
         default='normal',
         track_visibility='onchange',
         required=True,
         copy=False,
-        help="An Rx's kanban state indicates special situations affecting it:"
-        "\n * Normal is the default situation"
-        "\n * Blocked indicates something is preventing the progress of this"
-        " Rx"
-        "\n * Ready for next stage indicates the Rx is ready to be pulled to"
-        " the next stage",
+        help="An Rx's Kanban state indicates special situations affecting"
+        " it:\n"
+        "* `Normal Handling` is the default situation, and indicates no "
+        " special handling."
+        "* `Pharmacist Handling` indicates that this Rx must be processed"
+        " by a pharmacist. \n"
+        "* `Ready` indicates the Rx is ready to be pulled to the next stage.",
     )
