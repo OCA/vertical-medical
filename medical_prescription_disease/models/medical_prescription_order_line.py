@@ -10,7 +10,6 @@ class MedicalPrescriptionOrderLine(models.Model):
     disease_id = fields.Many2one(
         string='Disease',
         comodel_name='medical.patient.disease',
-        required=True,
         help='Disease diagnosis related to prescription.',
     )
 
