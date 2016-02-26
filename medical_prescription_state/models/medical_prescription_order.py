@@ -7,7 +7,7 @@ from openerp import fields, models
 
 class MedicalPrescriptionOrder(models.Model):
     '''
-    Add KanBan functionality to MedicalPrescriptionOrder
+    Add Kanban functionality to MedicalPrescriptionOrder
     '''
 
     _inherit = 'medical.prescription.order'
@@ -43,7 +43,7 @@ class MedicalPrescriptionOrder(models.Model):
     )
     date_assign = fields.Datetime(
         'Assigned Date',
-        help="date and time when order is assigned",
+        help="Date and time when order is assigned",
     )
     color = fields.Integer(
         'Color Index',
@@ -52,17 +52,17 @@ class MedicalPrescriptionOrder(models.Model):
     legend_blocked = fields.Char(
         string='Kanban Blocked Explanation',
         related='stage_id.legend_blocked',
-        help="Kanban Blocked Explanation",
+        help="Kanban blocked explanation",
     )
     legend_done = fields.Char(
         string='Kanban Done Explanation',
         related='stage_id.legend_done',
-        help="Kanban Done Explanation",
+        help="Kanban done explanation",
     )
     legend_normal = fields.Char(
         string='Kanban Ongoing Explanation',
         related='stage_id.legend_normal',
-        help="Kanban Ongoing Explanation",
+        help="Kanban ongoing explanation",
     )
     kanban_state = fields.Selection([
         ('normal', 'Normal Handling'),
@@ -74,7 +74,7 @@ class MedicalPrescriptionOrder(models.Model):
         track_visibility='onchange',
         required=True,
         copy=False,
-        help="An Rx's KanBan state indicates special situations affecting"
+        help="An Rx's Kanban state indicates special situations affecting"
         " it:\n"
         "* `Normal Handling` is the default situation, and indicates no "
         " special handling."

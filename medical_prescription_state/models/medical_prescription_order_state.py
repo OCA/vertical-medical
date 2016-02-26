@@ -7,21 +7,21 @@ from openerp import fields, models
 
 class MedicalPrescriptionOrderState(models.Model):
     '''
-    Add KanBan states to MedicalPrescriptionOrder
+    Add Kanban states to MedicalPrescriptionOrder
 
-    This class adds KanBan state attributes to `medical.prescription.order`
+    This class adds Kanban state attributes to `medical.prescription.order`
     For the most part, it should operate similar to that of the Project
-    KanBan.
+    Kanban.
     '''
 
     _name = 'medical.prescription.order.state'
     _description = 'Medical Prescription Order State'
 
     name = fields.Char(
-        'State Name',
+        'State name',
         translate=True,
         required=True,
-        help='Displayed as the header for this state in KanBan views.',
+        help='Displayed as the header for this state in Kanban views.',
     )
     description = fields.Text(
         'Description',
@@ -35,7 +35,7 @@ class MedicalPrescriptionOrderState(models.Model):
         help='Order of state in relation to others.',
     )
     legend_priority = fields.Char(
-        'Priority Management Explanation',
+        'Priority management explanation',
         translate=True,
         default='Star an item when it needs to be escalated ahead of other'
         '  items due to special circumstances.',
@@ -43,7 +43,7 @@ class MedicalPrescriptionOrderState(models.Model):
         ' mechanism on stages or RXs that are in this stage.',
     )
     legend_blocked = fields.Char(
-        'Kanban Blocked Explanation',
+        'Kanban blocked explanation',
         translate=True,
         default='Block an item if it requires handling by a specialist, such'
         ' as a pharmacist.',
@@ -51,14 +51,14 @@ class MedicalPrescriptionOrderState(models.Model):
         ' kanban selection, when the RX is in that stage.',
     )
     legend_done = fields.Char(
-        'Kanban Valid Explanation',
+        'Kanban valid explanation',
         translate=True,
         default='Item has been fully processed in this stage.',
         help='Override the default value displayed for the done state for'
         ' kanban selection, when the RX is in that stage.',
     )
     legend_normal = fields.Char(
-        'Kanban Ongoing Explanation',
+        'Kanban ongoing explanation',
         translate=True,
         default='This is the default situation, and indicates that a record'
         ' can be processed by any user working this queue.',
@@ -66,12 +66,12 @@ class MedicalPrescriptionOrderState(models.Model):
         ' kanban selection, when the RX is in that stage.',
     )
     fold = fields.Boolean(
-        'Folded in RX Pipeline',
+        'Folded in RX pipeline',
         help='This stage is folded in the kanban view when'
         ' there are no records in that stage to display.',
     )
     color = fields.Integer(
-        'Color Index',
+        'Color index',
         default=1,
         help='Color index to be used if the Rx does not have one defined',
     )
