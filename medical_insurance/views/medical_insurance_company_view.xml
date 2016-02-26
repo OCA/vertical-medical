@@ -33,56 +33,44 @@
                                     <group>
                                         <label for="street" string="Address" />
                                         <div>
-                                            <div class="oe_edit_only">
-                                                <field name="use_parent_address"
-													   class="oe_inline"
-                                                       on_change="onchange_address(use_parent_address, parent_id)"
-                                                       attrs="{'invisible': ['|', ('is_company', '=', True),
-													                              ('parent_id', '=', False)]}" />
-                                                <label for="use_parent_address"
-                                                       attrs="{'invisible': ['|', ('is_company', '=', True),
-													                              ('parent_id', '=', False)]}" />
-                                            </div>
-                                            <button name="open_parent"
-													type="object"
-													string="(edit company address)"
-													class="oe_link oe_edit_only"
-                                                    attrs="{'invisible': ['|', ('parent_id','=', False),
-													                           ('use_parent_address','=',False)]}" />
-                                            <field name="street" placeholder="Street..."
-                                                   attrs="{'readonly': [('use_parent_address','=',True)]}" />
-                                            <field name="street2"
-                                                   attrs="{'readonly': [('use_parent_address','=',True)]}" />
+                                            <field name="use_parent_address"
+                                                   class="edit_only inline"
+                                                   invisible="1" />
+                                            <label for="use_parent_address"
+                                                   class="edit_only"
+                                                   invisible="1" />
+                                            <field name="street"
+                                                   placeholder="Street..." />
+                                            <field name="street2" />
                                             <div class="address_format">
                                                 <field name="city"
-													   placeholder="City"
-													   style="width: 40%"
-                                                       attrs="{'readonly': [('use_parent_address','=',True)]}" />
+                                                       placeholder="City"
+                                                       style="width: 40%" />
                                                 <field name="state_id"
-													   class="oe_no_button"
-													   placeholder="State"
+                                                       class="no_button"
+                                                       placeholder="State"
                                                        style="width: 37%"
-													   options="{'no_open': True}"
-                                                       on_change="onchange_state(state_id)"
-                                                       attrs="{'readonly': [('use_parent_address','=',True)]}" />
+                                                       options='{"no_open": True}' />
                                                 <field name="zip"
-													   placeholder="ZIP"
-													   style="width: 20%"
-                                                       attrs="{'readonly': [('use_parent_address','=',True)]}" />
+                                                       placeholder="ZIP"
+                                                       style="width: 20%" />
                                             </div>
                                             <field name="country_id"
-												   placeholder="Country"
-												   class="oe_no_button"
-                                                   options="{'no_open': True, 'no_create': True}"
-                                                   attrs="{'readonly': [('use_parent_address','=',True)]}" />
+                                                   placeholder="Country"
+                                                   class="no_button"
+                                                   options='{"no_open": True}' />
                                         </div>
-                                        <field name="website" widget="url" placeholder="e.g. https://laslabs.com" />
+                                        <field name="website"
+                                               widget="url"
+                                               placeholder="e.g. https://laslabs.com" />
                                     </group>
                                     <group>
-                                        <field name="phone" placeholder="e.g. +1 (888) 678-6313" />
-                                        <field name="mobile" placeholder="e.g. +1 (888) 678-6313" />
-                                        <field name="fax" placeholder="e.g. +1 (888) 678-6313" />
-                                        <field name="email" widget="email" placeholder="e.g. support@laslabs.com" />
+                                        <field name="phone"
+                                               placeholder="e.g. +1 (888) 678-6313" />
+                                        <field name="mobile" />
+                                        <field name="fax" />
+                                        <field name="email"
+                                               widget="email" />
                                     </group>
                                 </group>
                                 <group  col="4" colspan="4"> 
@@ -125,7 +113,7 @@
                                         <field name="mobile"/>
                                         <field name="fax"/>
                                         <field name="state_id"/>
-                                        <field name="has_image"/>
+                                        <field name="image"/>
                                         <templates>
                                             <t t-name="kanban-box">
                                                 <t t-set="color"
@@ -139,7 +127,7 @@
 													</a>
                                                     <div class="oe_module_vignette">
                                                     <a type="open">
-                                                        <t t-if="record.has_image.raw_value === true">
+                                                        <t t-if="record.image.raw_value === true">
                                                             <img t-att-src="kanban_image('res.partner', 'image_small', record.id.value)"
 																 class="oe_avatar oe_kanban_avatar_smallbox" />
                                                         </t>
@@ -147,7 +135,7 @@
                                                             <img t-att-src="'data:image/png;base64,'+record.image.raw_value"
 																 class="oe_avatar oe_kanban_avatar_smallbox" />
                                                         </t>
-                                                        <t t-if="record.has_image.raw_value === false and (!record.image or record.image.raw_value === false)">
+                                                        <t t-if="record.image.raw_value === false and (!record.image or record.image.raw_value === false)">
                                                             <t t-if="record.is_company.raw_value === true">
                                                                 <img t-att-src="_s + '/base/static/src/img/company_image.png'"
 																	 class="oe_kanban_image oe_kanban_avatar_smallbox" />
