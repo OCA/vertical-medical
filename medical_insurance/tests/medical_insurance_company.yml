@@ -1,5 +1,5 @@
 -
   Create New Medical Insurance - Default Insurance
 -
-  !record {model: medical.patient, id: insco_1 }:
+  !record {model: medical.insurance.company, id: insco_1 }:
     name: Default Insurance
