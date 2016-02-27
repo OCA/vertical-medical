@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# © 2015 LasLabs Inc.
+# © 2015 ACSONE SA/NV
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from dateutil.relativedelta import relativedelta
@@ -25,7 +25,7 @@ class TestMedicalPatient(TransactionCase):
             patient_id.identification_code, 'Should have a sequence'
         )
 
-    def test_is_patient(self, ):
+    def test_is_patient(self):
         ''' Validate that is_patient is set on the partner '''
         patient_id = self.model_obj.create(self.vals)
         self.assertTrue(
@@ -48,7 +48,7 @@ class TestMedicalPatient(TransactionCase):
             )
         )
 
-    def test_age_computation_deceased(self, ):
+    def test_age_computation_deceased(self):
         """ Check proper handling of deceased patient """
         age = 5
         birth_date = fields.Date.to_string(

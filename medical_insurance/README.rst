@@ -2,7 +2,7 @@
     :alt: License: AGPL-3
 
 Odoo Medical Insurance
-========================
+======================
 
 Extension of medical that provides Insurance concept
 
