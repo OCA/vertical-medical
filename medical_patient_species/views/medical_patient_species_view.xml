@@ -36,10 +36,6 @@
             <field name="arch" type="xml">
                 <search string="Medical Patient Species">
                     <field name="name" />
-                    <newline />
-                    <group expand="0" string="Group By...">
-                        <filter string="Species" domain="[]" context="{'group_by':'name'}" />
-                    </group>
                 </search>
             </field>
         </record>
@@ -57,9 +53,9 @@
         </record>
         
         <menuitem id="medical_patient_species"
-          parent="medical.medical_patient_root"
-          sequence="10"
-          action="medical_patient_species_action" />
+                  parent="medical.medical_patient_root"
+                  sequence="10"
+                  action="medical_patient_species_action" />
 
     </data>
 </openerp>

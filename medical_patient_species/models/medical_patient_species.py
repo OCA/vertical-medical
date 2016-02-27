@@ -17,11 +17,12 @@ class MedicalPatientSpecies(models.Model):
         translate=True,
     )
     is_person = fields.Boolean(
-        compute='_compute_is_person'
+        compute='_compute_is_person',
+        store=True,
     )
 
     @api.multi
-    def _compute_is_person(self, ):
+    def _compute_is_person(self):
         for rec_id in self:
             rec_id.is_person = (
                 rec_id.id == self.env.ref('medical_patient_species.human').id
