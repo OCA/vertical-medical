@@ -95,6 +95,10 @@ class MedicalPatient(models.Model):
             ('z', 'law marriage'),
         ])
 
+    @api.multi
+    def onchange_state(self, state_id, partner_id):
+        return self.partner_id.onchange_state(state_id)
+
     @api.model
     @api.returns('self', lambda value: value.id)
     def create(self, vals):
