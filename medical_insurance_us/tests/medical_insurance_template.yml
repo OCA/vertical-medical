@@ -1,15 +1,29 @@
 -
-  Create New US Insurance Template
+  Create New Product Template
 -
-  !record {model: medical.insurance.template, id: usinstemp_1}:
-    name: Medical Insurance Template US
-    plan_number: Cheap Plan US
+  !record {model: product.template, id: ins_us_prodtemp_1}:
+    name: Medical Insurance Product Template
+
+-
+  Create New Product
+-
+  !record {model: product.product, id: ins_us_prod_1}:
+    product_tmpl_id: ins_us_prodtemp_1
+    name: Medical Insurance Plan
+
+-
+  Create New Insurance Template
+-
+  !record {model: medical.insurance.template, id: ins_us_temp_1}:
+    plan_number: Cheap Plan
     is_default: True
-    insurance_company_id: insco_1
+    insurance_company_id: ins_us_co_1
     notes: These are the notes!
-    insurance_affiliation: medicaid
-    group_number: Group Num
+    insurance_affiliation: state
+    product_id: ins_us_prod_1
+    group_number: GroupNum
+    rx_bin: RxBin
+    rx_pcn: RxPCN
+    rx_group: RxGroup
     insurance_type: ppo
-    rx_bin: RX Bin
-    rx_pcn: RX PCN
-    rx_group: RX Group
+    insurance_affiliation: medicaid
