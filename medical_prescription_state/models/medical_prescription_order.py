@@ -18,12 +18,12 @@ class MedicalPrescriptionOrder(models.Model):
         help="Sequence order when displaying a list of Rxs",
     )
     priority = fields.Selection([
-        (0, 'Normal'),
-        (5, 'Medium'),
-        (10, 'High'),
+        ('0', 'Normal'),
+        ('5', 'Medium'),
+        ('10', 'High'),
     ],
         select=True,
-        default=0,
+        default='0',
         help="Priority of the order",
     )
     stage_id = fields.Many2one(
