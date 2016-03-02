@@ -40,7 +40,7 @@
   !record {model: medical.prescription.order, id: prescription_order_test }:
     name: Test Order
     sequence: 10
-    priority: 0
+    priority: '0'
     patient_id: 'patient_1'
     physician_id: 'physician_1'
     stage_id: 'prescription_order_state_1'
