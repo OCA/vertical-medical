@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2015-[Now] LasLabs [https://laslabs.com]
+    @author Ken Mak <kmak@laslabs.com>
+    The license is in the file __openerp__.py
+-->
+
+<openerp>
+    <data>
+
+        <record id="medical_prescription_order_kanban_view" model="ir.ui.view">
+            <field name="name">Prescription Orders</field>
+            <field name="model">medical.prescription.order</field>
+            <field name='inherit_id' ref='medical_prescription_state.medical_prescription_order_kanban_view'/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='oe_kanban_content']" position="before">
+                    <div class="o_dropdown_kanban dropdown" groups="medical.group_medical_center_manager">
+                        <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" >
+                            <span class="fa fa-bars fa-lg"/>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <li>
+                                <ul class="oe_kanban_colorpicker" data-field="color"/>
+                            </li>
+                        </ul>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+        
+    </data>
+</openerp>
