@@ -1,6 +1,7 @@
 .. image:: https://img.shields.io/badge/license-AGPL--3-blue.svg
     :alt: License: AGPL-3
 
+===================================
 Odoo Medical Prescription Threading
 ===================================
 

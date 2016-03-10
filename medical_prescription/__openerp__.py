@@ -13,6 +13,7 @@
         'medical',
         'medical_medicament',
         'medical_medication',
+        'medical_physician',
     ],
     'summary': 'This module introduce the prescription/prescription line'
     'into the medical addons.',
