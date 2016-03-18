@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016-TODAY LasLabs [https://laslabs.com]
+    @license AGPL-3
+-->
+
+<odoo>
+
+	<template id="patients" name="Patients">
+		<h3 class="page-header">
+			Patients
+			<a href="/my/patients/0">
+				+
+			</a>
+		</h3>
+        <t t-if="not patients">
+            <p>There are currently no patients associated with your account.</p>
+        </t>
+        <t t-if="patients">
+            <table class="table table-hover o_my_status_table">
+                <thead>
+                  <tr class="active">
+                      <th>Name</th>
+                      <th>Age</th>
+                      <th>Gender</th>
+                    </tr>
+                </thead>
+				<tbody>
+					<t t-foreach="patients" t-as="patient">
+						<tr>
+							<td>
+								<a t-att-href="'/my/patients/' + str(patient.id)">
+									<t t-esc="patient.name" />
+								</a>
+							</td>
+							<td>
+								<span t-field="patient.age" />
+							</td>
+							<td>
+								<span t-field="patient.gender" />
+							</td>
+						</tr>
+					</t>
+				</tbody>
+			</table>
+		</t>
+	</template>
+
+	<template id="patient" name="Patient">
+		<t t-call="website.layout">
+			<div id="wrap">
+				<div class="oe_structure" />
+				<div class="container">
+					<div class="row">
+						<t t-call="website_medical_patient.patient_detail" />
+					</div>
+				</div>
+				<div class="oe_structure" />
+			</div>
+		</t>
+	</template>
+
+    <template id="patient_detail">
+		<h1>Patient Details</h1>
+		<form t-action="'/my/patients/%s' % patient.id or 'new'" method="post">
+			<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+			<div class="row o_website_portal_details">
+				<div class="col-md-8">
+					<div class="row">
+						<div class="col-md-12">
+						  <div t-if="error_message" class="alert alert-danger">
+							  <t t-foreach="error_message" t-as="err">
+								<t t-esc="err"/><br />
+							  </t>
+						  </div>
+						</div>
+						<div t-attf-class="form-group #{error.get('name') and 'has-error' or ''} col-lg-6">
+							<label class="control-label" for="contact_name">
+								Full Name
+							</label>
+							<input type="text"
+								   name="name"
+								   class="form-control"
+								   t-att-value="name or patient.name or ''" />
+						</div>
+						<div t-attf-class="form-group #{error.get('email') and 'has-error' or ''} col-lg-6">
+							<label class="control-label" for="contact_name">
+								Email
+							</label>
+							<input type="email" name="email" class="form-control" t-att-value="email or patient.email or ''" />
+						</div>
+						<div t-attf-class="form-group #{error.get('phone') and 'has-error' or ''} col-lg-6">
+							<label class="control-label" for="phone">
+								Phone
+							</label>
+							<input type="tel"
+								   name="phone"
+								   class="form-control"
+								   t-att-value="phone or patient.phone or ''" />
+						</div>
+
+						<div class="clearfix" />
+						<div t-attf-class="form-group #{error.get('dob') and 'has-error' or ''} col-lg-6">
+							<label class="control-label label-optional" for="dob">
+								Birth Date
+							</label>
+							<input type="text"
+								   name="dob"
+								   class="form-control"
+								   t-att-value="dob or patient.dob or ''" />
+						</div>
+						<div t-attf-class="form-group #{error.get('gender') and 'has-error' or ''} col-lg-6">
+							<label class="control-label label-optional" for="gender">
+								Gender
+							</label>
+							<select name="gender" class="form-control">
+								<t t-foreach="[('', 'Gender...'), ('f', 'Female'), ('m', 'Male'), ]"
+								   t-as="gender">
+									<option t-att-value="gender[0]"
+											t-att-selected="gender[0] == patient.gender">
+										<t t-esc="gender[1]" />
+									</option>
+								</t>
+							</select>
+						</div>
+						<!-- Removed for security.
+						<div t-if="has_check_vat" t-attf-class="form-group #{error.get('ref') and 'has-error' or ''} col-lg-6">
+							<label class="control-label label-optional" for="vat">SSN</label>
+							<input type="text" name="vat" class="form-control" t-att-value="vat or patient.vat" />
+						</div>
+						-->
+
+						<div class="clearfix" />
+						<div t-attf-class="form-group #{error.get('street') and 'has-error' or ''} col-lg-6">
+							<label class="control-label" for="street">
+								Street
+							</label>
+							<input type="text"
+								   name="street"
+								   class="form-control"
+								   t-att-value="street or patient.street or ''" />
+						</div>
+						<div t-attf-class="form-group #{error.get('street2') and 'has-error' or ''} col-lg-6">
+							<label class="control-label" for="street">
+								Street 2nd
+							</label>
+							<input type="text"
+								   name="street2"
+								   class="form-control"
+								   t-att-value="street2 or patient.street2 or ''" />
+						</div>
+						<div t-attf-class="form-group #{error.get('city') and 'has-error' or ''} col-lg-6">
+							<label class="control-label" for="city">
+								City
+							</label>
+							<input type="text"
+								   name="city"
+								   class="form-control"
+								   t-att-value="city or patient.city or ''" />
+						</div>
+						<div t-attf-class="form-group #{error.get('zip') and 'has-error' or ''} col-lg-6">
+							<label class="control-label" for="zipcode">
+								Zip / Postal Code
+							</label>
+							<input type="text"
+								   name="zipcode"
+								   class="form-control"
+								   t-att-value="zipcode or patient.zip or ''" />
+						</div>
+						<div t-attf-class="form-group #{error.get('state_id') and 'has-error' or ''} col-lg-6">
+							<label class="control-label label-optional" for="state_id">
+								State / Province
+							</label>
+							<select name="state_id" class="form-control">
+								<option value="">State/Province...</option>
+								<t t-foreach="states or []" t-as="state">
+									<option t-att-value="state.id"
+											style="display:none;"
+											t-att-data-country_id="state.country_id.id"
+											t-att-selected="state.id == patient.state_id.id">
+										<t t-esc="state.name" />
+									</option>
+								</t>
+							</select>
+						</div>
+						<div t-attf-class="form-group #{error.get('country_id') and 'has-error' or ''} col-lg-6">
+							<label class="control-label" for="country_id">
+								Country
+							</label>
+							<select name="country_id" class="form-control">
+								<option value="">Country...</option>
+								<t t-foreach="countries or []" t-as="country">
+									<option t-att-value="country.id"
+											t-att-selected="country.id == patient.country_id.id">
+										<t t-esc="country.name" />
+									</option>
+								</t>
+							</select>
+						</div>
+						<input type="hidden" name="redirect" t-att-value="redirect"/>
+					</div>
+					<div class="clearfix">
+						<button type="submit" class="btn btn-default btn-primary pull-right mb32 ">
+							Confirm
+							<span class="fa fa-long-arrow-right" />
+						</button>
+					</div>
+				</div>
+			</div>
+		</form>
+    </template>
+
+</odoo>

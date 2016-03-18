@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016-TODAY LasLabs [https://laslabs.com]
+    @license AGPL-3
+-->
+
+<odoo>
+	<template id="account"
+			  name="Account - Patient"
+			  inherit_id="website_portal.account">
+		<xpath expr="//div[contains(@class,'o_my_documents')]" position="inside">
+			<t t-call="website_medical_patient.patients" />
+		</xpath>
+	</template>
+</odoo>
