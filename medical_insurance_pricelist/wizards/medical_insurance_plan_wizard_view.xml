@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016-[Now] LasLabs [https://laslabs.com]
+    @author James Foster <jfoster@laslabs.com>
+    @license AGPL-3
+-->
+
+<openerp>
+    <data>
+        
+        <record model="ir.ui.view"
+                id="medical_insurance_plan_wizard_view_form">
+            <field name="name">medical.insurance.plan.wizard.view.form</field>
+            <field name="model">medical.insurance.plan.wizard</field>
+            <field name="arch" type="xml">
+                
+                <form string="Insurance Plan">
+
+                    <header />
+                    
+                    <sheet>
+                        <group name="plan">
+                            <field name="insurance_template_id" />
+                            <field name="number" />
+                        </group>
+                        <group name="member">
+                            <field name="member_since" />
+                            <field name="member_exp" />
+                        </group>
+                    </sheet>
+                    
+                    <footer>
+                        <button special="cancel"
+                                string="Cancel" />
+                        <button name="action_create_plan"
+                                type="object"
+                                string="Create Plan"
+                                class="oe_highlight" />
+                    </footer>
+                    
+                </form>
+            </field>
+        </record>
+
+        <act_window src_model="medical.patient"
+                    res_model="medical.insurance.plan.wizard"
+                    id="medical_insurance_plan_wizard_action"
+                    name="Create Plan"
+                    view_mode="form"
+                    target="new"
+                    key2="client_action_multi"/>
+        
+    </data>
+</openerp>
