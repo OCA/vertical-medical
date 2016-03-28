@@ -20,19 +20,23 @@ class MedicalInsurancePlan(models.Model):
     @api.multi
     def write(self, vals):
         res = super(MedicalInsurancePlan, self).write(vals)
-        if 'active' not in vals:
-            for rec_id in self:
-                rec_id._save_pricelist_and_invalidate_plans()
+        if vals.get('active', True):
+            self._save_pricelist_and_invalidate_plans()
         return res
 
     @api.multi
     def _save_pricelist_and_invalidate_plans(self):
-        if self.patient_id:
-            self.patient_id.write({'pricelist_id': self.pricelist_id.id})
-            plan_ids = self.patient_id.insurance_plan_ids
-            plan_ids.search([('id', '!=', self.id)]).action_invalidate()
+        for rec_id in self:
+            if rec_id.patient_id:
+                rec_id.patient_id.write({
+                    'property_product_pricelist': rec_id.pricelist_id.id
+                })
+                plan_ids = rec_id.env['medical.insurance.plan'].search([
+                    ['patient_id', '=', rec_id.patient_id.id],
+                    ['id', '!=', rec_id.id],
+                ])
+                plan_ids.action_invalidate()
 
     @api.multi
     def action_invalidate(self):
-        for rec_id in self:
-            rec_id.active = False
+        self.write({'active': False})

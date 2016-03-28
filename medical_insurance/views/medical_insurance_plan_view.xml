@@ -20,7 +20,9 @@
 			<field name="model">medical.insurance.plan</field>
 			<field name="arch" type="xml">
 				<form string="Insurance Plan">
-					<header />
+					<header>
+						<field name="name" readonly="True" />
+					</header>
 					<sheet>
 						<group name="data">
 							<field name="patient_id" />

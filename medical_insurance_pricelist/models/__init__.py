@@ -4,4 +4,3 @@
 
 from . import medical_insurance_plan
 from . import medical_insurance_template
-from . import medical_patient

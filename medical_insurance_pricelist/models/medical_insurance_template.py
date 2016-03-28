@@ -10,4 +10,5 @@ class MedicalInsuranceTemplate(models.Model):
     pricelist_id = fields.Many2one(
         string='Pricelist',
         comodel_name='product.pricelist',
+        help='Pricelist for plan',
     )

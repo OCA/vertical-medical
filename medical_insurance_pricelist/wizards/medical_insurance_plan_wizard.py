@@ -8,12 +8,6 @@ from openerp import api, fields, models
 class MedicalInsurancePlanWizard(models.TransientModel):
     _name = 'medical.insurance.plan.wizard'
     _description = 'Medical Insurance Plan Wizard'
-
-    def _compute_default_session(self):
-        return self.env['medical.patient'].browse(
-            self._context.get('active_id')
-        )
-
     insurance_template_id = fields.Many2one(
         string='Plan Template',
         help='Insurance Plan Template',
@@ -38,8 +32,15 @@ class MedicalInsurancePlanWizard(models.TransientModel):
         string='Expiration Date',
     )
 
+    @api.model
+    def _compute_default_session(self):
+        return self.env['medical.patient'].browse(
+            self._context.get('active_id')
+        )
+
     @api.multi
     def action_create_plan(self):
+        self.ensure_one()
         plan_obj = self.env['medical.insurance.plan']
         plan_obj.create({
             'insurance_template_id': self.insurance_template_id.id,

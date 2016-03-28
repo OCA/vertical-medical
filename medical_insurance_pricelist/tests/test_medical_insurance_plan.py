@@ -54,9 +54,10 @@ class TestMedicalInsurancePlan(TransactionCase):
     def test_pricelist_saved_on_patient_on_create(self):
         rec_id = self._new_record()
         self.assertEqual(
-            rec_id.pricelist_id, self.patient_id.pricelist_id,
+            rec_id.pricelist_id, self.patient_id.property_product_pricelist,
             'Pricelist did not save on patient. Expected %s got %s' % (
-                rec_id.pricelist_id, self.patient_id.pricelist_id
+                rec_id.pricelist_id,
+                self.patient_id.property_product_pricelist
             )
         )
 
@@ -67,9 +68,9 @@ class TestMedicalInsurancePlan(TransactionCase):
         })
         rec_id.write({'patient_id': new_patient_id.id})
         self.assertEqual(
-            rec_id.pricelist_id, new_patient_id.pricelist_id,
+            rec_id.pricelist_id, new_patient_id.property_product_pricelist,
             'Pricelist did not save on patient. Expected %s got %s' % (
-                rec_id.pricelist_id, new_patient_id.pricelist_id
+                rec_id.pricelist_id, new_patient_id.property_product_pricelist
             )
         )
 
