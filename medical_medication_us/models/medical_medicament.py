@@ -11,6 +11,14 @@ class MedicalMedicament(models.Model):
         string='NDC',
         help='National Drug Code for medication'
     )
+    gpi = fields.Integer(
+        string='GPI',
+        help='Generic Product Identifier',
+    )
+    gcn = fields.Integer(
+        string='GCN',
+        help='Generic Code Number',
+    )
     control_code = fields.Selection([
         ('c1', 'C1'),
         ('c2', 'C2'),
