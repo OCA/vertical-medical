@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/OCA/vertical-medical.svg?branch=9.0)](https://travis-ci.org/OCA/vertical-medical)
-[![Coverage Status](https://coveralls.io/repos/OCA/vertical-medical/badge.png?branch=9.0)](https://coveralls.io/r/OCA/vertical-medical?branch=9.0)
+[![Build Status](https://api.travis-ci.org/laslabs/vertical-medical.svg?branch=release%2F9.0)](https://travis-ci.org/laslabs/vertical-medical)
+[![Coverage Status](https://coveralls.io/repos/laslabs/vertical-medical/badge.png?branch=release%2F9.0)](https://coveralls.io/r/laslabs/vertical-medical)
 
 What is Odoo Medical
 ---
