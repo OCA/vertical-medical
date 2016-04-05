@@ -10,7 +10,7 @@
 	<template id="patients" name="Patients">
 		<h3 class="page-header">
 			Patients
-			<a href="/my/patients/0">
+			<a href="/medical/patients/0">
 				+
 			</a>
 		</h3>
@@ -24,13 +24,14 @@
                       <th>Name</th>
                       <th>Age</th>
                       <th>Gender</th>
+					  <th>Deactivate</th>
                     </tr>
                 </thead>
 				<tbody>
 					<t t-foreach="patients" t-as="patient">
 						<tr>
 							<td>
-								<a t-att-href="'/my/patients/' + str(patient.id)">
+								<a t-att-href="patient.website_url">
 									<t t-esc="patient.name" />
 								</a>
 							</td>
@@ -39,6 +40,12 @@
 							</td>
 							<td>
 								<span t-field="patient.gender" />
+							</td>
+							<td>
+								<t t-call="website_medical.object_delete">
+									<t t-set="object" t-value="patient" />
+									<t t-set="name" t-value="'patient'" />
+								</t>
 							</td>
 						</tr>
 					</t>
@@ -53,7 +60,10 @@
 				<div class="oe_structure" />
 				<div class="container">
 					<div class="row">
-						<t t-call="website_medical_patient.patient_detail" />
+						<t t-call="website_medical_patient.patient_detail">
+							<t t-set="patient" t-value="patient"/>
+							<t t-set="partner" t-value="partner"/>
+						</t>
 					</div>
 				</div>
 				<div class="oe_structure" />
@@ -63,8 +73,15 @@
 
     <template id="patient_detail">
 		<h1>Patient Details</h1>
-		<form t-action="'/my/patients/%s' % patient.id or 'new'" method="post">
-			<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+		<form action="/medical_website_form/"
+			  method="post"
+			  enctype="multipart/form-data"
+			  data-model_name="medical.patient"
+			  data-success_page="/my/home"
+			  class="s_website_form form-horizontal container-fluid mt32">
+			<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+			<input type="hidden" name="parent_id" t-att-value="patient.parent_id.id or partner.id" />
+			<input type="hidden" name="id" t-att-value="patient.id or 0" />
 			<div class="row o_website_portal_details">
 				<div class="col-md-8">
 					<div class="row">
@@ -75,50 +92,57 @@
 							  </t>
 						  </div>
 						</div>
-						<div t-attf-class="form-group #{error.get('name') and 'has-error' or ''} col-lg-6">
+						<div t-attf-class="form-group form-field #{error.get('name') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
 							<label class="control-label" for="contact_name">
 								Full Name
 							</label>
 							<input type="text"
 								   name="name"
-								   class="form-control"
-								   t-att-value="name or patient.name or ''" />
+								   class="form-control o_website_form_input"
+								   required=""
+								   t-att-value="request.params.get('name') or patient.name or ''" />
 						</div>
-						<div t-attf-class="form-group #{error.get('email') and 'has-error' or ''} col-lg-6">
+						<div t-attf-class="form-group form-field #{error.get('email') and 'has-error' or ''} col-lg-6">
 							<label class="control-label" for="contact_name">
 								Email
 							</label>
-							<input type="email" name="email" class="form-control" t-att-value="email or patient.email or ''" />
+							<input type="email"
+								   name="email"
+								   class="form-control o_website_form_input"
+								   t-att-value="request.params.get('email') or patient.email or partner.email or ''" />
 						</div>
-						<div t-attf-class="form-group #{error.get('phone') and 'has-error' or ''} col-lg-6">
+						<div t-attf-class="form-group form-field #{error.get('phone') and 'has-error' or ''} col-lg-6">
 							<label class="control-label" for="phone">
 								Phone
 							</label>
 							<input type="tel"
 								   name="phone"
-								   class="form-control"
-								   t-att-value="phone or patient.phone or ''" />
+								   class="form-control o_website_form_input"
+								   t-att-value="request.params.get('phone') or patient.phone or partner.phone or ''" />
 						</div>
 
 						<div class="clearfix" />
-						<div t-attf-class="form-group #{error.get('dob') and 'has-error' or ''} col-lg-6">
+						<div t-attf-class="o_datepicker form-group form-field #{error.get('dob') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
 							<label class="control-label label-optional" for="dob">
 								Birth Date
 							</label>
-							<input type="text"
+							<input type="datepicker"
 								   name="dob"
-								   class="form-control"
-								   t-att-value="dob or patient.dob or ''" />
+								   required=""
+								   class="form-control o_website_form_date"
+								   t-att-value="request.params.get('dob') or _format_date(patient.dob) or ''" />
 						</div>
-						<div t-attf-class="form-group #{error.get('gender') and 'has-error' or ''} col-lg-6">
+
+						<div t-attf-class="form-group form-field #{error.get('gender') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
 							<label class="control-label label-optional" for="gender">
 								Gender
 							</label>
-							<select name="gender" class="form-control">
-								<t t-foreach="[('', 'Gender...'), ('f', 'Female'), ('m', 'Male'), ]"
+							<select name="gender" class="form-control o_website_form_input" required="">
+								<option value="">Gender...</option>
+								<t t-foreach="[('f', 'Female'), ('m', 'Male'), ]"
 								   t-as="gender">
 									<option t-att-value="gender[0]"
-											t-att-selected="gender[0] == patient.gender">
+											t-att-selected="gender[0] == (request.params.get('gender') or patient.gender)">
 										<t t-esc="gender[1]" />
 									</option>
 								</t>
@@ -132,79 +156,86 @@
 						-->
 
 						<div class="clearfix" />
-						<div t-attf-class="form-group #{error.get('street') and 'has-error' or ''} col-lg-6">
+						<div t-attf-class="form-group form-field #{error.get('street') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
 							<label class="control-label" for="street">
 								Street
 							</label>
 							<input type="text"
 								   name="street"
-								   class="form-control"
-								   t-att-value="street or patient.street or ''" />
+								   required=""
+								   class="form-control o_website_form_input"
+								   t-att-value="request.params.get('street') or patient.street or partner.street or ''" />
 						</div>
-						<div t-attf-class="form-group #{error.get('street2') and 'has-error' or ''} col-lg-6">
+						<div t-attf-class="form-group form-field #{error.get('street2') and 'has-error' or ''} col-lg-6">
 							<label class="control-label" for="street">
 								Street 2nd
 							</label>
 							<input type="text"
 								   name="street2"
 								   class="form-control"
-								   t-att-value="street2 or patient.street2 or ''" />
+								   t-att-value="request.params.get('street2') or patient.street2 or ''" />
 						</div>
-						<div t-attf-class="form-group #{error.get('city') and 'has-error' or ''} col-lg-6">
+						<div t-attf-class="form-group form-field #{error.get('city') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
 							<label class="control-label" for="city">
 								City
 							</label>
 							<input type="text"
 								   name="city"
-								   class="form-control"
-								   t-att-value="city or patient.city or ''" />
+								   required=""
+								   class="form-control o_website_form_input"
+								   t-att-value="request.params.get('city') or patient.city or partner.city or ''" />
 						</div>
-						<div t-attf-class="form-group #{error.get('zip') and 'has-error' or ''} col-lg-6">
+						<div t-attf-class="form-group form-field #{error.get('zip') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
 							<label class="control-label" for="zipcode">
 								Zip / Postal Code
 							</label>
 							<input type="text"
-								   name="zipcode"
-								   class="form-control"
-								   t-att-value="zipcode or patient.zip or ''" />
+								   name="zip"
+								   required=""
+								   class="form-control o_website_form_input"
+								   t-att-value="request.params.get('zip') or patient.zip or partner.zip or ''" />
 						</div>
-						<div t-attf-class="form-group #{error.get('state_id') and 'has-error' or ''} col-lg-6">
+						<div t-attf-class="form-group form-field #{error.get('state_id') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
 							<label class="control-label label-optional" for="state_id">
 								State / Province
 							</label>
-							<select name="state_id" class="form-control">
+							<select name="state_id" class="form-control o_website_form_input" required="">
 								<option value="">State/Province...</option>
 								<t t-foreach="states or []" t-as="state">
 									<option t-att-value="state.id"
 											style="display:none;"
 											t-att-data-country_id="state.country_id.id"
-											t-att-selected="state.id == patient.state_id.id">
+											t-att-selected="state.id == (request.params.get('state_id') or patient.state_id.id or partner.state_id.id)">
 										<t t-esc="state.name" />
 									</option>
 								</t>
 							</select>
 						</div>
-						<div t-attf-class="form-group #{error.get('country_id') and 'has-error' or ''} col-lg-6">
+						<div t-attf-class="form-group form-field #{error.get('country_id') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
 							<label class="control-label" for="country_id">
 								Country
 							</label>
-							<select name="country_id" class="form-control">
+							<select name="country_id" class="form-control o_website_form_input" required="">
 								<option value="">Country...</option>
 								<t t-foreach="countries or []" t-as="country">
 									<option t-att-value="country.id"
-											t-att-selected="country.id == patient.country_id.id">
+											t-att-selected="country.id == (request.params.get('country_id') or patient.country_id.id or partner.country_id.id)">
 										<t t-esc="country.name" />
 									</option>
 								</t>
 							</select>
 						</div>
-						<input type="hidden" name="redirect" t-att-value="redirect"/>
 					</div>
-					<div class="clearfix">
-						<button type="submit" class="btn btn-default btn-primary pull-right mb32 ">
-							Confirm
+					<div class="clearfix form-group">
+						<a class="btn btn-default pull-left" href="/my/home">
+							<span class="fa fa-long-arrow-left" />
+							Home
+						</a>
+						<button class="btn btn-primary pull-right mb32 o_website_form_send">
+							Save
 							<span class="fa fa-long-arrow-right" />
 						</button>
+						<span id="o_website_form_result" />
 					</div>
 				</div>
 			</div>

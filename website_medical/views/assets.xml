@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2014-TODAY LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    The license is in the file __openerp__.py
+-->
+
+<openerp>
+    <data>
+        <template id="assets_frontend" name="LasLabs.com Front End  Assets" inherit_id="website.assets_frontend">
+            <xpath expr="." position="inside">
+                <script type="application/javascript" src="/website_medical/static/src/js/delete_form.js" />
+            </xpath>
+        </template>
+    </data>
+</openerp>

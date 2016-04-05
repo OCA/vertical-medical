@@ -5,11 +5,13 @@
 from openerp import http
 from openerp.http import request
 
-from openerp.addons.website_portal.controllers.main import website_account
+from openerp.addons.website_medical.controllers.main import (
+    WebsiteAccount
+)
 from openerp.exceptions import ValidationError
 
 
-class WebsiteAccount(website_account):
+class WebsiteAccount(WebsiteAccount):
 
     @http.route(['/my/home'], type='http', auth="user", website=True)
     def account(self, **kw):
@@ -29,18 +31,25 @@ class WebsiteAccount(website_account):
         })
         return response
 
-    def detail_vals(self, patient_id):
+    def _inject_detail_vals(self, patient_id):
+        vals = super(WebsiteAccount, self)._inject_detail_vals()
         countries = request.env['res.country'].sudo().search([])
         states = request.env['res.country.state'].sudo().search([])
         patient_id = request.env['medical.patient'].browse(patient_id)
-        return {
+        if len(patient_id):
+            partner_id = patient_id.partner_id
+        else:
+            partner_id = request.env.user.partner_id
+        vals.update({
             'countries': countries,
             'states': states,
             'patient': patient_id,
-        }
+            'partner': partner_id,
+        })
+        return vals
 
     @http.route(
-        ['/my/patients/<int:patient_id>'],
+        ['/medical/patients/<int:patient_id>'],
         type='http',
         auth='user',
         website=True,
@@ -48,26 +57,11 @@ class WebsiteAccount(website_account):
     def patient(self, patient_id=None, redirect=None, **post):
         values = {
             'error': {},
-            'error_message': []
+            'error_message': [],
         }
-        if patient_id is None:
-            return request.redirect('/my/patients/new')
-        values.update(self.detail_vals(patient_id))
+        values.update(
+            self._inject_detail_vals(patient_id)
+        )
         return request.website.render(
             'website_medical_patient.patient', values,
-        )
-
-    @http.route(
-        ['/my/patients/new'],
-        type='http',
-        auth='user',
-        website=True,
-    )
-    def patient_new(self, redirect=None, **post):
-        values = {
-            'error': {},
-            'error_message': []
-        }
-        return request.website.render(
-            'website_medical_patient.patient_new', values,
         )
