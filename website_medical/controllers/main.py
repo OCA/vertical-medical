@@ -28,8 +28,8 @@ class WebsiteForm(Ctrl):
         })
 
     @http.route(
-        ['/medical_website_form/<string:model_name>/<int:id>',
-         '/medical_website_form/<string:model_name>/'],
+        ['/medical/website_form/<string:model_name>/<int:id>',
+         '/medical/website_form/<string:model_name>/'],
         type='http',
         auth="user",
         methods=['POST'],
@@ -44,11 +44,14 @@ class WebsiteForm(Ctrl):
             return json.dumps(False)
 
         try:
-            data = self.extract_data(model_record, ** kwargs)
+            data = self.extract_data(model_record, **kwargs)
         # If we encounter an issue while extracting data
         except ValidationError, e:
             # I couldn't find a cleaner way to pass data to an exception
-            return json.dumps({'error_fields' : e.args[0]})
+            return json.dumps({'error_fields': e.args[0]})
+
+        _logger.debug(model_name)
+        _logger.debug(data)
 
         try:
             id_record = self.insert_or_update_record(
@@ -64,20 +67,21 @@ class WebsiteForm(Ctrl):
                     model_record, id_record, data['attachments'],
                 )
 
-        # Some fields have additionnal SQL constraints that we can't check generically
+        # Some fields have additionnal SQL constraints that we can't check
+        # generically
         # Ex: crm.lead.probability which is a float between 0 and 1
         # TODO: How to get the name of the erroneous field ?
         except IntegrityError:
             return json.dumps(False)
 
         request.session['form_builder_model'] = model_record.name
-        request.session['form_builder_id']    = id_record
+        request.session['form_builder_id'] = id_record
 
         return json.dumps({'id': id_record})
 
     @http.route(
-        ['/medical_website_form/<string:model_name>/<int:id>',
-         '/medical_website_form/<string:model_name>/'],
+        ['/medical/website_form/<string:model_name>/<int:id>',
+         '/medical/website_form/<string:model_name>/'],
         type='http',
         auth="user",
         methods=['DELETE'],
@@ -100,7 +104,7 @@ class WebsiteForm(Ctrl):
             record.action_invalidate()
         except ValidationError, e:
             # I couldn't find a cleaner way to pass data to an exception
-            return json.dumps({'error_fields' : e.args[0]})
+            return json.dumps({'error_fields': e.args[0]})
         return json.dumps({
             'rec_id': rec_id,
             'model_name': model_name,
@@ -123,9 +127,10 @@ class WebsiteForm(Ctrl):
         if custom or meta:
             default_field = model.website_form_default_field_id
             default_field_data = values.get(default_field.name, '')
-            custom_content = (default_field_data + "\n\n" if default_field_data else '') \
-                           + (self._custom_label + custom + "\n\n" if custom else '') \
-                           + (self._meta_label + meta if meta else '')
+            custom_content = \
+                (default_field_data + "\n\n" if default_field_data else '') +\
+                (self._custom_label + custom + "\n\n" if custom else '') +\
+                (self._meta_label + meta if meta else '')
 
             # If there is a default field configured for this model, use it.
             # If there isn't, put the custom data in a message instead
@@ -146,7 +151,26 @@ class WebsiteForm(Ctrl):
         return record.id
 
 
-class WebsiteAccount(website_account):
+class WebsiteMedical(website_account):
+
+    @http.route(
+        ['/medical', '/my/medical'],
+        type='http',
+        auth="user",
+        website=True,
+    )
+    def my_medical(self):
+        partner = request.env.user.partner_id
+
+        # get customer sales rep
+        if partner.user_id:
+            sales_rep = partner.user_id
+        else:
+            sales_rep = False
+        values = {
+            'user': request.env.user
+        }
+        return request.website.render("website_medical.medical_main", values)
 
     def _format_date(self, date):
         if not date:
@@ -154,7 +178,7 @@ class WebsiteAccount(website_account):
         split = date.split('-')
         return '%s/%s/%s' % (split[1], split[2], split[0])
 
-    def _inject_detail_vals(self):
+    def _inject_medical_detail_vals(self, **kwargs):
         return {
             '_format_date': self._format_date,
         }

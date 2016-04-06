@@ -9,7 +9,7 @@
 <odoo>
 	<template id="object_delete">
 		<form class="medical-form-deactivate"
-              action="/medical_website_form/"
+              action="/medical/website_form/"
 			  method="delete"
 			  enctype="multipart/form-data"
 			  t-att-data-model_name="object._name"

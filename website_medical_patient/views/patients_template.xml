@@ -10,8 +10,8 @@
 	<template id="patients" name="Patients">
 		<h3 class="page-header">
 			Patients
-			<a href="/medical/patients/0">
-				+
+			<a href="/medical/patients/0" class="btn btn-primary">
+				<i class="fa fa-plus-circle" />
 			</a>
 		</h3>
         <t t-if="not patients">
@@ -24,7 +24,7 @@
                       <th>Name</th>
                       <th>Age</th>
                       <th>Gender</th>
-					  <th>Deactivate</th>
+					  <th t-if="not suppress_deactivate">Deactivate</th>
                     </tr>
                 </thead>
 				<tbody>
@@ -73,11 +73,11 @@
 
     <template id="patient_detail">
 		<h1>Patient Details</h1>
-		<form action="/medical_website_form/"
+		<form action="/medical/website_form/"
 			  method="post"
 			  enctype="multipart/form-data"
 			  data-model_name="medical.patient"
-			  data-success_page="/my/home"
+			  t-att-data-success_page="success_page or '/my/medical/'"
 			  class="s_website_form form-horizontal container-fluid mt32">
 			<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
 			<input type="hidden" name="parent_id" t-att-value="patient.parent_id.id or partner.id" />
@@ -93,7 +93,7 @@
 						  </div>
 						</div>
 						<div t-attf-class="form-group form-field #{error.get('name') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
-							<label class="control-label" for="contact_name">
+							<label class="control-label" for="name">
 								Full Name
 							</label>
 							<input type="text"
@@ -103,7 +103,7 @@
 								   t-att-value="request.params.get('name') or patient.name or ''" />
 						</div>
 						<div t-attf-class="form-group form-field #{error.get('email') and 'has-error' or ''} col-lg-6">
-							<label class="control-label" for="contact_name">
+							<label class="control-label" for="email">
 								Email
 							</label>
 							<input type="email"
@@ -121,12 +121,11 @@
 								   t-att-value="request.params.get('phone') or patient.phone or partner.phone or ''" />
 						</div>
 
-						<div class="clearfix" />
 						<div t-attf-class="o_datepicker form-group form-field #{error.get('dob') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
 							<label class="control-label label-optional" for="dob">
 								Birth Date
 							</label>
-							<input type="datepicker"
+							<input type="text"
 								   name="dob"
 								   required=""
 								   class="form-control o_website_form_date"
@@ -186,7 +185,7 @@
 								   t-att-value="request.params.get('city') or patient.city or partner.city or ''" />
 						</div>
 						<div t-attf-class="form-group form-field #{error.get('zip') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
-							<label class="control-label" for="zipcode">
+							<label class="control-label" for="zip">
 								Zip / Postal Code
 							</label>
 							<input type="text"

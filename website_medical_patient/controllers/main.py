@@ -6,17 +6,17 @@ from openerp import http
 from openerp.http import request
 
 from openerp.addons.website_medical.controllers.main import (
-    WebsiteAccount
+    WebsiteMedical
 )
 from openerp.exceptions import ValidationError
 
 
-class WebsiteAccount(WebsiteAccount):
+class WebsiteMedical(WebsiteMedical):
 
-    @http.route(['/my/home'], type='http', auth="user", website=True)
-    def account(self, **kw):
-        """ Add patients to main account page """
-        response = super(WebsiteAccount, self).account()
+    @http.route(['/my/medical', '/medical'], type='http', auth="user", website=True)
+    def my_medical(self, **kw):
+        """ Add patients to medical account page """
+        response = super(WebsiteMedical, self).my_medical()
         partner_id = request.env.user.partner_id
 
         patient_obj = request.env['medical.patient']
@@ -31,8 +31,8 @@ class WebsiteAccount(WebsiteAccount):
         })
         return response
 
-    def _inject_detail_vals(self, patient_id):
-        vals = super(WebsiteAccount, self)._inject_detail_vals()
+    def _inject_medical_detail_vals(self, patient_id=0, **kwargs):
+        vals = super(WebsiteMedical, self)._inject_medical_detail_vals()
         countries = request.env['res.country'].sudo().search([])
         states = request.env['res.country.state'].sudo().search([])
         patient_id = request.env['medical.patient'].browse(patient_id)
@@ -44,6 +44,7 @@ class WebsiteAccount(WebsiteAccount):
             'countries': countries,
             'states': states,
             'patient': patient_id,
+            'patient_website_attr': 'website_url',
             'partner': partner_id,
         })
         return vals
@@ -53,14 +54,16 @@ class WebsiteAccount(WebsiteAccount):
         type='http',
         auth='user',
         website=True,
+        methods=['GET'],
     )
-    def patient(self, patient_id=None, redirect=None, **post):
+    def patient(self, patient_id=None, redirect=None, **kwargs):
         values = {
             'error': {},
             'error_message': [],
+            'success_page': kwargs.get('success_redirect', '/my/medical')
         }
         values.update(
-            self._inject_detail_vals(patient_id)
+            self._inject_medical_detail_vals(patient_id)
         )
         return request.website.render(
             'website_medical_patient.patient', values,
