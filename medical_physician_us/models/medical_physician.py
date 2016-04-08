@@ -7,7 +7,7 @@ from openerp.exceptions import ValidationError
 
 
 class MedicalPhysician(models.Model):
-    _inherit = ['medical.physician', 'medical.luhn.abstract']
+    _inherit = ['medical.physician', 'medical.abstract.luhn']
     _name = 'medical.physician'
 
     license_num = fields.Char(
@@ -22,9 +22,19 @@ class MedicalPhysician(models.Model):
 
     @api.multi
     @api.constrains('country_id', 'npi_num')
-    def _check_ref(self):
+    def _check_npi_num(self):
         """ Implement Luhns Formula to validate NPI """
         for rec_id in self:
             if rec_id.country_id.code == 'US':
                 if not self._luhn_is_valid(rec_id.npi_num):
                     raise ValidationError('Invalid NPI Number.')
+
+    @api.multi
+    @api.constrains('country_id', 'dea_num')
+    def _check_dea_num(self, ):
+        """ Implement DEA Formula to validate NPI """
+        for rec_id in self:
+            if rec_id.country_id.code == 'US':
+                if not self._luhn_is_valid(rec_id.npi_num):
+                    raise ValidationError('Invalid NPI Number.')
+    

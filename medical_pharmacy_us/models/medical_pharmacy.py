@@ -7,7 +7,7 @@ from openerp.exceptions import ValidationError
 
 
 class MedicalPharmacy(models.Model):
-    _inherit = ['medical.pharmacy', 'medical.luhn.abstract']
+    _inherit = ['medical.pharmacy', 'medical.abstract.luhn']
     _name = 'medical.pharmacy'
 
     nabp_num = fields.Char(

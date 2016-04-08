@@ -7,7 +7,7 @@ from openerp.exceptions import ValidationError
 
 
 class ResPartner(models.Model):
-    _inherit = ['res.partner', 'medical.luhn.abstract']
+    _inherit = ['res.partner', 'medical.abstract.luhn']
     _name = 'res.partner'
 
     @api.multi
