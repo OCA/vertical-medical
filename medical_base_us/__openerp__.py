@@ -3,8 +3,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    'name': 'Medical Base - Luhn',
-    'summary': 'Provides an abstract model with Luhn validation.',
+    'name': 'Medical Base - US',
+    'summary': 'Provides some helper mixins for US locale',
     'version': '9.0.1.0.0',
     'author': 'LasLabs, Odoo Community Association (OCA)',
     'category': 'Medical',
