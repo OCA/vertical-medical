@@ -63,7 +63,7 @@
                                        context="{'default_is_patient': True}" />
                                 <field name="physician_id" domain="[('is_doctor', '=', True)]"
                                        context="{'default_is_doctor': True}" />
-                                <field name="date_prescription" />
+                                <field name="date_prescription"/>
                             </group>
                             <group>
                                 <field name="partner_id" domain="[('is_pharmacy', '=', True)]"
@@ -76,7 +76,9 @@
                             <page string="Order Lines" name="order_lines">
                                 <field name="prescription_order_line_ids" nolabel="1"
                                        context="{'default_patient_id': patient_id,
-                                                 'default_physician_id': physician_id, }">
+                                                 'default_physician_id': physician_id,
+                                                 'default_prescription_order_id': id,
+                                                 'default_date_start_treatment': date_prescription}">
                                     <tree>
                                         <field name="date_start_treatment" />
                                         <field name="date_stop_treatment" />

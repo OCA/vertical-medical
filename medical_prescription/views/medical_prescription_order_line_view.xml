@@ -46,7 +46,7 @@
                 ref="medical_medication.medical_patient_medication_form_view"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='medication_template_id']/parent::group" postition="inside">
-                    <field name="prescription_order_id" required="1"/>
+                    <field name="prescription_order_id" context="{'default_patient_id': patient_id}"/>
                     <field name="qty"/>
                     <field name="is_substitutable"/>
                 </xpath>
