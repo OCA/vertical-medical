@@ -12,7 +12,7 @@ class MedicalLuhnAbstract(models.AbstractModel):
     to avoid name collisions with models that will inherit from this class.
     """
 
-    _name = 'medical.luhn.abstract'
+    _name = 'medical.abstract.luhn'
 
     @api.model
     def _luhn_is_valid(self, num):

@@ -37,4 +37,3 @@ class MedicalPhysician(models.Model):
             if rec_id.country_id.code == 'US':
                 if not self._luhn_is_valid(rec_id.npi_num):
                     raise ValidationError('Invalid NPI Number.')
-    
