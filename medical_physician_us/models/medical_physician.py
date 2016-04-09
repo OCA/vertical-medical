@@ -24,10 +24,7 @@ class MedicalPhysician(models.Model):
     @api.constrains('country_id', 'npi_num')
     def _check_npi_num(self):
         """ Implement Luhns Formula to validate NPI """
-        for rec_id in self:
-            if rec_id.country_id.code == 'US':
-                if not self._luhn_is_valid(rec_id.npi_num):
-                    raise ValidationError('Invalid NPI Number.')
+        self._luhn_constrains_helper('npi_num')
 
     @api.multi
     @api.constrains('country_id', 'dea_num')
@@ -36,4 +33,4 @@ class MedicalPhysician(models.Model):
         for rec_id in self:
             if rec_id.country_id.code == 'US':
                 if not self._luhn_is_valid(rec_id.npi_num):
-                    raise ValidationError('Invalid NPI Number.')
+                    raise ValidationError('Invalid DEA Number.')

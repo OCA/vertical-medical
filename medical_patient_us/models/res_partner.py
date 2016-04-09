@@ -3,7 +3,6 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import models, api
-from openerp.exceptions import ValidationError
 
 
 class ResPartner(models.Model):
@@ -15,6 +14,5 @@ class ResPartner(models.Model):
     def _check_ref(self):
         """ Implement Luhns Formula to validate social security numbers """
         for rec_id in self:
-            if rec_id.country_id.code == 'US' and rec_id.is_patient:
-                if not self._luhn_is_valid(rec_id.ref):
-                    raise ValidationError('Invalid Social Security Number.')
+            if rec_id.is_patient:
+                rec_id._luhn_constrains_helper('ref')
