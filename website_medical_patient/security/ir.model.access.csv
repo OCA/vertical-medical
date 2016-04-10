@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_patient_portal,medical.patient.portal,medical.model_medical_patient,base.group_portal,1,1,1,0
+access_res_partner_portal,res.partner.portal,base.model_res_partner,base.group_portal,1,1,1,0

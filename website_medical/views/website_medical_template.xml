@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016-TODAY LasLabs [https://laslabs.com]
+    @license AGPL-3
+-->
+
+<odoo>
+	<template id="medical_main" name="Medical Main">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container mb64">
+                    <div class="col-md-8 o_my_medical">
+                        <div class="oe_structure" />
+                    </div>
+                    <div t-if="sales_rep" class="col-md-3">
+                      <t t-call="website_portal.contact" />
+                      <div class="oe_structure" />
+                    </div>
+                    <div id="o_my_sidebar" class="col-md-3 col-md-offset-1 o_my_sidebar">
+                        <div class="o_my_details">
+                            <h3 class="page-header">
+								Your Details
+								<a href="/my/account" class="btn btn-default btn-xs">
+									Change
+								</a>
+							</h3>
+                            <div t-field="user.partner_id"
+								 t-field-options='{"widget": "contact",
+												   "fields": ["email", "phone", "address", "name"]}' />
+                        </div>
+                    </div>
+                    <div class="col-md-12 oe_structure" />
+                </div>
+            </div>
+        </t>
+    </template>
+	
+	<template id="my_medical_link" name="Link to medical portal" inherit_id="website.layout">
+        <xpath expr="//li[@id='o_logout']" position="before">
+            <li>
+				<a href="/my/medical" role="menuitem">
+					My Medical
+				</a>
+			</li>
+        </xpath>
+    </template>
+	
+</odoo>

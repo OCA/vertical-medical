@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016-TODAY LasLabs [https://laslabs.com]
+    @license AGPL-3
+-->
+
+<odoo>
+	<template id="medical_patient"
+			  name="Medical Patient"
+			  inherit_id="website_medical.medical_main">
+		<xpath expr="//div[contains(@class,'o_my_medical')]" position="inside">
+			<div class="o_website_medical_container o_website_medical_patient">
+				<t t-call="website_medical_patient.patients" />
+			</div>
+		</xpath>
+	</template>
+</odoo>
