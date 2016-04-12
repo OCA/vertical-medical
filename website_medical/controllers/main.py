@@ -21,10 +21,14 @@ _logger = logging.getLogger(__name__)
 class WebsiteForm(Ctrl):
     # @TODO: Integrate this more w/ existing WebsiteForm instead of copy code
 
+    def date(self, field_label, field_input):
+        split = field_input.split('/')
+        return '%s-%s-%s' % (split[2], split[0], split[1])
+
     def __init__(self, *args, **kwargs):
         super(WebsiteForm, self).__init__(*args, **kwargs)
         self._input_filters.update({
-            'date': Ctrl.identity,
+            'date': WebsiteForm.date,
         })
 
     @http.route(
