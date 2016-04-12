@@ -60,7 +60,7 @@ class WebsiteMedical(WebsiteMedical):
         values = {
             'error': {},
             'error_message': [],
-            'success_page': kwargs.get('success_redirect', '/my/medical')
+            'success_page': kwargs.get('success_page', '/my/medical')
         }
         values.update(
             self._inject_medical_detail_vals(patient_id)
