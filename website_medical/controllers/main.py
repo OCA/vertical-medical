@@ -126,7 +126,7 @@ class WebsiteForm(Ctrl):
             _logger.debug('Writing %s with %s', record, values)
             record.write(values)
         if not record:
-            record = request.env[model.model].create(values)
+            record = request.env[model.model].sudo().create(values)
 
         if custom or meta:
             default_field = model.website_form_default_field_id
