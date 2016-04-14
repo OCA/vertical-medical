@@ -17,6 +17,17 @@
             <value eval="[
                 'dob',
 				'gender',
+				'parent_id',
+                'id',
+                'name',
+                'email',
+                'phone',
+				'street',
+				'street2',
+				'city',
+				'zip',
+				'state_id',
+				'country_id',
             ]"/>
         </function>
         <function model="ir.model.fields" name="formbuilder_whitelist">
