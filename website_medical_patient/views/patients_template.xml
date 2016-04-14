@@ -147,12 +147,13 @@
 								</t>
 							</select>
 						</div>
-						<!-- Removed for security.
-						<div t-if="has_check_vat" t-attf-class="form-group #{error.get('ref') and 'has-error' or ''} col-lg-6">
-							<label class="control-label label-optional" for="vat">SSN</label>
-							<input type="text" name="vat" class="form-control" t-att-value="vat or patient.vat" />
+						
+						<div t-attf-class="form-group field-password #{error.get('ref') and 'has-error' or ''} col-lg-6">
+							<label class="control-label label-optional" for="ref">
+								SSN
+							</label>
+							<input type="password" name="ref" class="form-control" t-att-value="ref or patient.ref" />
 						</div>
-						-->
 
 						<div class="clearfix" />
 						<div t-attf-class="form-group form-field #{error.get('street') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
