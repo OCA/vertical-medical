@@ -14,6 +14,7 @@
     'website': 'https://laslabs.com',
     'license': 'AGPL-3',
     'data': [
+        'views/medical_medicament_view.xml',
     ],
     'installable': True,
     'auto_install': False,
