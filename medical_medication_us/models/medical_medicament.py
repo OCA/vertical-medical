@@ -11,11 +11,11 @@ class MedicalMedicament(models.Model):
         string='NDC',
         help='National Drug Code for medication'
     )
-    gpi = fields.Integer(
+    gpi = fields.Char(
         string='GPI',
         help='Generic Product Identifier',
     )
-    gcn = fields.Integer(
+    gcn = fields.Char(
         string='GCN',
         help='Generic Code Number',
     )
