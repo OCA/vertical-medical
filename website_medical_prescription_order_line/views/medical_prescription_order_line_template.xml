@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016-TODAY LasLabs [https://laslabs.com]
+    @license AGPL-3
+-->
+
+<odoo>
+
+	<template id="prescription_lines" name="Prescription Lines">
+		<h3 class="page-header">
+			Prescriptions
+		</h3>
+        <t t-if="not patients">
+            <p>There are currently no prescriptions associated with your account.</p>
+        </t>
+        <t t-if="patients">
+            <table class="table table-hover o_my_status_table">
+                <thead>
+                  <tr class="active">
+                      <th>Patient</th>
+                      <th>Physician</th>
+                      <th>Start Date</th>
+					  <th>Medicine</th>
+					  <!--<th>Quantity</th>
+					  <th>Refills</th>-->
+                    </tr>
+                </thead>
+				<tbody>
+					<t t-foreach="prescription_order_lines" t-as="line">
+						<tr>
+							<td>
+								<span t-field="line.patient_id" />
+							</td>
+							<td>
+								<span t-field="line.physician_id" />
+							</td>
+							<td>
+								<span t-field="line.date_start_treatment" />
+							</td>
+							<td>
+								<span t-field="line.medicament_id" />
+							</td>
+							<!--<td>
+								<span t-field="line.refill_remain_cnt" />
+							</td>
+							<td>
+								<span t-field="line.qty" />
+							</td>-->
+						</tr>
+					</t>
+				</tbody>
+			</table>
+		</t>
+	</template>
+
+</odoo>

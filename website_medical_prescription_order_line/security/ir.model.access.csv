@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_prescription_order_portal,medical.prescription.order.portal,medical_prescription.model_medical_prescription_order,base.group_portal,1,0,0,0
+access_medical_prescription_order_line_portal,medical.prescription.order.line.portal,medical_prescription.model_medical_prescription_order_line,base.group_portal,1,0,0,0
+access_medical_patient_medication_portal,medical.patient.medication.portal,medical_medication.model_medical__patient_medication,base.group_portal,1,0,0,0
+access_medical_medicament_portal,medical.medicament.portal,medical_medicament.model_medical_medicament,base.group_portal,1,0,0,0

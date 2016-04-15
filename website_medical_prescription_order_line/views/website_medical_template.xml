@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016-TODAY LasLabs [https://laslabs.com]
+    @license AGPL-3
+-->
+
+<odoo>
+	<template id="medical_prescription_line"
+			  name="Medical Prescription Line"
+			  inherit_id="website_medical.medical_main">
+		<xpath expr="//div[contains(@class,'o_website_medical_patient')]" position="after">
+			<div class="o_website_medical_container o_website_medical_prescription_order_line">
+				<t t-call="website_medical_prescription_order_line.prescription_lines" />
+			</div>
+		</xpath>
+	</template>
+</odoo>
