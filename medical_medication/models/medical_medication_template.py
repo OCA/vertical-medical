@@ -2,7 +2,7 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models, api, _
+from openerp import fields, models, api
 
 
 class MedicalMedicationTemplate(models.Model):
@@ -18,51 +18,48 @@ class MedicalMedicationTemplate(models.Model):
     pathology_id = fields.Many2one(
         string='Pathology',
         comodel_name='medical.pathology',
-        help=_(
-            'Choose a disease for this medicament from the disease list.'
-            ' It can be an existing disease of the patient or a prophylactic.'
-        ),
+        help='Choose a disease for this medicament from the disease list.'
+             ' It can be an existing disease of the patient or a'
+             ' prophylactic.',
     )
     duration = fields.Integer(
-        help=_('Period that the patient must take the medication'),
+        help='Period that the patient must take the medication',
     )
     duration_uom_id = fields.Many2one(
         string='Duration UoM',
         comodel_name='product.uom',
         domain=[('category_id.name', '=', 'Time')],
-        help=_('Measurement unit for medication duration'),
+        help='Measurement unit for medication duration',
     )
     frequency = fields.Integer(
-        help=_(
-            'Time in between doses the patient must wait (ie, for 1 pill '
-            'each 8 hours, put here 8 and select "hours\" in the unit field'
-        ),
+        help='Time in between doses the patient must wait (ie, for 1 pill '
+             'each 8 hours, put here 8 and select "hours\" in the unit field',
     )
     frequency_uom_id = fields.Many2one(
         string='Frequency UoM',
         comodel_name='product.uom',
         domain=[('category_id.name', '=', 'Time')],
-        help=_('Measurement unit for medication frequency'),
+        help='Measurement unit for medication frequency',
     )
     frequency_prn = fields.Boolean(
-        help=_('Use medication as needed (pro re nata)'),
+        help='Use medication as needed (pro re nata)',
     )
     medication_dosage_id = fields.Many2one(
         string='Common Dose',
         comodel_name='medical.medication.dosage',
-        help=_('Common / standard dosage frequency for this medicament'),
+        help='Common / standard dosage frequency for this medicament',
     )
     suggested_administration_hours = fields.Char(
-        help=_('Time that medication should typically be administered'),
+        help='Time that medication should typically be administered',
     )
     quantity = fields.Integer(
         string='Dose Quantity',
-        help=_('Quantity of units (eg, 2 capsules) of the medicament'),
+        help='Quantity of units (eg, 2 capsules) of the medicament',
     )
     dose_uom_id = fields.Many2one(
         string='Dose Unit',
         comodel_name='product.uom',
-        help=_('Measurement unit for dosage quantity'),
+        help='Measurement unit for dosage quantity',
     )
 
     @api.multi
