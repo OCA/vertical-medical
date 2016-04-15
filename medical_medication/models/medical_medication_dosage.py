@@ -15,12 +15,10 @@ class MedicalMedicationDosage(models.Model):
         translate=True,
     )
     abbreviation = fields.Char(
-        help=_('Dosage abbreviation, such as tid in the US or tds in the UK'),
+        help='Dosage abbreviation, such as tid in the US or tds in the UK',
     )
     code = fields.Char(
-        help=_(
-            'Dosage Code, for example: SNOMED 229798009 = 3 times per day'
-        ),
+        help='Dosage Code, for example: SNOMED 229798009 = 3 times per day',
     )
 
     _sql_constraints = [
