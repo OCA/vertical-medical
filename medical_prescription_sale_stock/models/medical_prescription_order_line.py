@@ -64,7 +64,8 @@ class MedicalPrescriptionOrderLine(models.Model):
     )
 
     @api.multi
-    @api.depends('dispense_uom_id', 'sale_order_line_ids',
+    @api.depends('dispense_uom_id',
+                 'sale_order_line_ids',
                  'sale_order_line_ids.procurement_ids.product_uom',
                  'sale_order_line_ids.procurement_ids.product_qty',
                  'sale_order_line_ids.procurement_ids.state', )
@@ -109,7 +110,9 @@ class MedicalPrescriptionOrderLine(models.Model):
             )
 
     @api.multi
-    @api.depends('dispensed_qty', 'exception_dispense_qty',
+    @api.depends('qty',
+                 'dispensed_qty',
+                 'exception_dispense_qty',
                  'pending_dispense_qty')
     def _compute_can_dispense_and_qty(self, ):
         '''
@@ -118,7 +121,6 @@ class MedicalPrescriptionOrderLine(models.Model):
         '''
 
         for rec_id in self:
-
             total = sum([rec_id.dispensed_qty,
                          rec_id.exception_dispense_qty,
                          rec_id.pending_dispense_qty])
