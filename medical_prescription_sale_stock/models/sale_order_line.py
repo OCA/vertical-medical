@@ -19,21 +19,22 @@ class SaleOrderLine(models.Model):
         compute='_compute_dispense_qty',
     )
 
-    @api.model
-    @api.depends('prescription_order_line_id.dispense_uom_id',
-                 'product_uom')
-    def _compute_dispense_qty(self, ):
-        rx_line = self.prescription_order_line_id
-        if self.product_uom == rx_line.dispense_uom_id:
-            self.dispense_qty = self.product_uom_qty
-        else:
-            self.dispense_qty = self.env['product.uom']._compute_qty_obj(
-                self.product_uom, self.product_uom_qty, rx_line.dispense_uom_id
-            )
+    @api.multi
+    @api.depends('product_uom',
+                 'prescription_order_line_id.dispense_uom_id')
+    def _compute_dispense_qty(self):
+        for rec_id in self:
+            rx_line = rec_id.prescription_order_line_id
+            if rec_id.product_uom == rx_line.dispense_uom_id:
+                rec_id.dispense_qty = rec_id.product_uom_qty
+            else:
+                rec_id.dispense_qty = self.env['product.uom']._compute_qty_obj(
+                    rec_id.product_uom, rec_id.product_uom_qty, rx_line.dispense_uom_id
+                )
 
     @api.multi
     @api.constrains('product_id', 'prescription_order_line_id')
-    def _check_product(self, ):
+    def _check_product(self):
         for rec_id in self:
             if not rec_id.prescription_order_line_id:
                 continue
@@ -54,7 +55,7 @@ class SaleOrderLine(models.Model):
 
     @api.multi
     @api.constrains('patient_id', 'prescription_order_line_id')
-    def _check_patient(self, ):
+    def _check_patient(self):
         for rec_id in self:
             if not rec_id.prescription_order_line_id:
                 continue
@@ -70,15 +71,16 @@ class SaleOrderLine(models.Model):
 
     @api.multi
     @api.constrains('dispense_qty', 'prescription_order_line_id')
-    def _check_can_dispense(self, ):
+    def _check_can_dispense(self):
         for rec_id in self:
             if not rec_id.prescription_order_line_id:
                 continue
             rx_line = rec_id.prescription_order_line_id
             if not rx_line.can_dispense:
                 raise ValidationError(_(
-                    'Cannot dispense - '
-                    'Currently %f pending and %f exception.' % (
+                    'Cannot dispense because there are related, '
+                    'pending order(s). \n'
+                    'Currently %.2f in pending and %.2f in exception' % (
                         rx_line.pending_dispense_qty,
                         rx_line.exception_dispense_qty,
                     )
