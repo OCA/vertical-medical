@@ -7,24 +7,33 @@ from openerp import fields, models
 
 class MedicalMedicament(models.Model):
     _inherit = 'medical.medicament'
-    ndc = fields.Char(
-        string='NDC',
-        help='National Drug Code for medication'
+    ndc_ids = fields.One2many(
+        string='NDCs',
+        comodel_name='medical.medicament.ndc',
+        inverse_name='medicament_id',
+        ondelete='cascade',
+        help='National Drug Codes for medicament.',
     )
-    gpi = fields.Char(
-        string='GPI',
-        help='Generic Product Identifier',
-    )
-    gcn = fields.Char(
+    gcn_id = fields.Many2one(
         string='GCN',
-        help='Generic Code Number',
+        comodel_name='medical.medicament.gcn',
+        help='Generic Code Number for medicament.',
+    )
+    gpi = fields.Selection([
+        ('0', '0 (non-drug)'),
+        ('1', '1 (generic)'),
+        ('2', '2 (brand)'),
+    ],
+        string='GPI',
+        default='0',
+        help='Generic Product Identifier for medicament.',
     )
     control_code = fields.Selection([
-        ('c1', 'C1'),
-        ('c2', 'C2'),
-        ('c3', 'C3'),
-        ('c4', 'C4'),
-        ('c5', 'C5'),
+        ('1', 'C1'),
+        ('2', 'C2'),
+        ('3', 'C3'),
+        ('4', 'C4'),
+        ('5', 'C5'),
     ],
-        help='Federal drug scheduling code',
+        help='Federal drug scheduling code for medicament.',
     )

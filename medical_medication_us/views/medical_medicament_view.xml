@@ -14,11 +14,21 @@
             <field name="model">medical.medicament</field>
             <field name='inherit_id' ref='medical_medicament.medical_medicament_view_form'/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='drug_form_id']" position="before">
-                    <field name="ndc" />
-                    <field name="gpi" />
-                    <field name="gcn" />
-                    <field name="control_code" />"
+                <xpath expr="//notebook" position="inside">
+                    <page string="US" attrs="{'invisible': [('is_medicament', '=', False)]}">
+                        <group string="Classifications">
+                            <field name="gpi" />
+                            <field name="control_code" />
+                        </group>
+                        <group string="Identifiers">
+                            <field name="gcn_id" />
+                            <field name="ndc_ids">
+                                <tree>
+                                    <field name="ndc" />
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
                 </xpath>
             </field>
         </record>
@@ -29,8 +39,8 @@
             <field name='inherit_id' ref='medical_medicament.medical_medicament_view_tree'/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='drug_form_id']" position="before">
-                    <field name="ndc"/>
                     <field name="control_code"/>
+                    <field name="gcn_id" />
                 </xpath>
             </field>
         </record>
