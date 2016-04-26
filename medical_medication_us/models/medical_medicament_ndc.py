@@ -9,8 +9,12 @@ class MedicalMedicamentNdc(models.Model):
     _name = 'medical.medicament.ndc'
     _description = 'Medical Medicament NDC'
 
-    ndc = fields.Char()
+    name = fields.Char(
+        string='NDC',
+        help='National Drug Code',
+    )
     medicament_id = fields.Many2one(
         string='Medicament',
         comodel_name='medical.medicament',
+        required=True,
     )

@@ -9,11 +9,14 @@
     'version': '9.0.1.0.0',
     'author': "LasLabs, Odoo Community Association (OCA)",
     'category': 'Medical',
+    "website": "https://laslabs.com",
+    "license": "AGPL-3",
     'depends': [
         'medical',
     ],
-    "website": "https://laslabs.com",
-    "licence": "AGPL-3",
+    'data': [
+        'security/ir.model.access.csv',
+    ],
     'installable': True,
     'auto_install': False,
 }

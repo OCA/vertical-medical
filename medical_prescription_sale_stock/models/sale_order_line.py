@@ -29,7 +29,9 @@ class SaleOrderLine(models.Model):
                 rec_id.dispense_qty = rec_id.product_uom_qty
             else:
                 rec_id.dispense_qty = self.env['product.uom']._compute_qty_obj(
-                    rec_id.product_uom, rec_id.product_uom_qty, rx_line.dispense_uom_id
+                    rec_id.product_uom,
+                    rec_id.product_uom_qty,
+                    rx_line.dispense_uom_id,
                 )
 
     @api.multi

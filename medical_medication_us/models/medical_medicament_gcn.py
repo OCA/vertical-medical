@@ -9,11 +9,12 @@ class MedicalMedicamentGcn(models.Model):
     _name = 'medical.medicament.gcn'
     _description = 'Medical Medicament GCN'
 
-    gcn = fields.Char(
+    name = fields.Char(
         string='GCN',
         help='Generic Code Number',
     )
-    medicament_id = fields.Many2one(
+    medicament_ids = fields.One2many(
         string='Medicament',
         comodel_name='medical.medicament',
+        inverse_name='gcn_id',
     )

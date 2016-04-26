@@ -21,12 +21,8 @@
                             <field name="control_code" />
                         </group>
                         <group string="Identifiers">
-                            <field name="gcn_id" />
-                            <field name="ndc_ids">
-                                <tree>
-                                    <field name="ndc" />
-                                </tree>
-                            </field>
+                            <field name="gcn_id" context="{'default_medicament_ids': [(4, id)]}" />
+                            <field name="ndc_ids" context="{'default_medicament_id': id}" />
                         </group>
                     </page>
                 </xpath>
