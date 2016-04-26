@@ -27,7 +27,6 @@ from dateutil.relativedelta import relativedelta
 
 from openerp import fields
 from openerp.tests.common import TransactionCase
-from datetime import date
 
 
 class TestMedicalPatient(TransactionCase):
@@ -38,35 +37,69 @@ class TestMedicalPatient(TransactionCase):
             'name': 'Patient 1',
             'gender': 'm',
         }
+        self.context_date = fields.Date.from_string('2016-01-01')
+
+    def model_obj(self):
+        return self.env['medical.patient'].with_context({
+            'date': fields.Date.to_string(self.context_date),
+        })
 
     def test_sequence(self):
         patient_id = self.env['medical.patient'].create(self.vals)
         self.assertTrue(
             patient_id.identification_code, 'Should have a sequence')
 
-    def test_age_computation(self):
-        """
-        Check value of age depending of the birth_date
-        """
+    def test_age_computation_dob(self):
+        """ Check value of age depending of the birth_date """
         age = 10
         complete_age = '10y 0m 0d'
-        birth_date =\
-            fields.Date.to_string(date.today() - relativedelta(years=age))
+        birth_date = fields.Date.to_string(
+            self.context_date - relativedelta(years=age)
+        )
         self.vals['dob'] = birth_date
-        patient_id = self.env['medical.patient'].create(self.vals)
+        patient_id = self.model_obj().create(self.vals)
         self.assertEquals(
-            patient_id.age, complete_age, 'Should be the same age')
+            complete_age, patient_id.age,
+            'Should be the same age'
+        )
+
+    def test_age_computation_dob_leap_year(self):
+        """ Check age computation when patient born on Feb 29 """
+        complete_age = '3y 0m 0d'
+        self.context_date = fields.Date.from_string('2015-02-28')
+        birth_date = '2012-02-29'
+        self.vals['dob'] = birth_date
+        patient_id = self.model_obj().create(self.vals)
+        self.assertEquals(
+            complete_age, patient_id.age,
+            'Should be the same age'
+        )
+
+    def test_age_computation_dod(self):
+        """ Check value of age depending on the death date """
         age = 5
+        birth_date = fields.Date.to_string(
+            self.context_date - relativedelta(years=age)
+        )
         vals = {
             'deceased': True,
-            'dod': fields.Date.to_string(
-                date.today() - relativedelta(years=age))
+            'dod': fields.Date.to_string(self.context_date),
+            'dob': birth_date,
         }
-        patient_id = patient_id.copy(default=vals)
+        self.vals.update(vals)
+        patient_id = self.model_obj().create(self.vals)
         dod_age = '5y 0m 0d'
         self.assertEquals(
-            patient_id.age, '%s (deceased)' % dod_age,
-            'Should be the same age')
+            '%s (deceased)' % dod_age, patient_id.age,
+            'Should be the same age',
+        )
+
+    def test_age_computation_no_dob(self):
+        """ Check age computation w/ no DOB """
+        res = self.model_obj().create(self.vals)
+        self.assertEqual(
+            'No DoB !', res.age,
+        )
 
     def test_invalidate(self):
         """

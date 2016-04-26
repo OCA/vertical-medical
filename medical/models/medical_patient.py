@@ -20,7 +20,6 @@
 #
 # #############################################################################
 from openerp import models, fields, api
-from datetime import datetime
 from openerp.tools.translate import _
 from dateutil.relativedelta import relativedelta
 
@@ -35,11 +34,10 @@ class MedicalPatient(models.Model):
 
     @api.one
     def _compute_age(self):
-        """
-        age computed depending of the birth date of the
-        membership request
-        """
-        now = datetime.now()
+        """ Age computed depending on the birth date of the patient """
+        now = fields.Datetime.from_string(
+            self.env.context.get('date', fields.Datetime.now())
+        )
         if self.dob:
             dob = fields.Datetime.from_string(self.dob)
 
