@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright (C) 2016 LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    The license is in the file __openerp__.py
+-->
+
+<openerp>
+    <data>
+
+        <!-- Medical Manufacturers  [Config/Medicaments/Medical Manufacturers] )--> 
+
+        <menuitem id="medical_pharmacy_order_line_state"
+                  name="Medical Manufacturers"
+                  parent="medical_medicament.medical_medicament_root" sequence="60"
+                  action="medical_manufacturer_action" />
+    </data>
+</openerp>

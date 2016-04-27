@@ -23,5 +23,6 @@ class MedicalManufacturer(models.Model):
         vals.update({
             'is_manufacturer': True,
             'customer': False,
+            'is_company': True,
         })
         return super(MedicalManufacturer, self).create(vals)

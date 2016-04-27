@@ -12,9 +12,11 @@
     "website": "https://laslabs.com",
     "license": "AGPL-3",
     'depends': [
-        'medical',
+        'medical_medicament',
     ],
     'data': [
+        'views/medical_manufacturer_view.xml',
+        'views/medical_menu.xml',
         'security/ir.model.access.csv',
     ],
     'installable': True,
