@@ -54,7 +54,10 @@ class MedicalPhysician(models.Model):
     @api.model
     @api.returns('self', lambda value: value.id)
     def create(self, vals,):
-        vals['is_doctor'] = True
+        vals.update({
+            'is_doctor': True,
+            'customer': False,
+        })
         if not vals.get('code'):
             sequence = self.env['ir.sequence'].next_by_code(
                 'medical.physician'
