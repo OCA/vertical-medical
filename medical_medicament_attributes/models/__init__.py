@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
+# © 2015 LasLabs Inc.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+
 from . import medical_medicament
-from . import medical_medicament_attribute_abstract
-from . import medical_medicament_attribute_color
-from . import medical_medicament_attribute_shape
-from . import medical_medicament_attribute_flavor
+from . import medical_medicament_attribute

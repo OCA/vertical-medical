@@ -15,16 +15,9 @@
             <field name='inherit_id' ref='medical_medicament.medical_medicament_view_form'/>
             <field name="arch" type="xml">
                 <xpath expr="//page[@name='medicament']" position="inside">
-                    <group>
-                        <group string="Color">
-                            <field name="color_id" nolabel="1" colspan="4"/>
-                        </group>
-                        <group string="Shape">
-                            <field name="shape_id" nolabel="1" colspan="4"/>
-                        </group>
-                        <group string="Flavor">
-                            <field name="flavor_id" nolabel="1" colspan="4"/>
-                        </group>
+                    <group string="Physical Attributes">
+                        <field name="medicament_attribute_ids"
+                               context="{'default_medicament_ids': [(4, id)]}" />
                     </group>
                 </xpath>
             </field>
