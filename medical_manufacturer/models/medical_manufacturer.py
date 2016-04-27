@@ -20,5 +20,8 @@ class MedicalManufacturer(models.Model):
     @api.model
     @api.returns('self', lambda value: value.id)
     def create(self, vals):
-        vals['is_manufacturer'] = True
+        vals.update({
+            'is_manufacturer': True,
+            'customer': False,
+        })
         return super(MedicalManufacturer, self).create(vals)
