@@ -22,7 +22,7 @@
                 <thead>
                   <tr class="active">
                       <th>Name</th>
-                      <th>Age</th>
+                      <th>Date of Birth</th>
                       <th>Gender</th>
 					  <th t-if="not suppress_deactivate">Deactivate</th>
                     </tr>
@@ -36,7 +36,7 @@
 								</a>
 							</td>
 							<td>
-								<span t-field="patient.age" />
+								<span t-field="patient.dob" />
 							</td>
 							<td>
 								<span t-field="patient.gender" />
