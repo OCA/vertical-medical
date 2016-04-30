@@ -1,4 +1,4 @@
-# -*- ding: utf-8 -*-
+# -*- coding: utf-8 -*-
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
@@ -15,7 +15,7 @@ class MedicalPrescriptionOrderLine(models.Model):
         compute='_compute_dispensings',
         store=True,
     )
-    last_dispense_id = fields.One2many(
+    last_dispense_id = fields.Many2one(
         string='Last Dispense',
         comodel_name='procurement.order',
         compute='_compute_dispensings',
