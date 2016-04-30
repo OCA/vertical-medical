@@ -29,6 +29,7 @@ class MedicalMedicament(models.Model):
         help='Generic Product Identifier for medicament.',
     )
     control_code = fields.Selection([
+        ('0', 'Not Controlled'),
         ('1', 'C1'),
         ('2', 'C2'),
         ('3', 'C3'),
