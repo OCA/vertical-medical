@@ -16,44 +16,37 @@ class MedicalPrescriptionOrderLine(models.Model):
         readonly=True,
     )
     dispensed_qty = fields.Float(
-        default=0.0,
         readonly=True,
         store=True,
         compute='_compute_dispensings',
         help='Amount already dispensed (using medicine dosage)',
     )
     pending_dispense_qty = fields.Float(
-        default=0.0,
-        readounly=True,
+        readonly=True,
         store=True,
         compute='_compute_dispensings',
         help='Amount pending dispense (using medicine dosage)',
     )
     exception_dispense_qty = fields.Float(
-        default=0.0,
-        readounly=True,
+        readonly=True,
         store=True,
         compute='_compute_dispensings',
         help='Qty of dispense exceptions (using medicine dosage)',
     )
     cancelled_dispense_qty = fields.Float(
-        default=0.0,
-        readounly=True,
+        readonly=True,
         store=True,
         compute='_compute_dispensings',
         help='Dispense qty cancelled (using medicine dosage)',
     )
     can_dispense = fields.Boolean(
         compute='_compute_can_dispense_and_qty',
-        default=False,
         readonly=True,
         store=True,
         help='Can this prescription be dispensed?',
     )
     can_dispense_qty = fields.Float(
         compute='_compute_can_dispense_and_qty',
-        default=0.0,
-        store=True,
         help='Amount that can be dispensed (using medicine dosage)',
     )
     dispense_uom_id = fields.Many2one(
@@ -121,6 +114,7 @@ class MedicalPrescriptionOrderLine(models.Model):
         '''
 
         for rec_id in self:
+            written_qty = rec_id.qty
             total = sum([rec_id.dispensed_qty,
                          rec_id.exception_dispense_qty,
                          rec_id.pending_dispense_qty])
