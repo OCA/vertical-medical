@@ -95,7 +95,7 @@ class MedicalMedicament(models.Model):
         help='Strength of medicament',
     )
     strength_uom_id = fields.Many2one(
-        string='String Unit',
+        string='Strength Unit',
         comodel_name='product.uom',
         help='Strength unit of measure',
     )
@@ -104,7 +104,16 @@ class MedicalMedicament(models.Model):
     def name_get(self):
         res = []
         for rec in self:
-            name = '%s - %s' % (rec.product_id.name, rec.drug_form_id.name)
+            if rec.drug_form_id.name:
+                form = '- %s' % rec.drug_form_id.name
+            else:
+                form = ''
+            name = '{name} {strength} {uom}'.format(
+                name=rec.product_id.name,
+                strength=rec.strength,
+                uom=rec.strength_uom_id.name or '',
+                form=form,
+            )
             res.append((rec.id, name))
         return res
 
