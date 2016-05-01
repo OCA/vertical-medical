@@ -91,7 +91,7 @@ class MedicalMedicament(models.Model):
     composition = fields.Text(
         help='Components that make up this medicament',
     )
-    strength = fields.Integer(
+    strength = fields.Float(
         help='Strength of medicament',
     )
     strength_uom_id = fields.Many2one(
