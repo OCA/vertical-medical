@@ -108,7 +108,7 @@ class MedicalMedicament(models.Model):
                 form = '- %s' % rec.drug_form_id.name
             else:
                 form = ''
-            name = '{name} {strength} {uom}'.format(
+            name = '{name} {strength:g} {uom}'.format(
                 name=rec.product_id.name,
                 strength=rec.strength,
                 uom=rec.strength_uom_id.name or '',
