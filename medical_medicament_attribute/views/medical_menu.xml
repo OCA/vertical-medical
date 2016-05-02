@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright (C) 2016 LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    The license is in the file __openerp__.py
+-->
+
+<odoo>
+        
+        <menuitem id="medical_medicament_attribute_type_menu"
+                  name="Attribute Types"
+                  parent="medical_medicament.medical_medicament_root"
+                  action="medical_medicament_attribute_type_action" />
+        
+        <menuitem id="medical_medicament_attribute_menu"
+                  name="Attributes"
+                  parent="medical_medicament.medical_medicament_root"
+                  action="medical_medicament_attribute_action" />
+
+</odoo>

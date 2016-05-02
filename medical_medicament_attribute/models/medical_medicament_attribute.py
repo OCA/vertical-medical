@@ -9,26 +9,22 @@ from openerp.exceptions import ValidationError
 class MedicalMedicamentAttribute(models.Model):
     _name = 'medical.medicament.attribute'
     name = fields.Char(
-        help="Full Name of Attribute"
+        help="Full Name of Attribute",
+        required=True,
     )
     code = fields.Char(
-        help="Short Code of Attribute"
+        help="Short Code of Attribute",
     )
-    category = fields.Selection([
-        ('clarity', 'Clarity'),
-        ('coating', 'Coating'),
-        ('color', 'Color'),
-        ('flavor', 'Flavor'),
-        ('score', 'Score'),
-        ('shape', 'Shape'),
-    ])
+    attribute_type_id = fields.Many2one(
+        string='Attribute Type',
+        comodel_name='medical.medicament.attribute.type',
+        required=True,
+    )
     medicament_ids = fields.Many2many(
         string='Medicaments',
         comodel_name='medical.medicament',
     )
     _sql_constraints = [
-        ('code_uniq', 'UNIQUE(category, code)',
-         'Attribute code must be unique per category.'),
-        ('name_uniq', 'UNIQUE(category, name)',
+        ('name_uniq', 'UNIQUE(name, attribute_type_id)',
          'Attribute name must be unique per category.'),
     ]

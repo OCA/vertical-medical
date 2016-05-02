@@ -4,6 +4,7 @@
 
 {
     'name': 'Medical Medicament Physical Attributes',
+    'summary': 'Add abstract physical attributes to medical medicaments.',
     'version': '9.0.1.0.0',
     'author': "LasLabs, Odoo Community Association (OCA)",
     'category': 'Medical',
@@ -14,6 +15,9 @@
     "license": "AGPL-3",
     "data": [
         'views/medical_medicament_view.xml',
+        'views/medical_medicament_attribute_view.xml',
+        'views/medical_medicament_attribute_type_view.xml',
+        'views/medical_menu.xml',
     ],
     'installable': True,
     'auto_install': False,

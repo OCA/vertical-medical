@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016 LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    The license is in the file __openerp__.py
+-->
+
+<openerp>
+    <data>
+
+        <record id="medical_medicament_attribute_view_form" model="ir.ui.view">
+            <field name="name">medical.medicament.attribute.view.form</field>
+            <field name="model">medical.medicament.attribute</field>
+            <field name="arch" type="xml">
+                <form string="Medicament Attribute">
+                    <header />
+                    <sheet>
+                        <group name="data">
+                            <field name="code" />
+                            <field name="name" />
+                            <field name="attribute_type_id" />
+                            <field name="medicament_ids" />
+                        </group>
+                    </sheet>
+                    <footer />
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_medicament_attribute_view_tree" model="ir.ui.view">
+            <field name="name">medical.medicament.attribute.view.tree</field>
+            <field name="model">medical.medicament.attribute</field>
+            <field name="arch" type="xml">
+                <tree string="Medicament Attributes">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="attribute_type_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="medical_medicament_attribute_view_search" model="ir.ui.view">
+            <field name="name">medical.medicament.attribute.view.search</field>
+            <field name="model">medical.medicament.attribute</field>
+            <field name="arch" type="xml">
+                <search string="Medicament Attributes">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="attribute_type_id" />
+                    
+                    <filter string="Type"
+                            domain=""
+                            context="{'group_by': 'attribute_type_id'}" />
+                </search>
+            </field>
+        </record>
+
+        <record id="medical_medicament_attribute_action" model="ir.actions.act_window">
+             <field name="name">Medicament Attributes</field>
+             <field name="res_model">medical.medicament.attribute</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">tree,form</field>
+         </record>
+
+    </data>
+</openerp>

@@ -4,3 +4,4 @@
 
 from . import medical_medicament
 from . import medical_medicament_attribute
+from . import medical_medicament_attribute_type
