@@ -4,9 +4,9 @@
 
 {
 
-    'name': 'Medical Medication - US Locale',
+    'name': 'Medical Medicament - US Locale',
     'version': '9.0.1.0.0',
-    'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
+    'author': "LasLabs, Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': [
         'medical_medication',

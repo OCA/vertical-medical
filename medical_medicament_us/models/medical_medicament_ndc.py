@@ -13,6 +13,10 @@ class MedicalMedicamentNdc(models.Model):
         string='NDC',
         help='National Drug Code',
     )
+    manufacturer_id = fields.Many2one(
+        string='Manufacturer',
+        comodel_name='medical.manufacturer',
+    )
     medicament_id = fields.Many2one(
         string='Medicament',
         comodel_name='medical.medicament',

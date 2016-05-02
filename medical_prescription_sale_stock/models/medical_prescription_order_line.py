@@ -9,6 +9,11 @@ from openerp.exceptions import ValidationError
 class MedicalPrescriptionOrderLine(models.Model):
     _inherit = 'medical.prescription.order.line'
 
+    dispense_uom_id = fields.Many2one(
+        comodel_name='product.uom',
+        string='Dispense UoM',
+        help='Dispense Unit of Measure',
+    )
     dispensed_ids = fields.Many2many(
         string='Dispensings',
         comodel_name='procurement.order',
