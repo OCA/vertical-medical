@@ -76,7 +76,7 @@ class TestWebsite(TransactionCase):
         model_obj = self.env['website']
         with mock.patch.object(model_obj.env.cr, 'fetchall') as cr_mk:
             model_obj.get_pricelist_available()
-            cr_mk.assert_called_once_with()
+            cr_mk.assert_called_with()
 
     @mock.patch('%s.request' % mod_path)
     def test_website_pricelist_template_computation_show(self, mk):

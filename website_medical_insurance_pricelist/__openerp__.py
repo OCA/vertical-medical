@@ -13,6 +13,9 @@
         'website_sale',
         'medical_insurance_pricelist',
     ],
+    'data': [
+        'views/website_pricelist_view.xml',
+    ],
     'website': 'https://laslabs.com',
     'license': 'AGPL-3',
     'installable': True,

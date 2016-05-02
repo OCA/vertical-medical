@@ -20,7 +20,13 @@
                             <field name="code" />
                             <field name="name" />
                             <field name="attribute_type_id" />
-                            <field name="medicament_ids" />
+                            <field name="parent_id"
+                                   context="{'default_attribute_type': attribute_type_id}"/>
+                            <field name="child_ids"
+                                   context="{'default_parent_id': id,
+                                             'default_attribute_type': attribute_type_id}" />
+                            <field name="medicament_ids"
+                                   context="{'default_medicament_attribute_ids': [(4, id)]}"/>
                         </group>
                     </sheet>
                     <footer />
@@ -35,6 +41,7 @@
                 <tree string="Medicament Attributes">
                     <field name="name" />
                     <field name="code" />
+                    <field name="parent_id" />
                     <field name="attribute_type_id" />
                 </tree>
             </field>
@@ -47,8 +54,12 @@
                 <search string="Medicament Attributes">
                     <field name="name" />
                     <field name="code" />
+                    <field name="parent_id" />
                     <field name="attribute_type_id" />
                     
+                    <filter string="Parent"
+                            domain=""
+                            context="{'group_by': 'parent_id'}" />
                     <filter string="Type"
                             domain=""
                             context="{'group_by': 'attribute_type_id'}" />
