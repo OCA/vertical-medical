@@ -15,3 +15,11 @@ class MedicalPrescriptionOrderLine(models.Model):
         string='Refill Remain',
         help='Amount of refills remaining in the prescription',
     )
+    ndc_id = fields.Many2one(
+        string='NDC',
+        comodel_name='medical.medicament.ndc',
+    )
+    gcn_id = fields.Many2one(
+        string='GCN',
+        comodel_name='medical.medicament.gcn',
+    )

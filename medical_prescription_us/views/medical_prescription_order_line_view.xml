@@ -17,6 +17,10 @@
 					<field name="refill_qty_original" />
 					<field name="refill_qty_remain" />
 				</xpath>
+				<xpath expr="//field[@name='is_course_complete']" position="after">
+					<field name="ndc_id" />
+					<field name="gcn_id" />
+				</xpath>
 			</field>
 		</record>
 		
@@ -28,6 +32,10 @@
 				<xpath expr="//field[@name='duration_uom_id']" position="after">
 					<field name="refill_qty_original" />
 					<field name="refill_qty_remain" />
+				</xpath>
+				<xpath expr="//field[@name='medicament_id']" position="after">
+					<field name="ndc_id" />
+					<field name="gcn_id" />
 				</xpath>
 			</field>
 		</record>
