@@ -8,7 +8,6 @@ from openerp.http import request
 from openerp.addons.website_medical.controllers.main import (
     WebsiteMedical
 )
-from openerp.exceptions import ValidationError
 
 
 class WebsiteMedical(WebsiteMedical):
@@ -42,11 +41,11 @@ class WebsiteMedical(WebsiteMedical):
         methods=['GET'],
     )
     def prescription_show(self, rx_id, **kwargs):
-        values = {
-            'error': {},
-            'error_message': [],
-            'success_page': kwargs.get('success_page', '/my/medical')
-        }
+        # values = {
+        #     'error': {},
+        #     'error_message': [],
+        #     'success_page': kwargs.get('success_page', '/my/medical')
+        # }
         raise NotImplementedError()
 
     @http.route(
@@ -57,12 +56,9 @@ class WebsiteMedical(WebsiteMedical):
         methods=['GET'],
     )
     def prescription_line_show(self, rx_id, rx_line_id, **kwargs):
-        values = {
-            'error': {},
-            'error_message': [],
-            'success_page': kwargs.get('success_page', '/my/medical')
-        }
+        # values = {
+        #     'error': {},
+        #     'error_message': [],
+        #     'success_page': kwargs.get('success_page', '/my/medical')
+        # }
         raise NotImplementedError()
-        return request.website.render(
-            'website_medical_patient.patient', values,
-        )

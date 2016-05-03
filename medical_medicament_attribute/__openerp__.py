@@ -18,6 +18,7 @@
         'views/medical_medicament_attribute_view.xml',
         'views/medical_medicament_attribute_type_view.xml',
         'views/medical_menu.xml',
+        'security/ir.model.access.csv',
     ],
     'installable': True,
     'auto_install': False,

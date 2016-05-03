@@ -130,7 +130,6 @@ class MedicalPrescriptionOrderLine(models.Model):
         '''
 
         for rec_id in self:
-            written_qty = rec_id.qty
             total = sum([rec_id.dispensed_qty,
                          rec_id.exception_dispense_qty,
                          rec_id.pending_dispense_qty])

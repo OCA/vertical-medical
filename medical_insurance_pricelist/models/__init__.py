@@ -4,3 +4,4 @@
 
 from . import medical_insurance_plan
 from . import medical_insurance_template
+from . import product_pricelist
