@@ -14,6 +14,7 @@
     'license': 'AGPL-3',
     'data': [
         'views/medical_pharmacy_view.xml',
+        'views/medical_menu.xml',
         'security/ir.model.access.csv',
     ],
     'test': [
