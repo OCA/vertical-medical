@@ -16,22 +16,6 @@
                   sequence="10"
                   action="medical_patient_action" />
 
-
-        <!--Appointment-->
-
-        <menuitem id="medical_appointment_root"
-                  name="Appoitment"
-                  parent="medical_root"
-                  sequence="20" />
-
-        <menuitem id="medical_appointment"
-                  name=" Appointment"
-                  parent="medical_appointment_root"
-                  sequence="10"
-                  action="medical_appointment_action" />
-
-
-
         <!--Configurations-->
 
         <menuitem id="medical_root_sub"

@@ -1,26 +1,8 @@
 # -*- coding: utf-8 -*-
-# #############################################################################
-#
-# Tech-Receptives Solutions Pvt. Ltd.
-# Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
-# Special Credit and Thanks to Thymbra Latinoamericana S.A.
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of the
-# License, or (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-# #############################################################################
+# © 2015 LasLabs Inc.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models, api
+from openerp import fields, models
 from openerp.addons.medical.medical_constants import days, hours, minutes
 
 import logging
@@ -98,10 +80,3 @@ class MedicalPhysician(models.Model):
     )
 
     _defaults = {'is_doctor': True, 'supplier': True, 'active': True, }
-
-    @api.model
-    def create(self, vals,):
-        groups_proxy = self.env['res.groups']
-        group_ids = groups_proxy.search([('name', '=', 'Medical Doctor')])
-        vals['groups_id'] = [(6, 0, group_ids)]
-        return super(MedicalPhysician, self).create(vals)
