@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="medical_pathology_view_search" model="ir.ui.view">
+            <field name="name">medical.pathology.search</field>
+            <field name="model">medical.pathology</field>
+            <field name="arch" type="xml">
+                <search string="Medical Pathology">
+                    <field name="category_id" />
+                    <field name="notes" />
+                    <field name="code" />
+                    <field name="name" />
+                    <field name="protein" />
+                    <field name="gene" />
+                    <field name="chromosome" />
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Category" domain="[]"
+                            context="{'group_by':'category_id'}" />
+                        <filter string="Protein involved" domain="[]"
+                            context="{'group_by':'protein'}" />
+                        <filter string="Gene" domain="[]" context="{'group_by':'gene'}" />
+                        <filter string="Affected Chromosome" domain="[]"
+                            context="{'group_by':'chromosome'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="medical_pathology_view_tree" model="ir.ui.view">
+            <field name="name">medical.pathology.tree</field>
+            <field name="model">medical.pathology</field>
+            <field name="arch" type="xml">
+                <tree string="Medical Pathology">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="category_id" />
+                    <field name="protein" />
+                    <field name="gene" />
+                    <field name="chromosome" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="medical_pathology_view_form" model="ir.ui.view">
+            <field name="name">medical.pathology.form</field>
+            <field name="model">medical.pathology</field>
+            <field name="arch" type="xml">
+                <form string="Medical Pathology">
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="oe_title" name="title">
+                            <label for="name" class="edit_only"/>
+                            <h1><field name="name"/></h1>
+                        </div>
+                        <div class="oe_right oe_button_box" name="buttons">
+                        </div>
+
+                        <group name="data">
+                            <group name="main">
+                                <field name="code" />
+                                <field name="protein" />
+                                <field name="chromosome" />
+                                <field name="gene" />
+                                <field name="category_id" />
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page string="Disease Groups" name="notes" autofocus="autofocus">
+                                <field name="medical_pathology_group_ids" />
+                            </page>
+                            <page string="Others" name="others">
+                                <separator string="Notes"/>
+                                <field name="notes" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div name="configurator" class="oe_form_sheetbg" groups="medical.group_medical_configurator">
+                        <div class="oe_formview oe_form_sheet_width">
+                            <h3>More Info</h3>
+                            <group name="moreinfo">
+                                <field name="id"/>
+                            </group>
+                        </div>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="medical_pathology_action">
+            <field name="name">Pathologies</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.pathology</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id">tree,form</field>
+            <field name="view_id" ref="medical_pathology_view_tree" />
+            <field name="search_view_id" ref="medical_pathology_view_search" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+    </data>
+</openerp>

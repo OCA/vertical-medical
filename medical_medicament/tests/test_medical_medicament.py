@@ -31,17 +31,27 @@ class TestMedicalMedicament(TransactionCase):
     def setUp(self):
         super(TestMedicalMedicament, self).setUp()
         self.medical_medicament_obj = self.env['medical.medicament']
+        self.name = 'ProductMedicament'
+        self.vals = {
+            'name': self.name,
+            'drug_form_id': self.env.ref('medical_medicament.AEM').id,
+        }
+
+    def _test_record(self, ):
+        return self.medical_medicament_obj.create(self.vals)
 
     def test_create(self):
         """
         Test create to assure second level inherits works fine
         """
-        name = 'ProductMedicament'
-        vals = {
-            'name': name,
-            'drug_form_id': self.env.ref('medical_medicament.AEM').id,
-        }
-        medicament_id = self.medical_medicament_obj.create(vals)
+        medicament_id = self._test_record()
         self.assertTrue(medicament_id)
         self.assertTrue(medicament_id.product_id)
         self.assertTrue(medicament_id.product_id.is_medicament)
+
+    def test_name_get(self, ):
+        ''' Verify that name is product and form '''
+        medicament_id = self._test_record()
+        expect = '%s - %s' % (medicament_id.product_id.name,
+                              medicament_id.drug_form_id.name)
+        self.assertTrue(expect, medicament_id)
