@@ -52,7 +52,7 @@ class MedicalMedicationTemplate(models.Model):
     suggested_administration_hours = fields.Char(
         help='Time that medication should typically be administered',
     )
-    quantity = fields.Integer(
+    quantity = fields.Float(
         string='Dose Quantity',
         help='Quantity of units (eg, 2 capsules) of the medicament',
     )
