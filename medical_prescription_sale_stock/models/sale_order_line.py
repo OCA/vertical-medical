@@ -43,13 +43,14 @@ class SaleOrderLine(models.Model):
             rx_line = rec_id.prescription_order_line_id
             if rx_line.medicament_id.product_id != rec_id.product_id:
                 if not rx_line.is_substitutable:
-                    raise ValidationError(_(
-                        'Products must be same on Order and Rx lines. '
-                        'Got %s on order line %s, expected %s from %r' % (
-                            rec_id.product_id.name, rec_id.name,
-                            rx_line.medicament_id.product_id.name, rx_line,
-                        ),
-                    ))
+                    pass
+                    # raise ValidationError(_(
+                    #     'Products must be same on Order and Rx lines. '
+                    #     'Got %s on order line %s, expected %s from %r' % (
+                    #         rec_id.product_id.name, rec_id.name,
+                    #         rx_line.medicament_id.product_id.name, rx_line,
+                    #     ),
+                    # ))
                 else:
                     raise ValidationError(_(
                         'Drug substitution validation is not implemented.'
