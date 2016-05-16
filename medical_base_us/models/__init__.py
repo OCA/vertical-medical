@@ -4,3 +4,4 @@
 
 from . import medical_abstract_luhn
 from . import medical_abstract_dea
+from . import medical_abstract_npi

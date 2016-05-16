@@ -6,41 +6,32 @@ from openerp import models, api, _
 from openerp.exceptions import ValidationError
 
 
-class MedicalAbstractLuhn(models.AbstractModel):
-    """ Inherit this to provide Luhn validation to any model.
+class MedicalAbstractNpi(models.AbstractModel):
+    """ Inherit this to provide Npi validation to any model.
 
-    Public attributes and methods will be prefixed with luhn in order
+    Public attributes and methods will be prefixed with Npi in order
     to avoid name collisions with models that will inherit from this class.
     """
 
-    _name = 'medical.abstract.luhn'
-    _description = 'Medical Abstract Luhn'
+    _name = 'medical.abstract.npi'
+    _description = 'Medical Abstract NPI'
+    _inherit = 'medical.abstract.luhn'
 
     @api.model
-    def _luhn_is_valid(self, num):
+    def _npi_is_valid(self, num):
         """ Determine whether num is valid. Meant to be used in constrains
         Params:
             num: :type:``str`` or :type:``int`` Number to validate
-                using Luhn's Alg.
+                using Npi's Alg.
         Returns:
             :type:``bool``
         """
-
-        def digits_of(n):
-            return [int(d) for d in str(n)]
-
-        digits = digits_of(num)
-        odd_digits = digits[-1::-2]
-        even_digits = digits[-2::-2]
-        checksum = sum(odd_digits)
-        checksum += sum(
-            sum(digits_of(d * 2)) for d in even_digits
-        )
-        return (checksum % 10) == 0
+        num = '80840%s' % num
+        return self._luhn_is_valid(num)
 
     @api.multi
-    def _luhn_constrains_helper(self, col_name, country_col='country_id'):
-        """ Provide a mixer for Luhn validation via constrains
+    def _npi_constrains_helper(self, col_name, country_col='country_id'):
+        """ Provide a mixer for Npi validation via constrains
         Params:
             col_name: :type:``str`` Name of db column to constrain
             country_col: :type:``str`` Name of db country column to verify
@@ -51,7 +42,7 @@ class MedicalAbstractLuhn(models.AbstractModel):
 
         for rec_id in self:
             if getattr(rec_id, country_col).code == 'US':
-                if not self._luhn_is_valid(
+                if not self._npi_is_valid(
                     getattr(rec_id, col_name, 0)
                 ):
                     col_obj = self.env['ir.model.fields'].search([
