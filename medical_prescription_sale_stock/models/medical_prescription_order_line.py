@@ -68,7 +68,8 @@ class MedicalPrescriptionOrderLine(models.Model):
                  'sale_order_line_ids',
                  'sale_order_line_ids.procurement_ids.product_uom',
                  'sale_order_line_ids.procurement_ids.product_qty',
-                 'sale_order_line_ids.procurement_ids.state', )
+                 'sale_order_line_ids.procurement_ids.state',
+                 )
     def _compute_dispensings(self, ):
         ''' Get related dispensings - Also sets dispense qtys '''
 
@@ -122,7 +123,8 @@ class MedicalPrescriptionOrderLine(models.Model):
     @api.depends('qty',
                  'dispensed_qty',
                  'exception_dispense_qty',
-                 'pending_dispense_qty')
+                 'pending_dispense_qty',
+                 )
     def _compute_can_dispense_and_qty(self, ):
         '''
         Determine whether Rx can be dispensed based on current dispensings,
@@ -145,5 +147,5 @@ class MedicalPrescriptionOrderLine(models.Model):
                 if sale_line_id.patient_id != rec_id.patient_id:
                     raise ValidationError(_(
                         'Cannot change the patient on a prescription while it '
-                        'is linked to active sale order(s)'
+                        'is linked to active sale order(s).'
                     ))

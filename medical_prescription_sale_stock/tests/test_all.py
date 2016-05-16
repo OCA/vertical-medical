@@ -196,16 +196,6 @@ class TestAll(TransactionCase):
         with self.assertRaises(ValidationError):
             order_line.product_id = product.id
 
-    def test_sale_line_check_product_substitute(self, ):
-        order_id = self._new_rx_order()
-        order_line = order_id.order_line[0]
-        self.rx_line_id.is_substitutable = True
-        product = self.env['product.product'].search([
-            ('id', '!=', order_line.product_id.id)
-        ], limit=1)
-        with self.assertRaises(ValidationError):
-            order_line.product_id = product.id
-
     def test_prepare_order_line_procurement_otc(self, ):
         order_id = self._new_order()
         res = order_id.order_line[0]._prepare_order_line_procurement()
