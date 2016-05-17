@@ -6,7 +6,7 @@ from openerp import fields, models, api
 
 
 class MedicalPharmacy(models.Model):
-    _inherit = ['medical.pharmacy', 'medical.abstract.luhn']
+    _inherit = ['medical.pharmacy', 'medical.abstract.npi']
     _name = 'medical.pharmacy'
 
     nabp_num = fields.Char(
@@ -23,4 +23,4 @@ class MedicalPharmacy(models.Model):
     @api.constrains('country_id', 'npi_num')
     def _check_npi_num(self):
         """ Implement Luhns Formula to validate NPI """
-        self._luhn_constrains_helper('npi_num')
+        self._npi_constrains_helper('npi_num')
