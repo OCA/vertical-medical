@@ -15,6 +15,8 @@
     ],
     'data': [
         'views/website_pricelist_view.xml',
+        'security/ir.model.access.csv',
+        'security/medical_insurance_security.xml',
     ],
     'website': 'https://laslabs.com',
     'license': 'AGPL-3',

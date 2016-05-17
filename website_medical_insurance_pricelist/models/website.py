@@ -29,11 +29,14 @@ class Website(models.Model):
         template_ints = [t[0] for t in self.env.cr.fetchall()]
 
         def check_pricelist(rec_id):
-            if len(rec_id.insurance_template_ids):
-                temp_ids = rec_id.insurance_template_ids
-                for i in temp_ids:
-                    if i.pricelist_id.id in template_ints:
-                        return True
+            try:
+                if len(rec_id.insurance_template_ids):
+                    temp_ids = rec_id.insurance_template_ids
+                    for i in temp_ids:
+                        if i.pricelist_id.id in template_ints:
+                            return True
+                    return False
+            except Exception:
                 return False
             return True
 
