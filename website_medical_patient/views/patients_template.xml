@@ -20,7 +20,7 @@
         <t t-if="patients">
             <table class="table table-hover o_my_status_table">
                 <thead>
-                  <tr class="active">
+                  <tr class="active text-center">
                       <th>Name</th>
                       <th>Date of Birth</th>
                       <th>Gender</th>
