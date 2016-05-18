@@ -17,7 +17,7 @@
         <t t-if="patients">
             <table class="table table-hover o_my_status_table">
                 <thead>
-                  <tr class="active">
+                  <tr class="active text-center">
                       <th>Patient</th>
                       <th>Rx Number</th>
                       <th>Medication Name</th>
@@ -26,6 +26,7 @@
 					  <th>Last Dispense</th>
 					  <th>Expiration</th>
 					  <th>Prescriber Name</th>
+					  <th>Refill</th>
                     </tr>
                 </thead>
 				<tbody>
@@ -54,6 +55,33 @@
 							</td>
 							<td>
 								<span t-field="line.physician_id" />
+							</td>
+							<td>
+								<t t-if="line.can_dispense_qty">
+									
+									<t t-set="product" t-value="line.medicament_id.product_id" />
+									
+									<form action="/shop/cart/update"
+										  method="POST"
+										  class="js_add_cart_variants"
+										  t-att-data-attribute_value_ids="product.product_variant_ids.ids"
+										  >
+										<input type="hidden"
+											   name="csrf_token"
+											   t-att-value="request.csrf_token()"
+											   />
+										<div class="js_product">
+											<input type="hidden" t-value="line.qty" />
+										  <a id="add_to_cart"
+											 class="btn btn-primary btn-xs mt8 js_check_product a-submit"
+											 href="#">
+												Add to Cart
+										  </a>
+										</div>
+					  
+									</form>
+									
+								</t>
 							</td>
 						</tr>
 					</t>
