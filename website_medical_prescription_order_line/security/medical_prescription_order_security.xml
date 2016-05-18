@@ -2,11 +2,12 @@
 
 <!--
     Copyright (C) 2016-TODAY LasLabs [https://laslabs.com]
-    @license AGPL-3
+    @license AGPL-3 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 
 <openerp>
 	<data>
+		<!-- @TODO: Fix security LABS-145 -->
 <!--		<record model="ir.rule" id="medical_prescription_order_portal_rule">
             <field name="name">medical.prescription.portal.order.rule</field>
             <field name="model_id" ref="medical_prescription.model_medical_prescription_order"/>

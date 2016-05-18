@@ -15,17 +15,17 @@
             <p>There are currently no prescriptions associated with your account.</p>
         </t>
         <t t-if="patients">
-            <table class="table table-hover o_my_status_table">
+            <table class="table table-hover table-responsive o_my_status_table">
                 <thead>
-                  <tr class="active text-center">
+                  <tr class="active auto-size">
                       <th>Patient</th>
                       <th>Rx Number</th>
-                      <th>Medication Name</th>
-					  <th>Written Qty</th>
-					  <th>Remaining Qty</th>
+                      <th>Medication</th>
+					  <th>Written</th>
+					  <th>Remain</th>
 					  <th>Last Dispense</th>
 					  <th>Expiration</th>
-					  <th>Prescriber Name</th>
+					  <th>Prescriber</th>
 					  <th>Refill</th>
                     </tr>
                 </thead>
@@ -33,54 +33,61 @@
 					<t t-foreach="prescription_order_lines" t-as="line">
 						<tr>
 							<td>
-								<span t-field="line.patient_id.name" />
+								<t t-esc="line.patient_id.name" />
 							</td>
 							<td>
-								<span t-field="line.name" />
+								<t t-esc="line.name" />
 							</td>
 							<td>
-								<span t-field="line.medicament_id.display_name" />
+								<t t-esc="line.medicament_id.display_name" />
 							</td>
 							<td>
-								<span t-field="line.qty" />
+								<t t-esc="line.qty" />
 							</td>
 							<td>
-								<span t-field="line.can_dispense_qty" />
+								<t t-esc="line.can_dispense_qty" />
 							</td>
 							<td>
-								<span t-field="line.last_dispense_id.date_planned" />
+								<t t-if="line.last_dispense_id.date_planned">
+								   <t t-esc="line.last_dispense_id.date_planned.split(' ')[0]" />
+								</t>
 							</td>
 							<td>
-								<span t-field="line.date_stop_treatment" />
+								<t t-if="line.date_stop_treatment">
+								   <t t-esc="line.date_stop_treatment.split(' ')[0]" />
+								</t>
 							</td>
 							<td>
-								<span t-field="line.physician_id" />
+								<t t-esc="line.prescription_order_id.physician_id.name" />
 							</td>
 							<td>
 								<t t-if="line.can_dispense_qty">
 									
 									<t t-set="product" t-value="line.medicament_id.product_id" />
 									
-									<form action="/shop/cart/update"
-										  method="POST"
-										  class="js_add_cart_variants"
-										  t-att-data-attribute_value_ids="product.product_variant_ids.ids"
-										  >
+									<form action="/shop/cart/update" method="POST">
 										<input type="hidden"
 											   name="csrf_token"
 											   t-att-value="request.csrf_token()"
 											   />
-										<div class="js_product">
-											<input type="hidden" t-value="line.qty" />
-										  <a id="add_to_cart"
-											 class="btn btn-primary btn-xs mt8 js_check_product a-submit"
-											 href="#">
-												Add to Cart
-										  </a>
-										</div>
+										<input type="hidden"
+											   class="product_id"
+											   name="product_id"
+											   t-att-value="int(product.product_variant_ids[0]) if len(product.product_variant_ids) == 1 else '0'"
+											   />
+										<input type="hidden" name="set_qty" t-att-value="line.qty" />
+										<button type="submit"
+												class="btn btn-primary btn-xs mt8"
+												>
+											  <i class="fa fa-2x fa-cart-plus" />
+										</button>
 					  
 									</form>
 									
+								</t>
+								
+								<t t-if="not line.can_dispense_qty">
+									<i class="fa fa-2x fa-times" />
 								</t>
 							</td>
 						</tr>

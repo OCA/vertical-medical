@@ -28,8 +28,9 @@ class WebsiteMedical(WebsiteMedical):
             ('patient_id.parent_id', 'child_of', [partner_id.id]),
         ])
 
+        # @TODO: Real security solution
         response.qcontext.update({
-            'prescription_order_lines': rx_line_ids,
+            'prescription_order_lines': rx_line_ids.sudo(),
         })
         return response
 
