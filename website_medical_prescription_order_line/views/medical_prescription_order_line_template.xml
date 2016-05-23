@@ -15,52 +15,48 @@
             <p>There are currently no prescriptions associated with your account.</p>
         </t>
         <t t-if="patients">
-            <table class="table table-hover table-responsive o_my_status_table">
+            <table class="table table-hover table-responsive">
                 <thead>
-                  <tr class="active auto-size">
-                      <th>Patient</th>
-                      <th>Rx Number</th>
-                      <th>Medication</th>
-					  <th>Written</th>
-					  <th>Remain</th>
-					  <th>Last Dispense</th>
-					  <th>Expiration</th>
-					  <th>Prescriber</th>
-					  <th>Refill</th>
+                  <tr class="active">
+                      <th colspan="3">Patient</th>
+                      <th colspan="2">Rx Number</th>
+                      <th colspan="3">Medication</th>
+					  <th colspan="1">Written</th>
+					  <th colspan="1">Remain</th>
+					  <th colspan="2">Last Dispense</th>
+					  <th colspan="2">Expiration</th>
+					  <th colspan="1" class="text-right">Order</th>
                     </tr>
                 </thead>
 				<tbody>
 					<t t-foreach="prescription_order_lines" t-as="line">
 						<tr>
-							<td>
-								<t t-esc="line.patient_id.name" />
+							<td colspan="3">
+								<span t-field="line.patient_id.name" />
 							</td>
-							<td>
-								<t t-esc="line.name" />
+							<td colspan="2" class="text-nowrap">
+								<span t-field="line.name" />
 							</td>
-							<td>
-								<t t-esc="line.medicament_id.display_name" />
+							<td colspan="3">
+								<span t-field="line.medicament_id.display_name" />
 							</td>
-							<td>
-								<t t-esc="line.qty" />
+							<td colspan="1">
+								<span t-field="line.qty" />
 							</td>
-							<td>
-								<t t-esc="line.can_dispense_qty" />
+							<td colspan="1">
+								<span t-field="line.can_dispense_qty" />
 							</td>
-							<td>
+							<td colspan="2">
 								<t t-if="line.last_dispense_id.date_planned">
-								   <t t-esc="line.last_dispense_id.date_planned.split(' ')[0]" />
+								   <span t-field="line.last_dispense_id.date_planned" t-field-options='{"widget": "date"}' />
 								</t>
 							</td>
-							<td>
+							<td colspan="2">
 								<t t-if="line.date_stop_treatment">
-								   <t t-esc="line.date_stop_treatment.split(' ')[0]" />
+								   <span t-field="line.date_stop_treatment" t-field-options='{"widget": "date"}' />
 								</t>
 							</td>
-							<td>
-								<t t-esc="line.prescription_order_id.physician_id.name" />
-							</td>
-							<td>
+							<td colspan="1" class="text-right">
 								<t t-if="line.can_dispense_qty">
 									
 									<t t-set="product" t-value="line.medicament_id.product_id" />
