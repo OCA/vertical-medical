@@ -15,6 +15,10 @@
             <p>There are currently no prescriptions associated with your account.</p>
         </t>
         <t t-if="patients">
+			<h5>
+				If you would like to order a medication, please click the green
+				button to add to cart.
+			</h5>
             <table class="table table-hover table-responsive">
                 <thead>
                   <tr class="active">
