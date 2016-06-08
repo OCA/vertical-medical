@@ -125,6 +125,10 @@ class MedicalMedicament(models.Model):
     def onchange_uom(self, uom_id, uom_po_id):
         return self.product_id.onchange_uom(uom_id, uom_po_id)
 
+    @api.multi
+    def onchange_tracking(self, tracking):
+        return self.product_id.onchange_tracking(tracking)
+
     @api.model
     @api.returns('self', lambda value: value.id)
     def create(self, vals):
