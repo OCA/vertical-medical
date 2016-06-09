@@ -23,7 +23,7 @@ For further information, please visit:
 Known issues / Roadmap
 ======================
 
-
+* Support multiple medicament name variances in product template name_get (such as diff strengths under same template)
 
 
 Bug Tracker
