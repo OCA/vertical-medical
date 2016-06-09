@@ -38,6 +38,8 @@ class SaleOrderLine(models.Model):
     @api.multi
     @api.constrains('product_id', 'prescription_order_line_id')
     def _check_product(self):
+        if self.env.context.get('__rx_force__'):
+            return True
         for rec_id in self:
             if not rec_id.prescription_order_line_id:
                 continue
@@ -59,6 +61,8 @@ class SaleOrderLine(models.Model):
     @api.multi
     @api.constrains('patient_id', 'prescription_order_line_id')
     def _check_patient(self):
+        if self.env.context.get('__rx_force__'):
+            return True
         for rec_id in self:
             if not rec_id.prescription_order_line_id:
                 continue
@@ -75,15 +79,18 @@ class SaleOrderLine(models.Model):
     @api.multi
     @api.constrains('dispense_qty', 'prescription_order_line_id')
     def _check_can_dispense(self):
+        if self.env.context.get('__rx_force__'):
+            return True
         for rec_id in self:
             if not rec_id.prescription_order_line_id:
                 continue
             rx_line = rec_id.prescription_order_line_id
             if not rx_line.can_dispense:
                 raise ValidationError(_(
-                    'Cannot dispense because there are related, '
+                    'Cannot dispense %s because there are related, '
                     'pending order(s). \n'
                     'Currently %.2f processed %.2f pending %.2f exception' % (
+                        rec_id.dispense_qty,
                         rx_line.dispensed_qty,
                         rx_line.pending_dispense_qty,
                         rx_line.exception_dispense_qty,
