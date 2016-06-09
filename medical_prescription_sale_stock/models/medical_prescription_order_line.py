@@ -17,42 +17,47 @@ class MedicalPrescriptionOrderLine(models.Model):
     dispensed_ids = fields.Many2many(
         string='Dispensings',
         comodel_name='procurement.order',
-        compute='_compute_dispensings',
+        compute=lambda s: s._compute_dispensings(),
         store=True,
     )
     last_dispense_id = fields.Many2one(
         string='Last Dispense',
         comodel_name='procurement.order',
-        compute='_compute_dispensings',
+        compute=lambda s: s._compute_dispensings(),
         store=True,
     )
     dispensed_qty = fields.Float(
         store=True,
-        compute='_compute_dispensings',
+        compute=lambda s: s._compute_dispensings(),
         help='Amount already dispensed (using medicine dosage)',
     )
     pending_dispense_qty = fields.Float(
         store=True,
-        compute='_compute_dispensings',
+        compute=lambda s: s._compute_dispensings(),
         help='Amount pending dispense (using medicine dosage)',
     )
     exception_dispense_qty = fields.Float(
         store=True,
-        compute='_compute_dispensings',
+        compute=lambda s: s._compute_dispensings(),
         help='Qty of dispense exceptions (using medicine dosage)',
     )
     cancelled_dispense_qty = fields.Float(
         store=True,
-        compute='_compute_dispensings',
+        compute=lambda s: s._compute_dispensings(),
         help='Dispense qty cancelled (using medicine dosage)',
     )
+    active_dispense_qty = fields.Float(
+        store=True,
+        compute=lambda s: s._compute_can_dispense_and_qty(),
+        help='Total amount of dispenses that are active in some way',
+    )
     can_dispense = fields.Boolean(
-        compute='_compute_can_dispense_and_qty',
+        compute=lambda s: s._compute_can_dispense_and_qty(),
         store=True,
         help='Can this prescription be dispensed?',
     )
     can_dispense_qty = fields.Float(
-        compute='_compute_can_dispense_and_qty',
+        compute=lambda s: s._compute_can_dispense_and_qty(),
         store=True,
         help='Amount that can be dispensed (using medicine dosage)',
     )
@@ -136,6 +141,7 @@ class MedicalPrescriptionOrderLine(models.Model):
                          rec_id.exception_dispense_qty,
                          rec_id.pending_dispense_qty])
 
+            rec_id.active_dispense_qty = total
             rec_id.can_dispense = rec_id.qty > total
             rec_id.can_dispense_qty = rec_id.qty - total
 
