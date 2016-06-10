@@ -127,7 +127,7 @@ class TestAll(TransactionCase):
 
     def test_rx_line_compute_dispensings_cancelled(self, ):
         self._new_procurement(
-            self._new_order().order_line[0]
+            self._new_rx_order().order_line[0]
         ).state = 'cancel'
         self.assertEqual(
             1, self.rx_line_id.cancelled_dispense_qty,
@@ -135,7 +135,7 @@ class TestAll(TransactionCase):
 
     def test_rx_line_compute_dispensings_pending_confirmed(self, ):
         self._new_procurement(
-            self._new_order().order_line[0]
+            self._new_rx_order().order_line[0]
         ).state = 'confirmed'
         self.assertEqual(
             1, self.rx_line_id.pending_dispense_qty,
@@ -143,7 +143,7 @@ class TestAll(TransactionCase):
 
     def test_rx_line_compute_dispensings_pending_running(self, ):
         self._new_procurement(
-            self._new_order().order_line[0]
+            self._new_rx_order().order_line[0]
         ).state = 'running'
         self.assertEqual(
             1, self.rx_line_id.pending_dispense_qty,
@@ -151,7 +151,7 @@ class TestAll(TransactionCase):
 
     def test_rx_line_compute_dispensings_done(self, ):
         self._new_procurement(
-            self._new_order().order_line[0]
+            self._new_rx_order().order_line[0]
         ).state = 'done'
         self.assertEqual(
             1, self.rx_line_id.dispensed_qty,
@@ -159,7 +159,7 @@ class TestAll(TransactionCase):
 
     def test_rx_line_compute_dispensings_except(self, ):
         self._new_procurement(
-            self._new_order().order_line[0]
+            self._new_rx_order().order_line[0]
         ).state = 'exception'
         self.assertEqual(
             1, self.rx_line_id.exception_dispense_qty,
@@ -167,7 +167,7 @@ class TestAll(TransactionCase):
 
     def test_rx_line_compute_can_dispense_none(self, ):
         self._new_procurement(
-            self._new_order().order_line[0]
+            self._new_rx_order().order_line[0]
         ).state
         self.assertEqual(
             0, self.rx_line_id.can_dispense_qty,
@@ -175,11 +175,25 @@ class TestAll(TransactionCase):
         self.assertFalse(self.rx_line_id.can_dispense)
 
     def test_rx_line_compute_can_dispense_one(self, ):
-        self._new_order()
+        self._new_rx_order()
         self.assertEqual(
             1, self.rx_line_id.can_dispense_qty,
         )
         self.assertTrue(self.rx_line_id.can_dispense)
+
+    def test_rx_line_compute_can_dispense_active_qty_none(self, ):
+        self._new_rx_order()
+        self.assertEqual(
+            0, self.rx_line_id.active_dispense_qty,
+        )
+
+    def test_rx_line_compute_can_dispense_active_qty_one(self, ):
+        self._new_procurement(
+            self._new_rx_order().order_line[0]
+        ).state = 'done'
+        self.assertEqual(
+            1, self.rx_line_id.active_dispense_qty,
+        )
 
     def test_sale_line_compute_dispense_qty_identical(self, ):
         order_id = self._new_rx_order()

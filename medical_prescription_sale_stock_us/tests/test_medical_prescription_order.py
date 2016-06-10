@@ -2,9 +2,10 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from datetime import datetime, timedelta
+
 from openerp.tests.common import TransactionCase
 from openerp import fields
-from openerp.exceptions import ValidationError
 
 
 class TestMedicalPrescriptionOrder(TransactionCase):
@@ -12,7 +13,11 @@ class TestMedicalPrescriptionOrder(TransactionCase):
     module = 'medical_prescription_sale_stock'
 
     def setUp(self, *args, **kwargs):
-        super(TestAll, self).setUp(*args, **kwargs)
+        super(TestMedicalPrescriptionOrder, self).setUp(*args, **kwargs)
+        date_now = datetime.now()
+        delta = timedelta(days=1)
+        self.date_today = fields.Datetime.to_string(date_now)
+        self.date_yesterday = fields.Datetime.to_string(date_now - delta)
 
     # def _clear_resources(self, ):
         self.order_vals = {}
@@ -43,6 +48,9 @@ class TestMedicalPrescriptionOrder(TransactionCase):
             'date_start_treatment': fields.Datetime.now(),
             'qty': 1,
             'dispense_uom_id': 1,
+            'duration': 30,
+            'duration_uom_id': self.env.ref('product.product_uom_day').id,
+            'refill_qty_original': 5,
         }
         self.procurement_vals = {
             'date_planned': fields.Datetime.now(),
@@ -51,7 +59,7 @@ class TestMedicalPrescriptionOrder(TransactionCase):
             'product_uom': 1,
         }
 
-    def _new_resources(self, clear=True, refills=1):
+    def _new_resources(self, clear=True):
         self.patient_id = self.env['medical.patient'].create(
             self.patient_vals
         )
@@ -72,9 +80,6 @@ class TestMedicalPrescriptionOrder(TransactionCase):
             'medicament_id': self.medicament_id.id,
             'physician_id': self.physician_id.id,
             'patient_id': self.patient_id.id,
-            'duration': 1,
-            'duration_uom_id': self.env.ref('product.product_uom_day').id,
-            'refill_qty_original': refills,
         })
         self.rx_vals.update({
             'patient_id': self.patient_id.id,
@@ -131,6 +136,7 @@ class TestMedicalPrescriptionOrder(TransactionCase):
         return order_line_id.procurement_ids[-1]
 
     def test_rx_line_compute_can_dispense_refill(self):
+        """ It should allow a dispense due to a refill, but not overfill """
         self._new_procurement(
             self._new_rx_order().order_line[0],
             '2016-01-01 00:00:00',
@@ -139,3 +145,114 @@ class TestMedicalPrescriptionOrder(TransactionCase):
             1, self.rx_line_id.can_dispense_qty,
         )
         self.assertTrue(self.rx_line_id.can_dispense)
+
+    def test_rx_line_compute_dispense_remain_no_fill_days(self):
+        """ It should start at zero when no procurements """
+        self._new_rx_order()
+        self.assertEqual(
+            0.0, self.rx_line_id.last_dispense_remain_day,
+        )
+
+    def test_rx_line_compute_dispense_remain_no_fill_qty(self):
+        """ It should start at zero when no procurements """
+        self._new_rx_order()
+        self.assertEqual(
+            0.0, self.rx_line_id.last_dispense_remain_qty,
+        )
+
+    def test_rx_line_compute_dispense_remain_no_fill_percent(self):
+        """ It should start at zero when no procurements """
+        self._new_rx_order()
+        self.assertEqual(
+            0.0, self.rx_line_id.last_dispense_remain_percent,
+        )
+
+    def test_rx_line_compute_dispense_remain_with_fill_days_today(self):
+        """ It should have all days remaining in dispense on dispense day """
+        self._new_procurement(
+            self._new_rx_order().order_line[0],
+            self.date_today,
+        ).state = 'done'
+        self.assertEqual(
+            5.0, self.rx_line_id.last_dispense_remain_day,
+        )
+
+    def test_rx_line_compute_dispense_remain_with_fill_qty_today(self):
+        """ It should have full dispense qty remaining on dispense day """
+        self._new_procurement(
+            self._new_rx_order().order_line[0],
+            self.date_today,
+        ).state = 'done'
+        self.assertEqual(
+            1.0, self.rx_line_id.last_dispense_remain_qty,
+        )
+
+    def test_rx_line_compute_dispense_remain_with_fill_percent_today(self):
+        """ It should have 100% of dispense remaining on dispense day """
+        self._new_procurement(
+            self._new_rx_order().order_line[0],
+            self.date_today,
+        ).state = 'done'
+        self.assertEqual(
+            100.0, self.rx_line_id.last_dispense_remain_percent,
+        )
+
+    def test_rx_line_compute_dispense_remain_with_fill_days_yestday(self):
+        """ It should have -1 day if dispensed yesterday """
+        self._new_procurement(
+            self._new_rx_order().order_line[0],
+            self.date_yesterday,
+        ).state = 'done'
+        self.assertEqual(
+            4.0, self.rx_line_id.last_dispense_remain_day,
+        )
+
+    def test_rx_line_compute_dispense_remain_with_fill_qty_yestday(self):
+        """ It should have -.2 qty remaining if dispensed yesterday """
+        self._new_procurement(
+            self._new_rx_order().order_line[0],
+            self.date_yesterday,
+        ).state = 'done'
+        self.assertEqual(
+            0.8, self.rx_line_id.last_dispense_remain_qty,
+        )
+
+    def test_rx_line_compute_dispense_remain_with_fill_percent_yestday(self):
+        """ It should have -20% remaining if dispensed yesterday """
+        self._new_procurement(
+            self._new_rx_order().order_line[0],
+            self.date_yesterday,
+        ).state = 'done'
+        self.assertEqual(
+            80.0, self.rx_line_id.last_dispense_remain_percent,
+        )
+
+    def test_compute_qty_remain_total_allowed(self):
+        """ It should start with refill count + 1 """
+        self._new_procurement(
+            self._new_rx_order().order_line[0],
+            self.date_yesterday,
+        ).state = 'done'
+        self.assertEqual(
+            6.0, self.rx_line_id.total_allowed_qty,
+        )
+
+    def test_compute_qty_remain_total_qty_remain(self):
+        """ It should decrement remaining qty if dispensed and +1 """
+        self._new_procurement(
+            self._new_rx_order().order_line[0],
+            self.date_yesterday,
+        ).state = 'done'
+        self.assertEqual(
+            5.0, self.rx_line_id.total_qty_remain,
+        )
+
+    def test_compute_qty_remain_refill_qty_remain(self):
+        """ It should decrement remaining qty and represent refills """
+        self._new_procurement(
+            self._new_rx_order().order_line[0],
+            self.date_yesterday,
+        ).state = 'done'
+        self.assertEqual(
+            4.0, self.rx_line_id.refill_qty_remain,
+        )

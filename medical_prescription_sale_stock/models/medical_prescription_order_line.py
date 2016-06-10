@@ -46,6 +46,11 @@ class MedicalPrescriptionOrderLine(models.Model):
         compute='_compute_dispensings',
         help='Dispense qty cancelled (using medicine dosage)',
     )
+    active_dispense_qty = fields.Float(
+        store=True,
+        compute='_compute_can_dispense_and_qty',
+        help='Total amount of dispenses that are active in some way',
+    )
     can_dispense = fields.Boolean(
         compute='_compute_can_dispense_and_qty',
         store=True,
@@ -136,6 +141,7 @@ class MedicalPrescriptionOrderLine(models.Model):
                          rec_id.exception_dispense_qty,
                          rec_id.pending_dispense_qty])
 
+            rec_id.active_dispense_qty = total
             rec_id.can_dispense = rec_id.qty > total
             rec_id.can_dispense_qty = rec_id.qty - total
 
