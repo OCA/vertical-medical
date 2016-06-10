@@ -5,10 +5,6 @@
 from openerp import models, api, fields
 
 
-import logging
-_logger = logging.getLogger(__name__)
-
-
 class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
@@ -23,7 +19,6 @@ class ProductTemplate(models.Model):
         res = []
         for rec_id in self:
             if rec_id.is_medicament and len(rec_id.medicament_ids):
-                _logger.debug('NAME_GET %s', rec_id.medicament_ids)
                 try:
                     med_name = rec_id.medicament_ids.name_get()[0]
                     res.append((rec_id.id, med_name[1]))
