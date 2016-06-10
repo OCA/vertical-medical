@@ -105,10 +105,10 @@ class MedicalMedicament(models.Model):
         res = []
         for rec in self:
             if rec.drug_form_id.name:
-                form = '- %s' % rec.drug_form_id.name
+                form = ' - %s' % rec.drug_form_id.name
             else:
                 form = ''
-            name = '{name} {strength:g} {uom}'.format(
+            name = '{name} {strength:g} {uom}{form}'.format(
                 name=rec.product_id.name,
                 strength=rec.strength,
                 uom=rec.strength_uom_id.name or '',
@@ -124,6 +124,10 @@ class MedicalMedicament(models.Model):
     @api.multi
     def onchange_uom(self, uom_id, uom_po_id):
         return self.product_id.onchange_uom(uom_id, uom_po_id)
+
+    @api.multi
+    def onchange_tracking(self, tracking):
+        return self.product_id.onchange_tracking(tracking)
 
     @api.model
     @api.returns('self', lambda value: value.id)
