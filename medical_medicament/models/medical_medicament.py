@@ -112,7 +112,7 @@ class MedicalMedicament(models.Model):
                 name=rec.product_id.name,
                 strength=rec.strength,
                 uom=rec.strength_uom_id.name or '',
-                form=form,
+                form=form.code,
             )
             res.append((rec.id, name))
         return res
