@@ -105,10 +105,10 @@ class MedicalMedicament(models.Model):
         res = []
         for rec in self:
             if rec.drug_form_id.name:
-                form = '- %s' % rec.drug_form_id.name
+                form = ' - %s' % rec.drug_form_id.name
             else:
                 form = ''
-            name = '{name} {strength:g} {uom}'.format(
+            name = '{name} {strength:g} {uom}{form}'.format(
                 name=rec.product_id.name,
                 strength=rec.strength,
                 uom=rec.strength_uom_id.name or '',
