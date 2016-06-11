@@ -57,7 +57,8 @@ class MedicalAbstractDea(models.AbstractModel):
             match = match.groupdict()
             evens = sum(digits_of(match['math_digits'][0:][::2]))
             odds = sum(digits_of(match['math_digits'][1:][::2]))
-            return (odds * 2) + evens == int(match['control_digit'])
+            res_str = str((odds * 2) + evens)
+            return int(res_str[-1]) == int(match['control_digit'])
 
         return False
 

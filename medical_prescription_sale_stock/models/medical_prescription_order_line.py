@@ -48,7 +48,7 @@ class MedicalPrescriptionOrderLine(models.Model):
     )
     active_dispense_qty = fields.Float(
         store=True,
-        compute=lambda s: s._compute_can_dispense_and_qty(),
+        compute='_compute_can_dispense_and_qty',
         help='Total amount of dispenses that are active in some way',
     )
     can_dispense = fields.Boolean(
