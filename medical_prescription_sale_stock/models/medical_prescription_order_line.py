@@ -17,55 +17,40 @@ class MedicalPrescriptionOrderLine(models.Model):
     dispensed_ids = fields.Many2many(
         string='Dispensings',
         comodel_name='procurement.order',
-        compute=lambda s: s._compute_dispensings(),
-        store=True,
+        readonly=True,
     )
     last_dispense_id = fields.Many2one(
         string='Last Dispense',
         comodel_name='procurement.order',
-        compute=lambda s: s._compute_dispensings(),
-        store=True,
+        readonly=True,
     )
     dispensed_qty = fields.Float(
-        store=True,
-        compute=lambda s: s._compute_dispensings(),
+        readonly=True,
         help='Amount already dispensed (using medicine dosage)',
     )
     pending_dispense_qty = fields.Float(
-        store=True,
-        compute=lambda s: s._compute_dispensings(),
+        readonly=True,
         help='Amount pending dispense (using medicine dosage)',
     )
     exception_dispense_qty = fields.Float(
-        store=True,
-        compute=lambda s: s._compute_dispensings(),
+        readonly=True,
         help='Qty of dispense exceptions (using medicine dosage)',
     )
     cancelled_dispense_qty = fields.Float(
-        store=True,
-        compute=lambda s: s._compute_dispensings(),
+        readonly=True,
         help='Dispense qty cancelled (using medicine dosage)',
     )
     active_dispense_qty = fields.Float(
-        store=True,
-        compute='_compute_can_dispense_and_qty',
+        readonly=True,
         help='Total amount of dispenses that are active in some way',
     )
     can_dispense = fields.Boolean(
-        compute=lambda s: s._compute_can_dispense_and_qty(),
-        store=True,
+        readonly=True,
         help='Can this prescription be dispensed?',
     )
     can_dispense_qty = fields.Float(
-        compute=lambda s: s._compute_can_dispense_and_qty(),
-        store=True,
+        readonly=True,
         help='Amount that can be dispensed (using medicine dosage)',
-    )
-    dispense_uom_id = fields.Many2one(
-        string='Dispense Units',
-        comodel_name='product.uom',
-        store=True,
-        help='Dispense unit of measurement',
     )
 
     @api.multi
