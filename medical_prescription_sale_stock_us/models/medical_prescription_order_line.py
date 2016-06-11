@@ -15,35 +15,32 @@ class MedicalPrescriptionOrderLine(models.Model):
 
     refill_qty_remain = fields.Float(
         string='Refill Remain',
-        store=True,
-        compute='_compute_qty_remain',
+        readonly=True,
         help='Amount of refills remaining in the prescription',
     )
     total_qty_remain = fields.Float(
         string='Qty Remaining',
-        store=True,
-        compute='_compute_qty_remain',
+        readonly=True,
         help='Total units remaining in the prescription',
     )
     total_allowed_qty = fields.Float(
         string='Qty Allowed',
-        store=True,
-        compute='_compute_qty_remain',
+        readonly=True,
         help='Total units allowed in the prescription, including refills',
     )
     last_dispense_remain_qty = fields.Float(
         string='Dispense Remaining Qty',
-        compute='_compute_dispense_remain',
+        compute=lambda s: s._compute_dispense_remain(),
         help='Estimated number of units remaining from last dispense',
     )
     last_dispense_remain_percent = fields.Float(
         string='Dispense Remaining Percent',
-        compute='_compute_dispense_remain',
+        compute=lambda s: s._compute_dispense_remain(),
         help='Estimated percentage remaining from last dispense',
     )
     last_dispense_remain_day = fields.Float(
         string='Dispense Remaining Days',
-        compute='_compute_dispense_remain',
+        compute=lambda s: s._compute_dispense_remain(),
         help='Estimated days remaining from last dispense',
     )
 
@@ -111,8 +108,6 @@ class MedicalPrescriptionOrderLine(models.Model):
                  'dispensed_qty',
                  'exception_dispense_qty',
                  'pending_dispense_qty',
-                 # 'refill_qty_remain',
-                 # 'total_qty_remain',
                  )
     def _compute_can_dispense_and_qty(self):
         """ Overload to provide refill logic """
