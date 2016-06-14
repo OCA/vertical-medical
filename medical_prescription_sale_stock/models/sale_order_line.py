@@ -48,10 +48,10 @@ class SaleOrderLine(models.Model):
                 if not rx_line.is_substitutable:
                     raise ValidationError(_(
                         'Products must be same on Order and Rx lines. '
-                        'Got %s on order line %s, expected %s from %r' % (
-                            rec_id.product_id.name, rec_id.name,
-                            rx_line.medicament_id.product_id.name, rx_line,
-                        ),
+                        'Got %s on order line %s, expected %s from %r'
+                    ) % (
+                        rec_id.product_id.name, rec_id.name,
+                        rx_line.medicament_id.product_id.name, rx_line,
                     ))
                 else:
                     # @TODO: implement determination for what drugs can be
@@ -70,10 +70,10 @@ class SaleOrderLine(models.Model):
             if rec_id.patient_id != rx_line.patient_id:
                 raise ValidationError(_(
                     'Patients must be same on Order and Rx lines. '
-                    'Got %s on order line %d, expected %s from rx line %d' % (
-                        rec_id.patient_id.name, rec_id.id,
-                        rx_line.patient_id.name, rx_line.id,
-                    ),
+                    'Got %s on order line %d, expected %s from rx line %d'
+                ) % (
+                    rec_id.patient_id.name, rec_id.id,
+                    rx_line.patient_id.name, rx_line.id,
                 ))
 
     @api.multi
@@ -89,19 +89,19 @@ class SaleOrderLine(models.Model):
                 raise ValidationError(_(
                     'Cannot dispense %s because there are related, '
                     'pending order(s). \n'
-                    'Currently %.2f processed %.2f pending %.2f exception' % (
-                        rec_id.dispense_qty,
-                        rx_line.dispensed_qty,
-                        rx_line.pending_dispense_qty,
-                        rx_line.exception_dispense_qty,
-                    )
+                    'Currently %.2f processed %.2f pending %.2f exception'
+                ) % (
+                    rec_id.dispense_qty,
+                    rx_line.dispensed_qty,
+                    rx_line.pending_dispense_qty,
+                    rx_line.exception_dispense_qty,
                 ))
             if rec_id.dispense_qty > rx_line.can_dispense_qty:
                 raise ValidationError(_(
-                    'Cannot dispense - %s goes over Rx qty by %d' % (
-                        rec_id.name,
-                        rec_id.dispense_qty - rx_line.can_dispense_qty
-                    )
+                    'Cannot dispense - %s goes over Rx qty by %d'
+                ) % (
+                    rec_id.name,
+                    rec_id.dispense_qty - rx_line.can_dispense_qty
                 ))
 
     @api.multi
