@@ -108,6 +108,8 @@ class MedicalPrescriptionOrderLine(models.Model):
                  'dispensed_qty',
                  'exception_dispense_qty',
                  'pending_dispense_qty',
+                 'refill_qty_remain',
+                 'total_qty_remain',
                  )
     def _compute_can_dispense_and_qty(self):
         """ Overload to provide refill logic """
