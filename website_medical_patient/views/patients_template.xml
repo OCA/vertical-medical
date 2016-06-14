@@ -86,12 +86,15 @@
 				<div class="col-md-8">
 					<div class="row">
 						<div class="col-md-12">
-						  <div t-if="error_message" class="alert alert-danger">
-							  <t t-foreach="error_message" t-as="err">
-								<t t-esc="err"/><br />
-							  </t>
-						  </div>
+							<span id="o_website_form_result" />
+							<div t-if="error_message" class="alert alert-danger">
+								<t t-foreach="error_message" t-as="err">
+									<t t-esc="err"/><br />
+								</t>
+							</div>
 						</div>
+					</div>
+					<div class="row">
 						<div t-attf-class="form-group form-field #{error.get('name') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
 							<label class="control-label" for="name">
 								Full Name
@@ -102,15 +105,6 @@
 								   required=""
 								   t-att-value="request.params.get('name') or patient.name or ''" />
 						</div>
-						<div t-attf-class="form-group form-field #{error.get('email') and 'has-error' or ''} col-lg-6">
-							<label class="control-label" for="email">
-								Email
-							</label>
-							<input type="email"
-								   name="email"
-								   class="form-control o_website_form_input"
-								   t-att-value="request.params.get('email') or patient.email or partner.email or ''" />
-						</div>
 						<div t-attf-class="form-group form-field #{error.get('phone') and 'has-error' or ''} col-lg-6">
 							<label class="control-label" for="phone">
 								Phone
@@ -120,7 +114,8 @@
 								   class="form-control o_website_form_input"
 								   t-att-value="request.params.get('phone') or patient.phone or partner.phone or ''" />
 						</div>
-
+					</div>
+					<div class="row">
 						<div t-attf-class="o_datepicker form-group form-field #{error.get('dob') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
 							<label class="control-label label-optional" for="dob">
 								Birth Date
@@ -131,7 +126,6 @@
 								   class="form-control o_website_form_date"
 								   t-att-value="request.params.get('dob') or _format_date(patient.dob) or ''" />
 						</div>
-
 						<div t-attf-class="form-group form-field #{error.get('gender') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
 							<label class="control-label label-optional" for="gender">
 								Gender
@@ -147,95 +141,18 @@
 								</t>
 							</select>
 						</div>
-						
-						<div t-attf-class="form-group field-password #{error.get('ref') and 'has-error' or ''} col-lg-6">
-							<label class="control-label label-optional" for="ref">
-								SSN
-							</label>
-							<input type="password" name="ref" class="form-control" t-att-value="ref or patient.ref" />
-						</div>
-
-						<div class="clearfix" />
-						<div t-attf-class="form-group form-field #{error.get('street') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
-							<label class="control-label" for="street">
-								Street
-							</label>
-							<input type="text"
-								   name="street"
-								   required=""
-								   class="form-control o_website_form_input"
-								   t-att-value="request.params.get('street') or patient.street or partner.street or ''" />
-						</div>
-						<div t-attf-class="form-group form-field #{error.get('street2') and 'has-error' or ''} col-lg-6">
-							<label class="control-label" for="street">
-								Street 2nd
-							</label>
-							<input type="text"
-								   name="street2"
-								   class="form-control"
-								   t-att-value="request.params.get('street2') or patient.street2 or ''" />
-						</div>
-						<div t-attf-class="form-group form-field #{error.get('city') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
-							<label class="control-label" for="city">
-								City
-							</label>
-							<input type="text"
-								   name="city"
-								   required=""
-								   class="form-control o_website_form_input"
-								   t-att-value="request.params.get('city') or patient.city or partner.city or ''" />
-						</div>
-						<div t-attf-class="form-group form-field #{error.get('zip') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
-							<label class="control-label" for="zip">
-								Zip / Postal Code
-							</label>
-							<input type="text"
-								   name="zip"
-								   required=""
-								   class="form-control o_website_form_input"
-								   t-att-value="request.params.get('zip') or patient.zip or partner.zip or ''" />
-						</div>
-						<div t-attf-class="form-group form-field #{error.get('state_id') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
-							<label class="control-label label-optional" for="state_id">
-								State / Province
-							</label>
-							<select name="state_id" class="form-control o_website_form_input" required="">
-								<option value="">State/Province...</option>
-								<t t-foreach="states or []" t-as="state">
-									<option t-att-value="state.id"
-											style="display:none;"
-											t-att-data-country_id="state.country_id.id"
-											t-att-selected="state.id == (request.params.get('state_id') or patient.state_id.id or partner.state_id.id)">
-										<t t-esc="state.name" />
-									</option>
-								</t>
-							</select>
-						</div>
-						<div t-attf-class="form-group form-field #{error.get('country_id') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
-							<label class="control-label" for="country_id">
-								Country
-							</label>
-							<select name="country_id" class="form-control o_website_form_input" required="">
-								<option value="">Country...</option>
-								<t t-foreach="countries or []" t-as="country">
-									<option t-att-value="country.id"
-											t-att-selected="country.id == (request.params.get('country_id') or patient.country_id.id or partner.country_id.id)">
-										<t t-esc="country.name" />
-									</option>
-								</t>
-							</select>
-						</div>
 					</div>
-					<div class="clearfix form-group">
-						<a class="btn btn-default pull-left" href="/my/home">
-							<span class="fa fa-long-arrow-left" />
-							Home
-						</a>
-						<button class="btn btn-primary pull-right mb32 o_website_form_send">
-							Save
-							<span class="fa fa-long-arrow-right" />
-						</button>
-						<span id="o_website_form_result" />
+					<div class="row">
+						<div class="clearfix form-group">
+							<a class="btn btn-default pull-left" href="/my/home">
+								<span class="fa fa-long-arrow-left" />
+								Home
+							</a>
+							<button class="btn btn-primary pull-right mb32 o_website_form_send">
+								Save
+								<span class="fa fa-long-arrow-right" />
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
