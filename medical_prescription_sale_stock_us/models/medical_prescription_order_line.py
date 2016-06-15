@@ -15,49 +15,37 @@ class MedicalPrescriptionOrderLine(models.Model):
 
     refill_qty_remain = fields.Float(
         string='Refill Remain',
-        readonly=True,
+        store=True,
+        compute='_compute_can_dispense_and_qty',
         help='Amount of refills remaining in the prescription',
     )
     total_qty_remain = fields.Float(
         string='Qty Remaining',
-        readonly=True,
+        store=True,
+        compute='_compute_can_dispense_and_qty',
         help='Total units remaining in the prescription',
     )
     total_allowed_qty = fields.Float(
         string='Qty Allowed',
-        readonly=True,
+        store=True,
+        compute='_compute_can_dispense_and_qty',
         help='Total units allowed in the prescription, including refills',
     )
     last_dispense_remain_qty = fields.Float(
         string='Dispense Remaining Qty',
-        compute=lambda s: s._compute_dispense_remain(),
+        compute='_compute_dispense_remain',
         help='Estimated number of units remaining from last dispense',
     )
     last_dispense_remain_percent = fields.Float(
         string='Dispense Remaining Percent',
-        compute=lambda s: s._compute_dispense_remain(),
+        compute='_compute_dispense_remain',
         help='Estimated percentage remaining from last dispense',
     )
     last_dispense_remain_day = fields.Float(
         string='Dispense Remaining Days',
-        compute=lambda s: s._compute_dispense_remain(),
+        compute='_compute_dispense_remain',
         help='Estimated days remaining from last dispense',
     )
-
-    @api.multi
-    @api.depends('qty',
-                 'refill_qty_original',
-                 'active_dispense_qty',
-                 )
-    def _compute_qty_remain(self):
-        for rec_id in self:
-            _logger.debug('In dispense qty %s', rec_id)
-            total_qty = rec_id.qty * (rec_id.refill_qty_original + 1.0)
-            rec_id.total_allowed_qty = total_qty
-            rec_id.total_qty_remain = total_qty - rec_id.active_dispense_qty
-            if rec_id.qty and rec_id.total_qty_remain:
-                remain = (rec_id.total_qty_remain / rec_id.qty) - 1.0
-                rec_id.refill_qty_remain = remain
 
     @api.multi
     def _compute_dispense_remain(self):
@@ -108,15 +96,23 @@ class MedicalPrescriptionOrderLine(models.Model):
                  'dispensed_qty',
                  'exception_dispense_qty',
                  'pending_dispense_qty',
-                 'refill_qty_remain',
-                 'total_qty_remain',
+                 'refill_qty_original',
                  )
     def _compute_can_dispense_and_qty(self):
         """ Overload to provide refill logic """
         super(MedicalPrescriptionOrderLine, self).\
             _compute_can_dispense_and_qty()
         for rec_id in self:
-            _logger.debug('In dispense compute %s', rec_id)
+
+            total_qty = rec_id.qty * (rec_id.refill_qty_original + 1.0)
+            rec_id.total_allowed_qty = total_qty
+            rec_id.total_qty_remain = total_qty - rec_id.active_dispense_qty
+            if rec_id.qty and rec_id.total_qty_remain:
+                remain = (rec_id.total_qty_remain / rec_id.qty) - 1.0
+            else:
+                remain = 0
+            rec_id.refill_qty_remain = remain
+
             if not rec_id.refill_qty_remain:
                 continue
             if rec_id.can_dispense_qty == rec_id.qty:

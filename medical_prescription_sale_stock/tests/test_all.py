@@ -211,6 +211,7 @@ class TestAll(TransactionCase):
             order_line.product_id = product.id
 
     def test_prepare_order_line_procurement_otc(self, ):
+        """ It should not throw an error and should assign OTC route """
         order_id = self._new_order()
         res = order_id.order_line[0]._prepare_order_line_procurement()
         expect = self.env.ref(
@@ -225,6 +226,7 @@ class TestAll(TransactionCase):
         )
 
     def test_prepare_order_line_procurement_prescription(self, ):
+        """ It should not throw an error and should assign RX route """
         order_id = self._new_rx_order()
         res = order_id.order_line[0]._prepare_order_line_procurement()
         expect = self.env.ref(

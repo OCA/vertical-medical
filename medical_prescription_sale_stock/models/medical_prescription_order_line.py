@@ -17,39 +17,48 @@ class MedicalPrescriptionOrderLine(models.Model):
     dispensed_ids = fields.Many2many(
         string='Dispensings',
         comodel_name='procurement.order',
+        compute='_compute_dispensings',
         readonly=True,
     )
     last_dispense_id = fields.Many2one(
         string='Last Dispense',
         comodel_name='procurement.order',
-        readonly=True,
+        store=True,
+        compute='_compute_dispensings',
     )
     dispensed_qty = fields.Float(
-        readonly=True,
+        store=True,
+        compute='_compute_dispensings',
         help='Amount already dispensed (using medicine dosage)',
     )
     pending_dispense_qty = fields.Float(
-        readonly=True,
+        store=True,
+        compute='_compute_dispensings',
         help='Amount pending dispense (using medicine dosage)',
     )
     exception_dispense_qty = fields.Float(
-        readonly=True,
+        store=True,
+        compute='_compute_dispensings',
         help='Qty of dispense exceptions (using medicine dosage)',
     )
     cancelled_dispense_qty = fields.Float(
-        readonly=True,
+        store=True,
+        compute='_compute_dispensings',
         help='Dispense qty cancelled (using medicine dosage)',
     )
     active_dispense_qty = fields.Float(
-        readonly=True,
+        store=True,
+        compute='_compute_can_dispense_and_qty',
         help='Total amount of dispenses that are active in some way',
     )
     can_dispense = fields.Boolean(
-        readonly=True,
+        store=True,
+        compute='_compute_can_dispense_and_qty',
         help='Can this prescription be dispensed?',
     )
     can_dispense_qty = fields.Float(
-        readonly=True,
+        store=True,
+        compute='_compute_can_dispense_and_qty',
         help='Amount that can be dispensed (using medicine dosage)',
     )
 
