@@ -20,4 +20,3 @@ class MedicalPatient(models.Model):
         for rec_id in self:
             res[rec_id.id] = "/medical/patients/%s" % rec_id.id
         return res
-

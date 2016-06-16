@@ -14,10 +14,24 @@
             <field name="model">medical.prescription.order.line</field>
             <field name='inherit_id' ref='medical_prescription.medical_prescription_order_line_form_view'/>
             <field name="arch" type="xml">
+                <xpath expr="//field[@name='prescription_order_id']" position="after">
+                    <field name="name" />
+                </xpath>
                 <xpath expr="//notebook" position="inside">
                     <page string="Sales" name="sale_data">
                         <field name="sale_order_ids"/>
                     </page>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="medical_prescription_order_line_tree_view" model="ir.ui.view">
+            <field name="name">Prescription Order Line Tree</field>
+            <field name="model">medical.prescription.order.line</field>
+            <field name='inherit_id' ref='medical_prescription.medical_prescription_order_line_tree_view'/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='prescription_order_id']" position="after">
+                    <field name="name" />
                 </xpath>
             </field>
         </record>
@@ -28,6 +42,7 @@
             <field name='inherit_id' ref='medical_prescription.medical_prescription_order_line_search_view'/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='prescription_order_id']" position="after">
+                    <field name="name" />
                     <field name="sale_order_ids"/>
                 </xpath>
                 <xpath expr="//group" position="inside">

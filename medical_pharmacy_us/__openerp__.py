@@ -9,6 +9,7 @@
     'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': [
+        'medical_base_us',
         'medical_pharmacy',
     ],
     "website": "https://laslabs.com",

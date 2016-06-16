@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016 LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    The license is in the file __openerp__.py
+-->
+
+<openerp>
+    <data>
+
+        <record id="medical_medicament_attribute_type_view_form" model="ir.ui.view">
+            <field name="name">medical.medicament.attribute.type.view.form</field>
+            <field name="model">medical.medicament.attribute.type</field>
+            <field name="arch" type="xml">
+                <form string="Medicament Attribute Type">
+                    <header />
+                    <sheet>
+                        <group name="data">
+                            <field name="name" />
+                            <field name="attribute_ids" />
+                        </group>
+                    </sheet>
+                    <footer />
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_medicament_attribute_type_view_tree" model="ir.ui.view">
+            <field name="name">medical.medicament.attribute.type.view.tree</field>
+            <field name="model">medical.medicament.attribute.type</field>
+            <field name="arch" type="xml">
+                <tree string="Medicament Attribute Types">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="medical_medicament_attribute_type_view_search" model="ir.ui.view">
+            <field name="name">medical.medicament.attribute.type.view.search</field>
+            <field name="model">medical.medicament.attribute.type</field>
+            <field name="arch" type="xml">
+                <search string="Medicament Attribute Types">
+                    <field name="name" />
+                </search>
+            </field>
+        </record>
+
+        <record id="medical_medicament_attribute_type_action" model="ir.actions.act_window">
+             <field name="name">Medicament Attribute Types</field>
+             <field name="res_model">medical.medicament.attribute.type</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">tree,form</field>
+         </record>
+
+    </data>
+</openerp>

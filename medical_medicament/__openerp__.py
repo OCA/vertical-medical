@@ -4,7 +4,7 @@
 
 {
     'name': 'Medical Medicament',
-    'version': '9.0.1.0.1',
+    'version': '9.0.1.0.2',
     "author": "ACSONE SA/NV, LasLabs, Odoo Community Association (OCA)",
     "maintainer": "ACSONE SA/NV, LasLabs, Odoo Community Association (OCA)",
     "website": "http://www.acsone.eu",

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016 LasLabs Inc.
+    @author Dave Lasley <dave@laslabs.com>
+    @license AGPL-3
+-->
+
+<openerp>
+	<data>
+		<record id="medical_prescription_order_line_view_form" model="ir.ui.view">
+			<field name="name">medical.prescription.order.line.form</field>
+			<field name="model">medical.prescription.order.line</field>
+			<field name="inherit_id" ref="medical_prescription.medical_prescription_order_line_form_view" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='qty']" position="after">
+					<field name="refill_qty_original" />
+					<field name="refill_qty_remain" />
+				</xpath>
+				<xpath expr="//field[@name='is_course_complete']" position="after">
+					<field name="ndc_id" />
+					<field name="gcn_id" />
+				</xpath>
+			</field>
+		</record>
+		
+		<record id="medical_prescription_order_line_view_tree" model="ir.ui.view">
+			<field name="name">medical.prescription.order.line.tree</field>
+			<field name="model">medical.prescription.order.line</field>
+			<field name="inherit_id" ref="medical_prescription.medical_prescription_order_line_tree_view" />
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='duration_uom_id']" position="after">
+					<field name="refill_qty_original" />
+					<field name="refill_qty_remain" />
+				</xpath>
+				<xpath expr="//field[@name='medicament_id']" position="after">
+					<field name="ndc_id" />
+					<field name="gcn_id" />
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

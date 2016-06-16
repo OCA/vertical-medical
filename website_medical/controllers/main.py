@@ -150,7 +150,7 @@ class WebsiteForm(Ctrl):
                     'no_auto_thread': False,
                     'res_id': record.id,
                 }
-                mail_id = request.env['mail.message'].sudo().create(values)
+                request.env['mail.message'].sudo().create(values)
 
         return record.id
 
@@ -164,13 +164,6 @@ class WebsiteMedical(website_account):
         website=True,
     )
     def my_medical(self):
-        partner = request.env.user.partner_id
-
-        # get customer sales rep
-        if partner.user_id:
-            sales_rep = partner.user_id
-        else:
-            sales_rep = False
         values = {
             'user': request.env.user
         }

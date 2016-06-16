@@ -96,7 +96,7 @@
                                     <field name="parent_id"
                                            colspan="2"
                                            string="Legal Representative"
-                                           domain="[('is_patient','=',True)]" />
+                                           domain="[('customer','=',True)]" />
                                 </group>
                                 <group> 
                                      <field name="lang" />

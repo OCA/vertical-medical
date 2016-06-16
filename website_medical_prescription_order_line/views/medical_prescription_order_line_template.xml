@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016-TODAY LasLabs [https://laslabs.com]
+    @license AGPL-3
+-->
+
+<odoo>
+
+	<template id="prescription_lines" name="Prescription Lines">
+		<h3 class="page-header">
+			Prescriptions
+		</h3>
+        <t t-if="not patients">
+            <p>There are currently no prescriptions associated with your account.</p>
+        </t>
+        <t t-if="patients">
+			<h5>
+				If you would like to order a medication, please click the green
+				button to add to cart.
+			</h5>
+            <table class="table table-hover table-responsive">
+                <thead>
+                  <tr class="active">
+                      <th colspan="3">Patient</th>
+                      <th colspan="2">Rx Number</th>
+                      <th colspan="3">Medication</th>
+					  <!--<th colspan="1">Written</th>-->
+					  <th colspan="1">Remain</th>
+					  <th colspan="2">Last Disp</th>
+					  <th colspan="2">Expiration</th>
+					  <th colspan="1" class="text-right">Order</th>
+                    </tr>
+                </thead>
+				<tbody>
+					<t t-foreach="prescription_order_lines" t-as="line">
+						<tr>
+							<td colspan="3">
+								<span t-field="line.patient_id.name" />
+							</td>
+							<td colspan="2" class="text-nowrap">
+								<span t-field="line.name" />
+							</td>
+							<td colspan="3">
+								<span t-field="line.medicament_id.display_name" />
+							</td>
+							<!--<td colspan="1">
+								<span t-field="line.qty" />
+							</td>-->
+							<td colspan="1">
+								<span t-field="line.can_dispense_qty" />
+							</td>
+							<td colspan="2">
+								<t t-if="line.last_dispense_id.date_planned">
+								   <span t-field="line.last_dispense_id.date_planned" t-field-options='{"widget": "date"}' />
+								</t>
+							</td>
+							<td colspan="2">
+								<t t-if="line.date_stop_treatment">
+								   <span t-field="line.date_stop_treatment" t-field-options='{"widget": "date"}' />
+								</t>
+							</td>
+							<td colspan="1" class="text-right">
+								<t t-if="line.can_dispense_qty">
+									
+									<t t-set="product" t-value="line.medicament_id.product_id" />
+									
+									<form action="/shop/cart/update" method="POST">
+										<input type="hidden"
+											   name="csrf_token"
+											   t-att-value="request.csrf_token()"
+											   />
+										<input type="hidden"
+											   class="product_id"
+											   name="product_id"
+											   t-att-value="int(product.product_variant_ids[0]) if len(product.product_variant_ids) == 1 else '0'"
+											   />
+										<input type="hidden" name="set_qty" t-att-value="line.qty" />
+										<button type="submit"
+												class="btn btn-primary btn-xs mt8"
+												>
+											  <i class="fa fa-2x fa-cart-plus" />
+										</button>
+					  
+									</form>
+									
+								</t>
+								
+								<t t-if="not line.can_dispense_qty">
+									<i class="fa fa-2x fa-times" />
+								</t>
+							</td>
+						</tr>
+					</t>
+				</tbody>
+			</table>
+		</t>
+	</template>
+
+</odoo>

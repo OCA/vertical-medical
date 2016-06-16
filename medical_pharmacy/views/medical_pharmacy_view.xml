@@ -317,7 +317,7 @@
              </field>
          </record>
 
-         <record model="ir.actions.act_window" id="act_open_medical_pharmacy_view">
+         <record model="ir.actions.act_window" id="medical_pharmacy_action">
              <field name="name">Pharmacy</field>
              <field name="type">ir.actions.act_window</field>
              <field name="res_model">medical.pharmacy</field>

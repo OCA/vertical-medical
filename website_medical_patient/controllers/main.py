@@ -8,12 +8,16 @@ from openerp.http import request
 from openerp.addons.website_medical.controllers.main import (
     WebsiteMedical
 )
-from openerp.exceptions import ValidationError
 
 
 class WebsiteMedical(WebsiteMedical):
 
-    @http.route(['/my/medical', '/medical'], type='http', auth="user", website=True)
+    @http.route(
+        ['/my/medical', '/medical'],
+        type='http',
+        auth="user",
+        website=True,
+    )
     def my_medical(self, **kw):
         """ Add patients to medical account page """
         response = super(WebsiteMedical, self).my_medical()

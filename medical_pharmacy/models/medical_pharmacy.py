@@ -23,7 +23,11 @@ class MedicalPharmacy(models.Model):
     @api.model
     @api.returns('self', lambda value: value.id)
     def create(self, vals):
-        vals['is_pharmacy'] = True
+        vals.update({
+            'is_pharmacy': True,
+            'customer': False,
+            'is_company': True,
+        })
         return super(MedicalPharmacy, self).create(vals)
 
     @api.multi

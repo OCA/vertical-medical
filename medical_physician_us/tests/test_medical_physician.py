@@ -12,14 +12,13 @@ class TestMedicalPhysician(TransactionCase):
         super(TestMedicalPhysician, self).setUp()
         self.model_obj = self.env['medical.physician']
         self.valid = [
-            4532015112830366,
-            6011514433546201,
-            6771549495586802,
+            1538596788,
+            1659779064,
         ]
         self.invalid = [
-            4531015112830366,
-            6011514438546201,
-            1771549495586802,
+            1659779062,
+            1538696788,
+            4949558680,
         ]
         self.country_id = self.env['res.country'].search([
             ('code', '=', 'US'),

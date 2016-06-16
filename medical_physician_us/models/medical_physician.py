@@ -7,7 +7,7 @@ from openerp import fields, models, api
 
 class MedicalPhysician(models.Model):
     _inherit = ['medical.physician',
-                'medical.abstract.luhn',
+                'medical.abstract.npi',
                 'medical.abstract.dea']
     _name = 'medical.physician'
 
@@ -28,7 +28,7 @@ class MedicalPhysician(models.Model):
     @api.constrains('country_id', 'npi_num')
     def _check_npi_num(self):
         """ Implement Luhns Formula to validate NPI """
-        self._luhn_constrains_helper('npi_num')
+        self._npi_constrains_helper('npi_num')
 
     @api.multi
     @api.constrains('country_id', 'dea_num')

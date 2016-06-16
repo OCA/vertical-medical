@@ -23,6 +23,7 @@ Known issues / Roadmap
 ======================
 
 * Improve and provide a full description for this module into the README.rst
+* Tests should be split by model & include doc blocks
 
 
 Bug Tracker
