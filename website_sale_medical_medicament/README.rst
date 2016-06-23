@@ -24,6 +24,7 @@ Known issues / Roadmap
 ======================
 
 * Support multiple medicament name variances in product template name_get (such as diff strengths under same template)
+* Security for portal/public is too lax
 
 
 Bug Tracker
