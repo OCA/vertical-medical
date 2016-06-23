@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_medicament_portal,medical.medicament.portal,medical_medicament.model_medical_medicament,base.group_portal,1,0,0,0
+access_medical_medicament_public,medical.medicament.public,medical_medicament.model_medical_medicament,base.group_public,1,0,0,0
+access_medical_drug_form_portal,medical.drug.form.portal,medical_medicament.model_medical_drug_form,base.group_portal,1,0,0,0
+access_medical_drug_form_public,medical.drug.form.public,medical_medicament.model_medical_drug_form,base.group_public,1,0,0,0
+access_product_uom_public,product.uom.public,product.model_product_uom,base.group_public,1,0,0,0
