@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2016 LasLabs Inc.
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<openerp>
+
+    <!-- Will not update data when module is updated. -->
+    <data noupdate="1">
+
+        <record id="user_editable_record" model="model.name">
+            <!-- My record data -->
+        </record>
+
+    </data>
+
+    <!-- Will update data when module is updated -->
+    <data>
+
+        <record id="my_data_record" model="model.name">
+            <!-- My record data -->
+        </record>
+
+    </data>
+
+</openerp>

@@ -13,6 +13,7 @@
         'sale',
         'medical_prescription',
         'medical_pharmacy',
+        'medical_prescription_thread',
     ],
     "website": "https://laslabs.com",
     "license": "AGPL-3",

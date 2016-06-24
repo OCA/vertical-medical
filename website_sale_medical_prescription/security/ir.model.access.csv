@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_physician_portal,medical.physician.portal,medical_physician.model_medical_physician,base.group_portal,1,0,1,0
+access_medical_physician_public,medical.physician.public,medical_physician.model_medical_physician,base.group_public,1,0,1,0
+access_medical_patient_public,medical.patient.public,medical.model_medical_patient,base.group_public,1,1,1,0
+access_medical_prescription_order_portal,medical.prescription.order.portal,medical_prescription.model_medical_prescription_order,base.group_portal,1,0,0,0
+access_medical_prescription_order_public,medical.prescription.order.public,medical_prescription.model_medical_prescription_order,base.group_public,1,0,0,0
+access_medical_prescription_order_line_portal,medical.prescription.order.line.portal,medical_prescription.model_medical_prescription_order_line,base.group_portal,1,0,0,0
+access_medical_prescription_order_line_public,medical.prescription.order.line.public,medical_prescription.model_medical_prescription_order_line,base.group_public,1,0,0,0
