@@ -8,3 +8,5 @@ from . import medical_medicament
 from . import sale_order_line
 from . import sale_order
 from . import product_category
+from . import medical_physician
+from . import medical_patient
