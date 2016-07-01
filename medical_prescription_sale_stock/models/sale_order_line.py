@@ -77,7 +77,7 @@ class SaleOrderLine(models.Model):
                 ))
 
     @api.multi
-    @api.constrains('dispense_qty', 'prescription_order_line_id')
+    @api.constrains('dispense_qty', 'prescription_order_line_id', 'state')
     def _check_can_dispense(self):
         if self.env.context.get('__rx_force__'):
             return True
@@ -89,7 +89,10 @@ class SaleOrderLine(models.Model):
             ],
                 limit=1,
             )
-            if not medicament_id.is_prescription:
+            conditions = [medicament_id.is_prescription]
+            if rec_id.state in ['draft', 'sent']:
+                conditions.append(rec_id.prescription_order_line_id)
+            if not all(conditions):
                 continue
             rx_line = rec_id.prescription_order_line_id
             if not rx_line.can_dispense:
