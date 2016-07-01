@@ -15,7 +15,7 @@ class TestAll(TransactionCase):
     def setUp(self, *args, **kwargs):
         super(TestAll, self).setUp(*args, **kwargs)
 
-    # def _clear_resources(self, ):
+    # def _clear_resources(self):
         self.order_vals = {}
         self.patient_vals = {
             'name': 'TestMedicalPatientPrescriptionStock',
@@ -51,6 +51,8 @@ class TestAll(TransactionCase):
             'product_qty': 1,
             'product_uom': 1,
         }
+        self.state = 'draft'
+        self.prescription_line = True
 
     def _new_resources(self, clear=True):
         self.patient_id = self.env['medical.patient'].create(
@@ -68,6 +70,7 @@ class TestAll(TransactionCase):
         self.order_vals.update({
             'partner_id': self.patient_id.partner_id.id,
             'pharmacy_id': self.pharmacy_id.id,
+            'state': self.state,
         })
         self.rx_line_vals.update({
             'medicament_id': self.medicament_id.id,
@@ -83,21 +86,26 @@ class TestAll(TransactionCase):
             self.rx_vals
         )
         self.rx_line_id = self.rx_id.prescription_order_line_ids[0]
-        self.order_vals.update({
-            'order_line': [(0, 0, {
-                'product_id': self.medicament_id.product_id.id,
-                'name': self.medicament_id.name,
-                'patient_id': self.patient_id.id,
-                'price_unit': 1,
-                'product_uom': 1,
-                'product_uom_qty': 1,
+        line_vals = {
+            'product_id': self.medicament_id.product_id.id,
+            'name': self.medicament_id.name,
+            'patient_id': self.patient_id.id,
+            'price_unit': 1,
+            'product_uom': 1,
+            'product_uom_qty': 1,
+            'state': self.state,
+        }
+        if self.prescription_line:
+            line_vals.update({
                 'prescription_order_line_id': self.rx_line_id.id,
-            })],
+            })
+        self.order_vals.update({
+            'order_line': [(0, 0, line_vals)],
             'partner_id': self.patient_id.partner_id.id,
             'pharmacy_id': self.pharmacy_id.id,
         })
 
-    def _new_patient(self, ):
+    def _new_patient(self):
         return self.env['medical.patient'].create(self.patient2_vals)
 
     def _new_rx_order(self, new_resources=True):
@@ -125,7 +133,7 @@ class TestAll(TransactionCase):
         })
         return order_line_id.procurement_ids[-1]
 
-    def test_rx_line_compute_dispensings_cancelled(self, ):
+    def test_rx_line_compute_dispensings_cancelled(self):
         self._new_procurement(
             self._new_rx_order().order_line[0]
         ).state = 'cancel'
@@ -133,7 +141,7 @@ class TestAll(TransactionCase):
             1, self.rx_line_id.cancelled_dispense_qty,
         )
 
-    def test_rx_line_compute_dispensings_pending_confirmed(self, ):
+    def test_rx_line_compute_dispensings_pending_confirmed(self):
         self._new_procurement(
             self._new_rx_order().order_line[0]
         ).state = 'confirmed'
@@ -141,7 +149,7 @@ class TestAll(TransactionCase):
             1, self.rx_line_id.pending_dispense_qty,
         )
 
-    def test_rx_line_compute_dispensings_pending_running(self, ):
+    def test_rx_line_compute_dispensings_pending_running(self):
         self._new_procurement(
             self._new_rx_order().order_line[0]
         ).state = 'running'
@@ -149,7 +157,7 @@ class TestAll(TransactionCase):
             1, self.rx_line_id.pending_dispense_qty,
         )
 
-    def test_rx_line_compute_dispensings_done(self, ):
+    def test_rx_line_compute_dispensings_done(self):
         self._new_procurement(
             self._new_rx_order().order_line[0]
         ).state = 'done'
@@ -157,7 +165,7 @@ class TestAll(TransactionCase):
             1, self.rx_line_id.dispensed_qty,
         )
 
-    def test_rx_line_compute_dispensings_except(self, ):
+    def test_rx_line_compute_dispensings_except(self):
         self._new_procurement(
             self._new_rx_order().order_line[0]
         ).state = 'exception'
@@ -165,7 +173,7 @@ class TestAll(TransactionCase):
             1, self.rx_line_id.exception_dispense_qty,
         )
 
-    def test_rx_line_compute_can_dispense_none(self, ):
+    def test_rx_line_compute_can_dispense_none(self):
         self._new_procurement(
             self._new_rx_order().order_line[0]
         ).state
@@ -174,20 +182,29 @@ class TestAll(TransactionCase):
         )
         self.assertFalse(self.rx_line_id.can_dispense)
 
-    def test_rx_line_compute_can_dispense_one(self, ):
+    def test_rx_line_compute_can_dispense_none(self):
+        self._new_procurement(
+            self._new_rx_order().order_line[0]
+        ).state
+        self.assertEqual(
+            0, self.rx_line_id.can_dispense_qty,
+        )
+        self.assertFalse(self.rx_line_id.can_dispense)
+
+    def test_rx_line_compute_can_dispense_one(self):
         self._new_rx_order()
         self.assertEqual(
             1, self.rx_line_id.can_dispense_qty,
         )
         self.assertTrue(self.rx_line_id.can_dispense)
 
-    def test_rx_line_compute_can_dispense_active_qty_none(self, ):
+    def test_rx_line_compute_can_dispense_active_qty_none(self):
         self._new_rx_order()
         self.assertEqual(
             0, self.rx_line_id.active_dispense_qty,
         )
 
-    def test_rx_line_compute_can_dispense_active_qty_one(self, ):
+    def test_rx_line_compute_can_dispense_active_qty_one(self):
         self._new_procurement(
             self._new_rx_order().order_line[0]
         ).state = 'done'
@@ -195,13 +212,20 @@ class TestAll(TransactionCase):
             1, self.rx_line_id.active_dispense_qty,
         )
 
-    def test_sale_line_compute_dispense_qty_identical(self, ):
+    def test_rx_line_compute_can_dispense_draft_no_rx(self):
+        """ It should not generate an error """
+        self.prescription_line = False
+        self._new_rx_order()
+        # Assert True because no error
+        self.assertTrue(True)
+
+    def test_sale_line_compute_dispense_qty_identical(self):
         order_id = self._new_rx_order()
         self.assertEqual(
             1, order_id.order_line[0].dispense_qty,
         )
 
-    def test_sale_line_check_product(self, ):
+    def test_sale_line_check_product(self):
         order_id = self._new_rx_order()
         order_line = order_id.order_line[0]
         product = self.env['product.product'].search([
@@ -210,7 +234,7 @@ class TestAll(TransactionCase):
         with self.assertRaises(ValidationError):
             order_line.product_id = product.id
 
-    def test_prepare_order_line_procurement_otc(self, ):
+    def test_prepare_order_line_procurement_otc(self):
         """ It should not throw an error and should assign OTC route """
         order_id = self._new_order()
         res = order_id.order_line[0]._prepare_order_line_procurement()
@@ -225,7 +249,7 @@ class TestAll(TransactionCase):
             )
         )
 
-    def test_prepare_order_line_procurement_prescription(self, ):
+    def test_prepare_order_line_procurement_prescription(self):
         """ It should not throw an error and should assign RX route """
         order_id = self._new_rx_order()
         res = order_id.order_line[0]._prepare_order_line_procurement()
