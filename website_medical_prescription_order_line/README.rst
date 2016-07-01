@@ -1,16 +1,18 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
     :alt: License: AGPL-3
 
-===================================
-Medical Website - Prescription Line
-===================================
+=================================
+Website Sale Medical Prescription
+=================================
 
-Extension of medical_website providing prescription order line
-listing in website_portal (My Medical).
+Extension providing prescription workflows in website_sale checkout process.
 
 
 Usage
 =====
+
+* Create a product that is Prescription Only ``medical.medicament.is_prescription``
+* Add it to cart in website
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
@@ -32,7 +34,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/vertical-medical/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed feedback
-`here <https://github.com/OCA/vertical-medical/issues/new?body=module:%20website_medical_prescription_order_line%0Aversion:%208.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`here <https://github.com/OCA/vertical-medical/issues/new?body=module:%20website_sale_medical_prescription%0Aversion:%208.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 
 Credits

@@ -35,14 +35,13 @@
                                 <field name="name" placeholder="Physician's Name" />
                             </h1>
                             <h3> 
-                                <field name="company_id" placeholder="Company" /> 
+                                <field name="parent_id" placeholder="Company" /> 
                             </h3> 
                         </div>
                         <group>
                             <field name="ref" string="Legal ID"/>
                             <field name="code" string="Internal ID"/>
                             <field name="specialty_id"/>
-                            <field name="parent_id" />
                             <field name="info" colspan="4"/>
                         </group>
                         <notebook>
@@ -77,7 +76,7 @@
                                     </div>
                                 </group>
                                 <group  col="4" colspan="4"> 
-                                    <field name="parent_id" colspan="2" string="Legal Representative" domain="[('is_patient','=',True)]"/>
+                                    <field name="parent_id" colspan="2" string="Company" domain="[('is_company','=',True)]"/>
                                 </group>
                                 <group  col="4" colspan="4"> 
                                      <field name="lang" colspan="2"/>

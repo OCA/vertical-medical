@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2016 LasLabs Inc.
+    @license AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+	<template id="prescription_details" name="Prescription">
+		<t t-call="website.layout">
+			<div id="wrap">
+				<div class="container oe_website_sale">
+					<t t-call="website_sale.wizard_checkout">
+						<t t-set="step" t-value="35"/>
+					</t>
+					<h1 class="page-header">
+						Your Prescriptions
+					</h1>
+					<div class="row">
+						<div class="col-lg-8 col-md-9 js_medical_prescription_checkout">
+							<form method="POST"
+								  data-success_page="/shop/checkout/medical/prescription"
+								  class="form-horizontal container-fluid mt32 mb32 s_website_form"
+								  >
+								<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+								<t t-foreach="sale_lines" t-as="sale_line">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4>
+												<span t-esc="'%s %s of %s' % (sale_line.product_uom_qty, sale_line.product_uom.name, sale_line.name)" />
+											</h4>
+										</div>
+										<div class="panel-body">
+											<div class="row mb16">
+												<label class="control-label" t-att-for="field_name">
+													Prescription
+												</label>
+											</div>
+											<t t-call="website_sale_medical_prescription.prescription_select">
+												<t t-set="prescription_lines" t-value="prescription_lines" />
+												<t t-set="user" t-value="user" />
+											</t>
+										</div>
+									</div>
+								</t>
+								<div class="form-group">
+									<div class="col-sm-offset-2 col-sm-10">
+										<button name="post_values" type="submit" class="btn btn-default o_website_form_send">
+											Continue
+										</button>
+									</div>
+								</div>
+								<div id='o_website_form_result'></div>
+							</form>
+						</div>
+						<div class="col-lg-offset-1 col-lg-3 col-md-3 text-muted">
+							<h3 class="page-header mt16">
+								Your Order
+								<small>
+									<a href="/shop/cart">
+										<span class="fa fa-arrow-right"/>
+										change
+									</a>
+								</small>
+							</h3>
+							<t t-set="website_sale_order" t-value="website.sale_get_order()"/>
+							<t t-call="website_sale.total"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</t>
+	</template>
+
+	<template id="prescription_select" name="Prescription Selection">
+		
+		<div class="row">
+			<select t-att-name="'%d.prescription_order_line_id.prescription_line_id' % sale_line.id"
+					data-res-model="medical.prescription.line"
+					data-src-model="sale.order.line"
+					t-att-data-rel="'%d.prescription_order_line_id' % sale_line.id"
+					class="form-control js_medical_prescription"
+					required=""
+					>
+				<option>Choose Prescription...</option>
+				<option value="0">New Prescription</option>
+				<t t-foreach="prescription_lines" t-as="prescription_line">
+					<option t-value="prescription_line.id">
+						<t t-esc="'#%s - %s - %s' % (prescription_line.name, prescription_line.patient_id.name, prescription_line.display_name)" />
+					</option>
+				</t>
+			</select>
+		</div>
+
+		<div class="js_medical_prescription_new hidden">
+
+			<t t-set="rel" t-value="'%d.prescription_order_id' % sale_line.id" />
+
+			<div class="row mb32 mt16">
+				<label class="control-label" t-att-for="'%s.receive_method' % rel">
+					Prescription Acquisition
+				</label>
+				<select t-att-name="'%s.receive_method' % rel"
+						class="form-control js_medical_prescription_acquisition"
+						>
+					<option>Choose Acquisition Method...</option>
+					<t t-foreach="[('fax', 'Prescriber Will Fax'),
+								   ('phone', 'Prescriber Will Phone In'),
+								   ('transfer', 'Pharmacy Will Transfer'),
+								   ('mail', 'Mailed'),
+								   ]"
+					   t-as="receive_method">
+						<option t-att-value="receive_method[0]"
+								t-att-selected="receive_method[0] == request.params.get('%s.receive_method' % rel)">
+							<t t-esc="receive_method[1]" />
+						</option>
+					</t>
+				</select>
+			</div>
+			
+			<t t-call="website_sale_medical_prescription.patient_select">
+				<t t-set="sale_line" t-value="sale_line" />
+			</t>
+			
+			<t t-call="website_sale_medical_prescription.doctor_select">
+				<t t-set="sale_line" t-value="sale_line" />
+				<t t-set="user" t-value="user" />
+			</t>
+			
+			<t t-call="website_sale_medical_prescription.pharmacy_select">
+				<t t-set="sale_line" t-value="sale_line" />
+			</t>
+			
+		</div>
+
+	</template>
+	
+	<template id="doctor_select" name="Doctor Select">
+		
+		<div class="well">
+			
+			<h4>Prescriber</h4>
+
+			<t t-set="rel" t-value="'%d.prescription_order_line_id.physician_id' % sale_line.id" />
+			<t t-set="res_model" t-value="'medical.physician'" />
+
+			<input type="hidden"
+				   t-att-name="'%s.id' % rel"
+				   class="js_website_autocomplete"
+				   t-att-value="request.params.get('%s.id' % rel)  or ''"
+				   t-att-data-model="res_model"
+				   t-att-data-relate-recv="rel"
+				   data-query-field="id"
+				   />
+
+			<div class="row">
+				
+				<div t-attf-class="form-group form-field col-lg-6">
+					<label class="control-label" t-att-name="'%s.name' % rel">
+						Name
+					</label>
+					<input type="text"
+						   t-att-name="'%s.name' % rel"
+						   class="js_website_autocomplete form-control"
+						   t-att-value="request.params.get('%s.name' % rel)  or ''"
+						   required=""
+						   t-att-data-model="res_model"
+						   t-att-data-relate-recv="rel"
+						   data-query-field="name"
+						   data-limit="5"
+						   autocomplete="off"
+						   />
+				</div>
+				
+				<div t-attf-class="form-group form-field col-lg-6">
+					<label class="control-label" t-att-name="'%s.phone' % rel">
+						Phone
+					</label>
+					<input type="tel"
+						   t-att-name="'%s.phone' % rel"
+						   class="js_website_autocomplete form-control"
+						   t-att-value="request.params.get('%s.phone' % rel)  or ''"
+						   required=""
+						   t-att-data-model="res_model"
+						   t-att-data-relate-recv="rel"
+						   data-query-field="phone"
+						   data-limit="5"
+						   autocomplete="off"
+						   />
+				</div>
+				
+			</div>
+			
+			<div class="row">
+				
+				<div t-attf-class="form-group form-field col-lg-6">
+					<label class="control-label" t-att-name="'%s.fax' % rel">
+						Fax
+					</label>
+					<input type="tel"
+						   t-att-name="'%s.fax' % rel"
+						   class="form-control"
+						   t-att-value="request.params.get('%s.fax' % rel)  or ''"
+						   required=""
+						   t-att-data-model="res_model"
+						   t-att-data-relate-recv="rel"
+						   data-query-field="fax"
+						   />
+				</div>
+				
+				<div t-attf-class="form-group form-field col-lg-6">
+					<label class="control-label" t-att-name="'%s.email' % rel">
+						Email
+					</label>
+					<input type="email"
+						   t-att-name="'%s.email' % rel"
+						   class="form-control"
+						   t-att-value="request.params.get('%s.email' % rel)  or ''"
+						   t-att-data-model="res_model"
+						   t-att-data-relate-recv="rel"
+						   data-query-field="email"
+						   />
+				</div>
+				
+			</div>
+			
+			<div class="row">
+				
+				<div t-attf-class="form-group form-field col-lg-6">
+					<label class="control-label" t-att-name="'%s.street' % rel">
+						Street Address
+					</label>
+					<input type="text"
+						   t-att-name="'%s.street' % rel"
+						   class="form-control"
+						   t-att-value="request.params.get('%s.street' % rel)  or ''"
+						   required=""
+						   t-att-data-model="res_model"
+						   t-att-data-relate-recv="rel"
+						   data-query-field="street"
+						   />
+				</div>
+				
+				<div t-attf-class="form-group form-field col-lg-6">
+					<label class="control-label" t-att-name="'%s.street2' % rel">
+						Street Line 2
+					</label>
+					<input type="text"
+						   t-att-name="'%s.street2' % rel"
+						   class="form-control"
+						   t-att-value="request.params.get('%s.street2' % rel)  or ''"
+						   t-att-data-model="res_model"
+						   t-att-data-relate-recv="rel"
+						   data-query-field="street2"
+						   />
+				</div>
+				
+			</div>
+		
+			<div class="row">
+				
+				<div t-attf-class="form-group form-field col-lg-6">
+					<label class="control-label" t-att-name="'%s.city' % rel">
+						City
+					</label>
+					<input type="text"
+						   t-att-name="'%s.city' % rel"
+						   class="form-control"
+						   t-att-value="request.params.get('%s.city' % rel)  or ''"
+						   required=""
+						   t-att-data-model="res_model"
+						   t-att-data-relate-recv="rel"
+						   data-query-field="city"
+						   />
+				</div>
+				
+				<div t-attf-class="form-group form-field col-lg-6">
+					<label class="control-label" t-att-name="'%s.zip' % rel">
+						Zip or Postal Code
+					</label>
+					<input type="text"
+						   t-att-name="'%s.zip' % rel"
+						   class="form-control"
+						   t-att-value="request.params.get('%s.zip' % rel)  or ''"
+						   required=""
+						   t-att-data-model="res_model"
+						   t-att-data-relate-recv="rel"
+						   data-query-field="zip"
+						   />
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</template>
+
+	<template id="patient_select" name="Patient Selection">
+		
+		<div class="well">
+			
+			<h4>Patient</h4>
+
+			<t t-set="rel" t-value="'%d.prescription_order_line_id.patient_id' % sale_line.id" />
+			<t t-set="res_model" t-value="'medical.patient'" />
+
+			<input type="hidden"
+				   t-att-name="'%s.id' % rel"
+				   class="js_website_autocomplete"
+				   t-att-value="request.params.get('%s.id' % rel)  or ''"
+				   t-att-data-model="res_model"
+				   t-att-data-relate-recv="rel"
+				   data-query-field="id"
+				   />
+			
+			<div class="row">
+				
+				<div t-attf-class="form-group form-field col-lg-6">
+					<label class="control-label" t-att-name="'%s.name' % rel">
+						Name
+					</label>
+					<input type="text"
+						   t-att-name="'%s.name' % rel"
+						   class="js_website_autocomplete form-control"
+						   t-att-value="request.params.get('%s.name' % rel)  or ''"
+						   required=""
+						   t-att-data-model="res_model"
+						   t-att-data-relate-recv="rel"
+						   data-query-field="name"
+						   data-limit="5"
+						   autocomplete="off"
+						   />
+				</div>
+				
+				<div t-attf-class="form-group form-field col-lg-6">
+					<label class="control-label" t-att-name="'%s.phone' % rel">
+						Phone
+					</label>
+					<input type="tel"
+						   t-att-name="'%s.phone' % rel"
+						   t-att-data-relate-recv="rel"
+						   class="form-control"
+						   t-att-value="request.params.get('%s.phone' % rel)  or ''"
+						   t-att-data-model="res_model"
+						   data-query-field="phone"
+						   autocomplete="off"
+						   />
+				</div>
+				
+			</div>
+			
+			<div class="row">
+				
+				<div t-attf-class="form-group form-field col-lg-6">
+					<label class="control-label" t-att-name="'%s.dob' % rel">
+						Birth Date
+					</label>
+					<input type="text"
+						   required=""
+						   t-att-name="'%s.dob' % rel"
+						   t-att-data-relate-recv="rel"
+						   class="form-control o_website_form_date"
+						   t-att-value="request.params.get('%s.dob' % rel)  or ''"
+						   t-att-data-model="res_model"
+						   data-query-field="dob"
+						   />
+				</div>
+				
+				<div t-attf-class="form-group form-field col-lg-6">
+					<label class="control-label" t-att-name="'%s.gender' % rel">
+						Gender
+					</label>
+					<select t-att-name="'%s.gender' % rel"
+							class="form-control form-field"
+							required=""
+						    t-att-data-model="res_model"
+						    t-att-data-relate-recv="rel"
+							data-query-field="gender"
+							>
+						<option value="">Gender...</option>
+						<t t-foreach="[('f', 'Female'), ('m', 'Male'), ]"
+						   t-as="gender">
+							<option t-att-value="gender[0]"
+									t-att-selected="gender[0] == request.params.get('%s.gender' % rel)">
+								<t t-esc="gender[1]" />
+							</option>
+						</t>
+					</select>
+				</div>
+					
+			</div>
+			
+			<div class="row">
+				
+				<div t-attf-class="form-group form-field col-lg-6">
+					<label>
+						Use Safety Cap?
+						<input t-att-name="'%s.safety_cap_yn' % rel"
+							   type="checkbox"
+							   t-att-data-model="res_model"
+							   t-att-data-relate-recv="rel"
+							   data-query-field="safety_cap_yn"
+							   t-att-checked="request.params.get('%s.safety_cap_yn' % rel) or False"
+							   />
+					</label>
+				</div>
+
+				<div t-attf-class="form-group form-field col-lg-6">
+					<label>
+						Counseling?
+						<input t-att-name="'%s.counseling_yn' % rel"
+							   type="checkbox"
+							   t-att-data-model="res_model"
+							   t-att-data-relate-recv="rel"
+							   data-query-field="counseling_yn"
+							   t-att-checked="request.params.get('%s.counseling_yn' % rel) or False"
+							   />
+					</label>
+				</div>
+
+			</div>
+			
+			<div class="row">
+				
+				<div t-attf-class="form-group form-field col-lg-12">
+					<label class="control-label" t-att-name="'%s.allergies' % rel">
+						Allergies
+					</label>
+					<input type="text"
+						   required=""
+						   t-att-name="'%s.allergies' % rel"
+						   t-att-data-relate-recv="rel"
+						   class="form-control"
+						   t-att-value="request.params.get('%s.allergies' % rel)  or ''"
+						   t-att-data-model="res_model"
+						   data-query-field="allergies"
+						   />
+				</div>
+				
+			</div>
+
+			<div class="row">
+				
+				<div t-attf-class="form-group form-field col-lg-12">
+					<label class="control-label" t-att-name="'%s.existing_meds' % rel">
+						Existing Medications
+					</label>
+					<input type="text"
+						   required=""
+						   t-att-name="'%s.existing_meds' % rel"
+						   t-att-data-relate-recv="rel"
+						   class="form-control"
+						   t-att-value="request.params.get('%s.existing_meds' % rel)  or ''"
+						   t-att-data-model="res_model"
+						   data-query-field="existing_meds"
+						   />
+				</div>
+				
+			</div>
+
+			<div class="row">
+				
+				<div t-attf-class="form-group form-field col-lg-12">
+					<label class="control-label" t-att-name="'%s.comment' % rel">
+						Medical History
+					</label>
+					<input type="text"
+						   required=""
+						   t-att-name="'%s.comment' % rel"
+						   t-att-data-relate-recv="rel"
+						   class="form-control"
+						   t-att-value="request.params.get('%s.comment' % rel)  or ''"
+						   t-att-data-model="res_model"
+						   data-query-field="comment"
+						   />
+				</div>
+				
+			</div>
+
+		</div>
+	</template>
+
+	<template id="pharmacy_select" name="Pharmacy Select">
+		
+		<div class="well js_medical_prescription_pharmacy hidden">
+			
+			<h4>Pharmacy</h4>
+
+			<div class="row">
+				
+				<t t-set="rel" t-value="'%d.prescription_order_id.transfer_pharmacy_id' % sale_line.id" />
+				<t t-set="res_model" t-value="'medical.pharmacy'" />
+
+				<input type="hidden"
+					   t-att-name="'%s.id' % rel"
+					   class="js_website_autocomplete form-control"
+					   t-att-value="request.params.get('%s.id' % rel)  or ''"
+					   t-att-data-model="res_model"
+					   t-att-data-relate-recv="rel"
+					   data-query-field="id"
+					   />
+				<input type="hidden"
+					   t-att-name="'%s.transfer_direction' % rel"
+					   class="js_website_autocomplete form-control"
+					   t-att-value="request.params.get('%s.transfer_direction' % rel)  or 'in'"
+					   t-att-data-model="res_model"
+					   t-att-data-relate-recv="rel"
+					   data-query-field="transfer_direction"
+					   />
+
+			</div>
+
+			<div class="row">
+				
+				<div t-attf-class="form-group form-field col-lg-6">
+					<label class="control-label" t-att-name="'%s.name' % rel">
+						Name
+					</label>
+					<input type="text"
+						   t-att-name="'%s.name' % rel"
+						   class="js_website_autocomplete form-control"
+						   t-att-value="request.params.get('%s.name' % rel)  or ''"
+						   required=""
+						   t-att-data-model="res_model"
+						   t-att-data-relate-recv="rel"
+						   data-query-field="name"
+						   data-limit="5"
+						   autocomplete="off"
+						   />
+				</div>
+				
+				<div t-attf-class="form-group form-field col-lg-6">
+					<label class="control-label" t-att-name="'%s.phone' % rel">
+						Phone
+					</label>
+					<input type="tel"
+						   t-att-name="'%s.phone' % rel"
+						   class="js_website_autocomplete form-control"
+						   t-att-value="request.params.get('%s.phone' % rel)  or ''"
+						   required=""
+						   t-att-data-model="res_model"
+						   t-att-data-relate-recv="rel"
+						   data-query-field="phone"
+						   data-limit="5"
+						   autocomplete="off"
+						   />
+				</div>
+				
+			</div>
+			
+			<t t-set="rel" t-value="'%d.prescription_order_id' % sale_line.id" />
+			
+			<div class="row">
+				
+				<div t-attf-class="form-group form-field col-lg-12">
+					<label class="control-label" t-att-name="'%s.transfer_ref' % rel">
+						Prescription Number
+					</label>
+					<input type="text"
+						   t-att-name="'%s.transfer_ref' % rel"
+						   class="form-control"
+						   t-att-value="request.params.get('%s.transfer_ref' % rel)  or ''"
+						   required=""
+						   />
+				</div>
+				
+			</div>
+		
+		</div>
+		
+	</template>
+
+	<template id="prescription_info_option"
+			  name="Prescription Step Option"
+			  inherit_id="website_sale.wizard_checkout"
+			  active="False"
+			  customize_show="True"
+			  >
+		<xpath expr="//li[@id='step40']" position="replace">
+			<!-- New Section -->
+			<li t-att-class="(step==35 and 'text-primary') or 'text-muted'" id="step35">
+				<t t-if="step &gt; 35 and step &lt; 50">
+					<a href="/shop/checkout/medical/prescription" clas="text-success">
+						Prescription Info<span class="chevron" />
+					</a>
+				</t>
+				<t t-if="not (step &gt; 35 and step &lt; 50)">
+					Prescription Info<span class="chevron" />
+				</t>
+			</li>
+			<!-- Make Payment clickable (dups logic in extra_info, but couldn't think of better way) -->
+			<li t-att-class="(step==40 and 'text-primary') or 'text-muted'" id="step40">
+				<t t-if="step &gt; 40 and step &lt; 50">
+					<a href="/shop/payment"  class='text-success'>
+						Payment<span class="chevron" />
+					</a>
+				</t>
+				<t t-if="not (step &gt; 40 and step &lt; 50)">
+					Payment<span class="chevron" />
+				</t>
+			</li>
+		</xpath>
+	</template>
+
+</odoo>
