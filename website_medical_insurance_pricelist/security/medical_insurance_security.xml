@@ -15,5 +15,13 @@
 				('partner_id', 'child_of', [user.commercial_partner_id.id]),
 			]</field>
         </record>
+		<record model="ir.rule" id="medical_insurance_plan_public_rule">
+            <field name="name">medical.insurance.plan.public.rule</field>
+            <field name="model_id" ref="medical_insurance.model_medical_insurance_plan"/>
+			<field name="groups" eval="[(4, ref('base.group_public'))]"/>
+            <field name="domain_force">[
+				('partner_id', 'child_of', [user.commercial_partner_id.id]),
+			]</field>
+        </record>
 	</data>
 </openerp>
