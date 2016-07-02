@@ -5,9 +5,11 @@
         <record model="medical.patient.species" id="human">
             <field name="name">Human</field>
         </record>
+
         <record model="medical.patient.species" id="dog">
             <field name="name">Dog</field>
         </record>
+
         <record model="medical.patient.species" id="cat">
             <field name="name">Cat</field>
         </record>

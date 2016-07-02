@@ -9,6 +9,7 @@
 <openerp>
     <data>
 
+        <!-- Medical Patient Form View -->
         <record id="medical_patient_view_form" model="ir.ui.view">
             <field name="name">medical.patient.view.form (medical_patient_species)</field>
             <field name="model">medical.patient</field>

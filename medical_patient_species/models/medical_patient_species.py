@@ -17,16 +17,15 @@ class MedicalPatientSpecies(models.Model):
         translate=True,
     )
     is_person = fields.Boolean(
-        compute='_compute_is_person',
-        store=True,
+        readonly=True,
     )
 
-    @api.multi
-    def _compute_is_person(self):
-        for rec_id in self:
-            rec_id.is_person = (
-                rec_id.id == self.env.ref('medical_patient_species.human').id
-            )
+    @api.model
+    @api.returns('self', lambda value: value.id)
+    def create(self, vals):
+        human = self.env.ref('medical_patient_species.human')
+        self.is_person = (self.id == human.id)
+        return super(MedicalPatientSpecies, self).create(vals)
 
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
