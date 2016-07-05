@@ -2,7 +2,9 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from openerp import _
 from openerp import api, fields, models
+from openerp.exceptions import Warning
 
 
 class MedicalPatientSpecies(models.Model):
@@ -21,11 +23,25 @@ class MedicalPatientSpecies(models.Model):
     )
 
     @api.model
-    @api.returns('self', lambda value: value.id)
+    @api.returns('s', lambda value: value.id)
     def create(self, vals):
-        human = self.env.ref('medical_patient_species.human')
-        self.is_person = (self.id == human.id)
+        try:
+            human = self.env.ref('medical_patient_species.human')
+        except:
+            vals['is_person'] = (vals['name'].lower() == "human")
+        else:
+            vals['is_person'] = (self.id == human.id)
         return super(MedicalPatientSpecies, self).create(vals)
+
+    @api.multi
+    def unlink(self):
+        for record in self:
+            if record.id == self.env.ref('medical_patient_species.human').id:
+                raise Warning(
+                    _('Human is a permanent record and cannot be destroyed')
+                )
+            else:
+                return super(MedicalPatientSpecies, record).unlink()
 
     _sql_constraints = [
         ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),

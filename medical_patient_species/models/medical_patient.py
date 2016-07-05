@@ -2,6 +2,7 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from openerp import _
 from openerp import api, fields, models
 from openerp.exceptions import ValidationError
 
@@ -13,6 +14,7 @@ class MedicalPatient(models.Model):
         string='Species',
         required=True,
         comodel_name='medical.patient.species',
+        default=lambda self: self.env.ref('medical_patient_species.human'),
         help='Select the species of the patient.',
     )
     is_person = fields.Boolean(
@@ -21,9 +23,15 @@ class MedicalPatient(models.Model):
     )
 
     @api.multi
-    @api.constrains('parent_id')
-    def _check_parent_id_exists(self):
-        if not self.is_person and not self.parent_id.name:
-            raise ValidationError(
-                'Must have a legal representative if not human.'
-            )
+    @api.constrains('parent_id', 'species_id')
+    def _check_parent_id(self):
+        for record in self:
+            if not record.is_person and not record.parent_id:
+                raise ValidationError(
+                    _('Must have a legal representative if not Human.')
+                )
+
+            elif record.parent_id and not record.parent_id.is_person:
+                raise ValidationError(
+                    _('Legal representative must be Human')
+                )
