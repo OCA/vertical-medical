@@ -114,6 +114,7 @@ class MedicalPrescriptionCheckout(models.TransientModel):
                     physician_id = self.env['medical.physician'].create(
                         physician_vals
                     )
+                    rx_line_vals['physician_id'] = physician_id.id
                 except:
                     res['errors'].append(_(
                         'Could not create physician'
@@ -122,7 +123,7 @@ class MedicalPrescriptionCheckout(models.TransientModel):
                         physician_vals, error_fields,
                         name_prefix='%s.physician_id' % name_prefix
                     )
-                rx_line_vals['physician_id'] = physician_id.id
+                    continue
             else:
                 rx_line_vals['physician_id'] = physician_vals['id']
 
@@ -136,11 +137,21 @@ class MedicalPrescriptionCheckout(models.TransientModel):
 
             try:
                 transfer_vals = rx_vals['transfer_pharmacy_id']
-                rx_vals['transfer_pharmacy_id'] = self._write_or_create(
-                    'medical.pharmacy', transfer_vals,
-                ).id
+                if int(transfer_vals.get('id', 0)) == 0:
+                    rx_vals['transfer_pharmacy_id'] = self._write_or_create(
+                        'medical.pharmacy', transfer_vals,
+                    ).id
             except KeyError:
                 pass
+            except:
+                res['errors'].append(_(
+                    'Could not create pharmacy'
+                ))
+                self._invalidate_all(
+                    physician_vals, error_fields,
+                    name_prefix='%s.transfer_pharmacy_id' % name_prefix
+                )
+                continue
 
             rx_vals['patient_id'] = rx_line_vals['patient_id']
             rx_vals['physician_id'] = rx_line_vals['physician_id']
