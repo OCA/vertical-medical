@@ -9,6 +9,7 @@ class ProductTemplate(models.Model):
     _inherit = 'product.template'
 
     is_medicament = fields.Boolean(
+        readonly=True,
         help=_('Check if the product is a medicament'),
     )
     is_vaccine = fields.Boolean(
