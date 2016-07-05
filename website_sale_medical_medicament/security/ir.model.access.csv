@@ -4,3 +4,4 @@ access_medical_medicament_public,medical.medicament.public,medical_medicament.mo
 access_medical_drug_form_portal,medical.drug.form.portal,medical_medicament.model_medical_drug_form,base.group_portal,1,0,0,0
 access_medical_drug_form_public,medical.drug.form.public,medical_medicament.model_medical_drug_form,base.group_public,1,0,0,0
 access_product_uom_public,product.uom.public,product.model_product_uom,base.group_public,1,0,0,0
+access_product_uom_portal,product.uom.portal,product.model_product_uom,base.group_portal,1,0,0,0
