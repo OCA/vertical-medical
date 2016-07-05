@@ -10,3 +10,4 @@ from . import sale_order
 from . import product_category
 from . import medical_physician
 from . import medical_patient
+from . import medical_pharmacy
