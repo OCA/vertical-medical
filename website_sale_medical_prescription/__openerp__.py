@@ -25,6 +25,7 @@
         'security/ir.model.access.csv',
         'security/medical_patient_security.xml',
         'security/medical_physician_security.xml',
+        'security/medical_pharmacy_security.xml',
         'security/res_partner_security.xml',
     ],
 }

@@ -6,3 +6,5 @@ access_medical_prescription_order_portal,medical.prescription.order.portal,medic
 access_medical_prescription_order_public,medical.prescription.order.public,medical_prescription.model_medical_prescription_order,base.group_public,1,0,0,0
 access_medical_prescription_order_line_portal,medical.prescription.order.line.portal,medical_prescription.model_medical_prescription_order_line,base.group_portal,1,0,0,0
 access_medical_prescription_order_line_public,medical.prescription.order.line.public,medical_prescription.model_medical_prescription_order_line,base.group_public,1,0,0,0
+access_medical_pharmacy_portal,medical.pharmacy.portal,medical_pharmacy.model_medical_pharmacy,base.group_portal,1,0,1,0
+access_medical_pharmacy_public,medical.pharmacy.public,medical_pharmacy.model_medical_pharmacy,base.group_public,1,0,1,0
