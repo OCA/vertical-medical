@@ -25,7 +25,9 @@
         'tests/patient.yml',
         'tests/partners.yml',
     ],
+    'demo': [
+        'demo/medical_patient_demo.xml',
+    ],
     'installable': True,
     'application': True,
-    'auto_install': False,
 }
