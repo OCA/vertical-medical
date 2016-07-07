@@ -13,7 +13,6 @@ class MedicalPatient(models.Model):
         string='Species',
         required=True,
         comodel_name='medical.patient.species',
-        default=lambda self: self.env.ref('medical_patient_species.human').id,
         help='Select the species of the patient.',
     )
     is_person = fields.Boolean(
@@ -28,9 +27,4 @@ class MedicalPatient(models.Model):
             if not rec_id.is_person and not rec_id.parent_id:
                 raise ValidationError(
                     _('Must have a legal representative if not Human.')
-                )
-
-            elif rec_id.parent_id and not rec_id.parent_id.is_person:
-                raise ValidationError(
-                    _('Legal representative must be Human')
                 )
