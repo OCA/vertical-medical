@@ -4,6 +4,7 @@
 
         <record model="medical.patient.species" id="human">
             <field name="name">Human</field>
+            <field name="is_person">True</field>
         </record>
         <record model="medical.patient.species" id="dog">
             <field name="name">Dog</field>
