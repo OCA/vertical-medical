@@ -22,6 +22,9 @@
         'data/ir_sequence_data.xml',
         'data/medical_specialties.xml',
     ],
+    'demo': [
+        'demo/medical_physician_demo.xml',
+    ],
     "application": False,
     'installable': True,
 }
