@@ -28,6 +28,12 @@
         'views/medical_physician_view.xml',
         'views/medical_patient_view.xml',
     ],
+    'demo': [
+        'demo/medical_medicament_demo.xml',
+        'demo/medical_medication_demo.xml',
+        'demo/medical_prescription_order_demo.xml',
+        'demo/medical_prescription_order_line_demo.xml',
+    ],
     'installable': True,
     'auto_install': False,
 }

@@ -23,6 +23,9 @@
         'views/medical_drug_form_view.xml',
         'views/medical_drug_route_view.xml',
     ],
+    'demo': [
+        'demo/medical_medicament_demo.xml',
+    ],
     'installable': True,
     'auto_install': False,
 }

@@ -24,6 +24,10 @@
         'views/medical_prescription_order_view.xml',
         'views/medical_prescription_order_line_view.xml',
     ],
+    'demo': [
+        'demo/medical_prescription_order_demo.xml',
+        'demo/medical_prescription_order_line_demo.xml',
+    ],
     'installable': True,
     'auto_install': False,
 }

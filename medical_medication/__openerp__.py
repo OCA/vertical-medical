@@ -24,6 +24,9 @@
         'views/medical_patient_medication_view.xml',
         'views/medical_patient_view.xml',
     ],
+    'demo': [
+        'demo/medical_medication_demo.xml',
+    ],
     'installable': True,
     'auto_install': False,
 }

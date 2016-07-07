@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016-TODAY LasLabs, Inc. [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    @license AGPL-3
+-->
+
+<odoo>
+	
+	<record id="medical_medicament_advil_1"
+			model="medical.medicament">
+		<field name="name">Advil</field>
+		<field name="type">consu</field>
+		<field name="control_code">1</field>
+		<field name="drug_form_id" ref="medical_medicament.BAR" />
+		<field name="strength">3</field>
+	</record>
+	
+	<record id="medical_medicament_advil_2"
+			model="medical.medicament">
+		<field name="name">Advil</field>
+		<field name="type">consu</field>
+		<field name="control_code">1</field>
+		<field name="drug_form_id" ref="medical_medicament.BAR" />
+		<field name="strength">20</field>
+	</record>
+		
+</odoo>
