@@ -367,12 +367,12 @@
 						   />
 				</div>
 				
-				<div t-attf-class="form-group form-field col-lg-6">
+				<div class="form-group form-field col-lg-6">
 					<label class="control-label" t-att-name="'%s.gender' % rel">
 						Gender
 					</label>
 					<select t-att-name="'%s.gender' % rel"
-							class="form-control form-field"
+							class="form-control form-field js_medical_prescription_gender"
 							required=""
 						    t-att-data-model="res_model"
 						    t-att-data-relate-recv="rel"
@@ -393,7 +393,7 @@
 			
 			<div class="row">
 				
-				<div t-attf-class="form-group form-field col-lg-6">
+				<div class="form-group form-field col-lg-4">
 					<label>
 						Use Safety Cap?
 						<input t-att-name="'%s.safety_cap_yn' % rel"
@@ -406,7 +406,7 @@
 					</label>
 				</div>
 
-				<div t-attf-class="form-group form-field col-lg-6">
+				<div class="form-group form-field col-lg-4">
 					<label>
 						Counseling?
 						<input t-att-name="'%s.counseling_yn' % rel"
@@ -419,11 +419,24 @@
 					</label>
 				</div>
 
+				<div class="form-group form-field col-lg-4 js_medical_prescription_is_pregnant hidden">
+					<label>
+						Pregnant?
+						<input t-att-name="'%s.is_pregnant' % rel"
+							   type="checkbox"
+							   t-att-data-model="res_model"
+							   t-att-data-relate-recv="rel"
+							   data-query-field="is_pregnant"
+							   t-att-checked="request.params.get('%s.is_pregnant' % rel) or False"
+							   />
+					</label>
+				</div>
+
 			</div>
 			
 			<div class="row">
 				
-				<div t-attf-class="form-group form-field col-lg-12">
+				<div class="form-group form-field col-lg-12">
 					<label class="control-label" t-att-name="'%s.allergies' % rel">
 						Allergies
 					</label>

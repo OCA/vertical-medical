@@ -23,13 +23,24 @@ odoo.define('website_sale_medical_prescription.form_checkout', function(require)
       this.$target.find('.js_medical_prescription')
         .change(function(event) {
           self.onchangePrescription(event, self);
-        }
-      );
+        });
       this.$target.find('.js_medical_prescription_acquisition')
         .change(function(event) {
           self.onchangeAcquisition(event, self);
-        }
-      );
+        });
+      this.$target.find('.js_medical_prescription_patient .js_medical_prescription_gender')
+        .change(self.onchangeGender);
+    },
+    
+    onchangeGender: function(event) {
+      var $target = $(event.target);
+      var $isPreg = $target.parents('.js_medical_prescription_patient')
+        .find('.js_medical_prescription_is_pregnant');
+      if ($target.val() == 'f') {
+        $isPreg.removeClass('hidden').prop('disabled', false);
+      } else {
+        $isPreg.addClass('hidden').prop('disabled', true).prop('checked', false);
+      }
     },
     
     onchangePrescription: function(event, self) {
