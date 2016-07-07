@@ -28,7 +28,7 @@
 		<field name="medication_dosage_id" ref="medical_medication.229799001" />
 	</record>
 	
-	<record id="medical_medication_patient_patient_2_advil_1"
+	<record id="medical_medication_patient_2_advil_1"
 			model="medical.patient.medication">
 		<field name="medicament_id" ref="medical_medicament.medical_medicament_advil_1" />
 		<field name="patient_id" ref="medical.medical_patient_patient_2" />
