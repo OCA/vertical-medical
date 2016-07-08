@@ -14,6 +14,7 @@
 			   ref="medical_prescription.medical_prescription_order_patient_1_order_1" />
 		<field name="medical_medication_id"
 			   ref="medical_medication.medical_medication_patient_1_advil_1" />
+		<field name="qty">30</field>
 	</record>
 	
 	<record id="medical_prescription_order_line_patient_1_order_1_line_2"
@@ -22,6 +23,7 @@
 			   ref="medical_prescription.medical_prescription_order_patient_1_order_1" />
 		<field name="medical_medication_id"
 			   ref="medical_medication.medical_medication_patient_1_advil_2" />
+		<field name="qty">120</field>
 	</record>
 	
 	<record id="medical_prescription_order_line_patient_2_order_1_line_1"
@@ -30,6 +32,7 @@
 			   ref="medical_prescription.medical_prescription_order_patient_2_order_1" />
 		<field name="medical_medication_id"
 			   ref="medical_medication.medical_medication_patient_2_advil_1" />
+		<field name="qty">60</field>
 	</record>
 	
 </odoo>
