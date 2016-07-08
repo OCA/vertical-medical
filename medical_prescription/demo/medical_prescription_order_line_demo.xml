@@ -2,8 +2,7 @@
 
 <!--
     Copyright (C) 2016 LasLabs, Inc. [https://laslabs.com]
-    @author Dave Lasley <dave@laslabs.com>
-    @license AGPL-3
+    @license AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 
 <odoo>
@@ -15,6 +14,7 @@
 		<field name="medical_medication_id"
 			   ref="medical_medication.medical_medication_patient_1_advil_1" />
 		<field name="qty">30</field>
+		<field name="name">RXL001</field>
 	</record>
 	
 	<record id="medical_prescription_order_line_patient_1_order_1_line_2"
@@ -24,6 +24,7 @@
 		<field name="medical_medication_id"
 			   ref="medical_medication.medical_medication_patient_1_advil_2" />
 		<field name="qty">120</field>
+		<field name="name">RXL002</field>
 	</record>
 	
 	<record id="medical_prescription_order_line_patient_2_order_1_line_1"
@@ -33,6 +34,7 @@
 		<field name="medical_medication_id"
 			   ref="medical_medication.medical_medication_patient_2_advil_1" />
 		<field name="qty">60</field>
+		<field name="name">RXL003</field>
 	</record>
 	
 </odoo>
