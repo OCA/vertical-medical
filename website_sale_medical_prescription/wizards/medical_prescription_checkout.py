@@ -62,8 +62,15 @@ class MedicalPrescriptionCheckout(models.TransientModel):
                 rx_line_vals = line_vals['prescription_order_line_id']
             except KeyError:
                 res['errors'].append(_(
-                    'Did not include a prescription line information'
+                    'Did not include prescription line information'
                 ))
+                continue
+
+            if rx_line_vals.get('prescription_line_id', '0') != '0':
+                rx_line_int = int(rx_line_vals['prescription_line_id'])
+                line_id.write({
+                    'prescription_order_line_id': rx_line_int,
+                })
                 continue
 
             medicament_id = line_id.product_id.medicament_ids[0]
