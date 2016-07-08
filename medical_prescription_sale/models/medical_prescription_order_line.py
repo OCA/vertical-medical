@@ -20,7 +20,6 @@ class MedicalPrescriptionOrderLine(models.Model):
     )
     name = fields.Char(
         default=lambda s: s._default_name(),
-        required=True,
     )
     verify_method = fields.Selection([
         ('none', 'Not Verified'),
