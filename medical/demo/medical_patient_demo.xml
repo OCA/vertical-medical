@@ -17,7 +17,7 @@
 		<field name="street">123 Example Way</field>
 		<field name="email">emma@example.com</field>
 		<field name="phone">+1 (702) 343-2342</field>
-		<field name="parent_id" ref="portal.partner_demo_portal" />
+		<field name="parent_id" ref="base.partner_demo" />
 	</record>
 
 	<record id="medical_patient_patient_1" model="medical.patient">
@@ -34,7 +34,7 @@
 		<field name="street">123 Example Way</field>
 		<field name="email">kyle@example.com</field>
 		<field name="phone">+1 (702) 343-2347</field>
-		<field name="parent_id" ref="portal.partner_demo_portal" />
+		<field name="parent_id" ref="base.partner_demo" />
 	</record>
 	
 	<record id="medical_patient_patient_2" model="medical.patient">
@@ -51,7 +51,7 @@
 		<field name="street">123 Test Drive</field>
 		<field name="email">kyle@example.com</field>
 		<field name="phone">+1 (702) 343-2347</field>
-		<field name="parent_id" ref="portal.partner_demo_portal" />
+		<field name="parent_id" ref="base.partner_demo" />
 	</record>
 	
 	<record id="medical_patient_patient_3" model="medical.patient">
