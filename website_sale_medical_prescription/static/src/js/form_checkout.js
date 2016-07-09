@@ -28,7 +28,7 @@ odoo.define('website_sale_medical_prescription.form_checkout', function(require)
         .change(function(event) {
           self.onchangeAcquisition(event, self);
         });
-      this.$target.find('.js_medical_prescription_patient .js_medical_prescription_gender')
+      this.$target.find('.js_medical_prescription_gender')
         .change(self.onchangeGender);
     },
     

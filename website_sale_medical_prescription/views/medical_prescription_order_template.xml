@@ -304,7 +304,7 @@
 
 	<template id="patient_select" name="Patient Selection">
 		
-		<div class="well">
+		<div class="well js_medical_prescription_patient">
 			
 			<h4>Patient</h4>
 

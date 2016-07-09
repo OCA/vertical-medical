@@ -3,6 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import models, fields, api, _
+from openerp.exceptions import ValidationError
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
@@ -60,6 +61,9 @@ class MedicalPatient(models.Model):
         ('x', 'Separated'),
         ('z', 'law marriage'),
     ], )
+    is_pregnant = fields.Boolean(
+        help='Check this if the patient if pregnant',
+    )
 
     @api.multi
     def _compute_age(self):
@@ -86,6 +90,14 @@ class MedicalPatient(models.Model):
             else:
                 years_months_days = _('No DoB !')
             rec_id.age = years_months_days
+
+    @api.constrains('is_pregnant', 'gender')
+    def _check_is_pregnant(self):
+        for rec_id in self:
+            if rec_id.is_pregnant and rec_id.gender != 'f':
+                raise ValidationError(_(
+                    'Invalid selection - males cannot be pregnant.',
+                ))
 
     @api.multi
     def action_invalidate(self):
