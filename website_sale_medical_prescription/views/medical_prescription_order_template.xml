@@ -408,7 +408,7 @@
 
 				<div t-attf-class="form-group form-field col-lg-6">
 					<label>
-						Counseling?
+						I would like to speak to a pharmacist regarding my medications
 						<input t-att-name="'%s.counseling_yn' % rel"
 							   type="checkbox"
 							   t-att-data-model="res_model"
