@@ -34,16 +34,19 @@ class TestMedicalPatient(TransactionCase):
     def test_check_parent_id_exists_with_parent(self):
         ''' Test create pet with parent_id not raises ValidationError '''
         patient_1 = self.new_patient()
-        with self.assertRaises(ValidationError):
+        try:
             self.new_patient({
                 'species_id': self.dog.id,
                 'parent_id': patient_1.partner_id.id,
             })
+            self.assertTrue(True)
+        except ValidationError:
+            self.fail("Should not raise ValidationError if parent_id exists")
 
-    def test_check_parent_id_is_human(self):
-        ''' Test create pet with non-human parent_id raises ValidationError'''
-        patient_1 = self.new_patient()
-        with self.assertRaises(ValidationError):
-            self.new_patient({
-                'parent_id': patient_1.partner_id.id,
-            })
+    def test_check_species_id(self):
+        ''' Test create medical patient no species raises ValidationError '''
+        patient = self.new_patient({'species_id': None})
+        self.assertEquals(
+            self.human.id,
+            patient.species_id.id,
+        )

@@ -22,6 +22,9 @@
                     <attribute name="attrs">{'required': [('is_person', '=', False)]}</attribute>
                     <attribute name="options">{'no_create': True}</attribute>
                 </xpath>
+                <xpath expr="//field[@name='species_id']" position="attributes">
+                    <attribute name="attrs">{'required': True}</attribute>
+                </xpath>
             </field>
         </record>
 
