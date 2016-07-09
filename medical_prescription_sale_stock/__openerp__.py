@@ -18,6 +18,9 @@
         'views/stock_warehouse_view.xml',
         'views/prescription_order_line_view.xml',
     ],
+    'demo': [
+        'demo/medical_prescription_order_line_demo.xml',
+    ],
     "website": "https://laslabs.com",
     "license": "AGPL-3",
     'installable': True,

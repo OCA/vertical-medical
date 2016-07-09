@@ -86,7 +86,7 @@
 				<option>Choose Prescription...</option>
 				<option value="0">New Prescription</option>
 				<t t-foreach="prescription_lines" t-as="prescription_line">
-					<option t-value="prescription_line.id">
+					<option t-att-value="prescription_line.id">
 						<t t-esc="'#%s - %s - %s' % (prescription_line.name, prescription_line.patient_id.name, prescription_line.display_name)" />
 					</option>
 				</t>
