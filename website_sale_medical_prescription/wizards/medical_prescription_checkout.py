@@ -142,6 +142,9 @@ class MedicalPrescriptionCheckout(models.TransientModel):
                 ))
                 continue
 
+            if rx_vals.get('receive_method') != 'transfer':
+                del rx_vals['transfer_pharmacy_id']
+
             try:
                 transfer_vals = rx_vals['transfer_pharmacy_id']
                 if int(transfer_vals.get('id', 0)) == 0:
