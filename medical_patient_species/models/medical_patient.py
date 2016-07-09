@@ -11,7 +11,6 @@ class MedicalPatient(models.Model):
 
     species_id = fields.Many2one(
         string='Species',
-        required=True,
         comodel_name='medical.patient.species',
         help='Select the species of the patient.',
     )
@@ -28,3 +27,19 @@ class MedicalPatient(models.Model):
                 raise ValidationError(
                     _('Must have a legal representative if not Human.')
                 )
+
+    @api.constrains('species_id')
+    def _check_species_id(self):
+        if not self.species_id:
+            raise ValidationError(
+                _('Must have a species defined')
+            )
+
+    @api.model
+    def create(self, vals):
+        species_model = self.env['medical.patient.species']
+        if 'species_id' in vals:
+            if not vals['species_id']:
+                human = species_model.browse(1)
+                vals.update({'species_id': human.id})
+        return super(MedicalPatient, self).create(vals)

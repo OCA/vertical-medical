@@ -22,4 +22,5 @@
         'views/medical_patient_species_view.xml',
         'views/medical_patient_view.xml',
     ],
+    "post_init_hook": "post_init_hook",
 }

@@ -41,3 +41,11 @@ class TestMedicalPatient(TransactionCase):
             })
         except ValidationError:
             self.fail("Should not raise ValidationError if parent_id exists")
+
+    def test_check_species_id(self):
+        ''' Test create medical patient no species raises ValidationError '''
+        patient = self.new_patient({'species_id': None})
+        self.assertEquals(
+            self.human.id,
+            patient.species_id.id,
+        )

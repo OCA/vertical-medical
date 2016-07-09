@@ -19,6 +19,11 @@ For further information, please visit:
    :alt: Try me on Runbot
    :target: https://runbot.odoo-community.org/runbot/159/9.0
 
+Known Issues / Roadmap
+======================
+
+* All medical patients are set to human initially using post_init_hook method. This is due to dependencies
+on medical_patient_species.human existing before medical.patient is updated.
 
 Bug Tracker
 ===========
