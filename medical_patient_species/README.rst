@@ -24,6 +24,7 @@ Known Issues / Roadmap
 
 * All medical patients are set to human initially using post_init_hook method. This is due to dependencies
 on medical_patient_species.human existing before medical.patient is updated.
+* Note that Human is always id #1 in the database.
 
 Bug Tracker
 ===========

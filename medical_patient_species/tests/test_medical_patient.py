@@ -39,6 +39,7 @@ class TestMedicalPatient(TransactionCase):
                 'species_id': self.dog.id,
                 'parent_id': patient_1.partner_id.id,
             })
+            self.assertTrue(True)
         except ValidationError:
             self.fail("Should not raise ValidationError if parent_id exists")
 
