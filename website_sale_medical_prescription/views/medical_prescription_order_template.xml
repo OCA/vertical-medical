@@ -105,7 +105,8 @@
 						class="form-control js_medical_prescription_acquisition"
 						>
 					<option>Choose Acquisition Method...</option>
-					<t t-foreach="[('fax', 'Prescriber Will Fax'),
+					<t t-foreach="[('online', 'E-Prescribe'),
+								   ('fax', 'Prescriber Will Fax'),
 								   ('phone', 'Prescriber Will Phone In'),
 								   ('transfer', 'Pharmacy Will Transfer'),
 								   ('mail', 'Mailed'),
