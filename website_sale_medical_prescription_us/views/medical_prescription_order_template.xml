@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2016 LasLabs Inc.
+    @license AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+	<template id="prescription_select" name="Prescription Selection - Filter by GPI" inherit_id="website_sale_medical_prescription.prescription_select">
+		
+		<xpath expr="//t[@t-as='prescription_line']" position="attributes">
+			<attribute name="t-foreach">
+				prescription_lines.filtered(
+					lambda r: record.medicament_id.gcn_id == sale_line.medicament_ids[0].gcn_id
+				)
+			</attribute>
+		</xpath>
+	</template>
+
+</odoo>
