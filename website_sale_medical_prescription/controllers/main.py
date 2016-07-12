@@ -63,6 +63,9 @@ class WebsiteSale(website_sale):
             ('patient_id', 'in', [p.id for p in patient_ids]),
         ])
 
+        # Sudo to circumvent website_published on Products
+        prescription_line_ids = prescription_line_ids.sudo()
+
         values = {
             'website_sale_order': order_id,
             'sale_lines': sale_line_ids,
