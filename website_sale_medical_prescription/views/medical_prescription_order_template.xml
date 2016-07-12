@@ -110,11 +110,11 @@
 						class="form-control js_medical_prescription_acquisition"
 						>
 					<option>Choose Acquisition Method...</option>
-					<t t-foreach="[('online', 'E-Prescribe'),
+					<t t-foreach="[('online', 'Prescriber Will E-Prescribe'),
 								   ('fax', 'Prescriber Will Fax'),
 								   ('phone', 'Prescriber Will Phone In'),
 								   ('transfer', 'Pharmacy Will Transfer'),
-								   ('mail', 'Mailed'),
+								   ('mail', 'Customer Will Mail'),
 								   ]"
 					   t-as="receive_method">
 						<option t-att-value="receive_method[0]"
