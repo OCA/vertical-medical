@@ -5,6 +5,10 @@
 from openerp import models, fields, api, _
 
 
+import logging
+_logger = logging.getLogger(__name__)
+
+
 class MedicalPrescriptionCheckout(models.TransientModel):
     _name = 'medical.prescription.checkout'
     _description = 'Medical Prescription Checkout'
@@ -115,14 +119,13 @@ class MedicalPrescriptionCheckout(models.TransientModel):
                 ))
                 continue
 
-            # Don't update physician
             if int(physician_vals.get('id', 0)) == 0:
                 try:
-                    physician_id = self.env['medical.physician'].create(
-                        physician_vals
-                    )
-                    rx_line_vals['physician_id'] = physician_id.id
+                    rx_line_vals['physician_id'] = self._write_or_create(
+                        'medical.physician', physician_vals, write=False
+                    ).id
                 except:
+                    _logger.exception("Could not create physician")
                     res['errors'].append(_(
                         'Could not create physician'
                     ))
@@ -143,13 +146,16 @@ class MedicalPrescriptionCheckout(models.TransientModel):
                 continue
 
             if rx_vals.get('receive_method') != 'transfer':
-                del rx_vals['transfer_pharmacy_id']
+                try:
+                    del rx_vals['transfer_pharmacy_id']
+                except KeyError:
+                    pass
 
             try:
                 transfer_vals = rx_vals['transfer_pharmacy_id']
                 if int(transfer_vals.get('id', 0)) == 0:
                     rx_vals['transfer_pharmacy_id'] = self._write_or_create(
-                        'medical.pharmacy', transfer_vals,
+                        'medical.pharmacy', transfer_vals, write=False
                     ).id
             except KeyError:
                 pass
@@ -177,9 +183,12 @@ class MedicalPrescriptionCheckout(models.TransientModel):
 
         return res
 
-    def _write_or_create(self, model_name, vals, sudo_create=True):
+    @api.model
+    def _write_or_create(self, model_name, vals, sudo_create=True,
+                         write=True
+                         ):
         model_obj = self.env[model_name]
-        if int(vals.get('id', 0)) != 0:
+        if write and int(vals.get('id', 0)) != 0:
             rec_id = model_obj.browse(int(vals['id']))
             del vals['id']
             rec_id.write(vals)
@@ -189,6 +198,7 @@ class MedicalPrescriptionCheckout(models.TransientModel):
             rec_id = model_obj.create(vals)
         return rec_id
 
+    @api.model
     def _invalidate_all(self, obj, error_fields=None, msg=None,
                         name_prefix=None,
                         ):
@@ -208,6 +218,7 @@ class MedicalPrescriptionCheckout(models.TransientModel):
                 error_fields[node_name] = _msg
         return error_fields
 
+    @api.model
     def _parse_form(self, vals):
         res = {}
         for key, val in vals.iteritems():
