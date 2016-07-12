@@ -13,7 +13,10 @@ from openerp.addons.website_medical.controllers.main import (
 class WebsiteMedical(WebsiteMedical):
 
     def _inject_medical_detail_vals(self, patient_id=0, **kwargs):
-        vals = super(WebsiteMedical, self)._inject_medical_detail_vals()
+        vals = super(WebsiteMedical, self)._inject_medical_detail_vals(
+            patient_id=0,
+            **kwargs
+        )
         species_ids = request.env['medical.patient.species'].search([])
         vals.update({
             'species': species_ids,
