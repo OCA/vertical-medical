@@ -55,17 +55,30 @@
 							</form>
 						</div>
 						<div class="col-lg-offset-1 col-lg-3 col-md-3 text-muted">
-							<h3 class="page-header mt16">
-								Your Order
-								<small>
-									<a href="/shop/cart">
-										<span class="fa fa-arrow-right"/>
-										change
-									</a>
-								</small>
-							</h3>
-							<t t-set="website_sale_order" t-value="website.sale_get_order()"/>
-							<t t-call="website_sale.total"/>
+							<div class="row">
+								<h3 class="page-header mt16">
+									Your Order
+									<small>
+										<a href="/shop/cart">
+											<span class="fa fa-arrow-right"/>
+											change
+										</a>
+									</small>
+								</h3>
+								<t t-set="website_sale_order" t-value="website.sale_get_order()"/>
+								<t t-call="website_sale.total"/>
+							</div>
+							<div class="row">
+								<h3 class="page-header mt16">
+									Our Info
+								</h3>
+								<address class="mb0 list-indent" itemscope="itemscope" itemtype="http://schema.org/Organization">
+									<div t-field="res_company.partner_id" t-field-options='{
+											"widget": "contact",
+											"fields": ["name", "address", "phone", "fax", "email"]
+										}'/>
+								</address>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -162,7 +175,7 @@
 
 			<div class="row">
 				
-				<div t-attf-class="form-group form-field col-lg-6">
+				<div class="form-group form-field col-lg-6">
 					<label class="control-label" t-att-name="'%s.name' % rel">
 						Name
 					</label>
@@ -179,7 +192,7 @@
 						   />
 				</div>
 				
-				<div t-attf-class="form-group form-field col-lg-6">
+				<div class="form-group form-field col-lg-6">
 					<label class="control-label" t-att-name="'%s.phone' % rel">
 						Phone
 					</label>
@@ -200,7 +213,7 @@
 			
 			<div class="row">
 				
-				<div t-attf-class="form-group form-field col-lg-6">
+				<div class="form-group form-field col-lg-6">
 					<label class="control-label" t-att-name="'%s.fax' % rel">
 						Fax
 					</label>
@@ -215,7 +228,7 @@
 						   />
 				</div>
 				
-				<div t-attf-class="form-group form-field col-lg-6">
+				<div class="form-group form-field col-lg-6">
 					<label class="control-label" t-att-name="'%s.email' % rel">
 						Email
 					</label>
@@ -233,7 +246,7 @@
 			
 			<div class="row">
 				
-				<div t-attf-class="form-group form-field col-lg-6">
+				<div class="form-group form-field col-lg-6">
 					<label class="control-label" t-att-name="'%s.street' % rel">
 						Street Address
 					</label>
@@ -266,7 +279,7 @@
 		
 			<div class="row">
 				
-				<div t-attf-class="form-group form-field col-lg-6">
+				<div class="form-group form-field col-lg-6">
 					<label class="control-label" t-att-name="'%s.city' % rel">
 						City
 					</label>
@@ -281,7 +294,7 @@
 						   />
 				</div>
 				
-				<div t-attf-class="form-group form-field col-lg-6">
+				<div class="form-group form-field col-lg-6">
 					<label class="control-label" t-att-name="'%s.zip' % rel">
 						Zip or Postal Code
 					</label>
@@ -322,7 +335,7 @@
 			
 			<div class="row">
 				
-				<div t-attf-class="form-group form-field col-lg-6">
+				<div class="form-group form-field col-lg-6">
 					<label class="control-label" t-att-name="'%s.name' % rel">
 						Name
 					</label>
@@ -339,7 +352,7 @@
 						   />
 				</div>
 				
-				<div t-attf-class="form-group form-field col-lg-6">
+				<div class="form-group form-field col-lg-6">
 					<label class="control-label" t-att-name="'%s.phone' % rel">
 						Phone
 					</label>
@@ -358,7 +371,7 @@
 			
 			<div class="row">
 				
-				<div t-attf-class="form-group form-field col-lg-6">
+				<div class="form-group form-field col-lg-6">
 					<label class="control-label" t-att-name="'%s.dob' % rel">
 						Birth Date
 					</label>
@@ -461,7 +474,7 @@
 
 			<div class="row">
 				
-				<div t-attf-class="form-group form-field col-lg-12">
+				<div class="form-group form-field col-lg-12">
 					<label class="control-label" t-att-name="'%s.existing_meds' % rel">
 						Existing Medications
 					</label>
@@ -480,7 +493,7 @@
 
 			<div class="row">
 				
-				<div t-attf-class="form-group form-field col-lg-12">
+				<div class="form-group form-field col-lg-12">
 					<label class="control-label" t-att-name="'%s.comment' % rel">
 						Medical History
 					</label>
@@ -532,7 +545,7 @@
 
 			<div class="row">
 				
-				<div t-attf-class="form-group form-field col-lg-6">
+				<div class="form-group form-field col-lg-6">
 					<label class="control-label" t-att-name="'%s.name' % rel">
 						Name
 					</label>
@@ -548,8 +561,25 @@
 						   autocomplete="off"
 						   />
 				</div>
+
+				<div class="form-group form-field col-lg-6">
+					<label class="control-label" t-att-name="'%s.transfer_ref' % rel">
+						Prescription Number
+					</label>
+					<input type="text"
+						   t-att-name="'%s.transfer_ref' % rel"
+						   class="form-control"
+						   t-att-value="request.params.get('%s.transfer_ref' % rel)  or ''"
+						   />
+				</div>
 				
-				<div t-attf-class="form-group form-field col-lg-6">
+			</div>
+			
+			<t t-set="rel" t-value="'%d.prescription_order_id' % sale_line.id" />
+			
+			<div class="row">
+				
+				<div class="form-group form-field col-lg-6">
 					<label class="control-label" t-att-name="'%s.phone' % rel">
 						Phone
 					</label>
@@ -565,25 +595,23 @@
 						   autocomplete="off"
 						   />
 				</div>
-				
-			</div>
-			
-			<t t-set="rel" t-value="'%d.prescription_order_id' % sale_line.id" />
-			
-			<div class="row">
-				
-				<div t-attf-class="form-group form-field col-lg-12">
-					<label class="control-label" t-att-name="'%s.transfer_ref' % rel">
-						Prescription Number
+
+				<div class="form-group form-field col-lg-6">
+					<label class="control-label" t-att-name="'%s.fax' % rel">
+						Fax
 					</label>
-					<input type="text"
-						   t-att-name="'%s.transfer_ref' % rel"
-						   class="form-control"
-						   t-att-value="request.params.get('%s.transfer_ref' % rel)  or ''"
-						   required=""
+					<input type="tel"
+						   t-att-name="'%s.fax' % rel"
+						   class="js_website_autocomplete form-control"
+						   t-att-value="request.params.get('%s.fax' % rel)  or ''"
+						   t-att-data-model="res_model"
+						   t-att-data-relate-recv="rel"
+						   data-query-field="fax"
+						   data-limit="5"
+						   autocomplete="off"
 						   />
 				</div>
-				
+
 			</div>
 		
 		</div>
