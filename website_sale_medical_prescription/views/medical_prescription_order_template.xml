@@ -160,6 +160,7 @@
 		<div class="well">
 			
 			<h4>Prescriber</h4>
+			<h6>Search by Name or Phone</h6>
 
 			<t t-set="rel" t-value="'%d.prescription_order_line_id.physician_id' % sale_line.id" />
 			<t t-set="res_model" t-value="'medical.physician'" />
@@ -320,6 +321,7 @@
 		<div class="well js_medical_prescription_patient">
 			
 			<h4>Patient</h4>
+			<h6>Search by Name or Phone</h6>
 
 			<t t-set="rel" t-value="'%d.prescription_order_line_id.patient_id' % sale_line.id" />
 			<t t-set="res_model" t-value="'medical.patient'" />
@@ -518,6 +520,7 @@
 		<div class="well js_medical_prescription_pharmacy hidden">
 			
 			<h4>Pharmacy Transfer Info</h4>
+			<h6>Search by Name or Phone</h6>
 
 			<div class="row">
 				
