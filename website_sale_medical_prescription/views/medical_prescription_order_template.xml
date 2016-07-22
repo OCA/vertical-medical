@@ -88,12 +88,12 @@
 
 	<template id="prescription_select" name="Prescription Selection">
 		
-		<div class="row">
+		<div class="row form-group form-field o_website_form_required_custom">
 			<select t-att-name="'%d.prescription_order_line_id.prescription_line_id' % sale_line.id"
 					data-res-model="medical.prescription.line"
 					data-src-model="sale.order.line"
 					t-att-data-rel="'%d.prescription_order_line_id' % sale_line.id"
-					class="form-control js_medical_prescription"
+					class="form-control js_medical_prescription o_website_form_input"
 					required=""
 					>
 				<option>Choose Prescription...</option>
@@ -115,12 +115,13 @@
 
 			<t t-set="rel" t-value="'%d.prescription_order_id' % sale_line.id" />
 
-			<div class="row mb32 mt16">
+			<div class="row mb32 mt16 form-group form-field o_website_form_required_custom">
 				<label class="control-label" t-att-for="'%s.receive_method' % rel">
 					Prescription Acquisition
 				</label>
 				<select t-att-name="'%s.receive_method' % rel"
-						class="form-control js_medical_prescription_acquisition"
+						class="form-control js_medical_prescription_acquisition o_website_form_input"
+						required=""
 						>
 					<option>Choose Acquisition Method...</option>
 					<t t-foreach="[('online', 'Prescriber Will E-Prescribe'),
@@ -168,7 +169,7 @@
 			<input type="hidden"
 				   t-att-name="'%s.id' % rel"
 				   class="js_website_autocomplete"
-				   t-att-value="request.params.get('%s.id' % rel)  or ''"
+				   t-att-value="request.params.get('%s.id' % rel)  or '0'"
 				   t-att-data-model="res_model"
 				   t-att-data-relate-recv="rel"
 				   data-query-field="id"
@@ -176,13 +177,13 @@
 
 			<div class="row">
 				
-				<div class="form-group form-field col-lg-6">
+				<div class="form-group form-field o_website_form_required_custom col-lg-6">
 					<label class="control-label" t-att-name="'%s.name' % rel">
 						Name
 					</label>
 					<input type="text"
 						   t-att-name="'%s.name' % rel"
-						   class="js_website_autocomplete form-control"
+						   class="js_website_autocomplete form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.name' % rel)  or ''"
 						   required=""
 						   t-att-data-model="res_model"
@@ -193,13 +194,13 @@
 						   />
 				</div>
 				
-				<div class="form-group form-field col-lg-6">
+				<div class="form-group form-field o_website_form_required_custom col-lg-6">
 					<label class="control-label" t-att-name="'%s.phone' % rel">
 						Phone
 					</label>
 					<input type="tel"
 						   t-att-name="'%s.phone' % rel"
-						   class="js_website_autocomplete form-control"
+						   class="js_website_autocomplete form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.phone' % rel)  or ''"
 						   required=""
 						   t-att-data-model="res_model"
@@ -220,9 +221,8 @@
 					</label>
 					<input type="tel"
 						   t-att-name="'%s.fax' % rel"
-						   class="form-control"
+						   class="form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.fax' % rel)  or ''"
-						   required=""
 						   t-att-data-model="res_model"
 						   t-att-data-relate-recv="rel"
 						   data-query-field="fax"
@@ -235,7 +235,7 @@
 					</label>
 					<input type="email"
 						   t-att-name="'%s.email' % rel"
-						   class="form-control"
+						   class="form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.email' % rel)  or ''"
 						   t-att-data-model="res_model"
 						   t-att-data-relate-recv="rel"
@@ -247,13 +247,13 @@
 			
 			<div class="row">
 				
-				<div class="form-group form-field col-lg-6">
+				<div class="form-group form-field o_website_form_required_custom col-lg-6">
 					<label class="control-label" t-att-name="'%s.street' % rel">
 						Street Address
 					</label>
 					<input type="text"
 						   t-att-name="'%s.street' % rel"
-						   class="form-control"
+						   class="form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.street' % rel)  or ''"
 						   required=""
 						   t-att-data-model="res_model"
@@ -268,7 +268,7 @@
 					</label>
 					<input type="text"
 						   t-att-name="'%s.street2' % rel"
-						   class="form-control"
+						   class="form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.street2' % rel)  or ''"
 						   t-att-data-model="res_model"
 						   t-att-data-relate-recv="rel"
@@ -280,13 +280,13 @@
 		
 			<div class="row">
 				
-				<div class="form-group form-field col-lg-6">
+				<div class="form-group form-field o_website_form_required_custom col-lg-6">
 					<label class="control-label" t-att-name="'%s.city' % rel">
 						City
 					</label>
 					<input type="text"
 						   t-att-name="'%s.city' % rel"
-						   class="form-control"
+						   class="form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.city' % rel)  or ''"
 						   required=""
 						   t-att-data-model="res_model"
@@ -295,13 +295,13 @@
 						   />
 				</div>
 				
-				<div class="form-group form-field col-lg-6">
+				<div class="form-group form-field o_website_form_required_custom col-lg-6">
 					<label class="control-label" t-att-name="'%s.zip' % rel">
 						Zip or Postal Code
 					</label>
 					<input type="text"
 						   t-att-name="'%s.zip' % rel"
-						   class="form-control"
+						   class="form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.zip' % rel)  or ''"
 						   required=""
 						   t-att-data-model="res_model"
@@ -329,7 +329,7 @@
 			<input type="hidden"
 				   t-att-name="'%s.id' % rel"
 				   class="js_website_autocomplete"
-				   t-att-value="request.params.get('%s.id' % rel)  or ''"
+				   t-att-value="request.params.get('%s.id' % rel)  or '0'"
 				   t-att-data-model="res_model"
 				   t-att-data-relate-recv="rel"
 				   data-query-field="id"
@@ -337,13 +337,13 @@
 			
 			<div class="row">
 				
-				<div class="form-group form-field col-lg-6">
+				<div class="form-group form-field o_website_form_required_custom col-lg-6">
 					<label class="control-label" t-att-name="'%s.name' % rel">
 						Name
 					</label>
 					<input type="text"
 						   t-att-name="'%s.name' % rel"
-						   class="js_website_autocomplete form-control"
+						   class="js_website_autocomplete form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.name' % rel)  or ''"
 						   required=""
 						   t-att-data-model="res_model"
@@ -354,14 +354,15 @@
 						   />
 				</div>
 				
-				<div class="form-group form-field col-lg-6">
+				<div class="form-group form-field o_website_form_required_custom col-lg-6">
 					<label class="control-label" t-att-name="'%s.phone' % rel">
 						Phone
 					</label>
 					<input type="tel"
 						   t-att-name="'%s.phone' % rel"
 						   t-att-data-relate-recv="rel"
-						   class="form-control"
+						   class="form-control o_website_form_input"
+						   required=""
 						   t-att-value="request.params.get('%s.phone' % rel)  or ''"
 						   t-att-data-model="res_model"
 						   data-query-field="phone"
@@ -373,7 +374,7 @@
 			
 			<div class="row">
 				
-				<div class="form-group form-field col-lg-6">
+				<div class="form-group form-field o_website_form_required_custom col-lg-6">
 					<label class="control-label" t-att-name="'%s.dob' % rel">
 						Birth Date
 					</label>
@@ -381,19 +382,19 @@
 						   required=""
 						   t-att-name="'%s.dob' % rel"
 						   t-att-data-relate-recv="rel"
-						   class="form-control o_website_form_date"
+						   class="form-control o_website_form_date o_website_form_input"
 						   t-att-value="request.params.get('%s.dob' % rel)  or ''"
 						   t-att-data-model="res_model"
 						   data-query-field="dob"
 						   />
 				</div>
 				
-				<div class="form-group form-field col-lg-6">
+				<div class="form-group form-field o_website_form_required_custom col-lg-6">
 					<label class="control-label" t-att-name="'%s.gender' % rel">
 						Gender
 					</label>
 					<select t-att-name="'%s.gender' % rel"
-							class="form-control form-field js_medical_prescription_gender"
+							class="form-control js_medical_prescription_gender o_website_form_input"
 							required=""
 						    t-att-data-model="res_model"
 						    t-att-data-relate-recv="rel"
@@ -414,10 +415,11 @@
 			
 			<div class="row">
 				
-				<div class="form-group form-field col-lg-4">
+				<div class="form-group form-field col-lg-6">
 					<label>
 						Use Safety Cap?
 						<input t-att-name="'%s.safety_cap_yn' % rel"
+							   class="form-control o_website_form_input"
 							   type="checkbox"
 							   t-att-data-model="res_model"
 							   t-att-data-relate-recv="rel"
@@ -427,24 +429,12 @@
 					</label>
 				</div>
 
-				<div class="form-group form-field col-lg-4">
+				<div class="form-group form-field col-lg-6 js_medical_prescription_is_pregnant hidden">
 					<label>
-						I would like to speak to a pharmacist regarding my medications
-						<input t-att-name="'%s.counseling_yn' % rel"
-							   type="checkbox"
-							   t-att-data-model="res_model"
-							   t-att-data-relate-recv="rel"
-							   data-query-field="counseling_yn"
-							   t-att-checked="request.params.get('%s.counseling_yn' % rel) or False"
-							   />
-					</label>
-				</div>
-
-				<div class="form-group form-field col-lg-4 js_medical_prescription_is_pregnant hidden">
-					<label>
-						Pregnant?
+						Are You Pregnant?
 						<input t-att-name="'%s.is_pregnant' % rel"
 							   type="checkbox"
+							   class="form-control o_website_form_input"
 							   t-att-data-model="res_model"
 							   t-att-data-relate-recv="rel"
 							   data-query-field="is_pregnant"
@@ -457,6 +447,24 @@
 			
 			<div class="row">
 				
+				<div class="form-group form-field o_website_form_required_custom col-lg-12">
+					<label>
+						I would like to speak to a pharmacist regarding my medications
+						<input t-att-name="'%s.counseling_yn' % rel"
+							   type="checkbox"
+							   class="form-control o_website_form_input"
+							   t-att-data-model="res_model"
+							   t-att-data-relate-recv="rel"
+							   data-query-field="counseling_yn"
+							   t-att-checked="request.params.get('%s.counseling_yn' % rel) or False"
+							   />
+					</label>
+				</div>
+				
+			</div>
+			
+			<div class="row">
+				
 				<div class="form-group form-field col-lg-12">
 					<label class="control-label" t-att-name="'%s.allergies' % rel">
 						Allergies
@@ -465,7 +473,7 @@
 						   required=""
 						   t-att-name="'%s.allergies' % rel"
 						   t-att-data-relate-recv="rel"
-						   class="form-control"
+						   class="form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.allergies' % rel)  or ''"
 						   t-att-data-model="res_model"
 						   data-query-field="allergies"
@@ -484,7 +492,7 @@
 						   required=""
 						   t-att-name="'%s.existing_meds' % rel"
 						   t-att-data-relate-recv="rel"
-						   class="form-control"
+						   class="form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.existing_meds' % rel)  or ''"
 						   t-att-data-model="res_model"
 						   data-query-field="existing_meds"
@@ -503,7 +511,7 @@
 						   required=""
 						   t-att-name="'%s.comment' % rel"
 						   t-att-data-relate-recv="rel"
-						   class="form-control"
+						   class="form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.comment' % rel)  or ''"
 						   t-att-data-model="res_model"
 						   data-query-field="comment"
@@ -529,15 +537,15 @@
 
 				<input type="hidden"
 					   t-att-name="'%s.id' % rel"
-					   class="js_website_autocomplete form-control"
-					   t-att-value="request.params.get('%s.id' % rel)  or ''"
+					   class="js_website_autocomplete form-control o_website_form_input"
+					   t-att-value="request.params.get('%s.id' % rel)  or '0'"
 					   t-att-data-model="res_model"
 					   t-att-data-relate-recv="rel"
 					   data-query-field="id"
 					   />
 				<input type="hidden"
 					   t-att-name="'%s.transfer_direction' % rel"
-					   class="js_website_autocomplete form-control"
+					   class="js_website_autocomplete form-control o_website_form_input"
 					   t-att-value="request.params.get('%s.transfer_direction' % rel)  or 'in'"
 					   t-att-data-model="res_model"
 					   t-att-data-relate-recv="rel"
@@ -554,7 +562,7 @@
 					</label>
 					<input type="text"
 						   t-att-name="'%s.name' % rel"
-						   class="js_website_autocomplete form-control"
+						   class="js_website_autocomplete form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.name' % rel)  or ''"
 						   required=""
 						   t-att-data-model="res_model"
@@ -571,7 +579,7 @@
 					</label>
 					<input type="text"
 						   t-att-name="'%s.transfer_ref' % rel"
-						   class="form-control"
+						   class="form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.transfer_ref' % rel)  or ''"
 						   />
 				</div>
@@ -588,7 +596,7 @@
 					</label>
 					<input type="tel"
 						   t-att-name="'%s.phone' % rel"
-						   class="js_website_autocomplete form-control"
+						   class="js_website_autocomplete form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.phone' % rel)  or ''"
 						   required=""
 						   t-att-data-model="res_model"
@@ -605,7 +613,7 @@
 					</label>
 					<input type="tel"
 						   t-att-name="'%s.fax' % rel"
-						   class="js_website_autocomplete form-control"
+						   class="js_website_autocomplete form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.fax' % rel)  or ''"
 						   t-att-data-model="res_model"
 						   t-att-data-relate-recv="rel"

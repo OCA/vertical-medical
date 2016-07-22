@@ -42,7 +42,7 @@ class MedicalPrescriptionCheckout(models.TransientModel):
 
         self.ensure_one()
 
-        error_fields = {}
+        error_fields = []
         res = {
             'error_fields': error_fields,
             'errors': [],
@@ -199,9 +199,7 @@ class MedicalPrescriptionCheckout(models.TransientModel):
         return rec_id
 
     @api.model
-    def _invalidate_all(self, obj, error_fields=None, msg=None,
-                        name_prefix=None,
-                        ):
+    def _invalidate_all(self, obj, error_fields=None, name_prefix=None):
         if error_fields is None:
             error_fields = {}
         if name_prefix is None:
@@ -211,11 +209,7 @@ class MedicalPrescriptionCheckout(models.TransientModel):
             if isinstance(val, dict):
                 self._invalidate_all(val, error_fields, name_prefix=node_name)
             else:
-                if msg is None:
-                    _msg = 'Invalid data'
-                else:
-                    _msg = msg
-                error_fields[node_name] = _msg
+                error_fields.append(node_name)
         return error_fields
 
     @api.model
