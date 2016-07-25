@@ -67,3 +67,12 @@ class TestResPartner(TransactionCase):
         )
         for i in self.valid:
             self.assertTrue(self._new_record(i, True, country_id))
+
+    def test_no_ref(self):
+        try:
+            self._new_record(ref=None)
+            self.assertTrue(True)
+        except ValidationError:
+            self.fail(
+                'Should not raise ValidationError if ref=None'
+            )
