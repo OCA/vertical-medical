@@ -14,8 +14,8 @@
     'license': 'AGPL-3',
     'data': [
         'data/ir_sequence_data.xml',
-        'views/res_partner_view.xml',
         'views/medical_patient_view.xml',
+        'views/res_partner_view.xml',
         'security/medical_security.xml',
         'security/ir.model.access.csv',
         'data/ir_sequence_data.xml',

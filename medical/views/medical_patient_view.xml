@@ -331,6 +331,7 @@
                      <field name="dob" />
                      <field name="age" />
                      <field name="identification_code" />
+                     <field name="parent_id" invisible="1" />
                      <newline />
                      <group expand="0" string="Group By...">
                          <filter string="DoB"
