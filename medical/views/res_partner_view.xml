@@ -8,7 +8,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//div[@name='button_box']" position="inside">
                     <button
-                        name="%(medical.medical_patient_action)d"
+                        name="medical.medical_patient_action"
                         type="action" class="oe_stat_button" icon="fa-list"
                         context="{'search_default_parent_id': active_id}"
                         string="Patients">
