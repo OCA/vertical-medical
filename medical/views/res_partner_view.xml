@@ -6,6 +6,14 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button
+                        name="medical.medical_patient_action"
+                        type="action" class="oe_stat_button" icon="fa-list"
+                        context="{'search_default_parent_id': active_id}"
+                        string="Patients">
+                    </button>
+                </xpath>
                 <notebook position="inside">
                     <page string="Medical" name="medical_page">
                         <group name="patient_data" attrs="{'invisible': [('is_patient', '!=', True)]}">
