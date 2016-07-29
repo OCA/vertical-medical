@@ -112,7 +112,7 @@
         <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
         <field name="search_view_id" ref="medical_prescription_order_line_search_view" />
-        <field name="view_id" ref="medical_prescription_order_kanban_view" />
+        <field name="view_id" ref="medical_prescription_order_line_kanban_view" />
         <field name="domain">[]</field>
         <field name="context">{}</field>
     </record>
