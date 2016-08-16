@@ -7,22 +7,57 @@
 
 <openerp>
 	<data>
-		<!-- @TODO: Fix security LABS-145 -->
-<!--		<record model="ir.rule" id="medical_prescription_order_portal_rule">
+        <record model="ir.rule" id="medical_prescription_order_portal_rule">
             <field name="name">medical.prescription.portal.order.rule</field>
             <field name="model_id" ref="medical_prescription.model_medical_prescription_order"/>
 			<field name="groups" eval="[(4, ref('base.group_portal'))]"/>
             <field name="domain_force">[
 				('patient_id.partner_id', 'child_of', [user.commercial_partner_id.id]),
 			]</field>
-        </record>-->
-<!--		<record model="ir.rule" id="medical_patient_medication_portal_rule">
+        </record>
+	    <record model="ir.rule" id="medical_patient_medication_portal_rule">
             <field name="name">medical.patient.medication.rule</field>
             <field name="model_id" ref="medical_medication.model_medical_patient_medication"/>
 			<field name="groups" eval="[(4, ref('base.group_portal'))]"/>
             <field name="domain_force">[
 				('patient_id.partner_id', 'child_of', [user.commercial_partner_id.id]),
 			]</field>
-        </record>-->
+        </record>
+
+        <!-- Domain force on prescription and lines for customer, or children of customer -->
+		<record model="ir.rule" id="res_partner_medication_rule_group_portal">
+            <field name="name">res.partner.medication.rule.group.portal</field>
+            <field name="model_id" ref="medical.model_res_partner"/>
+			<field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+            <field name="domain_force">[
+                '|',
+                ('patient_id', 'in', [for rec_id.patient_id.id in user.partner_id.patient_id.medication_ids]),
+                ('child_ids.patient_id', 'in', [for rec_id.patient_id.id in user.partner_id.child_ids.patient_id.medication_ids]),
+			]</field>
+        </record>
+
+        <!-- Domain force medicaments that customer, or children of customer has -->
+		<record model="ir.rule" id="res_partner_medicament_rule_group_portal">
+            <field name="name">res.partner.medicament.rule.group.portal</field>
+            <field name="model_id" ref="medical.model_res_partner"/>
+			<field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+            <field name="domain_force">[
+                '|',
+                ('patient_id.medicament_ids', 'in', [for rec_id.medicament_id.id in user.partner_id.patient_id.medication_ids]
+                ('child_ids.patient_id.medicament_ids', 'in', [for rec_id.medicament_id.id in user.partner_id.child_ids.patient_id.medication_ids]),
+			]</field>
+        </record>
+
+        <!-- Domain force doctors that customer, or children of customer, has Rxs from -->
+		<record model="ir.rule" id="res_partner_physician_rule_group_portal">
+            <field name="name">res.partner.physician.rule.group.portal</field>
+            <field name="model_id" ref="medical.model_res_partner"/>
+			<field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+            <field name="domain_force">[
+                '|',
+                ('patient_id.physician_id', 'in', [for rec_id.physician_id.id in user.partner_id.patient_id.medication_ids]),
+                ('child_ids.patient_id.physician_id', 'in', [for rec_id.physician_id.id in user.partner_id.child_ids.patient_id.medication_ids]),
+			]</field>
+        </record>
 	</data>
 </openerp>
