@@ -11,6 +11,7 @@
     'category': 'Medical',
     'depends': [
         'sale',
+        'stock',
         'medical_prescription',
         'medical_pharmacy',
         'medical_prescription_thread',
