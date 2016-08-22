@@ -29,7 +29,7 @@
 			<field name="groups" eval="[(4, ref('base.group_portal'))]"/>
             <field name="domain_force">[
                 '|',
-                ('patient_id.partner_id', 'child_of', user),
+                ('patient_id.partner_id', 'child_of', user.partner_id),
                 ('patient_id.partner_id', '=', user.partner_id),
 			]</field>
         </record>
@@ -40,7 +40,7 @@
             <field name="domain_force">[
                 '|',
                 ('sale_order_ids', 'in', [user.partner_id.sale_order_ids])
-                ('sale_order_ids', 'in', [for x.sale_order_ids in user.partner_id.child_ids]),
+                ('sale_order_ids', 'in', user.partner_id.child_ids.mapped('sale_order_ids')),
 			]</field>
         </record>
 		<record model="ir.rule" id="res_partner_physician_rule_group_portal">
@@ -49,8 +49,8 @@
 			<field name="groups" eval="[(4, ref('base.group_portal'))]"/>
             <field name="domain_force">[
                 '|',
-                ('physician_id.patient_ids', 'in', [user.partner_id.patient_id]),
-                ('physician_id.patient_ids', 'in', [for x.patient_id in user.partner_id.child_ids]),
+                ('physician_id.patient_ids', 'child_of', user.partner_id.patient_id),
+                ('physician_id.patient_ids', 'child_of', user.partner_id.child_ids.mapped('patient_id')),
 			]</field>
         </record>
 		<record model="ir.rule" id="res_partner_procurement_rule_group_portal">
@@ -58,7 +58,7 @@
             <field name="model_id" ref="medical.model_res_partner"/>
 			<field name="groups" eval="[(4, ref('base.group_portal'))]"/>
             <field name="domain_force">[
-                ('id', 'in', [for x.procurement_group_id.partner_id in user.partner_id.sale_order_ids]),
+                ('id', 'child_of', user.partner_id.sale_order_ids.mapped('procurement_group_id.partner_id')),
 			]</field>
         </record>
 	</data>
