@@ -7,22 +7,59 @@
 
 <openerp>
 	<data>
-		<!-- @TODO: Fix security LABS-145 -->
-<!--		<record model="ir.rule" id="medical_prescription_order_portal_rule">
+        <record model="ir.rule" id="medical_prescription_order_portal_rule">
             <field name="name">medical.prescription.portal.order.rule</field>
             <field name="model_id" ref="medical_prescription.model_medical_prescription_order"/>
 			<field name="groups" eval="[(4, ref('base.group_portal'))]"/>
             <field name="domain_force">[
 				('patient_id.partner_id', 'child_of', [user.commercial_partner_id.id]),
 			]</field>
-        </record>-->
-<!--		<record model="ir.rule" id="medical_patient_medication_portal_rule">
+        </record>
+	    <record model="ir.rule" id="medical_patient_medication_portal_rule">
             <field name="name">medical.patient.medication.rule</field>
             <field name="model_id" ref="medical_medication.model_medical_patient_medication"/>
 			<field name="groups" eval="[(4, ref('base.group_portal'))]"/>
             <field name="domain_force">[
 				('patient_id.partner_id', 'child_of', [user.commercial_partner_id.id]),
 			]</field>
-        </record>-->
+        </record>
+		<record model="ir.rule" id="res_partner_medication_rule_group_portal">
+            <field name="name">res.partner.medication.rule.group.portal</field>
+            <field name="model_id" ref="medical.model_res_partner"/>
+			<field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+            <field name="domain_force">[
+                '|',
+                ('patient_id.partner_id', 'child_of', user.partner_id),
+                ('patient_id.partner_id', '=', user.partner_id),
+			]</field>
+        </record>
+		<record model="ir.rule" id="res_partner_medicament_rule_group_portal">
+            <field name="name">res.partner.medicament.rule.group.portal</field>
+            <field name="model_id" ref="medical.model_res_partner"/>
+			<field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+            <field name="domain_force">[
+                '|',
+                ('sale_order_ids', 'in', [user.partner_id.sale_order_ids])
+                ('sale_order_ids', 'in', user.partner_id.child_ids.mapped('sale_order_ids')),
+			]</field>
+        </record>
+		<record model="ir.rule" id="res_partner_physician_rule_group_portal">
+            <field name="name">res.partner.physician.rule.group.portal</field>
+            <field name="model_id" ref="medical.model_res_partner"/>
+			<field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+            <field name="domain_force">[
+                '|',
+                ('physician_id.patient_ids', 'child_of', user.partner_id.patient_id),
+                ('physician_id.patient_ids', 'child_of', user.partner_id.child_ids.mapped('patient_id')),
+			]</field>
+        </record>
+		<record model="ir.rule" id="res_partner_procurement_rule_group_portal">
+            <field name="name">res.partner.procurement.rule.group.portal</field>
+            <field name="model_id" ref="medical.model_res_partner"/>
+			<field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+            <field name="domain_force">[
+                ('id', 'child_of', user.partner_id.sale_order_ids.mapped('procurement_group_id.partner_id')),
+			]</field>
+        </record>
 	</data>
 </openerp>
