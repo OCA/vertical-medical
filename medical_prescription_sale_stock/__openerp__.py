@@ -16,6 +16,7 @@
     'data': [
         'data/stock_data.xml',
         'views/stock_warehouse_view.xml',
+        'views/prescription_order_view.xml',
         'views/prescription_order_line_view.xml',
     ],
     'demo': [

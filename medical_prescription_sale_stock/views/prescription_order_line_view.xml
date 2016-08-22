@@ -19,6 +19,20 @@
                 </xpath>
             </field>
         </record>
-        
+
+        <record id="medical_prescription_order_line_tree_view" model="ir.ui.view">
+            <field name="name">medical.prescription.order.line.tree</field>
+            <field name="model">medical.prescription.order.line</field>
+            <field name='inherit_id' ref='medical_prescription.medical_prescription_order_line_tree_view'/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='duration_uom_id']" position="after">
+                    <field name="can_dispense" invisible="1" />
+                </xpath>
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="colors">red:can_dispense == False or current_date &gt; date_stop_treatment</attribute>
+                </xpath>
+            </field>
+        </record>
+
     </data>
 </openerp>
