@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import models, api, fields, _
@@ -14,11 +14,6 @@ class MedicalLeadWizard(models.TransientModel):
     _name = 'medical.lead.wizard'
     _description = 'Medical Lead Wizard'
 
-    def _compute_default_session(self, ):
-        return self.env['medical.prescription.order.line'].browse(
-            self._context.get('active_ids')
-        )
-
     prescription_line_ids = fields.Many2many(
         string='Prescription',
         comodel_name='medical.prescription.order.line',
@@ -31,6 +26,7 @@ class MedicalLeadWizard(models.TransientModel):
         help=_('Pharmacy to dispense orders from'),
         comodel_name='medical.pharmacy',
         required=True,
+        default=lambda s: s._compute_default_pharmacy(),
     )
     split_orders = fields.Selection([
         ('partner', 'By Customer'),
@@ -41,6 +37,16 @@ class MedicalLeadWizard(models.TransientModel):
         required=True,
         help=_('How to split the new orders'),
     )
+
+    def _compute_default_session(self, ):
+        return self.env['medical.prescription.order.line'].browse(
+            self._context.get('active_ids')
+        )
+
+    def _compute_default_pharmacy(self, ):
+        default_order_lines = self._compute_default_session()
+        if len(default_order_lines):
+            return default_order_lines[0].prescription_order_id.partner_id
 
     @api.multi
     def action_create_leads(self, ):
