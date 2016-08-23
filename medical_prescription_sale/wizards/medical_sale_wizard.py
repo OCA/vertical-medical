@@ -40,6 +40,7 @@ class MedicalSaleWizard(models.TransientModel):
         help=_('Pharmacy to dispense orders from'),
         comodel_name='medical.pharmacy',
         required=True,
+        default=lambda s: s._compute_default_pharmacy(),
     )
     sale_wizard_ids = fields.One2many(
         string='Orders',
@@ -61,6 +62,11 @@ class MedicalSaleWizard(models.TransientModel):
         return self.env['medical.prescription.order.line'].browse(
             self._context.get('active_ids')
         )
+
+    def _compute_default_pharmacy(self, ):
+        default_order_lines = self._compute_default_session()
+        if len(default_order_lines):
+            return default_order_lines[0].prescription_order_id.partner_id
 
     @api.multi
     def action_create_sale_wizards(self, ):
