@@ -28,9 +28,18 @@ class WebsiteMedical(WebsiteMedical):
             ('patient_id.parent_id', 'child_of', [partner_id.id]),
         ])
 
-        # @TODO: Real security solution
+        pricelist = request.website.get_current_pricelist()
+        pricelist_item_ids = pricelist.item_ids.ids
+
+        rx_lines_filtered = rx_line_ids.filtered(
+            lambda r: any(
+                i in r.medicament_id.item_ids.ids for i in pricelist_item_ids
+            )
+        )
+
         response.qcontext.update({
             'prescription_order_lines': rx_line_ids.sudo(),
+            'order_lines_filtered': rx_lines_filtered,
         })
         return response
 
