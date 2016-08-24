@@ -12,6 +12,7 @@
     'depends': [
         'medical_base_us',
         'medical_prescription_sale_stock',
+        'medical_prescription_us',
     ],
     'data': [
         'views/procurement_order_view.xml',
