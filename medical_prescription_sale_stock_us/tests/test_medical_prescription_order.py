@@ -247,12 +247,25 @@ class TestMedicalPrescriptionOrder(TransactionCase):
             5.0, self.rx_line_id.total_qty_remain,
         )
 
-    def test_compute_qty_remain_refill_qty_remain(self):
-        """ It should decrement remaining qty and represent refills """
+    def test_compute_qty_remain_refill_qty_remain_one_fill(self):
+        """ It should not decrement remaining qty during first fill """
         self._new_procurement(
             self._new_rx_order().order_line[0],
             self.date_yesterday,
         ).state = 'done'
+        self.assertEqual(
+            5.0, self.rx_line_id.refill_qty_remain,
+        )
+
+    def test_compute_qty_remain_refill_qty_remain_multiple_fills(self):
+        """ It should decrement remaining qty for fills after the first """
+        order_line_id = self._new_rx_order().order_line[0]
+        for __ in range(2):
+            self._new_procurement(
+                order_line_id,
+                self.date_yesterday,
+            ).state = 'done'
+
         self.assertEqual(
             4.0, self.rx_line_id.refill_qty_remain,
         )

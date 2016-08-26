@@ -107,10 +107,11 @@ class MedicalPrescriptionOrderLine(models.Model):
             total_qty = rec_id.qty * (rec_id.refill_qty_original + 1.0)
             rec_id.total_allowed_qty = total_qty
             rec_id.total_qty_remain = total_qty - rec_id.active_dispense_qty
-            if rec_id.qty and rec_id.total_qty_remain:
-                remain = (rec_id.total_qty_remain / rec_id.qty) - 1.0
+            if rec_id.qty > 0 and rec_id.active_dispense_qty > rec_id.qty:
+                refills_out = (rec_id.active_dispense_qty / rec_id.qty) - 1.0
+                remain = rec_id.refill_qty_original - refills_out
             else:
-                remain = 0
+                remain = rec_id.refill_qty_original
             rec_id.refill_qty_remain = remain
 
             if not rec_id.refill_qty_remain:
