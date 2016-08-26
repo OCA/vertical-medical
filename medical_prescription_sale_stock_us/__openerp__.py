@@ -16,6 +16,7 @@
     ],
     'data': [
         'views/procurement_order_view.xml',
+        'views/res_company_view.xml',
     ],
     "website": "https://laslabs.com",
     "license": "AGPL-3",

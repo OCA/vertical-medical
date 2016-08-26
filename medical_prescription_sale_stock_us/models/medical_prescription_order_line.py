@@ -5,7 +5,6 @@
 from openerp import fields, models, api
 from datetime import datetime
 
-
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -31,27 +30,23 @@ class MedicalPrescriptionOrderLine(models.Model):
         compute='_compute_can_dispense_and_qty',
         help='Total units allowed in the prescription, including refills',
     )
-    last_dispense_remain_qty = fields.Float(
+    dispense_remain_qty = fields.Float(
         string='Dispense Remaining Qty',
         compute='_compute_dispense_remain',
-        help='Estimated number of units remaining from last dispense',
+        help='Estimated number of units remaining from all finished dispenses',
     )
-    last_dispense_remain_percent = fields.Float(
-        string='Dispense Remaining Percent',
-        compute='_compute_dispense_remain',
-        help='Estimated percentage remaining from last dispense',
-    )
-    last_dispense_remain_day = fields.Float(
+    dispense_remain_day = fields.Float(
         string='Dispense Remaining Days',
         compute='_compute_dispense_remain',
-        help='Estimated days remaining from last dispense',
+        help='Estimated days remaining based on all finished dispenses',
     )
 
     @api.multi
     def _compute_dispense_remain(self):
-
         day_uom_id = self.env.ref('medical_medication.product_uom_day')
         for rec_id in self:
+            if not rec_id.duration_uom_id or rec_id.duration <= 0:
+                continue
 
             procurement_ids = \
                 rec_id.dispensed_ids.filtered(
@@ -60,44 +55,55 @@ class MedicalPrescriptionOrderLine(models.Model):
                     key=lambda r: r.date_planned
                 )
 
-            if not len(procurement_ids):
+            if not procurement_ids:
+                rec_id.dispense_remain_qty, rec_id.dispense_remain_day = 0, 0
                 continue
 
-            proc_id = procurement_ids[-1]
-
-            if rec_id.dispense_uom_id != proc_id.product_uom:
-                dispense_qty = proc_id.product_uom._compute_qty_obj(
-                    proc_id.product_qty, rec_id.dispense_uom_id
-                )
-            else:
-                dispense_qty = proc_id.product_qty
+            first_proc = procurement_ids[0]
+            date_first_dispense = fields.Datetime.from_string(
+                first_proc.date_planned,
+            )
+            date_delta = datetime.now() - date_first_dispense
+            days_passed = date_delta.days
 
             if day_uom_id != rec_id.duration_uom_id:
-                day_qty = rec_id.duration_uom_id._compute_qty_obj(
-                    rec_id.duration, day_uom_id,
+                day_qty = self.env['product.uom']._compute_qty_obj(
+                    rec_id.duration_uom_id, rec_id.duration, day_uom_id,
                 )
             else:
                 day_qty = rec_id.duration
+            total_qty = rec_id.qty * (rec_id.refill_qty_original + 1.0)
+            daily_qty = total_qty / float(day_qty)
+            estimated_use = days_passed * daily_qty
 
-            date_dispense = fields.Datetime.from_string(proc_id.date_planned)
-            daily_qty = rec_id.total_allowed_qty / float(day_qty)
-            days_dispensed = dispense_qty / daily_qty
-            date_delta = datetime.now() - date_dispense
-            days_remain = days_dispensed - date_delta.days
+            total_dispensed = 0
+            for proc_id in procurement_ids:
+                if rec_id.dispense_uom_id != proc_id.product_uom:
+                    dispense_qty = self.env['product.uom']._compute_qty_obj(
+                        proc_id.product_uom,
+                        proc_id.product_qty,
+                        rec_id.dispense_uom_id,
+                    )
+                else:
+                    dispense_qty = proc_id.product_qty
+                total_dispensed += dispense_qty
 
-            rec_id.last_dispense_remain_day = days_remain
-            rec_id.last_dispense_remain_qty = days_remain * daily_qty
-            rec_id.last_dispense_remain_percent = 100.0 * (
-                days_remain / days_dispensed
-            )
+            remaining_units = total_dispensed - estimated_use
+            remaining_units = 0 if remaining_units < 0 else remaining_units
+            rec_id.dispense_remain_qty = remaining_units
+            rec_id.dispense_remain_day = remaining_units / daily_qty
 
     @api.multi
-    @api.depends('qty',
-                 'dispensed_qty',
-                 'exception_dispense_qty',
-                 'pending_dispense_qty',
-                 'refill_qty_original',
-                 )
+    @api.depends(
+        'qty',
+        'dispensed_qty',
+        'exception_dispense_qty',
+        'pending_dispense_qty',
+        'refill_qty_original',
+        'dispense_remain_qty',
+        'prescription_order_id.partner_id.company_id' +
+        '.medical_prescription_refill_threshold',
+    )
     def _compute_can_dispense_and_qty(self):
         """ Overload to provide refill logic """
         super(MedicalPrescriptionOrderLine, self).\
@@ -118,12 +124,24 @@ class MedicalPrescriptionOrderLine(models.Model):
                 continue
             if rec_id.can_dispense_qty == rec_id.qty:
                 continue
-            pending = sum([rec_id.exception_dispense_qty,
-                           rec_id.pending_dispense_qty])
-            if pending >= rec_id.qty:
+
+            pending_and_unused = sum([
+                rec_id.exception_dispense_qty,
+                rec_id.pending_dispense_qty,
+                rec_id.dispense_remain_qty,
+            ])
+            if pending_and_unused >= rec_id.qty:
                 continue
-            allowed = rec_id.qty - pending
+
+            allowed = rec_id.qty - pending_and_unused
             if allowed > rec_id.total_qty_remain:
                 allowed = rec_id.total_qty_remain
-            rec_id.can_dispense = bool(allowed)
+            rec_id.can_dispense = allowed > 0
             rec_id.can_dispense_qty = allowed
+
+            refill_threshold = rec_id.prescription_order_id.partner_id \
+                .company_id.medical_prescription_refill_threshold
+            if refill_threshold is not False:
+                if pending_and_unused > refill_threshold * rec_id.qty:
+                    rec_id.can_dispense = False
+                    rec_id.can_dispense_qty = 0
