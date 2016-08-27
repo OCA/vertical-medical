@@ -39,7 +39,7 @@
 			<field name="groups" eval="[(4, ref('base.group_portal'))]"/>
             <field name="domain_force">[
                 '|',
-                ('sale_order_ids', 'in', [user.partner_id.sale_order_ids])
+                ('sale_order_ids', 'in', [user.partner_id.sale_order_ids]),
                 ('sale_order_ids', 'in', user.partner_id.child_ids.mapped('sale_order_ids')),
 			]</field>
         </record>
