@@ -50,7 +50,7 @@ class MedicalPrescriptionOrderLine(models.Model):
     @api.multi
     def _compute_dispense_remain(self):
 
-        day_uom_id = self.env.ref('product.product_uom_day')
+        day_uom_id = self.env.ref('medical_medication.product_uom_day')
         for rec_id in self:
 
             procurement_ids = \

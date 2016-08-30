@@ -49,7 +49,9 @@ class TestMedicalPrescriptionOrder(TransactionCase):
             'qty': 1,
             'dispense_uom_id': 1,
             'duration': 30,
-            'duration_uom_id': self.env.ref('product.product_uom_day').id,
+            'duration_uom_id': self.env.ref(
+                'medical_medication.product_uom_day'
+            ).id,
             'refill_qty_original': 5,
         }
         self.procurement_vals = {
