@@ -41,7 +41,8 @@ For further information, please visit:
 Known Issues / Roadmap
 ======================
 
-* ...
+* Date parse in field_autocomplete.js should be moved to website_field_autocomplete
+  & provide support for internationalization.
 
 Bug Tracker
 ===========
