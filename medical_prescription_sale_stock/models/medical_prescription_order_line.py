@@ -13,6 +13,8 @@ class MedicalPrescriptionOrderLine(models.Model):
         comodel_name='product.uom',
         string='Dispense UoM',
         help='Dispense Unit of Measure',
+        required=True,
+        default=lambda s: s._default_dispense_uom_id(),
     )
     dispensed_ids = fields.Many2many(
         string='Dispensings',
@@ -61,6 +63,12 @@ class MedicalPrescriptionOrderLine(models.Model):
         compute='_compute_can_dispense_and_qty',
         help='Amount that can be dispensed (using medicine dosage)',
     )
+
+    @api.model
+    def _default_dispense_uom_id(self):
+        return self.env['product.uom'].browse(
+            self.env['product.template']._get_uom_id()
+        )
 
     @api.multi
     @api.depends('dispense_uom_id',
