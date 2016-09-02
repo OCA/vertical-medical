@@ -13,6 +13,7 @@ Usage
 
 * Create a product that is Prescription Only ``medical.medicament.is_prescription``
 * Add it to cart in website
+* Note, prescriptions with medicaments that are not in the current pricelist cannot be added to the cart.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
@@ -25,8 +26,10 @@ For further information, please visit:
 Known issues / Roadmap
 ======================
 
-
-
+Medicaments that are not in any pricelist cannot be added to the cart.
+Make sure to select at least 'Different prices per customer segment' in
+Sales -> Settings -> Sale Price. Then add that medicament to a pricelist
+so it can be added to the cart when that pricelist is currently active.
 
 Bug Tracker
 ===========
@@ -44,6 +47,7 @@ Contributors
 ------------
 
 * Dave Lasley <dave@laslabs.com>
+* Brett Wood <bwood@laslabs.com>
 
 Maintainer
 ----------
