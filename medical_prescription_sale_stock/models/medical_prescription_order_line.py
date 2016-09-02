@@ -102,8 +102,10 @@ class MedicalPrescriptionOrderLine(models.Model):
                     last_procurement_id = proc_id
 
                     if proc_id.product_uom.id != rec_id.dispense_uom_id.id:
-                        _qty = proc_id.product_uom._compute_qty_obj(
-                            proc_id.product_qty, rec_id.dispense_uom_id
+                        _qty = self.env['product.uom']._compute_qty_obj(
+                            proc_id.product_uom,
+                            proc_id.product_qty,
+                            rec_id.dispense_uom_id,
                         )
                     else:
                         _qty = proc_id.product_qty

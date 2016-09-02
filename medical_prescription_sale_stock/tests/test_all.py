@@ -18,6 +18,10 @@ class TestAll(TransactionCase):
 
     # def _clear_resources(self):
         self.order_vals = {}
+        self.order_line_vals = {
+            'product_uom': 1,
+            'product_uom_qty': 1,
+        }
         self.patient_vals = {
             'name': 'TestMedicalPatientPrescriptionStock',
         }
@@ -87,21 +91,19 @@ class TestAll(TransactionCase):
             self.rx_vals
         )
         self.rx_line_id = self.rx_id.prescription_order_line_ids[0]
-        line_vals = {
+        self.order_line_vals.update({
             'product_id': self.medicament_id.product_id.id,
             'name': self.medicament_id.name,
             'patient_id': self.patient_id.id,
             'price_unit': 1,
-            'product_uom': 1,
-            'product_uom_qty': 1,
             'state': self.state,
-        }
+        })
         if self.prescription_line:
-            line_vals.update({
+            self.order_line_vals.update({
                 'prescription_order_line_id': self.rx_line_id.id,
             })
         self.order_vals.update({
-            'order_line': [(0, 0, line_vals)],
+            'order_line': [(0, 0, self.order_line_vals)],
             'partner_id': self.patient_id.partner_id.id,
             'pharmacy_id': self.pharmacy_id.id,
         })
@@ -192,6 +194,26 @@ class TestAll(TransactionCase):
         ).state = 'exception'
         self.assertEqual(
             1, self.rx_line_id.exception_dispense_qty,
+        )
+
+    def test_rx_line_compute_dispensings_unit_conversion(self):
+        old_rx_line_vals = self.rx_line_vals
+        old_order_line_vals = self.order_line_vals
+        self.rx_line_vals['dispense_uom_id'] = self.env.ref(
+            'product.product_uom_dozen'
+        ).id
+        self.order_line_vals['product_uom'] = self.env.ref(
+            'product.product_uom_unit'
+        ).id
+        self.order_line_vals['product_uom_qty'] = 12
+        self._new_procurement(
+            self._new_rx_order().order_line[0]
+        ).state = 'done'
+        self.rx_line_vals = old_rx_line_vals
+        self.order_line_vals = old_order_line_vals
+
+        self.assertEqual(
+            1, self.rx_line_id.active_dispense_qty,
         )
 
     def test_rx_line_compute_can_dispense_none(self):
