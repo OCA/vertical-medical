@@ -16,6 +16,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='qty']" position="after">
                     <field name="dispense_uom_id" />
+                    <field name="can_dispense" invisible="1" />
                 </xpath>
             </field>
         </record>
