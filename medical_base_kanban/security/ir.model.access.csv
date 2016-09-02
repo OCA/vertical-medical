@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_base_stage_user,access.medical.base.stage.user,model_medical_base_stage,medical.group_medical_user,1,0,0,0
+access_medical_base_stage_configurator,access.medical.base.stage.configurator,model_medical_base_stage,medical.group_medical_configurator,1,1,1,1
+access_medical_base_kanban_user,access.medical.base.kanban.user,model_medical_base_kanban,medical.group_medical_user,1,0,0,0
+access_medical_base_kanban_configurator,access.medical.base.kanban.configurator,model_medical_base_kanban,medical.group_medical_configurator,1,1,1,1
+access_medical_base_kanban_assign_user,access.medical.base.kanban.assign.user,model_medical_base_kanban_assign,medical.group_medical_user,1,0,0,0
+access_medical_base_kanban_assign_configurator,access.medical.base.kanban.assign.configurator,model_medical_base_kanban_assign,medical.group_medical_configurator,1,1,1,1
