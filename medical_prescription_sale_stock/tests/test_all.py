@@ -2,6 +2,7 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from psycopg2 import IntegrityError
 from openerp.tests.common import TransactionCase
 from openerp import fields
 from openerp.exceptions import ValidationError
@@ -133,6 +134,26 @@ class TestAll(TransactionCase):
         })
         return order_line_id.procurement_ids[-1]
 
+    def test_rx_line_dispense_uom_id_default(self):
+        old_rx_line_vals = self.rx_line_vals
+        del self.rx_line_vals['dispense_uom_id']
+        self._new_rx_order()
+        self.rx_line_vals = old_rx_line_vals
+
+        self.assertEqual(
+            self.env['product.template']._get_uom_id(),
+            self.rx_line_id.dispense_uom_id.id,
+        )
+
+    def test_rx_line_dispense_uom_id_required(self):
+        old_rx_line_vals = self.rx_line_vals
+        self.rx_line_vals['dispense_uom_id'] = None
+
+        with self.assertRaises(IntegrityError):
+            self._new_rx_order()
+
+        self.rx_line_vals = old_rx_line_vals
+
     def test_rx_line_compute_dispensings_cancelled(self):
         self._new_procurement(
             self._new_rx_order().order_line[0]
@@ -172,15 +193,6 @@ class TestAll(TransactionCase):
         self.assertEqual(
             1, self.rx_line_id.exception_dispense_qty,
         )
-
-    def test_rx_line_compute_can_dispense_none(self):
-        self._new_procurement(
-            self._new_rx_order().order_line[0]
-        ).state
-        self.assertEqual(
-            0, self.rx_line_id.can_dispense_qty,
-        )
-        self.assertFalse(self.rx_line_id.can_dispense)
 
     def test_rx_line_compute_can_dispense_none(self):
         self._new_procurement(
