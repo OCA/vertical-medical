@@ -8,7 +8,12 @@
 <odoo>
     <template id="assets_autocomplete" name="website_field_autocomplete Assets" inherit_id="website.assets_frontend">
         <xpath expr="." position="inside">
-            <script src="/website_sale_medical_prescription/static/src/js/form_checkout.js" />
+            <script type="application/javascript"
+                    src="/website_sale_medical_prescription/static/src/js/form_checkout.js"
+                    />
+            <script type="application/javascript"
+                    src="/website_sale_medical_prescription/static/src/js/field_autocomplete.js"
+                    />
         </xpath>
     </template>
 </odoo>

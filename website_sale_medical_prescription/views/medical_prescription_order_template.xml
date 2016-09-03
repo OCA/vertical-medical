@@ -94,7 +94,7 @@
 					data-src-model="sale.order.line"
 					t-att-data-rel="'%d.prescription_order_line_id' % sale_line.id"
 					class="form-control js_medical_prescription o_website_form_input"
-					required=""
+					required="required"
 					>
 				<option>Choose Prescription...</option>
 				<option value="0">New Prescription</option>
@@ -121,9 +121,9 @@
 				</label>
 				<select t-att-name="'%s.receive_method' % rel"
 						class="form-control js_medical_prescription_acquisition o_website_form_input"
-						required=""
+						required="required"
 						>
-					<option>Choose Acquisition Method...</option>
+					<option value="">Choose Acquisition Method...</option>
 					<t t-foreach="[('online', 'Prescriber Will E-Prescribe'),
 								   ('fax', 'Prescriber Will Fax'),
 								   ('phone', 'Prescriber Will Phone In'),
@@ -185,7 +185,7 @@
 						   t-att-name="'%s.name' % rel"
 						   class="js_website_autocomplete form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.name' % rel)  or ''"
-						   required=""
+						   required="required"
 						   t-att-data-model="res_model"
 						   t-att-data-relate-recv="rel"
 						   data-query-field="name"
@@ -202,7 +202,7 @@
 						   t-att-name="'%s.phone' % rel"
 						   class="js_website_autocomplete form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.phone' % rel)  or ''"
-						   required=""
+						   required="required"
 						   t-att-data-model="res_model"
 						   t-att-data-relate-recv="rel"
 						   data-query-field="phone"
@@ -255,7 +255,7 @@
 						   t-att-name="'%s.street' % rel"
 						   class="form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.street' % rel)  or ''"
-						   required=""
+						   required="required"
 						   t-att-data-model="res_model"
 						   t-att-data-relate-recv="rel"
 						   data-query-field="street"
@@ -288,7 +288,7 @@
 						   t-att-name="'%s.city' % rel"
 						   class="form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.city' % rel)  or ''"
-						   required=""
+						   required="required"
 						   t-att-data-model="res_model"
 						   t-att-data-relate-recv="rel"
 						   data-query-field="city"
@@ -303,7 +303,7 @@
 						   t-att-name="'%s.zip' % rel"
 						   class="form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.zip' % rel)  or ''"
-						   required=""
+						   required="required"
 						   t-att-data-model="res_model"
 						   t-att-data-relate-recv="rel"
 						   data-query-field="zip"
@@ -345,7 +345,7 @@
 						   t-att-name="'%s.name' % rel"
 						   class="js_website_autocomplete form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.name' % rel)  or ''"
-						   required=""
+						   required="required"
 						   t-att-data-model="res_model"
 						   t-att-data-relate-recv="rel"
 						   data-query-field="name"
@@ -362,7 +362,7 @@
 						   t-att-name="'%s.phone' % rel"
 						   t-att-data-relate-recv="rel"
 						   class="form-control o_website_form_input"
-						   required=""
+						   required="required"
 						   t-att-value="request.params.get('%s.phone' % rel)  or ''"
 						   t-att-data-model="res_model"
 						   data-query-field="phone"
@@ -379,7 +379,7 @@
 						Birth Date
 					</label>
 					<input type="text"
-						   required=""
+						   required="required"
 						   t-att-name="'%s.dob' % rel"
 						   t-att-data-relate-recv="rel"
 						   class="form-control o_website_form_date o_website_form_input"
@@ -395,8 +395,8 @@
 					</label>
 					<select t-att-name="'%s.gender' % rel"
 							class="form-control js_medical_prescription_gender o_website_form_input"
-							required=""
-						    t-att-data-model="res_model"
+							required="required"
+						    t-att-data-modiel="res_model"
 						    t-att-data-relate-recv="rel"
 							data-query-field="gender"
 							>
@@ -470,7 +470,7 @@
 						Allergies
 					</label>
 					<input type="text"
-						   required=""
+						   required="required"
 						   t-att-name="'%s.allergies' % rel"
 						   t-att-data-relate-recv="rel"
 						   class="form-control o_website_form_input"
@@ -489,7 +489,7 @@
 						Existing Medications
 					</label>
 					<input type="text"
-						   required=""
+						   required="required"
 						   t-att-name="'%s.existing_meds' % rel"
 						   t-att-data-relate-recv="rel"
 						   class="form-control o_website_form_input"
@@ -508,7 +508,7 @@
 						Medical History
 					</label>
 					<input type="text"
-						   required=""
+						   required="required"
 						   t-att-name="'%s.comment' % rel"
 						   t-att-data-relate-recv="rel"
 						   class="form-control o_website_form_input"
@@ -564,7 +564,7 @@
 						   t-att-name="'%s.name' % rel"
 						   class="js_website_autocomplete form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.name' % rel)  or ''"
-						   required=""
+						   required="required"
 						   t-att-data-model="res_model"
 						   t-att-data-relate-recv="rel"
 						   data-query-field="name"
@@ -598,7 +598,7 @@
 						   t-att-name="'%s.phone' % rel"
 						   class="js_website_autocomplete form-control o_website_form_input"
 						   t-att-value="request.params.get('%s.phone' % rel)  or ''"
-						   required=""
+						   required="required"
 						   t-att-data-model="res_model"
 						   t-att-data-relate-recv="rel"
 						   data-query-field="phone"

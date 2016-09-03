@@ -13,27 +13,24 @@ odoo.define('website_sale_medical_prescription.form_checkout', function(require)
     selector: '.js_medical_prescription_checkout',
 
     start: function() {
-      var self = this;
       this.$target.find('.js_medical_prescription_new')
         .addClass('hidden')
+        .find(':input')
         .prop('disabled', true);
       this.$target.find('.js_medical_prescription_pharmacy')
         .addClass('hidden')
+        .find(':input')
         .prop('disabled', true);
       this.$target.find('.js_medical_prescription')
-        .change(function(event) {
-          self.onchangePrescription(event, self);
-        });
+        .change($.proxy(this.onchangePrescription, this));
       this.$target.find('.js_medical_prescription_acquisition')
-        .change(function(event) {
-          self.onchangeAcquisition(event, self);
-        });
+        .change($.proxy(this.onchangeAcquisition, this));
       this.$target.find('.js_medical_prescription_gender')
-        .change(self.onchangeGender);
+        .change($.proxy(this.onchangeGender, this));
     },
     
     onchangeGender: function(event) {
-      var $target = $(event.target);
+      var $target = $(event.currentTarget);
       var $isPreg = $target.parents('.js_medical_prescription_patient')
         .find('.js_medical_prescription_is_pregnant');
       if ($target.val() == 'f') {
@@ -43,21 +40,21 @@ odoo.define('website_sale_medical_prescription.form_checkout', function(require)
       }
     },
     
-    onchangePrescription: function(event, self) {
-      var $rxNew = self.$target.find('.js_medical_prescription_new');
-      if ($(event.target).val() == '0') {
-        $rxNew.removeClass('hidden').prop('disabled', false);
+    onchangePrescription: function(event) {
+      var $rxNew = this.$target.find('.js_medical_prescription_new');
+      if ($(event.currentTarget).val() == '0') {
+        $rxNew.removeClass('hidden').find(':input').prop('disabled', false);
       } else {
-        $rxNew.addClass('hidden').prop('disabled', true);
+        $rxNew.addClass('hidden').find(':input').prop('disabled', true);
       }
     },
     
-    onchangeAcquisition: function(event, self) {
-      var $pharmacySel = self.$target.find('.js_medical_prescription_pharmacy');
-      if ($(event.target).val() == 'transfer') {
-        $pharmacySel.removeClass('hidden').prop('disabled', false);
+    onchangeAcquisition: function(event) {
+      var $pharmacySel = this.$target.find('.js_medical_prescription_pharmacy');
+      if ($(event.currentTarget).val() == 'transfer') {
+        $pharmacySel.removeClass('hidden').find(':input').prop('disabled', false);
       } else {
-        $pharmacySel.addClass('hidden').prop('disabled', true);
+        $pharmacySel.addClass('hidden').find(':input').prop('disabled', true);
       }
     },
     
