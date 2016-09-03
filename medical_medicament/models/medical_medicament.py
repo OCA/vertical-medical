@@ -133,8 +133,6 @@ class MedicalMedicament(models.Model):
     @api.returns('self', lambda value: value.id)
     def create(self, vals):
         vals['is_medicament'] = True
-        if not vals.get('type'):
-            vals['type'] = 'product'
         return super(MedicalMedicament, self).create(vals)
 
     @api.model

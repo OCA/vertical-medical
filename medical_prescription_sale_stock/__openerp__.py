@@ -3,7 +3,6 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-
     'name': 'Medical Prescription Sale Stock',
     'summary': 'Provides Dispense Logic for Prescriptions',
     'version': '9.0.1.0.0',
@@ -26,4 +25,5 @@
     "license": "AGPL-3",
     'installable': True,
     'auto_install': False,
+    'post_init_hook': 'post_init_hook_for_new_medicament_type',
 }
