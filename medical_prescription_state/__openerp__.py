@@ -5,25 +5,17 @@
 {
     'name': 'Medical Prescription Order States',
     'version': '9.0.1.0.0',
-    'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
+    'author': "LasLabs, Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': [
+        'medical_base_kanban',
         'medical_prescription',
     ],
     'website': 'http://github.com/oca/vertical-medical',
     'license': 'AGPL-3',
     'data': [
-        # Views
-        'views/medical_prescription_order_state_view.xml',
-        'views/medical_prescription_order_view.xml',
-
-        # Menu & Access
-        'views/medical_menu.xml',
-        'security/ir.model.access.csv',
-    ],
-    'test': [
-        "tests/medical_prescription_order.yml",
-        'tests/medical_prescription_order_state.yml',
+        'views/medical_prescription_order.xml',
+        'views/medical_prescription_order_line.xml',
     ],
     'installable': True,
     'auto_install': False,
