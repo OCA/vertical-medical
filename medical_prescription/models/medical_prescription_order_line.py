@@ -13,10 +13,15 @@ class MedicalPrescriptionOrderLine(models.Model):
 
     prescription_order_id = fields.Many2one(
         comodel_name='medical.prescription.order',
-        string='Prescription Order')
+        string='Prescription Order',
+        required=True,
+    )
     medical_medication_id = fields.Many2one(
-        comodel_name='medical.patient.medication', string='Medication',
-        required=True, ondelete='cascade')
+        comodel_name='medical.patient.medication',
+        string='Medication',
+        required=True,
+        ondelete='cascade',
+    )
     is_substitutable = fields.Boolean()
     qty = fields.Float(string='Quantity')
 
