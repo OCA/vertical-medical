@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright 2016 LasLabs Inc.
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <menuitem id="medical_root_kanban"
+              name="KanBan"
+              parent="medical.medical_root_sub"
+              sequence="190" />
+
+    <menuitem id="medical_base_stage_menu"
+              name="Stages"
+              parent="medical_root_kanban"
+              sequence="50"
+              action="medical_base_stage_action" />
+
+</odoo>
