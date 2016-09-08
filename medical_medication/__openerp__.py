@@ -12,6 +12,7 @@
     'depends': [
         'medical',
         'medical_patient_disease',
+        'medical_physician',
         'medical_medicament',
     ],
     'summary': 'Introduce medication notion into the medical addons',
