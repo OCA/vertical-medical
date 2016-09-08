@@ -10,19 +10,33 @@
                     <field name="category_id" />
                     <field name="notes" />
                     <field name="code" />
+                    <field name="code_type_id" />
                     <field name="name" />
                     <field name="protein" />
                     <field name="gene" />
                     <field name="chromosome" />
                     <newline />
                     <group expand="0" string="Group By...">
-                        <filter string="Category" domain="[]"
-                            context="{'group_by':'category_id'}" />
-                        <filter string="Protein involved" domain="[]"
-                            context="{'group_by':'protein'}" />
-                        <filter string="Gene" domain="[]" context="{'group_by':'gene'}" />
-                        <filter string="Affected Chromosome" domain="[]"
-                            context="{'group_by':'chromosome'}" />
+                        <filter string="Category"
+                                domain="[]"
+                                context="{'group_by':'category_id'}"
+                                />
+                        <filter string="Code Type"
+                                domain="[]"
+                                context="{'group_by': 'code_type_id'}"
+                                />
+                        <filter string="Protein involved"
+                                domain="[]"
+                                context="{'group_by':'protein'}"
+                                />
+                        <filter string="Gene"
+                                domain="[]"
+                                context="{'group_by':'gene'}"
+                                />
+                        <filter string="Affected Chromosome"
+                                domain="[]"
+                                context="{'group_by':'chromosome'}"
+                                />
                     </group>
                 </search>
             </field>
@@ -35,6 +49,7 @@
                 <tree string="Medical Pathology">
                     <field name="name" />
                     <field name="code" />
+                    <field name="code_type_id" />
                     <field name="category_id" />
                     <field name="protein" />
                     <field name="gene" />
@@ -61,10 +76,13 @@
                         <group name="data">
                             <group name="main">
                                 <field name="code" />
+                                <field name="code_type_id" />
+                                <field name="category_id" />
+                            </group>
+                            <group name="genetics">
                                 <field name="protein" />
                                 <field name="chromosome" />
                                 <field name="gene" />
-                                <field name="category_id" />
                             </group>
                         </group>
 

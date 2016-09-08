@@ -9,11 +9,17 @@ class MedicalPathology(models.Model):
     _name = 'medical.pathology'
     _description = 'Medical Pathology'
     _sql_constraints = [
-        ('code', 'UNIQUE(code)', 'Pathology codes must be unique.'),
+        ('code_and_type_uniq',
+         'UNIQUE(code, code_type_id)',
+         'Pathology codes must be unique per Code Type.'),
     ]
 
     name = fields.Char(required=True, translate=True)
     code = fields.Char(required=True)
+    code_type_id = fields.Many2one(
+        string='Code Type',
+        comodel_name='medical.pathology.code.type',
+    )
     notes = fields.Text(translate=True)
     category_id = fields.Many2one(
         string='Category of Pathology',

@@ -19,6 +19,7 @@
         'views/medical_pathology_group_view.xml',
         'views/medical_pathology_view.xml',
         'views/medical_menu.xml',
+        'data/medical_pathology_code_type.xml',
         'security/ir.model.access.csv',
     ],
     'test': [
