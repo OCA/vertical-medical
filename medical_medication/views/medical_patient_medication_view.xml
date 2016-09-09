@@ -70,7 +70,7 @@
                         </group>
                     </group>
                 </xpath>
-                <xpath expr="//notebook" postition="inside">
+                <xpath expr="//notebook" position="inside">
                     <page name="adverse_reaction" string="Adverse Reaction">
                         <field name="adverse_reaction" nolabel="1"/>
                     </page>
