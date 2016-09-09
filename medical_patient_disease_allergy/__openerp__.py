@@ -19,5 +19,6 @@
     "data": [
         "views/medical_patient_disease_view.xml",
         "views/medical_patient_view.xml",
+        'data/medical_pathology_code_type.xml',
     ],
 }
