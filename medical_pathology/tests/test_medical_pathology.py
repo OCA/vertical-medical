@@ -10,9 +10,13 @@ class TestMedicalPathology(TransactionCase):
     def setUp(self,):
         super(TestMedicalPathology, self).setUp()
         self.model_obj = self.env['medical.pathology']
+        self.code_type_id = self.env['medical.pathology.code.type'].create({
+            'name': 'Code Type',
+        })
         self.vals = {
             'name': 'Test Pathology',
             'code': 'TESTPATH',
+            'code_type_id': self.code_type_id.id,
         }
         self.record_id = self._test_record()
 
