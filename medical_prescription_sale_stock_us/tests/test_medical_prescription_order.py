@@ -18,9 +18,11 @@ class TestMedicalPrescriptionOrder(TransactionCase):
         delta = timedelta(days=1)
         self.date_today = fields.Datetime.to_string(date_now)
         self.date_yesterday = fields.Datetime.to_string(date_now - delta)
-
-    # def _clear_resources(self, ):
         self.order_vals = {}
+        self.order_line_vals = {
+            'product_uom': 1,
+            'product_uom_qty': 1,
+        }
         self.patient_vals = {
             'name': 'TestMedicalPatientPrescriptionStock',
         }
@@ -86,6 +88,7 @@ class TestMedicalPrescriptionOrder(TransactionCase):
         self.rx_vals.update({
             'patient_id': self.patient_id.id,
             'physician_id': self.physician_id.id,
+            'partner_id': self.pharmacy_id.id,
             'prescription_order_line_ids': [(0, 0, self.rx_line_vals)],
         })
         self.rx_id = self.env['medical.prescription.order'].create(
@@ -98,12 +101,10 @@ class TestMedicalPrescriptionOrder(TransactionCase):
                 'name': self.medicament_id.name,
                 'patient_id': self.patient_id.id,
                 'price_unit': 1,
-                'product_uom': 1,
-                'product_uom_qty': 1,
+                'product_uom': self.order_line_vals['product_uom'],
+                'product_uom_qty': self.order_line_vals['product_uom_qty'],
                 'prescription_order_line_id': self.rx_line_id.id,
-            })],
-            'partner_id': self.patient_id.partner_id.id,
-            'pharmacy_id': self.pharmacy_id.id,
+            })]
         })
 
     def _new_patient(self, ):
@@ -148,25 +149,125 @@ class TestMedicalPrescriptionOrder(TransactionCase):
         )
         self.assertTrue(self.rx_line_id.can_dispense)
 
+    def test_compute_dispense_remain_no_duration_uom_id(self):
+        """ It should not set the relevant fields when the prescription line
+         has no duration_uom_id """
+        old_rx_line_vals = self.rx_line_vals
+        del self.rx_line_vals['duration_uom_id']
+        self._new_procurement(
+            self._new_rx_order().order_line[0],
+            self.date_today,
+        ).state = 'done'
+        self.rx_line_vals = old_rx_line_vals
+
+        test_values = {
+            'remaining days': self.rx_line_id.dispense_remain_day,
+            'remaining qty': self.rx_line_id.dispense_remain_qty,
+        }
+        for key in test_values:
+            self.assertIs(
+                False,
+                test_values[key],
+                msg='%s should be False' % key,
+            )
+
+    def test_compute_dispense_remain_no_duration(self):
+        """ It should not set the relevant fields when the prescription line
+         has no duration """
+        old_rx_line_vals = self.rx_line_vals
+        del self.rx_line_vals['duration']
+        self._new_procurement(
+            self._new_rx_order().order_line[0],
+            self.date_today,
+        ).state = 'done'
+        self.rx_line_vals = old_rx_line_vals
+
+        test_values = {
+            'remaining days': self.rx_line_id.dispense_remain_day,
+            'remaining qty': self.rx_line_id.dispense_remain_qty,
+        }
+        for key in test_values:
+            self.assertIs(
+                False,
+                test_values[key],
+                msg='%s should be False' % key,
+            )
+
+    def test_compute_dispense_remain_invalid_duration(self):
+        """ It should not set the relevant fields when the prescription line
+         has an invalid duration """
+        old_rx_line_vals = self.rx_line_vals
+        self.rx_line_vals['duration'] = 0
+        self._new_procurement(
+            self._new_rx_order().order_line[0],
+            self.date_today,
+        ).state = 'done'
+        self.rx_line_vals = old_rx_line_vals
+
+        test_values = {
+            'remaining days': self.rx_line_id.dispense_remain_day,
+            'remaining qty': self.rx_line_id.dispense_remain_qty,
+        }
+        for key in test_values:
+            self.assertIs(
+                False,
+                test_values[key],
+                msg='%s should be False' % key,
+            )
+
+    def test_compute_dispense_remain_quantity_conversion(self):
+        """ It should properly convert between different quantity units """
+        old_rx_line_vals = self.rx_line_vals
+        old_order_line_vals = self.order_line_vals
+        self.rx_line_vals['dispense_uom_id'] = self.env.ref(
+            'product.product_uom_dozen'
+        ).id
+        self.order_line_vals['product_uom'] = self.env.ref(
+            'product.product_uom_unit'
+        ).id
+        self.order_line_vals['product_uom_qty'] = 12
+        self._new_procurement(
+            self._new_rx_order().order_line[0],
+            self.date_today,
+        ).state = 'done'
+        self.rx_line_vals = old_rx_line_vals
+        self.order_line_vals = old_order_line_vals
+
+        self.assertEqual((5.0, 1.0), (
+            self.rx_line_id.dispense_remain_day,
+            self.rx_line_id.dispense_remain_qty,
+        ))
+
+    def test_compute_dispense_remain_duration_conversion(self):
+        """ It should properly convert between different duration units """
+        old_rx_line_vals = self.rx_line_vals
+        self.rx_line_vals['duration_uom_id'] = self.env.ref(
+            'medical_medication.product_uom_hour'
+        ).id
+        self.rx_line_vals['duration'] = 30 * 24
+        self._new_procurement(
+            self._new_rx_order().order_line[0],
+            self.date_yesterday,
+        ).state = 'done'
+        self.rx_line_vals = old_rx_line_vals
+
+        self.assertEqual((4.0, 0.8), (
+            self.rx_line_id.dispense_remain_day,
+            self.rx_line_id.dispense_remain_qty,
+        ))
+
     def test_rx_line_compute_dispense_remain_no_fill_days(self):
         """ It should start at zero when no procurements """
         self._new_rx_order()
         self.assertEqual(
-            0.0, self.rx_line_id.last_dispense_remain_day,
+            0.0, self.rx_line_id.dispense_remain_day,
         )
 
     def test_rx_line_compute_dispense_remain_no_fill_qty(self):
         """ It should start at zero when no procurements """
         self._new_rx_order()
         self.assertEqual(
-            0.0, self.rx_line_id.last_dispense_remain_qty,
-        )
-
-    def test_rx_line_compute_dispense_remain_no_fill_percent(self):
-        """ It should start at zero when no procurements """
-        self._new_rx_order()
-        self.assertEqual(
-            0.0, self.rx_line_id.last_dispense_remain_percent,
+            0.0, self.rx_line_id.dispense_remain_qty,
         )
 
     def test_rx_line_compute_dispense_remain_with_fill_days_today(self):
@@ -176,7 +277,7 @@ class TestMedicalPrescriptionOrder(TransactionCase):
             self.date_today,
         ).state = 'done'
         self.assertEqual(
-            5.0, self.rx_line_id.last_dispense_remain_day,
+            5.0, self.rx_line_id.dispense_remain_day,
         )
 
     def test_rx_line_compute_dispense_remain_with_fill_qty_today(self):
@@ -186,17 +287,7 @@ class TestMedicalPrescriptionOrder(TransactionCase):
             self.date_today,
         ).state = 'done'
         self.assertEqual(
-            1.0, self.rx_line_id.last_dispense_remain_qty,
-        )
-
-    def test_rx_line_compute_dispense_remain_with_fill_percent_today(self):
-        """ It should have 100% of dispense remaining on dispense day """
-        self._new_procurement(
-            self._new_rx_order().order_line[0],
-            self.date_today,
-        ).state = 'done'
-        self.assertEqual(
-            100.0, self.rx_line_id.last_dispense_remain_percent,
+            1.0, self.rx_line_id.dispense_remain_qty,
         )
 
     def test_rx_line_compute_dispense_remain_with_fill_days_yestday(self):
@@ -206,7 +297,7 @@ class TestMedicalPrescriptionOrder(TransactionCase):
             self.date_yesterday,
         ).state = 'done'
         self.assertEqual(
-            4.0, self.rx_line_id.last_dispense_remain_day,
+            4.0, self.rx_line_id.dispense_remain_day,
         )
 
     def test_rx_line_compute_dispense_remain_with_fill_qty_yestday(self):
@@ -216,18 +307,25 @@ class TestMedicalPrescriptionOrder(TransactionCase):
             self.date_yesterday,
         ).state = 'done'
         self.assertEqual(
-            0.8, self.rx_line_id.last_dispense_remain_qty,
+            0.8, self.rx_line_id.dispense_remain_qty,
         )
 
-    def test_rx_line_compute_dispense_remain_with_fill_percent_yestday(self):
-        """ It should have -20% remaining if dispensed yesterday """
+    def test_rx_line_compute_dispense_remain_multiple_fills(self):
+        """ It should properly aggregate multiple, spaced out fills """
+        order_line_id = self._new_rx_order().order_line[0]
         self._new_procurement(
-            self._new_rx_order().order_line[0],
+            order_line_id,
             self.date_yesterday,
         ).state = 'done'
-        self.assertEqual(
-            80.0, self.rx_line_id.last_dispense_remain_percent,
-        )
+        self._new_procurement(
+            order_line_id,
+            self.date_today,
+        ).state = 'done'
+
+        self.assertEqual((9.0, 1.8), (
+            self.rx_line_id.dispense_remain_day,
+            self.rx_line_id.dispense_remain_qty,
+        ))
 
     def test_compute_qty_remain_total_allowed(self):
         """ It should start with refill count + 1 """
@@ -271,3 +369,115 @@ class TestMedicalPrescriptionOrder(TransactionCase):
         self.assertEqual(
             4.0, self.rx_line_id.refill_qty_remain,
         )
+
+    def test_can_dispense_and_qty_total_qty_remain_constraint(self):
+        """ It should not dispense more than total_allowed_qty """
+        old_order_line_vals = self.order_line_vals
+        self.order_line_vals['product_uom_qty'] = 0.9
+        order_line_id = self._new_rx_order().order_line[0]
+        for __ in range(6):
+            self._new_procurement(
+                order_line_id,
+                '2016-01-01 00:00:00',
+            ).state = 'done'
+        self.order_line_vals = old_order_line_vals
+
+        self.assertEqual((True, 0.6), (
+            self.rx_line_id.can_dispense,
+            self.rx_line_id.can_dispense_qty,
+        ))
+
+    def test_can_dispense_and_qty_last_dispense_remain_unset(self):
+        """ It should handle Rx lines where last_dispense_remain values can't
+         be computed """
+        old_rx_line_vals = self.rx_line_vals
+        del self.rx_line_vals['duration_uom_id']
+        self._new_procurement(
+            self._new_rx_order().order_line[0],
+            self.date_today,
+        ).state = 'done'
+        self.rx_line_vals = old_rx_line_vals
+
+        self.assertEqual((True, 1.0), (
+            self.rx_line_id.can_dispense,
+            self.rx_line_id.can_dispense_qty,
+        ))
+
+    def test_can_dispense_and_qty_no_threshold(self):
+        """ It should handle Rx lines not associated with refill threshold """
+        old_order_line_vals = self.order_line_vals
+        old_pharmacy_vals = self.pharmacy_vals
+        self.order_line_vals['product_uom_qty'] = 0.3
+        self.pharmacy_vals.update({
+            'company_id': None,
+        })
+        order_line_id = self._new_rx_order().order_line[0]
+        self._new_procurement(
+            order_line_id,
+            self.date_yesterday,
+        ).state = 'done'
+        self._new_procurement(
+            order_line_id,
+            self.date_yesterday,
+        ).state = 'running'
+        self._new_procurement(
+            order_line_id,
+            self.date_yesterday,
+        ).state = 'exception'
+        self.order_line_vals = old_order_line_vals
+        self.pharmacy_vals = old_pharmacy_vals
+
+        self.assertEqual((True, 0.3), (
+            self.rx_line_id.can_dispense,
+            self.rx_line_id.can_dispense_qty,
+        ))
+
+    def test_can_dispense_and_qty_below_threshold(self):
+        """ It should handle Rx lines below refill threshold """
+        old_order_line_vals = self.order_line_vals
+        self.order_line_vals['product_uom_qty'] = 0.3
+        order_line_id = self._new_rx_order().order_line[0]
+        self._new_procurement(
+            order_line_id,
+            self.date_yesterday,
+        ).state = 'done'
+        self._new_procurement(
+            order_line_id,
+            self.date_yesterday,
+        ).state = 'running'
+        self._new_procurement(
+            order_line_id,
+            self.date_yesterday,
+        ).state = 'exception'
+        self.order_line_vals = old_order_line_vals
+
+        self.assertEqual((True, 0.3), (
+            self.rx_line_id.can_dispense,
+            self.rx_line_id.can_dispense_qty,
+        ))
+
+    def test_can_dispense_and_qty_above_threshold(self):
+        """ It should handle Rx lines above refill threshold """
+        old_order_line_vals = self.order_line_vals
+        self.order_line_vals['product_uom_qty'] = 0.3
+        order_line_id = self._new_rx_order().order_line[0]
+        self._new_procurement(
+            order_line_id,
+            self.date_yesterday,
+        ).state = 'done'
+        self._new_procurement(
+            order_line_id,
+            self.date_yesterday,
+        ).state = 'running'
+        self._new_procurement(
+            order_line_id,
+            self.date_yesterday,
+        ).state = 'exception'
+        self.order_line_vals = old_order_line_vals
+        self.rx_line_id.prescription_order_id.partner_id.company_id \
+            .medical_prescription_refill_threshold = 0.6
+
+        self.assertEqual((False, 0), (
+            self.rx_line_id.can_dispense,
+            self.rx_line_id.can_dispense_qty,
+        ))
