@@ -16,9 +16,6 @@
         'views/medical_prescription_order_state_view.xml',
         'data/medical_prescription_order_state_data.xml',
     ],
-    'test': [
-        'tests/medical_prescription_order_state.yml',
-    ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
 }
