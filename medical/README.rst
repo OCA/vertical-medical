@@ -6,26 +6,7 @@
 Odoo Medical
 ============
 
-This module extends Odoo with the base functionality of medical patients, centers, and doctors.
-
-**Some patient attributes available:**
-
-- Age
-- Identification code
-- Date of birth
-- Date of death
-- Gender
-- Marital status
-- Is patient pregnant
-- Is patient deceased
-- Social security numbers or equivalent
-
-**Types of centers available:**
-
-- Medical center (institution)
-- School
-- Pharmacy
-- Insurance company
+This module extends Odoo with the base functionality of medical patients and centers.
 
 Usage
 =====
@@ -45,10 +26,10 @@ Known issues / Roadmap
 Bug Tracker
 ===========
 
-Bugs are tracked on `GitHub Issues <https://github.com/OCA/vertical-medical/issues>`_.
-In case of trouble, please check there if your issue has already been reported.
-If you spotted it first, help us smashing it by providing a detailed and welcomed feedback
-`here <https://github.com/OCA/vertical-medical/issues/new?body=module:%20medical%0Aversion:%209.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+Bugs are tracked on `GitHub Issues
+<https://github.com/OCA/vertical-medical/issues>`_. In case of trouble, please
+check there if your issue has already been reported. If you spotted it first,
+help us smashing it by providing a detailed and welcomed feedback.
 
 Credits
 =======

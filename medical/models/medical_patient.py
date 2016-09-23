@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016-TODAY LasLabs Inc. (https://laslabs.com)
+# Copyright 2004 Tech-Receptives
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import models, fields, api, _
@@ -84,6 +85,7 @@ class MedicalPatient(models.Model):
                 years_months_days = _('No DoB !')
             rec_id.age = years_months_days
 
+    @api.multi
     @api.constrains('is_pregnant', 'gender')
     def _check_is_pregnant(self):
         for rec_id in self:

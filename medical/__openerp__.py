@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016-TODAY LasLabs Inc. (https://laslabs.com)
+# Copyright 2004-2009 Tiny SPRL
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
     "name": "Odoo Medical",
-    "summary": "Extends Odoo with medical patients, doctors, and centers.",
+    "summary": "Extends Odoo with medical patients and centers.",
     "version": "9.0.1.0.0",
     "category": "Medical",
     "website": "https://odoo-community.org/",
-    "author": "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
+    "author": "LasLabs, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "application": True,
     "installable": True,
