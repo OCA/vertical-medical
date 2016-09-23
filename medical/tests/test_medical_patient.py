@@ -7,93 +7,112 @@ from dateutil.relativedelta import relativedelta
 from openerp.exceptions import ValidationError
 from openerp import fields
 from openerp.tests.common import TransactionCase
-from datetime import date
+from datetime import datetime
 
 
 class TestMedicalPatient(TransactionCase):
 
     def setUp(self):
         super(TestMedicalPatient, self).setUp()
-        self.model_obj = self.env['medical.patient']
-        self.vals = {
-            'name': 'Patient 1',
-            'gender': 'm',
-        }
+        self.patient_1 = self.env.ref('medical.medical_patient_patient_1')
+        self.partner_patient_1 = self.env.ref('medical.res_partner_patient_1')
+        self.patient_3 = self.env.ref('medical.medical_patient_patient_3')
 
-    def test_sequence(self):
-        patient_id = self.model_obj.create(self.vals)
+    def test_sequence_for_identification_code(self):
+        """ Test identification_code created if there is none """
         self.assertTrue(
-            patient_id.identification_code, 'Should have a sequence'
+            self.patient_1.identification_code,
+            'Should make id code if none.\rGot: %s\rExpected: %s' % (
+                self.patient_1.identification_code, 'A truthey value'
+            )
         )
 
-    def test_is_patient(self):
-        """ Validate that is_patient is set on the partner """
-        patient_id = self.model_obj.create(self.vals)
+    def test_partner_is_patient(self):
+        """ Test is_patient set to True on partner """
         self.assertTrue(
-            patient_id.is_patient, '`is_patient` not set on partner'
+            self.partner_patient_1.is_patient,
+            'is_patient should be True.\rGot: %s\rExpected: %s' % (
+                self.partner_patient_1.is_patient, True
+            )
         )
 
     def test_pregnant_male_raises_error(self):
-        """ Check raises ValidationError if male pregnant """
-        self.vals['is_pregnant'] = True
+        """ Test raises ValidationError if male pregnant """
         with self.assertRaises(ValidationError):
-            self.model_obj.create(self.vals)
+            self.patient_3.is_pregnant = True
 
-    def test_age_computation(self):
-        """ Check value of age depending of the birth_date """
-        age = 10
-        complete_age = '10y 0m 0d'
-        birth_date = fields.Date.to_string(
-            date.today() - relativedelta(years=age)
+    def test_pregnant_female_no_error(self):
+        """ Test no ValidationError if female is pregnant """
+        try:
+            self.patient_1.is_patient = True
+            self.assertTrue(True)
+        except ValidationError:
+            self.fail(
+                'Should not raise ValidationError if female pregnant'
+            )
+
+    def test_compute_age(self):
+        """ Test compute_age with no special cases """
+        now = datetime.now()
+        dob = fields.Datetime.from_string(self.patient_1.dob)
+        delta = relativedelta(now, dob)
+        age = '%s%s %s%s %s%s' % (
+            delta.years, 'y',
+            delta.months, 'm',
+            delta.days, 'd',
         )
-        self.vals['dob'] = birth_date
-        patient_id = self.model_obj.create(self.vals)
-        self.assertEquals(
-            complete_age, patient_id.age,
+        self.assertEqual(
+            self.patient_1.age, age,
             'Should be the same age.\rGot: %s\rExpected: %s' % (
-                patient_id.age, complete_age
+                self.patient_1.age, age
             )
         )
 
-    def test_age_computation_no_age_present(self):
-        """ Check age 'No DoB !' set if no age present """
-        patient_id = self.model_obj.create(self.vals)
+    def test_compute_age_patient_deceased(self):
+        """ Test age properly set if patient deceased """
         self.assertEquals(
-            patient_id.age, 'No DoB !',
+            self.patient_3.age, '36y 1m 20d (deceased)',
             'Should be the same age.\rGot: %s\rExpected: %s' % (
-                patient_id.age, 'No DoB !'
+                self.patient_3.age, '36y 1m 20d (deceased)'
             )
         )
 
-    def test_age_computation_deceased(self):
-        """ Check proper handling of deceased patient """
-        age = 5
-        birth_date = fields.Date.to_string(
-            date.today() - relativedelta(years=age*2)
-        )
-        self.vals.update({
-            'dob': birth_date,
-            'deceased': True,
-            'dod': fields.Date.to_string(
-                date.today() - relativedelta(years=age)
-            )
-        })
-        patient_id = self.model_obj.create(self.vals)
-        dod_age = '5y 0m 0d'
-        expect = '%s (deceased)' % dod_age
+    def test_compute_age_no_dob_set(self):
+        """ Test age equals 'No DoB !' if no dob present """
+        self.patient_1.dob = None
         self.assertEquals(
-            expect, patient_id.age,
-            'Did not properly handle deceased.\rGot: %s\rExpected: %s' % (
-                patient_id.age, expect
+            self.patient_1.age, 'No DoB !',
+            'Age should be No Dob !.\rGot: %s\rExpected: %s' % (
+                self.patient_1.age, 'No DoB !'
             )
         )
 
-    def test_invalidate(self):
-        """ Invalidate a patient should invalidate its diseases """
-        patient_id = self.model_obj.create(self.vals)
-        self.assertTrue(patient_id.active, 'Should be active')
-        self.assertTrue(patient_id.partner_id.active, 'Should be inactive')
-        self.assertFalse(patient_id.dod, 'Should be empty')
-        patient_id.action_invalidate()
-        self.assertFalse(patient_id.active, 'Should be inactive')
-        self.assertFalse(patient_id.partner_id.active, 'Should be inactive')
+    def test_action_invalidate(self):
+        """ Test invalidate patient also invalidates partner """
+        self.patient_1.action_invalidate()
+        self.assertEquals(
+            [self.partner_patient_1.active, self.patient_1.active],
+            [False, False],
+            'Should be inactive.\rGot: %s\rExpected: %s' % (
+                [self.partner_patient_1.active, self.patient_1.active],
+                [False, False]
+            )
+        )
+
+    def test_patient_deceased_if_dod_exists(self):
+        """ Test deceased is True if value set on dod """
+        self.assertTrue(
+            self.patient_3.deceased,
+            'Should be deceased if dod exists.\rGot: %s\rExpected: %s' % (
+                self.patient_3.deceased, True
+            )
+        )
+
+    def test_patient_not_deceased_if_no_dod(self):
+        """ Test deceased is False if no value set on dod """
+        self.assertFalse(
+            self.patient_1.deceased,
+            'Should not be deceased if no dod.\rGot: %s\rExpected: %s' % (
+                self.patient_1.deceased, False
+            )
+        )

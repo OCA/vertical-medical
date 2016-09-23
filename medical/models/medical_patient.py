@@ -3,7 +3,7 @@
 # Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api, _
+from openerp import _, api, fields, models
 from openerp.exceptions import ValidationError
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
@@ -34,7 +34,11 @@ class MedicalPatient(models.Model):
     active = fields.Boolean(
         default=True,
     )
-    deceased = fields.Boolean()
+    deceased = fields.Boolean(
+        compute='_compute_deceased',
+        store=True,
+        help='Automatically True if deceased date is set',
+    )
     partner_id = fields.Many2one(
         string='Related Partner',
         comodel_name='res.partner',
@@ -78,7 +82,8 @@ class MedicalPatient(models.Model):
                     delta = relativedelta(now, dob)
                     deceased = ''
                 years_months_days = '%s%s %s%s %s%s%s' % (
-                    delta.years, _('y'), delta.months, _('m'),
+                    delta.years, _('y'),
+                    delta.months, _('m'),
                     delta.days, _('d'), deceased
                 )
             else:
@@ -99,6 +104,15 @@ class MedicalPatient(models.Model):
         for rec_id in self:
             rec_id.active = False
             rec_id.partner_id.active = False
+
+    @api.multi
+    @api.depends('dod')
+    def _compute_deceased(self):
+        for rec_id in self:
+            if rec_id.dod:
+                rec_id.deceased = True
+            else:
+                rec_id.deceased = False
 
     @api.model
     @api.returns('self', lambda value: value.id)
