@@ -20,11 +20,11 @@ class ResPartner(models.Model):
     alias = fields.Char(
         string='Alias',
         size=256,
-        help='Common name the s/party/partner is referred to as',
+        help='Common name the partner is referred to as',
     )
     activation_date = fields.Date(
         string='Activation Date',
-        help='Date the s/party/partner was activated',
+        help='Date the partner was activated',
     )
     ref = fields.Char(
         size=256,
@@ -38,32 +38,32 @@ class ResPartner(models.Model):
     )
     is_doctor = fields.Boolean(
         string='Health Prof',
-        help='Check if the s/party/partner is a health professional',
+        help='Check if the partner is a health professional',
     )
     is_patient = fields.Boolean(
         string='Patient',
-        help='Check if the s/party/partner is a patient',
+        help='Check if the partner is a patient',
     )
     is_work = fields.Boolean(
         string='Work',
-        help='Check if the s/party/partner is a place of work',
+        help='Check if the partner is a place of work',
     )
     is_person = fields.Boolean(
         string='Person',
-        help='Check if the s/party/partner is a person',
+        help='Check if the partner is a person',
     )
     is_school = fields.Boolean(
         string='School',
     )
     is_pharmacy = fields.Boolean(
         string='Pharmacy',
-        help='Check if the s/party/partner is a pharmacy',
+        help='Check if the partner is a pharmacy',
     )
     is_insurance_company = fields.Boolean(
         string='Insurance',
-        help='Check if the s/party/partner is a patient',
+        help='Check if the partner is a patient',
     )
     is_institution = fields.Boolean(
         string='Institution',
-        help='Check if the s/party/partner is a medical center',
+        help='Check if the partner is a medical center',
     )
