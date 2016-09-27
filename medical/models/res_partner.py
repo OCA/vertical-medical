@@ -13,54 +13,18 @@ class ResPartner(models.Model):
         string='Relationship',
         size=25,
     )
-    is_institution = fields.Boolean(
-        string='Institution',
-        help='Check if the party is a medical center',
-    )
     relative_id = fields.Many2one(
         string='Contact',
         comodel_name='res.partner',
     )
-    is_doctor = fields.Boolean(
-        string='Health Prof',
-        help='Check if the party is a health professional',
-    )
-    is_patient = fields.Boolean(
-        string='Patient',
-        help='Check if the party is a patient',
-    )
     alias = fields.Char(
         string='Alias',
         size=256,
-        help='Common name the party is referred to as',
+        help='Common name the s/party/partner is referred to as',
     )
     activation_date = fields.Date(
         string='Activation Date',
-        help='Date the party was activated',
-    )
-    last_name = fields.Char(
-        string='Last Name',
-        size=256,
-        help='Last name of the party',
-    )
-    is_work = fields.Boolean(
-        string='Work',
-        help='Check if the party is a place of work',
-    )
-    is_person = fields.Boolean(
-        string='Person',
-        help='Check if the party is a person',
-    )
-    is_school = fields.Boolean(
-        string='School',
-    )
-    is_pharmacy = fields.Boolean(
-        string='Pharmacy',
-        help='Check if the party is a pharmacy',
-    )
-    is_insurance_company = fields.Boolean(
-        string='Insurance',
-        help='Check if the party is a patient',
+        help='Date the s/party/partner was activated',
     )
     ref = fields.Char(
         size=256,
@@ -71,4 +35,35 @@ class ResPartner(models.Model):
         comodel_name='medical.patient',
         fields_id='medical_center_id',
         string='Related Patients',
+    )
+    is_doctor = fields.Boolean(
+        string='Health Prof',
+        help='Check if the s/party/partner is a health professional',
+    )
+    is_patient = fields.Boolean(
+        string='Patient',
+        help='Check if the s/party/partner is a patient',
+    )
+    is_work = fields.Boolean(
+        string='Work',
+        help='Check if the s/party/partner is a place of work',
+    )
+    is_person = fields.Boolean(
+        string='Person',
+        help='Check if the s/party/partner is a person',
+    )
+    is_school = fields.Boolean(
+        string='School',
+    )
+    is_pharmacy = fields.Boolean(
+        string='Pharmacy',
+        help='Check if the s/party/partner is a pharmacy',
+    )
+    is_insurance_company = fields.Boolean(
+        string='Insurance',
+        help='Check if the s/party/partner is a patient',
+    )
+    is_institution = fields.Boolean(
+        string='Institution',
+        help='Check if the s/party/partner is a medical center',
     )

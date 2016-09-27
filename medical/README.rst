@@ -23,6 +23,10 @@ No additional configuration is needed to enable features for this module after i
 Known issues / Roadmap
 ======================
 
+* Separation of patient/res_partner name into first and last names.
+* (Odoo v10) Remove all is_* fields (e.g. is_school, is_work, etc.) from res.partner and move to res.partner.type.
+* Remove medical_constants in favor of existing solution in Odoo.
+
 Bug Tracker
 ===========
 

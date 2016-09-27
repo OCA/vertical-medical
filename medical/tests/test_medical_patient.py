@@ -81,9 +81,9 @@ class TestMedicalPatient(TransactionCase):
         """ Test age equals 'No DoB !' if no dob present """
         self.patient_1.dob = None
         self.assertEquals(
-            self.patient_1.age, 'No DoB !',
-            'Age should be No Dob !.\rGot: %s\rExpected: %s' % (
-                self.patient_1.age, 'No DoB !'
+            self.patient_1.age, 'No DoB!',
+            'Age is incorrect.\rGot: %s\rExpected: %s' % (
+                self.patient_1.age, 'No DoB!'
             )
         )
 

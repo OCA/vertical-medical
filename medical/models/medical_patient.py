@@ -20,7 +20,7 @@ class MedicalPatient(models.Model):
     identification_code = fields.Char(
         string='Internal Identification',
         help='Patient identifier provided by the health center'
-             '(Different from the social security number)',
+             ' (Different from the social security number)',
     )
     general_info = fields.Text(
         string='General Information',
@@ -46,23 +46,27 @@ class MedicalPatient(models.Model):
         ondelete='cascade',
         index=True,
     )
-    gender = fields.Selection([
-        ('m', 'Male'),
-        ('f', 'Female'),
-    ], )
+    gender = fields.Selection(
+        [
+            ('m', 'Male'),
+            ('f', 'Female'),
+        ],
+    )
     medical_center_id = fields.Many2one(
         string='Medical Center',
         comodel_name='res.partner',
         domain="[('is_institution', '=', True)]",
     )
-    marital_status = fields.Selection([
-        ('s', 'Single'),
-        ('m', 'Married'),
-        ('w', 'Widowed'),
-        ('d', 'Divorced'),
-        ('x', 'Separated'),
-        ('z', 'law marriage'),
-    ], )
+    marital_status = fields.Selection(
+        [
+            ('s', 'Single'),
+            ('m', 'Married'),
+            ('w', 'Widowed'),
+            ('d', 'Divorced'),
+            ('x', 'Separated'),
+            ('z', 'law marriage'),
+        ],
+    )
     is_pregnant = fields.Boolean(
         help='Check if the patient is pregnant',
     )
@@ -87,7 +91,7 @@ class MedicalPatient(models.Model):
                     delta.days, _('d'), deceased
                 )
             else:
-                years_months_days = _('No DoB !')
+                years_months_days = _('No DoB!')
             rec_id.age = years_months_days
 
     @api.multi
@@ -109,10 +113,7 @@ class MedicalPatient(models.Model):
     @api.depends('dod')
     def _compute_deceased(self):
         for rec_id in self:
-            if rec_id.dod:
-                rec_id.deceased = True
-            else:
-                rec_id.deceased = False
+            rec_id.deceased = bool(rec_id.dod)
 
     @api.model
     @api.returns('self', lambda value: value.id)
