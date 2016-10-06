@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/OCA/vertical-medical.svg?branch=9.0)](https://travis-ci.org/OCA/vertical-medical)
-[![Coverage Status](https://coveralls.io/repos/OCA/vertical-medical/badge.png?branch=9.0)](https://coveralls.io/r/OCA/vertical-medical?branch=9.0)
+[![Build Status](https://travis-ci.org/OCA/vertical-medical.svg?branch=10.0)](https://travis-ci.org/OCA/vertical-medical)
+[![Coverage Status](https://coveralls.io/repos/OCA/vertical-medical/badge.png?branch=10.0)](https://coveralls.io/r/OCA/vertical-medical?branch=10.0)
 
 What is Odoo Medical
 ---
@@ -101,19 +101,19 @@ Hacking Odoo Medical
 
     ```bash
     $ git clone git@github.com:oca/vertical-medical.git
-    $ cd medical && checkout 9.0
+    $ cd medical && checkout 10.0
     ```
 
 2. Create your own branch locally.
 
     ```bash
-    $ git checkout -b 9.0-your_new_feature_theme
+    $ git checkout -b 10.0-your_new_feature_theme
     ```
 
 3. Push your first change branch to know you start to work on.
 
     ```bash
-    $ git push -u origin 9.0-your_new_feature_theme
+    $ git push -u origin 10.0-your_new_feature_theme
     ```
 
 4. Prepare your enviroment to work with this repository and the mandatory ones to have all the enviroment ready.
@@ -121,8 +121,8 @@ Hacking Odoo Medical
     ```bash
     $ git clone https://github.com/odoo/odoo.git
     $ git clone https://github.com/oca/vertical-medical.git
-    $ cd odoo && checkout 9.0
-    $ cd vertical-medical && checkout 9.0
+    $ cd odoo && checkout 10.0
+    $ cd vertical-medical && checkout 10.0
     ```
 
 5. Create a postgres user (only for this work to avoid problems not related to this enviroment).
@@ -184,5 +184,5 @@ Hacking Odoo Medical
 12. Push your first change branch to know you start to work on.
 
     ```bash
-    $ git push -u origin 9.0-your_new_feature_theme
+    $ git push -u origin 10.0-your_new_feature_theme
     ```
