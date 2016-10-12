@@ -10,7 +10,6 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     relationship = fields.Char(
-        string='Relationship',
         size=25,
     )
     relative_id = fields.Many2one(
