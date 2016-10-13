@@ -11,11 +11,12 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='name']" position="after">
                     <field name="product_id" />
+                    <field name="strength" />
                     <field name="categ_id" />
                     <field name="indications" />
                     <field name="therapeutic_action" />
                     <field name="overdosage" />
-                    <field name="is_pregnant" />
+                    <field name="is_pregnancy_warning" />
                     <field name="notes" />
                     <field name="storage" />
                     <field name="adverse_reaction" />
@@ -25,9 +26,11 @@
                     <field name="presentation" />
                     <field name="composition" />
                 </xpath>
-                <xpath expr="//group" position="inside">
+                <xpath expr="//search" position="inside">
+                    <separator />
                     <filter string="Category" domain="[]" context="{'group_by':'categ_id'}" />
                     <filter string="Name" domain="[]" context="{'group_by':'name'}" />
+                    <filter string="Strength" domain="[]" context="{'group_by': 'strength'}" />
                     <filter string="Indication" domain="[]"
                         context="{'group_by':'indications'}" />
                     <filter string="Therapeutic effect" domain="[]"
@@ -36,7 +39,7 @@
                     <filter string="Overdosage" domain="[]"
                         context="{'group_by':'overdosage'}" />
                     <filter string="Pregnancy Warning" domain="[]"
-                        context="{'group_by':'is_pregnant'}" />
+                        context="{'group_by':'is_pregnancy_warning'}" />
                     <filter string="Extra Info" domain="[]" context="{'group_by':'notes'}" />
                     <filter string="Storage Conditions" domain="[]"
                         context="{'group_by':'storage'}" />
@@ -64,6 +67,8 @@
             <field name="mode">primary</field>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='name']" position="after">
+                    <field name="strength" />
+                    <field name="strength_uom_id" />
                     <field name="drug_form_id"/>
                 </xpath>
             </field>
@@ -81,12 +86,14 @@
                         <group>
                             <group string="Drug Info" name="drug_info">
                                 <field name="drug_form_id"/>
+                                <field name="strength" />
+                                <field name="strength_uom_id" />
                                 <field name="drug_route_id"/>
                                 <field name="active_component"/>
                                 <field name="therapeutic_action"/>
                             </group>
                             <group string="Pregnancy" name="pregnancy">
-                                <field name="is_pregnant" />
+                                <field name="is_pregnancy_warning" />
                                 <field name="pregnancy_category" />
                                 <label for="pregnancy" string="Pregnancy Notes"/>
                                 <field name="pregnancy" nolabel="1" colspan="4"/>
