@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2014-2016 LasLabs [https://laslabs.com]
+    @author Ken Mak <kmak@laslabs.com>
+    @license AGPL-3
+-->
+
+<openerp>
+    <data>
+        <record id="medical_physician_view_tree" model="ir.ui.view">
+            <field name="name">medical.physician.tree</field>
+            <field name="model">medical.physician</field>
+            <field name="arch" type="xml">
+                <tree string="Medical Physician">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="specialty_id" />
+                    <field name="parent_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="medical_physician_view_form" model="ir.ui.view">
+            <field name="name">medical.physician.form</field>
+            <field name="model">medical.physician</field>
+            <field name="arch" type="xml">
+                <form string="Medical Physician" >
+                    <header/>
+                    <sheet>
+                        <field name="image" widget='image' class="oe_avatar pull-left"
+                               options='{"preview_image": "image_medium", }'/>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Physician's Name" />
+                            </h1>
+                            <h3> 
+                                <field name="parent_id" placeholder="Company" /> 
+                            </h3> 
+                        </div>
+                        <group>
+                            <field name="ref" string="Legal ID"/>
+                            <field name="code" string="Internal ID"/>
+                            <field name="specialty_id"/>
+                            <field name="info" colspan="4"/>
+                        </group>
+                        <notebook>
+                            <page string="General Information">
+                                <group>
+                                    <field name="active"/>
+                                    <field name="phone" placeholder="e.g. +506 5555 5555"/>
+                                    <field name="mobile"/>
+                                    <field name="fax"/>
+                                       <field name="user_ids" invisible="1"/>
+                                    <field name="email" widget="email" attrs="{'required': [('user_ids','!=', [])]}"/>
+                                </group>
+                                <group>
+                                    <label for="street" string="Address"/>
+                                    <div>
+                                        <field name="use_parent_address" invisible="1"/>
+                                        <field name="street" placeholder="Street..."
+                                               attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                        <field name="street2"  attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                        <div class="address_format">
+                                            <field name="city" placeholder="City" style="width: 40%%"
+                                                   attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                            <field name="state_id" class="no_button" placeholder="State"
+                                                   style="width: 37%%" options='{"no_open": True}'
+                                                   attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                            <field name="zip" placeholder="ZIP" style="width: 20%%"
+                                                   attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                        </div>
+                                        <field name="country_id" placeholder="Country" class="no_button"
+                                               options='{"no_open": True}'
+                                               attrs="{'readonly': [('use_parent_address','=',True)]}"/>
+                                    </div>
+                                </group>
+                                <group  col="4" colspan="4"> 
+                                    <field name="parent_id" colspan="2" string="Company" domain="[('is_company','=',True)]"/>
+                                </group>
+                                <group  col="4" colspan="4"> 
+                                     <field name="lang" colspan="2"/>
+                                     <field name="opt_out" string="I don't want to receive commercial messages" colspan="2"/>
+                                </group>
+                            </page>
+                        </notebook>
+                     </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_physician_view_search" model="ir.ui.view">
+            <field name="name">medical.physician.search</field>
+            <field name="model">medical.physician</field>
+            <field name="arch" type="xml">
+                <search string="Medical Physician">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="specialty_id" />
+                    <field name="parent_id" />
+                    <field name="info" />
+                    <newline />
+                    <group expand="0" string="Group By...">
+                        <filter string="Extra info" domain="[]" context="{'group_by':'info'}" />
+                        <filter string="Name" domain="[]" context="{'group_by':'name'}" />
+                        <filter string="ID" domain="[]" context="{'group_by':'code'}" />
+                        <filter string="Specialty" domain="[]"    context="{'group_by':'specialty_id'}" />
+                        <filter string="Institution" domain="[]" context="{'group_by':'parent_id'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="medical_physician_action_self">
+            <field name="name">Physician</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.physician</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="medical_physician_view_search" />
+            <field name="domain">[('user_id', '=', uid)]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="medical_physician_action">
+            <field name="name">Physician</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">medical.physician</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="medical_physician_view_search" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="medical_physician_action_form">
+            <field name="act_window_id" ref="medical_physician_action" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="medical_physician_view_form" />
+        </record>
+
+        <record model="ir.actions.act_window.view" id="medical_physician_action_tree">
+            <field name="act_window_id" ref="medical_physician_action" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="medical_physician_view_tree" />
+        </record>
+
+    </data>
+</openerp>

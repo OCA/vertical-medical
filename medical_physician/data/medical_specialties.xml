@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="medical.specialty" id="spe1">
+            <field name="name">General Practitioner</field>
+            <field name="code">GP</field>
+        </record>
+
+    </data>
+</openerp>
