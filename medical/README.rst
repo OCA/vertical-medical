@@ -6,82 +6,49 @@
 Odoo Medical
 ============
 
-What is Odoo Medical
---------------------
-
-**Odoo Medical** is a multi-user, highly scalable, centralized Electronic Medical
-Record (EMR) and Hospital Information System for odoo.
-
-**Odoo Medical** provides a free universal Health and Hospital Information System,
-so doctors and institutions all over the world, specially in developing
-countries will benefit from a centralized, high quality, secure and scalable
-system.
-
-Odoo Medical at a glance:
--------------------------
-
-- Strong focus in family medicine and Primary Health Care
-
-- Major interest in Socio-economics (housing conditions, substance abuse, education...)
-
-- Diseases and Medical procedures standards (like ICD-10 / ICD-10-PCS ...)
-
-- Patient Genetic and Hereditary risks : Over 4200 genes related to diseases (NCBI / Genecards)
-
-- Epidemiological and other statistical reports
-
-- 100% paperless patient examination and history taking
-
-- Patient Administration (creation, evaluations / consultations, history ... )
-
-- Doctor Administration
-
-- Lab Administration
-
-- Medicine / Drugs information (vademécum)
-
-- Medical stock and supply chain management
-
-- Hospital Financial Administration
-
-- Designed with industry standards in mind
-
-- Open Source : Licensed under AGPL
+This module extends Odoo with the base functionality of medical patients and centers.
 
 Usage
 =====
 
+No additional configuration is needed to enable features for this module after installation.
+
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/159/8.0
+   :target: https://runbot.odoo-community.org/runbot/159/9.0
 
-For further information, please visit:
-
-* https://www.odoo.com/forum/help-1
+.. repo_id is available in https://github.com/OCA/maintainer-tools/blob/master/tools/repos_with_ids.txt
+.. branch is "9.0" for example
 
 Known issues / Roadmap
 ======================
 
-* Improve and provide a full description for this module into the README.rst
-
+* Separation of patient/res_partner name into first and last names.
+* (Odoo v10) Remove all is_* fields (e.g. is_school, is_work, etc.) from res.partner and move to res.partner.type.
+* Remove medical_constants in favor of existing solution in Odoo.
 
 Bug Tracker
 ===========
 
-Bugs are tracked on `GitHub Issues <https://github.com/OCA/vertical-medical/issues>`_.
-In case of trouble, please check there if your issue has already been reported.
-If you spotted it first, help us smashing it by providing a detailed and welcomed feedback
-`here <https://github.com/OCA/vertical-medical/issues/new?body=module:%20medical%0Aversion:%208.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
-
+Bugs are tracked on `GitHub Issues
+<https://github.com/OCA/vertical-medical/issues>`_. In case of trouble, please
+check there if your issue has already been reported. If you spotted it first,
+help us smashing it by providing a detailed and welcomed feedback.
 
 Credits
 =======
+
+Images
+------
+
+* Odoo Community Association: `Icon <https://github.com/OCA/maintainer-tools/blob/master/template/module/static/description/icon.svg>`_.
 
 Contributors
 ------------
 
 * Jonathan Nemry <jonathan.nemry@acsone.eu>
 * Dave Lasley <dave@laslabs.com>
+* Brett Wood <bwood@laslabs.com>
 * Parthiv Patel <parthiv@techreceptives.com>
 * Ruchir Shukla <ruchir@techreceptives.com>
 * Parthiv Patel <parthiv@techreceptives.com>
