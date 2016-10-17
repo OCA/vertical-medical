@@ -3,7 +3,7 @@
     :alt: License: AGPL-3
 
 ===================
-Medical Patient DOB
+Medical Patient DoB
 ===================
 
 This module adds date of birth to patient name in search field autocomplete.
@@ -14,9 +14,6 @@ Usage
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
    :target: https://runbot.odoo-community.org/runbot/159/9.0
-
-.. repo_id is available in https://github.com/OCA/maintainer-tools/blob/master/tools/repos_with_ids.txt
-.. branch is "9.0" for example
 
 Known issues / Roadmap
 ======================

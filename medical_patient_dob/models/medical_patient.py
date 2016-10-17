@@ -13,7 +13,10 @@ class MedicalPatient(models.Model):
         self.ensure_one()
         date = 'No DoB'
         if self.dob:
-            date = fields.Datetime.from_string(self.dob).strftime('%m/%d/%Y')
+            lang = self.env['res.lang'].search([('code', '=', self.lang)])
+            date = fields.Datetime.from_string(self.dob).strftime(
+                lang.date_format
+            )
         return ' [%s]' % date
 
     @api.multi
