@@ -12,6 +12,19 @@ class TestMedicalPatient(TransactionCase):
         self.patient_1 = self.env.ref(
             'medical.medical_patient_patient_1'
         )
+        self.lang = 'en_US'
+        self.lang_obj = self.env['res.lang'].search([('code', '=', self.lang)])
+        self.lang_obj.date_format = '%m/%d/%Y'
+
+    def test_change_date_format(self):
+        """ Test date format changed in display_name if adjusted """
+        self.lang_obj.date_format = '%Y-%m-%d'
+        self.assertEquals(
+            self.patient_1.display_name, 'Emma Fields [1920-02-23]',
+            'Should correctly adjust date format.\rGot: %s\rExpected: %s' % (
+                self.patient_1.display_name, 'Emma Fields [1920-02-23]'
+            )
+        )
 
     def test_name_includes_dob(self):
         """ Test display name includes dob if present """
