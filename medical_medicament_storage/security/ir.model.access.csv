@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_user,Medical Medicament Storage - User Access,model_medical_medicament_storage,medical.group_medical_user,1,0,0,0
+access_doctor,Medical Medicament Storage - Doctor Access,model_medical_medicament_storage,medical.group_medical_doctor,1,1,1,0
+access_assistant,Medical Medicament Storage - Assistant Access,model_medical_medicament_storage,medical.group_medical_assistant,1,1,1,0

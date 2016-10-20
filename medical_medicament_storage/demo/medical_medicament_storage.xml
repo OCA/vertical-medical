@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2016 LasLabs Inc.
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+    <record id="keep_dry" model="medical.medicament.storage">
+        <field name="name">DRY</field>
+        <field name="instructions" eval="'Store in a dry place. Remove cotton '
+            'ball from bottle before storing since it can pull in moisture.'"/>
+    </record>
+
+    <record id="keep_cool" model="medical.medicament.storage">
+        <field name="name">COOL</field>
+        <field name="instructions" eval="'Store in a cool place, away from '
+            'direct sunlight and heat sources like stoves.'"/>
+    </record>
+</odoo>

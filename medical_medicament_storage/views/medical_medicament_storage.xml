@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2016 LasLabs Inc.
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+    <record id="medical_medicament_storage_view_form" model="ir.ui.view">
+        <field name="name">Medicament Storage Instructions - Form View</field>
+        <field name="model">medical.medicament.storage</field>
+        <field name="arch" type="xml">
+            <form string="Medicament Storage Instruction Form">
+                <header/>
+                <sheet>
+                    <div class="oe_title" name="title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group name="data">
+                        <field name="instructions"/>
+                    </group>
+                </sheet>
+                <footer/>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_medicament_storage_view_tree" model="ir.ui.view">
+        <field name="name">Medicament Storage Instructions - Tree View</field>
+        <field name="model">medical.medicament.storage</field>
+        <field name="arch" type="xml">
+            <tree string="Medicament Storage Instructions">
+                <field name="name"/>
+                <field name="instructions"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="medical_medicament_storage_view_search" model="ir.ui.view">
+        <field name="name">Medicament Storage Instructions - Search View</field>
+        <field name="model">medical.medicament.storage</field>
+        <field name="arch" type="xml">
+            <search string="Medicament Storage Instructions">
+                <field name="name"/>
+                <field name="instructions"/>
+            </search>
+        </field>
+    </record>
+    
+    <record id="medical_medicament_storage_action" model="ir.actions.act_window">
+        <field name="name">Medicament Storage Instructions</field>
+        <field name="res_model">medical.medicament.storage</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+     </record>
+
+    <menuitem id="medical_medicament_storage_menu" name="Storage Instructions"
+        parent="medical_medicament.medical_medicament_root" 
+        action="medical_medicament_storage_action"/>
+</odoo>

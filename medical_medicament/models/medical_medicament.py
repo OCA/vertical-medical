@@ -81,9 +81,6 @@ class MedicalMedicament(models.Model):
     overdosage = fields.Text(
         help='Steps to perform in the event of overdosage',
     )
-    storage = fields.Text(
-        help='Storage instructions',
-    )
     adverse_reaction = fields.Text(
         help='Potential adverse reactions',
     )

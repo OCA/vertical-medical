@@ -18,7 +18,6 @@
                     <field name="overdosage" />
                     <field name="is_pregnancy_warning" />
                     <field name="notes" />
-                    <field name="storage" />
                     <field name="adverse_reaction" />
                     <field name="active_component" />
                     <field name="dosage_instruction" />
@@ -41,8 +40,6 @@
                     <filter string="Pregnancy Warning" domain="[]"
                         context="{'group_by':'is_pregnancy_warning'}" />
                     <filter string="Extra Info" domain="[]" context="{'group_by':'notes'}" />
-                    <filter string="Storage Conditions" domain="[]"
-                        context="{'group_by':'storage'}" />
                     <filter string="Adverse Reactions" domain="[]"
                         context="{'group_by':'adverse_reaction'}" />
                     <filter string="Active component" domain="[]"
@@ -124,9 +121,6 @@
                             </group>
                         </group>
                         <group>
-                            <group string="Storage">
-                                <field name="storage" colspan="4" nolabel="1" />
-                            </group>
                             <group string="Notes">
                                 <field name="notes" colspan="4" nolabel="1"/>
                             </group>

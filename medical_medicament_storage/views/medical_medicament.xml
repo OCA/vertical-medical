@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2016 LasLabs Inc.
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+    <record id="medical_medicament_view_form" model="ir.ui.view">
+        <field name="name">Medicament Form - Reusable Storage Instructions</field>
+        <field name="model">medical.medicament</field>
+        <field name="inherit_id" ref="medical_medicament.medical_medicament_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='drug_info']/.." position="after">
+                <group string="Storage Instructions" name="storage_instructions">
+                    <field name="storage_ids" nolabel="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
