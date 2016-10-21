@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical_pathology_category_1" model="medical.pathology.category">
+        <field name="name">Clinical Pathology</field>
+    </record>
+
+    <record id="medical_pathology_category_2" model="medical.pathology.category">
+        <field name="name">Microbiology</field>
+        <field name="parent_id" ref="medical_pathology.medical_pathology_category_1" />
+    </record>
+
+    <record id="medical_pathology_category_3" model="medical.pathology.category">
+        <field name="name">Infectious Diseases</field>
+        <field name="parent_id" ref="medical_pathology.medical_pathology_category_2" />
+    </record>
+
+    <record id="medical_pathology_category_4" model="medical.pathology.category">
+        <field name="name">STIs &amp; STDs</field>
+        <field name="parent_id" ref="medical_pathology.medical_pathology_category_3" />
+    </record>
+
+    <record id="medical_pathology_category_5" model="medical.pathology.category">
+        <field name="name">Parasitic Diseases</field>
+        <field name="parent_id" ref="medical_pathology.medical_pathology_category_3" />
+    </record>
+
+    <record id="medical_pathology_category_6" model="medical.pathology.category">
+        <field name="name">Protozoal Diseases</field>
+        <field name="parent_id" ref="medical_pathology.medical_pathology_category_5" />
+    </record>
+
+</odoo>

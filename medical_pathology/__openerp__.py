@@ -1,32 +1,31 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-
-    'name': 'Medical Pathology',
-    'version': '9.0.1.0.0',
-    'author': 'LasLabs, ACSONE SA/NV, Odoo Community Association (OCA)',
-    'maintainer': 'LasLabs, ACSONE SA/NV, Odoo Community Association (OCA)',
-    'category': 'Medical',
-    'depends': [
-        'medical',
+    "name": "Medical Pathology",
+    "summary": "Extends Odoo Medical with pathologies (diseases).",
+    "version": "9.0.1.0.0",
+    "category": "Medical",
+    "website": "https://laslabs.com/",
+    "author": "LasLabs, ACSONE SA/NV, Odoo Community Association (OCA)",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": [
+        "medical",
     ],
-    'website': 'https://laslabs.com/',
-    'licence': 'AGPL-3',
-    'data': [
-        'views/medical_pathology_category_view.xml',
-        'views/medical_pathology_group_view.xml',
-        'views/medical_pathology_view.xml',
-        'views/medical_menu.xml',
-        'data/medical_pathology_code_type.xml',
-        'security/ir.model.access.csv',
+    "data": [
+        "views/medical_pathology_category_view.xml",
+        "views/medical_pathology_group_view.xml",
+        "views/medical_pathology_view.xml",
+        "views/medical_menu.xml",
+        "data/medical_pathology_code_type.xml",
+        "security/ir.model.access.csv",
     ],
-    'test': [
-        'tests/medical_pathology_category.yml',
-        'tests/medical_pathology_group.yml',
-        'tests/medical_pathology.yml',
+    "demo": [
+        "demo/medical_pathology_category_demo.xml",
+        "demo/medical_pathology_group_demo.xml",
+        "demo/medical_pathology_demo.xml",
     ],
-    'installable': True,
-    'auto_install': False,
 }
