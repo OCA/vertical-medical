@@ -3,123 +3,112 @@
 # Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import _, api, fields, models
-from openerp.exceptions import ValidationError
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
+from odoo import _, api, fields, models, tools
+from odoo.modules import get_module_resource
+from odoo.exceptions import ValidationError
+
 
 class MedicalPatient(models.Model):
+    """
+    The concept of Patient included in medical.
+    """
     _name = 'medical.patient'
     _description = 'Medical Patient'
-    _inherits = {'res.partner': 'partner_id'}
+    _inherit = 'medical.abstract.entity'
 
     age = fields.Char(
         compute='_compute_age',
     )
     identification_code = fields.Char(
         string='Internal Identification',
-        help='Patient identifier provided by the health center'
-             ' (Different from the social security number)',
+        help='Patient Identifier provided by the Health Center.'
+             '(different from the Social Security Number)',
     )
     general_info = fields.Text(
         string='General Information',
     )
-    dob = fields.Date(
-        string='Date of Birth',
+    is_deceased = fields.Boolean(
+        compute='_compute_is_deceased',
     )
-    dod = fields.Datetime(
-        string='Deceased Date',
-    )
-    active = fields.Boolean(
-        default=True,
-    )
-    deceased = fields.Boolean(
-        compute='_compute_deceased',
-        store=True,
-        help='Automatically True if deceased date is set',
-    )
-    partner_id = fields.Many2one(
-        string='Related Partner',
-        comodel_name='res.partner',
-        required=True,
-        ondelete='cascade',
-        index=True,
-    )
-    gender = fields.Selection(
-        [
-            ('m', 'Male'),
-            ('f', 'Female'),
-        ],
-    )
-    medical_center_id = fields.Many2one(
-        string='Medical Center',
-        comodel_name='res.partner',
-        domain="[('is_institution', '=', True)]",
-    )
-    marital_status = fields.Selection(
-        [
-            ('s', 'Single'),
-            ('m', 'Married'),
-            ('w', 'Widowed'),
-            ('d', 'Divorced'),
-            ('x', 'Separated'),
-            ('z', 'law marriage'),
-        ],
-    )
+    marital_status = fields.Selection([
+        ('s', 'Single'),
+        ('m', 'Married'),
+        ('w', 'Widowed'),
+        ('d', 'Divorced'),
+        ('x', 'Separated'),
+        ('z', 'law marriage'),
+    ], )
     is_pregnant = fields.Boolean(
-        help='Check if the patient is pregnant',
+        help='Check this if the patient if pregnant',
+    )
+    date_death = fields.Datetime(
+        string='Deceased Date',
     )
 
     @api.multi
     def _compute_age(self):
+        """ Age computed depending based on the birth date in the
+         membership request.
+        """
         now = datetime.now()
-        for rec_id in self:
-            if rec_id.dob:
-                dob = fields.Datetime.from_string(rec_id.dob)
-
-                if rec_id.deceased:
-                    dod = fields.Datetime.from_string(rec_id.dod)
-                    delta = relativedelta(dod, dob)
-                    deceased = _(' (deceased)')
+        for record in self:
+            if record.birthdate_date:
+                birthdate_date = fields.Datetime.from_string(
+                    record.birthdate_date,
+                )
+                if record.is_deceased:
+                    date_death = fields.Datetime.from_string(record.date_death)
+                    delta = relativedelta(date_death, birthdate_date)
+                    is_deceased = _(' (deceased)')
                 else:
-                    delta = relativedelta(now, dob)
-                    deceased = ''
-                years_months_days = '%s%s %s%s %s%s%s' % (
-                    delta.years, _('y'),
-                    delta.months, _('m'),
-                    delta.days, _('d'), deceased
+                    delta = relativedelta(now, birthdate_date)
+                    is_deceased = ''
+                years_months_days = '%d%s %d%s %d%s%s' % (
+                    delta.years, _('y'), delta.months, _('m'),
+                    delta.days, _('d'), is_deceased
                 )
             else:
-                years_months_days = _('No DoB!')
-            rec_id.age = years_months_days
+                years_months_days = _('No DoB')
+            record.age = years_months_days
+
+    @api.multi
+    def _compute_is_deceased(self):
+        for record in self:
+            record.is_deceased = bool(record.date_death)
 
     @api.multi
     @api.constrains('is_pregnant', 'gender')
     def _check_is_pregnant(self):
-        for rec_id in self:
-            if rec_id.is_pregnant and rec_id.gender != 'f':
+        for record in self:
+            if record.is_pregnant and record.gender != 'female':
                 raise ValidationError(_(
-                    'Invalid selection - males cannot be pregnant.',
+                    'Invalid selection - Only a `Female` may be pregnant.',
                 ))
 
-    @api.multi
-    def action_invalidate(self):
-        for rec_id in self:
-            rec_id.active = False
-            rec_id.partner_id.active = False
-
-    @api.multi
-    @api.depends('dod')
-    def _compute_deceased(self):
-        for rec_id in self:
-            rec_id.deceased = bool(rec_id.dod)
+    @api.model
+    def _create_vals(self, vals):
+        vals = super(MedicalPatient, self)._create_vals(vals)
+        if not vals.get('identification_code'):
+            Seq = self.env['ir.sequence']
+            vals['identification_code'] = Seq.next_by_code(
+                self._name,
+            )
+        vals.update({
+            'customer': True,
+        })
+        return vals
 
     @api.model
-    @api.returns('self', lambda value: value.id)
-    def create(self, vals):
-        vals['is_patient'] = True
-        if not vals.get('identification_code'):
-            sequence = self.env['ir.sequence'].next_by_code('medical.patient')
-            vals['identification_code'] = sequence
-        return super(MedicalPatient, self).create(vals)
+    def _get_default_image(self, vals):
+        res = super(MedicalPatient, self)._get_default_image(vals)
+        if res:
+            return res
+        img_path = get_module_resource(
+            'medical', 'static/src/img', 'patient-avatar.png',
+        )
+        with open(img_path, 'r') as image:
+            base64_image = image.read().encode('base64')
+        return tools.image_resize_image_big(base64_image)
