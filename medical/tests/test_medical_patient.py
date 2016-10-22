@@ -3,11 +3,15 @@
 # Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
-from openerp.exceptions import ValidationError
-from openerp import fields
-from openerp.tests.common import TransactionCase
-from datetime import datetime
+
+from odoo import fields
+from odoo.tests.common import TransactionCase
+from odoo.exceptions import ValidationError
+
+
+MODULE_PATH = 'medical.models.medical_patient'
 
 
 class TestMedicalPatient(TransactionCase):
@@ -17,23 +21,22 @@ class TestMedicalPatient(TransactionCase):
         self.patient_1 = self.env.ref('medical.medical_patient_patient_1')
         self.partner_patient_1 = self.env.ref('medical.res_partner_patient_1')
         self.patient_3 = self.env.ref('medical.medical_patient_patient_3')
+        self.id_category = self.env['res.partner.id_category'].create({
+            'code': 'TEST',
+            'name': 'failed = False',
+        })
 
     def test_sequence_for_identification_code(self):
         """ Test identification_code created if there is none """
         self.assertTrue(
             self.patient_1.identification_code,
-            'Should make id code if none.\rGot: %s\rExpected: %s' % (
-                self.patient_1.identification_code, 'A truthey value'
-            )
         )
 
     def test_partner_is_patient(self):
-        """ Test is_patient set to True on partner """
-        self.assertTrue(
-            self.partner_patient_1.is_patient,
-            'is_patient should be True.\rGot: %s\rExpected: %s' % (
-                self.partner_patient_1.is_patient, True
-            )
+        """ Test that medical patient type is correctly set on partner """
+        self.assertEqual(
+            self.partner_patient_1.type,
+            'medical.patient',
         )
 
     def test_pregnant_male_raises_error(self):
@@ -43,76 +46,96 @@ class TestMedicalPatient(TransactionCase):
 
     def test_pregnant_female_no_error(self):
         """ Test no ValidationError if female is pregnant """
-        try:
-            self.patient_1.is_patient = True
-            self.assertTrue(True)
-        except ValidationError:
-            self.fail(
-                'Should not raise ValidationError if female pregnant'
-            )
+        self.patient_1.is_pregnant = True
+        self.assertTrue(True)
 
     def test_compute_age(self):
         """ Test compute_age with no special cases """
         now = datetime.now()
-        dob = fields.Datetime.from_string(self.patient_1.dob)
-        delta = relativedelta(now, dob)
+        birthdate_date = fields.Datetime.from_string(
+            self.patient_1.birthdate_date,
+        )
+        delta = relativedelta(now, birthdate_date)
         age = '%s%s %s%s %s%s' % (
             delta.years, 'y',
             delta.months, 'm',
             delta.days, 'd',
         )
-        self.assertEqual(
+        self.assertEquals(
             self.patient_1.age, age,
-            'Should be the same age.\rGot: %s\rExpected: %s' % (
-                self.patient_1.age, age
-            )
         )
 
     def test_compute_age_patient_deceased(self):
         """ Test age properly set if patient deceased """
         self.assertEquals(
             self.patient_3.age, '36y 1m 20d (deceased)',
-            'Should be the same age.\rGot: %s\rExpected: %s' % (
-                self.patient_3.age, '36y 1m 20d (deceased)'
-            )
         )
 
-    def test_compute_age_no_dob_set(self):
-        """ Test age equals 'No DoB !' if no dob present """
-        self.patient_1.dob = None
+    def test_compute_age_no_birthdate_date_set(self):
+        """ Test age equals 'No DoB' if no birthdate_date present """
+        self.patient_1.birthdate_date = None
         self.assertEquals(
-            self.patient_1.age, 'No DoB!',
-            'Age is incorrect.\rGot: %s\rExpected: %s' % (
-                self.patient_1.age, 'No DoB!'
-            )
+            self.patient_1.age, 'No DoB',
         )
 
-    def test_action_invalidate(self):
+    def test_toggle_active(self):
         """ Test invalidate patient also invalidates partner """
-        self.patient_1.action_invalidate()
+        self.patient_1.toggle_active()
         self.assertEquals(
             [self.partner_patient_1.active, self.patient_1.active],
             [False, False],
-            'Should be inactive.\rGot: %s\rExpected: %s' % (
-                [self.partner_patient_1.active, self.patient_1.active],
-                [False, False]
-            )
         )
 
-    def test_patient_deceased_if_dod_exists(self):
-        """ Test deceased is True if value set on dod """
+    def test_patient_deceased_if_date_death_exists(self):
+        """ Test deceased is True if value set on date_death """
         self.assertTrue(
-            self.patient_3.deceased,
-            'Should be deceased if dod exists.\rGot: %s\rExpected: %s' % (
-                self.patient_3.deceased, True
-            )
+            self.patient_3.is_deceased,
         )
 
-    def test_patient_not_deceased_if_no_dod(self):
-        """ Test deceased is False if no value set on dod """
+    def test_patient_not_deceased_if_no_date_death(self):
+        """ Test deceased is False if no value set on date_death """
         self.assertFalse(
-            self.patient_1.deceased,
-            'Should not be deceased if no dod.\rGot: %s\rExpected: %s' % (
-                self.patient_1.deceased, False
-            )
+            self.patient_1.is_deceased,
         )
+
+    def test_create_as_partner(self):
+        """ It should create the entity if created as a partner. """
+        partner = self.env['res.partner'].create({
+            'name': 'test',
+            'type': 'medical.patient',
+        })
+        self.assertEqual(
+            len(partner.patient_ids), 1,
+        )
+
+    def test_create_vals_default_image(self):
+        """ It should get the default image for entity on create. """
+        Patient = self.env['medical.patient'].with_context(
+            __image_create_allow=True,
+        )
+        vals = {'name': 'test'}
+        patient = Patient.create(vals)
+        self.assertTrue(patient.image)
+
+    def test_get_default_image(self):
+        """ It should return the default image for the entity. """
+        Patient = self.env['medical.patient']
+        image = Patient._get_default_image({})
+        self.assertTrue(image)
+
+    def test_allow_image_create_no_test(self):
+        """ It should not perform default image manipulation when testing. """
+        Patient = self.env['medical.patient']
+        can_create = Patient._allow_image_create({})
+        self.assertFalse(can_create)
+
+    def test_check_birthdate_date(self):
+        """ It should not allow birth dates in the future. """
+        now = datetime.now()
+        with self.assertRaises(ValidationError):
+            self.env['medical.patient'].create({
+                'name': 'Future Baby',
+                'birthdate_date': fields.Datetime.to_string(
+                    now + timedelta(days=20),
+                )
+            })

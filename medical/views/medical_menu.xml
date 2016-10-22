@@ -4,27 +4,36 @@
 
 <odoo>
 
-    <menuitem id="medical_root" name="Medical" sequence="10" />
+    <menuitem id="medical_root"
+              name="Medical"
+              sequence="10"
+              web_icon="medical,static/description/icon.png"
+              load_xmlid="True"
+              />
 
     <menuitem id="medical_patient_root"
-                name="Patient"
-                parent="medical_root"
-                sequence="10" />
+              name="Patient"
+              parent="medical_root"
+              sequence="10"
+              />
 
     <menuitem id="medical_patient"
-                name=" Patient"
-                parent="medical_patient_root"
-                sequence="10"
-                action="medical_patient_action" />
+              name="Patient"
+              parent="medical_patient_root"
+              sequence="10"
+              action="medical_patient_action"
+              />
 
     <menuitem id="medical_root_sub"
-                name="Configuration"
-                parent="medical_root"
-                sequence="100" />
+              name="Configuration"
+              parent="medical_root"
+              sequence="100"
+              />
 
     <menuitem id="medical_root_misc"
-                name="Misc"
-                parent="medical_root_sub"
-                sequence="200" />
+              name="Misc"
+              parent="medical_root_sub"
+              sequence="200"
+              />
 
 </odoo>

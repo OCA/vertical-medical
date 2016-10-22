@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <template id="assets_backend"
+              inherit_id="web.assets_backend"
+              name="Medical Assets">
+        <xpath expr=".">
+            <script type="text/javascript"
+                    src="/medical/static/src/js/medical.tour.js"/>
+        </xpath>
+    </template>
+
+</odoo>

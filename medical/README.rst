@@ -6,26 +6,80 @@
 Odoo Medical
 ============
 
-This module extends Odoo with the base functionality of medical patients and centers.
+This module extends Odoo with the base functionality of medical patients.
+
+Installation
+============
+
+This module depends on modules located in the following repos:
+* https://github.com/OCA/partner-contact
+
+Check the ``__manifest__.py`` for the specific dependencies.
 
 Usage
 =====
 
-No additional configuration is needed to enable features for this module after installation.
+Patients
+--------
+
+Patients are available in the ``Medical`` App, in the ``Patients`` submenu.
+
+Medical Abstract Entity
+-----------------------
+
+The Medical Abstract Entity (``medical.abstract.entity``) is an AbstractModel
+that provides for a central base that all medical entities should inherit from.
+
+A Medical Entity is any partner that also requires a medical context. Examples:
+
+* MedicalCenter
+* MedicalPatient
+* MedicalPhysician
+* MedicalPharmacy
+
+Some base views are also provided in order to make it easy to create new medical
+entities & maintain uniformity between them:
+
+* Kanban - ``medical_asbsract_entity_view_kanban``
+* Tree - ``medical_asbsract_entity_view_tree``
+* Form - ``medical_asbsract_entity_view_form``
+* Search - ``medical_asbsract_entity_view_search``
+
+When inheriting these views, you must define the inheritance mode as ``primary``,
+such as in the following example:
+
+    .. code-block:: xml
+
+    <record id="medical_patient_view_tree" model="ir.ui.view">
+        <field name="name">medical.patient.tree</field>
+        <field name="model">medical.patient</field>
+        <field name="inherit_id" ref="medical_abstract_entity_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="string">Patients</attribute>
+            </xpath>
+            <xpath expr="//field[@name='email']" position="after">
+                <field name="identification_code" />
+                <field name="age" />
+                <field name="gender" />
+            </xpath>
+        </field>
+    </record>
+
+Take a look at ``medical/views/medical_patient.xml``, or any of the other medical
+entity views for more examples.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/159/9.0
-
-.. repo_id is available in https://github.com/OCA/maintainer-tools/blob/master/tools/repos_with_ids.txt
-.. branch is "9.0" for example
+   :target: https://runbot.odoo-community.org/runbot/159/10.0
 
 Known issues / Roadmap
 ======================
 
-* Separation of patient/res_partner name into first and last names.
-* (Odoo v10) Remove all is_* fields (e.g. is_school, is_work, etc.) from res.partner and move to res.partner.type.
-* Remove medical_constants in favor of existing solution in Odoo.
+* There is a singleton issue with the ID numbers pass-thru & crossing could
+  occur.
+* v11 - Move Marital status into a new module in OCA/partner-contact
 
 Bug Tracker
 ===========
@@ -42,14 +96,14 @@ Images
 ------
 
 * Odoo Community Association: `Icon <https://github.com/OCA/maintainer-tools/blob/master/template/module/static/description/icon.svg>`_.
+* DevCom: `Patient Avatar <http://www.devcom.com/>`_.
 
 Contributors
 ------------
 
-* Jonathan Nemry <jonathan.nemry@acsone.eu>
 * Dave Lasley <dave@laslabs.com>
+* Jonathan Nemry <jonathan.nemry@acsone.eu>
 * Brett Wood <bwood@laslabs.com>
-* Parthiv Patel <parthiv@techreceptives.com>
 * Ruchir Shukla <ruchir@techreceptives.com>
 * Parthiv Patel <parthiv@techreceptives.com>
 * Nhomar Hernandéz <nhomar@vauxoo.com>
