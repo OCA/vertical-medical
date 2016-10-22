@@ -3,23 +3,22 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from psycopg2 import IntegrityError
-from openerp.tests.common import TransactionCase
-from openerp import fields
-from openerp.exceptions import ValidationError
+from odoo.tests.common import TransactionCase
+from odoo import fields
+from odoo.exceptions import ValidationError
 
 
 class TestAll(TransactionCase):
-    ''' @TODO: Isolate all of this by model '''
+    """ @TODO: Isolate all of this by model """
 
     module = 'medical_prescription_sale_stock'
 
     def setUp(self, *args, **kwargs):
         super(TestAll, self).setUp(*args, **kwargs)
-
-    # def _clear_resources(self):
+        self.uom_id = self.env.ref('product.product_uom_unit')
         self.order_vals = {}
         self.order_line_vals = {
-            'product_uom': 1,
+            'product_uom': self.uom_id.id,
             'product_uom_qty': 1,
         }
         self.patient_vals = {
@@ -54,7 +53,7 @@ class TestAll(TransactionCase):
             'date_planned': fields.Datetime.now(),
             'name': 'Test Dispensing',
             'product_qty': 1,
-            'product_uom': 1,
+            'product_uom': self.uom_id.id,
         }
         self.state = 'draft'
         self.prescription_line = True
@@ -143,7 +142,7 @@ class TestAll(TransactionCase):
         self.rx_line_vals = old_rx_line_vals
 
         self.assertEqual(
-            self.env['product.template']._get_uom_id(),
+            self.env['product.template']._get_default_uom_id(),
             self.rx_line_id.dispense_uom_id.id,
         )
 

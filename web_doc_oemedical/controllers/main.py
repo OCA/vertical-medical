@@ -25,10 +25,10 @@ import web
 
 
 def read_base_doc(name):
-    '''
+    """
     Method that will be sure to convert path of index in absolute path.
     TODO: It is not finished yet
-    '''
+    """
     whereami = os.path.dirname(os.path.realpath(__file__))
 
     return ''

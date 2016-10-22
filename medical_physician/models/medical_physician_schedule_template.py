@@ -2,18 +2,18 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models
-from openerp.addons.medical.medical_constants import days, hours, minutes
+from odoo import fields, models
+from odoo.addons.medical.medical_constants import days, hours, minutes
 
 
 class MedicalPhysicianScheduleTemplate(models.Model):
-    '''
+    """
     Available schedule for the Physiscian.
 
     ie: A physician will be able to say, in this schedule on this days.
 
     The objective is to show the available spaces for every physician
-    '''
+    """
     _name = 'medical.physician.schedule.template'
     _description = 'Medical Physicians Schedule Templates'
 
@@ -22,7 +22,7 @@ class MedicalPhysicianScheduleTemplate(models.Model):
         help='Physician for the schedule template',
         comodel_name='medical.physician',
         required=True,
-        select=True,
+        index=True,
         ondelete='cascade',
     )
     day = fields.Selection(

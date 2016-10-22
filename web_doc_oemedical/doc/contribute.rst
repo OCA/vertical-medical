@@ -45,7 +45,7 @@ A new object is this one that for functional or design reasons is not included
 on the core of OpenERP.
 
 New classes signature.
-''''''''''''''''''''''
+"""""""""""""""""""""'
 
 All new classes must start with ``OeMedicalName`` see it in `CamelCase`.
 
@@ -55,7 +55,7 @@ i.e.:
   :lines: 2
 
 New Object name.
-''''''''''''''''
+"""""""""""""""'
 
 All new objects will complay with OpenERP standard it means separated by one dot
 between words.
@@ -66,12 +66,12 @@ i.e.
   :lines: 15
 
 New method signature.
-'''''''''''''''''''''
+"""""""""""""""""""""
 
 All new methods will be named with `snake_case`.
 
 File management for new objects
-'''''''''''''''''''''''''''''''
+""""""""""""""""""""""""""""""'
 
 All new objects will be in a new folder, with both xml and py files, see 
 ``oemedical`` modules for some example.
@@ -83,7 +83,7 @@ In version 1.0 of OeMedical we decide work with version 7.0 of OpenERP, for
 this reason some specific conventions must be verified.
 
 Views 7.0 compatibles.
-''''''''''''''''''''''
+"""""""""""""""""""""'
 
 All views that use OeMedical will comply with version 7.0 of OpenERP.
 

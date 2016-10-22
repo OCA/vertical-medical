@@ -2,8 +2,8 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, api, _
-from openerp.exceptions import ValidationError
+from odoo import models, api, _
+from odoo.exceptions import ValidationError
 
 
 class MedicalAbstractNpi(models.AbstractModel):

@@ -23,7 +23,7 @@
 #
 ##############################################################################
 
-from openerp.tests.common import TransactionCase
+from odoo.tests.common import TransactionCase
 
 
 class TestMedicalMedicament(TransactionCase):
@@ -50,7 +50,7 @@ class TestMedicalMedicament(TransactionCase):
         self.assertTrue(medicament_id.product_id.is_medicament)
 
     def test_name_get(self, ):
-        ''' Verify that name is product and form '''
+        """ Verify that name is product and form """
         medicament_id = self._test_record()
         expect = '%s - %s' % (medicament_id.product_id.name,
                               medicament_id.drug_form_id.name)

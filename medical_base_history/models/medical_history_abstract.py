@@ -2,11 +2,11 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models, api
+from odoo import fields, models, api
 
 
 class MedicalHistoryAbstract(models.AbstractModel):
-    '''
+    """
     Inherit this to provide change audit logging capabilities to any model.
 
     Public attributes and methods will be prefixed with history_entry in order
@@ -15,7 +15,7 @@ class MedicalHistoryAbstract(models.AbstractModel):
     Attributes:
         _audit_on: `list` of methods to log. Supports create, write, and delete
             Override this in child classes in order to add/remove attrs
-    '''
+    """
 
     _name = 'medical.history.abstract'
     _description = 'Provides inheritable model for change history auditing'
@@ -32,7 +32,7 @@ class MedicalHistoryAbstract(models.AbstractModel):
 
     @api.model
     def create(self, vals, ):
-        ''' Overload create to create history '''
+        """ Overload create to create history """
         rec_id = super(MedicalHistoryAbstract, self).create(vals)
         if 'create' in self._audit_on:
             rec_id.history_entry_new('CREATE', vals).state_complete()
@@ -40,7 +40,7 @@ class MedicalHistoryAbstract(models.AbstractModel):
 
     @api.multi
     def write(self, vals):
-        ''' Overload write to create history '''
+        """ Overload write to create history """
         if 'write' in self._audit_on:
             entry_ids = self.history_entry_new('UPDATE', vals)
         res = super(MedicalHistoryAbstract, self).write(vals)
@@ -52,7 +52,7 @@ class MedicalHistoryAbstract(models.AbstractModel):
 
     @api.multi
     def unlink(self, ):
-        ''' Overload unlink to create history '''
+        """ Overload unlink to create history """
         if 'unlink' in self._audit_on:
             entry_ids = self.history_entry_new('DELETE', {})
         res = super(MedicalHistoryAbstract, self).unlink()
@@ -65,7 +65,7 @@ class MedicalHistoryAbstract(models.AbstractModel):
     @api.multi
     @api.returns('medical.history.entry')
     def history_entry_new(self, code, vals, ):
-        '''
+        """
         Create a new history entry given values
 
         Args:
@@ -73,7 +73,7 @@ class MedicalHistoryAbstract(models.AbstractModel):
 
         Returns:
             `Recordset` of the new entries created
-        '''
+        """
         entry_ids = self.env['medical.history.entry']
         entry_type_id = self.env['medical.history.type'].get_by_code(code)
         for rec_id in self:

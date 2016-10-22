@@ -20,8 +20,8 @@
 #
 #/#############################################################################
 
-from openerp.osv import fields, orm
-from openerp.tools.translate import _
+from odoo.osv import fields, orm
+from odoo.tools.translate import _
 
 
 class PatientPregnancy(orm.Model):
@@ -184,16 +184,16 @@ class PuerperiumMonitor(orm.Model):
             ('n', 'normal'),
             ('e', 'abundant'),
             ('h', 'hemorrhage'),
-        ], 'Lochia amount', select=True),
+        ], 'Lochia amount', index=True),
         'lochia_color': fields.selection([
             ('r', 'rubra'),
             ('s', 'serosa'),
             ('a', 'alba'),
-        ], 'Lochia color', select=True),
+        ], 'Lochia color', index=True),
         'lochia_odor': fields.selection([
             ('n', 'normal'),
             ('o', 'offensive'),
-        ], 'Lochia odor', select=True),
+        ], 'Lochia odor', index=True),
         'uterus_involution': fields.integer('Fundal Height', help="Distance between the symphysis pubis and the uterine fundus (S-FD) in cm"),
         'temperature': fields.float('Temperature'),
     }
@@ -222,7 +222,7 @@ class PerinatalMonitor(orm.Model):
             ('cb', 'Complete Breech'),
             ('t', 'Transverse Lie'),
             ('t', 'Footling Breech'),
-        ], 'Fetus Position', select=True),
+        ], 'Fetus Position', index=True),
     }
 
 
@@ -241,7 +241,7 @@ class OemedicalPerinatal(orm.Model):
             ('n', 'Normal'),
             ('i', 'Induced'),
             ('c', 'c-section'),
-        ], 'Labor mode', select=True),
+        ], 'Labor mode', index=True),
         'gestational_weeks': fields.integer('Gestational weeks'),
         'gestational_days': fields.integer('Gestational days'),
         'fetus_presentation': fields.selection([
@@ -251,7 +251,7 @@ class OemedicalPerinatal(orm.Model):
             ('cb', 'Complete Breech'),
             ('t', 'Transverse Lie'),
             ('t', 'Footling Breech'),
-        ], 'Fetus Presentation', select=True),
+        ], 'Fetus Presentation', index=True),
         'dystocia': fields.boolean('Dystocia'),
         'laceration': fields.selection([
             ('perineal', 'Perineal'),

@@ -11,10 +11,8 @@
         <field name="model">res.company</field>
         <field name="inherit_id" ref="base.view_company_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//page[@name='configuration']" position="inside">
-                <group name="medical_group" string="Medical">
-                    <field name="medical_prescription_refill_threshold"/>
-                </group>
+            <xpath expr="//field[@name='website']" position="inside">
+                <field name="medical_prescription_refill_threshold"/>
             </xpath>
         </field>
     </record>

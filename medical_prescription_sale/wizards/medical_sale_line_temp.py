@@ -2,7 +2,7 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api
+from odoo import models, fields, api
 import openerp.addons.decimal_precision as dp
 
 
@@ -27,16 +27,16 @@ class MedicalSaleLineTemp(models.TransientModel):
     )
     product_uom_qty = fields.Float(
         'Quantity',
-        digits_compute=dp.get_precision('Product UoM'),
+        digits=dp.get_precision('Product UoM'),
         required=True,
     )
     price_unit = fields.Float(
         'Unit Price',
-        digits_compute=dp.get_precision('Product Price'),
+        digits=dp.get_precision('Product Price'),
         required=True,
     )
     price_subtotal = fields.Float(
-        digits_compute=dp.get_precision('Account'),
+        digits=dp.get_precision('Account'),
         required=True,
         compute='_compute_all_amounts',
     )
@@ -54,20 +54,20 @@ class MedicalSaleLineTemp(models.TransientModel):
 
     @api.multi
     def _to_insert(self, ):
-        ''' List of insert tuples for ORM methods '''
+        """ List of insert tuples for ORM methods """
         return list(
             (0, 0, v) for v in self._to_vals_iter()
         )
 
     @api.multi
     def _to_vals_iter(self, ):
-        ''' Generator of values dicts for ORM methods '''
+        """ Generator of values dicts for ORM methods """
         for sale_id in self:
             yield sale_id._to_vals()
 
     @api.multi
     def _to_vals(self, ):
-        ''' Return a values dictionary to create in real model '''
+        """ Return a values dictionary to create in real model """
         self.ensure_one()
         name = '%s - %s' % (
             self.prescription_order_line_id.prescription_order_id.name,

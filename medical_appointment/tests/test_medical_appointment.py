@@ -2,8 +2,8 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp.tests.common import TransactionCase
-from openerp.exceptions import ValidationError
+from odoo.tests.common import TransactionCase
+from odoo.exceptions import ValidationError
 
 
 class TestMedicalAppointment(TransactionCase):
@@ -105,15 +105,15 @@ class TestMedicalAppointment(TransactionCase):
         self.assertEquals('Pending Review', self.appointment_id.stage_id.name)
 
     def test_check_not_double_booking_raises_error_when_in_appt(self):
-        ''' Appt created while another appt in progress should be rejected '''
+        """ Appt created while another appt in progress should be rejected """
         with self.assertRaises(ValidationError):
             self._new_appointment('11:30:00')
 
     def test_check_not_double_booking_raises_error_when_clash_with_apt(self):
-        ''' Appt that will be in progress during already created rejected '''
+        """ Appt that will be in progress during already created rejected """
         with self.assertRaises(ValidationError):
             self._new_appointment('10:30:00')
 
     def test_check_not_double_booking_no_error_when_not_booked(self):
-        ''' Should not raise ValidationError '''
+        """ Should not raise ValidationError """
         self._new_appointment('15:00:00')

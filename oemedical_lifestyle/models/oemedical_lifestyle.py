@@ -20,8 +20,8 @@
 #
 #/#############################################################################
 
-from openerp.osv import fields, orm
-from openerp.tools.translate import _
+from odoo.osv import fields, orm
+from odoo.tools.translate import _
 
 
 class DrugsRecreational(orm.Model):
@@ -183,7 +183,7 @@ class PatientRecreationalDrugs(orm.Model):
             'Recreational Drug'),
     }
 
-''' CAGE questionnaire to assess patient dependency to alcohol '''
+""" CAGE questionnaire to assess patient dependency to alcohol """
 PatientRecreationalDrugs()
 
 

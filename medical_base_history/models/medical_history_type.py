@@ -2,14 +2,14 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models, api
-from openerp.exceptions import ValidationError
+from odoo import fields, models, api
+from odoo.exceptions import ValidationError
 
 
 class MedicalHistoryType(models.Model):
-    '''
+    """
     Provides History Types to be used as classification for change logging
-    '''
+    """
 
     _name = 'medical.history.type'
     _description = 'Medical History Types'
@@ -52,7 +52,7 @@ class MedicalHistoryType(models.Model):
 
     @api.multi
     def _compute_display_name(self, ):
-        ''' Compute name for representation to user '''
+        """ Compute name for representation to user """
         for rec_id in self:
             rec_id.display_name = '[%(code)s] %(prefix)s%(name)s%(suffix)s' % {
                 'code': self.code,
@@ -64,7 +64,7 @@ class MedicalHistoryType(models.Model):
     @api.multi
     @api.constrains('code')
     def _check_unique_code(self, ):
-        ''' Constrain that code is unique '''
+        """ Constrain that code is unique """
         for rec_id in self:
             if len(self.search([('code', '=', rec_id.code)])) > 1:
                 raise ValidationError(
@@ -74,7 +74,7 @@ class MedicalHistoryType(models.Model):
     @api.model
     @api.returns('self')
     def get_by_code(self, code, ):
-        '''
+        """
         Return a Recordset singleton for the code
 
         Args:
@@ -82,7 +82,7 @@ class MedicalHistoryType(models.Model):
 
         Returns:
             `Recordset` Singleton of the History Type matching code
-        '''
+        """
         return self.search([
             ('code', '=', code),
         ], limit=1)
@@ -90,7 +90,7 @@ class MedicalHistoryType(models.Model):
     @api.model
     @api.returns('self')
     def get_by_name(self, name, operator='=', ):
-        '''
+        """
         Return a Recordset for the name
 
         Args:
@@ -99,7 +99,7 @@ class MedicalHistoryType(models.Model):
 
         Returns:
             `Recordset` of History Type(s) matching name
-        '''
+        """
         return self.search([
             ('name', operator, name)
         ])

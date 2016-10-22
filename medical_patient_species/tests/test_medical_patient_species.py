@@ -2,8 +2,8 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp.tests.common import TransactionCase
-from openerp.exceptions import Warning
+from odoo.tests.common import TransactionCase
+from odoo.exceptions import Warning
 
 
 class TestMedicalPatientSpecies(TransactionCase):
@@ -14,6 +14,6 @@ class TestMedicalPatientSpecies(TransactionCase):
         self.dog = self.env.ref('medical_patient_species.dog')
 
     def test_unlink_human(self):
-        ''' Test raises Warning if unlinking human '''
+        """ Test raises Warning if unlinking human """
         with self.assertRaises(Warning):
             self.human.unlink()

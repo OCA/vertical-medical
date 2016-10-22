@@ -17,15 +17,9 @@
                 <xpath expr="//field" position="before">
                     <field name="is_prescription" invisible="True" />
                 </xpath>
-                <xpath expr="//button[@attrs=&quot;{'invisible': [('probability', '=', 0)]}&quot;]"
+                <xpath expr="//button[@class='oe_highlight']"
                        position="attributes">
-                    <field name="attrs">{'invisible': [('probability', '=', 0),
-                                                       ('is_prescription', '=', True)]}</field>
-                </xpath>
-                <xpath expr="//button[@attrs=&quot;{'invisible': [('probability', '>', 0)]}&quot;]"
-                       position="attributes">
-                    <field name="attrs">{'invisible': [('probability', '>', 0),
-                                                       ('is_prescription', '=', True)}</field>
+                    <field name="attrs">{'invisible': [('is_prescription', '=', True)]}</field>
                 </xpath>
                 <xpath expr="//button" position="after">
                     <button string="New Quotation"

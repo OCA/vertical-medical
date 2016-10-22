@@ -20,8 +20,8 @@ import time
 from mx import DateTime
 import datetime
 
-from openerp.osv import fields, orm
-from openerp.tools.translate import _
+from odoo.osv import fields, orm
+from odoo.tools.translate import _
 
 # Add Lab test information to the Patient object
 

@@ -2,13 +2,13 @@
 # © 2016-TODAY LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import http
-from openerp.http import request
-from openerp.exceptions import ValidationError
-from openerp.addons.base.ir.ir_qweb import nl2br
+from odoo import http
+from odoo.http import request
+from odoo.exceptions import ValidationError
+from odoo.addons.base.ir.ir_qweb.fields import nl2br
 
-from openerp.addons.website_form.controllers.main import WebsiteForm as Ctrl
-from openerp.addons.website_portal.controllers.main import website_account
+from odoo.addons.website_form.controllers.main import WebsiteForm as Ctrl
+from odoo.addons.website_portal.controllers.main import website_account
 
 import json
 from psycopg2 import IntegrityError

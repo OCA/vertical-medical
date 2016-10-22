@@ -2,14 +2,14 @@
 # Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import http
-from openerp.http import request
-from openerp.addons.website_sale.controllers.main import website_sale
+from odoo import http
+from odoo.http import request
+from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 import json
 
 
-class WebsiteSale(website_sale):
+class WebsiteSale(WebsiteSale):
 
     form_name_map = {}
 

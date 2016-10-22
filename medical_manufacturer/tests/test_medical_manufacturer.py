@@ -2,7 +2,7 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp.tests.common import TransactionCase
+from odoo.tests.common import TransactionCase
 
 
 class TestMedicalManufacturer(TransactionCase):
@@ -18,6 +18,6 @@ class TestMedicalManufacturer(TransactionCase):
         return self.model_obj.create(self.vals)
 
     def test_is_manufacturer(self, ):
-        ''' Validate is_manufacturer is set on partner '''
+        """ Validate is_manufacturer is set on partner """
         rec_id = self._new_record()
         self.assertTrue(rec_id.is_manufacturer)

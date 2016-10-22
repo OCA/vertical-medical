@@ -20,8 +20,8 @@
 #
 #/#############################################################################
 
-from openerp.osv import fields, orm
-from openerp.tools.translate import _
+from odoo.osv import fields, orm
+from odoo.tools.translate import _
 
 
 class OeMedicalDiseaseGene(orm.Model):
@@ -38,7 +38,7 @@ class OeMedicalDiseaseGene(orm.Model):
                         'Affected Chromosome', size=256, required=True), 'info': fields.text(
                             string='Information'), 'dominance': fields.selection(
                                 [
-                                    ('d', 'dominant'), ('r', 'recessive'), ], 'Dominance', select=True)}
+                                    ('d', 'dominant'), ('r', 'recessive'), ], 'Dominance', index=True)}
 
 OeMedicalDiseaseGene()
 
@@ -51,7 +51,7 @@ class PatientGeneticRisk(orm.Model):
         'patient_id': fields.many2one(
             'oemedical.patient',
             'Patient',
-            select=True),
+            index=True),
         'disease_gene': fields.many2one(
             'oemedical.disease.gene',
             'Disease Gene',
@@ -65,12 +65,12 @@ class FamilyDiseases(orm.Model):
     _name = 'oemedical.patient.family.diseases'
     _description = 'Family Diseases'
     _columns = {
-        'patient_id': fields.many2one('oemedical.patient', 'Patient', select=True),
+        'patient_id': fields.many2one('oemedical.patient', 'Patient', index=True),
         'name': fields.many2one('oemedical.pathology', 'Disease', required=True),
         'xory': fields.selection([
             ('m', 'Maternal'),
             ('f', 'Paternal'),
-        ], 'Maternal or Paternal', select=True),
+        ], 'Maternal or Paternal', index=True),
         'relative': fields.selection([
             ('mother', 'Mother'),
             ('father', 'Father'),

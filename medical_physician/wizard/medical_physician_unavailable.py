@@ -2,7 +2,7 @@
 # © 2015 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models, api
+from odoo import fields, models, api
 
 
 class MedicalPhysicianUnavailableWizard(models.TransientModel):
@@ -19,7 +19,7 @@ class MedicalPhysicianUnavailableWizard(models.TransientModel):
         string='End', default=lambda s: fields.Datetime.now(), required=True
     )
     institution_id = fields.Many2one(
-        'res.partner', 'Medical Center', select=True,
+        'res.partner', 'Medical Center', index=True,
         domain=[('is_institution', '=', True)]
     )
 

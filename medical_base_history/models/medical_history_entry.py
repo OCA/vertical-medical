@@ -2,8 +2,8 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models, api, _
-from openerp.exceptions import ValidationError
+from odoo import fields, models, api, _
+from odoo.exceptions import ValidationError
 
 try:
     import cPickle as pickle
@@ -12,9 +12,9 @@ except ImportError:
 
 
 class MedicalHistoryEntry(models.Model):
-    '''
+    """
     Provides an abstract change log entry object to record changes on models
-    '''
+    """
 
     _name = 'medical.history.entry'
     _description = 'Medical History Historying Entries'
@@ -61,7 +61,7 @@ class MedicalHistoryEntry(models.Model):
     associated_model_name = fields.Char(
         string='Associated Record Type',
         required=True,
-        select=True,
+        index=True,
     )
     associated_record_id_int = fields.Integer(
         string='Associated Record ID',
@@ -82,14 +82,14 @@ class MedicalHistoryEntry(models.Model):
     @api.multi
     @api.depends('old_record_dict')
     def _compute_old_record_dict(self, ):
-        ''' Unpickle the old record for usage '''
+        """ Unpickle the old record for usage """
         for rec_id in self:
             if rec_id.old_record_dict:
                 self.old_record_dict = pickle.loads(rec_id.old_record_dict)
 
     @api.multi
     def _write_old_record_dict(self, ):
-        ''' Pickle the old record for storage '''
+        """ Pickle the old record for storage """
         for rec_id in self:
             if rec_id.old_record_dict:
                 self.old_record_dict = pickle.dumps(rec_id.old_record_dict)
@@ -97,28 +97,28 @@ class MedicalHistoryEntry(models.Model):
     @api.multi
     @api.depends('new_record_dict')
     def _compute_new_record_dict(self, ):
-        ''' Unpickle the new record for usage '''
+        """ Unpickle the new record for usage """
         for rec_id in self:
             if rec_id.new_record_dict:
                 self.new_record_dict = pickle.loads(rec_id.new_record_dict)
 
     @api.multi
     def _write_new_record_dict(self, ):
-        ''' Pickle the new record for storage '''
+        """ Pickle the new record for storage """
         for rec_id in self:
             if rec_id.new_record_dict:
                 self.new_record_dict = pickle.dumps(rec_id.new_record_dict)
 
     @api.multi
     def _compute_associated_record_details(self, ):
-        ''' Compute the record name and other details for abstract context '''
+        """ Compute the record name and other details for abstract context """
         for rec_id in self:
             associated_id = self.get_associated_record_id()
             self.associated_record_name = associated_id.get_name()
 
     @api.multi
     def write(self, vals, ):
-        ''' Overload write & disable if state is complete '''
+        """ Overload write & disable if state is complete """
         for rec_id in self:
             if rec_id.state == 'complete':
                 raise ValidationError(_(
@@ -128,7 +128,7 @@ class MedicalHistoryEntry(models.Model):
 
     @api.multi
     def unlink(self, ):
-        ''' Overload unlink & disable '''
+        """ Overload unlink & disable """
         raise ValidationError(_(
             'In order to preserve a compliant timeline, this history '
             'record cannot be destroyed once created. [%s]' % self,
@@ -136,7 +136,7 @@ class MedicalHistoryEntry(models.Model):
 
     @api.multi
     def get_associated_record_id(self, ):
-        '''
+        """
         Returns the Data Record that this History Record is associated with
 
         Raises:
@@ -144,14 +144,14 @@ class MedicalHistoryEntry(models.Model):
 
         Returns:
             `Recordset` Singleton associated with input record -unknown Model
-        '''
+        """
         self.ensure_one()
         model_obj = self.env[self.associated_model_name]
         return model_obj.browse(self.associated_record_id_int)
 
     @api.model
     def get_changed_cols(self, record_id, new_vals, ):
-        '''
+        """
         Returns a dictionary of the old values that are about to be changed
 
         Note that this method should be called *before* the record is updated;
@@ -164,7 +164,7 @@ class MedicalHistoryEntry(models.Model):
 
         Returns:
             `dict` - Old values that are about to be changed
-        '''
+        """
         changed = {}
         for key, val in new_vals.items():
             current_val = getattr(record_id, key, None)
@@ -178,7 +178,7 @@ class MedicalHistoryEntry(models.Model):
 
     @api.model
     def _do_history_actions(self, record_id, entry_type_id, new_vals, ):
-        '''
+        """
         Perform history actions for record_id
 
         Hooks into new_entry to add history actions as defined by the entry
@@ -191,7 +191,7 @@ class MedicalHistoryEntry(models.Model):
 
         Returns:
             `dict` of values for the new history record
-        '''
+        """
 
         vals = {}
 
@@ -214,7 +214,7 @@ class MedicalHistoryEntry(models.Model):
     @api.model
     @api.returns('self')
     def new_entry(self, record_id, entry_type_id, new_vals, ):
-        '''
+        """
         Create a new entry from the record and proposed new vals for it
 
         Args:
@@ -226,7 +226,7 @@ class MedicalHistoryEntry(models.Model):
 
         Returns:
             `Recordset` Singleton of new history entry
-        '''
+        """
         entry_vals = {
             'user_id': self.env.user.id,
             'entry_type_id': entry_type_id.id,
@@ -242,5 +242,5 @@ class MedicalHistoryEntry(models.Model):
 
     @api.multi
     def state_complete(self, ):
-        ''' Complete the history entry, indicating a valid record '''
+        """ Complete the history entry, indicating a valid record """
         return self.write({'state': 'complete'})

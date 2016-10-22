@@ -2,8 +2,8 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, api
-from openerp.models import MAGIC_COLUMNS
+from odoo import models, api
+from odoo.models import MAGIC_COLUMNS
 
 
 class AbstractMedicalMedication(models.AbstractModel):

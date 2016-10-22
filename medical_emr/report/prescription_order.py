@@ -1,5 +1,5 @@
 import time
-from openerp.report import report_sxw
+from odoo.report import report_sxw
 
 
 class order(report_sxw.rml_parse):

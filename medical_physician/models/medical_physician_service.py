@@ -2,12 +2,12 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models
-from openerp.addons.medical.medical_constants import minutes
+from odoo import fields, models
+from odoo.addons.medical.medical_constants import minutes
 
 
 class MedicalPhysicianService(models.Model):
-    '''
+    """
     Services provided by the Physician on a specific medical center.
 
     A physician could have "surgeries" on one center but only
@@ -15,7 +15,7 @@ class MedicalPhysicianService(models.Model):
     or the same service with different prices for each medical center.
     That's the reason to link this to res.partner instead of
     medical_physician.
-    '''
+    """
     _name = 'medical.physician.service'
     _inherits = {'product.product': 'product_id', }
     _description = 'Medical Physicians Services'
@@ -32,7 +32,7 @@ class MedicalPhysicianService(models.Model):
         help='The physician for the appointment',
         comodel_name='medical.physician',
         required=True,
-        select=True,
+        index=True,
         ondelete='cascade',
     )
     service_duration = fields.Selection(

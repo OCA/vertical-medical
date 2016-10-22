@@ -15,7 +15,7 @@ python:
 
 env:
   global:
-  - VERSION="9.0" TESTS="0" LINT_CHECK="0" TRANSIFEX="0"
+  - VERSION="10.0" TESTS="0" LINT_CHECK="0" TRANSIFEX="0"
   - TRANSIFEX_USER='transbot@odoo-community.org'
   # This line contains the encrypted transifex password
   # To encrypt transifex password, install travis ruby utils with:

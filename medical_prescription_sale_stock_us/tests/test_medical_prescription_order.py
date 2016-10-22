@@ -18,6 +18,7 @@ class TestMedicalPrescriptionOrder(TransactionCase):
         delta = timedelta(days=1)
         self.date_today = fields.Datetime.to_string(date_now)
         self.date_yesterday = fields.Datetime.to_string(date_now - delta)
+        self.company_id = self.env.ref('base.main_company')
         self.order_vals = {}
         self.order_line_vals = {
             'product_uom': 1,
@@ -31,6 +32,7 @@ class TestMedicalPrescriptionOrder(TransactionCase):
         }
         self.pharmacy_vals = {
             'name': 'TestMedicalPharmacy',
+            'company_id': self.company_id.id,
         }
         vals = {
             'name': 'nothing',
@@ -165,10 +167,8 @@ class TestMedicalPrescriptionOrder(TransactionCase):
             'remaining qty': self.rx_line_id.dispense_remain_qty,
         }
         for key in test_values:
-            self.assertIs(
-                False,
+            self.assertFalse(
                 test_values[key],
-                msg='%s should be False' % key,
             )
 
     def test_compute_dispense_remain_no_duration(self):
@@ -187,10 +187,8 @@ class TestMedicalPrescriptionOrder(TransactionCase):
             'remaining qty': self.rx_line_id.dispense_remain_qty,
         }
         for key in test_values:
-            self.assertIs(
-                False,
+            self.assertFalse(
                 test_values[key],
-                msg='%s should be False' % key,
             )
 
     def test_compute_dispense_remain_invalid_duration(self):
@@ -209,10 +207,8 @@ class TestMedicalPrescriptionOrder(TransactionCase):
             'remaining qty': self.rx_line_id.dispense_remain_qty,
         }
         for key in test_values:
-            self.assertIs(
-                False,
+            self.assertFalse(
                 test_values[key],
-                msg='%s should be False' % key,
             )
 
     def test_compute_dispense_remain_quantity_conversion(self):
@@ -408,9 +404,7 @@ class TestMedicalPrescriptionOrder(TransactionCase):
         old_order_line_vals = self.order_line_vals
         old_pharmacy_vals = self.pharmacy_vals
         self.order_line_vals['product_uom_qty'] = 0.3
-        self.pharmacy_vals.update({
-            'company_id': None,
-        })
+        self.company_id.medical_prescription_refill_threshold = 0.0
         order_line_id = self._new_rx_order().order_line[0]
         self._new_procurement(
             order_line_id,

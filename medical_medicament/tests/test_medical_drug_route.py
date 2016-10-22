@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from openerp.tests.common import TransactionCase
+from odoo.tests.common import TransactionCase
 from psycopg2 import IntegrityError
 
 
@@ -37,7 +37,7 @@ class TestMedicalDrugRoute(TransactionCase):
         return self.model_obj.create(self.vals)
 
     def test_name_unique(self, ):
-        ''' Validate unique name sql constraint '''
+        """ Validate unique name sql constraint """
         self._test_record()
         with self.assertRaises(IntegrityError):
             self.model_obj.create({

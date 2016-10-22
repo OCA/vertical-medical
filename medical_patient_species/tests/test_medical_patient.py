@@ -2,8 +2,8 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp.exceptions import ValidationError
-from openerp.tests.common import TransactionCase
+from odoo.exceptions import ValidationError
+from odoo.tests.common import TransactionCase
 
 
 class TestMedicalPatient(TransactionCase):
@@ -27,12 +27,12 @@ class TestMedicalPatient(TransactionCase):
         return self.medical_patient_model.create(self.vals)
 
     def test_check_parent_id_exists_no_parent(self):
-        ''' Test create pet with no parent_id raises ValidationError '''
+        """ Test create pet with no parent_id raises ValidationError """
         with self.assertRaises(ValidationError):
             self.new_patient({'species_id': self.dog.id})
 
     def test_check_parent_id_exists_with_parent(self):
-        ''' Test create pet with parent_id not raises ValidationError '''
+        """ Test create pet with parent_id not raises ValidationError """
         patient_1 = self.new_patient()
         try:
             self.new_patient({
@@ -44,7 +44,7 @@ class TestMedicalPatient(TransactionCase):
             self.fail("Should not raise ValidationError if parent_id exists")
 
     def test_check_species_id(self):
-        ''' Test create medical patient no species raises ValidationError '''
+        """ Test create medical patient no species raises ValidationError """
         patient = self.new_patient({'species_id': None})
         self.assertEquals(
             self.human.id,

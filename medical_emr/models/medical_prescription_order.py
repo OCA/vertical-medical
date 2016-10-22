@@ -20,15 +20,15 @@
 #
 # #############################################################################
 
-from openerp import models, fields
+from odoo import models, fields
 
 
 class MedicalPrescriptionOrder(models.Model):
     _inherit = 'medical.prescription.order'
 
     def print_prescription(self, cr, uid, ids, context=None):
-        '''
-        '''
+        """
+        """
         #        assert len(ids) == 1, 'This option should only be used for '
         #                              'a single id at a time'
         #        wf_service = netsvc.LocalService("workflow")

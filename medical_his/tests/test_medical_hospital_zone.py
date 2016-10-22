@@ -24,7 +24,7 @@
 ##############################################################################
 
 from anybox.testing.openerp import SharedSetupTransactionCase
-from openerp.exceptions import ValidationError
+from odoo.exceptions import ValidationError
 
 
 class TestMedicalHospitalZone(SharedSetupTransactionCase):

@@ -20,8 +20,8 @@
 #
 ##############################################################################
 
-from openerp import fields, models, api
-from openerp.tools.translate import _
+from odoo import fields, models, api
+from odoo.tools.translate import _
 
 
 class MedicalOperationalSector(models.Model):

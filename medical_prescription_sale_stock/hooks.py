@@ -6,7 +6,7 @@
 def post_init_hook_for_new_medicament_type(cr, registry):
     with cr.savepoint():
         cr.execute(
-            '''UPDATE product_template
+            """UPDATE product_template
             SET type = 'product'
-            WHERE is_medicament = TRUE'''
+            WHERE is_medicament = TRUE"""
         )

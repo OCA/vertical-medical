@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from openerp import fields, models
+from odoo import fields, models
 
 
 class MedicalPatient(models.Model):

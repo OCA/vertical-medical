@@ -21,7 +21,7 @@
 #
 ###############################################################################
 
-from openerp.osv import fields, orm
+from odoo.osv import fields, orm
 
 
 class MedicalPatientEvaluation(orm.Model):

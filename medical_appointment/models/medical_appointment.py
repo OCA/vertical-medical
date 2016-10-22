@@ -2,7 +2,7 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models, exceptions, api, _
+from odoo import fields, models, exceptions, api, _
 from datetime import timedelta
 
 
@@ -27,7 +27,7 @@ class MedicalAppointment(models.Model):
         string='Patient',
         comodel_name='medical.patient',
         required=True,
-        select=True,
+        index=True,
         help='Patient Name',
     )
     name = fields.Char(
@@ -40,13 +40,13 @@ class MedicalAppointment(models.Model):
     )
     appointment_date = fields.Datetime(
         string='Date and Time',
-        select=True,
+        index=True,
         help='Date and Time of Scheduled Appointment'
     )
     appointment_end_date = fields.Datetime(
         string='End Date and Time',
         readonly=True,
-        select=True,
+        index=True,
         store=True,
         compute='_compute_appointment_end_date',
     )
@@ -62,7 +62,7 @@ class MedicalAppointment(models.Model):
     physician_id = fields.Many2one(
         string='Physician',
         comodel_name='medical.physician',
-        select=True,
+        index=True,
         required=True,
         help='Scheduled Physician',
     )
@@ -133,7 +133,7 @@ class MedicalAppointment(models.Model):
 
     @api.model
     def _default_stage_id(self):
-        ''' Gives default stage_id '''
+        """ Gives default stage_id """
         stage_id = self.env['medical.appointment.stage'].search([
             ('is_default', '=', True)
         ],
@@ -202,7 +202,7 @@ class MedicalAppointment(models.Model):
 
     @api.multi
     def _change_stage(self, vals):
-        ''' @TODO: replace in SMD-118 '''
+        """ @TODO: replace in SMD-118 """
 
         stage_id = self.env['medical.appointment.stage'].browse(
             vals['stage_id']

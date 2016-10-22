@@ -2,7 +2,7 @@
 # © 2015 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models
+from odoo import fields, models
 
 
 class ResPartner(models.Model):
@@ -62,6 +62,6 @@ class ResPartner(models.Model):
     )
     patient_ids = fields.One2many(
         'medical.patient',
-        fields_id='medical_center_id',
+        inverse_name='partner_id',
         string='Related Patients',
     )

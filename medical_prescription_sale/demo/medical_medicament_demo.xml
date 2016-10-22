@@ -12,7 +12,6 @@
 			model="medical.medicament">
 		<field name="name">Simvastatin</field>
 		<field name="type">product</field>
-		<field name="control_code">1</field>
 		<field name="categ_id" ref="medical_prescription_sale.product_category_rx" />
 		<field name="drug_form_id" ref="medical_medicament.BAR" />
 		<field name="strength">20</field>
@@ -23,7 +22,6 @@
 			model="medical.medicament">
 		<field name="name">Simvastatin</field>
 		<field name="type">product</field>
-		<field name="control_code">1</field>
 		<field name="categ_id" ref="medical_prescription_sale.product_category_rx" />
 		<field name="drug_form_id" ref="medical_medicament.BAR" />
 		<field name="strength">40</field>

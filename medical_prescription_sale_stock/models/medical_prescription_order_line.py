@@ -2,8 +2,8 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models, api, _
-from openerp.exceptions import ValidationError
+from odoo import fields, models, api, _
+from odoo.exceptions import ValidationError
 
 
 class MedicalPrescriptionOrderLine(models.Model):
@@ -67,7 +67,7 @@ class MedicalPrescriptionOrderLine(models.Model):
     @api.model
     def _default_dispense_uom_id(self):
         return self.env['product.uom'].browse(
-            self.env['product.template']._get_uom_id()
+            self.env['product.template']._get_default_uom_id()
         )
 
     @api.multi
@@ -78,7 +78,7 @@ class MedicalPrescriptionOrderLine(models.Model):
                  'sale_order_line_ids.procurement_ids.state',
                  )
     def _compute_dispensings(self, ):
-        ''' Get related dispensings - Also sets dispense qtys '''
+        """ Get related dispensings - Also sets dispense qtys """
 
         for rec_id in self:
 
@@ -102,8 +102,7 @@ class MedicalPrescriptionOrderLine(models.Model):
                     last_procurement_id = proc_id
 
                     if proc_id.product_uom.id != rec_id.dispense_uom_id.id:
-                        _qty = self.env['product.uom']._compute_qty_obj(
-                            proc_id.product_uom,
+                        _qty = proc_id.product_uom._compute_quantity(
                             proc_id.product_qty,
                             rec_id.dispense_uom_id,
                         )
@@ -135,10 +134,10 @@ class MedicalPrescriptionOrderLine(models.Model):
                  'pending_dispense_qty',
                  )
     def _compute_can_dispense_and_qty(self, ):
-        '''
+        """
         Determine whether Rx can be dispensed based on current dispensings,
         and what qty
-        '''
+        """
 
         for rec_id in self:
             total = sum([rec_id.dispensed_qty,

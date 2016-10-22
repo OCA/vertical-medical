@@ -2,8 +2,8 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models, api, _
-from openerp.exceptions import ValidationError
+from odoo import fields, models, api, _
+from odoo.exceptions import ValidationError
 import logging
 
 
@@ -29,8 +29,7 @@ class SaleOrderLine(models.Model):
             if rec_id.product_uom == rx_line.dispense_uom_id:
                 rec_id.dispense_qty = rec_id.product_uom_qty
             else:
-                rec_id.dispense_qty = self.env['product.uom']._compute_qty_obj(
-                    rec_id.product_uom,
+                rec_id.dispense_qty = rec_id.product_uom._compute_quantity(
                     rec_id.product_uom_qty,
                     rx_line.dispense_uom_id,
                 )

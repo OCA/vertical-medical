@@ -2,16 +2,16 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, exceptions, api, _
+from odoo import models, fields, exceptions, api, _
 
 
 class MedicalPrescriptionOrderLine(models.Model):
-    '''
+    """
     Add State verification functionality to MedicalPrescriptionOrderLine
 
     This model disallows editing of a `medical.prescription.order.line` if its
     `prescription_order_id` is in a `verified` state.
-    '''
+    """
 
     _inherit = 'medical.prescription.order.line'
 
@@ -22,13 +22,13 @@ class MedicalPrescriptionOrderLine(models.Model):
 
     @api.multi
     def write(self, vals, ):
-        '''
+        """
         Overload write & perform audit validations
 
         Raises:
             ValidationError: When a write is not allowed due to being in a
                 protected state
-        '''
+        """
         for rec_id in self:
             if rec_id.state_type == 'verified':
                 raise exceptions.ValidationError(_(

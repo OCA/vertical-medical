@@ -528,7 +528,7 @@
         </record>
         <record model="medical.pathology" id="A190">
 	        <field name="name">Acute miliary tuberculosis of a single specified site</field>
-	        <field name="code">A19.0</field>
+	        <field name="code">A110.0</field>
 	        <field name="category" ref="icdcat1-2"></field>
         </record>
         <record model="medical.pathology" id="A191">
@@ -1013,7 +1013,7 @@
         </record>
         <record model="medical.pathology" id="A390">
 	        <field name="name">Meningococcal meningitis</field>
-	        <field name="code">A39.0</field>
+	        <field name="code">A310.0</field>
 	        <field name="category" ref="icdcat1-4"></field>
         </record>
         <record model="medical.pathology" id="A391">
@@ -1263,7 +1263,7 @@
         </record>
         <record model="medical.pathology" id="A490">
 	        <field name="name">Staphylococcal infection, unspecified</field>
-	        <field name="code">A49.0</field>
+	        <field name="code">A410.0</field>
 	        <field name="category" ref="icdcat1-4"></field>
         </record>
         <record model="medical.pathology" id="A491">
@@ -1543,7 +1543,7 @@
         </record>
         <record model="medical.pathology" id="A590">
 	        <field name="name">Urogenital trichomoniasis</field>
-	        <field name="code">A59.0</field>
+	        <field name="code">A510.0</field>
 	        <field name="category" ref="icdcat1-5"></field>
         </record>
         <record model="medical.pathology" id="A598">
@@ -1713,7 +1713,7 @@
         </record>
         <record model="medical.pathology" id="A690">
 	        <field name="name">Necrotising ulcerative stomatitis</field>
-	        <field name="code">A69.0</field>
+	        <field name="code">A610.0</field>
 	        <field name="category" ref="icdcat1-6"></field>
         </record>
         <record model="medical.pathology" id="A691">
@@ -1858,7 +1858,7 @@
         </record>
         <record model="medical.pathology" id="A790">
 	        <field name="name">Trench fever</field>
-	        <field name="code">A79.0</field>
+	        <field name="code">A710.0</field>
 	        <field name="category" ref="icdcat1-8"></field>
         </record>
         <record model="medical.pathology" id="A791">
@@ -2638,7 +2638,7 @@
         </record>
         <record model="medical.pathology" id="B190">
 	        <field name="name">Unspecified viral hepatitis with coma</field>
-	        <field name="code">B19.0</field>
+	        <field name="code">B110.0</field>
 	        <field name="category" ref="icdcat1-12"></field>
         </record>
         <record model="medical.pathology" id="B199">
@@ -3183,7 +3183,7 @@
         </record>
         <record model="medical.pathology" id="B390">
 	        <field name="name">Acute pulmonary histoplasmosis capsulati</field>
-	        <field name="code">B39.0</field>
+	        <field name="code">B310.0</field>
 	        <field name="category" ref="icdcat1-15"></field>
         </record>
         <record model="medical.pathology" id="B391">
@@ -3923,7 +3923,7 @@
         </record>
         <record model="medical.pathology" id="B690">
 	        <field name="name">Cysticercosis of central nervous system</field>
-	        <field name="code">B69.0</field>
+	        <field name="code">B610.0</field>
 	        <field name="category" ref="icdcat1-17"></field>
         </record>
         <record model="medical.pathology" id="B691">
@@ -4783,7 +4783,7 @@
         </record>
         <record model="medical.pathology" id="C090">
 	        <field name="name">Tonsillar fossa</field>
-	        <field name="code">C09.0</field>
+	        <field name="code">C010.0</field>
 	        <field name="category" ref="icdcat2-1"></field>
         </record>
         <record model="medical.pathology" id="C091">
@@ -5463,7 +5463,7 @@
         </record>
         <record model="medical.pathology" id="C390">
 	        <field name="name">Upper respiratory tract, part unspecified</field>
-	        <field name="code">C39.0</field>
+	        <field name="code">C310.0</field>
 	        <field name="category" ref="icdcat2-3"></field>
         </record>
         <record model="medical.pathology" id="C398">
@@ -5813,7 +5813,7 @@
         </record>
         <record model="medical.pathology" id="C490">
 	        <field name="name">Connective and soft tissue of head, face and neck</field>
-	        <field name="code">C49.0</field>
+	        <field name="code">C410.0</field>
 	        <field name="category" ref="icdcat2-6"></field>
         </record>
         <record model="medical.pathology" id="C491">
@@ -6253,7 +6253,7 @@
         </record>
         <record model="medical.pathology" id="C690">
 	        <field name="name">Conjunctiva</field>
-	        <field name="code">C69.0</field>
+	        <field name="code">C610.0</field>
 	        <field name="category" ref="icdcat2-11"></field>
         </record>
         <record model="medical.pathology" id="C691">
@@ -6633,7 +6633,7 @@
         </record>
         <record model="medical.pathology" id="C790">
 	        <field name="name">Secondary malignant neoplasm of kidney and renal pelvis</field>
-	        <field name="code">C79.0</field>
+	        <field name="code">C710.0</field>
 	        <field name="category" ref="icdcat2-13"></field>
         </record>
         <record model="medical.pathology" id="C791">
@@ -7448,7 +7448,7 @@
         </record>
         <record model="medical.pathology" id="D090">
 	        <field name="name">Bladder</field>
-	        <field name="code">D09.0</field>
+	        <field name="code">D010.0</field>
 	        <field name="category" ref="icdcat2-16"></field>
         </record>
         <record model="medical.pathology" id="D091">
@@ -7838,7 +7838,7 @@
         </record>
         <record model="medical.pathology" id="D190">
 	        <field name="name">Mesothelial tissue of pleura</field>
-	        <field name="code">D19.0</field>
+	        <field name="code">D110.0</field>
 	        <field name="category" ref="icdcat2-17"></field>
         </record>
         <record model="medical.pathology" id="D191">
@@ -8113,7 +8113,7 @@
         </record>
         <record model="medical.pathology" id="D290">
 	        <field name="name">Penis</field>
-	        <field name="code">D29.0</field>
+	        <field name="code">D210.0</field>
 	        <field name="category" ref="icdcat2-17"></field>
         </record>
         <record model="medical.pathology" id="D291">
@@ -8473,7 +8473,7 @@
         </record>
         <record model="medical.pathology" id="D390">
 	        <field name="name">Uterus</field>
-	        <field name="code">D39.0</field>
+	        <field name="code">D310.0</field>
 	        <field name="category" ref="icdcat2-18"></field>
         </record>
         <record model="medical.pathology" id="D391">
@@ -9063,7 +9063,7 @@
         </record>
         <record model="medical.pathology" id="D590">
 	        <field name="name">Drug-induced autoimmune haemolytic anaemia</field>
-	        <field name="code">D59.0</field>
+	        <field name="code">D510.0</field>
 	        <field name="category" ref="icdcat3-2"></field>
         </record>
         <record model="medical.pathology" id="D591">
@@ -9288,7 +9288,7 @@
         </record>
         <record model="medical.pathology" id="D690">
 	        <field name="name">Allergic purpura</field>
-	        <field name="code">D69.0</field>
+	        <field name="code">D610.0</field>
 	        <field name="category" ref="icdcat3-4"></field>
         </record>
         <record model="medical.pathology" id="D691">
@@ -9738,7 +9738,7 @@
         </record>
         <record model="medical.pathology" id="D890">
 	        <field name="name">Polyclonal hypergammaglobulinaemia</field>
-	        <field name="code">D89.0</field>
+	        <field name="code">D810.0</field>
 	        <field name="category" ref="icdcat3-6"></field>
         </record>
         <record model="medical.pathology" id="D891">
@@ -10618,7 +10618,7 @@
         </record>
         <record model="medical.pathology" id="E290">
 	        <field name="name">Testicular hyperfunction</field>
-	        <field name="code">E29.0</field>
+	        <field name="code">E210.0</field>
 	        <field name="category" ref="icdcat4-4"></field>
         </record>
         <record model="medical.pathology" id="E291">
@@ -11503,7 +11503,7 @@
 </record>
 <record model="medical.pathology" id="E790">
 	<field name="name">Hyperuricaemia without signs of inflammatory arthritis and tophaceous disease</field>
-	<field name="code">E79.0</field>
+	<field name="code">E710.0</field>
 	<field name="category" ref="icdcat4-8"></field>
 </record>
 <record model="medical.pathology" id="E791">
@@ -11768,7 +11768,7 @@
 </record>
 <record model="medical.pathology" id="E890">
 	<field name="name">Postprocedural hypothyroidism</field>
-	<field name="code">E89.0</field>
+	<field name="code">E810.0</field>
 	<field name="category" ref="icdcat4-8"></field>
 </record>
 <record model="medical.pathology" id="E891">
@@ -12538,7 +12538,7 @@
 </record>
 <record model="medical.pathology" id="F190">
 	<field name="name">Acute intoxication</field>
-	<field name="code">F19.0</field>
+	<field name="code">F110.0</field>
 	<field name="category" ref="icdcat5-2"></field>
 </record>
 <record model="medical.pathology" id="F191">
@@ -15258,7 +15258,7 @@
 </record>
 <record model="medical.pathology" id="G590">
 	<field name="name">Diabetic mononeuropathy</field>
-	<field name="code">G59.0</field>
+	<field name="code">G510.0</field>
 	<field name="category" ref="icdcat6-6"></field>
 </record>
 <record model="medical.pathology" id="G598">
@@ -15943,7 +15943,7 @@
 </record>
 <record model="medical.pathology" id="G990">
 	<field name="name">Autonomic neuropathy in endocrine and metabolic diseases</field>
-	<field name="code">G99.0</field>
+	<field name="code">G910.0</field>
 	<field name="category" ref="icdcat6-10"></field>
 </record>
 <record model="medical.pathology" id="G991">
@@ -16463,7 +16463,7 @@
 </record>
 <record model="medical.pathology" id="H190">
 	<field name="name">Scleritis and episcleritis in diseases classified elsewhere</field>
-	<field name="code">H19.0</field>
+	<field name="code">H110.0</field>
 	<field name="category" ref="icdcat7-3"></field>
 </record>
 <record model="medical.pathology" id="H191">
@@ -17173,7 +17173,7 @@
 </record>
 <record model="medical.pathology" id="H490">
 	<field name="name">Third [oculomotor] nerve palsy</field>
-	<field name="code">H49.0</field>
+	<field name="code">H410.0</field>
 	<field name="category" ref="icdcat7-9"></field>
 </record>
 <record model="medical.pathology" id="H491">
@@ -17483,7 +17483,7 @@
 </record>
 <record model="medical.pathology" id="H590">
 	<field name="name">Vitreous syndrome following cataract surgery</field>
-	<field name="code">H59.0</field>
+	<field name="code">H510.0</field>
 	<field name="category" ref="icdcat7-11"></field>
 </record>
 <record model="medical.pathology" id="H598">
@@ -17723,7 +17723,7 @@
 </record>
 <record model="medical.pathology" id="H690">
 	<field name="name">Patulous Eustachian tube</field>
-	<field name="code">H69.0</field>
+	<field name="code">H610.0</field>
 	<field name="category" ref="icdcat8-2"></field>
 </record>
 <record model="medical.pathology" id="H698">
@@ -18353,7 +18353,7 @@
 </record>
 <record model="medical.pathology" id="I090">
 	<field name="name">Rheumatic myocarditis</field>
-	<field name="code">I09.0</field>
+	<field name="code">I010.0</field>
 	<field name="category" ref="icdcat9-2"></field>
 </record>
 <record model="medical.pathology" id="I091">
@@ -18963,7 +18963,7 @@
 </record>
 <record model="medical.pathology" id="I390">
 	<field name="name">Mitral valve disorders in diseases classified elsewhere</field>
-	<field name="code">I39.0</field>
+	<field name="code">I310.0</field>
 	<field name="category" ref="icdcat9-6"></field>
 </record>
 <record model="medical.pathology" id="I391">
@@ -19273,7 +19273,7 @@
 </record>
 <record model="medical.pathology" id="I490">
 	<field name="name">Ventricular fibrillation and flutter</field>
-	<field name="code">I49.0</field>
+	<field name="code">I410.0</field>
 	<field name="category" ref="icdcat9-6"></field>
 </record>
 <record model="medical.pathology" id="I491">
@@ -19748,7 +19748,7 @@
 </record>
 <record model="medical.pathology" id="I690">
 	<field name="name">Sequelae of subarachnoid haemorrhage</field>
-	<field name="code">I69.0</field>
+	<field name="code">I610.0</field>
 	<field name="category" ref="icdcat9-7"></field>
 </record>
 <record model="medical.pathology" id="I691">
@@ -20048,7 +20048,7 @@
 </record>
 <record model="medical.pathology" id="I790">
 	<field name="name">Aneurysm of aorta in diseases classified elsewhere</field>
-	<field name="code">I79.0</field>
+	<field name="code">I710.0</field>
 	<field name="category" ref="icdcat9-8"></field>
 </record>
 <record model="medical.pathology" id="I791">
@@ -20333,7 +20333,7 @@
 </record>
 <record model="medical.pathology" id="I890">
 	<field name="name">Lymphoedema, not elsewhere classified</field>
-	<field name="code">I89.0</field>
+	<field name="code">I810.0</field>
 	<field name="category" ref="icdcat9-9"></field>
 </record>
 <record model="medical.pathology" id="I891">
@@ -21128,7 +21128,7 @@
 </record>
 <record model="medical.pathology" id="J390">
 	<field name="name">Retropharyngeal and parapharyngeal abscess</field>
-	<field name="code">J39.0</field>
+	<field name="code">J310.0</field>
 	<field name="category" ref="icdcat10-4"></field>
 </record>
 <record model="medical.pathology" id="J391">
@@ -21478,7 +21478,7 @@
 </record>
 <record model="medical.pathology" id="J690">
 	<field name="name">Pneumonitis due to food and vomit</field>
-	<field name="code">J69.0</field>
+	<field name="code">J610.0</field>
 	<field name="category" ref="icdcat10-6"></field>
 </record>
 <record model="medical.pathology" id="J691">
@@ -21813,7 +21813,7 @@
 </record>
 <record model="medical.pathology" id="J990">
 	<field name="name">Rheumatoid lung disease</field>
-	<field name="code">J99.0</field>
+	<field name="code">J910.0</field>
 	<field name="category" ref="icdcat10-10"></field>
 </record>
 <record model="medical.pathology" id="J991">
@@ -22208,7 +22208,7 @@
 </record>
 <record model="medical.pathology" id="K090">
 	<field name="name">Developmental odontogenic cysts</field>
-	<field name="code">K09.0</field>
+	<field name="code">K010.0</field>
 	<field name="category" ref="icdcat11-1"></field>
 </record>
 <record model="medical.pathology" id="K091">
@@ -22733,7 +22733,7 @@
 </record>
 <record model="medical.pathology" id="K290">
 	<field name="name">Acute haemorrhagic gastritis</field>
-	<field name="code">K29.0</field>
+	<field name="code">K210.0</field>
 	<field name="category" ref="icdcat11-2"></field>
 </record>
 <record model="medical.pathology" id="K291">
@@ -23318,7 +23318,7 @@
 </record>
 <record model="medical.pathology" id="K590">
 	<field name="name">Constipation</field>
-	<field name="code">K59.0</field>
+	<field name="code">K510.0</field>
 	<field name="category" ref="icdcat11-6"></field>
 </record>
 <record model="medical.pathology" id="K591">
@@ -24793,7 +24793,7 @@
 </record>
 <record model="medical.pathology" id="L290">
 	<field name="name">Pruritus ani</field>
-	<field name="code">L29.0</field>
+	<field name="code">L210.0</field>
 	<field name="category" ref="icdcat12-3"></field>
 </record>
 <record model="medical.pathology" id="L291">
@@ -25318,7 +25318,7 @@
 </record>
 <record model="medical.pathology" id="L590">
 	<field name="name">Erythema ab igne [dermatitis ab igne]</field>
-	<field name="code">L59.0</field>
+	<field name="code">L510.0</field>
 	<field name="category" ref="icdcat12-6"></field>
 </record>
 <record model="medical.pathology" id="L598">
@@ -26188,7 +26188,7 @@
 </record>
 <record model="medical.pathology" id="L990">
 	<field name="name">Amyloidosis of skin</field>
-	<field name="code">L99.0</field>
+	<field name="code">L910.0</field>
 	<field name="category" ref="icdcat12-8"></field>
 </record>
 <record model="medical.pathology" id="L998">
@@ -26493,7 +26493,7 @@
 </record>
 <record model="medical.pathology" id="M090">
 	<field name="name">Juvenile arthritis in psoriasis</field>
-	<field name="code">M09.0</field>
+	<field name="code">M010.0</field>
 	<field name="category" ref="icdcat13-2"></field>
 </record>
 <record model="medical.pathology" id="M091">
@@ -26863,7 +26863,7 @@
 </record>
 <record model="medical.pathology" id="M190">
 	<field name="name">Primary arthrosis of other joints</field>
-	<field name="code">M19.0</field>
+	<field name="code">M110.0</field>
 	<field name="category" ref="icdcat13-3"></field>
 </record>
 <record model="medical.pathology" id="M191">
@@ -27713,7 +27713,7 @@
 </record>
 <record model="medical.pathology" id="M490">
 	<field name="name">Tuberculosis of spine</field>
-	<field name="code">M49.0</field>
+	<field name="code">M410.0</field>
 	<field name="category" ref="icdcat13-7"></field>
 </record>
 <record model="medical.pathology" id="M491">
@@ -28503,7 +28503,7 @@
 </record>
 <record model="medical.pathology" id="M790">
 	<field name="name">Rheumatism, unspecified</field>
-	<field name="code">M79.0</field>
+	<field name="code">M710.0</field>
 	<field name="category" ref="icdcat13-11"></field>
 </record>
 <record model="medical.pathology" id="M791">
@@ -28908,7 +28908,7 @@
 </record>
 <record model="medical.pathology" id="M890">
 	<field name="name">Algoneurodystrophy</field>
-	<field name="code">M89.0</field>
+	<field name="code">M810.0</field>
 	<field name="category" ref="icdcat13-13"></field>
 </record>
 <record model="medical.pathology" id="M891">
@@ -29258,7 +29258,7 @@
 </record>
 <record model="medical.pathology" id="M990">
 	<field name="name">Segmental and somatic dysfunction</field>
-	<field name="code">M99.0</field>
+	<field name="code">M910.0</field>
 	<field name="category" ref="icdcat13-15"></field>
 </record>
 <record model="medical.pathology" id="M991">
@@ -30178,7 +30178,7 @@
 </record>
 <record model="medical.pathology" id="N290">
 	<field name="name">Late syphilis of kidney</field>
-	<field name="code">N29.0</field>
+	<field name="code">N210.0</field>
 	<field name="category" ref="icdcat14-5"></field>
 </record>
 <record model="medical.pathology" id="N291">
@@ -30423,7 +30423,7 @@
 </record>
 <record model="medical.pathology" id="N390">
 	<field name="name">Urinary tract infection, site not specified</field>
-	<field name="code">N39.0</field>
+	<field name="code">N310.0</field>
 	<field name="category" ref="icdcat14-6"></field>
 </record>
 <record model="medical.pathology" id="N391">
@@ -30643,7 +30643,7 @@
 </record>
 <record model="medical.pathology" id="N490">
 	<field name="name">Inflammatory disorders of seminal vesicle</field>
-	<field name="code">N49.0</field>
+	<field name="code">N410.0</field>
 	<field name="category" ref="icdcat14-7"></field>
 </record>
 <record model="medical.pathology" id="N491">
@@ -31403,7 +31403,7 @@
 </record>
 <record model="medical.pathology" id="N890">
 	<field name="name">Mild vaginal dysplasia</field>
-	<field name="code">N89.0</field>
+	<field name="code">N810.0</field>
 	<field name="category" ref="icdcat14-10"></field>
 </record>
 <record model="medical.pathology" id="N891">
@@ -31773,7 +31773,7 @@
 </record>
 <record model="medical.pathology" id="N990">
 	<field name="name">Postprocedural renal failure</field>
-	<field name="code">N99.0</field>
+	<field name="code">N910.0</field>
 	<field name="category" ref="icdcat14-11"></field>
 </record>
 <record model="medical.pathology" id="N991">
@@ -32613,7 +32613,7 @@
 </record>
 <record model="medical.pathology" id="O290">
 	<field name="name">Pulmonary complications of anaesthesia during pregnancy</field>
-	<field name="code">O29.0</field>
+	<field name="code">O210.0</field>
 	<field name="category" ref="icdcat15-3"></field>
 </record>
 <record model="medical.pathology" id="O291">
@@ -33433,7 +33433,7 @@
 </record>
 <record model="medical.pathology" id="O690">
 	<field name="name">Labour and delivery complicated by prolapse of cord</field>
-	<field name="code">O69.0</field>
+	<field name="code">O610.0</field>
 	<field name="category" ref="icdcat15-5"></field>
 </record>
 <record model="medical.pathology" id="O691">
@@ -33978,7 +33978,7 @@
 </record>
 <record model="medical.pathology" id="O890">
 	<field name="name">Pulmonary complications of anaesthesia during the puerperium</field>
-	<field name="code">O89.0</field>
+	<field name="code">O810.0</field>
 	<field name="category" ref="icdcat15-7"></field>
 </record>
 <record model="medical.pathology" id="O891">
@@ -34208,7 +34208,7 @@
 </record>
 <record model="medical.pathology" id="O990">
 	<field name="name">Anaemia complicating pregnancy, childbirth and the puerperium</field>
-	<field name="code">O99.0</field>
+	<field name="code">O910.0</field>
 	<field name="category" ref="icdcat15-8"></field>
 </record>
 <record model="medical.pathology" id="O991">
@@ -35113,7 +35113,7 @@
 </record>
 <record model="medical.pathology" id="P290">
 	<field name="name">Neonatal cardiac failure</field>
-	<field name="code">P29.0</field>
+	<field name="code">P210.0</field>
 	<field name="category" ref="icdcat16-4"></field>
 </record>
 <record model="medical.pathology" id="P291">
@@ -35283,7 +35283,7 @@
 </record>
 <record model="medical.pathology" id="P390">
 	<field name="name">Neonatal infective mastitis</field>
-	<field name="code">P39.0</field>
+	<field name="code">P310.0</field>
 	<field name="category" ref="icdcat16-5"></field>
 </record>
 <record model="medical.pathology" id="P391">
@@ -35598,7 +35598,7 @@
 </record>
 <record model="medical.pathology" id="P590">
 	<field name="name">Neonatal jaundice associated with preterm delivery</field>
-	<field name="code">P59.0</field>
+	<field name="code">P510.0</field>
 	<field name="category" ref="icdcat16-6"></field>
 </record>
 <record model="medical.pathology" id="P591">
@@ -37543,7 +37543,7 @@
 </record>
 <record model="medical.pathology" id="Q390">
 	<field name="name">Atresia of oesophagus without fistula</field>
-	<field name="code">Q39.0</field>
+	<field name="code">Q310.0</field>
 	<field name="category" ref="icdcat17-6"></field>
 </record>
 <record model="medical.pathology" id="Q391">
@@ -38543,7 +38543,7 @@
 </record>
 <record model="medical.pathology" id="Q690">
 	<field name="name">Accessory finger(s)</field>
-	<field name="code">Q69.0</field>
+	<field name="code">Q610.0</field>
 	<field name="category" ref="icdcat17-9"></field>
 </record>
 <record model="medical.pathology" id="Q691">
@@ -38968,7 +38968,7 @@
 </record>
 <record model="medical.pathology" id="Q790">
 	<field name="name">Congenital diaphragmatic hernia</field>
-	<field name="code">Q79.0</field>
+	<field name="code">Q710.0</field>
 	<field name="category" ref="icdcat17-9"></field>
 </record>
 <record model="medical.pathology" id="Q791">
@@ -39308,7 +39308,7 @@
 </record>
 <record model="medical.pathology" id="Q890">
 	<field name="name">Congenital malformations of spleen</field>
-	<field name="code">Q89.0</field>
+	<field name="code">Q810.0</field>
 	<field name="category" ref="icdcat17-10"></field>
 </record>
 <record model="medical.pathology" id="Q891">
@@ -39708,7 +39708,7 @@
 </record>
 <record model="medical.pathology" id="Q990">
 	<field name="name">Chimera 46,XX/46,XY</field>
-	<field name="code">Q99.0</field>
+	<field name="code">Q910.0</field>
 	<field name="category" ref="icdcat17-11"></field>
 </record>
 <record model="medical.pathology" id="Q991">
@@ -39918,7 +39918,7 @@
 </record>
 <record model="medical.pathology" id="R090">
 	<field name="name">Asphyxia</field>
-	<field name="code">R09.0</field>
+	<field name="code">R010.0</field>
 	<field name="category" ref="icdcat18-1"></field>
 </record>
 <record model="medical.pathology" id="R091">
@@ -40033,7 +40033,7 @@
 </record>
 <record model="medical.pathology" id="R190">
 	<field name="name">Intra-abdominal and pelvic swelling, mass and lump</field>
-	<field name="code">R19.0</field>
+	<field name="code">R110.0</field>
 	<field name="category" ref="icdcat18-2"></field>
 </record>
 <record model="medical.pathology" id="R191">
@@ -40258,7 +40258,7 @@
 </record>
 <record model="medical.pathology" id="R290">
 	<field name="name">Tetany</field>
-	<field name="code">R29.0</field>
+	<field name="code">R210.0</field>
 	<field name="category" ref="icdcat18-4"></field>
 </record>
 <record model="medical.pathology" id="R291">
@@ -40343,7 +40343,7 @@
 </record>
 <record model="medical.pathology" id="R390">
 	<field name="name">Extravasation of urine</field>
-	<field name="code">R39.0</field>
+	<field name="code">R310.0</field>
 	<field name="category" ref="icdcat18-5"></field>
 </record>
 <record model="medical.pathology" id="R391">
@@ -40623,7 +40623,7 @@
 </record>
 <record model="medical.pathology" id="R490">
 	<field name="name">Dysphonia</field>
-	<field name="code">R49.0</field>
+	<field name="code">R410.0</field>
 	<field name="category" ref="icdcat18-7"></field>
 </record>
 <record model="medical.pathology" id="R491">
@@ -40758,7 +40758,7 @@
 </record>
 <record model="medical.pathology" id="R590">
 	<field name="name">Localised enlarged lymph nodes</field>
-	<field name="code">R59.0</field>
+	<field name="code">R510.0</field>
 	<field name="category" ref="icdcat18-8"></field>
 </record>
 <record model="medical.pathology" id="R591">
@@ -41098,7 +41098,7 @@
 </record>
 <record model="medical.pathology" id="R790">
 	<field name="name">Abnormal level of blood mineral</field>
-	<field name="code">R79.0</field>
+	<field name="code">R710.0</field>
 	<field name="category" ref="icdcat18-9"></field>
 </record>
 <record model="medical.pathology" id="R798">
@@ -41458,7 +41458,7 @@
 </record>
 <record model="medical.pathology" id="R890">
 	<field name="name">Abnormal level of enzymes</field>
-	<field name="code">R89.0</field>
+	<field name="code">R810.0</field>
 	<field name="category" ref="icdcat18-11"></field>
 </record>
 <record model="medical.pathology" id="R891">
@@ -42073,7 +42073,7 @@
 </record>
 <record model="medical.pathology" id="S090">
 	<field name="name">Injury of blood vessels of head, not elsewhere classified</field>
-	<field name="code">S09.0</field>
+	<field name="code">S010.0</field>
 	<field name="category" ref="icdcat19-1"></field>
 </record>
 <record model="medical.pathology" id="S091">
@@ -42713,7 +42713,7 @@
 </record>
 <record model="medical.pathology" id="S290">
 	<field name="name">Injury of muscle and tendon at thorax level</field>
-	<field name="code">S29.0</field>
+	<field name="code">S210.0</field>
 	<field name="category" ref="icdcat19-3"></field>
 </record>
 <record model="medical.pathology" id="S297">
@@ -43138,7 +43138,7 @@
 </record>
 <record model="medical.pathology" id="S390">
 	<field name="name">Injury of muscle and tendon of abdomen, lower back and pelvis</field>
-	<field name="code">S39.0</field>
+	<field name="code">S310.0</field>
 	<field name="category" ref="icdcat19-4"></field>
 </record>
 <record model="medical.pathology" id="S396">
@@ -44783,7 +44783,7 @@
 </record>
 <record model="medical.pathology" id="S890">
 	<field name="name">Multiple injuries of lower leg</field>
-	<field name="code">S89.0</field>
+	<field name="code">S810.0</field>
 	<field name="category" ref="icdcat19-9"></field>
 </record>
 <record model="medical.pathology" id="S891">
@@ -45458,7 +45458,7 @@
 </record>
 <record model="medical.pathology" id="T090">
 	<field name="name">Superficial injury of trunk, level unspecified</field>
-	<field name="code">T09.0</field>
+	<field name="code">T010.0</field>
 	<field name="category" ref="icdcat19-12"></field>
 </record>
 <record model="medical.pathology" id="T091">
@@ -45793,7 +45793,7 @@
 </record>
 <record model="medical.pathology" id="T190">
 	<field name="name">Foreign body in urethra</field>
-	<field name="code">T19.0</field>
+	<field name="code">T110.0</field>
 	<field name="category" ref="icdcat19-13"></field>
 </record>
 <record model="medical.pathology" id="T191">
@@ -46253,7 +46253,7 @@
 </record>
 <record model="medical.pathology" id="T290">
 	<field name="name">Burns of multiple regions, unspecified degree</field>
-	<field name="code">T29.0</field>
+	<field name="code">T210.0</field>
 	<field name="category" ref="icdcat19-16"></field>
 </record>
 <record model="medical.pathology" id="T291">
@@ -46763,7 +46763,7 @@
 </record>
 <record model="medical.pathology" id="T390">
 	<field name="name">Salicylates</field>
-	<field name="code">T39.0</field>
+	<field name="code">T310.0</field>
 	<field name="category" ref="icdcat19-18"></field>
 </record>
 <record model="medical.pathology" id="T391">
@@ -47258,7 +47258,7 @@
 </record>
 <record model="medical.pathology" id="T490">
 	<field name="name">Local antifungal, anti-infective and anti-inflammatory drugs, not elsewhere classified</field>
-	<field name="code">T49.0</field>
+	<field name="code">T410.0</field>
 	<field name="category" ref="icdcat19-18"></field>
 </record>
 <record model="medical.pathology" id="T491">
@@ -47623,7 +47623,7 @@
 </record>
 <record model="medical.pathology" id="T590">
 	<field name="name">Nitrogen oxides</field>
-	<field name="code">T59.0</field>
+	<field name="code">T510.0</field>
 	<field name="category" ref="icdcat19-19"></field>
 </record>
 <record model="medical.pathology" id="T591">
@@ -47948,7 +47948,7 @@
 </record>
 <record model="medical.pathology" id="T690">
 	<field name="name">Immersion hand and foot</field>
-	<field name="code">T69.0</field>
+	<field name="code">T610.0</field>
 	<field name="category" ref="icdcat19-20"></field>
 </record>
 <record model="medical.pathology" id="T691">
@@ -48163,7 +48163,7 @@
 </record>
 <record model="medical.pathology" id="T790">
 	<field name="name">Air embolism (traumatic)</field>
-	<field name="code">T79.0</field>
+	<field name="code">T710.0</field>
 	<field name="category" ref="icdcat19-21"></field>
 </record>
 <record model="medical.pathology" id="T791">
@@ -49083,7 +49083,7 @@
 </record>
 <record model="medical.pathology" id="V090">
 	<field name="name">Pedestrian injured in nontraffic accident involving other and unspecified motor vehicles</field>
-	<field name="code">V09.0</field>
+	<field name="code">V010.0</field>
 	<field name="category" ref="icdcat20-1"></field>
 </record>
 <record model="medical.pathology" id="V091">
@@ -49473,7 +49473,7 @@
 </record>
 <record model="medical.pathology" id="V190">
 	<field name="name">Driver injured in collision with other and unspecified motor vehicles in nontraffic accident</field>
-	<field name="code">V19.0</field>
+	<field name="code">V110.0</field>
 	<field name="category" ref="icdcat20-2"></field>
 </record>
 <record model="medical.pathology" id="V191">
@@ -49883,7 +49883,7 @@
 </record>
 <record model="medical.pathology" id="V290">
 	<field name="name">Driver injured in collision with other and unspecified motor vehicles in nontraffic accident</field>
-	<field name="code">V29.0</field>
+	<field name="code">V210.0</field>
 	<field name="category" ref="icdcat20-3"></field>
 </record>
 <record model="medical.pathology" id="V291">
@@ -50383,7 +50383,7 @@
 </record>
 <record model="medical.pathology" id="V390">
 	<field name="name">Driver injured in collision with other and unspecified motor vehicles in nontraffic accident</field>
-	<field name="code">V39.0</field>
+	<field name="code">V310.0</field>
 	<field name="category" ref="icdcat20-4"></field>
 </record>
 <record model="medical.pathology" id="V391">
@@ -50883,7 +50883,7 @@
 </record>
 <record model="medical.pathology" id="V490">
 	<field name="name">Driver injured in collision with other and unspecified motor vehicles in nontraffic accident</field>
-	<field name="code">V49.0</field>
+	<field name="code">V410.0</field>
 	<field name="category" ref="icdcat20-5"></field>
 </record>
 <record model="medical.pathology" id="V491">
@@ -51383,7 +51383,7 @@
 </record>
 <record model="medical.pathology" id="V590">
 	<field name="name">Driver injured in collision with other and unspecified motor vehicles in nontraffic accident</field>
-	<field name="code">V59.0</field>
+	<field name="code">V510.0</field>
 	<field name="category" ref="icdcat20-6"></field>
 </record>
 <record model="medical.pathology" id="V591">
@@ -51883,7 +51883,7 @@
 </record>
 <record model="medical.pathology" id="V690">
 	<field name="name">Driver injured in collision with other and unspecified motor vehicles in nontraffic accident</field>
-	<field name="code">V69.0</field>
+	<field name="code">V610.0</field>
 	<field name="category" ref="icdcat20-7"></field>
 </record>
 <record model="medical.pathology" id="V691">
@@ -52383,7 +52383,7 @@
 </record>
 <record model="medical.pathology" id="V790">
 	<field name="name">Driver injured in collision with other and unspecified motor vehicles in nontraffic accident</field>
-	<field name="code">V79.0</field>
+	<field name="code">V710.0</field>
 	<field name="category" ref="icdcat20-8"></field>
 </record>
 <record model="medical.pathology" id="V791">
@@ -52908,7 +52908,7 @@
 </record>
 <record model="medical.pathology" id="V890">
 	<field name="name">Person injured in unspecified motor-vehicle accident, nontraffic</field>
-	<field name="code">V89.0</field>
+	<field name="code">V810.0</field>
 	<field name="category" ref="icdcat20-9"></field>
 </record>
 <record model="medical.pathology" id="V891">
@@ -53818,7 +53818,7 @@
 </record>
 <record model="medical.pathology" id="W090">
 	<field name="name">Home</field>
-	<field name="code">W09.0</field>
+	<field name="code">W010.0</field>
 	<field name="category" ref="icdcat20-13"></field>
 </record>
 <record model="medical.pathology" id="W091">
@@ -54368,7 +54368,7 @@
 </record>
 <record model="medical.pathology" id="W190">
 	<field name="name">Home</field>
-	<field name="code">W19.0</field>
+	<field name="code">W110.0</field>
 	<field name="category" ref="icdcat20-13"></field>
 </record>
 <record model="medical.pathology" id="W191">
@@ -54918,7 +54918,7 @@
 </record>
 <record model="medical.pathology" id="W290">
 	<field name="name">Home</field>
-	<field name="code">W29.0</field>
+	<field name="code">W210.0</field>
 	<field name="category" ref="icdcat20-14"></field>
 </record>
 <record model="medical.pathology" id="W291">
@@ -55468,7 +55468,7 @@
 </record>
 <record model="medical.pathology" id="W390">
 	<field name="name">Home</field>
-	<field name="code">W39.0</field>
+	<field name="code">W310.0</field>
 	<field name="category" ref="icdcat20-14"></field>
 </record>
 <record model="medical.pathology" id="W391">
@@ -55853,7 +55853,7 @@
 </record>
 <record model="medical.pathology" id="W490">
 	<field name="name">Home</field>
-	<field name="code">W49.0</field>
+	<field name="code">W410.0</field>
 	<field name="category" ref="icdcat20-14"></field>
 </record>
 <record model="medical.pathology" id="W491">
@@ -56403,7 +56403,7 @@
 </record>
 <record model="medical.pathology" id="W590">
 	<field name="name">Home</field>
-	<field name="code">W59.0</field>
+	<field name="code">W510.0</field>
 	<field name="category" ref="icdcat20-15"></field>
 </record>
 <record model="medical.pathology" id="W591">
@@ -56788,7 +56788,7 @@
 </record>
 <record model="medical.pathology" id="W690">
 	<field name="name">Home</field>
-	<field name="code">W69.0</field>
+	<field name="code">W610.0</field>
 	<field name="category" ref="icdcat20-16"></field>
 </record>
 <record model="medical.pathology" id="W691">
@@ -57228,7 +57228,7 @@
 </record>
 <record model="medical.pathology" id="W790">
 	<field name="name">Home</field>
-	<field name="code">W79.0</field>
+	<field name="code">W710.0</field>
 	<field name="category" ref="icdcat20-17"></field>
 </record>
 <record model="medical.pathology" id="W791">
@@ -57723,7 +57723,7 @@
 </record>
 <record model="medical.pathology" id="W890">
 	<field name="name">Home</field>
-	<field name="code">W89.0</field>
+	<field name="code">W810.0</field>
 	<field name="category" ref="icdcat20-18"></field>
 </record>
 <record model="medical.pathology" id="W891">
@@ -58053,7 +58053,7 @@
 </record>
 <record model="medical.pathology" id="W990">
 	<field name="name">Home</field>
-	<field name="code">W99.0</field>
+	<field name="code">W910.0</field>
 	<field name="category" ref="icdcat20-18"></field>
 </record>
 <record model="medical.pathology" id="W991">
@@ -58548,7 +58548,7 @@
 </record>
 <record model="medical.pathology" id="X090">
 	<field name="name">Home</field>
-	<field name="code">X09.0</field>
+	<field name="code">X010.0</field>
 	<field name="category" ref="icdcat20-19"></field>
 </record>
 <record model="medical.pathology" id="X091">
@@ -59098,7 +59098,7 @@
 </record>
 <record model="medical.pathology" id="X190">
 	<field name="name">Home</field>
-	<field name="code">X19.0</field>
+	<field name="code">X110.0</field>
 	<field name="category" ref="icdcat20-20"></field>
 </record>
 <record model="medical.pathology" id="X191">
@@ -59648,7 +59648,7 @@
 </record>
 <record model="medical.pathology" id="X290">
 	<field name="name">Home</field>
-	<field name="code">X29.0</field>
+	<field name="code">X210.0</field>
 	<field name="category" ref="icdcat20-21"></field>
 </record>
 <record model="medical.pathology" id="X291">
@@ -60198,7 +60198,7 @@
 </record>
 <record model="medical.pathology" id="X390">
 	<field name="name">Home</field>
-	<field name="code">X39.0</field>
+	<field name="code">X310.0</field>
 	<field name="category" ref="icdcat20-22"></field>
 </record>
 <record model="medical.pathology" id="X391">
@@ -60748,7 +60748,7 @@
 </record>
 <record model="medical.pathology" id="X490">
 	<field name="name">Home</field>
-	<field name="code">X49.0</field>
+	<field name="code">X410.0</field>
 	<field name="category" ref="icdcat20-23"></field>
 </record>
 <record model="medical.pathology" id="X491">
@@ -61188,7 +61188,7 @@
 </record>
 <record model="medical.pathology" id="X590">
 	<field name="name">Home</field>
-	<field name="code">X59.0</field>
+	<field name="code">X510.0</field>
 	<field name="category" ref="icdcat20-25"></field>
 </record>
 <record model="medical.pathology" id="X591">
@@ -61738,7 +61738,7 @@
 </record>
 <record model="medical.pathology" id="X690">
 	<field name="name">Home</field>
-	<field name="code">X69.0</field>
+	<field name="code">X610.0</field>
 	<field name="category" ref="icdcat20-26"></field>
 </record>
 <record model="medical.pathology" id="X691">
@@ -62288,7 +62288,7 @@
 </record>
 <record model="medical.pathology" id="X790">
 	<field name="name">Home</field>
-	<field name="code">X79.0</field>
+	<field name="code">X710.0</field>
 	<field name="category" ref="icdcat20-26"></field>
 </record>
 <record model="medical.pathology" id="X791">
@@ -62838,7 +62838,7 @@
 </record>
 <record model="medical.pathology" id="X890">
 	<field name="name">Home</field>
-	<field name="code">X89.0</field>
+	<field name="code">X810.0</field>
 	<field name="category" ref="icdcat20-27"></field>
 </record>
 <record model="medical.pathology" id="X891">
@@ -63388,7 +63388,7 @@
 </record>
 <record model="medical.pathology" id="X990">
 	<field name="name">Home</field>
-	<field name="code">X99.0</field>
+	<field name="code">X910.0</field>
 	<field name="category" ref="icdcat20-27"></field>
 </record>
 <record model="medical.pathology" id="X991">
@@ -63893,7 +63893,7 @@
 </record>
 <record model="medical.pathology" id="Y090">
 	<field name="name">Home</field>
-	<field name="code">Y09.0</field>
+	<field name="code">Y010.0</field>
 	<field name="category" ref="icdcat20-27"></field>
 </record>
 <record model="medical.pathology" id="Y091">
@@ -64443,7 +64443,7 @@
 </record>
 <record model="medical.pathology" id="Y190">
 	<field name="name">Home</field>
-	<field name="code">Y19.0</field>
+	<field name="code">Y110.0</field>
 	<field name="category" ref="icdcat20-28"></field>
 </record>
 <record model="medical.pathology" id="Y191">
@@ -64993,7 +64993,7 @@
 </record>
 <record model="medical.pathology" id="Y290">
 	<field name="name">Home</field>
-	<field name="code">Y29.0</field>
+	<field name="code">Y210.0</field>
 	<field name="category" ref="icdcat20-28"></field>
 </record>
 <record model="medical.pathology" id="Y291">
@@ -65853,7 +65853,7 @@
 </record>
 <record model="medical.pathology" id="Y490">
 	<field name="name">Tricyclic and tetracyclic antidepressants</field>
-	<field name="code">Y49.0</field>
+	<field name="code">Y410.0</field>
 	<field name="category" ref="icdcat20-30"></field>
 </record>
 <record model="medical.pathology" id="Y491">
@@ -66363,7 +66363,7 @@
 </record>
 <record model="medical.pathology" id="Y590">
 	<field name="name">Viral vaccines</field>
-	<field name="code">Y59.0</field>
+	<field name="code">Y510.0</field>
 	<field name="category" ref="icdcat20-30"></field>
 </record>
 <record model="medical.pathology" id="Y591">
@@ -66953,7 +66953,7 @@
 </record>
 <record model="medical.pathology" id="Y790">
 	<field name="name">Diagnostic and monitoring devices</field>
-	<field name="code">Y79.0</field>
+	<field name="code">Y710.0</field>
 	<field name="category" ref="icdcat20-31"></field>
 </record>
 <record model="medical.pathology" id="Y791">
@@ -67243,7 +67243,7 @@
 </record>
 <record model="medical.pathology" id="Y890">
 	<field name="name">Sequelae of legal intervention</field>
-	<field name="code">Y89.0</field>
+	<field name="code">Y810.0</field>
 	<field name="category" ref="icdcat20-33"></field>
 </record>
 <record model="medical.pathology" id="Y891">
@@ -67658,7 +67658,7 @@
 </record>
 <record model="medical.pathology" id="Z090">
 	<field name="name">Follow-up examination after surgery for other conditions</field>
-	<field name="code">Z09.0</field>
+	<field name="code">Z010.0</field>
 	<field name="category" ref="icdcat21-1"></field>
 </record>
 <record model="medical.pathology" id="Z091">
@@ -68198,7 +68198,7 @@
 </record>
 <record model="medical.pathology" id="Z290">
 	<field name="name">Isolation</field>
-	<field name="code">Z29.0</field>
+	<field name="code">Z210.0</field>
 	<field name="category" ref="icdcat21-2"></field>
 </record>
 <record model="medical.pathology" id="Z291">
@@ -68563,7 +68563,7 @@
 </record>
 <record model="medical.pathology" id="Z390">
 	<field name="name">Care and examination immediately after delivery</field>
-	<field name="code">Z39.0</field>
+	<field name="code">Z310.0</field>
 	<field name="category" ref="icdcat21-3"></field>
 </record>
 <record model="medical.pathology" id="Z391">
@@ -68898,7 +68898,7 @@
 </record>
 <record model="medical.pathology" id="Z490">
 	<field name="name">Preparatory care for dialysis</field>
-	<field name="code">Z49.0</field>
+	<field name="code">Z410.0</field>
 	<field name="category" ref="icdcat21-4"></field>
 </record>
 <record model="medical.pathology" id="Z491">
@@ -69343,7 +69343,7 @@
 </record>
 <record model="medical.pathology" id="Z590">
 	<field name="name">Homelessness</field>
-	<field name="code">Z59.0</field>
+	<field name="code">Z510.0</field>
 	<field name="category" ref="icdcat21-5"></field>
 </record>
 <record model="medical.pathology" id="Z591">
@@ -70413,7 +70413,7 @@
 </record>
 <record model="medical.pathology" id="Z890">
 	<field name="name">Acquired absence of finger(s) [including thumb], unilateral</field>
-	<field name="code">Z89.0</field>
+	<field name="code">Z810.0</field>
 	<field name="category" ref="icdcat21-7"></field>
 </record>
 <record model="medical.pathology" id="Z891">
@@ -70878,7 +70878,7 @@
 </record>
 <record model="medical.pathology" id="Z990">
 	<field name="name">Dependence on aspirator</field>
-	<field name="code">Z99.0</field>
+	<field name="code">Z910.0</field>
 	<field name="category" ref="icdcat21-7"></field>
 </record>
 <record model="medical.pathology" id="Z991">

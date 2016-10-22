@@ -2,7 +2,7 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, api
+from odoo import models, api
 
 
 class ProductCategory(models.Model):
@@ -10,7 +10,7 @@ class ProductCategory(models.Model):
 
     @api.multi
     def _is_descendant_of(self, category_id):
-        '''
+        """
         Compute whether the provided category is an ancestor of the input
 
         Raises:
@@ -21,7 +21,7 @@ class ProductCategory(models.Model):
 
         Returns:
             `Boolean` whether self inherits from category_id
-        '''
+        """
         self.ensure_one()
         if not self.parent_id:
             return False

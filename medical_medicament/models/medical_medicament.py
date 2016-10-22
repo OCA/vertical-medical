@@ -2,7 +2,7 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api
+from odoo import models, fields, api
 
 
 class MedicalMedicament(models.Model):
@@ -135,7 +135,7 @@ class MedicalMedicament(models.Model):
     @api.model
     @api.returns('self')
     def get_by_product(self, product_id):
-        '''
+        """
         Return medicaments associated to a Product Record
 
         Args:
@@ -143,5 +143,5 @@ class MedicalMedicament(models.Model):
 
         Returns:
             medical.medicament Recordsets associated with input product
-        '''
+        """
         return self.search([('product_id', '=', product_id.id)])

@@ -2,11 +2,11 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models, exceptions, api, _
+from odoo import fields, models, exceptions, api, _
 
 
 class MedicalPrescriptionOrder(models.Model):
-    '''
+    """
     Add State verification functionality to MedicalPrescriptionOrder
 
     This model will allow you to plug in verification methods to Rx Orders,
@@ -18,7 +18,7 @@ class MedicalPrescriptionOrder(models.Model):
             that has been defined in `_ALLOWED_CHANGE_STATES`)
         _ALLOWED_CHANGE_STATES: `list` of keys defining status types in which
             an RX can be moved to after being verified
-    '''
+    """
 
     _inherit = 'medical.prescription.order'
 
@@ -29,7 +29,7 @@ class MedicalPrescriptionOrder(models.Model):
         'medical.prescription.order.state',
         'State',
         track_visibility='onchange',
-        select=True,
+        index=True,
         copy=False,
         help="The state in Kanban view",
         default=lambda self: self.env.ref(
@@ -44,13 +44,13 @@ class MedicalPrescriptionOrder(models.Model):
 
     @api.multi
     def write(self, vals, ):
-        '''
+        """
         Overload write & perform audit validations
 
         Raises:
             ValidationError: When a write is not allowed due to being in a
                 protected state
-        '''
+        """
         for rec_id in self:
             if rec_id.state_type == 'verified':
 

@@ -5,7 +5,7 @@ OeMedical Documentation.
 ========================
 
 Base Documentation
-''''''''''''''''''
+""""""""""""""""""
 
 .. toctree::
     :maxdepth: 2
@@ -14,7 +14,7 @@ Base Documentation
 
 
 Module oemedical
-''''''''''''''''
+"""""""""""""""'
 
 .. toctree::
     :maxdepth: 2
@@ -23,7 +23,7 @@ Module oemedical
     gyneco.rst
 
 Module web_doc_oemedical
-''''''''''''''''''''''''
+""""""""""""""""""""""""
 
 .. toctree::
     :maxdepth: 2
@@ -31,7 +31,7 @@ Module web_doc_oemedical
     web_doc_oemedical_index.rst
 
 OeMedical API.
-''''''''''''''
+""""""""""""''
 
 Coding Guidelines
 +++++++++++++++++

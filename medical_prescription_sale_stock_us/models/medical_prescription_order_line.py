@@ -2,7 +2,7 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models, api
+from odoo import fields, models, api
 from datetime import datetime
 
 import logging
@@ -67,8 +67,8 @@ class MedicalPrescriptionOrderLine(models.Model):
             days_passed = date_delta.days
 
             if day_uom_id != rec_id.duration_uom_id:
-                day_qty = self.env['product.uom']._compute_qty_obj(
-                    rec_id.duration_uom_id, rec_id.duration, day_uom_id,
+                day_qty = rec_id.duration_uom_id._compute_quantity(
+                    rec_id.duration, day_uom_id,
                 )
             else:
                 day_qty = rec_id.duration
@@ -79,8 +79,7 @@ class MedicalPrescriptionOrderLine(models.Model):
             total_dispensed = 0
             for proc_id in procurement_ids:
                 if rec_id.dispense_uom_id != proc_id.product_uom:
-                    dispense_qty = self.env['product.uom']._compute_qty_obj(
-                        proc_id.product_uom,
+                    dispense_qty = proc_id.product_uom._compute_quantity(
                         proc_id.product_qty,
                         rec_id.dispense_uom_id,
                     )
@@ -141,7 +140,7 @@ class MedicalPrescriptionOrderLine(models.Model):
 
             refill_threshold = rec_id.prescription_order_id.partner_id \
                 .company_id.medical_prescription_refill_threshold
-            if refill_threshold is not False:
+            if refill_threshold:
                 if pending_and_unused > refill_threshold * rec_id.qty:
                     rec_id.can_dispense = False
                     rec_id.can_dispense_qty = 0

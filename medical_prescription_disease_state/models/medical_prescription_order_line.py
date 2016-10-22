@@ -2,20 +2,23 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import api, fields, models
+from odoo import api, fields, models
 
 
 class MedicalPrescriptionOrderLine(models.Model):
     _inherit = 'medical.prescription.order.line'
     active = fields.Boolean(
-        default=True,
+        store=True,
+        index=True,
         compute='_compute_active',
     )
     is_treatment_stopped = fields.Boolean(
+        store=True,
         compute='_compute_is_treatment_stopped'
     )
 
     @api.multi
+    @api.depends('is_course_complete', 'is_treatment_stopped')
     def _compute_active(self, ):
         for rec_id in self:
             if rec_id.is_course_complete or rec_id.is_treatment_stopped:
@@ -24,6 +27,7 @@ class MedicalPrescriptionOrderLine(models.Model):
                 rec_id.active = True
 
     @api.multi
+    @api.depends('date_stop_treatment')
     def _compute_is_treatment_stopped(self, ):
         for rec_id in self:
             if not rec_id.date_stop_treatment:
