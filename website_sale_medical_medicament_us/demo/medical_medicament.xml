@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2016 LasLabs Inc.
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+    <record id="acetaminophen_brand_1" model="medical.medicament">
+        <field name="name">Tylenol</field>
+        <field name="drug_form_id" ref="medical_medicament.TAB"/>
+        <field name="gcn_id" ref="acetaminophen_gcn"/>
+        <field name="gpi">2</field>
+        <field name="strength">300</field>
+        <field name="strength_uom_id" ref="medical_medication.product_uom_mg"/>
+        <field name="website_published" eval="True"/>
+    </record>
+
+    <record id="acetaminophen_brand_2" model="medical.medicament">
+        <field name="name">Panadol</field>
+        <field name="drug_form_id" ref="medical_medicament.TAB"/>
+        <field name="gcn_id" ref="acetaminophen_gcn"/>
+        <field name="gpi">2</field>
+        <field name="strength">300</field>
+        <field name="strength_uom_id" ref="medical_medication.product_uom_mg"/>
+        <field name="website_published" eval="True"/>
+    </record>
+
+    <record id="acetaminophen_generic" model="medical.medicament">
+        <field name="name">Acetaminophen</field>
+        <field name="drug_form_id" ref="medical_medicament.TAB"/>
+        <field name="gcn_id" ref="acetaminophen_gcn"/>
+        <field name="gpi">1</field>
+        <field name="strength">300</field>
+        <field name="strength_uom_id" ref="medical_medication.product_uom_mg"/>
+        <field name="website_published" eval="True"/>
+    </record>
+</odoo>

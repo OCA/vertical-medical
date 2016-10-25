@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2016 LasLabs Inc.
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+    <record id="acetaminophen_gcn" model="medical.medicament.gcn">
+        <field name="name">ACET</field>
+    </record>
+</odoo>

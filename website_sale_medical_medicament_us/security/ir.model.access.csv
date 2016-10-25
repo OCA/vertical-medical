@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_public,Medicament Brand/Generic Links - Public GCN Access,medical_medicament_us.model_medical_medicament_gcn,base.group_public,1,0,0,0
+access_portal,Medicament Brand/Generic Links - Portal GCN Access,medical_medicament_us.model_medical_medicament_gcn,base.group_portal,1,0,0,0
