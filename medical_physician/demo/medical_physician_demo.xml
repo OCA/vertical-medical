@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!--
-    Copyright (C) 2016-TODAY LasLabs, Inc. [https://laslabs.com]
-    @author Dave Lasley <dave@laslabs.com>
-    @license AGPL-3
--->
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
-    
-    <record id="medical_physician_physician_1" model="medical.physician">
+
+    <record id="res_partner_physician_1" model="res.partner">
         <field name="name">Chelsea Clinton</field>
         <field name="city">Las Vegas</field>
         <field name="state_id" ref="base.state_us_23" />
@@ -17,9 +13,16 @@
         <field name="street">987 Example Way</field>
         <field name="email">cclinton@example.com</field>
         <field name="phone">+1 (702) 123-2342</field>
+        <field name="ref">519-23-2307</field>
     </record>
-    
-    <record id="medical_physician_physician_2" model="medical.physician">
+
+    <record id="medical_physician_physician_1" model="medical.physician">
+        <field name="partner_id" ref="medical_physician.res_partner_physician_1" />
+        <field name="specialty_id" ref="medical_specialty_gp" />
+        <field name="info">General practitioner, supplier</field>
+    </record>
+
+    <record id="res_partner_physician_2" model="res.partner">
         <field name="name">David Johnson</field>
         <field name="city">Henderson</field>
         <field name="state_id" ref="base.state_us_23" />
@@ -28,9 +31,17 @@
         <field name="street">456 Doctors Blvd</field>
         <field name="email">doc_johnson@example.com</field>
         <field name="phone">+1 (702) 456-2347</field>
+        <field name="ref">218-69-6264</field>
+        <field name="supplier">False</field>
     </record>
-    
-    <record id="medical_physician_physician_3" model="medical.physician">
+
+    <record id="medical_physician_physician_2" model="medical.physician">
+        <field name="partner_id" ref="medical_physician.res_partner_physician_2" />
+        <field name="specialty_id" ref="medical_specialty_gp" />
+        <field name="info">General practitioner, not supplier</field>
+    </record>
+
+    <record id="res_partner_physician_3" model="res.partner">
         <field name="name">Heather Barnsfield</field>
         <field name="city">Las Vegas</field>
         <field name="state_id" ref="base.state_us_23" />
@@ -39,6 +50,13 @@
         <field name="street">74 Testersens Ave</field>
         <field name="email">hbarnsfield@example.com</field>
         <field name="phone">+1 (888) 123-4567</field>
+        <field name="ref">576-01-3001</field>
+    </record>
+  
+    <record id="medical_physician_physician_3" model="medical.physician">
+        <field name="partner_id" ref="medical_physician.res_partner_physician_3" />
+        <field name="specialty_id" ref="medical_specialty_gp" />
+        <field name="info">General practitioner, supplier</field>
     </record>
         
 </odoo>

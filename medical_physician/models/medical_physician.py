@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import fields, models, api
@@ -12,42 +12,28 @@ class MedicalPhysician(models.Model):
 
     partner_id = fields.Many2one(
         string='Related Partner',
-        help='Partner related data of the physician',
+        help='Partner-related data of the physician',
         comodel_name='res.partner',
         required=True,
         ondelete='cascade',
     )
     code = fields.Char(
         string='ID',
-        help='Physician Code',
-        size=256,
+        help='Physician code',
     )
     specialty_id = fields.Many2one(
-        help='Specialty Code',
+        help='Specialty code',
         comodel_name='medical.specialty',
-        default=lambda self: self.env.ref('medical_physician.spe1'),
+        default=lambda self: self.env.ref(
+            'medical_physician.medical_specialty_gp'
+        ),
         required=True,
     )
     info = fields.Text(
         string='Extra info',
-        help='Extra Info',
+        help='Other information about the physician',
     )
     active = fields.Boolean(
-        help='If unchecked, it will allow you to hide the physician without '
-             'removing it.',
-        default=True,
-    )
-    schedule_template_ids = fields.One2many(
-        string='Related schedules',
-        help='Schedule template of the physician',
-        comodel_name='medical.physician.schedule.template',
-        inverse_name='physician_id',
-    )
-    supplier = fields.Boolean(
-        string='Is a Vendor',
-        help='Check this box if this contact is a vendor. '
-             'If it\'s not checked, purchase people will not see it when'
-             'encoding a purchase order.',
         default=True,
     )
 

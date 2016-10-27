@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
-        <record model="medical.specialty" id="spe1">
-            <field name="name">General Practitioner</field>
-            <field name="code">GP</field>
-        </record>
+<odoo>
 
-    </data>
-</openerp>
+    <record model="medical.specialty" id="medical_specialty_gp">
+        <field name="name">General Practitioner</field>
+        <field name="code">GP</field>
+    </record>
+
+</odoo>
