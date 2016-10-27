@@ -1,14 +1,11 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import models, fields, api
 
 
 class MedicalPharmacy(models.Model):
-    '''
-    Medical pharmacy attributes on res.partner
-    '''
     _name = 'medical.pharmacy'
     _description = 'Medical Pharmacy'
     _inherits = {'res.partner': 'partner_id', }
