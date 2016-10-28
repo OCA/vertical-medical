@@ -1,24 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
-<!--
-    Copyright (C) 2014-[Now] LasLabs [https://laslabs.com]
-    @author Dave Lasley <dave@laslabs.com>
-    The license is in the file __openerp__.py
--->
+<odoo>
 
-<openerp>
-    <data>
+    <menuitem id="medical_pharmacy_menu"
+                name="Pharmacies"
+                sequence="60"
+                parent="medical.medical_root_misc"
+                action="medical_pharmacy_action" />
 
-        <!-- Prescription [Config/Prescription] -->
-
-        <menuitem id="medical_root_prescription" name="Prescription"
-                  parent="medical.medical_root_sub" sequence="190" />
-
-        <!-- Medical Prescription Order States  [Config/Prescription/Order Line States] )--> 
-
-        <menuitem id="medical_prescription_order_line_state"
-                  name="Order Line States"
-                  parent="medical_root_prescription" sequence="60"
-                  action="medical_prescription_order_line_state_action" />
-    </data>
-</openerp>
+</odoo>
