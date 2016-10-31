@@ -5,7 +5,7 @@
 {
     'name': 'Medicament Sales - Brand/Generic Links',
     'summary': 'Links to brand/generic alternatives on medicament shop pages',
-    'version': '9.0.1.0.0',
+    'version': '10.0.1.0.0',
     'category': 'Medical',
     'website': 'https://laslabs.com/',
     'author': 'LasLabs, Odoo Community Association (OCA)',
