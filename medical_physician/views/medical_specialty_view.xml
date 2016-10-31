@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical_specialty_view_tree" model="ir.ui.view">
+        <field name="name">medical.specialty.tree</field>
+        <field name="model">medical.specialty</field>
+        <field name="priority" eval="8" />
+        <field name="arch" type="xml">
+            <tree string="Medical Specialty">
+                <field name="code" />
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="medical_specialty_view_form" model="ir.ui.view">
+        <field name="name">medical.specialty.form</field>
+        <field name="model">medical.specialty</field>
+        <field name="priority" eval="8" />
+        <field name="arch" type="xml">
+            <form string="Medical Specialty">
+                <group>
+                    <field name="code" />
+                    <field name="name" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_specialty_view_search" model="ir.ui.view">
+        <field name="name">medical.specialty.search</field>
+        <field name="model">medical.specialty</field>
+        <field name="priority" eval="8" />
+        <field name="arch" type="xml">
+            <search string="Medical Specialty">
+                <field name="code" />
+                <field name="name" />
+                <newline />
+                <group expand="0" string="Group By...">
+                    <filter string="Code" domain="[]" context="{'group_by':'code'}" />
+                    <filter string="Specialty" domain="[]" context="{'group_by':'name'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_specialty_action">
+        <field name="name">Specialty</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.specialty</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="medical_specialty_view_search" />
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+</odoo>
