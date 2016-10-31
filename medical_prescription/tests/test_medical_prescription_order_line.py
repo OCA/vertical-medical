@@ -13,7 +13,7 @@ class TestMedicalPrescriptionOrderLine(TransactionCase):
 
         self.line_model = self.env['medical.prescription.order.line']
         self.line = self.env.ref(
-            'medical_prescription.' +
+            'medical_prescription.'
             'medical_prescription_order_line_patient_1_order_1_line_1'
         )
 

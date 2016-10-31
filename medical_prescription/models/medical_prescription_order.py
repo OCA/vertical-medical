@@ -47,9 +47,19 @@ class MedicalPrescriptionOrder(models.Model):
         string='Prescription Date',
         default=lambda s: fields.Datetime.now(),
     )
+    active = fields.Boolean(
+        compute='_compute_active',
+    )
 
     @api.model
     def _default_name(self):
         return self.env['ir.sequence'].next_by_code(
             'medical.prescription.order',
         )
+
+    @api.multi
+    def _compute_active(self):
+        for rec_id in self:
+            rec_id.active = any(
+                rec_id.prescription_order_line_ids.mapped('active')
+            )
