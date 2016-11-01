@@ -2,7 +2,7 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class MedicalMedicament(models.Model):
@@ -38,3 +38,29 @@ class MedicalMedicament(models.Model):
     ],
         help='Federal drug scheduling code for medicament.',
     )
+    brand_ids = fields.Many2many(
+        help='List of all brand-name medicaments equivalent to this one',
+        compute='_compute_brand_ids',
+        comodel_name='medical.medicament',
+    )
+    generic_ids = fields.Many2many(
+        help='List of all generic medicaments equivalent to this one',
+        compute='_compute_generic_ids',
+        comodel_name='medical.medicament',
+    )
+
+    @api.multi
+    def _compute_brand_ids(self):
+        for record in self:
+            record.brand_ids = self.search([
+                ('gcn_id.id', '=', record.gcn_id.id),
+                ('gpi', '=', '2'),
+            ])
+
+    @api.multi
+    def _compute_generic_ids(self):
+        for record in self:
+            record.generic_ids = self.search([
+                ('gcn_id.id', '=', record.gcn_id.id),
+                ('gpi', '=', '1'),
+            ])

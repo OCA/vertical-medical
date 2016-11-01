@@ -9,6 +9,7 @@
     'author': "LasLabs, Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': [
+        'medical_base_us',
         'medical_medication',
     ],
     'website': 'https://laslabs.com',
@@ -18,5 +19,5 @@
         'security/ir.model.access.csv',
     ],
     'installable': True,
-    'auto_install': False,
+    'auto_install': True,
 }

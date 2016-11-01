@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2016 LasLabs Inc.
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+    <template id="product" inherit_id="website_sale.product" customize_show="True" name="Medicament Sales - Brand/Generic Links">
+        <xpath expr="//div[@id='product_details']/p[last()]" position="after">
+            <t t-if="product.is_medicament">
+                <t t-set="medicament" t-value="product.medicament_ids[0]"/>
+                <t t-set="filtered_brand_ids" t-value="medicament.brand_ids.filtered('website_published')"/>
+                <t t-set="filtered_generic_ids" t-value="medicament.generic_ids.filtered('website_published')"/>
+                <t t-if="medicament.gpi == '1' and len(filtered_brand_ids) &gt; 0">
+                    <hr/>
+                    <strong>Buy brand-name instead:</strong>
+                    <ul class="list-unstyled">
+                        <t t-foreach="filtered_brand_ids" t-as="brand_id">
+                            <li><a t-att-href="brand_id.product_id.product_tmpl_id.website_url"><t t-esc="brand_id.display_name"/></a></li>
+                        </t>
+                    </ul>
+                </t>
+                <t t-if="medicament.gpi == '2' and len(filtered_generic_ids) &gt; 0">
+                    <hr/>
+                    <strong>Buy generic instead:</strong>
+                    <ul class="list-unstyled">
+                        <t t-foreach="filtered_generic_ids" t-as="generic_id">
+                            <li><a t-att-href="generic_id.product_id.product_tmpl_id.website_url"><t t-esc="generic_id.display_name"/></a></li>
+                        </t>
+                    </ul>
+                </t>
+            </t>
+        </xpath>
+    </template>
+</odoo>
