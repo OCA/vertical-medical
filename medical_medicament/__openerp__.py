@@ -1,49 +1,32 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#     This file is part of medical_medicament,
-#     an Odoo module.
-#
-#     Copyright (c) 2015 ACSONE SA/NV (<http://acsone.eu>)
-#
-#     medical_medicament is free software:
-#     you can redistribute it and/or modify it under the terms of the GNU
-#     Affero General Public License as published by the Free Software
-#     Foundation,either version 3 of the License, or (at your option) any
-#     later version.
-#
-#     medical_medicament is distributed
-#     in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
-#     even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
-#     PURPOSE.  See the GNU Affero General Public License for more details.
-#
-#     You should have received a copy of the GNU Affero General Public License
-#     along with medical_medicament.
-#     If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Copyright 2015 ACSONE SA/NV
+# Copyright 2016 LasLabs Inc.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+
 {
-    'name': 'Medical Medicament',
-    'version': '8.0.1.0.0',
-    'author': 'ACSONE SA/NV, Odoo Community Association (OCA)',
-    'maintainer': 'ACSONE SA/NV, Odoo Community Association (OCA)',
-    'website': 'http://www.acsone.eu',
-    'license': 'AGPL-3',
-    'category': 'Medical',
-    'depends': [
-        'medical',
-        'product',
+    "name": "Medical Medicament",
+    "summary": "Introduce Medicament notion into the medical product.",
+    "version": "9.0.1.0.0",
+    "category": "Medical",
+    "website": "http://acsone.eu",
+    "author": "ACSONE SA/NV, LasLabs, Odoo Community Association (OCA)",
+    "license": "AGPL-3",
+    "application": True,
+    "installable": True,
+    "depends": [
+        "medical",
     ],
-    'summary': 'Introduce Medicament notion into the medical product',
-    'data': [
-        'security/ir.model.access.csv',
-        'data/medical_drug_form.xml',
-        'data/medical_drug_route.xml',
-        'views/product_product_view.xml',
-        'views/medical_medicament_view.xml',
-        'views/medical_drug_form_view.xml',
-        'views/medical_drug_route_view.xml',
+    "data": [
+        "security/ir.model.access.csv",
+        "data/medical_drug_form.xml",
+        "data/medical_drug_route.xml",
+        "views/product_product_view.xml",
+        "views/medical_medicament_view.xml",
+        "views/medical_drug_form_view.xml",
+        "views/medical_drug_route_view.xml",
+        "views/medical_menu.xml",
     ],
-    'installable': False,
-    'auto_install': False,
+    "demo": [
+        "demo/medical_medicament_demo.xml",
+    ],
 }
