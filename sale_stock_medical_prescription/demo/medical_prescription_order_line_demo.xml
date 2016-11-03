@@ -26,19 +26,19 @@
 		<field name="dispense_uom_id" ref="product.product_uom_categ_unit" />
 	</record>
 	
-	<record id="medical_prescription_sale.medical_prescription_order_line_patient_1_order_1_line_1"
+	<record id="sale_medical_prescription.medical_prescription_order_line_patient_1_order_1_line_1"
 			model="medical.prescription.order.line"
 			>
 		<field name="dispense_uom_id" ref="product.product_uom_categ_unit" />
 	</record>
 	
-	<record id="medical_prescription_sale.medical_prescription_order_line_patient_1_order_1_line_2"
+	<record id="sale_medical_prescription.medical_prescription_order_line_patient_1_order_1_line_2"
 			model="medical.prescription.order.line"
 			>
 		<field name="dispense_uom_id" ref="product.product_uom_categ_unit" />
 	</record>
 	
-	<record id="medical_prescription_sale.medical_prescription_order_line_patient_2_order_1_line_1"
+	<record id="sale_medical_prescription.medical_prescription_order_line_patient_2_order_1_line_1"
 			model="medical.prescription.order.line"
 			>
 		<field name="dispense_uom_id" ref="product.product_uom_categ_unit" />

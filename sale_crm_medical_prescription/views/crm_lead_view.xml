@@ -23,7 +23,7 @@
                 </xpath>
                 <xpath expr="//button" position="after">
                     <button string="New Quotation"
-                            name="%(medical_prescription_sale.medical_sale_wizard_action)d"
+                            name="%(sale_medical_prescription.medical_sale_wizard_action)d"
                             type="action"
                             class="oe_highlight"
                             attrs="{'invisible': [('is_prescription', '=', False)]}"

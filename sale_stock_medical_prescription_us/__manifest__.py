@@ -11,7 +11,7 @@
     'category': 'Medical',
     'depends': [
         'medical_base_us',
-        'medical_prescription_sale_stock',
+        'sale_stock_medical_prescription',
         'medical_prescription_us',
     ],
     'data': [

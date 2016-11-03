@@ -10,7 +10,7 @@
     'category': 'Medical',
     'depends': [
         'sale_crm',
-        'medical_prescription_sale',
+        'sale_medical_prescription',
     ],
     "website": "https://laslabs.com",
     "license": "AGPL-3",

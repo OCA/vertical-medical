@@ -11,7 +11,7 @@ from odoo.exceptions import ValidationError
 class TestAll(TransactionCase):
     """ @TODO: Isolate all of this by model """
 
-    module = 'medical_prescription_sale_stock'
+    module = 'sale_stock_medical_prescription'
 
     def setUp(self, *args, **kwargs):
         super(TestAll, self).setUp(*args, **kwargs)
@@ -113,7 +113,7 @@ class TestAll(TransactionCase):
     def _new_rx_order(self, new_resources=True):
         if new_resources:
             prescription_categ_id = self.env.ref(
-                'medical_prescription_sale.product_category_rx'
+                'sale_medical_prescription.product_category_rx'
             )
             self.medicament_vals['categ_id'] = prescription_categ_id.id
             self._new_resources()
