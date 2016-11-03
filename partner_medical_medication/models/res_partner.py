@@ -18,7 +18,10 @@ class ResPartner(models.Model):
     @api.depends('child_ids')
     def _compute_medical_patient_ids(self):
         for record in self:
-            patients = self.env['medical.patient'].search([
-                ('partner_id', 'child_of', record.id),
-            ])
-            record.medical_patient_ids = [(6, 0, patients.ids)]
+            if record.id:
+                patients = self.env['medical.patient'].search([
+                    ('partner_id', 'child_of', record.id),
+                ])
+                record.medical_patient_ids = [(6, 0, patients.ids)]
+            else:
+                record.medical_patient_ids = [(6, 0, [])]

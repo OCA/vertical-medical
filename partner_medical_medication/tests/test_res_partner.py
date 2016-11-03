@@ -32,3 +32,13 @@ class TestResPartner(TransactionCase):
             partner.medical_patient_ids,
             patient + child_patient + grandchild_patient,
         )
+
+    def test_medical_patient_ids_not_persisted(self):
+        '''It should return empty patient recordset if partner not in DB yet'''
+        test_partner = self.env['res.partner'].new()
+
+        self.assertFalse(test_partner.medical_patient_ids)
+        self.assertEqual(
+            test_partner.medical_patient_ids._name,
+            'medical.patient',
+        )
