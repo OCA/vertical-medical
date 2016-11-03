@@ -20,7 +20,7 @@ class MedicalMedicament(models.Model):
     @api.multi
     def _compute_is_prescription(self, ):
         prescription_categ_id = self.env.ref(
-            'medical_prescription_sale.product_category_rx'
+            'sale_medical_prescription.product_category_rx'
         )
         for rec_id in self:
             if not rec_id.categ_id:

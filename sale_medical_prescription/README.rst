@@ -1,15 +1,19 @@
 .. image:: https://img.shields.io/badge/license-AGPL--3-blue.svg
     :alt: License: AGPL-3
 
-====================================
-Odoo Medical Prescription Sale Stock
-====================================
+===============================
+Odoo Medical Prescription Sales
+===============================
 
-Extension of medical_prescription_sale that allows for a pharmacy warehouse
+Extension of medical_prescription that allows for integration into sales workflows
 
 
 Usage
 =====
+
+Click `More` menu when viewing Medical Prescription Orders, then `Create Quote(s)`
+to trigger Rx to Sale wizard.
+
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
@@ -31,7 +35,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/vertical-medical/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us smashing it by providing a detailed and welcomed feedback
-`here <https://github.com/OCA/vertical-medical/issues/new?body=module:%20medical_prescription_sale_stock%0Aversion:%2010.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`here <https://github.com/OCA/vertical-medical/issues/new?body=module:%20sale_medical_prescription%0Aversion:%2010.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 
 Credits

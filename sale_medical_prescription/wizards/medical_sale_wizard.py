@@ -139,10 +139,10 @@ class MedicalSaleWizard(models.TransientModel):
     def _get_next_sale_wizard(self, only_states=None, ):
         model_obj = self.env['ir.model.data']
         wizard_id = model_obj.xmlid_to_object(
-            'medical_prescription_sale.medical_sale_temp_view_form'
+            'sale_medical_prescription.medical_sale_temp_view_form'
         )
         action_id = model_obj.xmlid_to_object(
-            'medical_prescription_sale.medical_sale_temp_action'
+            'sale_medical_prescription.medical_sale_temp_action'
         )
         context = self._context.copy()
         for wizard in self.sale_wizard_ids:

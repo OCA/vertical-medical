@@ -10,7 +10,7 @@
     'category': 'Medical',
     'depends': [
         'sale_stock',
-        'medical_prescription_sale',
+        'sale_medical_prescription',
     ],
     'data': [
         'data/stock_data.xml',

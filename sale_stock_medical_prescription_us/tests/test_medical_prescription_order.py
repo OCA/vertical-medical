@@ -10,7 +10,7 @@ from openerp import fields
 
 class TestMedicalPrescriptionOrder(TransactionCase):
 
-    module = 'medical_prescription_sale_stock'
+    module = 'sale_stock_medical_prescription'
 
     def setUp(self, *args, **kwargs):
         super(TestMedicalPrescriptionOrder, self).setUp(*args, **kwargs)
@@ -115,7 +115,7 @@ class TestMedicalPrescriptionOrder(TransactionCase):
     def _new_rx_order(self, new_resources=True):
         if new_resources:
             prescription_categ_id = self.env.ref(
-                'medical_prescription_sale.product_category_rx'
+                'sale_medical_prescription.product_category_rx'
             )
             self.medicament_vals['categ_id'] = prescription_categ_id.id
             self._new_resources()

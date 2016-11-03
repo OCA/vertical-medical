@@ -126,7 +126,7 @@ class TestPrescriptionSaleOrder(TransactionCase):
 
     def test_medicament_is_prescription_direct_descendant(self):
         prescription_categ_id = self.env.ref(
-            'medical_prescription_sale.product_category_rx'
+            'sale_medical_prescription.product_category_rx'
         )
         self.medicament_vals['categ_id'] = prescription_categ_id.id
         medicament_id = self.env['medical.medicament'].create(
@@ -139,7 +139,7 @@ class TestPrescriptionSaleOrder(TransactionCase):
 
     def test_medicament_is_prescription_indirect_descendant(self):
         prescription_categ_id = self.env.ref(
-            'medical_prescription_sale.product_category_rx'
+            'sale_medical_prescription.product_category_rx'
         )
         prescription_categ_id = self.env['product.category'].create({
             'name': 'Category',

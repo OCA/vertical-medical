@@ -13,7 +13,7 @@
 		<field name="prescription_order_id"
 			   ref="medical_prescription.medical_prescription_order_patient_1_order_1" />
 		<field name="medical_medication_id"
-			   ref="medical_prescription_sale.medical_medication_patient_1_simv_1" />
+			   ref="sale_medical_prescription.medical_medication_patient_1_simv_1" />
 		<field name="qty">90</field>
 	</record>
 	
@@ -22,7 +22,7 @@
 		<field name="prescription_order_id"
 			   ref="medical_prescription.medical_prescription_order_patient_1_order_1" />
 		<field name="medical_medication_id"
-			   ref="medical_prescription_sale.medical_medication_patient_1_simv_2" />
+			   ref="sale_medical_prescription.medical_medication_patient_1_simv_2" />
 		<field name="qty">360</field>
 	</record>
 	
@@ -31,7 +31,7 @@
 		<field name="prescription_order_id"
 			   ref="medical_prescription.medical_prescription_order_patient_2_order_1" />
 		<field name="medical_medication_id"
-			   ref="medical_prescription_sale.medical_medication_patient_2_simv_1" />
+			   ref="sale_medical_prescription.medical_medication_patient_2_simv_1" />
 		<field name="qty">120</field>
 	</record>
 	
