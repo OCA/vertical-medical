@@ -81,16 +81,10 @@ class SaleOrderLine(models.Model):
         if self.env.context.get('__rx_force__'):
             return True
         for rec_id in self:
-            if not rec_id.product_id.is_medicament:
-                continue
-            medicament_id = self.env['medical.medicament'].search([
-                ('product_id', '=', rec_id.product_id.id),
-            ],
-                limit=1,
-            )
-            conditions = [medicament_id.is_prescription]
-            if rec_id.state in ['draft', 'sent']:
-                conditions.append(rec_id.prescription_order_line_id)
+            conditions = [
+                rec_id.product_id.is_medicament,
+                rec_id.prescription_order_line_id,
+            ]
             if not all(conditions):
                 continue
             rx_line = rec_id.prescription_order_line_id

@@ -296,3 +296,14 @@ class TestAll(TransactionCase):
                 [expect.id], res
             )
         )
+
+    def test_check_can_dispense_no_order_lines(self):
+        """ Test Validations skipped if no prescription lines present """
+        order_id = self._new_rx_order()
+        try:
+            order_id.order_line[0].prescription_order_line_id = None
+            self.assertTrue(True)
+        except ValidationError:
+            self.fail(
+                'Should skip validations if no rx_line.'
+            )
