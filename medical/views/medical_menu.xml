@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openerp>
-    <data>
-        <menuitem id="medical_root" name="Medical" sequence="10" />
+<odoo>
 
+    <menuitem id="medical_root"
+              name="Medical"
+              sequence="10"
+              web_icon="medical,static/description/icon.png"
+              />
 
-        <!--Menu Patient-->
+    <menuitem id="medical_patient_root"
+              name="Patient"
+              parent="medical_root"
+              sequence="10" />
+    <menuitem id="medical_patient"
+              name=" Patient"
+              parent="medical_patient_root"
+              sequence="10"
+              action="medical_patient_action" />
 
-        <menuitem id="medical_patient_root"
-                  name="Patient"
-                  parent="medical_root"
-                  sequence="10" />
-        <menuitem id="medical_patient"
-                  name=" Patient"
-                  parent="medical_patient_root"
-                  sequence="10"
-                  action="medical_patient_action" />
+    <!--Configurations-->
 
-        <!--Configurations-->
+    <menuitem id="medical_root_sub"
+              name="Configuration"
+              parent="medical_root"
+              sequence="100" />
 
-        <menuitem id="medical_root_sub"
-                  name="Configuration"
-                  parent="medical_root"
-                  sequence="100" />
+    <!-- Misc -->
 
-        <!-- Misc -->
+    <menuitem id="medical_root_misc"
+              name="Misc"
+              parent="medical_root_sub"
+              sequence="200" />
 
-        <menuitem id="medical_root_misc"
-                  name="Misc"
-                  parent="medical_root_sub"
-                  sequence="200" />
-
-    </data>
-</openerp>
+</odoo>
