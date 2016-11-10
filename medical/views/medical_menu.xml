@@ -6,7 +6,9 @@
 
     <menuitem id="medical_root"
               name="Medical"
-              sequence="10" />
+              sequence="10"
+              web_icon="medical,static/description/icon.png"
+              />
 
     <menuitem id="medical_patient_root"
               name="Patient"
