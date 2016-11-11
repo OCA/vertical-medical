@@ -1,29 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
-<!--
-    Copyright (C) 2016-TODAY LasLabs, Inc. [https://laslabs.com]
-    @author Dave Lasley <dave@laslabs.com>
-    @license AGPL-3
--->
+<odoo>
 
-<openerp>
-    <data>
+    <record id="medical_patient_disease.medical_patient_disease_action" model="ir.actions.act_window">
+        <field name="domain">[('is_allergy', '=', False)]</field>
+    </record>      
 
-        <record id="medical_patient_disease.medical_patient_disease_action" model="ir.actions.act_window">
-            <field name="domain">[('is_allergy', '=', False)]</field>
-        </record>      
+    <record id="medical_patient_disease_allergy_action" model="ir.actions.act_window">
+        <field name="name">Patient Allergies</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.patient.disease</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="medical_patient_disease.medical_patient_disease_view_tree" />
+        <field name="search_view_id" ref="medical_patient_disease.medical_patient_disease_view_search" />
+        <field name="domain">[('is_allergy', '=', True)]</field>
+        <field name="context">{}</field>
+    </record>
 
-        <record id="medical_patient_disease_allergy_action" model="ir.actions.act_window">
-            <field name="name">Patient Allergies</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">medical.patient.disease</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="medical_patient_disease.medical_patient_view_disease_tree" />
-            <field name="search_view_id" ref="medical_patient_disease.medical_patient_view_disease_search" />
-            <field name="domain">[('is_allergy', '=', True)]</field>
-            <field name="context">{}</field>
-        </record>
-
-    </data>
-</openerp>
+</odoo>
