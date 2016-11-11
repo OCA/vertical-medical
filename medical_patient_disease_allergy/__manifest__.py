@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
     "name": "Medical Patient Allergies",
-    "summary": "Isolate the allergy concept in medical_disease",
-    "version": "10.0.2.0.0",
+    "summary": "Isolates allergies from diseases.",
+    "version": "10.0.1.0.0",
     "category": "Medical",
     "website": "https://laslabs.com/",
     "author": "LasLabs, Odoo Community Association (OCA)",
-    "maintainer": "LasLabs, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
@@ -17,8 +16,13 @@
         "medical_patient_disease",
     ],
     "data": [
+        "data/medical_pathology_code_type.xml",
         "views/medical_patient_disease_view.xml",
         "views/medical_patient_view.xml",
-        'data/medical_pathology_code_type.xml',
+    ],
+    "demo": [
+        "demo/medical_pathology_demo.xml",
+        "demo/medical_patient_demo.xml",
+        "demo/medical_patient_disease_demo.xml",
     ],
 }

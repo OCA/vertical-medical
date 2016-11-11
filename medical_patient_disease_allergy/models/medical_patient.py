@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, api, fields
@@ -26,13 +26,13 @@ class MedicalPatient(models.Model):
     )
 
     @api.multi
-    def action_invalidate(self, ):
+    def action_invalidate(self):
         for rec_id in self:
             super(MedicalPatient, rec_id).action_invalidate()
             for disease_id in rec_id.allergy_ids:
                 disease_id.action_invalidate()
 
     @api.multi
-    def _compute_count_allergy_ids(self, ):
+    def _compute_count_allergy_ids(self):
         for rec_id in self:
             rec_id.count_allergy_ids = len(rec_id.allergy_ids)
