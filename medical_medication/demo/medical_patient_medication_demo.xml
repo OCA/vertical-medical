@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical_medication_template_template_1" model="medical.medication.template">
+        <field name="medicament_id" ref="medical_medicament.medical_medicament_advil_1" />
+        <field name="quantity">2</field>
+        <field name="dose_uom_id" ref="medical_medication.product_uom_mg" />
+        <field name="frequency">2</field>
+        <field name="frequency_uom_id" ref="medical_medication.product_uom_hour" />
+        <field name="duration">1</field>
+        <field name="duration_uom_id" ref="medical_medication.product_uom_hour" />
+    </record>
+
+    <record id="medical_patient_medication_medication_1" model="medical.patient.medication">
+        <field name="medication_template_id" ref="medical_medication.medical_medication_template_template_1" />
+        <field name="patient_id" ref="medical.medical_patient_patient_1" />
+        <field name="physician_id" ref="medical_physician.medical_physician_physician_1" />
+        <field name="date_start_treatment">2016-01-01</field>
+        <field name="medicament_id" ref="medical_medicament.medical_medicament_advil_1" />
+    </record>
+
+    <record id="medical_medication_template_template_2" model="medical.medication.template">
+        <field name="medicament_id" ref="medical_medicament.medical_medicament_advil_2" />
+        <field name="quantity">1</field>
+        <field name="dose_uom_id" ref="medical_medication.product_uom_mg" />
+        <field name="pathology_id" ref="medical_medication.medical_pathology_pathology_4" />
+        <field name="duration">1</field>
+        <field name="duration_uom_id" ref="medical_medication.product_uom_day" />
+    </record>
+
+    <record id="medical_patient_medication_medication_2" model="medical.patient.medication">
+        <field name="medication_template_id" ref="medical_medication.medical_medication_template_template_2" />
+        <field name="medicament_id" ref="medical_medicament.medical_medicament_advil_2" />
+        <field name="patient_id" ref="medical.medical_patient_patient_1" />
+        <field name="physician_id" ref="medical_physician.medical_physician_physician_1" />
+        <field name="date_start_treatment">2015-01-01</field>
+    </record>
+
+    <record id="medical_medication_template_template_3" model="medical.medication.template">
+        <field name="medicament_id" ref="medical_medicament.medical_medicament_advil_1" />
+        <field name="quantity">2</field>
+        <field name="dose_uom_id" ref="medical_medication.product_uom_mg" />
+        <field name="duration">1</field>
+        <field name="duration_uom_id" ref="medical_medication.product_uom_hour" />
+    </record>
+
+    <record id="medical_patient_medication_medication_3" model="medical.patient.medication">
+        <field name="medication_template_id" ref="medical_medication.medical_medication_template_template_3" />
+        <field name="patient_id" ref="medical.medical_patient_patient_2" />
+        <field name="physician_id" ref="medical_physician.medical_physician_physician_1" />
+        <field name="date_start_treatment">2016-01-01</field>
+        <field name="medicament_id" ref="medical_medicament.medical_medicament_advil_1" />
+    </record>
+
+    <record id="medical_medication_template_template_4" model="medical.medication.template">
+        <field name="medicament_id" ref="medical_medicament.medical_medicament_advil_1" />
+        <field name="pathology_id" ref="medical_medication.medical_pathology_pathology_4" />
+        <field name="frequency_prn">True</field>
+        <field name="medication_dosage_id" ref="medical_medication.420449005" />
+        <field name="quantity">200</field>
+        <field name="dose_uom_id" ref="medical_medication.product_uom_mg" />
+        <field name="suggested_administration_hours">10</field>
+        <field name="duration">1</field>
+        <field name="duration_uom_id" ref="medical_medication.product_uom_day" />
+    </record>
+
+    <record id="medical_patient_medication_medication_4" model="medical.patient.medication">
+        <field name="medication_template_id" ref="medical_medication.medical_medication_template_template_4" />
+        <field name="medicament_id" ref="medical_medicament.medical_medicament_advil_1" />
+        <field name="patient_id" ref="medical_medication.medical_patient_patient_6" />
+        <field name="physician_id" ref="medical_physician.medical_physician_physician_3" />
+        <field name="date_start_treatment">2010-01-02</field>
+    </record>
+
+    <record id="medical_medication_template_template_5" model="medical.medication.template">
+        <field name="medicament_id" ref="medical_medication.medical_medicament_truvada_1" />
+        <field name="pathology_id" ref="medical_pathology.medical_pathology_medical_pathology_1" />
+        <field name="duration">3</field>
+        <field name="duration_uom_id" ref="medical_medication.product_uom_year" />
+        <field name="frequency">12</field>
+        <field name="frequency_uom_id" ref="medical_medication.product_uom_hour" />
+        <field name="medication_dosage_id" ref="medical_medication.307470009" />
+        <field name="quantity">1</field>
+        <field name="dose_uom_id" ref="medical_medication.product_uom_mg" />
+        <field name="suggested_administration_hours">12</field>
+    </record>
+
+    <record id="medical_patient_medication_medication_5" model="medical.patient.medication">
+        <field name="medication_template_id" ref="medical_medication.medical_medication_template_template_5" />
+        <field name="medicament_id" ref="medical_medication.medical_medicament_truvada_1" />
+        <field name="patient_id" ref="medical_patient_disease.medical_patient_patient_4" />
+        <field name="physician_id" ref="medical_physician.medical_physician_physician_2" />
+        <field name="date_start_treatment">2012-02-14</field>
+    </record>
+
+    <record id="medical_medication_template_template_6" model="medical.medication.template">
+        <field name="medicament_id" ref="medical_medication.medical_medicament_aralen_1" />
+        <field name="pathology_id" ref="medical_pathology.medical_pathology_medical_pathology_2" />
+        <field name="duration">30</field>
+        <field name="duration_uom_id" ref="medical_medication.product_uom_day" />
+        <field name="frequency">6</field>
+        <field name="frequency_uom_id" ref="medical_medication.product_uom_hour" />
+        <field name="medication_dosage_id" ref="medical_medication.420449005" />
+        <field name="quantity">1</field>
+        <field name="dose_uom_id" ref="medical_medication.product_uom_mg" />
+        <field name="suggested_administration_hours">8</field>
+    </record>
+
+    <record id="medical_patient_medication_medication_6" model="medical.patient.medication">
+        <field name="medication_template_id" ref="medical_medication.medical_medication_template_template_6" />
+        <field name="medicament_id" ref="medical_medication.medical_medicament_aralen_1" />
+        <field name="patient_id" ref="medical.medical_patient_patient_3" />
+        <field name="physician_id" ref="medical_physician.medical_physician_physician_1" />
+        <field name="date_start_treatment">2016-12-02</field>
+    </record>
+        
+</odoo>

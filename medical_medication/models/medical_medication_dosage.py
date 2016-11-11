@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2004 Tech-Receptives
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import fields, models, api, _
@@ -27,7 +28,7 @@ class MedicalMedicationDosage(models.Model):
 
     @api.multi
     @api.constrains('abbreviation')
-    def _check_abbreviation_unique(self, ):
+    def _check_abbreviation_unique(self):
         for rec_id in self:
             if rec_id.abbreviation:
                 domain = [('abbreviation', '=', rec_id.abbreviation)]
@@ -41,7 +42,7 @@ class MedicalMedicationDosage(models.Model):
 
     @api.multi
     @api.constrains('code')
-    def _check_code_unique(self, ):
+    def _check_code_unique(self):
         for rec_id in self:
             if rec_id.code:
                 domain = [('code', '=', rec_id.code)]
