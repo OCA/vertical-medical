@@ -1,32 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!--
-    Copyright 2016 LasLabs Inc.
-    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
--->
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
 
-    <template id="patient_detail"
-			  inherit_id="website_medical_patient.patient_detail">
-		<xpath expr="//div[contains(@class,'o_website_portal_details')]/div/div[3]"
-              position="after">
-            <div class="row">
-                <div t-attf-class="form-group form-field #{error.get('species_id') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
+    <template id="patient_detail" inherit_id="website_medical_patient.patient_detail">
+        <xpath expr="//div[div[label[@for='gender']]]" position="after">
+            <div class="form-group">
+                <div t-attf-class="form-field #{error.get('species_id') and 'has-error' or ''} o_website_form_required_custom">
                     <label class="control-label label-optional" for="species_id">
                         Species
                     </label>
                     <select name="species_id" class="form-control o_website_form_input" required="">
                         <option value="">Species...</option>
                         <t t-foreach="species" t-as="species">
-                           <option t-att-value="species.id" t-att-selected="species.id == patient.species_id.id">
-                               <t t-esc="species.name" />
-                           </option>
+                            <option t-att-value="species.id" t-att-selected="species.id == patient.species_id.id">
+                                <t t-esc="species.name" />
+                            </option>
                         </t>
                     </select>
                 </div>
             </div>
-		</xpath>
-	</template>
+        </xpath>
+    </template>
 
 </odoo>

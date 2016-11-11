@@ -1,162 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!--
-    Copyright (C) 2016-TODAY LasLabs [https://laslabs.com]
-    @license AGPL-3
--->
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
 
-	<template id="patients" name="Patients">
-		<h3 class="page-header">
-			Family Members
-			<a href="/medical/patients/0" class="btn btn-primary">
-				<i class="fa fa-plus-circle" />
-			</a>
-		</h3>
+    <template id="patients" name="Patients">
+        <h3 class="page-header medical-header">
+            Family
+            <a href="/medical/patients/0" class="pull-right btn-lg text-uppercase add-patient">
+                Add
+            </a>
+        </h3>
         <t t-if="not patients">
             <p>There are currently no patients associated with your account.</p>
         </t>
         <t t-if="patients">
-            <table class="table table-hover o_my_status_table">
-                <thead>
-                  <tr class="active text-center">
-                      <th>Name</th>
-                      <th>Date of Birth</th>
-                      <th>Gender</th>
-					  <th t-if="not suppress_deactivate">Deactivate</th>
-                    </tr>
-                </thead>
-				<tbody>
-					<t t-foreach="patients" t-as="patient">
-						<tr>
-							<td>
-								<a t-att-href="patient.website_url">
-									<t t-esc="patient.name" />
-								</a>
-							</td>
-							<td>
-								<span t-field="patient.dob" />
-							</td>
-							<td>
-								<span t-field="patient.gender" />
-							</td>
-							<td>
-								<t t-call="website_medical.object_delete">
-									<t t-set="object" t-value="patient" />
-									<t t-set="name" t-value="'patient'" />
-								</t>
-							</td>
-						</tr>
-					</t>
-				</tbody>
-			</table>
-		</t>
-	</template>
+            <div class="row">
+                <t t-foreach="patients" t-as="patient">
+                    <div class="col-xs-6 col-sm-3">
+                        <div class="medical-patient-container">
+                            <a t-att-href="patient.website_url" class="patient-resets">
+                                <div t-field="patient.image"
+                                     t-field-options='{"widget": "image","class": "img-circle"}' />
+                                <h5>
+                                    <t t-esc="patient.name" />
+                                </h5>
+                            </a>
+                        </div>
+                    </div>
+                </t>
+            </div>
+        </t>
+    </template>
 
-	<template id="patient" name="Patient">
-		<t t-call="website.layout">
-			<div id="wrap">
-				<div class="oe_structure" />
-				<div class="container">
-					<div class="row">
-						<t t-call="website_medical_patient.patient_detail">
-							<t t-set="patient" t-value="patient"/>
-							<t t-set="partner" t-value="partner"/>
-						</t>
-					</div>
-				</div>
-				<div class="oe_structure" />
-			</div>
-		</t>
-	</template>
+    <template id="patient" name="Patient">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure" />
+                <div class="container">
+                    <div class="row">
+                        <t t-call="website_medical_patient.patient_detail">
+                            <t t-set="patient" t-value="patient"/>
+                            <t t-set="partner" t-value="partner"/>
+                        </t>
+                    </div>
+                </div>
+                <div class="oe_structure" />
+            </div>
+        </t>
+    </template>
 
     <template id="patient_detail">
-		<h1>Patient Details</h1>
-		<form action="/medical/website_form/"
-			  method="post"
-			  enctype="multipart/form-data"
-			  data-model_name="medical.patient"
-			  t-att-data-success_page="success_page or '/my/medical/'"
-			  class="s_website_form form-horizontal container-fluid mt32">
-			<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
-			<input type="hidden" name="parent_id" t-att-value="patient.parent_id.id or partner.id" />
-			<input type="hidden" name="id" t-att-value="patient.id or 0" />
-			<div class="row o_website_portal_details">
-				<div class="col-md-8">
-					<div class="row">
-						<div class="col-md-12">
-							<span id="o_website_form_result" />
-							<div t-if="error_message" class="alert alert-danger">
-								<t t-foreach="error_message" t-as="err">
-									<t t-esc="err"/><br />
-								</t>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div t-attf-class="form-group form-field #{error.get('name') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
-							<label class="control-label" for="name">
-								Full Name
-							</label>
-							<input type="text"
-								   name="name"
-								   class="form-control o_website_form_input"
-								   required=""
-								   t-att-value="request.params.get('name') or patient.name or ''" />
-						</div>
-						<div t-attf-class="form-group form-field #{error.get('phone') and 'has-error' or ''} col-lg-6">
-							<label class="control-label" for="phone">
-								Phone
-							</label>
-							<input type="tel"
-								   name="phone"
-								   class="form-control o_website_form_input"
-								   t-att-value="request.params.get('phone') or patient.phone or partner.phone or ''" />
-						</div>
-					</div>
-					<div class="row">
-						<div t-attf-class="o_datepicker form-group form-field #{error.get('dob') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
-							<label class="control-label label-optional" for="dob">
-								Birth Date
-							</label>
-							<input type="text"
-								   name="dob"
-								   required=""
-								   class="form-control o_website_form_date"
-								   t-att-value="request.params.get('dob') or _format_date(patient.dob) or ''" />
-						</div>
-						<div t-attf-class="form-group form-field #{error.get('gender') and 'has-error' or ''} col-lg-6 o_website_form_required_custom">
-							<label class="control-label label-optional" for="gender">
-								Gender
-							</label>
-							<select name="gender" class="form-control o_website_form_input" required="">
-								<option value="">Gender...</option>
-								<t t-foreach="[('f', 'Female'), ('m', 'Male'), ]"
-								   t-as="gender">
-									<option t-att-value="gender[0]"
-											t-att-selected="gender[0] == (request.params.get('gender') or patient.gender)">
-										<t t-esc="gender[1]" />
-									</option>
-								</t>
-							</select>
-						</div>
-					</div>
-					<div class="row">
-						<div class="clearfix form-group">
-							<a class="btn btn-default pull-left" href="/my/home">
-								<span class="fa fa-long-arrow-left" />
-								Home
-							</a>
-							<button class="btn btn-primary pull-right mb32 o_website_form_send">
-								Save
-								<span class="fa fa-long-arrow-right" />
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</form>
+        <div class="medical-form-container">
+            <div class="medical-form-header">
+                <h1>Patient Details</h1>
+                <a class="pull-right" href="/my/medical">
+                    <span class="fa fa-times" />
+                </a>
+            </div>
+            <form action="/medical/website_form/"
+                  method="post"
+                  enctype="multipart/form-data"
+                  data-model_name="medical.patient"
+                  t-att-data-success_page="success_page or '/my/medical/'"
+                  class="s_website_form form-horizontal container-fluid mt32">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                <input type="hidden" name="parent_id" t-att-value="patient.parent_id.id or partner.id" />
+                <input type="hidden" name="id" t-att-value="patient.id or 0" />
+
+                <div class="row o_website_portal_details">
+                    <div class="col-xs-12">
+                        <div class="medical-form-error-message">
+                            <span id="o_website_form_result" />
+                            <div t-if="error_message" class="alert alert-danger">
+                                <t t-foreach="error_message" t-as="err">
+                                    <t t-esc="err"/><br />
+                                </t>
+                            </div>
+                        </div>
+                        <div class="medical-form-content">
+                            <div class="form-group">
+                                <div t-attf-class="form-field #{error.get('name') and 'has-error' or ''} o_website_form_required_custom">
+                                    <label class="control-label" for="name">
+                                        Full Name
+                                    </label>
+                                    <input type="text"
+                                        name="name"
+                                        class="form-control o_website_form_input"
+                                        required=""
+                                        t-att-value="request.params.get('name') or patient.name or ''" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div t-attf-class="form-field #{error.get('phone') and 'has-error' or ''}">
+                                    <label class="control-label" for="phone">
+                                        Phone
+                                    </label>
+                                    <input type="tel"
+                                        name="phone"
+                                        class="form-control o_website_form_input"
+                                        t-att-value="request.params.get('phone') or patient.phone or partner.phone or ''" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div t-attf-class="o_datepicker form-field #{error.get('dob') and 'has-error' or ''}">
+                                    <label class="control-label label-optional" for="dob">
+                                        Birth Date
+                                    </label>
+                                    <input type="text"
+                                        name="dob"
+                                        class="form-control o_website_form_date"
+                                        t-att-value="request.params.get('dob') or _format_date(patient.dob) or ''" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div t-attf-class="form-field #{error.get('gender') and 'has-error' or ''} o_website_form_required_custom">
+                                    <label class="control-label label-optional" for="gender">
+                                        Gender
+                                    </label>
+                                    <select name="gender" class="form-control o_website_form_input" required="">
+                                        <option value="">Gender...</option>
+                                        <t t-foreach="[('f', 'Female'), ('m', 'Male'), ]"
+                                        t-as="gender">
+                                            <option t-att-value="gender[0]"
+                                                    t-att-selected="gender[0] == (request.params.get('gender') or patient.gender)">
+                                                <t t-esc="gender[1]" />
+                                            </option>
+                                        </t>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group medical-form-input-file">
+                                <div t-attf-class="form-field #{error.get('phone') and 'has-error' or ''}">
+                                    <label class="control-label label-optional" for="image">
+                                        Profile Picture
+                                    </label>
+                                    <div class="input-group">
+                                        <label class="input-group-btn">
+                                            <span class="btn btn-default">
+                                                Browse <input type="file" accept="image/*" />
+                                            </span>
+                                        </label>
+                                        <input type="text" class="form-control" readonly="readonly" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row medical-form-footer">
+                    <button class="btn btn-primary pull-right o_website_form_send">
+                        Save
+                    </button>
+                </div>
+            </form>
+            <a class="medical-form-btn-delete">
+                <t t-call="website_medical.object_delete">
+                    <t t-set="object" t-value="patient" />
+                    <t t-set="name" t-value="'patient'" />
+                    <t t-set="redirect_on_success" t-value="'/my/medical'" />
+                </t>
+            </a>
+        </div>
     </template>
 
 </odoo>
