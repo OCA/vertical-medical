@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016 LasLabs, Inc. [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    @license AGPL-3
+-->
+
+<odoo>
+	
+	<record id="medical_medication_patient_1_advil_1"
+			model="medical.patient.medication">
+		<field name="medicament_id" ref="medical_medicament.medical_medicament_advil_1" />
+		<field name="patient_id" ref="medical.medical_patient_patient_1" />
+		<field name="date_start_treatment">2016-01-01</field>
+		<field name="quantity">2</field>
+		<field name="dose_uom_id" ref="product.product_uom_categ_unit" />
+		<field name="medication_dosage_id" ref="medical_medication.229799001" />
+	</record>
+	
+	<record id="medical_medication_patient_1_advil_2"
+			model="medical.patient.medication">
+		<field name="medicament_id" ref="medical_medicament.medical_medicament_advil_2" />
+		<field name="patient_id" ref="medical.medical_patient_patient_1" />
+		<field name="date_start_treatment">2015-01-01</field>
+		<field name="quantity">1</field>
+		<field name="dose_uom_id" ref="product.product_uom_categ_unit" />
+		<field name="medication_dosage_id" ref="medical_medication.229799001" />
+	</record>
+	
+	<record id="medical_medication_patient_2_advil_1"
+			model="medical.patient.medication">
+		<field name="medicament_id" ref="medical_medicament.medical_medicament_advil_1" />
+		<field name="patient_id" ref="medical.medical_patient_patient_2" />
+		<field name="date_start_treatment">2016-01-01</field>
+		<field name="quantity">2</field>
+		<field name="dose_uom_id" ref="product.product_uom_categ_unit" />
+		<field name="medication_dosage_id" ref="medical_medication.229799001" />
+	</record>
+		
+</odoo>

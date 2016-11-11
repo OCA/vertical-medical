@@ -9,7 +9,7 @@
             <field name="inherit_id"
                 ref="medical_medication.medical_medication_template_search_view"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='dose_unit_id']" position="after">
+                <xpath expr="//field[@name='dose_uom_id']" position="after">
                     <field name="patient_id" />
                     <field name="physician_id" />
                     <field name="medication_template_id" />
@@ -70,7 +70,7 @@
                         </group>
                     </group>
                 </xpath>
-                <xpath expr="//notebook" postition="inside">
+                <xpath expr="//notebook" position="inside">
                     <page name="adverse_reaction" string="Adverse Reaction">
                         <field name="adverse_reaction" nolabel="1"/>
                     </page>
