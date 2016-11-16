@@ -49,6 +49,7 @@ class MedicalPrescriptionOrder(models.Model):
     )
     active = fields.Boolean(
         compute='_compute_active',
+        store=True,
     )
 
     @api.model
@@ -58,8 +59,14 @@ class MedicalPrescriptionOrder(models.Model):
         )
 
     @api.multi
+    @api.depends('prescription_order_line_ids',
+                 'prescription_order_line_ids.active',
+                 )
     def _compute_active(self):
         for rec_id in self:
+            if not rec_id.prescription_order_line_ids:
+                rec_id.active = True
+                continue
             rec_id.active = any(
                 rec_id.prescription_order_line_ids.mapped('active')
             )
