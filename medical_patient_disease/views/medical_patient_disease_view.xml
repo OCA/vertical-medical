@@ -11,16 +11,16 @@
             <search string="Medical Patient Disease">
                 <field name="name" />
                 <field name="treatment_description" />
-                <field name="healed_date" />
+                <field name="date_healed" />
                 <field name="pathology_id" />
                 <field name="physician_id" />
                 <field name="weeks_of_pregnancy" />
-                <field name="diagnosed_date" />
+                <field name="date_diagnosed" />
                 <field name="notes" />
-                <field name="treatment_end_date" />
+                <field name="date_treatment_end" />
                 <field name="patient_id" />
                 <field name="age" />
-                <field name="treatment_start_date" />
+                <field name="date_treatment_start" />
                 <field name="short_comment" />
                 <filter name="is_on_treatment"
                         string="Is on Treatment"
@@ -48,7 +48,7 @@
                 <group expand="0" string="Group By...">
                     <filter string="Healed"
                             domain="[]"
-                            context="{'group_by':'healed_date'}" />
+                            context="{'group_by':'date_healed'}" />
                     <filter string="Disease"
                             domain="[]"
                             context="{'group_by':'pathology_id'}" />
@@ -69,7 +69,7 @@
                             context="{'group_by':'is_on_treatment'}" />
                     <filter string="Date of Diagnosis"
                             domain="[]"
-                            context="{'group_by':'diagnosed_date'}" />
+                            context="{'group_by':'date_diagnosed'}" />
                     <filter string="Infectious Disease"
                             domain="[]"
                             context="{'group_by':'is_infectious'}" />
@@ -81,7 +81,7 @@
                             context="{'group_by':'age'}" />
                     <filter string="Start"
                             domain="[]"
-                            context="{'group_by':'treatment_start_date'}" />
+                            context="{'group_by':'date_treatment_start'}" />
                     <filter string="State"
                             domain="[]"
                             context="{'group_by':'state'}" />
@@ -98,8 +98,8 @@
                 <field name="name" />
                 <field name="patient_id" />
                 <field name="physician_id" />
-                <field name="treatment_start_date" />
-                <field name="treatment_end_date" />
+                <field name="date_treatment_start" />
+                <field name="date_treatment_end" />
                 <field name="state" />
             </tree>
         </field>
@@ -149,18 +149,18 @@
                                 <field name="is_pregnant" />
                             </group>
                             <group name="dates">
-                                <field name="diagnosed_date" />
-                                <field name="treatment_start_date" />
-                                <field name="treatment_end_date" />
+                                <field name="date_diagnosed" />
+                                <field name="date_treatment_start" />
+                                <field name="date_treatment_end" />
                                 <field name="is_on_treatment" />
-                                <field name="healed_date" />
+                                <field name="date_healed" />
                             </group>
                         </group>
                     </group>
                     <group name="state" attrs="{'invisible': [('id','=',False)]}">
                         <group name="validity">
                             <field name="create_date" />
-                            <field name="expire_date" attrs="{'invisible': [('active','=',True)]}" />
+                            <field name="date_expire" attrs="{'invisible': [('active','=',True)]}" />
                         </group>
                     </group>
                     <notebook>

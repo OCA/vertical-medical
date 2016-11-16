@@ -35,23 +35,23 @@ class TestMedicalPatientDisease(TransactionCase):
             )
         )
 
-    def test_compute_expire_date_active_disease(self):
-        """ Test expire_date is False if disease is active """
+    def test_compute_date_expire_active_disease(self):
+        """ Test date_expire is False if disease is active """
         self.disease_2.active = True
         self.assertFalse(
-            self.disease_2.expire_date,
-            'expire_date should be False.\rGot: %s\rExpected: %s' % (
-                self.disease_2.expire_date, False
+            self.disease_2.date_expire,
+            'date_expire should be False.\rGot: %s\rExpected: %s' % (
+                self.disease_2.date_expire, False
             )
         )
 
-    def test_compute_expire_date_not_active_disease(self):
-        """ Test expire_date is Datetime.now() if disease not active """
+    def test_compute_date_expire_not_active_disease(self):
+        """ Test date_expire is Datetime.now() if disease not active """
         self.disease_2.active = False
         self.assertEquals(
-            self.disease_2.expire_date, fields.Datetime.now(),
-            'expire_date should be Datetime.now().\rGot: %s\rExpected: %s' % (
-                self.disease_2.expire_date, fields.Datetime.now()
+            self.disease_2.date_expire, fields.Datetime.now(),
+            'date_expire should be Datetime.now().\rGot: %s\rExpected: %s' % (
+                self.disease_2.date_expire, fields.Datetime.now()
             )
         )
 

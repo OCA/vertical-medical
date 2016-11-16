@@ -12,9 +12,9 @@
         <field name="disease_severity">3_sv</field>
         <field name="state">a</field>
         <field name="age">36</field>
-        <field name="diagnosed_date">2016-12-01</field>
-        <field name="treatment_start_date">2016-12-02</field>
-        <field name="treatment_end_date">2016-12-22</field>
+        <field name="date_diagnosed">2016-12-01</field>
+        <field name="date_treatment_start">2016-12-02</field>
+        <field name="date_treatment_end">2016-12-22</field>
         <field name="is_infectious">True</field>
         <field name="active">False</field>
     </record>
@@ -28,8 +28,8 @@
         <field name="disease_severity">3_sv</field>
         <field name="state">u</field>
         <field name="age">23</field>
-        <field name="diagnosed_date">2012-02-03</field>
-        <field name="treatment_start_date">2012-02-14</field>
+        <field name="date_diagnosed">2012-02-03</field>
+        <field name="date_treatment_start">2012-02-14</field>
         <field name="is_pregnant">True</field>
         <field name="is_infectious">True</field>
         <field name="weeks_of_pregnancy">12</field>
