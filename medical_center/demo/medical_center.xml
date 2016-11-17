@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="partner_center_1" model="res.partner">
+        <field name="name">Test Center</field>
+        <field name="street">123 Test St.</field>
+        <field name="street2">Suite 1337</field>
+        <field name="city">Las Vegas</field>
+        <field name="country_id" ref="base.us" />
+        <field name="phone">+1-888-888-8888</field>
+        <field name="email">email@example.com</field>
+        <field name="state_id" ref="base.state_us_3" />
+    </record>
+
+    <record id="medical_center_1" model="medical.center">
+        <field name="name">Test Center</field>
+        <field name="partner_id" ref="medical_center.partner_center_1" />
+    </record>
+
+</odoo>
