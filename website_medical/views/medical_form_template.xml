@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!--
-    Copyright (C) 2014-TODAY LasLabs [https://laslabs.com]
-    @author Dave Lasley <dave@laslabs.com>
-    The license is in the file __openerp__.py
--->
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
-	<template id="object_delete">
-		<form class="medical-form-deactivate"
+
+    <template id="object_delete">
+        <form class="medical-form-deactivate"
               action="/medical/website_form/"
-			  method="delete"
-			  enctype="multipart/form-data"
-			  t-att-data-model_name="object._name"
+              method="delete"
+              enctype="multipart/form-data"
+              t-att-data-model_name="object._name"
               t-att-data-human_name="name"
+              t-att-data-redirect_on_success="redirect_on_success"
               t-att-id="'%s.deactivate.%s' % (object._name, object.id)">
             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
-			<input type="hidden" name="id" t-att-value="object.id" />
-			<button class="btn" type="submit">
-				<i class="fa fa-trash-o" />
-			</button>
-		</form>
-	</template>
+            <input type="hidden" name="id" t-att-value="object.id" />
+            <button class="btn" type="submit">
+                <i class="fa fa-trash-o" />
+            </button>
+        </form>
+    </template>
+
 </odoo>

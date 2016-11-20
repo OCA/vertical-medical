@@ -1,0 +1,75 @@
+/* Copyright 2016 LasLabs Inc.
+   License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl */
+
+.medical-form-container {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    position: relative;
+    background-color: #f8f8f8;
+    margin: 20px auto;
+    padding: 20px 30px;
+    border-radius: 5px;
+
+    .medical-form-header {
+        border-bottom: 1px solid @gray-lighter;
+        padding: 0 10px 5px 10px;
+        margin-bottom: 15px;
+        h1 {
+            font-size: 26px;
+            margin: 0;
+            display: inline-block;
+        }
+        a {
+            color: @gray;
+            font-size: 28px;
+            margin: 0;
+            position: relative;
+            bottom: 8px;
+        }
+        a:hover {
+            color: @gray-darker;
+        }
+    }
+    form {
+        margin-top: 0 !important;
+        .medical-form-content {
+            padding: 0 20px;
+            margin-top: 10px;
+            label {
+                font-weight: bold;
+            }
+            input, textarea, select {
+                width: 100%;
+                margin-top: 5px;
+            }
+            .medical-form-input-file {
+                .form-control[readonly] {
+                    background-color: white;
+                    cursor: not-allowed;
+                }
+                .input-group-btn {
+                    span.btn {
+                        margin-top: 5px;
+                        height: 34px;
+                    }
+                    input[type="file"] {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .medical-form-footer {
+            margin-top: 30px;
+            button {
+                min-width: 75px;
+            }
+        }
+    }
+    .medical-form-btn-delete {
+        position: absolute;
+        left: 30px;
+        bottom: 20px;
+        color: @gray-dark;
+    }
+}

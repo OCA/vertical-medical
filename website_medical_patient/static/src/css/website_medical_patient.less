@@ -1,0 +1,39 @@
+/* Copyright 2016 LasLabs Inc.
+   License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). */
+
+.medical-patient-container {
+    width: 100%;
+    min-height: 151px;
+    height: auto;
+    text-align: center;
+    position: relative;
+    margin: 20px auto 0 auto;
+    overflow: hidden;
+    h5 {
+        margin: 10px 12px;
+        box-sizing: border-box;
+        text-overflow: hidden;
+        color: @gray-dark;
+    }
+    img {
+        width: 80px;
+        height: 80px;
+        background-color: @gray;
+        display: inline-block;
+        transition: width 0.15s ease 0s, height 0.15s ease 0s;
+    }
+    &:hover {
+        img {
+            width: 85px;
+            height: 85px;
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+    &:active {
+        a, h5 {
+            text-decoration: none;
+        }
+    }
+}
