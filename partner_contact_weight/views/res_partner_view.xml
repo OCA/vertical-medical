@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_partner_contact_weight" model="ir.ui.view">
+        <field name="name">Partner Contact Weight</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_contact_personal_information_page.personal_information"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//page[@name='personal_information_page']/group[@name='personal_information_group']">
+                    <label for="weight"/>
+                    <div>
+                        <field name='weight' class="oe_inline"/>
+                        <field name='weight_uom'
+                               class="oe_inline"
+                               placeholder="UoM"/>
+                    </div>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+</odoo>
