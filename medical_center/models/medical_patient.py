@@ -9,7 +9,7 @@ class MedicalPatient(models.Model):
     _inherit = 'medical.patient'
     medical_center_primary_id = fields.Many2one(
         string='Primary Medical Center',
-        comdoel_name='medical.center',
+        comodel_name='medical.center',
     )
     medical_center_secondary_ids = fields.Many2many(
         string='Secondary Medical Centers',
