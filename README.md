@@ -34,6 +34,7 @@ addon | version | summary
 [medical](medical/) | 9.0.1.0.0 | Extends Odoo with medical patients and centers.
 [medical_medicament](medical_medicament/) | 9.0.1.0.0 | Introduce Medicament notion into the medical product.
 [medical_pathology](medical_pathology/) | 9.0.1.0.0 | Extends Odoo Medical with pathologies (diseases).
+[medical_patient_disease](medical_patient_disease/) | 9.0.1.0.0 | Extend medical patients with the concept of diseases.
 [medical_patient_dob](medical_patient_dob/) | 9.0.1.0.0 | Show date of birth when searching patients.
 [medical_pharmacy](medical_pharmacy/) | 9.0.1.0.0 | Adds pharmacy namespace on partners.
 [medical_physician](medical_physician/) | 9.0.1.0.0 | Adds physicians to Odoo Medical.
