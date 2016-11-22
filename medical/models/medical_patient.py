@@ -93,6 +93,18 @@ class MedicalPatient(models.Model):
             ('z', 'law marriage'),
         ])
 
+    @api.multi
+    @api.onchange('state_id')
+    def onchange_state(self):
+        """ Hack to allow for onchange_state on partner.
+        Uses current user's partner, as there should be no correlation
+        between the partner and the response from this method anyways
+        """
+        res = self.env.user.partner_id.onchange_state(self.state_id.id)
+        for key, val in res.get('value', {}).items():
+            setattr(self, key, val)
+        return res
+
     @api.model
     @api.returns('self', lambda value: value.id)
     def create(self, vals):

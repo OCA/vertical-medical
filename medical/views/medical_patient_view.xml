@@ -160,7 +160,7 @@
                                                     <field name="street2" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
                                                     <div class="address_format">
                                                         <field name="city" placeholder="City" style="width: 40%%" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
-                                                        <field name="state_id" class="no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' on_change="onchange_state(state_id)" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
+                                                        <field name="state_id" class="no_button" placeholder="State" style="width: 37%%" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
                                                         <field name="zip" placeholder="ZIP" style="width: 20%%" attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
                                                     </div>
                                                     <field name="country_id" placeholder="Country" class="no_button" options='{"no_open": True}' attrs="{'readonly': [('use_parent_address','=',True)]}" colspan="2"/>
