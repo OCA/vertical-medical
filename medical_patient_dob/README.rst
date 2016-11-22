@@ -39,7 +39,6 @@ Contributors
 
 * James Foster <jfoster@laslabs.com>
 * Brett Wood <bwood@laslabs.com>
-* Dave Lasley <dave@laslabs.com>
 
 Maintainer
 ----------
