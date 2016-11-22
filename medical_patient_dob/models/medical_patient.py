@@ -13,9 +13,12 @@ class MedicalPatient(models.Model):
         self.ensure_one()
         date = 'No DoB'
         if self.dob:
-            lang = self.env['res.lang'].search([('code', '=', self.lang)])
+            ResLang = self.env['res.lang']
+            lang_fmt = ResLang.search([('code', '=', self.lang)]).date_format
+            if not lang_fmt:
+                lang_fmt = '%m/%d/%Y'
             date = fields.Datetime.from_string(self.dob).strftime(
-                lang.date_format
+                lang_fmt
             )
         return ' [%s]' % date
 
