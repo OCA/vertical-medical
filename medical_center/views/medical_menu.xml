@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <menuitem id="medical_center_menu"
+              name="Medical Centers"
+              sequence="60"
+              parent="medical.medical_root_misc"
+              action="medical_center_action"
+              />
+
+</odoo>
