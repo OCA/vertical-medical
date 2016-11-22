@@ -9,15 +9,12 @@ class TestProductProduct(TransactionCase):
 
     def setUp(self):
         super(TestProductProduct, self).setUp()
-        self.advil = self.env.ref(
-            'medical_medicament.medical_medicament_advil_1_product_product'
-        )
+        self.advil_id = self.env.ref(
+            'medical_medicament.product_product_advil_1',
+        ).product_tmpl_id
 
     def test_name_get(self):
         self.assertEqual(
-            self.advil.display_name,
-            'Advil 3  - BAR',
-            'Display name was not Advil 3  - BAR, it was %s' % (
-                self.advil.display_name
-            )
+            self.advil_id.display_name,
+            'Advil 0.2 g - CAP',
         )

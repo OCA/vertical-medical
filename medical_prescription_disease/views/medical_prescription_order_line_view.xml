@@ -9,10 +9,10 @@
 <openerp>
     <data>
 
-        <record id="medical_prescription_order_line_form_view" model="ir.ui.view">
+        <record id="medical_prescription_order_line_view_form" model="ir.ui.view">
             <field name="name">Prescription Order Line</field>
             <field name="model">medical.prescription.order.line</field>
-            <field name='inherit_id' ref='medical_prescription.medical_prescription_order_line_form_view'/>
+            <field name='inherit_id' ref='medical_prescription.medical_prescription_order_line_view_form'/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='patient_id']" position="after">
                     <field name="disease_id"
@@ -21,10 +21,10 @@
             </field>
         </record>
         
-        <record id="medical_prescription_order_line_search_view" model="ir.ui.view">
+        <record id="medical_prescription_order_line_view_search" model="ir.ui.view">
             <field name="name">Prescription Order Line Search</field>
             <field name="model">medical.prescription.order.line</field>
-            <field name='inherit_id' ref='medical_prescription.medical_prescription_order_line_search_view'/>
+            <field name='inherit_id' ref='medical_prescription.medical_prescription_order_line_view_search'/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='patient_id']" position="after">
                     <field name="disease_id"/>

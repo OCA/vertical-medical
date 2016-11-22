@@ -18,7 +18,6 @@ class TestMedicalPatient(TransactionCase):
     def new_patient(self, update_vals=None):
         self.vals = {
             'name': 'Patient',
-            'gender': 'm',
             'species_id': self.human.id,
             'parent_id': None,
         }

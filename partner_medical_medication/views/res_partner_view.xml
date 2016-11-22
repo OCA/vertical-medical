@@ -12,11 +12,11 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <xpath expr="//div[@name='button_box']" position="inside">
-                <field name="medical_patient_ids" invisible="True"/>
+                <field name="patient_ids" invisible="True"/>
                 <button  
                     name="partner_medical_medication.partner_action_medication" type="action" 
                     class="oe_stat_button" icon="fa-list"
-                    attrs="{'invisible': [('medical_patient_ids', '=', [])]}">
+                    attrs="{'invisible': [('patient_ids', '=', [])]}">
                     <span>Medications</span>
                 </button>
             </xpath>

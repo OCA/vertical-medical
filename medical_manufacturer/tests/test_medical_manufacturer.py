@@ -18,6 +18,9 @@ class TestMedicalManufacturer(TransactionCase):
         return self.model_obj.create(self.vals)
 
     def test_is_manufacturer(self, ):
-        """ Validate is_manufacturer is set on partner """
+        """ Validate medical.manufacturer type is set on partner """
         rec_id = self._new_record()
-        self.assertTrue(rec_id.is_manufacturer)
+        self.assertEqual(
+            rec_id.type,
+            'medical.manufacturer',
+        )

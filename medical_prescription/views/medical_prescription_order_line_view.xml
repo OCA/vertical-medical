@@ -1,53 +1,61 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
 
-    <record id="medical_prescription_order_line_search_view" model="ir.ui.view">
+    <record id="medical_prescription_order_line_view_search" model="ir.ui.view">
         <field name="name">medical.prescription.order.line.search</field>
         <field name="model">medical.prescription.order.line</field>
         <field name="mode">primary</field>
-        <field name="inherit_id"
-            ref="medical_medication.medical_patient_medication_search_view"/>
+        <field name="inherit_id" ref="medical_medication.medical_patient_medication_view_search" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='dose_uom_id']" position="after">
                 <field name="prescription_order_id" />
             </xpath>
             <xpath expr="//filter[@name='frequency_prn']" position="after">
-                <filter name="is_substitutable" string="Is Substitutable"
-                    domain="[('is_substitutable', '=', True)]"/>
+                <filter name="is_substitutable"
+                        string="Is Substitutable"
+                        domain="[('is_substitutable', '=', True)]" />
             </xpath>
             <xpath expr="//group" position="inside">
                 <filter string="Prescription Order"
-                    domain="[]" context="{'group_by':'prescription_order_id'}" />
+                        domain="[]"
+                        context="{'group_by':'prescription_order_id'}" />
                 <filter string="Medication"
-                    domain="[]" context="{'group_by':'medical_medication_id'}" />
+                        domain="[]"
+                        context="{'group_by':'medical_medication_id'}" />
             </xpath>
         </field>
     </record>
 
-    <record id="medical_prescription_order_line_tree_view" model="ir.ui.view">
+    <record id="medical_prescription_order_line_view_tree" model="ir.ui.view">
         <field name="name">medical.prescription.order.line.tree</field>
         <field name="model">medical.prescription.order.line</field>
         <field name="mode">primary</field>
-        <field name="inherit_id"
-            ref="medical_medication.medical_patient_medication_tree_view"/>
+        <field name="inherit_id" ref="medical_medication.medical_patient_medication_view_tree" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='patient_id']" position="before">
+            <xpath expr="//field[@name='pathology_id']" position="before">
                 <field name="prescription_order_id" />
+            </xpath>
+            <xpath expr="//field[@name='pathology_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='duration_uom_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
             </xpath>
         </field>
     </record>
 
-    <record id="medical_prescription_order_line_form_view" model="ir.ui.view">
+    <record id="medical_prescription_order_line_view_form" model="ir.ui.view">
         <field name="name">medical.prescription.order.line.form</field>
         <field name="model">medical.prescription.order.line</field>
         <field name="mode">primary</field>
-        <field name="inherit_id"
-            ref="medical_medication.medical_patient_medication_form_view"/>
+        <field name="inherit_id" ref="medical_medication.medical_patient_medication_view_form" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='medication_template_id']/parent::group" postition="inside">
-                <field name="prescription_order_id" context="{'default_patient_id': patient_id}"/>
-                <field name="qty"/>
-                <field name="is_substitutable"/>
+                <field name="prescription_order_id" context="{'default_patient_id': patient_id}" />
+                <field name="qty" />
+                <field name="is_substitutable" />
             </xpath>
             <xpath expr="//field[@name='physician_id']" position='attributes'>
                 <attribute name="invisible">1</attribute>
@@ -58,7 +66,7 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="medical_prescription_order_line_kanban_view">
+    <record id="medical_prescription_order_line_view_kanban" model="ir.ui.view" >
         <field name="name">medical.prescription.order.line.kanban</field>
         <field name="model">medical.prescription.order.line</field>
         <field name="type">kanban</field>
@@ -92,9 +100,6 @@
                                             <strong>Medicament:</strong>
                                             <field name="medicament_id" />
                                         </li>
-                                        <li>
-                                            <field name="display_name" />
-                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -105,19 +110,16 @@
         </field>
     </record>
 
-    <record model="ir.actions.act_window" id="medical_prescription_order_line_action">
+    <record id="medical_prescription_order_line_action" model="ir.actions.act_window">
         <field name="name">Prescription Order Lines</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">medical.prescription.order.line</field>
         <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
-        <field name="search_view_id" ref="medical_prescription_order_line_search_view" />
-        <field name="view_id" ref="medical_prescription_order_line_kanban_view" />
+        <field name="search_view_id" ref="medical_prescription_order_line_view_search" />
+        <field name="view_id" ref="medical_prescription_order_line_view_kanban" />
         <field name="domain">[]</field>
         <field name="context">{}</field>
     </record>
-
-    <menuitem id="medical_prescription_order_line_menu" sequence="20"
-        parent="medical_prescription_root" action="medical_prescription_order_line_action" />
 
 </odoo>

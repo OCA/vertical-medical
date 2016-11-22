@@ -42,7 +42,9 @@
                                 <field name="date_order" />
                                 <field name="client_order_ref" />
                                 <field name="pharmacy_id"
-                                       domain="[('is_pharmacy', '=', True)]" />
+                                       domain="[('type', '=', 'medical.pharmacy')]"
+                                       context="{'default_type': 'medical.pharmacy'}"
+                                       />
                                 <field domain="[('type','=','sale')]"
                                        name="pricelist_id"
                                        groups="product.group_sale_pricelist" />

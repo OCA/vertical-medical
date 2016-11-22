@@ -20,12 +20,13 @@ class MedicalPhysician(models.Model):
     code = fields.Char(
         string='ID',
         help='Physician Code',
-        size=256,
     )
     specialty_id = fields.Many2one(
         help='Specialty Code',
         comodel_name='medical.specialty',
-        default=lambda self: self.env.ref('medical_physician.spe1'),
+        default=lambda self: self.env.ref(
+            'medical_physician.medical_specialty_gp',
+        ),
         required=True,
     )
     info = fields.Text(
@@ -43,24 +44,16 @@ class MedicalPhysician(models.Model):
         comodel_name='medical.physician.schedule.template',
         inverse_name='physician_id',
     )
-    supplier = fields.Boolean(
-        string='Is a Vendor',
-        help='Check this box if this contact is a vendor. '
-             'If it\'s not checked, purchase people will not see it when'
-             'encoding a purchase order.',
-        default=True,
-    )
 
     @api.model
-    @api.returns('self', lambda value: value.id)
-    def create(self, vals,):
+    def create(self, vals):
         vals.update({
-            'is_doctor': True,
             'customer': False,
+            'type': self._name,
         })
         if not vals.get('code'):
             sequence = self.env['ir.sequence'].next_by_code(
-                'medical.physician'
+                self._name,
             )
             vals['code'] = sequence
         return super(MedicalPhysician, self).create(vals)

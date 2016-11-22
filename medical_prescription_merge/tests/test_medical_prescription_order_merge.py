@@ -131,7 +131,8 @@ class TestMedicalPrescriptionOrderMerge(TransactionCase):
         '''It should throw correct error when there are different physicians'''
         test_rx_order_1 = self._new_rx_order()
         test_physician_2 = self.env['medical.physician'].create({
-            'specialty_id': self.env.ref('medical_physician.spe1').id,
+            'specialty_id': self.env.ref(
+                'medical_physician.medical_specialty_gp').id,
             'name': 'Test Physician 2',
         })
         test_rx_order_2 = self._new_rx_order({
@@ -181,7 +182,8 @@ class TestMedicalPrescriptionOrderMerge(TransactionCase):
             'date_prescription': '2016-10-30 23:59:59',
         })
         test_physician_2 = self.env['medical.physician'].create({
-            'specialty_id': self.env.ref('medical_physician.spe1').id,
+            'specialty_id': self.env.ref(
+                'medical_physician.medical_specialty_gp').id,
             'name': 'Test Physician 2',
         })
         test_rx_order_2 = self._new_rx_order({

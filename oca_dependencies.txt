@@ -1,1 +1,2 @@
+partner-contact
 website https://github.com/laslabs/website.git release/10.0/website_field_autocomplete_related

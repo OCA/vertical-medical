@@ -375,17 +375,17 @@
 			<div class="row">
 				
 				<div class="form-group form-field o_website_form_required_custom col-lg-6">
-					<label class="control-label" t-att-name="'%s.dob' % rel">
+					<label class="control-label" t-att-name="'%s.birthdate_date' % rel">
 						Birth Date
 					</label>
 					<input type="text"
 						   required="required"
-						   t-att-name="'%s.dob' % rel"
+						   t-att-name="'%s.birthdate_date' % rel"
 						   t-att-data-relate-recv="rel"
 						   class="form-control o_website_form_date o_website_form_input"
-						   t-att-value="request.params.get('%s.dob' % rel)  or ''"
+						   t-att-value="request.params.get('%s.birthdate_date' % rel)  or ''"
 						   t-att-data-model="res_model"
-						   data-query-field="dob"
+						   data-query-field="birthdate_date"
 						   />
 				</div>
 				

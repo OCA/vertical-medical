@@ -7,26 +7,23 @@
     'name': 'Medical Pathology',
     'version': '10.0.1.0.0',
     'author': 'LasLabs, ACSONE SA/NV, Odoo Community Association (OCA)',
-    'maintainer': 'LasLabs, ACSONE SA/NV, Odoo Community Association (OCA)',
-    'category': 'Medical',
-    'depends': [
-        'medical',
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": [
+        "medical",
     ],
-    'website': 'https://laslabs.com/',
-    'licence': 'AGPL-3',
-    'data': [
-        'views/medical_pathology_category_view.xml',
-        'views/medical_pathology_group_view.xml',
-        'views/medical_pathology_view.xml',
-        'views/medical_menu.xml',
-        'data/medical_pathology_code_type.xml',
-        'security/ir.model.access.csv',
+    "data": [
+        "views/medical_pathology_category_view.xml",
+        "views/medical_pathology_group_view.xml",
+        "views/medical_pathology_view.xml",
+        "views/medical_menu.xml",
+        "data/medical_pathology_code_type.xml",
+        "security/ir.model.access.csv",
     ],
-    'test': [
-        'tests/medical_pathology_category.yml',
-        'tests/medical_pathology_group.yml',
-        'tests/medical_pathology.yml',
+    "demo": [
+        "demo/medical_pathology_category_demo.xml",
+        "demo/medical_pathology_group_demo.xml",
+        "demo/medical_pathology_demo.xml",
     ],
-    'installable': True,
-    'auto_install': False,
 }

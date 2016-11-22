@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import api, fields, models
@@ -14,23 +14,23 @@ class MedicalPatient(models.Model):
         string='Diseases',
     )
     count_disease_ids = fields.Integer(
-        compute='compute_count_disease_ids',
+        compute='_compute_count_disease_ids',
         string='Diseases',
     )
 
     @api.multi
-    def compute_count_disease_ids(self, ):
+    def _compute_count_disease_ids(self):
         for rec_id in self:
             rec_id.count_disease_ids = len(rec_id.disease_ids)
 
     @api.multi
-    def action_invalidate(self, ):
+    def action_invalidate(self):
         for rec_id in self:
             super(MedicalPatient, rec_id).action_invalidate()
             rec_id.disease_ids.action_invalidate()
 
     @api.multi
-    def action_revalidate(self, ):
+    def action_revalidate(self):
         for rec_id in self:
             rec_id.active = True
             rec_id.partner_id.active = True

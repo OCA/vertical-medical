@@ -5,14 +5,14 @@
 {
     'name': 'Medical Physician',
     'version': '10.0.1.0.0',
-    'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
+    'author': "LasLabs, Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': [
         'medical',
         'product',
     ],
     "website": "https://laslabs.com",
-    "licence": "AGPL-3",
+    "license": "AGPL-3",
     "data": [
         'views/medical_physician_view.xml',
         'views/medical_specialty_view.xml',
@@ -23,7 +23,7 @@
         'data/medical_specialties.xml',
     ],
     'demo': [
-        'demo/medical_physician_demo.xml',
+        'demo/medical_physician.xml',
     ],
     "application": False,
     'installable': True,

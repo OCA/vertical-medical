@@ -17,11 +17,6 @@
         'views/medical_insurance_plan_view.xml',
         'views/medical_insurance_template_view.xml',
     ],
-    'test': [
-        'tests/medical_insurance_company.yml',
-        'tests/medical_insurance_template.yml',
-        'tests/medical_insurance_plan.yml',
-    ],
     'installable': True,
     'auto_install': False,
 }

@@ -10,7 +10,7 @@
     'category': 'Medical',
     'website': 'https://laslabs.com',
     'licence': 'AGPL-3',
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'depends': [
         'medical',

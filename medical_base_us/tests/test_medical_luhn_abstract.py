@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo.tests.common import TransactionCase
-from odoo import models, fields, api
-from odoo.exceptions import ValidationError
 
 
 class MedicalLuhnAbstractTestMixer(TransactionCase):
@@ -27,18 +25,6 @@ class MedicalLuhnAbstractTestMixer(TransactionCase):
         ],
             limit=1,
         )
-
-
-class MedicalTestLuhn(models.Model):
-    _name = 'medical.test.luhn'
-    _inherit = 'medical.abstract.luhn'
-    ref = fields.Char()
-    country_id = fields.Many2one('res.country')
-
-    @api.multi
-    @api.constrains('ref')
-    def _check_ref(self):
-        self._luhn_constrains_helper('ref')
 
 
 class TestMedicalLuhnAbstract(MedicalLuhnAbstractTestMixer):
@@ -70,26 +56,3 @@ class TestMedicalLuhnAbstract(MedicalLuhnAbstractTestMixer):
                 self.model_obj._luhn_is_valid(str(i)),
                 'Luhn validity check on str %s did not fail for invalid' % i,
             )
-
-    def test_constrain_valid_us(self):
-        self.assertTrue(
-            self.env['medical.test.luhn'].create({
-                'ref': self.valid[0],
-                'country_id': self.country_us.id,
-            })
-        )
-
-    def test_constrain_invalid_us(self):
-        with self.assertRaises(ValidationError):
-            self.env['medical.test.luhn'].create({
-                'ref': self.invalid[0],
-                'country_id': self.country_us.id,
-            })
-
-    def test_constrain_invalid_non_us(self):
-        self.assertTrue(
-            self.env['medical.test.luhn'].create({
-                'ref': self.invalid[0],
-                'country_id': self.country_us.id + 1,
-            })
-        )

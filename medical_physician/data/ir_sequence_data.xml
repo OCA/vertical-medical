@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data noupdate="1">
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
-        <record id="seq_medical_physician" model="ir.sequence">
-            <field name="name">Medical Physician</field>
-            <field name="code">medical.physician</field>
-        </record>
+<odoo noupdate="1">
 
-    </data>
-</openerp>
+    <record id="seq_medical_physician" model="ir.sequence">
+        <field name="name">Medical Physician</field>
+        <field name="code">medical.physician</field>
+    </record>
+
+</odoo>

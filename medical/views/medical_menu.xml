@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
 <odoo>
 
     <menuitem id="medical_root"
@@ -11,20 +14,17 @@
               name="Patient"
               parent="medical_root"
               sequence="10" />
+
     <menuitem id="medical_patient"
               name=" Patient"
               parent="medical_patient_root"
               sequence="10"
               action="medical_patient_action" />
 
-    <!--Configurations-->
-
     <menuitem id="medical_root_sub"
               name="Configuration"
               parent="medical_root"
               sequence="100" />
-
-    <!-- Misc -->
 
     <menuitem id="medical_root_misc"
               name="Misc"

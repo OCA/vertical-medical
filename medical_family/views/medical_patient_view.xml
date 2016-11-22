@@ -16,8 +16,8 @@
                 
                 <xpath expr="//notebook">
                     <page string="Family">
-                        <field name="family_member_ids" mode="kanban" domain="[('is_patient', '=', True)]"
-                               context="{'default_contact_id': active_id, 'default_is_patient': True, 'default_customer': True}}">
+                        <field name="family_member_ids" mode="kanban" domain="[('type', '=', 'medical.patient')]"
+                               context="{'default_contact_id': active_id, 'default_type': 'medical.patient', 'default_customer': True}}">
                             <kanban>
                                 <field name="color"/>
                                 <field name="name"/>

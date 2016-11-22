@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
@@ -9,10 +9,7 @@
     'author': 'LasLabs, Odoo Community Association (OCA)',
     'category': 'Medical',
     'website': 'https://laslabs.com',
-    'licence': 'AGPL-3',
+    'license': 'AGPL-3',
     'installable': True,
     'auto_install': False,
-    'data': [
-        'security/ir.model.access.csv',
-    ]
 }

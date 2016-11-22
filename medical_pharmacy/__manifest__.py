@@ -1,25 +1,26 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    'name': 'Medical Pharmacy',
-    'version': '10.0.1.1.0',
-    'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
-    'category': 'Medical',
-    'depends': [
-        'medical',
+    "name": "Medical Pharmacy",
+    "summary": "Adds pharmacy namespace on partners.",
+    "version": "10.0.1.0.0",
+    "category": "Medical",
+    "website": "https://laslabs.com",
+    "author": "LasLabs, Odoo Community Association (OCA)",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": [
+        "medical",
     ],
-    'website': 'https://laslabs.com',
-    'license': 'AGPL-3',
-    'data': [
-        'views/medical_pharmacy_view.xml',
-        'views/medical_menu.xml',
-        'security/ir.model.access.csv',
+    "data": [
+        "views/medical_pharmacy_view.xml",
+        "views/medical_menu.xml",
+        "security/ir.model.access.csv",
     ],
-    'test': [
-        'tests/medical_pharmacy.yml',
+    "demo": [
+        "demo/medical_pharmacy_demo.xml",
     ],
-    'installable': True,
-    'auto_install': False,
 }

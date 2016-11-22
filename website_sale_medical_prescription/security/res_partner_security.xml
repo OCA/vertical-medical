@@ -13,8 +13,8 @@
 		<field name="domain_force">['|',
 			('id', 'child_of', [user.commercial_partner_id.id]),
 			('parent_id', 'child_of', [user.commercial_partner_id.id]),
-			('is_doctor', '=', True),
-			('is_pharmacy', '=', True),
+			('type', '=', 'medical.physician'),
+			('type', '=', 'medical.pharmacy'),
 			('create_uid', '=', user.id),
 		]</field>
 	</record>
@@ -25,8 +25,8 @@
 		<field name="domain_force">['|',
 			('id', 'child_of', [user.commercial_partner_id.id]),
 			('parent_id', 'child_of', [user.commercial_partner_id.id]),
-			('is_doctor', '=', True),
-			('is_pharmacy', '=', True),
+			('type', '=', 'medical.physician'),
+			('type', '=', 'medical.pharmacy'),
 			('create_uid', '=', user.id),
 		]</field>
 	</record>

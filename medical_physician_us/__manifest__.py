@@ -17,5 +17,5 @@
         'views/medical_physician_view.xml',
     ],
     "application": False,
-    'installable': True,
+    'installable': False,
 }

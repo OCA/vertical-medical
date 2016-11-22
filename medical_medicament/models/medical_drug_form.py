@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2004 Tech-Receptives
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields
@@ -13,8 +14,11 @@ class MedicalDrugForm(models.Model):
         required=True,
         translate=True,
     )
-    code = fields.Char()
+    code = fields.Char(
+        required=True,
+    )
 
     _sql_constraints = [
-        ('name_uniq', 'UNIQUE(name)', 'Drug form must be unique!'),
+        ('name_uniq', 'UNIQUE(name)', 'Drug form name must be unique!'),
+        ('code_uniq', 'UNIQUE(code)', 'Code should be unique!'),
     ]

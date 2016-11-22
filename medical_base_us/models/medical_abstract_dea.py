@@ -1,18 +1,13 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, api
-from odoo.exceptions import ValidationError
 import re
 
 
 class MedicalAbstractDea(models.AbstractModel):
-    """ Inherit this to provide DEA validation to any model.
-
-    Public attributes and methods will be prefixed with dea in order
-    to avoid name collisions with models that will inherit from this class.
-    """
+    """ It provides DEA Number verification method """
 
     _name = 'medical.abstract.dea'
 
@@ -61,29 +56,3 @@ class MedicalAbstractDea(models.AbstractModel):
             return int(res_str[-1]) == int(match['control_digit'])
 
         return False
-
-    @api.multi
-    def _dea_constrains_helper(self, col_name, country_col='country_id'):
-        """ Provide a helper for dea validation via constrain
-        Params:
-            col_name: ``str`` Name of db column to constrain
-            country_col: ``str`` Name of db country column to verify
-        Raises:
-            ValidationError: If constrain is a failure
-            AttributeError: If country column is not valid or is null in db
-        """
-
-        for rec_id in self:
-            if getattr(rec_id, country_col).code == 'US':
-                if not self._dea_is_valid(
-                    getattr(rec_id, col_name, 0)
-                ):
-                    col_obj = self.env['ir.model.fields'].search([
-                        ('name', '=', col_name),
-                        ('model', '=', rec_id._name),
-                    ],
-                        limit=1,
-                    )
-                    raise ValidationError(
-                        'Invalid %s was supplied.' % col_obj.display_name
-                    )

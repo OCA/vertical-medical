@@ -12,7 +12,7 @@ class TestMedicalPrescriptionOrderLine(TransactionCase):
         super(TestMedicalPrescriptionOrderLine, self).setUp()
         self.order_line_1 = self.env.ref(
             'medical_prescription.' +
-            'medical_prescription_order_line_patient_1_order_1_line_1'
+            'medical_prescription_order_order_line_1'
         )
 
     def test_check_refill_qty_original(self):

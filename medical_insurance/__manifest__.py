@@ -21,11 +21,6 @@
         'security/ir.model.access.csv',
         'views/medical_menu.xml',
     ],
-    'test': [
-        'tests/medical_insurance_company.yml',
-        'tests/medical_insurance_template.yml',
-        'tests/medical_insurance_plan.yml',
-    ],
     'installable': True,
     'auto_install': False,
 }

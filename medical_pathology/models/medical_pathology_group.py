@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2004 Tech-Receptives
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import fields, models
@@ -8,12 +9,14 @@ from odoo import fields, models
 class MedicalPathologyGroup(models.Model):
     _name = 'medical.pathology.group'
     _description = 'Medical Pathology Group'
-    _sql_constraints = [
-        ('code', 'UNIQUE(code)', 'Pathology group codes must be unique.'),
-    ]
 
-    name = fields.Char(required=True, translate=True)
-    notes = fields.Text(translate=True)
+    name = fields.Char(
+        required=True,
+        translate=True,
+    )
+    notes = fields.Text(
+        translate=True,
+    )
     code = fields.Char(
         required=True,
         help='For example MDG6 code will contain the Millennium Development'
@@ -24,3 +27,7 @@ class MedicalPathologyGroup(models.Model):
         required=True,
         translate=True,
     )
+
+    _sql_constraints = [
+        ('code', 'UNIQUE(code)', 'Pathology group codes must be unique.'),
+    ]

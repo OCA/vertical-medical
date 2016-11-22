@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2004 Tech-Receptives
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields, api
@@ -9,6 +10,11 @@ class MedicalMedicament(models.Model):
     _name = 'medical.medicament'
     _inherit = ['mail.thread']
     _inherits = {'product.product': 'product_id'}
+
+    active_component = fields.Char()
+    indications = fields.Text()
+    therapeutic_action = fields.Char()
+    presentation = fields.Text()
 
     product_id = fields.Many2one(
         comodel_name='product.product',
@@ -24,17 +30,17 @@ class MedicalMedicament(models.Model):
         comodel_name='medical.drug.route',
         string='Drug Route',
     )
-    active_component = fields.Char()
-    indications = fields.Text()
-    therapeutic_action = fields.Char()
-    pregnancy_category = fields.Selection([
-        ('a', 'A'),
-        ('b', 'B'),
-        ('c', 'C'),
-        ('d', 'D'),
-        ('x', 'X'),
-        ('n', 'N'),
-    ], help='** FDA Pregancy Categories ***\n'
+    pregnancy_category = fields.Selection(
+        selection=[
+            ('a', 'A'),
+            ('b', 'B'),
+            ('c', 'C'),
+            ('d', 'D'),
+            ('x', 'X'),
+            ('n', 'N'),
+        ],
+        help=(
+            '** FDA Pregancy Categories ***\n'
             'CATEGORY A :Adequate and well-controlled human studies have'
             'failed to demonstrate a risk to the fetus in the first'
             'trimester of pregnancy (and there is no evidence of risk in '
@@ -62,7 +68,8 @@ class MedicalMedicament(models.Model):
             'investigational or marketing experience, and the risks '
             'involved in use of the drug in pregnant'
             ' women clearly outweigh potential benefits.\n\n'
-            'CATEGORY N : Not yet classified',
+            'CATEGORY N : Not yet classified'
+        ),
     )
     is_pregnancy_warning = fields.Boolean(
         string='Pregnancy Warning',
@@ -84,7 +91,6 @@ class MedicalMedicament(models.Model):
     adverse_reaction = fields.Text(
         help='Potential adverse reactions',
     )
-    presentation = fields.Text()
     composition = fields.Text(
         help='Components that make up this medicament',
     )
@@ -100,31 +106,23 @@ class MedicalMedicament(models.Model):
     @api.multi
     def name_get(self):
         res = []
-        for rec in self:
-            if rec.drug_form_id.name:
-                form = ' - %s' % rec.drug_form_id.code
+        for rec_id in self:
+            if rec_id.drug_form_id.name:
+                form = ' - %s' % rec_id.drug_form_id.code
             else:
                 form = ''
             name = '{name} {strength:g} {uom}{form}'.format(
-                name=rec.product_id.name,
-                strength=rec.strength,
-                uom=rec.strength_uom_id.name or '',
+                name=rec_id.product_id.name,
+                strength=rec_id.strength,
+                uom=rec_id.strength_uom_id.name or '',
                 form=form,
             )
-            res.append((rec.id, name))
+            res.append((rec_id.id, name))
         return res
 
     @api.multi
-    def onchange_type(self, _type):
-        return self.product_id.onchange_type(_type)
-
-    @api.multi
-    def onchange_uom(self, uom_id, uom_po_id):
-        return self.product_id.onchange_uom(uom_id, uom_po_id)
-
-    @api.multi
-    def onchange_tracking(self, tracking):
-        return self.product_id.onchange_tracking(tracking)
+    def _onchange_uom(self, uom_id, uom_po_id):
+        return self.product_id._onchange_uom(uom_id, uom_po_id)
 
     @api.model
     @api.returns('self', lambda value: value.id)
@@ -135,13 +133,5 @@ class MedicalMedicament(models.Model):
     @api.model
     @api.returns('self')
     def get_by_product(self, product_id):
-        """
-        Return medicaments associated to a Product Record
-
-        Args:
-            product_id: product.product Record to search for
-
-        Returns:
-            medical.medicament Recordsets associated with input product
-        """
+        """ Return medicaments associated to a product record """
         return self.search([('product_id', '=', product_id.id)])

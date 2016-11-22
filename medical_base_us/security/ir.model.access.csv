@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_medical_test_luhn,access_medical_test_luhn,model_medical_test_luhn,base.group_no_one,1,1,1,1
-access_medical_test_npi,access_medical_test_npi,model_medical_test_npi,base.group_no_one,1,1,1,1
-access_medical_test_dea,access_medical_test_dea,model_medical_test_dea,base.group_no_one,1,1,1,1

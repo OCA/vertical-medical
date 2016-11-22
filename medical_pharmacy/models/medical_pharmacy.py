@@ -11,7 +11,7 @@ class MedicalPharmacy(models.Model):
     """
     _name = 'medical.pharmacy'
     _description = 'Medical Pharmacy'
-    _inherits = {'res.partner': 'partner_id', }
+    _inherits = {'res.partner': 'partner_id'}
 
     partner_id = fields.Many2one(
         comodel_name='res.partner',
@@ -21,11 +21,10 @@ class MedicalPharmacy(models.Model):
     )
 
     @api.model
-    @api.returns('self', lambda value: value.id)
     def create(self, vals):
         vals.update({
-            'is_pharmacy': True,
-            'customer': False,
             'is_company': True,
+            'customer': False,
+            'type': self._name,
         })
         return super(MedicalPharmacy, self).create(vals)

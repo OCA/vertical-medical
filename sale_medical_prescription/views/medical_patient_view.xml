@@ -12,7 +12,7 @@
         <field name="model">medical.patient</field>
         <field name='inherit_id' ref='medical.medical_patient_view_form'/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='medical_center_id']" position="after">
+            <xpath expr="//field[@name='is_pregnant']" position="after">
                 <field name="safety_cap_yn" />
                 <field name="counseling_yn" />
             </xpath>

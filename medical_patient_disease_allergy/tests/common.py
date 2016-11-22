@@ -10,7 +10,6 @@ class CommonTestBase(TransactionCase):
         super(CommonTestBase, self).setUp()
         vals = {
             'name': 'Patient 1',
-            'gender': 'm',
         }
         patient_id = self.env['medical.patient'].create(vals)
         allergy_code = self.env.ref(

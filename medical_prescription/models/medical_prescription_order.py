@@ -37,7 +37,7 @@ class MedicalPrescriptionOrder(models.Model):
     notes = fields.Text()
     is_pregnancy_warning = fields.Boolean(
         string='Pregnant',
-        help='Check this is the primary patient on prescription is pregnant',
+        help='Check this if the primary patient on prescription is pregnant',
     )
     is_verified = fields.Boolean(
         string='Verified',

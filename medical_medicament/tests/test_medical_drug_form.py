@@ -1,23 +1,6 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    Author: Dave Lasley <dave@laslabs.com>
-#    Copyright: 2016-TODAY LasLabs, Inc. [https://laslabs.com]
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Copyright 2016 LasLabs Inc.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo.tests.common import TransactionCase
 from psycopg2 import IntegrityError
@@ -25,21 +8,17 @@ from psycopg2 import IntegrityError
 
 class TestMedicalDrugForm(TransactionCase):
 
-    def setUp(self, ):
+    def setUp(self):
         super(TestMedicalDrugForm, self).setUp()
-        self.model_obj = self.env['medical.drug.form']
-        self.vals = {
-            'name': 'DrugForm',
-            'code': 'DF',
-        }
+        self.drug_form_bar = self.env.ref('medical_medicament.BAR')
+        self.drug_form_capsule = self.env.ref('medical_medicament.CAP')
 
-    def _test_record(self, ):
-        return self.model_obj.create(self.vals)
-
-    def test_name_unique(self, ):
-        """ Validate unique name sql constraint """
-        self._test_record()
+    def test_name_unique(self):
+        """ Validate drug form unique name sql constraint """
         with self.assertRaises(IntegrityError):
-            self.model_obj.create({
-                'name': self.vals['name'],
-            })
+            self.drug_form_bar.name = self.drug_form_capsule.name
+
+    def test_code_unique(self):
+        """ Validate drug form unique code sql constraint """
+        with self.assertRaises(IntegrityError):
+            self.drug_form_bar.code = self.drug_form_capsule.code

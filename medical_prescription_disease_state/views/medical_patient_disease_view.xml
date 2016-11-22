@@ -12,7 +12,7 @@
         <record id="medical_patient_disease_view_form" model="ir.ui.view">
             <field name="name">Medical Patient Disease Form</field>
             <field name="model">medical.patient.disease</field>
-            <field name='inherit_id' ref='medical_patient_disease.medical_patient_view_disease_form'/>
+            <field name='inherit_id' ref='medical_patient_disease.medical_patient_disease_view_form'/>
             <field name="arch" type="xml">
                 <xpath expr="//div[@name='buttons']" position="inside">
                     <button
@@ -35,7 +35,7 @@
             <field name="name">Medical Patient Disease Tree</field>
             <field name="model">medical.patient.disease</field>
             <field name="inherit_id"
-                ref="medical_patient_disease.medical_patient_view_disease_tree"/>
+                ref="medical_patient_disease.medical_patient_disease_view_tree"/>
             <field name="arch" type="xml">
                 <xpath expr="/tree" position="attributes">
                     <attribute name="colors">blue:last_prescription_order_line_active == False</attribute>

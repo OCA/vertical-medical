@@ -3,7 +3,6 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import fields, models
-from odoo.addons.medical.medical_constants import minutes
 
 
 class MedicalPhysicianService(models.Model):
@@ -35,7 +34,7 @@ class MedicalPhysicianService(models.Model):
         index=True,
         ondelete='cascade',
     )
-    service_duration = fields.Selection(
-        minutes, string='Duration',
-        help='Duration of the appointment in minutes',
-    )
+    # service_duration = fields.Selection(
+    #     minutes, string='Duration',
+    #     help='Duration of the appointment in minutes',
+    # )

@@ -19,7 +19,8 @@ class TestMedicalSaleWizard(TransactionCase):
             'name': 'Test Physician',
         })
         drug_form = self.env['medical.drug.form'].create({
-            'name': 'Test'
+            'name': 'Test',
+            'code': 'Test',
         })
         self.medicament = self.env['medical.medicament'].create({
             'name': 'Test Medicament',

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import fields, models, api
@@ -69,7 +69,9 @@ class MedicalMedicationTemplate(models.Model):
             if rec_id.medication_dosage_id:
                 name = rec_id.medication_dosage_id.name
             elif rec_id.frequency and rec_id.frequency_uom_id:
-                name = '%s / %s' % (rec_id.frequency, rec_id.frequency_uom_id)
+                name = '%s / %s' % (
+                    rec_id.frequency, rec_id.frequency_uom_id.name
+                )
             elif rec_id.pathology_id:
                 name = rec_id.pathology_id.name
             else:

@@ -1,17 +1,12 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, api, _
-from odoo.exceptions import ValidationError
+from odoo import api, models
 
 
 class MedicalAbstractNpi(models.AbstractModel):
-    """ Inherit this to provide Npi validation to any model.
-
-    Public attributes and methods will be prefixed with Npi in order
-    to avoid name collisions with models that will inherit from this class.
-    """
+    """ It provides NPI Validation method """
 
     _name = 'medical.abstract.npi'
     _description = 'Medical Abstract NPI'
@@ -28,29 +23,3 @@ class MedicalAbstractNpi(models.AbstractModel):
         """
         num = '80840%s' % num
         return self._luhn_is_valid(num)
-
-    @api.multi
-    def _npi_constrains_helper(self, col_name, country_col='country_id'):
-        """ Provide a mixer for Npi validation via constrains
-        Params:
-            col_name: :type:``str`` Name of db column to constrain
-            country_col: :type:``str`` Name of db country column to verify
-        Raises:
-            :type:``ValidationError``: If constrain is a failure
-            :type:AttributeError``: If country db col is not valid or is null
-        """
-
-        for rec_id in self:
-            if getattr(rec_id, country_col).code == 'US':
-                if not self._npi_is_valid(
-                    getattr(rec_id, col_name, 0)
-                ):
-                    col_obj = self.env['ir.model.fields'].search([
-                        ('name', '=', col_name),
-                        ('model', '=', rec_id._name),
-                    ],
-                        limit=1,
-                    )
-                    raise ValidationError(_(
-                        'Invalid %s was supplied.' % col_obj.display_name
-                    ))

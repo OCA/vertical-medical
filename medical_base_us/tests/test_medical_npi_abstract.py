@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo.tests.common import TransactionCase
-from odoo import models, fields, api
-from odoo.exceptions import ValidationError
 
 
 class MedicalNpiAbstractTestMixer(TransactionCase):
@@ -26,18 +24,6 @@ class MedicalNpiAbstractTestMixer(TransactionCase):
         ],
             limit=1,
         )
-
-
-class MedicalTestNpi(models.Model):
-    _name = 'medical.test.npi'
-    _inherit = 'medical.abstract.npi'
-    ref = fields.Char()
-    country_id = fields.Many2one('res.country')
-
-    @api.multi
-    @api.constrains('ref')
-    def _check_ref(self):
-        self._npi_constrains_helper('ref')
 
 
 class TestMedicalNpiAbstract(MedicalNpiAbstractTestMixer):
@@ -69,26 +55,3 @@ class TestMedicalNpiAbstract(MedicalNpiAbstractTestMixer):
                 self.model_obj._npi_is_valid(str(i)),
                 'Npi validity check on str %s did not fail for invalid' % i,
             )
-
-    def test_constrain_valid_us(self):
-        self.assertTrue(
-            self.env['medical.test.npi'].create({
-                'ref': self.valid[0],
-                'country_id': self.country_us.id,
-            })
-        )
-
-    def test_constrain_invalid_us(self):
-        with self.assertRaises(ValidationError):
-            self.env['medical.test.npi'].create({
-                'ref': self.invalid[0],
-                'country_id': self.country_us.id,
-            })
-
-    def test_constrain_invalid_non_us(self):
-        self.assertTrue(
-            self.env['medical.test.npi'].create({
-                'ref': self.invalid[0],
-                'country_id': self.country_us.id + 1,
-            })
-        )

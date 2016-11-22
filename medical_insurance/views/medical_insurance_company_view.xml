@@ -19,10 +19,9 @@
                                 <field name="is_company" invisible="True" />
                             </h1>
                             <field name="parent_id" placeholder="Parent Company"
-                                   domain="[('is_company', '=', True),
-								            ('is_pharmacy', '=', False)]"
+                                   domain="[('is_company', '=', True)]"
                                    context="{'default_is_company': True,
-                                             'default_is_insurance_company': False,
+                                             'default_type': 'medical.insurance.company',
                                              'default_supplier': supplier,
                                              'default_customer': customer}" />
                         </div>

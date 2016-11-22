@@ -8,10 +8,10 @@
 
 <odoo>
 
-    <record id="medical_prescription_order_form_view" model="ir.ui.view">
+    <record id="medical_prescription_order_view_form" model="ir.ui.view">
         <field name="name">medical.prescription.order.form</field>
         <field name="model">medical.prescription.order</field>
-        <field name='inherit_id' ref='medical_prescription.medical_prescription_order_form_view'/>
+        <field name='inherit_id' ref='medical_prescription.medical_prescription_order_view_form'/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='dose_uom_id']" position="after">
                 <field name="can_dispense" invisible="1" />

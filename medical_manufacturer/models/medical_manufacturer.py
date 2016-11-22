@@ -8,7 +8,7 @@ from odoo import fields, models, api
 class MedicalManufacturer(models.Model):
     _name = 'medical.manufacturer'
     _description = 'Medical Manufacturer'
-    _inherits = {'res.partner': 'partner_id', }
+    _inherits = {'res.partner': 'partner_id'}
 
     partner_id = fields.Many2one(
         comodel_name='res.partner',
@@ -18,11 +18,10 @@ class MedicalManufacturer(models.Model):
     )
 
     @api.model
-    @api.returns('self', lambda value: value.id)
     def create(self, vals):
         vals.update({
-            'is_manufacturer': True,
-            'customer': False,
             'is_company': True,
+            'customer': False,
+            'type': self._name,
         })
         return super(MedicalManufacturer, self).create(vals)
