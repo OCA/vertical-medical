@@ -15,8 +15,8 @@ class MedicalPatientDisease(models.Model):
         compute='_compute_name',
         store=True,
     )
-    expire_date = fields.Datetime(
-        compute='_compute_expire_date',
+    date_expire = fields.Datetime(
+        compute='_compute_date_expire',
         store=True,
     )
     pathology_id = fields.Many2one(
@@ -102,20 +102,20 @@ class MedicalPatientDisease(models.Model):
         help='Check this box if the patient is currently'
              ' receiving treatment for this disease.',
     )
-    treatment_start_date = fields.Date(
+    date_treatment_start = fields.Date(
         help='If the patient is receiving treatment'
              ' state the start date here.',
     )
-    treatment_end_date = fields.Date(
+    date_treatment_end = fields.Date(
         help='If the patient is/was receiving treament'
              ' state the end date here.',
     )
-    diagnosed_date = fields.Date(
+    date_diagnosed = fields.Date(
         string='Date of Diagnosis',
         help='When the patient was diagnosed'
              ' with this disease.',
     )
-    healed_date = fields.Date(
+    date_healed = fields.Date(
         string='Date of Healing',
         help='When the patient was fully relieved'
              ' of this disease.',
@@ -135,12 +135,12 @@ class MedicalPatientDisease(models.Model):
 
     @api.multi
     @api.depends('active')
-    def _compute_expire_date(self):
+    def _compute_date_expire(self):
         for rec_id in self:
             if rec_id.active:
-                rec_id.expire_date = False
+                rec_id.date_expire = False
             else:
-                rec_id.expire_date = fields.Datetime.now()
+                rec_id.date_expire = fields.Datetime.now()
 
     @api.multi
     def action_invalidate(self):
