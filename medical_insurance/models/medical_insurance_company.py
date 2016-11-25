@@ -38,3 +38,11 @@ class MedicalInsuranceCompany(models.Model):
     def create(self, vals):
         vals['is_insurance_company'] = True
         return super(MedicalInsuranceCompany, self).create(vals)
+
+    @api.multi
+    def onchange_state(self, state_id):
+        return self.partner_id.onchange_state(state_id)
+
+    @api.multi
+    def onchange_address(self, use_parent_address, parent_id):
+        return self.partner_id.onchange_address(use_parent_address, parent_id)
