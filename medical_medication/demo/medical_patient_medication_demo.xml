@@ -70,7 +70,7 @@
     <record id="medical_patient_medication_medication_4" model="medical.patient.medication">
         <field name="medication_template_id" ref="medical_medication.medical_medication_template_template_4" />
         <field name="medicament_id" ref="medical_medicament.medical_medicament_advil_1" />
-        <field name="patient_id" ref="medical_medication.medical_patient_patient_5" />
+        <field name="patient_id" ref="medical_medication.medical_patient_patient_6" />
         <field name="physician_id" ref="medical_physician.medical_physician_physician_3" />
         <field name="date_start_treatment">2010-01-02</field>
     </record>

@@ -21,7 +21,7 @@
     </record>
 
     <record id="medical_prescription_prescription_order_3" model="medical.prescription.order">
-        <field name="patient_id" ref="medical_medication.medical_patient_patient_5" />
+        <field name="patient_id" ref="medical_medication.medical_patient_patient_6" />
         <field name="physician_id" ref="medical_physician.medical_physician_physician_3" />
         <field name="date_prescription">2010-01-02</field>
         <field name="partner_id" ref="medical_pharmacy.medical_pharmacy_1" />
