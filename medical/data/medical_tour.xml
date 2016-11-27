@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-
-    <!-- Make the xmlid of menus required by the Medical tour available in webclient -->
-    <record id="medical.medical_root" model="ir.ui.menu">
-        <field name="load_xmlid" eval="True"/>
-    </record>
-
-</odoo>

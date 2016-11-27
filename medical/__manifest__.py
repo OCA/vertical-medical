@@ -25,7 +25,6 @@
         'security/medical_security.xml',
         'security/ir.model.access.csv',
         'data/ir_sequence_data.xml',
-        'data/medical_tour.xml',
     ],
     'demo': [
         'demo/medical_patient_demo.xml',

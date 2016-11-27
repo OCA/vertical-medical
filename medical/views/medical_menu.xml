@@ -8,6 +8,7 @@
               name="Medical"
               sequence="10"
               web_icon="medical,static/description/icon.png"
+              load_xmlid="True"
               />
 
     <menuitem id="medical_patient_root"
