@@ -8,27 +8,32 @@
               name="Medical"
               sequence="10"
               web_icon="medical,static/description/icon.png"
+              load_xmlid="True"
               />
 
     <menuitem id="medical_patient_root"
               name="Patient"
               parent="medical_root"
-              sequence="10" />
+              sequence="10"
+              />
 
     <menuitem id="medical_patient"
-              name=" Patient"
+              name="Patient"
               parent="medical_patient_root"
               sequence="10"
-              action="medical_patient_action" />
+              action="medical_patient_action"
+              />
 
     <menuitem id="medical_root_sub"
               name="Configuration"
               parent="medical_root"
-              sequence="100" />
+              sequence="100"
+              />
 
     <menuitem id="medical_root_misc"
               name="Misc"
               parent="medical_root_sub"
-              sequence="200" />
+              sequence="200"
+              />
 
 </odoo>
