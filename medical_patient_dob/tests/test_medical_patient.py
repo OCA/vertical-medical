@@ -44,3 +44,13 @@ class TestMedicalPatient(TransactionCase):
                 self.patient_1.display_name, 'Emma Fields [No DoB]'
             )
         )
+
+    def test_name_no_lang(self):
+        """ Test for a default date format if none existing on lang """
+        self.lang_obj.date_format = False
+        self.assertEquals(
+            self.patient_1.display_name, 'Emma Fields [02/23/1920]',
+            'Should include dob in display name.\rGot: %s\rExpected: %s' % (
+                self.patient_1.display_name, 'Emma Fields [02/23/1920]'
+            )
+        )
