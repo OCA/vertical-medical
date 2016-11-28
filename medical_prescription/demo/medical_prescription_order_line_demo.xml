@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016 LasLabs, Inc. [https://laslabs.com]
+    @license AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+	
+	<record id="medical_prescription_order_line_patient_1_order_1_line_1"
+			model="medical.prescription.order.line">
+		<field name="prescription_order_id"
+			   ref="medical_prescription.medical_prescription_order_patient_1_order_1" />
+		<field name="medical_medication_id"
+			   ref="medical_medication.medical_medication_patient_1_advil_1" />
+		<field name="qty">30</field>
+	</record>
+	
+	<record id="medical_prescription_order_line_patient_1_order_1_line_2"
+			model="medical.prescription.order.line">
+		<field name="prescription_order_id"
+			   ref="medical_prescription.medical_prescription_order_patient_1_order_1" />
+		<field name="medical_medication_id"
+			   ref="medical_medication.medical_medication_patient_1_advil_2" />
+		<field name="qty">120</field>
+	</record>
+	
+	<record id="medical_prescription_order_line_patient_2_order_1_line_1"
+			model="medical.prescription.order.line">
+		<field name="prescription_order_id"
+			   ref="medical_prescription.medical_prescription_order_patient_2_order_1" />
+		<field name="medical_medication_id"
+			   ref="medical_medication.medical_medication_patient_2_advil_1" />
+		<field name="qty">60</field>
+	</record>
+	
+</odoo>

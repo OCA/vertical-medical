@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright (C) 2016 LasLabs, Inc. [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    @license AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+	<record id="medical_prescription_order_patient_1_order_1"
+			model="medical.prescription.order">
+		<field name="patient_id" ref="medical.medical_patient_patient_1" />
+		<field name="physician_id" ref="medical_physician.medical_physician_physician_1" />
+		<field name="date_prescription">2016-01-21</field>
+	</record>
+	
+	<record id="medical_prescription_order_patient_1_order_2"
+			model="medical.prescription.order">
+		<field name="patient_id" ref="medical.medical_patient_patient_1" />
+		<field name="physician_id" ref="medical_physician.medical_physician_physician_2" />
+		<field name="date_prescription">2015-12-03</field>
+	</record>
+	
+	<record id="medical_prescription_order_patient_2_order_1"
+			model="medical.prescription.order">
+		<field name="patient_id" ref="medical.medical_patient_patient_2" />
+		<field name="physician_id" ref="medical_physician.medical_physician_physician_3" />
+		<field name="date_prescription">2016-02-03</field>
+	</record>
+	
+</odoo>
