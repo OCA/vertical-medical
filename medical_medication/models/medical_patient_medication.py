@@ -1,25 +1,7 @@
 # -*- coding: utf-8 -*-
-###############################################################################
-#
-#    Tech-Receptives Solutions Pvt. Ltd.
-#    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
-#    Special Credit and Thanks to Thymbra Latinoamericana S.A.
-#    Ported to 8.0 by Dave Lasley - LasLabs (https://laslabs.com)
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-###############################################################################
+# Copyright 2004 Tech-Receptives
+# Copyright 2016 LasLabs Inc.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import fields, models
 
@@ -31,23 +13,48 @@ class MedicalPatientMedication(models.Model):
     _rec_name = 'patient_id'
 
     medication_template_id = fields.Many2one(
+        string='Medication Template',
         comodel_name='medical.medication.template',
-        string='Medication Template', index=True)
+        index=True,
+        help='Template to apply to this medication',
+    )
     patient_id = fields.Many2one(
-        comodel_name='medical.patient', string='Patient', index=True,
-        required=True)
+        string='Patient',
+        comodel_name='medical.patient',
+        index=True,
+        required=True,
+        help='Patient that is taking this medication',
+    )
     physician_id = fields.Many2one(
-        comodel_name='medical.physician', string='Physician',
-        help='Physician who prescribed the medicament', index=True)
+        string='Physician',
+        comodel_name='medical.physician',
+        index=True,
+        help='Physician who prescribed the medicament',
+    )
     active = fields.Boolean(
         help='Check if the patient is currently taking the medication',
-        default=True)
-    is_course_complete = fields.Boolean(string='Course Completed')
-    is_discontinued = fields.Boolean()
-    date_start_treatment = fields.Datetime()
-    date_stop_treatment = fields.Datetime()
+        default=True,
+    )
+    is_course_complete = fields.Boolean(
+        string='Course Completed',
+        help='Check this if the patient is no longer taking this medication',
+    )
+    is_discontinued = fields.Boolean(
+        help='Check this if the medication has been discontinued',
+    )
     discontinued_reason = fields.Char(
-        help='Short description for discontinuing the treatment')
+        help='Short description explaining why the medication was'
+             ' discontinued',
+    )
+    date_start_treatment = fields.Datetime(
+        help='When the patient began taking this medication',
+    )
+    date_stop_treatment = fields.Datetime(
+        help='When the patient is scheduled to stop this medication',
+    )
     adverse_reaction = fields.Text(
-        help='Side effects or adverse reactions that patient experienced')
-    notes = fields.Text()
+        help='Side effects or adverse reactions that patient experienced',
+    )
+    notes = fields.Text(
+        help='Any additional information regarding this treatment',
+    )

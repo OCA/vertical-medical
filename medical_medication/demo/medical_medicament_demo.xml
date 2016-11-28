@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="product_product_truvada_1" model="product.product">
+        <field name="name">Truvada</field>
+        <field name="uom_id" ref="product.product_uom_gram" />
+        <field name="uom_po_id" ref="product.product_uom_gram" />
+        <field name="weight">15</field>
+        <field name="categ_id" ref="product.product_category_5" />
+        <field name="type">consu</field>
+        <field name="description_sale">Truvada 30 Capsules 300mg</field>
+        <field name="pricelist_id" ref="product.list0" />
+        <field name="standard_price">60.25</field>
+        <field name="list_price">99.99</field>
+        <field name="currency_id" ref="base.USD" />
+        <field name="default_code">TRUV</field>
+    </record>
+
+    <record id="medical_medicament_truvada_1" model="medical.medicament">
+        <field name="name">Truvada</field>
+        <field name="drug_form_id" ref="medical_medicament.TAB" />
+        <field name="strength">0.3</field>
+        <field name="strength_uom_id" ref="product.product_uom_gram" />
+        <field name="drug_route_id" ref="medical_medicament.route_34" />
+        <field name="product_id" ref="medical_medication.product_product_truvada_1" />
+        <field name="pregnancy_category">b</field>
+    </record>
+
+    <record id="product_product_aralen_1" model="product.product">
+        <field name="name">Aralen</field>
+        <field name="uom_id" ref="product.product_uom_gram" />
+        <field name="uom_po_id" ref="product.product_uom_gram" />
+        <field name="weight">17</field>
+        <field name="categ_id" ref="product.product_category_5" />
+        <field name="type">consu</field>
+        <field name="description_sale">Aralen 60 Tablets 250mg</field>
+        <field name="pricelist_id" ref="product.list0" />
+        <field name="standard_price">45.25</field>
+        <field name="list_price">67.19</field>
+        <field name="currency_id" ref="base.USD" />
+        <field name="default_code">ARLN</field>
+    </record>
+
+    <record id="medical_medicament_aralen_1" model="medical.medicament">
+        <field name="name">Aralen</field>
+        <field name="drug_form_id" ref="medical_medicament.TAB" />
+        <field name="strength">0.25</field>
+        <field name="strength_uom_id" ref="product.product_uom_gram" />
+        <field name="is_pregnancy_warning">True</field>
+        <field name="drug_route_id" ref="medical_medicament.route_34" />
+        <field name="product_id" ref="medical_medication.product_product_aralen_1" />
+        <field name="pregnancy_category">d</field>
+    </record>
+
+</odoo>

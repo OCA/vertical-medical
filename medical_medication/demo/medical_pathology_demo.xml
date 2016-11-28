@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical_pathology_pathology_4" model="medical.pathology">
+        <field name="name">Migraine</field>
+        <field name="code">G43.909</field>
+        <field name="code_type_id" ref="medical_pathology.pathology_code_05" />
+        <field name="category_id" ref="medical_patient_disease.medical_pathology_category_7" />
+    </record>
+
+</odoo>

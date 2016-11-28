@@ -1,105 +1,109 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<openerp>
-    <data>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
-        <record id="medical_patient_medication_search_view" model="ir.ui.view">
-            <field name="name">medical.patient.medication.search</field>
-            <field name="model">medical.patient.medication</field>
-            <field name="mode">primary</field>
-            <field name="inherit_id"
-                ref="medical_medication.medical_medication_template_search_view"/>
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='dose_unit_id']" position="after">
-                    <field name="patient_id" />
-                    <field name="physician_id" />
-                    <field name="medication_template_id" />
-                    <field name="adverse_reaction" />
-                    <field name="notes" />
-                    <field name="discontinued_reason" />
-                </xpath>
-                <xpath expr="//filter[@name='frequency_prn']" position="after">
-                    <filter name="inactive" string="Inactive" domain="[('active', '=', False)]"/>
-                    <filter name="is_course_complete" domain="[('is_course_complete', '=', True)]"/>
-                    <filter name="is_discontinued" domain="[('is_discontinued', '=', True)]"/>
-                </xpath>
-                <xpath expr="//group" position="inside">
-                    <filter string="Patient" domain="[]" context="{'group_by':'patient_id'}" />
-                    <filter string="Physician" domain="[]" context="{'group_by':'physician_id'}" />
-                    <filter string="Extra Info" domain="[]" context="{'group_by':'notes'}" />
-                    <filter string="Medication Template" domain="[]"
+<odoo>
+
+    <record id="medical_patient_medication_view_search" model="ir.ui.view">
+        <field name="name">medical.patient.medication.search</field>
+        <field name="model">medical.patient.medication</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="medical_medication.medical_medication_template_view_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='dose_uom_id']" position="after">
+                <field name="patient_id" />
+                <field name="physician_id" />
+                <field name="medication_template_id" />
+                <field name="adverse_reaction" />
+                <field name="notes" />
+                <field name="discontinued_reason" />
+            </xpath>
+            <xpath expr="//filter[@name='frequency_prn']" position="after">
+                <filter name="inactive"
+                        string="Inactive"
+                        domain="[('active', '=', False)]" />
+                <filter name="is_course_complete"
+                        domain="[('is_course_complete', '=', True)]" />
+                <filter name="is_discontinued"
+                        domain="[('is_discontinued', '=', True)]" />
+            </xpath>
+            <xpath expr="//group" position="inside">
+                <filter string="Patient"
+                        domain="[]"
+                        context="{'group_by':'patient_id'}" />
+                <filter string="Physician"
+                        domain="[]"
+                        context="{'group_by':'physician_id'}" />
+                <filter string="Extra Info"
+                        domain="[]" context="{'group_by':'notes'}" />
+                <filter string="Medication Template"
+                        domain="[]"
                         context="{'group_by':'medication_template_id'}" />
-                </xpath>
-            </field>
-        </record>
+            </xpath>
+        </field>
+    </record>
 
-        <record id="medical_patient_medication_tree_view" model="ir.ui.view">
-            <field name="name">medical.patient.medication.tree</field>
-            <field name="model">medical.patient.medication</field>
-            <field name="inherit_id"
-                ref="medical_medication.medical_medication_template_tree_view"/>
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='pathology_id']" position="after">
-                    <field name="patient_id" />
-                    <field name="physician_id" />
-                    <field name="date_start_treatment" />
-                    <field name="date_stop_treatment" />
-                </xpath>
-            </field>
-        </record>
+    <record id="medical_patient_medication_view_tree" model="ir.ui.view">
+        <field name="name">medical.patient.medication.tree</field>
+        <field name="model">medical.patient.medication</field>
+        <field name="inherit_id" ref="medical_medication.medical_medication_template_view_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='pathology_id']" position="after">
+                <field name="patient_id" />
+                <field name="physician_id" />
+                <field name="date_start_treatment" />
+                <field name="date_stop_treatment" />
+            </xpath>
+        </field>
+    </record>
 
-        <record id="medical_patient_medication_form_view" model="ir.ui.view">
-            <field name="name">medical.patient.medication.form</field>
-            <field name="model">medical.patient.medication</field>
-            <field name="mode">primary</field>
-            <field name="inherit_id"
-                ref="medical_medication.medical_medication_template_form_view"/>
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='pathology_id']" position="replace">
+    <record id="medical_patient_medication_view_form" model="ir.ui.view">
+        <field name="name">medical.patient.medication.form</field>
+        <field name="model">medical.patient.medication</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="medical_medication.medical_medication_template_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='pathology_id']" position="replace">
+                <group>
                     <group>
-                        <group>
-                            <field name="medication_template_id"
-                                domain="[('medicament_id','=', medicament_id)]"/>
-                            <field name="date_start_treatment" />
-                            <field name="physician_id" />
-                        </group>
-                        <group>
-                            <field name="patient_id" />
-                            <field name="date_stop_treatment" />
-                            <field name="is_discontinued"/>
-                            <field name="is_course_complete"/>
-                        </group>
+                        <field name="medication_template_id"
+                               domain="[('medicament_id','=', medicament_id)]" />
+                        <field name="date_start_treatment" />
+                        <field name="physician_id" />
                     </group>
-                </xpath>
-                <xpath expr="//notebook" postition="inside">
-                    <page name="adverse_reaction" string="Adverse Reaction">
-                        <field name="adverse_reaction" nolabel="1"/>
-                    </page>
-                    <page name="notes" string="Notes">
-                        <field name="notes" nolabel="1"/>
-                    </page>
-                    <page name="discontinued_reason" string="Discontinued Reason"
-                        attrs="{'invisible': [('is_discontinued', '=', False)]}">
-                        <field name="discontinued_reason" nolabel="1"/>
-                    </page>
-                </xpath>
-            </field>
-        </record>
+                    <group>
+                        <field name="patient_id" />
+                        <field name="date_stop_treatment" />
+                        <field name="is_discontinued" />
+                        <field name="is_course_complete" />
+                    </group>
+                </group>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page name="adverse_reaction" string="Adverse Reaction">
+                    <field name="adverse_reaction" nolabel="1" />
+                </page>
+                <page name="notes" string="Notes">
+                    <field name="notes" nolabel="1" />
+                </page>
+                <page name="discontinued_reason" string="Discontinued Reason"
+                    attrs="{'invisible': [('is_discontinued', '=', False)]}">
+                    <field name="discontinued_reason" nolabel="1" />
+                </page>
+            </xpath>
+        </field>
+    </record>
 
-        <record model="ir.actions.act_window" id="medical_patient_medication_action">
-            <field name="name">Medications</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">medical.patient.medication</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="domain">[]</field>
-            <field name="context">{}</field>
-            <field name="search_view_id" ref="medical_patient_medication_search_view" />
-            <field name="view_id" ref="medical_patient_medication_tree_view" />
-        </record>
+    <record  id="medical_patient_medication_action" model="ir.actions.act_window">
+        <field name="name">Medications</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.patient.medication</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="search_view_id" ref="medical_patient_medication_view_search" />
+        <field name="view_id" ref="medical_patient_medication_view_tree" />
+    </record>
 
-        <menuitem id="medical_patient_medication_menu"
-            parent="medical.medical_patient_root" sequence="20"
-            action="medical_patient_medication_action" />
-
-    </data>
-</openerp>
+</odoo>
