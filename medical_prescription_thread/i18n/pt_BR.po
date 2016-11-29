@@ -1,0 +1,93 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * medical_prescription_thread
+# 
+# Translators:
+# Nilo Silva <nilo.silva@e-nube.com.br>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-25 19:52+0000\n"
+"PO-Revision-Date: 2016-11-25 19:52+0000\n"
+"Last-Translator: Nilo Silva <nilo.silva@e-nube.com.br>, 2016\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: medical_prescription_thread
+#: model:ir.model,name:medical_prescription_thread.model_medical_prescription_order_line
+msgid "Abstract Medical Medication"
+msgstr "Medicação Medicina Abstrata"
+
+#. module: medical_prescription_thread
+#: help:medical.prescription.order,message_last_post:0
+#: help:medical.prescription.order.line,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Data da última mensagem postada no registro."
+
+#. module: medical_prescription_thread
+#: field:medical.prescription.order,message_follower_ids:0
+#: field:medical.prescription.order.line,message_follower_ids:0
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: medical_prescription_thread
+#: help:medical.prescription.order,message_summary:0
+#: help:medical.prescription.order.line,message_summary:0
+msgid ""
+"Holds the Chatter summary (number of messages, ...). This summary is "
+"directly in html format in order to be inserted in kanban views."
+msgstr ""
+"Contem o resumo Chatter (número de mensagens, ...). Este resumo é "
+"diretamente em formato html, a fim de ser inserido em modo kanban."
+
+#. module: medical_prescription_thread
+#: help:medical.prescription.order,message_unread:0
+#: help:medical.prescription.order.line,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "Se marcada novas mensagens requerem sua atenção."
+
+#. module: medical_prescription_thread
+#: field:medical.prescription.order,message_is_follower:0
+#: field:medical.prescription.order.line,message_is_follower:0
+msgid "Is a Follower"
+msgstr "É um Seguidor"
+
+#. module: medical_prescription_thread
+#: field:medical.prescription.order,message_last_post:0
+#: field:medical.prescription.order.line,message_last_post:0
+msgid "Last Message Date"
+msgstr "Data Última Mensagem"
+
+#. module: medical_prescription_thread
+#: model:ir.model,name:medical_prescription_thread.model_medical_prescription_order
+msgid "Medical Prescription Order"
+msgstr "Pedido de Prescrição Médica"
+
+#. module: medical_prescription_thread
+#: field:medical.prescription.order,message_ids:0
+#: field:medical.prescription.order.line,message_ids:0
+msgid "Messages"
+msgstr "Mensagens"
+
+#. module: medical_prescription_thread
+#: help:medical.prescription.order,message_ids:0
+#: help:medical.prescription.order.line,message_ids:0
+msgid "Messages and communication history"
+msgstr "Mensagens e histórico de comunicação"
+
+#. module: medical_prescription_thread
+#: field:medical.prescription.order,message_summary:0
+#: field:medical.prescription.order.line,message_summary:0
+msgid "Summary"
+msgstr "Resumo"
+
+#. module: medical_prescription_thread
+#: field:medical.prescription.order,message_unread:0
+#: field:medical.prescription.order.line,message_unread:0
+msgid "Unread Messages"
+msgstr "Mensagens Não Lidas"

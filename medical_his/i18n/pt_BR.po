@@ -1,0 +1,454 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * medical_his
+# 
+# Translators:
+# Nilo Silva <nilo.silva@e-nube.com.br>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-25 19:52+0000\n"
+"PO-Revision-Date: 2016-11-25 19:52+0000\n"
+"Last-Translator: Nilo Silva <nilo.silva@e-nube.com.br>, 2016\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: medical_his
+#: model:ir.model,name:medical_his.model_abstract_medical_hospital
+msgid "Abstract Medical Hospital"
+msgstr "Hospital Médico Abstrato"
+
+#. module: medical_his
+#: field:abstract.medical.hospital,active:0
+#: field:medical.hospital.bed,active:0 field:medical.hospital.or,active:0
+#: field:medical.hospital.room,active:0 field:medical.hospital.unit,active:0
+#: field:medical.hospital.zone,active:0
+msgid "Active"
+msgstr "Ativar"
+
+#. module: medical_his
+#: view:medical.hospital.bed:medical_his.medical_hospital_bed_search_view
+#: field:medical.hospital.bed,bed_type_id:0
+msgid "Bed Type"
+msgstr "Tipo de Leito"
+
+#. module: medical_his
+#: view:medical.hospital.room:medical_his.medical_hospital_room_form_view
+#: field:medical.hospital.room,bed_ids:0
+msgid "Beds"
+msgstr "Leitos"
+
+#. module: medical_his
+#: view:medical.hospital.room:medical_his.medical_hospital_room_search_view
+msgid "Beds Available"
+msgstr "Leitos Disponíveis"
+
+#. module: medical_his
+#: selection:medical.hospital.room,state:0
+msgid "Beds available"
+msgstr "Leitos disponíveis"
+
+#. module: medical_his
+#: field:medical.hospital.room,capacity:0
+msgid "Capacity"
+msgstr "Capacidade"
+
+#. module: medical_his
+#: field:medical.hospital.zone,child_ids:0
+msgid "Children"
+msgstr "Crianças"
+
+#. module: medical_his
+#: view:medical.hospital.zone:medical_his.medical_hospital_zone_form_view
+msgid "Children Zone"
+msgstr "Área de Crianças"
+
+#. module: medical_his
+#: field:medical.hospital.bed.type,code:0
+msgid "Code"
+msgstr "Código"
+
+#. module: medical_his
+#: field:medical.hospital.bed,create_uid:0
+#: field:medical.hospital.bed.type,create_uid:0
+#: field:medical.hospital.or,create_uid:0
+#: field:medical.hospital.room,create_uid:0
+#: field:medical.hospital.unit,create_uid:0
+#: field:medical.hospital.zone,create_uid:0
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: medical_his
+#: field:medical.hospital.bed,create_date:0
+#: field:medical.hospital.bed.type,create_date:0
+#: field:medical.hospital.or,create_date:0
+#: field:medical.hospital.room,create_date:0
+#: field:medical.hospital.unit,create_date:0
+#: field:medical.hospital.zone,create_date:0
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: medical_his
+#: field:abstract.medical.hospital,display_name:0
+#: field:medical.hospital.bed.type,display_name:0
+#: field:medical.hospital.or,display_name:0
+#: field:medical.hospital.unit,display_name:0
+msgid "Display Name"
+msgstr "Mostrar Nome"
+
+#. module: medical_his
+#: field:medical.hospital.bed,display_name:0
+#: field:medical.hospital.room,display_name:0
+#: field:medical.hospital.zone,display_name:0
+msgid "Display name"
+msgstr "Mostrar nome"
+
+#. module: medical_his
+#: field:abstract.medical.hospital,expire_date:0
+#: field:medical.hospital.bed,expire_date:0
+#: field:medical.hospital.or,expire_date:0
+#: field:medical.hospital.room,expire_date:0
+#: field:medical.hospital.unit,expire_date:0
+#: field:medical.hospital.zone,expire_date:0
+msgid "Expire date"
+msgstr "Data de Validade"
+
+#. module: medical_his
+#: view:medical.hospital.bed:medical_his.medical_hospital_bed_search_view
+#: selection:medical.hospital.bed,state:0
+#: view:medical.hospital.room:medical_his.medical_hospital_room_search_view
+#: selection:medical.hospital.room,state:0
+msgid "Free"
+msgstr "Livre"
+
+#. module: medical_his
+#: view:medical.hospital.room:medical_his.medical_hospital_room_search_view
+#: selection:medical.hospital.room,state:0
+msgid "Full"
+msgstr "Lotado"
+
+#. module: medical_his
+#: view:medical.hospital.bed:medical_his.medical_hospital_bed_search_view
+#: view:medical.hospital.or:medical_his.medical_hospital_or_search_view
+#: view:medical.hospital.room:medical_his.medical_hospital_room_search_view
+#: view:medical.hospital.unit:medical_his.medical_hospital_unit_search_view
+#: view:medical.hospital.zone:medical_his.medical_hospital_zone_search_view
+msgid "Group By..."
+msgstr "Grupo Por..."
+
+#. module: medical_his
+#: model:ir.actions.act_window,name:medical_his.medical_hospital_bed_action
+#: model:ir.ui.menu,name:medical_his.medical_hospital_bed
+msgid "Hospital Bed"
+msgstr "Leito Hospitalar"
+
+#. module: medical_his
+#: model:ir.actions.act_window,name:medical_his.medical_hospital_or_action
+#: model:ir.ui.menu,name:medical_his.medical_hospital_or
+msgid "Hospital Operating Room"
+msgstr "Sala de Cirurgia Hospitalar"
+
+#. module: medical_his
+#: model:ir.actions.act_window,name:medical_his.medical_hospital_room_action
+#: model:ir.ui.menu,name:medical_his.medical_hospital_room
+msgid "Hospital Room"
+msgstr "Quarto de Hospital"
+
+#. module: medical_his
+#: model:ir.actions.act_window,name:medical_his.medical_hospital_unit_action
+#: model:ir.ui.menu,name:medical_his.medical_hospital_unit
+msgid "Hospital Unit"
+msgstr "Unidade de Hospital"
+
+#. module: medical_his
+#: model:ir.actions.act_window,name:medical_his.medical_hospital_zone_action
+#: model:ir.ui.menu,name:medical_his.medical_hospital_zone
+msgid "Hospital Zone"
+msgstr "Área de Hospital"
+
+#. module: medical_his
+#: field:abstract.medical.hospital,id:0 field:medical.hospital.bed,id:0
+#: field:medical.hospital.bed.type,id:0 field:medical.hospital.or,id:0
+#: field:medical.hospital.room,id:0 field:medical.hospital.unit,id:0
+#: field:medical.hospital.zone,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_his
+#: view:medical.hospital.or:medical_his.medical_hospital_or_search_view
+#: field:medical.hospital.or,partner_id:0
+#: view:medical.hospital.unit:medical_his.medical_hospital_unit_search_view
+#: field:medical.hospital.unit,partner_id:0
+#: view:medical.hospital.zone:medical_his.medical_hospital_zone_search_view
+#: field:medical.hospital.zone,partner_id:0
+msgid "Institution"
+msgstr "Instituição"
+
+#. module: medical_his
+#: view:medical.hospital.bed:medical_his.medical_hospital_bed_form_view
+#: view:medical.hospital.or:medical_his.medical_hospital_or_form_view
+#: view:medical.hospital.room:medical_his.medical_hospital_room_form_view
+#: view:medical.hospital.unit:medical_his.medical_hospital_unit_form_view
+#: view:medical.hospital.zone:medical_his.medical_hospital_zone_form_view
+msgid "Invalidate"
+msgstr "Invalidar"
+
+#. module: medical_his
+#: view:medical.hospital.bed:medical_his.medical_hospital_bed_form_view
+msgid "Invalidate Bed: proceed anyway?"
+msgstr "Invalidar Leito: continuar assim mesmo?"
+
+#. module: medical_his
+#: view:medical.hospital.or:medical_his.medical_hospital_or_form_view
+msgid "Invalidate Operating Room: proceed anyway?"
+msgstr "Invalidar Sala de Cirurgia: continuar assim mesmo?"
+
+#. module: medical_his
+#: view:medical.hospital.room:medical_his.medical_hospital_room_form_view
+msgid "Invalidate Room: proceed anyway?"
+msgstr "Invalidar Quarto: continuar assim mesmo?"
+
+#. module: medical_his
+#: view:medical.hospital.unit:medical_his.medical_hospital_unit_form_view
+msgid "Invalidate Unit: proceed anyway?"
+msgstr "Invalidar Unidade: continuar assim mesmo?"
+
+#. module: medical_his
+#: view:medical.hospital.zone:medical_his.medical_hospital_zone_form_view
+msgid "Invalidate Zone: proceed anyway?"
+msgstr "Invalidar Área: continuar assim mesmo?"
+
+#. module: medical_his
+#: field:medical.hospital.or,label:0 field:medical.hospital.room,label:0
+#: field:medical.hospital.unit,label:0 field:medical.hospital.zone,label:0
+msgid "Label"
+msgstr "Etiqueta"
+
+#. module: medical_his
+#: field:abstract.medical.hospital,__last_update:0
+#: field:medical.hospital.bed,__last_update:0
+#: field:medical.hospital.bed.type,__last_update:0
+#: field:medical.hospital.or,__last_update:0
+#: field:medical.hospital.room,__last_update:0
+#: field:medical.hospital.unit,__last_update:0
+#: field:medical.hospital.zone,__last_update:0
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: medical_his
+#: field:medical.hospital.bed,write_uid:0
+#: field:medical.hospital.bed.type,write_uid:0
+#: field:medical.hospital.or,write_uid:0
+#: field:medical.hospital.room,write_uid:0
+#: field:medical.hospital.unit,write_uid:0
+#: field:medical.hospital.zone,write_uid:0
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: medical_his
+#: field:medical.hospital.bed,write_date:0
+#: field:medical.hospital.bed.type,write_date:0
+#: field:medical.hospital.or,write_date:0
+#: field:medical.hospital.room,write_date:0
+#: field:medical.hospital.unit,write_date:0
+#: field:medical.hospital.zone,write_date:0
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: medical_his
+#: model:ir.model,name:medical_his.model_medical_hospital_bed
+#: view:medical.hospital.bed:medical_his.medical_hospital_bed_form_view
+#: view:medical.hospital.bed:medical_his.medical_hospital_bed_search_view
+#: view:medical.hospital.bed:medical_his.medical_hospital_bed_tree_view
+msgid "Medical Hospital Bed"
+msgstr "Leito Médico Hospitalar"
+
+#. module: medical_his
+#: model:ir.model,name:medical_his.model_medical_hospital_bed_type
+msgid "Medical Hospital Bed Type"
+msgstr "Tipo de Leito Médico Hospitalar"
+
+#. module: medical_his
+#: model:ir.model,name:medical_his.model_medical_hospital_or
+#: view:medical.hospital.or:medical_his.medical_hospital_or_form_view
+#: view:medical.hospital.or:medical_his.medical_hospital_or_search_view
+#: view:medical.hospital.or:medical_his.medical_hospital_or_tree_view
+msgid "Medical Hospital Operating Room"
+msgstr "Sala de Cirurgia Médica Hospitalar"
+
+#. module: medical_his
+#: model:ir.model,name:medical_his.model_medical_hospital_room
+#: view:medical.hospital.room:medical_his.medical_hospital_room_form_view
+#: view:medical.hospital.room:medical_his.medical_hospital_room_search_view
+#: view:medical.hospital.room:medical_his.medical_hospital_room_tree_view
+msgid "Medical Hospital Room"
+msgstr "Quarto Médico Hospitalar"
+
+#. module: medical_his
+#: model:ir.model,name:medical_his.model_medical_hospital_unit
+#: view:medical.hospital.unit:medical_his.medical_hospital_unit_form_view
+#: view:medical.hospital.unit:medical_his.medical_hospital_unit_search_view
+#: view:medical.hospital.unit:medical_his.medical_hospital_unit_tree_view
+msgid "Medical Hospital Unit"
+msgstr "Unidade Médico Hospitalar"
+
+#. module: medical_his
+#: model:ir.model,name:medical_his.model_medical_hospital_zone
+#: view:medical.hospital.zone:medical_his.medical_hospital_zone_form_view
+#: view:medical.hospital.zone:medical_his.medical_hospital_zone_search_view
+#: view:medical.hospital.zone:medical_his.medical_hospital_zone_tree_view
+msgid "Medical Hospital Zone"
+msgstr "Área Médico Hospitalar"
+
+#. module: medical_his
+#: view:medical.hospital.bed:medical_his.medical_hospital_bed_form_view
+#: view:medical.hospital.or:medical_his.medical_hospital_or_form_view
+#: view:medical.hospital.room:medical_his.medical_hospital_room_form_view
+#: view:medical.hospital.unit:medical_his.medical_hospital_unit_form_view
+#: view:medical.hospital.zone:medical_his.medical_hospital_zone_form_view
+msgid "More Info"
+msgstr "Mais Info"
+
+#. module: medical_his
+#: view:medical.hospital.bed:medical_his.medical_hospital_bed_form_view
+#: field:medical.hospital.bed,name:0 field:medical.hospital.bed.type,name:0
+#: view:medical.hospital.or:medical_his.medical_hospital_or_form_view
+#: field:medical.hospital.or,name:0
+#: view:medical.hospital.room:medical_his.medical_hospital_room_form_view
+#: field:medical.hospital.room,name:0
+#: view:medical.hospital.unit:medical_his.medical_hospital_unit_form_view
+#: field:medical.hospital.unit,name:0
+#: view:medical.hospital.zone:medical_his.medical_hospital_zone_form_view
+#: field:medical.hospital.zone,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: medical_his
+#: view:medical.hospital.bed:medical_his.medical_hospital_bed_search_view
+#: view:medical.hospital.or:medical_his.medical_hospital_or_search_view
+#: view:medical.hospital.room:medical_his.medical_hospital_room_search_view
+#: view:medical.hospital.unit:medical_his.medical_hospital_unit_search_view
+#: view:medical.hospital.zone:medical_his.medical_hospital_zone_search_view
+msgid "Not Active"
+msgstr "Não Ativo"
+
+#. module: medical_his
+#: view:medical.hospital.bed:medical_his.medical_hospital_bed_form_view
+#: field:medical.hospital.bed,notes:0
+#: view:medical.hospital.or:medical_his.medical_hospital_or_form_view
+#: field:medical.hospital.or,notes:0
+#: view:medical.hospital.room:medical_his.medical_hospital_room_form_view
+#: field:medical.hospital.room,notes:0
+#: view:medical.hospital.unit:medical_his.medical_hospital_unit_form_view
+#: field:medical.hospital.unit,notes:0
+#: view:medical.hospital.zone:medical_his.medical_hospital_zone_form_view
+#: field:medical.hospital.zone,notes:0
+msgid "Notes"
+msgstr "Anotações"
+
+#. module: medical_his
+#: view:medical.hospital.bed:medical_his.medical_hospital_bed_search_view
+#: selection:medical.hospital.bed,state:0
+msgid "Occupied"
+msgstr "Ocupado"
+
+#. module: medical_his
+#: view:medical.hospital.bed:medical_his.medical_hospital_bed_form_view
+#: view:medical.hospital.or:medical_his.medical_hospital_or_form_view
+#: view:medical.hospital.room:medical_his.medical_hospital_room_form_view
+#: view:medical.hospital.unit:medical_his.medical_hospital_unit_form_view
+#: view:medical.hospital.zone:medical_his.medical_hospital_zone_form_view
+msgid "Others"
+msgstr "Outros"
+
+#. module: medical_his
+#: view:medical.hospital.unit:medical_his.medical_hospital_unit_search_view
+msgid "Parent"
+msgstr "Parente"
+
+#. module: medical_his
+#: field:medical.hospital.unit,parent_id:0
+msgid "Parent Unit"
+msgstr "Unidade de Parente"
+
+#. module: medical_his
+#: view:medical.hospital.zone:medical_his.medical_hospital_zone_search_view
+#: field:medical.hospital.zone,parent_id:0
+msgid "Parent Zone"
+msgstr "Área de Parente"
+
+#. module: medical_his
+#: field:medical.hospital.bed,phone:0 field:medical.hospital.room,phone:0
+msgid "Phone"
+msgstr "Telefone"
+
+#. module: medical_his
+#: view:medical.hospital.room:medical_his.medical_hospital_room_search_view
+#: field:medical.hospital.room,private:0
+msgid "Private"
+msgstr "Particular"
+
+#. module: medical_his
+#: view:medical.hospital.bed:medical_his.medical_hospital_bed_form_view
+#: view:medical.hospital.or:medical_his.medical_hospital_or_form_view
+#: view:medical.hospital.room:medical_his.medical_hospital_room_form_view
+#: view:medical.hospital.unit:medical_his.medical_hospital_unit_form_view
+#: view:medical.hospital.zone:medical_his.medical_hospital_zone_form_view
+msgid "Reactivate"
+msgstr "Reativar"
+
+#. module: medical_his
+#: view:medical.hospital.bed:medical_his.medical_hospital_bed_form_view
+#: view:medical.hospital.or:medical_his.medical_hospital_or_form_view
+#: view:medical.hospital.room:medical_his.medical_hospital_room_form_view
+#: view:medical.hospital.unit:medical_his.medical_hospital_unit_form_view
+#: view:medical.hospital.zone:medical_his.medical_hospital_zone_form_view
+msgid "Reactivate document: proceed anyway?"
+msgstr "Reativar documento: continuar assim mesmo?"
+
+#. module: medical_his
+#: view:medical.hospital.bed:medical_his.medical_hospital_bed_search_view
+#: selection:medical.hospital.bed,state:0
+msgid "Reserved"
+msgstr "Reservado"
+
+#. module: medical_his
+#: view:medical.hospital.bed:medical_his.medical_hospital_bed_search_view
+#: field:medical.hospital.bed,room_id:0
+#: view:medical.hospital.or:medical_his.medical_hospital_or_search_view
+msgid "Room"
+msgstr "Quarto"
+
+#. module: medical_his
+#: view:medical.hospital.zone:medical_his.medical_hospital_zone_form_view
+#: field:medical.hospital.zone,room_ids:0
+msgid "Rooms"
+msgstr "Quartos"
+
+#. module: medical_his
+#: view:medical.hospital.bed:medical_his.medical_hospital_bed_search_view
+#: field:medical.hospital.bed,state:0
+#: view:medical.hospital.room:medical_his.medical_hospital_room_search_view
+#: field:medical.hospital.room,state:0
+msgid "State"
+msgstr "Estado"
+
+#. module: medical_his
+#: view:medical.hospital.or:medical_his.medical_hospital_or_search_view
+#: field:medical.hospital.or,unit_id:0
+#: view:medical.hospital.room:medical_his.medical_hospital_room_search_view
+#: field:medical.hospital.room,unit_id:0
+msgid "Unit"
+msgstr "Unidade"
+
+#. module: medical_his
+#: field:medical.hospital.or,zone_id:0
+#: view:medical.hospital.room:medical_his.medical_hospital_room_search_view
+#: field:medical.hospital.room,zone_id:0
+msgid "Zone"
+msgstr "Área"

@@ -1,0 +1,92 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * medical_patient_occupation
+# 
+# Translators:
+# Nilo Silva <nilo.silva@e-nube.com.br>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-25 19:52+0000\n"
+"PO-Revision-Date: 2016-11-25 19:52+0000\n"
+"Last-Translator: Nilo Silva <nilo.silva@e-nube.com.br>, 2016\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: medical_patient_occupation
+#: field:medical.patient.occupation,code:0
+msgid "Code"
+msgstr "Código"
+
+#. module: medical_patient_occupation
+#: field:medical.patient.occupation,create_uid:0
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: medical_patient_occupation
+#: field:medical.patient.occupation,create_date:0
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: medical_patient_occupation
+#: field:medical.patient.occupation,display_name:0
+msgid "Display Name"
+msgstr "Mostrar Nome"
+
+#. module: medical_patient_occupation
+#: field:medical.patient.occupation,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_patient_occupation
+#: field:medical.patient.occupation,__last_update:0
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: medical_patient_occupation
+#: field:medical.patient.occupation,write_uid:0
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: medical_patient_occupation
+#: field:medical.patient.occupation,write_date:0
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: medical_patient_occupation
+#: model:ir.model,name:medical_patient_occupation.model_medical_patient
+msgid "Medical Patient"
+msgstr "Paciente Médico"
+
+#. module: medical_patient_occupation
+#: model:ir.model,name:medical_patient_occupation.model_medical_patient_occupation
+msgid "Medical Patient Occupation"
+msgstr "Ocupação Paciente"
+
+#. module: medical_patient_occupation
+#: field:medical.patient.occupation,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: medical_patient_occupation
+#: sql_constraint:medical.patient.occupation:0
+msgid "Name must be unique!"
+msgstr "Nome deve ser único!"
+
+#. module: medical_patient_occupation
+#: model:ir.actions.act_window,name:medical_patient_occupation.medical_patient_occupation_action
+#: field:medical.patient,occupation_id:0
+msgid "Occupation"
+msgstr "Ocupação"
+
+#. module: medical_patient_occupation
+#: view:medical.patient.occupation:medical_patient_occupation.medical_patient_occupation_view_form
+#: view:medical.patient.occupation:medical_patient_occupation.medical_patient_occupation_view_search
+#: view:medical.patient.occupation:medical_patient_occupation.medical_patient_occupation_view_tree
+msgid "Patient Occupation"
+msgstr "Ocupação do Paciente"

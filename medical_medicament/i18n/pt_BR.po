@@ -1,0 +1,1557 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * medical_medicament
+# 
+# Translators:
+# Nilo Silva <nilo.silva@e-nube.com.br>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-25 19:52+0000\n"
+"PO-Revision-Date: 2016-11-25 19:52+0000\n"
+"Last-Translator: Nilo Silva <nilo.silva@e-nube.com.br>, 2016\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: medical_medicament
+#: field:medical.medicament,product_variant_count:0
+msgid "# of Product Variants"
+msgstr "# de Variantes de Produto"
+
+#. module: medical_medicament
+#: help:medical.medicament,pregnancy_category:0
+msgid ""
+"** FDA Pregancy Categories ***\n"
+"CATEGORY A :Adequate and well-controlled human studies havefailed to demonstrate a risk to the fetus in the firsttrimester of pregnancy (and there is no evidence of risk in later trimesters).\n"
+"\n"
+"CATEGORY B : Animal reproduction studies have failed to demonstrate a risk to the fetus and there are no adequate and well-controlled studies in pregnant women OR Animal studies have shown an adverse effect, but adequate and well-controlled studies in pregnant women have failed to demonstrate a risk to the fetus in any trimester.\n"
+"\n"
+"CATEGORY C : Animal reproduction studies have shown an adverse effect on the fetus and there are no adequate and well-controlled  studies in humans, but potential benefits may warrant use of the drug in pregnant women despite potential risks. \n"
+"\n"
+" CATEGORY D : There is positive evidence of human fetal risk based on adverse reaction data from investigational or marketing experience or studies in humans, but potential benefits may warrant use of the drug in pregnant women despite potential risks.\n"
+"\n"
+"CATEGORY X : Studies in animals or humans have demonstrated fetal abnormalities and/or there is positive evidence of human fetal risk based on adverse reaction data from investigational or marketing experience, and the risks involved in use of the drug in pregnant women clearly outweigh potential benefits.\n"
+"\n"
+"CATEGORY N : Not yet classified"
+msgstr ""
+"** Categorias de Gravidez FDA ***\n"
+"Categoria A: Adequada e estudos em humanos bem controlados não conseguiram demonstrar um risco para o feto no primeiro trimestre da gravidez (e não há evidência de risco em trimestres posteriores) .\n"
+"\n"
+"Categoria B: Estudos de reprodução animal não conseguiram demonstrar um risco para o feto e não existem estudos adequados e bem controlados em mulheres grávidas ou em estudos com animais demonstraram um efeito adverso, mas estudos adequados e bem controlados em mulheres grávidas não conseguiram demonstram um risco para o feto em qualquer trimester.\n"
+"\n"
+"Categoria C: Estudos de reprodução em animais demonstraram um efeito adverso sobre o feto e não existem estudos adequados e bem controlados em seres humanos, mas os benefícios potenciais podem justificar o uso da droga em mulheres grávidas apesar dos riscos potenciais.\n"
+"\n"
+"CATEGORIA D: Não há evidência positiva de risco fetal humano com base em dados sobre reacções adversas a partir da experiência de investigação ou de marketing ou estudos em seres humanos, mas os benefícios potenciais podem justificar o uso da droga em mulheres grávidas apesar potencial risks.\n"
+"\n"
+"CATEGORIA X: Estudos em animais ou seres humanos demonstraram anormalidades fetais e / ou existe evidência positiva de risco fetal humano com base em dados sobre reacções adversas a partir da experiência de investigação ou de marketing, e os riscos envolvidos no uso da droga em mulheres grávidas claramente superam os potenciais benefícios .\n"
+"\n"
+"Categoria N: Ainda não classificada"
+
+#. module: medical_medicament
+#: help:medical.medicament,description_sale:0
+msgid ""
+"A description of the Product that you want to communicate to your customers."
+" This description will be copied to every Sale Order, Delivery Order and "
+"Customer Invoice/Refund"
+msgstr ""
+"A descrição do Produto que você quer oferecer para seus pacientes. Esta "
+"descrição será copiada para cada Pedido de Venda, Pedido de Entrega e "
+"Factura do Paciente/Reembolso"
+
+#. module: medical_medicament
+#: help:medical.medicament,description_purchase:0
+msgid ""
+"A description of the Product that you want to communicate to your suppliers."
+" This description will be copied to every Purchase Order, Receipt and "
+"Supplier Invoice/Refund."
+msgstr ""
+"A descrição do Produto que você deseja enviar para aos seus fornecedores. "
+"Esta descrição será copiada para cada Pedido de Compra, Recebimento e Fatura"
+" do Fornecedor/Reembolso."
+
+#. module: medical_medicament
+#: help:medical.medicament,description:0
+msgid ""
+"A precise description of the Product, used only for internal information "
+"purposes."
+msgstr ""
+"Uma descrição precisa do Produto, usado somente para fins de informação "
+"interna."
+
+#. module: medical_medicament
+#: field:medical.medicament,active:0
+msgid "Active"
+msgstr "Ativar"
+
+#. module: medical_medicament
+#: view:medical.medicament:medical_medicament.medical_medicament_search_view
+#: field:medical.medicament,active_component:0
+msgid "Active component"
+msgstr "Componente Ativo"
+
+#. module: medical_medicament
+#: view:medical.medicament:medical_medicament.medical_medicament_search_view
+#: view:medical.medicament:medical_medicament.medical_medicament_view_form
+msgid "Adverse Reactions"
+msgstr "Reações Adversas"
+
+#. module: medical_medicament
+#: field:medical.medicament,adverse_reaction:0
+msgid "Adverse reaction"
+msgstr "Reação adversa"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.AEM
+msgid "Aerosol metered-dose"
+msgstr "Aerossol de dose calibrada"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.AER
+msgid "Aerosol with propellants"
+msgstr "Aerossol com propelentes"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_1
+msgid "Apply Externally "
+msgstr "Aplicar Externamente"
+
+#. module: medical_medicament
+#: field:medical.medicament,attribute_value_ids:0
+msgid "Attributes"
+msgstr "Atributos"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.BAR
+msgid "Bar chewable"
+msgstr "Barra Mastigável"
+
+#. module: medical_medicament
+#: help:medical.medicament,list_price:0
+msgid ""
+"Base price to compute the customer price. Sometimes called the catalog "
+"price."
+msgstr ""
+"Preço base para calcular o preço ao paciente. Às vezes chamado o preço de "
+"lista."
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.BEA
+msgid "Bead"
+msgstr "Gota"
+
+#. module: medical_medicament
+#: field:medical.medicament,image:0
+msgid "Big-sized image"
+msgstr "Imagem Grande"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.BIS
+msgid "Biscuit"
+msgstr "Biscuit"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.BLS
+msgid "Bolus"
+msgstr "Comprimido"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_2
+msgid "Buccal "
+msgstr "Bucal"
+
+#. module: medical_medicament
+#: field:medical.medicament,rental:0
+msgid "Can be Rent"
+msgstr "Pode ser Alugado"
+
+#. module: medical_medicament
+#: field:medical.medicament,sale_ok:0
+msgid "Can be Sold"
+msgstr "Pode ser Vendido"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.CAP
+msgid "Capsule"
+msgstr "Cápsula"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.CDR
+msgid "Capsule delayed release"
+msgstr "Cápsula de libertação retardada"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.ECC
+msgid "Capsule enteric-coated"
+msgstr "Cápsula com revestimento entérico"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.CART
+msgid "Cartridge"
+msgstr "Cartucho"
+
+#. module: medical_medicament
+#: view:medical.medicament:medical_medicament.medical_medicament_search_view
+msgid "Category"
+msgstr "Categoria"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.CMT
+msgid "Cement"
+msgstr "Cimento"
+
+#. module: medical_medicament
+#: help:medical.medicament,is_medical_supply:0
+msgid "Check if the product is a medical supply"
+msgstr "Verifique se o produto é um suprimento médico"
+
+#. module: medical_medicament
+#: help:medical.medicament,is_vaccine:0
+msgid "Check if the product is a vaccine"
+msgstr "Verificar se o produto é uma vacina"
+
+#. module: medical_medicament
+#: help:medical.medicament,is_insurance_plan:0
+msgid "Check this if the product is an insurance plan"
+msgstr "Marque esta opção se o produto é um plano de seguro"
+
+#. module: medical_medicament
+#: field:medical.drug.form,code:0 field:medical.drug.route,code:0
+msgid "Code"
+msgstr "Código"
+
+#. module: medical_medicament
+#: help:medical.medicament,uos_coeff:0
+msgid ""
+"Coefficient to convert default Unit of Measure to Unit of Sale\n"
+" uos = uom * coeff"
+msgstr ""
+"Coeficiente de converter unidade de Medida Padrão para a Unidade de Venda\n"
+"uos = uom * coef"
+
+#. module: medical_medicament
+#: field:medical.medicament,color:0
+msgid "Color Index"
+msgstr "Índice de Cor"
+
+#. module: medical_medicament
+#: field:medical.medicament,company_id:0
+msgid "Company"
+msgstr "Companhia"
+
+#. module: medical_medicament
+#: view:medical.medicament:medical_medicament.medical_medicament_search_view
+#: view:medical.medicament:medical_medicament.medical_medicament_view_form
+#: field:medical.medicament,composition:0
+msgid "Composition"
+msgstr "Composição"
+
+#. module: medical_medicament
+#: help:medical.medicament,type:0
+msgid ""
+"Consumable are product where you don't manage stock, a service is a non-"
+"material product provided by a company or an individual."
+msgstr ""
+"Consumíveis são produto que você não gerencia estoque, um serviço é um "
+"produto não-material fornecido por uma empresa ou um indivíduo."
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.COR
+msgid "Cord"
+msgstr "Cordão"
+
+#. module: medical_medicament
+#: field:medical.medicament,standard_price:0
+msgid "Cost Price"
+msgstr "Preço de Custo"
+
+#. module: medical_medicament
+#: help:medical.medicament,standard_price:0
+msgid ""
+"Cost price of the product template used for standard stock valuation in "
+"accounting and used as a base price on purchase orders. Expressed in the "
+"default unit of measure of the product."
+msgstr ""
+"Preço de custo do modelo de produto usado para avaliação padrão do estoque "
+"na contabilidade e usado como um preço base em pedidos de compra. Expressa "
+"na unidade de medida padrão do produto."
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.CRM
+msgid "Cream"
+msgstr "Creme"
+
+#. module: medical_medicament
+#: field:medical.drug.form,create_uid:0 field:medical.drug.route,create_uid:0
+#: field:medical.medicament,create_uid:0
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: medical_medicament
+#: field:medical.drug.form,create_date:0
+#: field:medical.drug.route,create_date:0
+#: field:medical.medicament,create_date:0
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: medical_medicament
+#: field:medical.medicament,partner_ref:0
+msgid "Customer ref"
+msgstr "Cliente ref"
+
+#. module: medical_medicament
+#: help:medical.medicament,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Data da última mensagem postada no registro."
+
+#. module: medical_medicament
+#: help:medical.medicament,uom_id:0
+msgid "Default Unit of Measure used for all stock operation."
+msgstr ""
+"Unidade de medida padrão utilizada para todas as operações de estoque."
+
+#. module: medical_medicament
+#: help:medical.medicament,uom_po_id:0
+msgid ""
+"Default Unit of Measure used for purchase orders. It must be in the same "
+"category than the default unit of measure."
+msgstr ""
+"Unidade de medida padrão utilizado para pedidos de compra. Deve ser na mesma"
+" categoria que a unidade de medida padrão."
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_3
+msgid "Dental "
+msgstr "Dental "
+
+#. module: medical_medicament
+#: field:medical.medicament,description:0
+msgid "Description"
+msgstr "Descrição"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.SRD
+msgid "Disc sustained release"
+msgstr "Disco de libertação retardada"
+
+#. module: medical_medicament
+#: field:medical.drug.form,display_name:0
+#: field:medical.drug.route,display_name:0
+#: field:medical.medicament,display_name:0
+msgid "Display Name"
+msgstr "Mostrar Nome"
+
+#. module: medical_medicament
+#: view:medical.medicament:medical_medicament.medical_medicament_view_form
+msgid "Dosage"
+msgstr "Dosagem"
+
+#. module: medical_medicament
+#: view:medical.medicament:medical_medicament.medical_medicament_search_view
+#: field:medical.medicament,dosage_instruction:0
+msgid "Dosage Instructions"
+msgstr "Instruções de Dosagem"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.DCH
+msgid "Douche"
+msgstr "Ducha"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.DRE
+msgid "Dressing"
+msgstr "Curativo"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.DPS
+msgid "Drops"
+msgstr "Gotas"
+
+#. module: medical_medicament
+#: model:ir.ui.menu,name:medical_medicament.medical_drug_route
+msgid "Drug Admin Route"
+msgstr "Orientação para Administração"
+
+#. module: medical_medicament
+#: model:ir.ui.menu,name:medical_medicament.medical_drug_form
+#: field:medical.medicament,drug_form_id:0
+msgid "Drug Form"
+msgstr "Forma do Medicamento"
+
+#. module: medical_medicament
+#: model:ir.actions.act_window,name:medical_medicament.medical_drug_form_action
+msgid "Drug Forms"
+msgstr "Formas dos Medicamentos"
+
+#. module: medical_medicament
+#: view:medical.medicament:medical_medicament.medical_medicament_view_form
+msgid "Drug Info"
+msgstr "Info do Medicamento"
+
+#. module: medical_medicament
+#: field:medical.medicament,drug_route_id:0
+msgid "Drug Route"
+msgstr "Orientação do Medicamento"
+
+#. module: medical_medicament
+#: sql_constraint:medical.drug.route:0
+msgid "Drug Route name must be unique!"
+msgstr "Nome da Orientação do Medicamento deve ser único!"
+
+#. module: medical_medicament
+#: model:ir.actions.act_window,name:medical_medicament.medical_drug_route_action
+msgid "Drug Routes"
+msgstr "Orientações de Medicamento"
+
+#. module: medical_medicament
+#: sql_constraint:medical.drug.form:0
+msgid "Drug name must be unique!"
+msgstr "Nome do Medicamento deve ser único!"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.PMX
+msgid "Drug premix"
+msgstr "Pré-mistura de Medicamentos"
+
+#. module: medical_medicament
+#: field:medical.medicament,ean13:0
+msgid "EAN13 Barcode"
+msgstr "EAN13 Código Barra"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.ELX
+msgid "Elixir"
+msgstr "Elixir"
+
+#. module: medical_medicament
+#: model:ir.model,name:medical_medicament.model_medical_medicament
+msgid "Email Thread"
+msgstr "Email Tópico"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.EML
+msgid "Emulsion"
+msgstr "Emulsão"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_5
+msgid "Endotrachial Tube"
+msgstr "Tubo Endotraqueal"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.ENM
+msgid "Enema"
+msgstr "Enema"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_4
+msgid "Epidural "
+msgstr "Epidural "
+
+#. module: medical_medicament
+#: view:medical.medicament:medical_medicament.medical_medicament_search_view
+msgid "Extra Info"
+msgstr "Info Extra"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.FLS
+msgid "Floss"
+msgstr "Floss"
+
+#. module: medical_medicament
+#: field:medical.medicament,message_follower_ids:0
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_7
+msgid "GU Irrigant "
+msgstr "GU Irrigante "
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.GAS
+msgid "Gas"
+msgstr "Gás"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_6
+msgid "Gastrostomy Tube "
+msgstr "Tubo de Gastrostomia"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.GEL
+msgid "Gel"
+msgstr "Gel"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.GER
+msgid "Gel controlled release"
+msgstr "Gel de libertação controlada"
+
+#. module: medical_medicament
+#: help:medical.medicament,packaging_ids:0
+msgid ""
+"Gives the different ways to package the same product. This has no impact on "
+"the picking order and is mainly used if you use the EDI module."
+msgstr ""
+"Dá as diferentes maneiras de empacotar o mesmo produto. Isso não tem impacto"
+" sobre o pedido de coleta e é usado principalmente se você usar o módulo "
+"EDI."
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.GLO
+msgid "Globules"
+msgstr "Glóbulos"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.GRT
+msgid "Graft"
+msgstr "Enxerto"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.GEF
+msgid "Granule effervescent"
+msgstr "Grânulo efervecente"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.GDR
+msgid "Granule for suspension delayed release"
+msgstr "Grânulo de suspensão retardada"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.GRA
+msgid "Granules"
+msgstr "Grânulos"
+
+#. module: medical_medicament
+#: field:medical.medicament,weight:0
+msgid "Gross Weight"
+msgstr "Peso Bruto"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.GUM
+msgid "Gum chewable"
+msgstr "Goma de mastigar"
+
+#. module: medical_medicament
+#: help:medical.medicament,message_summary:0
+msgid ""
+"Holds the Chatter summary (number of messages, ...). This summary is "
+"directly in html format in order to be inserted in kanban views."
+msgstr ""
+"Contem o resumo Chatter (número de mensagens, ...). Este resumo é "
+"diretamente em formato html, a fim de ser inserido em modo kanban."
+
+#. module: medical_medicament
+#: field:medical.drug.form,id:0 field:medical.drug.route,id:0
+#: field:medical.medicament,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_medicament
+#: help:medical.medicament,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "Se marcada novas mensagens requerem sua atenção."
+
+#. module: medical_medicament
+#: help:medical.medicament,active:0
+msgid ""
+"If unchecked, it will allow you to hide the product without removing it."
+msgstr ""
+"Se desabilitado, não permitirá que você esconda o produto sem removê-lo."
+
+#. module: medical_medicament
+#: help:medical.medicament,image:0
+msgid ""
+"Image of the product variant (Big-sized image of product template if false)."
+" It is automatically resized as a 1024x1024px image, with aspect ratio "
+"preserved."
+msgstr ""
+"Imagem da variante do produto (imagem grande em tamanho real do modelo do "
+"produto se falso). Ela é automaticamente redimensionada como uma imagem de "
+"1024x1024px, com relação de aspecto preservado."
+
+#. module: medical_medicament
+#: help:medical.medicament,image_medium:0
+msgid ""
+"Image of the product variant (Medium-sized image of product template if "
+"false)."
+msgstr ""
+"Imagem da variante do produto (imagem de tamanho médio do modelo do produto "
+"se falso)."
+
+#. module: medical_medicament
+#: help:medical.medicament,image_small:0
+msgid ""
+"Image of the product variant (Small-sized image of product template if "
+"false)."
+msgstr ""
+"Imagem da variante do produto (imagem de tamanho pequeno do modelo do "
+"produto se falso)."
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_8
+msgid "Immerse (Soak) Body Part "
+msgstr "Mergulhe (imersão) Parte do corpo"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.IMP
+msgid "Implant"
+msgstr "Implantar"
+
+#. module: medical_medicament
+#: view:medical.medicament:medical_medicament.medical_medicament_search_view
+msgid "Indication"
+msgstr "Indicação"
+
+#. module: medical_medicament
+#: view:medical.medicament:medical_medicament.medical_medicament_view_form
+#: field:medical.medicament,indications:0
+msgid "Indications"
+msgstr "Indicações"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_14
+msgid "Inhalation "
+msgstr "Inalação"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.INS
+msgid "Insert"
+msgstr "Inserir"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.IER
+msgid "Insert extended release"
+msgstr "Insira liberação prolongada"
+
+#. module: medical_medicament
+#: field:medical.medicament,is_insurance_plan:0
+msgid "Insurance Plan"
+msgstr "Plano de Seguro"
+
+#. module: medical_medicament
+#: field:medical.medicament,categ_id:0
+msgid "Internal Category"
+msgstr "Categoria Interna"
+
+#. module: medical_medicament
+#: field:medical.medicament,code:0 field:medical.medicament,default_code:0
+msgid "Internal Reference"
+msgstr "Referência Interna"
+
+#. module: medical_medicament
+#: help:medical.medicament,ean13:0
+msgid "International Article Number used for product identification."
+msgstr "Número Internacional de Artigo usado para identificação do produto."
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_9
+msgid "Intra-arterial "
+msgstr "Intra-arterial "
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_10
+msgid "Intrabursal "
+msgstr "Intrabursal "
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_11
+msgid "Intracardiac "
+msgstr "Intracardíaca"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_12
+msgid "Intracervical (uterus) "
+msgstr "Intracervical (útero)"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_13
+msgid "Intradermal "
+msgstr "Intradérmico"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_15
+msgid "Intrahepatic Artery "
+msgstr "Artéria intra-hepática"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_16
+msgid "Intramuscular "
+msgstr "Intramuscular"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_17
+msgid "Intranasal "
+msgstr "Intranasal"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_18
+msgid "Intraocular "
+msgstr "Intraocular "
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_19
+msgid "Intraperitoneal "
+msgstr "Intraperitoneal"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_20
+msgid "Intrasynovial "
+msgstr "Intra-sinovial"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_21
+msgid "Intrathecal "
+msgstr "Intratecal"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_22
+msgid "Intrauterine "
+msgstr "Intra-uterino"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_23
+msgid "Intravenous "
+msgstr "Intravenoso"
+
+#. module: medical_medicament
+#: view:product.template:medical_medicament.view_product_product_search
+msgid "Is Medicament"
+msgstr "É Medicamento"
+
+#. module: medical_medicament
+#: field:medical.medicament,message_is_follower:0
+msgid "Is a Follower"
+msgstr "É um Seguidor"
+
+#. module: medical_medicament
+#: field:medical.medicament,is_medicament:0
+#: field:product.template,is_medicament:0
+msgid "Is medicament"
+msgstr "É medicamento"
+
+#. module: medical_medicament
+#: field:medical.medicament,is_product_variant:0
+msgid "Is product variant"
+msgstr "É variante de produto"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.JAM
+msgid "Jam"
+msgstr "Geléia"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.KIT
+msgid "Kit"
+msgstr "Kit"
+
+#. module: medical_medicament
+#: field:medical.medicament,message_last_post:0
+msgid "Last Message Date"
+msgstr "Data Última Mensagem"
+
+#. module: medical_medicament
+#: field:medical.drug.form,__last_update:0
+#: field:medical.drug.route,__last_update:0
+#: field:medical.medicament,__last_update:0
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: medical_medicament
+#: field:medical.drug.form,write_uid:0 field:medical.drug.route,write_uid:0
+#: field:medical.medicament,write_uid:0
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: medical_medicament
+#: field:medical.drug.form,write_date:0 field:medical.drug.route,write_date:0
+#: field:medical.medicament,write_date:0
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.LEF
+msgid "Leaf"
+msgstr "Folha"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.LIP
+msgid "Liposome"
+msgstr "Lipossoma"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.LIQ
+msgid "Liquid"
+msgstr "Líquido"
+
+#. module: medical_medicament
+#: field:medical.medicament,packaging_ids:0
+msgid "Logistical Units"
+msgstr "Unidades Logísticas"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.LOT
+msgid "Lotion"
+msgstr "Loção"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.LOZ
+msgid "Lozenge"
+msgstr "Pastilha"
+
+#. module: medical_medicament
+#: field:medical.medicament,seller_id:0
+msgid "Main Supplier"
+msgstr "Fornecedor Principal"
+
+#. module: medical_medicament
+#: help:medical.medicament,seller_id:0
+msgid "Main Supplier who has highest priority in Supplier List."
+msgstr ""
+"Fornecedor principal, que tenha prioridade mais alta na lista de "
+"fornecedores."
+
+#. module: medical_medicament
+#: field:medical.medicament,mes_type:0
+msgid "Measure Type"
+msgstr "Tipo de Medida"
+
+#. module: medical_medicament
+#: model:ir.model,name:medical_medicament.model_medical_drug_form
+#: view:medical.drug.form:medical_medicament.medical_drug_form_form_view
+#: view:medical.drug.form:medical_medicament.medical_drug_form_search_view
+#: view:medical.drug.form:medical_medicament.medical_drug_form_tree_view
+msgid "Medical Drug Form"
+msgstr "Formulário de Administração de Medicamentos"
+
+#. module: medical_medicament
+#: model:ir.model,name:medical_medicament.model_medical_drug_route
+#: view:medical.drug.route:medical_medicament.medical_drug_route_form_view
+#: view:medical.drug.route:medical_medicament.medical_drug_route_search_view
+#: view:medical.drug.route:medical_medicament.medical_drug_route_tree_view
+msgid "Medical Drug Route"
+msgstr "Orientação de Administração de Medicamentos"
+
+#. module: medical_medicament
+#: field:medical.medicament,is_medical_supply:0
+msgid "Medical Supply"
+msgstr "Suprimento Médico"
+
+#. module: medical_medicament
+#: model:ir.actions.act_window,name:medical_medicament.medical_medicament_action
+#: model:ir.ui.menu,name:medical_medicament.medical_medicament
+#: model:ir.ui.menu,name:medical_medicament.medical_medicament_root
+#: view:medical.medicament:medical_medicament.medical_medicament_view_form
+msgid "Medicaments"
+msgstr "Medicamentos"
+
+#. module: medical_medicament
+#: field:medical.medicament,image_medium:0
+msgid "Medium-sized image"
+msgstr "Imagem Média"
+
+#. module: medical_medicament
+#: field:medical.medicament,message_ids:0
+msgid "Messages"
+msgstr "Mensagens"
+
+#. module: medical_medicament
+#: help:medical.medicament,message_ids:0
+msgid "Messages and communication history"
+msgstr "Mensagens e histórico de comunicação"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.PMD
+msgid "Metered dose pump"
+msgstr "Bomba de dose calibrada"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_24
+msgid "Mouth/Throat "
+msgstr "Boca/Garganta"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.MWH
+msgid "Mouthwash gargle"
+msgstr "Gargarejo bochechos"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_25
+msgid "Mucous Membrane"
+msgstr "Membrana Mucosa"
+
+#. module: medical_medicament
+#: view:medical.drug.form:medical_medicament.medical_drug_form_form_view
+#: field:medical.drug.form,name:0
+#: view:medical.drug.route:medical_medicament.medical_drug_route_form_view
+#: field:medical.drug.route,name:0
+#: view:medical.medicament:medical_medicament.medical_medicament_search_view
+#: field:medical.medicament,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_26
+msgid "Nasal"
+msgstr "Nasal"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_28
+msgid "Nasal Prongs"
+msgstr "Tubos Nasais"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_27
+msgid "Nasogastric"
+msgstr "Nasogástrica"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_29
+msgid "Nasotrachial Tube"
+msgstr "Tubo Nasotraqueal"
+
+#. module: medical_medicament
+#: field:medical.medicament,weight_net:0
+msgid "Net Weight"
+msgstr "Peso Líquido"
+
+#. module: medical_medicament
+#: view:medical.medicament:medical_medicament.medical_medicament_view_form
+#: field:medical.medicament,notes:0
+msgid "Notes"
+msgstr "Anotações"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.ONT
+msgid "Ointment"
+msgstr "Pomada"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_30
+msgid "Ophthalmic"
+msgstr "Oftálmico"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_34
+msgid "Oral"
+msgstr "Oral"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_32
+msgid "Other/Miscellaneous"
+msgstr "Outro/Diversos"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_31
+msgid "Otic"
+msgstr "Ótico"
+
+#. module: medical_medicament
+#: view:medical.medicament:medical_medicament.medical_medicament_search_view
+#: view:medical.medicament:medical_medicament.medical_medicament_view_form
+#: field:medical.medicament,overdosage:0
+msgid "Overdosage"
+msgstr "Sobredosagem"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.OVU
+msgid "Ovules"
+msgstr "Óvulos"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.PAD
+msgid "Pad"
+msgstr "Almofada"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.PST
+msgid "Paste"
+msgstr "Pasta"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.PATCH
+msgid "Patch"
+msgstr "Emplastro"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.POR
+msgid "Pellet (oral)"
+msgstr "Péletes (oral)"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.PEN
+msgid "Pencil"
+msgstr "Isolado"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_33
+msgid "Perfusion"
+msgstr "Perfusão"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.PIC
+msgid "Piece chewable"
+msgstr "Pedaço Mastigável "
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.PLS
+msgid "Plaster"
+msgstr "Gesso"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.POW
+msgid "Powder"
+msgstr "Em pó"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.PEF
+msgid "Powder effervescent"
+msgstr "Pó Efervescente "
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.PEC
+msgid "Powder enteric coated"
+msgstr "Pó de revestimento entérico"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.PWSO
+msgid "Powder for solution"
+msgstr "Pó para solução"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.PSU
+msgid "Powder for suspension"
+msgstr "Pó para suspensão"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.PSSR
+msgid "Powder for suspension sustained release"
+msgstr "Pó para suspensão de libertação sustentada"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.PSS
+msgid "Powder sustained release"
+msgstr "Pó de libertação sustentada "
+
+#. module: medical_medicament
+#: view:medical.medicament:medical_medicament.medical_medicament_view_form
+msgid "Pregnancy"
+msgstr "Gravidez"
+
+#. module: medical_medicament
+#: view:medical.medicament:medical_medicament.medical_medicament_view_form
+msgid "Pregnancy Notes"
+msgstr "Anotações da Gravidez"
+
+#. module: medical_medicament
+#: view:medical.medicament:medical_medicament.medical_medicament_search_view
+#: field:medical.medicament,is_pregnant:0
+msgid "Pregnancy Warning"
+msgstr "Atenção Gravidez"
+
+#. module: medical_medicament
+#: view:medical.medicament:medical_medicament.medical_medicament_search_view
+#: field:medical.medicament,pregnancy:0
+msgid "Pregnancy and Lactancy"
+msgstr "Gravidez e Lactância"
+
+#. module: medical_medicament
+#: field:medical.medicament,pregnancy_category:0
+msgid "Pregnancy category"
+msgstr "Categoria de Gravidez"
+
+#. module: medical_medicament
+#: view:medical.medicament:medical_medicament.medical_medicament_search_view
+#: view:medical.medicament:medical_medicament.medical_medicament_view_form
+#: field:medical.medicament,presentation:0
+msgid "Presentation"
+msgstr "Apresentação"
+
+#. module: medical_medicament
+#: field:medical.medicament,price:0
+msgid "Price"
+msgstr "Preço"
+
+#. module: medical_medicament
+#: field:medical.medicament,pricelist_id:0
+msgid "Pricelist"
+msgstr "Preço de Lista"
+
+#. module: medical_medicament
+#: view:medical.medicament:medical_medicament.medical_medicament_search_view
+msgid "Product"
+msgstr "Produto"
+
+#. module: medical_medicament
+#: field:medical.medicament,attribute_line_ids:0
+msgid "Product Attributes"
+msgstr "Atributos do Produto"
+
+#. module: medical_medicament
+#: field:medical.medicament,product_manager:0
+msgid "Product Manager"
+msgstr "Gerente de Produto"
+
+#. module: medical_medicament
+#: model:ir.model,name:medical_medicament.model_product_template
+#: field:medical.medicament,product_tmpl_id:0
+msgid "Product Template"
+msgstr "Produto Modelo"
+
+#. module: medical_medicament
+#: field:medical.medicament,type:0
+msgid "Product Type"
+msgstr "Tipo de Produto"
+
+#. module: medical_medicament
+#: field:medical.medicament,product_id:0
+msgid "Product id"
+msgstr "ID do Produto"
+
+#. module: medical_medicament
+#: field:medical.medicament,product_variant_ids:0
+msgid "Products"
+msgstr "Produtos"
+
+#. module: medical_medicament
+#: field:medical.medicament,lst_price:0
+msgid "Public Price"
+msgstr "Preço Público"
+
+#. module: medical_medicament
+#: field:medical.medicament,description_purchase:0
+msgid "Purchase Description"
+msgstr "Descrição de Compra"
+
+#. module: medical_medicament
+#: field:medical.medicament,uom_po_id:0
+msgid "Purchase Unit of Measure"
+msgstr "Unidade de Medida de Compra "
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_36
+msgid "Rebreather Mask"
+msgstr "Máscara Respiradora"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_35
+msgid "Rectal"
+msgstr "Retal"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.RING
+msgid "Ring slow release"
+msgstr "Anel de liberação lenta"
+
+#. module: medical_medicament
+#: field:medical.medicament,description_sale:0
+msgid "Sale Description"
+msgstr "Descrição de Venda"
+
+#. module: medical_medicament
+#: field:medical.medicament,list_price:0
+msgid "Sale Price"
+msgstr "Preço de Venda"
+
+#. module: medical_medicament
+#: help:medical.medicament,categ_id:0
+msgid "Select category for the current product"
+msgstr "Selecione uma categoria para o produto atual"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.SHP
+msgid "Shampoo"
+msgstr "Shampoo"
+
+#. module: medical_medicament
+#: field:medical.medicament,image_small:0
+msgid "Small-sized image"
+msgstr "Imagem Pequena"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_37
+msgid "Soaked Dressing"
+msgstr "Vestir Embebido"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.SOP
+msgid "Soap bar"
+msgstr "Sabão em barra"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.SOL
+msgid "Solution"
+msgstr "Solução"
+
+#. module: medical_medicament
+#: help:medical.medicament,uos_id:0
+msgid ""
+"Specify a unit of measure here if invoicing is made in another unit of "
+"measure than inventory. Keep empty to use the default unit of measure."
+msgstr ""
+"Especificar uma unidade de medida aqui se a fatura é feita em outra unidade "
+"de medida de inventário. Mantenha vazio para usar a unidade de medida "
+"padrão."
+
+#. module: medical_medicament
+#: help:medical.medicament,sale_ok:0
+msgid "Specify if the product can be selected in a sales order line."
+msgstr ""
+"Especificar se o produto pode ser selecionado em uma linha de pedido de "
+"vendas."
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.SPG
+msgid "Sponge"
+msgstr "Esponja"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.SPR
+msgid "Spray"
+msgstr "Spray"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.SMD
+msgid "Spray metered dose"
+msgstr "Spray de dose medida"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.SPCAP
+msgid "Sprinkle capsule"
+msgstr "Cápsula de borrifar"
+
+#. module: medical_medicament
+#: field:medical.medicament,state:0
+msgid "Status"
+msgstr "Status"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.STK
+msgid "Stick"
+msgstr "Bastão"
+
+#. module: medical_medicament
+#: view:medical.medicament:medical_medicament.medical_medicament_view_form
+#: field:medical.medicament,storage:0
+msgid "Storage"
+msgstr "Armazenamento"
+
+#. module: medical_medicament
+#: view:medical.medicament:medical_medicament.medical_medicament_search_view
+msgid "Storage Conditions"
+msgstr "Condições de Armazenamento"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.STP
+msgid "Strip"
+msgstr "Faixa"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_38
+msgid "Subcutaneous"
+msgstr "Subcutâneo"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_39
+msgid "Sublingual"
+msgstr "Sublingual"
+
+#. module: medical_medicament
+#: field:medical.medicament,message_summary:0
+msgid "Summary"
+msgstr "Resumo"
+
+#. module: medical_medicament
+#: field:medical.medicament,seller_ids:0
+msgid "Supplier"
+msgstr "Fornecedor"
+
+#. module: medical_medicament
+#: field:medical.medicament,seller_delay:0
+msgid "Supplier Lead Time"
+msgstr "Prazo de Entrega"
+
+#. module: medical_medicament
+#: field:medical.medicament,seller_qty:0
+msgid "Supplier Quantity"
+msgstr "Quantidade Fornecedor "
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.SUP
+msgid "Suppository"
+msgstr "Supositório"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.SPS
+msgid "Suppository sustained release"
+msgstr "Supositório de libertação sustentada"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.SUS
+msgid "Suspension"
+msgstr "Suspensão"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.SDR
+msgid "Suspension delayed release"
+msgstr "Suspensão de libertação retardada"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.SRC
+msgid "Sustained release capsule"
+msgstr "Cápsula de libertação gradual"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.SRT
+msgid "Sustained release tablet"
+msgstr "Tablete de libertação sustentada"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.SUT
+msgid "Suture"
+msgstr "Sutura"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.SWA
+msgid "Swab"
+msgstr "Cotonete"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.SYR
+msgid "Syrup"
+msgstr "Xarope"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.SRS
+msgid "Syrup sustained release"
+msgstr "Xarope de libertação sustentada"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.TAB
+msgid "Tablet"
+msgstr "Tablete"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.TABC
+msgid "Tablet chewable"
+msgstr "Tablete mastigável"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.TDR
+msgid "Tablet delayed release"
+msgstr "Tablete de libertação retardada"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.TDIS
+msgid "Tablet dispersible"
+msgstr "Tablete dispersível"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.EVT
+msgid "Tablet effervescent"
+msgstr "Tablete efervecente"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.ECT
+msgid "Tablet enteric coated"
+msgstr "Tablete com revestimento entérico"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.TRD
+msgid "Tablet rapid dissolve"
+msgstr "Tablete de rápida dissolução"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.SLT
+msgid "Tablet sublingual"
+msgstr "Tablete sublingual"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.TAP
+msgid "Tape"
+msgstr "Fita"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.TEA
+msgid "Tea herbal"
+msgstr "Chá de ervas"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.TDL
+msgid "Teat dilator"
+msgstr "Dilatador de mama"
+
+#. module: medical_medicament
+#: field:medical.medicament,name_template:0
+msgid "Template Name"
+msgstr "Nome Modelo"
+
+#. module: medical_medicament
+#: help:medical.medicament,is_pregnant:0
+msgid "The drug represents risk to pregnancy or lactancy"
+msgstr "O medicamento representa risco para a gravidez ou lactância"
+
+#. module: medical_medicament
+#: help:medical.medicament,weight:0
+msgid "The gross weight in Kg."
+msgstr "O peso bruto em kg."
+
+#. module: medical_medicament
+#: help:medical.medicament,weight_net:0
+msgid "The net weight in Kg."
+msgstr "O peso líquido em Kg."
+
+#. module: medical_medicament
+#: help:medical.medicament,volume:0
+msgid "The volume in m3."
+msgstr "O volume em m3."
+
+#. module: medical_medicament
+#: field:medical.medicament,therapeutic_action:0
+msgid "Therapeutic action"
+msgstr "Ação terapêutica"
+
+#. module: medical_medicament
+#: view:medical.medicament:medical_medicament.medical_medicament_search_view
+msgid "Therapeutic effect"
+msgstr "Efeito terapêutico"
+
+#. module: medical_medicament
+#: help:medical.medicament,image_variant:0
+msgid ""
+"This field holds the image used as image for the product variant, limited to"
+" 1024x1024px."
+msgstr ""
+"Este campo contém a imagem usada como imagem para a variante do produto, "
+"limitada a 1024x1024px."
+
+#. module: medical_medicament
+#: help:medical.medicament,seller_qty:0
+msgid "This is minimum quantity to purchase from Main Supplier."
+msgstr "Esta é a quantidade mínima para comprar de principal fornecedor."
+
+#. module: medical_medicament
+#: help:medical.medicament,seller_delay:0
+msgid ""
+"This is the average delay in days between the purchase order confirmation "
+"and the receipts for this product and for the default supplier. It is used "
+"by the scheduler to order requests based on reordering delays."
+msgstr ""
+"Este é o atraso médio em dias entre a confirmação do pedido de compra e as "
+"receitas para este produto e para o fornecedor padrão. Ele é usado pelo "
+"programador para ordenar pedidos com base em atrasos de reordenamento."
+
+#. module: medical_medicament
+#: help:medical.medicament,price_extra:0
+msgid "This is the sum of the extra price of all attributes"
+msgstr "Esta é a soma do preço adicional de todos os atributos"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.TPT
+msgid "Toothpaste"
+msgstr "Pasta de dentes"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_40
+msgid "Topical"
+msgstr "Tópico"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_41
+msgid "Tracheostomy"
+msgstr "Traqueostomia"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_42
+msgid "Transdermal"
+msgstr "Transdérmica"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_43
+msgid "Translingual"
+msgstr "Translingual"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.UNS
+msgid "Unassigned"
+msgstr "Não atribuido"
+
+#. module: medical_medicament
+#: field:medical.medicament,uom_id:0
+msgid "Unit of Measure"
+msgstr "Unidade de Medida"
+
+#. module: medical_medicament
+#: field:medical.medicament,uos_coeff:0
+msgid "Unit of Measure -> UOS Coeff"
+msgstr "Unidade de Medida -> UOS Coef"
+
+#. module: medical_medicament
+#: field:medical.medicament,uos_id:0
+msgid "Unit of Sale"
+msgstr "Unidade de Venda"
+
+#. module: medical_medicament
+#: field:medical.medicament,message_unread:0
+msgid "Unread Messages"
+msgstr "Mensagens Não Lidas"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_44
+msgid "Urethral"
+msgstr "Uretral"
+
+#. module: medical_medicament
+#: field:medical.medicament,is_vaccine:0
+msgid "Vaccine"
+msgstr "Vacina"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_45
+msgid "Vaginal"
+msgstr "Vaginal"
+
+#. module: medical_medicament
+#: field:medical.medicament,price_extra:0
+msgid "Variant Extra Price"
+msgstr "Variante Preço Extra"
+
+#. module: medical_medicament
+#: field:medical.medicament,image_variant:0
+msgid "Variant Image"
+msgstr "Imagem Variante"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_46
+msgid "Ventimask"
+msgstr "Ventimask"
+
+#. module: medical_medicament
+#: field:medical.medicament,volume:0
+msgid "Volume"
+msgstr "Volume"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.WAF
+msgid "Wafer"
+msgstr "Pastílha"
+
+#. module: medical_medicament
+#: field:medical.medicament,warranty:0
+msgid "Warranty"
+msgstr "Garantia"
+
+#. module: medical_medicament
+#: model:medical.drug.form,name:medical_medicament.WIP
+msgid "Wipe "
+msgstr "Limpar"
+
+#. module: medical_medicament
+#: model:medical.drug.route,name:medical_medicament.route_47
+msgid "Wound"
+msgstr "Ferida"

@@ -1,0 +1,84 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * medical_medication_us
+# 
+# Translators:
+# Nilo Silva <nilo.silva@e-nube.com.br>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-25 19:52+0000\n"
+"PO-Revision-Date: 2016-11-25 19:52+0000\n"
+"Last-Translator: Nilo Silva <nilo.silva@e-nube.com.br>, 2016\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: medical_medication_us
+#: selection:medical.medicament,control_code:0
+msgid "C1"
+msgstr ""
+
+#. module: medical_medication_us
+#: selection:medical.medicament,control_code:0
+msgid "C2"
+msgstr ""
+
+#. module: medical_medication_us
+#: selection:medical.medicament,control_code:0
+msgid "C3"
+msgstr ""
+
+#. module: medical_medication_us
+#: selection:medical.medicament,control_code:0
+msgid "C4"
+msgstr ""
+
+#. module: medical_medication_us
+#: selection:medical.medicament,control_code:0
+msgid "C5"
+msgstr ""
+
+#. module: medical_medication_us
+#: field:medical.medicament,control_code:0
+msgid "Control code"
+msgstr ""
+
+#. module: medical_medication_us
+#: field:medical.medication.template,dispense_uom_id:0
+msgid "Dispense UOM"
+msgstr ""
+
+#. module: medical_medication_us
+#: help:medical.medication.template,dispense_uom_id:0
+msgid "Dispense Unit of Measure"
+msgstr ""
+
+#. module: medical_medication_us
+#: model:ir.model,name:medical_medication_us.model_medical_medicament
+msgid "Email Thread"
+msgstr "Email Tópico"
+
+#. module: medical_medication_us
+#: help:medical.medicament,control_code:0
+msgid "Federal drug scheduling code"
+msgstr ""
+
+#. module: medical_medication_us
+#: model:ir.model,name:medical_medication_us.model_medical_medication_template
+msgid "Medical Medication Template"
+msgstr "Modelo de Medicação"
+
+#. module: medical_medication_us
+#: field:medical.medicament,ndc:0
+msgid "NDC"
+msgstr ""
+
+#. module: medical_medication_us
+#: help:medical.medicament,ndc:0
+msgid "National Drug Code for medication"
+msgstr ""

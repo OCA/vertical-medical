@@ -1,0 +1,103 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * medical_patient_ethnicity
+# 
+# Translators:
+# Nilo Silva <nilo.silva@e-nube.com.br>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-25 19:52+0000\n"
+"PO-Revision-Date: 2016-11-25 19:52+0000\n"
+"Last-Translator: Nilo Silva <nilo.silva@e-nube.com.br>, 2016\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: medical_patient_ethnicity
+#: field:medical.patient.ethnicity,code:0
+msgid "Code"
+msgstr "Código"
+
+#. module: medical_patient_ethnicity
+#: field:medical.patient.ethnicity,create_uid:0
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: medical_patient_ethnicity
+#: field:medical.patient.ethnicity,create_date:0
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: medical_patient_ethnicity
+#: field:medical.patient.ethnicity,display_name:0
+msgid "Display Name"
+msgstr "Mostrar Nome"
+
+#. module: medical_patient_ethnicity
+#: model:ir.actions.act_window,name:medical_patient_ethnicity.medical_patient_ethnicity_action
+#: field:medical.patient,ethnicity_id:0
+msgid "Ethnicity"
+msgstr "Etnia"
+
+#. module: medical_patient_ethnicity
+#: sql_constraint:medical.patient.ethnicity:0
+msgid "Ethnicity code must be unique."
+msgstr "Código de etnia deve ser exclusivo."
+
+#. module: medical_patient_ethnicity
+#: sql_constraint:medical.patient.ethnicity:0
+msgid "Ethnicity name must be unique."
+msgstr "Nome etnia deve ser exclusivo."
+
+#. module: medical_patient_ethnicity
+#: field:medical.patient.ethnicity,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_patient_ethnicity
+#: field:medical.patient.ethnicity,__last_update:0
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: medical_patient_ethnicity
+#: field:medical.patient.ethnicity,write_uid:0
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: medical_patient_ethnicity
+#: field:medical.patient.ethnicity,write_date:0
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: medical_patient_ethnicity
+#: model:ir.model,name:medical_patient_ethnicity.model_medical_patient
+msgid "Medical Patient"
+msgstr "Paciente Médico"
+
+#. module: medical_patient_ethnicity
+#: model:ir.model,name:medical_patient_ethnicity.model_medical_patient_ethnicity
+msgid "Medical Patient Ethnicity"
+msgstr "Etnia do Paciente"
+
+#. module: medical_patient_ethnicity
+#: view:medical.patient.ethnicity:medical_patient_ethnicity.medical_patient_ethnicity_view_form
+#: field:medical.patient.ethnicity,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: medical_patient_ethnicity
+#: field:medical.patient.ethnicity,notes:0
+msgid "Notes"
+msgstr "Anotações"
+
+#. module: medical_patient_ethnicity
+#: view:medical.patient.ethnicity:medical_patient_ethnicity.medical_patient_ethnicity_view_form
+#: view:medical.patient.ethnicity:medical_patient_ethnicity.medical_patient_ethnicity_view_search
+#: view:medical.patient.ethnicity:medical_patient_ethnicity.medical_patient_ethnicity_view_tree
+msgid "Patient Ethnicity"
+msgstr "Etnia do Paciente"

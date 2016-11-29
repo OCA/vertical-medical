@@ -1,0 +1,762 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * medical_pharmacy
+# 
+# Translators:
+# Nilo Silva <nilo.silva@e-nube.com.br>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-25 19:52+0000\n"
+"PO-Revision-Date: 2016-11-25 19:52+0000\n"
+"Last-Translator: Nilo Silva <nilo.silva@e-nube.com.br>, 2016\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+msgid "(edit company address)"
+msgstr "(editar endereço companhia)"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,activation_date:0
+msgid "Activation date"
+msgstr "Data de ativação"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,active:0
+msgid "Active"
+msgstr "Ativar"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+msgid "Address"
+msgstr "Endereço"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,type:0
+msgid "Address Type"
+msgstr "Tipo de Endereço"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,alias:0
+msgid "Alias"
+msgstr "Apelido"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,bank_ids:0
+msgid "Banks"
+msgstr "Bancos"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,birthdate:0
+msgid "Birthdate"
+msgstr "Data nascimento"
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,is_company:0
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr "Verifique se o contato é uma empresa, caso contrário, é uma pessoa"
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,is_institution:0
+msgid "Check if the party is a Medical Center"
+msgstr "Verifique se o partido é um Centro Médico"
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,is_pharmacy:0
+msgid "Check if the party is a Pharmacy"
+msgstr "Verifique se o partido é uma Farmácia"
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,is_doctor:0
+msgid "Check if the party is a health professional"
+msgstr "Verifique se o partido é um profissional de saúde"
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,is_insurance_company:0
+#: help:medical.pharmacy,is_patient:0
+msgid "Check if the party is a patient"
+msgstr "Verifique se o partido é um paciente"
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,is_person:0
+msgid "Check if the party is a person."
+msgstr "Verifique se o partido é uma pessoa"
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,customer:0
+msgid "Check this box if this contact is a customer."
+msgstr "Marque esta caixa se este contato é um paciente."
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,supplier:0
+msgid ""
+"Check this box if this contact is a supplier. If it's not checked, purchase "
+"people will not see it when encoding a purchase order."
+msgstr ""
+"Marque esta caixa se este contato é um fornecedor. Se ela não está marcada, "
+"as pessoas de compras não vão vê-lo quando codificar um pedido de compra."
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,employee:0
+msgid "Check this box if this contact is an Employee."
+msgstr "Marque esta caixa se este contato é um funcionário."
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+#: field:medical.pharmacy,city:0
+msgid "City"
+msgstr "Cidade"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,color:0
+msgid "Color Index"
+msgstr "Índice de Cor"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,commercial_partner_id:0
+msgid "Commercial Entity"
+msgstr "Entidade Comercial"
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,alias:0
+msgid "Common name that the Party is reffered"
+msgstr "Nome comum ao qual o Partido é referido"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_search
+#: field:medical.pharmacy,company_id:0
+msgid "Company"
+msgstr "Companhia"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,contact_address:0
+msgid "Complete Address"
+msgstr "Endereço Completo"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+#: field:medical.pharmacy,relative_id:0
+msgid "Contact"
+msgstr "Contato"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+msgid "Contact Information"
+msgstr "Informação do Contato"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+#: field:medical.pharmacy,child_ids:0
+msgid "Contacts"
+msgstr "Contatos"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+#: field:medical.pharmacy,country_id:0
+msgid "Country"
+msgstr "País"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,create_uid:0
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,create_date:0
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,credit_limit:0
+msgid "Credit Limit"
+msgstr "Limite de Crédito"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,customer:0
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,date:0
+msgid "Date"
+msgstr "Data"
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,activation_date:0
+msgid "Date of activation of the party"
+msgstr "Data de activação do partido"
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Data da última mensagem postada no registro."
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,display_name:0
+msgid "Display Name"
+msgstr "Mostrar Nome"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,ean13:0
+msgid "EAN13"
+msgstr "EAN13"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,email:0
+msgid "Email"
+msgstr "Email"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,employee:0
+msgid "Employee"
+msgstr "Empregado"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,fax:0
+msgid "Fax"
+msgstr "Fax"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+msgid "Fax:"
+msgstr "Fax:"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,message_follower_ids:0
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+msgid "General Information"
+msgstr "Informação Geral"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_search
+msgid "Group By..."
+msgstr "Grupo Por..."
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,is_doctor:0
+msgid "Health Prof"
+msgstr "Prof Médico"
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,message_summary:0
+msgid ""
+"Holds the Chatter summary (number of messages, ...). This summary is "
+"directly in html format in order to be inserted in kanban views."
+msgstr ""
+"Contem o resumo Chatter (número de mensagens, ...). Este resumo é "
+"diretamente em formato html, a fim de ser inserido em modo kanban."
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+msgid "I don't want to receive commercial messages"
+msgstr "Eu não desejo receber mensagens comerciais"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,ref:0
+msgid "ID/SSN"
+msgstr "ID/CPF"
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "Se marcada novas mensagens requerem sua atenção."
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,opt_out:0
+msgid ""
+"If opt-out is checked, this contact has refused to receive emails for mass "
+"mailing and marketing campaign. Filter 'Available for Mass Mailing' allows "
+"users to filter the partners when performing mass mailing."
+msgstr ""
+"Se opt-out é marcado, este contato se recusou a receber emails para envio em"
+" massa e campanha de marketing. Filtro 'Disponível para envio de email em "
+"massa' permite ao usuário filtrar os parceiros na realização envio de email "
+"em massa."
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,lang:0
+msgid ""
+"If the selected language is loaded in the system, all documents related to "
+"this contact will be printed in this language. If not, it will be English."
+msgstr ""
+"Se o idioma selecionado é carregado no sistema, todos os documentos "
+"relacionados a esse contato serão impressos nesta língua. Se não, ele será o"
+" Inglês."
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,image:0
+msgid "Image"
+msgstr "Imagem"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,is_institution:0
+msgid "Institution"
+msgstr "Instituição"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,is_insurance_company:0
+msgid "Insurance"
+msgstr "Seguradora"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,is_company:0
+msgid "Is a Company"
+msgstr "É uma Companhia"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,message_is_follower:0
+msgid "Is a Follower"
+msgstr "É um Seguidor"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,function:0
+msgid "Job Position"
+msgstr "Cargo"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,lang:0
+msgid "Language"
+msgstr "Idioma"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,message_last_post:0
+msgid "Last Message Date"
+msgstr "Data Última Mensagem"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,__last_update:0
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,last_name:0 help:medical.pharmacy,last_name:0
+msgid "Last Name"
+msgstr "Último Nome"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,write_uid:0
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,write_date:0
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: medical_pharmacy
+#: model:ir.model,name:medical_pharmacy.model_medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_search
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_tree
+msgid "Medical Pharmacy"
+msgstr "Farmácia Médica"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,image_medium:0
+msgid "Medium-sized image"
+msgstr "Imagem Média"
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,image_medium:0
+msgid ""
+"Medium-sized image of this contact. It is automatically resized as a "
+"128x128px image, with aspect ratio preserved. Use this field in form views "
+"or some kanban views."
+msgstr ""
+"imagem de tamanho médio do contato. Ela é automaticamente redimensionada "
+"para uma imagem de 128x128px, com relação de aspecto preservado. Utilize "
+"este campo em formulário ou em alguns modelos kanban."
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,message_ids:0
+msgid "Messages"
+msgstr "Mensagens"
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,message_ids:0
+msgid "Messages and communication history"
+msgstr "Mensagens e histórico de comunicação"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,mobile:0
+msgid "Mobile"
+msgstr "Móvel"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+msgid "Mobile:"
+msgstr "Móvel:"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+msgid "More Info"
+msgstr "Mais Info"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,comment:0
+msgid "Notes"
+msgstr "Anotações"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,opt_out:0
+msgid "Opt-Out"
+msgstr "Opt-Out"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+msgid "Parent Company"
+msgstr "Matriz"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,parent_name:0
+msgid "Parent name"
+msgstr "Nome dos pais"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,partner_id:0
+msgid "Partner id"
+msgstr "Parceiro id"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,is_patient:0
+msgid "Patient"
+msgstr "Paciente"
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,ref:0
+msgid "Patient Social Security Number or equivalent"
+msgstr "Número de Seguro Social ou equivalente"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,is_person:0
+msgid "Person"
+msgstr "Pessoa"
+
+#. module: medical_pharmacy
+#: model:ir.actions.act_window,name:medical_pharmacy.act_open_medical_pharmacy_view
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+#: field:medical.pharmacy,is_pharmacy:0
+msgid "Pharmacy"
+msgstr "Farmácia"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+msgid "Pharmacy Name"
+msgstr "Nome Farmácia"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,phone:0
+msgid "Phone"
+msgstr "Telefone"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+msgid "Phone:"
+msgstr "Telefone:"
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,notify_email:0
+msgid ""
+"Policy to receive emails for new messages pushed to your personal Inbox:\n"
+"- Never: no emails are sent\n"
+"- All Messages: for every notification you receive in your Inbox"
+msgstr ""
+"Política de receber emails para novas mensagens enviadas para sua caixa de entrada pessoal:\n"
+"- Nunca: nenhum email será enviado\n"
+"- Todas as mensagens: para cada notificação que receber na sua caixa de entrada"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,notify_email:0
+msgid "Receive Inbox Notifications by Email"
+msgstr "Recebe Notificações na Caixa de Entrada por Email"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,parent_id:0
+msgid "Related Company"
+msgstr "Relacionado a Companhia"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,patient_ids:0
+msgid "Related Patients"
+msgstr "Relacionado ao Paciente"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,relationship:0
+msgid "Relationship"
+msgstr "Relacionamento"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,property_product_pricelist:0
+msgid "Sale Pricelist"
+msgstr "Preço de Lista de Venda"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,user_id:0
+msgid "Salesperson"
+msgstr "Vendedor"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,is_school:0
+msgid "School"
+msgstr "Escola"
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,use_parent_address:0
+msgid ""
+"Select this if you want to set company's address information  for this "
+"contact"
+msgstr ""
+"Selecione esta opção se você deseja definir as informações de endereço da "
+"empresa para este contato"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,signup_expiration:0
+msgid "Signup Expiration"
+msgstr "Vencimento de inscrição"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,signup_token:0
+msgid "Signup Token"
+msgstr "Token inscrição"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,signup_type:0
+msgid "Signup Token Type"
+msgstr "Tipo Token inscrição"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,signup_valid:0
+msgid "Signup Token is Valid"
+msgstr "Token inscrição é válido"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,signup_url:0
+msgid "Signup URL"
+msgstr "URL inscrição"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,image_small:0
+msgid "Small-sized image"
+msgstr "Imagem Pequena"
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,image_small:0
+msgid ""
+"Small-sized image of this contact. It is automatically resized as a 64x64px "
+"image, with aspect ratio preserved. Use this field anywhere a small image is"
+" required."
+msgstr ""
+"imagem de tamanho pequeno do contato. Ela é automaticamente redimensionada "
+"como uma imagem de 64x64px, com relação de aspecto preservado. Utilize este "
+"campo em qualquer lugar que uma imagem pequena é necessária."
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_search
+#: field:medical.pharmacy,state_id:0
+msgid "State"
+msgstr "Estado"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,street:0
+msgid "Street"
+msgstr "Rua"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+msgid "Street..."
+msgstr "Rua..."
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,street2:0
+msgid "Street2"
+msgstr "Rua2"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,message_summary:0
+msgid "Summary"
+msgstr "Resumo"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,supplier:0
+msgid "Supplier"
+msgstr "Fornecedor"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,vat:0
+msgid "TIN"
+msgstr "TIN"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,category_id:0
+msgid "Tags"
+msgstr "Tags"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+msgid "Tags..."
+msgstr "Tags..."
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,vat:0
+msgid ""
+"Tax Identification Number. Check the box if this contact is subjected to "
+"taxes. Used by the some of the legal statements."
+msgstr ""
+"Número de Identificação Fiscal. Marque a caixa se este contato está sujeito "
+"a impostos. Usado para algumas das declarações legais."
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,user_id:0
+msgid ""
+"The internal user that is in charge of communicating with this contact if "
+"any."
+msgstr ""
+"O usuário interno que é responsável pela comunicação com este contato se "
+"houver."
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,tz:0
+msgid ""
+"The partner's timezone, used to output proper date and time values inside "
+"printed reports. It is important to set a value for this field. You should "
+"use the same timezone that is otherwise used to pick and render date and "
+"time values: your computer's timezone."
+msgstr ""
+"Fuso horário do parceiro, usado para a saída de data e hora adequada valores"
+" dentro relatórios impressos. É importante definir um valor para este campo."
+" Você deve usar o mesmo fuso horário que é de outra maneira usado para "
+"escolher e processar data e hora valores: fuso horário do seu computador."
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,image:0
+msgid ""
+"This field holds the image used as avatar for this contact, limited to "
+"1024x1024px"
+msgstr ""
+"Este campo contém a imagem usada como avatar para este contato, limitado a "
+"1024x1024px"
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,property_product_pricelist:0
+msgid ""
+"This pricelist will be used, instead of the default one, for sales to the "
+"current partner"
+msgstr ""
+"Esta lista de preços será utilizado, em vez do padrão, para as vendas ao "
+"parceiro atual"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,tz:0
+msgid "Timezone"
+msgstr "Fuso horário"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,tz_offset:0
+msgid "Timezone offset"
+msgstr "Deslocamento do fuso horário"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,title:0
+msgid "Title"
+msgstr "Título"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,message_unread:0
+msgid "Unread Messages"
+msgstr "Mensagens Não Lidas"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,use_parent_address:0
+msgid "Use Company Address"
+msgstr "Usar Endereço da Companhia"
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,type:0
+msgid ""
+"Used to select automatically the right address according to the context in "
+"sales and purchases documents."
+msgstr ""
+"Usado para selecionar automaticamente o endereço correto de acordo com o "
+"contexto em documentos de vendas e compras."
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,user_ids:0
+msgid "Users"
+msgstr "Usuários"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,website:0
+msgid "Website"
+msgstr "Website"
+
+#. module: medical_pharmacy
+#: help:medical.pharmacy,website:0
+msgid "Website of Partner or Company"
+msgstr "Website da Companhia ou Parceiro"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,is_work:0
+msgid "Work"
+msgstr "Trabalho"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+msgid "ZIP"
+msgstr "CEP"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_search
+#: field:medical.pharmacy,zip:0
+msgid "Zip"
+msgstr "Cep"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+msgid "Zip Code"
+msgstr "Código CEP"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+msgid "e.g. +1 (888) 678-6313"
+msgstr "ex. +55 01000-000"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+msgid "e.g. Sales Director"
+msgstr "ex. Diretor de Vendas"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+msgid "e.g. https://laslabs.com"
+msgstr "ex. https://laboratorio.com.br"
+
+#. module: medical_pharmacy
+#: view:medical.pharmacy:medical_pharmacy.view_medical_pharmacy_form
+msgid "e.g. support@laslabs.com"
+msgstr "ex. suporte@laboratorio.com.br"
+
+#. module: medical_pharmacy
+#: field:medical.pharmacy,has_image:0
+msgid "unknown"
+msgstr "desconhecido"

@@ -1,0 +1,607 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * medical_medication
+# 
+# Translators:
+# Nilo Silva <nilo.silva@e-nube.com.br>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-25 19:52+0000\n"
+"PO-Revision-Date: 2016-11-25 19:52+0000\n"
+"Last-Translator: Nilo Silva <nilo.silva@e-nube.com.br>, 2016\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: medical_medication
+#: model:medical.medication.dosage,name:medical_medication.422114001
+msgid "1 time"
+msgstr "Uma vez"
+
+#. module: medical_medication
+#: model:medical.medication.dosage,name:medical_medication.229797004
+msgid "1 time per day"
+msgstr "Uma vez por dia"
+
+#. module: medical_medication
+#: model:medical.medication.dosage,name:medical_medication.396142006
+msgid "1 time per day at bedtime"
+msgstr "Uma vez por dia ao deitar"
+
+#. module: medical_medication
+#: model:medical.medication.dosage,name:medical_medication.396147000
+msgid "1 time per day in the evening"
+msgstr "Uma vez por dia à noite"
+
+#. module: medical_medication
+#: model:medical.medication.dosage,name:medical_medication.307472001
+msgid "1 time per day in the morning"
+msgstr "Uma vez por dia de manhã"
+
+#. module: medical_medication
+#: model:medical.medication.dosage,name:medical_medication.225769003
+msgid "1 time per week"
+msgstr "Uma vez por semana"
+
+#. module: medical_medication
+#: model:medical.medication.dosage,name:medical_medication.229799001
+msgid "2 times per day"
+msgstr "Duas vezes por dia"
+
+#. module: medical_medication
+#: model:medical.medication.dosage,name:medical_medication.229798009
+msgid "3 times per day"
+msgstr "Três vezes por dia"
+
+#. module: medical_medication
+#: model:medical.medication.dosage,name:medical_medication.396145008
+msgid "3 times per day, before meals"
+msgstr "Três vezes por dia, antes das refeições"
+
+#. module: medical_medication
+#: model:medical.medication.dosage,name:medical_medication.396146009
+msgid "3 times per day, with meals"
+msgstr "Três vezes por dia, com as refeições"
+
+#. module: medical_medication
+#: model:medical.medication.dosage,name:medical_medication.307439001
+msgid "4 times per day"
+msgstr "Quatro vezes por dia"
+
+#. module: medical_medication
+#: field:medical.medication.dosage,abbreviation:0
+msgid "Abbreviation"
+msgstr "Abreviação"
+
+#. module: medical_medication
+#: model:ir.model,name:medical_medication.model_abstract_medical_medication
+msgid "Abstract Medical Medication"
+msgstr "Medicação Medicina Abstrata"
+
+#. module: medical_medication
+#: field:medical.patient.medication,active:0
+msgid "Active"
+msgstr "Ativar"
+
+#. module: medical_medication
+#: view:medical.medication.template:medical_medication.medical_medication_template_search_view
+msgid "Administration hours"
+msgstr "Horas de administração"
+
+#. module: medical_medication
+#: view:medical.patient.medication:medical_medication.medical_patient_medication_form_view
+msgid "Adverse Reaction"
+msgstr "Reações Adversas"
+
+#. module: medical_medication
+#: field:medical.patient.medication,adverse_reaction:0
+msgid "Adverse reaction"
+msgstr "Reação adversa"
+
+#. module: medical_medication
+#: help:medical.patient.medication,active:0
+msgid "Check if the patient is currently taking the medication"
+msgstr "Verifique se o paciente está tomando a medicação"
+
+#. module: medical_medication
+#: help:medical.medication.template,pathology_id:0
+#: help:medical.patient.medication,pathology_id:0
+msgid ""
+"Choose a disease for this medicament from the disease list. It can be an "
+"existing disease of the patient or a prophylactic."
+msgstr ""
+"Escolha uma doença para este medicamento da lista doença. Pode ser uma "
+"doença existente do paciente ou profilático"
+
+#. module: medical_medication
+#: field:medical.medication.dosage,code:0
+msgid "Code"
+msgstr "Código"
+
+#. module: medical_medication
+#: help:medical.medication.template,medication_dosage_id:0
+#: help:medical.patient.medication,medication_dosage_id:0
+msgid "Common / standard dosage frequency for this medicament"
+msgstr "Frequência de dosagem comum / padrão para este medicamento"
+
+#. module: medical_medication
+#: field:medical.medication.template,medication_dosage_id:0
+#: field:medical.patient.medication,medication_dosage_id:0
+msgid "Common Dose"
+msgstr "Dose Comum"
+
+#. module: medical_medication
+#: field:medical.patient.medication,is_course_complete:0
+msgid "Course Completed"
+msgstr "Curso Concluído"
+
+#. module: medical_medication
+#: field:medical.medication.dosage,create_uid:0
+#: field:medical.medication.template,create_uid:0
+#: field:medical.patient.medication,create_uid:0
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: medical_medication
+#: field:medical.medication.dosage,create_date:0
+#: field:medical.medication.template,create_date:0
+#: field:medical.patient.medication,create_date:0
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: medical_medication
+#: field:medical.patient.medication,date_start_treatment:0
+msgid "Date start treatment"
+msgstr "Data de início do tratamento"
+
+#. module: medical_medication
+#: field:medical.patient.medication,date_stop_treatment:0
+msgid "Date stop treatment"
+msgstr "Data de fim do tratamento"
+
+#. module: medical_medication
+#: selection:medical.medication.template,duration_period:0
+#: selection:medical.patient.medication,duration_period:0
+msgid "Days"
+msgstr "Dias"
+
+#. module: medical_medication
+#: view:medical.patient.medication:medical_medication.medical_patient_medication_form_view
+msgid "Discontinued Reason"
+msgstr "Motivo da Descontinuação"
+
+#. module: medical_medication
+#: field:medical.patient.medication,discontinued_reason:0
+msgid "Discontinued reason"
+msgstr "Motivo da descontinuação"
+
+#. module: medical_medication
+#: field:abstract.medical.medication,display_name:0
+#: field:medical.medication.dosage,display_name:0
+#: field:medical.medication.template,display_name:0
+#: field:medical.patient.medication,display_name:0
+msgid "Display Name"
+msgstr "Mostrar Nome"
+
+#. module: medical_medication
+#: view:medical.medication.template:medical_medication.medical_medication_template_form_view
+msgid "Dosage"
+msgstr "Dosagem"
+
+#. module: medical_medication
+#: help:medical.medication.dosage,code:0
+msgid "Dosage Code,for example: SNOMED 229798009 = 3 times per day"
+msgstr "Código de Dosagem, por exemplo: SNOMED 229798009 = Três vezes por dia"
+
+#. module: medical_medication
+#: help:medical.medication.dosage,abbreviation:0
+msgid "Dosage abbreviation, such as tid in the US or tds in the UK"
+msgstr "Abreviatura de dosagem, tal como TID ou os EUA em TDS no Reino Unido"
+
+#. module: medical_medication
+#: field:medical.medication.template,quantity:0
+#: field:medical.patient.medication,quantity:0
+msgid "Dose Quantity"
+msgstr " Quantidade da Dose"
+
+#. module: medical_medication
+#: view:medical.medication.template:medical_medication.medical_medication_template_search_view
+#: field:medical.medication.template,dose_unit_id:0
+#: field:medical.patient.medication,dose_unit_id:0
+msgid "Dose Unit"
+msgstr "Unidade da Dose"
+
+#. module: medical_medication
+#: field:medical.medication.template,duration:0
+#: field:medical.patient.medication,duration:0
+msgid "Duration"
+msgstr "Duração"
+
+#. module: medical_medication
+#: field:medical.medication.template,duration_period:0
+#: field:medical.patient.medication,duration_period:0
+msgid "Duration period"
+msgstr "Período de Duração"
+
+#. module: medical_medication
+#: view:medical.patient.medication:medical_medication.medical_patient_medication_search_view
+msgid "Extra Info"
+msgstr "Info Extra"
+
+#. module: medical_medication
+#: view:medical.medication.template:medical_medication.medical_medication_template_form_view
+#: view:medical.medication.template:medical_medication.medical_medication_template_search_view
+#: field:medical.medication.template,frequency:0
+#: field:medical.patient.medication,frequency:0
+msgid "Frequency"
+msgstr "Freqüência"
+
+#. module: medical_medication
+#: field:medical.medication.template,frequency_prn:0
+#: field:medical.patient.medication,frequency_prn:0
+msgid "Frequency prn"
+msgstr " Frequência a critério médico"
+
+#. module: medical_medication
+#: field:medical.medication.template,frequency_unit:0
+#: field:medical.patient.medication,frequency_unit:0
+msgid "Frequency unit"
+msgstr "Unidade de frequência"
+
+#. module: medical_medication
+#: view:medical.medication.template:medical_medication.medical_medication_template_search_view
+msgid "Group By..."
+msgstr "Grupo Por..."
+
+#. module: medical_medication
+#: selection:medical.medication.template,duration_period:0
+#: selection:medical.patient.medication,duration_period:0
+msgid "Hours"
+msgstr "Horas"
+
+#. module: medical_medication
+#: field:abstract.medical.medication,id:0 field:medical.medication.dosage,id:0
+#: field:medical.medication.template,id:0
+#: field:medical.patient.medication,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_medication
+#: view:medical.patient.medication:medical_medication.medical_patient_medication_search_view
+msgid "Inactive"
+msgstr "Inativo"
+
+#. module: medical_medication
+#: selection:medical.medication.template,duration_period:0
+#: selection:medical.patient.medication,duration_period:0
+msgid "Indefinite"
+msgstr "Indeterminado"
+
+#. module: medical_medication
+#: view:medical.medication.template:medical_medication.medical_medication_template_search_view
+msgid "Is Frequency PRN"
+msgstr "É Freqüência A Critério Médico"
+
+#. module: medical_medication
+#: field:medical.patient.medication,is_discontinued:0
+msgid "Is discontinued"
+msgstr "É Descontinuado"
+
+#. module: medical_medication
+#: field:abstract.medical.medication,__last_update:0
+#: field:medical.medication.dosage,__last_update:0
+#: field:medical.medication.template,__last_update:0
+#: field:medical.patient.medication,__last_update:0
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: medical_medication
+#: field:medical.medication.dosage,write_uid:0
+#: field:medical.medication.template,write_uid:0
+#: field:medical.patient.medication,write_uid:0
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: medical_medication
+#: field:medical.medication.dosage,write_date:0
+#: field:medical.medication.template,write_date:0
+#: field:medical.patient.medication,write_date:0
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: medical_medication
+#: model:product.uom,name:medical_medication.product_uom_litre
+msgid "Litre"
+msgstr "Litro"
+
+#. module: medical_medication
+#: model:ir.model,name:medical_medication.model_medical_medication_dosage
+#: view:medical.medication.dosage:medical_medication.medical_medication_dosage_form_view
+#: view:medical.medication.dosage:medical_medication.medical_medication_dosage_search_view
+#: view:medical.medication.dosage:medical_medication.medical_medication_dosage_tree_view
+msgid "Medical Medication Dosage"
+msgstr "Dosagem da Medicação"
+
+#. module: medical_medication
+#: model:ir.model,name:medical_medication.model_medical_medication_template
+#: view:medical.medication.template:medical_medication.medical_medication_template_form_view
+#: view:medical.medication.template:medical_medication.medical_medication_template_search_view
+#: view:medical.medication.template:medical_medication.medical_medication_template_tree_view
+msgid "Medical Medication Template"
+msgstr "Modelo de Medicação"
+
+#. module: medical_medication
+#: model:ir.model,name:medical_medication.model_medical_patient
+msgid "Medical Patient"
+msgstr "Paciente Médico"
+
+#. module: medical_medication
+#: model:ir.model,name:medical_medication.model_medical_patient_medication
+msgid "Medical Patient Medication"
+msgstr "Medicação do Paciente"
+
+#. module: medical_medication
+#: field:medical.medication.template,medicament_id:0
+#: field:medical.patient.medication,medicament_id:0
+msgid "Medicament"
+msgstr "Medicamento"
+
+#. module: medical_medication
+#: model:ir.actions.act_window,name:medical_medication.medical_medication_dosage_action
+#: model:ir.ui.menu,name:medical_medication.medical_medication_dosage
+msgid "Medication Dosage"
+msgstr "Dosagem da Medicação"
+
+#. module: medical_medication
+#: model:ir.actions.act_window,name:medical_medication.medical_medication_template_action
+#: model:ir.ui.menu,name:medical_medication.medical_medication_template
+#: view:medical.patient.medication:medical_medication.medical_patient_medication_search_view
+#: field:medical.patient.medication,medication_template_id:0
+msgid "Medication Template"
+msgstr "Modelo de Medicação"
+
+#. module: medical_medication
+#: model:ir.actions.act_window,name:medical_medication.medical_patient_medication_action
+#: model:ir.ui.menu,name:medical_medication.medical_patient_medication_menu
+#: view:medical.patient:medical_medication.medical_patient_view_form
+#: field:medical.patient,medication_ids:0
+msgid "Medications"
+msgstr "Medicações"
+
+#. module: medical_medication
+#: selection:medical.medication.template,duration_period:0
+#: selection:medical.patient.medication,duration_period:0
+msgid "Minutes"
+msgstr "Minutos"
+
+#. module: medical_medication
+#: selection:medical.medication.template,duration_period:0
+#: selection:medical.patient.medication,duration_period:0
+msgid "Months"
+msgstr "Meses"
+
+#. module: medical_medication
+#: view:medical.medication.dosage:medical_medication.medical_medication_dosage_form_view
+#: field:medical.medication.dosage,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: medical_medication
+#: sql_constraint:medical.medication.dosage:0
+msgid "Name must be unique!"
+msgstr "Nome deve ser único!"
+
+#. module: medical_medication
+#: view:medical.patient.medication:medical_medication.medical_patient_medication_form_view
+#: field:medical.patient.medication,notes:0
+msgid "Notes"
+msgstr "Anotações"
+
+#. module: medical_medication
+#: view:medical.medication.template:medical_medication.medical_medication_template_search_view
+#: field:medical.medication.template,pathology_id:0
+#: field:medical.patient.medication,pathology_id:0
+msgid "Pathology"
+msgstr "Patologia"
+
+#. module: medical_medication
+#: view:medical.patient.medication:medical_medication.medical_patient_medication_search_view
+#: field:medical.patient.medication,patient_id:0
+msgid "Patient"
+msgstr "Paciente"
+
+#. module: medical_medication
+#: help:medical.medication.template,duration_period:0
+#: help:medical.patient.medication,duration_period:0
+msgid ""
+"Period that the patient must take the medication in minutes, hours, days, "
+"months, years or indefinately"
+msgstr ""
+"Período em que o paciente deve tomar a medicação em minutos, horas, dias, "
+"meses, anos ou indefinidamente"
+
+#. module: medical_medication
+#: help:medical.medication.template,duration:0
+#: help:medical.patient.medication,duration:0
+msgid ""
+"Period that the patient must take the medication. in minutes, hours, days, "
+"months, years or indefinately"
+msgstr ""
+"Período em que o paciente deve tomar a medicação. em minutos, horas, dias, "
+"meses, anos ou indefinidamente"
+
+#. module: medical_medication
+#: view:medical.patient.medication:medical_medication.medical_patient_medication_search_view
+#: field:medical.patient.medication,physician_id:0
+msgid "Physician"
+msgstr "Médico"
+
+#. module: medical_medication
+#: help:medical.patient.medication,physician_id:0
+msgid "Physician who prescribed the medicament"
+msgstr "Médico que receitou o medicamento"
+
+#. module: medical_medication
+#: help:medical.medication.template,quantity:0
+#: help:medical.patient.medication,quantity:0
+msgid "Quantity of units (eg, 2 capsules) of the medicament"
+msgstr "Quantidade de unidades (por exemplo, 2 cápsulas) do medicamento"
+
+#. module: medical_medication
+#: help:medical.patient.medication,discontinued_reason:0
+msgid "Short description for discontinuing the treatment"
+msgstr "Breve descrição para a interrupção do tratamento"
+
+#. module: medical_medication
+#: help:medical.patient.medication,adverse_reaction:0
+msgid "Side effects or adverse reactions that patient experienced"
+msgstr "Efeitos colaterais ou reações adversas que pacientes experimentaram"
+
+#. module: medical_medication
+#: field:medical.medication.template,suggested_administration_hours:0
+#: field:medical.patient.medication,suggested_administration_hours:0
+msgid "Suggested administration hours"
+msgstr "Horas de administração sugeridas"
+
+#. module: medical_medication
+#: help:medical.medication.template,frequency:0
+#: help:medical.patient.medication,frequency:0
+msgid ""
+"Time in between doses the patient must wait (ie, for 1 pill each 8 hours, "
+"put here 8 and select \"hours\" in the unit field"
+msgstr ""
+"Tempo entre doses, o paciente deve esperar (ou seja, para 1 comprimido a "
+"cada 8 horas, colocar aqui 8 e selecione \"horas\" no campo da unidade"
+
+#. module: medical_medication
+#: view:medical.medication.template:medical_medication.medical_medication_template_form_view
+msgid "Treament Duration"
+msgstr "Duração do Tratamento"
+
+#. module: medical_medication
+#: view:medical.medication.template:medical_medication.medical_medication_template_search_view
+msgid "Treatment duration"
+msgstr "Descrição do tratamento"
+
+#. module: medical_medication
+#: help:medical.medication.template,frequency_prn:0
+#: help:medical.patient.medication,frequency_prn:0
+msgid "Use it as needed, pro re nata"
+msgstr "Uso conforme orientação médica"
+
+#. module: medical_medication
+#: selection:medical.medication.template,duration_period:0
+#: selection:medical.patient.medication,duration_period:0
+msgid "Years"
+msgstr "Anos"
+
+#. module: medical_medication
+#: model:medical.medication.dosage,name:medical_medication.420449005
+msgid "as needed"
+msgstr "como necessário"
+
+#. module: medical_medication
+#: selection:medical.medication.template,frequency_unit:0
+#: selection:medical.patient.medication,frequency_unit:0
+msgid "days"
+msgstr "dias"
+
+#. module: medical_medication
+#: model:medical.medication.dosage,name:medical_medication.307470009
+msgid "every 12 hours"
+msgstr "a cada 12 horas"
+
+#. module: medical_medication
+#: model:medical.medication.dosage,name:medical_medication.225750008
+msgid "every 2 hours"
+msgstr "a cada 2 horas"
+
+#. module: medical_medication
+#: model:medical.medication.dosage,name:medical_medication.307476003
+msgid "every 28 days"
+msgstr "a cada 28 dias"
+
+#. module: medical_medication
+#: model:medical.medication.dosage,name:medical_medication.225756002
+msgid "every 4 hours"
+msgstr "a cada 4 horas"
+
+#. module: medical_medication
+#: model:medical.medication.dosage,name:medical_medication.307468000
+msgid "every 6 hours"
+msgstr "a cada 6 horas"
+
+#. module: medical_medication
+#: model:medical.medication.dosage,name:medical_medication.307469008
+msgid "every 8 hours"
+msgstr "a cada 8 horas"
+
+#. module: medical_medication
+#: model:medical.medication.dosage,name:medical_medication.307475004
+msgid "every month"
+msgstr "todo mês"
+
+#. module: medical_medication
+#: model:medical.medication.dosage,name:medical_medication.225760004
+msgid "every other day"
+msgstr "qualquer outro dia"
+
+#. module: medical_medication
+#: model:medical.medication.dosage,name:medical_medication.20050000
+msgid "every two weeks"
+msgstr "a cada duas semanas"
+
+#. module: medical_medication
+#: selection:medical.medication.template,frequency_unit:0
+#: selection:medical.patient.medication,frequency_unit:0
+msgid "hours"
+msgstr "Horas"
+
+#. module: medical_medication
+#: model:product.uom,name:medical_medication.product_uom_ml
+msgid "mL"
+msgstr "mL"
+
+#. module: medical_medication
+#: model:product.uom,name:medical_medication.mg
+msgid "mg"
+msgstr "mg"
+
+#. module: medical_medication
+#: selection:medical.medication.template,frequency_unit:0
+#: selection:medical.patient.medication,frequency_unit:0
+msgid "minutes"
+msgstr "minutos"
+
+#. module: medical_medication
+#: model:product.uom,name:medical_medication.mmol
+msgid "mmol"
+msgstr "mmol"
+
+#. module: medical_medication
+#: selection:medical.medication.template,frequency_unit:0
+#: selection:medical.patient.medication,frequency_unit:0
+msgid "seconds"
+msgstr "segundos"
+
+#. module: medical_medication
+#: model:product.uom,name:medical_medication.ug
+msgid "ug"
+msgstr "ug"
+
+#. module: medical_medication
+#: selection:medical.medication.template,frequency_unit:0
+#: selection:medical.patient.medication,frequency_unit:0
+msgid "weeks"
+msgstr "semanas"
+
+#. module: medical_medication
+#: selection:medical.medication.template,frequency_unit:0
+#: selection:medical.patient.medication,frequency_unit:0
+msgid "when required"
+msgstr "quando solicitado"

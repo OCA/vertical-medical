@@ -1,0 +1,157 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * medical_medicament_attributes
+# 
+# Translators:
+# Nilo Silva <nilo.silva@e-nube.com.br>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-25 19:52+0000\n"
+"PO-Revision-Date: 2016-11-25 19:52+0000\n"
+"Last-Translator: Nilo Silva <nilo.silva@e-nube.com.br>, 2016\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: medical_medicament_attributes
+#: sql_constraint:medical.medicament.attribute.abstract:0
+#: sql_constraint:medical.medicament.attribute.color:0
+#: sql_constraint:medical.medicament.attribute.flavor:0
+#: sql_constraint:medical.medicament.attribute.shape:0
+msgid "Attribute code must be unique."
+msgstr "Código de atributo deve ser exclusivo."
+
+#. module: medical_medicament_attributes
+#: sql_constraint:medical.medicament.attribute.abstract:0
+#: sql_constraint:medical.medicament.attribute.color:0
+#: sql_constraint:medical.medicament.attribute.flavor:0
+#: sql_constraint:medical.medicament.attribute.shape:0
+msgid "Attribute name must be unique."
+msgstr "Nome do atributo deve ser exclusivo."
+
+#. module: medical_medicament_attributes
+#: field:medical.medicament.attribute.abstract,code:0
+#: field:medical.medicament.attribute.color,code:0
+#: field:medical.medicament.attribute.flavor,code:0
+#: field:medical.medicament.attribute.shape,code:0
+msgid "Code"
+msgstr "Código"
+
+#. module: medical_medicament_attributes
+#: view:medical.medicament:medical_medicament_attributes.medical_medicament_view_form
+#: field:medical.medicament,color_id:0
+msgid "Color"
+msgstr "Cor"
+
+#. module: medical_medicament_attributes
+#: field:medical.medicament.attribute.color,create_uid:0
+#: field:medical.medicament.attribute.flavor,create_uid:0
+#: field:medical.medicament.attribute.shape,create_uid:0
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: medical_medicament_attributes
+#: field:medical.medicament.attribute.color,create_date:0
+#: field:medical.medicament.attribute.flavor,create_date:0
+#: field:medical.medicament.attribute.shape,create_date:0
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: medical_medicament_attributes
+#: field:medical.medicament.attribute.abstract,display_name:0
+#: field:medical.medicament.attribute.color,display_name:0
+#: field:medical.medicament.attribute.flavor,display_name:0
+#: field:medical.medicament.attribute.shape,display_name:0
+msgid "Display Name"
+msgstr "Mostrar Nome"
+
+#. module: medical_medicament_attributes
+#: model:ir.model,name:medical_medicament_attributes.model_medical_medicament
+msgid "Email Thread"
+msgstr "Email Tópico"
+
+#. module: medical_medicament_attributes
+#: view:medical.medicament:medical_medicament_attributes.medical_medicament_view_form
+#: field:medical.medicament,flavor_id:0
+msgid "Flavor"
+msgstr "Sabor"
+
+#. module: medical_medicament_attributes
+#: help:medical.medicament.attribute.abstract,name:0
+#: help:medical.medicament.attribute.color,name:0
+#: help:medical.medicament.attribute.flavor,name:0
+#: help:medical.medicament.attribute.shape,name:0
+msgid "Full Name of Attribute"
+msgstr "Nome completo de Atributo"
+
+#. module: medical_medicament_attributes
+#: field:medical.medicament.attribute.abstract,id:0
+#: field:medical.medicament.attribute.color,id:0
+#: field:medical.medicament.attribute.flavor,id:0
+#: field:medical.medicament.attribute.shape,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_medicament_attributes
+#: field:medical.medicament.attribute.abstract,__last_update:0
+#: field:medical.medicament.attribute.color,__last_update:0
+#: field:medical.medicament.attribute.flavor,__last_update:0
+#: field:medical.medicament.attribute.shape,__last_update:0
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: medical_medicament_attributes
+#: field:medical.medicament.attribute.color,write_uid:0
+#: field:medical.medicament.attribute.flavor,write_uid:0
+#: field:medical.medicament.attribute.shape,write_uid:0
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: medical_medicament_attributes
+#: field:medical.medicament.attribute.color,write_date:0
+#: field:medical.medicament.attribute.flavor,write_date:0
+#: field:medical.medicament.attribute.shape,write_date:0
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: medical_medicament_attributes
+#: model:ir.model,name:medical_medicament_attributes.model_medical_medicament_attribute_color
+msgid "Medical Medicament Physical Attributes - Color"
+msgstr "Atributos Físicos do Medicamento  - Cor"
+
+#. module: medical_medicament_attributes
+#: model:ir.model,name:medical_medicament_attributes.model_medical_medicament_attribute_flavor
+msgid "Medical Medicament Physical Attributes - Flavor"
+msgstr "Atributos Físicos do Medicamento  - Sabor"
+
+#. module: medical_medicament_attributes
+#: model:ir.model,name:medical_medicament_attributes.model_medical_medicament_attribute_shape
+msgid "Medical Medicament Physical Attributes - Shape"
+msgstr "Atributos Físicos do Medicamento  - Formato"
+
+#. module: medical_medicament_attributes
+#: field:medical.medicament.attribute.abstract,name:0
+#: field:medical.medicament.attribute.color,name:0
+#: field:medical.medicament.attribute.flavor,name:0
+#: field:medical.medicament.attribute.shape,name:0
+msgid "Name"
+msgstr "Nome"
+
+#. module: medical_medicament_attributes
+#: view:medical.medicament:medical_medicament_attributes.medical_medicament_view_form
+#: field:medical.medicament,shape_id:0
+msgid "Shape"
+msgstr "Formato"
+
+#. module: medical_medicament_attributes
+#: help:medical.medicament.attribute.abstract,code:0
+#: help:medical.medicament.attribute.color,code:0
+#: help:medical.medicament.attribute.flavor,code:0
+#: help:medical.medicament.attribute.shape,code:0
+msgid "Short Code of Attribute"
+msgstr "Código Abrev. do Atributo"
