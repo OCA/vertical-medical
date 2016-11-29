@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# Copyright 2004 Tech-Receptives
 # Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
@@ -23,11 +24,12 @@ class MedicalPrescriptionOrderLine(models.Model):
         ondelete='cascade',
     )
     is_substitutable = fields.Boolean()
-    qty = fields.Float(string='Quantity')
+    qty = fields.Float(
+        string='Quantity',
+    )
 
     @api.model
     def name_search(self, name='', args=None, operator='ilike', limit=100):
-
         args = args or []
         domain = [
             '|', '|', '|', '|',
@@ -37,6 +39,5 @@ class MedicalPrescriptionOrderLine(models.Model):
             ('medicament_id.drug_form_id.code', operator, name),
             ('patient_id.name', operator, name),
         ]
-
         recs = self.search(domain + args, limit=limit)
         return recs.name_get()

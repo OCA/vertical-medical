@@ -1,37 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!--
-    Copyright (C) 2016 LasLabs, Inc. [https://laslabs.com]
-    @license AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
--->
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
-	
-	<record id="medical_prescription_order_line_patient_1_order_1_line_1"
-			model="medical.prescription.order.line">
-		<field name="prescription_order_id"
-			   ref="medical_prescription.medical_prescription_order_patient_1_order_1" />
-		<field name="medical_medication_id"
-			   ref="medical_medication.medical_medication_patient_1_advil_1" />
-		<field name="qty">30</field>
-	</record>
-	
-	<record id="medical_prescription_order_line_patient_1_order_1_line_2"
-			model="medical.prescription.order.line">
-		<field name="prescription_order_id"
-			   ref="medical_prescription.medical_prescription_order_patient_1_order_1" />
-		<field name="medical_medication_id"
-			   ref="medical_medication.medical_medication_patient_1_advil_2" />
-		<field name="qty">120</field>
-	</record>
-	
-	<record id="medical_prescription_order_line_patient_2_order_1_line_1"
-			model="medical.prescription.order.line">
-		<field name="prescription_order_id"
-			   ref="medical_prescription.medical_prescription_order_patient_2_order_1" />
-		<field name="medical_medication_id"
-			   ref="medical_medication.medical_medication_patient_2_advil_1" />
-		<field name="qty">60</field>
-	</record>
-	
+
+    <record id="medical_prescription_order_order_line_1" model="medical.prescription.order.line">
+        <field name="prescription_order_id" ref="medical_prescription.medical_prescription_prescription_order_1" />
+        <field name="medical_medication_id" ref="medical_medication.medical_patient_medication_medication_1" />
+        <field name="is_substitutable">True</field>
+        <field name="qty">4</field>
+    </record>
+
+    <record id="medical_prescription_order_order_line_2" model="medical.prescription.order.line">
+        <field name="prescription_order_id" ref="medical_prescription.medical_prescription_prescription_order_1" />
+        <field name="medical_medication_id" ref="medical_medication.medical_patient_medication_medication_2" />
+        <field name="is_substitutable">True</field>
+        <field name="qty">100</field>
+    </record>
+
+    <record id="medical_prescription_order_order_line_3" model="medical.prescription.order.line">
+        <field name="prescription_order_id" ref="medical_prescription.medical_prescription_prescription_order_2" />
+        <field name="medical_medication_id" ref="medical_medication.medical_patient_medication_medication_3" />
+        <field name="is_substitutable">True</field>
+        <field name="qty">10</field>
+    </record>
+
+    <record id="medical_prescription_order_order_line_4" model="medical.prescription.order.line">
+        <field name="prescription_order_id" ref="medical_prescription.medical_prescription_prescription_order_3" />
+        <field name="medical_medication_id" ref="medical_medication.medical_patient_medication_medication_4" />
+        <field name="is_substitutable">True</field>
+        <field name="qty">180</field>
+    </record>
+
+    <record id="medical_prescription_order_order_line_5" model="medical.prescription.order.line">
+        <field name="prescription_order_id" ref="medical_prescription.medical_prescription_prescription_order_4" />
+        <field name="medical_medication_id" ref="medical_medication.medical_patient_medication_medication_5" />
+        <field name="is_substitutable">False</field>
+        <field name="qty">300</field>
+    </record>
+
+    <record id="medical_prescription_order_order_line_6" model="medical.prescription.order.line">
+        <field name="prescription_order_id" ref="medical_prescription.medical_prescription_prescription_order_5" />
+        <field name="medical_medication_id" ref="medical_medication.medical_patient_medication_medication_6" />
+        <field name="is_substitutable">False</field>
+        <field name="qty">250</field>
+    </record>
+
 </odoo>
