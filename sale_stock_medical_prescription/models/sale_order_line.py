@@ -26,6 +26,8 @@ class SaleOrderLine(models.Model):
     def _compute_dispense_qty(self):
         for rec_id in self:
             rx_line = rec_id.prescription_order_line_id
+            if not rx_line:
+                return
             if rec_id.product_uom == rx_line.dispense_uom_id:
                 rec_id.dispense_qty = rec_id.product_uom_qty
             else:
