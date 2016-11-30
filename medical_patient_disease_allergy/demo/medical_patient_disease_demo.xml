@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical_patient_disease_disease_3" model="medical.patient.disease">
+        <field name="pathology_id" ref="medical_patient_disease_allergy.medical_pathology_medical_pathology_3" />
+        <field name="physician_id" ref="medical_physician.medical_physician_physician_1" />
+        <field name="patient_id" ref="medical_patient_disease_allergy.medical_patient_patient_5" />
+        <field name="disease_severity">1_mi</field>
+        <field name="state">i</field>
+        <field name="age">10</field>
+        <field name="diagnosed_date">2009-12-01</field>
+        <field name="treatment_start_date">2010-01-02</field>
+        <field name="is_infectious">False</field>
+        <field name="allergy_type">ma</field>
+        <field name="is_on_treatment">True</field>
+    </record>
+
+</odoo>
