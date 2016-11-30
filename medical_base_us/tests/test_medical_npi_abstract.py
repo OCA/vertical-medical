@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp.tests.common import TransactionCase
-from openerp import models, fields, api
+from openerp import api, fields, models
 from openerp.exceptions import ValidationError
 
 
@@ -43,6 +43,7 @@ class MedicalTestNpi(models.Model):
 class TestMedicalNpiAbstract(MedicalNpiAbstractTestMixer):
 
     def test_valid_int(self):
+        """ Test _npi_is_valid returns True if valid int input """
         for i in self.valid:
             self.assertTrue(
                 self.model_obj._npi_is_valid(i),
@@ -50,6 +51,7 @@ class TestMedicalNpiAbstract(MedicalNpiAbstractTestMixer):
             )
 
     def test_valid_str(self):
+        """ Test _npi_is_valid returns True if valid str input """
         for i in self.valid:
             self.assertTrue(
                 self.model_obj._npi_is_valid(str(i)),
@@ -57,6 +59,7 @@ class TestMedicalNpiAbstract(MedicalNpiAbstractTestMixer):
             )
 
     def test_invalid_int(self):
+        """ Test _npi_is_valid returns False if invalid int input """
         for i in self.invalid:
             self.assertFalse(
                 self.model_obj._npi_is_valid(i),
@@ -64,6 +67,7 @@ class TestMedicalNpiAbstract(MedicalNpiAbstractTestMixer):
             )
 
     def test_invalid_str(self):
+        """ Test _npi_is_valid returns False if invalid str input """
         for i in self.invalid:
             self.assertFalse(
                 self.model_obj._npi_is_valid(str(i)),
@@ -71,12 +75,14 @@ class TestMedicalNpiAbstract(MedicalNpiAbstractTestMixer):
             )
 
     def test_false(self):
+        """ Test _npi_is_valid fails greacefully if given no/Falsey input """
         self.assertFalse(
             self.model_obj._npi_is_valid(False),
             'Npi validity check on False did not fail gracefully',
         )
 
     def test_constrain_valid_us(self):
+        """ Test _npi_constrains_helper no ValidationError if valid ref """
         self.assertTrue(
             self.env['medical.test.npi'].create({
                 'ref': self.valid[0],
@@ -85,6 +91,7 @@ class TestMedicalNpiAbstract(MedicalNpiAbstractTestMixer):
         )
 
     def test_constrain_invalid_us(self):
+        """ Test _npi_constrains_helper raise ValidationError invalid ref """
         with self.assertRaises(ValidationError):
             self.env['medical.test.npi'].create({
                 'ref': self.invalid[0],
@@ -92,6 +99,7 @@ class TestMedicalNpiAbstract(MedicalNpiAbstractTestMixer):
             })
 
     def test_constrain_invalid_non_us(self):
+        """ Test _npi_constrains_helper skips validation if not US """
         self.assertTrue(
             self.env['medical.test.npi'].create({
                 'ref': self.invalid[0],
