@@ -125,6 +125,7 @@ class TestAll(TransactionCase):
         if new_resources:
             self._new_resources()
         order_id = self.env['sale.order'].create(self.order_vals)
+        order_id.order_line[0].prescription_order_line_id = False
         return order_id
 
     def _new_procurement(self, order_line_id):
@@ -256,6 +257,12 @@ class TestAll(TransactionCase):
         order_id = self._new_rx_order()
         self.assertEqual(
             1, order_id.order_line[0].dispense_qty,
+        )
+
+    def test_sale_line_compute_dispense_qty_otc(self):
+        order_id = self._new_order()
+        self.assertFalse(
+            order_id.order_line[0].dispense_qty,
         )
 
     def test_sale_line_check_product(self):
