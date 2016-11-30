@@ -14,13 +14,12 @@
         <field name="email">michael@example.com</field>
         <field name="phone">+1 (702) 555-2447</field>
         <field name="parent_id" ref="base.partner_demo" />
-        <field name="ref">530-36-1774</field>
+        <field name="birthdate_date">1999-11-02</field>
+        <field name="gender">male</field>
     </record>
     
     <record id="medical_patient_patient_5" model="medical.patient">
         <field name="partner_id" ref="medical_patient_disease_allergy.res_partner_patient_5" />
-        <field name="dob">1999-11-02</field>
-        <field name="gender">m</field>
     </record>  
 
 </odoo>
