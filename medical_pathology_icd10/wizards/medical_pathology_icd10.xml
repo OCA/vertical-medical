@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical_pathology_icd10_view_form" model="ir.ui.view">
+        <field name="name">Medical Pathology ICD-10 Import Form</field>
+        <field name="model">medical.pathology.icd10</field>
+        <field name="arch" type="xml">
+            <form string='ICD-10-CM Import'>
+                <group>
+                    <field name="zip_uri" />
+                    <field name="file_name" />
+                    <field name="code_type_id" />
+                </group>
+            </form>
+        </field>
+    </record>
+    
+    <record id="medical_pathology_icd10_action" model="ir.actions.act_window">
+        <field name="name">ICD-10 Import</field>
+        <field name="res_model">medical.pathology.icd10</field>
+        <field name="src_model">medical.pathology</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+    </record>
+
+</odoo>

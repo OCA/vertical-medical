@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <menuitem id="medical_pathology_icd10_menu"
+              parent="medical_pathology.medical_root_pathology"
+              sequence="100"
+              action="medical_pathology_icd10_action"
+              groups="base.group_no_one"
+              />
+
+</odoo>
