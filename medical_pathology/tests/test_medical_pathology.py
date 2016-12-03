@@ -21,7 +21,10 @@ class TestMedicalPathology(TransactionCase):
 
     def test_check_recursive_parent(self):
         """ Test category recursive parent raises ValidationError """
+        parent = self.env.ref(
+            'medical_pathology.medical_pathology_medical_pathology_A00',
+        )
         with self.assertRaises(ValidationError):
-            self.pathology_1.parent_id = self.env.ref(
-                'medical_pathology.medical_pathology_2'
+            parent.parent_id = self.env.ref(
+                'medical_pathology.medical_pathology_medical_pathology_A00_0',
             ).id
