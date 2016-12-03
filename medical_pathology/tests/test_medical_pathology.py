@@ -18,3 +18,10 @@ class TestMedicalPathology(TransactionCase):
         """ Test 2 same codes per code_type raises integrity error """
         with self.assertRaises(IntegrityError):
             self.pathology_1.code = 'B54'
+
+    def test_check_recursive_parent(self):
+        """ Test category recursive parent raises ValidationError """
+        with self.assertRaises(ValidationError):
+            self.pathology_1.parent_id = self.env.ref(
+                'medical_pathology.medical_pathology_2'
+            ).id

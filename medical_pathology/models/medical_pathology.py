@@ -47,9 +47,30 @@ class MedicalPathology(models.Model):
     gene = fields.Char(
         string='Affected Gene',
     )
+    child_ids = fields.One2many(
+        string='Children Pathologies',
+        comodel_name='medical.pathology',
+        inverse_name='parent_id',
+        domain="[('code_type_id', '=', code_type_id)]",
+    )
+    parent_id = fields.Many2one(
+        string='Parent Pathology',
+        comodel_name='medical.pathology',
+        domain="[('code_type_id', '=', code_type_id)]",
+        index=True,
+    )
 
     _sql_constraints = [
         ('code_and_type_uniq',
          'UNIQUE(code, code_type_id)',
          'Pathology codes must be unique per Code Type.'),
     ]
+
+    @api.multi
+    @api.constrains('parent_id')
+    def _check_recursion_parent_id(self):
+        if not self._check_recursion():
+            raise ValidationError(_(
+                'Error! You are attempting to create a recursive pathology.'
+            ))
+
