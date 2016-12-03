@@ -5,31 +5,31 @@
 <odoo>
     
     <record id="pathology_code_01" model="medical.pathology.code.type">
-        <field name="name">ICD9CM Disease/Injury</field>
+        <field name="name">ICD-9-CM Disease/Injury</field>
     </record>
     
     <record id="pathology_code_02" model="medical.pathology.code.type">
-        <field name="name">ICD9CM Procedures</field>
+        <field name="name">ICD-9-CM Procedures</field>
     </record>
     
     <record id="pathology_code_03" model="medical.pathology.code.type">
-        <field name="name">ICD9CM V-Code</field>
+        <field name="name">ICD-9-CM V-Code</field>
     </record>
     
     <record id="pathology_code_04" model="medical.pathology.code.type">
-        <field name="name">ICD9CM E-Code</field>
+        <field name="name">ICD-9-CM E-Code</field>
     </record>
     
     <record id="pathology_code_05" model="medical.pathology.code.type">
-        <field name="name">ICD10CM</field>
+        <field name="name">ICD-10-CM</field>
     </record>
     
     <record id="pathology_code_06" model="medical.pathology.code.type">
-        <field name="name">ICD10PCS</field>
+        <field name="name">ICD-10-PCS</field>
     </record>
     
     <record id="pathology_code_07" model="medical.pathology.code.type">
-        <field name="name">ICD10AM 6th Edition</field>
+        <field name="name">ICD-10-AM 6th Edition</field>
     </record>
     
 </odoo>
