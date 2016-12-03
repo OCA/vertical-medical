@@ -15,6 +15,9 @@ class MedicalPathologyCategory(models.Model):
         required=True,
         translate=True,
     )
+    notes = fields.Text(
+        translate=True,
+    )
     child_ids = fields.One2many(
         string='Children Categories',
         comodel_name='medical.pathology.category',

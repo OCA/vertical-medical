@@ -39,4 +39,14 @@
         <field name="code_type_id" ref="medical_pathology.pathology_code_05" />
     </record>
 
+    <record id="medical_pathology_category_7" model="medical.pathology.category">
+        <field name="name">Cholera</field>
+        <field name="parent_id" ref="medical_pathology.medical_pathology_category_2" />
+        <field name="code_type_id" ref="medical_pathology.pathology_code_05" />
+        <field name="notes">Clinical Information:
+* Acute diarrheal disease endemic in India and southeast Asia whose causative agent is vibrio cholerae; can lead to severe dehydration in a matter of hours unless quickly treated.
+* An acute diarrheal disease endemic in India and southeast Asia whose causative agent is vibrio cholerae. This condition can lead to severe dehydration in a matter of hours unless quickly treated.
+* Cholera is a bacterial infection that causes diarrhea. The cholera bacterium is usually found in water or food contaminated by feces . Cholera is rare in the United States. You may get it if you travel to parts of the world with inadequate water treatment and poor sanitation, and lack of sewage treatment. Outbreaks can also happen after disasters. The disease is not likely to spread directly from one person to another. Often the infection is mild or without symptoms, but sometimes it can be severe. Severe symptoms include profuse watery diarrhea, vomiting, and leg cramps. In severe cases, rapid loss of body fluids leads to dehydration and shock. Without treatment, death can occur within hours. Doctors diagnose cholera with a stool sample or rectal swab. Treatment includes replacing fluid and salts and sometimes antibiotics. Anyone who thinks they may have cholera should seek medical attention immediately. Dehydration can be rapid so fluid replacement is essential. Centers for Disease Control and Prevention.</field>
+    </record>
+
 </odoo>

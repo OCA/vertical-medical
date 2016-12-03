@@ -57,6 +57,9 @@
                                    context="{'default_code_type_id': code_type_id}"
                                    />
                         </group>
+                        <group name="notes">
+                            <field name="notes" />
+                        </group>
                     </group>
                 </sheet>
             </form>
