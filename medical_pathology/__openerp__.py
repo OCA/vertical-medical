@@ -5,7 +5,7 @@
 {
     "name": "Medical Pathology",
     "summary": "Extends Odoo Medical with pathologies (diseases).",
-    "version": "9.0.1.0.0",
+    "version": "9.0.1.0.1",
     "category": "Medical",
     "website": "https://laslabs.com/",
     "author": "LasLabs, ACSONE SA/NV, Odoo Community Association (OCA)",

@@ -20,6 +20,7 @@ class MedicalPathology(models.Model):
     code_type_id = fields.Many2one(
         string='Code Type',
         comodel_name='medical.pathology.code.type',
+        index=True,
     )
     notes = fields.Text(
         translate=True,
@@ -27,6 +28,7 @@ class MedicalPathology(models.Model):
     category_id = fields.Many2one(
         string='Category of Pathology',
         comodel_name='medical.pathology.category',
+        domain="[('code_type_id', '=', code_type_id)]",
         index=True,
     )
     medical_pathology_group_ids = fields.Many2many(
