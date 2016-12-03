@@ -2,7 +2,7 @@
 # Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo.tests.common import TransactionCase
+from openerp.tests.common import TransactionCase
 from psycopg2 import IntegrityError
 
 
@@ -17,4 +17,4 @@ class TestMedicalPathologyGroup(TransactionCase):
     def test_check_unique_code(self):
         """ Test non-unique codes raise IntegrityError """
         with self.assertRaises(IntegrityError):
-            self.pathology_group_1.code = 'MDG6'
+            self.pathology_group_1.code = '[DEMO] MDG6'

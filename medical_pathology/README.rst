@@ -8,8 +8,34 @@ Odoo Medical Pathology
 
 This module extends Odoo Medical with functionality for pathologies (diseases).
 
+Definitions
+===========
+
+* ``Pathology`` - The branch of medicine concerned with the study of the nature of
+  disease and its causes, processes, development, and consequences.
+
+Configuration
+=============
+
+The ``Disease`` configuration menu is in the ``Configuration`` section of the
+``Medical`` app.
+
+* ``Pathologies`` - Use ths menu to add or view diseases in the system.
+* ``Pathology Categories`` - Provides a hierarchal category structure for pathologies.
+  These categories are typically standardized, such as ICD-10.
+* ``Pathology Groups`` - Allows for internal pathology classification while providing
+  isolation from the standardized categories.
+
+.. image:: static/description/screenshot_pathologies.png?raw=true
+   :alt: Pathologies
+
+.. image:: static/description/screenshot_pathology_categories.png?raw=true
+   :alt: Pathology Categories
+
 Usage
 =====
+
+This module does not provide functionality beyond data models as listed above.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
@@ -18,8 +44,9 @@ Usage
 Known issues / Roadmap
 ======================
 
-* Note this module replaces pathology logic from medical_disease
-* The remaining medical_disease logic is in medical_patient_disease
+Upgrade Note: This module replaces pathology logic from v8 ``medical_disease``. The
+remaining logic related to the application of pathologies to the context of a patient
+(aka ``pathosis``) is in ``medical_patient_disease``.
 
 Bug Tracker
 ===========
@@ -42,6 +69,7 @@ Contributors
 
 * James Foster <jfoster@laslabs.com>
 * Brett Wood <bwood@laslabs.com>
+* Dave Lasley <dave@laslabs.com>
 
 Maintainer
 ----------
