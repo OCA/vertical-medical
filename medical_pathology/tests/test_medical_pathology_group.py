@@ -17,4 +17,4 @@ class TestMedicalPathologyGroup(TransactionCase):
     def test_check_unique_code(self):
         """ Test non-unique codes raise IntegrityError """
         with self.assertRaises(IntegrityError):
-            self.pathology_group_1.code = 'MDG6'
+            self.pathology_group_1.code = '[DEMO] MDG6'

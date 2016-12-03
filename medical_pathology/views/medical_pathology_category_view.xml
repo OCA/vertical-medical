@@ -13,8 +13,14 @@
                 <field name="parent_id" />
                 <newline />
                 <group expand="0" string="Group By...">
-                    <filter string="Parent Category" domain="[]"
-                        context="{'group_by':'parent_id'}" />
+                    <filter string="Parent Category"
+                            domain="[]"
+                            context="{'group_by':'parent_id'}"
+                            />
+                    <filter string="Code Type"
+                            domain="[]"
+                            context="{'group_by':'code_type_id'}"
+                            />
                 </group>
             </search>
         </field>
@@ -26,6 +32,7 @@
         <field name="arch" type="xml">
             <tree string="Medical Pathology Category">
                 <field name="name" />
+                <field name="code_type_id" />
                 <field name="parent_id" />
             </tree>
         </field>
@@ -45,7 +52,13 @@
                     <div class="oe_right oe_button_box" name="buttons" />
                     <group name="data">
                         <group name="main">
-                            <field name="parent_id"/>
+                            <field name="code_type_id" />
+                            <field name="parent_id"
+                                   context="{'default_code_type_id': code_type_id}"
+                                   />
+                        </group>
+                        <group name="notes">
+                            <field name="notes" />
                         </group>
                     </group>
                 </sheet>
