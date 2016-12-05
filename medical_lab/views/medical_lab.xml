@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2016-2017 LasLabs Inc.
+    License AGPL-3 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <record id="medical_lab_view_form" model="ir.ui.view">
+            <field name="name">Lab Form</field>
+            <field name="model">medical.lab</field>
+            <field name="arch" type="xml">
+                <form string="Laboratory Test">
+                    <header />
+                    <sheet>
+                        <group name="meta">
+                            <group name="test">
+                                <field name="name" />
+                                <field name="test_type_id" />
+                                <field name="date_perform" />
+                                <field name="date_request" />
+                                <field name="date_receive" />
+                            </group>
+                            <group name="entity">
+                                <field name="request_physician_id" />
+                                <field name="physician_id" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Results" name="page_test">
+                                <group>
+                                    <field name="result_ids" nolabel="1">
+                                        <tree editable="top" string="Test Cases">
+                                            <field name="sequence" />
+                                            <field name="name" />
+                                            <field name="result_actual" />
+                                            <field name="result_expect" />
+                                            <field name="uom_id" />
+                                        </tree>
+                                        <form string="Test Cases">
+                                            <group>
+                                                <field name="criterion_id" />
+                                                <field name="name"
+                                                       readonly="True"
+                                                       />
+                                                <field name="description"
+                                                       readonly="True"
+                                                       />
+                                                <field name="result_actual" />
+                                                <field name="result_expect"
+                                                       readonly="True"
+                                                       />
+                                                <field name="uom_id"
+                                                       readonly="True"
+                                                       />
+                                                <field name="notes" />
+                                            </group>
+                                        </form>
+                                    </field>
+                                </group>
+                            </page>
+                            <page string="Diagnosis" name="page_diagnosis">
+                                <field name="diagnosis_ids" nolabel="1" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+        </field>
+    </record>
+
+    <record id="medical_lab_view_tree" model="ir.ui.view">
+        <field name="name">Lab Tree</field>
+        <field name="model">medical.lab</field>
+        <field name="arch" type="xml">
+            <tree string='Labs'>
+                <field name="name" />
+                <field name="test_type_id" />
+                <field name="date_perform" />
+                <field name="date_receive" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="medical_lab_view_search" model="ir.ui.view">
+        <field name="name">Lab Search</field>
+        <field name="model">medical.lab</field>
+        <field name="arch" type="xml">
+            <search string="Search Labs">
+                <field name="name" />
+                <field name="test_type_id" />
+                <field name="date_perform" />
+                <field name="date_request" />
+                <field name="physician_id" />
+                <field name="request_physician_id" />
+                <group expand="0" string="Group By">
+                    <filter string="Date of Analysis"
+                            domain="[]"
+                            context="{'group_by': 'date_perform'}"
+                            />
+                    <filter string="Date Requested"
+                            domain="[]"
+                            context="{'group_by': 'date_request'}"
+                            />
+                    <filter string="Date Received"
+                            domain="[]"
+                            context="{'group_by': 'date_receive'}"
+                            />
+                    <filter string="Pathologist"
+                            domain="[]"
+                            context="{'group_by': 'physician_id'}"
+                            />
+                    <filter string="Requesting Physician"
+                            domain="[]"
+                            context="{'group_by': 'request_physician_id'}"
+                            />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="medical_lab_action" model="ir.actions.act_window">
+        <field name="name">Labs</field>
+        <field name="res_model">medical.lab</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

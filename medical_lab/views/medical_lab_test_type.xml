@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2016-2017 LasLabs Inc.
+    License AGPL-3 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <record id="medical_lab_test_type_view_form" model="ir.ui.view">
+        <field name="name">Lab Test Type Form</field>
+        <field name="model">medical.lab.test.type</field>
+        <field name="arch" type="xml">
+            <form string="Lab Test Type">
+                <sheet>
+                    <group name="meta">
+                        <field name="name" />
+                        <field name="code" />
+                        <field name="product_id" />
+                    </group>
+                    <notebook>
+                        <page name="criteria" string="Criteria">
+                            <group>
+                                <field name="criterion_ids" />
+                            </group>
+                        </page>
+                        <page name="additional" string="Additional">
+                            <group>
+                                <field name="description" />
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_lab_test_type_view_tree" model="ir.ui.view">
+        <field name="name">Lab Test Types Tree</field>
+        <field name="model">medical.lab.test.type</field>
+        <field name="arch" type="xml">
+            <tree string="Lab Test Types">
+                <field name="name" />
+                <field name="code" />
+            </tree>
+        </field>
+    </record>
+    
+    <record id="medical_lab_test_type_view_search" model="ir.ui.view">
+        <field name="name">Lab Test Types Search</field>
+        <field name="model">medical.lab.test.type</field>
+        <field name="arch" type="xml">
+            <search string="Search Lab Test Types">
+                <field name="name" />
+                <field name="code" />
+            </search>
+        </field>
+    </record>
+
+    <record id="medical_lab_test_type_action" model="ir.actions.act_window">
+        <field name="name">Lab Test Types Action</field>
+        <field name="res_model">medical.lab.test.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

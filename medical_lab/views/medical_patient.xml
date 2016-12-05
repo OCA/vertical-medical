@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2016-2017 LasLabs Inc.
+    License AGPL-3 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+    
+    <act_window domain="[('patient_id', '=', active_id)]"
+                id="medical_patient_lab_action_history"
+                name="Lab Reports"
+                res_model="medical.lab.patient"
+                src_model="medical.patient"
+                />
+    
+</odoo>

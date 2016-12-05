@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2016-2017 LasLabs Inc.
+    License AGPL-3 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <record id="medical_lab_patient_view_form" model="ir.ui.view">
+        <field name="name">Patient Lab Form</field>
+        <field name="model">medical.lab.patient</field>
+        <field name="inherit_id" ref="medical_lab_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="string">Patient Lab</attribute>
+            </xpath>
+            <xpath expr="//header" position="inside">
+                <field name="state" widget="statusbar" />
+            </xpath>
+            <xpath expr="//field[@name='request_physician_id']"
+                   position="before"
+                   >
+                <field name="patient_id" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_lab_patient_view_tree" model="ir.ui.view">
+        <field name="name">Patient Labs Tree</field>
+        <field name="model">medical.lab.patient</field>
+        <field name="inherit_id" ref="medical_lab_view_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="patient_id" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_lab_patient_view_search" model="ir.ui.view">
+        <field name="name">Patient Labs Search</field>
+        <field name="model">medical.lab.patient</field>
+        <field name="inherit_id" ref="medical_lab_view_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='request_physician_id']" positon="after">
+                <field name="patient_id" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_lab_patient_action" model="ir.actions.act_window">
+        <field name="name">Patient Lab Requests</field>
+        <field name="res_model">medical.lab.patient</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="medical_lab_patient_action_draft" model="ir.actions.act_window">
+        <field name="name">Draft Patient Lab Requests</field>
+        <field name="res_model">medical.lab.patient</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('state','=','draft')]</field>
+    </record>
+
+    <record id="medical_lab_patient_action_draft_today" model="ir.actions.act_window">
+        <field name="name">Today's Draft Patient Lab Requests</field>
+        <field name="res_model">medical.lab.patient</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('state','=','draft'),
+                               ('date_receive', '>=', time.strftime('%Y-%m-%d 00:00:01')),
+                               ('date_receive','>=', time.strftime('%Y-%m-%d 23:59:59'),
+                              )]
+        </field>
+    </record>
+
+</odoo>

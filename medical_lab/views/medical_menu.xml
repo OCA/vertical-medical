@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2016-2017 LasLabs Inc.
+    License AGPL-3 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <menuitem id="medical_lab_root_menu"
+              name="Laboratory"
+              parent="medical.medical_root"
+              sequence="15"
+              />
+    
+    <menuitem id="medical_lab_patient_menu_root"
+              name="Patient Labs"
+              parent="medical_lab_root_menu"
+              sequence="10"
+              />
+    
+    <menuitem id="medical_lab_patient_menu_all"
+              name="All"
+              parent="medical_lab_patient_menu_root"
+              action="medical_lab_patient_action"
+              sequence="10"
+              />
+    
+    <menuitem id="medical_lab_patient_menu_today"
+              name="Today's Drafts"
+              parent="medical_lab_patient_menu_root"
+              action="medical_lab_patient_action_draft_today"
+              sequence="20"
+              />
+    
+    <menuitem id="medical_lab_patent_menu_draft"
+              name="All Drafts"
+              parent="medical_lab_patient_menu_root"
+              action="medical_lab_patient_action_draft"
+              sequence="30"
+              />
+    
+</odoo>
