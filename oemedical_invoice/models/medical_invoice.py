@@ -118,28 +118,3 @@ class labtest (orm.Model):
 
 
 labtest()
-
-
-class patient_prescription_order (orm.Model):
-
-    _name = "medical.prescription.order"
-    _inherit = "medical.prescription.order"
-
-    _columns = {
-        'no_invoice': fields.boolean('Invoice exempt'),
-        'invoice_status': fields.selection(
-            [
-                ('invoiced',
-                 'Invoiced'),
-                ('tobe',
-                 'To be Invoiced')],
-            'Invoice Status'),
-    }
-
-    _defaults = {
-        'invoice_status': lambda *a: 'tobe',
-        'no_invoice': lambda *a: True
-    }
-
-
-patient_prescription_order()
