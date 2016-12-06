@@ -4,10 +4,10 @@
 
 <odoo>
 
-    <menuitem id="medical_pathology_icd10_menu"
+    <menuitem id="medical_pathology_import_menu"
               parent="medical_pathology.medical_root_pathology"
               sequence="100"
-              action="medical_pathology_icd10_action"
+              action="medical_pathology_import_action"
               groups="base.group_no_one"
               />
 

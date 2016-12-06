@@ -4,23 +4,24 @@
 
 <odoo>
 
-    <record id="medical_pathology_icd10_view_form" model="ir.ui.view">
-        <field name="name">Medical Pathology ICD-10 Import Form</field>
-        <field name="model">medical.pathology.icd10</field>
+    <record id="medical_pathology_import_view_form" model="ir.ui.view">
+        <field name="name">Medical Pathology Import Form</field>
+        <field name="model">medical.pathology.import</field>
         <field name="arch" type="xml">
-            <form string='ICD-10-CM Import'>
+            <form string='Remote Pathology Data Import'>
                 <group>
+                    <field name="importer_type" />
+                    <field name="code_type_id" />
                     <field name="zip_uri" />
                     <field name="file_name" />
-                    <field name="code_type_id" />
                 </group>
             </form>
         </field>
     </record>
     
-    <record id="medical_pathology_icd10_action" model="ir.actions.act_window">
-        <field name="name">ICD-10 Import</field>
-        <field name="res_model">medical.pathology.icd10</field>
+    <record id="medical_pathology_import_action" model="ir.actions.act_window">
+        <field name="name">Import Data</field>
+        <field name="res_model">medical.pathology.import</field>
         <field name="src_model">medical.pathology</field>
         <field name="view_type">form</field>
         <field name="view_mode">form</field>
