@@ -57,16 +57,14 @@ class MedicalPathologyImport(models.TransientModel):
         ``_onchange_importer_type_*``, such as
         ``_onchange_importer_type_icd10``.
         """
-        for record in self:
-            try:
-                method = getattr(
-                    record, '_onchange_importer_type_%s' % record.importer_type,
-                )
-                method()
-            except AttributeError:
-                record.zip_uri = None
-                record.file_name = None
-                record.code_type_id = None
+        try:
+            method = getattr(
+                self, '_onchange_importer_type_%s' % self.importer_type,
+            )
+            method()
+        except AttributeError:
+            self.zip_uri = False
+            self.file_name = False
 
     @api.model
     def create(self, vals):
@@ -82,9 +80,9 @@ class MedicalPathologyImport(models.TransientModel):
         Import methods should be named ``do_import_*``, such as
         ``do_import_icd10`` or ``do_import_snomed``.
         """
-        for record in self:
-            method = getattr(record, 'do_import_%s' % record.importer_type)
-            method()
+        self.ensure_one()
+        method = getattr(self, 'do_import_%s' % self.importer_type)
+        method()
 
     @api.multi
     def _get_pathology_xml_id(self, code):

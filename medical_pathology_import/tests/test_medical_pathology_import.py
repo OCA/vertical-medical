@@ -77,11 +77,10 @@ class TestMedicaPathologyImport(TransactionCase):
     def test_onchange_importer_type_child(self):
         """ It should call child importer onchange """
         record = self.create_record()
-        with mock.patch.object(
-            record, '_onchange_importer_type_test',
-        ) as method:
-            record._onchange_importer_type()
-            method.assert_called_once_with()
+        method = mock.MagicMock()
+        record._onchange_importer_type_test = method
+        record._onchange_importer_type()
+        method.assert_called_once_with()
 
     def test_onchange_importer_type(self):
         """ It should null fields out when no child importer """
@@ -89,14 +88,11 @@ class TestMedicaPathologyImport(TransactionCase):
         vals = {
             'zip_uri': 'uri',
             'file_name': 'name',
-            'code_type_id': self.code_type.id,
         }
         record.write(vals)
         record._onchange_importer_type()
         for key in vals.keys():
-            self.assertEqual(
-                record[key], None,
-            )
+            self.assertFalse(record[key])
 
     def test_create_calls_import(self):
         """ It should call do_import on new record """
@@ -111,7 +107,7 @@ class TestMedicaPathologyImport(TransactionCase):
     def test_do_import_calls_child(self):
         """ It should call child import method for type """
         record = self.create_record()
-        setattr(self.Model, 'do_import_test', mock.MagicMock())
+        setattr(record, 'do_import_test', mock.MagicMock())
         record.do_import()
         record.do_import_test.assert_called_once_with()
 
@@ -127,7 +123,7 @@ class TestMedicaPathologyImport(TransactionCase):
         """ It should return properly formatted XML id """
         record = self.create_record()
         self.assertEqual(
-            record._get_pathology_xml_id('A00-B01'),
+            record._get_pathology_category_xml_id('A00-B01'),
             'medical_pathology_category_A00_B01',
         )
 
@@ -158,7 +154,7 @@ class TestMedicaPathologyImport(TransactionCase):
         pathology = record._upsert_pathology(**args)
         args['name'] = 'New Name'
         record._upsert_pathology(**args)
-        self.asertEqual(
+        self.assertEqual(
             pathology.name, args['name'],
         )
 
@@ -189,6 +185,6 @@ class TestMedicaPathologyImport(TransactionCase):
         category = record._upsert_pathology_category(**args)
         args['name'] = 'New Name'
         record._upsert_pathology_category(**args)
-        self.asertEqual(
+        self.assertEqual(
             category.name, args['name'],
         )
