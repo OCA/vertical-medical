@@ -1,26 +1,9 @@
 # -*- coding: utf-8 -*-
-# #############################################################################
-#
-# Tech-Receptives Solutions Pvt. Ltd.
-# Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
-# Special Credit and Thanks to Thymbra Latinoamericana S.A.
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as
-# published by the Free Software Foundation, either version 3 of the
-# License, or (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-# #############################################################################
+# Copyright 2004 Tech-Receptives
+# Copyright 2016 LasLabs Inc.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models
+from openerp import api, fields, models
 
 
 class MedicalPrescriptionOrderLine(models.Model):
@@ -31,9 +14,30 @@ class MedicalPrescriptionOrderLine(models.Model):
 
     prescription_order_id = fields.Many2one(
         comodel_name='medical.prescription.order',
-        string='Prescription Order')
+        string='Prescription Order',
+        required=True,
+    )
     medical_medication_id = fields.Many2one(
-        comodel_name='medical.patient.medication', string='Medication',
-        required=True, ondelete='cascade')
+        comodel_name='medical.patient.medication',
+        string='Medication',
+        required=True,
+        ondelete='cascade',
+    )
     is_substitutable = fields.Boolean()
-    qty = fields.Float(string='Quantity')
+    qty = fields.Float(
+        string='Quantity',
+    )
+
+    @api.model
+    def name_search(self, name='', args=None, operator='ilike', limit=100):
+        args = args or []
+        domain = [
+            '|', '|', '|', '|',
+            ('medicament_id.product_id.name', operator, name),
+            ('medicament_id.strength', operator, name),
+            ('medicament_id.strength_uom_id.name', operator, name),
+            ('medicament_id.drug_form_id.code', operator, name),
+            ('patient_id.name', operator, name),
+        ]
+        recs = self.search(domain + args, limit=limit)
+        return recs.name_get()

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical_prescription_prescription_order_1" model="medical.prescription.order">
+        <field name="patient_id" ref="medical.medical_patient_patient_1" />
+        <field name="physician_id" ref="medical_physician.medical_physician_physician_1" />
+        <field name="date_prescription">2014-12-10</field>
+        <field name="partner_id" ref="medical_pharmacy.medical_pharmacy_1" />
+        <field name="is_verified">True</field>
+    </record>
+
+    <record id="medical_prescription_prescription_order_2" model="medical.prescription.order">
+        <field name="patient_id" ref="medical.medical_patient_patient_2" />
+        <field name="physician_id" ref="medical_physician.medical_physician_physician_1" />
+        <field name="date_prescription">2016-01-01</field>
+        <field name="partner_id" ref="medical_pharmacy.medical_pharmacy_1" />
+        <field name="is_verified">True</field>
+    </record>
+
+    <record id="medical_prescription_prescription_order_3" model="medical.prescription.order">
+        <field name="patient_id" ref="medical_medication.medical_patient_patient_6" />
+        <field name="physician_id" ref="medical_physician.medical_physician_physician_3" />
+        <field name="date_prescription">2010-01-02</field>
+        <field name="partner_id" ref="medical_pharmacy.medical_pharmacy_1" />
+        <field name="is_verified">True</field>
+    </record>
+
+    <record id="medical_prescription_prescription_order_4" model="medical.prescription.order">
+        <field name="patient_id" ref="medical_patient_disease.medical_patient_patient_4" />
+        <field name="physician_id" ref="medical_physician.medical_physician_physician_2" />
+        <field name="date_prescription">2012-02-10</field>
+        <field name="partner_id" ref="medical_prescription.medical_pharmacy_2" />
+        <field name="is_verified">True</field>
+        <field name="is_pregnancy_warning">True</field>
+    </record>
+
+    <record id="medical_prescription_prescription_order_5" model="medical.prescription.order">
+        <field name="patient_id" ref="medical.medical_patient_patient_3" />
+        <field name="physician_id" ref="medical_physician.medical_physician_physician_1" />
+        <field name="date_prescription">2016-12-01</field>
+        <field name="partner_id" ref="medical_pharmacy.medical_pharmacy_1" />
+        <field name="is_verified">True</field>
+    </record>
+
+    <!-- No rx_lines in this order -->
+    <record id="medical_prescription_prescription_order_6" model="medical.prescription.order">
+        <field name="patient_id" ref="medical_prescription.medical_patient_patient_7" />
+        <field name="physician_id" ref="medical_prescription.medical_physician_physician_4" />
+        <field name="partner_id" ref="medical_prescription.medical_pharmacy_3" />
+        <field name="is_verified">False</field>
+    </record>
+
+</odoo>

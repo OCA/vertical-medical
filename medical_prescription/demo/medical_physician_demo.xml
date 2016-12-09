@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="res_partner_physician_4" model="res.partner">
+        <field name="name">Eltonette Baird</field>
+        <field name="city">New York</field>
+        <field name="state_id" ref="base.state_us_27" />
+        <field name="country_id" ref="base.us" />
+        <field name="zip">10005</field>
+        <field name="street">176 Example Way</field>
+        <field name="email">ebaird@example.com</field>
+        <field name="phone">+1 (646) 555-2342</field>
+        <field name="ref">084-78-5690</field>
+    </record>
+
+    <record id="medical_physician_physician_4" model="medical.physician">
+        <field name="partner_id" ref="medical_prescription.res_partner_physician_4" />
+        <field name="specialty_id" ref="medical_physician.medical_specialty_gp" />
+        <field name="info">General practitioner, supplier</field>
+    </record>
+
+</odoo>

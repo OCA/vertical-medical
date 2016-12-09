@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data noupdate="1">
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
-        <!-- Sequences for medical.prescription.order -->
-        <record id="seq_type_medical_prescription_order" model="ir.sequence.type">
-            <field name="name">Medical Prescription Order</field>
-            <field name="code">medical.prescription.order</field>
-        </record>
+<odoo noupdate="1">
 
-        <record id="seq_medical_prescription_order" model="ir.sequence">
-            <field name="name">Medical Prescription Order</field>
-            <field name="code">medical.prescription.order</field>
-            <field name="prefix">PRO</field>
-            <field name="padding">3</field>
-        </record>
-		
-		
-    </data>
-</openerp>
+    <record id="seq_medical_prescription_order" model="ir.sequence">
+        <field name="name">Medical Prescription Order</field>
+        <field name="code">medical.prescription.order</field>
+        <field name="prefix">PRO</field>
+        <field name="padding">4</field>
+    </record>
+
+</odoo>

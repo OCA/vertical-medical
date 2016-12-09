@@ -1,48 +1,34 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#     This file is part of medical_prescription,
-#     an Odoo module.
-#
-#     Copyright (c) 2015 ACSONE SA/NV (<http://acsone.eu>)
-#
-#     medical_prescription is free software:
-#     you can redistribute it and/or modify it under the terms of the GNU
-#     Affero General Public License as published by the Free Software
-#     Foundation,either version 3 of the License, or (at your option) any
-#     later version.
-#
-#     medical_prescription is distributed
-#     in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
-#     even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
-#     PURPOSE.  See the GNU Affero General Public License for more details.
-#
-#     You should have received a copy of the GNU Affero General Public License
-#     along with medical_prescription.
-#     If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Copyright 2015 ACSONE SA/NV
+# Copyright 2016 LasLabs Inc.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+
 {
-    'name': 'Medical Prescription',
-    'version': '8.0.1.1.0',
-    'author': 'ACSONE SA/NV, Odoo Community Association (OCA)',
-    'maintainer': 'ACSONE SA/NV, Odoo Community Association (OCA)',
-    'website': 'http://www.acsone.eu',
-    'license': 'AGPL-3',
-    'category': 'Medical',
-    'depends': [
-        'medical',
-        'medical_medicament',
-        'medical_medication',
+    "name": "Medical Prescription",
+    "summary": "Introduces prescription orders and prescription order lines.",
+    "version": "9.0.1.0.0",
+    "category": "Medical",
+    "website": "http://www.acsone.eu",
+    "author": "ACSONE SA/NV, LasLabs, Odoo Community Association (OCA)",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "depends": [
+        "medical_medication",
+        "medical_pharmacy",
     ],
-    'summary': 'This module introduce the prescription/prescription line '
-    'into the medical addons.',
-    'data': [
-        'security/ir.model.access.csv',
-        'data/ir_sequence.xml',
-        'views/medical_prescription_order_view.xml',
-        'views/medical_prescription_order_line_view.xml',
+    "data": [
+        "data/ir_sequence.xml",
+        "security/ir.model.access.csv",
+        "views/medical_prescription_order_view.xml",
+        "views/medical_prescription_order_line_view.xml",
+        "views/medical_menu.xml",
     ],
-    'installable': False,
-    'auto_install': False,
+    "demo": [
+        "demo/medical_patient_demo.xml",
+        "demo/medical_pharmacy_demo.xml",
+        "demo/medical_physician_demo.xml",
+        "demo/medical_prescription_order_demo.xml",
+        "demo/medical_prescription_order_line_demo.xml",
+    ],
 }

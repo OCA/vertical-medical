@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="partner_pharmacy_2" model="res.partner">
+        <field name="name">Test Pharmacy 2</field>
+        <field name="street">321 Test St.</field>
+        <field name="street2">Suite 1337</field>
+        <field name="city">Henderson</field>
+        <field name="country_id" ref="base.us" />
+        <field name="phone">+1 (702) 555-2447</field>
+        <field name="email">pharmacy_2@example.com</field>
+        <field name="state_id" ref="base.state_us_3" />
+    </record>
+
+    <record id="medical_pharmacy_2" model="medical.pharmacy">
+        <field name="name">Test Pharmacy 2</field>
+        <field name="partner_id" ref="medical_prescription.partner_pharmacy_2" />
+    </record>
+
+    <record id="partner_pharmacy_3" model="res.partner">
+        <field name="name">Test Pharmacy 3</field>
+        <field name="street">321 Main Test St.</field>
+        <field name="street2">Suite 1567</field>
+        <field name="city">New York</field>
+        <field name="country_id" ref="base.us" />
+        <field name="phone">+1 (646) 555-8757</field>
+        <field name="email">pharmacy_3@example.com</field>
+        <field name="state_id" ref="base.state_us_27" />
+    </record>
+
+    <record id="medical_pharmacy_3" model="medical.pharmacy">
+        <field name="name">Test Pharmacy 3</field>
+        <field name="partner_id" ref="medical_prescription.partner_pharmacy_3" />
+    </record>
+
+</odoo>
