@@ -3,13 +3,14 @@
 # * medical
 # 
 # Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2016
 # Nilo Silva <nilo.silva@e-nube.com.br>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-25 19:52+0000\n"
-"PO-Revision-Date: 2016-11-25 19:52+0000\n"
+"POT-Creation-Date: 2016-11-29 19:15+0000\n"
+"PO-Revision-Date: 2016-11-29 19:15+0000\n"
 "Last-Translator: Nilo Silva <nilo.silva@e-nube.com.br>, 2016\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
 "MIME-Version: 1.0\n"
@@ -425,7 +426,7 @@ msgstr "Apelido"
 #. module: medical
 #: selection:medical.appointment,appointment_type:0
 msgid "Ambulatory"
-msgstr "Ambulatório"
+msgstr "em Consultório"
 
 #. module: medical
 #: model:ir.actions.act_window,name:medical.medical_appointment_action
@@ -1137,7 +1138,7 @@ msgstr "Em Consulta"
 #. module: medical
 #: selection:medical.appointment,appointment_type:0
 msgid "Inpatient"
-msgstr "Internado"
+msgstr "em Hospital"
 
 #. module: medical
 #: field:medical.patient,is_institution:0
@@ -1511,7 +1512,7 @@ msgstr "Opt-Out"
 #. module: medical
 #: selection:medical.appointment,appointment_type:0
 msgid "Outpatient"
-msgstr "Ambulatorial"
+msgstr "em Ambulatorio"
 
 #. module: medical
 #: field:medical.patient,parent_name:0 field:medical.physician,parent_name:0
