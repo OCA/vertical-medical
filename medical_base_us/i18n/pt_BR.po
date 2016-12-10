@@ -1,0 +1,63 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * medical_base_us
+# 
+# Translators:
+# Nilo Silva <nilo.silva@e-nube.com.br>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-10 05:06+0000\n"
+"PO-Revision-Date: 2016-12-10 05:06+0000\n"
+"Last-Translator: Nilo Silva <nilo.silva@e-nube.com.br>, 2016\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: medical_base_us
+#: model:ir.model.fields,field_description:medical_base_us.field_medical_abstract_dea_display_name
+#: model:ir.model.fields,field_description:medical_base_us.field_medical_abstract_luhn_display_name
+#: model:ir.model.fields,field_description:medical_base_us.field_medical_abstract_npi_display_name
+msgid "Display Name"
+msgstr "Mostrar Nome"
+
+#. module: medical_base_us
+#: model:ir.model.fields,field_description:medical_base_us.field_medical_abstract_dea_id
+#: model:ir.model.fields,field_description:medical_base_us.field_medical_abstract_luhn_id
+#: model:ir.model.fields,field_description:medical_base_us.field_medical_abstract_npi_id
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_base_us
+#: code:addons/medical_base_us/models/medical_abstract_dea.py:87
+#: code:addons/medical_base_us/models/medical_abstract_luhn.py:66
+#: code:addons/medical_base_us/models/medical_abstract_npi.py:56
+#, python-format
+msgid "Invalid %s was supplied."
+msgstr ""
+
+#. module: medical_base_us
+#: model:ir.model.fields,field_description:medical_base_us.field_medical_abstract_dea___last_update
+#: model:ir.model.fields,field_description:medical_base_us.field_medical_abstract_luhn___last_update
+#: model:ir.model.fields,field_description:medical_base_us.field_medical_abstract_npi___last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: medical_base_us
+#: model:ir.model,name:medical_base_us.model_medical_abstract_luhn
+msgid "Medical Abstract Luhn"
+msgstr ""
+
+#. module: medical_base_us
+#: model:ir.model,name:medical_base_us.model_medical_abstract_npi
+msgid "Medical Abstract NPI"
+msgstr ""
+
+#. module: medical_base_us
+#: model:ir.model,name:medical_base_us.model_medical_abstract_dea
+msgid "medical.abstract.dea"
+msgstr ""
