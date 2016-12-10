@@ -13,6 +13,7 @@ class TestMedicalPatient(TransactionCase):
             'medical.medical_patient_patient_1'
         )
         self.lang = 'en_US'
+        self.patient_1.lang = self.lang
         self.lang_obj = self.env['res.lang'].search([('code', '=', self.lang)])
         self.lang_obj.date_format = '%m/%d/%Y'
 
@@ -47,7 +48,7 @@ class TestMedicalPatient(TransactionCase):
 
     def test_name_no_lang(self):
         """ Test for a default date format if none existing on lang """
-        self.lang_obj.date_format = False
+        self.patient_1.lang = None
         self.assertEquals(
             self.patient_1.display_name, 'Emma Fields [02/23/1920]',
             'Should include dob in display name.\rGot: %s\rExpected: %s' % (
