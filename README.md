@@ -32,6 +32,7 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [medical](medical/) | 9.0.1.0.0 | Extends Odoo with medical patients and centers.
+[medical_base_us](medical_base_us/) | 9.0.1.0.0 | Provides some helper mixins for US locale.
 [medical_medicament](medical_medicament/) | 9.0.1.0.0 | Introduce Medicament notion into the medical product.
 [medical_medication](medical_medication/) | 9.0.1.0.0 | Introduce medication notion into the medical addons.
 [medical_pathology](medical_pathology/) | 9.0.1.0.0 | Extends Odoo Medical with pathologies (diseases).
@@ -40,6 +41,7 @@ addon | version | summary
 [medical_patient_dob](medical_patient_dob/) | 9.0.1.0.0 | Show date of birth when searching patients.
 [medical_pharmacy](medical_pharmacy/) | 9.0.1.0.0 | Adds pharmacy namespace on partners.
 [medical_physician](medical_physician/) | 9.0.1.0.0 | Adds physicians to Odoo Medical.
+[medical_prescription](medical_prescription/) | 9.0.1.0.0 | Introduces prescription orders and prescription order lines.
 
 Unported addons
 ---------------
@@ -57,7 +59,6 @@ addon | version | summary
 [medical_patient_ethnicity](medical_patient_ethnicity/) | 8.0.1.1.0 (unported) | Medical Patient Ethnicity
 [medical_patient_occupation](medical_patient_occupation/) | 8.0.1.1.0 (unported) | Medical Patient Occupation
 [medical_pharmacy_us](medical_pharmacy_us/) | 8.0.1.1.0 (unported) | Medical Pharmacy - US Locale
-[medical_prescription](medical_prescription/) | 8.0.1.1.0 (unported) | This module introduce the prescription/prescription line into the medical addons.
 [medical_prescription_sale](medical_prescription_sale/) | 8.0.1.0.0 (unported) | Medical Prescription Sales Processes
 [medical_prescription_state](medical_prescription_state/) | 8.0.1.1.0 (unported) | Medical Prescription Order States
 [medical_prescription_thread](medical_prescription_thread/) | 8.0.1.0.0 (unported) | Medical Prescription Threaded
