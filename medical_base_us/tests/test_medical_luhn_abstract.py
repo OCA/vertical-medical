@@ -16,7 +16,7 @@ class MedicalLuhnAbstractTestMixer(TransactionCase):
         self.model_obj = self.env[MedicalTestLuhn._name]
         self.model_obj._prepare_setup()
         self.model_obj._setup_base(False)
-        self.model_obj._setup_fields()
+        self.model_obj._setup_fields(False)
         self.model_obj._setup_complete()
 
         self.valid = [
