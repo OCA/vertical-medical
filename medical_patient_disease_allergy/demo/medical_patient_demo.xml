@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="res_partner_patient_5" model="res.partner">
+        <field name="name">Michael Marine</field>
+        <field name="city">Las Vegas</field>
+        <field name="state_id" ref="base.state_us_23" />
+        <field name="country_id" ref="base.us" />
+        <field name="zip">89521</field>
+        <field name="street">123 Test 2 Drive</field>
+        <field name="email">michael@example.com</field>
+        <field name="phone">+1 (702) 555-2447</field>
+        <field name="parent_id" ref="base.partner_demo" />
+        <field name="birthdate_date">1999-11-02</field>
+        <field name="gender">male</field>
+    </record>
+    
+    <record id="medical_patient_patient_5" model="medical.patient">
+        <field name="partner_id" ref="medical_patient_disease_allergy.res_partner_patient_5" />
+    </record>  
+
+</odoo>
