@@ -1,61 +1,40 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    Copyright (C) LasLabs, Inc [https://laslabs.com]. All Rights Reserved
-#
-##############################################################################
-#
-#    Collaborators of this module:
-#       Written By: Dave Lasley <dave@laslabs.com>
-#
-##############################################################################
-#
-#    This project is mantained by Medical Team:
-#    https://github.com/OCA/vertical-medical/
-#
-##############################################################################
-#
-#    It is a collaborative effort between several companies that want to join
-#    efforts in have a proposal solid and strong in the Health Care environment
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# © 2016 LasLabs Inc.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+
 {
 
-    'name': 'Medical Prescription Sales Processes',
-    'version': '8.0.1.0.0',
-    'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
+    'name': 'Medical Prescription Sales',
+    'summary': 'Create Sale Orders from Prescriptions',
+    'version': '9.0.0.1.0',
+    'author': "LasLabs, Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': [
-        'sale_stock',
-        'sale_crm',
+        'sale',
+        'stock',
         'medical_prescription',
         'medical_pharmacy',
+        'medical_prescription_thread',
     ],
     "website": "https://laslabs.com",
     "license": "AGPL-3",
     "data": [
-        # Views
-        'views/prescription_order_line_view.xml',
-        'views/sale_order_view.xml',
-        'views/crm_lead_view.xml',
-
-        # Wizards
-        'wizards/medical_prescription_to_sale_wizard_view.xml',
+        'data/ir_sequence.xml',
+        'data/product_category_data.xml',
         'wizards/medical_sale_wizard_view.xml',
+        'wizards/medical_sale_temp_view.xml',
+        'views/prescription_order_line_view.xml',
+        'views/prescription_order_view.xml',
+        'views/sale_order_view.xml',
+        'views/medical_physician_view.xml',
+        'views/medical_patient_view.xml',
     ],
-    'installable': False,
+    'demo': [
+        'demo/medical_medicament_demo.xml',
+        'demo/medical_medication_demo.xml',
+        'demo/medical_prescription_order_demo.xml',
+        'demo/medical_prescription_order_line_demo.xml',
+    ],
+    'installable': True,
     'auto_install': False,
 }

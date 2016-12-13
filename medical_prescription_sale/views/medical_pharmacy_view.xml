@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2016 LasLabs Inc.
+    @license AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <record id="medical_physician_view_form" model="ir.ui.view">
+        <field name="name">Medical Physician Verified</field>
+        <field name="model">medical.physician</field>
+        <field name='inherit_id' ref='medical_physician.medical_physician_view_form'/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='parent_id']" position="after">
+                <field name="is_verified" attrs="{'invisible': [('verified_by_id', '!=', False)]}" />
+                <field name="verified_by_id" attrs="{'invisible': [('verified_by_id', '=', False)]}" />
+                <field name="verified_date" attrs="{'invisible': [('verified_by_id', '=', False)]}" />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
