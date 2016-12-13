@@ -9,9 +9,16 @@ from openerp.exceptions import ValidationError
 
 class MedicalDeaAbstractTestMixer(TransactionCase):
 
-    def setUp(self, model_name='medical.abstract.dea'):
+    def setUp(self):
         super(MedicalDeaAbstractTestMixer, self).setUp()
-        self.model_obj = self.env[model_name]
+
+        MedicalTestDea._build_model(self.registry, self.cr)
+        self.model_obj = self.env[MedicalTestDea._name]
+        self.model_obj._prepare_setup()
+        self.model_obj._setup_base(False)
+        self.model_obj._setup_fields()
+        self.model_obj._setup_complete()
+
         self.valid = [
             'AP5836727',
         ]
@@ -64,26 +71,34 @@ class TestMedicalDeaAbstract(MedicalDeaAbstractTestMixer):
 
     def test_constrain_valid_us(self):
         """ Test _dea_constrains_helper no ValidationError if valid ref """
-        self.assertTrue(
-            self.env['medical.test.dea'].create({
-                'ref': self.valid[0],
-                'country_id': self.country_us.id,
-            })
-        )
+        test_model = self.env['medical.test.dea'].new({
+            'ref': self.valid[0],
+            'country_id': self.country_us.id,
+        })
+
+        try:
+            test_model._check_ref()
+        except ValidationError:
+            self.fail('A ValidationError was raised and should not have been.')
 
     def test_constrain_invalid_us(self):
         """ Test _dea_constrains_helper raise ValidationError invalid ref """
+        test_model = self.env['medical.test.dea'].new({
+            'ref': self.invalid[0],
+            'country_id': self.country_us.id,
+        })
+
         with self.assertRaises(ValidationError):
-            self.env['medical.test.dea'].create({
-                'ref': self.invalid[0],
-                'country_id': self.country_us.id,
-            })
+            test_model._check_ref()
 
     def test_constrain_invalid_non_us(self):
         """ Test _dea_constrains_helper skips validation if not US """
-        self.assertTrue(
-            self.env['medical.test.dea'].create({
-                'ref': self.invalid[0],
-                'country_id': self.country_us.id + 1,
-            })
-        )
+        test_model = self.env['medical.test.dea'].new({
+            'ref': self.invalid[0],
+            'country_id': self.country_us.id + 1,
+        })
+
+        try:
+            test_model._check_ref()
+        except ValidationError:
+            self.fail('A ValidationError was raised and should not have been.')

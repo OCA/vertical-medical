@@ -9,9 +9,16 @@ from openerp.exceptions import ValidationError
 
 class MedicalLuhnAbstractTestMixer(TransactionCase):
 
-    def setUp(self, model_name='medical.abstract.luhn'):
+    def setUp(self):
         super(MedicalLuhnAbstractTestMixer, self).setUp()
-        self.model_obj = self.env[model_name]
+
+        MedicalTestLuhn._build_model(self.registry, self.cr)
+        self.model_obj = self.env[MedicalTestLuhn._name]
+        self.model_obj._prepare_setup()
+        self.model_obj._setup_base(False)
+        self.model_obj._setup_fields()
+        self.model_obj._setup_complete()
+
         self.valid = [
             4532015112830366,
             6011514433546201,
@@ -84,26 +91,34 @@ class TestMedicalLuhnAbstract(MedicalLuhnAbstractTestMixer):
 
     def test_constrain_valid_us(self):
         """ Test _luhn_constrains_helper no ValidationError if valid ref """
-        self.assertTrue(
-            self.env['medical.test.luhn'].create({
-                'ref': self.valid[0],
-                'country_id': self.country_us.id,
-            })
-        )
+        test_model = self.env['medical.test.luhn'].new({
+            'ref': self.valid[0],
+            'country_id': self.country_us.id,
+        })
+
+        try:
+            test_model._check_ref()
+        except ValidationError:
+            self.fail('A ValidationError was raised and should not have been.')
 
     def test_constrain_invalid_us(self):
         """ Test _luhn_constrains_helper raise ValidationError invalid ref """
+        test_model = self.env['medical.test.luhn'].new({
+            'ref': self.invalid[0],
+            'country_id': self.country_us.id,
+        })
+
         with self.assertRaises(ValidationError):
-            self.env['medical.test.luhn'].create({
-                'ref': self.invalid[0],
-                'country_id': self.country_us.id,
-            })
+            test_model._check_ref()
 
     def test_constrain_invalid_non_us(self):
         """ Test _luhn_constrains_helper skips validation if not US """
-        self.assertTrue(
-            self.env['medical.test.luhn'].create({
-                'ref': self.invalid[0],
-                'country_id': self.country_us.id + 1,
-            })
-        )
+        test_model = self.env['medical.test.luhn'].new({
+            'ref': self.invalid[0],
+            'country_id': self.country_us.id + 1,
+        })
+
+        try:
+            test_model._check_ref()
+        except ValidationError:
+            self.fail('A ValidationError was raised and should not have been.')
