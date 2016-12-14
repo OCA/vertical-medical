@@ -24,6 +24,7 @@ class MedicalDeaAbstractTestMixer(TransactionCase):
         ]
         self.invalid = [
             'AP5836729',
+            'Invalid00',
         ]
         self.country_us = self.env['res.country'].search([
             ('code', '=', 'US'),
