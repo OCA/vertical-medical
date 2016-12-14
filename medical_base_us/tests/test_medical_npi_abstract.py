@@ -9,9 +9,16 @@ from openerp.exceptions import ValidationError
 
 class MedicalNpiAbstractTestMixer(TransactionCase):
 
-    def setUp(self, model_name='medical.abstract.npi'):
+    def setUp(self):
         super(MedicalNpiAbstractTestMixer, self).setUp()
-        self.model_obj = self.env[model_name]
+
+        MedicalTestNpi._build_model(self.registry, self.cr)
+        self.model_obj = self.env[MedicalTestNpi._name]
+        self.model_obj._prepare_setup()
+        self.model_obj._setup_base(False)
+        self.model_obj._setup_fields(False)
+        self.model_obj._setup_complete()
+
         self.valid = [
             1538596788,
             1659779064,
@@ -83,26 +90,34 @@ class TestMedicalNpiAbstract(MedicalNpiAbstractTestMixer):
 
     def test_constrain_valid_us(self):
         """ Test _npi_constrains_helper no ValidationError if valid ref """
-        self.assertTrue(
-            self.env['medical.test.npi'].create({
-                'ref': self.valid[0],
-                'country_id': self.country_us.id,
-            })
-        )
+        test_model = self.env['medical.test.npi'].new({
+            'ref': self.valid[0],
+            'country_id': self.country_us.id,
+        })
+
+        try:
+            test_model._check_ref()
+        except ValidationError:
+            self.fail('A ValidationError was raised and should not have been.')
 
     def test_constrain_invalid_us(self):
         """ Test _npi_constrains_helper raise ValidationError invalid ref """
+        test_model = self.env['medical.test.npi'].new({
+            'ref': self.invalid[0],
+            'country_id': self.country_us.id,
+        })
+
         with self.assertRaises(ValidationError):
-            self.env['medical.test.npi'].create({
-                'ref': self.invalid[0],
-                'country_id': self.country_us.id,
-            })
+            test_model._check_ref()
 
     def test_constrain_invalid_non_us(self):
         """ Test _npi_constrains_helper skips validation if not US """
-        self.assertTrue(
-            self.env['medical.test.npi'].create({
-                'ref': self.invalid[0],
-                'country_id': self.country_us.id + 1,
-            })
-        )
+        test_model = self.env['medical.test.npi'].new({
+            'ref': self.invalid[0],
+            'country_id': self.country_us.id + 1,
+        })
+
+        try:
+            test_model._check_ref()
+        except ValidationError:
+            self.fail('A ValidationError was raised and should not have been.')
