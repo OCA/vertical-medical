@@ -14,7 +14,7 @@
         'stock',
         'medical_prescription',
         'medical_pharmacy',
-        'medical_prescription_thread',
+        'mail_thread_medical_prescription',
     ],
     "website": "https://laslabs.com",
     "license": "AGPL-3",
