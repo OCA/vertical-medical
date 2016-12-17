@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="res_partner_patient_1" model="res.partner">
+        <field name="name">Emma Fields</field>
+        <field name="city">Las Vegas</field>
+        <field name="state_id" ref="base.state_us_23"/>
+        <field name="country_id" ref="base.us"/>
+        <field name="zip">89119</field>
+        <field name="street">123 Example Way</field>
+        <field name="email">emma@example.com</field>
+        <field name="phone">+1 (702) 343-2342</field>
+        <field name="parent_id" ref="base.partner_demo"/>
+        <field name="ref">530-34-8612</field>
+    </record>
+
+    <record id="medical_patient_patient_1" model="medical.patient">
+        <field name="partner_id" ref="medical.res_partner_patient_1"/>
+        <field name="dob">1920-02-23</field>
+        <field name='gender'>f</field>
+    </record>
+
+    <record id="res_partner_patient_2" model="res.partner">
+        <field name="name">Kyle Jones</field>
+        <field name="city">Las Vegas</field>
+        <field name="state_id" ref="base.state_us_23"/>
+        <field name="country_id" ref="base.us"/>
+        <field name="zip">89119</field>
+        <field name="street">123 Example Way</field>
+        <field name="email">kyle@example.com</field>
+        <field name="phone">+1 (702) 343-2347</field>
+        <field name="parent_id" ref="base.partner_demo"/>
+        <field name="ref">417-96-7732</field>
+    </record>
+
+    <record id="medical_patient_patient_2" model="medical.patient">
+        <field name="partner_id" ref="medical.res_partner_patient_2"/>
+        <field name="dob">1950-01-02</field>
+        <field name='gender'>m</field>
+    </record>
+
+    <record id="res_partner_patient_3" model="res.partner">
+        <field name="name">Gary Smith</field>
+        <field name="city">Las Vegas</field>
+        <field name="state_id" ref="base.state_us_23"/>
+        <field name="country_id" ref="base.us"/>
+        <field name="zip">89121</field>
+        <field name="street">123 Test Drive</field>
+        <field name="email">kyle@example.com</field>
+        <field name="phone">+1 (702) 343-2347</field>
+        <field name="parent_id" ref="base.partner_demo"/>
+        <field name="ref">027-92-2837</field>
+    </record>
+
+    <record id="medical_patient_patient_3" model="medical.patient">
+        <field name="partner_id" ref="medical.res_partner_patient_3"/>
+        <field name="dob">1980-11-02</field>
+        <field name="dod">2016-12-22</field>
+        <field name='gender'>m</field>
+    </record>
+
+</odoo>

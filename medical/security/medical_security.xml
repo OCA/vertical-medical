@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-<data noupdate="0">
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
 
     <record id="group_medical_user" model="res.groups">
         <field name="name">Medical User</field>
@@ -41,32 +43,13 @@
         <field name="implied_ids" eval="[(4, ref('group_medical_manager'))]"/>
     </record>
 
-</data>
-
-<data noupdate="0">
-    <record id="medical_appointment_access_rule_physician" model="ir.rule">
-        <field name="name">Appointment Entry</field>
-        <field name="model_id" ref="model_medical_appointment"/>
-        <field name="global" eval="True"/>
-        <field name="groups" eval="[(4, ref('group_medical_doctor'))]"/>
-        <field name="domain_force">[('physician_id.user_id', '=', user.id)]</field>
-    </record>
-
-    <record id="medical_appointment_access_rule_assistant" model="ir.rule">
-        <field name="name">Appointment Entry</field>
-        <field name="model_id" ref="model_medical_appointment"/>
-        <field name="global" eval="True"/>
-        <field name="groups" eval="[(4, ref('group_medical_assistant'))]"/>
-        <field name="domain_force">['|', ('institution_id','=',user.parent_id.id), ('institution','child_of',user.parent_id.id)]</field>
-    </record>
-</data>
-<!--    
-    <record id="medical_partner_access_rule_assistant" model="ir.rule">
-        <field name="name">Partner Access rule for Assistants</field>
-        <field name="model_id" ref="model_res_partner"/>
-        <field name="global" eval="True"/>
-        <field name="groups" eval="[(4, ref('group_medical_assistant'))]"/>
-        <field name="domain_force">['|', '|', ('parent_id','=',user.parent_id.id), ('parent_id','child_of',user.parent_id.id)]</field>
-    </record>
--->
-</openerp>
+    <!--
+        <record id="medical_partner_access_rule_assistant" model="ir.rule">
+            <field name="name">Partner Access rule for Assistants</field>
+            <field name="model_id" ref="model_res_partner"/>
+            <field name="global" eval="True"/>
+            <field name="groups" eval="[(4, ref('group_medical_assistant'))]"/>
+            <field name="domain_force">['|', '|', ('parent_id','=',user.parent_id.id), ('parent_id','child_of',user.parent_id.id)]</field>
+        </record>
+    -->
+</odoo>

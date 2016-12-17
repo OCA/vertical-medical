@@ -1,39 +1,35 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    Tech-Receptives Solutions Pvt. Ltd.
-#    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
-#    Special Credit and Thanks to Thymbra Latinoamericana S.A.
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Copyright 2004 Tech-Receptives
+# Copyright 2016 LasLabs Inc.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+
+from odoo import _
+
 
 months = {
-    1: "January", 2: "February", 3: "March", 4: "April",
-    5: "May", 6: "June", 7: "July", 8: "August", 9: "September",
-    10: "October", 11: "November", 12: "December"
+    1: _('January'),
+    2: _('February'),
+    3: _('March'),
+    4: _('April'),
+    5: _('May'),
+    6: _('June'),
+    7: _('July'),
+    8: _('August'),
+    9: _('September'),
+    10: _('October'),
+    11: _('November'),
+    12: _('December'),
 }
 
-days = [(1, 'Monday'),
-        (2, 'Tuesday'),
-        (3, 'Wednesday'),
-        (4, 'Thursday'),
-        (5, 'Friday'),
-        (6, 'Saturday'),
-        (7, 'Sunday'),
-        ]
+days = [
+    (1, _('Monday')),
+    (2, _('Tuesday')),
+    (3, _('Wednesday')),
+    (4, _('Thursday')),
+    (5, _('Friday')),
+    (6, _('Saturday')),
+    (7, _('Sunday')),
+]
 
 hours = [
     ('0', '00'),
