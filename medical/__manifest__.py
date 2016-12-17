@@ -6,7 +6,7 @@
 {
     "name": "Odoo Medical",
     "summary": "Extends Odoo with medical patients and centers.",
-    "version": "9.0.1.0.0",
+    "version": "10.0.1.0.0",
     "category": "Medical",
     "website": "https://odoo-community.org/",
     "author": "LasLabs, Odoo Community Association (OCA)",
