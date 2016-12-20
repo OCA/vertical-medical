@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical_medication_template_template_7" model="medical.medication.template">
+        <field name="medicament_id" ref="sale_medical_prescription.medical_medicament_simv_1" />
+        <field name="quantity">2</field>
+        <field name="dose_uom_id" ref="product.product_uom_categ_unit" />
+        <field name="frequency">2</field>
+        <field name="frequency_uom_id" ref="medical_medication.product_uom_hour" />
+        <field name="duration">8</field>
+        <field name="duration_uom_id" ref="medical_medication.product_uom_hour" />
+		<field name="medication_dosage_id" ref="medical_medication.229799001" />
+    </record>
+
+    <record id="medical_patient_medication_medication_7" model="medical.patient.medication">
+        <field name="medication_template_id" ref="sale_medical_prescription.medical_medication_template_template_7" />
+        <field name="patient_id" ref="sale_medical_prescription.medical_patient_patient_8" />
+        <field name="physician_id" ref="sale_medical_prescription.medical_physician_physician_5" />
+        <field name="date_start_treatment">2015-01-01</field>
+        <field name="medicament_id" ref="sale_medical_prescription.medical_medicament_simv_1" />
+    </record>
+
+    <record id="medical_medication_template_template_8" model="medical.medication.template">
+        <field name="medicament_id" ref="sale_medical_prescription.medical_medicament_simv_2" />
+        <field name="quantity">2</field>
+        <field name="dose_uom_id" ref="product.product_uom_categ_unit" />
+        <field name="frequency">2</field>
+        <field name="frequency_uom_id" ref="medical_medication.product_uom_hour" />
+        <field name="duration">8</field>
+        <field name="duration_uom_id" ref="medical_medication.product_uom_hour" />
+		<field name="medication_dosage_id" ref="medical_medication.229799001" />
+    </record>
+
+    <record id="medical_patient_medication_medication_8" model="medical.patient.medication">
+        <field name="medication_template_id" ref="sale_medical_prescription.medical_medication_template_template_8" />
+        <field name="patient_id" ref="sale_medical_prescription.medical_patient_patient_8" />
+        <field name="physician_id" ref="sale_medical_prescription.medical_physician_physician_5" />
+        <field name="date_start_treatment">2015-01-05</field>
+        <field name="medicament_id" ref="sale_medical_prescription.medical_medicament_simv_2" />
+    </record>	
+
+</odoo>

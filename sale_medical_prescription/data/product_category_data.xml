@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+	<record id="product_category_medicament" model="product.category">
+		<field name="name">Pharmacy</field>
+	</record>
+
+	<record id="product_category_otc" model="product.category">
+		<field name="name">OTC</field>
+		<field name="parent_id" ref="sale_medical_prescription.product_category_medicament" />
+	</record>
+
+	<record id="product_category_rx" model="product.category">
+		<field name="name">RX</field>
+		<field name="parent_id" ref="sale_medical_prescription.product_category_medicament" />
+	</record>
+
+</odoo>

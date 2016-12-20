@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical_prescription_prescription_order_7" model="medical.prescription.order">
+        <field name="patient_id" ref="sale_medical_prescription.medical_patient_patient_8" />
+        <field name="physician_id" ref="sale_medical_prescription.medical_physician_physician_5" />
+        <field name="date_prescription">2014-12-10</field>
+        <field name="partner_id" ref="sale_medical_prescription.medical_pharmacy_4" />
+        <field name="is_verified">True</field>
+        <field name="receive_method">transfer</field>
+        <field name="verify_method">doctor_phone</field>
+        <field name="receive_date">2014-12-01</field>
+        <field name="transfer_pharmacy_id" ref="sale_medical_prescription.medical_pharmacy_5" />
+        <field name="transfer_direction">in</field>
+    </record>
+
+    <record id="medical_prescription_prescription_order_8" model="medical.prescription.order">
+        <field name="patient_id" ref="sale_medical_prescription.medical_patient_patient_9" />
+        <field name="physician_id" ref="sale_medical_prescription.medical_physician_physician_5" />
+        <field name="date_prescription">2014-12-10</field>
+        <field name="partner_id" ref="sale_medical_prescription.medical_pharmacy_5" />
+        <field name="is_verified">True</field>
+        <field name="receive_method">online</field>
+        <field name="verify_method">doctor_phone</field>
+        <field name="receive_date">2014-12-01</field>
+    </record>
+
+</odoo>

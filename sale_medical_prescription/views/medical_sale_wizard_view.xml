@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+        
+    <record id="medical_sale_wizard_view_form" model="ir.ui.view">
+        <field name="name">medical.sale.wizard.view.form</field>
+        <field name="model">medical.sale.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Rx => Sale(s)">
+                <header>
+                    <h1 class="pull-left">
+                        Prescription Line(s):
+                        <field name="prescription_line_ids" widget="many2many_tags" />
+                    </h1>
+                    <field name="state" widget="statusbar" />
+                </header>
+                <sheet>
+                    <group name="data">
+                        <field name="pharmacy_id" states="new,start" />
+                        <field name="date_order" states="new,start" />
+                        <field name="split_orders" states="new,start" />
+                        <field name="sale_wizard_ids"
+                                states="partial"
+                                context="{'default_prescription_wizard_id': True}">
+                            <tree string="Orders">
+                                <field name="patient_id" />
+                                <field name="line_cnt" />
+                                <field name="prescription_order_ids" />
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+                <footer states="new">
+                    <button special="cancel"
+                            string="Cancel" />
+                    <button name="action_create_sale_wizards"
+                            type="object"
+                            string="Generate Template(s)"
+                            class="oe_highlight" />
+                </footer>
+                <footer states="start">
+                    <button special="cancel"
+                            string="Cancel" />
+                    <button name="action_next_wizard"
+                            type="object"
+                            string="Continue Workflow"
+                            class="oe_highlight" />
+                </footer>
+                <footer states="partial">
+                    <button special="cancel"
+                            string="Cancel" />
+                    <button name="action_rx_sale_conversions"
+                            type="object"
+                            string="Create Sale(s)"
+                            class="oe_highlight" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="medical_sale_wizard_action" 
+                src_model="medical.prescription.order.line"
+                res_model="medical.sale.wizard"
+                name="Create Quote(s)"
+                view_mode="form"
+                target="new"
+                key2="client_action_multi" />
+
+</odoo>
