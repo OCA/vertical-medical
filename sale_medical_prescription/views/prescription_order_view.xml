@@ -9,7 +9,7 @@
         <field name="model">medical.prescription.order</field>
         <field name='inherit_id' ref='medical_prescription.medical_prescription_order_view_form'/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='is_verified']" position="replace">
+            <xpath expr="//field[@name='is_verified']" position="after">
                 <field name="receive_method" />
                 <field name="verify_method" />
             </xpath>

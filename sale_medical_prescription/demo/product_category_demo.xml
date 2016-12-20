@@ -4,14 +4,14 @@
 
 <odoo>
 
-	<record id="product_category_test_rx_descendant" model="product.category">
-		<field name="name">Test RX Descendant</field>
-		<field name="parent_id" ref="sale_medical_prescription.product_category_rx" />
-	</record>
+    <record id="product_category_test_rx_descendant" model="product.category">
+        <field name="name">Test RX Descendant</field>
+        <field name="parent_id" ref="sale_medical_prescription.product_category_rx" />
+    </record>
 
-	<record id="product_category_test_rx_descendant_2" model="product.category">
-		<field name="name">Test RX Descendant 2</field>
-		<field name="parent_id" ref="sale_medical_prescription.product_category_test_rx_descendant" />
-	</record>
+    <record id="product_category_test_rx_descendant_2" model="product.category">
+        <field name="name">Test RX Descendant 2</field>
+        <field name="parent_id" ref="sale_medical_prescription.product_category_test_rx_descendant" />
+    </record>
 
 </odoo>

@@ -2,11 +2,10 @@
 # Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp.addons.sale_medical_prescription.tests.\
-    wizard_test_setup import WizardTestSetup
+from . import wizard_test_setup
 
 
-class TestMedicalSaleLineTemp(WizardTestSetup):
+class TestMedicalSaleLineTemp(wizard_test_setup.WizardTestSetup):
 
     def test_compute_all_amounts(self):
         """ Test subtotal calculated correctly """

@@ -23,6 +23,7 @@
     "data": [
         "data/ir_sequence.xml",
         "data/product_category_data.xml",
+        "views/medical_pharmacy_view.xml",
         "views/medical_medicament_view.xml",
         "views/medical_sale_wizard_view.xml",
         "views/medical_sale_temp_view.xml",

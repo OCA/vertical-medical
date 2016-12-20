@@ -3,13 +3,13 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 import mock
-from openerp.addons.sale_medical_prescription.tests.\
-    wizard_test_setup import WizardTestSetup
+from . import wizard_test_setup
 
 NEXT_SALE = 'openerp.addons.sale_medical_prescription.wizards.' \
             'medical_sale_wizard.MedicalSaleWizard._get_next_sale_wizard'
 
-class TestMedicalSaleWizard(WizardTestSetup):
+
+class TestMedicalSaleWizard(wizard_test_setup.WizardTestSetup):
 
     def test_compute_default_session(self):
         """ Test rx lines properly extracted from context """

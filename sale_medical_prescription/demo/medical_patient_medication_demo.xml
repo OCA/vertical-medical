@@ -12,7 +12,7 @@
         <field name="frequency_uom_id" ref="medical_medication.product_uom_hour" />
         <field name="duration">8</field>
         <field name="duration_uom_id" ref="medical_medication.product_uom_hour" />
-		<field name="medication_dosage_id" ref="medical_medication.229799001" />
+        <field name="medication_dosage_id" ref="medical_medication.229799001" />
     </record>
 
     <record id="medical_patient_medication_medication_7" model="medical.patient.medication">
@@ -31,7 +31,7 @@
         <field name="frequency_uom_id" ref="medical_medication.product_uom_hour" />
         <field name="duration">8</field>
         <field name="duration_uom_id" ref="medical_medication.product_uom_hour" />
-		<field name="medication_dosage_id" ref="medical_medication.229799001" />
+        <field name="medication_dosage_id" ref="medical_medication.229799001" />
     </record>
 
     <record id="medical_patient_medication_medication_8" model="medical.patient.medication">
