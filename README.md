@@ -31,6 +31,7 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
+[mail_thread_medical_prescription](mail_thread_medical_prescription/) | 9.0.1.0.0 | Adds message threads to rx orders and rx order lines.
 [medical](medical/) | 9.0.1.0.0 | Extends Odoo with medical patients and centers.
 [medical_base_us](medical_base_us/) | 9.0.1.0.0 | Provides some helper mixins for US locale.
 [medical_medicament](medical_medicament/) | 9.0.1.0.0 | Introduce Medicament notion into the medical product.
@@ -61,7 +62,6 @@ addon | version | summary
 [medical_pharmacy_us](medical_pharmacy_us/) | 8.0.1.1.0 (unported) | Medical Pharmacy - US Locale
 [medical_prescription_sale](medical_prescription_sale/) | 8.0.1.0.0 (unported) | Medical Prescription Sales Processes
 [medical_prescription_state](medical_prescription_state/) | 8.0.1.1.0 (unported) | Medical Prescription Order States
-[medical_prescription_thread](medical_prescription_thread/) | 8.0.1.0.0 (unported) | Medical Prescription Threaded
 [oemedical_genetics](oemedical_genetics/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
 [oemedical_gynecology_and_obstetrics](oemedical_gynecology_and_obstetrics/) | 1.0.1 (unported) | OeMedical : gynecology and obstetrics
 [oemedical_icu](oemedical_icu/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
