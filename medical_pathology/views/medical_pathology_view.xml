@@ -76,7 +76,14 @@
                         <group name="main">
                             <field name="code" />
                             <field name="code_type_id" />
-                            <field name="category_id" />
+                            <field name="parent_id"
+                                   context="{'default_code_type_id': code_type_id,
+                                             'default_child_ids: [(4, id)],
+                                             }"
+                                   />
+                            <field name="category_id"
+                                   context="{'default_code_type_id': code_type_id}"
+                                   />
                         </group>
                         <group name="genetics">
                             <field name="protein" />
