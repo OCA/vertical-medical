@@ -1,0 +1,468 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * medical_patient_disease
+# 
+# Translators:
+# Gustavo Orozco H. <gustavo.orozco.h@app-247.com>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-23 02:11+0000\n"
+"PO-Revision-Date: 2016-12-23 02:11+0000\n"
+"Last-Translator: Gustavo Orozco H. <gustavo.orozco.h@app-247.com>, 2016\n"
+"Language-Team: Spanish (Colombia) (https://www.transifex.com/oca/teams/23907/es_CO/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es_CO\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: medical_patient_disease
+#: selection:medical.patient.disease,state:0
+msgid "Acute"
+msgstr "Agudo"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_age
+msgid "Age When Diagnosed"
+msgstr "Edad al Diagnosticar"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,help:medical_patient_disease.field_medical_patient_disease_age
+msgid "Age of the patient when diagnosed with this disease."
+msgstr "Edad del paciente cuando fue diagnosticado con esta enfermedad."
+
+#. module: medical_patient_disease
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_search
+msgid "Age when diagnosed"
+msgstr "Edad al Diagnosticar"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_is_allergy
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_search
+msgid "Allergic Disease"
+msgstr "Enfermead Alérgica"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_allergy_type
+msgid "Allergy type"
+msgstr "Tipo de Alergia"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,help:medical_patient_disease.field_medical_patient_disease_notes
+msgid "Any additional information that may be helpful."
+msgstr "Cualquier información adicional que podría ser útil."
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,help:medical_patient_disease.field_medical_patient_disease_is_on_treatment
+msgid ""
+"Check this box if the patient is currently receiving treatment for this "
+"disease."
+msgstr ""
+"Marque esta casilla si el paciente está actualmente recibiendo tratamiento "
+"para esta enfermedad."
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,help:medical_patient_disease.field_medical_patient_disease_is_allergy
+msgid "Check this box to indicate that the disease is an allergy."
+msgstr "Marque esta casiilla para indicar que la enfermedad es una alergia."
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,help:medical_patient_disease.field_medical_patient_disease_is_infectious
+msgid ""
+"Check this box to indicate that the disease is likely to be transmitted."
+msgstr ""
+"Marque esta casilla para indicar que la enfermedad es probable que sea "
+"transmitida."
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,help:medical_patient_disease.field_medical_patient_disease_is_pregnant
+msgid ""
+"Check this box to indicate that the patient was pregnant at the time of "
+"disease diagnosis."
+msgstr ""
+"Marque esta casiilla para indicar que la paciente está embarazada el momento"
+" de diagnosticarle esta enfermedad."
+
+#. module: medical_patient_disease
+#: selection:medical.patient.disease,state:0
+msgid "Chronic"
+msgstr "Crónico"
+
+#. module: medical_patient_disease
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_search
+msgid "Contracted in pregnancy week #"
+msgstr "Contraída en semana de embarazo #"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_is_on_treatment
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_search
+msgid "Currently on Treatment"
+msgstr "Actualmente en Tratamiento"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_expire_date
+msgid "Date Expired"
+msgstr "Fecha de Expiración"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_treatment_end_date
+msgid "Date Treatment Ends"
+msgstr "Fecha de Finalización del Tratamiento"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_treatment_start_date
+msgid "Date Treatment Starts"
+msgstr "Fecha de Inicio del Tratamiento"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_diagnosed_date
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_search
+msgid "Date of Diagnosis"
+msgstr "Fecha de Diagnóstico"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_healed_date
+msgid "Date of Healing"
+msgstr "Fecha de Curación"
+
+#. module: medical_patient_disease
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_search
+msgid "Disease"
+msgstr "Enfermedad"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_count_disease_ids
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_ids
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_view_form
+msgid "Diseases"
+msgstr "Enfermedades"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_display_name
+msgid "Display Name"
+msgstr "Mostrar Nombre"
+
+#. module: medical_patient_disease
+#: selection:medical.patient.disease,allergy_type:0
+msgid "Drug Allergy"
+msgstr "Alergia a la Droga"
+
+#. module: medical_patient_disease
+#: selection:medical.patient.disease,allergy_type:0
+msgid "Food Allergy"
+msgstr "Alergia a los Alimentos"
+
+#. module: medical_patient_disease
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_search
+msgid "Group By..."
+msgstr "Agrupar Por..."
+
+#. module: medical_patient_disease
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_search
+#: selection:medical.patient.disease,state:0
+msgid "Healed"
+msgstr "Curado"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_id
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,help:medical_patient_disease.field_medical_patient_disease_allergy_type
+msgid "If the disease is an allergy, indicate the type."
+msgstr "Si la enfermedad es una alergia, indique el tipo."
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,help:medical_patient_disease.field_medical_patient_disease_treatment_start_date
+msgid "If the patient is receiving treatment state the start date here."
+msgstr ""
+"Si el paciente está recibiendo tratamiento declare la fecha de inicio aquí."
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,help:medical_patient_disease.field_medical_patient_disease_treatment_end_date
+msgid "If the patient is/was receiving treament state the end date here."
+msgstr ""
+"Si el paciente es/estaba recibiendo tratamiento declare la fecha de "
+"finalización aquí."
+
+#. module: medical_patient_disease
+#: selection:medical.patient.disease,state:0
+msgid "Improving"
+msgstr "Mejorando"
+
+#. module: medical_patient_disease
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_search
+msgid "Inactive"
+msgstr "Inactivo"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,help:medical_patient_disease.field_medical_patient_disease_weeks_of_pregnancy
+msgid ""
+"Indicate how far along the pregnancy was when patient was diagnosed with "
+"this disease."
+msgstr ""
+"Indique en qué momento del embarazo la paciente fue diagnosticada con esta "
+"enfermedad."
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_is_infectious
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_search
+msgid "Infectious Disease"
+msgstr "Enfermedad Infecciosa"
+
+#. module: medical_patient_disease
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_form
+msgid "Invalidate"
+msgstr "Anular"
+
+#. module: medical_patient_disease
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_form
+msgid "Invalidate Disease: proceed anyway?"
+msgstr "Enfermedad Anulada: proceder de todas manera?"
+
+#. module: medical_patient_disease
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_search
+msgid "Is Allergy"
+msgstr "Alergia"
+
+#. module: medical_patient_disease
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_search
+msgid "Is Infectious"
+msgstr "Infecciosa"
+
+#. module: medical_patient_disease
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_search
+msgid "Is on Treatment"
+msgstr "Está en Tratamiento"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease___last_update
+msgid "Last Modified on"
+msgstr "Última Modificación en"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_write_uid
+msgid "Last Updated by"
+msgstr "Última Actualización por"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_write_date
+msgid "Last Updated on"
+msgstr "Última Actualización en"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,help:medical_patient_disease.field_medical_patient_disease_disease_severity
+msgid "Level of severity of this disease."
+msgstr "Nivel de severidad de esta enfermedad."
+
+#. module: medical_patient_disease
+#: model:ir.model,name:medical_patient_disease.model_medical_patient
+msgid "Medical Patient"
+msgstr "Paciente Médico"
+
+#. module: medical_patient_disease
+#: model:ir.model,name:medical_patient_disease.model_medical_patient_disease
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_form
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_search
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_tree
+msgid "Medical Patient Disease"
+msgstr "Médico Enfermedad del Paciente"
+
+#. module: medical_patient_disease
+#: selection:medical.patient.disease,disease_severity:0
+msgid "Mild"
+msgstr "Moderado"
+
+#. module: medical_patient_disease
+#: selection:medical.patient.disease,allergy_type:0
+msgid "Misc Allergy"
+msgstr "Alergia Misc"
+
+#. module: medical_patient_disease
+#: selection:medical.patient.disease,allergy_type:0
+msgid "Misc Contraindication"
+msgstr "Contraindicación Misc"
+
+#. module: medical_patient_disease
+#: selection:medical.patient.disease,disease_severity:0
+msgid "Moderate"
+msgstr "Moderado"
+
+#. module: medical_patient_disease
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_form
+msgid "More Info"
+msgstr "Información Adicional"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: medical_patient_disease
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_search
+msgid "Not Infectious"
+msgstr "No Infeccioso"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_notes
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_form
+msgid "Notes"
+msgstr "Notas"
+
+#. module: medical_patient_disease
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_form
+msgid "Others"
+msgstr "Otros"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_pathology_id
+msgid "Pathology"
+msgstr "Patología"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,help:medical_patient_disease.field_medical_patient_disease_pathology_id
+msgid "Pathology (disease type) the patient was diagnosed with."
+msgstr ""
+"Patología (tipo de enfermedad) con la que el paciente fue diagnosticado."
+
+#. module: medical_patient_disease
+#: model:medical.pathology.category,name:medical_patient_disease.medical_pathology_category_7
+msgid "Pathophysiology"
+msgstr "Fisiopatología"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_patient_id
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_search
+msgid "Patient"
+msgstr "Paciente"
+
+#. module: medical_patient_disease
+#: model:ir.actions.act_window,name:medical_patient_disease.medical_patient_disease_action
+#: model:ir.ui.menu,name:medical_patient_disease.medical_sub_disease
+msgid "Patient Diseases"
+msgstr "Enfermedades del Paciente"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,help:medical_patient_disease.field_medical_patient_disease_patient_id
+msgid "Patient that was diagnosed with this disease."
+msgstr "Paciente que fue diagnosticado con esta enfermedad"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_physician_id
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_search
+msgid "Physician"
+msgstr "Médico"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,help:medical_patient_disease.field_medical_patient_disease_physician_id
+msgid "Physician that diagnosed this disease."
+msgstr "Médico que diagnosticó la enfermedad"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_is_pregnant
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_search
+msgid "Pregnancy Warning"
+msgstr "Advertencia de Embarazo"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_weeks_of_pregnancy
+msgid "Pregnancy Week #"
+msgstr "Semana de Embarazo #"
+
+#. module: medical_patient_disease
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_search
+msgid "Pregnancy warning"
+msgstr "Advertencia de embarazo"
+
+#. module: medical_patient_disease
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_form
+msgid "Reactivate"
+msgstr "Reactivar"
+
+#. module: medical_patient_disease
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_form
+msgid "Reactivate document: proceed anyway?"
+msgstr "Documento reactivado: continuar de todas maneras?"
+
+#. module: medical_patient_disease
+#: selection:medical.patient.disease,disease_severity:0
+msgid "Severe"
+msgstr "Grave"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_disease_severity
+msgid "Severity"
+msgstr "Severidad"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_short_comment
+msgid "Short comment"
+msgstr "Comentario corto"
+
+#. module: medical_patient_disease
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_search
+msgid "Start"
+msgstr "Inicio"
+
+#. module: medical_patient_disease
+#: model:ir.ui.view,arch_db:medical_patient_disease.medical_patient_disease_view_search
+msgid "State"
+msgstr "Estado"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_state
+msgid "Status"
+msgstr "Estado"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,help:medical_patient_disease.field_medical_patient_disease_state
+msgid "Status of this disease."
+msgstr "Estado de la enfermedad"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,field_description:medical_patient_disease.field_medical_patient_disease_treatment_description
+msgid "Treatment description"
+msgstr "Descripción del tratamiento"
+
+#. module: medical_patient_disease
+#: selection:medical.patient.disease,state:0
+msgid "Unchanged"
+msgstr "Inalterado"
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,help:medical_patient_disease.field_medical_patient_disease_active
+msgid "Uncheck this box to deactivate."
+msgstr "Desmarque esta casilla para desactivar."
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,help:medical_patient_disease.field_medical_patient_disease_diagnosed_date
+msgid "When the patient was diagnosed with this disease."
+msgstr "Cuándo el paciente fue diagnosticado con esta enfermedad."
+
+#. module: medical_patient_disease
+#: model:ir.model.fields,help:medical_patient_disease.field_medical_patient_disease_healed_date
+msgid "When the patient was fully relieved of this disease."
+msgstr "Cuándo el paciente fue definitivamente curado de esta enfermedad."
+
+#. module: medical_patient_disease
+#: selection:medical.patient.disease,state:0
+msgid "Worsening"
+msgstr "Empeorando"
