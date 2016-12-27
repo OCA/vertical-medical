@@ -57,8 +57,8 @@
         'views/medical_insurance_template_view.xml',
     ],
     'test': [
-        'test/medical_insurance_template.yml',
-        'test/medical_insurance_plan.yml',
+        'tests/medical_insurance_template.yml',
+        'tests/medical_insurance_plan.yml',
     ],
     'installable': True,
     'auto_install': False,
