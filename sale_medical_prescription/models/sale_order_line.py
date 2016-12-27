@@ -22,8 +22,3 @@ class SaleOrderLine(models.Model):
         comodel_name='medical.patient.medication',
         related='prescription_order_line_id.medical_medication_id',
     )
-    dispense_qty = fields.Float(
-        default=0.0,
-        readonly=True,
-        compute='_compute_dispense_qty',
-    )

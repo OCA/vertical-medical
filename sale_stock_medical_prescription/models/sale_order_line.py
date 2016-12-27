@@ -16,6 +16,7 @@ class SaleOrderLine(models.Model):
     dispense_qty = fields.Float(
         default=0.0,
         readonly=True,
+        store=True,
         compute='_compute_dispense_qty',
     )
 
