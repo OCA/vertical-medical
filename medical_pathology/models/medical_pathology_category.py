@@ -15,14 +15,24 @@ class MedicalPathologyCategory(models.Model):
         required=True,
         translate=True,
     )
+    notes = fields.Text(
+        translate=True,
+    )
     child_ids = fields.One2many(
         string='Children Categories',
         comodel_name='medical.pathology.category',
         inverse_name='parent_id',
+        domain="[('code_type_id', '=', code_type_id)]",
     )
     parent_id = fields.Many2one(
         string='Parent Category',
         comodel_name='medical.pathology.category',
+        domain="[('code_type_id', '=', code_type_id)]",
+        index=True,
+    )
+    code_type_id = fields.Many2one(
+        string='Code Type',
+        comodel_name='medical.pathology.code.type',
         index=True,
     )
 

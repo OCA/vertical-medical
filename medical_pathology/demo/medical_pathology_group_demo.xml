@@ -5,15 +5,15 @@
 <odoo>
 
     <record id="medical_pathology_group_1" model="medical.pathology.group">
-        <field name="name">Millenium Development Goals 5</field>
+        <field name="name">[DEMO] Millenium Development Goals 5</field>
         <field name="description">Improve child mortality rates, HIV/AIDS, etc.</field>
-        <field name="code">MDG5</field>
+        <field name="code">[DEMO] MDG5</field>
     </record>
 
     <record id="medical_pathology_group_2" model="medical.pathology.group">
-        <field name="name">Millenium Development Goals 6</field>
+        <field name="name">[DEMO] Millenium Development Goals 6</field>
         <field name="description">Malaria, HIV/AIDS, etc.</field>
-        <field name="code">MDG6</field>
+        <field name="code">[DEMO] MDG6</field>
     </record>
 
 </odoo>
