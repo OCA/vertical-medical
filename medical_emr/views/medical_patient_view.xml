@@ -58,7 +58,7 @@
                                 <field name="patient_id"/>
                                 <field name="physician_id"/>
                                 <field name="age"/>
-                                <field name="treatment_start_date"/>
+                                <field name="date_treatment_start"/>
                                 <field name="treatment_end_date"/>
                                 <field name="healed_date"/>
                             </tree>
