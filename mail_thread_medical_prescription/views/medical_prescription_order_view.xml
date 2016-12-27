@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-    Copyright (C) 2016-[Now] LasLabs [https://laslabs.com]
-    @author James Foster <jfoster@laslabs.com>
-    The license is in the file __openerp__.py
+    Copyright 2016 LasLabs Inc.
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 
-<openerp>
-    <data>
+<odoo>
 
-        <record id="medical_prescription_order_view_form" model="ir.ui.view">
-            <field name="name">medical.prescription.order.form</field>
-            <field name="model">medical.prescription.order</field>
-            <field name="inherit_id" ref="medical_prescription.medical_prescription_order_view_form"/>
-            <field name="arch" type="xml">
-                <data>
-                    <xpath expr="//sheet" position="after">
-                        <div class="oe_chatter">
-                            <field name="message_follower_ids" widget="mail_followers"/>
-                            <field name="message_ids" widget="mail_thread"/>
-                        </div>
-                    </xpath>
-                </data>
-            </field>
-        </record>
+    <record id="medical_prescription_order_view_form" model="ir.ui.view">
+        <field name="name">medical.prescription.order.form</field>
+        <field name="model">medical.prescription.order</field>
+        <field name="inherit_id" ref="medical_prescription.medical_prescription_order_view_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//sheet" position="after">
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </xpath>
+            </data>
+        </field>
+    </record>
 
-    </data>
-</openerp>
+</odoo>
