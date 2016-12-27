@@ -13,6 +13,8 @@
                     <field name="importer_type" />
                     <field name="code_type_id" />
                     <field name="zip_uri" />
+                    <field name="auth_username" />
+                    <field name="auth_password" />
                     <field name="file_name" />
                 </group>
             </form>

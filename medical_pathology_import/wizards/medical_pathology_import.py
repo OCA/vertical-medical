@@ -2,11 +2,15 @@
 # Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from io import BytesIO
+from urllib2 import urlopen
+from zipfile import ZipFile
+
 from openerp import api, fields, models
 
 
 class MedicalPathologyImport(models.TransientModel):
-    """ It provides a model for importing ICD-10-CM codes to Odoo. """
+    """ It provides a model for importing pathology codes in to Odoo. """
 
     _name = 'medical.pathology.import'
     _description = 'Medical Pathology Import'
@@ -16,6 +20,12 @@ class MedicalPathologyImport(models.TransientModel):
     )
     file_name = fields.Char(
         help='Name of file (inside of zip) representing full tabular xml.',
+    )
+    auth_username = fields.Char(
+        help='Username for external authentication.',
+    )
+    auth_password = fields.Char(
+        help='Password for external authentication.',
     )
     code_type_id = fields.Many2one(
         string='Code Type',
@@ -91,16 +101,16 @@ class MedicalPathologyImport(models.TransientModel):
         """ It updates or creates a new Pathology for arguments.
 
         Args:
-            name: (str) Name of pathology to create.
-            code: (str) Code for pathology.
-            category: (medical.pathology.category) Singleton representing the
+            name (str): Name of pathology to create.
+            code (str): Code for pathology.
+            category (MedicalPathologyCategory): Singleton representing the
                 category for the new pathology.
-            code_type: (medical.pathology.code.type) Singleton representing
+            code_type (MedicalPathologyCodeType): Singleton representing
                 the code type of the pathology (ICD-10-CM).
-            parent: (medical.pathology) Parent pathology.
-            note: (str) Pathology notes.
+            parent (MedicalPathology): Parent pathology.
+            note (str): Pathology notes.
         Returns:
-            (medical.pathology) Newly created Pathology.
+            MedicalPathology: Newly created Pathology.
         """
         vals = {
             'name': name,
@@ -130,14 +140,14 @@ class MedicalPathologyImport(models.TransientModel):
         """ It updates or creates a new Pathology Category for arguments.
 
         Args:
-            name: (str) Name of pathology category to create.
-            code_type: (medical.pathology.code.type) Singleton representing
+            name (str): Name of pathology category to create.
+            code_type (MedicalPathologyCodeType): Singleton representing
                 the code type of the pathology (ICD-10-CM).
-            ref: (str) External ID reference.
-            parent: (medical.pathology.category) Parent category.
-            note: (str) Category notes.
+            ref (str) External ID reference.
+            parent (MedicalPathologyCategory): Parent category.
+            note (str): Category notes.
         Returns:
-            (medical.pathology.category) Newly created Pathology Category.
+            MedicalPathologyCategory: Newly created Pathology Category.
         """
         vals = {
             'name': name,
@@ -167,3 +177,16 @@ class MedicalPathologyImport(models.TransientModel):
             'res_id': record.id,
         }
         return self.env['ir.model.data'].create(vals)
+
+    @api.multi
+    def _get_remote_file(self):
+        """ It downloads the remote zip, then extracts & returns the file
+        Returns:
+            str: Contents of internal file
+        """
+        self.ensure_one()
+        response = urlopen(self.zip_uri)
+        with BytesIO(response.read()) as zip_data:
+            with ZipFile(zip_data) as files:
+                with files.open(self.file_name) as real_file:
+                    return real_file.read()

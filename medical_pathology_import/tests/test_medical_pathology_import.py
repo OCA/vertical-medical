@@ -3,6 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 import mock
+import os
 
 from openerp.tests.common import TransactionCase
 
@@ -14,6 +15,13 @@ MODULE_PATH = '.'.join((
 
 
 class TestMedicaPathologyImport(TransactionCase):
+
+    TEST_ZIP = os.path.join(
+        os.path.dirname(__file__),
+        'test_zip.zip'
+    )
+    TEST_FILE = 'test.txt'
+    TEST_FILE_CONTENT = 'test'
 
     def setUp(self):
         super(TestMedicaPathologyImport, self).setUp()
@@ -31,6 +39,8 @@ class TestMedicaPathologyImport(TransactionCase):
         return self.Model.create({
             'code_type_id': self.code_type.id,
             'importer_type': 'test',
+            'file_name': self.TEST_FILE,
+            'zip_uri': self.TEST_ZIP,
         })
 
     def create_category(self, parent=None):
@@ -38,7 +48,7 @@ class TestMedicaPathologyImport(TransactionCase):
             'code_type_id': self.code_type.id,
             'name': 'Category',
             'parent_id': parent.id if parent else None,
-            'notes': 'Category Notes',
+            'note': 'Category Notes',
         })
 
     def _get_pathology_args(self, parent=None, category=None):
@@ -188,3 +198,12 @@ class TestMedicaPathologyImport(TransactionCase):
         self.assertEqual(
             category.name, args['name'],
         )
+
+    @mock.patch('%s.urlopen' % MODULE_PATH)
+    def test_get_remote_file(self, urlopen):
+        """ It should extract and return the correct file. """
+        record = self.create_record()
+        with open(self.TEST_ZIP) as fh:
+            urlopen().read.return_value = fh.read()
+        res = record._get_remote_file()
+        self.assertEqual(res, self.TEST_FILE_CONTENT)
