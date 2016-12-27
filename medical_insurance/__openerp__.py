@@ -61,9 +61,9 @@
         'views/medical_menu.xml',
     ],
     'test': [
-        'test/medical_insurance_company.yml',
-        'test/medical_insurance_template.yml',
-        'test/medical_insurance_plan.yml',
+        'tests/medical_insurance_company.yml',
+        'tests/medical_insurance_template.yml',
+        'tests/medical_insurance_plan.yml',
     ],
     'installable': True,
     'auto_install': False,
