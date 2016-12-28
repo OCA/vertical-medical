@@ -6,31 +6,52 @@
 
     <record id="medical_pathology_category_1" model="medical.pathology.category">
         <field name="name">Clinical Pathology</field>
+        <field name="code_type_id" ref="medical_pathology.pathology_code_05" />
     </record>
 
     <record id="medical_pathology_category_2" model="medical.pathology.category">
         <field name="name">Microbiology</field>
         <field name="parent_id" ref="medical_pathology.medical_pathology_category_1" />
+        <field name="code_type_id" ref="medical_pathology.pathology_code_05" />
     </record>
 
     <record id="medical_pathology_category_3" model="medical.pathology.category">
         <field name="name">Infectious Diseases</field>
         <field name="parent_id" ref="medical_pathology.medical_pathology_category_2" />
+        <field name="code_type_id" ref="medical_pathology.pathology_code_05" />
     </record>
 
     <record id="medical_pathology_category_4" model="medical.pathology.category">
         <field name="name">STIs &amp; STDs</field>
         <field name="parent_id" ref="medical_pathology.medical_pathology_category_3" />
+        <field name="code_type_id" ref="medical_pathology.pathology_code_05" />
     </record>
 
     <record id="medical_pathology_category_5" model="medical.pathology.category">
         <field name="name">Parasitic Diseases</field>
         <field name="parent_id" ref="medical_pathology.medical_pathology_category_3" />
+        <field name="code_type_id" ref="medical_pathology.pathology_code_05" />
     </record>
 
     <record id="medical_pathology_category_6" model="medical.pathology.category">
         <field name="name">Protozoal Diseases</field>
         <field name="parent_id" ref="medical_pathology.medical_pathology_category_5" />
+        <field name="code_type_id" ref="medical_pathology.pathology_code_05" />
+    </record>
+
+    <record id="medical_pathology_category_7" model="medical.pathology.category">
+        <field name="name">[DEMO] Certain infectious and parasitic diseases (A00-B99)</field>
+        <field name="parent_id" ref="medical_pathology.medical_pathology_category_2" />
+        <field name="code_type_id" ref="medical_pathology.pathology_code_05" />
+        <field name="notes">Use Additional 
+* code to identify resistance to antimicrobial drugs (Z16.-)
+Type 1 Excludes 
+* certain localized infections - see body system-related chapters
+Type 2 Excludes 
+* carrier or suspected carrier of infectious disease (Z22.-)
+* infectious and parasitic diseases complicating pregnancy, childbirth and the puerperium (O98.-)
+* infectious and parasitic diseases specific to the perinatal period (P35-P39)
+* influenza and other acute respiratory infections (J00-J22)</field>
     </record>
 
 </odoo>

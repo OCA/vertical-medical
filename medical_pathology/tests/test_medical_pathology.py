@@ -1,28 +1,32 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-from odoo.tests.common import TransactionCase
+
 from psycopg2 import IntegrityError
+
+from openerp.tests.common import TransactionCase
+from openerp.exceptions import ValidationError
 
 
 class TestMedicalPathology(TransactionCase):
 
-    def setUp(self,):
+    def setUp(self):
         super(TestMedicalPathology, self).setUp()
-        self.model_obj = self.env['medical.pathology']
-        self.code_type_id = self.env['medical.pathology.code.type'].create({
-            'name': 'Code Type',
-        })
-        self.vals = {
-            'name': 'Test Pathology',
-            'code': 'TESTPATH',
-            'code_type_id': self.code_type_id.id,
-        }
-        self.record_id = self._test_record()
+        self.pathology_1 = self.env.ref(
+            'medical_pathology.medical_pathology_medical_pathology_1'
+        )
 
-    def _test_record(self, ):
-        return self.model_obj.create(self.vals)
-
-    def test_check_unique_code(self, ):
+    def test_check_unique_code(self):
+        """ Test 2 same codes per code_type raises integrity error """
         with self.assertRaises(IntegrityError):
-            self._test_record()
+            self.pathology_1.code = '[DEMO] B54'
+
+    def test_check_recursive_parent(self):
+        """ Test category recursive parent raises ValidationError """
+        parent = self.env.ref(
+            'medical_pathology.medical_pathology_medical_pathology_A00',
+        )
+        with self.assertRaises(ValidationError):
+            parent.parent_id = self.env.ref(
+                'medical_pathology.medical_pathology_medical_pathology_A00_0',
+            ).id

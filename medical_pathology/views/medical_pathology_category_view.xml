@@ -1,81 +1,81 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<openerp>
-    <data>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
-        <record id="medical_pathology_view_category_search" model="ir.ui.view">
-            <field name="name">medical.pathology.category.search</field>
-            <field name="model">medical.pathology.category</field>
-            <field name="arch" type="xml">
-                <search string="Medical Pathology Category">
-                    <field name="name" />
-                    <field name="parent_id" />
-                    <newline />
-                    <group expand="0" string="Group By...">
-                        <filter string="Parent Category" domain="[]"
-                            context="{'group_by':'parent_id'}" />
-                    </group>
-                </search>
-            </field>
-        </record>
+<odoo>
 
-        <record id="medical_pathology_view_category_tree" model="ir.ui.view">
-            <field name="name">medical.pathology.category.tree</field>
-            <field name="model">medical.pathology.category</field>
-            <field name="arch" type="xml">
-                <tree string="Medical Pathology Category">
-                    <field name="name" />
-                    <field name="parent_id" />
-                </tree>
-            </field>
-        </record>
+    <record id="medical_pathology_category_view_search" model="ir.ui.view">
+        <field name="name">medical.pathology.category.search</field>
+        <field name="model">medical.pathology.category</field>
+        <field name="arch" type="xml">
+            <search string="Medical Pathology Category">
+                <field name="name" />
+                <field name="parent_id" />
+                <newline />
+                <group expand="0" string="Group By...">
+                    <filter string="Parent Category"
+                            domain="[]"
+                            context="{'group_by':'parent_id'}"
+                            />
+                    <filter string="Code Type"
+                            domain="[]"
+                            context="{'group_by':'code_type_id'}"
+                            />
+                </group>
+            </search>
+        </field>
+    </record>
 
-        <record id="medical_pathology_view_category_form" model="ir.ui.view">
-            <field name="name">medical.pathology.category.form</field>
-            <field name="model">medical.pathology.category</field>
-            <field name="arch" type="xml">
-                <form string="Medical Pathology Category">
-                    <header>
-                    </header>
-                    <sheet>
-                        <div class="oe_title" name="title">
-                            <label for="name" class="edit_only"/>
-                            <h1><field name="name" /></h1>
-                        </div>
-                        <div class="oe_right oe_button_box" name="buttons">
-                        </div>
+    <record id="medical_pathology_category_view_tree" model="ir.ui.view">
+        <field name="name">medical.pathology.category.tree</field>
+        <field name="model">medical.pathology.category</field>
+        <field name="arch" type="xml">
+            <tree string="Medical Pathology Category">
+                <field name="name" />
+                <field name="code_type_id" />
+                <field name="parent_id" />
+            </tree>
+        </field>
+    </record>
 
-                        <group name="data">
-                            <group name="main">
-                                <field name="parent_id"/>
-                            </group>
-                        </group>
-
-                        <notebook>
-                        </notebook>
-                    </sheet>
-                    <div name="configurator" class="oe_form_sheetbg" groups="medical.group_medical_configurator">
-                        <div class="oe_formview oe_form_sheet_width">
-                            <h3>More Info</h3>
-                            <group name="moreinfo">
-                                <field name="id"/>
-                            </group>
-                        </div>
+    <record id="medical_pathology_category_view_form" model="ir.ui.view">
+        <field name="name">medical.pathology.category.form</field>
+        <field name="model">medical.pathology.category</field>
+        <field name="arch" type="xml">
+            <form string="Medical Pathology Category">
+                <header />
+                <sheet>
+                    <div class="oe_title" name="title">
+                        <label for="name" class="edit_only"/>
+                        <h1><field name="name" /></h1>
                     </div>
-                </form>
-            </field>
-        </record>
+                    <div class="oe_right oe_button_box" name="buttons" />
+                    <group name="data">
+                        <group name="main">
+                            <field name="code_type_id" />
+                            <field name="parent_id"
+                                   context="{'default_code_type_id': code_type_id}"
+                                   />
+                        </group>
+                        <group name="notes">
+                            <field name="notes" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-        <record model="ir.actions.act_window" id="medical_pathology_category_action">
-            <field name="name">Pathology Categories</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">medical.pathology.category</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="medical_pathology_view_category_tree" />
-            <field name="search_view_id" ref="medical_pathology_view_category_search" />
-            <field name="domain">[]</field>
-            <field name="context">{}</field>
-        </record>
+    <record id="medical_pathology_category_action" model="ir.actions.act_window">
+        <field name="name">Pathology Categories</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.pathology.category</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="medical_pathology_category_view_tree" />
+        <field name="search_view_id" ref="medical_pathology_category_view_search" />
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
 
-    </data>
-</openerp>
+</odoo>
