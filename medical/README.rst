@@ -6,12 +6,20 @@
 Odoo Medical
 ============
 
-This module extends Odoo with the base functionality of medical patients and centers.
+This module extends Odoo with the base functionality of medical patients.
+
+Installation
+============
+
+This module depends on modules located in the following repos:
+* https://github.com/OCA/partner-contact
+
+Check the ``__manifest__.py`` for the specific dependencies.
 
 Usage
 =====
 
-No additional configuration is needed to enable features for this module after installation.
+Patients are available in the ``Medical`` App, in the ``Patients`` submenu.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
@@ -20,6 +28,7 @@ No additional configuration is needed to enable features for this module after i
 Known issues / Roadmap
 ======================
 
+* v11 - Move Marital status into a new module in OCA/partner-contact
 
 Bug Tracker
 ===========
@@ -36,12 +45,13 @@ Images
 ------
 
 * Odoo Community Association: `Icon <https://github.com/OCA/maintainer-tools/blob/master/template/module/static/description/icon.svg>`_.
+* DevCom: `Patient Avatar <http://www.devcom.com/>`_.
 
 Contributors
 ------------
 
-* Jonathan Nemry <jonathan.nemry@acsone.eu>
 * Dave Lasley <dave@laslabs.com>
+* Jonathan Nemry <jonathan.nemry@acsone.eu>
 * Brett Wood <bwood@laslabs.com>
 * Ruchir Shukla <ruchir@techreceptives.com>
 * Parthiv Patel <parthiv@techreceptives.com>

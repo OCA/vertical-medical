@@ -12,12 +12,12 @@ class MedicalPatient(models.Model):
     def _format_dob(self):
         self.ensure_one()
         date = 'No DoB'
-        if self.dob:
+        if self.birthdate_date:
             ResLang = self.env['res.lang']
             lang_fmt = ResLang.search([('code', '=', self.lang)]).date_format
             if not lang_fmt:
                 lang_fmt = '%m/%d/%Y'
-            date = fields.Datetime.from_string(self.dob).strftime(
+            date = fields.Datetime.from_string(self.birthdate_date).strftime(
                 lang_fmt
             )
         return ' [%s]' % date
