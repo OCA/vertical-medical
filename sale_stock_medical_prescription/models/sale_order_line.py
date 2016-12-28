@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models, api, _
+from openerp import api, fields, models, _
 from openerp.exceptions import ValidationError
 import logging
 
@@ -20,9 +20,7 @@ class SaleOrderLine(models.Model):
     )
 
     @api.multi
-    @api.depends('product_uom',
-                 'prescription_order_line_id.dispense_uom_id',
-                 )
+    @api.depends('product_uom', 'prescription_order_line_id.dispense_uom_id')
     def _compute_dispense_qty(self):
         for rec_id in self:
             rx_line = rec_id.prescription_order_line_id
@@ -56,8 +54,6 @@ class SaleOrderLine(models.Model):
                         rx_line.medicament_id.product_id.name, rx_line,
                     ))
                 else:
-                    # @TODO: implement determination for what drugs can be
-                    #        substituted
                     pass
 
     @api.multi

@@ -1,34 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
-<!--
-    Copyright (C) 2015-[Now] LasLabs [https://laslabs.com]
-    @author Dave Lasley <dave@laslabs.com>
-    The license is in the file __openerp__.py
--->
+<odoo>
 
-<openerp>
+    <record id="route_warehouse0_prescription" model="stock.location.route">
+        <field name="name">RX</field>
+        <field name="sequence">100</field>
+        <field name="warehouse_selectable" eval="True"/>
+        <field name="product_selectable" eval="False"/>
+    </record>
     
-    <data noupdate="0">
-        
-        <record id="route_warehouse0_prescription" model="stock.location.route">
-            <field name="name">RX</field>
-            <field name="sequence">100</field>
-            <field name="warehouse_selectable" eval="True"/>
-            <field name="product_selectable" eval="False"/>
-        </record>
-        
-        <record id="route_warehouse0_otc" model="stock.location.route">
-            <field name="name">OTC</field>
-            <field name="sequence">100</field>
-        </record>
-        
-        <record id="stock.warehouse0" model="stock.warehouse">
-            <field name="is_pharmacy">1</field>
-            <field name="prescription_route_id" ref="route_warehouse0_prescription" />
-            <field name="otc_route_id" ref="route_warehouse0_otc" />
-            <field name="route_ids" eval="[(4, ref('route_warehouse0_prescription'), 0),
-                                           (4, ref('route_warehouse0_otc'), 0)]" />
-        </record>
-        
-    </data>
-</openerp>
+    <record id="route_warehouse0_otc" model="stock.location.route">
+        <field name="name">OTC</field>
+        <field name="sequence">100</field>
+    </record>
+    
+    <record id="stock.warehouse0" model="stock.warehouse">
+        <field name="is_pharmacy">1</field>
+        <field name="prescription_route_id" ref="route_warehouse0_prescription" />
+        <field name="otc_route_id" ref="route_warehouse0_otc" />
+        <field name="route_ids" eval="[(4, ref('route_warehouse0_prescription'), 0),
+                                        (4, ref('route_warehouse0_otc'), 0)]" />
+    </record>
+
+</odoo>

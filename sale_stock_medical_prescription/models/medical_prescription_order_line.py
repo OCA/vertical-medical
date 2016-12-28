@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models, api, _
+from openerp import api, fields, models, _
 from openerp.exceptions import ValidationError
 
 
@@ -14,7 +14,8 @@ class MedicalPrescriptionOrderLine(models.Model):
         string='Dispense UoM',
         help='Dispense Unit of Measure',
         required=True,
-        default=lambda s: s._default_dispense_uom_id(),
+        # default=lambda s: s._default_dispense_uom_id(),
+        related='medicament_id.uom_id',
     )
     dispensed_ids = fields.Many2many(
         string='Dispensings',
@@ -64,22 +65,21 @@ class MedicalPrescriptionOrderLine(models.Model):
         help='Amount that can be dispensed (using medicine dosage)',
     )
 
-    @api.model
-    def _default_dispense_uom_id(self):
-        return self.env['product.uom'].browse(
-            self.env['product.template']._get_uom_id()
-        )
+    # @api.model
+    # def _default_dispense_uom_id(self):
+    #     return self.env['product.uom'].browse(
+    #         self.env['product.template']._get_uom_id()
+    #     )
 
     @api.multi
-    @api.depends('dispense_uom_id',
-                 'sale_order_line_ids',
-                 'sale_order_line_ids.procurement_ids.product_uom',
-                 'sale_order_line_ids.procurement_ids.product_qty',
-                 'sale_order_line_ids.procurement_ids.state',
-                 )
-    def _compute_dispensings(self, ):
-        ''' Get related dispensings - Also sets dispense qtys '''
-
+    @api.depends(
+        'dispense_uom_id',
+        'sale_order_line_ids',
+        'sale_order_line_ids.procurement_ids.product_uom',
+        'sale_order_line_ids.procurement_ids.product_qty',
+        'sale_order_line_ids.procurement_ids.state',
+    )
+    def _compute_dispensings(self):
         for rec_id in self:
 
             dispense_ids = []
@@ -123,23 +123,20 @@ class MedicalPrescriptionOrderLine(models.Model):
             rec_id.dispensed_qty = dispense_qty
             rec_id.pending_dispense_qty = pending_qty
             rec_id.exception_dispense_qty = except_qty
+
             rec_id.dispensed_ids = self.env['procurement.order'].browse(
                 set(dispense_ids)
             )
             rec_id.last_dispense_id = last_procurement_id
 
     @api.multi
-    @api.depends('qty',
-                 'dispensed_qty',
-                 'exception_dispense_qty',
-                 'pending_dispense_qty',
-                 )
-    def _compute_can_dispense_and_qty(self, ):
-        '''
-        Determine whether Rx can be dispensed based on current dispensings,
-        and what qty
-        '''
-
+    @api.depends(
+        'qty',
+        'dispensed_qty',
+        'exception_dispense_qty',
+        'pending_dispense_qty',
+    )
+    def _compute_can_dispense_and_qty(self):
         for rec_id in self:
             total = sum([rec_id.dispensed_qty,
                          rec_id.exception_dispense_qty,
@@ -151,7 +148,7 @@ class MedicalPrescriptionOrderLine(models.Model):
 
     @api.multi
     @api.constrains('patient_id', 'sale_order_line_ids')
-    def _check_patient(self, ):
+    def _check_patient(self):
         for rec_id in self:
             for sale_line_id in rec_id.sale_order_line_ids:
                 if sale_line_id.patient_id != rec_id.patient_id:

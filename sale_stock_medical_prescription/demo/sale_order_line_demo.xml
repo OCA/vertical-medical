@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="sale_order_medical_order_line_12" model="sale.order.line">
+        <field name="prescription_order_line_id" ref="sale_stock_medical_prescription.medical_prescription_order_order_line_12" />
+        <field name="order_id" ref="sale_stock_medical_prescription.sale_order_medical_order_10" />
+        <field name="product_uom" ref="product.product_uom_unit" />
+        <field name="name">[OMCLN] Amoxicillin</field>
+        <field name="product_id" ref="sale_stock_medical_prescription.product_product_amoxicillin_1" />
+        <field name="product_uom_qty">20</field>
+        <field name="price_unit">1.50</field>
+    </record>
+
+    <record id="sale_order_medical_order_line_13" model="sale.order.line">
+        <field name="prescription_order_line_id" ref="sale_stock_medical_prescription.medical_prescription_order_order_line_13" />
+        <field name="order_id" ref="sale_stock_medical_prescription.sale_order_medical_order_10" />
+        <field name="product_uom" ref="product.product_uom_unit" />
+        <field name="name">[OMCLN] Amoxicillin</field>
+        <field name="product_id" ref="sale_stock_medical_prescription.product_product_amoxicillin_1" />
+        <field name="product_uom_qty">1</field>
+        <field name="price_unit">1.50</field>
+    </record>
+
+</odoo>

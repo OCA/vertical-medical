@@ -1,47 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!--
-    Copyright (C) 2016 LasLabs, Inc. [https://laslabs.com]
-    @author Dave Lasley <dave@laslabs.com>
-    @license AGPL-3
--->
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
 	
-	<record id="medical_prescription.medical_prescription_order_line_patient_1_order_1_line_1"
-			model="medical.prescription.order.line"
-			>
+    <record id="medical_prescription_order_order_line_12" model="medical.prescription.order.line">
+        <field name="prescription_order_id" ref="sale_stock_medical_prescription.medical_prescription_prescription_order_10" />
+        <field name="medical_medication_id" ref="sale_stock_medical_prescription.medical_patient_medication_medication_10" />
+        <field name="is_substitutable">False</field>
+        <field name="qty">40</field>
 		<field name="dispense_uom_id" ref="product.product_uom_categ_unit" />
-	</record>
-	
-	<record id="medical_prescription.medical_prescription_order_line_patient_1_order_1_line_2"
-			model="medical.prescription.order.line"
-			>
-		<field name="dispense_uom_id" ref="product.product_uom_categ_unit" />
-	</record>
-	
-	<record id="medical_prescription.medical_prescription_order_line_patient_2_order_1_line_1"
-			model="medical.prescription.order.line"
-			>
-		<field name="dispense_uom_id" ref="product.product_uom_categ_unit" />
-	</record>
-	
-	<record id="medical_prescription_sale.medical_prescription_order_line_patient_1_order_1_line_1"
-			model="medical.prescription.order.line"
-			>
-		<field name="dispense_uom_id" ref="product.product_uom_categ_unit" />
-	</record>
-	
-	<record id="medical_prescription_sale.medical_prescription_order_line_patient_1_order_1_line_2"
-			model="medical.prescription.order.line"
-			>
-		<field name="dispense_uom_id" ref="product.product_uom_categ_unit" />
-	</record>
-	
-	<record id="medical_prescription_sale.medical_prescription_order_line_patient_2_order_1_line_1"
-			model="medical.prescription.order.line"
-			>
-		<field name="dispense_uom_id" ref="product.product_uom_categ_unit" />
-	</record>
+    </record>
+
+    <record id="medical_prescription_order_order_line_13" model="medical.prescription.order.line">
+        <field name="prescription_order_id" ref="sale_stock_medical_prescription.medical_prescription_prescription_order_10" />
+        <field name="medical_medication_id" ref="sale_stock_medical_prescription.medical_patient_medication_medication_10" />
+        <field name="is_substitutable">False</field>
+		<field name="qty">20</field>
+    </record>
 	
 </odoo>

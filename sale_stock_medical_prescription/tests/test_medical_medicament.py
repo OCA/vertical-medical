@@ -8,9 +8,9 @@ from openerp.tests.common import TransactionCase
 class TestMedicalMedicament(TransactionCase):
 
     def test_create_uses_product_type_product(self):
+        """ Test medicament has type 'product' on creation """
         test_medicament = self.env['medical.medicament'].create({
             'name': 'Test Medicament',
             'drug_form_id': self.env.ref('medical_medicament.AEM').id,
         })
-
         self.assertEqual(test_medicament.type, 'product')
