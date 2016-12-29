@@ -6,21 +6,26 @@
 -->
 
 <odoo>
-    
+
     <record id="medical_prescription_order_line_kanban_view" model="ir.ui.view">
         <field name="name">Prescription Order Lines</field>
         <field name="model">medical.prescription.order.line</field>
-        <field name="inherit_id" ref="medical_base_kanban.medical_base_kanban_view" />
+        <field name="inherit_id" ref="base_kanban_stage.base_kanban_abstract_view_kanban" />
         <field name="priority" eval="99" />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='display_name']" position="replace">
-                <field name="prescription_order_id" />
-            </xpath>
-            <xpath expr="//div[@class='oe_kanban_details']" position="inside">
-                <ul>
-                    <li t-if="record.medicament_id.raw_value">
+            <xpath expr="//div[@name='card_header']" position="replace">
+                <strong>
+                    <span t-if="record.patient_id.raw_value">
+                        <field name="prescription_order_id" />
+                    </span>
+                     - 
+                    <span t-if="record.medicament_id.raw_value">
                         <field name="medicament_id" />
-                    </li>
+                    </span>
+                </strong>
+            </xpath>
+            <xpath expr="//div[@name='card_body']">
+                <ul>
                     <li>
                         <field name="display_name" />
                     </li>
@@ -36,7 +41,7 @@
             </xpath>
         </field>
     </record>
-    
+
     <record id="medical_prescription.medical_prescription_order_line_action" model="ir.actions.act_window">
         <field name="view_mode">kanban,tree,form</field>
         <field name="view_id" ref="medical_prescription_order_line_kanban_view" />

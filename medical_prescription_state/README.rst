@@ -42,6 +42,7 @@ Contributors
 
 * Dave Lasley <dave@laslabs.com>
 * Ken Mak <kmak@laslabs.com>
+* Ted Salmon <tsalmon@laslabs.com>
 
 Maintainer
 ----------

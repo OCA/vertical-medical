@@ -7,5 +7,5 @@ from openerp import models
 
 class MedicalPrescriptionOrder(models.Model):
     """ Add Kanban functionality to MedicalPrescriptionOrder """
-    _inherit = ['medical.prescription.order', 'medical.base.kanban']
+    _inherit = ['medical.prescription.order', 'base.kanban.abstract']
     _name = 'medical.prescription.order'

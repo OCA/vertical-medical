@@ -7,12 +7,12 @@
     'version': '9.0.1.0.0',
     'author': "LasLabs, Odoo Community Association (OCA)",
     'category': 'Medical',
+    'website': 'https://laslabs.com',
+    'license': 'AGPL-3',
     'depends': [
-        'medical_base_kanban',
+        'base_kanban_stage',
         'medical_prescription',
     ],
-    'website': 'http://github.com/oca/vertical-medical',
-    'license': 'AGPL-3',
     'data': [
         'views/medical_prescription_order.xml',
         'views/medical_prescription_order_line.xml',
