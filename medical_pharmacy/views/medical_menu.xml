@@ -10,4 +10,10 @@
                 parent="medical.medical_root_misc"
                 action="medical_pharmacy_action" />
 
+    <menuitem id="medical_pharmacist_menu"
+                name="Pharmacists"
+                sequence="61"
+                parent="medical_physician.medical_conf_physicians"
+                action="medical_pharmacist_action" />
+
 </odoo>

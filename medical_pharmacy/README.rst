@@ -23,6 +23,7 @@ Known issues / Roadmap
 ======================
 
 * Improve and provide a full description for this module into the README.rst
+* Move the menus somewhere better
 
 
 Bug Tracker
@@ -36,6 +37,13 @@ If you spotted it first, help us smashing it by providing a detailed and welcome
 
 Credits
 =======
+
+Images
+------
+
+* Odoo Community Association: `Icon <https://github.com/OCA/maintainer-tools/blob/master/template/module/static/description/icon.svg>`_.
+* Icons Land: `Pharmacist Avatars <http://www.icons-land.com/>`_.
+
 
 Contributors
 ------------

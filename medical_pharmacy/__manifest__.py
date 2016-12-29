@@ -13,10 +13,11 @@
     "application": False,
     "installable": True,
     "depends": [
-        "medical",
+        "medical_physician",
     ],
     "data": [
         "views/medical_pharmacy_view.xml",
+        "views/medical_pharmacist_view.xml",
         "views/medical_menu.xml",
         "security/ir.model.access.csv",
     ],
