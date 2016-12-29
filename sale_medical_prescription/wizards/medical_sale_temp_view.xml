@@ -75,7 +75,7 @@
                                         </group>
                                     </group>
                                 </form>
-                                <tree string="Sales Order Lines" editable="bottom">
+                                <tree string="Sales Order Lines" create="false" editable="bottom">
                                     <field name="sequence" widget="handle" />
                                     <field name="product_id"
                                            context="{'partner_id':parent.partner_id,
