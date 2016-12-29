@@ -18,6 +18,5 @@ class MedicalPatient(models.Model):
         help='Check this if the patient requires counseling on their '
              'prescription dispensings.'
     )
-    # @TODO: Get rid of these in favor of relations. Quick fix for website
     allergies = fields.Char()
     existing_meds = fields.Char()

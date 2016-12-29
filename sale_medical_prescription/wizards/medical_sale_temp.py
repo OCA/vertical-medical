@@ -2,7 +2,7 @@
 # Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 import openerp.addons.decimal_precision as dp
 import logging
 
@@ -14,6 +14,8 @@ class MedicalSaleTemp(models.TransientModel):
     _name = 'medical.sale.temp'
     _description = 'Temporary order info for Sale2Rx workflow'
 
+    note = fields.Text()
+    origin = fields.Char()
     order_line = fields.One2many(
         string='Order Lines',
         comodel_name='medical.sale.line.temp',
@@ -68,7 +70,6 @@ class MedicalSaleTemp(models.TransientModel):
     client_order_ref = fields.Char(
         string='Order Reference',
     )
-    origin = fields.Char()
     currency_id = fields.Many2one(
         string='Currency',
         comodel_name='res.currency',
@@ -81,7 +82,6 @@ class MedicalSaleTemp(models.TransientModel):
         comodel_name='res.company',
         required=True,
     )
-    note = fields.Text()
     user_id = fields.Many2one(
         string='Salesperson',
         comodel_name='res.users',
@@ -127,25 +127,21 @@ class MedicalSaleTemp(models.TransientModel):
 
     @api.multi
     def _compute_line_cnt(self):
-        for rec_id in self:
-            rec_id.line_cnt = len(rec_id.order_line)
+        for record in self:
+            record.line_cnt = len(record.order_line)
 
     @api.multi
     def _compute_all_amounts(self):
-        for rec_id in self:
-            # curr = self.pricelist_id.currency_id
+        for record in self:
             untaxed = 0.0
-            # taxes = 0.0
-            for line in rec_id.order_line:
+            for line in record.order_line:
                 untaxed += line.price_subtotal
-                # taxes += line.amount_tax
-            rec_id.amount_untaxed = untaxed
+            record.amount_untaxed = untaxed
 
     @api.multi
     def action_next_wizard(self):
         self.ensure_one()
         self.state = 'done'
-        #   @TODO: allow this workflow without a parent wizard
         wizard_action = self.prescription_wizard_id.action_next_wizard()
         _logger.debug('next_wizard: %s', wizard_action)
         return wizard_action
@@ -160,7 +156,7 @@ class MedicalSaleTemp(models.TransientModel):
     @api.multi
     def _to_vals_iter(self):
         """ Generator of values dicts for ORM methods """
-        for sale_id in self:
+        for record in self:
             yield self._to_vals()
 
     @api.multi
@@ -185,9 +181,5 @@ class MedicalSaleTemp(models.TransientModel):
             'origin': self.origin,
             'note': self.note,
             'team_id': self.team_id.id,
-            #  @TODO
-            #  warning logs, fields not found in sale.order
-            # 'payment_term': self.payment_term.id,
-            # 'fiscal_position': self.fiscal_position.id,
             'project_id': self.project_id.id,
         }

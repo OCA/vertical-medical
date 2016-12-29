@@ -37,16 +37,16 @@ class TestMedicalSaleWizard(wizard_test_setup.WizardTestSetup):
 
     def test_action_create_sale_wizards_orders(self):
         """ Test sale order fields properly populated from wizard """
-        patient_id = self.rx_order_7.patient_id
-        partner_id = patient_id.partner_id
+        patient = self.rx_order_7.patient_id
+        partner = patient.partner_id
         rx_order_names = self.rx_order_7.name
 
         exp_keys = {
-            'partner_id': partner_id,
-            'patient_id': patient_id,
+            'partner_id': partner,
+            'patient_id': patient,
             'pricelist_id': self.env.ref('product.list0'),
-            'partner_invoice_id': partner_id,
-            'partner_shipping_id': partner_id,
+            'partner_invoice_id': partner,
+            'partner_shipping_id': partner,
             'prescription_order_ids': self.rx_order_7,
             'pharmacy_id': self.rx_order_7.partner_id,
             'client_order_ref': rx_order_names,
@@ -108,10 +108,10 @@ class TestMedicalSaleWizard(wizard_test_setup.WizardTestSetup):
         """ Test next wizard attrs correctly returned """
         self.wizard_1.action_create_sale_wizards()
         res_next_sale = self.wizard_1._get_next_sale_wizard()
-        wizard_id = self.env.ref(
+        wizard = self.env.ref(
             'sale_medical_prescription.medical_sale_temp_view_form'
         )
-        action_id = self.env.ref(
+        action = self.env.ref(
             'sale_medical_prescription.medical_sale_temp_action'
         )
         order_line = self.wizard_1.sale_wizard_ids[0]
@@ -119,17 +119,17 @@ class TestMedicalSaleWizard(wizard_test_setup.WizardTestSetup):
         context['active_id'] = order_line.id
 
         exp_keys = {
-            'name': action_id.name,
-            'help': action_id.help,
-            'type': action_id.type,
+            'name': action.name,
+            'help': action.help,
+            'type': action.type,
             'target': 'new',
             'context': context,
-            'res_model': action_id.res_model,
+            'res_model': action.res_model,
             'res_id': order_line.id,
         }
         self.assertEquals(
             res_next_sale['views'][0][0],
-            wizard_id.id,
+            wizard.id,
         )
         for key in exp_keys:
             res = res_next_sale[key]
@@ -177,22 +177,22 @@ class TestMedicalSaleWizard(wizard_test_setup.WizardTestSetup):
         self.wizard_1.action_next_wizard()
         res_action = self.wizard_1.action_rx_sale_conversions()
 
-        form_id = self.env.ref('sale.view_order_form')
-        tree_id = self.env.ref('sale.view_quotation_tree')
-        action_id = self.env.ref('sale.action_quotations')
+        form = self.env.ref('sale.view_order_form')
+        tree = self.env.ref('sale.view_quotation_tree')
+        action = self.env.ref('sale.action_quotations')
         context = self.wizard_1._context.copy()
         exp_keys = {
-            'name': action_id.name,
-            'help': action_id.help,
-            'type': action_id.type,
+            'name': action.name,
+            'help': action.help,
+            'type': action.type,
             'view_mode': 'tree',
-            'view_id': tree_id.id,
+            'view_id': tree.id,
             'target': 'current',
             'context': context,
-            'res_model': action_id.res_model,
+            'res_model': action.res_model,
         }
         self.assertEquals(
-            [tree_id.id, form_id.id],
+            [tree.id, form.id],
             [
                 res_action['views'][0][0],
                 res_action['views'][1][0],

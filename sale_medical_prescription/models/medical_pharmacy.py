@@ -16,18 +16,18 @@ class MedicalPharmacy(models.Model):
         string='Verified By',
         comodel_name='res.users',
         store=True,
-        compute='_compute_verified_by_id',
+        compute='_compute_verified_by_id_and_date',
     )
     verified_date = fields.Datetime(
         string='Verified Date',
         store=True,
-        compute='_compute_verified_by_id',
+        compute='_compute_verified_by_id_and_date',
     )
 
     @api.multi
     @api.depends('is_verified')
-    def _compute_verified_by_id(self):
-        for rec_id in self:
-            if rec_id.is_verified and not rec_id.verified_date:
-                rec_id.verified_by_id = self.env.user.id
-                rec_id.verified_date = fields.Datetime.now()
+    def _compute_verified_by_id_and_date(self):
+        for record in self:
+            if record.is_verified and not record.verified_date:
+                record.verified_by_id = self.env.user.id
+                record.verified_date = fields.Datetime.now()

@@ -33,11 +33,11 @@ class SaleOrder(models.Model):
 
     @api.multi
     def _compute_patient_ids(self):
-        for rec_id in self:
+        for record in self:
             patient_ids = []
-            for line_id in rec_id.order_line:
+            for line_id in record.order_line:
                 patient_ids.append(line_id.patient_id.id)
-            rec_id.patient_ids = self.env['medical.patient'].browse(
+            record.patient_ids = self.env['medical.patient'].browse(
                 set(patient_ids)
             )
 
@@ -46,20 +46,22 @@ class SaleOrder(models.Model):
         rx_model = self.env['medical.prescription.order']
         rx_line_model = self.env['medical.prescription.order.line']
 
-        for rec_id in self:
-            prescription_ids = []
-            prescription_line_ids = []
+        for record in self:
+            rx_lines = rx_line_model.browse()
+            rx_orders = rx_model.browse()
 
-            for order_line_id in rec_id.order_line:
-                if not order_line_id.prescription_order_line_id:
+            for order_line in record.order_line:
+                if not order_line.prescription_order_line_id:
                     continue
-                line_id = order_line_id.prescription_order_line_id
-                prescription_line_ids.append(line_id.id)
-                prescription_ids.append(line_id.prescription_order_id.id)
 
-            rec_id.prescription_order_ids = rx_model.browse(
-                set(prescription_ids)
-            )
-            rec_id.prescription_order_line_ids = rx_line_model.browse(
-                set(prescription_line_ids)
-            )
+                related_rx_line = order_line.prescription_order_line_id
+                related_rx_order = related_rx_line.prescription_order_id
+
+                if related_rx_line not in rx_lines:
+                    rx_lines += related_rx_line
+
+                if related_rx_order not in rx_orders:
+                    rx_orders += related_rx_order
+
+            record.prescription_order_ids = rx_orders
+            record.prescription_order_line_ids = rx_lines

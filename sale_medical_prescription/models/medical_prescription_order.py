@@ -73,9 +73,9 @@ class MedicalPrescriptionOrder(models.Model):
     @api.multi
     @api.depends('verify_method')
     def _compute_verified(self):
-        for rec_id in self:
-            if rec_id.verify_method != 'none':
-                if not rec_id.is_verified:
-                    rec_id.is_verified = True
-                    rec_id.verify_user_id = self.env.user.id
-                    rec_id.verify_date = fields.Datetime.now()
+        for record in self:
+            if record.verify_method != 'none':
+                if not record.is_verified:
+                    record.is_verified = True
+                    record.verify_user_id = self.env.user.id
+                    record.verify_date = fields.Datetime.now()

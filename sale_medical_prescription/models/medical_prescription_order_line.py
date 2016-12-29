@@ -41,11 +41,11 @@ class MedicalPrescriptionOrderLine(models.Model):
 
     @api.multi
     def _compute_orders(self):
-        for rec_id in self:
+        for record in self:
             order_ids = []
-            for line_id in rec_id.sale_order_line_ids:
+            for line_id in record.sale_order_line_ids:
                 order_ids.append(line_id.order_id.id)
-            rec_id.sale_order_ids = self.env['sale.order'].browse(
+            record.sale_order_ids = self.env['sale.order'].browse(
                 set(order_ids)
             )
 

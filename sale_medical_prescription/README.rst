@@ -21,7 +21,10 @@ Known issues / Roadmap
 ======================
 
 * Remove allergies and existing_meds fields from Medical Patient in favor of related fields.
-* Add functionality to split orders by customers and prescription order lines
+* Add functionality to split orders by customers and prescription order lines in medical wizard.
+* Allow sale_line_temp to get next wizard without requirement of parent wizard (action_next_wizard)
+* Move duplicated is_verified, verified_by_id, verified_date, and related methods to medical.entity.abstract.
+* payment_term and fiscal_position fields removed from medical_sale_temp _to_vals as not found in sale order.
 
 Bug Tracker
 ===========

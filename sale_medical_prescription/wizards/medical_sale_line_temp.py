@@ -51,9 +51,8 @@ class MedicalSaleLineTemp(models.TransientModel):
     @api.multi
     @api.depends('price_unit', 'product_uom_qty')
     def _compute_all_amounts(self):
-        for rec_id in self:
-            rec_id.price_subtotal = rec_id.price_unit * rec_id.product_uom_qty
-            # taxes = self.env['account.tax'].compute_all()
+        for record in self:
+            record.price_subtotal = record.price_unit * record.product_uom_qty
 
     @api.multi
     def _to_insert(self):
@@ -65,8 +64,8 @@ class MedicalSaleLineTemp(models.TransientModel):
     @api.multi
     def _to_vals_iter(self):
         """ Generator of values dicts for ORM methods """
-        for sale_id in self:
-            yield sale_id._to_vals()
+        for record in self:
+            yield record._to_vals()
 
     @api.multi
     def _to_vals(self):

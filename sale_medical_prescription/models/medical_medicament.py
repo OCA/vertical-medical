@@ -23,10 +23,10 @@ class MedicalMedicament(models.Model):
         prescription_categ_id = self.env.ref(
             'sale_medical_prescription.product_category_rx'
         )
-        for rec_id in self:
-            if rec_id.categ_id == prescription_categ_id:
-                rec_id.is_prescription = True
+        for record in self:
+            if record.categ_id == prescription_categ_id:
+                record.is_prescription = True
                 continue
-            rec_id.is_prescription = rec_id.categ_id._is_descendant_of(
+            record.is_prescription = record.categ_id._is_descendant_of(
                 prescription_categ_id
             )

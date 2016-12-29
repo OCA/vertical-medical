@@ -21,17 +21,10 @@ class MedicalSaleWizard(models.TransientModel):
         required=True,
         readonly=True,
     )
-    # @TODO
-    # Add functionality to split orders by partner
-    # and rx order lines.
-    # patient_id in action_create_sale_wizards
-    # is empty in both cases, causing issues.
     split_orders = fields.Selection(
         string='Split Orders',
         selection=[
-            # ('partner', 'By Customer'),
             ('patient', 'By Patient'),
-            # ('all', 'By Rx Line'),
         ],
         default='patient',
         required=True,
@@ -84,45 +77,42 @@ class MedicalSaleWizard(models.TransientModel):
         order_inserts = []
 
         for rx_line in self.prescription_line_ids:
-            # if self.split_orders == 'patient':
             order_map[rx_line.patient_id].append(rx_line)
-            # else:
-            #     order_map[None].append(rx_line)
 
-        for patient_id, order in order_map.items():
+        for patient, order in order_map.items():
             order_lines = []
-            prescription_order_ids = self.env['medical.prescription.order']
+            rx_orders = self.env['medical.prescription.order'].browse()
 
-            for line_id in self.prescription_line_ids:
-                medicament_id = line_id.medical_medication_id.medicament_id
+            for rx_line in self.prescription_line_ids:
+                medicament = rx_line.medical_medication_id.medicament_id
                 order_lines.append((0, 0, {
-                    'product_id': medicament_id.product_id.id,
-                    'product_uom': medicament_id.product_id.uom_id.id,
-                    'product_uom_qty': line_id.qty,
-                    'price_unit': medicament_id.product_id.list_price,
-                    'prescription_order_line_id': line_id.id,
+                    'product_id': medicament.product_id.id,
+                    'product_uom': medicament.product_id.uom_id.id,
+                    'product_uom_qty': rx_line.qty,
+                    'price_unit': medicament.product_id.list_price,
+                    'prescription_order_line_id': rx_line.id,
                 }))
-                prescription_order_ids += line_id.prescription_order_id
-            prescription_order_ids = set(prescription_order_ids)
+                rx_orders += rx_line.prescription_order_id
+            rx_orders = set(rx_orders)
 
-            if patient_id.property_product_pricelist:
-                pricelist_id = patient_id.property_product_pricelist.id
+            if patient.property_product_pricelist:
+                pricelist_id = patient.property_product_pricelist.id
             else:
                 pricelist_id = False
 
-            pids = [(4, p.id, 0) for p in prescription_order_ids]
+            rx_order_ids = [(4, p.id, 0) for p in rx_orders]
             client_order_ref = ', '.join(
-                p.name for p in prescription_order_ids
+                p.name for p in rx_orders
             )
 
-            partner_id = patient_id.partner_id
+            partner = patient.partner_id
             order_inserts.append((0, 0, {
-                'partner_id': partner_id.id,
-                'patient_id': patient_id.id,
+                'partner_id': partner.id,
+                'patient_id': patient.id,
                 'pricelist_id': pricelist_id,
-                'partner_invoice_id': partner_id.id,
-                'partner_shipping_id': partner_id.id,
-                'prescription_order_ids': pids,
+                'partner_invoice_id': partner.id,
+                'partner_shipping_id': partner.id,
+                'prescription_order_ids': rx_order_ids,
                 'pharmacy_id': self.pharmacy_id.id,
                 'client_order_ref': client_order_ref,
                 'order_line': order_lines,
@@ -143,32 +133,32 @@ class MedicalSaleWizard(models.TransientModel):
     @api.model
     def _get_next_sale_wizard(self, only_states=None):
         model_obj = self.env['ir.model.data']
-        wizard_id = model_obj.xmlid_to_object(
+        wizard = model_obj.xmlid_to_object(
             'sale_medical_prescription.medical_sale_temp_view_form'
         )
-        action_id = model_obj.xmlid_to_object(
+        action = model_obj.xmlid_to_object(
             'sale_medical_prescription.medical_sale_temp_action'
         )
         context = self._context.copy()
-        for sale_id in self.sale_wizard_ids:
+        for sale_wizard in self.sale_wizard_ids:
 
-            _logger.debug(sale_id)
+            _logger.debug(sale_wizard)
 
-            if only_states and sale_id.state not in only_states:
+            if only_states and sale_wizard.state not in only_states:
                 continue
-            context['active_id'] = sale_id.id
+            context['active_id'] = sale_wizard.id
 
             return {
-                'name': action_id.name,
-                'help': action_id.help,
-                'type': action_id.type,
+                'name': action.name,
+                'help': action.help,
+                'type': action.type,
                 'views': [
-                    (wizard_id.id, 'form'),
+                    (wizard.id, 'form'),
                 ],
                 'target': 'new',
                 'context': context,
-                'res_model': action_id.res_model,
-                'res_id': sale_id.id,
+                'res_model': action.res_model,
+                'res_id': sale_wizard.id,
             }
         return False
 
@@ -188,41 +178,41 @@ class MedicalSaleWizard(models.TransientModel):
     def action_rx_sale_conversions(self):
         self.ensure_one()
         sale_obj = self.env['sale.order']
-        sale_ids = None
+        sale_orders = None
 
-        for sale_wizard_id in self.sale_wizard_ids:
-            sale_vals = sale_wizard_id._to_vals()
+        for sale_wizard in self.sale_wizard_ids:
+            sale_vals = sale_wizard._to_vals()
 
             _logger.debug(sale_vals)
 
-            sale_id = sale_obj.create(sale_vals)
+            sale_order = sale_obj.create(sale_vals)
             try:
-                sale_ids += sale_id
+                sale_orders += sale_order
             except TypeError:
-                sale_ids = [sale_id]
+                sale_orders = [sale_order]
 
         model_obj = self.env['ir.model.data']
-        form_id = model_obj.xmlid_to_object('sale.view_order_form')
-        tree_id = model_obj.xmlid_to_object('sale.view_quotation_tree')
-        action_id = model_obj.xmlid_to_object('sale.action_quotations')
+        form = model_obj.xmlid_to_object('sale.view_order_form')
+        tree = model_obj.xmlid_to_object('sale.view_quotation_tree')
+        action = model_obj.xmlid_to_object('sale.action_quotations')
         context = self._context.copy()
 
-        _logger.info('Created %s', sale_ids)
-        _logger.debug('%s %s %s', form_id, tree_id, action_id)
+        _logger.info('Created %s', sale_orders)
+        _logger.debug('%s %s %s', form, tree, action)
 
-        sale_ids = [s.id for s in sale_ids]
+        sale_order_ids = [s.id for s in sale_orders]
         return {
-            'name': action_id.name,
-            'help': action_id.help,
-            'type': action_id.type,
+            'name': action.name,
+            'help': action.help,
+            'type': action.type,
             'view_mode': 'tree',
-            'view_id': tree_id.id,
+            'view_id': tree.id,
             'views': [
-                (tree_id.id, 'tree'), (form_id.id, 'form'),
+                (tree.id, 'tree'), (form.id, 'form'),
             ],
             'target': 'current',
             'context': context,
-            'res_model': action_id.res_model,
-            'res_ids': sale_ids,
-            'domain': [('id', 'in', sale_ids)],
+            'res_model': action.res_model,
+            'res_ids': sale_order_ids,
+            'domain': [('id', 'in', sale_order_ids)],
         }

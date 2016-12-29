@@ -10,8 +10,9 @@ class TestMedicalSaleLineTemp(wizard_test_setup.WizardTestSetup):
     def test_compute_all_amounts(self):
         """ Test subtotal calculated correctly """
         self.wizard_1.action_create_sale_wizards()
-        res = self.wizard_1.sale_wizard_ids[0].order_line[0].price_subtotal
-        exp = self.line_7.product_uom_qty * self.line_7.price_unit
+        order_line = self.wizard_1.sale_wizard_ids[0].order_line[0]
+        res = order_line.price_subtotal
+        exp = order_line.product_uom_qty * order_line.price_unit
         self.assertEqual(
             res, exp,
         )
