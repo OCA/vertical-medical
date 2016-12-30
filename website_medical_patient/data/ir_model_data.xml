@@ -12,7 +12,7 @@
     <function model="ir.model.fields" name="formbuilder_whitelist">
         <value>medical.patient</value>
         <value eval="[
-            'dob',
+            'birthdate_date',
             'gender',
             'parent_id',
             'id',

@@ -38,7 +38,7 @@ class TestMedicalPatient(TransactionCase):
 
     def test_name_without_dob(self):
         """ Test display name includes [No DoB] if no dob present """
-        self.patient_1.dob = None
+        self.patient_1.birthdate_date = None
         self.assertEquals(
             self.patient_1.display_name, 'Emma Fields [No DoB]',
             'Should include [No DoB].\rGot: %s\rExpected: %s' % (

@@ -19,8 +19,9 @@
     'license': 'AGPL-3',
     'data': [
         'templates/assets.xml',
-        'views/medical_patient_view.xml',
-        'views/res_partner_view.xml',
+        'views/medical_abstract_entity.xml',
+        'views/medical_patient.xml',
+        'views/res_partner.xml',
         'views/medical_menu.xml',
         'security/medical_security.xml',
         'security/ir.model.access.csv',

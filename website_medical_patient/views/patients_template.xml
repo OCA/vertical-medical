@@ -103,14 +103,14 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div t-attf-class="o_datepicker form-field #{error.get('dob') and 'has-error' or ''}">
-                                    <label class="control-label label-optional" for="dob">
+                                <div t-attf-class="o_datepicker form-field #{error.get('birthdate_date') and 'has-error' or ''}">
+                                    <label class="control-label label-optional" for="birthdate_date">
                                         Birth Date
                                     </label>
                                     <input type="text"
-                                        name="dob"
+                                        name="birthdate_date"
                                         class="form-control o_website_form_date"
-                                        t-att-value="request.params.get('dob') or _format_date(patient.dob) or ''" />
+                                        t-att-value="request.params.get('birthdate_date') or _format_date(patient.birthdate_date) or ''" />
                                 </div>
                             </div>
                             <div class="form-group">

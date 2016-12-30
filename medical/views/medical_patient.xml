@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical_patient_view_tree" model="ir.ui.view">
+        <field name="name">medical.patient.tree</field>
+        <field name="model">medical.patient</field>
+        <field name="inherit_id" ref="medical_abstract_entity_view_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="string">Patients</attribute>
+            </xpath>
+            <xpath expr="//field[@name='email']" position="after">
+                <field name="identification_code" />
+                <field name="age" />
+                <field name="gender" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_patient_view_form" model="ir.ui.view">
+        <field name="name">medical.patient.form</field>
+        <field name="model">medical.patient</field>
+        <field name="inherit_id" ref="medical_abstract_entity_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="string">Patient</attribute>
+            </xpath>
+            <xpath expr="//group[@name='main_data']">
+                <group name="main">
+                    <field name="identification_code" />
+                    <field name="gender" />
+                    <field name="is_pregnant" />
+                    <field name="parent_id"
+                           colspan="2"
+                           string="Legal Representative"
+                           domain="[('customer','=',True)]"
+                           />
+                </group>
+                <group>
+                    <field name="birthdate_date" />
+                    <field name="date_death" />
+                    <field name="age" />
+                </group>
+            </xpath>
+            <xpath expr="//img[@name='kanban_image_default_person']"
+                   position="replace"
+                   priority="100">
+                <img name="kanban_image_default_person"
+                     t-if="record.is_company.raw_value === false"
+                     t-attf-src='{{ _s }}/medical/static/src/img/patient-avatar.png'
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_patient_view_kanban" model="ir.ui.view">
+        <field name="name">medical.patient.kanban</field>
+        <field name="model">medical.patient</field>
+        <field name="inherit_id" ref="medical_abstract_entity_view_kanban" />
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="string">Patients</attribute>
+            </xpath>
+            <xpath expr="//templates" position="before">
+                <field name="birthdate_date" />
+            </xpath>
+            <xpath expr="//ul[@name='entity_details']/li" position="before">
+                <li name="field_dob" t-if="record.birthdate_date.raw_value">
+                    <strong>DOB:</strong> <field name="birthdate_date" />
+                </li>
+                <li name="field_age_gender" t-if="record.birthdate_date.raw_value &amp;&amp; record.gender.raw_value">
+                    <field name="age" /> - <field name="gender" />
+                </li>
+                <li name="field_gender" t-if="! record.birthdate_date.raw_value &amp;&amp; record.gender.raw_value">
+                    <field name="gender" />
+                </li>
+            </xpath>
+            <xpath expr="//img[@name='kanban_image_default_person']"
+                   position="replace"
+                   priority="100">
+                <img name="kanban_image_default_person"
+                     t-if="record.is_company.raw_value === false"
+                     t-attf-src='{{ _s }}/medical/static/src/img/patient-avatar.png'
+                />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_patient_view_search" model="ir.ui.view">
+        <field name="name">medical.patient.search</field>
+        <field name="model">medical.patient</field>
+        <field name="inherit_id" ref="medical_abstract_entity_view_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="attributes">
+                <attribute name="string">Patients</attribute>
+            </xpath>
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="birthdate_date" />
+                <field name="age" />
+                <field name="identification_code" />
+            </xpath>
+            <xpath expr="//filter" position="after">
+                <filter string="DoB"
+                        domain="[]"
+                        context="{'group_by':'birthdate_date'}" />
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_patient_action">
+        <field name="name">Patients</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.patient</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_ids"
+               eval="[(5, 0, 0),
+                      (0, 0, {'view_mode': 'kanban', 'view_id': ref('medical_patient_view_kanban')}),
+                      (0, 0, {'view_mode': 'tree', 'view_id': ref('medical_patient_view_tree')}),
+                      (0, 0, {'view_mode': 'form', 'view_id': ref('medical_patient_view_form')}),
+                     ]"
+        />
+    </record>
+
+</odoo>

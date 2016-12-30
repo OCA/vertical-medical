@@ -89,3 +89,13 @@ class TestMedicalPatient(TransactionCase):
         self.assertFalse(
             self.patient_1.is_deceased,
         )
+
+    def test_create_as_partner(self):
+        """ It should create the entity if created as a partner. """
+        partner = self.env['res.partner'].create({
+            'name': 'test',
+            'type': 'medical.patient',
+        })
+        self.assertEqual(
+            len(partner.patient_ids), 1,
+        )

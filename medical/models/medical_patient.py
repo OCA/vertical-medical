@@ -15,7 +15,7 @@ class MedicalPatient(models.Model):
     """
     _name = 'medical.patient'
     _description = 'Medical Patient'
-    _inherits = {'res.partner': 'partner_id'}
+    _inherit = 'medical.abstract.entity'
 
     age = fields.Char(
         compute='_compute_age',
@@ -28,18 +28,8 @@ class MedicalPatient(models.Model):
     general_info = fields.Text(
         string='General Information',
     )
-    active = fields.Boolean(
-        default=True,
-    )
     is_deceased = fields.Boolean(
         compute='_compute_is_deceased',
-    )
-    partner_id = fields.Many2one(
-        string='Related Partner',
-        comodel_name='res.partner',
-        required=True,
-        ondelete='cascade',
-        index=True,
     )
     marital_status = fields.Selection([
         ('s', 'Single'),
@@ -58,9 +48,8 @@ class MedicalPatient(models.Model):
 
     @api.multi
     def _compute_age(self):
-        """
-        Age computed depending of the birth date of the
-        membership request
+        """ Age computed depending based on the birth date in the
+         membership request.
         """
         now = datetime.now()
         for record in self:
@@ -96,22 +85,15 @@ class MedicalPatient(models.Model):
                     'Invalid selection - Only a `Female` may be pregnant.',
                 ))
 
-    @api.multi
-    def action_invalidate(self):
-        for record in self:
-            record.active = False
-            if not any(record.partner_id.patient_ids.mapped('active')):
-                record.partner_id.active = False
-
     @api.model
-    def create(self, vals):
-        vals.update({
-            'customer': True,
-            'type': self._name,
-        })
+    def _create_vals(self, vals):
+        vals = super(MedicalPatient, self)._create_vals(vals)
         if not vals.get('identification_code'):
-            sequence = self.env['ir.sequence'].next_by_code(
+            Seq = self.env['ir.sequence']
+            vals['identification_code'] = Seq.next_by_code(
                 self._name,
             )
-            vals['identification_code'] = sequence
-        return super(MedicalPatient, self).create(vals)
+        vals.update({
+            'customer': True,
+        })
+        return vals
