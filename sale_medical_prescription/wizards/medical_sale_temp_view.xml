@@ -3,7 +3,7 @@
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
-        
+
     <record model="ir.ui.view" id="medical_sale_temp_view_form">
         <field name="name">medical.sale.temp.form</field>
         <field name="model">medical.sale.temp</field>
@@ -138,7 +138,7 @@
             </form>
         </field>
     </record>
-    
+
     <record id="medical_sale_temp_action" model="ir.actions.act_window">
         <field name="name">Temp Sale for Rx</field>
         <field name="type">ir.actions.act_window</field>

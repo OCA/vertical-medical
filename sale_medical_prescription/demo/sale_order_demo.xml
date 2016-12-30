@@ -39,7 +39,7 @@
         <field name="pharmacy_id" ref="medical_prescription.medical_pharmacy_3" />
         <field name="partner_id" ref="base.partner_demo" />
         <field name="state">cancel</field>
-    </record>  
+    </record>
 
     <record id="sale_order_medical_order_7" model="sale.order">
         <field name="pharmacy_id" ref="sale_medical_prescription.medical_pharmacy_4" />

@@ -3,7 +3,7 @@
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
-    
+
     <record id="product_product_simv_1" model="product.product">
         <field name="name">Simvastatin</field>
         <field name="uom_id" ref="product.product_uom_unit" />

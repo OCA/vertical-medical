@@ -19,7 +19,7 @@
             </xpath>
         </field>
     </record>
-    
+
     <record id="medical_prescription_order_line_view_tree" model="ir.ui.view">
         <field name="name">medical.prescription.order.line.tree</field>
         <field name="model">medical.prescription.order.line</field>
@@ -30,7 +30,7 @@
             </xpath>
         </field>
     </record>
-    
+
     <record id="medical_prescription_order_line_view_search" model="ir.ui.view">
         <field name="name">medical.prescription.order.line.search</field>
         <field name="model">medical.prescription.order.line</field>
@@ -46,5 +46,5 @@
             </xpath>
         </field>
     </record>
-    
+
 </odoo>
