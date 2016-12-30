@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models, api
+from openerp import api, fields, models
 
 
 class MedicalManufacturer(models.Model):
@@ -11,6 +11,7 @@ class MedicalManufacturer(models.Model):
     _inherits = {'res.partner': 'partner_id', }
 
     partner_id = fields.Many2one(
+        string='Partner',
         comodel_name='res.partner',
         required=True,
         ondelete='cascade',

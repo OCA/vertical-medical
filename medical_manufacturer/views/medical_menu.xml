@@ -1,19 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
-<!--
-    Copyright (C) 2016 LasLabs [https://laslabs.com]
-    @author Dave Lasley <dave@laslabs.com>
-    The license is in the file __openerp__.py
--->
+<odoo>
 
-<openerp>
-    <data>
+    <menuitem id="medical_pharmacy_order_line_state"
+              name="Medical Manufacturers"
+              parent="medical_medicament.medical_medicament_root"
+              sequence="60"
+              action="medical_manufacturer_action" />
 
-        <!-- Medical Manufacturers  [Config/Medicaments/Medical Manufacturers] )--> 
-
-        <menuitem id="medical_pharmacy_order_line_state"
-                  name="Medical Manufacturers"
-                  parent="medical_medicament.medical_medicament_root" sequence="60"
-                  action="medical_manufacturer_action" />
-    </data>
-</openerp>
+</odoo>
