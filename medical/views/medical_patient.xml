@@ -24,6 +24,7 @@
         <field name="name">medical.patient.form</field>
         <field name="model">medical.patient</field>
         <field name="inherit_id" ref="medical_abstract_entity_view_form" />
+        <field name="priority" eval="100" />
         <field name="arch" type="xml">
             <xpath expr="//form" position="attributes">
                 <attribute name="string">Patient</attribute>
@@ -45,9 +46,7 @@
                     <field name="age" />
                 </group>
             </xpath>
-            <xpath expr="//img[@name='kanban_image_default_person']"
-                   position="replace"
-                   priority="100">
+            <xpath expr="//img[@name='kanban_image_default_person']" position="replace">
                 <img name="kanban_image_default_person"
                      t-if="record.is_company.raw_value === false"
                      t-attf-src='{{ _s }}/medical/static/src/img/patient-avatar.png'
@@ -60,6 +59,7 @@
         <field name="name">medical.patient.kanban</field>
         <field name="model">medical.patient</field>
         <field name="inherit_id" ref="medical_abstract_entity_view_kanban" />
+        <field name="priority" eval="100" />
         <field name="arch" type="xml">
             <xpath expr="//kanban" position="attributes">
                 <attribute name="string">Patients</attribute>
@@ -78,9 +78,7 @@
                     <field name="gender" />
                 </li>
             </xpath>
-            <xpath expr="//img[@name='kanban_image_default_person']"
-                   position="replace"
-                   priority="100">
+            <xpath expr="//img[@name='kanban_image_default_person']" position="replace">
                 <img name="kanban_image_default_person"
                      t-if="record.is_company.raw_value === false"
                      t-attf-src='{{ _s }}/medical/static/src/img/patient-avatar.png'
