@@ -7,16 +7,9 @@ from odoo import fields, models, api
 
 class MedicalPhysician(models.Model):
     _name = 'medical.physician'
-    _inherits = {'res.partner': 'partner_id'}
+    _inherit = 'medical.abstract.entity'
     _description = 'Medical Physicians'
 
-    partner_id = fields.Many2one(
-        string='Related Partner',
-        help='Partner related data of the physician',
-        comodel_name='res.partner',
-        required=True,
-        ondelete='cascade',
-    )
     code = fields.Char(
         string='ID',
         help='Physician Code',
@@ -46,14 +39,11 @@ class MedicalPhysician(models.Model):
     )
 
     @api.model
-    def create(self, vals):
-        vals.update({
-            'customer': False,
-            'type': self._name,
-        })
+    def _create_vals(self, vals):
+        vals['customer'] = False
         if not vals.get('code'):
             sequence = self.env['ir.sequence'].next_by_code(
                 self._name,
             )
             vals['code'] = sequence
-        return super(MedicalPhysician, self).create(vals)
+        return super(MedicalPhysician, self)._create_vals(vals)
