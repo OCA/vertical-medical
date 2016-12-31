@@ -37,6 +37,12 @@ If you spotted it first, help us smashing it by providing a detailed and welcome
 Credits
 =======
 
+Images
+------
+
+* Odoo Community Association: `Icon <https://github.com/OCA/maintainer-tools/blob/master/template/module/static/description/icon.svg>`_.
+* ClipArt Best: `Medical Center Avatar <http://www.clipartbest.com/>`_.
+
 Contributors
 ------------
 
