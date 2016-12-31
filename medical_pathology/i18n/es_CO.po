@@ -8,15 +8,39 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vertical-medical (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-23 02:11+0000\n"
-"PO-Revision-Date: 2016-12-18 22:08+0000\n"
-"Last-Translator: Gustavo Orozco H. <gustavo.orozco.h@app-247.com>\n"
+"POT-Creation-Date: 2016-12-28 01:42+0000\n"
+"PO-Revision-Date: 2016-12-27 22:03+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Spanish (Colombia) (http://www.transifex.com/oca/OCA-vertical-medical-9-0/language/es_CO/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Language: es_CO\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: medical_pathology
+#: model:medical.pathology,notes:medical_pathology.medical_pathology_medical_pathology_A00_0
+msgid ""
+"* A00.0 is a billable/specific ICD-10-CM code that can be used to indicate a diagnosis for reimbursement purposes.\n"
+"* This is the American ICD-10-CM version of A00.0. Other international versions of ICD-10 A00.0 may differ.\n"
+"* Reimbursement claims with a date of service on or after October 1, 2015 require the use of ICD-10-CM codes."
+msgstr ""
+
+#. module: medical_pathology
+#: model:medical.pathology,notes:medical_pathology.medical_pathology_medical_pathology_A00_1
+msgid ""
+"* A00.1 is a billable/specific ICD-10-CM code that can be used to indicate a diagnosis for reimbursement purposes.\n"
+"* This is the American ICD-10-CM version of A00.1. Other international versions of ICD-10 A00.1 may differ.\n"
+"* Reimbursement claims with a date of service on or after October 1, 2015 require the use of ICD-10-CM codes."
+msgstr ""
+
+#. module: medical_pathology
+#: model:medical.pathology,notes:medical_pathology.medical_pathology_medical_pathology_A00_9
+msgid ""
+"* A00.9 is a billable/specific ICD-10-CM code that can be used to indicate a diagnosis for reimbursement purposes.\n"
+"* This is the American ICD-10-CM version of A00.9. Other international versions of ICD-10 A00.9 may differ.\n"
+"* Reimbursement claims with a date of service on or after October 1, 2015 require the use of ICD-10-CM codes."
+msgstr ""
 
 #. module: medical_pathology
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_chromosome
@@ -45,6 +69,11 @@ msgid "Children Categories"
 msgstr "Categorías Hijas"
 
 #. module: medical_pathology
+#: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_child_ids
+msgid "Children Pathologies"
+msgstr ""
+
+#. module: medical_pathology
 #: model:medical.pathology.category,name:medical_pathology.medical_pathology_category_1
 msgid "Clinical Pathology"
 msgstr "Patología Clínica"
@@ -56,7 +85,9 @@ msgid "Code"
 msgstr "Código"
 
 #. module: medical_pathology
+#: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_category_code_type_id
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_code_type_id
+#: model:ir.ui.view,arch_db:medical_pathology.medical_pathology_category_view_search
 #: model:ir.ui.view,arch_db:medical_pathology.medical_pathology_view_search
 msgid "Code Type"
 msgstr "Tipo de Código"
@@ -96,10 +127,16 @@ msgid "Display Name"
 msgstr "Mostrar Nombre"
 
 #. module: medical_pathology
-#: code:addons/medical_pathology/models/medical_pathology_category.py:33
+#: code:addons/medical_pathology/models/medical_pathology_category.py:43
 #, python-format
 msgid "Error! You are attempting to create a recursive category."
 msgstr "Error! Usted está intentando crear una categoría recursiva."
+
+#. module: medical_pathology
+#: code:addons/medical_pathology/models/medical_pathology.py:74
+#, python-format
+msgid "Error! You are attempting to create a recursive pathology."
+msgstr ""
 
 #. module: medical_pathology
 #: model:ir.model.fields,help:medical_pathology.field_medical_pathology_group_code
@@ -125,8 +162,8 @@ msgid "HIV/AIDS"
 msgstr "VIH/SIDA"
 
 #. module: medical_pathology
-#: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_category_id_2597
-#: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_code_type_id_2605
+#: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_category_id_2601
+#: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_code_type_id_2609
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_group_id
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_id
 msgid "ID"
@@ -216,16 +253,6 @@ msgid "Microbiology"
 msgstr "Microbiología"
 
 #. module: medical_pathology
-#: model:medical.pathology.group,name:medical_pathology.medical_pathology_group_1
-msgid "Millenium Development Goals 5"
-msgstr "Metas de Desarrollo del Milenio 5"
-
-#. module: medical_pathology
-#: model:medical.pathology.group,name:medical_pathology.medical_pathology_group_2
-msgid "Millenium Development Goals 6"
-msgstr "Metas de Desarrollo del Milenio 6"
-
-#. module: medical_pathology
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_category_name
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_code_type_name
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_group_name
@@ -234,6 +261,7 @@ msgid "Name"
 msgstr "Nombre"
 
 #. module: medical_pathology
+#: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_category_notes
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_group_notes
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_notes
 #: model:ir.ui.view,arch_db:medical_pathology.medical_pathology_group_view_form
@@ -257,6 +285,11 @@ msgstr "Enfermedades Parasitarias"
 #: model:ir.ui.view,arch_db:medical_pathology.medical_pathology_category_view_search
 msgid "Parent Category"
 msgstr "Categoría Padre"
+
+#. module: medical_pathology
+#: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_parent_id
+msgid "Parent Pathology"
+msgstr ""
 
 #. module: medical_pathology
 #: model:ir.actions.act_window,name:medical_pathology.medical_pathology_action
@@ -310,3 +343,52 @@ msgstr "Enfermedades/Infecciones Transmitidas Sexualmente"
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_group_description
 msgid "Short Description"
 msgstr "Descripción Corta"
+
+#. module: medical_pathology
+#: model:medical.pathology.category,notes:medical_pathology.medical_pathology_category_7
+msgid ""
+"Use Additional \n"
+"* code to identify resistance to antimicrobial drugs (Z16.-)\n"
+"Type 1 Excludes \n"
+"* certain localized infections - see body system-related chapters\n"
+"Type 2 Excludes \n"
+"* carrier or suspected carrier of infectious disease (Z22.-)\n"
+"* infectious and parasitic diseases complicating pregnancy, childbirth and the puerperium (O98.-)\n"
+"* infectious and parasitic diseases specific to the perinatal period (P35-P39)\n"
+"* influenza and other acute respiratory infections (J00-J22)"
+msgstr ""
+
+#. module: medical_pathology
+#: model:medical.pathology.category,name:medical_pathology.medical_pathology_category_7
+msgid "[DEMO] Certain infectious and parasitic diseases (A00-B99)"
+msgstr ""
+
+#. module: medical_pathology
+#: model:medical.pathology,name:medical_pathology.medical_pathology_medical_pathology_A00
+msgid "[DEMO] Cholera"
+msgstr ""
+
+#. module: medical_pathology
+#: model:medical.pathology,name:medical_pathology.medical_pathology_medical_pathology_A00_0
+msgid "[DEMO] Cholera due to Vibrio cholerae 01, biovar cholerae"
+msgstr ""
+
+#. module: medical_pathology
+#: model:medical.pathology,name:medical_pathology.medical_pathology_medical_pathology_A00_1
+msgid "[DEMO] Cholera due to Vibrio cholerae 01, biovar eltor"
+msgstr ""
+
+#. module: medical_pathology
+#: model:medical.pathology,name:medical_pathology.medical_pathology_medical_pathology_A00_9
+msgid "[DEMO] Cholera, unspecified"
+msgstr ""
+
+#. module: medical_pathology
+#: model:medical.pathology.group,name:medical_pathology.medical_pathology_group_1
+msgid "[DEMO] Millenium Development Goals 5"
+msgstr ""
+
+#. module: medical_pathology
+#: model:medical.pathology.group,name:medical_pathology.medical_pathology_group_2
+msgid "[DEMO] Millenium Development Goals 6"
+msgstr ""
