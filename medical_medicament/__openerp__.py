@@ -11,7 +11,7 @@
     "website": "http://acsone.eu",
     "author": "ACSONE SA/NV, LasLabs, Odoo Community Association (OCA)",
     "license": "AGPL-3",
-    "application": True,
+    "application": False,
     "installable": True,
     "depends": [
         "medical",
