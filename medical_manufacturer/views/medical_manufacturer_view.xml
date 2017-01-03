@@ -5,6 +5,7 @@
          <field name="name">medical.manufacturer.tree</field>
          <field name="model">medical.manufacturer</field>
          <field name="inherit_id" ref="medical.medical_abstract_entity_view_tree" />
+         <field name="mode">primary</field>
          <field name="arch" type="xml">
              <xpath expr="//tree" position="attributes">
                 <attribute name="string">Medical Manufacturers</attribute>
@@ -23,6 +24,7 @@
          <field name="name">medical.manufacturer.form</field>
          <field name="model">medical.manufacturer</field>
          <field name="inherit_id" ref="medical.medical_abstract_entity_view_form" />
+         <field name="mode">primary</field>
          <field name="arch" type="xml">
              <xpath expr="//form" position="attributes">
                 <attribute name="string">Medical Manufacturer</attribute>
@@ -49,6 +51,7 @@
         <field name="name">medical.manufacturer.kanban</field>
         <field name="model">medical.manufacturer</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_kanban" />
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
             <xpath expr="//kanban" position="attributes">
                 <attribute name="string">Medical Manufacturers</attribute>
@@ -65,6 +68,7 @@
          <field name="name">medical.manufacturer.search</field>
          <field name="model">medical.manufacturer</field>
          <field name="inherit_id" ref="medical.medical_abstract_entity_view_search" />
+         <field name="mode">primary</field>
          <field name="arch" type="xml">
              <xpath expr="//search" position="attributes">
                 <attribute name="string">Medical Manufacturers</attribute>
