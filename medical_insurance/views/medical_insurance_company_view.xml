@@ -5,6 +5,7 @@
         <field name="name">medical.insurance.company.view.form</field>
         <field name="model">medical.insurance.company</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_form" />
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
             <xpath expr="//form" position="attributes">
                 <attribute name="string">Insurance Provider</attribute>
@@ -27,6 +28,7 @@
         <field name="name">medical.insurance.company.view.tree</field>
         <field name="model">medical.insurance.company</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_tree" />
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
             <xpath expr="//tree" position="attributes">
                 <attribute name="string">Insurance Providers</attribute>
@@ -45,6 +47,7 @@
         <field name="name">medical.insurance.company.kanban</field>
         <field name="model">medical.insurance.company</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_kanban" />
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
             <xpath expr="//kanban" position="attributes">
                 <attribute name="string">Insurance Providers</attribute>
@@ -61,6 +64,7 @@
         <field name="name">medical.insurance.company.view.search</field>
         <field name="model">medical.insurance.company</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_search" />
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
             <xpath expr="//search" position="attributes">
                 <attribute name="string">Insurance Providers</attribute>
