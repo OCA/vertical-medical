@@ -8,6 +8,7 @@
         <field name="name">medical.pharmacy.tree</field>
         <field name="model">medical.pharmacy</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_tree" />
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
             <xpath expr="//tree" position="attributes">
                 <attribute name="string">Pharmacies</attribute>
@@ -25,6 +26,7 @@
         <field name="name">medical.pharmacy.form</field>
         <field name="model">medical.pharmacy</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_form" />
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
             <xpath expr="//form" position="attributes">
                 <attribute name="string">Pharmacy</attribute>
@@ -41,6 +43,7 @@
         <field name="name">medical.pharmacy.kanban</field>
         <field name="model">medical.pharmacy</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_kanban" />
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
             <xpath expr="//kanban" position="attributes">
                 <attribute name="string">Pharmacies</attribute>
@@ -60,6 +63,7 @@
         <field name="name">medical.pharmacy.search</field>
         <field name="model">medical.pharmacy</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_search" />
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
             <xpath expr="//search" position="attributes">
                 <attribute name="string">Pharmacies</attribute>
@@ -91,14 +95,6 @@
         <field name="res_model">medical.pharmacy</field>
         <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
-        <field name="search_view_id" ref="medical_pharmacy_view_search" />
-        <field name="view_ids"
-               eval="[(5, 0, 0),
-                      (0, 0, {'view_mode': 'kanban', 'view_id': ref('medical_pharmacy_view_kanban')}),
-                      (0, 0, {'view_mode': 'tree', 'view_id': ref('medical_pharmacy_view_tree')}),
-                      (0, 0, {'view_mode': 'form', 'view_id': ref('medical_pharmacy_view_form')}),
-                     ]"
-        />
     </record>
 
 </odoo>

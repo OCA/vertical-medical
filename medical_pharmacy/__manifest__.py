@@ -23,5 +23,6 @@
     ],
     "demo": [
         "demo/medical_pharmacy_demo.xml",
+        "demo/medical_pharmacist_demo.xml",
     ],
 }

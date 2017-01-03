@@ -8,6 +8,7 @@
         <field name="name">medical.pharmacist.tree</field>
         <field name="model">medical.pharmacist</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_tree" />
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
             <xpath expr="//tree" position="attributes">
                 <attribute name="string">Pharmacists</attribute>
@@ -22,14 +23,21 @@
         <field name="name">medical.pharmacist.form</field>
         <field name="model">medical.pharmacist</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_form" />
+        <field name="mode">primary</field>
         <field name="priority" eval="100" />
         <field name="arch" type="xml">
             <xpath expr="//form" position="attributes">
                 <attribute name="string">Pharmacist</attribute>
             </xpath>
-            <xpath expr="//group[@name='main_data']">
-                <group name="main">
-                    <field name="parent_id" />
+            <xpath expr="//h1" position="after">
+                <h3>
+                    <field name="parent_id" placeholder="Company" />
+                </h3>
+            </xpath>
+            <xpath expr="//group[@name='main_data']" position="replace">
+                <group name="main_data">
+                    <field name="gender" />
+                    <field name="employee" />
                 </group>
             </xpath>
             <xpath expr="//img[@name='kanban_image_default_person']" position="replace">
@@ -51,10 +59,14 @@
         <field name="name">medical.pharmacist.kanban</field>
         <field name="model">medical.pharmacist</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_kanban" />
+        <field name="mode">primary</field>
         <field name="priority" eval="100" />
         <field name="arch" type="xml">
             <xpath expr="//kanban" position="attributes">
                 <attribute name="string">Pharmacists</attribute>
+            </xpath>
+            <xpath expr="//templates" position="before">
+                <field name="gender" />
             </xpath>
             <xpath expr="//field[@name='email']" position="before">
                 <li name="field_company" t-if="record.parent_id.raw_value">
@@ -83,6 +95,7 @@
         <field name="name">medical.pharmacist.search</field>
         <field name="model">medical.pharmacist</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_search" />
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
             <xpath expr="//search" position="attributes">
                 <attribute name="string">Pharmacists</attribute>
@@ -114,14 +127,6 @@
         <field name="res_model">medical.pharmacist</field>
         <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
-        <field name="search_view_id" ref="medical_pharmacist_view_search" />
-        <field name="view_ids"
-               eval="[(5, 0, 0),
-                      (0, 0, {'view_mode': 'kanban', 'view_id': ref('medical_pharmacist_view_kanban')}),
-                      (0, 0, {'view_mode': 'tree', 'view_id': ref('medical_pharmacist_view_tree')}),
-                      (0, 0, {'view_mode': 'form', 'view_id': ref('medical_pharmacist_view_form')}),
-                     ]"
-        />
     </record>
 
 </odoo>
