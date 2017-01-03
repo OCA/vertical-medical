@@ -8,6 +8,7 @@
         <field name="name">medical.physician.tree</field>
         <field name="model">medical.physician</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_tree" />
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
             <xpath expr="//tree" position="attributes">
                 <attribute name="string">Physicians</attribute>
@@ -24,6 +25,7 @@
         <field name="name">medical.physician.form</field>
         <field name="model">medical.physician</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_form" />
+        <field name="mode">primary</field>
         <field name="priority" eval="100" />
         <field name="arch" type="xml">
             <xpath expr="//form" position="attributes">
@@ -32,25 +34,27 @@
             <xpath expr="//h1" position="after">
                 <h3>
                     <field name="parent_id" placeholder="Company" />
+                    <field name="specialty_id"/>
                 </h3>
             </xpath>
-            <xpath expr="//group[@name='main_data']">
-                <group name="main">
-                    <field name="code" string="Internal ID"/>
-                    <field name="specialty_id"/>
-                    <field name="info"/>
-                </group>
+            <xpath expr="//group[@name='main_data']/group[@name='left']" position="inside">
+                <field name="code" string="Internal ID"/>
+                <field name="info"/>
+            </xpath>
+            <xpath expr="//group[@name='main_data']/group[@name='left']" position="inside">
+                <field name="gender" />
+                <field name="employee" />
             </xpath>
             <xpath expr="//img[@name='kanban_image_default_person']" position="replace">
                 <t t-if="record.is_company.raw_value === false">
                     <img name="kanban_image_default_person"
                          t-if="record.gender.raw_value === 'female'"
                          t-attf-src='{{ _s }}/medical_physician/static/src/img/physician-avatar-female.png'
-                    />
+                         />
                     <img name="kanban_image_default_person"
                          t-if="record.gender.raw_value !== 'female'"
                          t-attf-src='{{ _s }}/medical_physician/static/src/img/physician-avatar-male.png'
-                    />
+                         />
                 </t>
             </xpath>
         </field>
@@ -60,6 +64,7 @@
         <field name="name">medical.physician.kanban</field>
         <field name="model">medical.physician</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_kanban" />
+        <field name="mode">primary</field>
         <field name="priority" eval="100" />
         <field name="arch" type="xml">
             <xpath expr="//kanban" position="attributes">
@@ -68,6 +73,7 @@
             <xpath expr="//templates" position="before">
                 <field name="specialty_id" />
                 <field name="code" />
+                <field name="gender" />
             </xpath>
             <xpath expr="//ul[@name='entity_details']/li" position="before">
                 <li name="field_specialty">
@@ -79,11 +85,11 @@
                     <img name="kanban_image_default_person"
                          t-if="record.gender.raw_value === 'female'"
                          t-attf-src='{{ _s }}/medical_physician/static/src/img/physician-avatar-female.png'
-                    />
+                         />
                     <img name="kanban_image_default_person"
                          t-if="record.gender.raw_value !== 'female'"
                          t-attf-src='{{ _s }}/medical_physician/static/src/img/physician-avatar-male.png'
-                    />
+                         />
                 </t>
             </xpath>
         </field>
@@ -93,6 +99,7 @@
         <field name="name">medical.physician.search</field>
         <field name="model">medical.physician</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_search" />
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
             <xpath expr="//search" position="attributes">
                 <attribute name="string">Physicians</attribute>

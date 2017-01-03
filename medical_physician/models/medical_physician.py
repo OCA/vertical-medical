@@ -47,3 +47,21 @@ class MedicalPhysician(models.Model):
             )
             vals['code'] = sequence
         return super(MedicalPhysician, self)._create_vals(vals)
+
+    @api.model
+    def _get_default_image(self, vals):
+        res = super(MedicalPhysician, self)._get_default_image(vals)
+        if not res:
+            return res
+        img_path = 'physician-%s-avatar.png' % vals.get('gender')
+        img_path = get_module_resource(
+            'medical_pharmacy', 'static/src/img', img_path,
+        )
+        if not img_path:
+            img_path = get_module_resource(
+                'medical_physician', 'static/src/img', 'physician-male-avatar.png',
+            )
+        with open(img_path, 'r') as image:
+            base64_image = image.read().encode('base64')
+            return tools.image_resize_image_big(base64_image)
+
