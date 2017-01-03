@@ -34,6 +34,7 @@
                     <h1>
                         <field name="name" placeholder="Name" />
                         <field name="is_company" invisible="True" />
+                        <field name="parent_id" invisible="True" />
                     </h1>
                 </div>
                 <group name="main_data">

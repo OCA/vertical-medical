@@ -3,10 +3,12 @@
 # Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
+
+from odoo import _, api, fields, models, tools
+from odoo.modules import get_module_resource
+from odoo.exceptions import ValidationError
 
 
 class MedicalPatient(models.Model):
@@ -97,3 +99,15 @@ class MedicalPatient(models.Model):
             'customer': True,
         })
         return vals
+
+    @api.model
+    def _get_default_image(self, vals):
+        res = super(MedicalPatient, self)._get_default_image(vals)
+        if not res:
+            return res
+        img_path = get_module_resource(
+            'medical', 'static/src/img', 'patient-avatar.png',
+        )
+        with open(img_path, 'r') as image:
+            base64_image = image.read().encode('base64')
+            return tools.image_resize_image_big(base64_image)

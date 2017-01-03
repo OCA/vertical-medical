@@ -2,10 +2,12 @@
 # Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+import threading
+
 from openerp import api, fields, models
 
 
-class MedicalAbstractEntity(models.Model):
+class MedicalAbstractEntity(models.AbstractModel):
     _name = 'medical.abstract.entity'
     _description = 'Medical Abstract Entity'
     _inherits = {'res.partner': 'partner_id'}
@@ -49,4 +51,42 @@ class MedicalAbstractEntity(models.Model):
     @api.model
     def _create_vals(self, vals):
         """ Overload this in child classes in order to add values. """
+        if not vals.get('image'):
+            vals['image'] = self._get_default_image(vals)
         return vals
+
+    @api.model
+    def _get_default_image(self, vals):
+        """ Overload this in child classes in order to add a default image.
+
+        Child classes should only add the image if super returns True. They
+        should return a base64 encoded image.
+
+        Example:
+
+            .. code-block:: python
+
+            @api.model
+            def _get_default_image(self, vals):
+                res = super(MedicalPatient, self)._get_default_image(vals)
+                if not res:
+                    return res
+                img_path = odoo.modules.get_module_resource(
+                    'base', 'static/src/img', 'patient-avatar.png',
+                )
+                with open(img_path, 'r') as image:
+                    base64_image = image.read().encode('base64')
+                    return odoo.tools.image_resize_image_big(base64_image)
+
+        Args:
+            vals (dict): Values dict as passed to create.
+
+        Returns:
+            str: Base64 encoded image if there was one.
+            bool: False in the event that an image should/could not be
+                generated.
+        """
+        if any((getattr(threading.currentThread(), 'testing', False),
+                self._context.get('install_mode'))):
+            return False
+        return True
