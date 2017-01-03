@@ -2,7 +2,8 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import fields, models, api
+from odoo import api, fields, models, tools
+from odoo.modules import get_module_resource
 
 
 class MedicalPhysician(models.Model):
@@ -59,9 +60,10 @@ class MedicalPhysician(models.Model):
         )
         if not img_path:
             img_path = get_module_resource(
-                'medical_physician', 'static/src/img', 'physician-male-avatar.png',
+                'medical_physician',
+                'static/src/img',
+                'physician-male-avatar.png',
             )
         with open(img_path, 'r') as image:
             base64_image = image.read().encode('base64')
             return tools.image_resize_image_big(base64_image)
-

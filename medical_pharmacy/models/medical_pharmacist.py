@@ -30,7 +30,9 @@ class MedicalPharmacist(models.Model):
         )
         if not img_path:
             img_path = get_module_resource(
-                'medical_pharmacy', 'static/src/img', 'pharmacist-female-avatar.png',
+                'medical_pharmacy',
+                'static/src/img',
+                'pharmacist-female-avatar.png',
             )
         with open(img_path, 'r') as image:
             base64_image = image.read().encode('base64')
