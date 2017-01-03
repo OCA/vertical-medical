@@ -8,6 +8,7 @@
         <field name="name">medical.center.tree</field>
         <field name="model">medical.center</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_tree" />
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
             <xpath expr="//tree" position="attributes">
                 <attribute name="string">Medical Centers</attribute>
@@ -25,6 +26,7 @@
         <field name="name">medical.center.form</field>
         <field name="model">medical.center</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_form" />
+        <field name="mode">primary</field>
         <field name="priority" eval="100" />
         <field name="arch" type="xml">
             <xpath expr="//form" position="attributes">
@@ -55,6 +57,7 @@
         <field name="name">medical.center.kanban</field>
         <field name="model">medical.center</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_kanban" />
+        <field name="mode">primary</field>
         <field name="priority" eval="100" />
         <field name="arch" type="xml">
             <xpath expr="//kanban" position="attributes">
@@ -80,6 +83,7 @@
         <field name="name">medical.center.search</field>
         <field name="model">medical.center</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_search" />
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
             <xpath expr="//search" position="attributes">
                 <attribute name="string">Medical Centers</attribute>
