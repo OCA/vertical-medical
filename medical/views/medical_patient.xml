@@ -35,6 +35,14 @@
                 <group name="main">
                     <field name="identification_code" />
                     <field name="gender" />
+                    <button name="toggle_active"
+                            type="object"
+                            class="oe_stat_button"
+                            >
+                        <field name="active"
+                               widget="boolean_button"
+                               />
+                    </button>
                     <field name="is_pregnant" />
                     <field name="parent_id"
                            colspan="2"

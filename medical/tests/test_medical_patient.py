@@ -3,11 +3,15 @@
 # Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
-from openerp.exceptions import ValidationError
-from openerp import fields
-from openerp.tests.common import TransactionCase
-from datetime import datetime
+
+from odoo import fields
+from odoo.tests.common import TransactionCase
+from odoo.exceptions import ValidationError
+
+
+MODULE_PATH = 'medical.models.medical_patient'
 
 
 class TestMedicalPatient(TransactionCase):
@@ -17,6 +21,10 @@ class TestMedicalPatient(TransactionCase):
         self.patient_1 = self.env.ref('medical.medical_patient_patient_1')
         self.partner_patient_1 = self.env.ref('medical.res_partner_patient_1')
         self.patient_3 = self.env.ref('medical.medical_patient_patient_3')
+        self.id_category = self.env['res.partner.id_category'].create({
+            'code': 'TEST',
+            'name': 'failed = False',
+        })
 
     def test_sequence_for_identification_code(self):
         """ Test identification_code created if there is none """
@@ -99,3 +107,35 @@ class TestMedicalPatient(TransactionCase):
         self.assertEqual(
             len(partner.patient_ids), 1,
         )
+
+    def test_create_vals_default_image(self):
+        """ It should get the default image for entity on create. """
+        Patient = self.env['medical.patient'].with_context(
+            __image_create_allow=True,
+        )
+        vals = {'name': 'test'}
+        patient = Patient.create(vals)
+        self.assertTrue(patient.image)
+
+    def test_get_default_image(self):
+        """ It should return the default image for the entity. """
+        Patient = self.env['medical.patient']
+        image = Patient._get_default_image({})
+        self.assertTrue(image)
+
+    def test_allow_image_create_no_test(self):
+        """ It should not perform default image manipulation when testing. """
+        Patient = self.env['medical.patient']
+        can_create = Patient._allow_image_create({})
+        self.assertFalse(can_create)
+
+    def test_check_birthdate_date(self):
+        """ It should not allow birth dates in the future. """
+        now = datetime.now()
+        with self.assertRaises(ValidationError):
+            self.env['medical.patient'].create({
+                'name': 'Future Baby',
+                'birthdate_date': fields.Datetime.to_string(
+                    now + timedelta(days=20),
+                )
+            })

@@ -108,10 +108,6 @@
                                                    }"
                                     />
                                 </div>
-                                <field name="website"
-                                       widget="url"
-                                       placeholder="e.g. https://laslabs.com/"
-                                />
                                 <field name="category_id"
                                        widget="many2many_tags"
                                        placeholder="Tags..."
@@ -301,7 +297,8 @@
                             </form>
                         </field>
                     </page>
-                    <page name='page_internal_notes' string="Internal Notes">
+                    <page name='page_internal_notes' string="ID &amp; Notes">
+                        <field name="id_numbers" />
                         <field name="comment" placeholder="Internal Note..." />
                     </page>
                 </notebook> 

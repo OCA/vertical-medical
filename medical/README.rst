@@ -19,7 +19,56 @@ Check the ``__manifest__.py`` for the specific dependencies.
 Usage
 =====
 
+Patients
+--------
+
 Patients are available in the ``Medical`` App, in the ``Patients`` submenu.
+
+Medical Abstract Entity
+-----------------------
+
+The Medical Abstract Entity (``medical.abstract.entity``) is an AbstractModel
+that provides for a central base that all medical entities should inherit from.
+
+A Medical Entity is any partner that also requires a medical context. Examples:
+
+* MedicalCenter
+* MedicalPatient
+* MedicalPhysician
+* MedicalPharmacy
+
+Some base views are also provided in order to make it easy to create new medical
+entities & maintain uniformity between them:
+
+* Kanban - ``medical_asbsract_entity_view_kanban``
+* Tree - ``medical_asbsract_entity_view_tree``
+* Form - ``medical_asbsract_entity_view_form``
+* Search - ``medical_asbsract_entity_view_search``
+
+When inheriting these views, you must define the inheritance mode as ``primary``,
+such as in the following example:
+
+    .. code-block:: xml
+
+    <record id="medical_patient_view_tree" model="ir.ui.view">
+        <field name="name">medical.patient.tree</field>
+        <field name="model">medical.patient</field>
+        <field name="inherit_id" ref="medical_abstract_entity_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="string">Patients</attribute>
+            </xpath>
+            <xpath expr="//field[@name='email']" position="after">
+                <field name="identification_code" />
+                <field name="age" />
+                <field name="gender" />
+            </xpath>
+        </field>
+    </record>
+
+Take a look at ``medical/views/medical_patient.xml``, or any of the other medical
+entity views for more examples.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
