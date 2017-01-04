@@ -8,6 +8,7 @@
         <field name="name">medical.patient.tree</field>
         <field name="model">medical.patient</field>
         <field name="inherit_id" ref="medical_abstract_entity_view_tree" />
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
             <xpath expr="//tree" position="attributes">
                 <attribute name="string">Patients</attribute>
@@ -24,6 +25,7 @@
         <field name="name">medical.patient.form</field>
         <field name="model">medical.patient</field>
         <field name="inherit_id" ref="medical_abstract_entity_view_form" />
+        <field name="mode">primary</field>
         <field name="priority" eval="100" />
         <field name="arch" type="xml">
             <xpath expr="//form" position="attributes">
@@ -59,6 +61,7 @@
         <field name="name">medical.patient.kanban</field>
         <field name="model">medical.patient</field>
         <field name="inherit_id" ref="medical_abstract_entity_view_kanban" />
+        <field name="mode">primary</field>
         <field name="priority" eval="100" />
         <field name="arch" type="xml">
             <xpath expr="//kanban" position="attributes">
@@ -91,6 +94,7 @@
         <field name="name">medical.patient.search</field>
         <field name="model">medical.patient</field>
         <field name="inherit_id" ref="medical_abstract_entity_view_search" />
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
             <xpath expr="//search" position="attributes">
                 <attribute name="string">Patients</attribute>

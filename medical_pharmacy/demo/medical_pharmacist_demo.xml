@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="res_partner_pharmacist_1" model="res.partner">
+        <field name="name">Kylie Thompson</field>
+        <field name="city">Las Vegas</field>
+        <field name="state_id" ref="base.state_us_23" />
+        <field name="country_id" ref="base.us" />
+        <field name="zip">89119</field>
+        <field name="street">123 Example Way</field>
+        <field name="email">kthompson@example.com</field>
+        <field name="phone">+1 (702) 123-4567 x233</field>
+        <field name="parent_id" ref="base.main_partner" />
+        <field name="birthdate_date">1980-01-23</field>
+        <field name='gender'>female</field>
+        <field name="birthdate_date">1980-01-23</field>
+    </record>
+
+    <record id="medical_pharmacist_pharmacist_1" model="medical.pharmacist">
+        <field name="partner_id" ref="res_partner_pharmacist_1" />
+    </record>
+
+    <record id="res_partner_pharmacist_2" model="res.partner">
+        <field name="name">Brandon Feinstein</field>
+        <field name="city">Las Vegas</field>
+        <field name="state_id" ref="base.state_us_23" />
+        <field name="country_id" ref="base.us" />
+        <field name="zip">89119</field>
+        <field name="street">123 Example Way</field>
+        <field name="email">kthompson@example.com</field>
+        <field name="phone">+1 (702) 123-4567 x235</field>
+        <field name="parent_id" ref="base.main_partner" />
+        <field name="birthdate_date">1960-01-02</field>
+        <field name='gender'>male</field>
+    </record>
+    
+    <record id="medical_pharmacist_pharmacist_2" model="medical.pharmacist">
+        <field name="partner_id" ref="res_partner_pharmacist_2" />
+    </record>
+    
+    <record id="res_partner_pharmacist_3" model="res.partner">
+        <field name="name">Lois Lane</field>
+        <field name="city">Las Vegas</field>
+        <field name="state_id" ref="base.state_us_23" />
+        <field name="country_id" ref="base.us" />
+        <field name="zip">89119</field>
+        <field name="street">123 Example Way</field>
+        <field name="email">llane@example.com</field>
+        <field name="phone">+1 (702) 123-4567 x234</field>
+        <field name="birthdate_date">1981-10-22</field>
+        <field name="gender">female</field>
+        <field name="parent_id" ref="base.partner_demo" />
+    </record>
+    
+    <record id="medical_pharmacist_pharmacist_3" model="medical.pharmacist">
+        <field name="partner_id" ref="res_partner_pharmacist_3" />
+    </record>
+        
+</odoo>

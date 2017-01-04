@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical_pharmacist_view_tree" model="ir.ui.view">
+        <field name="name">medical.pharmacist.tree</field>
+        <field name="model">medical.pharmacist</field>
+        <field name="inherit_id" ref="medical.medical_abstract_entity_view_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="string">Pharmacists</attribute>
+            </xpath>
+            <xpath expr="//field[@name='email']" position="after">
+                <field name="parent_id" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_pharmacist_view_form" model="ir.ui.view">
+        <field name="name">medical.pharmacist.form</field>
+        <field name="model">medical.pharmacist</field>
+        <field name="inherit_id" ref="medical.medical_abstract_entity_view_form" />
+        <field name="mode">primary</field>
+        <field name="priority" eval="100" />
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="string">Pharmacist</attribute>
+            </xpath>
+            <xpath expr="//h1" position="after">
+                <h3>
+                    <field name="parent_id" placeholder="Company" />
+                </h3>
+            </xpath>
+            <xpath expr="//group[@name='main_data']" position="replace">
+                <group name="main_data">
+                    <field name="gender" />
+                    <field name="employee" />
+                </group>
+            </xpath>
+            <xpath expr="//img[@name='kanban_image_default_person']" position="replace">
+                <t t-if="record.is_company.raw_value === false">
+                    <img name="kanban_image_default_person"
+                         t-if="record.gender.raw_value === 'male'"
+                         t-attf-src='{{ _s }}/medical_pharmacy/static/src/img/pharmacist-male-avatar.png'
+                         />
+                    <img name="kanban_image_default_person"
+                         t-if="record.gender.raw_value !== 'male'"
+                         t-attf-src='{{ _s }}/medical_pharmacy/static/src/img/pharmacist-female-avatar.png'
+                         />
+                </t>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_pharmacist_view_kanban" model="ir.ui.view">
+        <field name="name">medical.pharmacist.kanban</field>
+        <field name="model">medical.pharmacist</field>
+        <field name="inherit_id" ref="medical.medical_abstract_entity_view_kanban" />
+        <field name="mode">primary</field>
+        <field name="priority" eval="100" />
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="string">Pharmacists</attribute>
+            </xpath>
+            <xpath expr="//templates" position="before">
+                <field name="gender" />
+            </xpath>
+            <xpath expr="//field[@name='email']" position="before">
+                <li name="field_company" t-if="record.parent_id.raw_value">
+                    <field name="parent_id" />
+                </li>
+            </xpath>
+            <xpath expr="//field[@name='email']" position="after">
+                <li name="field_phone" t-if="record.phone.raw_value">
+                    <field name="phone" />
+                </li>
+            </xpath>
+            <xpath expr="//img[@name='kanban_image_default_person']" position="replace">
+                <img name="kanban_image_default_person"
+                     t-if="record.gender.raw_value === 'male'"
+                     t-attf-src='{{ _s }}/medical_pharmacy/static/src/img/pharmacist-male-avatar.png'
+                     />
+                <img name="kanban_image_default_person"
+                     t-if="record.gender.raw_value !== 'male'"
+                     t-attf-src='{{ _s }}/medical_pharmacy/static/src/img/pharmacist-female-avatar.png'
+                     />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_pharmacist_view_search" model="ir.ui.view">
+        <field name="name">medical.pharmacist.search</field>
+        <field name="model">medical.pharmacist</field>
+        <field name="inherit_id" ref="medical.medical_abstract_entity_view_search" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="attributes">
+                <attribute name="string">Pharmacists</attribute>
+            </xpath>
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="parent_id" />
+                <field name="street" />
+                <field name="city" />
+                <field name="state_id" />
+                <field name="zip" />
+            </xpath>
+            <xpath expr="//filter" position="after">
+                <filter string="Company"
+                        domain="[]"
+                        context="{'group_by':'parent_id'}" />
+                <filter string="State"
+                        domain="[]"
+                        context="{'group_by': 'state_id'}" />
+                <filter string="Zip"
+                        domain="[]"
+                        context="{'group_by': 'zip'}" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_pharmacist_action" model="ir.actions.act_window">
+        <field name="name">Pharmacist</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.pharmacist</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+</odoo>

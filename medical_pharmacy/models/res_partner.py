@@ -9,4 +9,5 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
     type = fields.Selection(selection_add=[
         ('medical.pharmacy', 'Medical Pharmacy'),
+        ('medical.pharmacist', 'Medical Pharmacist'),
     ])
