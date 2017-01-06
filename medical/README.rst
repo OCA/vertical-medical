@@ -77,6 +77,8 @@ entity views for more examples.
 Known issues / Roadmap
 ======================
 
+* There is a singleton issue with the ID numbers pass-thru & crossing could
+  occur.
 * v11 - Move Marital status into a new module in OCA/partner-contact
 
 Bug Tracker

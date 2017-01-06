@@ -4,7 +4,8 @@
 
 import threading
 
-from openerp import api, fields, models
+from odoo import _, api, fields, models
+from odoo.exceptions import UserError
 
 
 class MedicalAbstractEntity(models.AbstractModel):
@@ -49,38 +50,33 @@ class MedicalAbstractEntity(models.AbstractModel):
                 record.partner_id.active = False
 
     @api.multi
-    def _compute_identification(self, field_name, category_code, many=False):
+    @api.depends('id_numbers')
+    def _compute_identification(self, field_name, category_code):
         """ It computes a field that indicates a certain ID type.
 
         Use this on a field that represents a certain ID type. It will compute
         the desired field as that ID(s).
 
-        Set many to ``True`` to allow many results. This can only be used on
-        m2m fields.
+        This ID can be worked with as if it were a Char field, but it will
+        be relating back to a ``res.partner.id_number`` instead.
 
         Example:
 
             .. code-block:: python
 
-            social_security_id = fields.Many2one(
+            social_security_id = fields.Char(
                 string='Social Security',
-                comodel_name='res.partner.id_number',
                 compute=lambda s: s._compute_identification(
                     'social_security_id', 'SSN',
-                )
-            )
-            npi_ids = fields.Many2many(
-                string='NPI Numbers',
-                comodel_name='res.partner.id_number',
-                compute=lambda s: s._compute_identification(
-                    'npi_ids', 'NPI', True,
-                )
+                ),
+                inverse=lambda s: s._inverse_identification(
+                    'social_security_id', 'SSN',
+                ),
             )
 
         Args:
             field_name: Name of field to set.
             category_code: Category code of the Identification type.
-            many: Allow many results.
         """
         for record in self:
             id_numbers = record.id_numbers.filtered(
@@ -88,38 +84,65 @@ class MedicalAbstractEntity(models.AbstractModel):
             )
             if not id_numbers:
                 continue
-            # This cannot be validated, because the record can be manipulated
-            #   from underneath the patient. Consider:
+            # Singleton cannot be validated, because the record can be
+            #   manipulated from underneath the patient. Consider:
             #       * User adds a second driver's license through partner,
             #           but leaves the other active.
             #       * User navigates to partner's associated patient record
             #       UserError(*)
-            value = [(6, 0, id_numbers.ids)] if many else id_numbers[0].id
+            value = id_numbers[0].name
             setattr(record, field_name, value)
 
-    @api.model
-    def _context_identification(self, field_name, category_code):
-        """ It provides a context for the identification field.
+    @api.multi
+    def _inverse_identification(self, field_name, category_code):
+        """ It provides an inverse for the identification field.
 
-        Child classes should hopefully be able to call this somewhere.
+        This method will create a new record, or modify the existing one
+        in order to allow for the associated field to work like a Char.
 
         Example:
 
             .. code-block:: python
 
-            call_code!().jpg
+            social_security_id = fields.Char(
+                string='Social Security',
+                compute=lambda s: s._compute_identification(
+                    'social_security_id', 'SSN',
+                ),
+                inverse=lambda s: s._inverse_identification(
+                    'social_security_id', 'SSN',
+                ),
+            )
 
         Args:
             field_name: Name of field to set.
             category_code: Category code of the Identification type.
         """
-        category = self.env['res.partner.id_category'].search([
-            ('code', '=', category_code),
-        ])
-        return str({
-            'default_category_id': category.id,
-            'default_partner_id': 'partner_id',
-        })
+        for record in self:
+            id_number = record.id_numbers.filtered(
+                lambda r: r.category_id.code == category_code
+            )
+            record_len = len(id_number)
+            if record_len == 0:
+                category = self.env['res.partner.id_category'].search([
+                    ('code', '=', category_code),
+                ])
+                self.env['res.partner.id_number'].create({
+                    'partner_id': record.partner_id.id,
+                    'category_id': category.id,
+                    'name': getattr(record, field_name),
+                })
+            elif record_len == 1:
+                value = getattr(record, field_name)
+                id_number.name = value
+            else:
+                raise UserError(_(
+                    'This %s has multiple IDs of this type (%s), so a write '
+                    'via the %s field is not possible. In order to fix this, '
+                    'please use the IDs tab.',
+                ) % (
+                    record._name, category_code.name, field_name,
+                ))
 
     @api.model
     def _create_vals(self, vals):
