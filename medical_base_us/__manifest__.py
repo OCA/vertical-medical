@@ -12,4 +12,10 @@
     'license': 'AGPL-3',
     'installable': True,
     'auto_install': False,
+    'depends': [
+        'medical',
+    ],
+    'data': [
+        'data/res_partner_id_category.xml',
+    ],
 }

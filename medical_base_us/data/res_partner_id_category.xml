@@ -1,46 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2014-2017 LasLabs Inc.
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
 <odoo>
 
-    <record id="res_partner_id_category_dea" model="ir.sequence">
+    <record id="res_partner_id_category_dea" model="res.partner.id_category">
         <field name="code">DEA</field>
         <field name="name">DEA Number</field>
         <field name="validation_code">failed = not self.env['medical.abstract.dea']._dea_is_valid(id_number.name)</field>
     </record>
 
-    <record id="res_partner_id_category_ssn" model="ir.sequence">
+    <record id="res_partner_id_category_ssn" model="res.partner.id_category">
         <field name="code">SSN</field>
         <field name="name">Social Security Number</field>
         <field name="validation_code">failed = not self.env['medical.abstract.luhn']._luhn_is_valid(id_number.name)</field>
     </record>
 
-    <record id="res_partner_id_category_dl_us" model="ir.sequence">
+    <record id="res_partner_id_category_dl_us" model="res.partner.id_category">
         <field name="code">DL-US</field>
         <field name="name">US Driver's License</field>
-        <field name="validation_code">failed = False</field>
     </record>
 
-    <record id="res_partner_id_category_psprt_us" model="ir.sequence">
+    <record id="res_partner_id_category_psprt_us" model="res.partner.id_category">
         <field name="code">PSPRT-US</field>
         <field name="name">US Passport</field>
-        <field name="validation_code">failed = False</field>
     </record>
     
-    <record id="res_partner_id_category_npi" model="ir.sequence">
+    <record id="res_partner_id_category_npi" model="res.partner.id_category">
         <field name="code">NPI</field>
         <field name="name">NPI Number</field>
         <field name="validation_code">failed = not self.env['medical.abstract.npi']._npi_is_valid(id_number.name)</field>
     </record>
 
-    <record id="res_partner_id_category_medicaid" model="ir.sequence">
+    <record id="res_partner_id_category_medicaid" model="res.partner.id_category">
         <field name="code">MEDICAID</field>
         <field name="name">Medicaid Number</field>
-        <field name="validation_code">failed = false</field>
     </record>
 
-    <record id="res_partner_id_category_medicare" model="ir.sequence">
+    <record id="res_partner_id_category_medicare" model="res.partner.id_category">
         <field name="code">MEDICARE</field>
         <field name="name">Medicare Number</field>
-        <field name="validation_code">failed = false</field>
     </record>
 
 </odoo>

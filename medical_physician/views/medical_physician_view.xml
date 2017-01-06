@@ -41,7 +41,7 @@
                 <field name="code" string="Internal ID"/>
                 <field name="info"/>
             </xpath>
-            <xpath expr="//group[@name='main_data']/group[@name='left']" position="inside">
+            <xpath expr="//group[@name='main_data']/group[@name='right']" position="inside">
                 <field name="gender" />
                 <field name="employee" />
             </xpath>
