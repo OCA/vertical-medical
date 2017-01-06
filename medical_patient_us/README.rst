@@ -27,6 +27,8 @@ Known issues / Roadmap
 ======================
 
 * Improve and provide a full description for this module into the README.rst
+* Social Security, Driver's License, Passport are not currently shown - not secure, do not
+  encourage use of these fields at this time.
 
 
 Bug Tracker

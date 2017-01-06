@@ -98,6 +98,30 @@ class MedicalAbstractEntity(models.AbstractModel):
             setattr(record, field_name, value)
 
     @api.model
+    def _context_identification(self, field_name, category_code):
+        """ It provides a context for the identification field.
+
+        Child classes should hopefully be able to call this somewhere.
+
+        Example:
+
+            .. code-block:: python
+
+            call_code!().jpg
+
+        Args:
+            field_name: Name of field to set.
+            category_code: Category code of the Identification type.
+        """
+        category = self.env['res.partner.id_category'].search([
+            ('code', '=', category_code),
+        ])
+        return str({
+            'default_category_id': category.id,
+            'default_partner_id': 'partner_id',
+        })
+
+    @api.model
     def _create_vals(self, vals):
         """ Override this in child classes in order to add default values. """
         if self._allow_image_create(vals):

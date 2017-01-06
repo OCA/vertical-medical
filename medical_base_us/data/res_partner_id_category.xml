@@ -12,11 +12,35 @@
         <field name="name">Social Security Number</field>
         <field name="validation_code">failed = not self.env['medical.abstract.luhn']._luhn_is_valid(id_number.name)</field>
     </record>
+
+    <record id="res_partner_id_category_dl_us" model="ir.sequence">
+        <field name="code">DL-US</field>
+        <field name="name">US Driver's License</field>
+        <field name="validation_code">failed = False</field>
+    </record>
+
+    <record id="res_partner_id_category_psprt_us" model="ir.sequence">
+        <field name="code">PSPRT-US</field>
+        <field name="name">US Passport</field>
+        <field name="validation_code">failed = False</field>
+    </record>
     
     <record id="res_partner_id_category_npi" model="ir.sequence">
         <field name="code">NPI</field>
         <field name="name">NPI Number</field>
         <field name="validation_code">failed = not self.env['medical.abstract.npi']._npi_is_valid(id_number.name)</field>
+    </record>
+
+    <record id="res_partner_id_category_medicaid" model="ir.sequence">
+        <field name="code">MEDICAID</field>
+        <field name="name">Medicaid Number</field>
+        <field name="validation_code">failed = false</field>
+    </record>
+
+    <record id="res_partner_id_category_medicare" model="ir.sequence">
+        <field name="code">MEDICARE</field>
+        <field name="name">Medicare Number</field>
+        <field name="validation_code">failed = false</field>
     </record>
 
 </odoo>

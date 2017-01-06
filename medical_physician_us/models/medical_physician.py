@@ -2,36 +2,42 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import fields, models, api
+from odoo import fields, models
 
 
 class MedicalPhysician(models.Model):
-    _inherit = ['medical.physician',
-                'medical.abstract.npi',
-                'medical.abstract.dea']
-    _name = 'medical.physician'
+    _inherit = 'medical.physician'
 
-    license_num = fields.Char(
+    license_num = fields.Many2one(
         string='State License #',
+        comodel_name='res.partner.id_number',
+        compute=lambda s: s._compute_identification(
+            'license_num', 'ST-LIC',
+        ),
+        context=lambda s: s._context_identification(
+            'license_num', 'ST-LIC',
+        ),
         help='State medical license #',
     )
-    dea_num = fields.Char(
+    dea_num = fields.Many2one(
         string='DEA #',
+        comodel_name='res.partner.id_number',
+        compute=lambda s: s._compute_identification(
+            'dea_num', 'DEA',
+        ),
+        context=lambda s: s._context_identification(
+            'dea_num', 'DEA',
+        ),
         help='Drug Enforcement Agency #',
     )
-    npi_num = fields.Char(
+    npi_num = fields.Many2one(
         string='NPI #',
+        comodel_name='res.partner.id_number',
+        compute=lambda s: s._compute_identification(
+            'npi_num', 'NPI',
+        ),
+        context=lambda s: s._context_identification(
+            'npi_num', 'NPI',
+        ),
         help="National Provider Identifier",
     )
-
-    @api.multi
-    @api.constrains('country_id', 'npi_num')
-    def _check_npi_num(self):
-        """ Implement Luhns Formula to validate NPI """
-        self._npi_constrains_helper('npi_num')
-
-    @api.multi
-    @api.constrains('country_id', 'dea_num')
-    def _check_dea_num(self):
-        """ Implement DEA Formula to validate NPI """
-        self._dea_constrains_helper('dea_num')
