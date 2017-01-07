@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="0">
+<odoo>
 
     <record id="group_medical_user" model="res.groups">
         <field name="name">Medical User</field>

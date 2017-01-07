@@ -4,7 +4,7 @@
 
         <menuitem id="medical_conf_insurance_menu"
 				  name="Insurance" 
-                  parent="medical.medical_root_misc"
+                  parent="medical.medical_root_sub"
 				  sequence="20" />
 
 		<menuitem id="medical_insurance_company_menu"

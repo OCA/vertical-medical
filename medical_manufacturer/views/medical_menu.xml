@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2016 LasLabs Inc.
+<!-- Copyright 2016-2017 LasLabs Inc.
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
 
     <menuitem id="medical_pharmacy_order_line_state"
-              name="Medical Manufacturers"
-              parent="medical_medicament.medical_medicament_root"
+              name="Manufacturers"
+              parent="medical_medicament.medicaments_menu_config"
               sequence="60"
-              action="medical_manufacturer_action" />
+              action="medical_manufacturer_action"
+              />
 
 </odoo>

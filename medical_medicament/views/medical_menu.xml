@@ -4,27 +4,37 @@
 
 <odoo>
 
-    <menuitem id="medical_medicament_root"
+    <menuitem id="medicine_menu"
+              name="Medicine"
+              sequence="30"
+              parent="medical.medical_root"
+              />
+
+    <menuitem id="medicaments_menu_config"
               name="Medicaments"
               parent="medical.medical_root_sub"
-              sequence="50" />
+              sequence="50"
+              />
 
-    <menuitem id="medical_medicament"
+    <menuitem id="medicaments_menu"
               name="Medicaments"
-              parent="medical_medicament_root"
-              sequence="10"
-              action="medical_medicament_action" />
+              parent="medicine_menu"
+              sequence="30"
+              action="medical_medicament_action"
+              />
 
     <menuitem id="medical_drug_form"
               name="Drug Form"
-              parent="medical_medicament_root"
+              parent="medicaments_menu_config"
               sequence="99"
-              action="medical_drug_form_action" />
+              action="medical_drug_form_action"
+              />
     
     <menuitem id="medical_drug_route"
               name="Drug Admin Route"
-              parent="medical_medicament_root"
+              parent="medicaments_menu_config"
               sequence="98"
-              action="medical_drug_route_action" />
+              action="medical_drug_route_action"
+              />
 
 </odoo>

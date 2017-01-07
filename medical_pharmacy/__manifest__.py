@@ -13,6 +13,7 @@
     "application": False,
     "installable": True,
     "depends": [
+        "medical_center",
         "medical_physician",
     ],
     "data": [

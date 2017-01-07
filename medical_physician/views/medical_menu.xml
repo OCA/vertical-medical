@@ -1,28 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-    Copyright 2014-2016 LasLabs [https://laslabs.com]
+    Copyright 2014-2017 LasLabs [https://laslabs.com]
     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 
 <odoo>
 
-        <menuitem id="medical_specialty"
-                  name=" Medical Specialty"
-                  parent="medical.medical_root_misc"
-                  sequence="10"
-                  action="medical_specialty_action" />
+    <menuitem id="health_professionals_menu"
+              name="Health Professionals"
+              sequence="20"
+              parent="medical.medical_root"
+              />
 
-        <menuitem name="Health Professionals"
-                  id="medical_conf_physicians"
-                  parent="medical.medical_root_sub"
-                  sequence="20" />
-        
-        <menuitem id="medical_physician_admin"
-                  name=" Physicians"
-                  parent="medical_conf_physicians"
-                  sequence="10"
-                  action="medical_physician_action"
-                  groups="medical.group_medical_manager,medical.group_medical_assistant" />
+    <menuitem id="physicians_menu"
+              name="Physicians"
+              parent="health_professionals_menu"
+              sequence="10"
+              action="medical_physician_action"
+              groups="medical.group_medical_manager,medical.group_medical_assistant,medical.group_medical_doctor"
+              />
+
+    <menuitem id="health_professionals_menu_conf"
+              name="Health Professionals"
+              sequence="20"
+              parent="medical.medical_root_sub"
+              />
+
+    <menuitem id="medical_specialty"
+              name="Medical Specialties"
+              parent="health_professionals_menu_conf"
+              sequence="10"
+              action="medical_specialty_action"
+              />
 
 </odoo>

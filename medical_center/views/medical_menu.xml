@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2016 LasLabs Inc.
+<!-- Copyright 2016-2017 LasLabs Inc.
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
 
+    <menuitem id="medical_facilities_menu"
+              name="Medical Facilities"
+              sequence="20"
+              parent="medical.medical_root"
+              />
+
     <menuitem id="medical_center_menu"
-              name="Medical Centers"
-              sequence="60"
-              parent="medical.medical_root_misc"
+              name="Centers"
+              sequence="10"
+              parent="medical_facilities_menu"
               action="medical_center_action"
               />
 
