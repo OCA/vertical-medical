@@ -16,10 +16,9 @@ class MedicalAbstractNpi(models.AbstractModel):
     def _npi_is_valid(self, num):
         """ Determine whether num is valid. Meant to be used in constrains
         Params:
-            num: :type:``str`` or :type:``int`` Number to validate
-                using Npi's Alg.
+            num (str or int): Number to validate using NPI algorithm.
         Returns:
-            :type:``bool``
+            bool
         """
         num = '80840%s' % num
         return self._luhn_is_valid(num)

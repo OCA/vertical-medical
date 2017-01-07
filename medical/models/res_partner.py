@@ -27,7 +27,7 @@ class ResPartner(models.Model):
     @api.multi
     @api.constrains('birthdate_date')
     def _check_birthdate_date(self):
-        """ It will not allow birthdates in the past. """
+        """ It will not allow birthdates in the future. """
         now = datetime.now()
         for record in self:
             if not record.birthdate_date:

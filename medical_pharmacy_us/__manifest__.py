@@ -5,7 +5,7 @@
 {
     'name': 'Medical Pharmacy - US Locale',
     "website": "https://laslabs.com",
-    "licence": "AGPL-3",
+    "license": "AGPL-3",
     'installable': True,
     'auto_install': False,
     'version': '10.0.1.0.0',

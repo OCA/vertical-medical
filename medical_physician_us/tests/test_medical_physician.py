@@ -52,12 +52,3 @@ class TestMedicalPhysician(TransactionCase):
         for i in self.invalid:
             with self.assertRaises(ValidationError):
                 self._new_record(i)
-
-    def test_invalid_but_not_us(self):
-        country_id = self.env['res.country'].search([
-            ('code', '!=', 'US'),
-        ],
-            limit=1,
-        )
-        for i in self.invalid:
-            self.assertTrue(self._new_record(i, country_id))

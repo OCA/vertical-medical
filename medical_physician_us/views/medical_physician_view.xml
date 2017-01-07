@@ -6,6 +6,7 @@
 -->
 
 <odoo>
+
 	<record id="medical_physician_view_form" model="ir.ui.view">
 		<field name="name">medical.physician.form</field>
 		<field name="model">medical.physician</field>
@@ -41,5 +42,6 @@
 				<field name="npi_num" />
 			</xpath>
 		</field>
-	</record>\
+	</record>
+
 </odoo>

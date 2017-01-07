@@ -8,7 +8,7 @@ from odoo import fields, models
 class MedicalPharmacy(models.Model):
     _inherit = 'medical.pharmacy'
 
-    nabp_num = fields.Char(
+    napb_num = fields.Char(
         string='NAPB #',
         comodel_name='res.partner.id_number',
         compute=lambda s: s._compute_identification(
