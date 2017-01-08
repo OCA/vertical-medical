@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright (C) 2015-TODAY LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    @license AGPL-3
+-->
+
+<openerp>
+    
+    <data noupdate="1">
+
+        <record id="seq_medical_appointment" model="ir.sequence">
+            <field name="name">Medical Appointment</field>
+            <field name="code">medical.appointment</field>
+            <field name="prefix">AP</field>
+            <field name="padding">4</field>
+        </record>
+        
+    </data>
+
+</openerp>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright (C) 2015-TODAY LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    @license AGPL-3
+-->
+
+<openerp>
+    <data>
+
+        <menuitem id="medical_appointment_root"
+                  name="Appointment"
+                  parent="medical.medical_root"
+                  sequence="20" />
+
+        <menuitem id="medical_appointment"
+                  name=" Appointments"
+                  parent="medical_appointment_root"
+                  sequence="10"
+                  action="medical_appointment_action" />
+
+    </data>
+</openerp>
