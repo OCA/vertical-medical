@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2015-2017 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+        
+        <record id="medical_history_entry_view_form" model="ir.ui.view">
+            <field name="name">medical.history.entry.view.form</field>
+            <field name="model">medical.history.entry</field>
+            <field name="arch" type="xml">
+                <form string="History Entry">
+                    <header>
+                        <h1>
+                            <field name="associated_model_name" />
+                        </h1>
+                    </header>
+                    <sheet>
+                        <group name="data">
+                            <field name="display_name" />
+                            <field name="associated_record_name" />
+                            <field name="user_id" />
+                            <!-- @TODO: SMD-108: Display the old_record_dict in a template -->
+                            <field name="entry_type_id" />
+                        </group>
+                        <group name="configurator_data"
+                               groups="medical.group_medical_configurator">
+                            <field name="associated_record_id_int" />
+                        </group>
+                    </sheet>
+                    <footer />
+                </form>
+            </field>
+        </record>
+        
+        <record id="medical_history_entry_view_tree" model="ir.ui.view">
+            <field name="name">medical.history.entry.view.tree</field>
+            <field name="model">medical.history.entry</field>
+            <field name="arch" type="xml">
+                <tree string="History Entries">
+                    <field name="display_name" />
+                    <field name="associated_record_name" />
+                    <field name="entry_type_id" />
+                    <field name="user_id" />
+                </tree>
+            </field>
+        </record>
+        
+        <record id="medical_history_entry_view_search" model="ir.ui.view">
+            <field name="name">medical.history.entry.view.search</field>
+            <field name="model">medical.history.entry</field>
+            <field name="arch" type="xml">
+                <search string="History Entries">
+                    <field name="display_name" />
+                    <field name="associated_record_name" />
+                    <field name="associated_model_name" />
+                    <field name="entry_type_id" />
+                    <field name="user_id" />
+                    <newline />
+                    <group expand="0" string="Group By">
+                        <filter string="Associated Record"
+                                domain=""
+                                context="{'group_by': 'associated_record_name'}" />
+                        <filter string="Entry Type"
+                                domain=""
+                                context="{'group_by': 'entry_type_id'}" />
+                        <filter string="Associated Model"
+                                domain=""
+                                context="{'group_by': 'associated_model_name'}"
+                                groups="medical.group_medical_configurator" />
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record id="medical_history_entry_action" model="ir.actions.act_window">
+            <field name="name">medical.history.entry.action</field>
+            <field name="res_model">medical.history.entry</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">tree</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+</odoo>
