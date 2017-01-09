@@ -1,24 +1,26 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-
-    'name': 'Medical Manufacturer',
-    'summary': 'This module adds the concept of a manufacturer on products.',
-    'version': '10.0.1.0.0',
-    'author': "LasLabs, Odoo Community Association (OCA)",
-    'category': 'Medical',
+    "name": "Medical Manufacturer",
+    "summary": "Extension of medical with concept of medical manufacturers.",
+    "version": "10.0.1.0.0",
+    "category": "Medical",
     "website": "https://laslabs.com",
+    "author": "LasLabs, Odoo Community Association (OCA)",
     "license": "AGPL-3",
-    'depends': [
-        'medical_medicament',
+    "application": False,
+    "installable": True,
+    "depends": [
+        "medical_medicament",
     ],
-    'data': [
-        'views/medical_manufacturer_view.xml',
-        'views/medical_menu.xml',
-        'security/ir.model.access.csv',
+    "data": [
+        "views/medical_manufacturer_view.xml",
+        "views/medical_menu.xml",
+        "security/ir.model.access.csv",
     ],
-    'installable': True,
-    'auto_install': False,
+    "demo": [
+        "demo/medical_manufacturer_demo.xml",
+    ],
 }
