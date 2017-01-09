@@ -33,7 +33,7 @@ class MedicalAbstractDea(models.AbstractModel):
         4. 15 + 32 = 47
 
         Params:
-            dea_num: ``str`` DEA ID to validate
+            dea_num (str): DEA ID to validate
         Returns:
             bool
         """

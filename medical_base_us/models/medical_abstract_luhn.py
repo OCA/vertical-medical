@@ -15,10 +15,9 @@ class MedicalAbstractLuhn(models.AbstractModel):
     def _luhn_is_valid(self, num):
         """ Determine whether num is valid. Meant to be used in constrains
         Params:
-            num: :type:``str`` or :type:``int`` Number to validate
-                using Luhn's Alg.
+            num (str or int): Number to validate using Luhn's Alg.
         Returns:
-            :type:``bool``
+            bool
         """
 
         def digits_of(n):

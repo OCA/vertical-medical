@@ -79,6 +79,7 @@ class MedicalPatient(models.Model):
         for record in self:
             record.is_deceased = bool(record.date_death)
 
+    @api.multi
     @api.constrains('is_pregnant', 'gender')
     def _check_is_pregnant(self):
         for record in self:
@@ -103,7 +104,7 @@ class MedicalPatient(models.Model):
     @api.model
     def _get_default_image(self, vals):
         res = super(MedicalPatient, self)._get_default_image(vals)
-        if not res:
+        if res:
             return res
         img_path = get_module_resource(
             'medical', 'static/src/img', 'patient-avatar.png',

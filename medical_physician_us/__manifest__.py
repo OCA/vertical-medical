@@ -5,17 +5,18 @@
 {
     'name': 'Medical Physician - US Locale',
     'version': '10.0.1.0.0',
-    'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
+    'author': "LasLabs, Odoo Community Association (OCA)",
+    "website": "https://laslabs.com",
+    "licence": "AGPL-3",
     'category': 'Medical',
     'depends': [
         'medical_base_us',
         'medical_physician',
     ],
-    "website": "https://laslabs.com",
-    "licence": "AGPL-3",
     "data": [
         'views/medical_physician_view.xml',
+        'data/res_partner_id_category.xml',
     ],
     "application": False,
-    'installable': False,
+    'installable': True,
 }

@@ -6,11 +6,11 @@ from odoo.tests.common import TransactionCase
 from odoo.exceptions import ValidationError
 
 
-class TestResPartner(TransactionCase):
+class TestMedicalPatient(TransactionCase):
 
     def setUp(self,):
-        super(TestResPartner, self).setUp()
-        self.model_obj = self.env['res.partner']
+        super(TestMedicalPatient, self).setUp()
+        self.model_obj = self.env['medical.patient']
         self.valid = [
             4532015112830366,
             6011514433546201,
@@ -32,7 +32,7 @@ class TestResPartner(TransactionCase):
             country_id = self.country_id
         return self.model_obj.create({
             'name': 'Test Partner',
-            'ref': ref,
+            'social_security': ref,
             'is_patient': is_patient,
             'country_id': country_id.id,
         })
@@ -58,15 +58,6 @@ class TestResPartner(TransactionCase):
     def test_valid_but_not_patient(self):
         for i in self.valid:
             self.assertTrue(self._new_record(i, False))
-
-    def test_valid_but_not_us(self):
-        country_id = self.env['res.country'].search([
-            ('code', '!=', 'US'),
-        ],
-            limit=1,
-        )
-        for i in self.valid:
-            self.assertTrue(self._new_record(i, True, country_id))
 
     def test_no_ref(self):
         try:

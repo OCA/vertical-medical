@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2016 LasLabs Inc.
+<!-- Copyright 2016-2017 LasLabs Inc.
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
@@ -108,10 +108,6 @@
                                                    }"
                                     />
                                 </div>
-                                <field name="website"
-                                       widget="url"
-                                       placeholder="e.g. https://laslabs.com/"
-                                />
                                 <field name="category_id"
                                        widget="many2many_tags"
                                        placeholder="Tags..."
@@ -301,8 +297,11 @@
                             </form>
                         </field>
                     </page>
-                    <page name='page_internal_notes' string="Internal Notes">
+                    <page name='page_internal_notes' string="ID &amp; Notes">
                         <field name="comment" placeholder="Internal Note..." />
+                        <group>
+                            <field name="id_numbers" />
+                        </group>
                     </page>
                 </notebook> 
             </sheet>

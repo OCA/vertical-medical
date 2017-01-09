@@ -2,42 +2,42 @@
 # © 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import fields, models
+from odoo import fields, models, api
 
 
-class MedicalPhysician(models.Model):
-    _inherit = 'medical.physician'
+class MedicalPatient(models.Model):
+    _inherit = 'medical.patient'
 
-    license_num = fields.Char(
-        string='State License #',
+    social_security = fields.Char(
+        string='Social Security #',
         comodel_name='res.partner.id_number',
         compute=lambda s: s._compute_identification(
-            'license_num', 'ST-LIC',
+            'social_security', 'SSN',
         ),
         inverse=lambda s: s._inverse_identification(
-            'license_num', 'ST-LIC',
+            'social_security', 'SSN',
         ),
-        help='State medical license #',
+        help='Social Security Number',
     )
-    dea_num = fields.Char(
-        string='DEA #',
+    driver_license_us = fields.Char(
+        string='US License',
         comodel_name='res.partner.id_number',
         compute=lambda s: s._compute_identification(
-            'dea_num', 'DEA',
+            'drivers_license_us', 'DL-US',
         ),
         inverse=lambda s: s._inverse_identification(
-            'dea_num', 'DEA',
+            'drivers_license_us', 'DL-US',
         ),
-        help='Drug Enforcement Agency #',
+        help='US Driver\s License',
     )
-    npi_num = fields.Char(
-        string='NPI #',
+    passport_us = fields.Char(
+        string='US Passport',
         comodel_name='res.partner.id_number',
         compute=lambda s: s._compute_identification(
-            'npi_num', 'NPI',
+            'passport_us', 'PSPRT-US',
         ),
         inverse=lambda s: s._inverse_identification(
-            'npi_num', 'NPI',
+            'passport_us', 'PSPRT-US',
         ),
-        help="National Provider Identifier",
+        help='US Passport',
     )
