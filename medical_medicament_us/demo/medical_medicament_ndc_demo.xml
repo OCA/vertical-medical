@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical_medicament_ndc_us_1" model="medical.medicament.ndc">
+        <field name="name">00573015046</field>
+        <field name="manufacturer_id" ref="medical_medicament_us.medical_manufacturer_us_1" />
+        <field name="medicament_id" ref="medical_medicament_us.medical_medicament_advil_us_1" />
+    </record>
+
+</odoo>

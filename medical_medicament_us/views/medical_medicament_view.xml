@@ -1,45 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
-<!--
-    Copyright (C) 2014-[Now] LasLabs [https://laslabs.com]
-    @author Dave Lasley <dave@laslabs.com>
-    @license AGPL-3
--->
+<odoo>
 
-<openerp>
-    <data>
-        
-        <record id="medical_medicament_view_form" model="ir.ui.view">
-            <field name="name">medical.medicament.form</field>
-            <field name="model">medical.medicament</field>
-            <field name='inherit_id' ref='medical_medicament.medical_medicament_view_form'/>
-            <field name="arch" type="xml">
-                <xpath expr="//notebook" position="inside">
-                    <page string="US" attrs="{'invisible': [('is_medicament', '=', False)]}">
-                        <group string="Classifications">
-                            <field name="gpi" />
-                            <field name="control_code" />
-                        </group>
-                        <group string="Identifiers">
-                            <field name="gcn_id" context="{'default_medicament_ids': [(4, id)]}" />
-                            <field name="ndc_ids" context="{'default_medicament_id': id}" />
-                        </group>
-                    </page>
-                </xpath>
-            </field>
-        </record>
-        
-        <record id="medical_medicament_view_tree" model="ir.ui.view">
-            <field name="name">medical.medicament.tree</field>
-            <field name="model">medical.medicament</field>
-            <field name='inherit_id' ref='medical_medicament.medical_medicament_view_tree'/>
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='drug_form_id']" position="before">
-                    <field name="control_code"/>
-                    <field name="gcn_id" />
-                </xpath>
-            </field>
-        </record>
-        
-    </data>
-</openerp>
+    <record id="medical_medicament_view_form" model="ir.ui.view">
+        <field name="name">medical.medicament.form</field>
+        <field name="model">medical.medicament</field>
+        <field name='inherit_id' ref='medical_medicament.medical_medicament_view_form'/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="US" attrs="{'invisible': [('is_medicament', '=', False)]}">
+                    <group string="Classifications">
+                        <field name="gpi" />
+                        <field name="control_code" />
+                    </group>
+                    <group string="Identifiers">
+                        <field name="gcn_id" context="{'default_medicament_ids': [(4, id)]}" />
+                        <field name="ndc_ids" context="{'default_medicament_id': id}" />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_medicament_view_tree" model="ir.ui.view">
+        <field name="name">medical.medicament.tree</field>
+        <field name="model">medical.medicament</field>
+        <field name='inherit_id' ref='medical_medicament.medical_medicament_view_tree'/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='drug_form_id']" position="before">
+                <field name="control_code" />
+                <field name="gcn_id" />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
