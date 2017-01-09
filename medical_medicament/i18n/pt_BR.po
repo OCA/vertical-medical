@@ -849,7 +849,7 @@ msgstr ""
 #. module: medical_medicament
 #: model:ir.actions.act_window,name:medical_medicament.medical_medicament_action
 #: model:ir.ui.menu,name:medical_medicament.medical_medicament
-#: model:ir.ui.menu,name:medical_medicament.medical_medicament_root
+#: model:ir.ui.menu,name:medical_medicament.medicaments_menu_config
 #: model:ir.ui.view,arch_db:medical_medicament.medical_medicament_view_form
 msgid "Medicaments"
 msgstr ""

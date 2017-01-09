@@ -5,18 +5,23 @@
 <odoo>
 
     <menuitem id="medical_prescription_root"
-              name="Prescription"
+              name="Prescriptions"
               parent="medical.medical_root"
               sequence="30" />
 
     <menuitem id="medical_prescription_order_menu"
               sequence="10"
               parent="medical_prescription_root"
-              action="medical_prescription_order_action" />
+              action="medical_prescription_order_action"
+              name="Orders"
+              />
+
 
     <menuitem id="medical_prescription_order_line_menu"
               sequence="20"
               parent="medical_prescription_root"
-              action="medical_prescription_order_line_action" />
+              action="medical_prescription_order_line_action"
+              name="Dispensing"
+              />
 
 </odoo>

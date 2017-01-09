@@ -18,14 +18,14 @@
     'website': 'https://odoo-community.org/',
     'license': 'AGPL-3',
     'data': [
+        'security/medical_security.xml',
+        'security/ir.model.access.csv',
+        'data/ir_sequence_data.xml',
         'templates/assets.xml',
         'views/medical_abstract_entity.xml',
         'views/medical_patient.xml',
         'views/res_partner.xml',
         'views/medical_menu.xml',
-        'security/medical_security.xml',
-        'security/ir.model.access.csv',
-        'data/ir_sequence_data.xml',
     ],
     'demo': [
         'demo/medical_patient_demo.xml',

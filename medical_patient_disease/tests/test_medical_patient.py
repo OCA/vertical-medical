@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016 LasLabs Inc.
+# Copyright 2016-2017 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo.tests.common import TransactionCase
@@ -29,39 +29,31 @@ class TestMedicalPatient(TransactionCase):
         )
 
     def test_action_invalidate(self):
-        """ Test patient, partner, disease properly invalidated """
+        """ Patient should deactivate diseases when deactivated. """
         self.patient_4.active = True
         self.partner_4.active = True
         self.disease_2.active = True
         self.patient_4.action_invalidate()
         res = [
             self.patient_4.active,
-            self.partner_4.active,
             self.disease_2.active,
         ]
-        expect = [False] * 3
+        expect = [False] * 2
         self.assertEquals(
             res, expect,
-            'Not all 3 have been invalidated .\rGot: %s\rExpected: %s' % (
-                res, expect
-            )
         )
 
     def test_action_revalidate(self):
-        """ Test patient, partner, disease properly revalidated """
+        """ Patient should reactivate diseases when reactivated. """
         self.patient_4.active = False
         self.partner_4.active = False
         self.disease_2.active = False
         self.patient_4.action_revalidate()
         res = [
             self.patient_4.active,
-            self.partner_4.active,
             self.disease_2.active,
         ]
-        expect = [True] * 3
+        expect = [True] * 2
         self.assertEquals(
             res, expect,
-            'Not all 3 have been invalidated .\rGot: %s\rExpected: %s' % (
-                res, expect
-            )
         )

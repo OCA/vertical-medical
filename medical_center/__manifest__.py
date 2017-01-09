@@ -17,6 +17,7 @@
     ],
     "data": [
         "views/medical_center.xml",
+        "views/medical_patient.xml",
         "views/medical_menu.xml",
         "security/ir.model.access.csv",
     ],

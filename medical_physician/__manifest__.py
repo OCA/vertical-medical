@@ -9,6 +9,7 @@
     'category': 'Medical',
     'depends': [
         'medical',
+        'medical_center',
         'product',
     ],
     "website": "https://laslabs.com",

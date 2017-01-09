@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--
-    Copyright (C) 2016 LasLabs [https://laslabs.com]
-    @author Dave Lasley <dave@laslabs.com>
-    The license is in the file __openerp__.py
--->
+<!-- Copyright 2016-2017 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
         
-        <menuitem id="medical_medicament_attribute_type_menu"
-                  name="Attribute Types"
-                  parent="medical_medicament.medical_medicament_root"
-                  action="medical_medicament_attribute_type_action" />
-        
-        <menuitem id="medical_medicament_attribute_menu"
-                  name="Attributes"
-                  parent="medical_medicament.medical_medicament_root"
-                  action="medical_medicament_attribute_action" />
+    <menuitem id="medical_medicament_attribute_type_menu"
+              name="Attribute Types"
+              parent="medical_medicament.medicaments_menu_config"
+              action="medical_medicament_attribute_type_action"
+              sequence="10"
+              />
+
+    <menuitem id="medical_medicament_attribute_menu"
+              name="Attributes"
+              parent="medical_medicament.medicaments_menu_config"
+              action="medical_medicament_attribute_action"
+              sequence="11"
+              />
 
 </odoo>

@@ -33,7 +33,11 @@
             </xpath>
             <xpath expr="//h1" position="after">
                 <h3>
-                    <field name="parent_id" placeholder="Company" />
+                    <field name="parent_id"
+                           placeholder="Medical Center"
+                           domain="[('type', '=', 'medical.center')]"
+                           context="{'default_type': 'medical.center'}"
+                           />
                     <field name="specialty_id"/>
                 </h3>
             </xpath>
@@ -41,7 +45,7 @@
                 <field name="code" string="Internal ID"/>
                 <field name="info"/>
             </xpath>
-            <xpath expr="//group[@name='main_data']/group[@name='left']" position="inside">
+            <xpath expr="//group[@name='main_data']/group[@name='right']" position="inside">
                 <field name="gender" />
                 <field name="employee" />
             </xpath>

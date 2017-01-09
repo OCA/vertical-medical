@@ -1,11 +1,14 @@
 .. image:: https://img.shields.io/badge/license-AGPL--3-blue.svg
     :alt: License: AGPL-3
 
-=====================
-Odoo Medical Pharmacy
-=====================
+===================
+Odoo Medical Center
+===================
 
-Extension of medical that adds a pharmacy namespace on partners
+Extension of medical that adds a Medical Center entity.
+
+A Medical Center represents an office or other location in which a Health Professional,
+such as a Physician or Lab Tech, works.
 
 
 Usage
