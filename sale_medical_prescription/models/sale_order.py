@@ -50,9 +50,8 @@ class SaleOrder(models.Model):
             rx_lines = rx_line_model.browse()
             rx_orders = rx_model.browse()
 
-            for order_line in record.order_line:
-                if not order_line.prescription_order_line_id:
-                    continue
+            for order_line in record.order_line.filtered(
+                    lambda r: r.prescription_order_line_id):
 
                 related_rx_line = order_line.prescription_order_line_id
                 related_rx_order = related_rx_line.prescription_order_id
