@@ -47,7 +47,7 @@
         <field name="country_id" ref="base.us" />
         <field name="zip">89121</field>
         <field name="street">123 Test Drive</field>
-        <field name="email">kyle@example.com</field>
+        <field name="email">gsmith@example.com</field>
         <field name="phone">+1 (702) 343-2347</field>
         <field name="parent_id" ref="base.partner_demo" />
     </record>
