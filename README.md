@@ -34,6 +34,7 @@ addon | version | summary
 [mail_thread_medical_prescription](mail_thread_medical_prescription/) | 9.0.1.0.0 | Adds message threads to rx orders and rx order lines.
 [medical](medical/) | 9.0.1.0.0 | Extends Odoo with medical patients and centers.
 [medical_base_us](medical_base_us/) | 9.0.1.0.0 | Provides some helper mixins for US locale.
+[medical_manufacturer](medical_manufacturer/) | 9.0.1.0.0 | Extension of medical with concept of medical manufacturers.
 [medical_medicament](medical_medicament/) | 9.0.1.0.0 | Introduce Medicament notion into the medical product.
 [medical_medication](medical_medication/) | 9.0.1.0.0 | Introduce medication notion into the medical addons.
 [medical_pathology](medical_pathology/) | 9.0.1.0.1 | Extends Odoo Medical with pathologies (diseases).
