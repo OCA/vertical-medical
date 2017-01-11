@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2016-2017 LasLabs Inc.
+    License AGPL-3 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo noupdate="0">
+
+    <record id="group_medical_lab_user" model="res.groups">
+        <field name="name">Medical Lab User</field>
+        <field name="category_id" ref="base.module_category_accounting_and_finance"/>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+    <record id="group_medical_lab_manager" model="res.groups">
+        <field name="name">Medical Lab Manager</field>
+        <field name="category_id" ref="base.module_category_accounting_and_finance"/>
+        <field name="implied_ids" eval="[(4, ref('group_medical_lab_user'))]"/>
+    </record>
+
+</odoo>
