@@ -8,11 +8,6 @@ from odoo import fields, models
 class StockWarehouse(models.Model):
     _inherit = 'stock.warehouse'
 
-    is_pharmacy = fields.Boolean(
-        default=True,
-        help='Check if prescription orders allowed to be dispensed from'
-        ' this warehouse',
-    )
     prescription_route_id = fields.Many2one(
         string='Prescription Route',
         comodel_name='stock.location.route',

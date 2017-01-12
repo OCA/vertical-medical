@@ -15,10 +15,10 @@
             <field name='inherit_id' ref='stock.view_warehouse'/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='code']" position="after">
-                    <field name="is_pharmacy" groups="stock.group_adv_location"/>
+                    <field name="medical.pharmacy" groups="stock.group_adv_location"/>
                 </xpath>
                 <xpath expr="//notebook" position="inside">
-                    <page string="Pharmacy" attrs="{'invisible':[('is_pharmacy', '=', False)]}">
+                    <page string="Pharmacy" attrs="{'invisible':[('res.partner.type', '=', 'medical.pharmacy')]}">
                         <group>
                             <field name="prescription_route_id" />
                             <field name="otc_route_id" />

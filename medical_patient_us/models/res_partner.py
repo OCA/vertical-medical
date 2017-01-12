@@ -14,5 +14,5 @@ class ResPartner(models.Model):
     def _check_ref(self):
         """ Implement Luhns Formula to validate social security numbers """
         for rec_id in self:
-            if res.partner.type == medical.patient and rec_id.ref:
+            if rec_id.type == 'medical.patient' and rec_id.ref:
                 rec_id._luhn_constrains_helper('ref')
