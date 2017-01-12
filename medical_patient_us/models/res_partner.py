@@ -10,9 +10,9 @@ class ResPartner(models.Model):
     _name = 'res.partner'
 
     @api.multi
-    @api.constrains('country_id', 'ref', 'is_patient')
+    @api.constrains('country_id', 'ref')
     def _check_ref(self):
         """ Implement Luhns Formula to validate social security numbers """
         for rec_id in self:
-            if rec_id.is_patient and rec_id.ref:
+            if res.partner.type == medical.patient and rec_id.ref:
                 rec_id._luhn_constrains_helper('ref')

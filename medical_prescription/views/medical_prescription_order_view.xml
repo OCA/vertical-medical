@@ -70,16 +70,16 @@
                     <group name="data">
                         <group>
                             <field name="patient_id"
-                                   domain="[('is_patient', '=', True)]"
+                                   domain="[('res.partner.type', '=', 'medical.patient')]"
                                    context="{'default_is_patient': True}" />
                             <field name="physician_id"
-                                   domain="[('is_doctor', '=', True)]"
+                                   domain="[('res.partner.type', '=', 'medical.physician')]"
                                    context="{'default_is_doctor': True}" />
                             <field name="date_prescription" />
                         </group>
                         <group>
                             <field name="partner_id"
-                                   domain="[('is_pharmacy', '=', True)]"
+                                   domain="[('res.partner.type', '=', 'medical.pharmacy')]"
                                    context="{'default_is_pharmacy': True}" />
                             <field name="is_pregnancy_warning" />
                             <field name="is_verified" />
