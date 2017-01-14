@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2016 LasLabs Inc.
+
+<!-- Copyright 2014-2017 LasLabs Inc.
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
@@ -56,6 +57,20 @@
         <field name="search_view_id" ref="medical_specialty_view_search" />
         <field name="domain">[]</field>
         <field name="context">{}</field>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="medical_specialty_action_form">
+        <field name="act_window_id" ref="medical_specialty_action" />
+        <field name="sequence" eval="20" />
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="medical_specialty_view_form" />
+    </record>
+
+    <record model="ir.actions.act_window.view" id="medical_specialty_action_tree">
+        <field name="act_window_id" ref="medical_specialty_action" />
+        <field name="sequence" eval="10" />
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="medical_specialty_view_tree" />
     </record>
 
 </odoo>

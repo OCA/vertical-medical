@@ -1,39 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2016 LasLabs Inc.
+
+<!-- Copyright 2014-2017 LasLabs Inc.
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
 
-    <menuitem id="medical_specialty"
-                name=" Medical Specialty"
-                parent="medical.medical_root_misc"
-                sequence="10"
-                action="medical_specialty_action" />
+    <menuitem id="health_professionals_menu"
+              name="Health Professionals"
+              sequence="20"
+              parent="medical.medical_root"
+              />
 
-    <menuitem id="medical_conf_physicians"
-                name="Health Professionals"
-                parent="medical.medical_root_sub"
-                sequence="20" />
-    
-    <menuitem id="medical_physician_admin"
-                name=" Physician [Admin]"
-                parent="medical_conf_physicians"
-                sequence="10"
-                action="medical_physician_action"
-                groups="medical.group_medical_manager" />
-    
-    <menuitem id="medical_physician_self"
-                name=" Physician [Self]"
-                parent="medical_conf_physicians"
-                sequence="10"
-                action="medical_physician_action_self"
-                groups="medical.group_medical_doctor" />
-    
-    <menuitem id="medical_physician_assistant"
-                name=" Physician [Assistant]"
-                parent="medical_conf_physicians"
-                sequence="10"
-                action="medical_physician_action"
-                groups="medical.group_medical_assistant" />
+    <menuitem id="physicians_menu"
+              name="Physicians"
+              parent="health_professionals_menu"
+              sequence="10"
+              action="medical_physician_action"
+              groups="medical.group_medical_manager,medical.group_medical_assistant,medical.group_medical_doctor"
+              />
+
+    <menuitem id="health_professionals_menu_conf"
+              name="Health Professionals"
+              sequence="20"
+              parent="medical.medical_root_sub"
+              />
+
+    <menuitem id="medical_physician_service_menu"
+              name="Physician Services"
+              parent="health_professionals_menu_conf"
+              sequence="10"
+              action="medical_physician_service_action"
+              />
+
+    <menuitem id="medical_specialty"
+              name="Specialties"
+              parent="health_professionals_menu_conf"
+              sequence="20"
+              action="medical_specialty_action"
+              />
 
 </odoo>

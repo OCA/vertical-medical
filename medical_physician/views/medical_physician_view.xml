@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2016 LasLabs Inc.
+<!-- Copyright 2016-2017 LasLabs Inc.
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
@@ -7,156 +7,141 @@
     <record id="medical_physician_view_tree" model="ir.ui.view">
         <field name="name">medical.physician.tree</field>
         <field name="model">medical.physician</field>
+        <field name="inherit_id" ref="medical.medical_abstract_entity_view_tree" />
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
-            <tree string="Medical Physician">
-                <field name="name" />
+            <xpath expr="//tree" position="attributes">
+                <attribute name="string">Physicians</attribute>
+            </xpath>
+            <xpath expr="//field[@name='email']" position="after">
                 <field name="code" />
                 <field name="specialty_id" />
                 <field name="parent_id" />
-            </tree>
+            </xpath>
         </field>
     </record>
 
     <record id="medical_physician_view_form" model="ir.ui.view">
         <field name="name">medical.physician.form</field>
         <field name="model">medical.physician</field>
+        <field name="inherit_id" ref="medical.medical_abstract_entity_view_form" />
+        <field name="mode">primary</field>
+        <field name="priority" eval="100" />
         <field name="arch" type="xml">
-            <form string="Medical Physician" >
-                <header/>
-                <sheet>
-                    <field name="image" widget='image' class="oe_avatar pull-left"
-                            options='{"preview_image": "image_medium", }'/>
-                    <div class="oe_title">
-                        <h1>
-                            <field name="name" placeholder="Physician's Name" />
-                        </h1>
-                        <h3> 
-                            <field name="parent_id" placeholder="Company" /> 
-                        </h3> 
-                    </div>
-                    <group>
-                        <field name="ref" string="Legal ID"/>
-                        <field name="code" string="Internal ID"/>
-                        <field name="specialty_id"/>
-                        <field name="info" colspan="4"/>
-                    </group>
-                    <notebook>
-                        <page string="General Information">
-                            <group>
-                                <field name="active"/>
-                                <field name="phone" placeholder="e.g. +506 5555 5555"/>
-                                <field name="mobile"/>
-                                <field name="fax"/>
-                                <field name="user_ids" invisible="1"/>
-                                <field name="email" widget="email" attrs="{'required': [('user_ids','!=', [])]}"/>
-                            </group>
-                            <group>
-                                <label for="street" string="Address"/>
-                                <div>
-                                    <field name="use_parent_address" invisible="1"/>
-                                    <field name="street" placeholder="Street..."
-                                            attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-                                    <field name="street2"  attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-                                    <div class="address_format">
-                                        <field name="city" placeholder="City" style="width: 40%%"
-                                                attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-                                        <field name="state_id" class="no_button" placeholder="State"
-                                                style="width: 37%%" options='{"no_open": True}'
-                                                attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-                                        <field name="zip" placeholder="ZIP" style="width: 20%%"
-                                                attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-                                    </div>
-                                    <field name="country_id" placeholder="Country" class="no_button"
-                                            options='{"no_open": True}'
-                                            attrs="{'readonly': [('use_parent_address','=',True)]}"/>
-                                </div>
-                            </group>
-                            <group  col="4" colspan="4"> 
-                                <field name="parent_id" colspan="2" string="Company" domain="[('is_company','=',True)]"/>
-                            </group>
-                            <group  col="4" colspan="4"> 
-                                <field name="lang" colspan="2"/>
-                                <field name="opt_out" string="I don't want to receive commercial messages" colspan="2"/>
-                            </group>
-                        </page>
-                    </notebook>
-                </sheet>
-            </form>
+            <xpath expr="//form" position="attributes">
+                <attribute name="string">Physicians</attribute>
+            </xpath>
+            <xpath expr="//h1" position="after">
+                <h3>
+                    <field name="parent_id"
+                           placeholder="Medical Center"
+                           domain="[('type', '=', 'medical.center')]"
+                           context="{'default_type': 'medical.center'}"
+                           />
+                    <field name="specialty_id"/>
+                </h3>
+            </xpath>
+            <xpath expr="//group[@name='main_data']/group[@name='left']" position="inside">
+                <field name="code" string="Internal ID"/>
+                <field name="info"/>
+            </xpath>
+            <xpath expr="//group[@name='main_data']/group[@name='right']" position="inside">
+                <field name="gender" />
+                <field name="employee" />
+                <field name="calendar_id"
+                       options="{'invisible': [('employee', '=', False)]}"
+                       />
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Services">
+                    <field name="service_ids"
+                           nolabel="1"
+                           />
+                </page>
+            </xpath>
+            <xpath expr="//img[@name='kanban_image_default_person']" position="replace">
+                <t t-if="record.is_company.raw_value === false">
+                    <img name="kanban_image_default_person"
+                         t-if="record.gender.raw_value === 'female'"
+                         t-attf-src='{{ _s }}/medical_physician/static/src/img/physician-avatar-female.png'
+                         />
+                    <img name="kanban_image_default_person"
+                         t-if="record.gender.raw_value !== 'female'"
+                         t-attf-src='{{ _s }}/medical_physician/static/src/img/physician-avatar-male.png'
+                         />
+                </t>
+            </xpath>
         </field>
     </record>
 
     <record id="medical_physician_view_kanban" model="ir.ui.view">
         <field name="name">medical.physician.kanban</field>
         <field name="model">medical.physician</field>
-        <field name="type">kanban</field>
+        <field name="inherit_id" ref="medical.medical_abstract_entity_view_kanban" />
+        <field name="mode">primary</field>
+        <field name="priority" eval="100" />
         <field name="arch" type="xml">
-            <kanban class="background_grey" string="Physicians">
-                <field name="name" />
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="string">Physicians</attribute>
+            </xpath>
+            <xpath expr="//templates" position="before">
                 <field name="specialty_id" />
                 <field name="code" />
-                <templates>
-                    <t t-name="kanban-box">
-                        <div class="oe_kanban_global_click o_res_partner_kanban">
-                            <div class="o_kanban_tags_section oe_kanban_partner_categories" />
-                            <div class="o_kanban_image">
-                                <img t-att-src="kanban_image('medical.physician', 'image', record.id.value)"
-                                        width="110"
-                                        height="110"
-                                        class="employee_picture" />
-                            </div>
-                            <div class="oe_kanban_details">
-                                <div class="o_kanban_title">
-                                    <field name="name" />
-                                </div>
-                                <ul>
-                                    <li t-if="record.specialty_id.raw_value">
-                                        <strong>Specialty:</strong>
-                                        <field name="specialty_id" />
-                                    </li>
-                                    <li t-if="record.code.raw_value">
-                                        <strong>Internal ID:</strong>
-                                        <field name="code" />
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </t>
-                </templates> 
-            </kanban>
+                <field name="gender" />
+            </xpath>
+            <xpath expr="//ul[@name='entity_details']/li" position="before">
+                <li name="field_specialty">
+                    <field name="specialty_id" />
+                </li>
+            </xpath>
+            <xpath expr="//img[@name='kanban_image_default_person']" position="replace">
+                <t t-if="record.is_company.raw_value === false">
+                    <img name="kanban_image_default_person"
+                         t-if="record.gender.raw_value === 'female'"
+                         t-attf-src='{{ _s }}/medical_physician/static/src/img/physician-avatar-female.png'
+                         />
+                    <img name="kanban_image_default_person"
+                         t-if="record.gender.raw_value !== 'female'"
+                         t-attf-src='{{ _s }}/medical_physician/static/src/img/physician-avatar-male.png'
+                         />
+                </t>
+            </xpath>
         </field>
     </record>
 
     <record id="medical_physician_view_search" model="ir.ui.view">
         <field name="name">medical.physician.search</field>
         <field name="model">medical.physician</field>
+        <field name="inherit_id" ref="medical.medical_abstract_entity_view_search" />
+        <field name="mode">primary</field>
         <field name="arch" type="xml">
-            <search string="Medical Physician">
-                <field name="name" />
+            <xpath expr="//search" position="attributes">
+                <attribute name="string">Physicians</attribute>
+            </xpath>
+            <xpath expr="//field[@name='category_id']" position="after">
                 <field name="code" />
                 <field name="specialty_id" />
                 <field name="parent_id" />
                 <field name="info" />
-                <newline />
-                <group expand="0" string="Group By...">
-                    <filter string="Extra info" domain="[]" context="{'group_by':'info'}" />
-                    <filter string="Name" domain="[]" context="{'group_by':'name'}" />
-                    <filter string="ID" domain="[]" context="{'group_by':'code'}" />
-                    <filter string="Specialty" domain="[]"    context="{'group_by':'specialty_id'}" />
-                    <filter string="Institution" domain="[]" context="{'group_by':'parent_id'}" />
-                </group>
-            </search>
+            </xpath>
+            <xpath expr="//filter" position="after">
+                <filter string="Extra info"
+                        domain="[]"
+                        context="{'group_by':'info'}" />
+                <filter string="Name"
+                        domain="[]"
+                        context="{'group_by':'name'}" />
+                <filter string="ID"
+                        domain="[]"
+                        context="{'group_by':'code'}" />
+                <filter string="Specialty"
+                        domain="[]"
+                        context="{'group_by':'specialty_id'}" />
+                <filter string="Institution"
+                        domain="[]"
+                        context="{'group_by':'parent_id'}" />
+            </xpath>
         </field>
-    </record>
-
-    <record model="ir.actions.act_window" id="medical_physician_action_self">
-        <field name="name">Physician</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">medical.physician</field>
-        <field name="view_type">form</field>
-        <field name="view_mode">form</field>
-        <field name="search_view_id" ref="medical_physician_view_search" />
-        <field name="domain">[('user_id', '=', uid)]</field>
-        <field name="context">{}</field>
     </record>
 
     <record model="ir.actions.act_window" id="medical_physician_action">
@@ -166,8 +151,13 @@
         <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
         <field name="search_view_id" ref="medical_physician_view_search" />
-        <field name="domain">[]</field>
-        <field name="context">{}</field>
+        <field name="view_ids"
+               eval="[(5, 0, 0),
+                      (0, 0, {'view_mode': 'kanban', 'view_id': ref('medical_physician_view_kanban')}),
+                      (0, 0, {'view_mode': 'tree', 'view_id': ref('medical_physician_view_tree')}),
+                      (0, 0, {'view_mode': 'form', 'view_id': ref('medical_physician_view_form')}),
+                     ]"
+        />
     </record>
 
 </odoo>

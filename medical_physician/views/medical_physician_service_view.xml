@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Copyright 2017 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical_physician_service_view_tree" model="ir.ui.view">
+        <field name="name">medical.physician.service.tree</field>
+        <field name="model">medical.physician.service</field>
+        <field name="arch" type="xml">
+            <tree string="Physician Services">
+                <field name="physician_id" />
+                <field name="product_id" />
+                <field name="center_count" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="medical_physician_service_view_form" model="ir.ui.view">
+        <field name="name">medical.physician.service.form</field>
+        <field name="model">medical.physician.service</field>
+        <field name="arch" type="xml">
+            <form string="Physician Service">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="physician_id" />
+                        </group>
+                        <group>
+                            <field name="product_id" />
+                        </group>
+                    </group>
+                    <group>
+                        <field name="center_ids" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_physician_service_view_search" model="ir.ui.view">
+        <field name="name">medical.physician.service.search</field>
+        <field name="model">medical.physician.service</field>
+        <field name="arch" type="xml">
+            <search string="Physician Services">
+                <field name="physician_id" />
+                <field name="product_id" />
+                <field name="center_ids" />
+                <filter string="Physician"
+                        domain="[]"
+                        context="{'group_by':'physician_id'}"
+                        />
+                <filter string="Product"
+                        domain="[]"
+                        context="{'group_by':'product_id'}"
+                        />
+                <filter string="Center Count"
+                        domain="[]"
+                        context="{'group_by':'center_count'}"
+                        />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_physician_service_action">
+        <field name="name">Physician Services</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.physician.service</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

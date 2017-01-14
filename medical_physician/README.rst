@@ -13,7 +13,7 @@ Usage
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/159/9.0
+   :target: https://runbot.odoo-community.org/runbot/159/10.0
 
 Known issues / Roadmap
 ======================
@@ -33,12 +33,14 @@ Images
 ------
 
 * Odoo Community Association: `Icon <https://github.com/OCA/maintainer-tools/blob/master/template/module/static/description/icon.svg>`_.
+* Icons Land: `Physician Avatars <http://www.icons-land.com/>`_.
 
 Contributors
 ------------
 
 * Ken Mak <kmak@laslabs.com>
 * Brett Wood <bwood@laslabs.com>
+* Dave Lasley <dave@laslabs.com>
 
 Maintainer
 ----------

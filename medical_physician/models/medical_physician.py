@@ -1,52 +1,68 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016 LasLabs Inc.
+# Copyright 2016-2017 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models, api
+from odoo import api, fields, models, tools
+from odoo.modules import get_module_resource
 
 
 class MedicalPhysician(models.Model):
     _name = 'medical.physician'
-    _inherits = {'res.partner': 'partner_id'}
+    _inherit = 'medical.abstract.entity'
     _description = 'Medical Physicians'
 
-    partner_id = fields.Many2one(
-        string='Related Partner',
-        help='Partner-related data of the physician',
-        comodel_name='res.partner',
-        required=True,
-        ondelete='cascade',
-    )
     code = fields.Char(
         string='ID',
-        help='Physician code',
+        help='Physician Code',
     )
     specialty_id = fields.Many2one(
-        help='Specialty code',
+        help='Specialty Code',
         comodel_name='medical.specialty',
         default=lambda self: self.env.ref(
-            'medical_physician.medical_specialty_gp'
+            'medical_physician.medical_specialty_gp',
         ),
         required=True,
     )
     info = fields.Text(
         string='Extra info',
-        help='Other information about the physician',
+        help='Extra Info',
     )
-    active = fields.Boolean(
-        default=True,
+    calendar_id = fields.Many2one(
+        string='Calendar',
+        comodel_name='resource.calendar',
+        help='Schedule for this physician.',
+    )
+    service_ids = fields.Many2many(
+        string='Services',
+        comodel_name='medical.physician.service',
+        help='Services offered by this physician.',
     )
 
     @api.model
-    @api.returns('self', lambda value: value.id)
-    def create(self, vals,):
-        vals.update({
-            'is_doctor': True,
-            'customer': False,
-        })
+    def _create_vals(self, vals):
+        vals['customer'] = False
         if not vals.get('code'):
             sequence = self.env['ir.sequence'].next_by_code(
-                'medical.physician'
+                self._name,
             )
             vals['code'] = sequence
-        return super(MedicalPhysician, self).create(vals)
+        return super(MedicalPhysician, self)._create_vals(vals)
+
+    @api.model
+    def _get_default_image(self, vals):
+        res = super(MedicalPhysician, self)._get_default_image(vals)
+        if not res:
+            return res
+        img_path = 'physician-%s-avatar.png' % vals.get('gender')
+        img_path = get_module_resource(
+            'medical_pharmacy', 'static/src/img', img_path,
+        )
+        if not img_path:
+            img_path = get_module_resource(
+                'medical_physician',
+                'static/src/img',
+                'physician-male-avatar.png',
+            )
+        with open(img_path, 'r') as image:
+            base64_image = image.read().encode('base64')
+            return tools.image_resize_image_big(base64_image)
