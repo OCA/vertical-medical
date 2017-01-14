@@ -1,72 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-<data noupdate="0">
+<odoo noupdate="0">
+
+    <record id="ir_module_category_medical" model="ir.module.category">
+        <field name="name">Medical</field>
+        <field name="sequence">10</field>
+    </record>
 
     <record id="group_medical_user" model="res.groups">
         <field name="name">Medical User</field>
-        <field name="category_id" ref="base.module_category_accounting_and_finance"/>
+        <field name="category_id" ref="ir_module_category_medical"/>
         <field name="users" eval="[(4, ref('base.user_root'))]"/>
         <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
     </record>
 
     <record id="group_medical_doctor" model="res.groups">
         <field name="name">Medical Doctor</field>
-        <field name="category_id" ref="base.module_category_accounting_and_finance"/>
+        <field name="category_id" ref="ir_module_category_medical"/>
         <field name="users" eval="[(4, ref('base.user_root'))]"/>
         <field name="implied_ids" eval="[(4, ref('group_medical_user')),(4, ref('base.group_user'))]"/>
     </record>
 
     <record id="group_medical_assistant" model="res.groups">
         <field name="name">Medical Assistant</field>
-        <field name="category_id" ref="base.module_category_accounting_and_finance"/>
+        <field name="category_id" ref="ir_module_category_medical"/>
         <field name="users" eval="[(4, ref('base.user_root'))]"/>
         <field name="implied_ids" eval="[(4, ref('group_medical_user')),(4, ref('base.group_user'))]"/>
     </record>
 
     <record id="group_medical_center_manager" model="res.groups">
         <field name="name">Medical Center Manager</field>
-        <field name="category_id" ref="base.module_category_accounting_and_finance"/>
+        <field name="category_id" ref="ir_module_category_medical"/>
         <field name="implied_ids" eval="[(4, ref('group_medical_user')),(4, ref('group_medical_doctor'))]"/>
     </record>
 
     <record id="group_medical_manager" model="res.groups">
         <field name="name">Medical Manager</field>
-        <field name="category_id" ref="base.module_category_accounting_and_finance"/>
+        <field name="category_id" ref="ir_module_category_medical"/>
         <field name="implied_ids" eval="[(4, ref('group_medical_center_manager'))]"/>
     </record>
 
     <record id="group_medical_configurator" model="res.groups">
         <field name="name">Medical Configurator</field>
-        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="category_id" ref="ir_module_category_medical"/>
         <field name="implied_ids" eval="[(4, ref('group_medical_manager'))]"/>
     </record>
 
-</data>
-
-<data noupdate="0">
-    <record id="medical_appointment_access_rule_physician" model="ir.rule">
-        <field name="name">Appointment Entry</field>
-        <field name="model_id" ref="model_medical_appointment"/>
-        <field name="global" eval="True"/>
-        <field name="groups" eval="[(4, ref('group_medical_doctor'))]"/>
-        <field name="domain_force">[('physician_id.user_id', '=', user.id)]</field>
+    <record id="base.group_erp_manager" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_medical_configurator'))]"/>
     </record>
 
-    <record id="medical_appointment_access_rule_assistant" model="ir.rule">
-        <field name="name">Appointment Entry</field>
-        <field name="model_id" ref="model_medical_appointment"/>
-        <field name="global" eval="True"/>
-        <field name="groups" eval="[(4, ref('group_medical_assistant'))]"/>
-        <field name="domain_force">['|', ('institution_id','=',user.parent_id.id), ('institution','child_of',user.parent_id.id)]</field>
-    </record>
-</data>
-<!--    
-    <record id="medical_partner_access_rule_assistant" model="ir.rule">
-        <field name="name">Partner Access rule for Assistants</field>
-        <field name="model_id" ref="model_res_partner"/>
-        <field name="global" eval="True"/>
-        <field name="groups" eval="[(4, ref('group_medical_assistant'))]"/>
-        <field name="domain_force">['|', '|', ('parent_id','=',user.parent_id.id), ('parent_id','child_of',user.parent_id.id)]</field>
-    </record>
--->
-</openerp>
+</odoo>
