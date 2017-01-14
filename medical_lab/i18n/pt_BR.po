@@ -1,0 +1,468 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * medical_lab
+# 
+# Translators:
+# Nilo Silva <nilo.silva@e-nube.com.br>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-12 03:39+0000\n"
+"PO-Revision-Date: 2017-01-12 03:39+0000\n"
+"Last-Translator: Nilo Silva <nilo.silva@e-nube.com.br>, 2017\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: medical_lab
+#: model:ir.ui.view,arch_db:medical_lab.medical_lab_test_type_view_form
+msgid "Additional"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_notes
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_patient_notes
+msgid "Additional Notes"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.ui.menu,name:medical_lab.medical_lab_patient_menu_all
+msgid "All"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.ui.menu,name:medical_lab.medical_lab_patent_menu_draft
+msgid "All Drafts"
+msgstr ""
+
+#. module: medical_lab
+#: selection:medical.lab.patient,state:0
+msgid "Cancelled"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_type_code
+msgid "Code"
+msgstr "Código"
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_create_uid
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_patient_create_uid
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_criterion_create_uid
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_result_create_uid
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_type_create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_create_date
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_patient_create_date
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_criterion_create_date
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_result_create_date
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_type_create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_type_criterion_ids
+#: model:ir.ui.view,arch_db:medical_lab.medical_lab_test_type_view_form
+msgid "Criteria"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_result_criterion_id
+msgid "Criterion"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.ui.view,arch_db:medical_lab.medical_lab_view_search
+msgid "Date Received"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_date_request
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_patient_date_request
+#: model:ir.ui.view,arch_db:medical_lab.medical_lab_view_search
+msgid "Date Requested"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_date_perform
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_patient_date_perform
+#: model:ir.ui.view,arch_db:medical_lab.medical_lab_view_search
+msgid "Date of Analysis"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_criterion_description
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_result_description
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_type_description
+msgid "Description"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,help:medical_lab.field_medical_lab_diagnosis_ids
+#: model:ir.model.fields,help:medical_lab.field_medical_lab_patient_diagnosis_ids
+msgid "Diagnosed pathologies as a result of this lab."
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_diagnosis_ids
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_patient_diagnosis_ids
+msgid "Diagnoses"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.ui.view,arch_db:medical_lab.medical_lab_view_form
+msgid "Diagnosis"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_display_name
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_patient_display_name
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_criterion_display_name
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_result_display_name
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_type_display_name
+msgid "Display Name"
+msgstr "Mostrar Nome"
+
+#. module: medical_lab
+#: selection:medical.lab.patient,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.actions.act_window,name:medical_lab.medical_lab_patient_action_draft
+msgid "Draft Patient Lab Requests"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.ui.view,arch_db:medical_lab.medical_lab_view_search
+msgid "Group By"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_id
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_name
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_patient_id
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_patient_name
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_criterion_id
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_result_id
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_type_id
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_patient_lab_id
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_result_lab_id
+msgid "Lab"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.actions.act_window,name:medical_lab.medical_patient_lab_action_history
+msgid "Lab Reports"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.ui.view,arch_db:medical_lab.medical_lab_test_type_view_form
+msgid "Lab Test Type"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.ui.view,arch_db:medical_lab.medical_lab_test_type_view_tree
+msgid "Lab Test Types"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.actions.act_window,name:medical_lab.medical_lab_test_type_action
+msgid "Lab Test Types Action"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_patient_lab_test_ids
+msgid "Lab Tests"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,help:medical_lab.field_medical_lab_patient_test_type_id
+#: model:ir.model.fields,help:medical_lab.field_medical_lab_test_type_id_2863
+msgid "Lab test type."
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.ui.menu,name:medical_lab.medical_lab_root_menu
+msgid "Laboratory"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.ui.view,arch_db:medical_lab.medical_lab_view_form
+msgid "Laboratory Test"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.actions.act_window,name:medical_lab.medical_lab_action
+#: model:ir.ui.view,arch_db:medical_lab.medical_lab_view_tree
+msgid "Labs"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab___last_update
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_patient___last_update
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_criterion___last_update
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_result___last_update
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_type___last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_patient_write_uid
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_criterion_write_uid
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_result_write_uid
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_type_write_uid
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_write_uid
+msgid "Last Updated by"
+msgstr "Última Atualização por"
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_patient_write_date
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_criterion_write_date
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_result_write_date
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_type_write_date
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_write_date
+msgid "Last Updated on"
+msgstr "Última Atualização em"
+
+#. module: medical_lab
+#: model:res.groups,name:medical_lab.group_medical_lab_manager
+msgid "Medical Lab Manager"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model,name:medical_lab.model_medical_lab_test_criterion
+msgid "Medical Lab Test Criteria"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model,name:medical_lab.model_medical_lab_test_result
+msgid "Medical Lab Test Results"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model,name:medical_lab.model_medical_lab_test_type
+msgid "Medical Lab Test Types"
+msgstr ""
+
+#. module: medical_lab
+#: model:res.groups,name:medical_lab.group_medical_lab_user
+msgid "Medical Lab User"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model,name:medical_lab.model_medical_lab
+msgid "Medical Labs"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model,name:medical_lab.model_medical_lab_patient
+msgid "Medical Labs - Patient"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model,name:medical_lab.model_medical_patient
+msgid "Medical Patient"
+msgstr "Paciente Médico"
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_type_name
+msgid "Name"
+msgstr "Nome"
+
+#. module: medical_lab
+#: model:ir.model.fields,help:medical_lab.field_medical_lab_test_type_name
+msgid "Name of test type, such as X-Ray, Hemogram, Biopsy, etc."
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_criterion_result_expect
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_result_result_expect
+msgid "Normal Range"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_result_notes
+msgid "Notes"
+msgstr "Anotações"
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_patient_physician_id
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_physician_id
+#: model:ir.ui.view,arch_db:medical_lab.medical_lab_view_search
+msgid "Pathologist"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,help:medical_lab.field_medical_lab_patient_physician_id
+#: model:ir.model.fields,help:medical_lab.field_medical_lab_physician_id
+msgid "Pathologist that performed the exam."
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_patient_patient_id
+msgid "Patient"
+msgstr "Paciente"
+
+#. module: medical_lab
+#: model:ir.ui.view,arch_db:medical_lab.medical_lab_patient_view_form
+msgid "Patient Lab"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.actions.act_window,name:medical_lab.medical_lab_patient_action
+msgid "Patient Lab Requests"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.ui.menu,name:medical_lab.medical_lab_patient_menu_root
+msgid "Patient Labs"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,help:medical_lab.field_medical_lab_patient_request_physician_id
+#: model:ir.model.fields,help:medical_lab.field_medical_lab_request_physician_id
+msgid "Physician that requested the exam."
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_date_receive
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_patient_date_receive
+msgid "Received Date"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_patient_request_physician_id
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_request_physician_id
+#: model:ir.ui.view,arch_db:medical_lab.medical_lab_view_search
+msgid "Requesting Physician"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_result_result_actual
+msgid "Result"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.ui.view,arch_db:medical_lab.medical_lab_view_form
+msgid "Results"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.ui.view,arch_db:medical_lab.medical_lab_test_type_view_search
+msgid "Search Lab Test Types"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.ui.view,arch_db:medical_lab.medical_lab_view_search
+msgid "Search Labs"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_criterion_sequence
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_result_sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_type_product_id
+msgid "Service"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,help:medical_lab.field_medical_lab_test_type_code
+msgid "Short name or code for test type."
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_patient_state
+msgid "State"
+msgstr "Estado"
+
+#. module: medical_lab
+#: model:ir.ui.view,arch_db:medical_lab.medical_lab_view_form
+msgid "Test Cases"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_criterion_name
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_result_name
+msgid "Test Name"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_patient_result_ids
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_result_ids
+msgid "Test Results"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_patient_test_type_id
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_type_id_2863
+msgid "Test Type"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_criterion_test_type_ids
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_result_test_type_ids
+msgid "Test Types"
+msgstr ""
+
+#. module: medical_lab
+#: selection:medical.lab.patient,state:0
+msgid "Tested"
+msgstr ""
+
+#. module: medical_lab
+#: sql_constraint:medical.lab.test.type:0
+msgid "The lab test code must be unique"
+msgstr ""
+
+#. module: medical_lab
+#: sql_constraint:medical.lab.test.type:0
+msgid "The lab test name must be unique"
+msgstr ""
+
+#. module: medical_lab
+#: sql_constraint:medical.lab:0
+msgid "The test ID code must be unique"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,help:medical_lab.field_medical_lab_test_criterion_test_type_ids
+#: model:ir.model.fields,help:medical_lab.field_medical_lab_test_result_test_type_ids
+msgid "This criterion is related to these test types."
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.actions.act_window,name:medical_lab.medical_lab_patient_action_draft_today
+msgid "Today's Draft Patient Lab Requests"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.ui.menu,name:medical_lab.medical_lab_patient_menu_today
+msgid "Today's Drafts"
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,help:medical_lab.field_medical_lab_name
+#: model:ir.model.fields,help:medical_lab.field_medical_lab_patient_name
+msgid "Unique identifier for lab."
+msgstr ""
+
+#. module: medical_lab
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_criterion_uom_id
+#: model:ir.model.fields,field_description:medical_lab.field_medical_lab_test_result_uom_id
+msgid "Unit of Measure"
+msgstr ""
