@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="product_product_simv_1" model="product.product">
+        <field name="name">Simvastatin</field>
+        <field name="uom_id" ref="product.product_uom_unit" />
+        <field name="uom_po_id" ref="product.product_uom_unit" />
+        <field name="weight">0.0002</field>
+        <field name="categ_id" ref="sale_medical_prescription.product_category_rx" />
+        <field name="type">consu</field>
+        <field name="description_sale">Simvastatin Tablet 200mg</field>
+        <field name="pricelist_id" ref="product.list0" />
+        <field name="standard_price">0.54</field>
+        <field name="list_price">1.46</field>
+        <field name="currency_id" ref="base.USD" />
+        <field name="default_code">SIMV</field>
+    </record>
+
+    <record id="medical_medicament_simv_1" model="medical.medicament">
+        <field name="name">Simvastatin</field>
+        <field name="drug_form_id" ref="medical_medicament.TAB" />
+        <field name="strength">0.2</field>
+        <field name="strength_uom_id" ref="product.product_uom_gram" />
+        <field name="is_pregnancy_warning">True</field>
+        <field name="drug_route_id" ref="medical_medicament.route_34" />
+        <field name="product_id" ref="sale_medical_prescription.product_product_simv_1" />
+        <field name="pregnancy_category">x</field>
+        <field name="is_controlled">True</field>
+    </record>
+
+    <record id="product_product_simv_2" model="product.product">
+        <field name="name">Simvastatin 2</field>
+        <field name="uom_id" ref="product.product_uom_unit" />
+        <field name="uom_po_id" ref="product.product_uom_unit" />
+        <field name="weight">0.0004</field>
+        <field name="categ_id" ref="sale_medical_prescription.product_category_test_rx_descendant" />
+        <field name="type">consu</field>
+        <field name="description_sale">Simvastatin Tablet 400mg</field>
+        <field name="pricelist_id" ref="product.list0" />
+        <field name="standard_price">0.50</field>
+        <field name="list_price">1.27</field>
+        <field name="currency_id" ref="base.USD" />
+        <field name="default_code">SIMV-2</field>
+    </record>
+
+    <record id="medical_medicament_simv_2" model="medical.medicament">
+        <field name="name">Simvastatin 2</field>
+        <field name="drug_form_id" ref="medical_medicament.TAB" />
+        <field name="strength">0.4</field>
+        <field name="strength_uom_id" ref="product.product_uom_gram" />
+        <field name="is_pregnancy_warning">True</field>
+        <field name="drug_route_id" ref="medical_medicament.route_34" />
+        <field name="product_id" ref="sale_medical_prescription.product_product_simv_2" />
+        <field name="pregnancy_category">x</field>
+        <field name="is_controlled">False</field>
+    </record>
+
+</odoo>

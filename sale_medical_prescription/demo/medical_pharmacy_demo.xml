@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="partner_pharmacy_4" model="res.partner">
+        <field name="name">Test Pharmacy 4</field>
+        <field name="street">12345 Test Blvd.</field>
+        <field name="street2">Suite 1467</field>
+        <field name="city">Las Vegas</field>
+        <field name="country_id" ref="base.us" />
+        <field name="phone">+1 (888) 267-8769</field>
+        <field name="email">email@testpharm4.com</field>
+        <field name="state_id" ref="base.state_us_23" />
+    </record>
+
+    <record id="medical_pharmacy_4" model="medical.pharmacy">
+        <field name="name">Test Pharmacy 4</field>
+        <field name="partner_id" ref="sale_medical_prescription.partner_pharmacy_4" />
+        <field name="is_verified">False</field>
+    </record>
+
+    <record id="partner_pharmacy_5" model="res.partner">
+        <field name="name">Test Pharmacy 5</field>
+        <field name="street">1234 Test Blvd. 2</field>
+        <field name="street2">Suite 1000</field>
+        <field name="city">Las Vegas</field>
+        <field name="country_id" ref="base.us" />
+        <field name="phone">+1 (888) 321-1234</field>
+        <field name="email">email@testpharm5.com</field>
+        <field name="state_id" ref="base.state_us_23" />
+    </record>
+
+    <record id="medical_pharmacy_5" model="medical.pharmacy">
+        <field name="name">Test Pharmacy 5</field>
+        <field name="partner_id" ref="sale_medical_prescription.partner_pharmacy_5" />
+        <field name="is_verified">True</field>
+    </record>
+
+</odoo>

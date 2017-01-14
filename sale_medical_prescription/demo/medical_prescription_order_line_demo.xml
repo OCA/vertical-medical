@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical_prescription_order_order_line_7" model="medical.prescription.order.line">
+        <field name="prescription_order_id" ref="sale_medical_prescription.medical_prescription_prescription_order_7" />
+        <field name="medical_medication_id" ref="sale_medical_prescription.medical_patient_medication_medication_7" />
+        <field name="is_substitutable">False</field>
+        <field name="qty">10</field>
+    </record>
+
+    <record id="medical_prescription_order_order_line_8" model="medical.prescription.order.line">
+        <field name="prescription_order_id" ref="sale_medical_prescription.medical_prescription_prescription_order_7" />
+        <field name="medical_medication_id" ref="sale_medical_prescription.medical_patient_medication_medication_8" />
+        <field name="is_substitutable">False</field>
+        <field name="qty">10</field>
+    </record>
+
+    <record id="medical_prescription_order_order_line_9" model="medical.prescription.order.line">
+        <field name="prescription_order_id" ref="sale_medical_prescription.medical_prescription_prescription_order_8" />
+        <field name="medical_medication_id" ref="sale_medical_prescription.medical_patient_medication_medication_8" />
+        <field name="is_substitutable">False</field>
+        <field name="qty">10</field>
+    </record>
+
+</odoo>

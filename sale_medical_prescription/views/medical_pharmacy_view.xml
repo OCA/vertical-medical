@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical_pharmacy_view_form" model="ir.ui.view">
+        <field name="name">medical.pharmacy.form</field>
+        <field name="model">medical.pharmacy</field>
+        <field name='inherit_id' ref='medical_pharmacy.medical_pharmacy_view_form' />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='parent_id']" position="after">
+                <field name="is_verified" attrs="{'invisible': [('verified_by_id', '!=', False)]}" />
+                <field name="verified_by_id" attrs="{'invisible': [('verified_by_id', '=', False)]}" />
+                <field name="verified_date" attrs="{'invisible': [('verified_by_id', '=', False)]}" />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="sale_order_medical_order_1" model="sale.order">
+        <field name="pharmacy_id" ref="medical_pharmacy.medical_pharmacy_1" />
+        <field name="partner_id" ref="base.partner_demo" />
+        <field name="state">sale</field>
+    </record>
+
+    <record id="sale_order_medical_order_2" model="sale.order">
+        <field name="pharmacy_id" ref="medical_pharmacy.medical_pharmacy_1" />
+        <field name="partner_id" ref="base.partner_demo" />
+        <field name="state">sent</field>
+    </record>
+
+    <record id="sale_order_medical_order_3" model="sale.order">
+        <field name="pharmacy_id" ref="medical_pharmacy.medical_pharmacy_1" />
+        <field name="partner_id" ref="base.partner_demo" />
+        <field name="state">draft</field>
+    </record>
+
+    <record id="sale_order_medical_order_4" model="sale.order">
+        <field name="pharmacy_id" ref="medical_prescription.medical_pharmacy_2" />
+        <field name="partner_id" ref="base.partner_demo" />
+        <field name="state">sale</field>
+    </record>
+
+    <record id="sale_order_medical_order_5" model="sale.order">
+        <field name="pharmacy_id" ref="medical_pharmacy.medical_pharmacy_1" />
+        <field name="partner_id" ref="base.partner_demo" />
+        <field name="state">sale</field>
+    </record>
+
+    <!-- Has no order_lines or rx_lines -->
+    <record id="sale_order_medical_order_6" model="sale.order">
+        <field name="pharmacy_id" ref="medical_prescription.medical_pharmacy_3" />
+        <field name="partner_id" ref="base.partner_demo" />
+        <field name="state">cancel</field>
+    </record>
+
+    <record id="sale_order_medical_order_7" model="sale.order">
+        <field name="pharmacy_id" ref="sale_medical_prescription.medical_pharmacy_4" />
+        <field name="partner_id" ref="base.partner_demo" />
+        <field name="state">done</field>
+    </record>
+
+</odoo>

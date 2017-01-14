@@ -38,7 +38,6 @@
     "update_xml": [
         "views/medical_invoice_view.xml",
         "views/appointment_invoice.xml",
-        "views/prescription_invoice.xml",
         "views/create_lab_invoice.xml"
     ],
     'installable': False,
