@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016 LasLabs Inc.
+# Copyright 2016-2017 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-import mock
 from openerp.tests.common import TransactionCase
 from openerp.addons.base.res.res_partner import res_partner
 
@@ -22,32 +21,16 @@ class TestMedicalPharmacy(TransactionCase):
         """ Validate is_pharmacy is set to True on partner """
         self.assertTrue(
             self.partner_pharmacy_1.is_pharmacy,
-            'Should be a pharmacy.\rGot: %s\rExpected: %s' % (
-                self.partner_pharmacy_1.is_pharmacy, True
-            )
         )
 
     def test_is_company(self):
         """ Validate is_company is set to True on partner """
         self.assertTrue(
             self.partner_pharmacy_1.is_company,
-            'Should be a company.\rGot: %s\rExpected: %s' % (
-                self.partner_pharmacy_1.is_company, True
-            )
         )
 
     def test_customer(self):
         """ Test customer is set to False on partner """
         self.assertFalse(
             self.partner_pharmacy_1.customer,
-            'Should not be a customer.\rGot: %s\rExpected: %s' % (
-                self.partner_pharmacy_1.customer, False
-            )
         )
-
-    def test_onchange_state(self):
-        """ Test onchange_state is passed through to partner """
-        with mock.patch.object(res_partner, 'onchange_state') as mk:
-            expect = 'Expect'
-            self.medical_pharmacy_1.onchange_state(expect)
-            mk.assert_called_once_with(expect)
