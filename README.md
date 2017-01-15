@@ -45,6 +45,7 @@ addon | version | summary
 [medical_pharmacy](medical_pharmacy/) | 9.0.1.0.0 | Adds pharmacy namespace on partners.
 [medical_physician](medical_physician/) | 9.0.1.0.0 | Adds physicians to Odoo Medical.
 [medical_prescription](medical_prescription/) | 9.0.1.0.0 | Introduces prescription orders and prescription order lines.
+[sale_medical_prescription](sale_medical_prescription/) | 9.0.1.0.0 | Create sale orders from prescriptions.
 
 Unported addons
 ---------------
@@ -62,7 +63,6 @@ addon | version | summary
 [medical_patient_ethnicity](medical_patient_ethnicity/) | 8.0.1.1.0 (unported) | Medical Patient Ethnicity
 [medical_patient_occupation](medical_patient_occupation/) | 8.0.1.1.0 (unported) | Medical Patient Occupation
 [medical_pharmacy_us](medical_pharmacy_us/) | 8.0.1.1.0 (unported) | Medical Pharmacy - US Locale
-[medical_prescription_sale](medical_prescription_sale/) | 8.0.1.0.0 (unported) | Medical Prescription Sales Processes
 [medical_prescription_state](medical_prescription_state/) | 8.0.1.1.0 (unported) | Medical Prescription Order States
 [oemedical_genetics](oemedical_genetics/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
 [oemedical_gynecology_and_obstetrics](oemedical_gynecology_and_obstetrics/) | 1.0.1 (unported) | OeMedical : gynecology and obstetrics
