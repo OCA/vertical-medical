@@ -27,11 +27,16 @@ Records (EMR) System based on Odoo.
 - Designed with industry standards in mind
 
 [//]: # (addons)
+Available addons
+----------------
+addon | version | summary
+--- | --- | ---
+[medical](medical/) | 10.0.1.0.0 | Odoo Medical
+
 Unported addons
 ---------------
 addon | version | summary
 --- | --- | ---
-[medical](medical/) | 8.0.1.1.0 (unported) | Odoo Medical
 [medical_disease](medical_disease/) | 8.0.1.1.0 (unported) | Introduce disease notion into the medical category
 [medical_emr](medical_emr/) | 8.0.1.1 (unported) | Medical EMR : Electronic Medical Record management for Medical
 [medical_emr_data](medical_emr_data/) | 8.0.1.0 (unported) | Medical EMR: Module Data
