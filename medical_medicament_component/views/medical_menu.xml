@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2015-2017 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+
+<odoo>
+
+    <menuitem id="medical_medicament_component"
+              name="Medicament Components"
+              parent="medical_medicament.medical_medicament_root"
+              action="medical_medicament_component_action"
+              sequence="55"
+              />
+
+</odoo>

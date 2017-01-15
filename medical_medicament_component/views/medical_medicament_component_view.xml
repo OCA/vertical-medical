@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2015-2017 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+
+<odoo>
+
+    <record id="view_medical_medicament_component_tree" model="ir.ui.view">
+        <field name="name">medical.medicament.component.tree</field>
+        <field name="model">medical.medicament.component</field>
+        <field name="arch" type="xml">
+            <tree string="Medicament Component">
+                <field name="name" />
+                <field name="is_active_ingredient" />
+            </tree>
+        </field>
+    </record>
+    <record id="view_medical_medicament_component_form" model="ir.ui.view">
+        <field name="name">medical.medicament.component.form</field>
+        <field name="model">medical.medicament.component</field>
+        <field name="arch" type="xml">
+            <form string="Medicament Components">
+                <header />
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="is_active_ingredient" />
+                    </group>
+                    <notebook>
+                        <page string="Medicaments">
+                            <field name="medicament_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_medical_medicament_component_search" model="ir.ui.view">
+        <field name="name">medical.medicament.component.search</field>
+        <field name="model">medical.medicament.component</field>
+        <field name="arch" type="xml">
+            <search string="Medicament Components">
+                <field name="name" />
+                <field name="is_active_ingredient" />
+            </search>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="medical_medicament_component_action">
+        <field name="name">Medicament Component</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.medicament.component</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_medical_medicament_component_search" />
+    </record>
+
+</odoo>
