@@ -34,6 +34,7 @@ class MedicalPhysicianService(models.Model):
     )
     center_ids = fields.Many2many(
         string='Medical Centers',
+        comodel_name='medical.center',
         help='The medical center(s) that this service apply to.'
     )
     center_count = fields.Integer(
