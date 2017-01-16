@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright 2015 ACSONE SA/NV
-# Copyright 2016 LasLabs Inc.
+# Copyright 2016-2017 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 import mock
@@ -56,4 +56,16 @@ class TestMedicalMedicament(TransactionCase):
         self.assertEqual(
             self.medical_medicament_1.id,
             res.id,
+        )
+
+    def test_active_component_ids(self):
+        """ It should only contain the active ingredients. """
+        active = self.medical_medicament_1.active_component_ids
+        self.assertEqual(
+            len(active), 1
+        )
+        self.assertEqual(
+            active[0], self.env.ref(
+                'medical_medicament.medical_medicament_component_ibuprofen',
+            ),
         )

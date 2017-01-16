@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright 2004 Tech-Receptives
-# Copyright 2016 LasLabs Inc.
+# Copyright 2016-2017 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields, api
@@ -8,18 +8,27 @@ from odoo import models, fields, api
 
 class MedicalMedicament(models.Model):
     _name = 'medical.medicament'
+    _description = 'Medical Medicament'
     _inherit = ['mail.thread']
     _inherits = {'product.product': 'product_id'}
 
-    active_component = fields.Char()
     indications = fields.Text()
     therapeutic_action = fields.Char()
     presentation = fields.Text()
+    active_component_ids = fields.Many2many(
+        string='Active Ingredients',
+        comodel_name='medical.medicament.component',
+        compute='_compute_active_ingredient_ids',
+    )
 
     product_id = fields.Many2one(
         comodel_name='product.product',
         required=True,
         ondelete="cascade",
+    )
+    component_ids = fields.Many2many(
+        string='Components',
+        comodel_name='medical.medicament.component',
     )
     drug_form_id = fields.Many2one(
         comodel_name='medical.drug.form',
@@ -91,9 +100,6 @@ class MedicalMedicament(models.Model):
     adverse_reaction = fields.Text(
         help='Potential adverse reactions',
     )
-    composition = fields.Text(
-        help='Components that make up this medicament',
-    )
     strength = fields.Float(
         help='Strength of medicament',
     )
@@ -104,20 +110,29 @@ class MedicalMedicament(models.Model):
     )
 
     @api.multi
+    @api.depends('component_ids')
+    def _compute_active_ingredient_ids(self):
+        for rec in self:
+            active = rec.component_ids.filtered(
+                lambda r: r.is_active_ingredient
+            )
+            rec.active_component_ids = [(6, 0, active.ids)]
+
+    @api.multi
     def name_get(self):
         res = []
-        for rec_id in self:
-            if rec_id.drug_form_id.name:
-                form = ' - %s' % rec_id.drug_form_id.code
+        for rec in self:
+            if rec.drug_form_id.name:
+                form = ' - %s' % rec.drug_form_id.code
             else:
                 form = ''
             name = '{name} {strength:g} {uom}{form}'.format(
-                name=rec_id.product_id.name,
-                strength=rec_id.strength,
-                uom=rec_id.strength_uom_id.name or '',
+                name=rec.product_id.name,
+                strength=rec.strength,
+                uom=rec.strength_uom_id.name or '',
                 form=form,
             )
-            res.append((rec_id.id, name))
+            res.append((rec.id, name))
         return res
 
     @api.multi

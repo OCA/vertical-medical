@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2016 LasLabs Inc.
+<!-- Copyright 2016-2017 LasLabs Inc.
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
@@ -20,11 +20,11 @@
                 <field name="is_pregnancy_warning" />
                 <field name="notes" />
                 <field name="adverse_reaction" />
-                <field name="active_component" />
+                <field name="active_component_ids" />
                 <field name="dosage_instruction" />
                 <field name="pregnancy" />
                 <field name="presentation" />
-                <field name="composition" />
+                <field name="component_ids" />
             </xpath>
             <xpath expr="//search" position="inside">
                 <separator />
@@ -48,16 +48,14 @@
                         context="{'group_by':'notes'}" />
                 <filter string="Adverse Reactions"
                         context="{'group_by':'adverse_reaction'}" />
-                <filter string="Active component"
-                        context="{'group_by':'active_component'}" />
+                <filter string="Active Components"
+                        context="{'group_by':'active_component_ids'}" />
                 <filter string="Dosage Instructions"
                         context="{'group_by':'dosage_instruction'}" />
                 <filter string="Pregnancy and Lactancy"
                         context="{'group_by':'pregnancy'}" />
                 <filter string="Presentation"
                         context="{'group_by':'presentation'}" />
-                <filter string="Composition"
-                        context="{'group_by':'composition'}" />
             </xpath>
         </field>
     </record>
@@ -91,14 +89,25 @@
                             <field name="strength" />
                             <field name="strength_uom_id" />
                             <field name="drug_route_id" />
-                            <field name="active_component" />
                             <field name="therapeutic_action" />
                         </group>
                         <group string="Pregnancy" name="pregnancy">
                             <field name="is_pregnancy_warning" />
                             <field name="pregnancy_category" />
                             <label for="pregnancy" string="Pregnancy Notes" />
-                            <field name="pregnancy" nolabel="1" colspan="4" />
+                            <field name="pregnancy" nolabel="1" />
+                        </group>
+                    </group>
+                    <group string="Composition">
+                        <group>
+                            <field name="component_ids"
+                                   widget="many2many_tags"
+                                   />
+                        </group>
+                        <group>
+                            <field name="active_component_ids"
+                                   widget="many2many_tags"
+                                   />
                         </group>
                     </group>
                     <group>
@@ -106,28 +115,23 @@
                             <field name="indications" nolabel="1" />
                         </group>
                         <group string="Dosage">
-                            <field name="dosage_instruction" colspan="2" nolabel="1" />
+                            <field name="dosage_instruction" nolabel="1" />
                         </group>
                     </group>
                     <group>
                         <group string="Overdosage">
-                            <field name="overdosage" colspan="2" nolabel="1" />
+                            <field name="overdosage" nolabel="1" />
                         </group>
                         <group string="Presentation">
-                            <field name="presentation" colspan="4" nolabel="1" />
+                            <field name="presentation" nolabel="1" />
                         </group>
                     </group>
                     <group>
-                        <group string="Composition">
-                            <field name="composition" nolabel="1" colspan="4" />
-                        </group>
                         <group string="Adverse Reactions">
-                            <field name="adverse_reaction" colspan="4" nolabel="1" />
+                            <field name="adverse_reaction" nolabel="1" />
                         </group>
-                    </group>
-                    <group>
                         <group string="Notes">
-                            <field name="notes" colspan="4" nolabel="1" />
+                            <field name="notes" nolabel="1" />
                         </group>
                     </group>
                 </page>
@@ -141,10 +145,6 @@
         <field name="res_model">medical.medicament</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
-        <field name="domain">[]</field>
-        <field name="context">{}</field>
-        <field name="view_id" ref="medical_medicament_view_tree" />
-        <field name="search_view_id" ref="medical_medicament_view_search" />
     </record>
 
 </odoo>

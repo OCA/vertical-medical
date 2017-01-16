@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2016 LasLabs Inc.
+<!-- Copyright 2016-2017 LasLabs Inc.
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
@@ -21,6 +21,13 @@
               parent="medicine_menu"
               sequence="30"
               action="medical_medicament_action"
+              />
+
+    <menuitem id="medical_medicament_component"
+              name="Components"
+              parent="medicaments_menu_config"
+              sequence="10"
+              action="medical_medicament_component_action"
               />
 
     <menuitem id="medical_drug_form"
