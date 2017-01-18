@@ -10,12 +10,23 @@ class TestMedicalPrescriptionOrderLine(TransactionCase):
 
     def setUp(self):
         super(TestMedicalPrescriptionOrderLine, self).setUp()
-        self.order_line_1 = self.env.ref(
-            'medical_prescription.' +
-            'medical_prescription_order_line_patient_1_order_1_line_1'
+        self.rx_line_us_1 = self.env.ref(
+            'medical_prescription_us.' +
+            'medical_prescription_order_order_line_us_1'
+        )
+        self.rx_line_us_2 = self.env.ref(
+            'medical_prescription_us.' +
+            'medical_prescription_order_order_line_us_2'
         )
 
     def test_check_refill_qty_original(self):
         """ Test refill_qty_original cannot be less than 0 """
         with self.assertRaises(ValidationError):
-            self.order_line_1.refill_qty_original = -1
+            self.rx_line_us_1.refill_qty_original = -1
+
+    def test_create_date_stop_treatment(self):
+        """ Test date_stop_treatment properly calculated """
+        self.assertEquals(
+            self.rx_line_us_1.date_stop_treatment,
+            '1983-07-20 00:00:00',
+        )

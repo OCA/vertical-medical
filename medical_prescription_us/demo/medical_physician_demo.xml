@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="res_partner_physician_us_1" model="res.partner">
+        <field name="name">Christoper Kaleton</field>
+        <field name="city">Las Vegas</field>
+        <field name="state_id" ref="base.state_us_23" />
+        <field name="country_id" ref="base.us" />
+        <field name="zip">10005</field>
+        <field name="street">1112 Example Way</field>
+        <field name="email">ckaleton@example.com</field>
+        <field name="phone">+1 (702) 123-7836</field>
+        <field name="ref">530-61-8499</field>
+    </record>
+
+    <record id="medical_physician_physician_us_1" model="medical.physician">
+        <field name="partner_id" ref="medical_prescription_us.res_partner_physician_us_1" />
+        <field name="specialty_id" ref="medical_physician.medical_specialty_gp" />
+        <field name="info">General practitioner, supplier</field>
+    </record>
+
+</odoo>

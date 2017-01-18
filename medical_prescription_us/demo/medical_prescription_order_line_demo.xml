@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical_prescription_order_order_line_us_1" model="medical.prescription.order.line">
+        <field name="prescription_order_id" ref="medical_prescription_us.medical_prescription_prescription_order_us_1" />
+        <field name="medical_medication_id" ref="medical_prescription_us.medical_patient_medication_medication_us_1" />
+        <field name="is_substitutable">True</field>
+        <field name="qty">1920</field>
+        <field name="date_start_treatment">1983-01-20</field>
+        <field name="medicament_id" ref="medical_prescription_us.medical_medicament_pravastatin_us_1" />
+    </record>
+
+    <record id="medical_prescription_order_order_line_us_2" model="medical.prescription.order.line">
+        <field name="prescription_order_id" ref="medical_prescription_us.medical_prescription_prescription_order_us_1" />
+        <field name="medical_medication_id" ref="medical_prescription_us.medical_patient_medication_medication_us_1" />
+        <field name="qty">800</field>
+    </record>
+
+</odoo>

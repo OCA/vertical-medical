@@ -1,21 +1,31 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    'name': 'Medical Prescription - US Locale',
-    'version': '9.0.1.0.0',
-    'author': "LasLabs, Odoo Community Association (OCA)",
-    'category': 'Medical',
-    'depends': [
-        'medical_base_us',
-        'medical_prescription',
-    ],
+    "name": "Medical Prescription - US Locale",
+    "summary": "Extension of medical_prescription that provides US Locale",
+    "version": "9.0.1.0.0",
+    "category": "Medical",
     "website": "https://laslabs.com",
+    "author": "LasLabs, Odoo Community Association (OCA)",
     "license": "AGPL-3",
-    "data": [
-        'views/medical_prescription_order_line_view.xml',
-    ],
     "application": False,
-    'installable': True,
+    "installable": True,
+    "depends": [
+        "medical_medicament_us",
+        "medical_prescription",
+    ],
+    "data": [
+        "views/medical_prescription_order_line_view.xml",
+    ],
+    "demo": [
+        "demo/medical_patient_demo.xml",
+        "demo/medical_pharmacy_demo.xml",
+        "demo/medical_medicament_demo.xml",
+        "demo/medical_physician_demo.xml",
+        "demo/medical_patient_medication_demo.xml",
+        "demo/medical_prescription_order_demo.xml",
+        "demo/medical_prescription_order_line_demo.xml",
+    ],
 }

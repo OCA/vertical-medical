@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from dateutil.relativedelta import relativedelta
 from openerp.exceptions import ValidationError
-from openerp import fields, models, api, _
 
 
-# @TODO: Abstract control codes into core, add months till expire
+from openerp import _, api, fields, models
+
+
 DELTA_MAP = {
     '0': 12,
     '1': 1,
@@ -19,7 +20,9 @@ DELTA_MAP = {
 
 
 class MedicalPrescriptionOrderLine(models.Model):
+
     _inherit = 'medical.prescription.order.line'
+
     refill_qty_original = fields.Float(
         string='Refill Qty',
         help='Amount of refills originally allowed in this prescription',

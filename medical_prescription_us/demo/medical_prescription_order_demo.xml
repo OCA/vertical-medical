@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical_prescription_prescription_order_us_1" model="medical.prescription.order">
+        <field name="patient_id" ref="medical_prescription_us.medical_patient_patient_us_1" />
+        <field name="physician_id" ref="medical_prescription_us.medical_physician_physician_us_1" />
+        <field name="date_prescription">1983-01-01</field>
+        <field name="partner_id" ref="medical_prescription_us.medical_pharmacy_us_1" />
+        <field name="is_verified" eval="True" />
+    </record>
+
+</odoo>
