@@ -37,6 +37,7 @@ addon | version | summary
 [medical_lab](medical_lab/) | 9.0.1.0.0 | Medical Lab
 [medical_manufacturer](medical_manufacturer/) | 9.0.1.0.0 | Extension of medical with concept of medical manufacturers.
 [medical_medicament](medical_medicament/) | 9.0.1.0.0 | Introduce Medicament notion into the medical product.
+[medical_medicament_us](medical_medicament_us/) | 9.0.1.0.0 | Extension of medical_medicament that provides US locale.
 [medical_medication](medical_medication/) | 9.0.1.0.0 | Introduce medication notion into the medical addons.
 [medical_pathology](medical_pathology/) | 9.0.1.0.1 | Extends Odoo Medical with pathologies (diseases).
 [medical_patient_disease](medical_patient_disease/) | 9.0.1.0.0 | Extend medical patients with the concept of diseases.
@@ -58,7 +59,6 @@ addon | version | summary
 [medical_insurance](medical_insurance/) | 8.0.1.1.0 (unported) | Medical Insurance
 [medical_insurance_us](medical_insurance_us/) | 8.0.1.1.0 (unported) | Medical Insurance - US
 [medical_medicament_attributes](medical_medicament_attributes/) | 8.0.1.0.0 (unported) | Medical Medicament Physical Attributes
-[medical_medication_us](medical_medication_us/) | 8.0.1.0.0 (unported) | Medical Medication - US Locale
 [medical_operational](medical_operational/) | 8.0.1.0 (unported) | Odoo Medical : Operational areas and sectors
 [medical_patient_ethnicity](medical_patient_ethnicity/) | 8.0.1.1.0 (unported) | Medical Patient Ethnicity
 [medical_patient_occupation](medical_patient_occupation/) | 8.0.1.1.0 (unported) | Medical Patient Occupation
