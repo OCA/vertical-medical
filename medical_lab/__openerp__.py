@@ -13,6 +13,7 @@
     "installable": True,
     "depends": [
         "medical_pathology",
+        "medical_physician",
     ],
     "data": [
         "views/medical_lab.xml",
