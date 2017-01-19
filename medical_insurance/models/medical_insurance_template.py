@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
-# © 2015-TODAY LasLabs Inc.
+# Copyright 2015-2017 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models, api
+from openerp import api, fields, models
 
 
 class MedicalInsuranceTemplate(models.Model):
     _name = 'medical.insurance.template'
     _description = 'Medical Insurance Templates'
-    _inherits = {'product.product': 'product_id', }
+    _inherits = {'product.product': 'product_id'}
     plan_number = fields.Char(
         required=True,
         help='Identification number for plan',
@@ -46,3 +46,19 @@ class MedicalInsuranceTemplate(models.Model):
     def create(self, vals):
         vals['is_insurance_plan'] = True
         return super(MedicalInsuranceTemplate, self).create(vals)
+
+    @api.multi
+    @api.depends('product_id.name',
+                 'insurance_company_id.name',
+                 'plan_number',
+                 )
+    def name_get(self):
+        result = []
+        for record in self:
+            name = "%s (%s #%s)" % (
+                record.product_id.name,
+                record.insurance_company_id.name,
+                record.plan_number,
+            )
+            result.append((record.id, name))
+        return result
