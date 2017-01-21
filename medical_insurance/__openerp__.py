@@ -7,8 +7,6 @@
     "version": "9.0.1.0.0",
     "author": "LasLabs, Odoo Community Association (OCA)",
     "category": "Medical",
-    "installable": True,
-    "auto_install": False,
     "website": "https://laslabs.com",
     "license": "AGPL-3",
     "depends": [
@@ -22,5 +20,6 @@
         "security/ir.model.access.csv",
         "views/medical_menu.xml",
     ],
-    
+    "installable": True,
+    "auto_install": False,
 }
