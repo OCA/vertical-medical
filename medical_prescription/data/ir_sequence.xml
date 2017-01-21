@@ -11,4 +11,11 @@
         <field name="padding">4</field>
     </record>
 
+    <record id="seq_medical_prescription_order_line" model="ir.sequence">
+        <field name="name">Medical Prescription Order Line</field>
+        <field name="code">medical.prescription.order.line</field>
+        <field name="prefix">RXL</field>
+        <field name="padding">5</field>
+    </record>
+
 </odoo>

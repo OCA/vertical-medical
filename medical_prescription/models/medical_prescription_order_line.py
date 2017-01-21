@@ -27,6 +27,16 @@ class MedicalPrescriptionOrderLine(models.Model):
     qty = fields.Float(
         string='Quantity',
     )
+    name = fields.Char(
+        required=True,
+        default=lambda s: s._default_name(),
+    )
+
+    @api.model
+    def _default_name(self):
+        return self.env['ir.sequence'].next_by_code(
+            'medical.prescription.order.line'
+        )
 
     @api.model
     def name_search(self, name='', args=None, operator='ilike', limit=100):

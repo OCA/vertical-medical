@@ -16,6 +16,14 @@ class TestMedicalPrescriptionOrderLine(TransactionCase):
         self.patient_1 = self.env.ref(
             'medical.medical_patient_patient_1'
         )
+        self.rx_line_1 = self.env.ref(
+            'medical_prescription.'
+            'medical_prescription_order_order_line_1'
+        )
+
+    def test_default_name(self):
+        """ Test name added to rx_line as default """
+        self.assertTrue(self.rx_line_1.name)
 
     def test_name_search_medicament_name(self):
         """ Test returns line_ids matching medicament name """
