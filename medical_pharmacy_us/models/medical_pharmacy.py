@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016-2017 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import fields, models, api
@@ -20,7 +20,7 @@ class MedicalPharmacy(models.Model):
     )
 
     @api.multi
-    @api.constrains('country_id', 'npi_num')
+    @api.constrains('npi_num')
     def _check_npi_num(self):
         """ Implement Luhns Formula to validate NPI """
         self._npi_constrains_helper('npi_num')
