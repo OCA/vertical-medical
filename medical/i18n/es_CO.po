@@ -3,14 +3,15 @@
 # * medical
 # 
 # Translators:
-# Gustavo Orozco H. <gustavo.orozco.h@app-247.com>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2016
+# Gustavo Orozco H. <gustavo.orozco.h@app-247.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-23 02:11+0000\n"
-"PO-Revision-Date: 2016-12-23 02:11+0000\n"
-"Last-Translator: Gustavo Orozco H. <gustavo.orozco.h@app-247.com>, 2016\n"
+"POT-Creation-Date: 2017-01-18 03:41+0000\n"
+"PO-Revision-Date: 2017-01-18 03:41+0000\n"
+"Last-Translator: Gustavo Orozco H. <gustavo.orozco.h@app-247.com>, 2017\n"
 "Language-Team: Spanish (Colombia) (https://www.transifex.com/oca/teams/23907/es_CO/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,6 +44,16 @@ msgstr "<strong>NIT:</strong>"
 #: model:ir.ui.view,arch_db:medical.medical_patient_view_kanban
 msgid "<strong>Sex:</strong>"
 msgstr "<strong>Sexo:</strong>"
+
+#. module: medical
+#: model:ir.model.fields,field_description:medical.field_medical_patient_property_account_payable_id
+msgid "Account Payable"
+msgstr ""
+
+#. module: medical
+#: model:ir.model.fields,field_description:medical.field_medical_patient_property_account_receivable_id
+msgid "Account Receivable"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_patient_message_needaction
@@ -98,6 +109,11 @@ msgstr "Agosto"
 #: model:ir.model.fields,help:medical.field_medical_patient_deceased
 msgid "Automatically True if deceased date is set"
 msgstr "Automáticamente Verdadero si se ingresa la fecha de fallecimiento"
+
+#. module: medical
+#: model:ir.model.fields,field_description:medical.field_medical_patient_bank_account_count
+msgid "Bank"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_patient_bank_ids
@@ -209,6 +225,11 @@ msgid "Common name the partner is referred to as"
 msgstr "Nombre común para referirse al tercero"
 
 #. module: medical
+#: model:ir.model.fields,field_description:medical.field_medical_patient_ref_company_ids
+msgid "Companies that refers to partner"
+msgstr ""
+
+#. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_patient_company_id
 msgid "Company"
 msgstr "Empresa"
@@ -245,6 +266,12 @@ msgid "Contacts"
 msgstr "Contactos"
 
 #. module: medical
+#: model:ir.model.fields,field_description:medical.field_medical_patient_contract_ids
+#: model:ir.model.fields,field_description:medical.field_medical_patient_contracts_count
+msgid "Contracts"
+msgstr ""
+
+#. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_patient_country_id
 #: model:ir.ui.view,arch_db:medical.medical_patient_view_form
 msgid "Country"
@@ -264,6 +291,16 @@ msgstr "Creado en"
 #: model:ir.model.fields,field_description:medical.field_medical_patient_credit_limit
 msgid "Credit Limit"
 msgstr "Límite de Crédito"
+
+#. module: medical
+#: model:ir.model.fields,field_description:medical.field_medical_patient_currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: medical
+#: model:ir.model.fields,field_description:medical.field_medical_patient_property_payment_term_id
+msgid "Customer Payment Term"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_patient_date
@@ -374,6 +411,11 @@ msgid "First Name Last Name"
 msgstr "Nombre Apellido"
 
 #. module: medical
+#: model:ir.model.fields,field_description:medical.field_medical_patient_property_account_position_id
+msgid "Fiscal Position"
+msgstr ""
+
+#. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_patient_message_follower_ids
 msgid "Followers"
 msgstr "Seguidores"
@@ -409,6 +451,11 @@ msgstr "Información General"
 #: model:ir.ui.view,arch_db:medical.medical_patient_view_search
 msgid "Group By..."
 msgstr "Agrupar Por..."
+
+#. module: medical
+#: model:ir.model.fields,field_description:medical.field_medical_patient_has_unreconciled_entries
+msgid "Has unreconciled entries"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_patient_is_doctor
@@ -497,6 +544,11 @@ msgid "Invalid selection - males cannot be pregnant."
 msgstr "Selección no válida - los hombres no pueden estar embarazados."
 
 #. module: medical
+#: model:ir.model.fields,field_description:medical.field_medical_patient_invoice_ids
+msgid "Invoices"
+msgstr ""
+
+#. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_patient_message_is_follower
 msgid "Is Follower"
 msgstr "Es Seguidor"
@@ -531,6 +583,12 @@ msgstr "Enero"
 #: model:ir.model.fields,field_description:medical.field_medical_patient_function
 msgid "Job Position"
 msgstr "Trabajo"
+
+#. module: medical
+#: model:ir.model.fields,field_description:medical.field_medical_patient_issued_total
+#: model:ir.model.fields,field_description:medical.field_medical_patient_journal_item_count
+msgid "Journal Items"
+msgstr ""
 
 #. module: medical
 #: code:addons/medical/medical_constants.py:16
@@ -568,6 +626,19 @@ msgstr "Última Actualización por"
 #: model:ir.model.fields,field_description:medical.field_medical_patient_write_date
 msgid "Last Updated on"
 msgstr "Última Actualización en"
+
+#. module: medical
+#: model:ir.model.fields,help:medical.field_medical_patient_last_time_entries_checked
+msgid ""
+"Last time the invoices & payments matching was performed for this partner. "
+"It is set either if there's not at least an unreconciled debit and an "
+"unreconciled credit or if you click the \"Done\" button."
+msgstr ""
+
+#. module: medical
+#: model:ir.model.fields,field_description:medical.field_medical_patient_last_time_entries_checked
+msgid "Latest Invoices & Payments Matching Date"
+msgstr ""
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_patient_view_form
@@ -789,6 +860,11 @@ msgid "Patients"
 msgstr "Pacientes"
 
 #. module: medical
+#: model:ir.model.fields,field_description:medical.field_medical_patient_debit_limit
+msgid "Payable Limit"
+msgstr ""
+
+#. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_patient_is_person
 #: model:ir.model.fields,field_description:medical.field_res_partner_is_person
 msgid "Person"
@@ -847,6 +923,11 @@ msgstr "Relación"
 #: model:ir.model.fields,field_description:medical.field_medical_patient_property_product_pricelist
 msgid "Sale Pricelist"
 msgstr "Precio de Lista para la Venta"
+
+#. module: medical
+#: model:ir.model.fields,field_description:medical.field_medical_patient_team_id
+msgid "Sales Team"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_patient_user_id
@@ -1008,6 +1089,12 @@ msgstr ""
 "empresa sino como una empresa autónoma."
 
 #. module: medical
+#: model:ir.model.fields,help:medical.field_medical_patient_property_account_position_id
+msgid ""
+"The fiscal position will determine taxes and accounts used for the partner."
+msgstr ""
+
+#. module: medical
 #: model:ir.model.fields,help:medical.field_medical_patient_user_id
 msgid ""
 "The internal user that is in charge of communicating with this contact if "
@@ -1015,6 +1102,13 @@ msgid ""
 msgstr ""
 "El usuario interno encargado de comunicarse con este contacto, si es que "
 "existe."
+
+#. module: medical
+#: model:ir.model.fields,help:medical.field_medical_patient_has_unreconciled_entries
+msgid ""
+"The partner has at least one unreconciled debit and credit since last time "
+"the invoices & payments matching was performed."
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,help:medical.field_medical_patient_tz
@@ -1030,6 +1124,20 @@ msgstr ""
 "procesar los valores de fecha y hora: el huso horario de su equipo."
 
 #. module: medical
+#: model:ir.model.fields,help:medical.field_medical_patient_property_account_payable_id
+msgid ""
+"This account will be used instead of the default one as the payable account "
+"for the current partner"
+msgstr ""
+
+#. module: medical
+#: model:ir.model.fields,help:medical.field_medical_patient_property_account_receivable_id
+msgid ""
+"This account will be used instead of the default one as the receivable "
+"account for the current partner"
+msgstr ""
+
+#. module: medical
 #: model:ir.model.fields,help:medical.field_medical_patient_image
 msgid ""
 "This field holds the image used as avatar for this contact, limited to "
@@ -1037,6 +1145,20 @@ msgid ""
 msgstr ""
 "Este campo contiene la imagen usada como un avatar para este contacto, "
 "limitado a 1024x1024px"
+
+#. module: medical
+#: model:ir.model.fields,help:medical.field_medical_patient_property_supplier_payment_term_id
+msgid ""
+"This payment term will be used instead of the default one for purchase "
+"orders and vendor bills"
+msgstr ""
+
+#. module: medical
+#: model:ir.model.fields,help:medical.field_medical_patient_property_payment_term_id
+msgid ""
+"This payment term will be used instead of the default one for sale orders "
+"and customer invoices"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,help:medical.field_medical_patient_property_product_pricelist
@@ -1067,6 +1189,31 @@ msgstr "Desfase del huso horario"
 #: model:ir.model.fields,field_description:medical.field_medical_patient_title
 msgid "Title"
 msgstr "Título"
+
+#. module: medical
+#: model:ir.model.fields,field_description:medical.field_medical_patient_total_invoiced
+msgid "Total Invoiced"
+msgstr ""
+
+#. module: medical
+#: model:ir.model.fields,field_description:medical.field_medical_patient_debit
+msgid "Total Payable"
+msgstr ""
+
+#. module: medical
+#: model:ir.model.fields,field_description:medical.field_medical_patient_credit
+msgid "Total Receivable"
+msgstr ""
+
+#. module: medical
+#: model:ir.model.fields,help:medical.field_medical_patient_credit
+msgid "Total amount this customer owes you."
+msgstr ""
+
+#. module: medical
+#: model:ir.model.fields,help:medical.field_medical_patient_debit
+msgid "Total amount you have to pay to this vendor."
+msgstr ""
 
 #. module: medical
 #: code:addons/medical/medical_constants.py:26
@@ -1102,6 +1249,16 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical.field_medical_patient_user_ids
 msgid "Users"
 msgstr "Usuarios"
+
+#. module: medical
+#: model:ir.model.fields,help:medical.field_medical_patient_currency_id
+msgid "Utility field to express amount currency"
+msgstr ""
+
+#. module: medical
+#: model:ir.model.fields,field_description:medical.field_medical_patient_property_supplier_payment_term_id
+msgid "Vendor Payment Term"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_patient_website
