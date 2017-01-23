@@ -6,7 +6,7 @@
 {
     "name": "Medical Prescription",
     "summary": "Introduces prescription orders and prescription order lines.",
-    "version": "9.0.1.0.0",
+    "version": "9.0.2.0.0",
     "category": "Medical",
     "website": "http://www.acsone.eu",
     "author": "ACSONE SA/NV, LasLabs, Odoo Community Association (OCA)",
