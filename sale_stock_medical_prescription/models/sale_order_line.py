@@ -16,22 +16,23 @@ class SaleOrderLine(models.Model):
     dispense_qty = fields.Float(
         default=0.0,
         readonly=True,
+        store=True,
         compute='_compute_dispense_qty',
     )
 
     @api.multi
     @api.depends('product_uom', 'prescription_order_line_id.dispense_uom_id')
     def _compute_dispense_qty(self):
-        for rec_id in self:
-            rx_line = rec_id.prescription_order_line_id
+        for record in self:
+            rx_line = record.prescription_order_line_id
             if not rx_line:
                 return
-            if rec_id.product_uom == rx_line.dispense_uom_id:
-                rec_id.dispense_qty = rec_id.product_uom_qty
+            if record.product_uom == rx_line.dispense_uom_id:
+                record.dispense_qty = record.product_uom_qty
             else:
-                rec_id.dispense_qty = self.env['product.uom']._compute_qty_obj(
-                    rec_id.product_uom,
-                    rec_id.product_uom_qty,
+                record.dispense_qty = self.env['product.uom']._compute_qty_obj(
+                    record.product_uom,
+                    record.product_uom_qty,
                     rx_line.dispense_uom_id,
                 )
 
@@ -40,17 +41,17 @@ class SaleOrderLine(models.Model):
     def _check_product(self):
         if self.env.context.get('__rx_force__'):
             return True
-        for rec_id in self:
-            if not rec_id.prescription_order_line_id:
+        for record in self:
+            if not record.prescription_order_line_id:
                 continue
-            rx_line = rec_id.prescription_order_line_id
-            if rx_line.medicament_id.product_id != rec_id.product_id:
+            rx_line = record.prescription_order_line_id
+            if rx_line.medicament_id.product_id != record.product_id:
                 if not rx_line.is_substitutable:
                     raise ValidationError(_(
                         'Products must be same on Order and Rx lines. '
                         'Got %s on order line %s, expected %s from %r'
                     ) % (
-                        rec_id.product_id.name, rec_id.name,
+                        record.product_id.name, record.name,
                         rx_line.medicament_id.product_id.name, rx_line,
                     ))
                 else:
@@ -61,16 +62,16 @@ class SaleOrderLine(models.Model):
     def _check_patient(self):
         if self.env.context.get('__rx_force__'):
             return True
-        for rec_id in self:
-            if not rec_id.prescription_order_line_id:
+        for record in self:
+            if not record.prescription_order_line_id:
                 continue
-            rx_line = rec_id.prescription_order_line_id
-            if rec_id.patient_id != rx_line.patient_id:
+            rx_line = record.prescription_order_line_id
+            if record.patient_id != rx_line.patient_id:
                 raise ValidationError(_(
                     'Patients must be same on Order and Rx lines. '
                     'Got %s on order line %d, expected %s from rx line %d'
                 ) % (
-                    rec_id.patient_id.name, rec_id.id,
+                    record.patient_id.name, record.id,
                     rx_line.patient_id.name, rx_line.id,
                 ))
 
@@ -79,31 +80,31 @@ class SaleOrderLine(models.Model):
     def _check_can_dispense(self):
         if self.env.context.get('__rx_force__'):
             return True
-        for rec_id in self:
+        for record in self:
             conditions = [
-                rec_id.product_id.is_medicament,
-                rec_id.prescription_order_line_id,
+                record.product_id.is_medicament,
+                record.prescription_order_line_id,
             ]
             if not all(conditions):
                 continue
-            rx_line = rec_id.prescription_order_line_id
+            rx_line = record.prescription_order_line_id
             if not rx_line.can_dispense:
                 raise ValidationError(_(
                     'Cannot dispense %s because there are related, '
                     'pending order(s). \n'
                     'Currently %.2f processed %.2f pending %.2f exception'
                 ) % (
-                    rec_id.dispense_qty,
+                    record.dispense_qty,
                     rx_line.dispensed_qty,
                     rx_line.pending_dispense_qty,
                     rx_line.exception_dispense_qty,
                 ))
-            if rec_id.dispense_qty > rx_line.can_dispense_qty:
+            if record.dispense_qty > rx_line.can_dispense_qty:
                 raise ValidationError(_(
                     'Cannot dispense - %s goes over Rx qty by %d'
                 ) % (
-                    rec_id.name,
-                    rec_id.dispense_qty - rx_line.can_dispense_qty
+                    record.name,
+                    record.dispense_qty - rx_line.can_dispense_qty
                 ))
 
     @api.multi

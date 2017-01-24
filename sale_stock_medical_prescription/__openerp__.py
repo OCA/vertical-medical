@@ -12,7 +12,7 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "post_init_hook": "post_init_hook_for_new_medicament_type_and_rx_line_uom",
+    "post_init_hook": "_update_medicament_type",
     "depends": [
         "sale_stock",
         "sale_medical_prescription",

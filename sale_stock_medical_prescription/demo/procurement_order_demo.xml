@@ -13,7 +13,7 @@
         <field name="product_qty">20</field>
         <field name="sale_line_id" ref="sale_stock_medical_prescription.sale_order_medical_order_line_12" />
         <field name="priority">1</field>
-        <field name="date_planned">Datetime.now()</field>
+        <field name="date_planned" eval="datetime.now()" />
     </record>-->
 
     <!--Automatically created procurement from sale_order_line_13
@@ -25,7 +25,7 @@
         <field name="product_qty">1</field>
         <field name="sale_line_id" ref="sale_stock_medical_prescription.sale_order_medical_order_line_13" />
         <field name="priority">1</field>
-        <field name="date_planned">Datetime.now()</field>
+        <field name="date_planned" eval="datetime.now()" />
     </record>-->
 
     <record id="procurement_order_medical_procurement_1" model="procurement.order">

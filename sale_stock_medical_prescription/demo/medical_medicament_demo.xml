@@ -3,7 +3,7 @@
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
-    
+
     <record id="product_product_amoxicillin_1" model="product.product">
         <field name="name">Amoxicillin</field>
         <field name="uom_id" ref="product.product_uom_unit" />
@@ -25,11 +25,11 @@
         <field name="drug_form_id" ref="medical_medicament.CAP" />
         <field name="strength">0.250</field>
         <field name="strength_uom_id" ref="product.product_uom_gram" />
-        <field name="is_pregnancy_warning">True</field>
+        <field name="is_pregnancy_warning" eval="True" />
         <field name="drug_route_id" ref="medical_medicament.route_34" />
         <field name="product_id" ref="sale_stock_medical_prescription.product_product_amoxicillin_1" />
         <field name="pregnancy_category">b</field>
-        <field name="is_controlled">True</field>
+        <field name="is_controlled" eval="True" />
     </record>
 
 </odoo>

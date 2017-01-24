@@ -5,6 +5,10 @@
 from openerp import api, fields, models, _
 from openerp.exceptions import ValidationError
 
+import logging
+
+_logger = logging.getLogger(__name__)
+
 
 class MedicalPrescriptionOrderLine(models.Model):
     _inherit = 'medical.prescription.order.line'
@@ -14,7 +18,6 @@ class MedicalPrescriptionOrderLine(models.Model):
         string='Dispense UoM',
         help='Dispense Unit of Measure',
         required=True,
-        # default=lambda s: s._default_dispense_uom_id(),
         related='medicament_id.uom_id',
     )
     dispensed_ids = fields.Many2many(
@@ -65,12 +68,6 @@ class MedicalPrescriptionOrderLine(models.Model):
         help='Amount that can be dispensed (using medicine dosage)',
     )
 
-    # @api.model
-    # def _default_dispense_uom_id(self):
-    #     return self.env['product.uom'].browse(
-    #         self.env['product.template']._get_uom_id()
-    #     )
-
     @api.multi
     @api.depends(
         'dispense_uom_id',
@@ -80,7 +77,7 @@ class MedicalPrescriptionOrderLine(models.Model):
         'sale_order_line_ids.procurement_ids.state',
     )
     def _compute_dispensings(self):
-        for rec_id in self:
+        for record in self:
 
             dispense_ids = []
             dispense_qty = 0.0
@@ -89,7 +86,7 @@ class MedicalPrescriptionOrderLine(models.Model):
             except_qty = 0.0
             last_procurement_id = None
 
-            order_line_ids = rec_id.sale_order_line_ids.sorted(
+            order_line_ids = record.sale_order_line_ids.sorted(
                 key=lambda r: r.order_id.date_order
             )
             for line_id in order_line_ids:
@@ -101,11 +98,11 @@ class MedicalPrescriptionOrderLine(models.Model):
                     dispense_ids.append(proc_id.id)
                     last_procurement_id = proc_id
 
-                    if proc_id.product_uom.id != rec_id.dispense_uom_id.id:
+                    if proc_id.product_uom.id != record.dispense_uom_id.id:
                         _qty = self.env['product.uom']._compute_qty_obj(
                             proc_id.product_uom,
                             proc_id.product_qty,
-                            rec_id.dispense_uom_id,
+                            record.dispense_uom_id,
                         )
                     else:
                         _qty = proc_id.product_qty
@@ -119,15 +116,15 @@ class MedicalPrescriptionOrderLine(models.Model):
                     else:
                         except_qty += _qty
 
-            rec_id.cancelled_dispense_qty = cancel_qty
-            rec_id.dispensed_qty = dispense_qty
-            rec_id.pending_dispense_qty = pending_qty
-            rec_id.exception_dispense_qty = except_qty
+            record.cancelled_dispense_qty = cancel_qty
+            record.dispensed_qty = dispense_qty
+            record.pending_dispense_qty = pending_qty
+            record.exception_dispense_qty = except_qty
 
-            rec_id.dispensed_ids = self.env['procurement.order'].browse(
+            record.dispensed_ids = self.env['procurement.order'].browse(
                 set(dispense_ids)
             )
-            rec_id.last_dispense_id = last_procurement_id
+            record.last_dispense_id = last_procurement_id
 
     @api.multi
     @api.depends(
@@ -137,21 +134,25 @@ class MedicalPrescriptionOrderLine(models.Model):
         'pending_dispense_qty',
     )
     def _compute_can_dispense_and_qty(self):
-        for rec_id in self:
-            total = sum([rec_id.dispensed_qty,
-                         rec_id.exception_dispense_qty,
-                         rec_id.pending_dispense_qty])
+        for record in self:
+            total = sum([record.dispensed_qty,
+                         record.exception_dispense_qty,
+                         record.pending_dispense_qty])
 
-            rec_id.active_dispense_qty = total
-            rec_id.can_dispense = rec_id.qty > total
-            rec_id.can_dispense_qty = rec_id.qty - total
+            record.active_dispense_qty = total
+            record.can_dispense = record.qty > total
+            record.can_dispense_qty = record.qty - total
 
     @api.multi
     @api.constrains('patient_id', 'sale_order_line_ids')
     def _check_patient(self):
-        for rec_id in self:
-            for sale_line_id in rec_id.sale_order_line_ids:
-                if sale_line_id.patient_id != rec_id.patient_id:
+        for record in self:
+            _logger.info('LOGS')
+            for sale_line_id in record.sale_order_line_ids:
+                _logger.info(sale_line_id)
+                _logger.info(sale_line_id.patient_id)
+                _logger.info(record.patient_id)
+                if sale_line_id.patient_id != record.patient_id:
                     raise ValidationError(_(
                         'Cannot change the patient on a prescription while it '
                         'is linked to active sale order(s).'

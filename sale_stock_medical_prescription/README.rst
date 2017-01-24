@@ -15,7 +15,7 @@ Usage
    :alt: Try me on Runbot
    :target: https://runbot.odoo-community.org/runbot/159/9.0
 
-Known issues / Roadmap
+Known Issues / Roadmap
 ======================
 
 * Improve and provide a full description for this module into the README.rst

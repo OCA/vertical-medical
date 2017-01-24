@@ -7,9 +7,20 @@ from openerp.tests.common import TransactionCase
 
 class TestHooks(TransactionCase):
 
-    def test_post_init(self):
-        """ It should convert pre-existing medicaments to new type """
-        test_medicament = self.env.ref(
-            'medical_medicament.medical_medicament_advil_1'
+    def setUp(self):
+        super(TestHooks, self).setUp()
+        self.rx_line_13 = self.env.ref(
+            'sale_stock_medical_prescription.'
+            'medical_prescription_order_order_line_13'
         )
-        self.assertEqual(test_medicament.type, 'product')
+        self.medicament_amox_1 = self.env.ref(
+            'sale_stock_medical_prescription.'
+            'product_product_amoxicillin_1'
+        )
+
+    def test_post_init_medicament(self):
+        """ It should convert pre-existing medicaments to new type """
+        self.assertEqual(
+            self.medicament_amox_1.type,
+            'product',
+        )

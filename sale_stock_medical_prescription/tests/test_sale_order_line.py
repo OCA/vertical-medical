@@ -44,7 +44,7 @@ class TestSaleOrderLine(TransactionCase):
         )
 
     def test_compute_dispense_qty_different_uom(self):
-        """ Test sets converts dispense_qty if different uom as rx_line """
+        """ Test converts dispense_qty if different uom as rx_line """
         dozen = self.env.ref('product.product_uom_dozen')
         self.order_line_13.product_uom = dozen
         self.assertEquals(
@@ -52,13 +52,13 @@ class TestSaleOrderLine(TransactionCase):
             self.order_line_13.product_uom_qty * 12,
         )
 
-    # def test_check_product(self):
-    #     """ Test changing product to incorrect one raise ValidationError """
-    #     product = self.env['product.product'].search([
-    #         ('id', '!=', self.order_line_12.product_id.id)
-    #     ], limit=1)
-    #     with self.assertRaises(ValidationError):
-    #         self.order_line_12.product_id = product.id
+    def test_check_product(self):
+        """ Test changing product to incorrect one raise ValidationError """
+        product = self.env['product.product'].search([
+            ('id', '!=', self.order_line_12.product_id.id)
+        ], limit=1)
+        with self.assertRaises(ValidationError):
+            self.order_line_12.product_id = product.id
 
     def test_check_can_dispense_false(self):
         """ Test raise ValidationError if try to dispense but cannot """
@@ -118,3 +118,12 @@ class TestSaleOrderLine(TransactionCase):
             self.fail(
                 'Should skip validations if no rx_line.'
             )
+
+    def test_check_patient(self):
+        """ Test changing patient to incorrect one raise ValidationError """
+        patient = self.env['medical.patient'].search([
+            ('id', '!=', self.order_line_12.patient_id.id),
+            ('id', '!=', self.rx_line_12.patient_id.id)
+        ], limit=1)
+        with self.assertRaises(ValidationError):
+            self.order_line_12.patient_id = patient

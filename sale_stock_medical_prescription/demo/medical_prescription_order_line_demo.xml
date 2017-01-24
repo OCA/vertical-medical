@@ -3,20 +3,20 @@
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
-	
+
     <record id="medical_prescription_order_order_line_12" model="medical.prescription.order.line">
         <field name="prescription_order_id" ref="sale_stock_medical_prescription.medical_prescription_prescription_order_10" />
         <field name="medical_medication_id" ref="sale_stock_medical_prescription.medical_patient_medication_medication_10" />
-        <field name="is_substitutable">False</field>
+        <field name="is_substitutable" eval="False" />
         <field name="qty">40</field>
-		<field name="dispense_uom_id" ref="product.product_uom_categ_unit" />
+        <field name="dispense_uom_id" ref="product.product_uom_categ_unit" />
     </record>
 
     <record id="medical_prescription_order_order_line_13" model="medical.prescription.order.line">
         <field name="prescription_order_id" ref="sale_stock_medical_prescription.medical_prescription_prescription_order_10" />
         <field name="medical_medication_id" ref="sale_stock_medical_prescription.medical_patient_medication_medication_10" />
-        <field name="is_substitutable">False</field>
-		<field name="qty">20</field>
+        <field name="is_substitutable" eval="False" />
+        <field name="qty">30</field>
     </record>
-	
+
 </odoo>

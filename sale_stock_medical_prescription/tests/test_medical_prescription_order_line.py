@@ -25,8 +25,11 @@ class TestMedicalPrescriptionOrderLine(TransactionCase):
             'procurement_order_medical_procurement_2'
         )
         self.patient_1 = self.env.ref(
-            'medical.'
-            'medical_patient_patient_1'
+            'medical.medical_patient_patient_1'
+        )
+        self.order_line_12 = self.env.ref(
+            'sale_stock_medical_prescription.'
+            'sale_order_medical_order_line_12'
         )
 
     def test_compute_dispensings_dispensed_ids(self):
@@ -94,7 +97,7 @@ class TestMedicalPrescriptionOrderLine(TransactionCase):
         """ Test can_dispense_qty is correct for can_dispense=True """
         self.assertEquals(
             self.rx_line_13.can_dispense_qty,
-            7,
+            17,
         )
 
     def test_compute_can_dispense_qty_false(self):
@@ -104,11 +107,11 @@ class TestMedicalPrescriptionOrderLine(TransactionCase):
             0,
         )
 
-    # ValidationError not raised
-    # def test_check_patient(self):
-    #     """ Test changing patient to incorrect one raise ValidationError """
-    #     patient = self.env['medical.patient'].search([
-    #         ('id', '!=', self.rx_line_12.patient_id.id)
-    #     ], limit=1)
-    #     with self.assertRaises(ValidationError):
-    #         self.rx_line_12.patient_id = patient
+    def test_check_patient(self):
+        """ Test changing patient to incorrect one raise ValidationError """
+        patient = self.env['medical.patient'].search([
+            ('id', '!=', self.order_line_12.patient_id.id),
+            ('id', '!=', self.rx_line_12.patient_id.id)
+        ], limit=1)
+        with self.assertRaises(ValidationError):
+            self.rx_line_12.patient_id = patient
