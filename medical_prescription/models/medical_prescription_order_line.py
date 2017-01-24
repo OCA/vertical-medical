@@ -30,6 +30,7 @@ class MedicalPrescriptionOrderLine(models.Model):
     name = fields.Char(
         required=True,
         default=lambda s: s._default_name(),
+        readonly=True,
     )
 
     @api.model
