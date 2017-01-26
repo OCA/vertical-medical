@@ -6,8 +6,8 @@
 
     <record id="product_product_advil_1" model="product.product">
         <field name="name">Advil</field>
-        <field name="uom_id" ref="product.product_uom_gram" />
-        <field name="uom_po_id" ref="product.product_uom_gram" />
+        <field name="uom_id" ref="product.product_uom_unit" />
+        <field name="uom_po_id" ref="product.product_uom_unit" />
         <field name="weight">22.6796</field>
         <field name="volume">0.008</field>
         <field name="categ_id" ref="product.product_category_5" />
@@ -33,8 +33,8 @@
 
     <record id="product_product_advil_2" model="product.product">
         <field name="name">Advil Extra Strength</field>
-        <field name="uom_id" ref="product.product_uom_gram" />
-        <field name="uom_po_id" ref="product.product_uom_gram" />
+        <field name="uom_id" ref="product.product_uom_unit" />
+        <field name="uom_po_id" ref="product.product_uom_unit" />
         <field name="weight">15</field>
         <field name="volume">0.0033</field>
         <field name="categ_id" ref="product.product_category_5" />
