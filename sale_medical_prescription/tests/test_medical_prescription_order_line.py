@@ -26,7 +26,3 @@ class TestMedicalPrescriptionOrderLine(TransactionCase):
         self.assertEqual(
             res, exp,
         )
-
-    def test_default_name(self):
-        """ Test name added to rx_line as default """
-        self.assertTrue(self.rx_line_7.name)

@@ -5,7 +5,7 @@
 {
     "name": "Medical Prescription Sales",
     "summary": "Create sale orders from prescriptions.",
-    "version": "9.0.1.0.0",
+    "version": "9.0.2.0.0",
     "category": "Medical",
     "website": "https://laslabs.com",
     "author": "LasLabs, Odoo Community Association (OCA)",
@@ -20,7 +20,6 @@
         "mail_thread_medical_prescription",
     ],
     "data": [
-        "data/ir_sequence.xml",
         "data/product_category_data.xml",
         "views/medical_pharmacy_view.xml",
         "views/medical_medicament_view.xml",

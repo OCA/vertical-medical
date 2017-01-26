@@ -11,6 +11,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='dose_uom_id']" position="after">
                 <field name="prescription_order_id" />
+                <field name="name" />
             </xpath>
             <xpath expr="//filter[@name='frequency_prn']" position="after">
                 <filter name="is_substitutable"
@@ -36,6 +37,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='pathology_id']" position="before">
                 <field name="prescription_order_id" />
+                <field name="name" />
             </xpath>
             <xpath expr="//field[@name='pathology_id']" position="attributes">
                 <attribute name="invisible">1</attribute>
@@ -54,6 +56,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='medication_template_id']/parent::group" postition="inside">
                 <field name="prescription_order_id" context="{'default_patient_id': patient_id}" />
+                <field name="name" />
                 <field name="qty" />
                 <field name="is_substitutable" />
                 <field name="active" />

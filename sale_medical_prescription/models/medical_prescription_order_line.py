@@ -20,9 +20,6 @@ class MedicalPrescriptionOrderLine(models.Model):
         compute='_compute_orders',
         readonly=True,
     )
-    name = fields.Char(
-        default=lambda s: s._default_name(),
-    )
     verify_method = fields.Selection(
         selection=[
             ('none', 'Not Verified'),
@@ -48,9 +45,3 @@ class MedicalPrescriptionOrderLine(models.Model):
             record.sale_order_ids = self.env['sale.order'].browse(
                 set(order_ids)
             )
-
-    @api.model
-    def _default_name(self):
-        return self.env['ir.sequence'].next_by_code(
-            'medical.prescription.order.line'
-        )
