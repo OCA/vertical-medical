@@ -1,0 +1,6 @@
+-
+  Create New Active Ingredient Medicament Component
+-
+  !record {model: medical.medicament.component, id: medical_component_active }:
+    name: Medical Component Test - Active
+    is_active_ingredient: True
