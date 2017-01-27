@@ -37,6 +37,7 @@ addon | version | summary
 [medical_lab](medical_lab/) | 9.0.1.0.0 | Medical Lab
 [medical_manufacturer](medical_manufacturer/) | 9.0.1.0.0 | Extension of medical with concept of medical manufacturers.
 [medical_medicament](medical_medicament/) | 9.0.1.0.0 | Introduce Medicament notion into the medical product.
+[medical_medicament_component](medical_medicament_component/) | 9.0.1.0.0 | Medical Medicament Components
 [medical_medicament_us](medical_medicament_us/) | 9.0.1.0.0 | Extension of medical_medicament that provides US locale.
 [medical_medication](medical_medication/) | 9.0.1.0.0 | Introduce medication notion into the medical addons.
 [medical_pathology](medical_pathology/) | 9.0.1.0.1 | Extends Odoo Medical with pathologies (diseases).
@@ -45,8 +46,8 @@ addon | version | summary
 [medical_patient_dob](medical_patient_dob/) | 9.0.1.0.0 | Show date of birth when searching patients.
 [medical_pharmacy](medical_pharmacy/) | 9.0.1.0.0 | Adds pharmacy namespace on partners.
 [medical_physician](medical_physician/) | 9.0.1.0.0 | Adds physicians to Odoo Medical.
-[medical_prescription](medical_prescription/) | 9.0.1.0.0 | Introduces prescription orders and prescription order lines.
-[sale_medical_prescription](sale_medical_prescription/) | 9.0.1.0.0 | Create sale orders from prescriptions.
+[medical_prescription](medical_prescription/) | 9.0.2.0.0 | Introduces prescription orders and prescription order lines.
+[sale_medical_prescription](sale_medical_prescription/) | 9.0.2.0.0 | Create sale orders from prescriptions.
 
 Unported addons
 ---------------
