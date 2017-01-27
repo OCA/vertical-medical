@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2016 LasLabs Inc.
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <record id="medical_prescription_order_kanban_view" model="ir.ui.view">
+        <field name="name">Prescription Orders</field>
+        <field name="model">medical.prescription.order</field>
+        <field name="inherit_id" ref="base_kanban_stage.base_kanban_abstract_view_kanban" />
+        <field name="priority" eval="99" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='card_header']">
+                <span t-if="record.patient_id.raw_value">
+                    <strong>Patient:</strong>
+                    <field name="patient_id"/>
+                </span>
+            </xpath>
+            <xpath expr="//div[@name='card_body']">
+                <ul>
+                    <li t-if="record.date_prescription.raw_value">
+                        <strong>Date:</strong>
+                        <field name="date_prescription"/>
+                    </li>
+                    <li t-if="record.physician_id.raw_value">
+                        <strong>Physician:</strong>
+                        <field name="physician_id"/>
+                    </li>
+                </ul>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_prescription.medical_prescription_order_action" model="ir.actions.act_window">
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_id" ref="medical_prescription_order_kanban_view" />
+    </record>
+
+</odoo>
