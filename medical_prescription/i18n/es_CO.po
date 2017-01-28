@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-18 03:41+0000\n"
-"PO-Revision-Date: 2017-01-18 03:41+0000\n"
+"POT-Creation-Date: 2017-01-28 03:43+0000\n"
+"PO-Revision-Date: 2017-01-28 03:43+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: Spanish (Colombia) (https://www.transifex.com/oca/teams/23907/es_CO/)\n"
 "MIME-Version: 1.0\n"
@@ -282,6 +282,7 @@ msgid "Medication Template"
 msgstr "Plantilla de Medicación"
 
 #. module: medical_prescription
+#: model:ir.model.fields,field_description:medical_prescription.field_medical_prescription_order_line_name
 #: model:ir.model.fields,field_description:medical_prescription.field_medical_prescription_order_name
 #: model:ir.ui.view,arch_db:medical_prescription.medical_prescription_order_view_form
 msgid "Name"

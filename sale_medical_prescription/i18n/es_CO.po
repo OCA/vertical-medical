@@ -3,14 +3,14 @@
 # * sale_medical_prescription
 # 
 # Translators:
-# Gustavo Orozco H. <gustavo.orozco.h@app-247.com>, 2017
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-18 03:41+0000\n"
-"PO-Revision-Date: 2017-01-18 03:41+0000\n"
-"Last-Translator: Gustavo Orozco H. <gustavo.orozco.h@app-247.com>, 2017\n"
+"POT-Creation-Date: 2017-01-28 03:43+0000\n"
+"PO-Revision-Date: 2017-01-28 03:43+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Spanish (Colombia) (https://www.transifex.com/oca/teams/23907/es_CO/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -301,11 +301,6 @@ msgstr "Medicación"
 #: model:ir.model.fields,help:sale_medical_prescription.field_medical_prescription_order_verify_method
 msgid "Method of Rx verification"
 msgstr ""
-
-#. module: sale_medical_prescription
-#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_prescription_order_line_name
-msgid "Name"
-msgstr "Nombre"
 
 #. module: sale_medical_prescription
 #: selection:medical.prescription.order,transfer_direction:0

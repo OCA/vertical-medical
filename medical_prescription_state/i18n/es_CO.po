@@ -1,0 +1,216 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * medical_prescription_state
+# 
+# Translators:
+# Gustavo Orozco H. <gustavo.orozco.h@app-247.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-01-28 03:43+0000\n"
+"PO-Revision-Date: 2017-01-28 03:43+0000\n"
+"Last-Translator: Gustavo Orozco H. <gustavo.orozco.h@app-247.com>, 2017\n"
+"Language-Team: Spanish (Colombia) (https://www.transifex.com/oca/teams/23907/es_CO/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es_CO\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: medical_prescription_state
+#: model:ir.ui.view,arch_db:medical_prescription_state.medical_prescription_order_kanban_view
+msgid "<strong>Date:</strong>"
+msgstr ""
+
+#. module: medical_prescription_state
+#: model:ir.ui.view,arch_db:medical_prescription_state.medical_prescription_order_kanban_view
+#: model:ir.ui.view,arch_db:medical_prescription_state.medical_prescription_order_line_kanban_view
+msgid "<strong>Patient:</strong>"
+msgstr "<strong>Paciente:</strong>"
+
+#. module: medical_prescription_state
+#: model:ir.ui.view,arch_db:medical_prescription_state.medical_prescription_order_kanban_view
+#: model:ir.ui.view,arch_db:medical_prescription_state.medical_prescription_order_line_kanban_view
+msgid "<strong>Physician:</strong>"
+msgstr "<strong>Médico:</strong>"
+
+#. module: medical_prescription_state
+#: model:ir.model.fields,help:medical_prescription_state.field_medical_prescription_order_kanban_status
+#: model:ir.model.fields,help:medical_prescription_state.field_medical_prescription_order_line_kanban_status
+msgid ""
+"A record can have one of several Kanban statuses, which are used to indicate whether there are any special situations affecting it. The exact meaning of each status is allowed to vary based on the stage the record is in but they are roughly as follow:\n"
+"* Normal Handling: Default status, no special situations\n"
+"* Ready: Ready to transition to the next stage\n"
+"* Special Handling: Blocked in some way (e.g. must be handled by a specific user)\n"
+msgstr ""
+
+#. module: medical_prescription_state
+#: model:ir.model,name:medical_prescription_state.model_medical_prescription_order_line
+msgid "Abstract Medical Medication"
+msgstr "Tratamiento Médico Abstracta"
+
+#. module: medical_prescription_state
+#: model:ir.model.fields,field_description:medical_prescription_state.field_medical_prescription_order_line_user_id
+#: model:ir.model.fields,field_description:medical_prescription_state.field_medical_prescription_order_user_id
+msgid "Assigned To"
+msgstr ""
+
+#. module: medical_prescription_state
+#: model:ir.model.fields,field_description:medical_prescription_state.field_medical_prescription_order_kanban_color
+#: model:ir.model.fields,field_description:medical_prescription_state.field_medical_prescription_order_line_kanban_color
+msgid "Color Index"
+msgstr "Índice de Color"
+
+#. module: medical_prescription_state
+#: model:ir.model.fields,help:medical_prescription_state.field_medical_prescription_order_kanban_color
+#: model:ir.model.fields,help:medical_prescription_state.field_medical_prescription_order_line_kanban_color
+msgid "Color index to be used for the record's Kanban card"
+msgstr ""
+
+#. module: medical_prescription_state
+#: model:ir.model.fields,help:medical_prescription_state.field_medical_prescription_order_kanban_legend_normal
+#: model:ir.model.fields,help:medical_prescription_state.field_medical_prescription_order_line_kanban_legend_normal
+msgid ""
+"Explanation text to help users understand how the normal handling status "
+"applies to this record (depends on current stage)"
+msgstr ""
+
+#. module: medical_prescription_state
+#: model:ir.model.fields,help:medical_prescription_state.field_medical_prescription_order_kanban_legend_priority
+#: model:ir.model.fields,help:medical_prescription_state.field_medical_prescription_order_line_kanban_legend_priority
+msgid ""
+"Explanation text to help users understand how the priority/star mechanism "
+"applies to this record (depends on current stage)"
+msgstr ""
+
+#. module: medical_prescription_state
+#: model:ir.model.fields,help:medical_prescription_state.field_medical_prescription_order_kanban_legend_done
+#: model:ir.model.fields,help:medical_prescription_state.field_medical_prescription_order_line_kanban_legend_done
+msgid ""
+"Explanation text to help users understand how the ready status applies to "
+"this record (depends on current stage)"
+msgstr ""
+
+#. module: medical_prescription_state
+#: model:ir.model.fields,help:medical_prescription_state.field_medical_prescription_order_kanban_legend_blocked
+#: model:ir.model.fields,help:medical_prescription_state.field_medical_prescription_order_line_kanban_legend_blocked
+msgid ""
+"Explanation text to help users understand how the special handling status "
+"applies to this record (depends on current stage)"
+msgstr ""
+
+#. module: medical_prescription_state
+#: selection:medical.prescription.order,kanban_priority:0
+#: selection:medical.prescription.order.line,kanban_priority:0
+msgid "High"
+msgstr ""
+
+#. module: medical_prescription_state
+#: model:ir.model.fields,field_description:medical_prescription_state.field_medical_prescription_order_line_stage_id
+#: model:ir.model.fields,field_description:medical_prescription_state.field_medical_prescription_order_stage_id
+msgid "Kanban Stage"
+msgstr ""
+
+#. module: medical_prescription_state
+#: model:ir.model.fields,field_description:medical_prescription_state.field_medical_prescription_order_kanban_status
+#: model:ir.model.fields,field_description:medical_prescription_state.field_medical_prescription_order_line_kanban_status
+msgid "Kanban Status"
+msgstr ""
+
+#. module: medical_prescription_state
+#: model:ir.model.fields,field_description:medical_prescription_state.field_medical_prescription_order_kanban_priority
+#: model:ir.model.fields,field_description:medical_prescription_state.field_medical_prescription_order_line_kanban_priority
+msgid "Kanban priority"
+msgstr ""
+
+#. module: medical_prescription_state
+#: model:ir.model.fields,field_description:medical_prescription_state.field_medical_prescription_order_kanban_sequence
+#: model:ir.model.fields,field_description:medical_prescription_state.field_medical_prescription_order_line_kanban_sequence
+msgid "Kanban sequence"
+msgstr ""
+
+#. module: medical_prescription_state
+#: model:ir.model,name:medical_prescription_state.model_medical_prescription_order
+msgid "Medical Prescription Order"
+msgstr "Orden de Prescripción Médica"
+
+#. module: medical_prescription_state
+#: selection:medical.prescription.order,kanban_priority:0
+#: selection:medical.prescription.order.line,kanban_priority:0
+msgid "Medium"
+msgstr ""
+
+#. module: medical_prescription_state
+#: selection:medical.prescription.order,kanban_priority:0
+#: selection:medical.prescription.order.line,kanban_priority:0
+msgid "Normal"
+msgstr ""
+
+#. module: medical_prescription_state
+#: selection:medical.prescription.order,kanban_status:0
+#: selection:medical.prescription.order.line,kanban_status:0
+msgid "Normal Handling"
+msgstr ""
+
+#. module: medical_prescription_state
+#: model:ir.model.fields,field_description:medical_prescription_state.field_medical_prescription_order_kanban_legend_normal
+#: model:ir.model.fields,field_description:medical_prescription_state.field_medical_prescription_order_line_kanban_legend_normal
+msgid "Normal Handling Explanation"
+msgstr ""
+
+#. module: medical_prescription_state
+#: model:ir.model.fields,help:medical_prescription_state.field_medical_prescription_order_kanban_sequence
+#: model:ir.model.fields,help:medical_prescription_state.field_medical_prescription_order_line_kanban_sequence
+msgid ""
+"Order of record in relation to other records in the same Kanban stage and "
+"with the same priority"
+msgstr ""
+
+#. module: medical_prescription_state
+#: model:ir.model.fields,field_description:medical_prescription_state.field_medical_prescription_order_kanban_legend_priority
+#: model:ir.model.fields,field_description:medical_prescription_state.field_medical_prescription_order_line_kanban_legend_priority
+msgid "Priority Explanation"
+msgstr ""
+
+#. module: medical_prescription_state
+#: selection:medical.prescription.order,kanban_status:0
+#: selection:medical.prescription.order.line,kanban_status:0
+msgid "Ready"
+msgstr ""
+
+#. module: medical_prescription_state
+#: model:ir.model.fields,field_description:medical_prescription_state.field_medical_prescription_order_kanban_legend_done
+#: model:ir.model.fields,field_description:medical_prescription_state.field_medical_prescription_order_line_kanban_legend_done
+msgid "Ready Explanation"
+msgstr ""
+
+#. module: medical_prescription_state
+#: selection:medical.prescription.order,kanban_status:0
+#: selection:medical.prescription.order.line,kanban_status:0
+msgid "Special Handling"
+msgstr ""
+
+#. module: medical_prescription_state
+#: model:ir.model.fields,field_description:medical_prescription_state.field_medical_prescription_order_kanban_legend_blocked
+#: model:ir.model.fields,field_description:medical_prescription_state.field_medical_prescription_order_line_kanban_legend_blocked
+msgid "Special Handling Explanation"
+msgstr ""
+
+#. module: medical_prescription_state
+#: model:ir.model.fields,help:medical_prescription_state.field_medical_prescription_order_line_stage_id
+#: model:ir.model.fields,help:medical_prescription_state.field_medical_prescription_order_stage_id
+msgid "The Kanban stage that this record is currently in"
+msgstr ""
+
+#. module: medical_prescription_state
+#: model:ir.model.fields,help:medical_prescription_state.field_medical_prescription_order_kanban_priority
+#: model:ir.model.fields,help:medical_prescription_state.field_medical_prescription_order_line_kanban_priority
+msgid "The priority of the record (shown as stars in Kanban views)"
+msgstr ""
+
+#. module: medical_prescription_state
+#: model:ir.model.fields,help:medical_prescription_state.field_medical_prescription_order_line_user_id
+#: model:ir.model.fields,help:medical_prescription_state.field_medical_prescription_order_user_id
+msgid "User that the record is currently assigned to"
+msgstr ""
