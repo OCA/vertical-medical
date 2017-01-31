@@ -6,8 +6,8 @@
 
     <record id="product_product_truvada_1" model="product.product">
         <field name="name">Truvada</field>
-        <field name="uom_id" ref="product.product_uom_gram" />
-        <field name="uom_po_id" ref="product.product_uom_gram" />
+        <field name="uom_id" ref="product.product_uom_unit" />
+        <field name="uom_po_id" ref="product.product_uom_unit" />
         <field name="weight">15</field>
         <field name="categ_id" ref="product.product_category_5" />
         <field name="type">consu</field>
@@ -31,8 +31,8 @@
 
     <record id="product_product_aralen_1" model="product.product">
         <field name="name">Aralen</field>
-        <field name="uom_id" ref="product.product_uom_gram" />
-        <field name="uom_po_id" ref="product.product_uom_gram" />
+        <field name="uom_id" ref="product.product_uom_unit" />
+        <field name="uom_po_id" ref="product.product_uom_unit" />
         <field name="weight">17</field>
         <field name="categ_id" ref="product.product_category_5" />
         <field name="type">consu</field>
