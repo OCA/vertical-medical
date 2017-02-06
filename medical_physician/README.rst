@@ -8,6 +8,31 @@ Medical Physician
 
 This module extends Odoo Medical with functionality for medical physicians.
 
+Physicians
+----------
+This introduce a new type of partner "Medical Physician".
+
+Physicians can be defined with a specialty, a calendar and a list of services/treatment which can be offered.
+
+Physician Services
+------------------
+Services provided by the Physician at a specific medical center.
+
+A physician could have "surgeries" on one center but only "general consultation" in 2 other centers.
+
+This can be used as a technical base to handle the same service with different prices at each medical center.
+
+Medical Specialties
+-------------------
+A referential of Medical Specialties.
+
+Example:
+
+ - General Practitioner
+ - Cardiology
+ - Plastic surgeon
+
+
 Usage
 =====
 

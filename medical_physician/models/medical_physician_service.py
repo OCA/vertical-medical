@@ -23,6 +23,7 @@ class MedicalPhysicianService(models.Model):
         comodel_name='product.product',
         required=True,
         ondelete='restrict',
+        domain="[('type', '=', 'service')]",
     )
     physician_id = fields.Many2one(
         string='Physician',
