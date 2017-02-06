@@ -55,11 +55,11 @@
         <field name="ref">576-01-3001</field>
         <field name="gender">female</field>
     </record>
-  
+
     <record id="medical_physician_physician_3" model="medical.physician">
         <field name="partner_id" ref="medical_physician.res_partner_physician_3" />
         <field name="specialty_id" ref="medical_specialty_gp" />
         <field name="info">General practitioner, supplier</field>
     </record>
-        
+
 </odoo>
