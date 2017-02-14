@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical_medication_template_template_9" model="medical.medication.template">
+        <field name="medicament_id" ref="sale_crm_medical_prescription.medical_medicament_penicillin_1" />
+        <field name="quantity">1</field>
+        <field name="dose_uom_id" ref="product.product_uom_categ_unit" />
+        <field name="frequency">8</field>
+        <field name="frequency_uom_id" ref="medical_medication.product_uom_hour" />
+        <field name="duration">10</field>
+        <field name="duration_uom_id" ref="medical_medication.product_uom_day" />
+        <field name="medication_dosage_id" ref="medical_medication.307469008" />
+    </record>
+
+    <record id="medical_patient_medication_medication_9" model="medical.patient.medication">
+        <field name="medication_template_id" ref="sale_crm_medical_prescription.medical_medication_template_template_9" />
+        <field name="patient_id" ref="sale_crm_medical_prescription.medical_patient_patient_10" />
+        <field name="physician_id" ref="sale_crm_medical_prescription.medical_physician_physician_6" />
+        <field name="date_start_treatment">1980-10-10</field>
+        <field name="medicament_id" ref="sale_crm_medical_prescription.medical_medicament_penicillin_1" />
+    </record>
+
+</odoo>

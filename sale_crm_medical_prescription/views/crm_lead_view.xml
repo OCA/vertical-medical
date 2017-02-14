@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="crm_case_form_view_oppor" model="ir.ui.view">
+        <field name="name">crm.lead.form</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="sale_crm.crm_case_form_view_oppor" />
+        <field name="arch" type="xml">
+            <xpath expr="//field" position="before">
+                <field name="is_prescription" invisible="True" />
+            </xpath>
+            <xpath expr="//button[@attrs=&quot;{'invisible': [('probability', '=', 0)]}&quot;]"
+                   position="attributes">
+                <attribute name="attrs">{'invisible': ['|', ('probability', '=', 0),
+                                                    ('is_prescription', '=', True)]}</attribute>
+            </xpath>
+            <xpath expr="//button[@attrs=&quot;{'invisible': [('probability', '>', 0)]}&quot;]"
+                   position="attributes">
+                <attribute name="attrs">{'invisible': ['|', ('probability', '>', 0),
+                                                    ('is_prescription', '=', True)]}</attribute>
+            </xpath>
+            <xpath expr="//button" position="after">
+                <button string="New Quotation"
+                        name="%(sale_medical_prescription.medical_sale_wizard_action)d"
+                        type="action"
+                        class="oe_highlight"
+                        attrs="{'invisible': [('is_prescription', '=', False)]}"
+                        context="{
+                            'default_prescription_line_ids': prescription_order_line_ids,
+                            'default_pharmacy_id': pharmacy_id,
+                            'default_split_orders': 'patient',
+                            'default_state': 'new',
+                        }" />
+            </xpath>
+            <xpath expr="//page" position="before">
+                <page string="Medical"
+                        attrs="{'invisible': [('is_prescription', '=', False)]}">
+                    <group name="medical_group">
+                        <field name="pharmacy_id" />
+                        <field name="patient_ids" />
+                        <field name="prescription_order_line_ids">
+                            <field name="prescription_order_id" />
+                            <field name="physician_id" />
+                            <field name="patient_id" />
+                            <field name="medicament_id" />
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
