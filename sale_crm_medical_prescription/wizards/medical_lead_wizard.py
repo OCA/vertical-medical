@@ -2,12 +2,8 @@
 # Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, api, fields, _
+from openerp import api, fields, models
 from collections import defaultdict
-import logging
-
-
-_logger = logging.getLogger(__name__)
 
 
 class MedicalLeadWizard(models.TransientModel):
@@ -23,71 +19,62 @@ class MedicalLeadWizard(models.TransientModel):
     )
     pharmacy_id = fields.Many2one(
         string='Pharmacy',
-        help=_('Pharmacy to dispense orders from'),
+        help='Pharmacy to dispense orders from',
         comodel_name='medical.pharmacy',
         required=True,
         default=lambda s: s._compute_default_pharmacy(),
     )
-    split_orders = fields.Selection([
-        ('partner', 'By Customer'),
-        ('patient', 'By Patient'),
-        ('all', 'By Rx Line'),
-    ],
+    split_orders = fields.Selection(
+        string='Split Orders',
+        selection=[
+            ('patient', 'By Patient'),
+        ],
         default='patient',
         required=True,
-        help=_('How to split the new orders'),
+        help='How to split the new orders',
     )
 
-    def _compute_default_session(self, ):
+    def _compute_default_session(self):
         return self.env['medical.prescription.order.line'].browse(
             self._context.get('active_ids')
         )
 
-    def _compute_default_pharmacy(self, ):
+    def _compute_default_pharmacy(self):
         default_order_lines = self._compute_default_session()
         if len(default_order_lines):
             return default_order_lines[0].prescription_order_id.partner_id
 
     @api.multi
-    def action_create_leads(self, ):
-
+    def action_create_leads(self):
         order_map = defaultdict(list)
+
         for rx_line in self.prescription_line_ids:
-            if self.split_orders == 'partner':
-                raise NotImplementedError(_(
-                    'Patient and Customers are currently identical concepts.'
-                ))
-            elif self.split_orders == 'patient':
-                order_map[rx_line.patient_id].append(rx_line)
-            else:
-                order_map[None].append(rx_line)
+            order_map[rx_line.patient_id].append(rx_line)
 
-        lead_obj = self.env['crm.lead']
+        lead_obj = self.env['crm.lead'].browse()
         lead_ids = lead_obj
-        for patient_id, order in order_map.items():
 
+        for patient_id, rx_orders in order_map.items():
             partner_id = patient_id.partner_id
-            order_lines = [(4, l.id, 0) for l in order]
+            rx_order_lines = [(4, rx_order.id, 0) for rx_order in rx_orders]
+
             lead_ids += lead_obj.create({
                 'partner_id': partner_id.id,
                 'email_from': partner_id.email,
                 'phone': partner_id.phone,
                 'pharmacy_id': self.pharmacy_id.id,
-                'prescription_order_line_ids': order_lines,
+                'prescription_order_line_ids': rx_order_lines,
                 'is_prescription': True,
-                'name': ', '.join(l.name for l in order)
+                'name': ', '.join(rx_order.name for rx_order in rx_orders),
             })
-
-        _logger.debug('Created %s', lead_ids)
 
         model_obj = self.env['ir.model.data']
         form_id = model_obj.xmlid_to_object('crm.crm_case_form_view_oppor')
         tree_id = model_obj.xmlid_to_object('crm.crm_case_tree_view_oppor')
         action_id = model_obj.xmlid_to_object('crm.crm_lead_action_activities')
         context = self._context.copy()
-        _logger.debug('%s %s %s', form_id, tree_id, action_id)
-        lead_ids = [l.id for l in lead_ids]
 
+        lead_ids = [lead.id for lead in lead_ids]
         return {
             'name': action_id.name,
             'help': action_id.help,

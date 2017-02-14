@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
+# Copyright 2016 LasLabs Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models, api
+from openerp import api, fields, models
 
 
 class CrmLead(models.Model):
@@ -27,24 +27,28 @@ class CrmLead(models.Model):
     prescription_order_line_ids = fields.Many2many(
         string='Prescription Lines',
         comodel_name='medical.prescription.order.line',
-        # readonly=True,
     )
     is_prescription = fields.Boolean(
+        string='Prescription',
         readonly=True,
         default=False,
-        compute='_compute_prescription_order_and_patient_ids'
+        compute='_compute_prescription_order_and_patient_ids',
     )
 
     @api.multi
-    def _compute_prescription_order_and_patient_ids(self, ):
-        for rec_id in self:
-            prescription_ids = self.env['medical.prescription.order']
-            patient_ids = self.env['medical.patient']
-            for line_id in rec_id.prescription_order_line_ids:
+    def _compute_prescription_order_and_patient_ids(self):
+        prescription_ids = self.env['medical.prescription.order']
+        patient_ids = self.env['medical.patient']
+
+        for record in self:
+            for line_id in record.prescription_order_line_ids:
+
                 if line_id.prescription_order_id not in prescription_ids:
                     prescription_ids += line_id.prescription_order_id
+
                 if line_id.patient_id not in patient_ids:
                     patient_ids += line_id.patient_id
-            rec_id.prescription_order_ids = prescription_ids
-            rec_id.is_prescription = len(prescription_ids) > 0
-            rec_id.patient_ids = patient_ids
+
+            record.prescription_order_ids = prescription_ids
+            record.is_prescription = len(prescription_ids) > 0
+            record.patient_ids = patient_ids

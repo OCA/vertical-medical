@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="res_partner_patient_10" model="res.partner">
+        <field name="name">Donahue Dunkinsale</field>
+        <field name="city">Las Vegas</field>
+        <field name="state_id" ref="base.state_us_23" />
+        <field name="country_id" ref="base.us" />
+        <field name="zip">89130</field>
+        <field name="street">1432 Example Highway</field>
+        <field name="email">d.dunkinsale@example.com</field>
+        <field name="phone">+1 (702) 999-1111</field>
+        <field name="ref">530-47-8387</field>
+        <field name="parent_id" ref="base.partner_demo" />
+        <field name="type">invoice</field>
+    </record>
+
+    <record id="medical_patient_patient_10" model="medical.patient">
+        <field name="partner_id" ref="sale_crm_medical_prescription.res_partner_patient_10" />
+        <field name="dob">1962-11-08</field>
+        <field name='gender'>m</field>
+    </record>
+
+</odoo>
