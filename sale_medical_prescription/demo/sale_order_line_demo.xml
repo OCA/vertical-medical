@@ -10,7 +10,7 @@
         <field name="product_uom" ref="product.product_uom_unit" />
         <field name="name">[ADV] Advil</field>
         <field name="product_id" ref="medical_medicament.product_product_advil_1" />
-        <field name="product_uom_qty">4</field>
+        <field name="product_uom_qty">2</field>
         <field name="price_unit">0.12</field>
     </record>
 
@@ -20,7 +20,7 @@
         <field name="product_uom" ref="product.product_uom_unit" />
         <field name="name">[ADV-XSTNGTH] Advil Extra Strength</field>
         <field name="product_id" ref="medical_medicament.product_product_advil_2" />
-        <field name="product_uom_qty">100</field>
+        <field name="product_uom_qty">50</field>
         <field name="price_unit">0.46</field>
     </record>
 
@@ -30,7 +30,7 @@
         <field name="product_uom" ref="product.product_uom_unit" />
         <field name="name">[ADV] Advil</field>
         <field name="product_id" ref="medical_medicament.product_product_advil_1" />
-        <field name="product_uom_qty">10</field>
+        <field name="product_uom_qty">5</field>
         <field name="price_unit">0.12</field>
     </record>
 
@@ -40,7 +40,7 @@
         <field name="product_uom" ref="product.product_uom_unit" />
         <field name="name">[ADV] Advil</field>
         <field name="product_id" ref="medical_medicament.product_product_advil_1" />
-        <field name="product_uom_qty">180</field>
+        <field name="product_uom_qty">90</field>
         <field name="price_unit">0.12</field>
     </record>
 
@@ -50,7 +50,7 @@
         <field name="product_uom" ref="product.product_uom_unit" />
         <field name="name">[TRUV] Truvada</field>
         <field name="product_id" ref="medical_medication.product_product_truvada_1" />
-        <field name="product_uom_qty">300</field>
+        <field name="product_uom_qty">150</field>
         <field name="price_unit">3.33</field>
     </record>
 
@@ -60,7 +60,7 @@
         <field name="product_uom" ref="product.product_uom_unit" />
         <field name="name">[ARLN] Aralen</field>
         <field name="product_id" ref="medical_medication.product_product_aralen_1" />
-        <field name="product_uom_qty">250</field>
+        <field name="product_uom_qty">125</field>
         <field name="price_unit">1.12</field>
     </record>
 
@@ -70,7 +70,7 @@
         <field name="product_uom" ref="product.product_uom_unit" />
         <field name="name">[SIMV] Simvastatin</field>
         <field name="product_id" ref="sale_medical_prescription.product_product_simv_1" />
-        <field name="product_uom_qty">10</field>
+        <field name="product_uom_qty">5</field>
         <field name="price_unit">1.46</field>
     </record>
 
@@ -80,7 +80,7 @@
         <field name="product_uom" ref="product.product_uom_unit" />
         <field name="name">[SIMV-2] Simvastatin 2</field>
         <field name="product_id" ref="sale_medical_prescription.product_product_simv_2" />
-        <field name="product_uom_qty">10</field>
+        <field name="product_uom_qty">5</field>
         <field name="price_unit">1.27</field>
     </record>
 
@@ -90,7 +90,7 @@
         <field name="product_uom" ref="product.product_uom_unit" />
         <field name="name">[SIMV-2] Simvastatin 2</field>
         <field name="product_id" ref="sale_medical_prescription.product_product_simv_2" />
-        <field name="product_uom_qty">10</field>
+        <field name="product_uom_qty">5</field>
         <field name="price_unit">1.27</field>
     </record>
 
