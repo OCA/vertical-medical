@@ -1,35 +1,14 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    Author: Dave Lasley <dave@laslabs.com>
-#    Copyright: 2015 LasLabs, Inc [https://laslabs.com]
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Copyright 2015-2017 LasLabs Inc.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models, api
+from openerp import api, fields, models
 
 
 class MedicalInsuranceTemplate(models.Model):
     _name = 'medical.insurance.template'
     _description = 'Medical Insurance Templates'
-    _inherits = {'product.product': 'product_id', }
-    name = fields.Char(
-        required=True,
-        help='Insurance Plan Name',
-    )
+    _inherits = {'product.product': 'product_id'}
     plan_number = fields.Char(
         required=True,
         help='Identification number for plan',
@@ -67,3 +46,19 @@ class MedicalInsuranceTemplate(models.Model):
     def create(self, vals):
         vals['is_insurance_plan'] = True
         return super(MedicalInsuranceTemplate, self).create(vals)
+
+    @api.multi
+    @api.depends('product_id.name',
+                 'insurance_company_id.name',
+                 'plan_number',
+                 )
+    def name_get(self):
+        result = []
+        for record in self:
+            name = "%s (%s #%s)" % (
+                record.product_id.name,
+                record.insurance_company_id.name,
+                record.plan_number,
+            )
+            result.append((record.id, name))
+        return result
