@@ -1,12 +1,19 @@
-.. image:: https://img.shields.io/badge/license-AGPL--3-blue.svg
-    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
-    :alt: License: AGPL-3
+.. image:: https://img.shields.io/badge/license-LGPL--3-blue.svg
+    :target: http://www.gnu.org/licenses/LGPL-3.0-standalone.html
+    :alt: License: LGPL-3
 
 ===============================
 Medical Prescription Sale Stock
 ===============================
 
-Extension of sale_medical_prescription that allows for a pharmacy warehouse.
+* This module adds dispense logic to prescription sale orders and integrates with the process of stock and inventory
+  management found in the Odoo Inventory Management (stock) app. This also extends to OTC orders as well.
+
+* Prescription order lines in the Medical panel will be highlighted red in the
+  respective tree views if they cannot be dispensed due to lack of stock inventory available.
+
+* The prescription order lines will also be red if there is a Date Stop Treatment defined and the current date is
+  greater than the stop date.
 
 Usage
 =====
@@ -18,7 +25,6 @@ Usage
 Known Issues / Roadmap
 ======================
 
-* Improve and provide a full description for this module into the README.rst
 * Implement determination for what drugs can be substituted (in _check_product)
 
 Bug Tracker
@@ -27,7 +33,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues
 <https://github.com/OCA/vertical-medical/issues>`_. In case of trouble, please
 check there if your issue has already been reported. If you spotted it first,
-help us smashing it by providing a detailed and welcomed feedback.
+help us smash it by providing detailed and welcomed feedback.
 
 Credits
 =======

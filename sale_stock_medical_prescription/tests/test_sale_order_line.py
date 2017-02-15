@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016 LasLabs Inc.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# Copyright 2016-2017 LasLabs Inc.
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
 from openerp.tests.common import TransactionCase
 from openerp.exceptions import ValidationError
@@ -34,6 +34,25 @@ class TestSaleOrderLine(TransactionCase):
         self.assertEquals(
             self.order_line_12.dispense_qty,
             0.0,
+        )
+
+    def test_check_can_dispense_dispense_qty(self):
+        """ Test ValidationError dispense_qty greater than can_dispense_qty """
+        with self.assertRaises(ValidationError):
+            self.order_line_13.dispense_qty = 18
+
+    def test_check_product_with_context(self):
+        """ Test returns true if rx_force in context """
+        self.assertTrue(
+            self.order_line_12.with_context(
+                {'__rx_force__': True})._check_product()
+        )
+
+    def test_check_can_dispense_with_context(self):
+        """ Test returns true if rx_force in context """
+        self.assertTrue(
+            self.order_line_12.with_context(
+                {'__rx_force__': True})._check_can_dispense()
         )
 
     def test_compute_dispense_qty_same_uom(self):
@@ -118,12 +137,3 @@ class TestSaleOrderLine(TransactionCase):
             self.fail(
                 'Should skip validations if no rx_line.'
             )
-
-    def test_check_patient(self):
-        """ Test changing patient to incorrect one raise ValidationError """
-        patient = self.env['medical.patient'].search([
-            ('id', '!=', self.order_line_12.patient_id.id),
-            ('id', '!=', self.rx_line_12.patient_id.id)
-        ], limit=1)
-        with self.assertRaises(ValidationError):
-            self.order_line_12.patient_id = patient

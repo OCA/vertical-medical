@@ -1,16 +1,13 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016 LasLabs Inc.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# Copyright 2016-2017 LasLabs Inc.
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
-from openerp import api, fields, models, _
+from openerp import _, api, fields, models
 from openerp.exceptions import ValidationError
-import logging
-
-
-_logger = logging.getLogger(__name__)
 
 
 class SaleOrderLine(models.Model):
+
     _inherit = 'sale.order.line'
 
     dispense_qty = fields.Float(
@@ -56,24 +53,6 @@ class SaleOrderLine(models.Model):
                     ))
                 else:
                     pass
-
-    @api.multi
-    @api.constrains('patient_id', 'prescription_order_line_id')
-    def _check_patient(self):
-        if self.env.context.get('__rx_force__'):
-            return True
-        for record in self:
-            if not record.prescription_order_line_id:
-                continue
-            rx_line = record.prescription_order_line_id
-            if record.patient_id != rx_line.patient_id:
-                raise ValidationError(_(
-                    'Patients must be same on Order and Rx lines. '
-                    'Got %s on order line %d, expected %s from rx line %d'
-                ) % (
-                    record.patient_id.name, record.id,
-                    rx_line.patient_id.name, rx_line.id,
-                ))
 
     @api.multi
     @api.constrains('dispense_qty', 'prescription_order_line_id', 'state')

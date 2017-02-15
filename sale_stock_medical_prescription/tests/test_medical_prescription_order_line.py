@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016 LasLabs Inc.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# Copyright 2016-2017 LasLabs Inc.
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
 from openerp.tests.common import TransactionCase
-from openerp.exceptions import ValidationError
 
 
 class TestMedicalPrescriptionOrderLine(TransactionCase):
@@ -106,12 +105,3 @@ class TestMedicalPrescriptionOrderLine(TransactionCase):
             self.rx_line_12.can_dispense_qty,
             0,
         )
-
-    def test_check_patient(self):
-        """ Test changing patient to incorrect one raise ValidationError """
-        patient = self.env['medical.patient'].search([
-            ('id', '!=', self.order_line_12.patient_id.id),
-            ('id', '!=', self.rx_line_12.patient_id.id)
-        ], limit=1)
-        with self.assertRaises(ValidationError):
-            self.rx_line_12.patient_id = patient

@@ -1,16 +1,12 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016 LasLabs Inc.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# Copyright 2016-2017 LasLabs Inc.
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
-from openerp import api, fields, models, _
-from openerp.exceptions import ValidationError
-
-import logging
-
-_logger = logging.getLogger(__name__)
+from openerp import api, fields, models
 
 
 class MedicalPrescriptionOrderLine(models.Model):
+
     _inherit = 'medical.prescription.order.line'
 
     dispense_uom_id = fields.Many2one(
@@ -18,7 +14,7 @@ class MedicalPrescriptionOrderLine(models.Model):
         string='Dispense UoM',
         help='Dispense Unit of Measure',
         required=True,
-        related='medicament_id.uom_id',
+        default=lambda s: s._default_dispense_uom_id(),
     )
     dispensed_ids = fields.Many2many(
         string='Dispensings',
@@ -67,6 +63,12 @@ class MedicalPrescriptionOrderLine(models.Model):
         compute='_compute_can_dispense_and_qty',
         help='Amount that can be dispensed (using medicine dosage)',
     )
+
+    @api.model
+    def _default_dispense_uom_id(self):
+        return self.env['product.uom'].browse(
+            self.env['product.template']._get_uom_id()
+        )
 
     @api.multi
     @api.depends(
@@ -142,18 +144,3 @@ class MedicalPrescriptionOrderLine(models.Model):
             record.active_dispense_qty = total
             record.can_dispense = record.qty > total
             record.can_dispense_qty = record.qty - total
-
-    @api.multi
-    @api.constrains('patient_id', 'sale_order_line_ids')
-    def _check_patient(self):
-        for record in self:
-            _logger.info('LOGS')
-            for sale_line_id in record.sale_order_line_ids:
-                _logger.info(sale_line_id)
-                _logger.info(sale_line_id.patient_id)
-                _logger.info(record.patient_id)
-                if sale_line_id.patient_id != record.patient_id:
-                    raise ValidationError(_(
-                        'Cannot change the patient on a prescription while it '
-                        'is linked to active sale order(s).'
-                    ))

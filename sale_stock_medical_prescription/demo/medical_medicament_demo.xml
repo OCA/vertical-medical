@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2016 LasLabs Inc.
-     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<!-- Copyright 2016-2017 LasLabs Inc.
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
 
 <odoo>
 
@@ -16,7 +16,8 @@
         <field name="list_price">1.50</field>
         <field name="currency_id" ref="base.USD" />
         <field name="default_code">OMCLN</field>
-        <!-- Commented out for hooks testing
+        <!-- Commented out as post_init_hook will set this to product
+             (shown here so it's known what the value will/should be)
         <field name="type">product</field> -->
     </record>
 
