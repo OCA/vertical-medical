@@ -1,11 +1,12 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
-    :alt: License: AGPL-3
+   :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
+   :alt: License: AGPL-3
 
 =================
 Medical Base - US
 =================
 
-Provides base logic for Medical US Locale, such as
+This module extends the functionality of medical_base to support a US locale with logic such as:
  * Luhn Formula Verification (For Social Security #, NPI)
  * DEA # Verification (For DEA ID)
 
@@ -42,6 +43,7 @@ Contributors
 ------------
 
 * Dave Lasley <dave@laslabs.com>
+* Kelly Lougheed <kelly@smdrugstore.com>
 
 Maintainer
 ----------
