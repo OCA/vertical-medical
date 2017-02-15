@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2015-2017 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <!-- History Config [Config/History] -->
+
+    <menuitem id="medical_root_history"
+              name="History"
+              parent="medical.medical_root_sub"
+              sequence="30" />
+
+
+    <!-- Medical History Entries  [Config/History/Entries] -->
+
+    <menuitem id="medical_history_entry_menu"
+              name="Entries"
+              parent="medical_root_history"
+              sequence="50"
+              action="medical_history_entry_action" />
+
+    <!-- Medical History Entry  [Config/History/Entries] -->
+
+    <menuitem id="medical_history_type_menu"
+              name="Types"
+              parent="medical_root_history"
+              sequence="100"
+              action="medical_history_type_action" />
+
+</odoo>
