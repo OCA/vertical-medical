@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright 2015 ACSONE SA/NV
 # Copyright 2016 LasLabs Inc.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
 {
     "name": "Medical Medication",
@@ -10,7 +10,7 @@
     "category": "Medical",
     "website": "http://www.acsone.eu",
     "author": "LasLabs, ACSONE SA/NV, Odoo Community Association (OCA)",
-    "license": "AGPL-3",
+    "license": "LGPL-3",
     "application": False,
     "installable": True,
     "depends": [
