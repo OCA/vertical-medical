@@ -1,14 +1,20 @@
-.. image:: https://img.shields.io/badge/license-AGPL--3-blue.svg
-    :alt: License: AGPL-3
+.. image:: https://img.shields.io/badge/license-LGPL--3-blue.svg
+    :alt: License: LGPL-3
 
 Odoo Medical Insurance
-========================
+======================
 
 Extension of medical that provides Insurance concept
 
 
 Usage
 =====
+
+#. Go to Medical -> Configuration -> Insurance
+#. Add a new provider by going to Insurance Providers and pressing "Create"
+#. Add or import a new plan by going to Insurance Plans and pressing "Create" or "Import"
+#. Create an insurance plan template by going to Insurance Plan Templates
+and pressing "Create" or "Import"
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
