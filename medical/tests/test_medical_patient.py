@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright 2015 ACSONE SA/NV
 # Copyright 2016 LasLabs Inc.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
 from dateutil.relativedelta import relativedelta
 from openerp.exceptions import ValidationError

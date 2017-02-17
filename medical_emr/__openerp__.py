@@ -41,7 +41,7 @@
     'category': 'Medical',
     'depends': ['medical'],
     "website": "http://github.com/oca/vertical-medical",
-    'license': "AGPL-3",
+    'license': "LGPL-3",
     "data": [
         'views/medical_sequence.xml',
         'views/medical_secondary_condition_view.xml',

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright 2004-2009 Tiny SPRL
 # Copyright 2016 LasLabs Inc.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
 {
     "name": "Medical Lab",
@@ -9,7 +9,7 @@
     "author": "LasLabs, Odoo Community Association (OCA)",
     "category": "Medical",
     "website": "https://github.com/OCA/vertical-medical",
-    "license": "AGPL-3",
+    "license": "LGPL-3",
     "installable": True,
     "depends": [
         "medical_pathology",

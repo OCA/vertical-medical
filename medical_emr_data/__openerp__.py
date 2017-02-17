@@ -41,7 +41,7 @@
     'category': 'Medical',
     'depends': ['medical_emr'],
     "website": "http://launchpad.net/medical",
-    "licence": "AGPL-3",
+    "licence": "LGPL-3",
     "data": [
         'data/medicament_categories.xml',
         'data/WHO_products.xml',

@@ -1,5 +1,5 @@
-.. image:: https://img.shields.io/badge/license-AGPL--3-blue.svg
-    :alt: License: AGPL-3
+.. image:: https://img.shields.io/badge/license-LGPL--3-blue.svg
+    :alt: License: LGPL-3
 
 Odoo Medical Family
 ========================

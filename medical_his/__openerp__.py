@@ -42,7 +42,7 @@
     'depends': ['medical'],
     'application': True,
     'website': 'https://github.com/OCA/vertical-medical/',
-    'license': "AGPL-3",
+    'license': "LGPL-3",
     'data': [
         'security/ir.model.access.csv',
         'views/medical_hospital_bed_view.xml',
