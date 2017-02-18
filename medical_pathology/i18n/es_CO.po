@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vertical-medical (9.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-28 03:43+0000\n"
+"POT-Creation-Date: 2017-04-29 02:51+0000\n"
 "PO-Revision-Date: 2016-12-27 22:03+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>\n"
 "Language-Team: Spanish (Colombia) (http://www.transifex.com/oca/OCA-vertical-medical-9-0/language/es_CO/)\n"
@@ -162,8 +162,8 @@ msgid "HIV/AIDS"
 msgstr "VIH/SIDA"
 
 #. module: medical_pathology
-#: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_category_id_3875
-#: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_code_type_id_3883
+#: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_category_id_4460
+#: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_code_type_id_4468
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_group_id
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_id
 msgid "ID"
