@@ -1,0 +1,153 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * sale_crm_medical_prescription
+# 
+# Translators:
+# Gustavo Orozco H. <gustavo.orozco.h@app-247.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-17 17:34+0000\n"
+"PO-Revision-Date: 2017-02-17 17:34+0000\n"
+"Last-Translator: Gustavo Orozco H. <gustavo.orozco.h@app-247.com>, 2017\n"
+"Language-Team: Spanish (Colombia) (https://www.transifex.com/oca/teams/23907/es_CO/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es_CO\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: sale_crm_medical_prescription
+#: selection:medical.lead.wizard,split_orders:0
+msgid "By Patient"
+msgstr ""
+
+#. module: sale_crm_medical_prescription
+#: model:ir.ui.view,arch_db:sale_crm_medical_prescription.medical_rx_lead_wizard_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: sale_crm_medical_prescription
+#: model:ir.actions.act_window,name:sale_crm_medical_prescription.medical_rx_lead_wizard_action
+#: model:ir.ui.view,arch_db:sale_crm_medical_prescription.medical_rx_lead_wizard_view_form
+msgid "Create Lead(s)"
+msgstr ""
+
+#. module: sale_crm_medical_prescription
+#: model:ir.model.fields,field_description:sale_crm_medical_prescription.field_medical_lead_wizard_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: sale_crm_medical_prescription
+#: model:ir.model.fields,field_description:sale_crm_medical_prescription.field_medical_lead_wizard_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: sale_crm_medical_prescription
+#: model:ir.model.fields,field_description:sale_crm_medical_prescription.field_medical_lead_wizard_display_name
+msgid "Display Name"
+msgstr "Mostrar Nombre"
+
+#. module: sale_crm_medical_prescription
+#: model:ir.model.fields,help:sale_crm_medical_prescription.field_medical_lead_wizard_split_orders
+msgid "How to split the new orders"
+msgstr ""
+
+#. module: sale_crm_medical_prescription
+#: model:ir.model.fields,field_description:sale_crm_medical_prescription.field_medical_lead_wizard_id
+msgid "ID"
+msgstr "ID"
+
+#. module: sale_crm_medical_prescription
+#: model:ir.model.fields,field_description:sale_crm_medical_prescription.field_medical_lead_wizard___last_update
+msgid "Last Modified on"
+msgstr "Última Modificación en"
+
+#. module: sale_crm_medical_prescription
+#: model:ir.model.fields,field_description:sale_crm_medical_prescription.field_medical_lead_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Última Actualización por"
+
+#. module: sale_crm_medical_prescription
+#: model:ir.model.fields,field_description:sale_crm_medical_prescription.field_medical_lead_wizard_write_date
+msgid "Last Updated on"
+msgstr "Última Actualización en"
+
+#. module: sale_crm_medical_prescription
+#: model:ir.model,name:sale_crm_medical_prescription.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr ""
+
+#. module: sale_crm_medical_prescription
+#: model:ir.ui.view,arch_db:sale_crm_medical_prescription.crm_case_form_view_oppor
+msgid "Medical"
+msgstr "Médico"
+
+#. module: sale_crm_medical_prescription
+#: model:ir.model,name:sale_crm_medical_prescription.model_medical_lead_wizard
+msgid "Medical Lead Wizard"
+msgstr ""
+
+#. module: sale_crm_medical_prescription
+#: model:ir.ui.view,arch_db:sale_crm_medical_prescription.crm_case_form_view_oppor
+msgid "New Quotation"
+msgstr ""
+
+#. module: sale_crm_medical_prescription
+#: model:ir.model.fields,field_description:sale_crm_medical_prescription.field_crm_lead_patient_ids
+msgid "Patients"
+msgstr "Pacientes"
+
+#. module: sale_crm_medical_prescription
+#: model:medical.medicament,name:sale_crm_medical_prescription.medical_medicament_penicillin_1
+#: model:product.product,name:sale_crm_medical_prescription.medical_medicament_penicillin_1_product_product
+#: model:product.product,name:sale_crm_medical_prescription.product_product_penicillin_1
+#: model:product.template,name:sale_crm_medical_prescription.product_product_penicillin_1_product_template
+msgid "Penicillin"
+msgstr ""
+
+#. module: sale_crm_medical_prescription
+#: model:medical.medicament,description_sale:sale_crm_medical_prescription.medical_medicament_penicillin_1
+#: model:product.product,description_sale:sale_crm_medical_prescription.medical_medicament_penicillin_1_product_product
+#: model:product.product,description_sale:sale_crm_medical_prescription.product_product_penicillin_1
+#: model:product.template,description_sale:sale_crm_medical_prescription.product_product_penicillin_1_product_template
+msgid "Penicillin Tablet 500mg"
+msgstr ""
+
+#. module: sale_crm_medical_prescription
+#: model:ir.model.fields,field_description:sale_crm_medical_prescription.field_crm_lead_pharmacy_id
+#: model:ir.model.fields,field_description:sale_crm_medical_prescription.field_medical_lead_wizard_pharmacy_id
+msgid "Pharmacy"
+msgstr "Farmacia"
+
+#. module: sale_crm_medical_prescription
+#: model:ir.model.fields,help:sale_crm_medical_prescription.field_medical_lead_wizard_pharmacy_id
+msgid "Pharmacy to dispense orders from"
+msgstr ""
+
+#. module: sale_crm_medical_prescription
+#: model:ir.model.fields,field_description:sale_crm_medical_prescription.field_crm_lead_is_prescription
+#: model:ir.model.fields,field_description:sale_crm_medical_prescription.field_medical_lead_wizard_prescription_line_ids
+msgid "Prescription"
+msgstr "Prescripción"
+
+#. module: sale_crm_medical_prescription
+#: model:ir.model.fields,field_description:sale_crm_medical_prescription.field_crm_lead_prescription_order_line_ids
+msgid "Prescription Lines"
+msgstr ""
+
+#. module: sale_crm_medical_prescription
+#: model:ir.model.fields,field_description:sale_crm_medical_prescription.field_crm_lead_prescription_order_ids
+msgid "Prescriptions"
+msgstr ""
+
+#. module: sale_crm_medical_prescription
+#: model:ir.ui.view,arch_db:sale_crm_medical_prescription.medical_rx_lead_wizard_view_form
+msgid "Rx => Lead(s)"
+msgstr ""
+
+#. module: sale_crm_medical_prescription
+#: model:ir.model.fields,field_description:sale_crm_medical_prescription.field_medical_lead_wizard_split_orders
+msgid "Split Orders"
+msgstr ""

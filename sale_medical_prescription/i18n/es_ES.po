@@ -1,0 +1,791 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * sale_medical_prescription
+# 
+# Translators:
+# Fernando Lara <gennesis45@gmail.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-17 17:34+0000\n"
+"PO-Revision-Date: 2017-02-17 17:34+0000\n"
+"Last-Translator: Fernando Lara <gennesis45@gmail.com>, 2017\n"
+"Language-Team: Spanish (Spain) (https://www.transifex.com/oca/teams/23907/es_ES/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es_ES\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_pharmacy_sale_order_count
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_physician_sale_order_count
+msgid "# of Sales Order"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model,name:sale_medical_prescription.model_medical_prescription_order_line
+msgid "Abstract Medical Medication"
+msgstr "Imagen abstracta de una receta medica o logotipo"
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_patient_allergies
+msgid "Allergies"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: selection:medical.sale.wizard,split_orders:0
+msgid "By Patient"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: selection:medical.prescription.order,verify_method:0
+msgid "Called Doctor"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.ui.view,arch_db:sale_medical_prescription.medical_sale_temp_view_form
+#: model:ir.ui.view,arch_db:sale_medical_prescription.medical_sale_wizard_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_medicament_is_controlled
+msgid "Check this if the medicament is a controlled substance"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_patient_safety_cap_yn
+msgid ""
+"Check this if the patient prefers a safety cap on their prescription "
+"dispensings."
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_patient_counseling_yn
+msgid ""
+"Check this if the patient requires counseling on their prescription "
+"dispensings."
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_physician_is_verified
+msgid "Check this to indicate that this doctor is a verified entity"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_pharmacy_is_verified
+msgid "Check this to indicate that this pharmacy is a verified entity"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_company_id
+msgid "Company"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: selection:medical.sale.temp,state:0 selection:medical.sale.wizard,state:0
+msgid "Completed"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.ui.view,arch_db:sale_medical_prescription.medical_sale_wizard_view_form
+msgid "Continue Workflow"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_medicament_is_controlled
+msgid "Controlled Substance"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_pharmacy_payment_method_count
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_physician_payment_method_count
+msgid "Count Payment Method"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.ui.view,arch_db:sale_medical_prescription.medical_sale_temp_view_form
+msgid "Create"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.actions.act_window,name:sale_medical_prescription.medical_sale_wizard_action
+msgid "Create Quote(s)"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.ui.view,arch_db:sale_medical_prescription.medical_sale_wizard_view_form
+msgid "Create Sale(s)"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_line_temp_create_uid
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_create_uid
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_wizard_create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_line_temp_create_date
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_create_date
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_wizard_create_date
+msgid "Created on"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_partner_id
+msgid "Customer"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_pharmacy_property_stock_customer
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_physician_property_stock_customer
+msgid "Customer Location"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_sale_wizard_date_order
+msgid "Date For The New Orders"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_wizard_date_order
+msgid "Date order"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_sale_order_line_dispense_qty
+msgid "Dispense qty"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_line_temp_display_name
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_display_name
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_wizard_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: selection:medical.prescription.order,receive_method:0
+msgid "E-Prescription"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model,name:sale_medical_prescription.model_medical_medicament
+msgid "Email Thread"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_patient_existing_meds
+msgid "Existing meds"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: selection:medical.prescription.order,receive_method:0
+msgid "Fax"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_fiscal_position
+msgid "Fiscal Position"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.ui.view,arch_db:sale_medical_prescription.medical_prescription_order_view_form
+msgid "General"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.ui.view,arch_db:sale_medical_prescription.medical_sale_wizard_view_form
+msgid "Generate Template(s)"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_prescription_order_receive_method
+msgid "How the Rx was received"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_sale_wizard_split_orders
+msgid "How to split the new orders"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_line_temp_id
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_id
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_wizard_id
+msgid "ID"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: selection:medical.prescription.order,transfer_direction:0
+msgid "In"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_medicament_is_prescription
+msgid "Indicates if a prescription is required for this medicament"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_partner_invoice_id
+msgid "Invoice Partner"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_pharmacy_is_manufacturer
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_physician_is_manufacturer
+msgid "Is Manufacturer"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_line_temp___last_update
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp___last_update
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_wizard___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_line_temp_write_uid
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_write_uid
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_wizard_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_line_temp_write_date
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_write_date
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_wizard_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model,name:sale_medical_prescription.model_medical_patient
+msgid "Medical Patient"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model,name:sale_medical_prescription.model_medical_pharmacy
+msgid "Medical Pharmacy"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model,name:sale_medical_prescription.model_medical_physician
+msgid "Medical Physicians"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model,name:sale_medical_prescription.model_medical_prescription_order
+msgid "Medical Prescription Order"
+msgstr "Receta Medica"
+
+#. module: sale_medical_prescription
+#: model:ir.model,name:sale_medical_prescription.model_medical_sale_wizard
+msgid "Medical Sale Wizard"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_sale_order_line_medication_id
+msgid "Medication"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_prescription_order_line_verify_method
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_prescription_order_verify_method
+msgid "Method of Rx verification"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: selection:medical.prescription.order,transfer_direction:0
+msgid "None"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: selection:medical.sale.temp,state:0 selection:medical.sale.wizard,state:0
+msgid "Not Started"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: selection:medical.prescription.order,verify_method:0
+msgid "Not Verified"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_note
+msgid "Note"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:product.category,name:sale_medical_prescription.product_category_otc
+msgid "OTC"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: selection:medical.sale.wizard,state:0
+msgid "Open"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_line_temp_order_id
+msgid "Order"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_date_order
+msgid "Order Date"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_line_cnt
+msgid "Order Line Count"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_order_line
+#: model:ir.ui.view,arch_db:sale_medical_prescription.medical_sale_temp_view_form
+msgid "Order Lines"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_client_order_ref
+msgid "Order Reference"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_wizard_sale_wizard_ids
+#: model:ir.ui.view,arch_db:sale_medical_prescription.medical_sale_wizard_view_form
+msgid "Orders"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_sale_wizard_sale_wizard_ids
+msgid "Orders to create when wizard is completed"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_origin
+msgid "Origin"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.ui.view,arch_db:sale_medical_prescription.medical_sale_temp_view_form
+msgid "Other Information"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: selection:medical.prescription.order,transfer_direction:0
+msgid "Out"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_patient_id
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_sale_order_line_patient_id
+msgid "Patient"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_sale_temp_patient_id
+msgid "Patient (used for defaults when creating sale lines)"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,help:sale_medical_prescription.field_sale_order_line_patient_id
+msgid "Patient that is taking this medication"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_sale_order_patient_ids
+msgid "Patients"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_pharmacy_payment_method_ids
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_physician_payment_method_ids
+msgid "Payment Methods"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_payment_term
+msgid "Payment Term"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_pharmacy_id
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_wizard_pharmacy_id
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_sale_order_pharmacy_id
+#: model:product.category,name:sale_medical_prescription.product_category_medicament
+msgid "Pharmacy"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.ui.view,arch_db:sale_medical_prescription.medical_prescription_order_view_form
+msgid "Pharmacy Transfer"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_sale_wizard_pharmacy_id
+msgid "Pharmacy to dispense orders from"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: selection:medical.prescription.order,receive_method:0
+msgid "Phoned In"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: selection:medical.prescription.order,receive_method:0
+msgid "Physical Mail"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_prescription_order_ids
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_wizard_prescription_line_ids
+msgid "Prescription"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_line_temp_prescription_order_line_id
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_sale_order_line_prescription_order_line_id
+#: model:ir.ui.view,arch_db:sale_medical_prescription.view_order_form
+msgid "Prescription Line"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.ui.view,arch_db:sale_medical_prescription.medical_sale_wizard_view_form
+msgid "Prescription Line(s):"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_sale_order_prescription_order_line_ids
+msgid "Prescription Lines"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_medicament_is_prescription
+msgid "Prescription Required"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_prescription_wizard_id
+msgid "Prescription wizard id"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_sale_order_prescription_order_ids
+msgid "Prescriptions"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_pricelist_id
+msgid "Pricelist"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_line_temp_product_id
+msgid "Product"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model,name:sale_medical_prescription.model_product_category
+msgid "Product Category"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_project_id
+msgid "Project"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_patient_counseling_yn
+msgid "Provide Counseling"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_line_temp_product_uom_qty
+msgid "Quantity"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:product.category,name:sale_medical_prescription.product_category_rx
+msgid "RX"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_prescription_order_line_receive_date
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_prescription_order_receive_date
+msgid "Receive Date"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_prescription_order_receive_method
+msgid "Receive Method"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.ui.view,arch_db:sale_medical_prescription.medical_prescription_order_view_form
+msgid "Receiving"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.ui.view,arch_db:sale_medical_prescription.medical_sale_wizard_view_form
+msgid "Rx => Sale(s)"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.ui.view,arch_db:sale_medical_prescription.medical_prescription_order_line_view_search
+msgid "Sale Order"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_prescription_order_line_sale_order_line_ids
+msgid "Sale Order Lines"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_prescription_order_line_sale_order_ids
+msgid "Sale Orders"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.ui.view,arch_db:sale_medical_prescription.medical_prescription_order_line_view_form
+msgid "Sales"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model,name:sale_medical_prescription.model_sale_order
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_pharmacy_sale_order_ids
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_physician_sale_order_ids
+msgid "Sales Order"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model,name:sale_medical_prescription.model_sale_order_line
+msgid "Sales Order Line"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.ui.view,arch_db:sale_medical_prescription.medical_sale_temp_view_form
+msgid "Sales Order Lines"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_team_id
+msgid "Sales Team"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_user_id
+msgid "Salesperson"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_line_temp_sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_partner_shipping_id
+msgid "Ship To"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:medical.medicament,name:sale_medical_prescription.medical_medicament_simv_1
+#: model:product.product,name:sale_medical_prescription.medical_medicament_simv_1_product_product
+#: model:product.product,name:sale_medical_prescription.product_product_simv_1
+#: model:product.template,name:sale_medical_prescription.product_product_simv_1_product_template
+msgid "Simvastatin"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:medical.medicament,name:sale_medical_prescription.medical_medicament_simv_2
+#: model:product.product,name:sale_medical_prescription.medical_medicament_simv_2_product_product
+#: model:product.product,name:sale_medical_prescription.product_product_simv_2
+#: model:product.template,name:sale_medical_prescription.product_product_simv_2_product_template
+msgid "Simvastatin 2"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:medical.medicament,description_sale:sale_medical_prescription.medical_medicament_simv_1
+#: model:product.product,description_sale:sale_medical_prescription.medical_medicament_simv_1_product_product
+#: model:product.product,description_sale:sale_medical_prescription.product_product_simv_1
+#: model:product.template,description_sale:sale_medical_prescription.product_product_simv_1_product_template
+msgid "Simvastatin Tablet 200mg"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:medical.medicament,description_sale:sale_medical_prescription.medical_medicament_simv_2
+#: model:product.product,description_sale:sale_medical_prescription.medical_medicament_simv_2_product_product
+#: model:product.product,description_sale:sale_medical_prescription.product_product_simv_2
+#: model:product.template,description_sale:sale_medical_prescription.product_product_simv_2_product_template
+msgid "Simvastatin Tablet 400mg"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_wizard_split_orders
+msgid "Split Orders"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: selection:medical.sale.temp,state:0 selection:medical.sale.wizard,state:0
+msgid "Started"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_state
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_wizard_state
+msgid "State"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_line_temp_price_subtotal
+msgid "Subtotal"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.actions.act_window,name:sale_medical_prescription.medical_sale_temp_action
+msgid "Temp Sale for Rx"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model,name:sale_medical_prescription.model_medical_sale_temp
+msgid "Temporary order info for Sale2Rx workflow"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model,name:sale_medical_prescription.model_medical_sale_line_temp
+msgid "Temporary order line info for Sale2Rx workflow"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.ui.view,arch_db:sale_medical_prescription.medical_sale_temp_view_form
+msgid "Terms and conditions."
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:product.category,name:sale_medical_prescription.product_category_test_rx_descendant
+msgid "Test RX Descendant"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:product.category,name:sale_medical_prescription.product_category_test_rx_descendant_2
+msgid "Test RX Descendant 2"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_pharmacy_property_stock_customer
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_physician_property_stock_customer
+msgid ""
+"This stock location will be used, instead of the default one, as the "
+"destination location for goods you send to this partner"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_pharmacy_property_stock_supplier
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_physician_property_stock_supplier
+msgid ""
+"This stock location will be used, instead of the default one, as the source "
+"location for goods you receive from the current partner"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_temp_amount_untaxed
+msgid "Total Before Tax"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_prescription_order_transfer_direction
+msgid "Transfer Direction"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_prescription_order_transfer_pharmacy_id
+msgid "Transfer Pharmacy"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_prescription_order_transfer_ref
+msgid "Transfer Reference"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: selection:medical.prescription.order,receive_method:0
+msgid "Transferred In"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_line_temp_price_unit
+msgid "Unit Price"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_sale_line_temp_product_uom
+msgid "Unit of Measure"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_patient_safety_cap_yn
+msgid "Use Safety Cap"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_prescription_order_verify_user_id
+msgid "User that verified the prescription"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_pharmacy_property_stock_supplier
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_physician_property_stock_supplier
+msgid "Vendor Location"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_prescription_order_verify_date
+msgid "Verification Date"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_prescription_order_line_verify_method
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_prescription_order_verify_method
+msgid "Verification Method"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_pharmacy_is_verified
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_physician_is_verified
+msgid "Verified"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_pharmacy_verified_by_id
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_physician_verified_by_id
+msgid "Verified By"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_pharmacy_verified_date
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_physician_verified_date
+msgid "Verified Date"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,field_description:sale_medical_prescription.field_medical_prescription_order_verify_user_id
+msgid "Verify User"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_prescription_order_line_receive_date
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_prescription_order_receive_date
+msgid "When the Rx was received"
+msgstr ""
+
+#. module: sale_medical_prescription
+#: model:ir.model.fields,help:sale_medical_prescription.field_medical_prescription_order_verify_date
+msgid "When the prescription was verified"
+msgstr ""
