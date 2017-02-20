@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openerp>
-    <data>
+<odoo>
 
         <record id="medical_family_view_tree" model="ir.ui.view">
             <field name="name">medical.family.tree</field>
@@ -61,5 +60,4 @@
         <menuitem id="medical_family_menu" name="Family" parent="medical.medical_patient_root"
                   sequence="20" action="medical_family_action"/>
 
-    </data>
-</openerp>
+</odoo>
