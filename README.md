@@ -57,7 +57,7 @@ addon | version | summary
 --- | --- | ---
 [medical_emr](medical_emr/) | 8.0.1.1 (unported) | Medical EMR : Electronic Medical Record management for Medical
 [medical_emr_data](medical_emr_data/) | 8.0.1.0 (unported) | Medical EMR: Module Data
-[medical_family](medical_family/) | 8.0.1.1.0 (unported) | Medical Family
+[medical_family](medical_family/) | 9.0.1.0.0 (unported) | Medical Family
 [medical_his](medical_his/) | 8.0.1.1.0 (unported) | Medical Hospital
 [medical_insurance](medical_insurance/) | 8.0.1.1.0 (unported) | Medical Insurance
 [medical_insurance_us](medical_insurance_us/) | 8.0.1.1.0 (unported) | Medical Insurance - US
