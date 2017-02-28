@@ -1,35 +1,26 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-#    Author: Dave Lasley <dave@laslabs.com>
-#    Copyright: 2015 LasLabs, Inc.
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
+# Copyright 2016-2017 LasLabs Inc.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import fields, models
+from openerp import api, fields, models
 
 
 class MedicalPharmacy(models.Model):
-    _inherit = 'medical.pharmacy'
-    nabp_num = fields.Integer(
+    _inherit = ['medical.pharmacy', 'medical.abstract.npi']
+    _name = 'medical.pharmacy'
+
+    nabp_num = fields.Char(
         help='National Boards of Pharmacy Id #',
     )
-    medicaid_num = fields.Integer(
+    medicaid_num = fields.Char(
         help='Medicaid Id #',
     )
-    npi_num = fields.Integer(
+    npi_num = fields.Char(
         help="National Provider Identifier",
     )
+
+    @api.multi
+    @api.constrains('npi_num')
+    def _check_npi_num(self):
+        """ Implement Luhns Formula to validate NPI """
+        self._npi_constrains_helper('npi_num')
