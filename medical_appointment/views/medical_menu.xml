@@ -6,19 +6,15 @@
     @license AGPL-3
 -->
 
-<openerp>
-    <data>
+<odoo>
+    <menuitem id="medical_appointment_root"
+              name="Appointment"
+              parent="medical.medical_root"
+              sequence="20" />
 
-        <menuitem id="medical_appointment_root"
-                  name="Appointment"
-                  parent="medical.medical_root"
-                  sequence="20" />
-
-        <menuitem id="medical_appointment"
-                  name=" Appointments"
-                  parent="medical_appointment_root"
-                  sequence="10"
-                  action="medical_appointment_action" />
-
-    </data>
-</openerp>
+    <menuitem id="medical_appointment"
+              name=" Appointments"
+              parent="medical_appointment_root"
+              sequence="10"
+              action="medical_appointment_action" />
+</odoo>

@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-    Copyright (C) 2015-TODAY LasLabs [https://laslabs.com]
-    @author Dave Lasley <dave@laslabs.com>
-    @license AGPL-3
+    Copyright 2015-2017 LasLabs Inc.
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 -->
 
-<openerp>
-    
-    <data noupdate="1">
-
-        <record id="seq_medical_appointment" model="ir.sequence">
-            <field name="name">Medical Appointment</field>
-            <field name="code">medical.appointment</field>
-            <field name="prefix">AP</field>
-            <field name="padding">4</field>
-        </record>
-        
-    </data>
-
-</openerp>
+<odoo noupdate="1">
+    <record id="seq_medical_appointment" model="ir.sequence">
+        <field name="name">Medical Appointment</field>
+        <field name="code">medical.appointment</field>
+        <field name="prefix">AP</field>
+        <field name="padding">4</field>
+    </record>
+</odoo>

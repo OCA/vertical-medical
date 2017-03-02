@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-# © 2016 LasLabs Inc.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# Copyright 2016-2017 LasLabs Inc.
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
 from openerp import fields, models, exceptions, api, _
 from datetime import timedelta
@@ -8,8 +8,8 @@ from datetime import timedelta
 
 class MedicalAppointment(models.Model):
     _name = 'medical.appointment'
-    _inherit = 'medical.history.abstract'
     _description = 'Medical Appointments'
+    _inherit = 'mail.thread'
 
     STATES = {
         'draft': [('readonly', False)]
@@ -71,10 +71,6 @@ class MedicalAppointment(models.Model):
         string='Alias',
         help='Alias for appointment',
     )
-    comments = fields.Text(
-        string='Comments',
-        help='Any additional notes',
-    )
     appointment_type = fields.Selection([
         ('ambulatory', 'Ambulatory'),
         ('outpatient', 'Outpatient'),
@@ -89,7 +85,7 @@ class MedicalAppointment(models.Model):
         string='Medical Center',
         help='Medical center that appointment is located at',
         comodel_name='res.partner',
-        domain="[('is_institution', '=', True)]",
+        domain="[('type', '=', 'medical.center')]",
     )
     consultation_ids = fields.Many2one(
         string='Consultation Services',
@@ -212,7 +208,6 @@ class MedicalAppointment(models.Model):
 
         for rec_id in self:
 
-            history_entry_ids = self.history_entry_new('STAGE', vals)
             date_start = vals.get(
                 'appointment_date', rec_id.appointment_date
             )
@@ -249,8 +244,6 @@ class MedicalAppointment(models.Model):
                 )
                 template_id = email_template_proxy.browse(template_id_int)
                 template_id.send_mail(rec_id.id, True)
-
-        history_entry_ids.state_complete()
 
     @api.model
     def _get_appointments(self, physician_ids, institution_ids,
