@@ -49,6 +49,7 @@ addon | version | summary
 [medical_physician](medical_physician/) | 9.0.1.0.0 | Adds physicians to Odoo Medical.
 [medical_prescription](medical_prescription/) | 9.0.2.0.0 | Introduces prescription orders and prescription order lines.
 [medical_prescription_state](medical_prescription_state/) | 9.0.1.0.0 | Medical Prescription Order States
+[medical_prescription_us](medical_prescription_us/) | 9.0.1.0.0 | Extension of medical_prescription that provides US Locale
 [sale_crm_medical_prescription](sale_crm_medical_prescription/) | 9.0.1.0.0 | Create opportunities from prescriptions.
 [sale_medical_prescription](sale_medical_prescription/) | 9.0.2.0.0 | Create sale orders from prescriptions.
 
