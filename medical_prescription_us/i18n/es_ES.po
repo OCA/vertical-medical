@@ -1,0 +1,76 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * medical_prescription_us
+# 
+# Translators:
+# Fernando Lara <gennesis45@gmail.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-03 03:56+0000\n"
+"PO-Revision-Date: 2017-03-03 03:56+0000\n"
+"Last-Translator: Fernando Lara <gennesis45@gmail.com>, 2017\n"
+"Language-Team: Spanish (Spain) (https://www.transifex.com/oca/teams/23907/es_ES/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es_ES\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: medical_prescription_us
+#: model:ir.model,name:medical_prescription_us.model_medical_prescription_order_line
+msgid "Abstract Medical Medication"
+msgstr "Imagen abstracta de una receta medica o logotipo"
+
+#. module: medical_prescription_us
+#: model:ir.model.fields,help:medical_prescription_us.field_medical_prescription_order_line_refill_qty_original
+msgid "Amount of refills originally allowed in this prescription"
+msgstr ""
+
+#. module: medical_prescription_us
+#: model:ir.model.fields,help:medical_prescription_us.field_medical_prescription_order_line_refill_qty_remain
+msgid "Amount of refills remaining in the prescription"
+msgstr ""
+
+#. module: medical_prescription_us
+#: model:ir.model.fields,field_description:medical_prescription_us.field_medical_prescription_order_line_gcn_id
+msgid "GCN"
+msgstr ""
+
+#. module: medical_prescription_us
+#: model:ir.model.fields,field_description:medical_prescription_us.field_medical_prescription_order_line_ndc_id
+msgid "NDC"
+msgstr ""
+
+#. module: medical_prescription_us
+#: model:medical.medicament,description_sale:medical_prescription_us.medical_medicament_pravastatin_us_1
+#: model:product.product,description_sale:medical_prescription_us.medical_medicament_pravastatin_us_1_product_product
+#: model:product.product,description_sale:medical_prescription_us.product_product_pravastatin_us_1
+#: model:product.template,description_sale:medical_prescription_us.product_product_pravastatin_us_1_product_template
+msgid "Pravastatin Tablet 40mg"
+msgstr ""
+
+#. module: medical_prescription_us
+#: model:medical.medicament,name:medical_prescription_us.medical_medicament_pravastatin_us_1
+#: model:product.product,name:medical_prescription_us.medical_medicament_pravastatin_us_1_product_product
+#: model:product.product,name:medical_prescription_us.product_product_pravastatin_us_1
+#: model:product.template,name:medical_prescription_us.product_product_pravastatin_us_1_product_template
+msgid "Pravastatin US Locale"
+msgstr ""
+
+#. module: medical_prescription_us
+#: model:ir.model.fields,field_description:medical_prescription_us.field_medical_prescription_order_line_refill_qty_original
+msgid "Refill Qty"
+msgstr ""
+
+#. module: medical_prescription_us
+#: model:ir.model.fields,field_description:medical_prescription_us.field_medical_prescription_order_line_refill_qty_remain
+msgid "Refill Remain"
+msgstr ""
+
+#. module: medical_prescription_us
+#: code:addons/medical_prescription_us/models/medical_prescription_order_line.py:68
+#, python-format
+msgid "Refill quantity cannot be less than 0."
+msgstr ""
