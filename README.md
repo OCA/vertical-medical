@@ -27,6 +27,7 @@ Records (EMR) System based on Odoo.
 - Designed with industry standards in mind
 
 [//]: # (addons)
+
 Available addons
 ----------------
 addon | version | summary
