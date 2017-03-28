@@ -6,7 +6,7 @@
 {
     "name": "Medical Medication",
     "summary": "Introduce medication notion into the medical addons.",
-    "version": "9.0.1.0.0",
+    "version": "9.0.1.0.1",
     "category": "Medical",
     "website": "http://www.acsone.eu",
     "author": "LasLabs, ACSONE SA/NV, Odoo Community Association (OCA)",
