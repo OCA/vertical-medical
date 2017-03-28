@@ -50,6 +50,7 @@ addon | version | summary
 [medical_prescription_state](medical_prescription_state/) | 8.0.1.1.0 | Medical Prescription Order States
 [medical_prescription_thread](medical_prescription_thread/) | 8.0.1.0.0 | Medical Prescription Threaded
 
+
 Unported addons
 ---------------
 addon | version | summary
