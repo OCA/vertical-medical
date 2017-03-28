@@ -54,6 +54,7 @@ addon | version | summary
 [sale_crm_medical_prescription](sale_crm_medical_prescription/) | 9.0.1.0.0 | Create opportunities from prescriptions.
 [sale_medical_prescription](sale_medical_prescription/) | 9.0.2.0.0 | Create sale orders from prescriptions.
 
+
 Unported addons
 ---------------
 addon | version | summary
