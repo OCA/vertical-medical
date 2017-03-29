@@ -40,7 +40,7 @@ addon | version | summary
 [medical_medicament](medical_medicament/) | 9.0.1.0.0 | Introduce Medicament notion into the medical product.
 [medical_medicament_component](medical_medicament_component/) | 9.0.1.0.0 | Medical Medicament Components
 [medical_medicament_us](medical_medicament_us/) | 9.0.1.0.0 | Extension of medical_medicament that provides US locale.
-[medical_medication](medical_medication/) | 9.0.1.0.0 | Introduce medication notion into the medical addons.
+[medical_medication](medical_medication/) | 9.0.1.0.1 | Introduce medication notion into the medical addons.
 [medical_pathology](medical_pathology/) | 9.0.1.0.1 | Extends Odoo Medical with pathologies (diseases).
 [medical_patient_disease](medical_patient_disease/) | 9.0.1.0.0 | Extend medical patients with the concept of diseases.
 [medical_patient_disease_allergy](medical_patient_disease_allergy/) | 9.0.1.0.0 | Isolates allergies from diseases.
