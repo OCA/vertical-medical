@@ -93,16 +93,16 @@ class SaleOrderLine(models.Model):
             group_id=group_id
         )
         if self.product_id.is_medicament:
-            medicament_id = self.env['medical.medicament'].get_by_product(
+            medicament = self.env['medical.medicament'].get_by_product(
                 self.product_id,
             )
-            warehouse_id = self.order_id.warehouse_id
-            if medicament_id.is_prescription:
+            warehouse = self.order_id.warehouse_id
+            if medicament.is_prescription:
                 res['route_ids'] = [
-                    (6, 0, [warehouse_id.prescription_route_id.id])
+                    (6, 0, [warehouse.prescription_route_id.id])
                 ]
             else:
                 res['route_ids'] = [
-                    (6, 0, [warehouse_id.otc_route_id.id])
+                    (6, 0, [warehouse.otc_route_id.id])
                 ]
         return res

@@ -86,34 +86,34 @@ class MedicalPrescriptionOrderLine(models.Model):
             pending_qty = 0.0
             cancel_qty = 0.0
             except_qty = 0.0
-            last_procurement_id = None
+            last_procurement = None
 
-            order_line_ids = record.sale_order_line_ids.sorted(
+            order_lines = record.sale_order_line_ids.sorted(
                 key=lambda r: r.order_id.date_order
             )
-            for line_id in order_line_ids:
-                procurement_ids = line_id.procurement_ids.sorted(
+            for order_line in order_lines:
+                procurements = order_line.procurement_ids.sorted(
                     key=lambda r: r.date_planned
                 )
-                for proc_id in procurement_ids:
+                for procurement in procurements:
 
-                    dispense_ids.append(proc_id.id)
-                    last_procurement_id = proc_id
+                    dispense_ids.append(procurement.id)
+                    last_procurement = procurement
 
-                    if proc_id.product_uom.id != record.dispense_uom_id.id:
+                    if procurement.product_uom.id != record.dispense_uom_id.id:
                         _qty = self.env['product.uom']._compute_qty_obj(
-                            proc_id.product_uom,
-                            proc_id.product_qty,
+                            procurement.product_uom,
+                            procurement.product_qty,
                             record.dispense_uom_id,
                         )
                     else:
-                        _qty = proc_id.product_qty
+                        _qty = procurement.product_qty
 
-                    if proc_id.state == 'done':
+                    if procurement.state == 'done':
                         dispense_qty += _qty
-                    elif proc_id.state in ['confirmed', 'running']:
+                    elif procurement.state in ['confirmed', 'running']:
                         pending_qty += _qty
-                    elif proc_id.state == 'cancel':
+                    elif procurement.state == 'cancel':
                         cancel_qty += _qty
                     else:
                         except_qty += _qty
@@ -126,7 +126,7 @@ class MedicalPrescriptionOrderLine(models.Model):
             record.dispensed_ids = self.env['procurement.order'].browse(
                 set(dispense_ids)
             )
-            record.last_dispense_id = last_procurement_id
+            record.last_dispense_id = last_procurement
 
     @api.multi
     @api.depends(

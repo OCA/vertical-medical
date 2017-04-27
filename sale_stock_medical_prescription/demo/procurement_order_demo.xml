@@ -4,30 +4,6 @@
 
 <odoo>
 
-    <!--Automatically created procurement from sale_order_line_12
-    <record id="procurement_order_medical_procurement_0" model="procurement.order">
-        <field name="name">[OMCLN] Amoxicillin</field>
-        <field name="state">running</field>
-        <field name="product_id" ref="sale_stock_medical_prescription.product_product_amoxicillin_1" />
-        <field name="product_uom" ref="product.product_uom_unit" />
-        <field name="product_qty">20</field>
-        <field name="sale_line_id" ref="sale_stock_medical_prescription.sale_order_medical_order_line_12" />
-        <field name="priority">1</field>
-        <field name="date_planned" eval="datetime.now()" />
-    </record>-->
-
-    <!--Automatically created procurement from sale_order_line_13
-    <record id="procurement_order_medical_procurement_00" model="procurement.order">
-        <field name="name">[OMCLN] Amoxicillin</field>
-        <field name="state">running</field>
-        <field name="product_id" ref="sale_stock_medical_prescription.product_product_amoxicillin_1" />
-        <field name="product_uom" ref="product.product_uom_unit" />
-        <field name="product_qty">1</field>
-        <field name="sale_line_id" ref="sale_stock_medical_prescription.sale_order_medical_order_line_13" />
-        <field name="priority">1</field>
-        <field name="date_planned" eval="datetime.now()" />
-    </record>-->
-
     <record id="procurement_order_medical_procurement_1" model="procurement.order">
         <field name="name">[OMCLN] Amoxicillin</field>
         <field name="state">done</field>
