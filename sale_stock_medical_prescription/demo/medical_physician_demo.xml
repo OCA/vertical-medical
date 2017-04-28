@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016-2017 LasLabs Inc.
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+
+<odoo>
+
+    <record id="res_partner_physician_7" model="res.partner">
+        <field name="name">Andy Arnoldendit</field>
+        <field name="city">Las Vegas</field>
+        <field name="state_id" ref="base.state_us_23" />
+        <field name="country_id" ref="base.us" />
+        <field name="zip">89106</field>
+        <field name="street">222 Example Way 6</field>
+        <field name="email">a.arnoldendit@example.com</field>
+        <field name="phone">+1 (702) 253-3674</field>
+        <field name="ref">680-02-8713</field>
+    </record>
+
+    <record id="medical_physician_physician_7" model="medical.physician">
+        <field name="partner_id" ref="sale_stock_medical_prescription.res_partner_physician_7" />
+        <field name="specialty_id" ref="medical_physician.medical_specialty_gp" />
+        <field name="info">General practitioner, supplier</field>
+    </record>
+
+</odoo>

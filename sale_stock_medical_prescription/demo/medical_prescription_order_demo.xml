@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016-2017 LasLabs Inc.
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+
+<odoo>
+
+    <record id="medical_prescription_prescription_order_10" model="medical.prescription.order">
+        <field name="patient_id" ref="sale_stock_medical_prescription.medical_patient_patient_11" />
+        <field name="physician_id" ref="sale_stock_medical_prescription.medical_physician_physician_7" />
+        <field name="date_prescription">2001-10-01</field>
+        <field name="partner_id" ref="sale_stock_medical_prescription.medical_pharmacy_8" />
+    </record>
+
+</odoo>

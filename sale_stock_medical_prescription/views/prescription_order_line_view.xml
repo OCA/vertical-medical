@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016-2017 LasLabs Inc.
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+
+<odoo>
+
+    <record id="medical_prescription_order_line_view_form" model="ir.ui.view">
+        <field name="name">Prescription Order Line</field>
+        <field name="model">medical.prescription.order.line</field>
+        <field name='inherit_id' ref='medical_prescription.medical_prescription_order_line_view_form'/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='qty']" position="after">
+                <field name="dispense_uom_id" />
+                <field name="can_dispense" invisible="1" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_prescription_order_line_view_tree" model="ir.ui.view">
+        <field name="name">medical.prescription.order.line.tree</field>
+        <field name="model">medical.prescription.order.line</field>
+        <field name='inherit_id' ref='medical_prescription.medical_prescription_order_line_view_tree'/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='duration_uom_id']" position="after">
+                <field name="can_dispense" invisible="1" />
+            </xpath>
+            <xpath expr="//tree" position="attributes">
+                <attribute name="colors">
+                    red:can_dispense == False or current_date &gt; date_stop_treatment and date_stop_treatment
+                </attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

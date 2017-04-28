@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016-2017 LasLabs Inc.
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+
+<odoo>
+
+    <record id="medical_medication_template_template_10" model="medical.medication.template">
+        <field name="medicament_id" ref="sale_stock_medical_prescription.medical_medicament_amoxicillin_1" />
+        <field name="quantity">2</field>
+        <field name="dose_uom_id" ref="product.product_uom_categ_unit" />
+        <field name="frequency">12</field>
+        <field name="frequency_uom_id" ref="medical_medication.product_uom_hour" />
+        <field name="duration">15</field>
+        <field name="duration_uom_id" ref="medical_medication.product_uom_day" />
+        <field name="medication_dosage_id" ref="medical_medication.307470009" />
+    </record>
+
+    <record id="medical_patient_medication_medication_10" model="medical.patient.medication">
+        <field name="medication_template_id" ref="sale_stock_medical_prescription.medical_medication_template_template_10" />
+        <field name="patient_id" ref="sale_stock_medical_prescription.medical_patient_patient_11" />
+        <field name="physician_id" ref="sale_stock_medical_prescription.medical_physician_physician_7" />
+        <field name="date_start_treatment">2001-10-10</field>
+        <field name="medicament_id" ref="sale_stock_medical_prescription.medical_medicament_amoxicillin_1" />
+    </record>
+
+</odoo>
