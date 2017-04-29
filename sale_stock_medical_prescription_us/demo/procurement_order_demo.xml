@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016-2017 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <!--Automatically created procurement from sale_order_medical_order_line_us_3
+    <record id="procurement_order_medical_procurement_us_0" model="procurement.order">
+        <field name="name">[US-PRNVL] Prinivil US</field>
+        <field name="state">running</field>
+        <field name="product_id" ref="product_product_prinivil_us_1" />
+        <field name="product_uom" ref="product.product_uom_unit" />
+        <field name="product_qty">20</field>
+        <field name="sale_line_id" ref="sale_order_medical_order_line_us_3" />
+        <field name="priority">1</field>
+        <field name="date_planned" eval="datetime.now()" />
+    </record>-->
+
+    <!--Automatically created procurement from sale_order_medical_order_line_us_4
+    <record id="procurement_order_medical_procurement_us_00" model="procurement.order">
+        <field name="name">[US-PRNVL] Prinivil US</field>
+        <field name="state">running</field>
+        <field name="product_id" ref="product_product_prinivil_us_1" />
+        <field name="product_uom" ref="product.product_uom_unit" />
+        <field name="product_qty">30</field>
+        <field name="sale_line_id" ref="sale_order_medical_order_line_us_4" />
+        <field name="priority">1</field>
+        <field name="date_planned" eval="datetime.now()" />
+    </record>-->
+
+    <record id="procurement_order_medical_procurement_us_1" model="procurement.order">
+        <field name="name">[US-PRNVL] Prinivil US</field>
+        <field name="state">done</field>
+        <field name="product_id" ref="product_product_prinivil_us_1" />
+        <field name="product_uom" ref="product.product_uom_unit" />
+        <field name="product_qty">20</field>
+        <field name="sale_line_id" ref="sale_order_medical_order_line_us_3" />
+        <field name="priority">1</field>
+        <field name="date_planned">2002-10-08</field>
+        <field name="ndc_id" ref="medical_medicament_ndc_us_2" />
+    </record>
+
+    <record id="procurement_order_medical_procurement_us_2" model="procurement.order">
+        <field name="name">[US-PRNVL] Prinivil US</field>
+        <field name="state">done</field>
+        <field name="product_id" ref="product_product_prinivil_us_1" />
+        <field name="product_uom" ref="product.product_uom_unit" />
+        <field name="product_qty">10</field>
+        <field name="sale_line_id" ref="sale_order_medical_order_line_us_4" />
+        <field name="priority">1</field>
+        <field name="date_planned">2002-10-08</field>
+        <field name="ndc_id" ref="medical_medicament_ndc_us_2" />
+    </record>
+
+</odoo>
