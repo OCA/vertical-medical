@@ -1,0 +1,209 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * sale_stock_medical_prescription
+# 
+# Translators:
+# Nilo Silva <nilo.silva@e-nube.com.br>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-04-29 02:51+0000\n"
+"PO-Revision-Date: 2017-04-29 02:51+0000\n"
+"Last-Translator: Nilo Silva <nilo.silva@e-nube.com.br>, 2017\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model,name:sale_stock_medical_prescription.model_medical_prescription_order_line
+msgid "Abstract Medical Medication"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,field_description:sale_stock_medical_prescription.field_medical_prescription_order_line_active_dispense_qty
+msgid "Active dispense qty"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,help:sale_stock_medical_prescription.field_medical_prescription_order_line_dispensed_qty
+msgid "Amount already dispensed (using medicine dosage)"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,help:sale_stock_medical_prescription.field_medical_prescription_order_line_pending_dispense_qty
+msgid "Amount pending dispense (using medicine dosage)"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,help:sale_stock_medical_prescription.field_medical_prescription_order_line_can_dispense_qty
+msgid "Amount that can be dispensed (using medicine dosage)"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:medical.medicament,name:sale_stock_medical_prescription.medical_medicament_amoxicillin_1
+#: model:product.product,name:sale_stock_medical_prescription.medical_medicament_amoxicillin_1_product_product
+#: model:product.product,name:sale_stock_medical_prescription.product_product_amoxicillin_1
+#: model:product.template,name:sale_stock_medical_prescription.product_product_amoxicillin_1_product_template
+msgid "Amoxicillin"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,field_description:sale_stock_medical_prescription.field_medical_prescription_order_line_can_dispense
+msgid "Can dispense"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,field_description:sale_stock_medical_prescription.field_medical_prescription_order_line_can_dispense_qty
+msgid "Can dispense qty"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,help:sale_stock_medical_prescription.field_medical_prescription_order_line_can_dispense
+msgid "Can this prescription be dispensed?"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,field_description:sale_stock_medical_prescription.field_medical_prescription_order_line_cancelled_dispense_qty
+msgid "Cancelled dispense qty"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: code:addons/sale_stock_medical_prescription/models/sale_order_line.py:71
+#, python-format
+msgid ""
+"Cannot dispense %s because there are related, pending order(s). \n"
+"Currently %.2f processed %.2f pending %.2f exception"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: code:addons/sale_stock_medical_prescription/models/sale_order_line.py:82
+#, python-format
+msgid "Cannot dispense - %s goes over Rx qty by %d"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,help:sale_stock_medical_prescription.field_stock_warehouse_is_pharmacy
+msgid ""
+"Check if prescription orders allowed to be dispensed from this warehouse"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,help:sale_stock_medical_prescription.field_medical_prescription_order_line_dispense_uom_id
+msgid "Dispense Unit of Measure"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,field_description:sale_stock_medical_prescription.field_medical_prescription_order_line_dispense_uom_id
+msgid "Dispense UoM"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,help:sale_stock_medical_prescription.field_medical_prescription_order_line_cancelled_dispense_qty
+msgid "Dispense qty cancelled (using medicine dosage)"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,field_description:sale_stock_medical_prescription.field_medical_prescription_order_line_dispensed_qty
+msgid "Dispensed qty"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,field_description:sale_stock_medical_prescription.field_medical_prescription_order_line_dispensed_ids
+msgid "Dispensings"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model,name:sale_stock_medical_prescription.model_medical_medicament
+msgid "Email Thread"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,field_description:sale_stock_medical_prescription.field_medical_prescription_order_line_exception_dispense_qty
+msgid "Exception dispense qty"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,field_description:sale_stock_medical_prescription.field_medical_prescription_order_line_last_dispense_id
+msgid "Last Dispense"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:stock.location.route,name:sale_stock_medical_prescription.route_warehouse0_otc
+msgid "OTC"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,field_description:sale_stock_medical_prescription.field_stock_warehouse_otc_route_id
+msgid "OTC Route"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,field_description:sale_stock_medical_prescription.field_medical_prescription_order_line_pending_dispense_qty
+msgid "Pending dispense qty"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:medical.medicament,description_sale:sale_stock_medical_prescription.medical_medicament_amoxicillin_1
+#: model:product.product,description_sale:sale_stock_medical_prescription.medical_medicament_amoxicillin_1_product_product
+#: model:product.product,description_sale:sale_stock_medical_prescription.product_product_amoxicillin_1
+#: model:product.template,description_sale:sale_stock_medical_prescription.product_product_amoxicillin_1_product_template
+msgid "Penicillin Capsule 250mg"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,field_description:sale_stock_medical_prescription.field_stock_warehouse_is_pharmacy
+#: model:ir.ui.view,arch_db:sale_stock_medical_prescription.stock_warehouse_view_form
+msgid "Pharmacy"
+msgstr "Farmácia"
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,field_description:sale_stock_medical_prescription.field_stock_warehouse_prescription_route_id
+msgid "Prescription Route"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: code:addons/sale_stock_medical_prescription/models/sale_order_line.py:47
+#, python-format
+msgid ""
+"Products must be same on Order and Rx lines. Got %s on order line %s, "
+"expected %s from %r"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,help:sale_stock_medical_prescription.field_medical_prescription_order_line_exception_dispense_qty
+msgid "Qty of dispense exceptions (using medicine dosage)"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:stock.location.route,name:sale_stock_medical_prescription.route_warehouse0_prescription
+msgid "RX"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model,name:sale_stock_medical_prescription.model_sale_order_line
+msgid "Sales Order Line"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,help:sale_stock_medical_prescription.field_stock_warehouse_otc_route_id
+msgid "Stock route for over the counter sales"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,help:sale_stock_medical_prescription.field_stock_warehouse_prescription_route_id
+msgid "Stock route for prescription sales"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model.fields,help:sale_stock_medical_prescription.field_medical_prescription_order_line_active_dispense_qty
+msgid "Total amount of dispenses that are active in some way"
+msgstr ""
+
+#. module: sale_stock_medical_prescription
+#: model:ir.model,name:sale_stock_medical_prescription.model_stock_warehouse
+msgid "Warehouse"
+msgstr ""

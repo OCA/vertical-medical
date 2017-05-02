@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 9.0c\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-03 03:56+0000\n"
-"PO-Revision-Date: 2017-03-03 03:56+0000\n"
+"POT-Creation-Date: 2017-04-29 02:51+0000\n"
+"PO-Revision-Date: 2017-04-29 02:51+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Spanish (Colombia) (https://www.transifex.com/oca/teams/23907/es_CO/)\n"
 "MIME-Version: 1.0\n"
@@ -167,7 +167,7 @@ msgid "Generic Product Identifier for medicament."
 msgstr ""
 
 #. module: medical_medicament_us
-#: model:ir.model.fields,field_description:medical_medicament_us.field_medical_medicament_gcn_id_5977
+#: model:ir.model.fields,field_description:medical_medicament_us.field_medical_medicament_gcn_id_5980
 #: model:ir.model.fields,field_description:medical_medicament_us.field_medical_medicament_ndc_id
 msgid "ID"
 msgstr "ID"
