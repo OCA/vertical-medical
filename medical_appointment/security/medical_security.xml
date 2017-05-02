@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright (C) 2015-TODAY LasLabs [https://laslabs.com]
+    @author Dave Lasley <dave@laslabs.com>
+    @license AGPL-3
+-->
+
+<openerp>
+    <data noupdate="0">
+
+        <record id="medical_appointment_access_rule_physician" model="ir.rule">
+            <field name="name">Appointment Entry</field>
+            <field name="model_id" ref="model_medical_appointment"/>
+            <field name="global" eval="True"/>
+            <field name="groups" eval="[(4, ref('medical.group_medical_doctor'))]"/>
+            <field name="domain_force"><![CDATA[ [
+                ('physician_id.user_id', '=', user.id),
+            ] ]]></field>
+        </record>
+        
+        <record id="medical_appointment_access_rule_assistant" model="ir.rule">
+            <field name="name">Appointment Entry</field>
+            <field name="model_id" ref="model_medical_appointment"/>
+            <field name="global" eval="True"/>
+            <field name="groups" eval="[(4, ref('medical.group_medical_assistant'))]"/>
+            <field name="domain_force"><![CDATA[ [
+                '|',
+                ('institution_id', '=', user.parent_id.id),
+                ('institution', 'child_of',user.parent_id.id),
+            ] ]]></field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 LasLabs Inc.
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo noupdate="1">
+    <record id="medical_appointment_mutate" model="auditlog.rule">
+        <field name="name">Medical Appointment Changes</field>
+        <field name="model_id" ref="model_medical_appointment"/>
+        <field name="log_type">full</field>
+        <field name="log_write" eval="True"/>
+        <field name="log_unlink" eval="True"/>
+        <field name="log_create" eval="True"/>
+        <field name="state">subscribed</field>
+    </record>
+</odoo>
