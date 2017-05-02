@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016-2017 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical_prescription_order_order_line_us_3" model="medical.prescription.order.line">
+        <field name="prescription_order_id" ref="medical_prescription_prescription_order_us_2" />
+        <field name="medical_medication_id" ref="medical_patient_medication_medication_us_2" />
+        <field name="qty">61</field>
+        <field name="refill_qty_original">3</field>
+    </record>
+
+    <record id="medical_prescription_order_order_line_us_4" model="medical.prescription.order.line">
+        <field name="prescription_order_id" ref="medical_prescription_prescription_order_us_2" />
+        <field name="medical_medication_id" ref="medical_patient_medication_medication_us_2" />
+        <field name="qty">91</field>
+        <field name="refill_qty_original">2</field>
+    </record>
+
+</odoo>

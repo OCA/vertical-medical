@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016-2017 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="partner_pharmacy_us_2" model="res.partner">
+        <field name="name">Test Pharmacy US 2</field>
+        <field name="street">33146 Test 2 St.</field>
+        <field name="street2">Suite 1116</field>
+        <field name="city">Las Vegas</field>
+        <field name="country_id" ref="base.us" />
+        <field name="phone">+1 (702) 111-7676</field>
+        <field name="email">pharmacy_us_2@example.com</field>
+        <field name="state_id" ref="base.state_us_23" />
+        <field name="is_company" eval="True" />
+    </record>
+
+    <record id="company_pharmacy_us_2" model="res.company">
+        <field name="currency_id" ref="base.USD" />
+        <field name="name">Test Pharmacy US 2</field>
+        <field name="partner_id" ref="partner_pharmacy_us_2" />
+        <field name="medical_prescription_refill_threshold">0.75</field>
+    </record>
+
+    <record id="medical_pharmacy_us_2" model="medical.pharmacy">
+        <field name="name">Test Pharmacy US 2</field>
+        <field name="partner_id" ref="partner_pharmacy_us_2" />
+        <field name="company_id" ref="company_pharmacy_us_2" />
+    </record>
+
+</odoo>

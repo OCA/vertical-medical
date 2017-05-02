@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016-2017 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="product_product_prinivil_us_1" model="product.product">
+        <field name="name">Prinivil US</field>
+        <field name="uom_id" ref="product.product_uom_unit" />
+        <field name="uom_po_id" ref="product.product_uom_unit" />
+        <field name="weight">0.0002</field>
+        <field name="categ_id" ref="product.product_category_5" />
+        <field name="type">product</field>
+        <field name="description_sale">Prinivil US-Locale 1 Capsule 10mg</field>
+        <field name="pricelist_id" ref="product.list0" />
+        <field name="standard_price">1.00</field>
+        <field name="list_price">1.50</field>
+        <field name="currency_id" ref="base.USD" />
+        <field name="default_code">US-PRNVL</field>
+    </record>
+
+    <record id="medical_medicament_prinivil_us_1" model="medical.medicament">
+        <field name="name">Prinivil US</field>
+        <field name="drug_form_id" ref="medical_medicament.TAB" />
+        <field name="strength">0.01</field>
+        <field name="strength_uom_id" ref="product.product_uom_gram" />
+        <field name="is_pregnancy_warning" eval="True" />
+        <field name="drug_route_id" ref="medical_medicament.route_34" />
+        <field name="product_id" ref="product_product_prinivil_us_1" />
+        <field name="pregnancy_category">d</field>
+        <field name="control_code">5</field>
+        <field name="gpi">2</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016-2017 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="res_partner_physician_us_2" model="res.partner">
+        <field name="name">Janet Jeraldo</field>
+        <field name="city">Las Vegas</field>
+        <field name="state_id" ref="base.state_us_23" />
+        <field name="country_id" ref="base.us" />
+        <field name="zip">89164</field>
+        <field name="street">12 Example Way</field>
+        <field name="email">jjeraldo@example.com</field>
+        <field name="phone">+1 (702) 763-1136</field>
+        <field name="ref">221-68-5458</field>
+        <field name="parent_id" ref="partner_pharmacy_us_2" />
+    </record>
+
+    <record id="medical_physician_physician_us_2" model="medical.physician">
+        <field name="partner_id" ref="res_partner_physician_us_2" />
+        <field name="specialty_id" ref="medical_physician.medical_specialty_gp" />
+        <field name="info">General practitioner, supplier</field>
+    </record>
+
+</odoo>
