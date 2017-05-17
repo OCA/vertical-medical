@@ -1,14 +1,17 @@
 # -*- coding: utf-8 -*-
 # Copyright 2015 ACSONE SA/NV
 # Copyright 2016 LasLabs Inc.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from dateutil.relativedelta import relativedelta
 
 from odoo import fields
 from odoo.tests.common import TransactionCase
 from odoo.exceptions import ValidationError
+
+import logging
+_logger = logging.getLogger(__name__)
 
 
 MODULE_PATH = 'medical.models.medical_patient'
@@ -21,10 +24,6 @@ class TestMedicalPatient(TransactionCase):
         self.patient_1 = self.env.ref('medical.medical_patient_patient_1')
         self.partner_patient_1 = self.env.ref('medical.res_partner_patient_1')
         self.patient_3 = self.env.ref('medical.medical_patient_patient_3')
-        self.id_category = self.env['res.partner.id_category'].create({
-            'code': 'TEST',
-            'name': 'failed = False',
-        })
 
     def test_sequence_for_identification_code(self):
         """ Test identification_code created if there is none """
@@ -108,7 +107,7 @@ class TestMedicalPatient(TransactionCase):
             len(partner.patient_ids), 1,
         )
 
-    def test_create_vals_default_image(self):
+    def test_create_vals_get_default_image_encoded(self):
         """ It should get the default image for entity on create. """
         Patient = self.env['medical.patient'].with_context(
             __image_create_allow=True,
@@ -117,10 +116,10 @@ class TestMedicalPatient(TransactionCase):
         patient = Patient.create(vals)
         self.assertTrue(patient.image)
 
-    def test_get_default_image(self):
+    def test_get_default_image_encoded(self):
         """ It should return the default image for the entity. """
         Patient = self.env['medical.patient']
-        image = Patient._get_default_image({})
+        image = Patient._get_default_image_encoded({})
         self.assertTrue(image)
 
     def test_allow_image_create_no_test(self):
@@ -139,3 +138,27 @@ class TestMedicalPatient(TransactionCase):
                     now + timedelta(days=20),
                 )
             })
+
+    def test_search_age(self):
+        """
+        When patients are searched by age,
+        it should return patients with the corresponding birth dates
+        """
+        birthdate = datetime.strptime(
+            self.patient_1.birthdate_date, "%Y-%m-%d"
+        ).date()
+        current_date = date.today()
+        delta = current_date - birthdate
+        years = delta.days/365
+        result = self.env['medical.patient'].search(
+            [('age', '=', years)]
+        )
+        self.assertIn(self.patient_1, result)
+
+    def test_toggle_is_pregnant(self):
+        self.patient_1.write({'is_pregnant': False})
+        self.patient_1.toggle_is_pregnant()
+        self.patient_1.refresh()
+        self.assertEquals(
+            self.patient_1.is_pregnant, True
+        )
