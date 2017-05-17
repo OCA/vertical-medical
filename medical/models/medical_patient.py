@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 # Copyright 2004 Tech-Receptives
 # Copyright 2016 LasLabs Inc.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
-from datetime import datetime
+from datetime import date, datetime
 from dateutil.relativedelta import relativedelta
 
-from odoo import _, api, fields, models, tools
+from odoo import _, api, fields, models
 from odoo.modules import get_module_resource
 from odoo.exceptions import ValidationError
 
@@ -21,6 +21,7 @@ class MedicalPatient(models.Model):
 
     age = fields.Char(
         compute='_compute_age',
+        search='_search_age',
     )
     identification_code = fields.Char(
         string='Internal Identification',
@@ -93,7 +94,7 @@ class MedicalPatient(models.Model):
         vals = super(MedicalPatient, self)._create_vals(vals)
         if not vals.get('identification_code'):
             Seq = self.env['ir.sequence']
-            vals['identification_code'] = Seq.next_by_code(
+            vals['identification_code'] = Seq.sudo().next_by_code(
                 self._name,
             )
         vals.update({
@@ -101,14 +102,44 @@ class MedicalPatient(models.Model):
         })
         return vals
 
-    @api.model
-    def _get_default_image(self, vals):
-        res = super(MedicalPatient, self)._get_default_image(vals)
-        if res:
-            return res
-        img_path = get_module_resource(
+    @api.model_cr_context
+    def _get_default_image_path(self, vals):
+        super(MedicalPatient, self)._get_default_image_path(vals)
+        return get_module_resource(
             'medical', 'static/src/img', 'patient-avatar.png',
         )
-        with open(img_path, 'r') as image:
-            base64_image = image.read().encode('base64')
-        return tools.image_resize_image_big(base64_image)
+
+    def _search_age(self, operator, value):
+        current_date = date.today()
+        if operator not in ('like', '=', '>=', '>', '<', '<='):
+            operator = 'like'
+        assert operator in ('like', '=', '>=', '>', '<', '<=')
+        current_year = current_date.year
+        current_day = current_date.day
+        first_possible_birthdate = current_date.replace(
+            year=current_year - (int(value) + 1)
+        )
+        last_possible_birthdate = first_possible_birthdate.replace(
+            year=current_year - int(value),
+            day=current_day - 1
+        )
+        if operator == '=' or operator == 'like':
+            return ['&', ('birthdate_date', '>=', first_possible_birthdate),
+                    ('birthdate_date', '<=', last_possible_birthdate)]
+        elif operator == '>=':
+            return [('birthdate_date', '>=', first_possible_birthdate)]
+        elif operator == '>':
+            return [('birthdate_date', '>', last_possible_birthdate)]
+        elif operator == '<=':
+            return [('birthdate_date', '<=', last_possible_birthdate)]
+        elif operator == '<':
+            return [('birthdate_date', '<', first_possible_birthdate)]
+
+    def toggle_is_pregnant(self):
+        self.toggle('is_pregnant')
+
+    def toggle_safety_cap_yn(self):
+        self.toggle('safety_cap_yn')
+
+    def toggle_counseling_yn(self):
+        self.toggle('counseling_yn')
