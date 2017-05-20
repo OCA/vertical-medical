@@ -3,14 +3,15 @@
 # * medical_medication_us
 # 
 # Translators:
-# Nilo Silva <nilo.silva@e-nube.com.br>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2016
+# Rodrigo de Almeida Sottomaior Macedo <rmsolucoeseminformatic4@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-25 19:52+0000\n"
-"PO-Revision-Date: 2016-11-25 19:52+0000\n"
-"Last-Translator: Nilo Silva <nilo.silva@e-nube.com.br>, 2016\n"
+"POT-Creation-Date: 2017-03-28 09:59+0000\n"
+"PO-Revision-Date: 2017-03-28 09:59+0000\n"
+"Last-Translator: Rodrigo de Almeida Sottomaior Macedo <rmsolucoeseminformatic4@gmail.com>, 2017\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,42 +22,42 @@ msgstr ""
 #. module: medical_medication_us
 #: selection:medical.medicament,control_code:0
 msgid "C1"
-msgstr ""
+msgstr "C1"
 
 #. module: medical_medication_us
 #: selection:medical.medicament,control_code:0
 msgid "C2"
-msgstr ""
+msgstr "C2"
 
 #. module: medical_medication_us
 #: selection:medical.medicament,control_code:0
 msgid "C3"
-msgstr ""
+msgstr "C3"
 
 #. module: medical_medication_us
 #: selection:medical.medicament,control_code:0
 msgid "C4"
-msgstr ""
+msgstr "C4"
 
 #. module: medical_medication_us
 #: selection:medical.medicament,control_code:0
 msgid "C5"
-msgstr ""
+msgstr "C5"
 
 #. module: medical_medication_us
 #: field:medical.medicament,control_code:0
 msgid "Control code"
-msgstr ""
+msgstr "Código de controle"
 
 #. module: medical_medication_us
 #: field:medical.medication.template,dispense_uom_id:0
 msgid "Dispense UOM"
-msgstr ""
+msgstr "Dispensa UOM"
 
 #. module: medical_medication_us
 #: help:medical.medication.template,dispense_uom_id:0
 msgid "Dispense Unit of Measure"
-msgstr ""
+msgstr "Dispensar Unidade de Medida"
 
 #. module: medical_medication_us
 #: model:ir.model,name:medical_medication_us.model_medical_medicament
@@ -66,7 +67,7 @@ msgstr "Email Tópico"
 #. module: medical_medication_us
 #: help:medical.medicament,control_code:0
 msgid "Federal drug scheduling code"
-msgstr ""
+msgstr "Código Federal de Programação de Medicamentos"
 
 #. module: medical_medication_us
 #: model:ir.model,name:medical_medication_us.model_medical_medication_template
@@ -76,9 +77,9 @@ msgstr "Modelo de Medicação"
 #. module: medical_medication_us
 #: field:medical.medicament,ndc:0
 msgid "NDC"
-msgstr ""
+msgstr "NDC"
 
 #. module: medical_medication_us
 #: help:medical.medicament,ndc:0
 msgid "National Drug Code for medication"
-msgstr ""
+msgstr "Código Nacional de Medicamentos para medicamentos"

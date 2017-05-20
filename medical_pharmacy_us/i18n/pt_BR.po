@@ -3,14 +3,15 @@
 # * medical_pharmacy_us
 # 
 # Translators:
-# Nilo Silva <nilo.silva@e-nube.com.br>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2016
+# Rodrigo de Almeida Sottomaior Macedo <rmsolucoeseminformatic4@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-25 19:52+0000\n"
-"PO-Revision-Date: 2016-11-25 19:52+0000\n"
-"Last-Translator: Nilo Silva <nilo.silva@e-nube.com.br>, 2016\n"
+"POT-Creation-Date: 2017-03-28 09:59+0000\n"
+"PO-Revision-Date: 2017-03-28 09:59+0000\n"
+"Last-Translator: Rodrigo de Almeida Sottomaior Macedo <rmsolucoeseminformatic4@gmail.com>, 2017\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,12 +22,12 @@ msgstr ""
 #. module: medical_pharmacy_us
 #: help:medical.pharmacy,medicaid_num:0
 msgid "Medicaid Id #"
-msgstr ""
+msgstr "SUS Id #"
 
 #. module: medical_pharmacy_us
 #: field:medical.pharmacy,medicaid_num:0
 msgid "Medicaid num"
-msgstr ""
+msgstr "SUS num"
 
 #. module: medical_pharmacy_us
 #: model:ir.model,name:medical_pharmacy_us.model_medical_pharmacy
@@ -36,19 +37,19 @@ msgstr "Farmácia Médica"
 #. module: medical_pharmacy_us
 #: field:medical.pharmacy,nabp_num:0
 msgid "Nabp num"
-msgstr ""
+msgstr "Nabp num"
 
 #. module: medical_pharmacy_us
 #: help:medical.pharmacy,nabp_num:0
 msgid "National Boards of Pharmacy Id #"
-msgstr ""
+msgstr "Conselhos Nacionais de Farmácia Id #"
 
 #. module: medical_pharmacy_us
 #: help:medical.pharmacy,npi_num:0
 msgid "National Provider Identifier"
-msgstr ""
+msgstr "Identificador do provedor nacional"
 
 #. module: medical_pharmacy_us
 #: field:medical.pharmacy,npi_num:0
 msgid "Npi num"
-msgstr ""
+msgstr "Npi num"

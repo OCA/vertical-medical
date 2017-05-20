@@ -3,14 +3,15 @@
 # * medical_insurance_us
 # 
 # Translators:
-# Nilo Silva <nilo.silva@e-nube.com.br>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2016
+# Rodrigo de Almeida Sottomaior Macedo <rmsolucoeseminformatic4@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-25 19:52+0000\n"
-"PO-Revision-Date: 2016-11-25 19:52+0000\n"
-"Last-Translator: Nilo Silva <nilo.silva@e-nube.com.br>, 2016\n"
+"POT-Creation-Date: 2017-03-28 09:59+0000\n"
+"PO-Revision-Date: 2017-03-28 09:59+0000\n"
+"Last-Translator: Rodrigo de Almeida Sottomaior Macedo <rmsolucoeseminformatic4@gmail.com>, 2017\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/oca/teams/23907/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,23 +22,23 @@ msgstr ""
 #. module: medical_insurance_us
 #: selection:medical.insurance.template,insurance_type:0
 msgid "FSA"
-msgstr ""
+msgstr "FSA"
 
 #. module: medical_insurance_us
 #: view:medical.insurance.template:medical_insurance_us.medical_insurance_template_view_search
 msgid "Group Number"
-msgstr ""
+msgstr "Grupo de Número"
 
 #. module: medical_insurance_us
 #: field:medical.insurance.plan,group_number:0
 #: field:medical.insurance.template,group_number:0
 msgid "Group number"
-msgstr ""
+msgstr "Grupo de número"
 
 #. module: medical_insurance_us
 #: selection:medical.insurance.template,insurance_type:0
 msgid "HMO"
-msgstr ""
+msgstr "HMO"
 
 #. module: medical_insurance_us
 #: view:medical.insurance.template:medical_insurance_us.medical_insurance_template_view_search
@@ -47,13 +48,13 @@ msgstr "Afiliação de Seguro"
 #. module: medical_insurance_us
 #: view:medical.insurance.template:medical_insurance_us.medical_insurance_template_view_search
 msgid "Insurance Type"
-msgstr ""
+msgstr "Tipo de Seguro"
 
 #. module: medical_insurance_us
 #: field:medical.insurance.plan,insurance_type:0
 #: field:medical.insurance.template,insurance_type:0
 msgid "Insurance type"
-msgstr ""
+msgstr "Tipo de seguro"
 
 #. module: medical_insurance_us
 #: field:medical.insurance.plan,is_medicament:0
@@ -74,45 +75,45 @@ msgstr "Modelos de Seguro Médico"
 #. module: medical_insurance_us
 #: selection:medical.insurance.template,insurance_type:0
 msgid "PPO"
-msgstr ""
+msgstr "PPO"
 
 #. module: medical_insurance_us
 #: field:medical.insurance.plan,person_num:0
 msgid "Person Number"
-msgstr ""
+msgstr "Número Pessoal"
 
 #. module: medical_insurance_us
 #: help:medical.insurance.plan,rx_bin:0
 #: help:medical.insurance.template,rx_bin:0
 msgid "RX BIN Number"
-msgstr ""
+msgstr "Número BIN RX"
 
 #. module: medical_insurance_us
 #: help:medical.insurance.plan,rx_group:0
 #: help:medical.insurance.template,rx_group:0
 msgid "RX Group Number"
-msgstr ""
+msgstr "Grupo de Número RX"
 
 #. module: medical_insurance_us
 #: help:medical.insurance.plan,rx_pcn:0
 #: help:medical.insurance.template,rx_pcn:0
 msgid "RX Processor Control Number (PCN)"
-msgstr ""
+msgstr "Número de Controle de Processo (PCN)"
 
 #. module: medical_insurance_us
 #: field:medical.insurance.plan,rx_bin:0
 #: field:medical.insurance.template,rx_bin:0
 msgid "Rx bin"
-msgstr ""
+msgstr "Rx bin"
 
 #. module: medical_insurance_us
 #: field:medical.insurance.plan,rx_group:0
 #: field:medical.insurance.template,rx_group:0
 msgid "Rx group"
-msgstr ""
+msgstr "Grupo RX"
 
 #. module: medical_insurance_us
 #: field:medical.insurance.plan,rx_pcn:0
 #: field:medical.insurance.template,rx_pcn:0
 msgid "Rx pcn"
-msgstr ""
+msgstr "Rx pcn"
