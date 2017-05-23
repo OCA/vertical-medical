@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="medical_conf_practitioner_menu"
+                  name="Practitioner"
+                  parent="medical.medical_root"
+                  sequence="20"/>
+
+        <menuitem id="medical_practitioner_menu"
+                  name="Practitioners"
+                  parent="medical_conf_practitioner_menu"
+                  action="medical_practitioner_action"
+                  sequence="10"/>
+
+        <menuitem id="medical_role_menu"
+                  name="Roles"
+                  parent="medical_conf_practitioner_menu"
+                  action="medical_role_action"
+                  sequence="20"/>
+
+    </data>
+</odoo>

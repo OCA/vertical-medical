@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="medical_role_view_form" model="ir.ui.view">
+        <field name="name">medical.role.view.form</field>
+        <field name="model">medical.role</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <form string="Role">
+                <group>
+                    <field name="name"/>
+                    <field name="description"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_role_view_tree" model="ir.ui.view">
+        <field name="name">medical.role.view.tree</field>
+        <field name="model">medical.role</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <tree string="Roles">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_role_action">
+        <field name="name">Roles</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.role</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
