@@ -44,6 +44,14 @@ class ResPartner(models.Model):
     )
 
     @api.multi
+    def _get_medical_entity(self):
+        self.ensure_one()
+        if self.type and self.type[:7] == 'medical':
+            return self.env[self.type].search([
+                ('partner_id', '=', self.id),
+            ])
+
+    @api.multi
     def _compute_patient_ids_and_count(self):
         for record in self:
             patients = self.env['medical.patient'].search([
