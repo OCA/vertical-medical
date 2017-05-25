@@ -151,9 +151,25 @@ class TestMedicalPatient(TransactionCase):
         delta = current_date - birthdate
         years = delta.days/365
         result = self.env['medical.patient'].search(
-            [('age', '=', years)]
+            [('age_years', '=', years)]
         )
         self.assertIn(self.patient_1, result)
+        result = self.env['medical.patient'].search(
+            [('age_years', '>=', years)]
+        )
+        self.assertIn(self.patient_1, result)
+        result = self.env['medical.patient'].search(
+            [('age_years', '<=', years)]
+        )
+        self.assertIn(self.patient_1, result)
+        result = self.env['medical.patient'].search(
+            [('age_years', '>', years)]
+        )
+        self.assertNotIn(self.patient_1, result)
+        result = self.env['medical.patient'].search(
+            [('age_years', '<', years)]
+        )
+        self.assertNotIn(self.patient_1, result)
 
     def test_toggle_is_pregnant(self):
         self.patient_1.write({'is_pregnant': False})
