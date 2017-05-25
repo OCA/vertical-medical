@@ -144,7 +144,7 @@
             </xpath>
             <xpath expr="//field[@name='category_id']" position="after">
                 <field name="birthdate_date" />
-                <field name="age" />
+                <field name="age_years" />
                 <field name="identification_code" />
             </xpath>
             <xpath expr="//filter" position="after">

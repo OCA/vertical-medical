@@ -8,7 +8,7 @@ from dateutil.relativedelta import relativedelta
 
 from odoo import _, api, fields, models
 from odoo.modules import get_module_resource
-from odoo.exceptions import ValidationError
+from odoo.exceptions import ValidationError, UserError
 
 
 class MedicalPatient(models.Model):
@@ -20,6 +20,10 @@ class MedicalPatient(models.Model):
     _inherit = 'medical.abstract.entity'
 
     age = fields.Char(
+        compute='_compute_age',
+    )
+    age_years = fields.Integer(
+        string="Age (years old)",
         compute='_compute_age',
         search='_search_age',
     )
@@ -71,9 +75,13 @@ class MedicalPatient(models.Model):
                     delta.years, _('y'), delta.months, _('m'),
                     delta.days, _('d'), is_deceased
                 )
+                years = delta.years
             else:
                 years_months_days = _('No DoB')
+                years = False
             record.age = years_months_days
+            if years:
+                record.age_years = years
 
     @api.multi
     def _compute_is_deceased(self):
@@ -111,29 +119,29 @@ class MedicalPatient(models.Model):
 
     def _search_age(self, operator, value):
         current_date = date.today()
-        if operator not in ('like', '=', '>=', '>', '<', '<='):
-            operator = 'like'
-        assert operator in ('like', '=', '>=', '>', '<', '<=')
+        if operator not in ('ilike', '=', '>=', '>', '<', '<='):
+            raise UserError(_('Invalid operator: %s' % (operator,)))
+
         current_year = current_date.year
         current_day = current_date.day
         first_possible_birthdate = current_date.replace(
-            year=current_year - (int(value) + 1)
+            year=current_year - (value + 1)
         )
         last_possible_birthdate = first_possible_birthdate.replace(
-            year=current_year - int(value),
+            year=current_year - value,
             day=current_day - 1
         )
-        if operator == '=' or operator == 'like':
+        if operator == '=' or operator == 'ilike':
             return ['&', ('birthdate_date', '>=', first_possible_birthdate),
                     ('birthdate_date', '<=', last_possible_birthdate)]
         elif operator == '>=':
-            return [('birthdate_date', '>=', first_possible_birthdate)]
-        elif operator == '>':
-            return [('birthdate_date', '>', last_possible_birthdate)]
-        elif operator == '<=':
             return [('birthdate_date', '<=', last_possible_birthdate)]
-        elif operator == '<':
+        elif operator == '>':
             return [('birthdate_date', '<', first_possible_birthdate)]
+        elif operator == '<=':
+            return [('birthdate_date', '>=', first_possible_birthdate)]
+        elif operator == '<':
+            return [('birthdate_date', '>', last_possible_birthdate)]
 
     def toggle_is_pregnant(self):
         self.toggle('is_pregnant')
