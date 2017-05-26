@@ -111,9 +111,9 @@ class MedicalAbstractEntity(models.AbstractModel):
             .. code-block:: python
 
             @api.model
-            def _get_default_image(self, vals):
-                res = super(MedicalPatient, self)._get_default_image(vals)
-                if not res:
+            def _get_default_image_path(self, vals):
+                res = super(MedicalPatient, self)._get_default_image_path(vals)
+                if res:
                     return res
                 image_path = odoo.modules.get_module_resource(
                     'base', 'static/src/img', 'patient-avatar.png',
