@@ -5,6 +5,7 @@
 
 from datetime import date, datetime, timedelta
 from dateutil.relativedelta import relativedelta
+import mock
 
 from odoo import fields
 from odoo.tests.common import TransactionCase
@@ -13,8 +14,7 @@ from odoo.exceptions import ValidationError
 import logging
 _logger = logging.getLogger(__name__)
 
-
-MODULE_PATH = 'medical.models.medical_patient'
+MOCK_PATH = 'odoo.addons.medical.models.medical_patient.date'
 
 
 class TestMedicalPatient(TransactionCase):
@@ -170,6 +170,29 @@ class TestMedicalPatient(TransactionCase):
             [('age_years', '<', years)]
         )
         self.assertNotIn(self.patient_1, result)
+
+    @mock.patch(MOCK_PATH)
+    def test_search_age_on_birthday(self, date_mock):
+        """Should correctly treat patients as being 1 year older on birthday"""
+        date_mock.today.return_value = date(2017, 4, 15)
+        p1_birth = date(2016, 4, 15)
+        self.patient_1.birthdate_date = fields.Datetime.to_string(p1_birth)
+        p3_birth = date(2015, 4, 16)
+        self.patient_3.birthdate_date = fields.Datetime.to_string(p3_birth)
+
+        result = self.env['medical.patient'].search([('age_years', '=', 1)])
+        self.assertIn(self.patient_1, result)
+        self.assertIn(self.patient_3, result)
+
+    @mock.patch(MOCK_PATH)
+    def test_search_age_end_of_month(self, date_mock):
+        """Should return correct result when current date at end of month"""
+        date_mock.today.return_value = date(2017, 4, 30)
+        p1_birth = date(2015, 5, 1)
+        self.patient_1.birthdate_date = fields.Datetime.to_string(p1_birth)
+
+        result = self.env['medical.patient'].search([('age_years', '=', 1)])
+        self.assertIn(self.patient_1, result)
 
     def test_toggle_is_pregnant(self):
         self.patient_1.write({'is_pregnant': False})
