@@ -118,19 +118,18 @@ class MedicalPatient(models.Model):
         )
 
     def _search_age(self, operator, value):
-        current_date = date.today()
         if operator not in ('ilike', '=', '>=', '>', '<', '<='):
             raise UserError(_('Invalid operator: %s' % (operator,)))
 
-        current_year = current_date.year
-        current_day = current_date.day
-        first_possible_birthdate = current_date.replace(
-            year=current_year - (value + 1)
+        current_date = date.today()
+        last_birthdate = current_date + relativedelta(years=value * -1)
+        first_birthdate = current_date + relativedelta(
+            years=(value + 1) * -1,
+            days=1,
         )
-        last_possible_birthdate = first_possible_birthdate.replace(
-            year=current_year - value,
-            day=current_day - 1
-        )
+        last_possible_birthdate = fields.Datetime.to_string(last_birthdate)
+        first_possible_birthdate = fields.Datetime.to_string(first_birthdate)
+
         if operator == '=' or operator == 'ilike':
             return ['&', ('birthdate_date', '>=', first_possible_birthdate),
                     ('birthdate_date', '<=', last_possible_birthdate)]
