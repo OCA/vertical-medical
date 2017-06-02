@@ -33,6 +33,7 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [medical](medical/) | 10.0.1.0.0 | Odoo Medical
+[medical_agpl](medical_agpl/) | 10.0.1.0.0 | Odoo Medical - AGPL
 
 
 Unported addons
