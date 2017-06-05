@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2016 LasLabs Inc.
-     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
 
 <odoo>
 
@@ -45,19 +45,11 @@
             </xpath>
             <xpath expr="//group[@name='main_data']">
                 <group name="main">
-                    <field name="identification_code" />
-                    <field name="gender" />
-                    <field name="is_pregnant" />
                     <field name="parent_id"
                            colspan="2"
                            string="Legal Representative"
                            domain="[('customer','=',True)]"
                            />
-                </group>
-                <group>
-                    <field name="birthdate_date" />
-                    <field name="date_death" />
-                    <field name="age" />
                 </group>
             </xpath>
             <xpath expr="//img[@name='kanban_image_default_person']" position="replace">
@@ -65,6 +57,45 @@
                      t-if="record.is_company.raw_value === false"
                      t-attf-src='{{ _s }}/medical/static/src/img/patient-avatar.png'
                 />
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page name="medical" string="Medical">
+                    <group name="group_medical_buttons" class="oe_button_box" col="6">
+                        <button name="toggle_is_pregnant"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-venus"
+                            >
+                            <field name="is_pregnant"
+                                   widget="boolean_button"
+                                   options='{"terminology": {"string_true": "Pregnant",
+                                                             "string_hover_true": "Switch to Not Pregnant",
+                                                             "string_false": "Not Pregnant",
+                                                             "string_hover_false": "Switch to Pregnant"}}'
+                            />
+                        </button>
+                    </group>
+                    <group name="group_medical_general" string="General">
+                        <group name="group_medical_general_left">
+                            <field name="identification_code" />
+                            <field name="gender" />
+                        </group>
+                        <group name="group_medical_general_right">
+                            <field name="birthdate_date" />
+                            <field name="date_death" />
+                            <field name="age" />
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='age']" position="after">
+                <label for="weight" />
+                <div>
+                    <field name='weight' class="oe_inline" />
+                    <field name='weight_uom'
+                           class="oe_inline"
+                           placeholder="UoM" />
+                </div>
             </xpath>
         </field>
     </record>
@@ -113,7 +144,7 @@
             </xpath>
             <xpath expr="//field[@name='category_id']" position="after">
                 <field name="birthdate_date" />
-                <field name="age" />
+                <field name="age_years" />
                 <field name="identification_code" />
             </xpath>
             <xpath expr="//filter" position="after">
@@ -130,13 +161,6 @@
         <field name="res_model">medical.patient</field>
         <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
-        <field name="view_ids"
-               eval="[(5, 0, 0),
-                      (0, 0, {'view_mode': 'kanban', 'view_id': ref('medical_patient_view_kanban')}),
-                      (0, 0, {'view_mode': 'tree', 'view_id': ref('medical_patient_view_tree')}),
-                      (0, 0, {'view_mode': 'form', 'view_id': ref('medical_patient_view_form')}),
-                     ]"
-        />
     </record>
 
 </odoo>

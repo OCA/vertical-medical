@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 # Copyright 2016 LasLabs Inc.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
 import threading
 
-from odoo import _, api, fields, models
-from odoo.exceptions import UserError
+from odoo import api, fields, models, tools
 
 
 class MedicalAbstractEntity(models.AbstractModel):
@@ -52,106 +51,11 @@ class MedicalAbstractEntity(models.AbstractModel):
                 if not entities:
                     record.partner_id.active = False
 
-    @api.multi
-    @api.depends('id_numbers')
-    def _compute_identification(self, field_name, category_code):
-        """ It computes a field that indicates a certain ID type.
-
-        Use this on a field that represents a certain ID type. It will compute
-        the desired field as that ID(s).
-
-        This ID can be worked with as if it were a Char field, but it will
-        be relating back to a ``res.partner.id_number`` instead.
-
-        Example:
-
-            .. code-block:: python
-
-            social_security_id = fields.Char(
-                string='Social Security',
-                compute=lambda s: s._compute_identification(
-                    'social_security_id', 'SSN',
-                ),
-                inverse=lambda s: s._inverse_identification(
-                    'social_security_id', 'SSN',
-                ),
-            )
-
-        Args:
-            field_name: Name of field to set.
-            category_code: Category code of the Identification type.
-        """
-        for record in self:
-            id_numbers = record.id_numbers.filtered(
-                lambda r: r.category_id.code == category_code
-            )
-            if not id_numbers:
-                continue
-            # Singleton cannot be validated, because the record can be
-            #   manipulated from underneath the patient. Consider:
-            #       * User adds a second driver's license through partner,
-            #           but leaves the other active.
-            #       * User navigates to partner's associated patient record
-            #       UserError(*)
-            value = id_numbers[0].name
-            setattr(record, field_name, value)
-
-    @api.multi
-    def _inverse_identification(self, field_name, category_code):
-        """ It provides an inverse for the identification field.
-
-        This method will create a new record, or modify the existing one
-        in order to allow for the associated field to work like a Char.
-
-        Example:
-
-            .. code-block:: python
-
-            social_security_id = fields.Char(
-                string='Social Security',
-                compute=lambda s: s._compute_identification(
-                    'social_security_id', 'SSN',
-                ),
-                inverse=lambda s: s._inverse_identification(
-                    'social_security_id', 'SSN',
-                ),
-            )
-
-        Args:
-            field_name: Name of field to set.
-            category_code: Category code of the Identification type.
-        """
-        for record in self:
-            id_number = record.id_numbers.filtered(
-                lambda r: r.category_id.code == category_code
-            )
-            record_len = len(id_number)
-            if record_len == 0:
-                category = self.env['res.partner.id_category'].search([
-                    ('code', '=', category_code),
-                ])
-                self.env['res.partner.id_number'].create({
-                    'partner_id': record.partner_id.id,
-                    'category_id': category.id,
-                    'name': getattr(record, field_name),
-                })
-            elif record_len == 1:
-                value = getattr(record, field_name)
-                id_number.name = value
-            else:
-                raise UserError(_(
-                    'This %s has multiple IDs of this type (%s), so a write '
-                    'via the %s field is not possible. In order to fix this, '
-                    'please use the IDs tab.',
-                ) % (
-                    record._name, category_code.name, field_name,
-                ))
-
     @api.model
     def _create_vals(self, vals):
         """ Override this in child classes in order to add default values. """
         if self._allow_image_create(vals):
-            vals['image'] = self._get_default_image(vals)
+            vals['image'] = self._get_default_image_encoded(vals)
         return vals
 
     @api.model_cr_context
@@ -176,34 +80,58 @@ class MedicalAbstractEntity(models.AbstractModel):
         return True
 
     @api.model_cr_context
-    def _get_default_image(self, vals):
-        """ Overload this in child classes in order to add a default image.
+    def _create_default_image(self, vals):
+        base64_image = self._get_default_image_encoded(vals)
+        if not base64_image:
+            return
+        return tools.image_resize_image_big(base64_image)
 
-        Child classes should only add the image if super returns False/None.
-        They should return a base64 encoded image.
+    def _get_default_image_encoded(self, vals):
+        """ It returns the base64 encoded image string for the default avatar.
+
+        Args:
+            vals (dict): Values dict as passed to create.
+
+        Returns:
+            str: A base64 encoded image.
+            NoneType: None if no result.
+        """
+        image_path = self._get_default_image_path(vals)
+        if not image_path:
+            return
+        with open(image_path, 'r') as image:
+            return image.read().encode('base64')
+
+    @api.model_cr_context
+    def _get_default_image_path(self, vals):
+        """ Overload this in child classes in order to add a default image.
 
         Example:
 
             .. code-block:: python
 
             @api.model
-            def _get_default_image(self, vals):
-                res = super(MedicalPatient, self)._get_default_image(vals)
-                if not res:
+            def _get_default_image_path(self, vals):
+                res = super(MedicalPatient, self)._get_default_image_path(vals)
+                if res:
                     return res
-                img_path = odoo.modules.get_module_resource(
+                image_path = odoo.modules.get_module_resource(
                     'base', 'static/src/img', 'patient-avatar.png',
                 )
-                with open(img_path, 'r') as image:
-                    base64_image = image.read().encode('base64')
-                    return odoo.tools.image_resize_image_big(base64_image)
+                return image_path
 
         Args:
             vals (dict): Values dict as passed to create.
 
         Returns:
-            str: Base64 encoded image if there was one.
+            str: A file path to the image on disk.
             bool: False if error.
             NoneType: None if no result.
         """
         return  # pragma: no cover
+
+    def toggle(self, attr):
+        if getattr(self, attr) is True:
+            self.write({attr: False})
+        elif getattr(self, attr) is False:
+            self.write({attr: True})
