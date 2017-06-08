@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright 2004 Tech-Receptives
 # Copyright 2016 LasLabs Inc.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
 from datetime import datetime
 
@@ -21,13 +21,41 @@ class ResPartner(models.Model):
     patient_ids = fields.One2many(
         string='Related Patients',
         comodel_name='medical.patient',
-        inverse_name='partner_id',
+        compute='_compute_patient_ids_and_count',
     )
+    count_patients = fields.Integer(
+        compute='_compute_patient_ids_and_count',
+    )
+    birthdate_date = fields.Date(
+        string='Birthdate',
+    )
+    gender = fields.Selection([
+        ('male', 'Male'),
+        ('female', 'Female'),
+        ('other', 'Other'),
+    ])
+    weight = fields.Float()
+    weight_uom = fields.Many2one(
+        string="Weight UoM",
+        comodel_name="product.uom",
+        domain=lambda self: [('category_id', '=',
+                              self.env.ref('product.product_uom_categ_kgm').id)
+                             ]
+    )
+
+    @api.multi
+    def _compute_patient_ids_and_count(self):
+        for record in self:
+            patients = self.env['medical.patient'].search([
+                ('partner_id', 'child_of', record.id),
+            ])
+            record.count_patients = len(patients)
+            record.patient_ids = [(6, 0, patients.ids)]
 
     @api.multi
     @api.constrains('birthdate_date')
     def _check_birthdate_date(self):
-        """ It will not allow birth dates in the future. """
+        """ It will not allow birthdates in the future. """
         now = datetime.now()
         for record in self:
             if not record.birthdate_date:
@@ -35,7 +63,7 @@ class ResPartner(models.Model):
             birthdate = fields.Datetime.from_string(record.birthdate_date)
             if birthdate > now:
                 raise ValidationError(_(
-                    'Patients cannot be born in the future.',
+                    'Partners cannot be born in the future.',
                 ))
 
     @api.model

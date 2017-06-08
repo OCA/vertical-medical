@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2016-2017 LasLabs Inc.
-     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
 
 <odoo>
 
@@ -22,7 +22,6 @@
         <form string="Medical Entity">
             <header />
             <sheet>
-                <div class="oe_button_box" name="buttons" />
                 <field name="image"
                        widget='image'
                        class="oe_left oe_avatar"
@@ -39,12 +38,9 @@
                         <field name="parent_id" invisible="True" />
                     </h1>
                 </div>
-                <group name="main_data">
-                    <group name="left" />
-                    <group name="right" />
-                </group>
                 <notebook>
                     <page name="page_general_info" string="General Information">
+                        <div class="oe_button_box" name="buttons" />
                         <group name="group_contact_info" string="Contact Information">
                             <group name="group_contact_left">
                                 <field name="type"
@@ -129,6 +125,10 @@
                                 <field name="lang" />
                             </group>
                         </group>
+                        <group name="main_data">
+                            <group name="left" />
+                            <group name="right" />
+                        </group>
                     </page>
                     <page name="page_contacts" string="Contacts &amp; Addresses">
                         <field name="child_ids"
@@ -140,8 +140,6 @@
                                          'default_state_id': state_id,
                                          'default_zip': zip,
                                          'default_country_id': country_id,
-                                         'default_supplier': supplier,
-                                         'default_customer': customer,
                                          'default_lang': lang,
                                          }">
                             <kanban>
@@ -301,9 +299,6 @@
                     </page>
                     <page name='page_internal_notes' string="ID &amp; Notes">
                         <field name="comment" placeholder="Internal Note..." />
-                        <group>
-                            <field name="id_numbers" />
-                        </group>
                     </page>
                 </notebook> 
             </sheet>
@@ -387,12 +382,17 @@
                 <field name="name" />
                 <field name="category_id" />
                 <field name="parent_id" invisible="1" />
+                <field name="partner_id" invisible="1" />
                 <filter string="Tag"
                         domain="[]"
                         context="{'group_by':'category_id'}" />
                 <filter string="Parent"
                         domain="[]"
                         context="{'group_by':'parent_id'}" />
+                <filter string="Related Partner"
+                        domain="[('partner_id', 'child_of', partner_id)]"
+                        invisible="1"
+                        />
             </search>
         </field>
     </record>

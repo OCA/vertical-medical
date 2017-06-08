@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 # Copyright 2004 Tech-Receptives
 # Copyright 2016 LasLabs Inc.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
-from datetime import datetime
+from datetime import date, datetime
 from dateutil.relativedelta import relativedelta
 
-from odoo import _, api, fields, models, tools
+from odoo import _, api, fields, models
 from odoo.modules import get_module_resource
-from odoo.exceptions import ValidationError
+from odoo.exceptions import ValidationError, UserError
 
 
 class MedicalPatient(models.Model):
@@ -21,6 +21,11 @@ class MedicalPatient(models.Model):
 
     age = fields.Char(
         compute='_compute_age',
+    )
+    age_years = fields.Integer(
+        string="Age (years old)",
+        compute='_compute_age',
+        search='_search_age',
     )
     identification_code = fields.Char(
         string='Internal Identification',
@@ -70,9 +75,13 @@ class MedicalPatient(models.Model):
                     delta.years, _('y'), delta.months, _('m'),
                     delta.days, _('d'), is_deceased
                 )
+                years = delta.years
             else:
                 years_months_days = _('No DoB')
+                years = False
             record.age = years_months_days
+            if years:
+                record.age_years = years
 
     @api.multi
     def _compute_is_deceased(self):
@@ -93,7 +102,7 @@ class MedicalPatient(models.Model):
         vals = super(MedicalPatient, self)._create_vals(vals)
         if not vals.get('identification_code'):
             Seq = self.env['ir.sequence']
-            vals['identification_code'] = Seq.next_by_code(
+            vals['identification_code'] = Seq.sudo().next_by_code(
                 self._name,
             )
         vals.update({
@@ -101,14 +110,43 @@ class MedicalPatient(models.Model):
         })
         return vals
 
-    @api.model
-    def _get_default_image(self, vals):
-        res = super(MedicalPatient, self)._get_default_image(vals)
-        if res:
-            return res
-        img_path = get_module_resource(
+    @api.model_cr_context
+    def _get_default_image_path(self, vals):
+        super(MedicalPatient, self)._get_default_image_path(vals)
+        return get_module_resource(
             'medical', 'static/src/img', 'patient-avatar.png',
         )
-        with open(img_path, 'r') as image:
-            base64_image = image.read().encode('base64')
-        return tools.image_resize_image_big(base64_image)
+
+    def _search_age(self, operator, value):
+        if operator not in ('ilike', '=', '>=', '>', '<', '<='):
+            raise UserError(_('Invalid operator: %s' % (operator,)))
+
+        current_date = date.today()
+        last_birthdate = current_date + relativedelta(years=value * -1)
+        first_birthdate = current_date + relativedelta(
+            years=(value + 1) * -1,
+            days=1,
+        )
+        last_possible_birthdate = fields.Datetime.to_string(last_birthdate)
+        first_possible_birthdate = fields.Datetime.to_string(first_birthdate)
+
+        if operator == '=' or operator == 'ilike':
+            return ['&', ('birthdate_date', '>=', first_possible_birthdate),
+                    ('birthdate_date', '<=', last_possible_birthdate)]
+        elif operator == '>=':
+            return [('birthdate_date', '<=', last_possible_birthdate)]
+        elif operator == '>':
+            return [('birthdate_date', '<', first_possible_birthdate)]
+        elif operator == '<=':
+            return [('birthdate_date', '>=', first_possible_birthdate)]
+        elif operator == '<':
+            return [('birthdate_date', '>', last_possible_birthdate)]
+
+    def toggle_is_pregnant(self):
+        self.toggle('is_pregnant')
+
+    def toggle_safety_cap_yn(self):
+        self.toggle('safety_cap_yn')
+
+    def toggle_counseling_yn(self):
+        self.toggle('counseling_yn')
