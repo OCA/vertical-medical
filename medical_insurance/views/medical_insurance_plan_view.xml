@@ -6,9 +6,9 @@
             <field name="model">medical.insurance.plan</field>
             <field name="arch" type="xml">
                 <tree string="Insurance Plans">
+                    <field name="name" />
                     <field name="patient_id" />
                     <field name="number" />
-                    <field name="name" />
                     <field name="insurance_company_id" />
                     <field name="insurance_template_id" />
                 </tree>
@@ -22,6 +22,9 @@
                 <form string="Insurance Plan">
                     <header />
                     <sheet>
+                        <h2>
+                            <field name="name" nolabel="1" />
+                        </h2>
                         <group name="data">
                             <field name="patient_id" />
                             <field name="number" />
@@ -31,10 +34,11 @@
                         <notebook>
                             <page string="Plan Information">
                                 <group name="plan_info">
-                                    <field name="plan_number" />
-                                    <field name="product_id" />
-                                    <field name="insurance_company_id" />
-                                    <field name="insurance_affiliation" />
+                                    <field name="insurance_template_id" />
+                                    <field name="plan_number"/>
+                                    <field name="product_id"/>
+                                    <field name="insurance_company_id"/>
+                                    <field name="insurance_affiliation"/>
                                 </group>
                             </page>
                             <page string="Additional">
@@ -55,7 +59,6 @@
                     <field name="name" />
                     <field name="patient_id" />
                     <field name="number" />
-                    <field name="is_default" />
                     <field name="insurance_company_id" />
                     <field name="insurance_template_id" />
                     <field name="notes" />
@@ -63,9 +66,6 @@
                     <field name="product_id" />
                     <newline />
                     <group expand="0" string="Group By...">
-                        <filter string="Default plan"
-                                domain="[]"
-                                context="{'group_by':'is_default'}" />
                         <filter string="Insurance Company"
                                 domain="[]"
                                 context="{'group_by':'insurance_company_id'}" />

@@ -13,12 +13,12 @@ Usage
 #. Go to Medical -> Configuration -> Insurance
 #. Add a new provider by going to Insurance Providers and pressing "Create"
 #. Add or import a new plan by going to Insurance Plans and pressing "Create" or "Import"
-#. Create an insurance plan template by going to Insurance Plan Templates
-and pressing "Create" or "Import"
+#. Create an insurance plan template by going to Insurance Plan Templates and pressing "Create" or "Import"
+
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/159/8.0
+   :target: https://runbot.odoo-community.org/runbot/159/10.0
 
 For further information, please visit:
 
@@ -51,6 +51,8 @@ Contributors
 * Ruchir Shukla <ruchir@techreceptives.com>
 * Parthiv Patel <parthiv@techreceptives.com>
 * Nhomar Hernandéz <nhomar@vauxoo.com>
+* Gisela Mora <gisela.mora@eficent.com>
+
 
 Maintainer
 ----------
