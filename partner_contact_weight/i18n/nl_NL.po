@@ -1,0 +1,43 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * partner_contact_weight
+# 
+# Translators:
+# Peter Hageman <hageman.p@gmail.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-10 01:50+0000\n"
+"PO-Revision-Date: 2017-06-10 01:50+0000\n"
+"Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
+"Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/teams/23907/nl_NL/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: nl_NL\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: partner_contact_weight
+#: model:ir.model,name:partner_contact_weight.model_res_partner
+msgid "Partner"
+msgstr "Relatie"
+
+#. module: partner_contact_weight
+#: model:ir.ui.view,arch_db:partner_contact_weight.view_partner_contact_weight
+msgid "UoM"
+msgstr ""
+
+#. module: partner_contact_weight
+#: model:ir.model.fields,field_description:partner_contact_weight.field_res_partner_alias_weight
+#: model:ir.model.fields,field_description:partner_contact_weight.field_res_partner_weight
+#: model:ir.model.fields,field_description:partner_contact_weight.field_res_users_weight
+msgid "Weight"
+msgstr ""
+
+#. module: partner_contact_weight
+#: model:ir.model.fields,field_description:partner_contact_weight.field_res_partner_alias_weight_uom
+#: model:ir.model.fields,field_description:partner_contact_weight.field_res_partner_weight_uom
+#: model:ir.model.fields,field_description:partner_contact_weight.field_res_users_weight_uom
+msgid "Weight UoM"
+msgstr ""
