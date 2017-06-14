@@ -7,7 +7,7 @@ from odoo import fields, models
 
 class MedicalInsurancePlan(models.Model):
     _name = 'medical.insurance.plan'
-    _description = 'Medical Insurance Providers'
+    _description = 'Medical Insurance Plans'
 
     name = fields.Char(
         related='insurance_template_id.name',
@@ -19,12 +19,14 @@ class MedicalInsurancePlan(models.Model):
         string='Plan Template',
         comodel_name='medical.insurance.template',
         required=True,
-        ondelete='cascade',
+        ondelete='restrict',
         help='Insurance Plan Template',
     )
     patient_id = fields.Many2one(
         'medical.patient',
         string='Patient',
+        required=True,
+        ondelete='restrict',
     )
     number = fields.Char(
         required=True,
