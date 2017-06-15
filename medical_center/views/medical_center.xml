@@ -36,7 +36,7 @@
                 <h3>
                     <field name="is_company" invisible="True" />
                     <field name="parent_id" placeholder="Parent Company"
-                           domain="[('is_company', '=', True), ('is_center', '=', False)]"
+                           domain="[('is_company', '=', True)]"
                            context="{'default_is_company': True,
                                      'default_is_center': False,
                                      'default_supplier': supplier,
