@@ -19,7 +19,7 @@ class MedicalCenter(models.Model):
         })
         return super(MedicalCenter, self)._create_vals(vals)
 
-    @api.model
+    @api.model_cr_context
     def _get_default_image_path(self, vals):
         super(MedicalCenter, self)._get_default_image_path(vals)
         return get_module_resource(
