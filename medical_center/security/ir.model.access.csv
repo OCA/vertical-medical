@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_center_user,access.medical.center.user,model_medical_center,medical.group_medical_user,1,0,0,0
+access_medical_center_manager,access.medical.center.manager,model_medical_center,medical.group_medical_center_manager,1,1,1,1
