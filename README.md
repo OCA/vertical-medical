@@ -34,6 +34,7 @@ addon | version | summary
 --- | --- | ---
 [medical](medical/) | 10.0.1.0.1 | Odoo Medical
 [medical_agpl](medical_agpl/) | 10.0.1.0.0 | Odoo Medical - AGPL
+[medical_center](medical_center/) | 10.0.1.0.0 | Adds a concept of Medical Centers to Patients.
 
 
 Unported addons
