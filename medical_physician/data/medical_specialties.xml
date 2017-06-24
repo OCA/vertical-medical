@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016-2017 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="medical.specialty" id="medical_specialty_gp">
+        <field name="name">General Practitioner</field>
+        <field name="code">GP</field>
+    </record>
+
+    <record model="medical.specialty" id="medical_specialty_2">
+        <field name="name">Anatomy</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_3">
+        <field name="name">Andrology</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_4">
+        <field name="name">Alternative Medicine</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_5">
+        <field name="name">Anesthesiology</field>
+        <field name="code">AN, PAN</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_6">
+        <field name="name">Biochemistry</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_7">
+        <field name="name">Cardiology</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_8">
+        <field name="name">Cardiovascular surgery</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_9">
+        <field name="name">Clinical laboratory sciences</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_10">
+        <field name="name">Clinical Neurophysiology</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_11">
+        <field name="name">Dermatology</field>
+        <field name="code">D, DS</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_12">
+        <field name="name">Dietetics</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_13">
+        <field name="name">Embryology</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_14">
+        <field name="name">Emergency medicine</field>
+        <field name="code">EM</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_15">
+        <field name="name">Endocrinology</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_16">
+        <field name="name">Family Medicine</field>
+        <field name="code">FM</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_17">
+        <field name="name">Forensic Medicine</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_18">
+        <field name="name">Gastroenterology</field>
+        <field name="code">GI</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_19">
+        <field name="name">General surgery</field>
+        <field name="code">GS</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_20">
+        <field name="name">Genetics</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_21">
+        <field name="name">Geriatrics</field>
+        <field name="code">IMG</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_22">
+        <field name="name">Gynaecology</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_23">
+        <field name="name">Hematology</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_24">
+        <field name="name">Hepatology</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_25">
+        <field name="name">Histology</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_26">
+        <field name="name">Immunology</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_27">
+        <field name="name">Infectious disease</field>
+        <field name="code">ID</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_28">
+        <field name="name">Intensive care medicine</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_29">
+        <field name="name">Maxillofacial surgery</field>
+        <field name="code">Maxfacs, OMFS</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_30">
+        <field name="name">Nephrology</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_31">
+        <field name="name">Neurology</field>
+        <field name="code">N</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_32">
+        <field name="name">Neurosurgery</field>
+        <field name="code">NS</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_33">
+        <field name="name">Nursing</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_34">
+        <field name="name">Obstetrics and gynecology</field>
+        <field name="code">OB/GYN</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_35">
+        <field name="name">Oncology</field>
+        <field name="code">ON</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_36">
+        <field name="name">Ophthalmology</field>
+        <field name="code">OPH</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_37">
+        <field name="name">Orthopedic surgery</field>
+        <field name="code">ORS</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_38">
+        <field name="name">Otolaryngology, or ENT</field>
+        <field name="code">ORL, ENT</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_39">
+        <field name="name">Palliative care</field>
+        <field name="code">PLM</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_40">
+        <field name="name">Pathology</field>
+        <field name="code">PTH</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_41">
+        <field name="name">Pediatrics</field>
+        <field name="code">PD</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_42">
+        <field name="name">Pediatric surgery</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_43">
+        <field name="name">Pharmacology</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_44">
+        <field name="name">Physical medicine and rehabilitation</field>
+        <field name="code">PM&amp;R</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_45">
+        <field name="name">Plastic surgery</field>
+        <field name="code">PS</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_46">
+        <field name="name">Proctology</field>
+        <field name="code">PRO</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_47">
+        <field name="name">Psychiatry</field>
+        <field name="code">P</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_48">
+        <field name="name">Pulmonology</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_49">
+        <field name="name">Radiology</field>
+        <field name="code">R, DR</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_50">
+        <field name="name">Rheumatology</field>
+        <field name="code">RHU</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_51">
+        <field name="name">Stomatology</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_52">
+        <field name="name">Surgical oncology</field>
+        <field name="code">SO</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_53">
+        <field name="name">Thoracic surgery</field>
+        <field name="code">TS</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_54">
+        <field name="name">Toxicology</field>
+        <field name="code"></field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_55">
+        <field name="name">Transplant surgery</field>
+        <field name="code">TTS</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_56">
+        <field name="name">Trauma surgery</field>
+        <field name="code">TRS</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_57">
+        <field name="name">Urgent Care Medicine</field>
+        <field name="code">UCM</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_58">
+        <field name="name">Urology</field>
+        <field name="code">U</field>
+    </record>
+    <record model="medical.specialty" id="medical_specialty_59">
+        <field name="name">Vascular surgery</field>
+        <field name="code">VS</field>
+    </record>
+
+</odoo>
