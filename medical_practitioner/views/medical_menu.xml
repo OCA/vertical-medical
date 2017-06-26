@@ -1,7 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<odoo>
-    <data>
+<?xml version="1.0" encoding="utf-8"?>
 
+<!--
+    Copyright 2017 LasLabs Inc.
+    Copyright 2017 Creu Blanca
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
         <menuitem id="medical_conf_practitioner_menu"
                   name="Practitioner"
                   parent="medical.medical_root"
@@ -18,6 +24,4 @@
                   parent="medical_conf_practitioner_menu"
                   action="medical_role_action"
                   sequence="20"/>
-
-    </data>
 </odoo>

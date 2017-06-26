@@ -1,5 +1,13 @@
-<odoo>
-    <data noupdate="1">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright 2017 LasLabs Inc.
+    Copyright 2017 Creu Blanca
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo noupdate="1">
         <record model="medical.role" id="doctor">
             <field name="name">Doctor</field>
             <field name="description">Doctor</field>
@@ -24,5 +32,4 @@
             <field name="name">Administrative</field>
             <field name="description">Administrative</field>
         </record>
-    </data>
 </odoo>

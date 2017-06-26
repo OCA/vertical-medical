@@ -1,21 +1,27 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# Copyright 2017 LasLabs Inc.
+# Copyright 2017 Creu Blanca
+# Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+
 {
     'name': 'Medical Practitioner',
-    'version': '1',
-    'summary': 'Defines practioners',
-    'author': "Creu Blanca",
-    'maintainer': 'Creu Blanca',
-    'sequence': 30,
-    'category': 'Project',
-    'website': 'http://www.creublanca.es',
-    'depends': ['medical'],
+    'version': '10.0.1.0.0',
+    'summary': 'Defines medical practioners',
+    'author': 'Eficent, Creu Blanca, LasLabs, '
+              'Odoo Community Association (OCA)',
+    'website': 'https://odoo-community.org/',
+    'license': 'LGPL-3',
+    'category': 'Medical',
+    'depends': [
+        'medical',
+    ],
     'data': [
         'data/medical_role.xml',
         'views/medical_role.xml',
-        'wizard/medical_practitioner_user.xml',
         'views/medical_practitioner.xml',
         'views/medical_menu.xml',
+        'security/ir.model.access.csv',
     ],
     'installable': True,
     'application': False,

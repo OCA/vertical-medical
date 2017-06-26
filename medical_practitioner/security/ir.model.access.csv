@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+assistant_medical_practitioner,assistant_medical_practitioner,model_medical_practitioner,medical.group_medical_assistant,1,1,1,0
+center_manager_medical_practitioner,center_manager_medical_practitioner,model_medical_practitioner,medical.group_medical_center_manager,1,0,0,0
+doctor_medical_practitioner,doctor_medical_practitioner,model_medical_practitioner,medical.group_medical_doctor,1,1,1,0
+user_medical_practitioner,user_medical_practitioner,model_medical_practitioner,medical.group_medical_user,1,1,1,0
+assistant_medical_role,assistant_medical_role,model_medical_role,medical.group_medical_assistant,1,1,1,0
+center_manager_medical_role,center_manager_medical_role,model_medical_role,medical.group_medical_center_manager,1,0,0,0
+doctor_medical_role,doctor_medical_role,model_medical_role,medical.group_medical_doctor,1,1,1,0
+user_medical_role,user_medical_role,model_medical_role,medical.group_medical_user,1,1,1,0

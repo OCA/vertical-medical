@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 LasLabs Inc.
+    Copyright 2017 Creu Blanca
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+-->
+
 <odoo>
 
     <record id="medical_practitioner_view_form" model="ir.ui.view">
@@ -8,13 +16,6 @@
         <field name="mode">primary</field>
         <field name="arch" type="xml">
             <header>
-                <button
-                        type="action"
-                        name="%(action_medical_practitioner_user_create)d"
-                        string="Create user"
-                        class="oe_highlight"
-                        help="Create user"
-                        attrs="{'invisible': [('login_user_id', '!=', False)]}"/>
             </header>
             <xpath expr="//form" position="attributes">
                 <attribute name="string">Practitioner</attribute>
@@ -28,9 +29,6 @@
                     <field name="role_ids" placeholder="Roles" widget="many2many_tags"
                            options="{'no_create_edit': True}"/>
                 </h3>
-            </xpath>
-            <xpath expr="//field[@name='category_id']" position="after">
-                <field name="login_user_id"/>
             </xpath>
         </field>
     </record>

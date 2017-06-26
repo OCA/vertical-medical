@@ -1,48 +1,79 @@
-.. image:: https://img.shields.io/badge/license-AGPL--3-blue.svg
-    :alt: License: AGPL-3
+.. image:: https://img.shields.io/badge/licence-LGPL--3-blue.svg
+   :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
+   :alt: License: LGPL-3
 
-Odoo Medical Practitioner
-=========================
+====================
+Medical Practitioner
+====================
 
-Extension of medical that provides Practitoner concept
+This module adds medical practitioners.
+
+Practitioner covers all individuals who are engaged in the healthcare process
+and healthcare-related services as part of their formal responsibilities.
+
+Practitioners include (but are not limited to):
+
+* Physicians, dentists, pharmacists
+* Physician assistants, nurses, scribes
+* Midwives, dietitians, therapists, optometrists, paramedics
+* Medical technicians, laboratory scientists, prosthetic technicians,
+  radiographers
+* Social workers, professional home carers, official volunteers
+* Receptionists handling patient registration
+* IT personnel merging or unmerging patient records
+* Service animal (e.g., ward assigned dog capable of detecting cancer in
+  patients)
+
+A practitioner in Odoo is going to be also a partner.
+
+
+Installation
+============
+
+To install this module, simply follow the standard install process.
 
 
 Usage
 =====
 
+#. Go to Medical -> Practitioner -> Practitioners
+#. Click "Create"
+#. Enter the practitioner information and click "Save"
+
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/159/8.0
-
-For further information, please visit:
-
-* https://www.odoo.com/forum/help-1
-
-Known issues / Roadmap
-======================
-
-* Improve and provide a full description for this module into the README.rst
+   :target: https://runbot.odoo-community.org/runbot/159/10.0
 
 
 Bug Tracker
 ===========
 
-Bugs are tracked on `GitHub Issues <https://github.com/OCA/vertical-medical/issues>`_.
-In case of trouble, please check there if your issue has already been reported.
-If you spotted it first, help us smashing it by providing a detailed and welcomed feedback
-`here <https://github.com/OCA/vertical-medical/issues/new?body=module:%20medical_operational%0Aversion:%208.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+Bugs are tracked on
+`GitHub Issues <https://github.com/OCA/vertical-medical/issues>`_. In case of
+trouble, please check there if your issue has already been reported. If you
+spotted it first, help us smash it by providing detailed and welcomed feedback.
 
 
 Credits
 =======
 
+Images
+------
+
+* Odoo Community Association:
+  `Icon <https://github.com/OCA/maintainer-tools/blob/master/template/module/static/description/icon.svg>`_.
+
+
 Contributors
 ------------
 
-* Jordi Ballester <jordi.ballester@eficent.com>
+* Ken Mak <kmak@laslabs.com>
+* Brett Wood <bwood@laslabs.com>
+* Dave Lasley <dave@laslabs.com>
+* Enric Tobella <etobella@creublanca.es>
 * Roser Garcia <roser.garcia@eficent.com>
 * Gisela Mora <gisela.mora@eficent.com>
-* Enric Tobella <etobella@creublanca.es
+
 
 Maintainer
 ----------
@@ -57,4 +88,4 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-To contribute to this module, please visit http://odoo-community.org.
+To contribute to this module, please visit https://odoo-community.org.
