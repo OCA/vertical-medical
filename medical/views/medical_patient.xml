@@ -59,7 +59,7 @@
                 />
             </xpath>
             <xpath expr="//notebook" position="inside">
-                <page name="medical" string="Medical">
+                <page name="medical" string="Medical" autofocus="True">
                     <group name="group_medical_buttons" class="oe_button_box" col="6">
                         <button name="toggle_is_pregnant"
                             type="object"
