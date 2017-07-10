@@ -14,4 +14,11 @@ class MedicalPractitioner(models.Model):
 
     role_ids = fields.Many2many(
         string='Roles',
-        comodel_name='medical.role')
+        comodel_name='medical.role',
+    )
+    practitioner_type = fields.Selection(
+        string='Entity Type',
+        selection=[('internal', 'Internal Entity'),
+                   ('external', 'External Entity')],
+        readonly=False,
+    )
