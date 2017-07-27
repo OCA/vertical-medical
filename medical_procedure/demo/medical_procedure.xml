@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 LasLabs Inc.
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+
+<odoo>
+    <record id="medical_procedure_active_demo" model="medical.procedure">
+        <field name="name">Active Demo Procedure</field>
+        <field name="code">ADEMO</field>
+        <field name="description">This is an active demo medical procedure record.</field>
+    </record>
+
+    <record id="medical_procedure_inactive_demo" model="medical.procedure">
+        <field name="name">Inactive Demo Procedure</field>
+        <field name="code">IDEMO</field>
+        <field name="description">This is an inactive demo medical procedure record.</field>
+        <field name="active" eval="False"/>
+    </record>
+</odoo>
