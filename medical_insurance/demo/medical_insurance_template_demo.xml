@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="medical_insurance_template_1" model="medical.insurance.template">
+        <field name="name">Insurance Template 1</field>
+        <field name="plan_number">PLAN-12345</field>
+        <field name="product_id" ref="medical_insurance.product_product_1" />
+        <field name="insurance_affiliation">private</field>
+    </record>
+
+    <record id="medical_insurance_template_2" model="medical.insurance.template">
+        <field name="name">Insurance Template 2</field>
+        <field name="plan_number">INSURE-9876</field>
+        <field name="product_id" ref="medical_insurance.product_product_1" />
+        <field name="insurance_affiliation">private</field>
+    </record>
+
+</odoo>

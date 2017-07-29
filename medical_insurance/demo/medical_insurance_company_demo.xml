@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="medical_insurance_company_1" model="medical.insurance.company">
+        <field name="name">Insurance Company 1</field>
+        <field name="street">123 Insurance Blvd.</field>
+        <field name="city">The Shire</field>
+        <field name="zip">12345</field>
+        <field name="phone">1-234-567-8901</field>
+    </record>
+
+    <record id="medical_insurance_company_2" model="medical.insurance.company">
+        <field name="name">Insurance Company 2</field>
+        <field name="street">124 Insurance Blvd.</field>
+        <field name="city">The Shire</field>
+        <field name="zip">12345</field>
+        <field name="phone">1-987-654-3210</field>
+    </record>
+
+</odoo>

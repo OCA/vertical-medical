@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="medical_insurance_plan_1" model="medical.insurance.plan">
+        <field name="patient_id" ref="medical.medical_patient_patient_1" />
+        <field name="number">999761-1</field>
+        <field name="member_since">2015-01-01</field>
+        <field name="insurance_template_id" ref="medical_insurance.medical_insurance_template_1" />
+    </record>
+
+    <record id="medical_insurance_plan_2" model="medical.insurance.plan">
+        <field name="patient_id" ref="medical.medical_patient_patient_2" />
+        <field name="number">999761-2</field>
+        <field name="member_since">2015-01-01</field>
+        <field name="insurance_template_id" ref="medical_insurance.medical_insurance_template_1" />
+    </record>
+
+    <record id="medical_insurance_plan_3" model="medical.insurance.plan">
+        <field name="patient_id" ref="medical.medical_patient_patient_3" />
+        <field name="number">12234324-1</field>
+        <field name="member_since">2011-01-01</field>
+        <field name="insurance_template_id" ref="medical_insurance.medical_insurance_template_2" />
+    </record>
+
+</odoo>

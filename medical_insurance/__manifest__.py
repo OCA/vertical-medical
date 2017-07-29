@@ -21,6 +21,12 @@
         'security/ir.model.access.csv',
         'views/medical_menu.xml',
     ],
+    "demo": [
+        "demo/product_product_demo.xml",
+        "demo/medical_insurance_company_demo.xml",
+        "demo/medical_insurance_template_demo.xml",
+        "demo/medical_insurance_plan_demo.xml",
+    ],
     'installable': True,
     'auto_install': False,
 }

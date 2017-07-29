@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="product_product_1" model="product.product">
+        <field name="name">Insurance Product 1</field>
+        <field name="uom_id" ref="product.product_uom_unit" />
+        <field name="uom_po_id" ref="product.product_uom_unit" />
+        <field name="type">service</field>
+        <field name="description_sale">Insurance for 1 person</field>
+        <field name="pricelist_id" ref="product.list0" />
+        <field name="standard_price">200.00</field>
+        <field name="list_price">200.00</field>
+        <field name="currency_id" ref="base.USD" />
+        <field name="default_code">INSURE-1</field>
+    </record>
+
+</odoo>
