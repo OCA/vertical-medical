@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record model="ir.ui.view" id="medical_request_group_form">
+        <field name="name">medical.request.group.form</field>
+        <field name="model">medical.request.group</field>
+        <field name="inherit_id"
+               ref="medical_request_group.medical_request_group_form"/>
+        <field name="arch" type="xml">
+                <page name='procedure_requests' position="inside">
+                    <field name="procedure_request_ids" nolabel="1">
+                        <tree string="Procedure request" noedit="0">
+                            <field name="internal_identifier"/>
+                            <field name="title"/>
+                        </tree>
+                    </field>
+                </page>
+                <page name='request_groups' position="inside">
+                    <field name="request_group_ids" nolabel="1">
+                        <tree string="Request groups" noedit="0">
+                            <field name="name"/>
+                        </tree>
+                    </field>
+                </page>
+        </field>
+    </record>
+
+</odoo>

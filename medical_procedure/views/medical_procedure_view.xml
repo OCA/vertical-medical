@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="medical_procedure_view_tree" model="ir.ui.view">
+        <field name="name">medical.procedure.view.tree</field>
+        <field name="model">medical.procedure</field>
+        <field name="arch" type="xml">
+            <tree string="Medical Procedures"
+                  colors="grey:state in ('cancelled');">
+                <field name="internal_identifier"/>
+                <field name="priority"/>
+                <field name="title"/>
+                <field name="center_id"/>
+                <field name="subject_id"/>
+                <field name="performer_id"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="medical_procedure_view_form" model="ir.ui.view">
+        <field name="name">medical.procedure.view.form</field>
+        <field name="model">medical.procedure</field>
+        <field name="arch" type="xml">
+            <form string="Medical Procedure">
+                <header>
+                    <button name="button_draft"
+                            states="active,suspended,completed,entered-in-error,
+                            unknown"
+                            string="Reset"
+                            type="object"/>
+                            <!--TODO groups=""-->
+                    <button name="button_active"
+                            states="draft,suspended"
+                            string="Active"
+                            type="object"/>
+                            <!--TODO groups=""-->
+                    <button name="button_suspended"
+                            states="draft,active,entered-in-error,unknown"
+                            string="Suspend"
+                            type="object"/>
+                            <!--TODO groups=""-->
+                    <button name="button_completed"
+                            states="active,suspended,unknown"
+                            string="Completed"
+                            type="object"/>
+                            <!--TODO groups=""-->
+                    <button name="button_completed_and_invoiced"
+                            states="active,suspended,completed,unknown"
+                            string="Completed and Invoiced"
+                            type="object"/>
+                            <!--TODO groups=""-->
+                    <button name="button_entered_in_error"
+                            states="active,suspended,completed,entered-in-error,
+                            unknown"
+                            string="Entered in Error"
+                            type="object"/>
+                            <!--TODO groups=""-->
+                    <button name="button_cancelled"
+                            states="active,suspended,unknown"
+                            string="Cancel"
+                            type="object"/>
+                            <!--TODO groups=""-->
+                    <button name="button_unknown"
+                            states="active,suspended"
+                            string="Unknown"
+                            type="object"/>
+                            <!--TODO groups=""-->
+                    <field name="state"
+                           widget="statusbar"
+                           statusbar_visible="draft,active,suspended,completed,
+                           completed-and-invoiced,entered-in-error,unknown"/>
+                </header>
+                <sheet>
+                    <h1>
+                        <field name="internal_identifier"/>
+                    </h1>
+                    <h2>
+                        <field name="title"
+                               attrs="{'readonly':['|',
+                               ('state','in',('cancelled')), '|',
+                               ('state','in',('completed')),
+                               ('state','in',('completed-and-invoiced'))]}"/>
+                    </h2>
+                    <group name="service">
+                        <field name="service_id"
+                               attrs="{'readonly':['|',
+                               ('state','in',('cancelled')), '|',
+                               ('state','in',('completed')),
+                               ('state','in',('completed-and-invoiced'))]}"/>
+                        <field name="center_id"
+                               attrs="{'readonly':['|',
+                               ('state','in',('cancelled')), '|',
+                               ('state','in',('completed')),
+                               ('state','in',('completed-and-invoiced'))]}"/>
+                    </group>
+                    <group name="priority">
+                        <group>
+                            <field name="priority"
+                                   attrs="{'readonly':['|',
+                                   ('state','in',('cancelled')), '|',
+                                   ('state','in',('completed')),
+                                   ('state','in',
+                                   ('completed-and-invoiced'))]}"/>
+                        </group>
+                        <group>
+                            <field name="procedure_request_id"/>
+                        </group>
+                    </group>
+                    <group name="patient">
+                        <field name="subject_id"
+                               attrs="{'readonly':['|',
+                               ('state','in',('cancelled')), '|',
+                               ('state','in',('completed')),
+                               ('state','in',('completed-and-invoiced'))]}"/>
+                        <field name="reason"
+                               attrs="{'readonly':['|',
+                               ('state','in',('cancelled')), '|',
+                               ('state','in',('completed')),
+                               ('state','in',('completed-and-invoiced'))]}"/>
+                    </group>
+                    <group name="performance">
+                        <field name="performer_id"
+                               attrs="{'readonly':['|',
+                               ('state','in',('cancelled')), '|',
+                               ('state','in',('completed')),
+                               ('state','in',('completed-and-invoiced'))]}"/>
+                        <field name="date_start"
+                               attrs="{'readonly':['|',
+                               ('state','in',('cancelled')), '|',
+                               ('state','in',('completed')),
+                               ('state','in',('completed-and-invoiced'))]}"/>
+                        <field name="date_end"
+                               attrs="{'readonly':['|',
+                               ('state','in',('cancelled')), '|',
+                               ('state','in',('completed')),
+                               ('state','in',('completed-and-invoiced'))]}"/>
+                    </group>
+                    <notebook>
+                        <page string="Details" name="description">
+                            <field name="details" nolabel="1"
+                                   attrs="{'readonly':['|',
+                                   ('state','in',('cancelled')), '|',
+                                   ('state','in',('completed')),
+                                   ('state','in',
+                                   ('completed-and-invoiced'))]}"/>
+                        </page>
+                        <page string="Notes and Messages" name="messages">
+                            <div class="oe_chatter">
+                                <field name="message_follower_ids"
+                                       widget="mail_followers"/>
+                                <field name="message_ids" widget="mail_thread"/>
+                            </div>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="medical_procedure_view_search" model="ir.ui.view">
+        <field name="name">medical.procedure.view.search</field>
+        <field name="model">medical.procedure</field>
+        <field name="arch" type="xml">
+            <search string="Medical Procedure">
+                <field name="internal_identifier"/>
+                <field name="subject_id"/>
+                <field name="performer_id"/>
+                <field name="procedure_request_id"/>
+                <field name="title" />
+                <field name="state"/>
+                <field name="priority"/>
+                <newline />
+                <group expand="0" name="groupby" string="Group By...">
+                    <filter string="Patient"
+                            domain="[]"
+                            context="{'group_by':'subject_id'}" />
+                    <filter string="Performer"
+                            domain="[]"
+                            context="{'group_by':'performer_id'}" />
+                    <filter string="Priority"
+                            domain="[]"
+                            context="{'group_by':'priority'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_procedure_action">
+        <field name="name">Procedures</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.procedure</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,calendar</field>
+        <field name="context">{}</field>
+    </record>
+
+</odoo>
+

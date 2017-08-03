@@ -1,1 +1,3 @@
 partner-contact
+vertical-medical-plan-definition https://github.com/Eficent/vertical-medical.git 10.0-feature-plandefinition
+vertical-medical-request-group https://github.com/Eficent/vertical-medical.git 10.0-feature-request_group
