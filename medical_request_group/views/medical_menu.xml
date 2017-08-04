@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+    <menuitem id="medical_request_group_root"
+              name="Request Group"
+              parent="medical.medical_root"/>
+
+    <menuitem id="medical_request_group"
+              name=" Request Groups"
+              parent="medical_request_group_root"
+              sequence="10"
+              action="medical_request_group_window_action" />
+</odoo>

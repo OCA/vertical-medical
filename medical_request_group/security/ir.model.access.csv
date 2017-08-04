@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+assistant_medical_request_group,assistant_medical_request_group,model_medical_request_group,medical.group_medical_assistant,1,1,1,0
+center_manager_medical_request_group,center_manager_medical_request_group,model_medical_request_group,medical.group_medical_center_manager,1,0,0,0
+doctor_medical_request_group,doctor_medical_request_group,model_medical_request_group,medical.group_medical_doctor,1,1,1,0
+user_medical_request_group,user_medical_request_group,model_medical_request_group,medical.group_medical_user,1,1,1,0
