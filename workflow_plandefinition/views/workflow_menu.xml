@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <menuitem
+            id="main_workflow"
+            name="Workflow"
+            groups="group_workflow_user"/>
+
+    <menuitem
+            id="main_workflow_config"
+            name="Configuration"
+            parent="main_workflow"
+            groups="group_workflow_manager"
+            sequence="90"/>
+
+    <menuitem
+            id="workflow_plan_definition_menu"
+            name="Plan definition"
+            parent="main_workflow"
+            sequence="10"/>
+
+    <menuitem
+            id="workflow_plan_definitions_menu"
+            name="Plan definitions"
+            parent="workflow_plan_definition_menu"
+            action="workflow_plan_definition"
+            sequence="10"/>
+
+    <menuitem
+            id="workflow_plan_definition_actions_menu"
+            name="Actions"
+            parent="workflow_plan_definition_menu"
+            action="workflow_plan_definition_action"
+            sequence="20"/>
+
+    <menuitem
+            id="workflow_activity_definition_menu"
+            name="Activity definition"
+            parent="main_workflow"
+            sequence="30"/>
+
+    <menuitem
+            id="workflow_activity_definitions_menu"
+            name="Activity definitions"
+            parent="workflow_activity_definition_menu"
+            action="workflow_activity_definition_action"
+            sequence="10"/>
+
+    <menuitem
+            id="workflow_type"
+            name="Workflow Types"
+            parent="main_workflow_config"
+            action="workflow_type_action"/>
+
+</odoo>

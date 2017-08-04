@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+user_workflow_type,user_workflow_type,model_workflow_type,group_workflow_user,1,1,1,0
+user_workflow_activity_definition,user_workflow_activity_definition,model_workflow_activity_definition,group_workflow_user,1,1,1,0
+user_workflow_plan_definition,user_workflow_plan_definition,model_workflow_plan_definition,group_workflow_user,1,1,1,0
