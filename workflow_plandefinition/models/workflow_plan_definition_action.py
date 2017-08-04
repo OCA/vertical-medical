@@ -47,6 +47,7 @@ class PlanDefinitionAction(models.Model):
     parent_id = fields.Many2one(
         string='Parent Action',
         comodel_name='workflow.plan.definition.action',
+        ondelete='cascade',
     )
     child_ids = fields.One2many(
         string='Child Actions',
