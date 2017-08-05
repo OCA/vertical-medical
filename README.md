@@ -4,27 +4,14 @@
 
 # Vertical Medical
 
-It provides a free universal Health and Hospital Information System, allowing
-medical instutions to benefit from a centralized and scalable Electronic Medical
-Records (EMR) System based on Odoo.
+Vertical Medical provides a Free and Open Source solution for storing and processing medical
+records in Odoo.
 
-- Strong focus in family medicine and Primary Health Care
-- Major interest in Socio-economics (housing conditions, substance abuse,
-  education, etc.)
-- Diseases and Medical procedures standards (like ICD-9, ICD-10, ICD-10-PCS,
-  etc.)
-- Patient Genetic and Hereditary risks: Over 4200 genes related to
-  diseases (NCBI / Genecards)
-- Epidemiological and other statistical reports
-- 100% paperless patient examination and history taking
-- Patient Administration
-  (creation, evaluations / consultations, history, etc.)
-- Doctor Administration
-- Lab Administration
-- Medicine / Drugs information
-- Medical stock and supply chain management
-- Hospital Financial Administration
-- Designed with industry standards in mind
+Many of the workflows were built in alignment with existing Odoo processes to allow for
+seamless operation with other record types.
+
+This project is moving towards organization and data models inspired by [HL7 FHIR v3](
+https://www.hl7.org/fhir/overview.html).
 
 [//]: # (addons)
 
