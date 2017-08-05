@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_medical_operational_area,access.medical.operational.area,model_medical_operational_area,medical.group_medical_user,1,0,0,0
-access_medical_operational_area,access.medical.operational.area,model_medical_operational_area,medical.group_medical_configurator,1,1,1,1
-access_medical_operational_sector,access.medical.operational.sector,model_medical_operational_sector,medical.group_medical_user,1,0,0,0
-access_medical_operational_sector,access.medical.operational.sector,model_medical_operational_sector,medical.group_medical_configurator,1,1,1,1
