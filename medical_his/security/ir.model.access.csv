@@ -1,7 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_medical_hospital_bed_group_medical_user,access.medical.hospital.bed.group.medical.user,model_medical_hospital_bed,medical.group_medical_user,1,1,1,0
-access_medical_hospital_room,access.medical.hospital.room,model_medical_hospital_room,medical.group_medical_user,1,1,1,0
-access_medical_hospital_or,access.medical.hospital.or,model_medical_hospital_or,medical.group_medical_user,1,1,1,0
-access_medical_hospital_zone,access.medical.hospital.zone,model_medical_hospital_zone,medical.group_medical_user,1,1,1,0
-access_medical_hospital_unit,access.medical.hospital.unit,model_medical_hospital_unit,medical.group_medical_user,1,1,1,0
-access_medical_hospital_bed_type,access.medical.hospital.bed.type,model_medical_hospital_bed_type,medical.group_medical_user,1,1,1,0
