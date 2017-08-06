@@ -47,25 +47,9 @@ Unported addons
 ---------------
 addon | version | summary
 --- | --- | ---
-[medical_emr](medical_emr/) | 8.0.1.1 (unported) | Medical EMR : Electronic Medical Record management for Medical
-[medical_emr_data](medical_emr_data/) | 8.0.1.0 (unported) | Medical EMR: Module Data
-[medical_family](medical_family/) | 9.0.1.0.0 (unported) | Medical Family
-[medical_his](medical_his/) | 8.0.1.1.0 (unported) | Medical Hospital
 [medical_insurance](medical_insurance/) | 8.0.1.1.0 (unported) | Medical Insurance
 [medical_insurance_us](medical_insurance_us/) | 8.0.1.1.0 (unported) | Medical Insurance - US
 [medical_medicament_attributes](medical_medicament_attributes/) | 8.0.1.0.0 (unported) | Medical Medicament Physical Attributes
-[medical_operational](medical_operational/) | 8.0.1.0 (unported) | Odoo Medical : Operational areas and sectors
-[medical_patient_ethnicity](medical_patient_ethnicity/) | 8.0.1.1.0 (unported) | Medical Patient Ethnicity
-[medical_patient_occupation](medical_patient_occupation/) | 8.0.1.1.0 (unported) | Medical Patient Occupation
-[oemedical_genetics](oemedical_genetics/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
-[oemedical_gynecology_and_obstetrics](oemedical_gynecology_and_obstetrics/) | 1.0.1 (unported) | OeMedical : gynecology and obstetrics
-[oemedical_icu](oemedical_icu/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
-[oemedical_invoice](oemedical_invoice/) | 0.1 (unported) | Medical Invoice
-[oemedical_lifestyle](oemedical_lifestyle/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
-[oemedical_pediatrics](oemedical_pediatrics/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
-[oemedical_socioeconomics](oemedical_socioeconomics/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
-[oemedical_surgery](oemedical_surgery/) | 1.0 (unported) | OeMedical : Free Health and Hospital Information System
-[web_doc_oemedical](web_doc_oemedical/) | 0.1 (unported) | OeMedical CMS
 
 [//]: # (end addons)
 
