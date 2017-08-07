@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical_pathology_import_view_form" model="ir.ui.view">
+        <field name="name">Medical Pathology Import Form</field>
+        <field name="model">medical.pathology.import</field>
+        <field name="arch" type="xml">
+            <form string='Remote Pathology Data Import'>
+                <group>
+                    <field name="importer_type" />
+                    <field name="code_type_id" />
+                    <field name="zip_uri" />
+                    <field name="auth_username" />
+                    <field name="auth_password" />
+                    <field name="file_name" />
+                </group>
+            </form>
+        </field>
+    </record>
+    
+    <record id="medical_pathology_import_action" model="ir.actions.act_window">
+        <field name="name">Import Data</field>
+        <field name="res_model">medical.pathology.import</field>
+        <field name="src_model">medical.pathology</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+    </record>
+
+</odoo>
