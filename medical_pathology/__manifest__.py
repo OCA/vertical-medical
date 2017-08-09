@@ -5,9 +5,9 @@
 {
     "name": "Medical Pathology",
     "summary": "Extends Odoo Medical with pathologies (diseases).",
-    "version": "9.0.1.0.1",
+    "version": "10.0.1.0.0",
     "category": "Medical",
-    "website": "https://laslabs.com/",
+    "website": "https://github.com/OCA/vertical-medical",
     "author": "LasLabs, ACSONE SA/NV, Odoo Community Association (OCA)",
     "license": "LGPL-3",
     "application": False,
@@ -17,7 +17,6 @@
     ],
     "data": [
         "views/medical_pathology_category_view.xml",
-        "views/medical_pathology_group_view.xml",
         "views/medical_pathology_view.xml",
         "views/medical_menu.xml",
         "data/medical_pathology_code_type.xml",
@@ -25,7 +24,6 @@
     ],
     "demo": [
         "demo/medical_pathology_category_demo.xml",
-        "demo/medical_pathology_group_demo.xml",
         "demo/medical_pathology_demo.xml",
     ],
 }

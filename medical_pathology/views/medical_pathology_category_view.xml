@@ -50,14 +50,14 @@
                         <h1><field name="name" /></h1>
                     </div>
                     <div class="oe_right oe_button_box" name="buttons" />
-                    <group name="data">
-                        <group name="main">
+                    <group name="group_data">
+                        <group name="group_main">
                             <field name="code_type_id" />
                             <field name="parent_id"
                                    context="{'default_code_type_id': code_type_id}"
                                    />
                         </group>
-                        <group name="notes">
+                        <group name="group_notes">
                             <field name="notes" />
                         </group>
                     </group>

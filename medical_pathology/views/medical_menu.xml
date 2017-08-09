@@ -5,23 +5,20 @@
 <odoo>
 
     <menuitem id="medical_root_pathology"
-              name="Disease"
+              name="Pathology"
               parent="medical.medical_root_sub"
               sequence="10" />
 
     <menuitem id="medical_pathology"
               parent="medical_root_pathology"
               sequence="10" 
-              action="medical_pathology_action" />
+              action="medical_pathology_action"
+              />
 
     <menuitem id="medical_pathology_category"
               parent="medical_root_pathology"
               sequence="20"
-              action="medical_pathology_category_action" />
-
-    <menuitem id="medical_pathology_group"
-              parent="medical_root_pathology"
-              sequence="30"
-              action="medical_pathology_group_action" />
+              action="medical_pathology_category_action"
+              />
 
 </odoo>

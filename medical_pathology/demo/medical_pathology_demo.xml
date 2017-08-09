@@ -9,8 +9,6 @@
         <field name="code">[DEMO] B20</field>
         <field name="code_type_id" ref="medical_pathology.pathology_code_05" />
         <field name="category_id" ref="medical_pathology.medical_pathology_category_4" />
-        <field name="medical_pathology_group_ids" 
-               eval="[(6, 0, [ref('medical_pathology.medical_pathology_group_2')])]"></field>
     </record>
 
     <record id="medical_pathology_medical_pathology_2" model="medical.pathology">
@@ -18,8 +16,6 @@
         <field name="code">[DEMO] B54</field>
         <field name="code_type_id" ref="medical_pathology.pathology_code_05" />
         <field name="category_id" ref="medical_pathology.medical_pathology_category_6" />
-        <field name="medical_pathology_group_ids" 
-               eval="[(6, 0, [ref('medical_pathology.medical_pathology_group_2')])]"></field>
     </record>
 
     <record id="medical_pathology_medical_pathology_A00" model="medical.pathology">

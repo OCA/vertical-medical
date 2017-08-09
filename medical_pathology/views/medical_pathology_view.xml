@@ -14,9 +14,6 @@
                 <field name="code" />
                 <field name="code_type_id" />
                 <field name="name" />
-                <field name="protein" />
-                <field name="gene" />
-                <field name="chromosome" />
                 <newline />
                 <group expand="0" string="Group By...">
                     <filter string="Category"
@@ -26,18 +23,6 @@
                     <filter string="Code Type"
                             domain="[]"
                             context="{'group_by': 'code_type_id'}"
-                            />
-                    <filter string="Protein involved"
-                            domain="[]"
-                            context="{'group_by':'protein'}"
-                            />
-                    <filter string="Gene"
-                            domain="[]"
-                            context="{'group_by':'gene'}"
-                            />
-                    <filter string="Affected Chromosome"
-                            domain="[]"
-                            context="{'group_by':'chromosome'}"
                             />
                 </group>
             </search>
@@ -53,9 +38,6 @@
                 <field name="code" />
                 <field name="code_type_id" />
                 <field name="category_id" />
-                <field name="protein" />
-                <field name="gene" />
-                <field name="chromosome" />
             </tree>
         </field>
     </record>
@@ -72,8 +54,8 @@
                         <h1><field name="name"/></h1>
                     </div>
                     <div class="oe_right oe_button_box" name="buttons" />
-                    <group name="data">
-                        <group name="main">
+                    <group name="group_data">
+                        <group name="group_main">
                             <field name="code" />
                             <field name="code_type_id" />
                             <field name="parent_id"
@@ -85,17 +67,9 @@
                                    context="{'default_code_type_id': code_type_id}"
                                    />
                         </group>
-                        <group name="genetics">
-                            <field name="protein" />
-                            <field name="chromosome" />
-                            <field name="gene" />
-                        </group>
                     </group>
                     <notebook>
-                        <page string="Disease Groups" name="notes" autofocus="autofocus">
-                            <field name="medical_pathology_group_ids" />
-                        </page>
-                        <page string="Others" name="others">
+                        <page string="Misc" name="page_other">
                             <separator string="Notes"/>
                             <field name="notes" />
                         </page>

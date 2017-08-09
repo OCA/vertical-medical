@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
-# Copyright 2004 Tech-Receptives
 # Copyright 2016 LasLabs Inc.
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
-from openerp import api, fields, models, _
-from openerp.exceptions import ValidationError
+from odoo import api, fields, models, _
+from odoo.exceptions import ValidationError
 
 
 class MedicalPathologyCategory(models.Model):
@@ -38,8 +37,8 @@ class MedicalPathologyCategory(models.Model):
 
     @api.multi
     @api.constrains('parent_id')
-    def _check_recursion_parent_id(self):
+    def _check_parent_id(self):
         if not self._check_recursion():
             raise ValidationError(_(
-                'Error! You are attempting to create a recursive category.'
+                'You are attempting to create a recursive category.'
             ))

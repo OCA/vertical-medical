@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
-# Copyright 2004 Tech-Receptives
 # Copyright 2016 LasLabs Inc.
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
-from openerp import _, api, fields, models
-from openerp.exceptions import ValidationError
+from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class MedicalPathology(models.Model):
@@ -32,22 +31,6 @@ class MedicalPathology(models.Model):
         domain="[('code_type_id', '=', code_type_id)]",
         index=True,
     )
-    medical_pathology_group_ids = fields.Many2many(
-        string='Medical Pathology Groups',
-        comodel_name='medical.pathology.group',
-        column1='pathology_id',
-        colmun2='pathology_group_id',
-        relation="pathology_id_pathology_group_id_rel",
-    )
-    protein = fields.Char(
-        string='Protein Involved',
-    )
-    chromosome = fields.Char(
-        string='Affected Chromosome',
-    )
-    gene = fields.Char(
-        string='Affected Gene',
-    )
     child_ids = fields.One2many(
         string='Children Pathologies',
         comodel_name='medical.pathology',
@@ -64,13 +47,13 @@ class MedicalPathology(models.Model):
     _sql_constraints = [
         ('code_and_type_uniq',
          'UNIQUE(code, code_type_id)',
-         'Pathology codes must be unique per Code Type.'),
+         'Pathology codes must be unique per code type.'),
     ]
 
     @api.multi
     @api.constrains('parent_id')
-    def _check_recursion_parent_id(self):
+    def _check_parent_id(self):
         if not self._check_recursion():
             raise ValidationError(_(
-                'Error! You are attempting to create a recursive pathology.'
+                'You are attempting to create a recursive pathology.'
             ))

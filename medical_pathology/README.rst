@@ -20,11 +20,9 @@ Configuration
 The ``Disease`` configuration menu is in the ``Configuration`` section of the
 ``Medical`` app.
 
-* ``Pathologies`` - Use ths menu to add or view diseases in the system.
-* ``Pathology Categories`` - Provides a hierarchal category structure for pathologies.
+* ``Pathologies`` - Use this menu to add or view diseases in the system.
+* ``Pathology Categories`` - Provides a hierarchical category structure for pathologies.
   These categories are typically standardized, such as ICD-10.
-* ``Pathology Groups`` - Allows for internal pathology classification while providing
-  isolation from the standardized categories.
 
 .. image:: static/description/screenshot_pathologies.png?raw=true
    :alt: Pathologies
@@ -39,14 +37,17 @@ This module does not provide functionality beyond data models as listed above.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/159/9.0
+   :target: https://runbot.odoo-community.org/runbot/159/10.0
 
 Known issues / Roadmap
 ======================
 
-Upgrade Note: This module replaces pathology logic from v8 ``medical_disease``. The
-remaining logic related to the application of pathologies to the context of a patient
-(aka ``pathosis``) is in ``medical_patient_disease``.
+* The concepts here should be replaced with FHIR `Observation <https://www.hl7.org/fhir/observation.html>`_
+  and `Condition <https://www.hl7.org/fhir/condition.html>`_ in v11. `More info
+  <http://wiki.hl7.org/index.php?title=Observation,_Condition,_Diagnosis,_Concern>`_.
+* A concept of pathology aliases should be introduced, which will allow for pathologies
+  of different code types to be referenced back to each other - allowing for code type
+  conversions.
 
 Bug Tracker
 ===========
@@ -54,7 +55,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues
 <https://github.com/OCA/vertical-medical/issues>`_. In case of trouble, please
 check there if your issue has already been reported. If you spotted it first,
-help us smashing it by providing a detailed and welcomed feedback.
+help us smash it by providing detailed and welcomed feedback.
 
 Credits
 =======
