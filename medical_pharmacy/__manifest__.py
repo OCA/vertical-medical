@@ -1,29 +1,28 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016-2017 LasLabs Inc.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# Copyright 2016-2018 LasLabs Inc.
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
 {
-    "name": "Medical Pharmacy",
-    "summary": "Adds pharmacy namespace on partners.",
-    "version": "10.0.1.0.0",
-    "category": "Medical",
-    "website": "https://laslabs.com",
-    "author": "LasLabs, Odoo Community Association (OCA)",
-    "license": "AGPL-3",
-    "application": False,
-    "installable": True,
-    "depends": [
-        "medical_center",
-        "medical_physician",
+    'name': 'Medical Pharmacy',
+    'summary': 'Support for storing pharmacy and pharmacist info',
+    'version': '10.0.1.0.0',
+    'category': 'Medical',
+    'website': 'https://github.com/OCA/vertical-medical',
+    'author': 'LasLabs, Odoo Community Association (OCA)',
+    'license': 'LGPL-3',
+    'application': False,
+    'installable': True,
+    'depends': [
+        'medical_center',
     ],
-    "data": [
-        "views/medical_pharmacy_view.xml",
-        "views/medical_pharmacist_view.xml",
-        "views/medical_menu.xml",
-        "security/ir.model.access.csv",
+    'data': [
+        'security/ir.model.access.csv',
+        'views/medical_pharmacist.xml',
+        'views/medical_pharmacy.xml',
+        'views/medical_menu.xml',
     ],
-    "demo": [
-        "demo/medical_pharmacy_demo.xml",
-        "demo/medical_pharmacist_demo.xml",
+    'demo': [
+        'demo/medical_pharmacist.xml',
+        'demo/medical_pharmacy.xml',
     ],
 }

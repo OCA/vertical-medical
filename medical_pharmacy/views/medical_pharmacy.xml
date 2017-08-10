@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2016-2017 LasLabs Inc.
-     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<!-- Copyright 2016-2018 LasLabs Inc.
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
 
 <odoo>
-
     <record id="medical_pharmacy_view_tree" model="ir.ui.view">
         <field name="name">medical.pharmacy.tree</field>
         <field name="model">medical.pharmacy</field>
-        <field name="inherit_id" ref="medical.medical_abstract_entity_view_tree" />
+        <field name="inherit_id" ref="medical.medical_abstract_entity_view_tree"/>
         <field name="mode">primary</field>
         <field name="arch" type="xml">
-            <xpath expr="//tree" position="attributes">
-                <attribute name="string">Pharmacies</attribute>
-            </xpath>
             <xpath expr="//field[@name='email']" position="after">
-                <field name="parent_id" />
-                <field name="city" />
-                <field name="state_id" />
-                <field name="zip" />
+                <field name="parent_id"/>
+                <field name="city"/>
+                <field name="state_id"/>
+                <field name="zip"/>
             </xpath>
         </field>
     </record>
@@ -25,15 +21,12 @@
     <record id="medical_pharmacy_view_form" model="ir.ui.view">
         <field name="name">medical.pharmacy.form</field>
         <field name="model">medical.pharmacy</field>
-        <field name="inherit_id" ref="medical.medical_abstract_entity_view_form" />
+        <field name="inherit_id" ref="medical.medical_abstract_entity_view_form"/>
         <field name="mode">primary</field>
         <field name="arch" type="xml">
-            <xpath expr="//form" position="attributes">
-                <attribute name="string">Pharmacy</attribute>
-            </xpath>
             <xpath expr="//group[@name='main_data']">
                 <group name="main">
-                    <field name="is_company" invisible="True" />
+                    <field name="is_company" invisible="True"/>
                 </group>
             </xpath>
         </field>
@@ -42,18 +35,15 @@
     <record id="medical_pharmacy_view_kanban" model="ir.ui.view">
         <field name="name">medical.pharmacy.kanban</field>
         <field name="model">medical.pharmacy</field>
-        <field name="inherit_id" ref="medical.medical_abstract_entity_view_kanban" />
+        <field name="inherit_id" ref="medical.medical_abstract_entity_view_kanban"/>
         <field name="mode">primary</field>
         <field name="arch" type="xml">
-            <xpath expr="//kanban" position="attributes">
-                <attribute name="string">Pharmacies</attribute>
-            </xpath>
-            <xpath expr="//field[@name='email']" position="after">
+            <xpath expr="//ul[@name='entity_details']">
                 <li name="field_phone" t-if="record.phone.raw_value">
-                    <field name="phone" />
+                    <field name="phone"/>
                 </li>
                 <li name="field_location" t-if="record.city.raw_value and record.state_id.raw_value">
-                    <field name="city" />, <field name="state_id" />
+                    <field name="city"/>, <field name="state_id"/>
                 </li>
             </xpath>
         </field>
@@ -62,39 +52,32 @@
     <record id="medical_pharmacy_view_search" model="ir.ui.view">
         <field name="name">medical.pharmacy.search</field>
         <field name="model">medical.pharmacy</field>
-        <field name="inherit_id" ref="medical.medical_abstract_entity_view_search" />
+        <field name="inherit_id" ref="medical.medical_abstract_entity_view_search"/>
         <field name="mode">primary</field>
         <field name="arch" type="xml">
-            <xpath expr="//search" position="attributes">
-                <attribute name="string">Pharmacies</attribute>
-            </xpath>
             <xpath expr="//field[@name='category_id']" position="after">
-                <field name="parent_id" />
-                <field name="street" />
-                <field name="city" />
-                <field name="state_id" />
-                <field name="zip" />
+                <field name="parent_id"/>
+                <field name="street"/>
+                <field name="city"/>
+                <field name="state_id"/>
+                <field name="zip"/>
             </xpath>
             <xpath expr="//filter" position="after">
-                <filter string="Company"
-                        domain="[]"
-                        context="{'group_by':'parent_id'}" />
                 <filter string="State"
                         domain="[]"
-                        context="{'group_by': 'state_id'}" />
+                        context="{'group_by': 'state_id'}"/>
                 <filter string="Zip"
                         domain="[]"
-                        context="{'group_by': 'zip'}" />
+                        context="{'group_by': 'zip'}"/>
             </xpath>
         </field>
     </record>
 
     <record id="medical_pharmacy_action" model="ir.actions.act_window">
-        <field name="name">Pharmacy</field>
+        <field name="name">Pharmacies</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">medical.pharmacy</field>
         <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
     </record>
-
 </odoo>

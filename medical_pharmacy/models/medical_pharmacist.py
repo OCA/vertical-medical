@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Copyright 2016-2017 LasLabs Inc.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
-from odoo import api, models, tools
+from odoo import api, models
 from odoo.modules import get_module_resource
 
 
@@ -20,10 +20,8 @@ class MedicalPharmacist(models.Model):
         return super(MedicalPharmacist, self)._create_vals(vals)
 
     @api.model
-    def _get_default_image(self, vals):
-        res = super(MedicalPharmacist, self)._get_default_image(vals)
-        if not res:
-            return res
+    def _get_default_image_path(self, vals):
+        super(MedicalPharmacist, self)._get_default_image_path(vals)
         img_path = 'pharmacist-%s-avatar.png' % vals.get('gender')
         img_path = get_module_resource(
             'medical_pharmacy', 'static/src/img', img_path,
@@ -34,6 +32,4 @@ class MedicalPharmacist(models.Model):
                 'static/src/img',
                 'pharmacist-female-avatar.png',
             )
-        with open(img_path, 'r') as image:
-            base64_image = image.read().encode('base64')
-            return tools.image_resize_image_big(base64_image)
+        return img_path

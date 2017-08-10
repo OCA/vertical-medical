@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2016-2017 LasLabs Inc.
-     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<!-- Copyright 2016-2018 LasLabs Inc.
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
 
 <odoo>
+    <menuitem id="medical_pharmacy_menu" name="Pharmacies"
+        sequence="30" parent="medical_center.medical_facilities_menu"
+        action="medical_pharmacy_action"/>
 
-    <menuitem id="medical_pharmacy_menu"
-              name="Pharmacies"
-              sequence="30"
-              parent="medical_center.medical_facilities_menu"
-              action="medical_pharmacy_action"
-              />
+    <menuitem id="medical_pharmacy_module_menu" name="Pharmacy"
+        sequence="20" parent="medical.medical_root"/>
 
-    <menuitem id="medical_pharmacist_menu"
-              name="Pharmacists"
-              sequence="20"
-              parent="medical_physician.health_professionals_menu"
-              action="medical_pharmacist_action"
-              />
-
+    <menuitem id="medical_pharmacist_menu" name="Pharmacists"
+        sequence="10" parent="medical_pharmacy_module_menu"
+        action="medical_pharmacist_action"/>
 </odoo>
