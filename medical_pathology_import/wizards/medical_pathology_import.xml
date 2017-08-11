@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016-2017 LasLabs Inc.
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html) -->
+
+<odoo>
+    <record id="medical_pathology_import_view_form" model="ir.ui.view">
+        <field name="name">Medical Pathology Import Form</field>
+        <field name="model">medical.pathology.import</field>
+        <field name="arch" type="xml">
+            <form string="Remote Pathology Data Import">
+                <sheet>
+                    <group name="import_params">
+                        <field name="importer_type"/>
+                        <field name="code_type_id"/>
+                        <field name="zip_uri"/>
+                        <field name="file_name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="medical_pathology_import_action" model="ir.actions.act_window">
+        <field name="name">Import Data</field>
+        <field name="res_model">medical.pathology.import</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+    </record>
+
+    <menuitem id="medical_pathology_import_menu"
+              parent="medical_pathology.medical_root_pathology"
+              sequence="100"
+              action="medical_pathology_import_action"
+              groups="medical.group_medical_configurator"
+              />
+
+    <record id="medical_pathology_import_action_install" model="ir.actions.client">
+        <field name="name">Pathology Import - Post-Install Action</field>
+        <field name="tag">reload</field>
+        <field name="params" eval="{'menu_id': ref('medical_pathology_import_menu')}"/>
+    </record>
+
+    <record id="base.open_menu" model="ir.actions.todo">
+        <field name="action_id" ref="medical_pathology_import_action_install"/>
+        <field name="state">open</field>
+    </record>
+</odoo>
