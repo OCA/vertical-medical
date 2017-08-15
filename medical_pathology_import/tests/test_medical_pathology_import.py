@@ -49,6 +49,7 @@ class TestMedicaPathologyImport(TransactionCase):
             'code': 'Code',
             'category': category,
             'code_type': self.code_type,
+            'id_pref': 'test_module',
             'parent': parent,
             'note': 'Pathology Note',
         }
@@ -58,15 +59,10 @@ class TestMedicaPathologyImport(TransactionCase):
             'name': 'Name',
             'code_type': self.code_type,
             'ref': 'Ref',
+            'id_pref': 'test_module',
             'parent': parent,
             'note': 'Category Note',
         }
-
-    def test_module_name(self):
-        """ It should return proper base name for modules """
-        self.assertEqual(
-            self.Model.module_name, 'medical_pathology_'
-        )
 
     def test_get_importer_types(self):
         """ It should return empty list """
@@ -141,7 +137,7 @@ class TestMedicaPathologyImport(TransactionCase):
         pathology = record._upsert_pathology(**args)
         self.assertEqual(
             self.env['ir.model.data'].get_object(
-                self.Model.module_name,
+                'test_module',
                 'medical_pathology_Code',
             ),
             pathology,
@@ -172,7 +168,7 @@ class TestMedicaPathologyImport(TransactionCase):
         category = record._upsert_pathology_category(**args)
         self.assertEqual(
             self.env['ir.model.data'].get_object(
-                self.Model.module_name,
+                'test_module',
                 'medical_pathology_category_Ref',
             ),
             category,

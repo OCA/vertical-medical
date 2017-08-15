@@ -33,10 +33,6 @@ class MedicalPathologyImport(models.TransientModel):
         string='Importer Type',
     )
 
-    @property
-    def module_name(self):
-        return 'medical_pathology_'
-
     @api.model
     def _get_importer_types(self):
         return []
@@ -90,7 +86,7 @@ class MedicalPathologyImport(models.TransientModel):
 
     @api.multi
     def _upsert_pathology(
-        self, name, code, category, code_type, parent=None, note=None,
+        self, name, code, category, code_type, id_pref, parent=None, note=None,
     ):
         """ It updates or creates a new Pathology for arguments.
 
@@ -101,6 +97,7 @@ class MedicalPathologyImport(models.TransientModel):
                 category for the new pathology.
             code_type: (medical.pathology.code.type) Singleton representing
                 the code type of the pathology (ICD-10-CM).
+            id_pref: (str) External ID prefix for pathology
             parent: (medical.pathology) Parent pathology.
             note: (str) Pathology notes.
         Returns:
@@ -116,20 +113,17 @@ class MedicalPathologyImport(models.TransientModel):
         }
         xml_id = self._get_pathology_xml_id(code)
         try:
-            pathology = self.env['ir.model.data'].get_object(
-                self.module_name,
-                xml_id,
-            )
+            pathology = self.env['ir.model.data'].get_object(id_pref, xml_id)
             pathology.update(vals)
             return pathology
         except ValueError:
             pathology = self.env['medical.pathology'].create(vals)
-            self.__create_ir_model_data(xml_id, pathology)
+            self.__create_ir_model_data(xml_id, id_pref, pathology)
         return pathology
 
     @api.multi
     def _upsert_pathology_category(
-        self, name, code_type, ref, parent=None, note=None,
+        self, name, code_type, ref, id_pref, parent=None, note=None,
     ):
         """ It updates or creates a new Pathology Category for arguments.
 
@@ -138,6 +132,7 @@ class MedicalPathologyImport(models.TransientModel):
             code_type: (medical.pathology.code.type) Singleton representing
                 the code type of the pathology (ICD-10-CM).
             ref: (str) External ID reference.
+            id_pref: (str) External ID prefix for category
             parent: (medical.pathology.category) Parent category.
             note: (str) Category notes.
         Returns:
@@ -151,23 +146,20 @@ class MedicalPathologyImport(models.TransientModel):
         }
         xml_id = self._get_pathology_category_xml_id(ref)
         try:
-            category = self.env['ir.model.data'].get_object(
-                self.module_name,
-                xml_id,
-            )
+            category = self.env['ir.model.data'].get_object(id_pref, xml_id)
             category.update(vals)
             return category
         except ValueError:
             category = self.env['medical.pathology.category'].create(vals)
-            self.__create_ir_model_data(xml_id, category)
+            self.__create_ir_model_data(xml_id, id_pref, category)
         return category
 
-    def __create_ir_model_data(self, name, record):
+    def __create_ir_model_data(self, name, id_pref, record):
         """ It creates an external reference record for the args """
         vals = {
             'name': name,
             'model': record._name,
-            'module': self.module_name,
+            'module': id_pref,
             'res_id': record.id,
         }
         return self.env['ir.model.data'].create(vals)
