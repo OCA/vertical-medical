@@ -4,7 +4,7 @@
 
 {
     'name': 'Odoo Medical',
-    'version': '10.0.1.0.3',
+    'version': '10.0.1.1.0',
     'category': 'Medical',
     'depends': [
         'product',

@@ -383,6 +383,8 @@
                 <field name="category_id" />
                 <field name="parent_id" invisible="1" />
                 <field name="partner_id" invisible="1" />
+                <filter string="Deactivated"
+                        domain="[('active', '=', 0)]" />
                 <filter string="Tag"
                         domain="[]"
                         context="{'group_by':'category_id'}" />
