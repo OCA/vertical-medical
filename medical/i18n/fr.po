@@ -3,14 +3,14 @@
 # * medical
 # 
 # Translators:
-# leemannd <denis.leemann@camptocamp.com>, 2017
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-08 02:47+0000\n"
-"PO-Revision-Date: 2017-07-08 02:47+0000\n"
-"Last-Translator: leemannd <denis.leemann@camptocamp.com>, 2017\n"
+"POT-Creation-Date: 2017-08-08 07:57+0000\n"
+"PO-Revision-Date: 2017-08-08 07:57+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: medical
-#: code:addons/medical/models/medical_patient.py:70
+#: code:addons/medical/models/medical_patient.py:67
 #, python-format
 msgid " (deceased)"
 msgstr "(décédé)"
@@ -453,13 +453,13 @@ msgid "Internal Reference"
 msgstr "Référence interne"
 
 #. module: medical
-#: code:addons/medical/models/medical_patient.py:122
+#: code:addons/medical/models/medical_patient.py:119
 #, python-format
 msgid "Invalid operator: %s"
 msgstr ""
 
 #. module: medical
-#: code:addons/medical/models/medical_patient.py:96
+#: code:addons/medical/models/medical_patient.py:93
 #, python-format
 msgid "Invalid selection - Only a `Female` may be pregnant."
 msgstr "Selection invalide - Seulement une `Femme`peut être enceinte."
@@ -612,7 +612,7 @@ msgid "Name"
 msgstr "Nom"
 
 #. module: medical
-#: code:addons/medical/models/medical_patient.py:80
+#: code:addons/medical/models/medical_patient.py:77
 #, python-format
 msgid "No DoB"
 msgstr ""
@@ -646,7 +646,7 @@ msgid "Partner"
 msgstr "Contact"
 
 #. module: medical
-#: code:addons/medical/models/res_partner.py:73
+#: code:addons/medical/models/res_partner.py:72
 #, python-format
 msgid "Partners cannot be born in the future."
 msgstr ""
