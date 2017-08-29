@@ -41,18 +41,6 @@ class ActivityDefinition(models.Model):
         help='Product that represents this resource',
         required=False,
     )
-    product_id = fields.Many2one(
-        string='Product',
-        comodel_name='product.product',
-        help='What is to be supplied',
-        required=False,
-    )
-    categ_id = fields.Many2one(
-        string='Product Category',
-        comodel_name='product.category',
-        help='Product Categroy that represents resource',
-        required=False,
-    )
     quantity = fields.Float(
         string='Quantity',
         help='How much to administer/supply/consume',

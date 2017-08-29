@@ -38,8 +38,6 @@
                         <field name="type_id"/>
                         <field name="model_id"/>
                         <field name="resource_product_id"/>
-                        <field name="product_id"/>
-                        <field name="categ_id"/>
                         <field name="quantity"/>
                     </group>
                     <notebook>
