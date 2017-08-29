@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo noupdate="0">
+
+        <!-- workflow type -->
+        <record id="workflow_type_1" model="workflow.type">
+            <field name="name">Medical</field>
+            <field name="description">Medical related workflow</field>
+            <field name="model_id"
+                   search="[('model', 'in', ['medical.request.group'])]" />
+            <field name="model_ids"
+                   search="[('model', 'in', ['medical.procedure.request', 'medical.request.group'])]"/>
+        </record>
+
+        <!-- products -->
+        <record id="product_1" model="product.product">
+            <field name="name">Suicide Risk Assessment and Outpatient Management</field>
+            <field name="type">service</field>
+            <field name="taxes_id"/>
+        </record>
+        <record id="product_2" model="product.product">
+            <field name="name">Consults and Referrals</field>
+            <field name="type">service</field>
+            <field name="taxes_id"/>
+        </record>
+        <record id="product_3" model="product.product">
+            <field name="name">Medications</field>
+            <field name="type">service</field>
+            <field name="taxes_id"/>
+        </record>
+
+        <!-- activity definitions -->
+        <record id="workflow_activity_definition_1" model="workflow.activity.definition">
+            <field name="name">Suicide Risk Assessment and Outpatient Management</field>
+            <field name="type_id"
+                   ref="workflow_plandefinition.workflow_type_1"/>
+            <field name="model_id" search="[('model', 'in', ['medical.request.group'])]" />
+            <field name="resource_product_id"
+                   ref="workflow_plandefinition.product_1" />
+            <field name="state">active</field>
+        </record>
+        <record id="workflow_activity_definition_2"
+                model="workflow.activity.definition">
+            <field name="name">Consults and Referrals</field>
+            <field name="type_id"
+                   ref="workflow_plandefinition.workflow_type_1"/>
+            <field name="model_id" search="[('model', 'in', ['medical.procedure.request'])]" />
+            <field name="resource_product_id"
+                   ref="workflow_plandefinition.product_2" />
+            <field name="state">active</field>
+        </record>
+        <record id="workflow_activity_definition_3"
+                model="workflow.activity.definition">
+            <field name="name">Medications</field>
+            <field name="type_id"
+                   ref="workflow_plandefinition.workflow_type_1"/>
+            <field name="model_id" search="[('model', 'in', ['medical.procedure.request'])]" />
+            <field name="resource_product_id"
+                   ref="workflow_plandefinition.product_3" />
+            <field name="state">active</field>
+        </record>
+
+        <!-- plan definition -->
+        <record id="workflow_plan_definition_1"
+                model="workflow.plan.definition">
+            <field name="name">Low Suicide Risk Order Set</field>
+            <field name="description">Orders to be applied to a patient characterized as low suicide risk.</field>
+            <field name="state">active</field>
+            <field name="type_id"
+                   ref="workflow_plandefinition.workflow_type_1"/>
+            <field name="model_id"
+                   search="[('model', 'in', ['medical.request.group'])]" />
+        </record>
+
+    <!-- actions -->
+        <record id="workflow_plan_definition_action_1"
+                model="workflow.plan.definition.action">
+            <field name="name">Suicide Risk Assessment and Outpatient Management</field>
+            <field name="direct_plan_definition_id"
+                   ref="workflow_plandefinition.workflow_plan_definition_1"/>
+            <field name="activity_definition_id"
+                   ref="workflow_plandefinition.workflow_activity_definition_1"/>
+        </record>
+        <record id="workflow_plan_definition_action_2"
+                model="workflow.plan.definition.action">
+            <field name="name">Consults and Referrals</field>
+            <field name="direct_plan_definition_id"
+                   ref="workflow_plandefinition.workflow_plan_definition_1"/>
+            <field name="parent_id"
+                   ref="workflow_plandefinition.workflow_plan_definition_action_1"/>
+            <field name="activity_definition_id"
+                   ref="workflow_plandefinition.workflow_activity_definition_2"/>
+        </record>
+        <record id="workflow_plan_definition_action_3"
+                model="workflow.plan.definition.action">
+            <field name="name">Medications</field>
+            <field name="direct_plan_definition_id"
+                   ref="workflow_plandefinition.workflow_plan_definition_1"/>
+            <field name="parent_id"
+                   ref="workflow_plandefinition.workflow_plan_definition_action_1"/>
+            <field name="activity_definition_id"
+                   ref="workflow_plandefinition.workflow_activity_definition_3"/>
+        </record>
+
+</odoo>
+
