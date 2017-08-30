@@ -8,11 +8,13 @@
 <odoo>
     <menuitem id="medical_request_group_root"
               name="Request Group"
-              parent="medical.medical_root"/>
+              parent="medical.medical_root"
+              groups="group_request_group" />
 
     <menuitem id="medical_request_group"
               name=" Request Groups"
               parent="medical_request_group_root"
               sequence="10"
-              action="medical_request_group_window_action" />
+              action="medical_request_group_window_action"
+              groups="group_request_group" />
 </odoo>

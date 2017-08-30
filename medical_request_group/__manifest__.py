@@ -15,6 +15,7 @@
         'medical_center',
     ],
     'data': [
+        'security/request_group_security.xml',
         'security/ir.model.access.csv',
         'views/medical_request_group_view.xml',
         'views/medical_menu.xml',
