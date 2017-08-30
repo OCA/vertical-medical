@@ -5,3 +5,4 @@
 from . import medical_procedure
 from . import medical_procedure_request
 from . import medical_request_group
+from . import medical_procedure_request_settings

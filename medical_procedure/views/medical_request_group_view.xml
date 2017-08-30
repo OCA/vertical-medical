@@ -16,6 +16,7 @@
                 <page name='procedure_requests' position="inside">
                     <field name="procedure_request_ids" nolabel="1">
                         <tree string="Procedure request" noedit="0">
+                            <field name="sequence" widget="handle"/>
                             <field name="internal_identifier"/>
                             <field name="title"/>
                         </tree>

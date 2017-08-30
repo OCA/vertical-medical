@@ -18,6 +18,7 @@
     ],
     'data': [
         'wizard/medical_procedure_request_make_procedure_view.xml',
+        'views/procedure_config_settings_views.xml',
         'views/medical_procedure_view.xml',
         'views/medical_procedure_request_view.xml',
         'views/medical_request_group_view.xml',

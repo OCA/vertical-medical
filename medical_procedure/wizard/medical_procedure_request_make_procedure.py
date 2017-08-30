@@ -13,7 +13,6 @@ class ProcedureRequestMakeProcedure(models.Model):
     def _prepare_procedure(self, pr):
         data = {
             'subject_id': pr.subject_id.id,
-            'reason': pr.reason,
             'performer_id': pr.performer_id.id,
             'priority': pr.priority,
             'procedure_request_id': pr.id,

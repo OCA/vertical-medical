@@ -9,6 +9,7 @@ class MedicalProcedureRequest(models.Model):
     _name = 'medical.procedure.request'
     _description = 'Medical Procedure Request'
     _inherit = 'mail.thread'
+    _order = 'sequence, id'
 
     _STATES = [
         ('draft', 'Draft'),
@@ -30,6 +31,14 @@ class MedicalProcedureRequest(models.Model):
     @api.depends('procedure_ids')
     def _compute_procedure_count(self):
         self.procedure_count = len(self.procedure_ids)
+
+    @api.multi
+    def _compute_request_group_active(self):
+        for rec in self:
+            if rec.env.user._has_group('medical_request_group.group_request_group'):
+                rec.request_group_active = True
+            else:
+                rec.request_group_active = False
 
     internal_identifier = fields.Char(
         string='Procedure Request ID',
@@ -82,11 +91,6 @@ class MedicalProcedureRequest(models.Model):
         required=True,
         default='normal',
     )
-    reason = fields.Char(
-        #TODO: In time, replace with many to one to Condition, Observations
-        string='Reason',
-        help='Explanation/Justification for test',
-    )
     requester = fields.Many2one(
         string='Requested by',
         comodel_name='res.users',
@@ -134,6 +138,15 @@ class MedicalProcedureRequest(models.Model):
         string='# of Procedures',
         copy=False,
         default=0,
+    )
+    request_group_active = fields.Boolean(
+        string='Request Group Active',
+        default=False,
+        compute='_compute_request_group_active',
+    )
+    sequence = fields.Integer(
+        string='Sequence',
+        default=10,
     )
 
     @api.model
@@ -228,7 +241,6 @@ class MedicalProcedureRequest(models.Model):
         result = action.read()[0]
 
         result['context'] = {'default_subject_id': self.subject_id.id,
-                             'default_reason': self.reason,
                              'default_performer_id': self.performer_id.id,
                              'default_priority': self.priority,
                              'default_procedure_request_id': self.id,
@@ -239,7 +251,6 @@ class MedicalProcedureRequest(models.Model):
         if not self.procedure_ids:
             journal_domain = [
                 ('subject_id', '=', self.subject_id.id),
-                ('reason', '=', self.reason),
                 ('performer_id', '=', self.performer_id.id),
                 ('priority', '=', self.priority),
                 ('procedure_request_id', '=', self.id),

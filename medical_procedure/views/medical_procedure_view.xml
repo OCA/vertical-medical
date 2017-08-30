@@ -109,30 +109,30 @@
                                    ('state','in',('cancelled')), '|',
                                    ('state','in',('completed')),
                                    ('state','in',
-                                   ('completed-and-invoiced'))]}"/>
+                                   ('completed-and-invoiced'))]}"
+                                   readonly="1"/>
                         </group>
                         <group>
                             <field name="procedure_request_id"/>
                         </group>
                     </group>
                     <group name="patient">
-                        <field name="subject_id"
-                               attrs="{'readonly':['|',
-                               ('state','in',('cancelled')), '|',
-                               ('state','in',('completed')),
-                               ('state','in',('completed-and-invoiced'))]}"/>
-                        <field name="reason"
-                               attrs="{'readonly':['|',
-                               ('state','in',('cancelled')), '|',
-                               ('state','in',('completed')),
-                               ('state','in',('completed-and-invoiced'))]}"/>
+                        <group>
+                            <field name="subject_id"
+                                   attrs="{'readonly':['|',
+                                   ('state','in',('cancelled')), '|',
+                                   ('state','in',('completed')),
+                                   ('state','in',('completed-and-invoiced'))]}"/>
+                        </group>
+                        <group>
+                            <field name="performer_id"
+                                   attrs="{'readonly':['|',
+                                   ('state','in',('cancelled')), '|',
+                                   ('state','in',('completed')),
+                                   ('state','in',('completed-and-invoiced'))]}"/>
+                        </group>
                     </group>
                     <group name="performance">
-                        <field name="performer_id"
-                               attrs="{'readonly':['|',
-                               ('state','in',('cancelled')), '|',
-                               ('state','in',('completed')),
-                               ('state','in',('completed-and-invoiced'))]}"/>
                         <field name="date_start"
                                attrs="{'readonly':['|',
                                ('state','in',('cancelled')), '|',

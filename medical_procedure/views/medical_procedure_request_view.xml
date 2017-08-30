@@ -120,10 +120,6 @@
                                    attrs="{'readonly':['|',
                                    ('state','in',('cancelled')),
                                    ('state','in',('completed'))]}"/>
-                            <field name="reason"
-                                   attrs="{'readonly':['|',
-                                   ('state','in',('cancelled')),
-                                   ('state','in',('completed'))]}"/>
                         </group>
                         <group>
                             <field name="performer_id"
@@ -138,10 +134,13 @@
                                    attrs="{'readonly':['|',
                                    ('state','in',('cancelled')),
                                    ('state','in',('completed'))]}"/>
+                            <field name="request_group_active"
+                                   invisible="1"/>
                             <field name="request_group_id"
-                                   attrs="{'readonly':['|',
+                                   attrs="{'readonly': ['|',
                                    ('state','in',('cancelled')),
-                                   ('state','in',('completed'))]}"/>
+                                   ('state','in',('completed'))],
+                                   'invisible': [('request_group_active', '!=', True)]}"/>
                         </group>
                         <group>
                         <field name="intent"

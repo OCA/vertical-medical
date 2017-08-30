@@ -49,11 +49,6 @@ class MedicalProcedure(models.Model):
         index=True,
         help='Patient Name',
     )
-    reason = fields.Char(
-        #TODO: In time, replace with many to one to Condition, Observations
-        string='Reason',
-        help='Explanation/Justification for the procedure',
-    )
     performer_id = fields.Many2one(
         # to be extended with groups.
         string='Performer',
