@@ -2,7 +2,7 @@
 # Copyright 2017 Eficent Business and IT Consulting Services, S.L.
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
-from odoo import fields, models, api, exceptions
+from odoo import fields, models, api, exceptions, _
 
 
 class ActivityDefinition(models.Model):
@@ -11,12 +11,10 @@ class ActivityDefinition(models.Model):
     _inherit = 'mail.thread'
 
     name = fields.Char(
-        string='Name',
         help='Human-friendly name for the Plan Definition',
         required=True,
     )
     description = fields.Text(
-        string='Description',
         help='Summary of nature of plan',
     )
     type_id = fields.Many2one(
@@ -33,7 +31,8 @@ class ActivityDefinition(models.Model):
          ('active', 'Active'),
          ('retired', 'Retired'),
          ('unknown', 'Unknown')],
-        required=True, default='draft',
+        required=True,
+        default='draft',
     )
     resource_product_id = fields.Many2one(
         string='Resource Product',
@@ -42,7 +41,6 @@ class ActivityDefinition(models.Model):
         required=False,
     )
     quantity = fields.Float(
-        string='Quantity',
         help='How much to administer/supply/consume',
     )
     action_ids = fields.One2many(
@@ -53,14 +51,17 @@ class ActivityDefinition(models.Model):
     )
 
     @api.constrains('type_id')
-    def _constrains_type_id(self):
-        if self.action_ids:
-            raise exceptions.UserError(
-                "Type cannot be modified if the record has relations")
+    def _check_type_id(self):
+        for rec in self:
+            if rec.action_ids:
+                raise exceptions.UserError(
+                    _('Type cannot be modified if the record has relations'))
 
     @api.onchange('type_id')
-    def _domain_type_id(self):
+    def _onchange_type_id(self):
         self.model_id = False
         return {
             'domain': {
-                'model_id': [('id', 'in', self.type_id.model_ids.ids)]}}
+                'model_id': [('id', 'in', self.type_id.model_ids.ids)],
+            },
+        }

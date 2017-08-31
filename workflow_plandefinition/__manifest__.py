@@ -25,5 +25,4 @@
     'website': 'https://github.com/OCA/vertical-medical',
     'licence': 'LGPL-3',
     'installable': True,
-    'auto_install': False,
 }

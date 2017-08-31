@@ -9,34 +9,14 @@ class PlanDefinitionAction(models.Model):
     _name = 'workflow.plan.definition.action'
     _description = 'Medical Plan Definition Action'
     _inherit = 'mail.thread'
-    _parent_name = 'parent_id'
+    #_parent_name = 'parent_id'
     _parent_store = True
     _parent_order = 'name'
     _order = 'parent_left'
     _rec_name = 'complete_name'
     _order = 'id asc'
 
-    @api.one
-    @api.depends('name', 'parent_id')
-    def _compute_complete_name(self):
-        """ Forms complete name of action from parent to child action. """
-        name = self.name
-        current = self
-        while current.parent_id:
-            current = current.parent_id
-            name = '%s/%s' % (current.name, name)
-        self.complete_name = name
-
-    @api.multi
-    @api.depends('parent_id', 'direct_plan_definition_id')
-    def _compute_plan_definition_id(self):
-        for rec in self:
-            rec.plan_definition_id = rec.direct_plan_definition_id
-            if rec.parent_id:
-                rec.plan_definition_id = rec.parent_id.plan_definition_id
-
     name = fields.Char(
-        string='Action name',
         required=True,
     )
     complete_name = fields.Char(
@@ -79,13 +59,43 @@ class PlanDefinitionAction(models.Model):
         index=True,
     )
 
+    @api.depends('name', 'parent_id')
+    def _compute_complete_name(self):
+        """ Forms complete name of action from parent to child action. """
+        for rec in self:
+            name = rec.name
+            current = rec
+            while current.parent_id:
+                current = current.parent_id
+                name = '%s/%s' % (current.name, name)
+            rec.complete_name = name
+
+    @api.multi
+    @api.depends('parent_id', 'direct_plan_definition_id')
+    def _compute_plan_definition_id(self):
+        for rec in self:
+            rec.plan_definition_id = rec.direct_plan_definition_id
+            if rec.parent_id:
+                rec.plan_definition_id = rec.parent_id.plan_definition_id
+
     @api.onchange('plan_definition_id')
-    def _domain_activity_definition_id(self):
+    def _onchange_plan_definition_id(self):
         return {
             'domain': {
                 'activity_definition_id':
-                    [('type_id', 'in', [self.plan_definition_id.type_id.id, False])]}}
+                    [('type_id', 'in', [self.plan_definition_id.type_id.id,
+                                        False])],
+            },
+        }
 
     @api.onchange('activity_definition_id')
     def _onchange_activity_definition_id(self):
         self.name = self.activity_definition_id.name
+
+    @api.multi
+    @api.constrains('parent_id')
+    def _check_recursion_parent_id(self):
+        if not self._check_recursion():
+            raise exceptions.ValidationError(_(
+                'Error! You are attempting to create a recursive category.'
+            ))

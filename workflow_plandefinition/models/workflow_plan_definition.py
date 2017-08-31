@@ -11,12 +11,10 @@ class PlanDefinition(models.Model):
     _inherit = 'mail.thread'
 
     name = fields.Char(
-        string='Name',
         help='Human-friendly name for the Plan Definition',
         required=True,
     )
     description = fields.Text(
-        string='Description',
         help='Summary of nature of plan',
     )
     type_id = fields.Many2one(
