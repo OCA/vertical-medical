@@ -27,15 +27,15 @@
                 <header>
                 </header>
                 <sheet>
-                    <group>
-                        <group name="details">
-                            <field name="name"/>
-                            <field name="patient_id"/>
-                        </group>
-                        <group name="sale">
-                            <field name="service_id"/>
-                            <field name="center_id"/>
-                        </group>
+                    <div name="button_box" class="oe_button_box">
+                    </div>
+                    <group name="details">
+                        <field name="name"/>
+                        <field name="patient_id"/>
+                    </group>
+                    <group name="sale">
+                        <field name="service_id"/>
+                        <field name="center_id"/>
                     </group>
                     <group name="pricelist">
                     </group>

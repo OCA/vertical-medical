@@ -40,6 +40,7 @@ class RequestGroup(models.Model):
     )
 
     @api.model
-    def create_resource_from_activity_definition(self, activity_definition):
+    def create_resource_from_activity_definition(self, activity_definition,
+                                                 is_billable):
         ''' This method should be defined by each resources that could be 
         created from a request group, based on an activity definition.'''
