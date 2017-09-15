@@ -28,7 +28,8 @@ class RequestGroup(models.Model):
         # here compute & fill related_ids with ids of related object
         self.request_group_ids.ids = related_ids
 
-    def _prepare_procedure_request(self, activity_definition, name=False,
+    def _prepare_procedure_request(self, activity_definition, is_billable,
+                                   name=False,
                                    variable_fee=False, fixed_fee=False):
         return {
             'title': name or activity_definition.name,
@@ -38,19 +39,22 @@ class RequestGroup(models.Model):
             'center_id': self.center_id.id,
             'variable_fee': variable_fee,
             'fixed_fee': fixed_fee,
+            'is_billable': is_billable,
         }
 
     @api.model
     def create_resource_from_activity_definition(self, activity_definition,
-                                                 name=False, variable_fee=False,
+                                                 is_billable, name=False,
+                                                 variable_fee=False,
                                                  fixed_fee=False):
         if activity_definition.model_id.model == \
                 'medical.procedure.request':
             data = self._prepare_procedure_request(activity_definition,
+                                                   is_billable,
                                                    name=name,
                                                    variable_fee=variable_fee,
                                                    fixed_fee=fixed_fee)
             self.env['medical.procedure.request'].create(data)
         return super(RequestGroup,
                      self).create_resource_from_activity_definition(
-            activity_definition)
+            activity_definition, is_billable)

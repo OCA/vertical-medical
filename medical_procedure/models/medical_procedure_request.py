@@ -148,6 +148,9 @@ class MedicalProcedureRequest(models.Model):
         string='Sequence',
         default=10,
     )
+    is_billable = fields.Boolean(
+        string='Is billable?',
+        default=False)
 
     @api.model
     def create(self, vals):
