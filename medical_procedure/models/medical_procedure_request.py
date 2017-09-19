@@ -20,26 +20,6 @@ class MedicalProcedureRequest(models.Model):
         ('cancelled', 'Cancelled'),
     ]
 
-    @api.multi
-    @api.depends('internal_identifier', 'title')
-    def _compute_name(self):
-        for rec in self:
-            rec.name = '[%s]' % rec.internal_identifier
-            if rec.title:
-                rec.name = '%s %s' % (rec.name, rec.title)
-
-    @api.depends('procedure_ids')
-    def _compute_procedure_count(self):
-        self.procedure_count = len(self.procedure_ids)
-
-    @api.multi
-    def _compute_request_group_active(self):
-        for rec in self:
-            if rec.env.user._has_group('medical_request_group.group_request_group'):
-                rec.request_group_active = True
-            else:
-                rec.request_group_active = False
-
     internal_identifier = fields.Char(
         string='Procedure Request ID',
         default='/',
@@ -150,14 +130,29 @@ class MedicalProcedureRequest(models.Model):
     )
     is_billable = fields.Boolean(
         string='Is billable?',
-        default=False)
+        default=False,
+    )
 
-    @api.model
-    def create(self, vals):
-        if vals.get('name', '/') == '/':
-            vals['internal_identifier'] = self.env['ir.sequence'].next_by_code(
-                'medical.procedure.request') or '/'
-        return super(MedicalProcedureRequest, self).create(vals)
+    @api.multi
+    @api.depends('internal_identifier', 'title')
+    def _compute_name(self):
+        for rec in self:
+            rec.name = '[%s]' % rec.internal_identifier
+            if rec.title:
+                rec.name = '%s %s' % (rec.name, rec.title)
+
+    @api.depends('procedure_ids')
+    def _compute_procedure_count(self):
+        self.procedure_count = len(self.procedure_ids)
+
+    @api.multi
+    def _compute_request_group_active(self):
+        for rec in self:
+            if rec.env.user._has_group('medical_request_group.'
+                                       'group_request_group'):
+                rec.request_group_active = True
+            else:
+                rec.request_group_active = False
 
     @api.multi
     def name_get(self):
@@ -276,3 +271,17 @@ class MedicalProcedureRequest(models.Model):
             result['views'] = [(res and res.id or False, 'form')]
             result['res_id'] = self.procedure_ids.id
         return result
+
+    def _get_ir_sequence(self, vals):
+        """TO-DO: Implement method to define the correct sequence for the
+        internal identifier."""
+        return 'medical.procedure.request'
+
+    @api.model
+    def create(self, vals):
+        if vals.get('name', '/') == '/':
+            ir_sequence = self._get_ir_sequence(vals)
+            vals['internal_identifier'] = self.env['ir.sequence'].next_by_code(
+                ir_sequence) or '/'
+        return super(MedicalProcedureRequest, self).create(vals)
+

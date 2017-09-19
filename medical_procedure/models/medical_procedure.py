@@ -25,8 +25,8 @@ class MedicalProcedure(models.Model):
     def _check_procedure(self):
         if len(self.procedure_request_id.procedure_ids) > 1:
             raise exceptions.ValidationError(
-                "You cannot create more than one Procedure "
-                "for each Procedure Request.")
+                _("You cannot create more than one Procedure "
+                "for each Procedure Request."))
 
     @api.multi
     @api.depends('internal_identifier', 'title')
@@ -118,13 +118,6 @@ class MedicalProcedure(models.Model):
         self.date_end = fields.Datetime.now()
         return self.date_end
 
-    @api.model
-    def create(self, vals):
-        if vals.get('name', '/') == '/':
-            vals['internal_identifier'] = self.env['ir.sequence'].next_by_code(
-                'medical.procedure') or '/'
-        return super(MedicalProcedure, self).create(vals)
-
     @api.multi
     def name_get(self):
         # TDE: this could be cleaned a bit I think
@@ -205,3 +198,16 @@ class MedicalProcedure(models.Model):
         for rec in self:
             rec.state = 'unknown'
         return True
+
+    def _get_ir_sequence(self, vals):
+        """TO-DO: Implement method to define the correct sequence for the
+        internal identifier."""
+        return 'medical.procedure'
+
+    @api.model
+    def create(self, vals):
+        if vals.get('name', '/') == '/':
+            ir_sequence = self._get_ir_sequence(vals)
+            vals['internal_identifier'] = self.env['ir.sequence'].next_by_code(
+                ir_sequence) or '/'
+        return super(MedicalProcedure, self).create(vals)
