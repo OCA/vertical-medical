@@ -20,6 +20,9 @@
             <xpath expr="//form" position="attributes">
                 <attribute name="string">Practitioner</attribute>
             </xpath>
+            <xpath expr="//h1" position="before">
+                <field name="practitioner_type" widget="radio"/>
+            </xpath>
             <xpath expr="//h1" position="after">
                 <field name="is_company" invisible="True"/>
                 <h3>
