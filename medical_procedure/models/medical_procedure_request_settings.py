@@ -2,10 +2,10 @@
 # Copyright 2017 Eficent Business and IT Consulting Services, S.L.
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
-from odoo import api, exceptions, fields, models, _
+from odoo import fields, models
 
 
-class MedicalProcedureRequestSettings(models.Model):
+class MedicalProcedureRequestSettings(models.TransientModel):
     _name = 'medical.procedure.request.settings'
     _description = 'Medical Procedure Request Settings'
     _inherit = 'res.config.settings'
