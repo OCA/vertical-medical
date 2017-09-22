@@ -4,7 +4,12 @@
 # Copyright 2017 Eficent Business and IT Consulting Services, S.L.
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
+from mock import patch
+from odoo import modules
 from odoo.tests.common import TransactionCase
+
+SUPER_FILE_PATH = 'odoo.addons.medical.models.medical_abstract_entity'
+SUPER_PATH = SUPER_FILE_PATH + '.MedicalAbstractEntity._get_default_image_path'
 
 
 class TestMedicalPractitioner(TransactionCase):
@@ -41,3 +46,71 @@ class TestMedicalPractitioner(TransactionCase):
             self.medical_assistant).create(practitioner_vals)
         self.assertNotEquals(practitioner_1, False)
         self.assertEquals(practitioner_1.type, 'medical.practitioner')
+
+    @patch(SUPER_PATH)
+    def test_get_default_image_path_super_result(self, super_mock):
+        """It should call super and return result if not falsy"""
+        test_vals = 'Test Vals'
+        super_mock.return_value = test_image_path = 'Test Image Path'
+        result = self.practitioner_model._get_default_image_path(test_vals)
+
+        super_mock.assert_called_once_with(test_vals)
+        self.assertEquals(result, test_image_path)
+
+    @patch(SUPER_PATH)
+    def test_get_default_image_path_no_super_result_male(self, super_mock):
+        """It should return correct path if result falsy and gender male"""
+        super_mock.return_value = None
+        result = self.practitioner_model._get_default_image_path({
+            'gender': 'male',
+        })
+
+        expected = modules.get_module_resource(
+            'medical_practitioner',
+            'static/src/img',
+            'practitioner-male-avatar.png',
+        )
+        self.assertEquals(result, expected)
+
+    @patch(SUPER_PATH)
+    def test_get_default_image_path_no_super_result_female(self, super_mock):
+        """It should return correct path if result falsy and gender female"""
+        super_mock.return_value = None
+        result = self.practitioner_model._get_default_image_path({
+            'gender': 'female',
+        })
+
+        expected = modules.get_module_resource(
+            'medical_practitioner',
+            'static/src/img',
+            'practitioner-female-avatar.png',
+        )
+        self.assertEquals(result, expected)
+
+    @patch(SUPER_PATH)
+    def test_get_default_image_path_no_super_result_other(self, super_mock):
+        """It should return male path if result falsy and gender other"""
+        super_mock.return_value = None
+        result = self.practitioner_model._get_default_image_path({
+            'gender': 'other',
+        })
+
+        expected = modules.get_module_resource(
+            'medical_practitioner',
+            'static/src/img',
+            'practitioner-male-avatar.png',
+        )
+        self.assertEquals(result, expected)
+
+    @patch(SUPER_PATH)
+    def test_get_default_image_path_no_super_result_none(self, super_mock):
+        """It should return male path if result falsy and gender unspecified"""
+        super_mock.return_value = None
+        result = self.practitioner_model._get_default_image_path({})
+
+        expected = modules.get_module_resource(
+            'medical_practitioner',
+            'static/src/img',
+            'practitioner-male-avatar.png',
+        )
+        self.assertEquals(result, expected)

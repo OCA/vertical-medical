@@ -7,3 +7,7 @@ assistant_medical_role,assistant_medical_role,model_medical_role,medical.group_m
 center_manager_medical_role,center_manager_medical_role,model_medical_role,medical.group_medical_center_manager,1,0,0,0
 doctor_medical_role,doctor_medical_role,model_medical_role,medical.group_medical_doctor,1,1,1,0
 user_medical_role,user_medical_role,model_medical_role,medical.group_medical_user,1,1,1,0
+medical_specialty_access_assistant,Medical Specialty - Assistant Access,model_medical_specialty,medical.group_medical_assistant,1,1,1,0
+medical_specialty_access_center_manager,Medical Specialty - Center Manager Access,model_medical_specialty,medical.group_medical_center_manager,1,0,0,0
+medical_specialty_access_doctor,Medical Specialty - Doctor Access,model_medical_specialty,medical.group_medical_doctor,1,1,1,0
+medical_specialty_access_user,Medical Specialty - User Access,model_medical_specialty,medical.group_medical_user,1,1,1,0

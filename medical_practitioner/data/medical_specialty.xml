@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2017 LasLabs Inc.
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html) -->
+
+<odoo noupdate="1">
+    <record id="medical_specialty_adult_mental" model="medical.specialty">
+        <field name="code">408467006</field>
+        <field name="name">Adult mental illness</field>
+    </record>
+
+    <record id="medical_specialty_anesthetics" model="medical.specialty">
+        <field name="code">394577000</field>
+        <field name="name">Anesthetics</field>
+    </record>
+
+    <record id="medical_specialty_audiology" model="medical.specialty">
+        <field name="code">394578005</field>
+        <field name="name">Audiological medicine</field>
+    </record>
+
+    <record id="medical_specialty_blood_bank" model="medical.specialty">
+        <field name="code">421661004</field>
+        <field name="name">Blood banking and transfusion medicine</field>
+    </record>
+
+    <record id="medical_specialty_burn" model="medical.specialty">
+        <field name="code">408462000</field>
+        <field name="name">Burn care</field>
+    </record>
+
+    <record id="medical_specialty_cardio" model="medical.specialty">
+        <field name="code">394579002</field>
+        <field name="name">Cardiology</field>
+    </record>
+
+    <record id="medical_specialty_cytogenetics" model="medical.specialty">
+        <field name="code">394804000</field>
+        <field name="name">Clinical cytogenetics and molecular genetics</field>
+    </record>
+
+    <record id="medical_specialty_clinical_genetics" model="medical.specialty">
+        <field name="code">394580004</field>
+        <field name="name">Clinical genetics</field>
+    </record>
+
+    <record id="medical_specialty_clinical_hema" model="medical.specialty">
+        <field name="code">394803006</field>
+        <field name="name">Clinical hematology</field>
+    </record>
+
+    <record id="medical_specialty_clinical_immuno" model="medical.specialty">
+        <field name="code">408480009</field>
+        <field name="name">Clinical immunology</field>
+    </record>
+
+    <record id="medical_specialty_clinical_microbio" model="medical.specialty">
+        <field name="code">408454008</field>
+        <field name="name">Clinical microbiology</field>
+    </record>
+
+    <record id="medical_specialty_clinical_neuro" model="medical.specialty">
+        <field name="code">394809005</field>
+        <field name="name">Clinical neuro-physiology</field>
+    </record>
+
+    <record id="medical_specialty_clinical_onco" model="medical.specialty">
+        <field name="code">394592004</field>
+        <field name="name">Clinical oncology</field>
+    </record>
+
+    <record id="medical_specialty_clinical_pharma" model="medical.specialty">
+        <field name="code">394600006</field>
+        <field name="name">Clinical pharmacology</field>
+    </record>
+
+    <record id="medical_specialty_clinical_physio" model="medical.specialty">
+        <field name="code">394601005</field>
+        <field name="name">Clinical physiology</field>
+    </record>
+
+    <record id="medical_specialty_community" model="medical.specialty">
+        <field name="code">394581000</field>
+        <field name="name">Community medicine</field>
+    </record>
+
+    <record id="medical_specialty_critical_care" model="medical.specialty">
+        <field name="code">408478003</field>
+        <field name="name">Critical care medicine</field>
+    </record>
+
+    <record id="medical_specialty_dental_specialties" model="medical.specialty">
+        <field name="code">394812008</field>
+        <field name="name">Dental medicine specialties</field>
+    </record>
+
+    <record id="medical_specialty_dental_gp" model="medical.specialty">
+        <field name="code">408444009</field>
+        <field name="name">Dental: General practice</field>
+    </record>
+
+    <record id="medical_specialty_derm" model="medical.specialty">
+        <field name="code">394582007</field>
+        <field name="name">Dermatology</field>
+    </record>
+
+    <record id="medical_specialty_diabetic" model="medical.specialty">
+        <field name="code">408475000</field>
+        <field name="name">Diabetic medicine</field>
+    </record>
+
+    <record id="medical_specialty_dive" model="medical.specialty">
+        <field name="code">410005002</field>
+        <field name="name">Dive medicine</field>
+    </record>
+
+    <record id="medical_specialty_endocrinology" model="medical.specialty">
+        <field name="code">394583002</field>
+        <field name="name">Endocrinology</field>
+    </record>
+
+    <record id="medical_specialty_family" model="medical.specialty">
+        <field name="code">419772000</field>
+        <field name="name">Family practice</field>
+    </record>
+
+    <record id="medical_specialty_gastro" model="medical.specialty">
+        <field name="code">394584008</field>
+        <field name="name">Gastroenterology</field>
+    </record>
+
+    <record id="medical_specialty_gmp" model="medical.specialty">
+        <field name="code">408443003</field>
+        <field name="name">General medical practice</field>
+    </record>
+
+    <record id="medical_specialty_general" model="medical.specialty">
+        <field name="code">394802001</field>
+        <field name="name">General medicine</field>
+    </record>
+
+    <record id="medical_specialty_general_path" model="medical.specialty">
+        <field name="code">394915009</field>
+        <field name="name">General pathology</field>
+    </record>
+
+    <record id="medical_specialty_gp" model="medical.specialty">
+        <field name="code">394814009</field>
+        <field name="name">General practice</field>
+    </record>
+
+    <record id="medical_specialty_genito_urniary" model="medical.specialty">
+        <field name="code">394808002</field>
+        <field name="name">Genito-urinary medicine</field>
+    </record>
+
+    <record id="medical_specialty_geriatric" model="medical.specialty">
+        <field name="code">394811001</field>
+        <field name="name">Geriatric medicine</field>
+    </record>
+
+    <record id="medical_specialty_gyno_onco" model="medical.specialty">
+        <field name="code">408446006</field>
+        <field name="name">Gynecological oncology</field>
+    </record>
+
+    <record id="medical_specialty_gyno" model="medical.specialty">
+        <field name="code">394586005</field>
+        <field name="name">Gynecology</field>
+    </record>
+
+    <record id="medical_specialty_hematopath" model="medical.specialty">
+        <field name="code">394916005</field>
+        <field name="name">Hematopathology</field>
+    </record>
+
+    <record id="medical_specialty_hepatology" model="medical.specialty">
+        <field name="code">408472002</field>
+        <field name="name">Hepatology</field>
+    </record>
+
+    <record id="medical_specialty_histopath" model="medical.specialty">
+        <field name="code">394597005</field>
+        <field name="name">Histopathology</field>
+    </record>
+
+    <record id="medical_specialty_immunopath" model="medical.specialty">
+        <field name="code">394598000</field>
+        <field name="name">Immunopathology</field>
+    </record>
+
+    <record id="medical_specialty_infectious" model="medical.specialty">
+        <field name="code">394807007</field>
+        <field name="name">Infectious diseases</field>
+    </record>
+
+    <record id="medical_specialty_internal" model="medical.specialty">
+        <field name="code">419192003</field>
+        <field name="name">Internal medicine</field>
+    </record>
+
+    <record id="medical_specialty_learning_disability" model="medical.specialty">
+        <field name="code">408468001</field>
+        <field name="name">Learning disabilities</field>
+    </record>
+
+    <record id="medical_specialty_medical_onco" model="medical.specialty">
+        <field name="code">394593009</field>
+        <field name="name">Medical oncology</field>
+    </record>
+
+    <record id="medical_specialty_medical_ophth" model="medical.specialty">
+        <field name="code">394813003</field>
+        <field name="name">Medical ophthalmology</field>
+    </record>
+
+    <record id="medical_specialty_military" model="medical.specialty">
+        <field name="code">410001006</field>
+        <field name="name">Military medicine</field>
+    </record>
+
+    <record id="medical_specialty_nephro" model="medical.specialty">
+        <field name="code">394589003</field>
+        <field name="name">Nephrology</field>
+    </record>
+
+    <record id="medical_specialty_neuro" model="medical.specialty">
+        <field name="code">394591006</field>
+        <field name="name">Neurology</field>
+    </record>
+
+    <record id="medical_specialty_neuropath" model="medical.specialty">
+        <field name="code">394599008</field>
+        <field name="name">Neuropathology</field>
+    </record>
+
+    <record id="medical_specialty_nuclear" model="medical.specialty">
+        <field name="code">394649004</field>
+        <field name="name">Nuclear medicine</field>
+    </record>
+
+    <record id="medical_specialty_obstetrics" model="medical.specialty">
+        <field name="code">408470005</field>
+        <field name="name">Obstetrics</field>
+    </record>
+
+    <record id="medical_specialty_obstetrics_gyno" model="medical.specialty">
+        <field name="code">394585009</field>
+        <field name="name">Obstetrics and gynecology</field>
+    </record>
+
+    <record id="medical_specialty_occupational" model="medical.specialty">
+        <field name="code">394821009</field>
+        <field name="name">Occupational medicine</field>
+    </record>
+
+    <record id="medical_specialty_ophth_surgery" model="medical.specialty">
+        <field name="code">422191005</field>
+        <field name="name">Ophthalmic surgery</field>
+    </record>
+
+    <record id="medical_specialty_ophth" model="medical.specialty">
+        <field name="code">394594003</field>
+        <field name="name">Ophthalmology</field>
+    </record>
+
+    <record id="medical_specialty_osteo" model="medical.specialty">
+        <field name="code">416304004</field>
+        <field name="name">Osteopathic manipulative medicine</field>
+    </record>
+
+    <record id="medical_specialty_otolaryngology" model="medical.specialty">
+        <field name="code">418960008</field>
+        <field name="name">Otolaryngology</field>
+    </record>
+
+    <record id="medical_specialty_pain" model="medical.specialty">
+        <field name="code">394882004</field>
+        <field name="name">Pain management</field>
+    </record>
+
+    <record id="medical_specialty_palliative" model="medical.specialty">
+        <field name="code">394806003</field>
+        <field name="name">Palliative medicine</field>
+    </record>
+
+    <record id="medical_specialty_ped_psych" model="medical.specialty">
+        <field name="code">394588006</field>
+        <field name="name">Pediatric psychiatry</field>
+    </record>
+
+    <record id="medical_specialty_ped_cardio" model="medical.specialty">
+        <field name="code">408459003</field>
+        <field name="name">Pediatric cardiology</field>
+    </record>
+
+    <record id="medical_specialty_ped_dentist" model="medical.specialty">
+        <field name="code">394607009</field>
+        <field name="name">Pediatric dentistry</field>
+    </record>
+
+    <record id="medical_specialty_ped_endocrinology" model="medical.specialty">
+        <field name="code">419610006</field>
+        <field name="name">Pediatric endocrinology</field>
+    </record>
+
+    <record id="medical_specialty_ped_gastro" model="medical.specialty">
+        <field name="code">418058008</field>
+        <field name="name">Pediatric gastroenterology</field>
+    </record>
+
+    <record id="medical_specialty_ped_genetics" model="medical.specialty">
+        <field name="code">420208008</field>
+        <field name="name">Pediatric genetics</field>
+    </record>
+
+    <record id="medical_specialty_ped_hematology" model="medical.specialty">
+        <field name="code">418652005</field>
+        <field name="name">Pediatric hematology</field>
+    </record>
+
+    <record id="medical_specialty_ped_immuno" model="medical.specialty">
+        <field name="code">418535003</field>
+        <field name="name">Pediatric immunology</field>
+    </record>
+
+    <record id="medical_specialty_ped_infect" model="medical.specialty">
+        <field name="code">418862001</field>
+        <field name="name">Pediatric infectious diseases</field>
+    </record>
+
+    <record id="medical_specialty_ped_nephrology" model="medical.specialty">
+        <field name="code">419365004</field>
+        <field name="name">Pediatric nephrology</field>
+    </record>
+
+    <record id="medical_specialty_ped_onco" model="medical.specialty">
+        <field name="code">418002000</field>
+        <field name="name">Pediatric oncology</field>
+    </record>
+
+    <record id="medical_specialty_ped_ophth" model="medical.specialty">
+        <field name="code">419983000</field>
+        <field name="name">Pediatric ophthalmology</field>
+    </record>
+
+    <record id="medical_specialty_ped_pulmo" model="medical.specialty">
+        <field name="code">419170002</field>
+        <field name="name">Pediatric pulmonology</field>
+    </record>
+
+    <record id="medical_specialty_ped_rheum" model="medical.specialty">
+        <field name="code">419472004</field>
+        <field name="name">Pediatric rheumatology</field>
+    </record>
+
+    <record id="medical_specialty_ped_surgery" model="medical.specialty">
+        <field name="code">394539006</field>
+        <field name="name">Pediatric surgery</field>
+    </record>
+
+    <record id="medical_specialty_ped_surgery_marrow" model="medical.specialty">
+        <field name="code">420112009</field>
+        <field name="name">Pediatric surgery: Bone marrow transplantation</field>
+    </record>
+
+    <record id="medical_specialty_prevent" model="medical.specialty">
+        <field name="code">409968004</field>
+        <field name="name">Preventive medicine</field>
+    </record>
+
+    <record id="medical_specialty_psych" model="medical.specialty">
+        <field name="code">394587001</field>
+        <field name="name">Psychiatry</field>
+    </record>
+
+    <record id="medical_specialty_psychotherapy" model="medical.specialty">
+        <field name="code">394913002</field>
+        <field name="name">Psychotherapy</field>
+    </record>
+
+    <record id="medical_specialty_public_health" model="medical.specialty">
+        <field name="code">408440000</field>
+        <field name="name">Public health medicine</field>
+    </record>
+
+    <record id="medical_specialty_pulmo" model="medical.specialty">
+        <field name="code">418112009</field>
+        <field name="name">Pulmonary medicine</field>
+    </record>
+
+    <record id="medical_specialty_radiation_onco" model="medical.specialty">
+        <field name="code">419815003</field>
+        <field name="name">Radiation oncology</field>
+    </record>
+
+    <record id="medical_specialty_radio" model="medical.specialty">
+        <field name="code">394914008</field>
+        <field name="name">Radiology</field>
+    </record>
+
+    <record id="medical_specialty_intervention_radio" model="medical.specialty">
+        <field name="code">408455009</field>
+        <field name="name">Interventional radiology</field>
+    </record>
+
+    <record id="medical_specialty_rehab" model="medical.specialty">
+        <field name="code">394602003</field>
+        <field name="name">Rehabilitation</field>
+    </record>
+
+    <record id="medical_specialty_respite" model="medical.specialty">
+        <field name="code">408447002</field>
+        <field name="name">Respite care</field>
+    </record>
+
+    <record id="medical_specialty_rheum" model="medical.specialty">
+        <field name="code">394810000</field>
+        <field name="name">Rheumatology</field>
+    </record>
+
+    <record id="medical_specialty_sleep" model="medical.specialty">
+        <field name="code">408450004</field>
+        <field name="name">Sleep studies</field>
+    </record>
+
+    <record id="medical_specialty_surgery_marrow" model="medical.specialty">
+        <field name="code">408476004</field>
+        <field name="name">Surgery: Bone and marrow transplantation</field>
+    </record>
+
+    <record id="medical_specialty_surgery_breast" model="medical.specialty">
+        <field name="code">408469009</field>
+        <field name="name">Surgery: Breast surgery</field>
+    </record>
+
+    <record id="medical_specialty_surgery_cardio" model="medical.specialty">
+        <field name="code">408466002</field>
+        <field name="name">Surgery: Cardiac surgery</field>
+    </record>
+
+    <record id="medical_specialty_surgery_cardiothoracic" model="medical.specialty">
+        <field name="code">408471009</field>
+        <field name="name">Surgery: Cardiothoracic transplantation</field>
+    </record>
+
+    <record id="medical_specialty_surgery_colon" model="medical.specialty">
+        <field name="code">408464004</field>
+        <field name="name">Surgery: Colorectal surgery</field>
+    </record>
+
+    <record id="medical_specialty_surgery_endodontics" model="medical.specialty">
+        <field name="code">408441001</field>
+        <field name="name">Surgery: Endodontics</field>
+    </record>
+
+    <record id="medical_specialty_surgery_dental_maxillo" model="medical.specialty">
+        <field name="code">408465003</field>
+        <field name="name">Surgery: Dental and maxillofacial surgery</field>
+    </record>
+
+    <record id="medical_specialty_surgery_oral" model="medical.specialty">
+        <field name="code">394605001</field>
+        <field name="name">Surgery: Oral surgery</field>
+    </record>
+
+    <record id="medical_specialty_surgery_orthodontics" model="medical.specialty">
+        <field name="code">394608004</field>
+        <field name="name">Surgery: Orthodontics</field>
+    </record>
+
+    <record id="medical_specialty_surgery_periodontal" model="medical.specialty">
+        <field name="code">408461007</field>
+        <field name="name">Surgery: Periodontal surgery</field>
+    </record>
+
+    <record id="medical_specialty_surgery_prosthodont" model="medical.specialty">
+        <field name="code">408460008</field>
+        <field name="name">Surgery: Prosthodontics</field>
+    </record>
+
+    <record id="medical_specialty_surgery_restore_dent" model="medical.specialty">
+        <field name="code">394606000</field>
+        <field name="name">Surgery: Restorative dentistry</field>
+    </record>
+
+    <record id="medical_specialty_surgery_dental" model="medical.specialty">
+        <field name="code">408449004</field>
+        <field name="name">Surgery: Surgical dentistry</field>
+    </record>
+
+    <record id="medical_specialty_surgery_derm" model="medical.specialty">
+        <field name="code">418018006</field>
+        <field name="name">Surgery: Dermatologic surgery</field>
+    </record>
+
+    <record id="medical_specialty_surgery_ent" model="medical.specialty">
+        <field name="code">394604002</field>
+        <field name="name">Surgery: Ear, nose and throat surgery</field>
+    </record>
+
+    <record id="medical_specialty_surgery_general" model="medical.specialty">
+        <field name="code">394609007</field>
+        <field name="name">Surgery: General</field>
+    </record>
+
+    <record id="medical_specialty_surgery_pancreas" model="medical.specialty">
+        <field name="code">408474001</field>
+        <field name="name">Surgery: Hepatobiliary and pancreatic surgery</field>
+    </record>
+
+    <record id="medical_specialty_surgery_neuro" model="medical.specialty">
+        <field name="code">394610002</field>
+        <field name="name">Surgery: Neurosurgery</field>
+    </record>
+
+    <record id="medical_specialty_surgery_plastic" model="medical.specialty">
+        <field name="code">394611003</field>
+        <field name="name">Surgery: Plastic surgery</field>
+    </record>
+
+    <record id="medical_specialty_surgery_transplant" model="medical.specialty">
+        <field name="code">408477008</field>
+        <field name="name">Surgery: Transplantation surgery</field>
+    </record>
+
+    <record id="medical_specialty_trauma_ortho" model="medical.specialty">
+        <field name="code">394801008</field>
+        <field name="name">Surgery: Trauma and orthopedics</field>
+    </record>
+
+    <record id="medical_specialty_surgery_vascular" model="medical.specialty">
+        <field name="code">408463005</field>
+        <field name="name">Surgery: Vascular</field>
+    </record>
+
+    <record id="medical_specialty_surgery_onco" model="medical.specialty">
+        <field name="code">419321007</field>
+        <field name="name">Surgery: Oncology</field>
+    </record>
+
+    <record id="medical_specialty_surgery_emergency" model="medical.specialty">
+        <field name="code">394576009</field>
+        <field name="name">Surgery: Accident/emergency</field>
+    </record>
+
+    <record id="medical_specialty_thoracic" model="medical.specialty">
+        <field name="code">394590007</field>
+        <field name="name">Thoracic medicine</field>
+    </record>
+
+    <record id="medical_specialty_toxo" model="medical.specialty">
+        <field name="code">409967009</field>
+        <field name="name">Toxicology</field>
+    </record>
+
+    <record id="medical_specialty_tropical" model="medical.specialty">
+        <field name="code">408448007</field>
+        <field name="name">Tropical medicine</field>
+    </record>
+
+    <record id="medical_specialty_urology_onco" model="medical.specialty">
+        <field name="code">419043006</field>
+        <field name="name">Urological oncology</field>
+    </record>
+
+    <record id="medical_specialty_urology" model="medical.specialty">
+        <field name="code">394612005</field>
+        <field name="name">Urology</field>
+    </record>
+
+    <record id="medical_specialty_medical_other" model="medical.specialty">
+        <field name="code">394733009</field>
+        <field name="name">Medical specialty: Other</field>
+    </record>
+
+    <record id="medical_specialty_surgery_other" model="medical.specialty">
+        <field name="code">394732004</field>
+        <field name="name">Surgical specialty: Other</field>
+    </record>
+</odoo>

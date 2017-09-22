@@ -6,7 +6,7 @@
 
 {
     'name': 'Medical Practitioner',
-    'version': '10.0.1.1.0',
+    'version': '10.0.1.2.0',
     'summary': 'Defines medical practioners',
     'author': 'Eficent, Creu Blanca, LasLabs, '
               'Odoo Community Association (OCA)',
@@ -17,11 +17,14 @@
         'medical',
     ],
     'data': [
+        'data/ir_sequence.xml',
         'data/medical_role.xml',
-        'views/medical_role.xml',
-        'views/medical_practitioner.xml',
-        'views/medical_menu.xml',
+        'data/medical_specialty.xml',
         'security/ir.model.access.csv',
+        'views/medical_practitioner.xml',
+        'views/medical_role.xml',
+        'views/medical_menu.xml',
+        'views/medical_specialty.xml',
     ],
     'installable': True,
     'application': False,
