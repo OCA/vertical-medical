@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016 LasLabs Inc.
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+# Copyright 2016-2017 LasLabs Inc.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import api, models, _
-from openerp.exceptions import ValidationError
+from odoo import _, api, models
+from odoo.exceptions import ValidationError
 
 
 class MedicalAbstractNpi(models.AbstractModel):
@@ -21,13 +21,14 @@ class MedicalAbstractNpi(models.AbstractModel):
     def _npi_is_valid(self, num):
         """ Determine whether num is valid. Meant to be used in constrains
         Params:
-            num: :type:``str`` or :type:``int`` Number to validate
-                using Npi's Alg.
+            num (str or int): Number to validate using NPI algorithm.
         Returns:
-            :type:``bool``
+            bool
         """
+
         if not num:
             return False
+
         num = '80840%s' % num
         return self._luhn_is_valid(num)
 

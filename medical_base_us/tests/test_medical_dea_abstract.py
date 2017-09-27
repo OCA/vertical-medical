@@ -1,36 +1,10 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016 LasLabs Inc.
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+# Copyright 2016-2017 LasLabs Inc.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp.tests.common import TransactionCase
-from openerp import api, fields, models
-from openerp.exceptions import ValidationError
-
-
-class MedicalDeaAbstractTestMixer(TransactionCase):
-
-    def setUp(self):
-        super(MedicalDeaAbstractTestMixer, self).setUp()
-
-        MedicalTestDea._build_model(self.registry, self.cr)
-        self.model_obj = self.env[MedicalTestDea._name]
-        self.model_obj._prepare_setup()
-        self.model_obj._setup_base(False)
-        self.model_obj._setup_fields(False)
-        self.model_obj._setup_complete()
-
-        self.valid = [
-            'AP5836727',
-        ]
-        self.invalid = [
-            'AP5836729',
-            'Invalid00',
-        ]
-        self.country_us = self.env['res.country'].search([
-            ('code', '=', 'US'),
-        ],
-            limit=1,
-        )
+from odoo import api, fields, models
+from odoo.exceptions import ValidationError
+from odoo.tests.common import SingleTransactionCase
 
 
 class MedicalTestDea(models.Model):
@@ -43,6 +17,50 @@ class MedicalTestDea(models.Model):
     @api.constrains('ref')
     def _check_ref(self):
         self._dea_constrains_helper('ref')
+
+
+class MedicalDeaAbstractTestMixer(SingleTransactionCase):
+
+    @classmethod
+    def setUpClass(cls):
+        super(MedicalDeaAbstractTestMixer, cls).setUpClass()
+
+        cls.registry.enter_test_mode()
+        cls.old_cursor = cls.cr
+        cls.cr = cls.registry.cursor()
+        cls.env = api.Environment(cls.cr, cls.uid, {})
+
+        MedicalTestDea._build_model(cls.registry, cls.cr)
+        cls.model_obj = cls.env[MedicalTestDea._name].with_context(todo=[])
+        cls.model_obj._prepare_setup()
+        cls.model_obj._setup_base(partial=False)
+        cls.model_obj._setup_fields(partial=False)
+        cls.model_obj._setup_complete()
+        cls.model_obj._auto_init()
+        cls.model_obj.init()
+        cls.model_obj._auto_end()
+
+        cls.valid = [
+            'AP5836727',
+        ]
+        cls.invalid = [
+            'AP5836729',
+            'Invalid00',
+        ]
+        cls.country_us = cls.env['res.country'].search([
+            ('code', '=', 'US'),
+        ],
+            limit=1,
+        )
+
+    @classmethod
+    def tearDownClass(cls):
+        del cls.registry.models[MedicalTestDea._name]
+        cls.registry.leave_test_mode()
+        cls.cr = cls.old_cursor
+        cls.env = api.Environment(cls.cr, cls.uid, {})
+
+        super(MedicalDeaAbstractTestMixer, cls).tearDownClass()
 
 
 class TestMedicalDeaAbstract(MedicalDeaAbstractTestMixer):

@@ -1,39 +1,10 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016 LasLabs Inc.
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+# Copyright 2016-2017 LasLabs Inc.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp.tests.common import TransactionCase
-from openerp import api, fields, models
-from openerp.exceptions import ValidationError
-
-
-class MedicalLuhnAbstractTestMixer(TransactionCase):
-
-    def setUp(self):
-        super(MedicalLuhnAbstractTestMixer, self).setUp()
-
-        MedicalTestLuhn._build_model(self.registry, self.cr)
-        self.model_obj = self.env[MedicalTestLuhn._name]
-        self.model_obj._prepare_setup()
-        self.model_obj._setup_base(False)
-        self.model_obj._setup_fields(False)
-        self.model_obj._setup_complete()
-
-        self.valid = [
-            4532015112830366,
-            6011514433546201,
-            6771549495586802,
-        ]
-        self.invalid = [
-            4531015112830366,
-            6011514438546201,
-            1771549495586802,
-        ]
-        self.country_us = self.env['res.country'].search([
-            ('code', '=', 'US'),
-        ],
-            limit=1,
-        )
+from odoo import api, fields, models
+from odoo.exceptions import ValidationError
+from odoo.tests.common import SingleTransactionCase
 
 
 class MedicalTestLuhn(models.Model):
@@ -46,6 +17,53 @@ class MedicalTestLuhn(models.Model):
     @api.constrains('ref')
     def _check_ref(self):
         self._luhn_constrains_helper('ref')
+
+
+class MedicalLuhnAbstractTestMixer(SingleTransactionCase):
+
+    @classmethod
+    def setUpClass(cls):
+        super(MedicalLuhnAbstractTestMixer, cls).setUpClass()
+
+        cls.registry.enter_test_mode()
+        cls.old_cursor = cls.cr
+        cls.cr = cls.registry.cursor()
+        cls.env = api.Environment(cls.cr, cls.uid, {})
+
+        MedicalTestLuhn._build_model(cls.registry, cls.cr)
+        cls.model_obj = cls.env[MedicalTestLuhn._name].with_context(todo=[])
+        cls.model_obj._prepare_setup()
+        cls.model_obj._setup_base(partial=False)
+        cls.model_obj._setup_fields(partial=False)
+        cls.model_obj._setup_complete()
+        cls.model_obj._auto_init()
+        cls.model_obj.init()
+        cls.model_obj._auto_end()
+
+        cls.valid = [
+            4532015112830366,
+            6011514433546201,
+            6771549495586802,
+        ]
+        cls.invalid = [
+            4531015112830366,
+            6011514438546201,
+            1771549495586802,
+        ]
+        cls.country_us = cls.env['res.country'].search([
+            ('code', '=', 'US'),
+        ],
+            limit=1,
+        )
+
+    @classmethod
+    def tearDownClass(cls):
+        del cls.registry.models[MedicalTestLuhn._name]
+        cls.registry.leave_test_mode()
+        cls.cr = cls.old_cursor
+        cls.env = api.Environment(cls.cr, cls.uid, {})
+
+        super(MedicalLuhnAbstractTestMixer, cls).tearDownClass()
 
 
 class TestMedicalLuhnAbstract(MedicalLuhnAbstractTestMixer):

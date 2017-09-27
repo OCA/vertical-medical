@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016 LasLabs Inc.
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+# Copyright 2016-2017 LasLabs Inc.
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import api, models, _
-from openerp.exceptions import ValidationError
 import re
+from odoo import _, api, models
+from odoo.exceptions import ValidationError
 
 
 class MedicalAbstractDea(models.AbstractModel):
@@ -38,7 +38,7 @@ class MedicalAbstractDea(models.AbstractModel):
         4. 15 + 32 = 47
 
         Params:
-            dea_num: ``str`` DEA ID to validate
+            dea_num (str): DEA ID to validate
         Returns:
             bool
         """
