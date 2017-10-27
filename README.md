@@ -4,7 +4,7 @@
 
 # Vertical Medical
 
-Vertical Medical provides a Free and Open Source solution for storing and processing medical
+Vertical Medical provides a free open source solution for storing and processing medical
 records in Odoo.
 
 Many of the workflows were built in alignment with existing Odoo processes to allow for
