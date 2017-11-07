@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 # Copyright 2016 LasLabs Inc.
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+# License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
 
 import threading
+import base64
 
-from odoo import api, fields, models, tools
+from odoo import api, fields, models
 
 
 class MedicalAbstractEntity(models.AbstractModel):
@@ -79,13 +80,6 @@ class MedicalAbstractEntity(models.AbstractModel):
                 return False
         return True
 
-    @api.model_cr_context
-    def _create_default_image(self, vals):
-        base64_image = self._get_default_image_encoded(vals)
-        if not base64_image:
-            return
-        return tools.image_resize_image_big(base64_image)
-
     def _get_default_image_encoded(self, vals):
         """ It returns the base64 encoded image string for the default avatar.
 
@@ -97,10 +91,12 @@ class MedicalAbstractEntity(models.AbstractModel):
             NoneType: None if no result.
         """
         image_path = self._get_default_image_path(vals)
+        import logging
+        logging.info(image_path)
         if not image_path:
-            return
-        with open(image_path, 'r') as image:
-            return image.read().encode('base64')
+            return False
+        with open(image_path, 'rb') as image:
+            return base64.b64encode(image.read())
 
     @api.model_cr_context
     def _get_default_image_path(self, vals):
@@ -109,7 +105,6 @@ class MedicalAbstractEntity(models.AbstractModel):
         Example:
 
             .. code-block:: python
-
             @api.model
             def _get_default_image_path(self, vals):
                 res = super(MedicalPatient, self)._get_default_image_path(vals)
@@ -128,7 +123,7 @@ class MedicalAbstractEntity(models.AbstractModel):
             bool: False if error.
             NoneType: None if no result.
         """
-        return  # pragma: no cover
+        return False  # pragma: no cover
 
     def toggle(self, attr):
         if getattr(self, attr) is True:

@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
 # Copyright 2016 LasLabs Inc.
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+# License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
 
 from datetime import date, datetime
 from dateutil.relativedelta import relativedelta
@@ -94,20 +93,21 @@ class MedicalPatient(models.Model):
                     'Invalid selection - Only a `Female` may be pregnant.',
                 ))
 
+    def calculate_identification_code(self):
+        Seq = self.env['ir.sequence']
+        return Seq.sudo().next_by_code(self._name)
+
     @api.model
     def _create_vals(self, vals):
         vals = super(MedicalPatient, self)._create_vals(vals)
         if not vals.get('identification_code'):
-            Seq = self.env['ir.sequence']
-            vals['identification_code'] = Seq.sudo().next_by_code(
-                self._name,
-            )
+            vals['identification_code'] = self.calculate_identification_code()
         vals.update({
             'customer': True,
         })
         return vals
 
-    @api.model_cr_context
+    @api.model
     def _get_default_image_path(self, vals):
         super(MedicalPatient, self)._get_default_image_path(vals)
         return get_module_resource(
@@ -119,6 +119,7 @@ class MedicalPatient(models.Model):
             raise UserError(_('Invalid operator: %s' % (operator,)))
 
         current_date = date.today()
+        last_birthdate = current_date + relativedelta(years=value * -1)
         last_birthdate = current_date + relativedelta(years=value * -1)
         first_birthdate = current_date + relativedelta(
             years=(value + 1) * -1,
@@ -141,9 +142,3 @@ class MedicalPatient(models.Model):
 
     def toggle_is_pregnant(self):
         self.toggle('is_pregnant')
-
-    def toggle_safety_cap_yn(self):
-        self.toggle('safety_cap_yn')
-
-    def toggle_counseling_yn(self):
-        self.toggle('counseling_yn')

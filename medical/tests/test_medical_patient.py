@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
 # Copyright 2015 ACSONE SA/NV
 # Copyright 2016 LasLabs Inc.
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+# License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
 
 from datetime import date, datetime, timedelta
 from dateutil.relativedelta import relativedelta
@@ -12,6 +11,7 @@ from odoo.tests.common import TransactionCase
 from odoo.exceptions import ValidationError
 
 import logging
+import math
 _logger = logging.getLogger(__name__)
 
 MOCK_PATH = 'odoo.addons.medical.models.medical_patient.date'
@@ -60,29 +60,34 @@ class TestMedicalPatient(TransactionCase):
             delta.months, 'm',
             delta.days, 'd',
         )
-        self.assertEquals(
+        self.assertEqual(
             self.patient_1.age, age,
         )
 
     def test_compute_age_patient_deceased(self):
         """ Test age properly set if patient deceased """
-        self.assertEquals(
+        self.assertEqual(
             self.patient_3.age, '36y 1m 20d (deceased)',
         )
 
     def test_compute_age_no_birthdate_date_set(self):
         """ Test age equals 'No DoB' if no birthdate_date present """
         self.patient_1.birthdate_date = None
-        self.assertEquals(
+        self.assertEqual(
             self.patient_1.age, 'No DoB',
         )
 
     def test_toggle_active(self):
         """ Test invalidate patient also invalidates partner """
         self.patient_1.toggle_active()
-        self.assertEquals(
+        self.assertEqual(
             [self.partner_patient_1.active, self.patient_1.active],
             [False, False],
+        )
+        self.patient_1.toggle_active()
+        self.assertEqual(
+            [self.partner_patient_1.active, self.patient_1.active],
+            [True, True],
         )
 
     def test_patient_deceased_if_date_death_exists(self):
@@ -149,7 +154,7 @@ class TestMedicalPatient(TransactionCase):
         ).date()
         current_date = date.today()
         delta = current_date - birthdate
-        years = delta.days/365
+        years = math.floor(delta.days/365)
         result = self.env['medical.patient'].search(
             [('age_years', '=', years)]
         )
@@ -198,6 +203,6 @@ class TestMedicalPatient(TransactionCase):
         self.patient_1.write({'is_pregnant': False})
         self.patient_1.toggle_is_pregnant()
         self.patient_1.refresh()
-        self.assertEquals(
+        self.assertEqual(
             self.patient_1.is_pregnant, True
         )

@@ -1,11 +1,10 @@
-# -*- coding: utf-8 -*-
 # Copyright 2004-2009 Tiny SPRL
 # Copyright 2016 LasLabs Inc.
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+# License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
 
 {
     'name': 'Odoo Medical',
-    'version': '10.0.1.0.2',
+    'version': '11.0.1.0.0',
     'category': 'Medical',
     'depends': [
         'product',

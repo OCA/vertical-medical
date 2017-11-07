@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2016 LasLabs Inc.
-     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl). -->
 
 <odoo>
 
@@ -8,7 +8,6 @@
               name="Medical"
               sequence="10"
               web_icon="medical,static/description/icon.png"
-              load_xmlid="True"
               />
 
     <menuitem id="medical_patient_root"

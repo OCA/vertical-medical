@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
 # Copyright 2016 LasLabs Inc.
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+# License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
 
 from odoo.tests.common import TransactionCase
 
@@ -20,7 +19,7 @@ class TestResPartner(TransactionCase):
         """ Test returns correct medical entity """
         self.partner_1.type = 'medical.patient'
         res = self.partner_1._get_medical_entity()
-        self.assertEquals(
+        self.assertEqual(
             res.partner_id,
             self.partner_1,
         )

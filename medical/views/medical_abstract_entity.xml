@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2016 LasLabs Inc.
-     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl). -->
 
 <odoo>
 
@@ -115,7 +115,6 @@
                             <group name="group_contact_right">
                                 <field name="phone" widget="phone" />
                                 <field name="mobile" widget="phone" />
-                                <field name="fax" />
                                 <field name="user_ids" invisible="1" />
                                 <field name="email" widget="email" attrs="{'required': [('user_ids','!=', [])]}" />
                                 <field name="title"
@@ -158,7 +157,6 @@
                                 <field name="city" />
                                 <field name="country_id" />
                                 <field name="mobile" />
-                                <field name="fax" />
                                 <field name="state_id" />
                                 <field name="image" />
                                 <field name="lang" />
@@ -218,9 +216,6 @@
                                                 </div>
                                                 <div t-if="record.mobile.raw_value">
                                                     Mobile: <field name="mobile" />
-                                                </div>
-                                                <div t-if="record.fax.raw_value">
-                                                    Fax: <field name="fax" />
                                                 </div>
                                             </div>
                                         </div>
@@ -336,13 +331,14 @@
                 <field name="category_id" />
                 <field name="image_small" />
                 <field name="type" />
+                <field name="id" invisible="1"/>
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click o_res_partner_kanban">
                             <div class="o_kanban_tags_section oe_kanban_partner_categories" />
                             <div class="o_kanban_image">
                                 <t t-if="record.image_small.raw_value">
-                                    <img t-att-src="kanban_image('res.partner', 'image_small', record.id.value)" />
+                                    <img t-att-src="kanban_image('res.partner', 'image_small', record.id.raw_value)" />
                                 </t>
                                 <t t-if="!record.image_small.raw_value">
                                     <t t-if="record.is_company.raw_value === true">

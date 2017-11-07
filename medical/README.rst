@@ -1,5 +1,5 @@
 .. image:: https://img.shields.io/badge/license-LGPL--3-blue.svg
-    :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
+    :target: https://www.gnu.org/licenses/lgpl-3.0-standalone.html
     :alt: License: LGPL-3
 
 ============
@@ -46,9 +46,8 @@ entities & maintain uniformity between them:
 * Search - ``medical_asbsract_entity_view_search``
 
 When inheriting these views, you must define the inheritance mode as ``primary``,
-such as in the following example:
+such as in the following example ::
 
-    .. code-block:: xml
     <record id="medical_patient_view_tree" model="ir.ui.view">
         <field name="name">medical.patient.tree</field>
         <field name="model">medical.patient</field>
@@ -71,7 +70,7 @@ entity views for more examples.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/159/10.0
+   :target: https://runbot.odoo-community.org/runbot/159/11.0
 
 Known issues / Roadmap
 ======================
@@ -118,4 +117,4 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-To contribute to this module, please visit http://odoo-community.org.
+To contribute to this module, please visit https://odoo-community.org.
