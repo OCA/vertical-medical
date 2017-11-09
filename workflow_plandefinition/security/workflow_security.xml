@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+        <record id="ir_module_category_workflow" model="ir.module.category">
+            <field name="name">Workflow</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="group_workflow_user" model="res.groups">
+            <field name="name">Workflow User</field>
+            <field name="category_id" ref="ir_module_category_workflow"/>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_workflow_manager" model="res.groups">
+            <field name="name">Workflow Manager</field>
+            <field name="category_id" ref="ir_module_category_workflow"/>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+            <field name="implied_ids"
+                   eval="[(4, ref('workflow_plandefinition.group_workflow_user'))]"/>
+        </record>
+
+</odoo>
