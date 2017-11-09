@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 LasLabs Inc.
+    Copyright 2017 Creu Blanca
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+        <menuitem id="medical_conf_practitioner_menu"
+                  name="Practitioner"
+                  parent="medical.medical_root"
+                  sequence="20"/>
+
+        <menuitem id="medical_practitioner_menu"
+                  name="Practitioners"
+                  parent="medical_conf_practitioner_menu"
+                  action="medical_practitioner_action"
+                  sequence="10"/>
+
+        <menuitem id="medical_role_menu"
+                  name="Roles"
+                  parent="medical_conf_practitioner_menu"
+                  action="medical_role_action"
+                  sequence="20"/>
+</odoo>
