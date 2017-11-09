@@ -1,5 +1,6 @@
-.. image:: https://img.shields.io/badge/license-LGPL--3-blue.svg
-    :alt: License: LGPL-3
+.. image:: https://img.shields.io/badge/licence-LGPL--3-blue.svg
+   :target: https://www.gnu.org/licenses/lgpl-3.0-standalone.html
+   :alt: License: LGPL-3
 
 ===================
 Odoo Medical Center
@@ -19,7 +20,7 @@ Usage
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/159/10.0
+   :target: https://runbot.odoo-community.org/runbot/159/11.0
 
 For further information, please visit:
 
@@ -46,7 +47,7 @@ Credits
 Images
 ------
 
-* Odoo Community Association: `Icon <https://github.com/OCA/maintainer-tools/blob/master/template/module/static/description/icon.svg>`_.
+* Odoo Community Association: `Icon <https://odoo-community.org/logo.png>`_.
 * ClipArt Best: `Medical Center Avatar <http://www.clipartbest.com/>`_.
 
 Contributors
