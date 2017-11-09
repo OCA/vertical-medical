@@ -10,7 +10,7 @@
         'product',
     ],
     'author': 'LasLabs, Odoo Community Association (OCA)',
-    'website': 'https://odoo-community.org/',
+    'website': 'https://github.com/OCA/vertical-medical',
     'license': 'LGPL-3',
     'data': [
         'security/medical_security.xml',
@@ -21,6 +21,7 @@
         'views/medical_patient.xml',
         'views/res_partner.xml',
         'views/medical_menu.xml',
+        'views/res_config_settings_views.xml',
     ],
     'demo': [
         'demo/medical_patient_demo.xml',
