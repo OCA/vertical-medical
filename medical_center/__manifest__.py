@@ -1,13 +1,12 @@
-# -*- coding: utf-8 -*-
 # Copyright 2016 LasLabs Inc.
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+# License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
 
 {
     "name": "Medical Centers",
     "summary": "Adds a concept of Medical Centers to Patients.",
-    "version": "10.0.1.0.0",
+    "version": "11.0.1.0.0",
     "category": "Medical",
-    "website": "https://laslabs.com",
+    "website": "https://github.com/OCA/vertical-medical",
     "author": "LasLabs, Odoo Community Association (OCA)",
     "license": "LGPL-3",
     "application": False,
