@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <record id="medical_insurance_company_view_form" model="ir.ui.view">
+        <field name="name">medical.insurance.company.view.form</field>
+        <field name="model">medical.insurance.company</field>
+        <field name="inherit_id" ref="medical.medical_abstract_entity_view_form"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="string">Insurance Provider</attribute>
+            </xpath>
+            <xpath expr="//h1" position="after">
+                <field name="is_company" invisible="True"/>
+                <h3>
+                    <field name="parent_id" placeholder="Parent Company"
+                           domain="[('is_company', '=', True)]"
+                           context="{'default_is_company': True,
+                                     'default_type': 'medical.insurance.company'}"/>
+                </h3>
+            </xpath>
+            <notebook position="inside">
+                <page string="Templates">
+                    <field name="insurance_template_ids" nolabel="1">
+                        <tree string="Templates" editable="top">
+                            <field name="code"/>
+                            <field name="description"/>
+                            <field name="plan_number"/>
+                            <field name="product_id"/>
+                            <field name="insurance_affiliation"/>
+                            <field name="is_default"/>
+                        </tree>
+                    </field>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+    <record id="medical_insurance_company_view_tree" model="ir.ui.view">
+        <field name="name">medical.insurance.company.view.tree</field>
+        <field name="model">medical.insurance.company</field>
+        <field name="inherit_id" ref="medical.medical_abstract_entity_view_tree"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="string">Insurance Providers</attribute>
+            </xpath>
+            <xpath expr="//field[@name='email']" position="after">
+                <field name="parent_id"/>
+                <field name="street"/>
+                <field name="city"/>
+                <field name="state_id"/>
+                <field name="zip"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_insurance_company_view_kanban" model="ir.ui.view">
+        <field name="name">medical.insurance.company.kanban</field>
+        <field name="model">medical.insurance.company</field>
+        <field name="inherit_id" ref="medical.medical_abstract_entity_view_kanban"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="string">Insurance Providers</attribute>
+            </xpath>
+            <xpath expr="//ul[@name='entity_details']/li" position="before">
+                <li name="field_phone" t-if="record.phone.raw_value">
+                    <field name="phone"/>
+                </li>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_insurance_company_view_search" model="ir.ui.view">
+        <field name="name">medical.insurance.company.view.search</field>
+        <field name="model">medical.insurance.company</field>
+        <field name="inherit_id" ref="medical.medical_abstract_entity_view_search"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="attributes">
+                <attribute name="string">Insurance Providers</attribute>
+            </xpath>
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="name"/>
+                <field name="parent_id"/>
+                <field name="street"/>
+                <field name="city"/>
+                <field name="state_id"/>
+                <field name="zip"/>
+            </xpath>
+            <xpath expr="//filter" position="after">
+                <filter string="Company"
+                        domain="[]"
+                        context="{'group_by':'parent_id'}"/>
+                <filter string="State"
+                        domain="[]"
+                        context="{'group_by': 'state_id'}"/>
+                <filter string="Zip"
+                        domain="[]"
+                        context="{'group_by': 'zip'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_insurance_company_action">
+        <field name="name">Insurance Providers</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.insurance.company</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="search_view_id" ref="medical_insurance_company_view_search"/>
+        <field name="view_ids"
+               eval="[(5, 0, 0),
+                      (0, 0, {'view_mode': 'kanban', 'view_id': ref('medical_insurance_company_view_kanban')}),
+                      (0, 0, {'view_mode': 'tree', 'view_id': ref('medical_insurance_company_view_tree')}),
+                      (0, 0, {'view_mode': 'form', 'view_id': ref('medical_insurance_company_view_form')}),
+                     ]"
+        />
+        <field name="context">{'default_company_type':'company', 'default_is_company':True}</field>
+    </record>
+
+</odoo>
