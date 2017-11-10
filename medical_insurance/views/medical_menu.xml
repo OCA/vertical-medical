@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <odoo>
-    <data>
 
         <menuitem id="medical_conf_insurance_menu"
                   name="Insurance"
@@ -25,5 +25,4 @@
                   action="medical_insurance_template_action"
                   sequence="30"/>
 
-    </data>
 </odoo>

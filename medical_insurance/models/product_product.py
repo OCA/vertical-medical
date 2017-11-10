@@ -23,6 +23,7 @@ from odoo import fields, models
 
 class ProductProduct(models.Model):
     _inherit = 'product.product'
+
     is_insurance_plan = fields.Boolean(
         string='Insurance Plan',
         help='Check this if the product is an insurance plan',

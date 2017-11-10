@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <odoo>
-	<data>
+
 		<record id="medical_insurance_template_view_tree" model="ir.ui.view">
 			<field name="name">medical.insurance.template.tree</field>
 			<field name="model">medical.insurance.template</field>
@@ -88,5 +89,4 @@
 			<field name="context">{}</field>
 		</record>
 
-	</data>
 </odoo>

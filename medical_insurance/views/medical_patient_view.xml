@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <odoo>
-	<data>
+
 		<record id="medical_patient_view_form" model="ir.ui.view">
             <field name="name">medical.patient.form</field>
              <field name="model">medical.patient</field>
@@ -10,12 +11,11 @@
 					<page string="Insurance">
 						<group>
 							<field name="insurance_plan_ids" nolabel="1">
-                                <tree string="Actions"
-                                      editable="bottom">
+                                <tree string="Actions">
 									<field name="insurance_template_id"/>
 									<field name="number"/>
-                                    <field name="name" readonly="True"/>
-                                    <field name="insurance_company_id" readonly="True"/>
+                                    <field name="name"/>
+                                    <field name="insurance_company_id"/>
 									<field name="active"/>
                                 </tree>
                             </field>
@@ -24,5 +24,5 @@
 				</xpath>
             </field>
         </record>
-	</data>
+
 </odoo>

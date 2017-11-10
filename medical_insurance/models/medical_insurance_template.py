@@ -26,12 +26,6 @@ class MedicalInsuranceTemplate(models.Model):
     _description = 'Medical Insurance Templates'
     _inherits = {'product.product': 'product_id', }
 
-    @api.multi
-    @api.depends('insurance_company_id', 'code')
-    def _compute_name(self):
-        for rec in self:
-            rec.name = '[%s] %s' % (rec.insurance_company_id.name, rec.code)
-
     name = fields.Char(
         required=True,
         readonly=True,
@@ -52,7 +46,7 @@ class MedicalInsuranceTemplate(models.Model):
     )
     is_default = fields.Boolean(
         string='Default Plan',
-        help='Check this if the plan should be the default when assigning'
+        help='Check this if the plan should be the default when assigning '
         'company to patient',
     )
     insurance_company_id = fields.Many2one(
@@ -78,6 +72,12 @@ class MedicalInsuranceTemplate(models.Model):
     ],
         help='What type of entity is this insurance provided to?',
     )
+
+    @api.multi
+    @api.depends('insurance_company_id', 'code')
+    def _compute_name(self):
+        for rec in self:
+            rec.name = '[%s] %s' % (rec.insurance_company_id.name, rec.code)
 
     @api.model
     @api.returns('self', lambda value: value.id)

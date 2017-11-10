@@ -6,10 +6,28 @@
 Odoo Medical Insurance
 ======================
 
-Extension of medical that provides Insurance concept
+Extension of medical that provides Insurance concept.
+
+Configuration
+=============
+
+To configure this module, you need to:
+
+#. Go to 'Medical/Insurance/Insurance Providers' and create an Insurance
+   Provider.
+#. Go to 'Medical/Insurance/Insurance Plan Template' and create a Plan Template
+   with an Insurance Provider and an Insurance Product.
 
 Usage
 =====
+
+In order to create an Insurance Plan for a patient:
+
+#. Go to 'Medical/Patient/Patient' and create a Patient.
+#. Go to 'Medical/Insurance/Insurance Plans' and create a new Insurance Plan
+   with the Patient and using the according Insurance Plan Template.
+#. Go to the patient and in the page 'Medical' you can see the new Insurance
+   Plan for that patient.
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot

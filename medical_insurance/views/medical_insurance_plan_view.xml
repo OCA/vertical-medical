@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <odoo>
-	<data>
+
 		<record id="medical_insurance_plan_view_tree" model="ir.ui.view">
 			<field name="name">medical.insurance.plan.tree</field>
 			<field name="model">medical.insurance.plan</field>
@@ -100,5 +101,4 @@
 			<field name="context">{'active_test': False,}</field>
 		</record>
 
-	</data>
 </odoo>

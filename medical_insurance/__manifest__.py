@@ -44,7 +44,8 @@
 
     'name': 'Medical Insurance',
     'version': '11.0.1.0.0',
-    'author': "LasLabs, Eficent, Odoo Medical Team, Odoo Community Association (OCA)",
+    'author': "LasLabs, Eficent, Odoo Medical Team,"
+              "Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': [
         'medical'
