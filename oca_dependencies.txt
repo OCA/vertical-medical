@@ -1,0 +1,4 @@
+medical https://github.com/eficent/vertical-medical 11.0-mig-medical
+medical_center https://github.com/eficent/vertical-medical 11.0-mig-medical_center
+medical_request_group https://github.com/eficent/vertical-medical 11.0-add-medical_request_group
+medical_practitioner https://github.com/eficent/vertical-medical 11.0-mig-medical_practitioner
