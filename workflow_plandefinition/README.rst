@@ -48,6 +48,22 @@ Define Workflow Types
 #. Go to Workflow / Configuration / Workflow Types
 #. Create a new Workflow Type.
 
+Usage of main activity definition on plans
+------------------------------------------
+
+It is possible to add a main activity definition on plans in order to create
+a parent activity.
+You can configure it on Medical / Configuration / Settings
+
+Add plan definitions directly on patients
+-----------------------------------------
+
+It is possible to add a plan configuration on patients.
+You can configure this option on Medical / Configuration / Settings.
+
+Once it is allowed, you can add it on a patient through a button on the header
+of patient
+
 Usage
 =====
 #. Go to Workflow / Activity definition

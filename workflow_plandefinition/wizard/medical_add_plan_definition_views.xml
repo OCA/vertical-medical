@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="medical_add_plan_definition_form">
+        <field name="name">medical.add.plan.definition.form</field>
+        <field name="model">medical.add.plan.definition</field>
+        <field name="arch" type="xml">
+            <form string="Activity Definition">
+                <field name="patient_id" invisible="1"/>
+                <field name="plan_definition_id"/>
+                <footer>
+                    <button type="object" name="run" string="Create"
+                            class="oe_highlight"/>
+                    <button special="cancel" string="Cancel" class="oe_link"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_medical_add_plan_definition_form"
+            model="ir.actions.act_window">
+        <field name="name">Add Plan definition</field>
+        <field name="res_model">medical.add.plan.definition</field>
+        <field name="view_mode">form</field>
+        <field name="context">{'default_patient_id': active_id}</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

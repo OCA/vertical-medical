@@ -37,7 +37,7 @@
                         <field name="description"/>
                         <field name="type_id"/>
                         <field name="model_id"/>
-                        <field name="resource_product_id"/>
+                        <field name="service_id"/>
                     </group>
                     <notebook>
                         <page string="Notes and Messages" name="messages">

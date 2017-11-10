@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="medical_workflow" model="workflow.type">
+        <field name="name">Medical</field>
+        <field name="description">Medical workflows</field>
+        <field name="model_id" ref="medical_request_group.model_medical_request_group"/>
+        <field name="model_ids" eval="[(6, 0, [ref('medical_request_group.model_medical_request_group')])]"/>
+    </record>
+</odoo>

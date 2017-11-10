@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="mr_product" model="product.product">
+        <field name="name">Medical Resonance service</field>
+        <field name="type">service</field>
+    </record>
+    <record id="ct_product" model="product.product">
+        <field name="name">Computed Tomography service</field>
+        <field name="type">service</field>
+    </record>
+    <record id="check_up_product" model="product.product">
+        <field name="name">Check Up service</field>
+        <field name="type">service</field>
+    </record>
+
+
+    <record id="mr_activity" model="workflow.activity.definition">
+        <field name="name">MR</field>
+        <field name="description">Medical resonance</field>
+        <field name="type_id" ref="medical_workflow"/>
+        <field name="model_id" ref="medical_request_group.model_medical_request_group"/>
+        <field name="state">active</field>
+        <field name="service_id" ref="mr_product"/>
+        <field name="quantity">1</field>
+    </record>
+    <record id="ct_activity" model="workflow.activity.definition">
+        <field name="name">CT</field>
+        <field name="description">Computed Tomography</field>
+        <field name="type_id" ref="medical_workflow"/>
+        <field name="model_id" ref="medical_request_group.model_medical_request_group"/>
+        <field name="state">active</field>
+        <field name="service_id" ref="ct_product"/>
+        <field name="quantity">1</field>
+    </record>
+    <record id="check_up_activity" model="workflow.activity.definition">
+        <field name="name">CH</field>
+        <field name="description">Check Up</field>
+        <field name="type_id" ref="medical_workflow"/>
+        <field name="model_id" ref="medical_request_group.model_medical_request_group"/>
+        <field name="state">active</field>
+        <field name="service_id" ref="check_up_product"/>
+        <field name="quantity">1</field>
+    </record>
+
+    <record id="mr_knee" model="workflow.plan.definition">
+        <field name="name">Knee MR</field>
+        <field name="description">Basic knee Medical Resonance</field>
+        <field name="type_id" ref="medical_workflow"/>
+        <field name="state">active</field>
+        <field name="activity_definition_id" ref="mr_activity"/>
+    </record>
+    <record id="mr_knee_action" model="workflow.plan.definition.action">
+        <field name="name">MR</field>
+        <field name="activity_definition_id" ref="mr_knee"/>
+        <field name="direct_plan_definition_id" ref="mr_activity"/>
+    </record>
+
+    <record id="ct_abdominal" model="workflow.plan.definition">
+        <field name="name">Abdominal ct</field>
+        <field name="description">Basic abdominal computed tomography</field>
+        <field name="type_id" ref="medical_workflow"/>
+        <field name="state">active</field>
+    </record>
+    <record id="ct_abdominal_action" model="workflow.plan.definition.action">
+        <field name="name">CT</field>
+        <field name="activity_definition_id" ref="ct_activity"/>
+        <field name="direct_plan_definition_id" ref="ct_abdominal"/>
+    </record>
+    <record id="basic_check_up" model="workflow.plan.definition">
+        <field name="name">Basic Check Up</field>
+        <field name="description">Basic check up</field>
+        <field name="type_id" ref="medical_workflow"/>
+        <field name="state">active</field>
+    </record>
+
+    <record id="basic_check_up_action" model="workflow.plan.definition.action">
+        <field name="name">CH</field>
+        <field name="activity_definition_id" ref="check_up_activity"/>
+        <field name="direct_plan_definition_id" ref="basic_check_up"/>
+    </record>
+    <record id="basic_check_up_mr_action" model="workflow.plan.definition.action">
+        <field name="name">MR</field>
+        <field name="activity_definition_id" ref="mr_activity"/>
+        <field name="parent_id" ref="basic_check_up_action"/>
+    </record>
+    <record id="basic_check_up_ct_action" model="workflow.plan.definition.action">
+        <field name="name">CT</field>
+        <field name="activity_definition_id" ref="ct_activity"/>
+        <field name="parent_id" ref="basic_check_up_action"/>
+    </record>
+</odoo>

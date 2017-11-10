@@ -16,7 +16,6 @@ class PlanDefinitionAction(models.Model):
     _parent_order = 'name'
     _order = 'parent_left'
     _rec_name = 'complete_name'
-    _order = 'id asc'
 
     name = fields.Char(
         string='Action name',
@@ -48,11 +47,12 @@ class PlanDefinitionAction(models.Model):
         comodel_name='workflow.plan.definition',
         compute='_compute_plan_definition_id',
         ondelete='cascade',
-    )   # FHIR field: Definition (Plan Definition)
+        store=True
+    )
     activity_definition_id = fields.Many2one(
         string='Activity definition',
         comodel_name='workflow.activity.definition',
-    )   # FHIR field: Definition (Activity Definition)
+    )   # FHIR field: definition (Activity Definition)
     parent_left = fields.Integer(
         'Left Parent',
         index=True,
@@ -101,3 +101,12 @@ class PlanDefinitionAction(models.Model):
         if not self._check_recursion():
             raise exceptions.ValidationError(
                 _('Error! You are attempting to create a recursive category.'))
+
+    @api.multi
+    def execute_action(self, vals, parent=False):
+        self.ensure_one()
+        res = self.activity_definition_id.execute_activity(
+            vals, parent, self.plan_definition_id, self
+        )
+        for action in self.child_ids:
+            action.execute_action(vals, res)

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="medical_patient_view_form" model="ir.ui.view">
+        <field name="name">medical.patient.form</field>
+        <field name="model">medical.patient</field>
+        <field name="inherit_id" ref="medical.medical_patient_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="%(action_medical_add_plan_definition_form)d"
+                        type="action" string="Add Plan definition"
+                        groups="workflow_plandefinition.group_patient_add_plan_definition"
+                        class="oe_highlight"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
