@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Dave Lasley <dave@laslabs.com>
@@ -15,17 +14,19 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
-from openerp import fields, models
+from odoo import fields, models
 
 
 class MedicalPatient(models.Model):
     _inherit = 'medical.patient'
-    insurance_plan_ids = fields.Many2many(
+
+    insurance_plan_ids = fields.One2many(
         string='Insurance Plans',
         comodel_name='medical.insurance.plan',
-        help='Past & Present Insurance Plans',
+        inverse_name='patient_id',
+        domain=['|', ('active', '=', False), ('active', '=', True)]
     )

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Dave Lasley <dave@laslabs.com>
@@ -15,26 +14,20 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
-from openerp import fields, models, api
+from odoo import fields, models
 
 
 class MedicalInsuranceCompany(models.Model):
     _name = 'medical.insurance.company'
     _description = 'Medical Insurance Providers'
-    _inherits = {'res.partner': 'partner_id', }
-    partner_id = fields.Many2one(
-        string='Related Partner',
-        comodel_name='res.partner',
-        required=True,
-        ondelete='cascade',
-    )
+    _inherit = 'medical.abstract.entity'
 
-    @api.model
-    @api.returns('self', lambda value: value.id)
-    def create(self, vals):
-        vals['is_insurance_company'] = True
-        return super(MedicalInsuranceCompany, self).create(vals)
+    insurance_template_ids = fields.One2many(
+        comodel_name='medical.insurance.template',
+        string='Plan templates',
+        inverse_name='insurance_company_id',
+    )

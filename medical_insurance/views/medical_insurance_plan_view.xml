@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openerp>
-	<data>
+
+<odoo>
+
 		<record id="medical_insurance_plan_view_tree" model="ir.ui.view">
 			<field name="name">medical.insurance.plan.tree</field>
 			<field name="model">medical.insurance.plan</field>
@@ -11,6 +12,7 @@
 					<field name="name" />
 					<field name="insurance_company_id" />
 					<field name="insurance_template_id" />
+					<field name="active"/>
 				</tree>
 			</field>
 		</record>
@@ -20,15 +22,14 @@
 			<field name="model">medical.insurance.plan</field>
 			<field name="arch" type="xml">
 				<form string="Insurance Plan">
-					<header>
-						<field name="name" readonly="True" />
-					</header>
 					<sheet>
 						<group name="data">
 							<field name="patient_id" />
 							<field name="number" />
 							<field name="member_since" />
 							<field name="member_exp" />
+							<field name="insurance_template_id"/>
+							<field name="active"/>
 						</group>
 						<notebook>
 							<page string="Additional">
@@ -36,10 +37,11 @@
 							</page>
 							<page string="Plan Information">
 								<group name="plan_info">
-									<field name="plan_number" />
-									<field name="product_id" />
-									<field name="insurance_company_id" />
-									<field name="insurance_affiliation" />
+									<field name="code" readonly="True" />
+									<field name="plan_number" readonly="True" />
+									<field name="product_id" readonly="True" />
+									<field name="insurance_company_id" readonly="True" />
+									<field name="insurance_affiliation" readonly="True" />
 								</group>
 							</page>
 						</notebook>
@@ -96,8 +98,7 @@
 			<field name="view_mode">tree,form</field>
 			<field name="search_view_id" ref="medical_insurance_plan_view_search" />
 			<field name="domain">[]</field>
-			<field name="context">{}</field>
+			<field name="context">{'active_test': False,}</field>
 		</record>
 
-	</data>
-</openerp>
+</odoo>

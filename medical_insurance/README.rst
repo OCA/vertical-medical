@@ -1,18 +1,37 @@
-.. image:: https://img.shields.io/badge/license-AGPL--3-blue.svg
-    :alt: License: AGPL-3
+.. image:: https://img.shields.io/badge/license-AGPL--3-blue.png
+   :target: https://www.gnu.org/licenses/agpl
+   :alt: License: AGPL-3
 
+======================
 Odoo Medical Insurance
-========================
+======================
 
-Extension of medical that provides Insurance concept
+Extension of medical that provides Insurance concept.
 
+Configuration
+=============
+
+To configure this module, you need to:
+
+#. Go to 'Medical/Insurance/Insurance Providers' and create an Insurance
+   Provider.
+#. Go to 'Medical/Insurance/Insurance Plan Template' and create a Plan Template
+   with an Insurance Provider and an Insurance Product.
 
 Usage
 =====
 
+In order to create an Insurance Plan for a patient:
+
+#. Go to 'Medical/Patient/Patient' and create a Patient.
+#. Go to 'Medical/Insurance/Insurance Plans' and create a new Insurance Plan
+   with the Patient and using the according Insurance Plan Template.
+#. Go to the patient and in the page 'Medical' you can see the new Insurance
+   Plan for that patient.
+
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/159/8.0
+   :target: https://runbot.odoo-community.org/runbot/159/11.0
 
 For further information, please visit:
 
@@ -23,18 +42,21 @@ Known issues / Roadmap
 
 * Improve and provide a full description for this module into the README.rst
 
-
 Bug Tracker
 ===========
 
-Bugs are tracked on `GitHub Issues <https://github.com/OCA/vertical-medical/issues>`_.
-In case of trouble, please check there if your issue has already been reported.
-If you spotted it first, help us smashing it by providing a detailed and welcomed feedback
-`here <https://github.com/OCA/vertical-medical/issues/new?body=module:%20medical_operational%0Aversion:%208.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
-
+Bugs are tracked on `GitHub Issues
+<https://github.com/OCA/{project_repo}/issues>`_. In case of trouble, please
+check there if your issue has already been reported. If you spotted it first,
+help us smash it by providing detailed and welcomed feedback.
 
 Credits
 =======
+
+Images
+------
+
+* Odoo Community Association: `Icon <https://odoo-community.org/logo.png>`_.
 
 Contributors
 ------------
@@ -45,6 +67,10 @@ Contributors
 * Ruchir Shukla <ruchir@techreceptives.com>
 * Parthiv Patel <parthiv@techreceptives.com>
 * Nhomar Hernandéz <nhomar@vauxoo.com>
+* Jordi Ballester <jordi.ballester@eficent.com>
+* Roser Garcia <roser.garcia@eficent.com>
+* Gisela Mora <gisela.mora@eficent.com>
+* Enric Tobella <etobella@creublanca.es
 
 Maintainer
 ----------

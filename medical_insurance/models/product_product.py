@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Dave Lasley <dave@laslabs.com>
@@ -15,15 +14,16 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
-from openerp import fields, models
+from odoo import fields, models
 
 
 class ProductProduct(models.Model):
     _inherit = 'product.product'
+
     is_insurance_plan = fields.Boolean(
         string='Insurance Plan',
         help='Check this if the product is an insurance plan',

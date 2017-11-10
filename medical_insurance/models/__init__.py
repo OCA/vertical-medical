@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Dave Lasley <dave@laslabs.com>
@@ -15,7 +14,7 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
@@ -24,3 +23,4 @@ from . import medical_insurance_template
 from . import medical_insurance_plan
 from . import medical_patient
 from . import product_product
+from . import res_partner

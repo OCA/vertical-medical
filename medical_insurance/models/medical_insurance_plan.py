@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Dave Lasley <dave@laslabs.com>
@@ -15,17 +14,18 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 ##############################################################################
 
-from openerp import fields, models
+from odoo import api, fields, models
 
 
 class MedicalInsurancePlan(models.Model):
     _name = 'medical.insurance.plan'
     _description = 'Medical Insurance Providers'
     _inherits = {'medical.insurance.template': 'insurance_template_id', }
+
     insurance_template_id = fields.Many2one(
         string='Plan Template',
         comodel_name='medical.insurance.template',
@@ -36,9 +36,10 @@ class MedicalInsurancePlan(models.Model):
     patient_id = fields.Many2one(
         'medical.patient',
         string='Patient',
+        required=True,
     )
     number = fields.Char(
-        required=True,
+        required=False,
         help='Identification number for insurance account',
     )
     member_since = fields.Date(
@@ -47,3 +48,14 @@ class MedicalInsurancePlan(models.Model):
     member_exp = fields.Date(
         string='Expiration Date',
     )
+    active = fields.Boolean(
+        default=True,
+    )
+
+    @api.multi
+    def name_get(self):
+        result = []
+        for plan in self.sudo():
+            name = '%s %s' % (plan.name, plan.patient_id.name)
+            result.append((plan.id, name))
+        return result

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Dave Lasley <dave@laslabs.com>
@@ -15,7 +14,7 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 ##############################################################################
 #
@@ -38,14 +37,15 @@
 #    GNU Affero General Public License for more details.
 #
 #    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 ##############################################################################
 {
 
     'name': 'Medical Insurance',
-    'version': '8.0.1.1.0',
-    'author': "LasLabs, Odoo Medical Team, Odoo Community Association (OCA)",
+    'version': '11.0.1.0.0',
+    'author': "LasLabs, Eficent, Odoo Medical Team,"
+              "Odoo Community Association (OCA)",
     'category': 'Medical',
     'depends': [
         'medical'
@@ -60,11 +60,6 @@
         'security/ir.model.access.csv',
         'views/medical_menu.xml',
     ],
-    'test': [
-        'test/medical_insurance_company.yml',
-        'test/medical_insurance_template.yml',
-        'test/medical_insurance_plan.yml',
-    ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
 }

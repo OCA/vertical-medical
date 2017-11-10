@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openerp>
-	<data>
+
+<odoo>
+
 		<record id="medical_insurance_template_view_tree" model="ir.ui.view">
 			<field name="name">medical.insurance.template.tree</field>
 			<field name="model">medical.insurance.template</field>
 			<field name="arch" type="xml">
 				<tree string="Insurance Plan Templates">
 					<field name="name" />
+					<field name="description" />
 					<field name="plan_number" />
 					<field name="insurance_company_id" />
 					<field name="insurance_affiliation" />
@@ -25,7 +27,8 @@
 					<sheet>
 						<group name="data">
 							<group name="plan_info" string="Plan Info">
-								<field name="name" />
+								<field name="code" />
+								<field name="description" />
 								<field name="plan_number" />
 								<field name="product_id" />
 							</group>
@@ -52,6 +55,7 @@
 			<field name="arch" type="xml">
 				<search string="Insurance Plan Templates">
 					<field name="name" />
+					<field name="description" />
 					<field name="plan_number" />
 					<field name="insurance_company_id" />
 					<field name="is_default" />
@@ -85,5 +89,4 @@
 			<field name="context">{}</field>
 		</record>
 
-	</data>
-</openerp>
+</odoo>
