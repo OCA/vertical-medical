@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <!-- Medical Category -->
+
+    <record id="ir_module_category_medical" model="ir.module.category">
+        <field name="name">Medical</field>
+    </record>
+
+    <!-- Menu Groups -->
+
+    <record id="group_medical_root_menu" model="res.groups">
+        <field name="name">Root menu</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <record id="group_medical_administration_menu" model="res.groups">
+        <field name="name">Administration menu</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <record id="group_medical_clinical_menu" model="res.groups">
+        <field name="name">Clinical menu</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <record id="group_medical_diagnostics_menu" model="res.groups">
+        <field name="name">Diagnostics menu</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <record id="group_medical_medications_menu" model="res.groups">
+        <field name="name">Medications menu</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <record id="group_medical_financial_menu" model="res.groups">
+        <field name="name">Financial menu</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <record id="group_medical_workflow_menu" model="res.groups">
+        <field name="name">Workflow menu</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <record id="group_medical_configuration_menu" model="res.groups">
+        <field name="name">Configuration menu</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <record id="group_medical_terminologies_menu" model="res.groups">
+        <field name="name">Terminologies menu</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <!-- Generic groups -->
+
+    <record id="group_medical_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="ir_module_category_medical"/>
+        <field name="users" eval="[(4, ref('base.user_demo'))]"/>
+        <field name="implied_ids"
+               eval="[(4, ref('group_medical_root_menu')),
+                      (4, ref('group_medical_administration_menu')),
+                      (4, ref('group_medical_clinical_menu')),
+                      (4, ref('group_medical_diagnostics_menu')),
+                      (4, ref('group_medical_medications_menu')),
+                      (4, ref('group_medical_financial_menu')),
+                      (4, ref('group_medical_workflow_menu')),
+                      (4, ref('group_medical_configuration_menu')),
+                      (4, ref('group_medical_terminologies_menu')),
+                      (4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="group_medical_configurator" model="res.groups">
+        <field name="name">System Administrator</field>
+        <field name="category_id" ref="ir_module_category_medical"/>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field name="implied_ids"
+               eval="[(4, ref('group_medical_user')),
+                      (4, ref('base.group_erp_manager'))]"/>
+    </record>
+
+</odoo>
