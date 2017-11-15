@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="group_res_partner_display" model="res.groups">
+        <field name="name">Partner Display</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <record id="group_res_partner_manager" model="res.groups">
+        <field name="name">Partner Manager</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('group_res_partner_display'))]"/>
+    </record>
+
+    <record id="group_medical_patient_display" model="res.groups">
+        <field name="name">Patient Display</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids"
+               eval="[(4, ref('medical_base.group_medical_root_menu')), (4, ref('medical_base.group_medical_administration_menu')), (4, ref('group_res_partner_display'))]"/>
+    </record>
+
+    <record id="group_medical_patient_manager" model="res.groups">
+        <field name="name">Patient Manager</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids"
+               eval="[(4, ref('group_res_partner_manager')), (4, ref('group_medical_patient_display'))]"/>
+    </record>
+
+    <!-- Generic groups -->
+
+    <record id="medical_base.group_medical_user" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_medical_patient_display'))]"/>
+    </record>
+
+    <record id="medical_base.group_medical_configurator" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_medical_patient_manager'))]"/>
+    </record>
+
+</odoo>

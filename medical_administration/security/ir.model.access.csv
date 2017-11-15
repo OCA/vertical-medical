@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+medical_patient_display,medical_patient_display,model_medical_patient,medical_administration.group_medical_patient_display,1,0,0,0
+medical_patient_manager,medical_patient_manager,model_medical_patient,medical_administration.group_medical_patient_manager,0,1,1,0
+res_partner_display,res_partner_display,base.model_res_partner,medical_administration.group_res_partner_display,1,0,0,0
+res_partner_manager,res_partner_manager,base.model_res_partner,medical_administration.group_res_partner_manager,0,1,1,0

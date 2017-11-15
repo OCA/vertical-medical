@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="medical_abstract_partner_tree" model="ir.ui.view">
+        <field name="name">medical.abstract.partner.tree</field>
+        <field name="model">medical.abstract.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <field name="display_name" position="after">
+                <field name="internal_identifier"/>
+                <field name="name"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="medical_abstract_partner_form" model="ir.ui.view">
+        <field name="name">medical.abstract.partner.form</field>
+        <field name="model">medical.abstract.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//h1" position="before">
+                <h1>
+                    <field name="internal_identifier" attrs="{'invisible': [('internal_identifier','=','/')]}"/>
+                </h1>
+            </xpath>
+            <xpath expr="//sheet" position="after">
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
