@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright 2017 LasLabs Inc.
+    Copyright 2017 Creu Blanca
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+        <record model="medical.role" id="doctor">
+            <field name="name">Doctor</field>
+            <field name="description">Doctor</field>
+        </record>
+
+        <record model="medical.role" id="nurse">
+            <field name="name">Nurse</field>
+            <field name="description">Nurse</field>
+        </record>
+
+        <record model="medical.role" id="pharmacist">
+            <field name="name">Pharmacist</field>
+            <field name="description">Pharmacist</field>
+        </record>
+
+        <record model="medical.role" id="ict">
+            <field name="name">IT</field>
+            <field name="description">ICT Professional</field>
+        </record>
+
+        <record model="medical.role" id="technician">
+            <field name="name">Technician</field>
+            <field name="description">Technician</field>
+        </record>
+
+        <record model="medical.role" id="administrative">
+            <field name="name">Administrative</field>
+            <field name="description">Administrative</field>
+        </record>
+
+</odoo>

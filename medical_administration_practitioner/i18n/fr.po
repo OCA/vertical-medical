@@ -1,0 +1,603 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * medical_practitioner
+# 
+# Translators:
+# leemannd <denis.leemann@camptocamp.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-08 02:47+0000\n"
+"PO-Revision-Date: 2017-07-08 02:47+0000\n"
+"Last-Translator: leemannd <denis.leemann@camptocamp.com>, 2017\n"
+"Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_role_active
+msgid "Active"
+msgstr "Actif"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_alias
+msgid "Alias"
+msgstr "Alias"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_bank_ids
+msgid "Banks"
+msgstr "Banques"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_barcode
+msgid "Barcode"
+msgstr "Code-barres"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_birthdate
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_birthdate_date
+msgid "Birthdate"
+msgstr "Année de naissance"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_message_bounce
+msgid "Bounce"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_channel_ids
+msgid "Channels"
+msgstr "Canaux"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_is_company
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_customer
+msgid "Check this box if this contact is a customer."
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_supplier
+msgid ""
+"Check this box if this contact is a vendor. If it's not checked, purchase "
+"people will not see it when encoding a purchase order."
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_employee
+msgid "Check this box if this contact is an Employee."
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_city
+msgid "City"
+msgstr "Ville"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_color
+msgid "Color Index"
+msgstr "Index de couleur"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_commercial_partner_id
+msgid "Commercial Entity"
+msgstr "Entité commerciale"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_alias
+msgid "Common name that the Party is referred"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_company_id
+#: model:ir.ui.view,arch_db:medical_practitioner.medical_practitioner_view_search
+msgid "Company"
+msgstr "Companie"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_company_name
+msgid "Company Name"
+msgstr "Nom de la companie"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_commercial_company_name
+msgid "Company Name Entity"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_company_type
+msgid "Company Type"
+msgstr "Type de companie"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_contact_address
+msgid "Complete Address"
+msgstr "Adresse complète"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_child_ids
+msgid "Contacts"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_count_patients
+msgid "Count patients"
+msgstr "Nombre de patients"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_message_bounce
+msgid "Counter of the number of bounced emails for this contact"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_country_id
+msgid "Country"
+msgstr "Pays"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_create_uid
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_role_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_create_date
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_role_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_credit_limit
+msgid "Credit Limit"
+msgstr "Limite de crédit"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_date
+msgid "Date"
+msgstr "Date"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_role_description
+msgid "Description"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_display_name
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_role_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_partner_share
+msgid ""
+"Either customer (no user), either shared user. Indicated the current partner"
+" is a customer without access or with a limited access created for sharing "
+"data."
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_email
+msgid "Email"
+msgstr "Email"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_notify_email
+msgid "Email Messages and Notifications"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_employee
+msgid "Employee"
+msgstr "Employé"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_fax
+msgid "Fax"
+msgstr "Fax"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_firstname
+msgid "First name"
+msgstr "Prénom"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_email_formatted
+msgid "Format email address \"Name <email@domain>\""
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_email_formatted
+msgid "Formatted Email"
+msgstr "Email formatté"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_gender
+msgid "Gender"
+msgstr "Genre"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_id
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_role_id
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_im_status
+msgid "IM Status"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_id_numbers
+msgid "Identification Numbers"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_opt_out
+msgid ""
+"If opt-out is checked, this contact has refused to receive emails for mass "
+"mailing and marketing campaign. Filter 'Available for Mass Mailing' allows "
+"users to filter the partners when performing mass mailing."
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_team_id
+msgid ""
+"If set, sale team used notably for sales and assignations related to this "
+"partner"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_lang
+msgid ""
+"If the selected language is loaded in the system, all documents related to "
+"this contact will be printed in this language. If not, it will be English."
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_image
+msgid "Image"
+msgstr "Image"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_ref
+msgid "Internal Reference"
+msgstr "Référence interne"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_is_company
+msgid "Is a Company"
+msgstr "Est une companie"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_customer
+msgid "Is a Customer"
+msgstr "Est un Client"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_supplier
+msgid "Is a Vendor"
+msgstr "Est un Fournisseur"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_function
+msgid "Job Position"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_lang
+msgid "Language"
+msgstr "Langue"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner___last_update
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_role___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_write_uid
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_role_write_uid
+msgid "Last Updated by"
+msgstr "D"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_write_date
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_role_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_lastname
+msgid "Last name"
+msgstr "Nom de famille"
+
+#. module: medical_practitioner
+#: model:ir.model,name:medical_practitioner.model_medical_practitioner
+msgid "Medical Practitioner"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_image_medium
+msgid "Medium-sized image"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_image_medium
+msgid ""
+"Medium-sized image of this contact. It is automatically resized as a "
+"128x128px image, with aspect ratio preserved. Use this field in form views "
+"or some kanban views."
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_mobile
+msgid "Mobile"
+msgstr "Mobile"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_name
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_role_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_comment
+msgid "Notes"
+msgstr "Notes"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_opt_out
+msgid "Opt-Out"
+msgstr "Opt-Out"
+
+#. module: medical_practitioner
+#: model:ir.ui.view,arch_db:medical_practitioner.medical_practitioner_view_form
+msgid "Parent Company"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_parent_name
+msgid "Parent name"
+msgstr "Nom du parent"
+
+#. module: medical_practitioner
+#: model:ir.model,name:medical_practitioner.model_res_partner
+msgid "Partner"
+msgstr "Contact"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_phone
+msgid "Phone"
+msgstr "Téléphone"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_notify_email
+msgid ""
+"Policy to receive emails for new messages pushed to your personal Inbox:\n"
+"- Never: no emails are sent\n"
+"- All Messages: for every notification you receive in your Inbox"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.ui.menu,name:medical_practitioner.medical_conf_practitioner_menu
+#: model:ir.ui.view,arch_db:medical_practitioner.medical_practitioner_view_form
+msgid "Practitioner"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model,name:medical_practitioner.model_medical_role
+msgid "Practitioner Roles"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.actions.act_window,name:medical_practitioner.medical_practitioner_action
+#: model:ir.ui.menu,name:medical_practitioner.medical_practitioner_menu
+#: model:ir.ui.view,arch_db:medical_practitioner.medical_practitioner_view_kanban
+#: model:ir.ui.view,arch_db:medical_practitioner.medical_practitioner_view_search
+#: model:ir.ui.view,arch_db:medical_practitioner.medical_practitioner_view_tree
+msgid "Practitioners"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_parent_id
+msgid "Related Company"
+msgstr "Companie liée"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_patient_ids
+msgid "Related Patients"
+msgstr "Patients liés"
+
+#. module: medical_practitioner
+#: model:ir.ui.view,arch_db:medical_practitioner.medical_role_view_form
+msgid "Role"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.actions.act_window,name:medical_practitioner.medical_role_action
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_role_ids
+#: model:ir.ui.menu,name:medical_practitioner.medical_role_menu
+#: model:ir.ui.view,arch_db:medical_practitioner.medical_practitioner_view_form
+#: model:ir.ui.view,arch_db:medical_practitioner.medical_role_view_tree
+msgid "Roles"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_property_product_pricelist
+msgid "Sale Pricelist"
+msgstr "Liste de prix"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_team_id
+msgid "Sales Team"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_user_id
+msgid "Salesperson"
+msgstr "Vendeur"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_self
+msgid "Self"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_partner_share
+msgid "Share Partner"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_signup_type
+msgid "Signup Token Type"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_signup_valid
+msgid "Signup Token is Valid"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_signup_url
+msgid "Signup URL"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_signup_expiration
+msgid "Signup expiration"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_signup_token
+msgid "Signup token"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_image_small
+msgid "Small-sized image"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_image_small
+msgid ""
+"Small-sized image of this contact. It is automatically resized as a 64x64px "
+"image, with aspect ratio preserved. Use this field anywhere a small image is"
+" required."
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_state_id
+#: model:ir.ui.view,arch_db:medical_practitioner.medical_practitioner_view_search
+msgid "State"
+msgstr "Etat"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_street
+msgid "Street"
+msgstr "Rue"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_street2
+msgid "Street2"
+msgstr "Rue2"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_vat
+msgid "TIN"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_category_id
+msgid "Tags"
+msgstr "Tags"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_vat
+msgid ""
+"Tax Identification Number. Fill it if the company is subjected to taxes. "
+"Used by the some of the legal statements."
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_user_id
+msgid ""
+"The internal user that is in charge of communicating with this contact if "
+"any."
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_tz
+msgid ""
+"The partner's timezone, used to output proper date and time values inside "
+"printed reports. It is important to set a value for this field. You should "
+"use the same timezone that is otherwise used to pick and render date and "
+"time values: your computer's timezone."
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_image
+msgid ""
+"This field holds the image used as avatar for this contact, limited to "
+"1024x1024px"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_property_product_pricelist
+msgid ""
+"This pricelist will be used, instead of the default one, for sales to the "
+"current partner"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_tz
+msgid "Timezone"
+msgstr "Fuseau horaire"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_tz_offset
+msgid "Timezone offset"
+msgstr "Décalage horaire"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_title
+msgid "Title"
+msgstr "Titre"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_user_ids
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_website
+msgid "Website"
+msgstr "Site internet"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_website
+msgid "Website of Partner or Company"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_weight
+msgid "Weight"
+msgstr "Poids"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_weight_uom
+msgid "Weight UoM"
+msgstr "Poids UdM"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_zip
+#: model:ir.ui.view,arch_db:medical_practitioner.medical_practitioner_view_search
+msgid "Zip"
+msgstr "Zip"

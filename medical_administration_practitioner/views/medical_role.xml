@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 LasLabs Inc.
+    Copyright 2017 Creu Blanca
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="medical_role_view_form" model="ir.ui.view">
+        <field name="name">medical.role.view.form</field>
+        <field name="model">medical.role</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <form string="Role">
+                <header/>
+                <sheet>
+                    <div name="button_box" class="oe_button_box">
+                        <button name="toggle_active" type="object"
+                                class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"
+                                   options='{"terminology": "archive"}'/>
+                        </button>
+                    </div>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_role_view_tree" model="ir.ui.view">
+        <field name="name">medical.role.view.tree</field>
+        <field name="model">medical.role</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <tree string="Roles">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_role_action">
+        <field name="name">Roles</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.role</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 LasLabs Inc.
+    Copyright 2017 Creu Blanca
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="medical_practitioner_role_view_tree" model="ir.ui.view">
+        <field name="name">medical.practitioner.view.tree</field>
+        <field name="model">medical.practitioner.role</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="role_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="medical_practitioner_role_view_form" model="ir.ui.view">
+        <field name="name">medical.practitioner.view.form</field>
+        <field name="model">medical.practitioner.role</field>
+        <field name="arch" type="xml">
+            <form string="Role">
+                <sheet>
+                    <group>
+                        <field name="role_id"/>
+                        <field name="practitioner_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

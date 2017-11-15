@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="group_medical_role_display" model="res.groups">
+        <field name="name">Role Display</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <record id="group_medical_role_manager" model="res.groups">
+        <field name="name">Role Manager</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <record id="group_medical_practitioner_display" model="res.groups">
+        <field name="name">Practitioner Display</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('medical_base.group_medical_root_menu')), (4, ref('medical_base.group_medical_administration_menu')), (4, ref('medical_administration.group_res_partner_display')), (4, ref('group_medical_role_display'))]"/>
+    </record>
+
+    <record id="group_medical_practitioner_manager" model="res.groups">
+        <field name="name">Practitioner Manager</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('group_medical_practitioner_display')), (4, ref('medical_administration.group_res_partner_manager')), (4, ref('group_medical_role_manager')), (4, ref('medical_base.group_medical_configuration_menu'))]"/>
+    </record>
+
+    <!-- Generic groups -->
+
+    <record id="medical_base.group_medical_user" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_medical_practitioner_display'))]"/>
+    </record>
+
+    <record id="medical_base.group_medical_configurator" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_medical_practitioner_manager'))]"/>
+    </record>
+
+    <!-- Record rules -->
+
+    <record id="practitioner_display" model="ir.rule">
+        <field name="name">Practitioner Display</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="groups" eval="[(4, ref('group_medical_practitioner_display'))]"/>
+        <field name="domain_force">[('is_practitioner', '=', True)]</field>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+        <field name="perm_read" eval="True"/>
+    </record>
+
+    <record id="practitioner_manager" model="ir.rule">
+        <field name="name">Practitioner Manager</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="groups" eval="[(4, ref('group_medical_practitioner_manager'))]"/>
+        <field name="domain_force">[('is_practitioner', '=', True)]</field>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+        <field name="perm_read" eval="True"/>
+    </record>
+
+    <record id="practitioner_partner_display" model="ir.rule">
+        <field name="name">Practitioner Partner Display</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="domain_force">[('is_medical', '=', False)]</field>
+        <field name="groups" eval="[(4, ref('medical_administration.group_res_partner_display'))]"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+        <field name="perm_read" eval="True"/>
+    </record>
+
+    <record id="practitioner_partner_manager" model="ir.rule">
+        <field name="name">Practitioner Partner Manager</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="domain_force">[('is_medical', '=', False)]</field>
+        <field name="groups" eval="[(4, ref('medical_administration.group_res_partner_manager'))]"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+        <field name="perm_read" eval="True"/>
+    </record>
+
+</odoo>
