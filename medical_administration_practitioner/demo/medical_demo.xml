@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="practitioner_01_partner" model="res.partner">
+        <field name="name">Dr Who</field>
+        <field name="is_practitioner" eval="True"/>
+        <field name="is_medical" eval="True"/>
+    </record>
+
+</odoo>

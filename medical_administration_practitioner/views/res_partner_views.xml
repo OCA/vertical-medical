@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 LasLabs Inc.
+    Copyright 2017 Creu Blanca
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="res_partner_view_form" model="ir.ui.view">
+        <field name="name">res.partner.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//h1" position="before">
+                <h1>
+                    <field name="is_practitioner" invisible="1"/>
+                    <field name="edit_practitioner" invisible="1"/>
+                    <field name="practitioner_identifier"
+                           attrs="{'invisible': [('is_practitioner','=',False)]}"
+                           groups="medical_administration_practitioner.group_medical_practitioner_display"
+                    />
+                </h1>
+            </xpath>
+            <xpath expr="//div[hasclass('oe_title')]" position="inside">
+                <div>
+                <field name="practitioner_type"
+                       widget="radio"
+                       options="{'horizontal': true}"
+                       attrs="{'invisible': [('is_practitioner','=',False)],'readonly':[('edit_practitioner', '=', False)]}"
+                       groups="medical_administration_practitioner.group_medical_practitioner_display"/>
+                </div>
+                <div>
+                <field name="practitioner_role_ids"
+                       widget="many2many_tags"
+                       attrs="{'invisible': [('is_practitioner','=',False)],'readonly':[('edit_practitioner', '=', False)]}"
+                       groups="medical_administration_practitioner.group_medical_practitioner_display"
+                />
+                </div>
+            </xpath>
+            <field name="company_type" position="attributes">
+                <attribute name="attrs">{'invisible': True}</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_practitioner_action">
+        <field name="name">Practitioners</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[('is_practitioner', '=', True)]</field>
+        <field name="context">{'default_company_type':'person', 'default_is_company':False, 'default_is_practitioner': True, 'default_is_medical': True}</field>
+    </record>
+
+</odoo>
