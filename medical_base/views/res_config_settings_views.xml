@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.medical</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block"
+                     data-string="Medical" data-key="medical_base"
+                     groups="medical_base.group_medical_configurator">
+                    <h2>Administration</h2>
+                    <div class="row mt16 o_settings_container" id="medical_administration"/>
+                    <h2>Clinical</h2>
+                    <div class="row mt16 o_settings_container" id="medical_clinical"/>
+                    <h2>Workflow</h2>
+                    <div class="row mt16 o_settings_container" id="medical_workflow"/>
+                    <h2>Financial</h2>
+                    <div class="row mt16 o_settings_container" id="medical_financial"/>
+                    <h2>Diagnostics</h2>
+                    <div class="row mt16 o_settings_container" id="medical_diagnostics"/>
+                    <h2>Medications</h2>
+                    <div class="row mt16 o_settings_container" id="medical_medication"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_medical_config" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'medical_base'}</field>
+    </record>
+
+    <menuitem id="menu_medical_config" name="Settings"
+              parent="medical_root_configuration"
+              sequence="0" action="action_medical_config"
+              groups="base.group_system"/>
+</odoo>
