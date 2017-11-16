@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+medical_user_procedure_request,medical_user_procedure_request,model_medical_procedure_request,medical_base.group_medical_user,1,1,1,0
+medical_user_procedure,medical_user_procedure,model_medical_procedure,medical_base.group_medical_user,1,1,1,0
+access_procedure_request_make_procedure,access_procedure_request_make_procedure,model_procedure_request_make_procedure,medical_base.group_medical_user,1,1,1,0
