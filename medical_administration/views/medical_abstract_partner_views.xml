@@ -20,7 +20,7 @@
     </record>
 
     <record model="ir.ui.view" id="medical_abstract_partner_form">
-        <field name="name">medical.abstract.partner.tree</field>
+        <field name="name">medical.abstract.partner.form</field>
         <field name="model">medical.abstract.partner</field>
         <field name="arch" type="xml">
             <form string="Abstract partner">
@@ -49,8 +49,13 @@
                             <field name="name" default_focus="1"
                                    placeholder="Name"
                                    attrs="{'required' : [('type', '=', 'contact')]}"/>
+                            <field name="is_company" invisible="True" />
+                            <field name="supplier" invisible="True" />
+                            <field name="customer" invisible="True" />
+                            <field name="parent_id" invisible="True" />
                         </h1>
                         <div class="o_row">
+                            <field name="supplier" invisible="True"/>
                             <field name="parent_id"
                                    placeholder="Company"
                                    domain="[('is_company', '=', True)]"
@@ -127,6 +132,8 @@
                                    placeholder="Internal note..."/>
                         </page>
                     </notebook>
+                    <field name="supplier" invisible="True" />
+                    <field name="customer" invisible="True" />
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids"
