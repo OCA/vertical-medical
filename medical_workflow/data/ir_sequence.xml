@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo>
+
+    <record id="seq_workflow_plan_definition" model="ir.sequence">
+        <field name="name">Workflow Plan definition</field>
+        <field name="code">workflow.plan.definition</field>
+        <field name="prefix">PD</field>
+        <field name="padding">8</field>
+    </record>
+
+    <record id="seq_workflow_activity_definition" model="ir.sequence">
+        <field name="name">Workflow activity definition</field>
+        <field name="code">workflow.activity.definition</field>
+        <field name="prefix">AD</field>
+        <field name="padding">8</field>
+    </record>
+
+</odoo>

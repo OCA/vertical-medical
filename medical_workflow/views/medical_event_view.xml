@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record model="ir.ui.view" id="medical_event_tree">
+        <field name="name">medical.event.tree</field>
+        <field name="model">medical.event</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="internal_identifier"/>
+                <field name="name"/>
+                <field name="patient_id"/>
+                <field name="service_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_event_form">
+        <field name="name">medical.event.form</field>
+        <field name="model">medical.event</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <form string="Event">
+                <header>
+                    <button string="Activate" type="object" name="preparation2in_progress"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','preparation')]}"/>
+                    <button string="Complete" type="object"
+                            name="in_progress2completed" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','in-progress')]}"/>
+                    <button string="Suspend" type="object"
+                            name="in_progress2suspended" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','in-progress')]}"/>
+                    <button string="Abort" type="object"
+                            name="in_progress2aborted" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','in-progress')]}"/>
+                    <button string="Reactivate" type="object"
+                            name="suspended2in_progress" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','suspended')]}"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="preparation,in-progress,suspended,completed"/>
+                </header>
+                <sheet>
+                    <div name="button_box" class="oe_button_box"/>
+                    <h2>
+                        <field name="internal_identifier" readonly="1"/>
+                    </h2>
+                    <group name="details" cols="4">
+                        <group>
+                            <field name="is_editable" invisible="1"/>
+                            <field name="name"
+                                   attrs="{'readonly':[('is_editable', '=', False)]}"/>
+                            <field name="patient_id"
+                                   attrs="{'readonly':[('is_editable', '=', False)]}"/>
+                        </group>
+                    </group>
+                    <group name="sale">
+                        <group>
+                            <field name="service_id"
+                                   attrs="{'readonly':[('is_editable', '=', False)]}"/>
+                            <field name="performer_id"
+                                   attrs="{'readonly':[('is_editable', '=', False)]}"/>
+                        </group>
+                        <group>
+                            <field name="occurrence_date"
+                                   attrs="{'readonly':[('is_editable', '=', False)]}"/>
+                        </group>
+                    </group>
+                    <group name="inheritance"/>
+                    <notebook/>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+</odoo>

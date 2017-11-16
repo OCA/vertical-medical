@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="group_workflow_type_display" model="res.groups">
+        <field name="name">Workflow Type Display</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('medical_base.group_medical_root_menu')), (4, ref('medical_base.group_medical_workflow_menu'))]"/>
+    </record>
+
+    <record id="group_workflow_type_manager" model="res.groups">
+        <field name="name">Workflow Type Manager</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('group_workflow_type_display'))]"/>
+    </record>
+
+    <record id="group_workflow_activity_definition_display" model="res.groups">
+        <field name="name">Workflow Activity Definition Display</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('medical_base.group_medical_root_menu')), (4, ref('medical_base.group_medical_workflow_menu'))]"/>
+    </record>
+
+    <record id="group_workflow_activity_definition_manager" model="res.groups">
+        <field name="name">Workflow Activity Definition Manager</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('group_workflow_activity_definition_display')), (4, ref('group_workflow_type_display'))]"/>
+    </record>
+
+    <record id="group_workflow_plan_definition_display" model="res.groups">
+        <field name="name">Workflow Plan Definition Display</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('group_workflow_type_display'))]"/>
+    </record>
+
+    <record id="group_workflow_plan_definition_manager" model="res.groups">
+        <field name="name">Workflow Plan Definition Manager</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('group_workflow_plan_definition_display'))]"/>
+    </record>
+
+    <record id="group_workflow_plan_definition_action_display" model="res.groups">
+        <field name="name">Workflow Plan Definition Action Display</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('group_workflow_plan_definition_display')), (4, ref('group_workflow_activity_definition_display')), (4, ref('group_workflow_type_display'))]"/>
+    </record>
+
+    <record id="group_workflow_plan_definition_action_manager" model="res.groups">
+        <field name="name">Workflow Plan Definition Action Manager</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('group_workflow_plan_definition_action_display')), (4, ref('group_workflow_plan_definition_manager'))]"/>
+    </record>
+
+    <record id="medical_workflow.group_workflow_plan_definition_display" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_workflow_plan_definition_action_display'))]"/>
+    </record>
+
+    <record id="medical_workflow.group_workflow_plan_definition_manager" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_workflow_plan_definition_action_manager'))]"/>
+    </record>
+
+    <record id="medical_workflow.group_workflow_activity_definition_manager" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_workflow_plan_definition_action_display'))]"/>
+    </record>
+
+    <!-- Additional features -->
+
+    <record id="group_patient_add_plan_definition" model="res.groups">
+        <field name="name">Add Plan definition on patient</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('medical_administration.group_medical_patient_display'))]"/>
+    </record>
+
+    <record id="group_main_activity_plan_definition" model="res.groups">
+        <field name="name">Manage a possible parent activity on plan definition</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('group_workflow_plan_definition_display'))]"/>
+    </record>
+
+    <!-- Generic groups -->
+
+    <record id="medical_base.group_medical_user" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_workflow_type_display')), (4, ref('group_workflow_activity_definition_display')), (4, ref('group_workflow_plan_definition_display')), (4, ref('group_workflow_plan_definition_action_display'))]"/>
+    </record>
+
+    <record id="medical_base.group_medical_configurator" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_workflow_type_manager')), (4, ref('group_workflow_activity_definition_manager')), (4, ref('group_workflow_plan_definition_manager')), (4, ref('group_workflow_plan_definition_action_manager'))]"/>
+    </record>
+
+</odoo>
