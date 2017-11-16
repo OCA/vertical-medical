@@ -2,7 +2,8 @@
 # Copyright 2017 Eficent Business and IT Consulting Services, S.L.
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
 
-from odoo import api, fields, models
+from odoo import api, fields, models, _
+from odoo.exceptions import UserError
 
 
 class PlanDefinition(models.Model):
@@ -57,6 +58,19 @@ class PlanDefinition(models.Model):
     def _get_internal_identifier(self, vals):
         return self.env['ir.sequence'].next_by_code(
             'workflow.plan.definition') or '/'
+
+    @api.multi
+    def _check_plan_recursion(self, plan_ids):
+        self.ensure_one()
+        if self.id in plan_ids:
+            raise UserError(_(
+                'Error! You are attempting to create a recursive definition'))
+        plan_ids.append(self.id)
+        for action in self.action_ids:
+            if action.execute_plan_definition_id:
+                action.execute_plan_definition_id._check_plan_recursion(
+                    plan_ids
+                )
 
     @api.multi
     def execute_plan_definition(self, vals):

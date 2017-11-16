@@ -50,6 +50,11 @@ class PlanDefinitionAction(models.Model):
         ondelete='cascade',
         store=True
     )
+    execute_plan_definition_id = fields.Many2one(
+        string='Plan definition',
+        comodel_name='workflow.plan.definition',
+        help='This plan will be executed instead of an activity'
+    )
     activity_definition_id = fields.Many2one(
         string='Activity definition',
         comodel_name='workflow.activity.definition',
@@ -95,6 +100,12 @@ class PlanDefinitionAction(models.Model):
     @api.onchange('activity_definition_id')
     def _onchange_activity_definition_id(self):
         self.name = self.activity_definition_id.name
+        self.execute_plan_definition_id = False
+
+    @api.onchange('execute_plan_definition_id')
+    def _onchange_execute_plan_definition_id(self):
+        self.name = self.execute_plan_definition_id.name
+        self.activity_definition_id = False
 
     @api.multi
     @api.constrains('parent_id')
@@ -102,6 +113,14 @@ class PlanDefinitionAction(models.Model):
         if not self._check_recursion():
             raise exceptions.ValidationError(
                 _('Error! You are attempting to create a recursive category.'))
+
+    @api.multi
+    @api.constrains('execute_plan_definition_id')
+    def _check_execute_plan_definition_id(self):
+        for record in self:
+            if record.execute_plan_definition_id:
+                plan_ids = [record.plan_definition_id.id]
+                self.execute_plan_definition_id._check_plan_recursion(plan_ids)
 
     @api.multi
     def execute_action(self, vals, parent=False):
