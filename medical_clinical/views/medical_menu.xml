@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
+-->
+
+<odoo>
+
+    <record id="medical_base.medical_root_clinical" model="ir.ui.menu">
+        <field name="active" eval="True"/>
+    </record>
+
+    <menuitem
+            id="medical_clinical_request"
+            name="Requests"
+            parent="medical_base.medical_root_clinical"
+            sequence="10"/>
+
+    <menuitem
+            id="medical_clinical_event"
+            name="Events"
+            parent="medical_base.medical_root_clinical"
+            sequence="10"/>
+
+</odoo>
