@@ -37,6 +37,8 @@
                             <field name="plan_definition_id"/>
                             <field name="direct_plan_definition_id"/>
                             <field name="activity_definition_id"/>
+                            <field name="type_id" invisible="1"/>
+                            <field name="execute_plan_definition_id" domain="[('type_id', '=', type_id)]"/>
                         </group>
                     </group>
                     <group>
@@ -46,7 +48,7 @@
                     <notebook>
                         <page string="Child actions" name="child_actions">
                             <field name="child_ids"
-                                   context="{'default_plan_definition_id': plan_definition_id,'default_direct_plan_definition_id': direct_plan_definition_id}"/>
+                                   context="{'default_plan_definition_id': plan_definition_id,'default_direct_plan_definition_id': direct_plan_definition_id, 'default_parent_id': active_id}"/>
                         </page>
                         <page string="Notes and Messages" name="messages">
                             <div class="oe_chatter">

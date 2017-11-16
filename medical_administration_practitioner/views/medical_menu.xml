@@ -13,10 +13,10 @@
                   parent="medical_base.medical_root_administration"
                   sequence="20"/>
 
-        <menuitem id="medical_administration_practitioner_menu"
+        <menuitem id="medical_practitioner_menu"
                   name="Practitioners"
                   parent="medical_conf_practitioner_menu"
-                  action="medical_administration_practitioner_action"
+                  action="medical_practitioner_action"
                   sequence="10"/>
 
         <menuitem id="medical_role_menu"

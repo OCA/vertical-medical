@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
+    -->
+
+<odoo>
+
+    <record id="medical_procedure_view_tree" model="ir.ui.view">
+        <field name="name">medical.procedure.view.tree</field>
+        <field name="model">medical.procedure</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="medical_workflow.medical_event_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="string">Procedures</attribute>
+            </xpath>
+        </field>
+
+    </record>
+
+    <record id="medical_procedure_view_form" model="ir.ui.view">
+        <field name="name">medical.procedure.view.form</field>
+        <field name="model">medical.procedure</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="medical_workflow.medical_event_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="string">Procedure</attribute>
+            </xpath>
+            <group name="inheritance" position="inside">
+                <field name="procedure_request_id"/>
+            </group>
+            <field name="occurrence_date" position="after">
+                <field name="performed_initial_date" attrs="{'readonly': [('is_editable','=', False)]}"/>
+                <field name="performed_end_date" attrs="{'readonly': [('is_editable','=', False)]}"/>
+            </field>
+            <field name="occurrence_date" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+        </field>
+    </record>
+    
+    <record id="medical_procedure_view_search" model="ir.ui.view">
+        <field name="name">medical.procedure.view.search</field>
+        <field name="model">medical.procedure</field>
+        <field name="arch" type="xml">
+            <search string="Medical Procedure">
+                <field name="internal_identifier"/>
+                <field name="patient_id"/>
+                <field name="performer_id"/>
+                <field name="procedure_request_id"/>
+                <field name="name" />
+                <field name="state"/>
+                <newline />
+                <group expand="0" name="groupby" string="Group By...">
+                    <filter string="Patient"
+                            domain="[]"
+                            context="{'group_by':'patient_id'}" />
+                    <filter string="Performer"
+                            domain="[]"
+                            context="{'group_by':'performer_id'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_procedure_action">
+        <field name="name">Procedures</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.procedure</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem id="medical_procedure"
+              name="Procedures"
+              parent="medical_clinical.medical_clinical_event"
+              sequence="10"
+              action="medical_procedure_action" />
+
+</odoo>
+

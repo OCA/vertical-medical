@@ -73,7 +73,7 @@ class PlanDefinition(models.Model):
                 )
 
     @api.multi
-    def execute_plan_definition(self, vals):
+    def execute_plan_definition(self, vals, parent=False):
         self.ensure_one()
         parent = False
         if (
@@ -82,7 +82,7 @@ class PlanDefinition(models.Model):
             self.activity_definition_id
         ):
             parent = self.activity_definition_id.execute_activity(
-                vals, plan=self)
+                vals, parent, plan=self)
         for action in self.direct_action_ids:
             action.execute_action(vals, parent)
         return parent

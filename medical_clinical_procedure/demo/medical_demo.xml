@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
+    -->
+
+<odoo>
+    <record id="machine_time_product" model="product.product">
+        <field name="name">Time on machine service</field>
+        <field name="type">service</field>
+    </record>
+    <record id="medical_report_product" model="product.product">
+        <field name="name">Medical report</field>
+        <field name="type">service</field>
+    </record>
+    <record id="quality_check_product" model="product.product">
+        <field name="name">Quality check</field>
+        <field name="type">service</field>
+    </record>
+
+    <record id="machine_time_activity" model="workflow.activity.definition">
+        <field name="name">MACT</field>
+        <field name="description">Machine time</field>
+        <field name="type_id" ref="medical_workflow.medical_workflow"/>
+        <field name="model_id" ref="model_medical_procedure_request"/>
+        <field name="state">active</field>
+        <field name="service_id" ref="machine_time_product"/>
+        <field name="quantity">1</field>
+    </record>
+    <record id="medical_report_activity" model="workflow.activity.definition">
+        <field name="name">REP</field>
+        <field name="description">Medical report</field>
+        <field name="type_id" ref="medical_workflow.medical_workflow"/>
+        <field name="model_id" ref="model_medical_procedure_request"/>
+        <field name="state">active</field>
+        <field name="service_id" ref="medical_report_product"/>
+        <field name="quantity">1</field>
+    </record>
+    <record id="quality_check_activity" model="workflow.activity.definition">
+        <field name="name">QC</field>
+        <field name="description">Quality check</field>
+        <field name="type_id" ref="medical_workflow.medical_workflow"/>
+        <field name="model_id" ref="model_medical_procedure_request"/>
+        <field name="state">active</field>
+        <field name="service_id" ref="quality_check_product"/>
+        <field name="quantity">1</field>
+    </record>
+
+    <record id="mr_report_action" model="workflow.plan.definition.action">
+        <field name="name">REP</field>
+        <field name="activity_definition_id" ref="machine_time_activity"/>
+        <field name="direct_plan_definition_id" ref="medical_workflow.mr_knee"/>
+    </record>
+    <record id="mr_machine_time_action" model="workflow.plan.definition.action">
+        <field name="name">MACT</field>
+        <field name="activity_definition_id" ref="medical_report_activity"/>
+        <field name="direct_plan_definition_id" ref="medical_workflow.mr_knee"/>
+    </record>
+
+    <record id="ct_report_action" model="workflow.plan.definition.action">
+        <field name="name">REP</field>
+        <field name="activity_definition_id" ref="medical_report_activity"/>
+        <field name="direct_plan_definition_id" ref="medical_workflow.ct_abdominal"/>
+    </record>
+    <record id="ct_machine_time_action" model="workflow.plan.definition.action">
+        <field name="name">MACT</field>
+        <field name="activity_definition_id" ref="machine_time_activity"/>
+        <field name="direct_plan_definition_id" ref="medical_workflow.ct_abdominal"/>
+    </record>
+
+</odoo>

@@ -11,7 +11,7 @@ class TestMedicalAdministrationPractitioner(TransactionCase):
     def setUp(self):
         super(TestMedicalAdministrationPractitioner, self).setUp()
         self.practitioner_model = \
-            self.env['medical.administration.practitioner']
+            self.env['medical.practitioner']
         self.role_model = self.env['medical.role']
         self.medical_user_group = \
             self.env.ref('medical_base.group_medical_user')

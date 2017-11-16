@@ -3,6 +3,7 @@
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
 
 from odoo import api, exceptions, fields, models, _
+from odoo.exceptions import ValidationError
 
 
 class PlanDefinitionAction(models.Model):
@@ -42,6 +43,10 @@ class PlanDefinitionAction(models.Model):
         string='Root plan definition',
         comodel_name='workflow.plan.definition',
         ondelete='cascade',
+    )
+    type_id = fields.Many2one(
+        'workflow.type',
+        related='plan_definition_id.type_id'
     )
     plan_definition_id = fields.Many2one(
         string='Plan definition',
@@ -115,16 +120,23 @@ class PlanDefinitionAction(models.Model):
                 _('Error! You are attempting to create a recursive category.'))
 
     @api.multi
-    @api.constrains('execute_plan_definition_id')
+    @api.constrains('execute_plan_definition_id', 'child_ids')
     def _check_execute_plan_definition_id(self):
         for record in self:
             if record.execute_plan_definition_id:
                 plan_ids = [record.plan_definition_id.id]
                 self.execute_plan_definition_id._check_plan_recursion(plan_ids)
+            if self.child_ids:
+                raise ValidationError(_(
+                    'Actions with Plans cannot have child actions'))
 
     @api.multi
     def execute_action(self, vals, parent=False):
         self.ensure_one()
+        if self.execute_plan_definition_id:
+            self.execute_plan_definition_id.execute_plan_definition(
+                vals, parent)
+            return
         res = self.activity_definition_id.execute_activity(
             vals, parent, self.plan_definition_id, self
         )

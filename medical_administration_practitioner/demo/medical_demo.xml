@@ -7,7 +7,7 @@
 -->
 
 <odoo>
-    <record id="practitioner_01_partner" model="medical.administration.practitioner">
+    <record id="practitioner_01_partner" model="medical.practitioner">
         <field name="name">Dr Who</field>
         <field name="role_ids"
                eval="[(6,0,[ref('medical_administration_practitioner.doctor')])]"/>

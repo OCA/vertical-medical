@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
+    -->
+
+<odoo>
+    <record model="ir.ui.view" id="medical_request_form">
+        <field name="name">medical.request.form</field>
+        <field name="model">medical.request</field>
+        <field name="inherit_id"
+               ref="medical_workflow.medical_request_form"/>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <group name="inheritance" position="inside">
+                <field name="procedure_request_id" readonly="1"
+                       attrs="{'invisible': [('procedure_request_id', '=', False)]}"/>
+            </group>
+            <notebook position="attributes">
+                <attributes name="invisible">0</attributes>
+            </notebook>
+            <notebook position="inside">
+                <page string="Procedure requests" name="procedure_requests">
+                    <field name="procedure_request_ids"
+                           attrs="{'readonly':[('is_editable', '=', False)]}"/>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>
