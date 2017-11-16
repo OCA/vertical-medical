@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+    <record id="patient_01_partner" model="res.partner">
+        <field name="name">Jane Doe</field>
+        <field name="country_id" ref="base.us"/>
+    </record>
+    <record id="patient_01" model="medical.patient">
+        <field name="partner_id" ref="patient_01_partner"/>
+    </record>
+
+    <record id="patient_02_partner" model="res.partner">
+        <field name="name">Vinnie Boombotz</field>
+        <field name="country_id" ref="base.us"/>
+    </record>
+    <record id="patient_02" model="medical.patient">
+        <field name="partner_id" ref="patient_02_partner"/>
+    </record>
+
+    <record id="patient_03_partner" model="res.partner">
+        <field name="name">Lucas Hood</field>
+        <field name="country_id" ref="base.us"/>
+    </record>
+
+    <record id="patient_03" model="medical.patient">
+        <field name="partner_id" ref="patient_03_partner"/>
+    </record>
+
+</odoo>
