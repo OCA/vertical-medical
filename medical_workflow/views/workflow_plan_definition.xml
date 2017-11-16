@@ -58,6 +58,7 @@
                                 <tree string="Actions">
                                     <field name="complete_name"/>
                                     <field name="activity_definition_id"/>
+                                    <field name="execute_plan_definition_id"/>
                                 </tree>
                             </field>
                         </page>
@@ -66,6 +67,7 @@
                                 <tree string="Actions">
                                     <field name="complete_name"/>
                                     <field name="activity_definition_id"/>
+                                    <field name="execute_plan_definition_id"/>
                                 </tree>
                             </field>
                         </page>

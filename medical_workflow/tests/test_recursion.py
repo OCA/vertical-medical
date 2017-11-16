@@ -52,3 +52,13 @@ class TestRecursion(TransactionCase):
                 'name': plan_1.name,
                 'execute_plan_definition_id': plan_1.id
             })
+        action = action_obj.create({
+            'direct_plan_definition_id': plan_1.id,
+            'name': 'AUX'
+        })
+        with self.assertRaises(ValidationError):
+            action_obj.create({
+                'parent_id': action.id,
+                'name': plan_1.name,
+                'execute_plan_definition_id': plan_1.id
+            })
