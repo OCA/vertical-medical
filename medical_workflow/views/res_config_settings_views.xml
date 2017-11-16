@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.medical
+        </field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="medical_base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='medical_workflow']" position="inside">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="group_main_activity_plan_definition"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label string="Main activity on plan definition"
+                               for="group_main_activity_plan_definition"/>
+                        <div class="text-muted">
+                            Add a main activity definition on plan definition
+                            that will be its main parent
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="group_patient_add_plan_definition"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label string="Plan definition on patients"
+                               for="group_patient_add_plan_definition"/>
+                        <div class="text-muted">
+                            Allows to add plan definitions on patients
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
