@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
+-->
+
+<odoo >
+
+    <record id="seq_medical_procedure" model="ir.sequence">
+        <field name="name">Medical Procedure</field>
+        <field name="code">medical.procedure</field>
+        <field name="prefix">P</field>
+        <field name="padding">8</field>
+    </record>
+    <record id="seq_medical_procedure_request" model="ir.sequence">
+        <field name="name">Medical Procedure Request</field>
+        <field name="code">medical.procedure.request</field>
+        <field name="prefix">PR</field>
+        <field name="padding">8</field>
+    </record>
+
+</odoo>

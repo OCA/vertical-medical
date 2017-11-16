@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="group_medical_procedure_request_display" model="res.groups">
+        <field name="name">Procedure Request Display</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('medical_clinical.group_medical_view_requests'))]"/>
+    </record>
+
+    <record id="group_medical_procedure_display" model="res.groups">
+        <field name="name">Procedure Display</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('medical_administration_location.group_medical_location_display')), (4, ref('group_medical_procedure_request_display'))]"/>
+    </record>
+
+    <record id="group_access_procedure_request_make_procedure" model="res.groups">
+        <field name="name">Access Procedure Request Make Procedure</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('medical_clinical.group_medical_view_requests'))]"/>
+    </record>
+
+    <record id="medical_clinical.group_medical_view_requests" model="res.groups">
+        <field name="implied_ids"
+               eval="[(4, ref('group_medical_procedure_display')), (4, ref('medical_administration_practitioner.group_medical_practitioner_display'))]"/>
+    </record>
+
+    <record id="group_medical_procedure_request_manager" model="res.groups">
+        <field name="name">Procedure Request Manager</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('group_medical_procedure_display'))]"/>
+    </record>
+
+    <record id="group_medical_procedure_manager" model="res.groups">
+        <field name="name">Procedure Manager</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('group_access_procedure_request_make_procedure')), (4, ref('group_medical_procedure_request_manager')), (4, ref('group_medical_procedure_display'))]"/>
+    </record>
+
+    <!-- Generic groups -->
+
+    <record id="medical_base.group_medical_user" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_medical_procedure_display'))]"/>
+    </record>
+
+    <record id="medical_base.group_medical_configurator" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_medical_procedure_manager'))]"/>
+    </record>
+
+</odoo>
