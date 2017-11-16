@@ -10,7 +10,8 @@
     'website': 'https://github.com/OCA/vertical-medical',
     'license': 'LGPL-3',
     'depends': [
-        'medical_administration'
+        'medical_administration_practitioner',
+        'product'
     ],
     'data': [
         'data/medical_workflow.xml',
