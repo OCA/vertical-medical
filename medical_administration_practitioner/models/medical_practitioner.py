@@ -6,10 +6,10 @@
 from odoo import api, fields, models
 
 
-class MedicalAdministrationPractitioner(models.Model):
+class MedicalPractitioner(models.Model):
     # FHIR Entity: Practitioner (https://www.hl7.org/fhir/practitioner.html)
-    _name = 'medical.administration.practitioner'
-    _description = 'Medical Administration Practitioner'
+    _name = 'medical.practitioner'
+    _description = 'Medical Practitioner'
     _inherit = 'medical.abstract.partner'
 
     role_ids = fields.Many2many(
@@ -26,4 +26,4 @@ class MedicalAdministrationPractitioner(models.Model):
     @api.model
     def _get_internal_identifier(self, vals):
         return self.env['ir.sequence'].next_by_code(
-            'medical.administration.practitioner') or '/'
+            'medical.practitioner') or '/'

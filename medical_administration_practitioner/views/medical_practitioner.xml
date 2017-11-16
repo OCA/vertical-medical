@@ -9,9 +9,9 @@
 
 <odoo>
 
-    <record id="medical_administration_practitioner_view_form" model="ir.ui.view">
-        <field name="name">medical.administration.practitioner.view.form</field>
-        <field name="model">medical.administration.practitioner</field>
+    <record id="medical_practitioner_view_form" model="ir.ui.view">
+        <field name="name">medical.practitioner.view.form</field>
+        <field name="model">medical.practitioner</field>
         <field name="inherit_id" ref="medical_administration.medical_abstract_partner_form"/>
         <field name="mode">primary</field>
         <field name="arch" type="xml">
@@ -27,9 +27,9 @@
         </field>
     </record>
 
-    <record id="medical_administration_practitioner_view_tree" model="ir.ui.view">
-        <field name="name">medical.administration.practitioner.view.tree</field>
-        <field name="model">medical.administration.practitioner</field>
+    <record id="medical_practitioner_view_tree" model="ir.ui.view">
+        <field name="name">medical.practitioner.view.tree</field>
+        <field name="model">medical.practitioner</field>
         <field name="inherit_id" ref="medical_administration.medical_abstract_partner_tree"/>
         <field name="mode">primary</field>
         <field name="arch" type="xml">
@@ -39,9 +39,9 @@
         </field>
     </record>
 
-    <record id="medical_administration_practitioner_view_kanban" model="ir.ui.view">
-        <field name="name">medical.administration.practitioner.kanban</field>
-        <field name="model">medical.administration.practitioner</field>
+    <record id="medical_practitioner_view_kanban" model="ir.ui.view">
+        <field name="name">medical.practitioner.kanban</field>
+        <field name="model">medical.practitioner</field>
         <field name="inherit_id" ref="medical_administration.medical_abstract_partner_kanban"/>
         <field name="mode">primary</field>
         <field name="arch" type="xml">
@@ -78,20 +78,12 @@
     </record>-->
 
     <record model="ir.actions.act_window"
-            id="medical_administration_practitioner_action">
+            id="medical_practitioner_action">
         <field name="name">Practitioners</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">medical.administration.practitioner</field>
+        <field name="res_model">medical.practitioner</field>
         <field name="view_type">form</field>
         <field name="view_mode">kanban,tree,form</field>
-        <!--<field name="search_view_id" ref="medical_practitioner_view_search"/>-->
-        <field name="view_ids"
-               eval="[(5, 0, 0),
-                      (0, 0, {'view_mode': 'kanban', 'view_id': ref('medical_administration_practitioner_view_kanban')}),
-                      (0, 0, {'view_mode': 'tree', 'view_id': ref('medical_administration_practitioner_view_tree')}),
-                      (0, 0, {'view_mode': 'form', 'view_id': ref('medical_administration_practitioner_view_form')}),
-                     ]"
-        />
         <field name="context">{'default_company_type':'person', 'default_is_company':False}</field>
     </record>
 

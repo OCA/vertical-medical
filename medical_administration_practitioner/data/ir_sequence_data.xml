@@ -7,9 +7,9 @@
 -->
 
 <odoo>
-    <record id="seq_medical_administration_practitioner" model="ir.sequence">
+    <record id="seq_medical_practitioner" model="ir.sequence">
         <field name="name">Practitioner sequence</field>
-        <field name="code">medical.administration.practitioner</field>
+        <field name="code">medical.practitioner</field>
         <field name="prefix">PRA</field>
         <field name="padding">6</field>
     </record>
