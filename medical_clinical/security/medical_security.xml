@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="group_medical_view_requests" model="res.groups">
+        <field name="name">Medical view requests</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('medical_base.group_medical_root_menu')), (4, ref('medical_base.group_medical_administration_menu')), (4, ref('medical_base.group_medical_clinical_menu')), (4, ref('medical_administration.group_medical_patient_display'))]"/>
+    </record>
+
+</odoo>
