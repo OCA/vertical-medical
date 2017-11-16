@@ -29,6 +29,20 @@
             <form position="attributes">
                 <attribute name="string">Patient</attribute>
             </form>
+            <page name="internal_notes" position="before">
+                <page name="medical_administration" string="Administration data">
+                    <group>
+                        <group id="medical_administration_info">
+                            <field name="gender"/>
+                            <field name="marital_status"/>
+                        </group>
+                        <group id="medical_administration_date">
+                            <field name="birth_date"/>
+                            <field name="deceased_date"/>
+                        </group>
+                    </group>
+                </page>
+            </page>
         </field>
     </record>
 
