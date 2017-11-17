@@ -32,6 +32,7 @@ class PlanDefinitionAction(models.Model):
         string='Parent Action',
         comodel_name='workflow.plan.definition.action',
         ondelete='cascade',
+        domain="[('plan_definition_id', '=', plan_definition_id)]"
     )
     child_ids = fields.One2many(
         string='Child Actions',
@@ -141,4 +142,4 @@ class PlanDefinitionAction(models.Model):
             vals, parent, self.plan_definition_id, self
         )
         for action in self.child_ids:
-            action.execute_action(vals, res)
+            action.execute_action(vals, parent=res)

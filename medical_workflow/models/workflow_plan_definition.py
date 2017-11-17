@@ -75,14 +75,16 @@ class PlanDefinition(models.Model):
     @api.multi
     def execute_plan_definition(self, vals, parent=False):
         self.ensure_one()
-        parent = False
+        res = False
         if (
             self.env.user._has_group('workflow_plandefinition.'
                                      'group_main_activity_plan_definition') and
             self.activity_definition_id
         ):
-            parent = self.activity_definition_id.execute_activity(
+            res = self.activity_definition_id.execute_activity(
                 vals, parent, plan=self)
+        if not res:
+            res = parent
         for action in self.direct_action_ids:
-            action.execute_action(vals, parent)
-        return parent
+            action.execute_action(vals, res)
+        return res
