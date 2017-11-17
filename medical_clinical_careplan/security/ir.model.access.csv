@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+user_medical_careplan,user_medical_careplan,model_medical_careplan,medical_base.group_medical_user,1,1,1,0
