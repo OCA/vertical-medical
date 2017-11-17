@@ -12,7 +12,7 @@
     'depends': [
         'medical_workflow',
         'medical_clinical',
-        # 'medical_location'
+        'medical_administration_location',
     ],
     'data': [
         'security/ir.model.access.csv',

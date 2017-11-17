@@ -33,6 +33,9 @@
             <group name="inheritance" position="inside">
                 <field name="procedure_request_id"/>
             </group>
+            <field name="performer_id" position="after">
+                <field name="location_id"/>
+            </field>
             <field name="occurrence_date" position="after">
                 <field name="performed_initial_date" attrs="{'readonly': [('is_editable','=', False)]}"/>
                 <field name="performed_end_date" attrs="{'readonly': [('is_editable','=', False)]}"/>

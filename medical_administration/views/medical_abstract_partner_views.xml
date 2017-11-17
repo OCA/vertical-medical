@@ -69,7 +69,7 @@
                                     attrs="{'invisible': ['|', '|', ('is_company','=', True), ('company_name', '=', ''), ('company_name', '=', False)]}"/>
                         </div>
                     </div>
-                    <group>
+                    <group name="contact">
                         <group>
                             <field name="type"
                                    attrs="{'invisible': [('parent_id','=', False)]}"

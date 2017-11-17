@@ -25,6 +25,10 @@ class MedicalProcedure(models.Model):
     performed_end_date = fields.Datetime(
         string='End date'
     )   # FHIR Field: performed/performedPeriod
+    location_id = fields.Many2one(
+        comodel_name='medical.location',
+        string='Location',
+    )   # FHIR Field: location
 
     @api.constrains('procedure_request_id')
     def _check_procedure(self):

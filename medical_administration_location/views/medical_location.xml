@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 LasLabs Inc.
+    Copyright 2017 Creu Blanca
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="medical_location_view_tree" model="ir.ui.view">
+        <field name="name">medical.location.tree</field>
+        <field name="model">medical.location</field>
+        <field name="inherit_id" ref="medical_administration.medical_abstract_partner_tree"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="string">Medical Locations</attribute>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="state" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_location_view_form" model="ir.ui.view">
+        <field name="name">medical.location.form</field>
+        <field name="model">medical.location</field>
+        <field name="inherit_id" ref="medical_administration.medical_abstract_partner_form"/>
+        <field name="mode">primary</field>
+        <field name="priority" eval="100" />
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="string">Medical Locations</attribute>
+            </xpath>
+            <xpath expr="//header" position="inside">
+                <button string="Suspend" type="object" name="active2suspended" class="oe_highlight"
+                        attrs="{'invisible': [('state','!=','active')]}"/>
+                <button string="Activate" type="object" name="suspended2active" class="oe_highlight"
+                        attrs="{'invisible': [('state','!=','suspended')]}"/>
+                <button string="Inactivate" type="object" name="active2inactive" class="oe_highlight"
+                        attrs="{'invisible': [('state','!=','active')]}"/>
+                <button string="Activate" type="object" name="inactive2active" class="oe_highlight"
+                        attrs="{'invisible': [('state','!=','inactive')]}"/>
+                <button string="Inactivate" type="object" name="suspended2inactive" class="oe_highlight"
+                        attrs="{'invisible': [('state','!=','suspended')]}"/>
+                <field name="state" widget="statusbar"/>
+            </xpath>
+            <xpath expr="//h1" position="inside">
+                <field name="is_editable" invisible="1"/>
+            </xpath>
+            <field name="name" position="attributes">
+                <attribute name="attrs">{'required' : [('type', '=', 'contact')], 'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
+            <group name="contact" position="before">
+                <group name="description">
+                    <field name="description" attrs="{'readonly':[('is_editable', '=', False)]}"/>
+                </group>
+            </group>
+            <field name="type" position="attributes">
+                <attribute name="attrs">{'invisible': [('parent_id','=', False)], 'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="street" position="attributes">
+                <attribute name="attrs">{'readonly': ['&amp;','|',('type','=','contact'),('parent_id', '!=',False),('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="street2" position="attributes">
+                <attribute name="attrs">{'readonly': ['&amp;','|',('type', '=','contact'),('parent_id', '!=', False),('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="city" position="attributes">
+                <attribute name="attrs">{'readonly': ['&amp;','|',('type', '=','contact'),('parent_id', '!=', False),('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="state_id" position="attributes">
+                <attribute name="attrs">{'readonly': ['&amp;','|',('type', '=','contact'),('parent_id', '!=', False),('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="zip" position="attributes">
+                <attribute name="attrs">{'readonly': ['&amp;','|',('type', '=','contact'),('parent_id', '!=', False),('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="country_id" position="attributes">
+                <attribute name="attrs">{'readonly': ['&amp;','|',('type', '=','contact'),('parent_id', '!=', False),('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="vat" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="category_id" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="function" position="attributes">
+                <attribute name="attrs">{'invisible': [('is_company','=', True)], 'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="phone" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="mobile" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="email" position="attributes">
+                <attribute name="attrs">{'required': [('user_ids','!=', [])], 'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="website" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="title" position="attributes">
+                <attribute name="attrs">{'invisible': [('is_company', '=', True)], 'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="lang" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="medical_center_view_kanban" model="ir.ui.view">
+        <field name="name">medical.location.kanban</field>
+        <field name="model">medical.location</field>
+        <field name="inherit_id" ref="medical_administration.medical_abstract_partner_kanban"/>
+        <field name="mode">primary</field>
+        <field name="priority" eval="100" />
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="string">Medical Locations</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_location_action" model="ir.actions.act_window">
+        <field name="name">Medical Locations</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.location</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="view_ids"
+               eval="[(5, 0, 0),
+                      (0, 0, {'view_mode': 'kanban', 'view_id': ref('medical_center_view_kanban')}),
+                      (0, 0, {'view_mode': 'tree', 'view_id': ref('medical_location_view_tree')}),
+                      (0, 0, {'view_mode': 'form', 'view_id': ref('medical_location_view_form')}),
+                     ]"
+        />
+    </record>
+
+</odoo>
