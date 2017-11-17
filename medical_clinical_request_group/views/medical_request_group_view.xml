@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
+-->
+
+<odoo>
+
+    <record model="ir.ui.view" id="medical_request_group_tree">
+        <field name="name">medical.request.group.tree</field>
+        <field name="model">medical.request.group</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="medical_workflow.medical_request_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="string">Requests groups</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_request_group_form">
+        <field name="name">medical.request.group.form</field>
+        <field name="model">medical.request.group</field>
+        <field name="inherit_id" ref="medical_request_form"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <form position="attributes">
+                <attribute name="string">Request Group</attribute>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window"
+            id="medical_request_group_window_action">
+        <field name="name">Request Group</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.request.group</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem id="medical_request_groups"
+              name="Request groups"
+              parent="medical_clinical.medical_clinical_request"
+              sequence="10"
+              action="medical_request_group_window_action" />
+
+</odoo>
