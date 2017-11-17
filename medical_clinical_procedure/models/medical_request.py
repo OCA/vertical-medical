@@ -15,5 +15,5 @@ class MedicalRequest(models.AbstractModel):
     procedure_request_ids = fields.One2many(
         string="Associated Procedure Requests",
         comodel_name="medical.procedure.request",
-        inverse_name="procedure_request_id",
+        inverse_name="id",
     )
