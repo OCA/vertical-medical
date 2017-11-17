@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+medical_careplan_display,medical_careplan_display,model_medical_careplan,medical_clinical_careplan.group_medical_careplan_display,1,0,0,0
+medical_careplan_manager,medical_careplan_manager,model_medical_careplan,medical_clinical_careplan.group_medical_careplan_manager,0,1,1,0

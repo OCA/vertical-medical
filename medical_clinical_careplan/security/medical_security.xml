@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="group_medical_careplan_add_plan_definition" model="res.groups">
+        <field name="name">Add plan definition on careplans</field>
+        <field name="implied_ids" eval="[(4, ref('medical_workflow.group_workflow_plan_definition_display'))]"/>
+    </record>
+
+    <record id="group_medical_careplan_display" model="res.groups">
+        <field name="name">Careplan Display</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('medical_clinical.group_medical_view_requests'))]"/>
+    </record>
+
+    <record id="group_medical_careplan_manager" model="res.groups">
+        <field name="name">Careplan Manager</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids" eval="[(4, ref('group_medical_careplan_display'))]"/>
+    </record>
+
+    <record id="medical_clinical.group_medical_view_requests" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_medical_careplan_display')), (4, ref('medical_administration_practitioner.group_medical_practitioner_display'))]"/>
+    </record>
+
+    <!-- Generic groups -->
+
+    <record id="medical_base.group_medical_user" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_medical_careplan_display'))]"/>
+    </record>
+
+    <record id="medical_base.group_medical_configurator" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_medical_careplan_manager'))]"/>
+    </record>
+
+</odoo>
