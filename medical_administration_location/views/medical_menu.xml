@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 LasLabs Inc.
+    Copyright 2017 Creu Blanca
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <menuitem id="medical_location_menu"
+              name="Medical Location"
+              sequence="20"
+              parent="medical_base.medical_root_administration"
+              />
+
+    <menuitem id="medical_locaions"
+              name="Locations"
+              sequence="10"
+              parent="medical_location_menu"
+              action="medical_location_action"
+              />
+
+</odoo>
