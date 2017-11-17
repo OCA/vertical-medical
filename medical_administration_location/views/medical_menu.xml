@@ -11,7 +11,7 @@
 
     <menuitem id="medical_location_menu"
               name="Medical Location"
-              sequence="20"
+              sequence="30"
               parent="medical_base.medical_root_administration"
               />
 

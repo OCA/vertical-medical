@@ -8,6 +8,7 @@
     'version': '11.0.1.0.0',
     'author': 'Eficent, Creu Blanca, LasLabs, '
               'Odoo Community Association (OCA)',
+    'category': 'Medical',
     'website': 'https://github.com/OCA/vertical-medical',
     'license': 'LGPL-3',
     'depends': [
