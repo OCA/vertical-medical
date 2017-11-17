@@ -5,3 +5,4 @@
 from . import medical_request
 from . import medical_procedure_request
 from . import medical_procedure
+from . import workflow_activity_definition

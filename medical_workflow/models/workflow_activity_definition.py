@@ -4,7 +4,6 @@
 
 from odoo import api, exceptions, fields, models, _
 from odoo.exceptions import ValidationError
-from odoo.tools import pycompat
 
 
 class ActivityDefinition(models.Model):
@@ -91,21 +90,13 @@ class ActivityDefinition(models.Model):
             'plan_definition_action_id': action and action.id,
             'activity_definition_id': self.id,
         }
-        if parent and parent._name == 'medical.request.group':
-            values['request_group_id'] = parent.id
         return values
 
     def _get_activity_values(self, vals, parent=False, plan=False, action=False
                              ):
         values = vals.copy()
-        model_obj = self.env[self.model_id.model]
-        parents = model_obj._inherit
-        parents = [parents] if isinstance(
-            parents, pycompat.string_types) else (parents or [])
-        if 'medical.request' in parents:
+        if self.type_id == self.env.ref('medical_workflow.medical_workflow'):
             values.update(self._get_medical_values(vals, parent, plan, action))
-            values['internal_identifier'] = model_obj._get_internal_identifier(
-                values)
         return values
 
     @api.multi

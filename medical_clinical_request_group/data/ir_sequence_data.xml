@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
+    -->
+
+<odoo>
+    <record id="seq_medical_request_group" model="ir.sequence">
+        <field name="name">Request Group</field>
+        <field name="code">medical.request.group</field>
+        <field name="prefix">RG</field>
+        <field name="padding">6</field>
+    </record>
+
+</odoo>

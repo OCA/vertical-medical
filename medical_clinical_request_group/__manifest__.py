@@ -3,20 +3,25 @@
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
 
 {
-    'name': 'Medical Clinical',
-    'summary': 'Medical clinical',
+    'name': 'Medical Clinical Request Group',
+    'summary': 'Medical request group',
     'version': '11.0.1.0.0',
     'author': 'Creu Blanca, Eficent, Odoo Community Association (OCA)',
     'website': 'https://github.com/OCA/vertical-medical',
     'license': 'LGPL-3',
     'depends': [
-        'medical_administration'
+        'medical_clinical_procedure',
+        'medical_workflow',
     ],
     'data': [
-        'views/medical_menu.xml',
-        'views/res_config_settings_views.xml',
+        'data/ir_sequence_data.xml',
+        'data/medical_workflow.xml',
+        'security/ir.model.access.csv',
+        'views/medical_request_view.xml',
+        'views/medical_request_group_view.xml',
     ],
     'demo': [
+        'demo/medical_demo.xml',
     ],
     'application': False,
     'installable': True,

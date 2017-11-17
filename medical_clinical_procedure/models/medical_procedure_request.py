@@ -26,6 +26,9 @@ class MedicalProcedureRequest(models.Model):
         required=True,
         default=fields.Datetime.now,
     )
+    procedure_request_ids = fields.One2many(
+        inverse_name="procedure_request_id",
+    )
     procedure_ids = fields.One2many(
         string='Related Procedure',
         comodel_name='medical.procedure',
