@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.medical
+        </field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="medical_clinical.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='module_medical_clinical_careplan']/div[@name='right']"
+                   position="inside">
+                <div>
+                    <field class="oe_inline" name="group_medical_careplan_add_plan_definition"/>
+                    Allow to add plan definitions on care plans
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
