@@ -19,7 +19,6 @@
                 <attribute name="string">Medical Locations</attribute>
             </xpath>
             <xpath expr="//field[@name='name']" position="after">
-                <field name="description" />
                 <field name="state" />
             </xpath>
         </field>
@@ -35,14 +34,78 @@
             <xpath expr="//form" position="attributes">
                 <attribute name="string">Medical Locations</attribute>
             </xpath>
-            <xpath expr="//header" position="attributes">
-                <field name="state"
-                       widget="statusbar"
-                       clickable="True"/>
+            <xpath expr="//header" position="inside">
+                <button string="Suspend" type="object" name="active2suspended" class="oe_highlight"
+                        attrs="{'invisible': [('state','!=','active')]}"/>
+                <button string="Activate" type="object" name="suspended2active" class="oe_highlight"
+                        attrs="{'invisible': [('state','!=','suspended')]}"/>
+                <button string="Inactivate" type="object" name="active2inactive" class="oe_highlight"
+                        attrs="{'invisible': [('state','!=','active')]}"/>
+                <button string="Activate" type="object" name="inactive2active" class="oe_highlight"
+                        attrs="{'invisible': [('state','!=','inactive')]}"/>
+                <button string="Inactivate" type="object" name="suspended2inactive" class="oe_highlight"
+                        attrs="{'invisible': [('state','!=','suspended')]}"/>
+                <field name="state" widget="statusbar"/>
             </xpath>
-            <xpath expr="//div[@class='oe_title']">
-                <field name="description" />
+            <xpath expr="//h1" position="inside">
+                <field name="is_editable" invisible="1"/>
             </xpath>
+            <field name="name" position="attributes">
+                <attribute name="attrs">{'required' : [('type', '=', 'contact')], 'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
+            <group name="contact" position="before">
+                <group name="description">
+                    <field name="description" attrs="{'readonly':[('is_editable', '=', False)]}"/>
+                </group>
+            </group>
+            <field name="type" position="attributes">
+                <attribute name="attrs">{'invisible': [('parent_id','=', False)], 'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="street" position="attributes">
+                <attribute name="attrs">{'readonly': ['&amp;','|',('type','=','contact'),('parent_id', '!=',False),('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="street2" position="attributes">
+                <attribute name="attrs">{'readonly': ['&amp;','|',('type', '=','contact'),('parent_id', '!=', False),('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="city" position="attributes">
+                <attribute name="attrs">{'readonly': ['&amp;','|',('type', '=','contact'),('parent_id', '!=', False),('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="state_id" position="attributes">
+                <attribute name="attrs">{'readonly': ['&amp;','|',('type', '=','contact'),('parent_id', '!=', False),('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="zip" position="attributes">
+                <attribute name="attrs">{'readonly': ['&amp;','|',('type', '=','contact'),('parent_id', '!=', False),('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="country_id" position="attributes">
+                <attribute name="attrs">{'readonly': ['&amp;','|',('type', '=','contact'),('parent_id', '!=', False),('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="vat" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="category_id" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="function" position="attributes">
+                <attribute name="attrs">{'invisible': [('is_company','=', True)], 'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="phone" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="mobile" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="email" position="attributes">
+                <attribute name="attrs">{'required': [('user_ids','!=', [])], 'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="website" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="title" position="attributes">
+                <attribute name="attrs">{'invisible': [('is_company', '=', True)], 'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
+            <field name="lang" position="attributes">
+                <attribute name="attrs">{'readonly': [('is_editable', '=', False)]}</attribute>
+            </field>
         </field>
     </record>
 

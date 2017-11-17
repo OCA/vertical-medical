@@ -26,6 +26,20 @@ class MedicalLocation(models.Model):
     description = fields.Text(
         string='Description',
     )  # FHIR field: description
+    is_editable = fields.Boolean(
+        compute='_compute_is_editable'
+    )
+
+    @api.multi
+    @api.depends('name', 'internal_identifier')
+    def name_get(self):
+        result = []
+        for record in self:
+            name = '[%s]' % record.internal_identifier
+            if record.name:
+                name = '%s %s' % (name, record.name)
+            result.append((record.id, name))
+        return result
 
     @api.model
     def create(self, vals):
@@ -39,3 +53,27 @@ class MedicalLocation(models.Model):
     def _get_internal_identifier(self, vals):
         return self.env['ir.sequence'].next_by_code(
             'medical.location') or '/'
+
+    @api.multi
+    @api.depends('state')
+    def _compute_is_editable(self):
+        for rec in self:
+            if rec.state in ('suspended', 'inactive'):
+                rec.is_editable = False
+            else:
+                rec.is_editable = True
+
+    def active2suspended(self):
+        self.write({'state': 'suspended'})
+
+    def suspended2active(self):
+        self.write({'state': 'active'})
+
+    def active2inactive(self):
+        self.write({'state': 'inactive'})
+
+    def inactive2active(self):
+        self.write({'state': 'active'})
+
+    def suspended2inactive(self):
+        self.write({'state': 'inactive'})
