@@ -13,7 +13,8 @@
         'medical_administration'
     ],
     'data': [
-        'views/medical_menu.xml'
+        'views/medical_menu.xml',
+        'views/res_config_settings_views.xml',
     ],
     'demo': [
     ],
