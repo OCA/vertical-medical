@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+medical_encounter_display,medical_encounter_display,model_medical_encounter,medical_administration_encounter.group_medical_encounter_display,1,0,0,0
+medical_encounter_manager,medical_encounter_manager,model_medical_encounter,medical_administration_encounter.group_medical_encounter_manager,0,1,1,0
