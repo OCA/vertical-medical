@@ -80,14 +80,23 @@ class TestMedicalInsurance(TransactionCase):
                           "The insurance plan is no longer active.")
 
     def test_insurance_provider_has_template(self):
+<<<<<<< HEAD
         """ Check that a user has the insurance plan. """
+=======
+        """ Check that a the insurance provider has an insurance template. """
+>>>>>>> 2301f0e8d12ba3ab6c0f3878355f7f5ae3db46a4
 
         self.assertEquals(self.insurance_company.insurance_template_ids[0],
                           self.insurance_template,
                           "The insurance provider must have this template.")
 
     def test_patient_has_modified_insurance(self):
+<<<<<<< HEAD
         """ Check that a user has the insurance plan. """
+=======
+        """ Check that when an insurance plan is modified the insurance plan
+        of the patient is modified as well. """
+>>>>>>> 2301f0e8d12ba3ab6c0f3878355f7f5ae3db46a4
 
         self.insurance_plan.number = '1234'
         self.assertEquals(self.patient.insurance_plan_ids.number, '1234',
