@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
+-->
+
+<odoo>
+
+    <record id="product_template_form_view" model="ir.ui.view">
+        <field name="name">product.template.common.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <label for="sale_ok" position="after">
+                <div>
+                    <field name="is_medication"/>
+                    <label for="is_medication"/>
+                </div>
+            </label>
+            <notebook position="inside">
+                <page string="Medication" name="medication"
+                      attrs="{'invisible':[('is_medication','=', False)]}">
+                    <group>
+                        <group>
+                            <field name="sct_code_id" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="atc_code_id" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="over_the_counter"/>
+                            <field name="form_id" options="{'no_create': True, 'no_open': True}"/>
+                        </group>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_medication_action">
+        <field name="name">Medications</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.template</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('is_medication', '=', True)]</field>
+        <field name="context">{'default_is_medication': True}</field>
+    </record>
+
+    <menuitem id="medical_medication"
+              name="Medications"
+              parent="medical_base.medical_root_medications"
+              sequence="10"
+              action="medical_medication_action"/>
+
+</odoo>

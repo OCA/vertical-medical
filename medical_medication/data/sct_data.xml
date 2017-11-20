@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
+-->
+
+<odoo>
+
+    <record id="sct_105904009" model="medical.sct.concept">
+        <field name="code">105904009</field>
+        <field name="name">Type of drug preparation</field>
+        <field name="parent_ids" eval="[(4, ref('medical_terminology_sct.sct_362981000'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_421967003" model="medical.sct.concept">
+        <field name="code">421967003</field>
+        <field name="name">Drug dose form</field>
+        <field name="parent_ids" eval="[(4, ref('sct_105904009'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_421378002" model="medical.sct.concept">
+        <field name="code">421378002</field>
+        <field name="name">Solid dose form</field>
+        <field name="parent_ids" eval="[(4, ref('sct_421967003'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_420699003" model="medical.sct.concept">
+        <field name="code">420699003</field>
+        <field name="name">Liquid dose form</field>
+        <field name="parent_ids" eval="[(4, ref('sct_421967003'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_46992007" model="medical.sct.concept">
+        <field name="code">46992007</field>
+        <field name="name">Pill</field>
+        <field name="parent_ids" eval="[(4, ref('sct_421378002'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_85581007" model="medical.sct.concept">
+        <field name="code">85581007</field>
+        <field name="name">Drug powder</field>
+        <field name="parent_ids" eval="[(4, ref('sct_421378002'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_385049006" model="medical.sct.concept">
+        <field name="code">385049006</field>
+        <field name="name">Capsule</field>
+        <field name="parent_ids" eval="[(4, ref('sct_421378002'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_385055001" model="medical.sct.concept">
+        <field name="code">385055001</field>
+        <field name="name">Tablet dose form</field>
+        <field name="parent_ids" eval="[(4, ref('sct_421378002'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_77899000" model="medical.sct.concept">
+        <field name="code">77899000</field>
+        <field name="name">Drug solution</field>
+        <field name="parent_ids" eval="[(4, ref('sct_420699003'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_421410002" model="medical.sct.concept">
+        <field name="code">421410002</field>
+        <field name="name">Intravenous solution</field>
+        <field name="parent_ids" eval="[(4, ref('sct_77899000'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_410942007" model="medical.sct.concept">
+        <field name="code">410942007</field>
+        <field name="name">Drug</field>
+        <field name="parent_ids" eval="[(4, ref('medical_terminology_sct.sct_105590001'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_115668003" model="medical.sct.concept">
+        <field name="code">115668003</field>
+        <field name="name">Biological substance</field>
+        <field name="parent_ids" eval="[(4, ref('medical_terminology_sct.sct_105590001'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_106181007" model="medical.sct.concept">
+        <field name="code">106181007</field>
+        <field name="name">Immunologic substance</field>
+        <field name="parent_ids" eval="[(4, ref('sct_115668003'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+</odoo>
