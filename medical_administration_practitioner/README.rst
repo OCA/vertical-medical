@@ -66,7 +66,6 @@ Contributors
 * Dave Lasley <dave@laslabs.com>
 * Enric Tobella <etobella@creublanca.es>
 * Roser Garcia <roser.garcia@eficent.com>
-* Gisela Mora <gisela.mora@eficent.com>
 
 Maintainer
 ----------

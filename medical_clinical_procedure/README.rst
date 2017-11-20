@@ -46,7 +46,6 @@ Contributors
 
 * Jordi Ballester <jordi.ballester@eficent.com>
 * Roser Garcia <roser.garcia@eficent.com>
-* Gisela Mora <gisela.mora@eficent.com>
 * Enric Tobella <etobella@creublanca.es>
 
 Maintainer
