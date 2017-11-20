@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+
+<odoo>
+
+    <menuitem id="medical_root_pathology"
+              name="Pathology"
+              parent="medical.medical_root_sub"
+              sequence="10" />
+
+    <menuitem id="medical_pathology"
+              parent="medical_root_pathology"
+              sequence="10" 
+              action="medical_pathology_action"
+              />
+
+    <menuitem id="medical_pathology_category"
+              parent="medical_root_pathology"
+              sequence="20"
+              action="medical_pathology_category_action"
+              />
+
+</odoo>

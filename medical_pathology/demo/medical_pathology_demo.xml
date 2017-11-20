@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+
+<odoo>
+
+    <record id="medical_pathology_medical_pathology_1" model="medical.pathology">
+        <field name="name">HIV/AIDS</field>
+        <field name="code">[DEMO] B20</field>
+        <field name="code_type_id" ref="medical_pathology.pathology_code_05" />
+        <field name="category_id" ref="medical_pathology.medical_pathology_category_4" />
+    </record>
+
+    <record id="medical_pathology_medical_pathology_2" model="medical.pathology">
+        <field name="name">Malaria</field>
+        <field name="code">[DEMO] B54</field>
+        <field name="code_type_id" ref="medical_pathology.pathology_code_05" />
+        <field name="category_id" ref="medical_pathology.medical_pathology_category_6" />
+    </record>
+
+    <record id="medical_pathology_medical_pathology_A00" model="medical.pathology">
+        <field name="name">[DEMO] Cholera</field>
+        <field name="code">[DEMO] A00</field>
+        <field name="code_type_id" ref="medical_pathology.pathology_code_05" />
+        <field name="category_id" ref="medical_pathology.medical_pathology_category_7" />
+    </record>
+
+    <record id="medical_pathology_medical_pathology_A00_0" model="medical.pathology">
+        <field name="name">[DEMO] Cholera due to Vibrio cholerae 01, biovar cholerae</field>
+        <field name="code">[DEMO] A00.0</field>
+        <field name="code_type_id" ref="medical_pathology.pathology_code_05" />
+        <field name="category_id" ref="medical_pathology.medical_pathology_category_7" />
+        <field name="parent_id" ref="medical_pathology_medical_pathology_A00" />
+        <field name="notes">* A00.0 is a billable/specific ICD-10-CM code that can be used to indicate a diagnosis for reimbursement purposes.
+* This is the American ICD-10-CM version of A00.0. Other international versions of ICD-10 A00.0 may differ.
+* Reimbursement claims with a date of service on or after October 1, 2015 require the use of ICD-10-CM codes.</field>
+    </record>
+    
+    <record id="medical_pathology_medical_pathology_A00_1" model="medical.pathology">
+        <field name="name">[DEMO] Cholera due to Vibrio cholerae 01, biovar eltor</field>
+        <field name="code">[DEMO] A00.1</field>
+        <field name="code_type_id" ref="medical_pathology.pathology_code_05" />
+        <field name="category_id" ref="medical_pathology.medical_pathology_category_7" />
+        <field name="parent_id" ref="medical_pathology_medical_pathology_A00" />
+        <field name="notes">* A00.1 is a billable/specific ICD-10-CM code that can be used to indicate a diagnosis for reimbursement purposes.
+* This is the American ICD-10-CM version of A00.1. Other international versions of ICD-10 A00.1 may differ.
+* Reimbursement claims with a date of service on or after October 1, 2015 require the use of ICD-10-CM codes.</field>
+    </record>
+    
+    <record id="medical_pathology_medical_pathology_A00_9" model="medical.pathology">
+        <field name="name">[DEMO] Cholera, unspecified</field>
+        <field name="code">[DEMO] A00.9</field>
+        <field name="code_type_id" ref="medical_pathology.pathology_code_05" />
+        <field name="category_id" ref="medical_pathology.medical_pathology_category_7" />
+        <field name="parent_id" ref="medical_pathology_medical_pathology_A00" />
+        <field name="notes">* A00.9 is a billable/specific ICD-10-CM code that can be used to indicate a diagnosis for reimbursement purposes.
+* This is the American ICD-10-CM version of A00.9. Other international versions of ICD-10 A00.9 may differ.
+* Reimbursement claims with a date of service on or after October 1, 2015 require the use of ICD-10-CM codes.</field>
+    </record>
+
+</odoo>

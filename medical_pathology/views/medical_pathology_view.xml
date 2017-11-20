@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+
+<odoo>
+
+    <record id="medical_pathology_view_search" model="ir.ui.view">
+        <field name="name">medical.pathology.search</field>
+        <field name="model">medical.pathology</field>
+        <field name="arch" type="xml">
+            <search string="Medical Pathology">
+                <field name="category_id" />
+                <field name="notes" />
+                <field name="code" />
+                <field name="code_type_id" />
+                <field name="name" />
+                <newline />
+                <group expand="0" string="Group By...">
+                    <filter string="Category"
+                            domain="[]"
+                            context="{'group_by':'category_id'}"
+                            />
+                    <filter string="Code Type"
+                            domain="[]"
+                            context="{'group_by': 'code_type_id'}"
+                            />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="medical_pathology_view_tree" model="ir.ui.view">
+        <field name="name">medical.pathology.tree</field>
+        <field name="model">medical.pathology</field>
+        <field name="arch" type="xml">
+            <tree string="Medical Pathology">
+                <field name="name" />
+                <field name="code" />
+                <field name="code_type_id" />
+                <field name="category_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="medical_pathology_view_form" model="ir.ui.view">
+        <field name="name">medical.pathology.form</field>
+        <field name="model">medical.pathology</field>
+        <field name="arch" type="xml">
+            <form string="Medical Pathology">
+                <header />
+                <sheet>
+                    <div class="oe_title" name="title">
+                        <label for="name" class="edit_only"/>
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <div class="oe_right oe_button_box" name="buttons" />
+                    <group name="group_data">
+                        <group name="group_main">
+                            <field name="code" />
+                            <field name="code_type_id" />
+                            <field name="parent_id"
+                                   context="{'default_code_type_id': code_type_id,
+                                             'default_child_ids': [(4, id)],
+                                             }"
+                                   />
+                            <field name="category_id"
+                                   context="{'default_code_type_id': code_type_id}"
+                                   />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Misc" name="page_other">
+                            <separator string="Notes"/>
+                            <field name="notes" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_pathology_action" model="ir.actions.act_window">
+        <field name="name">Pathologies</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.pathology</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="medical_pathology_view_tree" />
+        <field name="search_view_id" ref="medical_pathology_view_search" />
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+</odoo>

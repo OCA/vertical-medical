@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 LasLabs Inc.
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+
+<odoo>
+    
+    <record id="pathology_code_01" model="medical.pathology.code.type">
+        <field name="name">ICD-9-CM Disease/Injury</field>
+    </record>
+    
+    <record id="pathology_code_02" model="medical.pathology.code.type">
+        <field name="name">ICD-9-CM Procedures</field>
+    </record>
+    
+    <record id="pathology_code_03" model="medical.pathology.code.type">
+        <field name="name">ICD-9-CM V-Code</field>
+    </record>
+    
+    <record id="pathology_code_04" model="medical.pathology.code.type">
+        <field name="name">ICD-9-CM E-Code</field>
+    </record>
+    
+    <record id="pathology_code_05" model="medical.pathology.code.type">
+        <field name="name">ICD-10-CM</field>
+    </record>
+    
+    <record id="pathology_code_06" model="medical.pathology.code.type">
+        <field name="name">ICD-10-PCS</field>
+    </record>
+    
+    <record id="pathology_code_07" model="medical.pathology.code.type">
+        <field name="name">ICD-10-AM 6th Edition</field>
+    </record>
+    
+</odoo>
