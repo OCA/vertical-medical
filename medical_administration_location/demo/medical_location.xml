@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 LasLabs Inc.
+    Copyright 2017 Creu Blanca
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="partner_location_1" model="res.partner">
+        <field name="name">Test Center</field>
+        <field name="street">123 Test St.</field>
+        <field name="street2">Suite 1337</field>
+        <field name="city">Las Vegas</field>
+        <field name="country_id" ref="base.us" />
+        <field name="phone">+1-888-888-8888</field>
+        <field name="email">email@example.com</field>
+        <field name="state_id" ref="base.state_us_23" />
+    </record>
+
+    <record id="medical_location_1" model="medical.location">
+        <field name="name">Test Location</field>
+        <field name="partner_id"
+               ref="medical_administration_location.partner_location_1" />
+    </record>
+
+</odoo>

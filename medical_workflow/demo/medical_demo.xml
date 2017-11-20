@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="ct_abdominal" model="workflow.plan.definition">
+        <field name="name">Abdominal ct</field>
+        <field name="description">Basic abdominal computed tomography</field>
+        <field name="type_id" ref="medical_workflow"/>
+        <field name="state">active</field>
+    </record>
+
+    <record id="mr_knee" model="workflow.plan.definition">
+        <field name="name">Knee MR</field>
+        <field name="description">Basic knee Medical Resonance</field>
+        <field name="type_id" ref="medical_workflow"/>
+        <field name="state">active</field>
+    </record>
+
+    <record id="basic_check_up" model="workflow.plan.definition">
+        <field name="name">Basic Check Up</field>
+        <field name="description">Basic check up</field>
+        <field name="type_id" ref="medical_workflow"/>
+        <field name="state">active</field>
+    </record>
+</odoo>

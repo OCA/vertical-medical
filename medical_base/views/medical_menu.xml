@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2016 LasLabs Inc.
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
+    -->
+
+<odoo>
+
+    <menuitem id="medical_root"
+              name="Medical"
+              sequence="10"
+              groups="medical_base.group_medical_user"
+              web_icon="medical_base,static/description/icon.png"/>
+
+    <menuitem id="medical_root_administration"
+              name="Administration"
+              parent="medical_root"
+              sequence="1"/>
+    <record id="medical_root_administration" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+    </record>
+
+    <menuitem id="medical_root_clinical"
+              name="Clinical"
+              parent="medical_root"
+              sequence="10"/>
+    <record id="medical_root_clinical" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+    </record>
+
+    <menuitem id="medical_root_diagnostics"
+              name="Administration"
+              parent="medical_root"
+              sequence="20"/>
+    <record id="medical_root_diagnostics" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+    </record>
+
+    <menuitem id="medical_root_medications"
+              name="Medications"
+              parent="medical_root"
+              sequence="30"/>
+    <record id="medical_root_medications" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+    </record>
+
+    <menuitem id="medical_root_financial"
+              name="Financial"
+              parent="medical_root"
+              sequence="40"/>
+    <record id="medical_root_financial" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+    </record>
+
+    <menuitem id="medical_root_workflow"
+              name="Workflow"
+              parent="medical_root"
+              sequence="50"/>
+    <record id="medical_root_workflow" model="ir.ui.menu">
+        <field name="active" eval="False"/>
+    </record>
+
+    <menuitem id="medical_root_configuration"
+              name="Configuration"
+              parent="medical_root"
+              groups="medical_base.group_medical_configurator"
+              sequence="100"/>
+
+</odoo>

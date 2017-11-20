@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+user_medical_practitioner,user_medical_practitioner,model_medical_practitioner,medical_base.group_medical_user,1,1,1,0
+user_medical_role,user_medical_role,model_medical_role,medical_base.group_medical_user,1,1,1,0

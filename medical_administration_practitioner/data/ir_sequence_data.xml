@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+    Copyright 2017 Creu Blanca
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+    <record id="seq_medical_practitioner" model="ir.sequence">
+        <field name="name">Practitioner sequence</field>
+        <field name="code">medical.practitioner</field>
+        <field name="prefix">PRA</field>
+        <field name="padding">6</field>
+    </record>
+</odoo>

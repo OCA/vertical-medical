@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_location_user,access.medical.location.user,model_medical_location,medical_base.group_medical_user,1,0,0,0
+access_medical_location_manager,access.medical.location.manager,model_medical_location,medical_base.group_medical_configurator,1,1,1,1
