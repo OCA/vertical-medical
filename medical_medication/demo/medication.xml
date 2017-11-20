@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
+-->
+
+<odoo>
+
+     <record id="product_medication_01" model="product.product">
+        <field name="name">Aumen Tini</field>
+        <field name="type">consu</field>
+        <field name="is_medication" eval="True"/>
+        <field name="atc_code_id" ref="medical_terminology_atc.atc_J01DF"/>
+    </record>
+
+</odoo>
