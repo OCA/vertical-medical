@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="medical_encounter_view_tree" model="ir.ui.view">
+        <field name="name">medical.encounter.view.tree</field>
+        <field name="model">medical.encounter</field>
+        <field name="arch" type="xml">
+            <tree string="Medical Encounters">
+                <field name="internal_identifier"/>
+                <field name="patient_id"/>
+                <field name="location_id"/>
+                <field name="priority_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="medical_encounter_view_form" model="ir.ui.view">
+        <field name="name">medical.encounter.view.form</field>
+        <field name="model">medical.encounter</field>
+        <field name="arch" type="xml">
+            <form string="Medical Encounter">
+                <header>
+                    <button string="Arrived" type="object"
+                            name="planned2arrived" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','planned')]}"/>
+                    <button string="Cancel" type="object"
+                            name="planned2cancelled" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','planned')]}"/>
+                    <button string="In-Progress" type="object"
+                            name="arrived2inprogress" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','arrived')]}"/>
+                    <button string="Cancel" type="object"
+                            name="arrived2cancelled" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','arrived')]}"/>
+                    <button string="On Leave" type="object"
+                            name="inprogress2onleave" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','in-progress')]}"/>
+                    <button string="Cancel" type="object"
+                            name="inprogress2cancelled" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','in-progress')]}"/>
+                    <button string="Finished" type="object"
+                            name="onleave2finished" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','onleave')]}"/>
+                    <button string="Cancel" type="object"
+                            name="onleave2cancelled" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','onleave')]}"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div name="button_box" class="oe_button_box">
+                    </div>
+                    <h1>
+                        <field name="internal_identifier"/>
+                        <field name="is_editable" invisible="1"/>
+                    </h1>
+                    <h2>
+                        <field name="name" attrs="{'readonly': [('is_editable', '=', False)]}"/>
+                    </h2>
+                    <group>
+                        <group name="patient">
+                            <field name="patient_id"
+                                   attrs="{'readonly': [('is_editable', '=', False)]}"/>
+                            <field name="priority_id"
+                                   attrs="{'readonly': [('is_editable', '=', False)]}"/>
+                        </group>
+                    </group>
+                    <group name="location_id">
+                        <field name="location_id" attrs="{'readonly': [('is_editable', '=', False)]}"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_medical_encounter_search" model="ir.ui.view">
+        <field name="name">medical.encounter.search</field>
+        <field name="model">medical.encounter</field>
+        <field name="arch" type="xml">
+            <search string="Medical Encounter">
+                <field name="internal_identifier"/>
+                <separator/>
+                <field name="patient_id"/>
+                <separator/>
+                <field name="priority_id"/>
+                <field name="location_id"/>
+                <separator/>
+                <field name="state"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_encounter_action">
+        <field name="name">Encounters</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.encounter</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+</odoo>
