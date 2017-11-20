@@ -16,4 +16,5 @@ class MedicalRequest(models.AbstractModel):
     request_group_ids = fields.One2many(
         string="Parent Request group",
         comodel_name="medical.request.group",
+        inverse_name='id'
     )

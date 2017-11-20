@@ -8,12 +8,12 @@ from odoo import fields, models
 class MedicalRequest(models.AbstractModel):
     _inherit = 'medical.request'
 
-    procedure_request_id = fields.Many2one(
-        string="Parent Procedure Request",
-        comodel_name="medical.procedure.request"
+    careplan_id = fields.Many2one(
+        string="Parent Careplan",
+        comodel_name="medical.careplan"
     )   # FHIR Field: BasedOn
-    procedure_request_ids = fields.One2many(
-        string="Associated Procedure Requests",
-        comodel_name="medical.procedure.request",
-        inverse_name="id",
+    careplan_ids = fields.One2many(
+        string="Associated Careplans",
+        comodel_name="medical.careplan",
+        inverse_name='id'
     )
