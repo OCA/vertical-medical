@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <menuitem id="menu_medical_encounter_root"
+              name="Medical Encounter"
+              sequence="40"
+              parent="medical_base.medical_root_administration"/>
+
+    <menuitem id="medical_encounter"
+              name="Medical Encounters"
+              parent="menu_medical_encounter_root"
+              sequence="10"
+              action="medical_encounter_action"/>
+
+</odoo>
