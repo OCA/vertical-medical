@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="group_medical_location_stock" model="res.groups">
+        <field name="name">Location Stock</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <record id="medical_administration_location.group_medical_location_display" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_medical_location_stock'))]"/>
+    </record>
+
+</odoo>
