@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="res_partner_view_form" model="ir.ui.view">
+        <field name="name">res.partner.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//h1" position="before">
+                <h1>
+                    <field name="is_payor" invisible="1"/>
+                    <field name="edit_payor" invisible="1"/>
+                    <field name="payor_identifier"
+                           attrs="{'invisible': [('is_payor','=',False)]}"
+                           groups="medical_financial_coverage.group_medical_payor_display"
+                    />
+                </h1>
+            </xpath>
+            <div name="button_box" position="inside">
+                <button
+                    type="object" name="action_view_coverage_template"
+                    class="oe_stat_button"  icon="fa-plus-square"
+                    groups="medical_financial_coverage.group_medical_payor_display"
+                    attrs="{'invisible': [('is_payor', '=', False)]}"
+                >
+                    <field name="coverage_template_count" widget="statinfo"
+                           string="Coverage Templates"/>
+                    <field name='coverage_template_ids' invisible="1"/>
+                </button>
+            </div>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_payor_action">
+        <field name="name">Payors</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field><field name="domain">[('is_payor', '=', True)]</field>
+        <field name="context">{'default_company_type':'company', 'default_is_company':True, 'default_is_payor': True, 'default_is_medical': True}</field>
+    </record>
+
+</odoo>

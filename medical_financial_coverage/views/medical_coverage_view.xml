@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="medical_coverage_view_tree" model="ir.ui.view">
+        <field name="name">medical.coverage.view.tree</field>
+        <field name="model">medical.coverage</field>
+        <field name="arch" type="xml">
+            <tree string="Medical Coverages">
+                <field name="internal_identifier"/>
+                <field name="name"/>
+                <field name="coverage_template_id"/>
+                <field name="patient_id"/>
+                <field name="subscriber_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="medical_coverage_view_form" model="ir.ui.view">
+        <field name="name">medical.coverage.view.form</field>
+        <field name="model">medical.coverage</field>
+        <field name="arch" type="xml">
+            <form string="Medical Coverage">
+                <header>
+                    <button string="Activate" type="object"
+                            name="draft2active" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','draft')]}"/>
+                    <button string="Cancel" type="object"
+                            name="draft2cancelled" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','draft')]}"/>
+                    <button string="Entered In Error" type="object"
+                            name="draft2enteredinerror" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','draft')]}"/>
+                    <button string="Cancel" type="object"
+                            name="active2cancelled" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','active')]}"/>
+                    <button string="Entered In Error" type="object"
+                            name="active2enteredinerror" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','active')]}"/>
+                    <button string="Entered In Error" type="object"
+                            name="cancelled2enteredinerror" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','cancelled')]}"/>
+                    <button string="Send to draft" type="object"
+                            name="active2draft" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','active')]}"/>
+                    <button string="Send to draft" type="object"
+                            name="cancelled2draft" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','cancelled')]}"/>
+                    <button string="Activate" type="object"
+                            name="cancelled2active" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','cancelled')]}"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div name="button_box" class="oe_button_box">
+                    </div>
+                    <h1>
+                        <field name="internal_identifier"/>
+                        <field name="is_editable" invisible="1"/>
+                    </h1>
+                    <h2>
+                        <field name="name" attrs="{'readonly': [('is_editable', '=', False)]}"/>
+                    </h2>
+                    <group>
+                        <group name="patient">
+                            <field name="patient_id"
+                                   attrs="{'readonly': [('is_editable', '=', False)]}"/>
+                            <field name="subscriber_id"
+                                   attrs="{'readonly': [('is_editable', '=', False)]}"/>
+                            <field name="coverage_template_id"
+                                   attrs="{'readonly': [('is_editable', '=', False)]}"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_medical_coverage_search" model="ir.ui.view">
+        <field name="name">medical.coverage.search</field>
+        <field name="model">medical.coverage</field>
+        <field name="arch" type="xml">
+            <search string="Medical Coverages">
+                <field name="internal_identifier"/>
+                <separator/>
+                <field name="name"/>
+                <separator/>
+                <field name="patient_id"/>
+                <separator/>
+                <field name="subscriber_id"/>
+                <separator/>
+                <field name="coverage_template_id"/>
+                <separator/>
+                <field name="state"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_coverage_action">
+        <field name="name">Coverages</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.coverage</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+</odoo>
