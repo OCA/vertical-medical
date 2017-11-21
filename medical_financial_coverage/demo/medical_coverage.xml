@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Creu Blanca
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo noupdate="1">
+
+    <!-- Payors -->
+    <record id="partner_payor_1" model="res.partner">
+        <field name="name">DKP</field>
+        <field name="street">Test St.</field>
+        <field name="city">Barcelona</field>
+        <field name="country_id" ref="base.es" />
+        <field name="phone">+34 93 769 51 44</field>
+        <field name="email">example@dkp.example.com</field>
+        <field name="is_payor" eval="True"/>
+        <field name="company_type">company</field>
+        <field name="is_medical" eval="True"/>
+    </record>
+
+    <record id="partner_payor_2" model="res.partner">
+        <field name="name">ADL</field>
+        <field name="street">Test 2 St.</field>
+        <field name="city">Barcelona</field>
+        <field name="country_id" ref="base.es" />
+        <field name="phone">+34 93 745 99 65</field>
+        <field name="email">example@adl.example.com</field>
+        <field name="is_payor" eval="True"/>
+        <field name="company_type">company</field>
+        <field name="is_medical" eval="True"/>
+    </record>
+
+    <!-- Coverage Template -->
+    <record id="medical_coverage_template_1" model="medical.coverage.template">
+        <field name="name">DKP Template</field>
+        <field name="payor_id" ref="medical_financial_coverage.partner_payor_1" />
+        <field name="state">active</field>
+    </record>
+
+    <record id="medical_coverage_template_2" model="medical.coverage.template">
+        <field name="name">ADL Template</field>
+        <field name="payor_id" ref="medical_financial_coverage.partner_payor_2" />
+        <field name="state">active</field>
+    </record>
+
+    <!-- Coverage -->
+    <record id="medical_coverage_1" model="medical.coverage">
+        <field name="name">DKP Coverage</field>
+        <field name="patient_id" ref="medical_administration.patient_02" />
+        <field name="coverage_template_id" ref="medical_financial_coverage.medical_coverage_template_1" />
+        <field name="state">active</field>
+    </record>
+
+    <record id="medical_coverage_2" model="medical.coverage">
+        <field name="name">ADL Coverage</field>
+        <field name="patient_id" ref="medical_administration.patient_02" />
+        <field name="coverage_template_id" ref="medical_financial_coverage.medical_coverage_template_2" />
+        <field name="state">active</field>
+    </record>
+
+</odoo>

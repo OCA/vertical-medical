@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <menuitem id="menu_medical_coverage_root"
+              name="Coverage"
+              sequence="10"
+              parent="medical_base.medical_root_financial"
+              action="medical_coverage_action"/>
+
+    <menuitem id="menu_medical_coverage_template_root"
+              name="Coverage Template"
+              sequence="20"
+              parent="medical_base.medical_root_financial"
+              action="medical_coverage_template_action"/>
+
+    <menuitem id="menu_medical_payor_root"
+              name="Payors"
+              sequence="40"
+              parent="medical_base.medical_root_financial"
+              action="medical_payor_action"/>
+
+</odoo>
