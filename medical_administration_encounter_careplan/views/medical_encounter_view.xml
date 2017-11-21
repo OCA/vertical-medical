@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="medical_encounter_view_form" model="ir.ui.view">
+        <field name="name">medical.encounter.view.form</field>
+        <field name="model">medical.encounter</field>
+        <field name="inherit_id" ref="medical_administration_encounter.medical_encounter_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button string="Care plans" type="object"
+                        name="action_view_careplans"
+                         class="oe_stat_button"  icon="fa-hospital-o"
+                        attrs="{'invisible': [('state','=','planned')]}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
