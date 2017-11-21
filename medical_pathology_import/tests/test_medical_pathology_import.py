@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016 LasLabs Inc.
+# Copyright 2016-2017 LasLabs Inc.
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html)
 
 import mock
@@ -24,14 +24,18 @@ class TestMedicaPathologyImport(TransactionCase):
 
     @mock.patch('%s.MedicalPathologyImport._get_importer_types' % MODULE_PATH)
     @mock.patch('%s.MedicalPathologyImport.do_import' % MODULE_PATH)
-    def create_record(self, do_import, _get_importer_types):
+    def create_record(self, do_import, _get_importer_types, no_import=False):
         self._get_importer_types = _get_importer_types
         self.do_import = do_import
         _get_importer_types.return_value = [('test', 'Test Type')]
-        return self.Model.create({
+        create_vals = {
             'code_type_id': self.code_type.id,
             'importer_type': 'test',
-        })
+        }
+
+        if no_import:
+            return self.Model.create(create_vals, no_import=no_import)
+        return self.Model.create(create_vals)
 
     def create_category(self, parent=None):
         return self.env['medical.pathology.category'].create({
@@ -90,10 +94,15 @@ class TestMedicaPathologyImport(TransactionCase):
         for key in vals.keys():
             self.assertFalse(record[key])
 
-    def test_create_calls_import(self):
-        """ It should call do_import on new record """
+    def test_create_no_flag(self):
+        """ It should call do_import on new record if no flag passed """
         self.create_record()
         self.do_import.assert_called_once_with()
+
+    def test_create_no_import_flag(self):
+        """ It should not call do_import on new record if no_import flag """
+        self.create_record(no_import=True)
+        self.do_import.assert_not_called()
 
     def test_create_returns_record(self):
         """ It should return newly created record """

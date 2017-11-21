@@ -56,10 +56,11 @@ class MedicalPathologyImport(models.TransientModel):
             self.file_name = False
 
     @api.model
-    def create(self, vals):
-        """ It begins import process after create """
+    def create(self, vals, no_import=False):
+        """ It begins import process after creation unless flag is passed """
         record = super(MedicalPathologyImport, self).create(vals)
-        record.do_import()
+        if not no_import:
+            record.do_import()
         return record
 
     @api.multi
@@ -91,17 +92,17 @@ class MedicalPathologyImport(models.TransientModel):
         """ It updates or creates a new Pathology for arguments.
 
         Args:
-            name: (str) Name of pathology to create.
-            code: (str) Code for pathology.
-            category: (medical.pathology.category) Singleton representing the
+            name (str): Name of pathology to create.
+            code (str): Code for pathology.
+            category (MedicalPathologyCategory): Singleton representing the
                 category for the new pathology.
-            code_type: (medical.pathology.code.type) Singleton representing
+            code_type (MedicalPathologyCodeType): Singleton representing
                 the code type of the pathology (ICD-10-CM).
-            id_pref: (str) External ID prefix for pathology
-            parent: (medical.pathology) Parent pathology.
-            note: (str) Pathology notes.
+            id_pref (str): External ID prefix for pathology
+            parent (MedicalPathology): Parent pathology.
+            note (str): Pathology notes.
         Returns:
-            (medical.pathology) Newly created Pathology.
+            MedicalPathology: Newly created Pathology.
         """
         vals = {
             'name': name,
@@ -128,15 +129,15 @@ class MedicalPathologyImport(models.TransientModel):
         """ It updates or creates a new Pathology Category for arguments.
 
         Args:
-            name: (str) Name of pathology category to create.
-            code_type: (medical.pathology.code.type) Singleton representing
+            name (str): Name of pathology category to create.
+            code_type (MedicalPathologyCodeType): Singleton representing
                 the code type of the pathology (ICD-10-CM).
-            ref: (str) External ID reference.
-            id_pref: (str) External ID prefix for category
-            parent: (medical.pathology.category) Parent category.
-            note: (str) Category notes.
+            ref (str): External ID reference.
+            id_pref (str): External ID prefix for category
+            parent (MedicalPathologyCategory): Parent category.
+            note (str): Category notes.
         Returns:
-            (medical.pathology.category) Newly created Pathology Category.
+            MedicalPathologyCategory: Newly created Pathology Category.
         """
         vals = {
             'name': name,
