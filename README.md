@@ -22,6 +22,7 @@ addon | version | summary
 [medical](medical/) | 10.0.1.0.2 | Odoo Medical
 [medical_agpl](medical_agpl/) | 10.0.1.0.0 | Odoo Medical - AGPL
 [medical_center](medical_center/) | 10.0.1.0.0 | Adds a concept of Medical Centers to Patients.
+[medical_pathology](medical_pathology/) | 10.0.1.0.0 | Extends Odoo Medical with pathologies (diseases).
 [medical_practitioner](medical_practitioner/) | 10.0.1.1.0 | Defines medical practioners
 
 
