@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+    Copyright 2017 Creu Blanca
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="location_patient" model="stock.location">
+        <field name="name">Patient location</field>
+        <field name="location_id" ref="stock.stock_location_locations_partner"/>
+        <field name="usage">customer</field>
+    </record>
+
+</odoo>
