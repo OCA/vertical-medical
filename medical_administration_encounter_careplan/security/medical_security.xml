@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="medical_administration_encounter.group_medical_encounter_display" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('medical_clinical_careplan.group_medical_careplan_display'))]"/>
+    </record>
+
+</odoo>
