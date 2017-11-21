@@ -34,10 +34,9 @@ class MedicalPathologyImport(models.TransientModel):
 
     @api.multi
     def _onchange_importer_type_icd10(self):
-        for record in self:
-            record.code_type_id = self.env.ref(self.ICD10_CODE)
-            record.file_name = self.ICD10_FILE_NAME
-            record.zip_uri = self.ICD10_URI
+        self.code_type_id = self.env.ref(self.ICD10_CODE)
+        self.file_name = self.ICD10_FILE_NAME
+        self.zip_uri = self.ICD10_URI
 
     @api.multi
     def do_import_icd10(self):

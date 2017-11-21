@@ -20,6 +20,10 @@ If necessary, you can manually trigger the import as follows:
 2. Select the ``ICD-10-CM`` importer type
 3. Click ``Save``
 
+This is a large dataset and can easily take a few minutes to import. If your
+Odoo instance times out during this process, you may need to increase the
+``limit_time_cpu`` and ``limit_time_real`` values in your config file.
+
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
    :target: https://runbot.odoo-community.org/runbot/159/10.0
