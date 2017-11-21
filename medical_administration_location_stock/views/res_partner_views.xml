@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Creu Blanca
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="res_partner_view_form" model="ir.ui.view">
+        <field name="name">res.partner.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="medical_administration_location.res_partner_view_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Location"
+                      groups="medical_administration_location_stock.group_medical_location_stock"
+                      name="stock_location"
+                      attrs="{'invisible': [('is_location', '=', False)]}"
+                >
+                    <group name="stock_location_group">
+                        <group>
+                            <field name="stock_location_id"/>
+                        </group>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</odoo>
