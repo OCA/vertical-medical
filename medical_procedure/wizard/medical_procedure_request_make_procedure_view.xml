@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+        <record id="medical_procedure_request_make_procedure_view"
+                model="ir.ui.view">
+            <field name="name">Procedure Request Make Procedure</field>
+            <field name="model">procedure.request.make.procedure</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Create Procedures" create="false">
+                    <separator
+                            string="Create Procedures
+                            from selected Procedure Requests"/>
+                    <newline/>
+                    <footer colspan="2">
+                        <button name="make_procedure"
+                                string="Create Procedure" type="object"
+                                class="oe_highlight"/>
+                        <button special="cancel" string="Cancel"
+                                class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="medical_procedure_request_make_procedure_action"
+                model="ir.actions.act_window">
+            <field name="name">Create Procedure</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">procedure.request.make.procedure</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id"
+                   ref="medical_procedure_request_make_procedure_view"/>
+            <field name="target">new</field>
+        </record>
+
+        <record model="ir.values" id="medical_procedure_request_make_procedure">
+            <field name="model_id"
+                   ref="model_procedure_request_make_procedure" />
+            <field name="name">Create Procedure</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value"
+                   eval="'ir.actions.act_window,' +
+                   str(ref
+                   ('medical_procedure_request_make_procedure_action'))" />
+            <field name="key">action</field>
+            <field name="model">medical.procedure.request</field>
+        </record>
+
+</odoo>

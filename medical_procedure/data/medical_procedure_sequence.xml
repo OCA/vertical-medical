@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+
+<odoo noupdate="1">
+
+    <record id="seq_medical_procedure" model="ir.sequence">
+        <field name="name">Medical Procedure</field>
+        <field name="code">medical.procedure</field>
+        <field name="prefix">P</field>
+        <field name="padding">8</field>
+    </record>
+
+</odoo>

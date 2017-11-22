@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="medical_procedure_request_view_tree" model="ir.ui.view">
+        <field name="name">medical.procedure.request.view.tree</field>
+        <field name="model">medical.procedure.request</field>
+        <field name="arch" type="xml">
+            <tree string="Medical Procedure Requests"
+                  colors="grey:state in ('cancelled');">
+                <field name="internal_identifier"/>
+                <field name="priority"/>
+                <field name="title"/>
+                <field name="center_id"/>
+                <field name="subject_id"/>
+                <field name="performer_id"/>
+                <field name="intent"/>
+                <field name="occurrence"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="medical_procedure_request_view_form" model="ir.ui.view">
+        <field name="name">medical.procedure.request.view.form</field>
+        <field name="model">medical.procedure.request</field>
+        <field name="arch" type="xml">
+            <form string="Medical Procedure Request">
+                <header>
+                    <button name="button_draft"
+                            states="active,suspended,completed,
+                            completed_and_invoiced,entered-in-error,unknown"
+                            string="Reset"
+                            type="object"/>
+                            <!--TODO groups=""-->
+                    <button name="button_active"
+                            states="draft,completed_and_invoiced,suspended"
+                            string="Active"
+                            type="object"/>
+                            <!--TODO groups=""-->
+                    <button name="button_suspended"
+                            states="active,entered-in-error,unknown"
+                            string="Suspend"
+                            type="object"/>
+                            <!--TODO groups=""-->
+                    <button name="button_completed"
+                            states="active,completed_and_invoiced,suspended,
+                            unknown"
+                            string="Completed"
+                            type="object"/>
+                            <!--TODO groups=""-->
+                    <button name="button_entered_in_error"
+                            states="active,suspended,completed,entered-in-error,
+                            unknown"
+                            string="Entered in Error"
+                            type="object"/>
+                            <!--TODO groups=""-->
+                    <button name="button_cancelled"
+                            states="active,suspended,unknown"
+                            string="Cancel"
+                            type="object"/>
+                            <!--TODO groups=""-->
+                    <field name="state"
+                           widget="statusbar"
+                           statusbar_visible="draft,active,suspended,completed,
+                           entered-in-error"/>
+                </header>
+                <sheet>
+                    <div name="button_box" class="oe_button_box">
+                        <button
+                            type="object"
+                            name="action_view_procedure"
+                            class="oe_stat_button"
+                            icon="fa-pencil-square-o"
+                            attrs="{'invisible':['|',
+                            ('state','in',('cancelled')),
+                            ('state','in',('completed'))]}">
+                            <field name="procedure_count" widget="statinfo"
+                                   string="Procedure"/>
+                            <field name='procedure_ids' invisible="1"/>
+                        </button>
+                    </div>
+                    <h1>
+                        <field name="internal_identifier"/>
+                    </h1>
+                    <h2>
+                        <field name="title"
+                               attrs="{'readonly':['|',
+                               ('state','in',('cancelled')),
+                               ('state','in',('completed'))]}"/>
+                    </h2>
+                    <group name="service">
+                        <field name="service_id"/>
+                        <field name="center_id"/>
+                    </group>
+                    <group name="pricelist">
+                    </group>
+                    <group name="priority" >
+                        <group>
+                            <field name="priority"
+                                   attrs="{'readonly':['|',
+                                   ('state','in',('cancelled')),
+                                   ('state','in',('completed'))]}"/>
+                        </group>
+                        <group>
+                            <field name="occurrence"
+                                   attrs="{'readonly':['|',
+                                   ('state','in',('cancelled')),
+                                   ('state','in',('completed'))]}"/>
+                        </group>
+                    </group>
+                    <group name="participants">
+                        <group>
+                            <field name="subject_id"
+                                   attrs="{'readonly':['|',
+                                   ('state','in',('cancelled')),
+                                   ('state','in',('completed'))]}"/>
+                        </group>
+                        <group>
+                            <field name="performer_id"
+                                   attrs="{'readonly':['|',
+                                   ('state','in',('cancelled')),
+                                   ('state','in',('completed'))]}"/>
+                        </group>
+                    </group>
+                    <group name="request">
+                        <group>
+                            <field name="requester"
+                                   attrs="{'readonly':['|',
+                                   ('state','in',('cancelled')),
+                                   ('state','in',('completed'))]}"/>
+                            <field name="request_group_active"
+                                   invisible="1"/>
+                            <field name="request_group_id"
+                                   attrs="{'readonly': ['|',
+                                   ('state','in',('cancelled')),
+                                   ('state','in',('completed'))],
+                                   'invisible': [('request_group_active', '!=', True)]}"/>
+                        </group>
+                        <group>
+                        <field name="intent"
+                               attrs="{'readonly':['|',
+                               ('state','in',('cancelled')),
+                               ('state','in',('completed'))]}"/>
+                        <field name="authored_on"
+                               attrs="{'readonly':['|',
+                               ('state','in',('cancelled')),
+                               ('state','in',('completed'))]}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Observations" name="description">
+                            <field name="observations" nolabel="1"/>
+                        </page>
+                        <page string="Related Procedures" name="procedure_ids">
+                            <field name="procedure_ids" nolabel="1"/>
+                        </page>
+                        <page string="Notes and Messages" name="messages">
+                            <div class="oe_chatter">
+                                <field name="message_follower_ids"
+                                       widget="mail_followers"/>
+                                <field name="message_ids" widget="mail_thread"/>
+                            </div>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_procedure_request_view_search" model="ir.ui.view">
+        <field name="name">medical.procedure.request.view.search</field>
+        <field name="model">medical.procedure.request</field>
+        <field name="arch" type="xml">
+            <search string="Medical Procedure Request">
+                <field name="internal_identifier"/>
+                <field name="subject_id"/>
+                <field name="title" />
+                <field name="state"/>
+                <field name="priority"/>
+                <field name="performer_id"/>
+                <field name="requester"/>
+                <field name="intent"/>
+                <field name="occurrence"/>
+                <field name="procedure_ids"/>
+                <newline />
+                <group expand="0" name="groupby" string="Group By...">
+                    <filter string="Patient"
+                            domain="[]"
+                            context="{'group_by':'subject_id'}" />
+                    <filter string="Performer"
+                            domain="[]"
+                            context="{'group_by':'performer_id'}" />
+                    <filter string="Priority"
+                            domain="[]"
+                            context="{'group_by':'priority'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_procedure_request_action">
+        <field name="name">Procedure Requests</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.procedure.request</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+</odoo>
