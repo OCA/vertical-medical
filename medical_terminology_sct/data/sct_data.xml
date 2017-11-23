@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="sct_138875005" model="medical.sct.concept">
+        <field name="code">138875005</field>
+        <field name="name">SNOMED CT Concept (SNOMED RT+CTV3)</field>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_123037004" model="medical.sct.concept">
+        <field name="code">123037004</field>
+        <field name="name">Body structure</field>
+        <field name="parent_ids" eval="[(4, ref('sct_138875005'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_404684003" model="medical.sct.concept">
+        <field name="code">404684003</field>
+        <field name="name">Clinical finding</field>
+        <field name="parent_ids" eval="[(4, ref('sct_138875005'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_272379006" model="medical.sct.concept">
+        <field name="code">272379006</field>
+        <field name="name">Event</field>
+        <field name="parent_ids" eval="[(4, ref('sct_138875005'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_363787002" model="medical.sct.concept">
+        <field name="code">363787002</field>
+        <field name="name">Observable entity</field>
+        <field name="parent_ids" eval="[(4, ref('sct_138875005'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_410607006" model="medical.sct.concept">
+        <field name="code">410607006</field>
+        <field name="name">Organism</field>
+        <field name="parent_ids" eval="[(4, ref('sct_138875005'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_373873005" model="medical.sct.concept">
+        <field name="code">373873005</field>
+        <field name="name">Pharmaceutical / biologic product</field>
+        <field name="parent_ids" eval="[(4, ref('sct_138875005'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_78621006" model="medical.sct.concept">
+        <field name="code">78621006</field>
+        <field name="name">Physical force</field>
+        <field name="parent_ids" eval="[(4, ref('sct_138875005'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_260787004" model="medical.sct.concept">
+        <field name="code">260787004</field>
+        <field name="name">Physical object</field>
+        <field name="parent_ids" eval="[(4, ref('sct_138875005'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_71388002" model="medical.sct.concept">
+        <field name="code">71388002</field>
+        <field name="name">Procedure</field>
+        <field name="parent_ids" eval="[(4, ref('sct_138875005'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_362981000" model="medical.sct.concept">
+        <field name="code">362981000</field>
+        <field name="name">Qualifier value</field>
+        <field name="parent_ids" eval="[(4, ref('sct_138875005'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_419891008" model="medical.sct.concept">
+        <field name="code">419891008</field>
+        <field name="name">Record artifact</field>
+        <field name="parent_ids" eval="[(4, ref('sct_138875005'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_243796009" model="medical.sct.concept">
+        <field name="code">243796009</field>
+        <field name="name">Situation with explicit context</field>
+        <field name="parent_ids" eval="[(4, ref('sct_138875005'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_48176007" model="medical.sct.concept">
+        <field name="code">48176007</field>
+        <field name="name">Social context</field>
+        <field name="parent_ids" eval="[(4, ref('sct_138875005'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_370115009" model="medical.sct.concept">
+        <field name="code">370115009</field>
+        <field name="name">Special concept</field>
+        <field name="parent_ids" eval="[(4, ref('sct_138875005'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_123038009" model="medical.sct.concept">
+        <field name="code">123038009</field>
+        <field name="name">Specimen</field>
+        <field name="parent_ids" eval="[(4, ref('sct_138875005'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_254291000" model="medical.sct.concept">
+        <field name="code">254291000</field>
+        <field name="name">Staging and scales</field>
+        <field name="parent_ids" eval="[(4, ref('sct_138875005'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+    <record id="sct_105590001" model="medical.sct.concept">
+        <field name="code">105590001</field>
+        <field name="name">Substance</field>
+        <field name="parent_ids" eval="[(4, ref('sct_138875005'))]"/>
+        <field name="editable" eval="False"/>
+    </record>
+
+</odoo>

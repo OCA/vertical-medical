@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+medical_sct_concept_display,medical_sct_concept_display,model_medical_sct_concept,group_medical_sct_concept_display,1,0,0,0
