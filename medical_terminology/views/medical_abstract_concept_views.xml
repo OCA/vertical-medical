@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record model="ir.ui.view" id="medical_abstract_concept_tree">
+        <field name="name">medical.abstract.concept.tree</field>
+        <field name="model">medical.abstract.concept</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="name"/>
+                <field name="definition"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_abstract_concept_uniparent_tree">
+        <field name="name">medical.abstract.concept.uniparent.tree</field>
+        <field name="model">medical.abstract.concept.uniparent</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="medical_abstract_concept_tree"/>
+        <field name="arch" type="xml">
+            <field name="definition" position="after">
+                <field name="parent_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_abstract_concept_form">
+        <field name="name">medical.abstract.concept.form</field>
+        <field name="model">medical.abstract.concept</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="editable" invisible="1"/>
+                        <field name="code"
+                               attrs="{'readonly': [('editable', '=', False)]}"/>
+                        <field name="name"
+                               attrs="{'readonly': [('editable', '=', False)]}"/>
+                        <field name="definition"
+                               attrs="{'readonly': [('editable', '=', False)]}"/>
+                    </group>
+                    <notebook/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_abstract_concept_uniparent_form">
+        <field name="name">medical.abstract.concept.uniparent.form</field>
+        <field name="model">medical.abstract.concept.uniparent</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="medical_abstract_concept_form"/>
+        <field name="arch" type="xml">
+            <field name="definition" position="after">
+                <field name="parent_id"
+                       attrs="{'readonly': [('editable', '=', False)]}"/>
+            </field>
+            <notebook position="inside">
+                <page string="Direct childs">
+                    <field name="child_ids"
+                           attrs="{'readonly': [('editable', '=', False)]}"/>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_abstract_concept_multiparent_form">
+        <field name="name">medical.abstract.concept.multiparent.form</field>
+        <field name="model">medical.abstract.concept.multiparent</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="medical_abstract_concept_form"/>
+        <field name="arch" type="xml">
+            <field name="definition" position="after">
+                <field name="parent_ids"
+                       widget="many2many_tags"
+                       attrs="{'readonly': [('editable', '=', False)]}"/>
+            </field>
+            <notebook position="inside">
+                <page string="Direct childs">
+                    <field name="child_ids"
+                           attrs="{'readonly': [('editable', '=', False)]}"/>
+                </page>
+                <page string="Full childs">
+                    <field name="full_child_ids" readonly="1"/>
+                </page>
+                <page string="Full parents">
+                    <field name="full_parent_ids" readonly="1"/>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_abstract_concept_filter">
+        <field name="name">medical.abstract.concept.filter</field>
+        <field name="model">medical.abstract.concept</field>
+        <field name="arch" type="xml">
+            <search string="Search">
+                <field name="code"/>
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+</odoo>
