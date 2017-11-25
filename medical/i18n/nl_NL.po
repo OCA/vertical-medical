@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-08 02:47+0000\n"
-"PO-Revision-Date: 2017-07-08 02:47+0000\n"
+"POT-Creation-Date: 2017-11-23 03:47+0000\n"
+"PO-Revision-Date: 2017-11-23 03:47+0000\n"
 "Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
 "Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/teams/23907/nl_NL/)\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: medical
-#: code:addons/medical/models/medical_patient.py:70
+#: code:addons/medical/models/medical_patient.py:67
 #, python-format
 msgid " (deceased)"
 msgstr ""
@@ -124,13 +124,13 @@ msgstr "Kanalen"
 #: model:ir.model.fields,help:medical.field_medical_abstract_entity_is_company
 #: model:ir.model.fields,help:medical.field_medical_patient_is_company
 msgid "Check if the contact is a company, otherwise it is a person"
-msgstr ""
+msgstr "Controleren of de relatie een bedrijf is, anders is het een persoon"
 
 #. module: medical
 #: model:ir.model.fields,help:medical.field_medical_abstract_entity_customer
 #: model:ir.model.fields,help:medical.field_medical_patient_customer
 msgid "Check this box if this contact is a customer."
-msgstr ""
+msgstr "Dit vakje aanvinken indien de relatie een klant is."
 
 #. module: medical
 #: model:ir.model.fields,help:medical.field_medical_abstract_entity_supplier
@@ -139,6 +139,8 @@ msgid ""
 "Check this box if this contact is a vendor. If it's not checked, purchase "
 "people will not see it when encoding a purchase order."
 msgstr ""
+"Dit vakje aanvinken indien deze relatie een leverancier is. Als het niet "
+"aangevinkt is, zullen inkopers het niet zien bij het aanmaken van"
 
 #. module: medical
 #: model:ir.model.fields,help:medical.field_medical_abstract_entity_employee
@@ -334,7 +336,7 @@ msgstr "E-mail"
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_notify_email
 #: model:ir.model.fields,field_description:medical.field_medical_patient_notify_email
 msgid "Email Messages and Notifications"
-msgstr ""
+msgstr "E-mail berichten en meldingen"
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_employee
@@ -363,7 +365,7 @@ msgstr "Voornaam"
 #: model:ir.model.fields,help:medical.field_medical_abstract_entity_email_formatted
 #: model:ir.model.fields,help:medical.field_medical_patient_email_formatted
 msgid "Format email address \"Name <email@domain>\""
-msgstr ""
+msgstr "Formaat e-mailadres \"Naam <email@domein>\""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_email_formatted
@@ -453,13 +455,13 @@ msgid "Internal Reference"
 msgstr ""
 
 #. module: medical
-#: code:addons/medical/models/medical_patient.py:122
+#: code:addons/medical/models/medical_patient.py:119
 #, python-format
 msgid "Invalid operator: %s"
 msgstr ""
 
 #. module: medical
-#: code:addons/medical/models/medical_patient.py:96
+#: code:addons/medical/models/medical_patient.py:93
 #, python-format
 msgid "Invalid selection - Only a `Female` may be pregnant."
 msgstr ""
@@ -609,10 +611,10 @@ msgstr "Mobiel:"
 #: model:ir.model.fields,field_description:medical.field_medical_patient_name
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 #. module: medical
-#: code:addons/medical/models/medical_patient.py:80
+#: code:addons/medical/models/medical_patient.py:77
 #, python-format
 msgid "No DoB"
 msgstr ""
@@ -646,7 +648,7 @@ msgid "Partner"
 msgstr ""
 
 #. module: medical
-#: code:addons/medical/models/res_partner.py:73
+#: code:addons/medical/models/res_partner.py:72
 #, python-format
 msgid "Partners cannot be born in the future."
 msgstr ""

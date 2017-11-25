@@ -3,20 +3,20 @@
 # * medical_base_us
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
+# leemannd <denis.leemann@camptocamp.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-23 03:47+0000\n"
 "PO-Revision-Date: 2017-11-23 03:47+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Spanish (Colombia) (https://www.transifex.com/oca/teams/23907/es_CO/)\n"
+"Last-Translator: leemannd <denis.leemann@camptocamp.com>, 2017\n"
+"Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es_CO\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: medical_base_us
 #: model:res.partner.id_category,name:medical_base_us.res_partner_id_category_dea
@@ -28,7 +28,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical_base_us.field_medical_abstract_luhn_display_name
 #: model:ir.model.fields,field_description:medical_base_us.field_medical_abstract_npi_display_name
 msgid "Display Name"
-msgstr "Mostrar Nombre"
+msgstr "Nom affiché"
 
 #. module: medical_base_us
 #: model:ir.model.fields,field_description:medical_base_us.field_medical_abstract_dea_id
@@ -43,14 +43,14 @@ msgstr "ID"
 #: code:addons/medical_base_us/models/medical_abstract_npi.py:57
 #, python-format
 msgid "Invalid %s was supplied."
-msgstr "No válido %s suministrado."
+msgstr ""
 
 #. module: medical_base_us
 #: model:ir.model.fields,field_description:medical_base_us.field_medical_abstract_dea___last_update
 #: model:ir.model.fields,field_description:medical_base_us.field_medical_abstract_luhn___last_update
 #: model:ir.model.fields,field_description:medical_base_us.field_medical_abstract_npi___last_update
 msgid "Last Modified on"
-msgstr "Última Modificación en"
+msgstr "Dernière modification le"
 
 #. module: medical_base_us
 #: model:res.partner.id_category,name:medical_base_us.res_partner_id_category_medicaid
@@ -60,12 +60,12 @@ msgstr ""
 #. module: medical_base_us
 #: model:ir.model,name:medical_base_us.model_medical_abstract_luhn
 msgid "Medical Abstract Luhn"
-msgstr "Luhn Médico Abstracto"
+msgstr ""
 
 #. module: medical_base_us
 #: model:ir.model,name:medical_base_us.model_medical_abstract_npi
 msgid "Medical Abstract NPI"
-msgstr "NPI Médico Abstracto"
+msgstr ""
 
 #. module: medical_base_us
 #: model:res.partner.id_category,name:medical_base_us.res_partner_id_category_medicare
@@ -95,4 +95,4 @@ msgstr ""
 #. module: medical_base_us
 #: model:ir.model,name:medical_base_us.model_medical_abstract_dea
 msgid "medical.abstract.dea"
-msgstr "DEA Médico Abstracto"
+msgstr ""

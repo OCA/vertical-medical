@@ -3,20 +3,20 @@
 # * medical_pathology
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
+# leemannd <denis.leemann@camptocamp.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-23 03:47+0000\n"
 "PO-Revision-Date: 2017-11-23 03:47+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Spanish (Colombia) (https://www.transifex.com/oca/teams/23907/es_CO/)\n"
+"Last-Translator: leemannd <denis.leemann@camptocamp.com>, 2017\n"
+"Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es_CO\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: medical_pathology
 #: model:medical.pathology,notes:medical_pathology.medical_pathology_medical_pathology_A00_0
@@ -45,17 +45,17 @@ msgstr ""
 #. module: medical_pathology
 #: model:ir.ui.view,arch_db:medical_pathology.medical_pathology_view_search
 msgid "Category"
-msgstr "Categoría"
+msgstr ""
 
 #. module: medical_pathology
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_category_id
 msgid "Category of Pathology"
-msgstr "Categoría de la Patología"
+msgstr ""
 
 #. module: medical_pathology
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_category_child_ids
 msgid "Children Categories"
-msgstr "Categorías Hijas"
+msgstr ""
 
 #. module: medical_pathology
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_child_ids
@@ -65,12 +65,12 @@ msgstr ""
 #. module: medical_pathology
 #: model:medical.pathology.category,name:medical_pathology.medical_pathology_category_1
 msgid "Clinical Pathology"
-msgstr "Patología Clínica"
+msgstr ""
 
 #. module: medical_pathology
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_code
 msgid "Code"
-msgstr "Código"
+msgstr ""
 
 #. module: medical_pathology
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_category_code_type_id
@@ -78,39 +78,39 @@ msgstr "Código"
 #: model:ir.ui.view,arch_db:medical_pathology.medical_pathology_category_view_search
 #: model:ir.ui.view,arch_db:medical_pathology.medical_pathology_view_search
 msgid "Code Type"
-msgstr "Tipo de Código"
+msgstr ""
 
 #. module: medical_pathology
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_category_create_uid
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_code_type_create_uid
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr "Créé par"
 
 #. module: medical_pathology
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_category_create_date
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_code_type_create_date
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_create_date
 msgid "Created on"
-msgstr "Creado en"
+msgstr "Créé le"
 
 #. module: medical_pathology
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_category_display_name
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_code_type_display_name
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_display_name
 msgid "Display Name"
-msgstr "Mostrar Nombre"
+msgstr "Nom affiché"
 
 #. module: medical_pathology
 #: model:ir.ui.view,arch_db:medical_pathology.medical_pathology_category_view_search
 #: model:ir.ui.view,arch_db:medical_pathology.medical_pathology_view_search
 msgid "Group By..."
-msgstr "Agrupar Por..."
+msgstr ""
 
 #. module: medical_pathology
 #: model:medical.pathology,name:medical_pathology.medical_pathology_medical_pathology_1
 msgid "HIV/AIDS"
-msgstr "VIH/SIDA"
+msgstr ""
 
 #. module: medical_pathology
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_category_id_2761
@@ -122,33 +122,33 @@ msgstr "ID"
 #. module: medical_pathology
 #: model:medical.pathology.category,name:medical_pathology.medical_pathology_category_3
 msgid "Infectious Diseases"
-msgstr "Enfermedades Infecciosas"
+msgstr ""
 
 #. module: medical_pathology
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology___last_update
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_category___last_update
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_code_type___last_update
 msgid "Last Modified on"
-msgstr "Última Modificación en"
+msgstr "Dernière modification le"
 
 #. module: medical_pathology
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_category_write_uid
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_code_type_write_uid
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_write_uid
 msgid "Last Updated by"
-msgstr "Última Actualización por"
+msgstr "D"
 
 #. module: medical_pathology
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_category_write_date
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_code_type_write_date
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_write_date
 msgid "Last Updated on"
-msgstr "Última Actualización en"
+msgstr ""
 
 #. module: medical_pathology
 #: model:medical.pathology,name:medical_pathology.medical_pathology_medical_pathology_2
 msgid "Malaria"
-msgstr "Malaria"
+msgstr ""
 
 #. module: medical_pathology
 #: model:ir.model,name:medical_pathology.model_medical_pathology
@@ -156,7 +156,7 @@ msgstr "Malaria"
 #: model:ir.ui.view,arch_db:medical_pathology.medical_pathology_view_search
 #: model:ir.ui.view,arch_db:medical_pathology.medical_pathology_view_tree
 msgid "Medical Pathology"
-msgstr "Patología Médica"
+msgstr ""
 
 #. module: medical_pathology
 #: model:ir.model,name:medical_pathology.model_medical_pathology_category
@@ -164,17 +164,17 @@ msgstr "Patología Médica"
 #: model:ir.ui.view,arch_db:medical_pathology.medical_pathology_category_view_search
 #: model:ir.ui.view,arch_db:medical_pathology.medical_pathology_category_view_tree
 msgid "Medical Pathology Category"
-msgstr "Categoría de Patología Médica"
+msgstr ""
 
 #. module: medical_pathology
 #: model:ir.model,name:medical_pathology.model_medical_pathology_code_type
 msgid "Medical Pathology Code Type"
-msgstr "Tipo de Código de la Patología Médica"
+msgstr ""
 
 #. module: medical_pathology
 #: model:medical.pathology.category,name:medical_pathology.medical_pathology_category_2
 msgid "Microbiology"
-msgstr "Microbiología"
+msgstr ""
 
 #. module: medical_pathology
 #: model:ir.ui.view,arch_db:medical_pathology.medical_pathology_view_form
@@ -186,25 +186,25 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_code_type_name
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_name
 msgid "Name"
-msgstr "Nombre"
+msgstr "Nom"
 
 #. module: medical_pathology
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_category_notes
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_notes
 #: model:ir.ui.view,arch_db:medical_pathology.medical_pathology_view_form
 msgid "Notes"
-msgstr "Notas"
+msgstr "Notes"
 
 #. module: medical_pathology
 #: model:medical.pathology.category,name:medical_pathology.medical_pathology_category_5
 msgid "Parasitic Diseases"
-msgstr "Enfermedades Parasitarias"
+msgstr ""
 
 #. module: medical_pathology
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_category_parent_id
 #: model:ir.ui.view,arch_db:medical_pathology.medical_pathology_category_view_search
 msgid "Parent Category"
-msgstr "Categoría Padre"
+msgstr ""
 
 #. module: medical_pathology
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_parent_id
@@ -215,7 +215,7 @@ msgstr ""
 #: model:ir.actions.act_window,name:medical_pathology.medical_pathology_action
 #: model:ir.ui.menu,name:medical_pathology.medical_pathology
 msgid "Pathologies"
-msgstr "Patologías"
+msgstr ""
 
 #. module: medical_pathology
 #: model:ir.ui.menu,name:medical_pathology.medical_root_pathology
@@ -226,7 +226,7 @@ msgstr ""
 #: model:ir.actions.act_window,name:medical_pathology.medical_pathology_category_action
 #: model:ir.ui.menu,name:medical_pathology.medical_pathology_category
 msgid "Pathology Categories"
-msgstr "Categorías de Patologías"
+msgstr ""
 
 #. module: medical_pathology
 #: sql_constraint:medical.pathology:0
@@ -236,12 +236,12 @@ msgstr ""
 #. module: medical_pathology
 #: model:medical.pathology.category,name:medical_pathology.medical_pathology_category_6
 msgid "Protozoal Diseases"
-msgstr "Enfermedades Protozoarias"
+msgstr ""
 
 #. module: medical_pathology
 #: model:medical.pathology.category,name:medical_pathology.medical_pathology_category_4
 msgid "STIs & STDs"
-msgstr "Enfermedades/Infecciones Transmitidas Sexualmente"
+msgstr ""
 
 #. module: medical_pathology
 #: model:medical.pathology.category,notes:medical_pathology.medical_pathology_category_7
