@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
-	<data>
+    <data>
 
         <menuitem id="medical_conf_insurance_menu"
-				  name="Insurance" 
-                  parent="medical.medical_root_misc"
-				  sequence="20" />
+                  name="Insurance" 
+                  parent="medical.medical_root_sub"
+                  sequence="20" />
 
-		<menuitem id="medical_insurance_company_menu"
-				  name="Insurance Providers" 
-				  parent="medical_conf_insurance_menu"
+        <menuitem id="medical_insurance_company_menu"
+                  name="Insurance Providers" 
+                  parent="medical_conf_insurance_menu"
                   action="medical_insurance_company_action"
-				  sequence="10" />
+                  sequence="10" />
 
-		<menuitem id="medical_insurance_plan_menu"
-				  name="Insurance Plans"
-			      parent="medical_conf_insurance_menu"
-			      action="medical_insurance_plan_action"
-				  sequence="20" />
-		
-		<menuitem id="medical_insurance_template_menu"
-				  name="Insurance Plan Templates"
-			      parent="medical_conf_insurance_menu"
-			      action="medical_insurance_template_action"
-				  sequence="30" />
+        <menuitem id="medical_insurance_plan_menu"
+                  name="Insurance Plans"
+                  parent="medical_conf_insurance_menu"
+                  action="medical_insurance_plan_action"
+                  sequence="20" />
+        
+        <menuitem id="medical_insurance_template_menu"
+                  name="Insurance Plan Templates"
+                  parent="medical_conf_insurance_menu"
+                  action="medical_insurance_template_action"
+                  sequence="30" />
 
-	</data>
+    </data>
 </openerp>
