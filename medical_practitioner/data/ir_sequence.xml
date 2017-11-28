@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 LasLabs Inc.
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl) -->
+
+<odoo noupdate="1">
+    <record id="ir_sequence_medical_practitioner_code" model="ir.sequence">
+        <field name="name">Medical Practitioner - Code</field>
+        <field name="code">medical.practitioner.code</field>
+        <field name="prefix">MP</field>
+        <field name="padding">6</field>
+    </record>
+</odoo>

@@ -123,6 +123,7 @@
                                        attrs="{'invisible': [('is_company', '=', True)]}"
                                 />
                                 <field name="lang" />
+                                <field name="gender" attrs="{'invisible': [('is_company', '=', True)]}"/>
                             </group>
                         </group>
                         <group name="main_data">

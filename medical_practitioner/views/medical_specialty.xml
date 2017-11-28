@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Copyright 2014-2017 LasLabs Inc.
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html) -->
+
+<odoo>
+    <record id="medical_specialty_view_form" model="ir.ui.view">
+        <field name="name">medical.specialty.form</field>
+        <field name="model">medical.specialty</field>
+        <field name="arch" type="xml">
+            <form string="Medical Specialty">
+                <sheet>
+                    <group>
+                        <field name="code"/>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_specialty_view_tree" model="ir.ui.view">
+        <field name="name">medical.specialty.tree</field>
+        <field name="model">medical.specialty</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="medical_specialty_view_search" model="ir.ui.view">
+        <field name="name">medical.specialty.search</field>
+        <field name="model">medical.specialty</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="code"/>
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="medical_specialty_action" model="ir.actions.act_window">
+        <field name="name">Specialties</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.specialty</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="medical_specialty_menu"
+              name="Specialties"
+              parent="medical_conf_practitioner_menu"
+              action="medical_specialty_action"
+              sequence="30"/>
+</odoo>

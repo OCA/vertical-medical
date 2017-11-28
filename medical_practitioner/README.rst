@@ -62,6 +62,7 @@ Images
 
 * Odoo Community Association:
   `Icon <https://github.com/OCA/maintainer-tools/blob/master/template/module/static/description/icon.svg>`_.
+* Icons Land: `Practitioner Avatars <http://www.icons-land.com/>`_.
 
 
 Contributors
@@ -73,6 +74,7 @@ Contributors
 * Enric Tobella <etobella@creublanca.es>
 * Roser Garcia <roser.garcia@eficent.com>
 * Gisela Mora <gisela.mora@eficent.com>
+* Oleg Bulkin <obulkin@laslabs.com>
 
 
 Maintainer

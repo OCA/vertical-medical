@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!--
-    Copyright 2017 LasLabs Inc.
-    Copyright 2017 Creu Blanca
-    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
-    License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
--->
+<!-- Copyright 2017 LasLabs Inc.
+     Copyright 2017 Creu Blanca
+     Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html) -->
 
 <odoo>
-
     <record id="medical_practitioner_view_form" model="ir.ui.view">
         <field name="name">medical.practitioner.view.form</field>
         <field name="model">medical.practitioner</field>
         <field name="inherit_id" ref="medical.medical_abstract_entity_view_form"/>
         <field name="mode">primary</field>
         <field name="arch" type="xml">
-            <header>
-            </header>
             <xpath expr="//form" position="attributes">
                 <attribute name="string">Practitioner</attribute>
             </xpath>
@@ -33,6 +28,14 @@
                            options="{'no_create_edit': True}"/>
                 </h3>
             </xpath>
+            <xpath expr="//group[@name='main_data']/group[@name='left']" position="inside">
+                <field name="code"/>
+            </xpath>
+            <xpath expr="//group[@name='main_data']" position="after">
+                <group name="main_data_wide">
+                    <field name="specialty_ids"/>
+                </group>
+            </xpath>
         </field>
     </record>
 
@@ -44,6 +47,9 @@
         <field name="arch" type="xml">
             <xpath expr="//tree" position="attributes">
                 <attribute name="string">Practitioners</attribute>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="code"/>
             </xpath>
         </field>
     </record>
@@ -70,7 +76,8 @@
                 <attribute name="string">Practitioners</attribute>
             </xpath>
             <xpath expr="//field[@name='category_id']" position="after">
-                <field name="name"/>
+                <field name="code"/>
+                <field name="specialty_ids"/>
             </xpath>
             <xpath expr="//filter" position="after">
                 <filter string="Company"
@@ -102,5 +109,4 @@
         />
         <field name="context">{'default_company_type':'person', 'default_is_company':False}</field>
     </record>
-
 </odoo>
