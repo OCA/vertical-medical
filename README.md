@@ -23,9 +23,10 @@ addon | version | summary
 [medical_agpl](medical_agpl/) | 10.0.1.0.0 | Odoo Medical - AGPL
 [medical_base_us](medical_base_us/) | 10.0.1.0.0 | Provides some helper mixins for US locale
 [medical_center](medical_center/) | 10.0.1.0.0 | Adds a concept of Medical Centers to Patients.
+[medical_insurance](medical_insurance/) | 10.0.1.0.0 | Medical Insurance
 [medical_pathology](medical_pathology/) | 10.0.1.0.0 | Extends Odoo Medical with pathologies (diseases).
 [medical_pathology_import](medical_pathology_import/) | 10.0.1.0.0 | Provides an interface for medical pathology data imports
-[medical_practitioner](medical_practitioner/) | 10.0.1.1.0 | Defines medical practioners
+[medical_practitioner](medical_practitioner/) | 10.0.1.2.0 | Defines medical practioners
 
 
 Unported addons
@@ -33,7 +34,6 @@ Unported addons
 addon | version | summary
 --- | --- | ---
 [medical_disease](medical_disease/) | 8.0.1.1.0 (unported) | Introduce disease notion into the medical category
-[medical_insurance](medical_insurance/) | 8.0.1.1.0 (unported) | Medical Insurance
 [medical_insurance_us](medical_insurance_us/) | 8.0.1.1.0 (unported) | Medical Insurance - US
 [medical_medicament](medical_medicament/) | 8.0.1.0.0 (unported) | Introduce Medicament notion into the medical product
 [medical_medicament_attributes](medical_medicament_attributes/) | 8.0.1.0.0 (unported) | Medical Medicament Physical Attributes
