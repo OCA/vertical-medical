@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-23 03:47+0000\n"
-"PO-Revision-Date: 2017-11-23 03:47+0000\n"
+"POT-Creation-Date: 2017-11-29 03:47+0000\n"
+"PO-Revision-Date: 2017-11-29 03:47+0000\n"
 "Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
 "Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/teams/23907/nl_NL/)\n"
 "MIME-Version: 1.0\n"
@@ -85,6 +85,16 @@ msgid "City"
 msgstr "Plaats"
 
 #. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_specialty_code
+msgid "Code"
+msgstr ""
+
+#. module: medical_practitioner
+#: sql_constraint:medical.specialty:0
+msgid "Code must be unique!"
+msgstr ""
+
+#. module: medical_practitioner
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_color
 msgid "Color Index"
 msgstr "Kleurindex"
@@ -148,12 +158,14 @@ msgstr "Land"
 #. module: medical_practitioner
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_create_uid
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_role_create_uid
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_specialty_create_uid
 msgid "Created by"
 msgstr "Aangemaakt door"
 
 #. module: medical_practitioner
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_create_date
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_role_create_date
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_specialty_create_date
 msgid "Created on"
 msgstr "Aangemaakt op"
 
@@ -175,6 +187,7 @@ msgstr ""
 #. module: medical_practitioner
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_display_name
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_role_display_name
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_specialty_display_name
 msgid "Display Name"
 msgstr "Weergavenaam"
 
@@ -239,6 +252,7 @@ msgstr "Geslacht"
 #. module: medical_practitioner
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_id
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_role_id
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_specialty_id
 msgid "ID"
 msgstr "ID"
 
@@ -285,6 +299,16 @@ msgid "Internal Entity"
 msgstr ""
 
 #. module: medical_practitioner
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_code
+msgid "Internal ID"
+msgstr ""
+
+#. module: medical_practitioner
+#: sql_constraint:medical.practitioner:0
+msgid "Internal ID must be unique"
+msgstr ""
+
+#. module: medical_practitioner
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_ref
 msgid "Internal Reference"
 msgstr ""
@@ -317,18 +341,21 @@ msgstr "Taal"
 #. module: medical_practitioner
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner___last_update
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_role___last_update
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_specialty___last_update
 msgid "Last Modified on"
 msgstr "Laatst gewijzigd op"
 
 #. module: medical_practitioner
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_write_uid
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_role_write_uid
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_specialty_write_uid
 msgid "Last Updated by"
 msgstr "Laatst aangepast door"
 
 #. module: medical_practitioner
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_write_date
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_role_write_date
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_specialty_write_date
 msgid "Last Updated on"
 msgstr "Laatst aangepast op"
 
@@ -340,6 +367,12 @@ msgstr "Achternaam"
 #. module: medical_practitioner
 #: model:ir.model,name:medical_practitioner.model_medical_practitioner
 msgid "Medical Practitioner"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model,name:medical_practitioner.model_medical_specialty
+#: model:ir.ui.view,arch_db:medical_practitioner.medical_specialty_view_form
+msgid "Medical Specialty"
 msgstr ""
 
 #. module: medical_practitioner
@@ -363,8 +396,19 @@ msgstr "Mobiel"
 #. module: medical_practitioner
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_name
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_role_name
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_specialty_name
 msgid "Name"
 msgstr "Naam"
+
+#. module: medical_practitioner
+#: sql_constraint:medical.specialty:0
+msgid "Name must be unique!"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_specialty_name
+msgid "Name of the specialty"
+msgstr ""
 
 #. module: medical_practitioner
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_comment
@@ -512,6 +556,18 @@ msgid ""
 msgstr ""
 
 #. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_specialty_code
+msgid "Speciality code"
+msgstr ""
+
+#. module: medical_practitioner
+#: model:ir.actions.act_window,name:medical_practitioner.medical_specialty_action
+#: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_specialty_ids
+#: model:ir.ui.menu,name:medical_practitioner.medical_specialty_menu
+msgid "Specialties"
+msgstr ""
+
+#. module: medical_practitioner
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_state_id
 #: model:ir.ui.view,arch_db:medical_practitioner.medical_practitioner_view_search
 msgid "State"
@@ -588,6 +644,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_title
 msgid "Title"
 msgstr "Titel"
+
+#. module: medical_practitioner
+#: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_code
+msgid "Unique ID for this physician"
+msgstr ""
 
 #. module: medical_practitioner
 #: model:ir.model.fields,field_description:medical_practitioner.field_medical_practitioner_user_ids

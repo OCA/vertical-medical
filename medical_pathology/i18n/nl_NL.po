@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-23 03:47+0000\n"
-"PO-Revision-Date: 2017-11-23 03:47+0000\n"
+"POT-Creation-Date: 2017-11-29 03:47+0000\n"
+"PO-Revision-Date: 2017-11-29 03:47+0000\n"
 "Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
 "Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/teams/23907/nl_NL/)\n"
 "MIME-Version: 1.0\n"
@@ -113,8 +113,8 @@ msgid "HIV/AIDS"
 msgstr "HIV/AIDS"
 
 #. module: medical_pathology
-#: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_category_id_2761
-#: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_code_type_id_2769
+#: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_category_id_2939
+#: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_code_type_id_2947
 #: model:ir.model.fields,field_description:medical_pathology.field_medical_pathology_id
 msgid "ID"
 msgstr "ID"

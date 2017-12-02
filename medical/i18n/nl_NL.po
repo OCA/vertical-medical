@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-23 03:47+0000\n"
-"PO-Revision-Date: 2017-11-23 03:47+0000\n"
+"POT-Creation-Date: 2017-11-29 03:47+0000\n"
+"PO-Revision-Date: 2017-11-29 03:47+0000\n"
 "Last-Translator: Peter Hageman <hageman.p@gmail.com>, 2017\n"
 "Language-Team: Dutch (Netherlands) (https://www.transifex.com/oca/teams/23907/nl_NL/)\n"
 "MIME-Version: 1.0\n"
@@ -42,6 +42,7 @@ msgstr ""
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_active
 #: model:ir.model.fields,field_description:medical.field_medical_center_active
+#: model:ir.model.fields,field_description:medical.field_medical_insurance_company_active
 #: model:ir.model.fields,field_description:medical.field_medical_patient_active
 #: model:ir.model.fields,field_description:medical.field_medical_practitioner_active
 msgid "Active"
@@ -55,6 +56,7 @@ msgstr "Adres"
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_type
 #: model:ir.model.fields,field_description:medical.field_medical_center_type
+#: model:ir.model.fields,field_description:medical.field_medical_insurance_company_type
 #: model:ir.model.fields,field_description:medical.field_medical_patient_type
 #: model:ir.model.fields,field_description:medical.field_medical_practitioner_type
 msgid "Address Type"
@@ -292,6 +294,11 @@ msgid "Date"
 msgstr "Datum"
 
 #. module: medical
+#: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_search
+msgid "Deactivated"
+msgstr ""
+
+#. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_patient_date_death
 msgid "Deceased Date"
 msgstr ""
@@ -405,6 +412,12 @@ msgstr "ID & Notities"
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_im_status
 #: model:ir.model.fields,field_description:medical.field_medical_patient_im_status
 msgid "IM Status"
+msgstr ""
+
+#. module: medical
+#: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_id_numbers
+#: model:ir.model.fields,field_description:medical.field_medical_patient_id_numbers
+msgid "Identification Numbers"
 msgstr ""
 
 #. module: medical
@@ -648,7 +661,7 @@ msgid "Partner"
 msgstr ""
 
 #. module: medical
-#: code:addons/medical/models/res_partner.py:72
+#: code:addons/medical/models/res_partner.py:73
 #, python-format
 msgid "Partners cannot be born in the future."
 msgstr ""
@@ -704,6 +717,7 @@ msgstr ""
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_partner_id
 #: model:ir.model.fields,field_description:medical.field_medical_center_partner_id
+#: model:ir.model.fields,field_description:medical.field_medical_insurance_company_partner_id
 #: model:ir.model.fields,field_description:medical.field_medical_patient_partner_id
 #: model:ir.model.fields,field_description:medical.field_medical_practitioner_partner_id
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_search
@@ -927,6 +941,7 @@ msgstr ""
 #. module: medical
 #: model:ir.model.fields,help:medical.field_medical_abstract_entity_type
 #: model:ir.model.fields,help:medical.field_medical_center_type
+#: model:ir.model.fields,help:medical.field_medical_insurance_company_type
 #: model:ir.model.fields,help:medical.field_medical_patient_type
 #: model:ir.model.fields,help:medical.field_medical_practitioner_type
 msgid ""
@@ -960,16 +975,12 @@ msgstr ""
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_weight
 #: model:ir.model.fields,field_description:medical.field_medical_patient_weight
-#: model:ir.model.fields,field_description:medical.field_res_partner_weight
-#: model:ir.model.fields,field_description:medical.field_res_users_weight
 msgid "Weight"
 msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_weight_uom
 #: model:ir.model.fields,field_description:medical.field_medical_patient_weight_uom
-#: model:ir.model.fields,field_description:medical.field_res_partner_weight_uom
-#: model:ir.model.fields,field_description:medical.field_res_users_weight_uom
 msgid "Weight UoM"
 msgstr ""
 
