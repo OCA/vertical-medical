@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="group_medical_specialty_display" model="res.groups">
+        <field name="name">Specialty Display</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <record id="group_medical_specialty_manager" model="res.groups">
+        <field name="name">Specialty Manager</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <record id="medical_administration_practitioner.group_medical_practitioner_display" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('medical_administration_practitioner_specialty.group_medical_specialty_display'))]"/>
+    </record>
+
+    <record id="medical_administration_practitioner.group_medical_practitioner_manager" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('medical_administration_practitioner_specialty.group_medical_specialty_manager'))]"/>
+    </record>
+
+</odoo>
