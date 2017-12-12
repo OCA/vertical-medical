@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Copyright 2014-2017 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html) -->
+
+<odoo>
+    <record id="medical_practitioner_view_form" model="ir.ui.view">
+        <field name="name">Practitioner Form View - US IDs</field>
+        <field name="model">medical.practitioner</field>
+        <field name="inherit_id" ref="medical_practitioner.medical_practitioner_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='left']" position="inside">
+                <field name="license_num"/>
+            </xpath>
+            <xpath expr="//group[@name='right']" position="inside">
+                <field name="dea_num"/>
+                <field name="npi_num"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_practitioner_view_tree" model="ir.ui.view">
+        <field name="name">Practitioner List View - US IDs</field>
+        <field name="model">medical.practitioner</field>
+        <field name="inherit_id" ref="medical_practitioner.medical_practitioner_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="license_num"/>
+                <field name="dea_num"/>
+                <field name="npi_num"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="medical_practitioner_view_search" model="ir.ui.view">
+        <field name="name">Practitioner Search View - US IDs</field>
+        <field name="model">medical.practitioner</field>
+        <field name="inherit_id" ref="medical_practitioner.medical_practitioner_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="license_num"/>
+                <field name="dea_num"/>
+                <field name="npi_num"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
