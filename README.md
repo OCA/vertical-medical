@@ -27,6 +27,7 @@ addon | version | summary
 [medical_pathology](medical_pathology/) | 10.0.1.0.0 | Extends Odoo Medical with pathologies (diseases).
 [medical_pathology_import](medical_pathology_import/) | 10.0.1.0.0 | Provides an interface for medical pathology data imports
 [medical_practitioner](medical_practitioner/) | 10.0.1.2.0 | Defines medical practioners
+[medical_practitioner_us](medical_practitioner_us/) | 10.0.1.0.0 | Adds several US IDs to medical practitioners
 
 
 Unported addons
