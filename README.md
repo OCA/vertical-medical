@@ -25,9 +25,11 @@ addon | version | summary
 [medical_center](medical_center/) | 10.0.1.0.0 | Adds a concept of Medical Centers to Patients.
 [medical_insurance](medical_insurance/) | 10.0.1.0.0 | Medical Insurance
 [medical_pathology](medical_pathology/) | 10.0.1.0.0 | Extends Odoo Medical with pathologies (diseases).
+[medical_pathology_icd10](medical_pathology_icd10/) | 10.0.1.0.0 | Supports the import of ICD-10-CM pathology data
 [medical_pathology_import](medical_pathology_import/) | 10.0.1.0.0 | Provides an interface for medical pathology data imports
 [medical_practitioner](medical_practitioner/) | 10.0.1.2.0 | Defines medical practioners
 [medical_practitioner_us](medical_practitioner_us/) | 10.0.1.0.0 | Adds several US IDs to medical practitioners
+[medical_procedure](medical_procedure/) | 10.0.1.0.0 | Adds notion of medical procedure used elsewhere in medical
 
 
 Unported addons
