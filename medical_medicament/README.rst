@@ -6,42 +6,46 @@
 Medical Medicament
 ==================
 
-This module introduce the concept of Medicaments using product as basis
-It also includes concept of drug forms and drug routes
+This module introduce the concept of Medicaments using product as basis.
+It also includes concept of drug forms and drug routes.
 
 Usage
 =====
 
-For further information, please visit:
-
-* https://www.odoo.com/forum/help-1
-
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/159/8.0
+   :target: https://runbot.odoo-community.org/runbot/159/10.0
 
+Known issues / Roadmap
+======================
+
+* Note that the storage column has been removed from v8. Replacement module is medical_medicament_storage.
 
 Bug Tracker
 ===========
 
-Bugs are tracked on `GitHub Issues <https://github.com/OCA/vertical-medical/issues>`_.
-In case of trouble, please check there if your issue has already been reported.
-If you spotted it first, help us smashing it by providing a detailed and welcomed feedback
-`here <https://github.com/OCA/vertical-medical/issues/new?body=module:%20medical_medicament%0Aversion:%208.0.1.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
-
+Bugs are tracked on `GitHub Issues
+<https://github.com/OCA/vertical-medical/issues>`_. In case of trouble, please
+check there if your issue has already been reported. If you spotted it first,
+help us smashing it by providing a detailed and welcomed feedback.
 
 Credits
 =======
+
+Images
+------
+
+* Odoo Community Association: `Icon <https://github.com/OCA/maintainer-tools/blob/master/template/module/static/description/icon.svg>`_.
 
 Contributors
 ------------
 
 * Jonathan Nemry <jonathan.nemry@acsone.eu>
+* Dave Lasley <dave@laslabs.com>
+* Brett Wood <bwood@laslabs.com>
 * Parthiv Patel <parthiv@techreceptives.com>
 * Ruchir Shukla <ruchir@techreceptives.com>
-* Parthiv Patel <parthiv@techreceptives.com>
 * Nhomar Hernandéz <nhomar@vauxoo.com>
-* Dave Lasley <dave@laslabs.com>
 
 Maintainer
 ----------

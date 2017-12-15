@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 LasLabs Inc.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record id="medical_medicament_component_ibuprofen" model="medical.medicament.component">
+        <field name="name">Ibuprofen</field>
+        <field name="is_active_ingredient" eval="True" />
+    </record>
+
+    <record id="medical_medicament_component_amg" model="medical.medicament.component">
+        <field name="name">Acetylated Monoglycerides</field>
+    </record>
+
+    <record id="medical_medicament_component_csd" model="medical.medicament.component">
+        <field name="name">Colloidal Silicon Dioxide</field>
+    </record>
+        
+</odoo>
