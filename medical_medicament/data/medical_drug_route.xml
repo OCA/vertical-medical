@@ -1,195 +1,238 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data noupdate="1">
 
-        <record model="medical.drug.route" id="route_1">
-            <field name="name">Apply Externally </field>
-            <field name="code">AP</field>
-        </record>
-        <record model="medical.drug.route" id="route_2">
-            <field name="name">Buccal </field>
-            <field name="code">B</field>
-        </record>
-        <record model="medical.drug.route" id="route_3">
-            <field name="name">Dental </field>
-            <field name="code">DT</field>
-        </record>
-        <record model="medical.drug.route" id="route_4">
-            <field name="name">Epidural </field>
-            <field name="code">EP</field>
-        </record>
-        <record model="medical.drug.route" id="route_5">
-            <field name="name">Endotrachial Tube</field>
-            <field name="code">ET</field>
-        </record>
-        <record model="medical.drug.route" id="route_6">
-            <field name="name">Gastrostomy Tube </field>
-            <field name="code">GTT</field>
-        </record>
-        <record model="medical.drug.route" id="route_7">
-            <field name="name">GU Irrigant </field>
-            <field name="code">GU</field>
-        </record>
-        <record model="medical.drug.route" id="route_8">
-            <field name="name">Immerse (Soak) Body Part </field>
-            <field name="code">IMR</field>
-        </record>
-        <record model="medical.drug.route" id="route_9">
-            <field name="name">Intra-arterial </field>
-            <field name="code">IA</field>
-        </record>
-        <record model="medical.drug.route" id="route_10">
-            <field name="name">Intrabursal </field>
-            <field name="code">IB</field>
-        </record>
-        <record model="medical.drug.route" id="route_11">
-            <field name="name">Intracardiac </field>
-            <field name="code">IC</field>
-        </record>
-        <record model="medical.drug.route" id="route_12">
-            <field name="name">Intracervical (uterus) </field>
-            <field name="code">ICV</field>
-        </record>
-        <record model="medical.drug.route" id="route_13">
-            <field name="name">Intradermal </field>
-            <field name="code">ID</field>
-        </record>
-        <record model="medical.drug.route" id="route_14">
-            <field name="name">Inhalation </field>
-            <field name="code">IH</field>
-        </record>
-        <record model="medical.drug.route" id="route_15">
-            <field name="name">Intrahepatic Artery </field>
-            <field name="code">IHA</field>
-        </record>
-        <record model="medical.drug.route" id="route_16">
-            <field name="name">Intramuscular </field>
-            <field name="code">IM</field>
-        </record>
-        <record model="medical.drug.route" id="route_17">
-            <field name="name">Intranasal </field>
-            <field name="code">IN</field>
-        </record>
-        <record model="medical.drug.route" id="route_18">
-            <field name="name">Intraocular </field>
-            <field name="code">IO</field>
-        </record>
-        <record model="medical.drug.route" id="route_19">
-            <field name="name">Intraperitoneal </field>
-            <field name="code">IP</field>
-        </record>
-        <record model="medical.drug.route" id="route_20">
-            <field name="name">Intrasynovial </field>
-            <field name="code">IS</field>
-        </record>
-        <record model="medical.drug.route" id="route_21">
-            <field name="name">Intrathecal </field>
-            <field name="code">IT</field>
-        </record>
-        <record model="medical.drug.route" id="route_22">
-            <field name="name">Intrauterine </field>
-            <field name="code">IU</field>
-        </record>
-        <record model="medical.drug.route" id="route_23">
-            <field name="name">Intravenous </field>
-            <field name="code">IV</field>
-        </record>
-        <record model="medical.drug.route" id="route_24">
-            <field name="name">Mouth/Throat </field>
-            <field name="code">MTH</field>
-        </record>
-        <record model="medical.drug.route" id="route_25">
-            <field name="name">Mucous Membrane</field>
-            <field name="code">MM</field>
-        </record>
-        <record model="medical.drug.route" id="route_26">
-            <field name="name">Nasal</field>
-            <field name="code">NS</field>
-        </record>
-        <record model="medical.drug.route" id="route_27">
-            <field name="name">Nasogastric</field>
-            <field name="code">NG</field>
-        </record>
-        <record model="medical.drug.route" id="route_28">
-            <field name="name">Nasal Prongs</field>
-            <field name="code">NP</field>
-        </record>
-        <record model="medical.drug.route" id="route_29">
-            <field name="name">Nasotrachial Tube</field>
-            <field name="code">NT</field>
-        </record>
-        <record model="medical.drug.route" id="route_30">
-            <field name="name">Ophthalmic</field>
-            <field name="code">OP</field>
-        </record>
-        <record model="medical.drug.route" id="route_31">
-            <field name="name">Otic</field>
-            <field name="code">OT</field>
-        </record>
-        <record model="medical.drug.route" id="route_32">
-            <field name="name">Other/Miscellaneous</field>
-            <field name="code">OTH</field>
-        </record>
-        <record model="medical.drug.route" id="route_33">
-            <field name="name">Perfusion</field>
-            <field name="code">PF</field>
-        </record>
-        <record model="medical.drug.route" id="route_34">
-            <field name="name">Oral</field>
-            <field name="code">PO</field>
-        </record>
-        <record model="medical.drug.route" id="route_35">
-            <field name="name">Rectal</field>
-            <field name="code">PR</field>
-        </record>
-        <record model="medical.drug.route" id="route_36">
-            <field name="name">Rebreather Mask</field>
-            <field name="code">RM</field>
-        </record>
-        <record model="medical.drug.route" id="route_37">
-            <field name="name">Soaked Dressing</field>
-            <field name="code">SD</field>
-        </record>
-        <record model="medical.drug.route" id="route_38">
-            <field name="name">Subcutaneous</field>
-            <field name="code">SC</field>
-        </record>
-        <record model="medical.drug.route" id="route_39">
-            <field name="name">Sublingual</field>
-            <field name="code">SL</field>
-        </record>
-        <record model="medical.drug.route" id="route_40">
-            <field name="name">Topical</field>
-            <field name="code">TP</field>
-        </record>
-        <record model="medical.drug.route" id="route_41">
-            <field name="name">Tracheostomy</field>
-            <field name="code">TRA</field>
-        </record>
-        <record model="medical.drug.route" id="route_42">
-            <field name="name">Transdermal</field>
-            <field name="code">TD</field>
-        </record>
-        <record model="medical.drug.route" id="route_43">
-            <field name="name">Translingual</field>
-            <field name="code">TL</field>
-        </record>
-        <record model="medical.drug.route" id="route_44">
-            <field name="name">Urethral</field>
-            <field name="code">UR</field>
-        </record>
-        <record model="medical.drug.route" id="route_45">
-            <field name="name">Vaginal</field>
-            <field name="code">VG</field>
-        </record>
-        <record model="medical.drug.route" id="route_46">
-            <field name="name">Ventimask</field>
-            <field name="code">VM</field>
-        </record>
-        <record model="medical.drug.route" id="route_47">
-            <field name="name">Wound</field>
-            <field name="code">WND</field>
-        </record>
+<odoo noupdate="1">
+    <record model="medical.drug.route" id="route_1">
+        <field name="name">Apply Externally</field>
+        <field name="code">AP</field>
+    </record>
 
-    </data>
-</openerp>
+    <record model="medical.drug.route" id="route_2">
+        <field name="name">Buccal</field>
+        <field name="code">B</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_3">
+        <field name="name">Dental</field>
+        <field name="code">DT</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_4">
+        <field name="name">Epidural</field>
+        <field name="code">EP</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_5">
+        <field name="name">Endotrachial Tube</field>
+        <field name="code">ET</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_6">
+        <field name="name">Gastrostomy Tube</field>
+        <field name="code">GTT</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_7">
+        <field name="name">GU Irrigant</field>
+        <field name="code">GU</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_8">
+        <field name="name">Immerse (Soak) Body Part</field>
+        <field name="code">IMR</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_9">
+        <field name="name">Intra-arterial</field>
+        <field name="code">IA</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_10">
+        <field name="name">Intrabursal</field>
+        <field name="code">IB</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_11">
+        <field name="name">Intracardiac</field>
+        <field name="code">IC</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_12">
+        <field name="name">Intracervical (uterus)</field>
+        <field name="code">ICV</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_13">
+        <field name="name">Intradermal</field>
+        <field name="code">ID</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_14">
+        <field name="name">Inhalation</field>
+        <field name="code">IH</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_15">
+        <field name="name">Intrahepatic Artery</field>
+        <field name="code">IHA</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_16">
+        <field name="name">Intramuscular</field>
+        <field name="code">IM</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_17">
+        <field name="name">Intranasal</field>
+        <field name="code">IN</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_18">
+        <field name="name">Intraocular</field>
+        <field name="code">IO</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_19">
+        <field name="name">Intraperitoneal</field>
+        <field name="code">IP</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_20">
+        <field name="name">Intrasynovial</field>
+        <field name="code">IS</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_21">
+        <field name="name">Intrathecal</field>
+        <field name="code">IT</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_22">
+        <field name="name">Intrauterine</field>
+        <field name="code">IU</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_23">
+        <field name="name">Intravenous</field>
+        <field name="code">IV</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_24">
+        <field name="name">Mouth/Throat</field>
+        <field name="code">MTH</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_25">
+        <field name="name">Mucous Membrane</field>
+        <field name="code">MM</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_26">
+        <field name="name">Nasal</field>
+        <field name="code">NS</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_27">
+        <field name="name">Nasogastric</field>
+        <field name="code">NG</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_28">
+        <field name="name">Nasal Prongs</field>
+        <field name="code">NP</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_29">
+        <field name="name">Nasotrachial Tube</field>
+        <field name="code">NT</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_30">
+        <field name="name">Ophthalmic</field>
+        <field name="code">OP</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_31">
+        <field name="name">Otic</field>
+        <field name="code">OT</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_32">
+        <field name="name">Other/Miscellaneous</field>
+        <field name="code">OTH</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_33">
+        <field name="name">Perfusion</field>
+        <field name="code">PF</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_34">
+        <field name="name">Oral</field>
+        <field name="code">PO</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_35">
+        <field name="name">Rectal</field>
+        <field name="code">PR</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_36">
+        <field name="name">Rebreather Mask</field>
+        <field name="code">RM</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_37">
+        <field name="name">Soaked Dressing</field>
+        <field name="code">SD</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_38">
+        <field name="name">Subcutaneous</field>
+        <field name="code">SC</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_39">
+        <field name="name">Sublingual</field>
+        <field name="code">SL</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_40">
+        <field name="name">Topical</field>
+        <field name="code">TP</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_41">
+        <field name="name">Tracheostomy</field>
+        <field name="code">TRA</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_42">
+        <field name="name">Transdermal</field>
+        <field name="code">TD</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_43">
+        <field name="name">Translingual</field>
+        <field name="code">TL</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_44">
+        <field name="name">Urethral</field>
+        <field name="code">UR</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_45">
+        <field name="name">Vaginal</field>
+        <field name="code">VG</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_46">
+        <field name="name">Ventimask</field>
+        <field name="code">VM</field>
+    </record>
+
+    <record model="medical.drug.route" id="route_47">
+        <field name="name">Wound</field>
+        <field name="code">WND</field>
+    </record>
+</odoo>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016-2017 LasLabs Inc.
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+
+<odoo>
+
+    <record id="product_product_advil_1" model="product.product">
+        <field name="name">Advil</field>
+        <field name="uom_id" ref="product.product_uom_unit" />
+        <field name="uom_po_id" ref="product.product_uom_unit" />
+        <field name="weight">0.0002</field>
+        <field name="categ_id" ref="product.product_category_5" />
+        <field name="type">consu</field>
+        <field name="description_sale">Advil Capsule 200mg</field>
+        <field name="pricelist_id" ref="product.list0" />
+        <field name="standard_price">0.06</field>
+        <field name="list_price">0.12</field>
+        <field name="currency_id" ref="base.USD" />
+        <field name="default_code">ADV</field>
+    </record>
+
+    <record id="medical_medicament_advil_1" model="medical.medicament">
+        <field name="name">Advil</field>
+        <field name="drug_form_id" ref="medical_medicament.CAP" />
+        <field name="strength">0.2</field>
+        <field name="strength_uom_id" ref="product.product_uom_gram" />
+        <field name="is_pregnancy_warning" eval="True" />
+        <field name="drug_route_id" ref="medical_medicament.route_34" />
+        <field name="product_id" ref="medical_medicament.product_product_advil_1" />
+        <field name="pregnancy_category">d</field>
+        <field name="component_ids" eval="[(4, ref('medical_medicament_component_ibuprofen')),
+                                           (4, ref('medical_medicament_component_amg')),
+                                           (4, ref('medical_medicament_component_csd')),
+                                          ]"
+               />
+    </record>
+
+    <record id="product_product_advil_2" model="product.product">
+        <field name="name">Advil Extra Strength</field>
+        <field name="uom_id" ref="product.product_uom_unit" />
+        <field name="uom_po_id" ref="product.product_uom_unit" />
+        <field name="weight">0.0004</field>
+        <field name="categ_id" ref="product.product_category_5" />
+        <field name="type">consu</field>
+        <field name="description_sale">Advil Extra Strength Capsule 400mg</field>
+        <field name="pricelist_id" ref="product.list0" />
+        <field name="standard_price">0.35</field>
+        <field name="list_price">0.46</field>
+        <field name="currency_id" ref="base.USD" />
+        <field name="default_code">ADV-XSTNGTH</field>
+    </record>
+
+    <record id="medical_medicament_advil_2" model="medical.medicament">
+        <field name="name">Advil Extra Strength</field>
+        <field name="type">consu</field>
+        <field name="drug_form_id" ref="medical_medicament.CAP" />
+        <field name="strength">0.4</field>
+        <field name="strength_uom_id" ref="product.product_uom_gram" />
+        <field name="is_pregnancy_warning" eval="True" />
+        <field name="drug_route_id" ref="medical_medicament.route_34" />
+        <field name="product_id" ref="medical_medicament.product_product_advil_2" />
+        <field name="pregnancy_category">d</field>
+        <field name="component_ids" eval="[(4, ref('medical_medicament_component_ibuprofen')),
+                                           (4, ref('medical_medicament_component_amg')),
+                                           (4, ref('medical_medicament_component_csd')),
+                                          ]"
+               />
+    </record>
+
+</odoo>

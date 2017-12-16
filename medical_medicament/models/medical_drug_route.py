@@ -1,35 +1,24 @@
 # -*- coding: utf-8 -*-
-# #############################################################################
-#
-#    Tech-Receptives Solutions Pvt. Ltd.
-#    Copyright (C) 2004-TODAY Tech-Receptives(<http://www.techreceptives.com>)
-#    Special Credit and Thanks to Thymbra Latinoamericana S.A.
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-# #############################################################################
+# Copyright 2004 Tech-Receptives
+# Copyright 2016-2017 LasLabs Inc.
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
-from openerp import models, fields
+from odoo import fields, models
 
 
 class MedicalDrugRoute(models.Model):
     _name = 'medical.drug.route'
     _description = 'Medical Drug Route'
 
-    name = fields.Char(required=True, translate=True)
-    code = fields.Char()
+    name = fields.Char(
+        required=True,
+        translate=True,
+    )
+    code = fields.Char(
+        required=True,
+    )
 
     _sql_constraints = [
-        ('name_uniq', 'UNIQUE(name)', 'Drug Route name must be unique!'),
+        ('name_uniq', 'UNIQUE(name)', 'Drug route name must be unique!'),
+        ('code_uniq', 'UNIQUE(code)', 'Drug route code must be unique!')
     ]
