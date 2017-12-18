@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="seq_medical_condition" model="ir.sequence">
+        <field name="name">Medical condition sequence</field>
+        <field name="code">medical.condition</field>
+        <field name="prefix">CDT</field>
+        <field name="padding">6</field>
+    </record>
+
+    <record id="seq_medical_clinical_finding" model="ir.sequence">
+        <field name="name">Clinical Finding sequence</field>
+        <field name="code">medical.clinical.finding</field>
+        <field name="prefix">CF</field>
+        <field name="padding">5</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Creu Blanca
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record model="ir.ui.view" id="medical_patient_form">
+        <field name="name">medical.patient.form</field>
+        <field name="model">medical.patient</field>
+        <field name="inherit_id"
+               ref="medical_administration.medical_patient_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="toggle_is_pregnant" type="object"
+                        class="oe_stat_button" icon="fa-venus">
+                    <field name="is_pregnant" widget="boolean_button"
+                           options="{'terminology': {
+                                    'string_true': 'Pregnant',
+                                    'hover_true': 'Not pregnant',
+                                    'string_false': 'Not pregnant',
+                                    'hover_false': 'Pregnant'
+                                }}"/>
+                </button>
+                <button
+                    type="object"
+                    name="action_view_medical_conditions"
+                    class="oe_stat_button"
+                    icon="fa-stethoscope">
+                    <field name="medical_condition_count" widget="statinfo"
+                           string="Conditions"/>
+                    <field name="medical_condition_ids" invisible="1"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

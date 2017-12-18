@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Creu Blanca
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="medical_condition_view_tree" model="ir.ui.view">
+        <field name="name">medical.condition.view.tree</field>
+        <field name="model">medical.condition</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="internal_identifier"/>
+                <field name="category_code"/>
+                <field name="clinical_finding_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="medical_condition_view_form" model="ir.ui.view">
+        <field name="name">medical.condition.view.form</field>
+        <field name="model">medical.condition</field>
+        <field name="arch" type="xml">
+            <form string="Condition">
+                <header/>
+                <sheet>
+                    <div name="button_box" class="oe_button_box">
+                        <button name="toggle_active" type="object"
+                                class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"
+                                   options='{"terminology": "archive"}'/>
+                        </button>
+                    </div>
+                    <h2>
+                        <field name="internal_identifier" readonly="1"/>
+                    </h2>
+                    <group name="details" cols="4">
+                        <group>
+                            <field name="patient_id" readonly="1"/>
+                            <field name="clinical_finding_id"/>
+                        </group>
+                        <group>
+                            <field name="category_code"/>
+                        </group>
+                    </group>
+                    <notebook invisible="1"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_clinical_condition_action">
+        <field name="name">Clinical Conditions</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.condition</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+</odoo>
