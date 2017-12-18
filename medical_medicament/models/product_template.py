@@ -13,7 +13,3 @@ class ProductTemplate(models.Model):
         readonly=True,
         help='Checked if the product is a medicament',
     )
-    is_vaccine = fields.Boolean(
-        string='Vaccine',
-        help='Check if the product is a vaccine',
-    )
