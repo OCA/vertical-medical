@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="group_medical_clinical_finding_display" model="res.groups">
+        <field name="name">Clinical finding display</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids"
+               eval="[(4, ref('medical_base.group_medical_root_menu')), (4, ref('medical_base.group_medical_terminologies_menu'))]"/>
+    </record>
+
+    <record id="group_medical_clinical_finding_manager" model="res.groups">
+        <field name="name">Clinical finding Manager</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="implied_ids"
+               eval="[(4, ref('group_medical_clinical_finding_display'))]"/>
+    </record>
+
+    <!-- Generic groups -->
+
+    <record id="medical_base.group_medical_user" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_medical_clinical_finding_display'))]"/>
+    </record>
+
+    <record id="medical_base.group_medical_configurator" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_medical_clinical_finding_manager'))]"/>
+    </record>
+
+</odoo>

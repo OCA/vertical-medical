@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    Copyright 2017 Creu Blanca
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+
+<odoo>
+
+    <record id="patient_01_pregnant" model="medical.condition">
+        <field name="patient_id" ref="medical_administration.patient_01"/>
+        <field name="clinical_finding_id" ref="medical_clinical_condition.finding_pregnant"/>
+    </record>
+
+</odoo>
