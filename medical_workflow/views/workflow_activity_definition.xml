@@ -43,6 +43,7 @@
                                invisible="context.get('invisible_type',False)"/>
                         <field name="model_id"/>
                         <field name="service_id"/>
+                        <field name="quantity"/>
                     </group>
                     <notebook invisible="1"/>
                 </sheet>
