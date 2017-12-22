@@ -10,6 +10,7 @@
 
     <record id="group_medical_careplan_add_plan_definition" model="res.groups">
         <field name="name">Add plan definition on careplans</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
         <field name="implied_ids" eval="[(4, ref('medical_workflow.group_workflow_plan_definition_display'))]"/>
     </record>
 
