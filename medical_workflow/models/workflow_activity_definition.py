@@ -49,6 +49,7 @@ class ActivityDefinition(models.Model):
     quantity = fields.Integer(
         string='Quantity',
         help='How much to realize',
+        default=1,
     )   # FHIR field: quantity
     action_ids = fields.One2many(
         string='Subsequent actions',
@@ -84,8 +85,9 @@ class ActivityDefinition(models.Model):
             raise ValidationError(_('Patient is not defined'))
         values = {
             'service_id': self.service_id.id,
-            'plan_definition_id': plan.id or action.plan_definition_id.id,
-            'plan_definition_action_id': action and action.id,
+            'plan_definition_id': plan and plan.id or
+            action and action.plan_definition_id.id or False,
+            'plan_definition_action_id': action and action.id or False,
             'activity_definition_id': self.id,
         }
         return values

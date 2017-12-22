@@ -76,7 +76,7 @@ class PlanDefinition(models.Model):
         result = False
         res = False
         if (
-            self.env.user._has_group('workflow_plandefinition.'
+            self.env.user._has_group('medical_workflow.'
                                      'group_main_activity_plan_definition') and
             self.activity_definition_id
         ):
