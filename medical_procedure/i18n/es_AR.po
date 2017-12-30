@@ -1,0 +1,106 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * medical_procedure
+# 
+# Translators:
+# Anael M <anaelwendel@live.com.ar>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-14 06:00+0000\n"
+"PO-Revision-Date: 2017-12-14 06:00+0000\n"
+"Last-Translator: Anael M <anaelwendel@live.com.ar>, 2017\n"
+"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/teams/23907/es_AR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es_AR\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: medical_procedure
+#: model:ir.model.fields,field_description:medical_procedure.field_medical_procedure_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: medical_procedure
+#: model:ir.model.fields,field_description:medical_procedure.field_medical_procedure_code
+#: model:ir.ui.view,arch_db:medical_procedure.medical_procedure_view_form
+msgid "Code"
+msgstr ""
+
+#. module: medical_procedure
+#: model:ir.model.fields,field_description:medical_procedure.field_medical_procedure_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: medical_procedure
+#: model:ir.model.fields,field_description:medical_procedure.field_medical_procedure_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: medical_procedure
+#: model:ir.model.fields,field_description:medical_procedure.field_medical_procedure_description
+msgid "Description"
+msgstr ""
+
+#. module: medical_procedure
+#: model:ir.model.fields,field_description:medical_procedure.field_medical_procedure_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: medical_procedure
+#: model:ir.model.fields,field_description:medical_procedure.field_medical_procedure_id
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_procedure
+#: model:ir.ui.view,arch_db:medical_procedure.medical_procedure_view_search
+msgid "Inactive"
+msgstr ""
+
+#. module: medical_procedure
+#: model:ir.model.fields,field_description:medical_procedure.field_medical_procedure___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: medical_procedure
+#: model:ir.model.fields,field_description:medical_procedure.field_medical_procedure_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: medical_procedure
+#: model:ir.model.fields,field_description:medical_procedure.field_medical_procedure_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: medical_procedure
+#: model:ir.ui.view,arch_db:medical_procedure.medical_procedure_view_form
+msgid "Medical Procedure"
+msgstr ""
+
+#. module: medical_procedure
+#: model:ir.model.fields,field_description:medical_procedure.field_medical_procedure_name
+msgid "Name"
+msgstr ""
+
+#. module: medical_procedure
+#: model:ir.model.fields,help:medical_procedure.field_medical_procedure_name
+msgid "Name of procedure, such as \"Behavioral therapy\""
+msgstr ""
+
+#. module: medical_procedure
+#: model:ir.actions.act_window,name:medical_procedure.medical_procedure_action
+#: model:ir.ui.menu,name:medical_procedure.medical_procedure_menu
+msgid "Procedures"
+msgstr ""
+
+#. module: medical_procedure
+#: model:ir.model.fields,help:medical_procedure.field_medical_procedure_code
+msgid "Short name or code for procedure"
+msgstr ""
+
+#. module: medical_procedure
+#: model:ir.model,name:medical_procedure.model_medical_procedure
+msgid "medical.procedure"
+msgstr ""

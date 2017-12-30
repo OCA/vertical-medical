@@ -1,0 +1,95 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * medical_practitioner_us
+# 
+# Translators:
+# leemannd <denis.leemann@camptocamp.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-14 06:00+0000\n"
+"PO-Revision-Date: 2017-12-14 06:00+0000\n"
+"Last-Translator: leemannd <denis.leemann@camptocamp.com>, 2017\n"
+"Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: medical_practitioner_us
+#: model:ir.model.fields,field_description:medical_practitioner_us.field_medical_abstract_entity_dea_num
+#: model:ir.model.fields,field_description:medical_practitioner_us.field_medical_center_dea_num
+#: model:ir.model.fields,field_description:medical_practitioner_us.field_medical_insurance_company_dea_num
+#: model:ir.model.fields,field_description:medical_practitioner_us.field_medical_patient_dea_num
+#: model:ir.model.fields,field_description:medical_practitioner_us.field_medical_practitioner_dea_num
+#: model:ir.model.fields,field_description:medical_practitioner_us.field_res_partner_dea_num
+#: model:ir.model.fields,field_description:medical_practitioner_us.field_res_users_dea_num
+msgid "DEA #"
+msgstr ""
+
+#. module: medical_practitioner_us
+#: model:ir.model.fields,help:medical_practitioner_us.field_medical_abstract_entity_dea_num
+#: model:ir.model.fields,help:medical_practitioner_us.field_medical_center_dea_num
+#: model:ir.model.fields,help:medical_practitioner_us.field_medical_insurance_company_dea_num
+#: model:ir.model.fields,help:medical_practitioner_us.field_medical_patient_dea_num
+#: model:ir.model.fields,help:medical_practitioner_us.field_medical_practitioner_dea_num
+#: model:ir.model.fields,help:medical_practitioner_us.field_res_partner_dea_num
+#: model:ir.model.fields,help:medical_practitioner_us.field_res_users_dea_num
+msgid "Drug Enforcement Agency Number - 2 alpha characters and 7 digits"
+msgstr ""
+
+#. module: medical_practitioner_us
+#: model:ir.model.fields,field_description:medical_practitioner_us.field_medical_abstract_entity_npi_num
+#: model:ir.model.fields,field_description:medical_practitioner_us.field_medical_center_npi_num
+#: model:ir.model.fields,field_description:medical_practitioner_us.field_medical_insurance_company_npi_num
+#: model:ir.model.fields,field_description:medical_practitioner_us.field_medical_patient_npi_num
+#: model:ir.model.fields,field_description:medical_practitioner_us.field_medical_practitioner_npi_num
+#: model:ir.model.fields,field_description:medical_practitioner_us.field_res_partner_npi_num
+#: model:ir.model.fields,field_description:medical_practitioner_us.field_res_users_npi_num
+msgid "NPI"
+msgstr ""
+
+#. module: medical_practitioner_us
+#: model:ir.model.fields,help:medical_practitioner_us.field_medical_abstract_entity_npi_num
+#: model:ir.model.fields,help:medical_practitioner_us.field_medical_center_npi_num
+#: model:ir.model.fields,help:medical_practitioner_us.field_medical_insurance_company_npi_num
+#: model:ir.model.fields,help:medical_practitioner_us.field_medical_patient_npi_num
+#: model:ir.model.fields,help:medical_practitioner_us.field_medical_practitioner_npi_num
+#: model:ir.model.fields,help:medical_practitioner_us.field_res_partner_npi_num
+#: model:ir.model.fields,help:medical_practitioner_us.field_res_users_npi_num
+msgid "National Provider Identifier - 10 digits"
+msgstr ""
+
+#. module: medical_practitioner_us
+#: model:ir.model,name:medical_practitioner_us.model_res_partner
+msgid "Partner"
+msgstr "Contact"
+
+#. module: medical_practitioner_us
+#: model:ir.model.fields,field_description:medical_practitioner_us.field_medical_abstract_entity_license_num
+#: model:ir.model.fields,field_description:medical_practitioner_us.field_medical_center_license_num
+#: model:ir.model.fields,field_description:medical_practitioner_us.field_medical_insurance_company_license_num
+#: model:ir.model.fields,field_description:medical_practitioner_us.field_medical_patient_license_num
+#: model:ir.model.fields,field_description:medical_practitioner_us.field_medical_practitioner_license_num
+#: model:ir.model.fields,field_description:medical_practitioner_us.field_res_partner_license_num
+#: model:ir.model.fields,field_description:medical_practitioner_us.field_res_users_license_num
+msgid "State License #"
+msgstr ""
+
+#. module: medical_practitioner_us
+#: model:res.partner.id_category,name:medical_practitioner_us.res_partner_id_category_st_lic
+msgid "State License Number"
+msgstr ""
+
+#. module: medical_practitioner_us
+#: model:ir.model.fields,help:medical_practitioner_us.field_medical_abstract_entity_license_num
+#: model:ir.model.fields,help:medical_practitioner_us.field_medical_center_license_num
+#: model:ir.model.fields,help:medical_practitioner_us.field_medical_insurance_company_license_num
+#: model:ir.model.fields,help:medical_practitioner_us.field_medical_patient_license_num
+#: model:ir.model.fields,help:medical_practitioner_us.field_medical_practitioner_license_num
+#: model:ir.model.fields,help:medical_practitioner_us.field_res_partner_license_num
+#: model:ir.model.fields,help:medical_practitioner_us.field_res_users_license_num
+msgid "State Medical License Number - constraints vary by type of license"
+msgstr ""
