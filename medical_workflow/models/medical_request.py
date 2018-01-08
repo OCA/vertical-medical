@@ -183,22 +183,20 @@ class MedicalRequest(models.AbstractModel):
 
     @api.multi
     def action_view_request(self):
+        self.ensure_one()
         model = self.env.context.get('model_name', False)
-        inverse_id = self.env.context.get('inverse_id', False)
-        if not inverse_id:
-            raise UserError(_('No reference provided.'))
         if model:
             params = self.env[model].action_view_request_parameters()
         else:
             raise UserError(_('No model provided.'))
         inverse_name = self._get_parent_field_name()
-        requests = self.env[model].search([(inverse_name, '=', inverse_id)])
+        requests = self.env[model].search([(inverse_name, '=', self.id)])
         action = self.env.ref(params['view'])
         result = action.read()[0]
         context = {'default_patient_id': self.patient_id.id}
         context = self._get_medical_request_context(context)
         result['context'] = context
-        result['domain'] = [(inverse_name, '=', inverse_id)]
+        result['domain'] = [(inverse_name, '=', self.id)]
         if len(requests) == 1:
             res = self.env.ref(params['view_form'], False)
             result['views'] = [(res and res.id or False, 'form')]

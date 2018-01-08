@@ -20,8 +20,7 @@
                         name="action_view_request"
                         class="oe_stat_button"  icon="fa-pencil-square-o"
                         attrs="{'readonly':[('is_editable', '=', False)]}"
-                        context="{'inverse_id': active_id,
-                                  'model_name': 'medical.procedure.request'}">
+                        context="{'model_name': 'medical.procedure.request'}">
                     <field name="procedure_request_count" widget="statinfo"
                                string="Procedure Requests"/>
                     <field name='procedure_request_ids' invisible="1"/>

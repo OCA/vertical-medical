@@ -20,7 +20,7 @@
                         name="action_view_request"
                         class="oe_stat_button"  icon="fa-hospital-o"
                         attrs="{'readonly':[('is_editable', '=', False)]}"
-                        context="{'inverse_id': active_id, 'model_name': 'medical.careplan'}">
+                        context="{'model_name': 'medical.careplan'}">
                 <field name="careplan_count" widget="statinfo"
                            string="Care Plans"/>
                 <field name='careplan_ids' invisible="1"/>
