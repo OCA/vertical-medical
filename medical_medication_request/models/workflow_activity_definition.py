@@ -13,7 +13,7 @@ class ActivityDefinition(models.Model):
     def _get_medical_values(self, vals, parent=False, plan=False, action=False
                             ):
         values = super(ActivityDefinition, self)._get_medical_values(
-            vals, parent=False, plan=False, action=False)
+            vals, parent, plan, action)
         if self.model_id.model == 'medical.medication.request':
             values.update({
                 'product_id': self.service_id.id,
