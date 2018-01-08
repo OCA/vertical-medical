@@ -125,9 +125,9 @@ class PlanDefinitionAction(models.Model):
             if record.execute_plan_definition_id:
                 plan_ids = [record.plan_definition_id.id]
                 self.execute_plan_definition_id._check_plan_recursion(plan_ids)
-            if self.child_ids:
-                raise ValidationError(_(
-                    'Actions with Plans cannot have child actions'))
+                if record.child_ids:
+                    raise ValidationError(_(
+                        'Actions with Plans cannot have child actions'))
 
     @api.multi
     @api.constrains('execute_plan_definition_id', 'activity_definition_id')
