@@ -62,7 +62,7 @@
                                 </tree>
                             </field>
                         </page>
-                        <page string="Actions list" name='actions'>
+                        <page string="Actions list" name='actions_list'>
                             <field name="action_ids">
                                 <tree string="Actions">
                                     <field name="complete_name"/>
