@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2016 LasLabs Inc.
+<!-- Copyright 2016-2018 LasLabs Inc.
      License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
 
 <odoo>
@@ -386,9 +386,6 @@
                 <field name="partner_id" invisible="1" />
                 <filter string="Deactivated"
                         domain="[('active', '=', 0)]" />
-                <filter string="Tag"
-                        domain="[]"
-                        context="{'group_by':'category_id'}" />
                 <filter string="Parent"
                         domain="[]"
                         context="{'group_by':'parent_id'}" />
