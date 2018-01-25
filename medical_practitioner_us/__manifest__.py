@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright 2016-2017 LasLabs Inc.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
+# License GPL-3.0 or later (http://www.gnu.org/licenses/gpl.html)
 
 {
     'name': 'Medical Practitioner - US Locale',
@@ -8,7 +8,7 @@
     'version': '10.0.1.0.0',
     'author': 'LasLabs, Odoo Community Association (OCA)',
     'website': 'https://github.com/OCA/vertical-medical',
-    'license': 'AGPL-3',
+    'license': 'GPL-3',
     'category': 'Medical',
     'depends': [
         'medical_base_us',

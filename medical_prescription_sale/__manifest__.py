@@ -45,7 +45,7 @@
         'medical_pharmacy',
     ],
     "website": "https://laslabs.com",
-    "license": "AGPL-3",
+    "license": "GPL-3",
     "data": [
         # Views
         'views/prescription_order_line_view.xml',

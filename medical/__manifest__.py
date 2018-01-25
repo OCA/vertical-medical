@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright 2016 LasLabs Inc.
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+# License GPL-3.0 or later (http://www.gnu.org/licenses/gpl.html).
 
 {
     'name': 'Odoo Medical',
@@ -12,7 +12,7 @@
     ],
     'author': 'LasLabs, Odoo Community Association (OCA)',
     'website': 'https://odoo-community.org/',
-    'license': 'LGPL-3',
+    'license': 'GPL-3',
     'data': [
         'security/medical_security.xml',
         'security/ir.model.access.csv',

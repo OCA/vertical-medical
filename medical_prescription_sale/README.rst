@@ -1,5 +1,5 @@
-.. image:: https://img.shields.io/badge/license-AGPL--3-blue.svg
-    :alt: License: AGPL-3
+.. image:: https://img.shields.io/badge/license-GPL--3-blue.svg
+    :alt: License: GPL-3
 
 Odoo Medical Prescription Sales
 ===============================

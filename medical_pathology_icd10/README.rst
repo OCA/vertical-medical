@@ -1,6 +1,6 @@
-.. image:: https://img.shields.io/badge/license-LGPL--3-blue.svg
-   :target: https://www.gnu.org/licenses/lgpl.html
-   :alt: License: LGPL-3
+.. image:: https://img.shields.io/badge/license-GPL--3-blue.svg
+   :target: https://www.gnu.org/licenses/gpl.html
+   :alt: License: GPL-3
 
 ====================================
 Medical Pathology - ICD-10-CM Import

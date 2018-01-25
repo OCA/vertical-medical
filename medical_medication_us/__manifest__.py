@@ -42,7 +42,7 @@
         'medical_medication',
     ],
     'website': 'https://laslabs.com',
-    'license': 'AGPL-3',
+    'license': 'GPL-3',
     'data': [
     ],
     'installable': False,

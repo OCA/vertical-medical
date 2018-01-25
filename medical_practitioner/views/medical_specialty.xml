@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- Copyright 2014-2017 LasLabs Inc.
-     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html) -->
+     License GPL-3.0 or later (http://www.gnu.org/licenses/gpl.html) -->
 
 <odoo>
     <record id="medical_specialty_view_form" model="ir.ui.view">

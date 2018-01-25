@@ -42,7 +42,7 @@
         'medical_medicament',
     ],
     "website": "http://github.com/oca/vertical-medical",
-    "license": "AGPL-3",
+    "license": "GPL-3",
     "data": [
         'views/medical_medicament_view.xml',
     ],

@@ -2,7 +2,7 @@
 # Copyright 2017 LasLabs Inc.
 # Copyright 2017 Creu Blanca
 # Copyright 2017 Eficent Business and IT Consulting Services, S.L.
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+# License GPL-3.0 or later (http://www.gnu.org/licenses/gpl.html).
 
 {
     'name': 'Medical Practitioner',
@@ -11,7 +11,7 @@
     'author': 'Eficent, Creu Blanca, LasLabs, '
               'Odoo Community Association (OCA)',
     'website': 'https://odoo-community.org/',
-    'license': 'LGPL-3',
+    'license': 'GPL-3',
     'category': 'Medical',
     'depends': [
         'medical',

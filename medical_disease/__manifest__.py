@@ -28,7 +28,7 @@
     'author': 'ACSONE SA/NV, Odoo Community Association (OCA)',
     'maintainer': 'ACSONE SA/NV,Odoo Community Association (OCA)',
     'website': 'http://www.acsone.eu',
-    'license': 'AGPL-3',
+    'license': 'GPL-3',
     'category': 'Medical',
     'depends': [
         'medical',

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2017 LasLabs Inc.
-     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl) -->
+     License GPL-3.0 or later (http://www.gnu.org/licenses/gpl) -->
 
 <odoo>
     <record id="medical_procedure_view_tree" model="ir.ui.view">
