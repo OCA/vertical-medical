@@ -1,6 +1,6 @@
-.. image:: https://img.shields.io/badge/license-LGPL--3-blue.svg
-    :target: http://www.gnu.org/licenses/LGPL-3.0-standalone.html
-    :alt: License: LGPL-3
+.. image:: https://img.shields.io/badge/license-GPL--3-blue.svg
+    :target: http://www.gnu.org/licenses/GPL-3.0-standalone.html
+    :alt: License: GPL-3
 
 ===============================
 Medical Prescription Sale Stock

@@ -51,7 +51,7 @@
         'medical'
     ],
     "website": "https://laslabs.com",
-    "license": "LGPL-3",
+    "license": "GPL-3",
     "data": [
         'views/medical_insurance_company_view.xml',
         'views/medical_insurance_template_view.xml',

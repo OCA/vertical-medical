@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright 2016 LasLabs Inc.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License GPL-3.0 or later (http://www.gnu.org/licenses/gpl.html).
 
 {
     "name": "Medical Prescription - US Locale",
@@ -9,7 +9,7 @@
     "category": "Medical",
     "website": "https://laslabs.com",
     "author": "LasLabs, Odoo Community Association (OCA)",
-    "license": "AGPL-3",
+    "license": "GPL-3",
     "application": False,
     "installable": True,
     "depends": [

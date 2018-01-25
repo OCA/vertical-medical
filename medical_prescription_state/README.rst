@@ -1,5 +1,5 @@
-.. image:: https://img.shields.io/badge/license-LGPL--3-blue.svg
-    :alt: License: LGPL-3
+.. image:: https://img.shields.io/badge/license-GPL--3-blue.svg
+    :alt: License: GPL-3
 
 ===============================
 Odoo Medical Prescription State
