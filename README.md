@@ -12,15 +12,14 @@ seamless operation with other record types.
 
 # Licensing history
 The current project as it is today represents an evolution of the original work
-from from started from Luis Falcon. See https://sourceforge
-.net/projects/medical/files/Oldfiles/1.0.1, that later became GNU Health (see
+from from started from Luis Falcon. See https://sourceforge.net/projects/medical/files/Oldfiles/1.0.1,
+that later became GNU Health (see
 http://health.gnu.org/). The original code was licensed under GPL.
 
-On Nov 27, 2012 derivative code was published in https://github
-.com/OCA/vertical-medical, by Tech-Receptives Solutions Pvt. Ltd., licensed
+On Nov 27, 2012 derivative code was published in https://github.com/OCA/vertical-medical,
+by Tech-Receptives Solutions Pvt. Ltd., licensed
 under AGPL.  The license change was unauthorized by the original
-author. See https://github.com/OCA/vertical-medical/commit
-/f0a664749edaea36f6749c34bfb04f1fc4cc9ea4
+author. See https://github.com/OCA/vertical-medical/commit/f0a664749edaea36f6749c34bfb04f1fc4cc9ea4
 
 On Feb 17, 2017 the branch 9.0 of the project was relicensed to LGPL.
 https://github.com/OCA/vertical-medical/pull/166. Various prior contributors
