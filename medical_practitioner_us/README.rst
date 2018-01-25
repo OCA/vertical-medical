@@ -1,6 +1,6 @@
-.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
-   :target: https://www.gnu.org/licenses/agpl
-   :alt: License: AGPL-3
+.. image:: https://img.shields.io/badge/licence-GPL--3-blue.svg
+   :target: https://www.gnu.org/licenses/gpl
+   :alt: License: GPL-3
 
 ================================
 Medical Practitioner - US Locale

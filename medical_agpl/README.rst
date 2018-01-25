@@ -1,12 +1,12 @@
-.. image:: https://img.shields.io/badge/license-AGPL--3-blue.svg
-    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
-    :alt: License: AGPL-3
+.. image:: https://img.shields.io/badge/license-GPL--3-blue.svg
+    :target: http://www.gnu.org/licenses/gpl-3.0-standalone.html
+    :alt: License: GPL-3
 
 ============
-Medical AGPL
+Medical GPL
 ============
 
-This module provides AGPL assets for Odoo Medical
+This module provides GPL assets for Odoo Medical
 
 Installation
 ============

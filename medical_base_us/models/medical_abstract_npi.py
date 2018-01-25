@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright 2016-2017 LasLabs Inc.
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# License GPL-3.0 or later (http://www.gnu.org/licenses/gpl.html).
 
 from odoo import _, api, models
 from odoo.exceptions import ValidationError

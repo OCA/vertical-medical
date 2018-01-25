@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # © 2015-TODAY LasLabs Inc.
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
+# License GPL-3.0 or later (http://www.gnu.org/licenses/gpl.html).
 
 {
 
@@ -12,7 +12,7 @@
         'medical'
     ],
     "website": "https://laslabs.com",
-    "license": "LGPL-3",
+    "license": "GPL-3",
     "data": [
         'views/medical_insurance_company_view.xml',
         'views/medical_insurance_template_view.xml',
