@@ -26,7 +26,7 @@ On Feb 17, 2017 the branch 9.0 of the project was relicensed to LGPL.
 https://github.com/OCA/vertical-medical/pull/166. Various prior contributors
 approved the relicense, but not all.
 
-On Jan 25, 2017, GNU Health claimed that the original code and attribution
+On Jan 25, 2018, GNU Health claimed that the original code and attribution
 should be respected, and after further investigation the Odoo Community
 Association Board agreed to switch the license back to GPL v3 to respect the
 rights of the original author.
