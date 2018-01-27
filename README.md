@@ -45,7 +45,7 @@ Available addons
 addon | version | summary
 --- | --- | ---
 [medical](medical/) | 10.0.1.1.0 | Odoo Medical
-[medical_agpl](medical_agpl/) | 10.0.1.0.0 | Odoo Medical - AGPL
+[medical_agpl](medical_agpl/) | 10.0.1.0.0 | Odoo Medical - GPL
 [medical_base_us](medical_base_us/) | 10.0.1.0.0 | Provides some helper mixins for US locale
 [medical_center](medical_center/) | 10.0.1.0.0 | Adds a concept of Medical Centers to Patients.
 [medical_insurance](medical_insurance/) | 10.0.1.0.0 | Medical Insurance
