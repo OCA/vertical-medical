@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #     This file is part of medical, an Odoo module.
-#
+# Copyright 2008 Luis Falcon <lfalcon@gnusolidario.org>
 #     Copyright (c) 2015 ACSONE SA/NV (<http://acsone.eu>)
 #
 #     medical is free software:
