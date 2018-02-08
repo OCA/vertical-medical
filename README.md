@@ -12,7 +12,7 @@ seamless operation with other record types.
 
 # Licensing history
 The current project as it is today represents an evolution of the original work
-from from started from Luis Falcon. See https://sourceforge.net/projects/medical/files/Oldfiles/1.0.1,
+started by Luis Falcon. See https://sourceforge.net/projects/medical/files/Oldfiles/1.0.1,
 that later became GNU Health (see
 http://health.gnu.org/). The original code was licensed under GPL.
 
@@ -35,6 +35,8 @@ and the original code from 2012, through the commit history of the project one
 can see that the current status of the project is the end result of an
 evolutionary process. The Odoo Community Association Board concluded that
 the original license should be respected for ethical reasons.
+
+More information can be read here - https://odoo-community.org/blog/our-blog-1/post/vertical-medical-75.
 
 
 

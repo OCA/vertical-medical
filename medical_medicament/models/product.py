@@ -3,7 +3,7 @@
 #
 #     This file is part of medicament_medicament,
 #     an Odoo module.
-#
+# Copyright 2008 Luis Falcon <lfalcon@gnusolidario.org>
 #     Copyright (c) 2015 ACSONE SA/NV (<http://acsone.eu>)
 #
 #     medicament_medicament is free software:
