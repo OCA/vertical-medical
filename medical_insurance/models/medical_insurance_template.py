@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-# © 2015-TODAY LasLabs Inc.
+# Copyright 2008 Luis Falcon <lfalcon@gnusolidario.org>
+# © 2015 LasLabs Inc.
 # License GPL-3.0 or later (http://www.gnu.org/licenses/gpl.html).
 
 from odoo import fields, models, api
