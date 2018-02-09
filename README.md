@@ -69,7 +69,6 @@ addon | version | summary
 [medical_medicament_attributes](medical_medicament_attributes/) | 8.0.1.0.0 (unported) | Medical Medicament Physical Attributes
 [medical_medication](medical_medication/) | 8.0.1.0.0 (unported) | Introduce medication notion into the medical addons
 [medical_medication_us](medical_medication_us/) | 8.0.1.0.0 (unported) | Medical Medication - US Locale
-[medical_patient_occupation](medical_patient_occupation/) | 8.0.1.1.0 (unported) | Medical Patient Occupation
 [medical_pharmacy](medical_pharmacy/) | 8.0.1.1.0 (unported) | Medical Pharmacy
 [medical_pharmacy_us](medical_pharmacy_us/) | 8.0.1.1.0 (unported) | Medical Pharmacy - US Locale
 [medical_prescription](medical_prescription/) | 8.0.1.1.0 (unported) | This module introduce the prescription/prescription line into the medical addons.
