@@ -3,31 +3,31 @@
 # * medical
 # 
 # Translators:
-# leemannd <denis.leemann@camptocamp.com>, 2017
+# enjolras <yo@miguelrevilla.com>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-09 17:52+0000\n"
 "PO-Revision-Date: 2018-02-09 17:52+0000\n"
-"Last-Translator: leemannd <denis.leemann@camptocamp.com>, 2017\n"
-"Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
+"Last-Translator: enjolras <yo@miguelrevilla.com>, 2018\n"
+"Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: medical
 #: code:addons/medical/models/medical_patient.py:68
 #, python-format
 msgid " (deceased)"
-msgstr "(décédé)"
+msgstr ""
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
 msgid "(edit)"
-msgstr "(edit)"
+msgstr ""
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.view_res_partner_form
@@ -46,12 +46,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical.field_medical_patient_active
 #: model:ir.model.fields,field_description:medical.field_medical_practitioner_active
 msgid "Active"
-msgstr "Actif"
+msgstr ""
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
 msgid "Address"
-msgstr "Adresse"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_type
@@ -60,12 +60,12 @@ msgstr "Adresse"
 #: model:ir.model.fields,field_description:medical.field_medical_patient_type
 #: model:ir.model.fields,field_description:medical.field_medical_practitioner_type
 msgid "Address Type"
-msgstr "Type d'adresse"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_patient_age
 msgid "Age"
-msgstr "Age"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_patient_age_years
@@ -83,19 +83,19 @@ msgstr "Alias"
 #. module: medical
 #: model:res.groups,name:medical.group_medical_assistant
 msgid "Assistant"
-msgstr "Assistant"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_bank_ids
 #: model:ir.model.fields,field_description:medical.field_medical_patient_bank_ids
 msgid "Banks"
-msgstr "Banques"
+msgstr "Bancos"
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_barcode
 #: model:ir.model.fields,field_description:medical.field_medical_patient_barcode
 msgid "Barcode"
-msgstr "Code-barres"
+msgstr "Código de barras"
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_birthdate
@@ -103,7 +103,7 @@ msgstr "Code-barres"
 #: model:ir.model.fields,field_description:medical.field_medical_patient_birthdate
 #: model:ir.model.fields,field_description:medical.field_medical_patient_birthdate_date
 msgid "Birthdate"
-msgstr "Année de naissance"
+msgstr "Fecha de nacimiento"
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_message_bounce
@@ -120,7 +120,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_channel_ids
 #: model:ir.model.fields,field_description:medical.field_medical_patient_channel_ids
 msgid "Channels"
-msgstr "Canaux"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,help:medical.field_medical_abstract_entity_is_company
@@ -158,19 +158,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical.field_medical_patient_city
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
 msgid "City"
-msgstr "Ville"
+msgstr "Ciudad"
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_color
 #: model:ir.model.fields,field_description:medical.field_medical_patient_color
 msgid "Color Index"
-msgstr "Index de couleur"
+msgstr "Índice de color"
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_commercial_partner_id
 #: model:ir.model.fields,field_description:medical.field_medical_patient_commercial_partner_id
 msgid "Commercial Entity"
-msgstr "Entité commerciale"
+msgstr "Entidad comercial"
 
 #. module: medical
 #: model:ir.model.fields,help:medical.field_medical_abstract_entity_alias
@@ -184,18 +184,18 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_company_id
 #: model:ir.model.fields,field_description:medical.field_medical_patient_company_id
 msgid "Company"
-msgstr "Companie"
+msgstr "Compañía"
 
 #. module: medical
 #: model:res.groups,name:medical.group_medical_manager
 msgid "Company Manager"
-msgstr "Manager de la companie"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_company_name
 #: model:ir.model.fields,field_description:medical.field_medical_patient_company_name
 msgid "Company Name"
-msgstr "Nom de la companie"
+msgstr "Nombre de la compañía"
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_commercial_company_name
@@ -207,23 +207,23 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_company_type
 #: model:ir.model.fields,field_description:medical.field_medical_patient_company_type
 msgid "Company Type"
-msgstr "Type de companie"
+msgstr "Tipo de compañía"
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_contact_address
 #: model:ir.model.fields,field_description:medical.field_medical_patient_contact_address
 msgid "Complete Address"
-msgstr "Adresse complète"
+msgstr "Dirección completa"
 
 #. module: medical
 #: model:ir.ui.menu,name:medical.medical_root_sub
 msgid "Configuration"
-msgstr "Configuration"
+msgstr ""
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
 msgid "Contact / Address"
-msgstr "Contact / adresse"
+msgstr ""
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
@@ -239,12 +239,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_child_ids
 #: model:ir.model.fields,field_description:medical.field_medical_patient_child_ids
 msgid "Contacts"
-msgstr ""
+msgstr "Contactos"
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
 msgid "Contacts & Addresses"
-msgstr "Contacts et adresses"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_count_patients
@@ -252,7 +252,7 @@ msgstr "Contacts et adresses"
 #: model:ir.model.fields,field_description:medical.field_res_partner_count_patients
 #: model:ir.model.fields,field_description:medical.field_res_users_count_patients
 msgid "Count patients"
-msgstr "Nombre de patients"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,help:medical.field_medical_abstract_entity_message_bounce
@@ -265,31 +265,31 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical.field_medical_patient_country_id
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
 msgid "Country"
-msgstr "Pays"
+msgstr "País"
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_create_uid
 #: model:ir.model.fields,field_description:medical.field_medical_patient_create_uid
 msgid "Created by"
-msgstr "Créé par"
+msgstr "Creado por"
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_create_date
 #: model:ir.model.fields,field_description:medical.field_medical_patient_create_date
 msgid "Created on"
-msgstr "Créé le"
+msgstr "Creado el"
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_credit_limit
 #: model:ir.model.fields,field_description:medical.field_medical_patient_credit_limit
 msgid "Credit Limit"
-msgstr "Limite de crédit"
+msgstr "Límite de crédito"
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_date
 #: model:ir.model.fields,field_description:medical.field_medical_patient_date
 msgid "Date"
-msgstr "Date"
+msgstr "Fecha"
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_search
@@ -299,18 +299,18 @@ msgstr ""
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_patient_date_death
 msgid "Deceased Date"
-msgstr "Date de décès"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_display_name
 #: model:ir.model.fields,field_description:medical.field_medical_patient_display_name
 msgid "Display Name"
-msgstr "Nom affiché"
+msgstr "Nombre mostrado"
 
 #. module: medical
 #: selection:medical.patient,marital_status:0
 msgid "Divorced"
-msgstr "Divorcé"
+msgstr ""
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_patient_view_search
@@ -320,7 +320,7 @@ msgstr ""
 #. module: medical
 #: model:res.groups,name:medical.group_medical_doctor
 msgid "Doctor"
-msgstr "Docteur"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,help:medical.field_medical_abstract_entity_partner_share
@@ -347,7 +347,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_employee
 #: model:ir.model.fields,field_description:medical.field_medical_patient_employee
 msgid "Employee"
-msgstr "Employé"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_fax
@@ -358,13 +358,13 @@ msgstr "Fax"
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
 msgid "Fax:"
-msgstr "Fax:"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_firstname
 #: model:ir.model.fields,field_description:medical.field_medical_patient_firstname
 msgid "First name"
-msgstr "Prénom"
+msgstr "Nombre"
 
 #. module: medical
 #: model:ir.model.fields,help:medical.field_medical_abstract_entity_email_formatted
@@ -376,24 +376,24 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_email_formatted
 #: model:ir.model.fields,field_description:medical.field_medical_patient_email_formatted
 msgid "Formatted Email"
-msgstr "Email formatté"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_gender
 #: model:ir.model.fields,field_description:medical.field_medical_patient_gender
 msgid "Gender"
-msgstr "Genre"
+msgstr "Sexo"
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_patient_view_form
 msgid "General"
-msgstr "Général"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_patient_general_info
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
 msgid "General Information"
-msgstr "Information générale"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_id
@@ -404,7 +404,7 @@ msgstr "ID"
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
 msgid "ID & Notes"
-msgstr "ID & Notes"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_im_status
@@ -416,7 +416,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_id_numbers
 #: model:ir.model.fields,field_description:medical.field_medical_patient_id_numbers
 msgid "Identification Numbers"
-msgstr ""
+msgstr "Número de identificació"
 
 #. module: medical
 #: model:ir.model.fields,help:medical.field_medical_abstract_entity_opt_out
@@ -447,23 +447,23 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_image
 #: model:ir.model.fields,field_description:medical.field_medical_patient_image
 msgid "Image"
-msgstr "Image"
+msgstr "Imagen"
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_patient_identification_code
 msgid "Internal Identification"
-msgstr "Identification interne"
+msgstr ""
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
 msgid "Internal Note..."
-msgstr "Note interne..."
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_ref
 #: model:ir.model.fields,field_description:medical.field_medical_patient_ref
 msgid "Internal Reference"
-msgstr "Référence interne"
+msgstr "Referencia interna"
 
 #. module: medical
 #: code:addons/medical/models/medical_patient.py:120
@@ -475,35 +475,35 @@ msgstr ""
 #: code:addons/medical/models/medical_patient.py:94
 #, python-format
 msgid "Invalid selection - Only a `Female` may be pregnant."
-msgstr "Selection invalide - Seulement une `Femme`peut être enceinte."
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_is_company
 #: model:ir.model.fields,field_description:medical.field_medical_patient_is_company
 msgid "Is a Company"
-msgstr "Est une companie"
+msgstr "Es una empresa"
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_customer
 #: model:ir.model.fields,field_description:medical.field_medical_patient_customer
 msgid "Is a Customer"
-msgstr "Est un Client"
+msgstr "Es un cliente"
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_supplier
 #: model:ir.model.fields,field_description:medical.field_medical_patient_supplier
 msgid "Is a Vendor"
-msgstr "Est un Fournisseur"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_patient_is_deceased
 msgid "Is deceased"
-msgstr "Es décédé"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_patient_is_pregnant
 msgid "Is pregnant"
-msgstr "Est enceinte"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_function
@@ -515,36 +515,36 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_lang
 #: model:ir.model.fields,field_description:medical.field_medical_patient_lang
 msgid "Language"
-msgstr "Langue"
+msgstr "Idioma"
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity___last_update
 #: model:ir.model.fields,field_description:medical.field_medical_patient___last_update
 msgid "Last Modified on"
-msgstr "Dernière modification le"
+msgstr "Última modificación el"
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_write_uid
 #: model:ir.model.fields,field_description:medical.field_medical_patient_write_uid
 msgid "Last Updated by"
-msgstr "D"
+msgstr "Última actualización por"
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_write_date
 #: model:ir.model.fields,field_description:medical.field_medical_patient_write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Última actualización el"
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_lastname
 #: model:ir.model.fields,field_description:medical.field_medical_patient_lastname
 msgid "Last name"
-msgstr "Nom de famille"
+msgstr "Apellidos"
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_patient_view_form
 msgid "Legal Representative"
-msgstr "Représentant légal"
+msgstr ""
 
 #. module: medical
 #. openerp-web
@@ -556,40 +556,40 @@ msgstr ""
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_patient_marital_status
 msgid "Marital status"
-msgstr "Etat civil"
+msgstr ""
 
 #. module: medical
 #: selection:medical.patient,marital_status:0
 msgid "Married"
-msgstr "Marié"
+msgstr ""
 
 #. module: medical
 #: model:ir.module.category,name:medical.ir_module_category_medical
 #: model:ir.ui.menu,name:medical.medical_root
 #: model:ir.ui.view,arch_db:medical.medical_patient_view_form
 msgid "Medical"
-msgstr "Médical"
+msgstr ""
 
 #. module: medical
 #: model:ir.model,name:medical.model_medical_abstract_entity
 msgid "Medical Abstract Entity"
-msgstr "Entité médicale abstraite"
+msgstr ""
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_search
 msgid "Medical Entities"
-msgstr "Entités médicales"
+msgstr ""
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_tree
 msgid "Medical Entity"
-msgstr "Entité médicale"
+msgstr ""
 
 #. module: medical
 #: model:ir.model,name:medical.model_medical_patient
 msgid "Medical Patient"
-msgstr "Patient"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_image_medium
@@ -610,19 +610,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_mobile
 #: model:ir.model.fields,field_description:medical.field_medical_patient_mobile
 msgid "Mobile"
-msgstr "Mobile"
+msgstr "Móvil"
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
 msgid "Mobile:"
-msgstr "Mobile:"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_name
 #: model:ir.model.fields,field_description:medical.field_medical_patient_name
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
 msgid "Name"
-msgstr "Nom"
+msgstr "Nombre"
 
 #. module: medical
 #: code:addons/medical/models/medical_patient.py:78
@@ -634,29 +634,29 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_comment
 #: model:ir.model.fields,field_description:medical.field_medical_patient_comment
 msgid "Notes"
-msgstr "Notes"
+msgstr "Notas"
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_opt_out
 #: model:ir.model.fields,field_description:medical.field_medical_patient_opt_out
 msgid "Opt-Out"
-msgstr "Opt-Out"
+msgstr ""
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_search
 msgid "Parent"
-msgstr "Parent"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_parent_name
 #: model:ir.model.fields,field_description:medical.field_medical_patient_parent_name
 msgid "Parent name"
-msgstr "Nom du parent"
+msgstr ""
 
 #. module: medical
 #: model:ir.model,name:medical.model_res_partner
 msgid "Partner"
-msgstr "Contact"
+msgstr ""
 
 #. module: medical
 #: code:addons/medical/models/res_partner.py:74
@@ -669,7 +669,7 @@ msgstr ""
 #: model:ir.ui.menu,name:medical.medical_patient_root
 #: model:ir.ui.view,arch_db:medical.medical_patient_view_form
 msgid "Patient"
-msgstr "Patient"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,help:medical.field_medical_patient_identification_code
@@ -684,18 +684,18 @@ msgstr ""
 #: model:ir.ui.view,arch_db:medical.medical_patient_view_search
 #: model:ir.ui.view,arch_db:medical.medical_patient_view_tree
 msgid "Patients"
-msgstr "Patients"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_phone
 #: model:ir.model.fields,field_description:medical.field_medical_patient_phone
 msgid "Phone"
-msgstr "Téléphone"
+msgstr ""
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
 msgid "Phone:"
-msgstr "Téléphone:"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,help:medical.field_medical_abstract_entity_notify_email
@@ -710,7 +710,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_parent_id
 #: model:ir.model.fields,field_description:medical.field_medical_patient_parent_id
 msgid "Related Company"
-msgstr "Companie liée"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_partner_id
@@ -720,7 +720,7 @@ msgstr "Companie liée"
 #: model:ir.model.fields,field_description:medical.field_medical_practitioner_partner_id
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_search
 msgid "Related Partner"
-msgstr "Contact lié"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_patient_ids
@@ -728,13 +728,13 @@ msgstr "Contact lié"
 #: model:ir.model.fields,field_description:medical.field_res_partner_patient_ids
 #: model:ir.model.fields,field_description:medical.field_res_users_patient_ids
 msgid "Related Patients"
-msgstr "Patients liés"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_property_product_pricelist
 #: model:ir.model.fields,field_description:medical.field_medical_patient_property_product_pricelist
 msgid "Sale Pricelist"
-msgstr "Liste de prix"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_team_id
@@ -746,7 +746,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_user_id
 #: model:ir.model.fields,field_description:medical.field_medical_patient_user_id
 msgid "Salesperson"
-msgstr "Vendeur"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_self
@@ -757,7 +757,7 @@ msgstr ""
 #. module: medical
 #: selection:medical.patient,marital_status:0
 msgid "Separated"
-msgstr "Divorcé"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_partner_share
@@ -798,7 +798,7 @@ msgstr ""
 #. module: medical
 #: selection:medical.patient,marital_status:0
 msgid "Single"
-msgstr "Célibataire"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_image_small
@@ -820,34 +820,34 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical.field_medical_patient_state_id
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
 msgid "State"
-msgstr "Etat"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_street
 #: model:ir.model.fields,field_description:medical.field_medical_patient_street
 msgid "Street"
-msgstr "Rue"
+msgstr ""
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
 msgid "Street 2..."
-msgstr "Rue 2..."
+msgstr ""
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
 msgid "Street..."
-msgstr "Rue..."
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_street2
 #: model:ir.model.fields,field_description:medical.field_medical_patient_street2
 msgid "Street2"
-msgstr "Rue2"
+msgstr ""
 
 #. module: medical
 #: model:res.groups,name:medical.group_medical_configurator
 msgid "System Administrator"
-msgstr "Administrateur système"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_vat
@@ -858,18 +858,18 @@ msgstr ""
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_search
 msgid "Tag"
-msgstr "Tag"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_category_id
 #: model:ir.model.fields,field_description:medical.field_medical_patient_category_id
 msgid "Tags"
-msgstr "Tags"
+msgstr ""
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
 msgid "Tags..."
-msgstr "Tags..."
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,help:medical.field_medical_abstract_entity_vat
@@ -917,24 +917,24 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_tz
 #: model:ir.model.fields,field_description:medical.field_medical_patient_tz
 msgid "Timezone"
-msgstr "Fuseau horaire"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_tz_offset
 #: model:ir.model.fields,field_description:medical.field_medical_patient_tz_offset
 msgid "Timezone offset"
-msgstr "Décalage horaire"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_title
 #: model:ir.model.fields,field_description:medical.field_medical_patient_title
 msgid "Title"
-msgstr "Titre"
+msgstr ""
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_patient_view_form
 msgid "UoM"
-msgstr "UdM"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,help:medical.field_medical_abstract_entity_type
@@ -950,19 +950,19 @@ msgstr ""
 #. module: medical
 #: model:res.groups,name:medical.group_medical_user
 msgid "User"
-msgstr "Utilisateur"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_user_ids
 #: model:ir.model.fields,field_description:medical.field_medical_patient_user_ids
 msgid "Users"
-msgstr "Utilisateurs"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_website
 #: model:ir.model.fields,field_description:medical.field_medical_patient_website
 msgid "Website"
-msgstr "Site internet"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,help:medical.field_medical_abstract_entity_website
@@ -974,29 +974,29 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_weight
 #: model:ir.model.fields,field_description:medical.field_medical_patient_weight
 msgid "Weight"
-msgstr "Poids"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_weight_uom
 #: model:ir.model.fields,field_description:medical.field_medical_patient_weight_uom
 msgid "Weight UoM"
-msgstr "Poids UdM"
+msgstr ""
 
 #. module: medical
 #: selection:medical.patient,marital_status:0
 msgid "Widowed"
-msgstr "Veuve"
+msgstr ""
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
 msgid "ZIP"
-msgstr "ZIP"
+msgstr ""
 
 #. module: medical
 #: model:ir.model.fields,field_description:medical.field_medical_abstract_entity_zip
 #: model:ir.model.fields,field_description:medical.field_medical_patient_zip
 msgid "Zip"
-msgstr "Zip"
+msgstr ""
 
 #. module: medical
 #: model:ir.ui.view,arch_db:medical.medical_abstract_entity_view_form
