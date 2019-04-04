@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * medical_pathology
-# 
+#
 # Translators:
 # Anael M <anaelwendel@live.com.ar>, 2017
 msgid ""
@@ -11,35 +11,45 @@ msgstr ""
 "POT-Creation-Date: 2017-12-14 06:00+0000\n"
 "PO-Revision-Date: 2017-12-14 06:00+0000\n"
 "Last-Translator: Anael M <anaelwendel@live.com.ar>, 2017\n"
-"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/teams/23907/es_AR/)\n"
+"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/"
+"teams/23907/es_AR/)\n"
+"Language: es_AR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es_AR\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: medical_pathology
 #: model:medical.pathology,notes:medical_pathology.medical_pathology_medical_pathology_A00_0
 msgid ""
-"* A00.0 is a billable/specific ICD-10-CM code that can be used to indicate a diagnosis for reimbursement purposes.\n"
-"* This is the American ICD-10-CM version of A00.0. Other international versions of ICD-10 A00.0 may differ.\n"
-"* Reimbursement claims with a date of service on or after October 1, 2015 require the use of ICD-10-CM codes."
+"* A00.0 is a billable/specific ICD-10-CM code that can be used to indicate a "
+"diagnosis for reimbursement purposes.\n"
+"* This is the American ICD-10-CM version of A00.0. Other international "
+"versions of ICD-10 A00.0 may differ.\n"
+"* Reimbursement claims with a date of service on or after October 1, 2015 "
+"require the use of ICD-10-CM codes."
 msgstr ""
 
 #. module: medical_pathology
 #: model:medical.pathology,notes:medical_pathology.medical_pathology_medical_pathology_A00_1
 msgid ""
-"* A00.1 is a billable/specific ICD-10-CM code that can be used to indicate a diagnosis for reimbursement purposes.\n"
-"* This is the American ICD-10-CM version of A00.1. Other international versions of ICD-10 A00.1 may differ.\n"
-"* Reimbursement claims with a date of service on or after October 1, 2015 require the use of ICD-10-CM codes."
+"* A00.1 is a billable/specific ICD-10-CM code that can be used to indicate a "
+"diagnosis for reimbursement purposes.\n"
+"* This is the American ICD-10-CM version of A00.1. Other international "
+"versions of ICD-10 A00.1 may differ.\n"
+"* Reimbursement claims with a date of service on or after October 1, 2015 "
+"require the use of ICD-10-CM codes."
 msgstr ""
 
 #. module: medical_pathology
 #: model:medical.pathology,notes:medical_pathology.medical_pathology_medical_pathology_A00_9
 msgid ""
-"* A00.9 is a billable/specific ICD-10-CM code that can be used to indicate a diagnosis for reimbursement purposes.\n"
-"* This is the American ICD-10-CM version of A00.9. Other international versions of ICD-10 A00.9 may differ.\n"
-"* Reimbursement claims with a date of service on or after October 1, 2015 require the use of ICD-10-CM codes."
+"* A00.9 is a billable/specific ICD-10-CM code that can be used to indicate a "
+"diagnosis for reimbursement purposes.\n"
+"* This is the American ICD-10-CM version of A00.9. Other international "
+"versions of ICD-10 A00.9 may differ.\n"
+"* Reimbursement claims with a date of service on or after October 1, 2015 "
+"require the use of ICD-10-CM codes."
 msgstr ""
 
 #. module: medical_pathology
@@ -252,19 +262,21 @@ msgid ""
 "* certain localized infections - see body system-related chapters\n"
 "Type 2 Excludes \n"
 "* carrier or suspected carrier of infectious disease (Z22.-)\n"
-"* infectious and parasitic diseases complicating pregnancy, childbirth and the puerperium (O98.-)\n"
-"* infectious and parasitic diseases specific to the perinatal period (P35-P39)\n"
+"* infectious and parasitic diseases complicating pregnancy, childbirth and "
+"the puerperium (O98.-)\n"
+"* infectious and parasitic diseases specific to the perinatal period (P35-"
+"P39)\n"
 "* influenza and other acute respiratory infections (J00-J22)"
 msgstr ""
 
 #. module: medical_pathology
-#: code:addons/medical_pathology/models/medical_pathology_category.py:42
+#: code:addons/medical_pathology/models/medical_pathology_category.py:43
 #, python-format
 msgid "You are attempting to create a recursive category."
 msgstr ""
 
 #. module: medical_pathology
-#: code:addons/medical_pathology/models/medical_pathology.py:57
+#: code:addons/medical_pathology/models/medical_pathology.py:58
 #, python-format
 msgid "You are attempting to create a recursive pathology."
 msgstr ""
