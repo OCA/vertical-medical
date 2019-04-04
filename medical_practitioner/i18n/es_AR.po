@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * medical_practitioner
-# 
+#
 # Translators:
 # Anael M <anaelwendel@live.com.ar>, 2017
 msgid ""
@@ -11,11 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2017-12-14 06:00+0000\n"
 "PO-Revision-Date: 2017-12-14 06:00+0000\n"
 "Last-Translator: Anael M <anaelwendel@live.com.ar>, 2017\n"
-"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/teams/23907/es_AR/)\n"
+"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/"
+"teams/23907/es_AR/)\n"
+"Language: es_AR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es_AR\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: medical_practitioner
@@ -57,8 +58,7 @@ msgstr "Canales"
 #. module: medical_practitioner
 #: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_is_company
 msgid "Check if the contact is a company, otherwise it is a person"
-msgstr ""
-"Comprueba si el contacto es una compañia, por otro lado es una persona"
+msgstr "Comprueba si el contacto es una compañia, por otro lado es una persona"
 
 #. module: medical_practitioner
 #: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_customer
@@ -192,8 +192,8 @@ msgstr ""
 #. module: medical_practitioner
 #: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_partner_share
 msgid ""
-"Either customer (no user), either shared user. Indicated the current partner"
-" is a customer without access or with a limited access created for sharing "
+"Either customer (no user), either shared user. Indicated the current partner "
+"is a customer without access or with a limited access created for sharing "
 "data."
 msgstr ""
 
@@ -549,8 +549,8 @@ msgstr ""
 #: model:ir.model.fields,help:medical_practitioner.field_medical_practitioner_image_small
 msgid ""
 "Small-sized image of this contact. It is automatically resized as a 64x64px "
-"image, with aspect ratio preserved. Use this field anywhere a small image is"
-" required."
+"image, with aspect ratio preserved. Use this field anywhere a small image is "
+"required."
 msgstr ""
 
 #. module: medical_practitioner
