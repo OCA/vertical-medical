@@ -1,43 +1,38 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * medical_center
+#	* medical_center
 #
-# Translators:
-# enjolras <yo@miguelrevilla.com>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-09 17:52+0000\n"
-"PO-Revision-Date: 2018-02-09 17:52+0000\n"
-"Last-Translator: enjolras <yo@miguelrevilla.com>, 2018\n"
-"Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
-"Language: es\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: \n"
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_alias
 msgid "Alias"
-msgstr "Alias"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_bank_ids
 msgid "Banks"
-msgstr "Bancos"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_barcode
 msgid "Barcode"
-msgstr "Código de barras"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_birthdate
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_birthdate_date
 msgid "Birthdate"
-msgstr "Fecha de nacimiento"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_message_bounce
@@ -47,12 +42,12 @@ msgstr ""
 #. module: medical_center
 #: model:ir.ui.menu,name:medical_center.medical_center_menu
 msgid "Centers"
-msgstr "Centros"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_channel_ids
 msgid "Channels"
-msgstr "Canales"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,help:medical_center.field_medical_center_is_company
@@ -66,9 +61,7 @@ msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,help:medical_center.field_medical_center_supplier
-msgid ""
-"Check this box if this contact is a vendor. If it's not checked, purchase "
-"people will not see it when encoding a purchase order."
+msgid "Check this box if this contact is a vendor. If it's not checked, purchase people will not see it when encoding a purchase order."
 msgstr ""
 
 #. module: medical_center
@@ -79,17 +72,17 @@ msgstr ""
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_city
 msgid "City"
-msgstr "Ciudad"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_color
 msgid "Color Index"
-msgstr "Índice de color"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_commercial_partner_id
 msgid "Commercial Entity"
-msgstr "Entidad comercial"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,help:medical_center.field_medical_center_alias
@@ -100,12 +93,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_company_id
 #: model:ir.ui.view,arch_db:medical_center.medical_center_view_search
 msgid "Company"
-msgstr "Compañía"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_company_name
 msgid "Company Name"
-msgstr "Nombre de la compañía"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_commercial_company_name
@@ -115,17 +108,17 @@ msgstr ""
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_company_type
 msgid "Company Type"
-msgstr "Tipo de compañía"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_contact_address
 msgid "Complete Address"
-msgstr "Dirección completa"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_child_ids
 msgid "Contacts"
-msgstr "Contactos"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_count_patients
@@ -140,45 +133,42 @@ msgstr ""
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_country_id
 msgid "Country"
-msgstr "País"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_create_date
 msgid "Created on"
-msgstr "Creado el"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_credit_limit
 msgid "Credit Limit"
-msgstr "Límite de crédito"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_date
 msgid "Date"
-msgstr "Fecha"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_display_name
 msgid "Display Name"
-msgstr "Nombre mostrado"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,help:medical_center.field_medical_center_partner_share
-msgid ""
-"Either customer (no user), either shared user. Indicated the current partner "
-"is a customer without access or with a limited access created for sharing "
-"data."
+msgid "Either customer (no user), either shared user. Indicated the current partner is a customer without access or with a limited access created for sharing data."
 msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_email
 msgid "Email"
-msgstr "Email"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_notify_email
@@ -188,17 +178,17 @@ msgstr ""
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_employee
 msgid "Employee"
-msgstr "Empleado"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_fax
 msgid "Fax"
-msgstr "Fax"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_firstname
 msgid "First name"
-msgstr "Nombre"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,help:medical_center.field_medical_center_email_formatted
@@ -213,12 +203,12 @@ msgstr ""
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_gender
 msgid "Gender"
-msgstr "Sexo"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_im_status
@@ -228,49 +218,42 @@ msgstr ""
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_id_numbers
 msgid "Identification Numbers"
-msgstr "Número de identificació"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,help:medical_center.field_medical_center_opt_out
-msgid ""
-"If opt-out is checked, this contact has refused to receive emails for mass "
-"mailing and marketing campaign. Filter 'Available for Mass Mailing' allows "
-"users to filter the partners when performing mass mailing."
+msgid "If opt-out is checked, this contact has refused to receive emails for mass mailing and marketing campaign. Filter 'Available for Mass Mailing' allows users to filter the partners when performing mass mailing."
 msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,help:medical_center.field_medical_center_team_id
-msgid ""
-"If set, sale team used notably for sales and assignations related to this "
-"partner"
+msgid "If set, sale team used notably for sales and assignations related to this partner"
 msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,help:medical_center.field_medical_center_lang
-msgid ""
-"If the selected language is loaded in the system, all documents related to "
-"this contact will be printed in this language. If not, it will be English."
+msgid "If the selected language is loaded in the system, all documents related to this contact will be printed in this language. If not, it will be English."
 msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_image
 msgid "Image"
-msgstr "Imagen"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_ref
 msgid "Internal Reference"
-msgstr "Referencia interna"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_is_company
 msgid "Is a Company"
-msgstr "Es una empresa"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_customer
 msgid "Is a Customer"
-msgstr "Es un cliente"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_supplier
@@ -285,33 +268,33 @@ msgstr ""
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_lang
 msgid "Language"
-msgstr "Idioma"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center___last_update
 msgid "Last Modified on"
-msgstr "Última modificación el"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_write_date
 msgid "Last Updated on"
-msgstr "Última actualización el"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_lastname
 msgid "Last name"
-msgstr "Apellidos"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model,name:medical_center.model_medical_center
 #: model:ir.ui.view,arch_db:medical_center.medical_center_view_form
 msgid "Medical Center"
-msgstr "Centro médico"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.actions.act_window,name:medical_center.medical_center_action
@@ -319,7 +302,7 @@ msgstr "Centro médico"
 #: model:ir.ui.view,arch_db:medical_center.medical_center_view_search
 #: model:ir.ui.view,arch_db:medical_center.medical_center_view_tree
 msgid "Medical Centers"
-msgstr "Centros médicos"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.ui.menu,name:medical_center.medical_facilities_menu
@@ -338,26 +321,23 @@ msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,help:medical_center.field_medical_center_image_medium
-msgid ""
-"Medium-sized image of this contact. It is automatically resized as a "
-"128x128px image, with aspect ratio preserved. Use this field in form views "
-"or some kanban views."
+msgid "Medium-sized image of this contact. It is automatically resized as a 128x128px image, with aspect ratio preserved. Use this field in form views or some kanban views."
 msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_mobile
 msgid "Mobile"
-msgstr "Móvil"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_name
 msgid "Name"
-msgstr "Nombre"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_comment
 msgid "Notes"
-msgstr "Notas"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_opt_out
@@ -382,12 +362,11 @@ msgstr ""
 #. module: medical_center
 #: model:ir.model.fields,field_description:medical_center.field_medical_center_phone
 msgid "Phone"
-msgstr "Teléfono"
+msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,help:medical_center.field_medical_center_notify_email
-msgid ""
-"Policy to receive emails for new messages pushed to your personal Inbox:\n"
+msgid "Policy to receive emails for new messages pushed to your personal Inbox:\n"
 "- Never: no emails are sent\n"
 "- All Messages: for every notification you receive in your Inbox"
 msgstr ""
@@ -470,10 +449,7 @@ msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,help:medical_center.field_medical_center_image_small
-msgid ""
-"Small-sized image of this contact. It is automatically resized as a 64x64px "
-"image, with aspect ratio preserved. Use this field anywhere a small image is "
-"required."
+msgid "Small-sized image of this contact. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
 msgstr ""
 
 #. module: medical_center
@@ -504,39 +480,27 @@ msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,help:medical_center.field_medical_center_vat
-msgid ""
-"Tax Identification Number. Fill it if the company is subjected to taxes. "
-"Used by the some of the legal statements."
+msgid "Tax Identification Number. Fill it if the company is subjected to taxes. Used by the some of the legal statements."
 msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,help:medical_center.field_medical_center_user_id
-msgid ""
-"The internal user that is in charge of communicating with this contact if "
-"any."
+msgid "The internal user that is in charge of communicating with this contact if any."
 msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,help:medical_center.field_medical_center_tz
-msgid ""
-"The partner's timezone, used to output proper date and time values inside "
-"printed reports. It is important to set a value for this field. You should "
-"use the same timezone that is otherwise used to pick and render date and "
-"time values: your computer's timezone."
+msgid "The partner's timezone, used to output proper date and time values inside printed reports. It is important to set a value for this field. You should use the same timezone that is otherwise used to pick and render date and time values: your computer's timezone."
 msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,help:medical_center.field_medical_center_image
-msgid ""
-"This field holds the image used as avatar for this contact, limited to "
-"1024x1024px"
+msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
 msgstr ""
 
 #. module: medical_center
 #: model:ir.model.fields,help:medical_center.field_medical_center_property_product_pricelist
-msgid ""
-"This pricelist will be used, instead of the default one, for sales to the "
-"current partner"
+msgid "This pricelist will be used, instead of the default one, for sales to the current partner"
 msgstr ""
 
 #. module: medical_center
@@ -584,3 +548,4 @@ msgstr ""
 #: model:ir.ui.view,arch_db:medical_center.medical_center_view_search
 msgid "Zip"
 msgstr ""
+
