@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * medical_insurance
-# 
+#
 # Translators:
 # leemannd <denis.leemann@camptocamp.com>, 2017
 msgid ""
@@ -12,10 +12,10 @@ msgstr ""
 "PO-Revision-Date: 2017-11-29 03:47+0000\n"
 "Last-Translator: leemannd <denis.leemann@camptocamp.com>, 2017\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: medical_insurance
@@ -26,8 +26,8 @@ msgstr ""
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_description_sale
 msgid ""
-"A description of the Product that you want to communicate to your customers."
-" This description will be copied to every Sale Order, Delivery Order and "
+"A description of the Product that you want to communicate to your customers. "
+"This description will be copied to every Sale Order, Delivery Order and "
 "Customer Invoice/Refund"
 msgstr ""
 
@@ -49,10 +49,15 @@ msgstr ""
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_type
 msgid ""
-"A stockable product is a product for which you manage stock. The \"Inventory\" app has to be installed.\n"
-"A consumable product, on the other hand, is a product for which stock is not managed.\n"
+"A stockable product is a product for which you manage stock. The \"Inventory"
+"\" app has to be installed.\n"
+"A consumable product, on the other hand, is a product for which stock is not "
+"managed.\n"
 "A service is a non-material product you provide.\n"
-"A digital content is a non-material product you sell online. The files attached to the products are the one that are sold on the e-commerce such as e-books, music, pictures,... The \"Digital Product\" module has to be installed."
+"A digital content is a non-material product you sell online. The files "
+"attached to the products are the one that are sold on the e-commerce such as "
+"e-books, music, pictures,... The \"Digital Product\" module has to be "
+"installed."
 msgstr ""
 
 #. module: medical_insurance
@@ -101,8 +106,7 @@ msgstr "Code-barres"
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_list_price
 msgid ""
-"Base price to compute the customer price. Sometimes called the catalog "
-"price."
+"Base price to compute the customer price. Sometimes called the catalog price."
 msgstr ""
 
 #. module: medical_insurance
@@ -166,8 +170,7 @@ msgstr ""
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_is_default
 msgid ""
-"Check this if the plan should be the default when assigningcompany to "
-"patient"
+"Check this if the plan should be the default when assigningcompany to patient"
 msgstr ""
 
 #. module: medical_insurance
@@ -237,8 +240,8 @@ msgstr ""
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_standard_price
 msgid ""
-"Cost of the product template used for standard stock valuation in accounting"
-" and used as a base price on purchase orders. Expressed in the default unit "
+"Cost of the product template used for standard stock valuation in accounting "
+"and used as a base price on purchase orders. Expressed in the default unit "
 "of measure of the product."
 msgstr ""
 
@@ -333,8 +336,8 @@ msgstr "Nom affiché"
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_company_partner_share
 msgid ""
-"Either customer (no user), either shared user. Indicated the current partner"
-" is a customer without access or with a limited access created for sharing "
+"Either customer (no user), either shared user. Indicated the current partner "
+"is a customer without access or with a limited access created for sharing "
 "data."
 msgstr ""
 
@@ -496,8 +499,8 @@ msgstr "Image"
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_image
 msgid ""
-"Image of the product variant (Big-sized image of product template if false)."
-" It is automatically resized as a 1024x1024px image, with aspect ratio "
+"Image of the product variant (Big-sized image of product template if false). "
+"It is automatically resized as a 1024x1024px image, with aspect ratio "
 "preserved."
 msgstr ""
 
@@ -1031,8 +1034,8 @@ msgstr ""
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_company_image_small
 msgid ""
 "Small-sized image of this contact. It is automatically resized as a 64x64px "
-"image, with aspect ratio preserved. Use this field anywhere a small image is"
-" required."
+"image, with aspect ratio preserved. Use this field anywhere a small image is "
+"required."
 msgstr ""
 
 #. module: medical_insurance
@@ -1123,8 +1126,8 @@ msgstr ""
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_image_variant
 msgid ""
-"This field holds the image used as image for the product variant, limited to"
-" 1024x1024px."
+"This field holds the image used as image for the product variant, limited to "
+"1024x1024px."
 msgstr ""
 
 #. module: medical_insurance

@@ -1,23 +1,17 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * medical_insurance
+#	* medical_insurance
 #
-# Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-29 03:47+0000\n"
-"PO-Revision-Date: 2017-11-29 03:47+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
-"Language-Team: Spanish (Colombia) (https://www.transifex.com/oca/teams/23907/"
-"es_CO/)\n"
-"Language: es_CO\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: \n"
 
 #. module: medical_insurance
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_template_product_variant_count
@@ -26,39 +20,25 @@ msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_description_sale
-msgid ""
-"A description of the Product that you want to communicate to your customers. "
-"This description will be copied to every Sale Order, Delivery Order and "
-"Customer Invoice/Refund"
+msgid "A description of the Product that you want to communicate to your customers. This description will be copied to every Sale Order, Delivery Order and Customer Invoice/Refund"
 msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_description_purchase
-msgid ""
-"A description of the Product that you want to communicate to your vendors. "
-"This description will be copied to every Purchase Order, Receipt and Vendor "
-"Bill/Refund."
+msgid "A description of the Product that you want to communicate to your vendors. This description will be copied to every Purchase Order, Receipt and Vendor Bill/Refund."
 msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_description
-msgid ""
-"A precise description of the Product, used only for internal information "
-"purposes."
+msgid "A precise description of the Product, used only for internal information purposes."
 msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_type
-msgid ""
-"A stockable product is a product for which you manage stock. The \"Inventory"
-"\" app has to be installed.\n"
-"A consumable product, on the other hand, is a product for which stock is not "
-"managed.\n"
+msgid "A stockable product is a product for which you manage stock. The \"Inventory\" app has to be installed.\n"
+"A consumable product, on the other hand, is a product for which stock is not managed.\n"
 "A service is a non-material product you provide.\n"
-"A digital content is a non-material product you sell online. The files "
-"attached to the products are the one that are sold on the e-commerce such as "
-"e-books, music, pictures,... The \"Digital Product\" module has to be "
-"installed."
+"A digital content is a non-material product you sell online. The files attached to the products are the one that are sold on the e-commerce such as e-books, music, pictures,... The \"Digital Product\" module has to be installed."
 msgstr ""
 
 #. module: medical_insurance
@@ -106,8 +86,7 @@ msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_list_price
-msgid ""
-"Base price to compute the customer price. Sometimes called the catalog price."
+msgid "Base price to compute the customer price. Sometimes called the catalog price."
 msgstr ""
 
 #. module: medical_insurance
@@ -158,9 +137,7 @@ msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_company_supplier
-msgid ""
-"Check this box if this contact is a vendor. If it's not checked, purchase "
-"people will not see it when encoding a purchase order."
+msgid "Check this box if this contact is a vendor. If it's not checked, purchase people will not see it when encoding a purchase order."
 msgstr ""
 
 #. module: medical_insurance
@@ -170,8 +147,7 @@ msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_is_default
-msgid ""
-"Check this if the plan should be the default when assigningcompany to patient"
+msgid "Check this if the plan should be the default when assigningcompany to patient"
 msgstr ""
 
 #. module: medical_insurance
@@ -240,10 +216,7 @@ msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_standard_price
-msgid ""
-"Cost of the product template used for standard stock valuation in accounting "
-"and used as a base price on purchase orders. Expressed in the default unit "
-"of measure of the product."
+msgid "Cost of the product template used for standard stock valuation in accounting and used as a base price on purchase orders. Expressed in the default unit of measure of the product."
 msgstr ""
 
 #. module: medical_insurance
@@ -266,14 +239,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan_create_uid
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_template_create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_company_create_date
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan_create_date
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_template_create_date
 msgid "Created on"
-msgstr "Creado en"
+msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_company_credit_limit
@@ -312,9 +285,7 @@ msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_uom_po_id
-msgid ""
-"Default Unit of Measure used for purchase orders. It must be in the same "
-"category than the default unit of measure."
+msgid "Default Unit of Measure used for purchase orders. It must be in the same category than the default unit of measure."
 msgstr ""
 
 #. module: medical_insurance
@@ -332,14 +303,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan_display_name
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_template_display_name
 msgid "Display Name"
-msgstr "Mostrar Nombre"
+msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_company_partner_share
-msgid ""
-"Either customer (no user), either shared user. Indicated the current partner "
-"is a customer without access or with a limited access created for sharing "
-"data."
+msgid "Either customer (no user), either shared user. Indicated the current partner is a customer without access or with a limited access created for sharing data."
 msgstr ""
 
 #. module: medical_insurance
@@ -410,9 +378,7 @@ msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_packaging_ids
-msgid ""
-"Gives the different ways to package the same product. This has no impact on "
-"the picking order and is mainly used if you use the EDI module."
+msgid "Gives the different ways to package the same product. This has no impact on the picking order and is mainly used if you use the EDI module."
 msgstr ""
 
 #. module: medical_insurance
@@ -424,14 +390,14 @@ msgstr ""
 #: model:ir.ui.view,arch_db:medical_insurance.medical_insurance_plan_view_search
 #: model:ir.ui.view,arch_db:medical_insurance.medical_insurance_template_view_search
 msgid "Group By..."
-msgstr "Agrupar Por..."
+msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_company_id
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan_id
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_template_id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_company_im_status
@@ -466,30 +432,22 @@ msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_company_opt_out
-msgid ""
-"If opt-out is checked, this contact has refused to receive emails for mass "
-"mailing and marketing campaign. Filter 'Available for Mass Mailing' allows "
-"users to filter the partners when performing mass mailing."
+msgid "If opt-out is checked, this contact has refused to receive emails for mass mailing and marketing campaign. Filter 'Available for Mass Mailing' allows users to filter the partners when performing mass mailing."
 msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_company_team_id
-msgid ""
-"If set, sale team used notably for sales and assignations related to this "
-"partner"
+msgid "If set, sale team used notably for sales and assignations related to this partner"
 msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_company_lang
-msgid ""
-"If the selected language is loaded in the system, all documents related to "
-"this contact will be printed in this language. If not, it will be English."
+msgid "If the selected language is loaded in the system, all documents related to this contact will be printed in this language. If not, it will be English."
 msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_active
-msgid ""
-"If unchecked, it will allow you to hide the product without removing it."
+msgid "If unchecked, it will allow you to hide the product without removing it."
 msgstr ""
 
 #. module: medical_insurance
@@ -499,24 +457,17 @@ msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_image
-msgid ""
-"Image of the product variant (Big-sized image of product template if false). "
-"It is automatically resized as a 1024x1024px image, with aspect ratio "
-"preserved."
+msgid "Image of the product variant (Big-sized image of product template if false). It is automatically resized as a 1024x1024px image, with aspect ratio preserved."
 msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_image_medium
-msgid ""
-"Image of the product variant (Medium-sized image of product template if "
-"false)."
+msgid "Image of the product variant (Medium-sized image of product template if false)."
 msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_image_small
-msgid ""
-"Image of the product variant (Small-sized image of product template if "
-"false)."
+msgid "Image of the product variant (Small-sized image of product template if false)."
 msgstr ""
 
 #. module: medical_insurance
@@ -692,21 +643,21 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan___last_update
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_template___last_update
 msgid "Last Modified on"
-msgstr "Última Modificación en"
+msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_company_write_uid
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan_write_uid
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_template_write_uid
 msgid "Last Updated by"
-msgstr "Última Actualización por"
+msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_company_write_date
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan_write_date
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_template_write_date
 msgid "Last Updated on"
-msgstr "Última Actualización en"
+msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_company_lastname
@@ -746,10 +697,7 @@ msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_company_image_medium
-msgid ""
-"Medium-sized image of this contact. It is automatically resized as a "
-"128x128px image, with aspect ratio preserved. Use this field in form views "
-"or some kanban views."
+msgid "Medium-sized image of this contact. It is automatically resized as a 128x128px image, with aspect ratio preserved. Use this field in form views or some kanban views."
 msgstr ""
 
 #. module: medical_insurance
@@ -772,12 +720,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_plan_name
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_template_name
 msgid "Name"
-msgstr "Nombre"
+msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,field_description:medical_insurance.field_medical_insurance_company_comment
 msgid "Notes"
-msgstr "Notas"
+msgstr ""
 
 #. module: medical_insurance
 #: model:ir.ui.view,arch_db:medical_insurance.medical_insurance_plan_view_form
@@ -872,8 +820,7 @@ msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_company_notify_email
-msgid ""
-"Policy to receive emails for new messages pushed to your personal Inbox:\n"
+msgid "Policy to receive emails for new messages pushed to your personal Inbox:\n"
 "- Never: no emails are sent\n"
 "- All Messages: for every notification you receive in your Inbox"
 msgstr ""
@@ -1033,10 +980,7 @@ msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_company_image_small
-msgid ""
-"Small-sized image of this contact. It is automatically resized as a 64x64px "
-"image, with aspect ratio preserved. Use this field anywhere a small image is "
-"required."
+msgid "Small-sized image of this contact. It is automatically resized as a 64x64px image, with aspect ratio preserved. Use this field anywhere a small image is required."
 msgstr ""
 
 #. module: medical_insurance
@@ -1073,38 +1017,27 @@ msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_company_vat
-msgid ""
-"Tax Identification Number. Fill it if the company is subjected to taxes. "
-"Used by the some of the legal statements."
+msgid "Tax Identification Number. Fill it if the company is subjected to taxes. Used by the some of the legal statements."
 msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_pricelist_id
-msgid ""
-"Technical field. Used for searching on pricelists, not stored in database."
+msgid "Technical field. Used for searching on pricelists, not stored in database."
 msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_company_user_id
-msgid ""
-"The internal user that is in charge of communicating with this contact if "
-"any."
+msgid "The internal user that is in charge of communicating with this contact if any."
 msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_company_tz
-msgid ""
-"The partner's timezone, used to output proper date and time values inside "
-"printed reports. It is important to set a value for this field. You should "
-"use the same timezone that is otherwise used to pick and render date and "
-"time values: your computer's timezone."
+msgid "The partner's timezone, used to output proper date and time values inside printed reports. It is important to set a value for this field. You should use the same timezone that is otherwise used to pick and render date and time values: your computer's timezone."
 msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_lst_price
-msgid ""
-"The sale price is managed from the product template. Click on the 'Variant "
-"Prices' button to set the extra attribute prices."
+msgid "The sale price is managed from the product template. Click on the 'Variant Prices' button to set the extra attribute prices."
 msgstr ""
 
 #. module: medical_insurance
@@ -1119,16 +1052,12 @@ msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_company_image
-msgid ""
-"This field holds the image used as avatar for this contact, limited to "
-"1024x1024px"
+msgid "This field holds the image used as avatar for this contact, limited to 1024x1024px"
 msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_template_image_variant
-msgid ""
-"This field holds the image used as image for the product variant, limited to "
-"1024x1024px."
+msgid "This field holds the image used as image for the product variant, limited to 1024x1024px."
 msgstr ""
 
 #. module: medical_insurance
@@ -1138,9 +1067,7 @@ msgstr ""
 
 #. module: medical_insurance
 #: model:ir.model.fields,help:medical_insurance.field_medical_insurance_company_property_product_pricelist
-msgid ""
-"This pricelist will be used, instead of the default one, for sales to the "
-"current partner"
+msgid "This pricelist will be used, instead of the default one, for sales to the current partner"
 msgstr ""
 
 #. module: medical_insurance
@@ -1235,3 +1162,4 @@ msgstr ""
 #: model:ir.ui.view,arch_db:medical_insurance.medical_insurance_company_view_search
 msgid "Zip"
 msgstr ""
+
