@@ -48,7 +48,8 @@ entities & maintain uniformity between them:
 When inheriting these views, you must define the inheritance mode as ``primary``,
 such as in the following example:
 
-    .. code-block:: xml
+.. code-block:: xml
+
     <record id="medical_patient_view_tree" model="ir.ui.view">
         <field name="name">medical.patient.tree</field>
         <field name="model">medical.patient</field>
