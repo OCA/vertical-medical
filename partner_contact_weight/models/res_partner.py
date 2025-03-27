@@ -10,8 +10,8 @@ class ResPartner(models.Model):
     weight = fields.Float()
     weight_uom = fields.Many2one(
         string="Weight UoM",
-        comodel_name="product.uom",
+        comodel_name="uom.uom",
         domain=lambda self: [
-            ("category_id", "=", self.env.ref("product.product_uom_categ_kgm").id)
+            ("category_id", "=", self.env.ref("uom.product_uom_categ_kgm").id)
         ],
     )

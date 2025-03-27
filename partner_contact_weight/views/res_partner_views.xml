@@ -8,6 +8,7 @@
             name="inherit_id"
             ref="partner_contact_personal_information_page.personal_information"
         />
+        <field name="priority" eval="100" />
         <field name="arch" type="xml">
             <xpath
                 expr="//page[@name='personal_information_page']/group[@name='personal_information_group']"
