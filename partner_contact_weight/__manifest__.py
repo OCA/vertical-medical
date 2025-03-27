@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2016 Ursa Information Systems <http://ursainfosystems.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
@@ -6,7 +5,7 @@
     "summary": "Provide contact weight",
     "version": "10.0.1.0.1",
     "category": "Health",
-    "website": "http://ursainfosystems.com",
+    "website": "https://github.com/OCA/partner-contact",
     "author": "Ursa Information Systems, Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "application": False,
