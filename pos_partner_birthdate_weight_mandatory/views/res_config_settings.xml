@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_res_config_settings_weight_required" model="ir.ui.view">
+        <field name="model">res.config.settings</field>
+        <field
+            name="inherit_id"
+            ref="pos_partner_birthdate_warning.view_res_config_settings_birthdate_warning"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='age_warning']" position="after">
+                <setting
+                    string="Weight Required"
+                    help="Check if you want to require the customer's weight in POS interface"
+                >
+                    <field name="weight_required" />
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>
