@@ -1,0 +1,5 @@
+  - Emanuel Cino \<<ecino@compassion.ch>\>
+  - Juan Carlos Bonilla Bravo \<<juancarlos.bonilla@factorlibre.com>\>
+  - Enric Tobella
+  - Cyril VINH-TUNG \<<cyril@invitu.com>\>
+  - Vehiana Tepuhiarii \<<vehi@invitu.com>\>
