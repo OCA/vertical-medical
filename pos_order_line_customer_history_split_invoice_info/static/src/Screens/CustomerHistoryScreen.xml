@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+
+    <t
+        t-name="CustomerHistoryScreen"
+        t-inherit="pos_order_line_customer_history.CustomerHistoryScreen"
+        t-inherit-mode="extension"
+    >
+        <xpath expr="//div[hasclass('header-row')]" position="inside">
+            <div class="col wide p-2" id="infos" title="Additional icons">
+                Infos
+            </div>
+        </xpath>
+        <xpath expr="//t[@t-if='!ui.isSmall']//div[@name='cart']" position="after">
+            <div class="col wide p-2" id="info_icon_list">
+                <div
+                    t-if="line.is_splitting_invoice_unpaid and line.is_splitted_move_line"
+                >
+                    <i
+                        class="fa fa-exclamation-triangle text-danger"
+                        title="Unpaid Invoice"
+                    />
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//t[@t-if='ui.isSmall']//div[@name='cart']/.." position="before">
+            <div
+                class="col p-2"
+                t-if="line.is_splitting_invoice_unpaid and line.is_splitted_move_line"
+                id="mobile_info_icon_list"
+            >
+                <div>
+                    <i
+                        class="fa fa-exclamation-triangle text-danger"
+                        title="Unpaid Invoice"
+                    />
+                </div>
+            </div>
+        </xpath>
+    </t>
+
+</templates>
